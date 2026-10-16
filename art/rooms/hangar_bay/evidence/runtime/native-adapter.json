@@ -1,0 +1,15 @@
+{
+  "runtime": "Godot 4.7.2 room_stage_3d",
+  "taskContract": "docs/team/CODEX_TASKS_3D_ROOMS.md",
+  "geometryTiersRequired": ["hangar_bay.glb"],
+  "textureTiersRequired": [2048],
+  "triangleBudget": 40000,
+  "assetByteBudget": 8000000,
+  "textureByteBudget": 4194304,
+  "lighting": "Code-painted colour and room-only baked AO; real-time metal finish and four lights derived from lighting-fixtures.json. No static illumination baked into base colour.",
+  "lightmapRequired": false,
+  "nativeCapture": "runtime/godot-production.png",
+  "paidGeneration": false,
+  "approvalRequired": true,
+  "bundledValidatorCompatibility": "Meshy-only assets, a static lightmap and web texture tiers are not used by the explicit native project contract. Preserve validator failures; never fabricate Meshy provenance or human approval."
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "opening": "bay-door",
+    "tool": "trace_opening_mask.py",
+    "exitCode": 1,
+    "diagnostic": "Traceback (most recent call last):\n  File \"C:\\Users\\pmcga\\.codex\\plugins\\cache\\openai-curated-remote\\build-3d-game-rooms\\0.3.3\\skills\\build-3d-game-rooms\\scripts\\trace_opening_mask.py\", line 11, in <module>\n    import cv2\nModuleNotFoundError: No module named 'cv2'"
+  },
+  {
+    "opening": "west-window",
+    "tool": "trace_opening_mask.py",
+    "exitCode": 1,
+    "diagnostic": "Traceback (most recent call last):\n  File \"C:\\Users\\pmcga\\.codex\\plugins\\cache\\openai-curated-remote\\build-3d-game-rooms\\0.3.3\\skills\\build-3d-game-rooms\\scripts\\trace_opening_mask.py\", line 11, in <module>\n    import cv2\nModuleNotFoundError: No module named 'cv2'"
+  },
+  {
+    "opening": "east-window",
+    "tool": "trace_opening_mask.py",
+    "exitCode": 1,
+    "diagnostic": "Traceback (most recent call last):\n  File \"C:\\Users\\pmcga\\.codex\\plugins\\cache\\openai-curated-remote\\build-3d-game-rooms\\0.3.3\\skills\\build-3d-game-rooms\\scripts\\trace_opening_mask.py\", line 11, in <module>\n    import cv2\nModuleNotFoundError: No module named 'cv2'"
+  }
+]

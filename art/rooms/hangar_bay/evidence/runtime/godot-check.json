@@ -1,0 +1,29 @@
+{
+	"camera": {
+		"position": [
+			3.8,
+			7.3,
+			6.6
+		],
+		"target": [
+			0.0,
+			1.35,
+			0.0
+		],
+		"verticalFovDegrees": 50.0
+	},
+	"capture": "docs/art/3d/room_hangar_bay.png",
+	"failures": 0,
+	"fixtureCount": 4,
+	"machineSha256": "13775cbd64fee22ccfe401269bab987627a8960b816263ac3ce9909a61f87f0e",
+	"materialSurfaces": 5,
+	"passed": true,
+	"roomSha256": "ab185cac5c09efddadbe699e6546bdf5429aab6c6ab6449216e58efdcbd530d1",
+	"roomTriangles": 3280,
+	"runtimeApproval": "pending",
+	"sceneTriangles": 20782,
+	"viewport": [
+		320,
+		180
+	]
+}

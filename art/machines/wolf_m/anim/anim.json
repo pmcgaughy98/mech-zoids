@@ -1,0 +1,137 @@
+{
+ "size": [
+  180,
+  122
+ ],
+ "feet_y": 110,
+ "clips": {
+  "idle": {
+   "frames": [
+    "idle/0.png",
+    "idle/1.png",
+    "idle/2.png",
+    "idle/3.png"
+   ],
+   "ms": [
+    450,
+    450,
+    450,
+    450
+   ],
+   "loop": "pingpong",
+   "strike": -1
+  },
+  "lunge": {
+   "frames": [
+    "lunge/0.png",
+    "lunge/1.png",
+    "lunge/2.png",
+    "lunge/3.png",
+    "lunge/4.png",
+    "lunge/5.png",
+    "lunge/6.png",
+    "lunge/7.png",
+    "lunge/8.png"
+   ],
+   "ms": [
+    150,
+    150,
+    180,
+    250,
+    50,
+    50,
+    120,
+    130,
+    200
+   ],
+   "loop": "once",
+   "strike": 5
+  },
+  "howl": {
+   "frames": [
+    "howl/0.png",
+    "howl/1.png",
+    "howl/2.png",
+    "howl/3.png",
+    "howl/4.png",
+    "howl/5.png",
+    "howl/6.png",
+    "howl/7.png",
+    "howl/8.png"
+   ],
+   "ms": [
+    150,
+    150,
+    180,
+    250,
+    50,
+    50,
+    120,
+    130,
+    200
+   ],
+   "loop": "once",
+   "strike": 5
+  },
+  "dash": {
+   "frames": [
+    "dash/0.png",
+    "dash/1.png",
+    "dash/2.png",
+    "dash/3.png",
+    "dash/4.png",
+    "dash/5.png",
+    "dash/6.png",
+    "dash/7.png",
+    "dash/8.png"
+   ],
+   "ms": [
+    150,
+    150,
+    180,
+    250,
+    50,
+    50,
+    120,
+    130,
+    200
+   ],
+   "loop": "once",
+   "strike": 5
+  },
+  "hit": {
+   "frames": [
+    "hit/0.png",
+    "hit/1.png",
+    "hit/2.png"
+   ],
+   "ms": [
+    60,
+    120,
+    150
+   ],
+   "loop": "once",
+   "strike": -1
+  },
+  "death": {
+   "frames": [
+    "death/0.png",
+    "death/1.png",
+    "death/2.png",
+    "death/3.png",
+    "death/4.png",
+    "death/5.png"
+   ],
+   "ms": [
+    80,
+    100,
+    130,
+    180,
+    250,
+    400
+   ],
+   "loop": "once",
+   "strike": -1
+  }
+ }
+}

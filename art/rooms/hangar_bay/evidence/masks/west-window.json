@@ -1,0 +1,44 @@
+{
+  "schema": "game-room.opening-cutter.v1",
+  "id": "west-window",
+  "kind": "window",
+  "widthMeters": 3.4,
+  "heightMeters": 2.2,
+  "sillMeters": 2.4,
+  "depthMeters": 0.3,
+  "source": "west-window.png",
+  "sourceSha256": "fc59868d8508666ca291a6ae0fb7281830d56bbe5407c3e92d003f89976e4857",
+  "imageSize": [
+    340,
+    220
+  ],
+  "whitePixelRatio": 0.7219251336898396,
+  "contours": [
+    {
+      "role": "outer",
+      "points": [
+        [
+          0.058823529411764705,
+          0.09090909090909094
+        ],
+        [
+          0.9411764705882353,
+          0.09090909090909094
+        ],
+        [
+          0.9411764705882353,
+          0.9090909090909091
+        ],
+        [
+          0.058823529411764705,
+          0.9090909090909091
+        ]
+      ]
+    }
+  ],
+  "traceMethod": "Exact rectangular white-component boundary, Pillow/NumPy fallback; official tracer attempted but cv2 missing",
+  "apertureMeters": [
+    3,
+    1.8
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "note": "Render settings for the Zoids Legacy look (Claude, 2026-10-14; docs/reference/sprite-rules-legacy-2026-10-14-gap.md). creature_round.sh, anim_round.sh, ape_round.sh and ape_anim_round.sh export these for the machine named, else 'default'. Remove a machine's entry, or set LEGACY_LOOK=0, to render the old way. pangolin_m: camera 14 degrees, a long low machine at 18 showed so much of its back from behind that its N view stood 26% taller than its side view (view_art_check). wolf_m: side views (E, W) at 24 degrees, the rest at 18 (at 24 its front and back views stood a third taller than the side and view_art_check failed); his Mechabeast V2 reference is drawn from higher (side view outline 0.631 at 18 to 0.677 at 24, and the red back shows). kangaroo_m: side views at 30 degrees, his Mechabeast V2 is drawn from higher (side view 0.622 at 18, 0.650 at 30). Mechabeast V2 references (2026-10-15): hippo, shoebill and pangolin are drawn more front-on, so their side view turns 35 degrees toward the viewer (side view against V2: hippo 0.762 to 0.796, pangolin 0.698 to 0.820, shoebill 0.594 to 0.604); the pangolin's side view at 18 degrees, its other views at 14. PIXEL_MIN_CLUSTER 4 (2026-10-15): one-shade patches under 4 px merge into their neighbours; five blind reviewers named speckled plates first. Tiny patches on the side views fell 60 to 87%.",
+  "default": {
+    "SPRITE_MATCAP": "toon_light.exr",
+    "SPRITE_CAVITY": "1",
+    "SPRITE_ELEV": "18",
+    "SPRITE_E_TURN": "20",
+    "PIXEL_SEAM_SHARE": "0.35",
+    "PIXEL_SHADOW_SPAN": "0.12",
+    "PIXEL_MIN_CLUSTER": "4"
+  },
+  "pangolin_m": {
+    "SPRITE_MATCAP": "toon_light.exr",
+    "SPRITE_CAVITY": "1",
+    "SPRITE_ELEV": "14",
+    "SPRITE_E_TURN": "35",
+    "PIXEL_SEAM_SHARE": "0.35",
+    "PIXEL_SHADOW_SPAN": "0.12",
+    "SPRITE_SIDE_ELEV": "18",
+    "PIXEL_MIN_CLUSTER": "4"
+  },
+  "wolf_m": {
+    "SPRITE_MATCAP": "toon_light.exr",
+    "SPRITE_CAVITY": "1",
+    "SPRITE_ELEV": "18",
+    "SPRITE_E_TURN": "20",
+    "PIXEL_SEAM_SHARE": "0.35",
+    "PIXEL_SHADOW_SPAN": "0.12",
+    "SPRITE_SIDE_ELEV": "24",
+    "PIXEL_MIN_CLUSTER": "4"
+  },
+  "kangaroo_m": {
+    "SPRITE_MATCAP": "toon_light.exr",
+    "SPRITE_CAVITY": "1",
+    "SPRITE_ELEV": "18",
+    "SPRITE_E_TURN": "20",
+    "PIXEL_SEAM_SHARE": "0.35",
+    "PIXEL_SHADOW_SPAN": "0.12",
+    "SPRITE_SIDE_ELEV": "30",
+    "PIXEL_MIN_CLUSTER": "4"
+  },
+  "hippo_m": {
+    "SPRITE_MATCAP": "toon_light.exr",
+    "SPRITE_CAVITY": "1",
+    "SPRITE_ELEV": "18",
+    "SPRITE_E_TURN": "35",
+    "PIXEL_SEAM_SHARE": "0.35",
+    "PIXEL_SHADOW_SPAN": "0.12",
+    "PIXEL_MIN_CLUSTER": "4"
+  },
+  "shoebill_m": {
+    "SPRITE_MATCAP": "toon_light.exr",
+    "SPRITE_CAVITY": "1",
+    "SPRITE_ELEV": "18",
+    "SPRITE_E_TURN": "35",
+    "PIXEL_SEAM_SHARE": "0.35",
+    "PIXEL_SHADOW_SPAN": "0.12",
+    "PIXEL_MIN_CLUSTER": "4"
+  }
+}

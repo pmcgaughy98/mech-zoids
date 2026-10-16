@@ -1,0 +1,102 @@
+{
+  "note": "Pangolin machine palette (Claude, 2026-10-12): ochre scales, madder trim, delft snout, grey limbs, teal eyes, from scripts/data/machines.gd. Ramps dark to light. Despeckle on every family (PixelLab: singletons the top deduction after the near-duplicate pass). Legacy value pass 2026-10-14 (Preston: 'go', the Zoids look over the near-black): ramps start at brightness 36 or more, greys run up to light steel, edges two shades down, plate lines sparse (seam_share 0.35), a violet ground line. Measured gap: docs/reference/sprite-rules-legacy-2026-10-14-gap.md. The earlier palette is in the session scratchpad. Dither off 2026-10-14: Legacy sprites do not dither (docs/reference/sprite-rules-legacy-2026-10-12.md) and the Mechabeast V2 references are clean flat plates. Mechabeast V2 blind review 2 (2026-10-15): orange ramp drops 4d2e07 and b87405, his gold is bright saturated yellow-orange and ours read muddy with brown mottling.",
+  "families": {
+    "red": {
+      "hue": [
+        0.95,
+        0.05
+      ],
+      "min_sat": 0.45,
+      "ramp": [
+        "6e150c",
+        "8c1b0e",
+        "a02010",
+        "c0402a",
+        "d86a4f"
+      ],
+      "edge_floor": 2,
+      "despeckle": true,
+      "gamma": 0.85,
+      "side_drop": 2,
+      "under_drop": 2,
+      "seam_shade": 0
+    },
+    "orange": {
+      "hue": [
+        0.05,
+        0.17
+      ],
+      "min_sat": 0.35,
+      "ramp": [
+        "6e4408",
+        "925c07",
+        "da8600",
+        "eba22c",
+        "f5bf5a"
+      ],
+      "extra_top": [
+        "ffd889"
+      ],
+      "edge_floor": 1,
+      "top_rim": 0,
+      "despeckle": true,
+      "gamma": 0.85,
+      "side_drop": 2,
+      "under_drop": 2,
+      "seam_shade": 0
+    },
+    "blue": {
+      "hue": [
+        0.53,
+        0.7
+      ],
+      "min_sat": 0.3,
+      "ramp": [
+        "22364d",
+        "30506f",
+        "407090",
+        "5e8db0",
+        "87b0cc"
+      ],
+      "edge_floor": 1,
+      "despeckle": true,
+      "gamma": 0.85,
+      "side_drop": 2,
+      "under_drop": 2,
+      "seam_shade": 0
+    },
+    "grey": {
+      "ramp": [
+        "2a2c31",
+        "3f3e43",
+        "4c4b52",
+        "5a585f",
+        "69686f",
+        "828188",
+        "9a9aa2",
+        "b4b5bb"
+      ],
+      "extra_top": [
+        "c9cbd2"
+      ],
+      "extra_bottom": [],
+      "gamma": 0.85,
+      "edge_floor": 1,
+      "despeckle": true,
+      "side_drop": 2,
+      "under_drop": 2,
+      "seam_shade": 0
+    },
+    "teal": {
+      "ramp": [
+        "1f6e66",
+        "5fe1d0",
+        "bff7ef"
+      ]
+    }
+  },
+  "shadow": [
+    "2e2640",
+    "463a5e"
+  ]
+}

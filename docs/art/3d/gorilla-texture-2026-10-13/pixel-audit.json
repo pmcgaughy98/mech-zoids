@@ -1,0 +1,38 @@
+{
+  "settings": {
+    "scale": "x4.4",
+    "eye_flat": true,
+    "highlight_rank": [
+      0.93,
+      0.975
+    ],
+    "stance": "base=19;R_leg=16;L_leg=3;L_arm=27"
+  },
+  "views": [
+    {
+      "view": "e",
+      "size": [
+        115,
+        89
+      ],
+      "same_alpha_and_position": true
+    },
+    {
+      "view": "s",
+      "size": [
+        122,
+        89
+      ],
+      "same_alpha_and_position": true
+    },
+    {
+      "view": "se",
+      "size": [
+        131,
+        86
+      ],
+      "same_alpha_and_position": true
+    }
+  ],
+  "preview_only": true
+}

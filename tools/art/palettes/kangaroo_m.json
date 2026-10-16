@@ -1,0 +1,65 @@
+{
+  "note": "Red kangaroo machine palette (Claude, 2026-10-12, draft): red b83a2c (the male's orange-red coat), maroon trim 5a1a1e, cream underside and muzzle stripe e8dcc8, warm grey limbs, teal eyes. Ramps dark to light. Edge settings from the earlier machines. v3: red ramp deepened (v2 lit faces read salmon, highlights 24-40%). Factory pass: ordered dither 0.6 on every family but the eyes (Legacy texture bands). Reference pass 2026-10-12: ramps taken from Preston's kangaroo sprite (orange-red over charcoal). Round 4: ramps capped at the reference's lit colours (the pixelizer stretches each family to its full ramp). Near-duplicate pass: grey ramp kept clear of the other ramps. Despeckle on every family (PixelLab: singletons the top deduction after the near-duplicate pass). Legacy study 2026-10-12: red ramp 8 steps plus a lit top, grey ramp lifted off black (Godos, Rev Raptor: 27-33 colours, 1-14% near-black edges; ours were 15 and 40%). Factory pass 2026-10-14: red dither 0.25 to 0.1; the side view's stray share was 18%, above the Legacy band (11-16%), now 16%. Legacy value pass 2026-10-14 (Preston: 'go', the Zoids look over the near-black): ramps start at brightness 36 or more, greys run up to light steel, edges two shades down, plate lines sparse (seam_share 0.35), a violet ground line. Measured gap: docs/reference/sprite-rules-legacy-2026-10-14-gap.md. The earlier palette is in the session scratchpad. Dither off 2026-10-14: Legacy sprites do not dither (docs/reference/sprite-rules-legacy-2026-10-12.md) and the Mechabeast V2 references are clean flat plates. Mechabeast V2 blind review 2 (2026-10-15): red ramp brighter and more saturated (his plates are a bright orange near e8501e, ours read brick), gamma 0.85 to 0.75, top_rim 1 for a light rim on top edges.",
+  "families": {
+    "red": {
+      "hue": [
+        0.96,
+        0.08
+      ],
+      "min_sat": 0.4,
+      "ramp": [
+        "8e2010",
+        "a82914",
+        "c0341a",
+        "d84424",
+        "e8552a",
+        "f56a38"
+      ],
+      "extra_top": [
+        "ffa266"
+      ],
+      "edge_floor": 2,
+      "top_rim": 1,
+      "gamma": 0.75,
+      "dither": 0,
+      "match_style": false,
+      "despeckle": true,
+      "side_drop": 2,
+      "under_drop": 2,
+      "seam_shade": 0
+    },
+    "grey": {
+      "ramp": [
+        "2a2429",
+        "383540",
+        "47444e",
+        "58555e",
+        "6a6770",
+        "7c7983",
+        "9d9ba2",
+        "b9b8bc"
+      ],
+      "extra_top": [],
+      "extra_bottom": [],
+      "gamma": 0.85,
+      "edge_floor": 2,
+      "despeckle": true,
+      "dither": 0,
+      "match_style": false,
+      "side_drop": 2,
+      "under_drop": 2,
+      "seam_shade": 0
+    },
+    "teal": {
+      "ramp": [
+        "1f6e66",
+        "5fe1d0",
+        "bff7ef"
+      ]
+    }
+  },
+  "shadow": [
+    "2e2640",
+    "463a5e"
+  ]
+}

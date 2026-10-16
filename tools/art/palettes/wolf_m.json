@@ -1,0 +1,69 @@
+{
+  "note": "Black wolf machine palette (Claude, 2026-10-12, draft): near-black armour over a charcoal frame, blood-red accents (mane plates, fangs, claws, fins), teal eyes (player faction). Ramps dark to light. The black body is the grey family with its ramp capped dark so it stays black under the top light; the red ramp is deep so the accents read as dried blood, not orange. Edge floors and despeckle as the kangaroo's palette after the Legacy study (near-black edges stay under a quarter). Factory pass 2026-10-14: the extra top shade was 82829a, a near-copy of the ramp's top 84849a (PixelLab score: near-duplicates the top deduction, dist 2.8); now a0a0b4, a clear step lighter, same colour count. Legacy value pass 2026-10-14 (Preston: the Zoids look over the near-black; \"go\"): the black wolf becomes dark steel with lit edges, as Legacy's dark machines (Shadow Fox: mean brightness 94, 9% near-black; this wolf was 33 and 80%). Grey ramp 26262e to cacada plus e2e2ee, red ramp lifted one step, edges three shades down, a violet ground line. The old ramps are in the session scratchpad copy. V2 reference pass 2026-10-14: grey gamma 0.7 to 0.55 (his V2 steel is lighter: mean 79 against our 66). Then gamma 0.4 and grey plate lines one step up: side view mean 80 (his 79). Red gamma 1.1 to 0.6: his V2 red is bright (mean R 190 against our 149; now 170). Dither off 2026-10-14: Legacy sprites do not dither (docs/reference/sprite-rules-legacy-2026-10-12.md) and the Mechabeast V2 references are clean flat plates. Blind review pass 2026-10-15 (Mechabeast V2 blind review: his red is a bright saturated e01818, ours read as dark maroon): red ramp now 6a0a10 to f85a4a with e01818 in the middle, so plate faces land on bright red over one darker shade; the old ramp was 4a0a0e to ee7a6a. Blind review 2 pass 2026-10-15 (his limb plating is near-white, ours lavender-grey): grey top three 9696a8, b0b0c2, cacada and extra e2e2ee become the less violet 9a9aa6, b8b8c2, d4d4da and eeeef2.",
+  "families": {
+    "red": {
+      "hue": [
+        0.95,
+        0.03
+      ],
+      "min_sat": 0.45,
+      "ramp": [
+        "6a0a10",
+        "9c0e14",
+        "c41216",
+        "e01818",
+        "ee2c26",
+        "f85a4a"
+      ],
+      "extra_top": [
+        "f6a090"
+      ],
+      "edge_floor": 2,
+      "top_rim": 0,
+      "gamma": 0.6,
+      "dither": 0,
+      "match_style": false,
+      "despeckle": true,
+      "under_drop": 2,
+      "side_drop": 2,
+      "seam_shade": 0
+    },
+    "grey": {
+      "ramp": [
+        "26262e",
+        "34343e",
+        "44444f",
+        "555562",
+        "686876",
+        "7e7e8e",
+        "9a9aa6",
+        "b8b8c2",
+        "d4d4da"
+      ],
+      "extra_top": [
+        "eeeef2"
+      ],
+      "extra_bottom": [],
+      "gamma": 0.4,
+      "edge_floor": 2,
+      "despeckle": true,
+      "dither": 0,
+      "match_style": false,
+      "under_drop": 2,
+      "side_drop": 2,
+      "seam_shade": 1
+    },
+    "teal": {
+      "ramp": [
+        "1f6e66",
+        "5fe1d0",
+        "bff7ef"
+      ]
+    }
+  },
+  "shadow": [
+    "2e2640",
+    "463a5e"
+  ],
+  "seam_share": 0.35
+}

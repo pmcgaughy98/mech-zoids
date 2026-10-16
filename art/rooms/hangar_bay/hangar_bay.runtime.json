@@ -1,0 +1,79 @@
+{
+  "roomId": "hangar_bay",
+  "viewport": [320, 180],
+  "camera": {
+    "position": [
+      3.8,
+      7.3,
+      6.6
+    ],
+    "target": [
+      0,
+      1.35,
+      0
+    ],
+    "verticalFovDegrees": 50
+  },
+  "fixtures": [
+    {
+      "id": "work-light-1",
+      "position": [
+        4.8,
+        7.78,
+        -2
+      ],
+      "color": [
+        1,
+        0.83,
+        0.6
+      ],
+      "energy": 1.5,
+      "range": 12
+    },
+    {
+      "id": "work-light-2",
+      "position": [
+        -4.8,
+        7.78,
+        -2
+      ],
+      "color": [
+        1,
+        0.83,
+        0.6
+      ],
+      "energy": 1.5,
+      "range": 12
+    },
+    {
+      "id": "work-light-3",
+      "position": [
+        4.8,
+        7.78,
+        3
+      ],
+      "color": [
+        1,
+        0.83,
+        0.6
+      ],
+      "energy": 1.5,
+      "range": 12
+    },
+    {
+      "id": "work-light-4",
+      "position": [
+        -4.8,
+        7.78,
+        3
+      ],
+      "color": [
+        1,
+        0.83,
+        0.6
+      ],
+      "energy": 1.5,
+      "range": 12
+    }
+  ]
+}

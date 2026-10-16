@@ -1,0 +1,90 @@
+{
+ "note": "Shoebill machine palette (Claude, 2026-10-12): Preston's Blue Hour Cool (blue 4a6fa5, deep blue 1f3a68, gold f2c26b, teal eyes) from scripts/data/machines.gd; dark grey legs. Ramps dark to light. Edge settings from the pangolin and hippo. Factory pass: ordered dither 0.6 on every family but the eyes (Legacy texture bands). Reference pass 2026-10-12: ramps taken from Preston's shoebill sprite (light blue dominant, muted gold). Near-duplicate pass: grey ramp kept clear of the other ramps. Despeckle on every family (PixelLab: singletons the top deduction after the near-duplicate pass). Legacy value pass 2026-10-14 (Preston: 'go', the Zoids look over the near-black): ramps start at brightness 36 or more, greys run up to light steel, edges two shades down, plate lines sparse (seam_share 0.35), a violet ground line. Measured gap: docs/reference/sprite-rules-legacy-2026-10-14-gap.md. The earlier palette is in the session scratchpad. Dither off 2026-10-14: Legacy sprites do not dither (docs/reference/sprite-rules-legacy-2026-10-12.md) and the Mechabeast V2 references are clean flat plates.",
+ "families": {
+  "blue": {
+   "hue": [
+    0.53,
+    0.72
+   ],
+   "min_sat": 0.28,
+   "ramp": [
+    "223562",
+    "364d7e",
+    "4f6ea3",
+    "82a6d7",
+    "a9c4e6",
+    "cfe0f3"
+   ],
+   "extra_top": [
+    "e6eef8"
+   ],
+   "edge_floor": 2,
+   "top_rim": 0,
+   "dither": 0,
+   "despeckle": true,
+   "gamma": 1.75,
+   "side_drop": 2,
+   "under_drop": 2,
+   "seam_shade": 0
+  },
+  "gold": {
+   "hue": [
+    0.07,
+    0.18
+   ],
+   "min_sat": 0.3,
+   "ramp": [
+    "3a2808",
+    "6a4a12",
+    "9c7020",
+    "c4942c",
+    "e0b24a",
+    "f0c85e",
+    "f8dc8c"
+   ],
+   "edge_floor": 1,
+   "top_rim": 0,
+   "dither": 0,
+   "despeckle": true,
+   "gamma": 0.85,
+   "side_drop": 2,
+   "under_drop": 2,
+   "seam_shade": 0
+  },
+  "grey": {
+   "ramp": [
+    "262a32",
+    "33373f",
+    "41464e",
+    "4f545c",
+    "60656d",
+    "777c84",
+    "9a9da3",
+    "b7b9bd"
+   ],
+   "extra_bottom": [],
+   "gamma": 0.85,
+   "edge_floor": 2,
+   "despeckle": true,
+   "dither": 0,
+   "match_style": false,
+   "side_drop": 2,
+   "under_drop": 2,
+   "seam_shade": 0
+  },
+  "teal": {
+   "ramp": [
+    "1f6e66",
+    "5fe1d0",
+    "bff7ef"
+   ]
+  }
+ },
+ "shadow": [
+  "2e2640",
+  "463a5e"
+ ],
+ "notes": [
+  "2026-10-16: blue gamma 0.85 -> 1.75: the detail pixelizer's lit rims brighten the torso; 1.75 matches the mid-blue Codex's finish set (torso brightness 95-97, Codex 97)"
+ ]
+}

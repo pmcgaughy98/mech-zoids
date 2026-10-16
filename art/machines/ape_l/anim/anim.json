@@ -1,0 +1,167 @@
+{
+ "size": [
+  170,
+  127
+ ],
+ "feet_y": 122,
+ "clips": {
+  "idle": {
+   "frames": [
+    "idle/0.png",
+    "idle/1.png",
+    "idle/2.png",
+    "idle/3.png"
+   ],
+   "ms": [
+    450,
+    450,
+    450,
+    450
+   ],
+   "loop": "pingpong",
+   "strike": -1
+  },
+  "gait": {
+   "frames": [
+    "gait/0.png",
+    "gait/1.png",
+    "gait/2.png",
+    "gait/3.png",
+    "gait/4.png",
+    "gait/5.png",
+    "gait/6.png",
+    "gait/7.png",
+    "gait/8.png"
+   ],
+   "ms": [
+    165,
+    165,
+    165,
+    165,
+    165,
+    165,
+    165,
+    165,
+    165
+   ],
+   "loop": "loop",
+   "strike": -1
+  },
+  "punch": {
+   "frames": [
+    "punch/0.png",
+    "punch/1.png",
+    "punch/2.png",
+    "punch/3.png",
+    "punch/4.png",
+    "punch/5.png",
+    "punch/6.png",
+    "punch/7.png",
+    "punch/8.png"
+   ],
+   "ms": [
+    160,
+    240,
+    130,
+    70,
+    50,
+    150,
+    120,
+    200,
+    380
+   ],
+   "loop": "once",
+   "strike": 5
+  },
+  "slam": {
+   "frames": [
+    "slam/0.png",
+    "slam/1.png",
+    "slam/2.png",
+    "slam/3.png",
+    "slam/4.png",
+    "slam/5.png",
+    "slam/6.png",
+    "slam/7.png",
+    "slam/8.png",
+    "slam/9.png"
+   ],
+   "ms": [
+    250,
+    250,
+    250,
+    300,
+    50,
+    50,
+    200,
+    80,
+    160,
+    250
+   ],
+   "loop": "once",
+   "strike": 5
+  },
+  "throw": {
+   "frames": [
+    "throw/0.png",
+    "throw/1.png",
+    "throw/2.png",
+    "throw/3.png",
+    "throw/4.png",
+    "throw/5.png",
+    "throw/6.png",
+    "throw/7.png",
+    "throw/8.png",
+    "throw/9.png"
+   ],
+   "ms": [
+    200,
+    200,
+    200,
+    260,
+    90,
+    50,
+    120,
+    120,
+    150,
+    150
+   ],
+   "loop": "once",
+   "strike": 5
+  },
+  "hit": {
+   "frames": [
+    "hit/0.png",
+    "hit/1.png",
+    "hit/2.png"
+   ],
+   "ms": [
+    60,
+    120,
+    150
+   ],
+   "loop": "once",
+   "strike": -1
+  },
+  "death": {
+   "frames": [
+    "death/0.png",
+    "death/1.png",
+    "death/2.png",
+    "death/3.png",
+    "death/4.png",
+    "death/5.png"
+   ],
+   "ms": [
+    80,
+    100,
+    130,
+    180,
+    250,
+    1000
+   ],
+   "loop": "once",
+   "strike": -1
+  }
+ }
+}

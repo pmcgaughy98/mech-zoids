@@ -1,0 +1,19 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 596.49 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce GTX 1660 SUPER
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+room_check: hangar_bay
+  ok    the room loads (art/rooms/hangar_bay/hangar_bay.glb)
+  ok    room size 28.6 wide, 8.5 high, 32.3 deep (m)
+  ok    a mesh named floor* has its top at the origin (top 0.00)
+  ok    the machine stands inside the room (machine 3.1 x 2.8 x 3.0 at y 0.00)
+  ok    the room is within budget (3280 of 40000 triangles)
+  ok    every surface has the metal finish (5 of 5)
+  ok    painted colour, baked AO and emission atlases load with nearest filtering
+  ok    current machine's idle animation is playing
+  ok    production camera is inside the shell footprint
+  ok    room plus current machine below the scene budget (20782 triangles)
+  ok    loaded game capture is 320x180
+  still: docs/art/3d/room_hangar_bay.png
+room_check: PASS

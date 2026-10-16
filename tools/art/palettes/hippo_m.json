@@ -1,0 +1,109 @@
+{
+  "note": "Pygmy hippo machine palette (Claude, 2026-10-12): Preston's Desert Dusk (plum 6b4e71, dark plum 2e2235, dusk salmon c98b6b, teal eyes) from scripts/data/machines.gd; violet-grey frame topping out in cream for the tusks. Ramps dark to light. Edge settings carried over from the pangolin (edge_floor, despeckle). v7: a cream ramp for the tusks. Factory pass: ordered dither 0.6 on every family but the eyes (Legacy texture bands). Round 3: purple brighter (reference 96658a-ac7ca3), grey ramp capped at charcoal (the reference's frame). Near-duplicate pass: grey ramp kept clear of the other ramps. Despeckle on every family (PixelLab: singletons the top deduction after the near-duplicate pass). Legacy value pass 2026-10-14 (Preston: 'go', the Zoids look over the near-black): ramps start at brightness 36 or more, greys run up to light steel, edges two shades down, plate lines sparse (seam_share 0.35), a violet ground line. Measured gap: docs/reference/sprite-rules-legacy-2026-10-14-gap.md. The earlier palette is in the session scratchpad. Round 20 (2026-10-14): read too dark on the battle ground (mean 73, near-black 0.27, nearly all plate lines in the darkest purple); plate lines one step up, purple and grey gamma 0.5: mean 88. Dither off 2026-10-14: Legacy sprites do not dither (docs/reference/sprite-rules-legacy-2026-10-12.md) and the Mechabeast V2 references are clean flat plates. Mechabeast V2 blind review 3 (2026-10-15): his panels read light lilac-pink against dark grey joints, ours dark plum; purple ramp lifted about a third and turned pinker, sampled from his value bands (835981, 956791, a675a1, bd88b5).",
+  "families": {
+    "purple": {
+      "hue": [
+        0.72,
+        0.9
+      ],
+      "min_sat": 0.22,
+      "ramp": [
+        "2e2235",
+        "5b3a5b",
+        "7a5078",
+        "956791",
+        "a675a1",
+        "bd88b5",
+        "d0a0c8"
+      ],
+      "extra_top": [
+        "e0bad8"
+      ],
+      "edge_floor": 1,
+      "top_rim": 0,
+      "dither": 0,
+      "gamma": 0.5,
+      "despeckle": true,
+      "side_drop": 2,
+      "under_drop": 2,
+      "seam_shade": 1
+    },
+    "salmon": {
+      "hue": [
+        0.98,
+        0.1
+      ],
+      "min_sat": 0.3,
+      "ramp": [
+        "3a1f18",
+        "5c3326",
+        "7f4c38",
+        "a46a4f",
+        "c98b6b",
+        "dca688",
+        "ecc4a8"
+      ],
+      "edge_floor": 1,
+      "dither": 0,
+      "despeckle": true,
+      "gamma": 0.85,
+      "side_drop": 2,
+      "under_drop": 2,
+      "seam_shade": 1
+    },
+    "cream": {
+      "hue": [
+        0.08,
+        0.18
+      ],
+      "min_sat": 0.1,
+      "ramp": [
+        "5a5040",
+        "8a7c62",
+        "b8a888",
+        "d8ccae",
+        "ece2c8",
+        "f8f2e2"
+      ],
+      "edge_floor": 1,
+      "dither": 0,
+      "despeckle": true,
+      "gamma": 0.85,
+      "side_drop": 2,
+      "under_drop": 2,
+      "seam_shade": 0
+    },
+    "grey": {
+      "ramp": [
+        "2b313c",
+        "393f4b",
+        "474e5b",
+        "565e6b",
+        "6c7482",
+        "9298a2",
+        "b2b5bc"
+      ],
+      "extra_top": [],
+      "extra_bottom": [],
+      "gamma": 0.5,
+      "edge_floor": 2,
+      "despeckle": true,
+      "dither": 0,
+      "match_style": false,
+      "side_drop": 2,
+      "under_drop": 2,
+      "seam_shade": 1
+    },
+    "teal": {
+      "ramp": [
+        "1f6e66",
+        "5fe1d0",
+        "bff7ef"
+      ]
+    }
+  },
+  "shadow": [
+    "2e2640",
+    "463a5e"
+  ]
+}

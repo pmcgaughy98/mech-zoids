@@ -1,0 +1,16 @@
+FAIL: props.json: generation must use Meshy model meshy-5
+FAIL: props.json: positive creditsPerTexturedTask is required
+FAIL: props.json: hardCreditCeiling must be positive and no greater than the room credit budget
+FAIL: prop gantry-crane: reference image requires explicit approval
+FAIL: prop tool-cart: reference image requires explicit approval
+FAIL: prop parts-rack: reference image requires explicit approval
+FAIL: prop ballast-pallet: reference image requires explicit approval
+FAIL: prop coolant-tanks: reference image requires explicit approval
+FAIL: prop service-console: reference image requires explicit approval
+FAIL: prop cable-tray: reference image requires explicit approval
+FAIL: prop work-light: reference image requires explicit approval
+FAIL: opening bay-door: mask/dimensions are not approved
+FAIL: opening west-window: mask/dimensions are not approved
+FAIL: opening east-window: mask/dimensions are not approved
+FAIL: Function gate: explicit approval is required
+FAIL: final-report.json: gates.function must be true

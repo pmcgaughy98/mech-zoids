@@ -1,0 +1,95 @@
+{
+ "machine": "hippo_m",
+ "weapons": [
+  {
+   "slot": "turret",
+   "move": null,
+   "draft": true,
+   "kind": "cannon",
+   "note": "spare: a short twin cannon on the front of the back",
+   "parts": [
+    "wpn_turret_barrel0",
+    "wpn_turret_barrel1",
+    "wpn_turret_mount",
+    "wpn_turret_muzzle0",
+    "wpn_turret_muzzle1"
+   ],
+   "muzzles": [
+    [
+     0.065,
+     -1.127,
+     1.714
+    ],
+    [
+     -0.065,
+     -1.127,
+     1.714
+    ]
+   ]
+  },
+  {
+   "slot": "torpedo",
+   "move": null,
+   "draft": true,
+   "kind": "missile_pod",
+   "note": "spare: two torpedo tubes on the back, forward",
+   "parts": [
+    "wpn_torpedo_box",
+    "wpn_torpedo_rim00",
+    "wpn_torpedo_rim01",
+    "wpn_torpedo_tube00",
+    "wpn_torpedo_tube01"
+   ],
+   "muzzles": [
+    [
+     -0.125,
+     -0.091,
+     1.827
+    ],
+    [
+     0.125,
+     -0.091,
+     1.827
+    ]
+   ]
+  },
+  {
+   "slot": "thrusterR",
+   "move": "Wake Charge",
+   "draft": false,
+   "kind": "jet",
+   "note": "a water thruster on each flank, the surge behind the charge",
+   "parts": [
+    "wpn_thrusterR_body",
+    "wpn_thrusterR_nozzle",
+    "wpn_thrusterR_ring"
+   ],
+   "muzzles": [
+    [
+     -0.727,
+     0.928,
+     1.143
+    ]
+   ]
+  },
+  {
+   "slot": "thrusterL",
+   "move": "Wake Charge",
+   "draft": false,
+   "kind": "jet",
+   "note": "a water thruster on each flank, the surge behind the charge",
+   "parts": [
+    "wpn_thrusterL_body",
+    "wpn_thrusterL_nozzle",
+    "wpn_thrusterL_ring"
+   ],
+   "muzzles": [
+    [
+     0.727,
+     0.928,
+     1.143
+    ]
+   ]
+  }
+ ]
+}

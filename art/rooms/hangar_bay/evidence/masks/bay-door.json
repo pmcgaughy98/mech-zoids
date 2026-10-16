@@ -1,0 +1,44 @@
+{
+  "schema": "game-room.opening-cutter.v1",
+  "id": "bay-door",
+  "kind": "door",
+  "widthMeters": 6.4,
+  "heightMeters": 5.3,
+  "sillMeters": 0,
+  "depthMeters": 0.3,
+  "source": "bay-door.png",
+  "sourceSha256": "e7c8823881fccaf08da4e0826a8cfe1b72384e3bfcc540e5dfb897eb40072554",
+  "imageSize": [
+    640,
+    530
+  ],
+  "whitePixelRatio": 0.8844339622641509,
+  "contours": [
+    {
+      "role": "outer",
+      "points": [
+        [
+          0.03125,
+          0.0
+        ],
+        [
+          0.96875,
+          0.0
+        ],
+        [
+          0.96875,
+          0.9433962264150944
+        ],
+        [
+          0.03125,
+          0.9433962264150944
+        ]
+      ]
+    }
+  ],
+  "traceMethod": "Exact rectangular white-component boundary, Pillow/NumPy fallback; official tracer attempted but cv2 missing",
+  "apertureMeters": [
+    6,
+    5
+  ]
+}

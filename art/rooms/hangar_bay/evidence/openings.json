@@ -1,0 +1,55 @@
+{
+  "schema": "game-room.opening-schedule.v1",
+  "roomId": "hangar-bay",
+  "primaryArrival": {
+    "openingId": "bay-door",
+    "exception": ""
+  },
+  "openings": [
+    {
+      "id": "bay-door",
+      "kind": "door",
+      "wall": "north",
+      "widthMeters": 6,
+      "heightMeters": 5,
+      "thresholdMeters": 0,
+      "depthMeters": 0.3,
+      "destination": "Four-metre exterior dispatch apron, with open yard beyond",
+      "mask": "masks/bay-door.png",
+      "cutter": "masks/bay-door.json",
+      "approved": true,
+      "approvedBy": "Preston",
+      "approvedAt": "2026-10-12 01:04:21 UTC"
+    },
+    {
+      "id": "west-window",
+      "kind": "window",
+      "wall": "west",
+      "widthMeters": 3,
+      "heightMeters": 1.8,
+      "sillMeters": 2.4,
+      "depthMeters": 0.3,
+      "destination": "Visible exterior yard beyond thick wall reveal; non-traversable",
+      "mask": "masks/west-window.png",
+      "cutter": "masks/west-window.json",
+      "approved": true,
+      "approvedBy": "Preston",
+      "approvedAt": "2026-10-12 01:04:21 UTC"
+    },
+    {
+      "id": "east-window",
+      "kind": "window",
+      "wall": "east",
+      "widthMeters": 3,
+      "heightMeters": 1.8,
+      "sillMeters": 2.4,
+      "depthMeters": 0.3,
+      "destination": "Visible exterior yard beyond thick wall reveal; non-traversable",
+      "mask": "masks/east-window.png",
+      "cutter": "masks/east-window.json",
+      "approved": true,
+      "approvedBy": "Preston",
+      "approvedAt": "2026-10-12 01:04:21 UTC"
+    }
+  ]
+}

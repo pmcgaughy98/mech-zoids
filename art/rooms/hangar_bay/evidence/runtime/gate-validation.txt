@@ -1,0 +1,18 @@
+Unmodified Build 3D Game Rooms validator, --gate runtime, 2026-10-12.
+Exit code: 1. Human Runtime approval pending; native adapter differences preserved.
+The project's Godot room_check and exported-geometry audit both pass.
+
+FAIL: props.json: generation must use Meshy model meshy-5
+FAIL: props.json: positive creditsPerTexturedTask is required
+FAIL: props.json: hardCreditCeiling must be positive and no greater than the room credit budget
+FAIL: Runtime gate: explicit approval is required
+FAIL: final-report.json: gates.runtime must be true
+FAIL: Form gate: prop gantry-crane requires an accepted, hashed Meshy GLB
+FAIL: Form gate: prop tool-cart requires an accepted, hashed Meshy GLB
+FAIL: Form gate: prop parts-rack requires an accepted, hashed Meshy GLB
+FAIL: Form gate: prop ballast-pallet requires an accepted, hashed Meshy GLB
+FAIL: Form gate: prop coolant-tanks requires an accepted, hashed Meshy GLB
+FAIL: Form gate: prop service-console requires an accepted, hashed Meshy GLB
+FAIL: Form gate: prop cable-tray requires an accepted, hashed Meshy GLB
+FAIL: Form gate: prop work-light requires an accepted, hashed Meshy GLB
+FAIL: Runtime gate: runtimeChecks.lightmap must be true

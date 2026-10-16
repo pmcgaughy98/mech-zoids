@@ -1,0 +1,102 @@
+{
+  "generator": "Built-in image_gen",
+  "notes": "Draft visual designs for Preston to review. Logo is text-free because no game name is decided. Native assets resized with nearest-neighbor; alpha preserved.",
+  "assets": [
+    {
+      "path": "title/background.png",
+      "width": 320,
+      "height": 180,
+      "transparent": false,
+      "prompt": "Original 16-bit handheld RPG pixel art, crisp deliberate pixel clusters, limited palette, hard edges, no antialiasing, no blur, no gradients, no text or watermark. Industrial animal-mech world. Blue slate shadows, gunmetal #4a4f57 and #2b2e33, ivory #fafaf7, electric blue #1e90ff, small amber #ffd400 accents. Wide 16:9 title-screen backdrop. Distant grassland and angular mountain ridges at dawn, an industrial hangar silhouette at lower left and a tiny antenna tower at lower right. Muted blue sky, subtle amber horizon. Keep central upper area clear for a logo at x60 y34 width200 height40; dark quiet central lower area for menu at y100-140. Environment only, no people or machines.",
+      "source": "C:\\Users\\pmcga\\.codex\\generated_images\\01a12c93-2902-7472-b26f-fdfb7e793929\\exec-114952fc-37ce-43ef-900f-99a027adf52d.png"
+    },
+    {
+      "path": "title/logo.png",
+      "width": 200,
+      "height": 40,
+      "transparent": true,
+      "prompt": "Original 16-bit handheld RPG pixel art, crisp deliberate pixel clusters, limited palette, hard edges, no antialiasing, no blur, no gradients, no text or watermark. Industrial animal-mech world. Blue slate shadows, gunmetal #4a4f57 and #2b2e33, ivory #fafaf7, electric blue #1e90ff, small amber #ffd400 accents. A wide horizontal TEXT-FREE title crest, aspect 5:1. A compact geometric steel feline-head crest centered between two long slim segmented mechanical wings or rails, ivory blue and amber, clean strong symmetrical silhouette, dark outline. No lettering, no title, no symbols resembling existing franchise logos. Isolated on true transparency, fills wide canvas with 3 percent margins.",
+      "source": "C:\\Users\\pmcga\\.codex\\generated_images\\01a12c93-2902-7472-b26f-fdfb7e793929\\exec-fe6f2dfc-c8ca-4832-892c-2578a46137cb.png"
+    },
+    {
+      "path": "opening/scene.png",
+      "width": 320,
+      "height": 180,
+      "transparent": false,
+      "prompt": "Original 16-bit handheld RPG pixel art, crisp deliberate pixel clusters, limited palette, hard edges, no antialiasing, no blur, no gradients, no text or watermark. Industrial animal-mech world. Blue slate shadows, gunmetal #4a4f57 and #2b2e33, ivory #fafaf7, electric blue #1e90ff, small amber #ffd400 accents. Wide 16:9 cinematic establishing scene: view from inside an industrial machine hangar toward sunlit grassland and far ridges, blue-gray steel beams frame left and right; small crates and tool racks near edges; open empty maintenance deck in center. No characters or machines. Quiet darker bottom quarter reserved for dialogue overlay. Handheld pixel-art background.",
+      "source": "C:\\Users\\pmcga\\.codex\\generated_images\\01a12c93-2902-7472-b26f-fdfb7e793929\\exec-331dc426-0506-4682-ac94-416bb3ab08c5.png"
+    },
+    {
+      "path": "ui/dialogue_box.png",
+      "width": 312,
+      "height": 44,
+      "transparent": false,
+      "prompt": "Original 16-bit handheld RPG pixel art, crisp deliberate pixel clusters, limited palette, hard edges, no antialiasing, no blur, no gradients, no text or watermark. Industrial animal-mech world. Blue slate shadows, gunmetal #4a4f57 and #2b2e33, ivory #fafaf7, electric blue #1e90ff, small amber #ffd400 accents. Very wide 7.09:1 rectangular game dialogue panel, fills entire image. Thin 1-pixel dark outer outline, restrained steel-blue border with tiny electric-blue and amber corner accents; uniform nearly-black navy interior. All decoration confined to outermost 3 pixels, inner 300x38 entirely empty solid dark navy for white dialogue text. No lettering, no icons, no textures in the text area.",
+      "source": "C:\\Users\\pmcga\\.codex\\generated_images\\01a12c93-2902-7472-b26f-fdfb7e793929\\exec-d38be0a5-cd10-4169-ac44-bf871fa816b8.png"
+    },
+    {
+      "path": "rooms/hangar.png",
+      "width": 320,
+      "height": 180,
+      "transparent": false,
+      "prompt": "Original 16-bit handheld RPG pixel art, crisp deliberate pixel clusters, limited palette, hard edges, no antialiasing, no blur, no gradients, no text or watermark. Industrial animal-mech world. Blue slate shadows, gunmetal #4a4f57 and #2b2e33, ivory #fafaf7, electric blue #1e90ff, small amber #ffd400 accents. Wide 16:9 top-down slight elevated handheld RPG hangar room. Exact spatial layout at final 320x180: top wall at y0-28 with cabinets, conduits and industrial supports; floor walkable from x8-312 y30-164, flat blue-gray concrete metal grid with sparse clean seams, no obstacles in middle. Empty maintenance pad at x170-234 y40-88 for separate machine sprite. Tool bench along top wall near x70-110; empty spot for mechanic at x84 y54. Right wall has clear doorway opening x306-320 y80-112. Clear horizontal walking route y100 from left to right. No people or machines or text. Keep floor quiet so small sprites readable.",
+      "source": "C:\\Users\\pmcga\\.codex\\generated_images\\01a12c93-2902-7472-b26f-fdfb7e793929\\exec-2c0f7b4a-4ade-45d7-a4fb-58833a8ce2c5.png"
+    },
+    {
+      "path": "rooms/hangar_door.png",
+      "width": 14,
+      "height": 32,
+      "transparent": true,
+      "prompt": "Original 16-bit handheld RPG pixel art, crisp deliberate pixel clusters, limited palette, hard edges, no antialiasing, no blur, no gradients, no text or watermark. Industrial animal-mech world. Blue slate shadows, gunmetal #4a4f57 and #2b2e33, ivory #fafaf7, electric blue #1e90ff, small amber #ffd400 accents. Isolated narrow vertical industrial hangar door sprite 14x32 native pixel proportions. Seen top-down slight elevated like handheld RPG wall doorway. Dark steel frame, blue-gray recessed doorway black interior, tiny amber access lamp, understated hazard marks at base. Full 7:16 canvas, true transparent outside door. Clear rectangle silhouette, no text.",
+      "source": "C:\\Users\\pmcga\\.codex\\generated_images\\01a12c93-2902-7472-b26f-fdfb7e793929\\exec-112ba0d8-059a-4d18-9542-b083e713905f.png"
+    },
+    {
+      "path": "people/pilot.png",
+      "width": 12,
+      "height": 16,
+      "transparent": true,
+      "prompt": "Original 16-bit handheld RPG pixel art, crisp deliberate pixel clusters, limited palette, hard edges, no antialiasing, no blur, no gradients, no text or watermark. Industrial animal-mech world. Blue slate shadows, gunmetal #4a4f57 and #2b2e33, ivory #fafaf7, electric blue #1e90ff, small amber #ffd400 accents. One SINGLE tiny handheld RPG player pilot sprite, native 12x16 pixels design, full body facing down toward viewer in slightly top-down view, blue flight suit with ivory shoulder panels, dark boots, dark short hair and warm neutral skin. Strong simple readable pixel clusters, 1-pixel dark outline, only 12 colors. Feet slightly offset suggests walking step. One character only, no sheet, no text, true transparent outside sprite, no ground shadow. Fill canvas.",
+      "source": "C:\\Users\\pmcga\\.codex\\generated_images\\01a12c93-2902-7472-b26f-fdfb7e793929\\exec-adf8f6e3-089f-443b-a624-77a189ae0427.png"
+    },
+    {
+      "path": "people/mechanic.png",
+      "width": 12,
+      "height": 16,
+      "transparent": true,
+      "prompt": "Original 16-bit handheld RPG pixel art, crisp deliberate pixel clusters, limited palette, hard edges, no antialiasing, no blur, no gradients, no text or watermark. Industrial animal-mech world. Blue slate shadows, gunmetal #4a4f57 and #2b2e33, ivory #fafaf7, electric blue #1e90ff, small amber #ffd400 accents. One SINGLE tiny handheld RPG hangar mechanic sprite, native 12x16 pixels design, full body facing down toward viewer in slightly top-down view. Orange work overalls, gunmetal boots, ivory short sleeves, dark hair with amber cap, neutral warm skin. Strong simple readable pixel clusters, 1-pixel dark outline, only 12 colors. One character only no sheet no text true transparent outside sprite, no ground shadow. Fill canvas.",
+      "source": "C:\\Users\\pmcga\\.codex\\generated_images\\01a12c93-2902-7472-b26f-fdfb7e793929\\exec-4142799d-ffd8-4d60-b5fb-11f69e97282c.png"
+    },
+    {
+      "path": "field/grassland.png",
+      "width": 320,
+      "height": 180,
+      "transparent": false,
+      "prompt": "Original 16-bit handheld RPG pixel art, crisp deliberate pixel clusters, limited palette, hard edges, no antialiasing, no blur, no gradients, no text or watermark. Industrial animal-mech world. Blue slate shadows, gunmetal #4a4f57 and #2b2e33, ivory #fafaf7, electric blue #1e90ff, small amber #ffd400 accents. Wide 16:9 top-down slight elevated handheld RPG grassland overworld. Entire field is walkable. Broad muted sage green low-detail grassy ground with small sparse tufts. Sandy path crossing horizontally y90-120 from west entrance x0 to east exit x320. Small rocks bushes and grassy ledges confined top y0-30 and bottom y150-180. Clear empty machine encounter area x200-264 y70-118. No people, machines, buildings, UI, text. Quiet ground ensures tiny blue pilot readable.",
+      "source": "C:\\Users\\pmcga\\.codex\\generated_images\\01a12c93-2902-7472-b26f-fdfb7e793929\\exec-ac2ec571-52ac-4249-8125-4e9ba8e273cb.png"
+    },
+    {
+      "path": "battle/background.png",
+      "width": 320,
+      "height": 180,
+      "transparent": false,
+      "prompt": "Original 16-bit handheld RPG pixel art, crisp deliberate pixel clusters, limited palette, hard edges, no antialiasing, no blur, no gradients, no text or watermark. Industrial animal-mech world. Blue slate shadows, gunmetal #4a4f57 and #2b2e33, ivory #fafaf7, electric blue #1e90ff, small amber #ffd400 accents. Wide 16:9 side-view handheld RPG battle backdrop matching grassland field. Slate blue mountain ridges and distant muted grassland at horizon y50-65. Flat olive green and dusty beige battle ground from y65-125, quiet empty staging spaces for separate animal machines at x36-100 and x220-284 y52-100. Topmost 45 pixels dark low contrast to support overlaid status bars; bottom 56 pixels dark navy quiet ground hidden by UI. No characters machines text or UI.",
+      "source": "C:\\Users\\pmcga\\.codex\\generated_images\\01a12c93-2902-7472-b26f-fdfb7e793929\\exec-8be9d27a-567c-4a6e-99ce-788dc815087a.png"
+    },
+    {
+      "path": "machines/lion_m.png",
+      "width": 64,
+      "height": 48,
+      "transparent": true,
+      "prompt": "Original 16-bit handheld RPG pixel art, crisp deliberate pixel clusters, limited palette, hard edges, no antialiasing, no blur, no gradients, no text or watermark. Industrial animal-mech world. Blue slate shadows, gunmetal #4a4f57 and #2b2e33, ivory #fafaf7, electric blue #1e90ff, small amber #ffd400 accents. ONE original mechanical lion war-machine sprite, perfectly SIDE VIEW facing RIGHT, native 64x48 pixel design. Full body fits with 2 pixel margins. Four powerful articulated gunmetal legs and broad paws, robust horizontal torso, short angular feline muzzle with amber yellow eye, segmented steel mane formed by original compact rectangular collar plates, thin articulated tail extends left. Ivory white armor with electric blue trim on gunmetal chassis, discreet shoulder weapon mounts. Strong readable animal silhouette, pixel clusters and dark 1-pixel outlines. No famous franchise designs or distinctive copied armor. True transparency, no ground plane, no shadows outside sprite, no text, no extra machines.",
+      "source": "C:\\Users\\pmcga\\.codex\\generated_images\\01a12c93-2902-7472-b26f-fdfb7e793929\\exec-3249acca-51b8-4352-9488-6712c021b5af.png"
+    },
+    {
+      "path": "machines/raptor_s.png",
+      "width": 64,
+      "height": 48,
+      "transparent": true,
+      "prompt": "Original 16-bit handheld RPG pixel art, crisp deliberate pixel clusters, limited palette, hard edges, no antialiasing, no blur, no gradients, no text or watermark. Industrial animal-mech world. Blue slate shadows, gunmetal #4a4f57 and #2b2e33, ivory #fafaf7, electric blue #1e90ff, small amber #ffd400 accents. ONE original small mechanical raptor war-machine sprite, perfectly SIDE VIEW facing RIGHT, native 64x48 pixel design. Full body fits with 2 pixel margins. Lightweight red armored bipedal dinosaur, two long articulated gunmetal hind legs with clawed feet, small bent forearms, narrow toothy metal snout and amber eye, long segmented tail stretching LEFT as counterbalance. RED #ff3b3f and BLACK #111111 armor, gunmetal exposed mechanical joints. Smaller slender silhouette than lion, no wing or mane, modest angular shoulder weapon housing. Pixel clusters and dark 1-pixel outline. No existing franchise designs. True transparency, no ground plane or external shadows, no text, one machine.",
+      "source": "C:\\Users\\pmcga\\.codex\\generated_images\\01a12c93-2902-7472-b26f-fdfb7e793929\\exec-220701dc-2d29-4ae4-8532-363843100cde.png"
+    }
+  ]
+}

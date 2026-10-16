@@ -1,0 +1,204 @@
+{
+ "machine": "wolf_m",
+ "weapons": [
+  {
+   "slot": "fang",
+   "move": "Fang Lunge",
+   "draft": false,
+   "kind": "spikes",
+   "note": "red teeth along the upper jaw",
+   "parts": [
+    "head_wpn_fang_spike0",
+    "head_wpn_fang_spike1",
+    "head_wpn_fang_spike2",
+    "head_wpn_fang_spike3",
+    "head_wpn_fang_spike4",
+    "head_wpn_fang_spike5"
+   ],
+   "muzzles": [
+    [
+     -0.181,
+     -2.352,
+     1.789
+    ],
+    [
+     -0.181,
+     -2.267,
+     1.789
+    ],
+    [
+     -0.181,
+     -2.181,
+     1.789
+    ],
+    [
+     0.181,
+     -2.352,
+     1.789
+    ],
+    [
+     0.181,
+     -2.267,
+     1.789
+    ],
+    [
+     0.181,
+     -2.181,
+     1.789
+    ]
+   ]
+  },
+  {
+   "slot": "howl",
+   "move": "Howl Burst",
+   "draft": false,
+   "kind": "emitter",
+   "note": "the throat emitter",
+   "parts": [
+    "neck_wpn_howl_housing",
+    "neck_wpn_howl_lens",
+    "neck_wpn_howl_rim"
+   ],
+   "muzzles": [
+    [
+     0.0,
+     -1.479,
+     1.633
+    ]
+   ]
+  },
+  {
+   "slot": "rail",
+   "move": null,
+   "draft": true,
+   "kind": "cannon",
+   "note": "spare: a long rail gun on the right of the back",
+   "parts": [
+    "wpn_rail_barrel0",
+    "wpn_rail_mount",
+    "wpn_rail_muzzle0"
+   ],
+   "muzzles": [
+    [
+     -0.2,
+     -1.202,
+     2.09
+    ]
+   ]
+  },
+  {
+   "slot": "dashR",
+   "move": "Shadow Dash",
+   "draft": false,
+   "kind": "blade",
+   "note": "a swept blade on the outside of each forearm",
+   "parts": [
+    "front_shin_wpn_dashR_blade_-1"
+   ],
+   "muzzles": [
+    [
+     -0.367,
+     -1.136,
+     0.755
+    ]
+   ]
+  },
+  {
+   "slot": "podR",
+   "move": null,
+   "draft": true,
+   "kind": "missile_pod",
+   "note": "spare: a 2x2 launcher on each haunch",
+   "parts": [
+    "wpn_podR_box",
+    "wpn_podR_rim00",
+    "wpn_podR_rim01",
+    "wpn_podR_rim10",
+    "wpn_podR_rim11",
+    "wpn_podR_tube00",
+    "wpn_podR_tube01",
+    "wpn_podR_tube10",
+    "wpn_podR_tube11"
+   ],
+   "muzzles": [
+    [
+     -0.335,
+     0.282,
+     2.0
+    ],
+    [
+     -0.225,
+     0.282,
+     2.0
+    ],
+    [
+     -0.335,
+     0.324,
+     2.091
+    ],
+    [
+     -0.225,
+     0.324,
+     2.091
+    ]
+   ]
+  },
+  {
+   "slot": "dashL",
+   "move": "Shadow Dash",
+   "draft": false,
+   "kind": "blade",
+   "note": "a swept blade on the outside of each forearm",
+   "parts": [
+    "front_shin_wpn_dashL_blade_1"
+   ],
+   "muzzles": [
+    [
+     0.367,
+     -0.936,
+     0.755
+    ]
+   ]
+  },
+  {
+   "slot": "podL",
+   "move": null,
+   "draft": true,
+   "kind": "missile_pod",
+   "note": "spare: a 2x2 launcher on each haunch",
+   "parts": [
+    "wpn_podL_box",
+    "wpn_podL_rim00",
+    "wpn_podL_rim01",
+    "wpn_podL_rim10",
+    "wpn_podL_rim11",
+    "wpn_podL_tube00",
+    "wpn_podL_tube01",
+    "wpn_podL_tube10",
+    "wpn_podL_tube11"
+   ],
+   "muzzles": [
+    [
+     0.225,
+     0.282,
+     2.0
+    ],
+    [
+     0.335,
+     0.282,
+     2.0
+    ],
+    [
+     0.225,
+     0.324,
+     2.091
+    ],
+    [
+     0.335,
+     0.324,
+     2.091
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+  "roomId": "hangar-bay",
+  "triangles": 3280,
+  "bytes": 4273448,
+  "sha256": "ab185cac5c09efddadbe699e6546bdf5429aab6c6ab6449216e58efdcbd530d1",
+  "sourceSha256": "abe6a0edd7f96afec1349db668e6495fa821e847bd680b6eb7e19c7163c0b264",
+  "coordinateTransform": "Rotate room 180 degrees in Blender Z, then glTF Y-up; door faces Godot +Z. Machine is loaded independently.",
+  "heroIncluded": false,
+  "lightsIncluded": false,
+  "camerasIncluded": false,
+  "texturePainting": "Deterministic 64px panels per 2m; lit lip, dark seam and sparse bolts; no noise or generated images",
+  "atlasSize": 2048,
+  "aoSamples": 32,
+  "aoIncludesMachine": false,
+  "fixtureManifestSha256": "2dfd1563a12b99585da37b926957cd0d40671b86cd136ad919da1bd706aee119",
+  "textures": {
+    "hangar_colour.png": {
+      "bytes": 1759293,
+      "sha256": "0850f91e6af3b33e258feeb8c31a42f654a42a8d03ffa86dea2157b8812205af"
+    },
+    "hangar_emission.png": {
+      "bytes": 86460,
+      "sha256": "4d871966780e8f3c7fdae4beb5f067eb3c86057c1e8dc1a3b245b3801540aeff"
+    },
+    "hangar_orm.png": {
+      "bytes": 2196062,
+      "sha256": "eb43f5cb2578c9e4e09bbd13da013a84e99b4d1dc2f940a9350cca58200a8eaa"
+    }
+  }
+}

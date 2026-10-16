@@ -1,0 +1,43 @@
+{
+  "source_sha256": "2b0128cdd92708c34d3da35e5b1c117d9d82d68c84532bb7cf5054fa6092e1ac",
+  "finished_sha256": "dca48ebb66f9e6ce0d19a1aaf2da67ceaede7163952a90797d0f53cf79c91ec1",
+  "resolution": [
+    2048,
+    2048
+  ],
+  "coverage": 0.40653324127197266,
+  "connected_parts": 277,
+  "triangles_body": 21344,
+  "preserved_non_image_buffer_views": 212,
+  "geometry_uv_skin_bones_animations_unchanged": true,
+  "clips": [
+    "walk",
+    "gait",
+    "idle",
+    "punch",
+    "slam",
+    "throw",
+    "hit",
+    "death"
+  ],
+  "material_parts": {
+    "green": 45,
+    "orange": 106,
+    "steel": 126,
+    "cyan": 0
+  },
+  "paint_metallic": 0,
+  "paint_roughness": [
+    0.63,
+    0.66
+  ],
+  "coated_steel_metallic": 0.42,
+  "steel_part_brightness_percentiles": [
+    20.604515871259313,
+    48.0,
+    61.108630158068536,
+    69.10428338356225,
+    84.52795481046529
+  ],
+  "normal_strength": 0.45
+}

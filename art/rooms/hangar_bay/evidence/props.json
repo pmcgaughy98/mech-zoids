@@ -1,0 +1,263 @@
+{
+  "schema": "game-room.prop-manifest.v1",
+  "roomId": "hangar-bay",
+  "generation": {
+    "provider": "blender-procedural",
+    "apiModel": null,
+    "hardCreditCeiling": 0,
+    "maxChargedAttemptsPerAsset": 2,
+    "pricingVerifiedAt": "2026-10-11",
+    "pricingSource": "https://docs.meshy.ai/en/api/pricing",
+    "note": "No Meshy requested. meshy-5 retired Oct 10; task R1 explicitly prefers free procedural props."
+  },
+  "assets": [
+    {
+      "id": "gantry-crane",
+      "function": "Overhead lift for armor and ballast, parked clear of hero",
+      "description": "Original chunky procedural prototype; review before final build",
+      "class": "reusable",
+      "dimensionsMeters": [
+        8.8,
+        8.0,
+        6.5
+      ],
+      "intendedInstances": 1,
+      "attachmentFace": "freestanding",
+      "semanticFront": "negative-y",
+      "targetPolycount": 3500,
+      "productionMethod": "Blender procedural; no Meshy",
+      "rejectionCriteria": [
+        "Outside declared dimensional envelope",
+        "Floating or missing support",
+        "Intersects central hero reserve or circulation",
+        "Noisy details disappear at 320x180"
+      ],
+      "image": {
+        "prompt": "Procedural Blender reference: Overhead lift for armor and ballast, parked clear of hero. Dimensions [8.8, 8.0, 6.5] m, chunky flat color shapes, gunmetal/concrete, orange caps/trim, teal screens only. Grounded supports, complete front and back, no machine-green room paint. Exact geometry is produced by plan_hangar_bay.py.",
+        "generator": "Blender 5.2 Workbench orthographic render of original procedural prototype",
+        "source": "images/gantry-crane.png",
+        "approved": true,
+        "approvedBy": "Preston",
+        "approvedAt": "2026-10-12 01:04:21 UTC"
+      },
+      "attempts": []
+    },
+    {
+      "id": "tool-cart",
+      "function": "Mobile tools at mechanic station",
+      "description": "Original chunky procedural prototype; review before final build",
+      "class": "reusable",
+      "dimensionsMeters": [
+        1.2,
+        0.65,
+        1.1
+      ],
+      "intendedInstances": 1,
+      "attachmentFace": "floor",
+      "semanticFront": "negative-y",
+      "targetPolycount": 1000,
+      "productionMethod": "Blender procedural; no Meshy",
+      "rejectionCriteria": [
+        "Outside declared dimensional envelope",
+        "Floating or missing support",
+        "Intersects central hero reserve or circulation",
+        "Noisy details disappear at 320x180"
+      ],
+      "image": {
+        "prompt": "Procedural Blender reference: Mobile tools at mechanic station. Dimensions [1.2, 0.65, 1.1] m, chunky flat color shapes, gunmetal/concrete, orange caps/trim, teal screens only. Grounded supports, complete front and back, no machine-green room paint. Exact geometry is produced by plan_hangar_bay.py.",
+        "generator": "Blender 5.2 Workbench orthographic render of original procedural prototype",
+        "source": "images/tool-cart.png",
+        "approved": true,
+        "approvedBy": "Preston",
+        "approvedAt": "2026-10-12 01:04:21 UTC"
+      },
+      "attempts": []
+    },
+    {
+      "id": "parts-rack",
+      "function": "Shelved spare armor and frame parts",
+      "description": "Original chunky procedural prototype; review before final build",
+      "class": "reusable",
+      "dimensionsMeters": [
+        2.4,
+        0.7,
+        2.2
+      ],
+      "intendedInstances": 1,
+      "attachmentFace": "floor",
+      "semanticFront": "negative-y",
+      "targetPolycount": 1400,
+      "productionMethod": "Blender procedural; no Meshy",
+      "rejectionCriteria": [
+        "Outside declared dimensional envelope",
+        "Floating or missing support",
+        "Intersects central hero reserve or circulation",
+        "Noisy details disappear at 320x180"
+      ],
+      "image": {
+        "prompt": "Procedural Blender reference: Shelved spare armor and frame parts. Dimensions [2.4, 0.7, 2.2] m, chunky flat color shapes, gunmetal/concrete, orange caps/trim, teal screens only. Grounded supports, complete front and back, no machine-green room paint. Exact geometry is produced by plan_hangar_bay.py.",
+        "generator": "Blender 5.2 Workbench orthographic render of original procedural prototype",
+        "source": "images/parts-rack.png",
+        "approved": true,
+        "approvedBy": "Preston",
+        "approvedAt": "2026-10-12 01:04:21 UTC"
+      },
+      "attempts": []
+    },
+    {
+      "id": "ballast-pallet",
+      "function": "Three heavy ballast blocks, grey bodies with orange caps",
+      "description": "Original chunky procedural prototype; review before final build",
+      "class": "reusable",
+      "dimensionsMeters": [
+        1.8,
+        1.2,
+        0.85
+      ],
+      "intendedInstances": 2,
+      "attachmentFace": "floor",
+      "semanticFront": "negative-y",
+      "targetPolycount": 900,
+      "productionMethod": "Blender procedural; no Meshy",
+      "rejectionCriteria": [
+        "Outside declared dimensional envelope",
+        "Floating or missing support",
+        "Intersects central hero reserve or circulation",
+        "Noisy details disappear at 320x180"
+      ],
+      "image": {
+        "prompt": "Procedural Blender reference: Three heavy ballast blocks, grey bodies with orange caps. Dimensions [1.8, 1.2, 0.85] m, chunky flat color shapes, gunmetal/concrete, orange caps/trim, teal screens only. Grounded supports, complete front and back, no machine-green room paint. Exact geometry is produced by plan_hangar_bay.py.",
+        "generator": "Blender 5.2 Workbench orthographic render of original procedural prototype",
+        "source": "images/ballast-pallet.png",
+        "approved": true,
+        "approvedBy": "Preston",
+        "approvedAt": "2026-10-12 01:04:21 UTC"
+      },
+      "attempts": []
+    },
+    {
+      "id": "coolant-tanks",
+      "function": "Closed coolant service with visible grounded tanks and pipework",
+      "description": "Original chunky procedural prototype; review before final build",
+      "class": "reusable",
+      "dimensionsMeters": [
+        1.4,
+        0.8,
+        1.6
+      ],
+      "intendedInstances": 1,
+      "attachmentFace": "floor",
+      "semanticFront": "negative-y",
+      "targetPolycount": 1200,
+      "productionMethod": "Blender procedural; no Meshy",
+      "rejectionCriteria": [
+        "Outside declared dimensional envelope",
+        "Floating or missing support",
+        "Intersects central hero reserve or circulation",
+        "Noisy details disappear at 320x180"
+      ],
+      "image": {
+        "prompt": "Procedural Blender reference: Closed coolant service with visible grounded tanks and pipework. Dimensions [1.4, 0.8, 1.6] m, chunky flat color shapes, gunmetal/concrete, orange caps/trim, teal screens only. Grounded supports, complete front and back, no machine-green room paint. Exact geometry is produced by plan_hangar_bay.py.",
+        "generator": "Blender 5.2 Workbench orthographic render of original procedural prototype",
+        "source": "images/coolant-tanks.png",
+        "approved": true,
+        "approvedBy": "Preston",
+        "approvedAt": "2026-10-12 01:04:21 UTC"
+      },
+      "attempts": []
+    },
+    {
+      "id": "service-console",
+      "function": "Machine/deck service point with readable teal screen",
+      "description": "Original chunky procedural prototype; review before final build",
+      "class": "reusable",
+      "dimensionsMeters": [
+        1.3,
+        0.8,
+        1.45
+      ],
+      "intendedInstances": 1,
+      "attachmentFace": "floor",
+      "semanticFront": "negative-y",
+      "targetPolycount": 1000,
+      "productionMethod": "Blender procedural; no Meshy",
+      "rejectionCriteria": [
+        "Outside declared dimensional envelope",
+        "Floating or missing support",
+        "Intersects central hero reserve or circulation",
+        "Noisy details disappear at 320x180"
+      ],
+      "image": {
+        "prompt": "Procedural Blender reference: Machine/deck service point with readable teal screen. Dimensions [1.3, 0.8, 1.45] m, chunky flat color shapes, gunmetal/concrete, orange caps/trim, teal screens only. Grounded supports, complete front and back, no machine-green room paint. Exact geometry is produced by plan_hangar_bay.py.",
+        "generator": "Blender 5.2 Workbench orthographic render of original procedural prototype",
+        "source": "images/service-console.png",
+        "approved": true,
+        "approvedBy": "Preston",
+        "approvedAt": "2026-10-12 01:04:21 UTC"
+      },
+      "attempts": []
+    },
+    {
+      "id": "cable-tray",
+      "function": "Protected overhead cable distribution",
+      "description": "Original chunky procedural prototype; review before final build",
+      "class": "reusable",
+      "dimensionsMeters": [
+        4.0,
+        0.45,
+        0.18
+      ],
+      "intendedInstances": 2,
+      "attachmentFace": "ceiling",
+      "semanticFront": "negative-z",
+      "targetPolycount": 600,
+      "productionMethod": "Blender procedural; no Meshy",
+      "rejectionCriteria": [
+        "Outside declared dimensional envelope",
+        "Floating or missing support",
+        "Intersects central hero reserve or circulation",
+        "Noisy details disappear at 320x180"
+      ],
+      "image": {
+        "prompt": "Procedural Blender reference: Protected overhead cable distribution. Dimensions [4.0, 0.45, 0.18] m, chunky flat color shapes, gunmetal/concrete, orange caps/trim, teal screens only. Grounded supports, complete front and back, no machine-green room paint. Exact geometry is produced by plan_hangar_bay.py.",
+        "generator": "Blender 5.2 Workbench orthographic render of original procedural prototype",
+        "source": "images/cable-tray.png",
+        "approved": true,
+        "approvedBy": "Preston",
+        "approvedAt": "2026-10-12 01:04:21 UTC"
+      },
+      "attempts": []
+    },
+    {
+      "id": "work-light",
+      "function": "Flat flush-mounted warm work lights",
+      "description": "Original chunky procedural prototype; review before final build",
+      "class": "reusable",
+      "dimensionsMeters": [
+        1.8,
+        0.3,
+        0.2
+      ],
+      "intendedInstances": 4,
+      "attachmentFace": "ceiling",
+      "semanticFront": "negative-z",
+      "targetPolycount": 400,
+      "productionMethod": "Blender procedural; no Meshy",
+      "rejectionCriteria": [
+        "Outside declared dimensional envelope",
+        "Floating or missing support",
+        "Intersects central hero reserve or circulation",
+        "Noisy details disappear at 320x180"
+      ],
+      "image": {
+        "prompt": "Procedural Blender reference: Flat flush-mounted warm work lights. Dimensions [1.8, 0.3, 0.2] m, chunky flat color shapes, gunmetal/concrete, orange caps/trim, teal screens only. Grounded supports, complete front and back, no machine-green room paint. Exact geometry is produced by plan_hangar_bay.py.",
+        "generator": "Blender 5.2 Workbench orthographic render of original procedural prototype",
+        "source": "images/work-light.png",
+        "approved": true,
+        "approvedBy": "Preston",
+        "approvedAt": "2026-10-12 01:04:21 UTC"
+      },
+      "attempts": []
+    }
+  ]
+}

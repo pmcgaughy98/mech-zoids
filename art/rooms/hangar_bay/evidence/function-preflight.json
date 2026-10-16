@@ -1,0 +1,21 @@
+{
+  "status": "Prepared for human review; Function NOT approved",
+  "checks": [
+    "gantry-crane: reference and dimensions recorded",
+    "tool-cart: reference and dimensions recorded",
+    "parts-rack: reference and dimensions recorded",
+    "ballast-pallet: reference and dimensions recorded",
+    "coolant-tanks: reference and dimensions recorded",
+    "service-console: reference and dimensions recorded",
+    "cable-tray: reference and dimensions recorded",
+    "work-light: reference and dimensions recorded",
+    "bay-door: mask and contour aperture verified",
+    "west-window: mask and contour aperture verified",
+    "east-window: mask and contour aperture verified",
+    "Prototype geometry plus 11000-triangle hero reserve is below 40000"
+  ],
+  "paidCreditsUsed": 0,
+  "pluginGatePassed": false,
+  "validatorPolicyMismatch": "Bundled validator requires Meshy for every prop and a positive paid budget. CODEX_TASKS_3D_ROOMS.md explicitly prefers free procedural props; no paid budget or approval fabricated.",
+  "maskDependencyFallback": "Bundled tracer attempted for all three masks; cv2 absent. Exact rectangle boundary fallback verified without installations."
+}

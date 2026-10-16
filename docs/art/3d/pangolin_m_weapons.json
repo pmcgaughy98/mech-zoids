@@ -1,0 +1,118 @@
+{
+ "machine": "pangolin_m",
+ "weapons": [
+  {
+   "slot": "roll",
+   "move": "Ball Roll",
+   "draft": false,
+   "kind": "spikes",
+   "note": "Delft-blue studs along the spine, what it rolls on",
+   "parts": [
+    "wpn_roll_spike0",
+    "wpn_roll_spike1",
+    "wpn_roll_spike2",
+    "wpn_roll_spike3"
+   ],
+   "muzzles": [
+    [
+     0.0,
+     -0.322,
+     1.764
+    ],
+    [
+     0.0,
+     -0.037,
+     1.764
+    ],
+    [
+     0.0,
+     0.247,
+     1.692
+    ],
+    [
+     0.0,
+     0.532,
+     1.528
+    ]
+   ]
+  },
+  {
+   "slot": "chin",
+   "move": null,
+   "draft": true,
+   "kind": "gatling",
+   "note": "spare: a rotary gun under the snout",
+   "parts": [
+    "snout_wpn_chin_barrel0",
+    "snout_wpn_chin_barrel1",
+    "snout_wpn_chin_barrel2",
+    "snout_wpn_chin_barrel3",
+    "snout_wpn_chin_barrel4",
+    "snout_wpn_chin_barrel5",
+    "snout_wpn_chin_collar",
+    "snout_wpn_chin_drum"
+   ],
+   "muzzles": [
+    [
+     0.0,
+     -1.906,
+     0.519
+    ]
+   ]
+  },
+  {
+   "slot": "vls",
+   "move": null,
+   "draft": true,
+   "kind": "missile_pod",
+   "note": "spare: a 2x3 launcher on the rump, firing up and forward",
+   "parts": [
+    "wpn_vls_box",
+    "wpn_vls_rim00",
+    "wpn_vls_rim01",
+    "wpn_vls_rim02",
+    "wpn_vls_rim10",
+    "wpn_vls_rim11",
+    "wpn_vls_rim12",
+    "wpn_vls_tube00",
+    "wpn_vls_tube01",
+    "wpn_vls_tube02",
+    "wpn_vls_tube10",
+    "wpn_vls_tube11",
+    "wpn_vls_tube12"
+   ],
+   "muzzles": [
+    [
+     -0.133,
+     0.532,
+     1.525
+    ],
+    [
+     0.0,
+     0.532,
+     1.525
+    ],
+    [
+     0.133,
+     0.532,
+     1.525
+    ],
+    [
+     -0.133,
+     0.608,
+     1.552
+    ],
+    [
+     0.0,
+     0.608,
+     1.552
+    ],
+    [
+     0.133,
+     0.608,
+     1.552
+    ]
+   ]
+  }
+ ]
+}

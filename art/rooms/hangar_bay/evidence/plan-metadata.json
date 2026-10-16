@@ -1,0 +1,2447 @@
+{
+  "schema": "game-room.plan-metadata.v1",
+  "roomId": "hangar-bay",
+  "style": "monochrome-engineering",
+  "projectionSource": "actual-meshes",
+  "layers": [
+    "lower-room",
+    "reflected-ceiling"
+  ],
+  "semanticLabelsOutsideImage": true,
+  "aiInspirationIncluded": false,
+  "aiInspirationReason": "",
+  "coverage": [
+    "room-outline",
+    "cutouts",
+    "openings",
+    "exterior-apron",
+    "main-sign",
+    "ingress-props",
+    "floor-markers",
+    "barriers",
+    "columns",
+    "circulation",
+    "placed-features"
+  ],
+  "features": [
+    {
+      "id": "Apron stripe",
+      "featureId": "ingress-props",
+      "layer": "lower-room",
+      "centerMeters": [
+        -2.5,
+        8.199999809265137,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.30000001192092896,
+        0.6000000238418579,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "Apron stripe.001",
+      "featureId": "ingress-props",
+      "layer": "lower-room",
+      "centerMeters": [
+        -1.5,
+        8.199999809265137,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.30000001192092896,
+        0.6000000238418579,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "Apron stripe.002",
+      "featureId": "ingress-props",
+      "layer": "lower-room",
+      "centerMeters": [
+        -0.5,
+        8.199999809265137,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.30000001192092896,
+        0.6000000238418579,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "Apron stripe.003",
+      "featureId": "ingress-props",
+      "layer": "lower-room",
+      "centerMeters": [
+        0.5,
+        8.199999809265137,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.30000001192092896,
+        0.6000000238418579,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "Apron stripe.004",
+      "featureId": "ingress-props",
+      "layer": "lower-room",
+      "centerMeters": [
+        1.5,
+        8.199999809265137,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.30000001192092896,
+        0.6000000238418579,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "Apron stripe.005",
+      "featureId": "ingress-props",
+      "layer": "lower-room",
+      "centerMeters": [
+        2.5,
+        8.199999809265137,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.30000001192092896,
+        0.6000000238418579,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "ballast-pallet bearer",
+      "featureId": "ballast-pallet-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.400000095367432,
+        3.759999990463257,
+        0.07999999821186066
+      ],
+      "dimensionsMeters": [
+        1.7999999523162842,
+        0.1599999964237213,
+        0.1599999964237213
+      ]
+    },
+    {
+      "id": "ballast-pallet bearer.001",
+      "featureId": "ballast-pallet-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.400000095367432,
+        4.199999809265137,
+        0.07999999821186066
+      ],
+      "dimensionsMeters": [
+        1.7999999523162842,
+        0.1599999964237213,
+        0.1599999964237213
+      ]
+    },
+    {
+      "id": "ballast-pallet bearer.002",
+      "featureId": "ballast-pallet-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.400000095367432,
+        4.639999866485596,
+        0.07999999821186066
+      ],
+      "dimensionsMeters": [
+        1.7999999523162842,
+        0.1599999964237213,
+        0.1599999964237213
+      ]
+    },
+    {
+      "id": "ballast-pallet bearer.003",
+      "featureId": "ballast-pallet-2",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.400000095367432,
+        4.639999866485596,
+        0.07999999821186066
+      ],
+      "dimensionsMeters": [
+        1.7999999523162842,
+        0.1599999964237213,
+        0.1599999964237213
+      ]
+    },
+    {
+      "id": "ballast-pallet bearer.004",
+      "featureId": "ballast-pallet-2",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.400000095367432,
+        3.760000228881836,
+        0.07999999821186066
+      ],
+      "dimensionsMeters": [
+        1.7999999523162842,
+        0.1599999964237213,
+        0.1599999964237213
+      ]
+    },
+    {
+      "id": "ballast-pallet bearer.005",
+      "featureId": "ballast-pallet-2",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.400000095367432,
+        4.199999809265137,
+        0.07999999821186066
+      ],
+      "dimensionsMeters": [
+        1.7999999523162842,
+        0.1599999964237213,
+        0.1599999964237213
+      ]
+    },
+    {
+      "id": "ballast-pallet block",
+      "featureId": "ballast-pallet-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.96999979019165,
+        4.199999809265137,
+        0.5199999809265137
+      ],
+      "dimensionsMeters": [
+        0.4699999988079071,
+        0.8199999928474426,
+        0.5400000214576721
+      ]
+    },
+    {
+      "id": "ballast-pallet block.001",
+      "featureId": "ballast-pallet-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.400000095367432,
+        4.199999809265137,
+        0.5199999809265137
+      ],
+      "dimensionsMeters": [
+        0.4699999988079071,
+        0.8199999928474426,
+        0.5400000214576721
+      ]
+    },
+    {
+      "id": "ballast-pallet block.002",
+      "featureId": "ballast-pallet-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -4.829999923706055,
+        4.199999809265137,
+        0.5199999809265137
+      ],
+      "dimensionsMeters": [
+        0.4699999988079071,
+        0.8199999928474426,
+        0.5400000214576721
+      ]
+    },
+    {
+      "id": "ballast-pallet block.003",
+      "featureId": "ballast-pallet-2",
+      "layer": "lower-room",
+      "centerMeters": [
+        4.830000400543213,
+        4.199999809265137,
+        0.5199999809265137
+      ],
+      "dimensionsMeters": [
+        0.4699999988079071,
+        0.8199999928474426,
+        0.5400000214576721
+      ]
+    },
+    {
+      "id": "ballast-pallet block.004",
+      "featureId": "ballast-pallet-2",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.970000267028809,
+        4.199999809265137,
+        0.5199999809265137
+      ],
+      "dimensionsMeters": [
+        0.4699999988079071,
+        0.8199999928474426,
+        0.5400000214576721
+      ]
+    },
+    {
+      "id": "ballast-pallet block.005",
+      "featureId": "ballast-pallet-2",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.400000095367432,
+        4.199999809265137,
+        0.5199999809265137
+      ],
+      "dimensionsMeters": [
+        0.4699999988079071,
+        0.8199999928474426,
+        0.5400000214576721
+      ]
+    },
+    {
+      "id": "ballast-pallet cap",
+      "featureId": "ballast-pallet-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.96999979019165,
+        4.199999809265137,
+        0.8100000023841858
+      ],
+      "dimensionsMeters": [
+        0.47999998927116394,
+        0.8399999737739563,
+        0.07999999821186066
+      ]
+    },
+    {
+      "id": "ballast-pallet cap.001",
+      "featureId": "ballast-pallet-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.400000095367432,
+        4.199999809265137,
+        0.8100000023841858
+      ],
+      "dimensionsMeters": [
+        0.47999998927116394,
+        0.8399999737739563,
+        0.07999999821186066
+      ]
+    },
+    {
+      "id": "ballast-pallet cap.002",
+      "featureId": "ballast-pallet-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -4.829999923706055,
+        4.199999809265137,
+        0.8100000023841858
+      ],
+      "dimensionsMeters": [
+        0.47999998927116394,
+        0.8399999737739563,
+        0.07999999821186066
+      ]
+    },
+    {
+      "id": "ballast-pallet cap.003",
+      "featureId": "ballast-pallet-2",
+      "layer": "lower-room",
+      "centerMeters": [
+        4.830000400543213,
+        4.199999809265137,
+        0.8100000023841858
+      ],
+      "dimensionsMeters": [
+        0.47999998927116394,
+        0.8399999737739563,
+        0.07999999821186066
+      ]
+    },
+    {
+      "id": "ballast-pallet cap.004",
+      "featureId": "ballast-pallet-2",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.400000095367432,
+        4.199999809265137,
+        0.8100000023841858
+      ],
+      "dimensionsMeters": [
+        0.47999998927116394,
+        0.8399999737739563,
+        0.07999999821186066
+      ]
+    },
+    {
+      "id": "ballast-pallet cap.005",
+      "featureId": "ballast-pallet-2",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.970000267028809,
+        4.199999809265137,
+        0.8100000023841858
+      ],
+      "dimensionsMeters": [
+        0.47999998927116394,
+        0.8399999737739563,
+        0.07999999821186066
+      ]
+    },
+    {
+      "id": "ballast-pallet deck",
+      "featureId": "ballast-pallet-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.400000095367432,
+        4.199999809265137,
+        0.20000000298023224
+      ],
+      "dimensionsMeters": [
+        1.7999999523162842,
+        1.2000000476837158,
+        0.09000000357627869
+      ]
+    },
+    {
+      "id": "ballast-pallet deck.001",
+      "featureId": "ballast-pallet-2",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.400000095367432,
+        4.199999809265137,
+        0.20000000298023224
+      ],
+      "dimensionsMeters": [
+        1.7999999523162842,
+        1.2000000476837158,
+        0.09000000357627869
+      ]
+    },
+    {
+      "id": "Bay end mark",
+      "featureId": "floor-markers",
+      "layer": "lower-room",
+      "centerMeters": [
+        0.0,
+        -3.5,
+        0.004999999888241291
+      ],
+      "dimensionsMeters": [
+        6.0,
+        0.07000000029802322,
+        0.009999999776482582
+      ]
+    },
+    {
+      "id": "Bay end mark.001",
+      "featureId": "floor-markers",
+      "layer": "lower-room",
+      "centerMeters": [
+        0.0,
+        3.5,
+        0.004999999888241291
+      ],
+      "dimensionsMeters": [
+        6.0,
+        0.07000000029802322,
+        0.009999999776482582
+      ]
+    },
+    {
+      "id": "Bay side mark",
+      "featureId": "floor-markers",
+      "layer": "lower-room",
+      "centerMeters": [
+        -3.0,
+        0.0,
+        0.004999999888241291
+      ],
+      "dimensionsMeters": [
+        0.07000000029802322,
+        7.0,
+        0.009999999776482582
+      ]
+    },
+    {
+      "id": "Bay side mark.001",
+      "featureId": "floor-markers",
+      "layer": "lower-room",
+      "centerMeters": [
+        3.0,
+        0.0,
+        0.004999999888241291
+      ],
+      "dimensionsMeters": [
+        0.07000000029802322,
+        7.0,
+        0.009999999776482582
+      ]
+    },
+    {
+      "id": "Bay sign",
+      "featureId": "main-sign",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        0.0,
+        8.0,
+        5.5
+      ],
+      "dimensionsMeters": [
+        1.7999999523162842,
+        0.11999999731779099,
+        0.4000000059604645
+      ]
+    },
+    {
+      "id": "cable-tray bottom",
+      "featureId": "cable-tray-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -6.300000190734863,
+        0.0,
+        7.849999904632568
+      ],
+      "dimensionsMeters": [
+        4.0,
+        0.44999998807907104,
+        0.05999999865889549
+      ]
+    },
+    {
+      "id": "cable-tray bottom.001",
+      "featureId": "cable-tray-2",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        6.300000190734863,
+        0.0,
+        7.849999904632568
+      ],
+      "dimensionsMeters": [
+        4.0,
+        0.44999998807907104,
+        0.05999999865889549
+      ]
+    },
+    {
+      "id": "cable-tray cable",
+      "featureId": "cable-tray-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -6.210000038146973,
+        -5.5109109193513166e-18,
+        7.894999980926514
+      ],
+      "dimensionsMeters": [
+        3.799999952316284,
+        0.03999999910593033,
+        0.03999999910593033
+      ]
+    },
+    {
+      "id": "cable-tray cable.001",
+      "featureId": "cable-tray-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -6.300000190734863,
+        0.0,
+        7.894999980926514
+      ],
+      "dimensionsMeters": [
+        3.799999952316284,
+        0.03999999910593033,
+        0.03999999910593033
+      ]
+    },
+    {
+      "id": "cable-tray cable.002",
+      "featureId": "cable-tray-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -6.389999866485596,
+        5.5109109193513166e-18,
+        7.894999980926514
+      ],
+      "dimensionsMeters": [
+        3.799999952316284,
+        0.03999999910593033,
+        0.03999999910593033
+      ]
+    },
+    {
+      "id": "cable-tray cable.003",
+      "featureId": "cable-tray-2",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        6.210000514984131,
+        5.5109109193513166e-18,
+        7.894999980926514
+      ],
+      "dimensionsMeters": [
+        3.799999952316284,
+        0.03999999910593033,
+        0.03999999910593033
+      ]
+    },
+    {
+      "id": "cable-tray cable.004",
+      "featureId": "cable-tray-2",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        6.300000190734863,
+        0.0,
+        7.894999980926514
+      ],
+      "dimensionsMeters": [
+        3.799999952316284,
+        0.03999999910593033,
+        0.03999999910593033
+      ]
+    },
+    {
+      "id": "cable-tray cable.005",
+      "featureId": "cable-tray-2",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        6.390000343322754,
+        -5.5109109193513166e-18,
+        7.894999980926514
+      ],
+      "dimensionsMeters": [
+        3.799999952316284,
+        0.03999999910593033,
+        0.03999999910593033
+      ]
+    },
+    {
+      "id": "cable-tray lip",
+      "featureId": "cable-tray-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -6.099999904632568,
+        -1.2246468525851679e-17,
+        7.909999847412109
+      ],
+      "dimensionsMeters": [
+        4.0,
+        0.05000000074505806,
+        0.18000000715255737
+      ]
+    },
+    {
+      "id": "cable-tray lip.001",
+      "featureId": "cable-tray-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -6.5,
+        1.2246468525851679e-17,
+        7.909999847412109
+      ],
+      "dimensionsMeters": [
+        4.0,
+        0.05000000074505806,
+        0.18000000715255737
+      ]
+    },
+    {
+      "id": "cable-tray lip.002",
+      "featureId": "cable-tray-2",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        6.500000476837158,
+        -1.2246468525851679e-17,
+        7.909999847412109
+      ],
+      "dimensionsMeters": [
+        4.0,
+        0.05000000074505806,
+        0.18000000715255737
+      ]
+    },
+    {
+      "id": "cable-tray lip.003",
+      "featureId": "cable-tray-2",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        6.100000381469727,
+        1.2246468525851679e-17,
+        7.909999847412109
+      ],
+      "dimensionsMeters": [
+        4.0,
+        0.05000000074505806,
+        0.18000000715255737
+      ]
+    },
+    {
+      "id": "cable-tray rung",
+      "featureId": "cable-tray-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -6.300000190734863,
+        -1.7999999523162842,
+        7.860000133514404
+      ],
+      "dimensionsMeters": [
+        0.05999999865889549,
+        0.44999998807907104,
+        0.05999999865889549
+      ]
+    },
+    {
+      "id": "cable-tray rung.001",
+      "featureId": "cable-tray-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -6.300000190734863,
+        -1.2000000476837158,
+        7.860000133514404
+      ],
+      "dimensionsMeters": [
+        0.05999999865889549,
+        0.44999998807907104,
+        0.05999999865889549
+      ]
+    },
+    {
+      "id": "cable-tray rung.002",
+      "featureId": "cable-tray-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -6.300000190734863,
+        -0.6000000238418579,
+        7.860000133514404
+      ],
+      "dimensionsMeters": [
+        0.05999999865889549,
+        0.44999998807907104,
+        0.05999999865889549
+      ]
+    },
+    {
+      "id": "cable-tray rung.003",
+      "featureId": "cable-tray-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -6.300000190734863,
+        0.0,
+        7.860000133514404
+      ],
+      "dimensionsMeters": [
+        0.05999999865889549,
+        0.44999998807907104,
+        0.05999999865889549
+      ]
+    },
+    {
+      "id": "cable-tray rung.004",
+      "featureId": "cable-tray-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -6.300000190734863,
+        0.6000000238418579,
+        7.860000133514404
+      ],
+      "dimensionsMeters": [
+        0.05999999865889549,
+        0.44999998807907104,
+        0.05999999865889549
+      ]
+    },
+    {
+      "id": "cable-tray rung.005",
+      "featureId": "cable-tray-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -6.300000190734863,
+        1.2000000476837158,
+        7.860000133514404
+      ],
+      "dimensionsMeters": [
+        0.05999999865889549,
+        0.44999998807907104,
+        0.05999999865889549
+      ]
+    },
+    {
+      "id": "cable-tray rung.006",
+      "featureId": "cable-tray-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -6.300000190734863,
+        1.7999999523162842,
+        7.860000133514404
+      ],
+      "dimensionsMeters": [
+        0.05999999865889549,
+        0.44999998807907104,
+        0.05999999865889549
+      ]
+    },
+    {
+      "id": "cable-tray rung.007",
+      "featureId": "cable-tray-2",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        6.300000190734863,
+        0.6000000238418579,
+        7.860000133514404
+      ],
+      "dimensionsMeters": [
+        0.05999999865889549,
+        0.44999998807907104,
+        0.05999999865889549
+      ]
+    },
+    {
+      "id": "cable-tray rung.008",
+      "featureId": "cable-tray-2",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        6.300000190734863,
+        0.0,
+        7.860000133514404
+      ],
+      "dimensionsMeters": [
+        0.05999999865889549,
+        0.44999998807907104,
+        0.05999999865889549
+      ]
+    },
+    {
+      "id": "cable-tray rung.009",
+      "featureId": "cable-tray-2",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        6.300000190734863,
+        1.7999999523162842,
+        7.860000133514404
+      ],
+      "dimensionsMeters": [
+        0.05999999865889549,
+        0.44999998807907104,
+        0.05999999865889549
+      ]
+    },
+    {
+      "id": "cable-tray rung.010",
+      "featureId": "cable-tray-2",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        6.300000190734863,
+        -1.7999999523162842,
+        7.860000133514404
+      ],
+      "dimensionsMeters": [
+        0.05999999865889549,
+        0.44999998807907104,
+        0.05999999865889549
+      ]
+    },
+    {
+      "id": "cable-tray rung.011",
+      "featureId": "cable-tray-2",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        6.300000190734863,
+        -1.2000000476837158,
+        7.860000133514404
+      ],
+      "dimensionsMeters": [
+        0.05999999865889549,
+        0.44999998807907104,
+        0.05999999865889549
+      ]
+    },
+    {
+      "id": "cable-tray rung.012",
+      "featureId": "cable-tray-2",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        6.300000190734863,
+        1.2000000476837158,
+        7.860000133514404
+      ],
+      "dimensionsMeters": [
+        0.05999999865889549,
+        0.44999998807907104,
+        0.05999999865889549
+      ]
+    },
+    {
+      "id": "cable-tray rung.013",
+      "featureId": "cable-tray-2",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        6.300000190734863,
+        -0.6000000238418579,
+        7.860000133514404
+      ],
+      "dimensionsMeters": [
+        0.05999999865889549,
+        0.44999998807907104,
+        0.05999999865889549
+      ]
+    },
+    {
+      "id": "coolant-tanks band",
+      "featureId": "coolant-tanks-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.429999828338623,
+        6.110000133514404,
+        1.0299999713897705
+      ],
+      "dimensionsMeters": [
+        0.3499999940395355,
+        0.02500000037252903,
+        0.10000000149011612
+      ]
+    },
+    {
+      "id": "coolant-tanks band.001",
+      "featureId": "coolant-tanks-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        6.170000076293945,
+        6.110000133514404,
+        1.0299999713897705
+      ],
+      "dimensionsMeters": [
+        0.3499999940395355,
+        0.02500000037252903,
+        0.10000000149011612
+      ]
+    },
+    {
+      "id": "coolant-tanks base",
+      "featureId": "coolant-tanks-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.800000190734863,
+        6.400000095367432,
+        0.07999999821186066
+      ],
+      "dimensionsMeters": [
+        1.399999976158142,
+        0.800000011920929,
+        0.1599999964237213
+      ]
+    },
+    {
+      "id": "coolant-tanks pipe",
+      "featureId": "coolant-tanks-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.800000190734863,
+        6.059999942779541,
+        0.4000000059604645
+      ],
+      "dimensionsMeters": [
+        0.09000000357627869,
+        0.09000000357627869,
+        0.7400000095367432
+      ]
+    },
+    {
+      "id": "coolant-tanks tank",
+      "featureId": "coolant-tanks-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.429999828338623,
+        6.400000095367432,
+        0.8500000238418579
+      ],
+      "dimensionsMeters": [
+        0.5799999833106995,
+        0.5799999833106995,
+        1.350000023841858
+      ]
+    },
+    {
+      "id": "coolant-tanks tank.001",
+      "featureId": "coolant-tanks-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        6.170000076293945,
+        6.400000095367432,
+        0.8500000238418579
+      ],
+      "dimensionsMeters": [
+        0.5799999833106995,
+        0.5799999833106995,
+        1.350000023841858
+      ]
+    },
+    {
+      "id": "coolant-tanks valve",
+      "featureId": "coolant-tanks-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.429999828338623,
+        6.400000095367432,
+        1.5700000524520874
+      ],
+      "dimensionsMeters": [
+        0.20000000298023224,
+        0.20000000298023224,
+        0.05999999865889549
+      ]
+    },
+    {
+      "id": "coolant-tanks valve.001",
+      "featureId": "coolant-tanks-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        6.170000076293945,
+        6.400000095367432,
+        1.5700000524520874
+      ],
+      "dimensionsMeters": [
+        0.20000000298023224,
+        0.20000000298023224,
+        0.05999999865889549
+      ]
+    },
+    {
+      "id": "Door lintel",
+      "featureId": "bay-door",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        0.0,
+        8.0,
+        5.099999904632568
+      ],
+      "dimensionsMeters": [
+        6.400000095367432,
+        0.4000000059604645,
+        0.20000000298023224
+      ]
+    },
+    {
+      "id": "Door reveal",
+      "featureId": "bay-door",
+      "layer": "lower-room",
+      "centerMeters": [
+        -3.0999999046325684,
+        8.0,
+        2.5
+      ],
+      "dimensionsMeters": [
+        0.20000000298023224,
+        0.4000000059604645,
+        5.0
+      ]
+    },
+    {
+      "id": "Door reveal.001",
+      "featureId": "bay-door",
+      "layer": "lower-room",
+      "centerMeters": [
+        3.0999999046325684,
+        8.0,
+        2.5
+      ],
+      "dimensionsMeters": [
+        0.20000000298023224,
+        0.4000000059604645,
+        5.0
+      ]
+    },
+    {
+      "id": "East window reference",
+      "featureId": "side-window",
+      "layer": "lower-room",
+      "centerMeters": [
+        6.699999809265137,
+        2.5,
+        3.200000047683716
+      ],
+      "dimensionsMeters": [
+        0.10000000149011612,
+        3.0,
+        1.7999999523162842
+      ]
+    },
+    {
+      "id": "Engaged column",
+      "featureId": "columns",
+      "layer": "lower-room",
+      "centerMeters": [
+        -6.599999904632568,
+        -6.5,
+        4.0
+      ],
+      "dimensionsMeters": [
+        0.30000001192092896,
+        0.4000000059604645,
+        8.0
+      ]
+    },
+    {
+      "id": "Engaged column.001",
+      "featureId": "columns",
+      "layer": "lower-room",
+      "centerMeters": [
+        -6.599999904632568,
+        6.5,
+        4.0
+      ],
+      "dimensionsMeters": [
+        0.30000001192092896,
+        0.4000000059604645,
+        8.0
+      ]
+    },
+    {
+      "id": "Engaged column.002",
+      "featureId": "columns",
+      "layer": "lower-room",
+      "centerMeters": [
+        6.599999904632568,
+        -6.5,
+        4.0
+      ],
+      "dimensionsMeters": [
+        0.30000001192092896,
+        0.4000000059604645,
+        8.0
+      ]
+    },
+    {
+      "id": "Engaged column.003",
+      "featureId": "columns",
+      "layer": "lower-room",
+      "centerMeters": [
+        6.599999904632568,
+        6.5,
+        4.0
+      ],
+      "dimensionsMeters": [
+        0.30000001192092896,
+        0.4000000059604645,
+        8.0
+      ]
+    },
+    {
+      "id": "Exterior apron",
+      "featureId": "exterior-apron",
+      "layer": "lower-room",
+      "centerMeters": [
+        0.0,
+        10.0,
+        -0.10000000149011612
+      ],
+      "dimensionsMeters": [
+        8.0,
+        4.0,
+        0.20000000298023224
+      ]
+    },
+    {
+      "id": "Floor extent",
+      "featureId": "room-outline",
+      "layer": "lower-room",
+      "centerMeters": [
+        0.0,
+        0.0,
+        -0.10000000149011612
+      ],
+      "dimensionsMeters": [
+        14.0,
+        16.0,
+        0.20000000298023224
+      ]
+    },
+    {
+      "id": "gantry-crane bridge",
+      "featureId": "gantry-crane-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        0.0,
+        2.700000047683716,
+        6.25
+      ],
+      "dimensionsMeters": [
+        8.399999618530273,
+        0.44999998807907104,
+        0.5
+      ]
+    },
+    {
+      "id": "gantry-crane cable",
+      "featureId": "gantry-crane-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -2.799999952316284,
+        2.700000047683716,
+        5.050000190734863
+      ],
+      "dimensionsMeters": [
+        0.05000000074505806,
+        0.05000000074505806,
+        1.5
+      ]
+    },
+    {
+      "id": "gantry-crane foot",
+      "featureId": "gantry-crane-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -4.050000190734863,
+        -3.6500000953674316,
+        0.05999999865889549
+      ],
+      "dimensionsMeters": [
+        0.6499999761581421,
+        0.6499999761581421,
+        0.11999999731779099
+      ]
+    },
+    {
+      "id": "gantry-crane foot.001",
+      "featureId": "gantry-crane-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -4.050000190734863,
+        3.6500000953674316,
+        0.05999999865889549
+      ],
+      "dimensionsMeters": [
+        0.6499999761581421,
+        0.6499999761581421,
+        0.11999999731779099
+      ]
+    },
+    {
+      "id": "gantry-crane foot.002",
+      "featureId": "gantry-crane-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        4.050000190734863,
+        -3.6500000953674316,
+        0.05999999865889549
+      ],
+      "dimensionsMeters": [
+        0.6499999761581421,
+        0.6499999761581421,
+        0.11999999731779099
+      ]
+    },
+    {
+      "id": "gantry-crane foot.003",
+      "featureId": "gantry-crane-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        4.050000190734863,
+        3.6500000953674316,
+        0.05999999865889549
+      ],
+      "dimensionsMeters": [
+        0.6499999761581421,
+        0.6499999761581421,
+        0.11999999731779099
+      ]
+    },
+    {
+      "id": "gantry-crane hook",
+      "featureId": "gantry-crane-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -2.799999952316284,
+        2.700000047683716,
+        4.199999809265137
+      ],
+      "dimensionsMeters": [
+        0.25,
+        0.18000000715255737,
+        0.20000000298023224
+      ]
+    },
+    {
+      "id": "gantry-crane post",
+      "featureId": "gantry-crane-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -4.050000190734863,
+        -3.6500000953674316,
+        3.25
+      ],
+      "dimensionsMeters": [
+        0.23999999463558197,
+        0.2800000011920929,
+        6.5
+      ]
+    },
+    {
+      "id": "gantry-crane post.001",
+      "featureId": "gantry-crane-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -4.050000190734863,
+        3.6500000953674316,
+        3.25
+      ],
+      "dimensionsMeters": [
+        0.23999999463558197,
+        0.2800000011920929,
+        6.5
+      ]
+    },
+    {
+      "id": "gantry-crane post.002",
+      "featureId": "gantry-crane-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        4.050000190734863,
+        -3.6500000953674316,
+        3.25
+      ],
+      "dimensionsMeters": [
+        0.23999999463558197,
+        0.2800000011920929,
+        6.5
+      ]
+    },
+    {
+      "id": "gantry-crane post.003",
+      "featureId": "gantry-crane-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        4.050000190734863,
+        3.6500000953674316,
+        3.25
+      ],
+      "dimensionsMeters": [
+        0.23999999463558197,
+        0.2800000011920929,
+        6.5
+      ]
+    },
+    {
+      "id": "gantry-crane rail",
+      "featureId": "gantry-crane-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -4.050000190734863,
+        0.0,
+        6.239999771118164
+      ],
+      "dimensionsMeters": [
+        0.30000001192092896,
+        7.599999904632568,
+        0.3799999952316284
+      ]
+    },
+    {
+      "id": "gantry-crane rail.001",
+      "featureId": "gantry-crane-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        4.050000190734863,
+        0.0,
+        6.239999771118164
+      ],
+      "dimensionsMeters": [
+        0.30000001192092896,
+        7.599999904632568,
+        0.3799999952316284
+      ]
+    },
+    {
+      "id": "gantry-crane trolley",
+      "featureId": "gantry-crane-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -2.799999952316284,
+        2.700000047683716,
+        5.949999809265137
+      ],
+      "dimensionsMeters": [
+        0.75,
+        0.75,
+        0.4000000059604645
+      ]
+    },
+    {
+      "id": "Hero envelope",
+      "featureId": "hero-reserve",
+      "layer": "lower-room",
+      "centerMeters": [
+        -1.7000000476837158,
+        -1.2000000476837158,
+        1.3650000095367432
+      ],
+      "dimensionsMeters": [
+        0.02500000037252903,
+        0.02500000037252903,
+        2.6700000762939453
+      ]
+    },
+    {
+      "id": "Hero envelope.001",
+      "featureId": "hero-reserve",
+      "layer": "lower-room",
+      "centerMeters": [
+        -1.7000000476837158,
+        1.2000000476837158,
+        1.3650000095367432
+      ],
+      "dimensionsMeters": [
+        0.02500000037252903,
+        0.02500000037252903,
+        2.6700000762939453
+      ]
+    },
+    {
+      "id": "Hero envelope.002",
+      "featureId": "hero-reserve",
+      "layer": "lower-room",
+      "centerMeters": [
+        1.7000000476837158,
+        -1.2000000476837158,
+        1.3650000095367432
+      ],
+      "dimensionsMeters": [
+        0.02500000037252903,
+        0.02500000037252903,
+        2.6700000762939453
+      ]
+    },
+    {
+      "id": "Hero envelope.003",
+      "featureId": "hero-reserve",
+      "layer": "lower-room",
+      "centerMeters": [
+        1.7000000476837158,
+        1.2000000476837158,
+        1.3650000095367432
+      ],
+      "dimensionsMeters": [
+        0.02500000037252903,
+        0.02500000037252903,
+        2.6700000762939453
+      ]
+    },
+    {
+      "id": "Hero envelope.004",
+      "featureId": "hero-reserve",
+      "layer": "lower-room",
+      "centerMeters": [
+        -1.7000000476837158,
+        0.0,
+        0.029999999329447746
+      ],
+      "dimensionsMeters": [
+        0.02500000037252903,
+        0.02500000037252903,
+        2.4000000953674316
+      ]
+    },
+    {
+      "id": "Hero envelope.005",
+      "featureId": "hero-reserve",
+      "layer": "lower-room",
+      "centerMeters": [
+        1.7000000476837158,
+        0.0,
+        0.029999999329447746
+      ],
+      "dimensionsMeters": [
+        0.02500000037252903,
+        0.02500000037252903,
+        2.4000000953674316
+      ]
+    },
+    {
+      "id": "Hero envelope.006",
+      "featureId": "hero-reserve",
+      "layer": "lower-room",
+      "centerMeters": [
+        0.0,
+        -1.2000000476837158,
+        0.029999999329447746
+      ],
+      "dimensionsMeters": [
+        0.02500000037252903,
+        0.02500000037252903,
+        3.4000000953674316
+      ]
+    },
+    {
+      "id": "Hero envelope.007",
+      "featureId": "hero-reserve",
+      "layer": "lower-room",
+      "centerMeters": [
+        0.0,
+        1.2000000476837158,
+        0.029999999329447746
+      ],
+      "dimensionsMeters": [
+        0.02500000037252903,
+        0.02500000037252903,
+        3.4000000953674316
+      ]
+    },
+    {
+      "id": "Hero envelope.008",
+      "featureId": "hero-reserve",
+      "layer": "lower-room",
+      "centerMeters": [
+        -1.7000000476837158,
+        0.0,
+        2.700000047683716
+      ],
+      "dimensionsMeters": [
+        0.02500000037252903,
+        0.02500000037252903,
+        2.4000000953674316
+      ]
+    },
+    {
+      "id": "Hero envelope.009",
+      "featureId": "hero-reserve",
+      "layer": "lower-room",
+      "centerMeters": [
+        1.7000000476837158,
+        0.0,
+        2.700000047683716
+      ],
+      "dimensionsMeters": [
+        0.02500000037252903,
+        0.02500000037252903,
+        2.4000000953674316
+      ]
+    },
+    {
+      "id": "Hero envelope.010",
+      "featureId": "hero-reserve",
+      "layer": "lower-room",
+      "centerMeters": [
+        0.0,
+        -1.2000000476837158,
+        2.700000047683716
+      ],
+      "dimensionsMeters": [
+        0.02500000037252903,
+        0.02500000037252903,
+        3.4000000953674316
+      ]
+    },
+    {
+      "id": "Hero envelope.011",
+      "featureId": "hero-reserve",
+      "layer": "lower-room",
+      "centerMeters": [
+        0.0,
+        1.2000000476837158,
+        2.700000047683716
+      ],
+      "dimensionsMeters": [
+        0.02500000037252903,
+        0.02500000037252903,
+        3.4000000953674316
+      ]
+    },
+    {
+      "id": "North boundary",
+      "featureId": "room-outline",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.0,
+        8.0,
+        0.3499999940395355
+      ],
+      "dimensionsMeters": [
+        4.0,
+        0.15000000596046448,
+        0.699999988079071
+      ]
+    },
+    {
+      "id": "North boundary.001",
+      "featureId": "room-outline",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.0,
+        8.0,
+        0.3499999940395355
+      ],
+      "dimensionsMeters": [
+        4.0,
+        0.15000000596046448,
+        0.699999988079071
+      ]
+    },
+    {
+      "id": "parts-rack armor",
+      "featureId": "parts-rack-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.920000076293945,
+        6.5,
+        1.7699999809265137
+      ],
+      "dimensionsMeters": [
+        0.46000000834465027,
+        0.18000000715255737,
+        0.5199999809265137
+      ]
+    },
+    {
+      "id": "parts-rack armor.001",
+      "featureId": "parts-rack-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.199999809265137,
+        6.5,
+        1.7699999809265137
+      ],
+      "dimensionsMeters": [
+        0.46000000834465027,
+        0.18000000715255737,
+        0.5199999809265137
+      ]
+    },
+    {
+      "id": "parts-rack armor.002",
+      "featureId": "parts-rack-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -4.480000019073486,
+        6.5,
+        1.7699999809265137
+      ],
+      "dimensionsMeters": [
+        0.46000000834465027,
+        0.18000000715255737,
+        0.5199999809265137
+      ]
+    },
+    {
+      "id": "parts-rack joint",
+      "featureId": "parts-rack-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.920000076293945,
+        6.5,
+        1.0299999713897705
+      ],
+      "dimensionsMeters": [
+        0.36000001430511475,
+        0.36000001430511475,
+        0.3499999940395355
+      ]
+    },
+    {
+      "id": "parts-rack joint.001",
+      "featureId": "parts-rack-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.199999809265137,
+        6.5,
+        1.0299999713897705
+      ],
+      "dimensionsMeters": [
+        0.36000001430511475,
+        0.36000001430511475,
+        0.3499999940395355
+      ]
+    },
+    {
+      "id": "parts-rack joint.002",
+      "featureId": "parts-rack-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -4.480000019073486,
+        6.5,
+        1.0299999713897705
+      ],
+      "dimensionsMeters": [
+        0.36000001430511475,
+        0.36000001430511475,
+        0.3499999940395355
+      ]
+    },
+    {
+      "id": "parts-rack post",
+      "featureId": "parts-rack-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -6.28000020980835,
+        6.21999979019165,
+        1.100000023841858
+      ],
+      "dimensionsMeters": [
+        0.11999999731779099,
+        0.11999999731779099,
+        2.200000047683716
+      ]
+    },
+    {
+      "id": "parts-rack post.001",
+      "featureId": "parts-rack-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -6.28000020980835,
+        6.78000020980835,
+        1.100000023841858
+      ],
+      "dimensionsMeters": [
+        0.11999999731779099,
+        0.11999999731779099,
+        2.200000047683716
+      ]
+    },
+    {
+      "id": "parts-rack post.002",
+      "featureId": "parts-rack-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -4.119999885559082,
+        6.21999979019165,
+        1.100000023841858
+      ],
+      "dimensionsMeters": [
+        0.11999999731779099,
+        0.11999999731779099,
+        2.200000047683716
+      ]
+    },
+    {
+      "id": "parts-rack post.003",
+      "featureId": "parts-rack-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -4.119999885559082,
+        6.78000020980835,
+        1.100000023841858
+      ],
+      "dimensionsMeters": [
+        0.11999999731779099,
+        0.11999999731779099,
+        2.200000047683716
+      ]
+    },
+    {
+      "id": "parts-rack rear brace",
+      "featureId": "parts-rack-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.199999809265137,
+        6.800000190734863,
+        1.0999999046325684
+      ],
+      "dimensionsMeters": [
+        0.07500000298023224,
+        0.07500000298023224,
+        2.9732136726379395
+      ]
+    },
+    {
+      "id": "parts-rack shelf",
+      "featureId": "parts-rack-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.199999809265137,
+        6.5,
+        0.07999999821186066
+      ],
+      "dimensionsMeters": [
+        2.4000000953674316,
+        0.699999988079071,
+        0.07999999821186066
+      ]
+    },
+    {
+      "id": "parts-rack shelf.001",
+      "featureId": "parts-rack-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.199999809265137,
+        6.5,
+        0.800000011920929
+      ],
+      "dimensionsMeters": [
+        2.4000000953674316,
+        0.699999988079071,
+        0.07999999821186066
+      ]
+    },
+    {
+      "id": "parts-rack shelf.002",
+      "featureId": "parts-rack-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.199999809265137,
+        6.5,
+        1.5
+      ],
+      "dimensionsMeters": [
+        2.4000000953674316,
+        0.699999988079071,
+        0.07999999821186066
+      ]
+    },
+    {
+      "id": "service-console keyboard",
+      "featureId": "service-console-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.75,
+        -1.7999999523162842,
+        0.9800000190734863
+      ],
+      "dimensionsMeters": [
+        1.100000023841858,
+        0.41999998688697815,
+        0.07999999821186066
+      ]
+    },
+    {
+      "id": "service-console panel",
+      "featureId": "service-console-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.5,
+        -1.7999999523162842,
+        1.1799999475479126
+      ],
+      "dimensionsMeters": [
+        1.2999999523162842,
+        0.15000000596046448,
+        0.5
+      ]
+    },
+    {
+      "id": "service-console pedestal",
+      "featureId": "service-console-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.380000114440918,
+        -1.7999999523162842,
+        0.550000011920929
+      ],
+      "dimensionsMeters": [
+        0.75,
+        0.4000000059604645,
+        0.8999999761581421
+      ]
+    },
+    {
+      "id": "service-console plinth",
+      "featureId": "service-console-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.5,
+        -1.7999999523162842,
+        0.07000000029802322
+      ],
+      "dimensionsMeters": [
+        1.2999999523162842,
+        0.800000011920929,
+        0.14000000059604645
+      ]
+    },
+    {
+      "id": "service-console screen",
+      "featureId": "service-console-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        5.585999965667725,
+        -1.7999999523162842,
+        1.190000057220459
+      ],
+      "dimensionsMeters": [
+        1.0800000429153442,
+        0.02500000037252903,
+        0.30000001192092896
+      ]
+    },
+    {
+      "id": "Side boundary",
+      "featureId": "room-outline",
+      "layer": "lower-room",
+      "centerMeters": [
+        -7.0,
+        0.0,
+        0.3499999940395355
+      ],
+      "dimensionsMeters": [
+        0.15000000596046448,
+        16.0,
+        0.699999988079071
+      ]
+    },
+    {
+      "id": "Side boundary.001",
+      "featureId": "room-outline",
+      "layer": "lower-room",
+      "centerMeters": [
+        7.0,
+        0.0,
+        0.3499999940395355
+      ],
+      "dimensionsMeters": [
+        0.15000000596046448,
+        16.0,
+        0.699999988079071
+      ]
+    },
+    {
+      "id": "South boundary",
+      "featureId": "room-outline",
+      "layer": "lower-room",
+      "centerMeters": [
+        0.0,
+        -8.0,
+        0.3499999940395355
+      ],
+      "dimensionsMeters": [
+        14.0,
+        0.15000000596046448,
+        0.699999988079071
+      ]
+    },
+    {
+      "id": "Staff lane dash",
+      "featureId": "circulation",
+      "layer": "lower-room",
+      "centerMeters": [
+        -2.950000047683716,
+        -6.0,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.054999999701976776,
+        0.6499999761581421,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "Staff lane dash.001",
+      "featureId": "circulation",
+      "layer": "lower-room",
+      "centerMeters": [
+        -2.950000047683716,
+        -4.0,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.054999999701976776,
+        0.6499999761581421,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "Staff lane dash.002",
+      "featureId": "circulation",
+      "layer": "lower-room",
+      "centerMeters": [
+        -2.950000047683716,
+        -2.0,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.054999999701976776,
+        0.6499999761581421,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "Staff lane dash.003",
+      "featureId": "circulation",
+      "layer": "lower-room",
+      "centerMeters": [
+        -2.950000047683716,
+        0.0,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.054999999701976776,
+        0.6499999761581421,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "Staff lane dash.004",
+      "featureId": "circulation",
+      "layer": "lower-room",
+      "centerMeters": [
+        -2.950000047683716,
+        2.0,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.054999999701976776,
+        0.6499999761581421,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "Staff lane dash.005",
+      "featureId": "circulation",
+      "layer": "lower-room",
+      "centerMeters": [
+        -2.950000047683716,
+        4.0,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.054999999701976776,
+        0.6499999761581421,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "Staff lane dash.006",
+      "featureId": "circulation",
+      "layer": "lower-room",
+      "centerMeters": [
+        -2.950000047683716,
+        6.0,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.054999999701976776,
+        0.6499999761581421,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "Staff lane dash.007",
+      "featureId": "circulation",
+      "layer": "lower-room",
+      "centerMeters": [
+        2.950000047683716,
+        -6.0,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.054999999701976776,
+        0.6499999761581421,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "Staff lane dash.008",
+      "featureId": "circulation",
+      "layer": "lower-room",
+      "centerMeters": [
+        2.950000047683716,
+        -4.0,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.054999999701976776,
+        0.6499999761581421,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "Staff lane dash.009",
+      "featureId": "circulation",
+      "layer": "lower-room",
+      "centerMeters": [
+        2.950000047683716,
+        -2.0,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.054999999701976776,
+        0.6499999761581421,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "Staff lane dash.010",
+      "featureId": "circulation",
+      "layer": "lower-room",
+      "centerMeters": [
+        2.950000047683716,
+        0.0,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.054999999701976776,
+        0.6499999761581421,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "Staff lane dash.011",
+      "featureId": "circulation",
+      "layer": "lower-room",
+      "centerMeters": [
+        2.950000047683716,
+        2.0,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.054999999701976776,
+        0.6499999761581421,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "Staff lane dash.012",
+      "featureId": "circulation",
+      "layer": "lower-room",
+      "centerMeters": [
+        2.950000047683716,
+        4.0,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.054999999701976776,
+        0.6499999761581421,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "Staff lane dash.013",
+      "featureId": "circulation",
+      "layer": "lower-room",
+      "centerMeters": [
+        2.950000047683716,
+        6.0,
+        0.007000000216066837
+      ],
+      "dimensionsMeters": [
+        0.054999999701976776,
+        0.6499999761581421,
+        0.012000000104308128
+      ]
+    },
+    {
+      "id": "tool-cart cabinet",
+      "featureId": "tool-cart-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.599999904632568,
+        -1.5,
+        0.6200000047683716
+      ],
+      "dimensionsMeters": [
+        1.149999976158142,
+        0.6000000238418579,
+        0.7799999713897705
+      ]
+    },
+    {
+      "id": "tool-cart drawer",
+      "featureId": "tool-cart-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.909999847412109,
+        -1.5,
+        0.4300000071525574
+      ],
+      "dimensionsMeters": [
+        1.0199999809265137,
+        0.02500000037252903,
+        0.14000000059604645
+      ]
+    },
+    {
+      "id": "tool-cart drawer.001",
+      "featureId": "tool-cart-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.909999847412109,
+        -1.5,
+        0.6399999856948853
+      ],
+      "dimensionsMeters": [
+        1.0199999809265137,
+        0.02500000037252903,
+        0.14000000059604645
+      ]
+    },
+    {
+      "id": "tool-cart drawer.002",
+      "featureId": "tool-cart-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.909999847412109,
+        -1.5,
+        0.8500000238418579
+      ],
+      "dimensionsMeters": [
+        1.0199999809265137,
+        0.02500000037252903,
+        0.14000000059604645
+      ]
+    },
+    {
+      "id": "tool-cart handle",
+      "featureId": "tool-cart-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.940000057220459,
+        -1.5,
+        0.4300000071525574
+      ],
+      "dimensionsMeters": [
+        0.44999998807907104,
+        0.05000000074505806,
+        0.03999999910593033
+      ]
+    },
+    {
+      "id": "tool-cart handle.001",
+      "featureId": "tool-cart-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.940000057220459,
+        -1.5,
+        0.6399999856948853
+      ],
+      "dimensionsMeters": [
+        0.44999998807907104,
+        0.05000000074505806,
+        0.03999999910593033
+      ]
+    },
+    {
+      "id": "tool-cart handle.002",
+      "featureId": "tool-cart-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.940000057220459,
+        -1.5,
+        0.8500000238418579
+      ],
+      "dimensionsMeters": [
+        0.44999998807907104,
+        0.05000000074505806,
+        0.03999999910593033
+      ]
+    },
+    {
+      "id": "tool-cart top",
+      "featureId": "tool-cart-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.599999904632568,
+        -1.5,
+        1.0499999523162842
+      ],
+      "dimensionsMeters": [
+        1.2000000476837158,
+        0.6499999761581421,
+        0.10000000149011612
+      ]
+    },
+    {
+      "id": "tool-cart wheel",
+      "featureId": "tool-cart-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.820000171661377,
+        -1.059999942779541,
+        0.11999999731779099
+      ],
+      "dimensionsMeters": [
+        0.23999999463558197,
+        0.23999999463558197,
+        0.07999999821186066
+      ]
+    },
+    {
+      "id": "tool-cart wheel.001",
+      "featureId": "tool-cart-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.380000114440918,
+        -1.059999942779541,
+        0.11999999731779099
+      ],
+      "dimensionsMeters": [
+        0.23999999463558197,
+        0.23999999463558197,
+        0.07999999821186066
+      ]
+    },
+    {
+      "id": "tool-cart wheel.002",
+      "featureId": "tool-cart-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.820000171661377,
+        -1.940000057220459,
+        0.11999999731779099
+      ],
+      "dimensionsMeters": [
+        0.23999999463558197,
+        0.23999999463558197,
+        0.07999999821186066
+      ]
+    },
+    {
+      "id": "tool-cart wheel.003",
+      "featureId": "tool-cart-1",
+      "layer": "lower-room",
+      "centerMeters": [
+        -5.380000114440918,
+        -1.940000057220459,
+        0.11999999731779099
+      ],
+      "dimensionsMeters": [
+        0.23999999463558197,
+        0.23999999463558197,
+        0.07999999821186066
+      ]
+    },
+    {
+      "id": "West window reference",
+      "featureId": "side-window",
+      "layer": "lower-room",
+      "centerMeters": [
+        -6.699999809265137,
+        2.5,
+        3.200000047683716
+      ],
+      "dimensionsMeters": [
+        0.10000000149011612,
+        3.0,
+        1.7999999523162842
+      ]
+    },
+    {
+      "id": "work-light housing",
+      "featureId": "work-light-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -4.800000190734863,
+        -2.0,
+        7.900000095367432
+      ],
+      "dimensionsMeters": [
+        1.7999999523162842,
+        0.30000001192092896,
+        0.20000000298023224
+      ]
+    },
+    {
+      "id": "work-light housing.001",
+      "featureId": "work-light-2",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        4.800000190734863,
+        -2.0,
+        7.900000095367432
+      ],
+      "dimensionsMeters": [
+        1.7999999523162842,
+        0.30000001192092896,
+        0.20000000298023224
+      ]
+    },
+    {
+      "id": "work-light housing.002",
+      "featureId": "work-light-3",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -4.800000190734863,
+        3.0,
+        7.900000095367432
+      ],
+      "dimensionsMeters": [
+        1.7999999523162842,
+        0.30000001192092896,
+        0.20000000298023224
+      ]
+    },
+    {
+      "id": "work-light housing.003",
+      "featureId": "work-light-4",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        4.800000190734863,
+        3.0,
+        7.900000095367432
+      ],
+      "dimensionsMeters": [
+        1.7999999523162842,
+        0.30000001192092896,
+        0.20000000298023224
+      ]
+    },
+    {
+      "id": "work-light lens",
+      "featureId": "work-light-1",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -4.800000190734863,
+        -2.0,
+        7.806000232696533
+      ],
+      "dimensionsMeters": [
+        1.6399999856948853,
+        0.2199999988079071,
+        0.017999999225139618
+      ]
+    },
+    {
+      "id": "work-light lens.001",
+      "featureId": "work-light-2",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        4.800000190734863,
+        -2.0,
+        7.806000232696533
+      ],
+      "dimensionsMeters": [
+        1.6399999856948853,
+        0.2199999988079071,
+        0.017999999225139618
+      ]
+    },
+    {
+      "id": "work-light lens.002",
+      "featureId": "work-light-3",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        -4.800000190734863,
+        3.0,
+        7.806000232696533
+      ],
+      "dimensionsMeters": [
+        1.6399999856948853,
+        0.2199999988079071,
+        0.017999999225139618
+      ]
+    },
+    {
+      "id": "work-light lens.003",
+      "featureId": "work-light-4",
+      "layer": "reflected-ceiling",
+      "centerMeters": [
+        4.800000190734863,
+        3.0,
+        7.806000232696533
+      ],
+      "dimensionsMeters": [
+        1.6399999856948853,
+        0.2199999988079071,
+        0.017999999225139618
+      ]
+    }
+  ],
+  "barriers": "No freestanding rail barriers proposed; gantry posts and room shell define bay boundaries",
+  "cutouts": "North bay door and two symmetric side windows; masks and final Boolean schedule in openings.json",
+  "heroReserve": {
+    "center": [
+      0,
+      0,
+      0
+    ],
+    "bayFootprint": [
+      6,
+      7
+    ],
+    "displayProxy": [
+      3.4,
+      2.4,
+      2.7
+    ],
+    "source": "Task R1 dimensions, not runtime model fit"
+  }
+}

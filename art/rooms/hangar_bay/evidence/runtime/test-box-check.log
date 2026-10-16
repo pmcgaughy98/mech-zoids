@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+room_check: test_box
+  ok    the room loads (art/rooms/test_box/test_box.glb)
+  ok    room size 14.0 wide, 8.4 high, 16.0 deep (m)
+  ok    a mesh named floor* has its top at the origin (top 0.00)
+  ok    the machine stands inside the room (machine 3.1 x 2.8 x 3.0 at y 0.00)
+  ok    the room is within budget (108 of 40000 triangles)
+  ok    every surface has the metal finish (11 of 11)
+room_check: PASS

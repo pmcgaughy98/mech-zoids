@@ -1,0 +1,137 @@
+{
+ "size": [
+  155,
+  132
+ ],
+ "feet_y": 127,
+ "clips": {
+  "idle": {
+   "frames": [
+    "idle/0.png",
+    "idle/1.png",
+    "idle/2.png",
+    "idle/3.png"
+   ],
+   "ms": [
+    450,
+    450,
+    450,
+    450
+   ],
+   "loop": "pingpong",
+   "strike": -1
+  },
+  "rake": {
+   "frames": [
+    "rake/0.png",
+    "rake/1.png",
+    "rake/2.png",
+    "rake/3.png",
+    "rake/4.png",
+    "rake/5.png",
+    "rake/6.png",
+    "rake/7.png",
+    "rake/8.png"
+   ],
+   "ms": [
+    150,
+    150,
+    180,
+    250,
+    50,
+    50,
+    120,
+    130,
+    200
+   ],
+   "loop": "once",
+   "strike": 5
+  },
+  "shot": {
+   "frames": [
+    "shot/0.png",
+    "shot/1.png",
+    "shot/2.png",
+    "shot/3.png",
+    "shot/4.png",
+    "shot/5.png",
+    "shot/6.png",
+    "shot/7.png",
+    "shot/8.png"
+   ],
+   "ms": [
+    150,
+    150,
+    180,
+    250,
+    50,
+    50,
+    120,
+    130,
+    200
+   ],
+   "loop": "once",
+   "strike": 5
+  },
+  "roll": {
+   "frames": [
+    "roll/0.png",
+    "roll/1.png",
+    "roll/2.png",
+    "roll/3.png",
+    "roll/4.png",
+    "roll/5.png",
+    "roll/6.png",
+    "roll/7.png",
+    "roll/8.png"
+   ],
+   "ms": [
+    150,
+    150,
+    180,
+    250,
+    50,
+    50,
+    120,
+    130,
+    200
+   ],
+   "loop": "once",
+   "strike": 5
+  },
+  "hit": {
+   "frames": [
+    "hit/0.png",
+    "hit/1.png",
+    "hit/2.png"
+   ],
+   "ms": [
+    60,
+    120,
+    150
+   ],
+   "loop": "once",
+   "strike": -1
+  },
+  "death": {
+   "frames": [
+    "death/0.png",
+    "death/1.png",
+    "death/2.png",
+    "death/3.png",
+    "death/4.png",
+    "death/5.png"
+   ],
+   "ms": [
+    80,
+    100,
+    130,
+    180,
+    250,
+    400
+   ],
+   "loop": "once",
+   "strike": -1
+  }
+ }
+}

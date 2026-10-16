@@ -1,0 +1,74 @@
+{
+  "roomId": "hangar-bay",
+  "fixtures": [
+    {
+      "id": "work-light-1",
+      "location": [
+        -4.8,
+        -2,
+        7.78
+      ],
+      "orientation": "negative-z",
+      "blenderPreviewWatts": 200,
+      "color": [
+        1,
+        0.83,
+        0.6
+      ],
+      "runtimeMethod": "Static baked baseline; calibrated Godot sun .2 and ambient .6 preserved"
+    },
+    {
+      "id": "work-light-2",
+      "location": [
+        4.8,
+        -2,
+        7.78
+      ],
+      "orientation": "negative-z",
+      "blenderPreviewWatts": 200,
+      "color": [
+        1,
+        0.83,
+        0.6
+      ],
+      "runtimeMethod": "Static baked baseline; calibrated Godot sun .2 and ambient .6 preserved"
+    },
+    {
+      "id": "work-light-3",
+      "location": [
+        -4.8,
+        3,
+        7.78
+      ],
+      "orientation": "negative-z",
+      "blenderPreviewWatts": 200,
+      "color": [
+        1,
+        0.83,
+        0.6
+      ],
+      "runtimeMethod": "Static baked baseline; calibrated Godot sun .2 and ambient .6 preserved"
+    },
+    {
+      "id": "work-light-4",
+      "location": [
+        4.8,
+        3,
+        7.78
+      ],
+      "orientation": "negative-z",
+      "blenderPreviewWatts": 200,
+      "color": [
+        1,
+        0.83,
+        0.6
+      ],
+      "runtimeMethod": "Static baked baseline; calibrated Godot sun .2 and ambient .6 preserved"
+    }
+  ],
+  "godotCalibration": {
+    "sun": 0.2,
+    "ambientFill": 0.6
+  },
+  "previewFillIsNotRuntimeCalibration": true
+}

@@ -1,0 +1,117 @@
+{
+  "schema": "game-room.room-brief.v1",
+  "roomId": "hangar-bay",
+  "family": "display-gallery",
+  "purpose": "Home maintenance hangar presenting the selected animal machine between missions; Function proposal, nothing here is canon",
+  "runtimeSurface": "Godot 4.7.2 future scenes/rooms/hangar_bay.tscn; existing 2D base unchanged",
+  "boundsMeters": [
+    14,
+    16,
+    8
+  ],
+  "hero": {
+    "id": "ape_l",
+    "role": "Machine in central maintenance cradle, at origin facing -Y (camera)",
+    "reservedBoundsMeters": [
+      6,
+      7,
+      5.5
+    ]
+  },
+  "symmetry": {
+    "mode": "bilateral",
+    "order": 2,
+    "appliesTo": [
+      "architecture",
+      "barriers",
+      "circulation",
+      "repeatedProps"
+    ],
+    "exceptions": [
+      "Tool cart on west, console on east: mechanic and pilot stations differ in function",
+      "Parts rack west and coolant tanks east: different service jobs; both outside reserve",
+      "Gantry trolley parked rear-left for clear hero silhouette"
+    ]
+  },
+  "circulation": {
+    "description": "Two 1.2m staff lanes at x=+/-2.95m, beside the parked machine and inside the gantry posts, from south approach to north 6m bay door and 4m apron. Machine remains parked during base interactions.",
+    "minimumClearanceMeters": 1.2,
+    "centerLines": [
+      [
+        [
+          -2.95,
+          -6,
+          0
+        ],
+        [
+          -2.95,
+          6,
+          0
+        ]
+      ],
+      [
+        [
+          2.95,
+          -6,
+          0
+        ],
+        [
+          2.95,
+          6,
+          0
+        ]
+      ]
+    ]
+  },
+  "productionCamera": {
+    "viewport": [
+      320,
+      180
+    ],
+    "location": [
+      14,
+      -23,
+      17
+    ],
+    "target": [
+      0,
+      1,
+      3
+    ],
+    "verticalFovDegrees": 56
+  },
+  "performanceBudget": {
+    "maxSceneTriangles": 40000,
+    "maxVLowBytes": 8000000,
+    "maxHighTextureBytes": 4194304
+  },
+  "creditBudget": {
+    "maximumCredits": 0,
+    "approvalRequired": true
+  },
+  "environment": {
+    "type": "none",
+    "identity": "",
+    "source": "",
+    "assignmentKey": ""
+  },
+  "artifacts": {
+    "floorPlan": "plans/lower-room.png",
+    "reflectedCeilingPlan": "plans/reflected-ceiling.png",
+    "planMetadata": "plan-metadata.json",
+    "wallElevations": [
+      "plans/elevation-north.png",
+      "plans/elevation-south.png",
+      "plans/elevation-east.png",
+      "plans/elevation-west.png"
+    ],
+    "visualTarget": "renders/function-visual-target.png",
+    "openingContactSheet": "masks/opening-contact-sheet.png"
+  },
+  "lightingContract": {
+    "sunEnergy": 0.2,
+    "ambientFillEnergy": 0.6,
+    "notes": "Calibrated Godot values retained at Runtime; Blender Workbench preview does not prove lighting parity"
+  },
+  "heroModelPath": "res://art/machines/ape_l/ape_l.glb"
+}

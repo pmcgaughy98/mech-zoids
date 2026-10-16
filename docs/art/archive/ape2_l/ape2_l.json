@@ -1,0 +1,71 @@
+{
+ "note": "Factory gorilla palette (Claude, 2026-10-12): Preston's Gorilla type colours (4a7a3c, 2c4a2a, a8763e, teal), ramps taken from the approved ape_l slot palette, with every factory lesson: edge floors, no extra top rim on the main family, dither, despeckle on all families, grey capped and not matched to the master (the master is the gorilla, so green and orange keep the match).",
+ "families": {
+  "green": {
+   "hue": [
+    0.2,
+    0.42
+   ],
+   "min_sat": 0.25,
+   "ramp": [
+    "1f2a1b",
+    "303e29",
+    "3b5a31",
+    "4c713c",
+    "598644",
+    "6c9b4a",
+    "79ac54",
+    "9fc96f"
+   ],
+   "extra_top": [
+    "b3d686"
+   ],
+   "edge_floor": 1,
+   "top_rim": 0,
+   "dither": 0.6,
+   "despeckle": true
+  },
+  "orange": {
+   "hue": [
+    0.05,
+    0.14
+   ],
+   "min_sat": 0.35,
+   "ramp": [
+    "4a2f17",
+    "704c2b",
+    "8c5626",
+    "aa692c",
+    "d4853b",
+    "eba655",
+    "f6c27c"
+   ],
+   "edge_floor": 1,
+   "dither": 0.6,
+   "despeckle": true
+  },
+  "grey": {
+   "ramp": [
+    "181f1c",
+    "2a2c31",
+    "3f3e43",
+    "4c4b52",
+    "5a585f",
+    "69686f",
+    "828188"
+   ],
+   "gamma": 1.1,
+   "match_style": false,
+   "edge_floor": 2,
+   "dither": 0.6,
+   "despeckle": true
+  },
+  "teal": {
+   "ramp": [
+    "1f6e66",
+    "5fe1d0",
+    "bff7ef"
+   ]
+  }
+ }
+}

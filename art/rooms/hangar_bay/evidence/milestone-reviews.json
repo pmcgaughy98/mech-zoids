@@ -1,0 +1,44 @@
+{
+  "schema": "game-room.milestone-reviews.v1",
+  "roomId": "hangar-bay",
+  "function": {
+    "status": "approved",
+    "approvedBy": "Preston",
+    "approvedAt": "2026-10-12 01:04:21 UTC",
+    "evidence": [
+      "plans/lower-room.png",
+      "plans/reflected-ceiling.png",
+      "images/prop-contact-sheet.png",
+      "masks/opening-contact-sheet.png",
+      "renders/function-visual-target.png"
+    ],
+    "strangestElement": "The teal wire box is only the measured hero reserve; it promises no finished machine or runtime interaction. Actual ape fit belongs to Form.",
+    "notes": "User said 'next' after being asked to approve the Function layout, eight prop references, and three openings. Free procedural route; no paid spend."
+  },
+  "form": {
+    "status": "approved",
+    "approvedBy": "Preston",
+    "approvedAt": "2026-10-12 14:17:45 UTC",
+    "evidence": [
+      "renders/form-production.png",
+      "form-audit.json",
+      "renders/form-corner-south-west.png",
+      "renders/form-corner-south-east.png",
+      "renders/form-corner-north-west.png",
+      "renders/form-corner-north-east.png",
+      "renders/form-ceiling-center-up.png",
+      "renders/form-ceiling-south-oblique.png",
+      "renders/form-ceiling-north-oblique.png"
+    ],
+    "strangestElement": "The machine is in a tall sparse crane bay, not a showroom pedestal; overhead service fixtures must remain readable without hiding its face.",
+    "notes": "Preston said 'next' after the Form review and explicit export approval request. Free procedural shell/props; no paid generation. Authorized room export and Godot Runtime checks."
+  },
+  "runtime": {
+    "status": "pending",
+    "approvedBy": "",
+    "approvedAt": "",
+    "evidence": ["runtime/godot-production.png", "runtime/godot-check.json", "runtime/geometry-check.json", "runtime/export-audit.json", "runtime/hard-edges.txt"],
+    "strangestElement": "The overhead crane is larger than the parked machine, but promises a service lift rather than another hero; its cable now clears the production-camera silhouette.",
+    "notes": "Godot room_check PASS with the current machine at 320x180; 3280 room / 20782 scene triangles. Largest structural mesh has 100% crisp hard edges. Code-painted atlas and baked AO; native stage uses real-time metal lighting. Await explicit human Runtime approval."
+  }
+}

@@ -1,0 +1,16 @@
+Unmodified Build 3D Game Rooms validator, --gate form, 2026-10-12.
+Exit code: 1. Approval pending; procedural-route incompatibilities preserved.
+
+FAIL: props.json: generation must use Meshy model meshy-5
+FAIL: props.json: positive creditsPerTexturedTask is required
+FAIL: props.json: hardCreditCeiling must be positive and no greater than the room credit budget
+FAIL: Form gate: explicit approval is required
+FAIL: final-report.json: gates.form must be true
+FAIL: Form gate: prop gantry-crane requires an accepted, hashed Meshy GLB
+FAIL: Form gate: prop tool-cart requires an accepted, hashed Meshy GLB
+FAIL: Form gate: prop parts-rack requires an accepted, hashed Meshy GLB
+FAIL: Form gate: prop ballast-pallet requires an accepted, hashed Meshy GLB
+FAIL: Form gate: prop coolant-tanks requires an accepted, hashed Meshy GLB
+FAIL: Form gate: prop service-console requires an accepted, hashed Meshy GLB
+FAIL: Form gate: prop cable-tray requires an accepted, hashed Meshy GLB
+FAIL: Form gate: prop work-light requires an accepted, hashed Meshy GLB

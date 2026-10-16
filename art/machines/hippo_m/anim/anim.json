@@ -1,0 +1,137 @@
+{
+ "size": [
+  134,
+  90
+ ],
+ "feet_y": 83,
+ "clips": {
+  "idle": {
+   "frames": [
+    "idle/0.png",
+    "idle/1.png",
+    "idle/2.png",
+    "idle/3.png"
+   ],
+   "ms": [
+    450,
+    450,
+    450,
+    450
+   ],
+   "loop": "pingpong",
+   "strike": -1
+  },
+  "gape": {
+   "frames": [
+    "gape/0.png",
+    "gape/1.png",
+    "gape/2.png",
+    "gape/3.png",
+    "gape/4.png",
+    "gape/5.png",
+    "gape/6.png",
+    "gape/7.png",
+    "gape/8.png"
+   ],
+   "ms": [
+    150,
+    150,
+    180,
+    250,
+    50,
+    50,
+    120,
+    130,
+    200
+   ],
+   "loop": "once",
+   "strike": 5
+  },
+  "jets": {
+   "frames": [
+    "jets/0.png",
+    "jets/1.png",
+    "jets/2.png",
+    "jets/3.png",
+    "jets/4.png",
+    "jets/5.png",
+    "jets/6.png",
+    "jets/7.png",
+    "jets/8.png"
+   ],
+   "ms": [
+    150,
+    150,
+    180,
+    250,
+    50,
+    50,
+    120,
+    130,
+    200
+   ],
+   "loop": "once",
+   "strike": 5
+  },
+  "charge": {
+   "frames": [
+    "charge/0.png",
+    "charge/1.png",
+    "charge/2.png",
+    "charge/3.png",
+    "charge/4.png",
+    "charge/5.png",
+    "charge/6.png",
+    "charge/7.png",
+    "charge/8.png"
+   ],
+   "ms": [
+    150,
+    150,
+    180,
+    250,
+    50,
+    50,
+    120,
+    130,
+    200
+   ],
+   "loop": "once",
+   "strike": 5
+  },
+  "hit": {
+   "frames": [
+    "hit/0.png",
+    "hit/1.png",
+    "hit/2.png"
+   ],
+   "ms": [
+    60,
+    120,
+    150
+   ],
+   "loop": "once",
+   "strike": -1
+  },
+  "death": {
+   "frames": [
+    "death/0.png",
+    "death/1.png",
+    "death/2.png",
+    "death/3.png",
+    "death/4.png",
+    "death/5.png"
+   ],
+   "ms": [
+    80,
+    100,
+    130,
+    180,
+    250,
+    400
+   ],
+   "loop": "once",
+   "strike": -1
+  }
+ }
+}

@@ -1,0 +1,137 @@
+{
+ "size": [
+  110,
+  120
+ ],
+ "feet_y": 116,
+ "clips": {
+  "idle": {
+   "frames": [
+    "idle/0.png",
+    "idle/1.png",
+    "idle/2.png",
+    "idle/3.png"
+   ],
+   "ms": [
+    450,
+    450,
+    450,
+    450
+   ],
+   "loop": "pingpong",
+   "strike": -1
+  },
+  "clamp": {
+   "frames": [
+    "clamp/0.png",
+    "clamp/1.png",
+    "clamp/2.png",
+    "clamp/3.png",
+    "clamp/4.png",
+    "clamp/5.png",
+    "clamp/6.png",
+    "clamp/7.png",
+    "clamp/8.png"
+   ],
+   "ms": [
+    150,
+    150,
+    180,
+    250,
+    50,
+    50,
+    120,
+    130,
+    200
+   ],
+   "loop": "once",
+   "strike": 5
+  },
+  "lance": {
+   "frames": [
+    "lance/0.png",
+    "lance/1.png",
+    "lance/2.png",
+    "lance/3.png",
+    "lance/4.png",
+    "lance/5.png",
+    "lance/6.png",
+    "lance/7.png",
+    "lance/8.png"
+   ],
+   "ms": [
+    150,
+    150,
+    180,
+    250,
+    50,
+    50,
+    120,
+    130,
+    200
+   ],
+   "loop": "once",
+   "strike": 5
+  },
+  "buffet": {
+   "frames": [
+    "buffet/0.png",
+    "buffet/1.png",
+    "buffet/2.png",
+    "buffet/3.png",
+    "buffet/4.png",
+    "buffet/5.png",
+    "buffet/6.png",
+    "buffet/7.png",
+    "buffet/8.png"
+   ],
+   "ms": [
+    150,
+    150,
+    180,
+    250,
+    50,
+    50,
+    120,
+    130,
+    200
+   ],
+   "loop": "once",
+   "strike": 5
+  },
+  "hit": {
+   "frames": [
+    "hit/0.png",
+    "hit/1.png",
+    "hit/2.png"
+   ],
+   "ms": [
+    60,
+    120,
+    150
+   ],
+   "loop": "once",
+   "strike": -1
+  },
+  "death": {
+   "frames": [
+    "death/0.png",
+    "death/1.png",
+    "death/2.png",
+    "death/3.png",
+    "death/4.png",
+    "death/5.png"
+   ],
+   "ms": [
+    80,
+    100,
+    130,
+    180,
+    250,
+    400
+   ],
+   "loop": "once",
+   "strike": -1
+  }
+ }
+}

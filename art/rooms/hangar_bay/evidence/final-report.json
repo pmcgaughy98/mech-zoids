@@ -1,0 +1,81 @@
+{
+  "schema": "game-room.room-final-report.v1",
+  "roomId": "hangar-bay",
+  "gates": {
+    "function": true,
+    "form": true,
+    "runtime": false
+  },
+  "formChecks": {
+    "floorPlanParity": true,
+    "primaryArrival": true,
+    "symmetry": true,
+    "shell": true,
+    "manifold": true,
+    "booleans": true,
+    "collisions": true,
+    "support": true,
+    "attachmentOrientation": true,
+    "ceilingAttachmentOrientation": true,
+    "seatingOrientation": true,
+    "focalDistribution": true,
+    "heroClearance": true,
+    "colonnades": true,
+    "screenClearance": true,
+    "scale": true,
+    "camera": true,
+    "ceilingCoverage": true,
+    "environmentCoverage": true,
+    "provenance": true
+  },
+  "reviewRenders": {
+    "corners": [
+      "renders/form-corner-south-west.png",
+      "renders/form-corner-south-east.png",
+      "renders/form-corner-north-west.png",
+      "renders/form-corner-north-east.png"
+    ],
+    "ceiling": [
+      "renders/form-ceiling-center-up.png",
+      "renders/form-ceiling-south-oblique.png",
+      "renders/form-ceiling-north-oblique.png"
+    ],
+    "environment": {}
+  },
+  "runtimeChecks": {
+    "vlow": true,
+    "textureTiers": true,
+    "lightmap": false,
+    "lightingManifest": true,
+    "performance": true,
+    "browserCapture": "runtime/godot-production.png",
+    "nativeGodotCheck": "runtime/godot-check.json",
+    "exportGeometryCheck": "runtime/geometry-check.json",
+    "adapter": "runtime/native-adapter.json",
+    "budgetScope": "Triangle and asset-byte budgets only; no handheld hardware benchmark",
+    "errors": []
+  },
+  "postmortem": {
+    "observations": [
+      "The authored door faced opposite the native stage contract; rotating exported room geometry 180 degrees aligns it with Godot +Z",
+      "Canvas-items stretching did not force a low-resolution 3D scene; the room stage now uses a scoped 320x180 viewport stretch",
+      "Current machine fit differs from the immutable Form snapshot; all Runtime evidence pins the actual current model hash"
+    ],
+    "corrections": [
+      "Excluded Blender-importer-generated bone-display Icosphere from staged hero bounds and geometry; source GLB unchanged",
+      "Center-up camera moved above hero to show actual ceiling",
+      "Reduced preview fixture/fill intensity to preserve material separation",
+      "Production camera moved inside sealed shell while retaining high three-quarter view",
+      "Runtime camera x changed from 4.8 to 3.8 m to clear crane cable from current machine; zero of 375 front-surface samples occluded",
+      "Code-painted panel tiles and baked room-only AO into 2048px colour/ORM/emission atlases",
+      "Runtime fixture locations derive from the authoring manifest; previous test-box lighting preserved"
+    ],
+    "remainingRisks": [
+      "Runtime approval pending",
+      "Full animation envelopes, gameplay collision/navigation and handheld performance remain unverified",
+      "Bundled validator assumes Meshy/web assets and a static lightmap; native task contract uses procedural geometry, one texture tier, baked AO and real-time metal lighting",
+      "Godot reports a Windows root-certificate-store warning; local loading, rendering, checks and evidence capture pass"
+    ]
+  },
+  "proposedLessons": []
+}

@@ -1,0 +1,83 @@
+{
+ "machine": "kangaroo_m",
+ "weapons": [
+  {
+   "slot": "rockets",
+   "move": null,
+   "draft": true,
+   "kind": "missile_pod",
+   "note": "spare: a 3x2 rocket pod on the right shoulder",
+   "parts": [
+    "wpn_rockets_box",
+    "wpn_rockets_rim00",
+    "wpn_rockets_rim01",
+    "wpn_rockets_rim10",
+    "wpn_rockets_rim11",
+    "wpn_rockets_rim20",
+    "wpn_rockets_rim21",
+    "wpn_rockets_tube00",
+    "wpn_rockets_tube01",
+    "wpn_rockets_tube10",
+    "wpn_rockets_tube11",
+    "wpn_rockets_tube20",
+    "wpn_rockets_tube21"
+   ],
+   "muzzles": [
+    [
+     -0.707,
+     -0.244,
+     1.961
+    ],
+    [
+     -0.557,
+     -0.244,
+     1.961
+    ],
+    [
+     -0.707,
+     -0.213,
+     2.077
+    ],
+    [
+     -0.557,
+     -0.213,
+     2.077
+    ],
+    [
+     -0.707,
+     -0.182,
+     2.193
+    ],
+    [
+     -0.557,
+     -0.182,
+     2.193
+    ]
+   ]
+  },
+  {
+   "slot": "shgun",
+   "move": null,
+   "draft": true,
+   "kind": "gatling",
+   "note": "spare: a rotary gun on the left shoulder",
+   "parts": [
+    "wpn_shgun_barrel0",
+    "wpn_shgun_barrel1",
+    "wpn_shgun_barrel2",
+    "wpn_shgun_barrel3",
+    "wpn_shgun_barrel4",
+    "wpn_shgun_barrel5",
+    "wpn_shgun_collar",
+    "wpn_shgun_drum"
+   ],
+   "muzzles": [
+    [
+     0.588,
+     -0.734,
+     2.073
+    ]
+   ]
+  }
+ ]
+}

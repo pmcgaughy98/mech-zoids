@@ -1,0 +1,70 @@
+{
+ "note": "First gorilla (ape_l) factory-pass palette (Claude, 2026-10-12): its own approved ramps (views.json), run through the palette-driven pixelizer so it gets the factory treatment (dither, despeckle, shadow in its own greys, edge floors). Green and orange keep the match to Preston's master; grey is capped and unmatched. Candidate only until Preston compares. fp2: edge floors removed (fp1 lost the dark outline, near-black edges 21% to 2-4%).",
+ "families": {
+  "green": {
+   "hue": [
+    0.2,
+    0.42
+   ],
+   "min_sat": 0.25,
+   "ramp": [
+    "1f2a1b",
+    "303e29",
+    "3b5a31",
+    "4c713c",
+    "598644",
+    "6c9b4a",
+    "79ac54",
+    "9fc96f"
+   ],
+   "extra_top": [
+    "b3d686"
+   ],
+   "dither": 0.45,
+   "despeckle": true
+  },
+  "orange": {
+   "hue": [
+    0.05,
+    0.14
+   ],
+   "min_sat": 0.35,
+   "ramp": [
+    "4a2f17",
+    "704c2b",
+    "8c5626",
+    "aa692c",
+    "d4853b",
+    "eba655",
+    "f6c27c"
+   ],
+   "dither": 0.45,
+   "despeckle": true
+  },
+  "grey": {
+   "ramp": [
+    "181f1c",
+    "2a2c31",
+    "3f3e43",
+    "4c4b52",
+    "5a585f",
+    "69686f",
+    "828188"
+   ],
+   "extra_top": [
+    "9a9aa2"
+   ],
+   "gamma": 1.1,
+   "match_style": false,
+   "dither": 0.45,
+   "despeckle": true
+  },
+  "teal": {
+   "ramp": [
+    "1f6e66",
+    "5fe1d0",
+    "bff7ef"
+   ]
+  }
+ }
+}

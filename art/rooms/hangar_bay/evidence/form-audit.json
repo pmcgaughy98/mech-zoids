@@ -1,0 +1,484 @@
+{
+  "roomId": "hangar-bay",
+  "phase": "Form",
+  "trianglesIncludingHeroAndExterior": 18656,
+  "budget": 40000,
+  "withinBudget": true,
+  "heroSourceSha256": "113e282db206b21d042da91e29496c21d1e1127d7ccb5170d09fcbf7894fa3a3",
+  "heroSnapshot": "../source/hero-fit-113e282db206.glb",
+  "heroSourceMatchesStagedSnapshot": false,
+  "originalHeroSourceWrittenByRoomBuilder": false,
+  "excludedImporterHelpers": [
+    "Icosphere"
+  ],
+  "heroBoundsMeters": [
+    [
+      -1.5700000524520874,
+      -1.8612496852874756,
+      0.0
+    ],
+    [
+      1.5700002908706665,
+      1.1900004148483276,
+      2.693593978881836
+    ]
+  ],
+  "heroFloorCorrectionMeters": -6.216929477886879e-07,
+  "heroFloorGapMeters": 0.0,
+  "heroInsideBay": true,
+  "heroProductionFrame": {
+    "left": 0.373188,
+    "right": 0.583938,
+    "bottom": 0.22205,
+    "top": 0.637777,
+    "pixelWidth320": 67.4,
+    "pixelHeight180": 74.8
+  },
+  "shell": [
+    {
+      "id": "floor",
+      "manifold": true,
+      "nonManifoldEdges": 0
+    },
+    {
+      "id": "ceiling",
+      "manifold": true,
+      "nonManifoldEdges": 0
+    },
+    {
+      "id": "north",
+      "manifold": true,
+      "nonManifoldEdges": 0
+    },
+    {
+      "id": "south",
+      "manifold": true,
+      "nonManifoldEdges": 0
+    },
+    {
+      "id": "west",
+      "manifold": true,
+      "nonManifoldEdges": 0
+    },
+    {
+      "id": "east",
+      "manifold": true,
+      "nonManifoldEdges": 0
+    }
+  ],
+  "openings": [
+    {
+      "id": "bay-door",
+      "clearRays": 9,
+      "rays": 9,
+      "clear": true,
+      "apertureMeters": [
+        6,
+        5
+      ],
+      "destinationDepthMeters": 4
+    },
+    {
+      "id": "west-window",
+      "clearRays": 9,
+      "rays": 9,
+      "clear": true,
+      "apertureMeters": [
+        3,
+        1.8
+      ],
+      "destinationDepthMeters": 3.5
+    },
+    {
+      "id": "east-window",
+      "clearRays": 9,
+      "rays": 9,
+      "clear": true,
+      "apertureMeters": [
+        3,
+        1.8
+      ],
+      "destinationDepthMeters": 3.5
+    }
+  ],
+  "booleans": [
+    {
+      "id": "bay-door",
+      "wall": "Shell north",
+      "solver": "EXACT",
+      "applied": true,
+      "sourceMaskSha256": "e7c8823881fccaf08da4e0826a8cfe1b72384e3bfcc540e5dfb897eb40072554"
+    },
+    {
+      "id": "west-window",
+      "wall": "Shell west",
+      "solver": "EXACT",
+      "applied": true,
+      "sourceMaskSha256": "fc59868d8508666ca291a6ae0fb7281830d56bbe5407c3e92d003f89976e4857"
+    },
+    {
+      "id": "east-window",
+      "wall": "Shell east",
+      "solver": "EXACT",
+      "applied": true,
+      "sourceMaskSha256": "fc59868d8508666ca291a6ae0fb7281830d56bbe5407c3e92d003f89976e4857"
+    }
+  ],
+  "supports": [
+    {
+      "id": "gantry-crane-1",
+      "attachment": "freestanding",
+      "supportGapMeters": 0.0,
+      "supported": true,
+      "bounds": [
+        [
+          -4.375,
+          -3.9750001430511475,
+          0.0
+        ],
+        [
+          4.375,
+          3.9750001430511475,
+          6.5
+        ]
+      ]
+    },
+    {
+      "id": "tool-cart-1",
+      "attachment": "floor",
+      "supportGapMeters": 0.0,
+      "supported": true,
+      "bounds": [
+        [
+          -5.965000152587891,
+          -2.1000001430511475,
+          -1.7484554915014883e-09
+        ],
+        [
+          -5.260000228881836,
+          -0.8999999761581421,
+          1.0999999046325684
+        ]
+      ]
+    },
+    {
+      "id": "parts-rack-1",
+      "attachment": "floor",
+      "supportGapMeters": 0.0,
+      "supported": true,
+      "bounds": [
+        [
+          -6.399999618530273,
+          6.150000095367432,
+          0.0
+        ],
+        [
+          -3.999999761581421,
+          6.849999904632568,
+          2.200000047683716
+        ]
+      ]
+    },
+    {
+      "id": "ballast-pallet-1",
+      "attachment": "floor",
+      "supportGapMeters": 0.0,
+      "supported": true,
+      "bounds": [
+        [
+          -6.300000190734863,
+          3.5999999046325684,
+          0.0
+        ],
+        [
+          -4.5,
+          4.799999713897705,
+          0.8500000238418579
+        ]
+      ]
+    },
+    {
+      "id": "ballast-pallet-2",
+      "attachment": "floor",
+      "supportGapMeters": 0.0,
+      "supported": true,
+      "bounds": [
+        [
+          4.5,
+          3.5999999046325684,
+          0.0
+        ],
+        [
+          6.300000190734863,
+          4.799999713897705,
+          0.8500000238418579
+        ]
+      ]
+    },
+    {
+      "id": "coolant-tanks-1",
+      "attachment": "floor",
+      "supportGapMeters": 0.0,
+      "supported": true,
+      "bounds": [
+        [
+          5.100000381469727,
+          6.0,
+          0.0
+        ],
+        [
+          6.5,
+          6.800000190734863,
+          1.600000023841858
+        ]
+      ]
+    },
+    {
+      "id": "service-console-1",
+      "attachment": "floor",
+      "supportGapMeters": 0.0,
+      "supported": true,
+      "bounds": [
+        [
+          5.099999904632568,
+          -2.450000047683716,
+          0.0
+        ],
+        [
+          5.960000038146973,
+          -1.149999976158142,
+          1.4258419275283813
+        ]
+      ]
+    },
+    {
+      "id": "cable-tray-1",
+      "attachment": "ceiling",
+      "supportGapMeters": 0.0,
+      "supported": true,
+      "bounds": [
+        [
+          -6.525000095367432,
+          -2.0,
+          7.819999694824219
+        ],
+        [
+          -6.074999809265137,
+          2.0,
+          8.0
+        ]
+      ]
+    },
+    {
+      "id": "cable-tray-2",
+      "attachment": "ceiling",
+      "supportGapMeters": 0.0,
+      "supported": true,
+      "bounds": [
+        [
+          6.075000286102295,
+          -2.0,
+          7.819999694824219
+        ],
+        [
+          6.52500057220459,
+          2.0,
+          8.0
+        ]
+      ]
+    },
+    {
+      "id": "work-light-1",
+      "attachment": "ceiling",
+      "supportGapMeters": 0.0,
+      "supported": true,
+      "bounds": [
+        [
+          -5.700000286102295,
+          -2.1500000953674316,
+          7.797000408172607
+        ],
+        [
+          -3.9000000953674316,
+          -1.850000023841858,
+          8.0
+        ]
+      ]
+    },
+    {
+      "id": "work-light-2",
+      "attachment": "ceiling",
+      "supportGapMeters": 0.0,
+      "supported": true,
+      "bounds": [
+        [
+          3.9000000953674316,
+          -2.1500000953674316,
+          7.797000408172607
+        ],
+        [
+          5.700000286102295,
+          -1.850000023841858,
+          8.0
+        ]
+      ]
+    },
+    {
+      "id": "work-light-3",
+      "attachment": "ceiling",
+      "supportGapMeters": 0.0,
+      "supported": true,
+      "bounds": [
+        [
+          -5.700000286102295,
+          2.8499999046325684,
+          7.797000408172607
+        ],
+        [
+          -3.9000000953674316,
+          3.1500000953674316,
+          8.0
+        ]
+      ]
+    },
+    {
+      "id": "work-light-4",
+      "attachment": "ceiling",
+      "supportGapMeters": 0.0,
+      "supported": true,
+      "bounds": [
+        [
+          3.9000000953674316,
+          2.8499999046325684,
+          7.797000408172607
+        ],
+        [
+          5.700000286102295,
+          3.1500000953674316,
+          8.0
+        ]
+      ]
+    }
+  ],
+  "runtimeVerified": false,
+  "note": "Blender lighting is Form preview only; calibrated Godot shading/color parity belongs to Runtime. Machine fit is pinned to the recorded immutable snapshot; live machine revisions require a fresh Runtime check.",
+  "independentPropsBVH": {
+    "pairsTested": 91,
+    "collisions": [],
+    "passed": true
+  },
+  "ceilingAttachments": [
+    {
+      "id": "cable-tray-1",
+      "shortestDimensionAxis": "z",
+      "supportDistanceMeters": 0.0,
+      "shortAxisNormalDot": 1.0,
+      "attached": true,
+      "largestFaceParallelToCeiling": true
+    },
+    {
+      "id": "cable-tray-2",
+      "shortestDimensionAxis": "z",
+      "supportDistanceMeters": 0.0,
+      "shortAxisNormalDot": 1.0,
+      "attached": true,
+      "largestFaceParallelToCeiling": true
+    },
+    {
+      "id": "work-light-1",
+      "shortestDimensionAxis": "z",
+      "supportDistanceMeters": 0.0,
+      "shortAxisNormalDot": 1.0,
+      "attached": true,
+      "largestFaceParallelToCeiling": true
+    },
+    {
+      "id": "work-light-2",
+      "shortestDimensionAxis": "z",
+      "supportDistanceMeters": 0.0,
+      "shortAxisNormalDot": 1.0,
+      "attached": true,
+      "largestFaceParallelToCeiling": true
+    },
+    {
+      "id": "work-light-3",
+      "shortestDimensionAxis": "z",
+      "supportDistanceMeters": 0.0,
+      "shortAxisNormalDot": 1.0,
+      "attached": true,
+      "largestFaceParallelToCeiling": true
+    },
+    {
+      "id": "work-light-4",
+      "shortestDimensionAxis": "z",
+      "supportDistanceMeters": 0.0,
+      "shortAxisNormalDot": 1.0,
+      "attached": true,
+      "largestFaceParallelToCeiling": true
+    }
+  ],
+  "heroScreenOcclusion": {
+    "frontSurfaceSamples": 405,
+    "occludedSamples": 0,
+    "occludedFraction": 0.0,
+    "passed": true
+  },
+  "shellEnclosureRays": [
+    {
+      "direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "hitsShell": true,
+      "distance": 7.0
+    },
+    {
+      "direction": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "hitsShell": true,
+      "distance": 7.0
+    },
+    {
+      "direction": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "hitsShell": true,
+      "distance": 8.0
+    },
+    {
+      "direction": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "hitsShell": true,
+      "distance": 4.0
+    },
+    {
+      "direction": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "hitsShell": true,
+      "distance": 4.0
+    },
+    {
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "testHeight": 6,
+      "hitsShell": true,
+      "distance": 8.0
+    }
+  ],
+  "enclosurePassed": true
+}

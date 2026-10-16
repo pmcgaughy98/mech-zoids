@@ -8,7 +8,7 @@ if [ -f "art/machines/ape_l/CODEX_IN_PROGRESS" ] && [ "$LIVE_GUARD_FORCE" != "1"
 eval "$(python tools/art/legacy_env.py ape_l)"   # the Legacy-look render settings (2026-10-14)
 SP="C:/Users/pmcga/AppData/Local/Temp/claude/C--Program-Files-Git/4953b3ea-a6b8-40db-8a77-2bac0e47ab36/scratchpad"
 [ -n "$PATCH" ] && python "$SP/$PATCH"
-B="C:/Program Files/Blender Foundation/Blender 5.2/blender.exe"
+B="${BLENDER:-C:/Program Files/Blender Foundation/Blender 5.2/blender.exe}"
 timeout 590 "$B" -b --factory-startup -P tools/blender/build_ape_l_v2.py 2>&1 | grep -E 'APE_L_V2_DONE|Error|Traceback|line [0-9]+' | head -4
 SPRITE_STANCE="base=22;R_leg=22;L_leg=34;L_arm=21" timeout 500 "$B" -b docs/art/3d/ape_l_v2.blend -P tools/blender/render_sprite_views.py 2>&1 | grep -E 'SPRITE glow|Error' | head -3
 O=docs/art/2d/ape_l; mkdir -p $O/$V

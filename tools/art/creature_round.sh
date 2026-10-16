@@ -12,7 +12,7 @@ cd "$(dirname "$0")/../.."
 ID=$1; V=$2; ORTHO=${3:-5.6}
 if [ -f "art/machines/$ID/CODEX_IN_PROGRESS" ] && [ "$LIVE_GUARD_FORCE" != "1" ]; then echo "STOP: $ID is marked CODEX_IN_PROGRESS: Codex is finishing it; this round would overwrite its renders and part maps (tools/art/live_guard.py)."; exit 1; fi
 eval "$(python tools/art/legacy_env.py $ID)"   # the Legacy-look render settings (2026-10-14)
-B="C:/Program Files/Blender Foundation/Blender 5.2/blender.exe"; O=docs/art/2d/$ID
+B="${BLENDER:-C:/Program Files/Blender Foundation/Blender 5.2/blender.exe}"; O=docs/art/2d/$ID
 timeout 590 "$B" -b --factory-startup -P tools/blender/build_$ID.py 2>&1 | grep -E '_DONE|Error|Traceback|line [0-9]+' | head -8
 STANCE=""; [ -f docs/art/3d/$ID.stance ] && STANCE="$(cat docs/art/3d/$ID.stance)"
 SPRITE_STANCE="$STANCE" SPRITE_ORTHO=$ORTHO SPRITE_OUT="$(pwd)/$O/renders" timeout 500 "$B" -b docs/art/3d/$ID.blend -P tools/blender/render_sprite_views.py 2>&1 | grep -E 'Error|Traceback' | head -3

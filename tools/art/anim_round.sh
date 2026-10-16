@@ -10,7 +10,7 @@ cd "$(dirname "$0")/../.."
 ID=$1; ORTHO=${2:-5.6}
 if [ -f "art/machines/$ID/CODEX_IN_PROGRESS" ] && [ "$LIVE_GUARD_FORCE" != "1" ]; then echo "STOP: $ID is marked CODEX_IN_PROGRESS: Codex is finishing it; this round would overwrite its renders and part maps (tools/art/live_guard.py)."; exit 1; fi
 eval "$(python tools/art/legacy_env.py $ID)"   # the Legacy-look render settings (2026-10-14)
-B="C:/Program Files/Blender Foundation/Blender 5.2/blender.exe"
+B="${BLENDER:-C:/Program Files/Blender Foundation/Blender 5.2/blender.exe}"
 OUT="docs/art/2d/$ID/anim_frames"; rm -rf "$OUT"; mkdir -p "$OUT"
 python - "$ID" "$OUT/jobs.txt" <<'PY'
 import json, sys

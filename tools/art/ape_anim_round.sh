@@ -12,7 +12,7 @@ if [ -f "art/machines/ape_l/CODEX_IN_PROGRESS" ] && [ "$LIVE_GUARD_FORCE" != "1"
 eval "$(python tools/art/legacy_env.py ape_l)"   # the Legacy-look render settings (2026-10-14)
 export SPRITE_ORTHO="${SPRITE_ORTHO:-5.61}"   # 2026-10-15: 20 sprite px more frame each side (816 px, still 4.4 px per sprite px); the
 # haymaker punch's fist left the 4.4 frame, and Codex found slam/throw/death cut by it too. export_anim crops to the union.
-B="C:/Program Files/Blender Foundation/Blender 5.2/blender.exe"
+B="${BLENDER:-C:/Program Files/Blender Foundation/Blender 5.2/blender.exe}"
 OUT="$(cygpath -m "$(realpath -m "${ANIM_OUT:-docs/art/2d/ape_l/anim_frames}")")"   # absolute: Blender put a relative path under C:\ (2026-10-14)
 rm -rf "$OUT"; mkdir -p "$OUT"
 while read clip k frame; do

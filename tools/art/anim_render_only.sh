@@ -8,7 +8,7 @@ set -e
 cd "$(dirname "$0")/../.."
 ID=$1; OUT=$2; ORTHO=${3:-5.6}
 eval "$(python tools/art/legacy_env.py $ID)"
-B="C:/Program Files/Blender Foundation/Blender 5.2/blender.exe"
+B="${BLENDER:-C:/Program Files/Blender Foundation/Blender 5.2/blender.exe}"
 rm -rf "$OUT"; mkdir -p "$OUT"
 python - "$ID" "$OUT/jobs.txt" <<'PY'
 import json, sys

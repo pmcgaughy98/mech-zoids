@@ -40,6 +40,8 @@ PAL = {   # material keys the kit's parts use, with this machine's colours
     "frame_dark": "2a2630",  # the body under the plates; blind review (2026-10-15): near-black joints and seams (was 3c3644)
     "face": "5d5866",
     "tusk": "e8dcc0",        # cream tusks
+    "toe": "d8c8a0",         # p41: the toe caps' cream, a little deeper, so the lit bevels stay cream (e8dcc0 clipped to
+                             # white on 8-9% of the toe pixels and the pixelizer read those as grey dots)
     "light": "8a8d92",
     "eye_src": "5fe1d0",     # teal eyes (player faction)
 }
@@ -57,7 +59,7 @@ def make_materials():
 
 
 # ---- the body: a barrel, the back sloping down to the shoulders, armour plates on its real surface ------------
-SQ, LIFT = 0.9, 0.1   # Mechabeast V2 (2026-10-14): a little taller (p28 at 1.0, 0.2 overshot: front-right view 0.802 to 0.763)   # r10 (look-compare): legs 10 cm shorter, the body sits low as his (width/height 1.79 against 1.97); was 0.1
+SQ, LIFT = 0.9, 0.25   # p41 model pass (2026-10-16, judges: "feet read as flat bricks", the reference stands on pillars): the body 15 cm higher on longer legs (was 0.1).   # Mechabeast V2 (2026-10-14): a little taller (p28 at 1.0, 0.2 overshot: front-right view 0.802 to 0.763)   # r10 (look-compare): legs 10 cm shorter, the body sits low as his (width/height 1.79 against 1.97); was 0.1
 TOP = [(-1.05 * SQ, 1.26 + LIFT), (-0.75 * SQ, 1.45 + LIFT), (-0.3 * SQ, 1.51 + LIFT), (0.3 * SQ, 1.55 + LIFT),
        (0.8 * SQ, 1.55 + LIFT), (1.12 * SQ, 1.35 + LIFT)]   # (y, top height); Mechabeast V2 blind review 3 (2026-10-15): a taller back, his shoulders as high as the rump (the overlay: his top stood above ours over the shoulders; was 1.12, 1.33, 1.43, 1.53)
 BOTTOM = 0.5 + LIFT
@@ -191,42 +193,66 @@ def head():
         kit.shell("head_nostril_%d" % s, "trim", hc + Vector((s * 0.13, -0.68, 0.18)), (0.08, 0.07, 0.05), (0, 0, 0), 0.5, levels=0)
 
 
-# ---- legs: pillar legs, longer than the river hippo's, four nailed toes on round pads ------------------------
+# ---- legs: pillar legs, longer than the river hippo's, nailed toes round a dark hoof ---------------------------
 STAGGER = 0.1
 JOINTS = {}
+
+# p41 model pass (2026-10-16; blind judges: "feet read as flat bricks", "make the legs thick upright columns with toe
+# pads about twice as big, distinct toes"; reference docs/art/reference/starters/hippo_m.png). Until p40 each leg segment
+# was a slab 0.9 m front to back and 0.4 m tall, the foot pad hid under a ring of four cream cubes, and from the side the
+# four feet ran together into one cream strip. Now: an upright square column (0.44 m) per segment in grey, a big purple
+# plate on its outer face and one on its front, a round knee wheel, a dark ankle cuff, a dark round hoof wider than the
+# leg, and five big rounded cream toes round the hoof's front with dark gaps between them. Sizes are for the x4.4
+# pixelize (about 33 sprite px per metre): every shape at least 4 sprite px, the dark toe gaps 1 to 2.
+FRONT_Y, HIND_Y = -0.8 * SQ, 0.9 * SQ   # columns nearer the barrel's ends, so the four feet stand apart (were -0.66, 0.74)
+FRONT_STAGGER = 0.03   # the fore pair nearly level (0.1 in p40), so the far fore foot clears the near one in the side view
+COL = 0.22        # column half-thickness (the slabs were 0.35 x 0.46)
+HOOF_R, HOOF_H = 0.33, 0.4
+TOE = (0.2, 0.24, 0.3)   # toe cap (wide, deep, tall): about 7 x 10 sprite px, twice p40's visible cream (6 x 5)
+TOE_ANG, TOE_RAD = (-80, -40, 0, 40, 80), 0.31   # five round the front: the battle camera (55 degrees off the nose) sees
+# three of them face on, as the reference's three front toes (four in p41a showed two and a sliver)
 
 
 def legs():
     for s in (-1, 1):
         side = "L" if s == 1 else "R"
-        fo, ho = Vector((0, s * STAGGER, 0)), Vector((0, -s * STAGGER, 0))
-        sh = Vector((s * 0.44, -0.66 * SQ, 0.86 + LIFT)) + fo   # reference pass: longer legs, the body shorter
-        el = Vector((s * 0.47, -0.5 * SQ, 0.42 + LIFT * 0.5)) + fo   # Mechabeast V2 blind review (2026-10-15): elbow under the shoulder, a columnar leg (was -0.4)   # p24: elbow back and lower, a longer foreleg with reach (the straight leg had none, so forward feet lifted)
-        wr = Vector((s * 0.47, -0.7 * SQ, 0.17)) + fo
-        hp = Vector((s * 0.44, 0.74 * SQ, 0.95 + LIFT)) + ho
-        kn = Vector((s * 0.47, 0.64 * SQ, 0.52 + LIFT * 0.5)) + ho
-        an = Vector((s * 0.47, 0.74 * SQ, 0.17)) + ho
+        fo, ho = Vector((0, s * FRONT_STAGGER, 0)), Vector((0, -s * STAGGER, 0))
+        sh = Vector((s * 0.44, FRONT_Y, 0.86 + LIFT)) + fo
+        el = Vector((s * 0.46, FRONT_Y + 0.08, 0.54 + LIFT * 0.5)) + fo   # the elbow a little back, so the IK bends it the right way
+        wr = Vector((s * 0.46, FRONT_Y - 0.02, 0.17)) + fo
+        hp = Vector((s * 0.44, HIND_Y, 0.95 + LIFT)) + ho
+        kn = Vector((s * 0.46, HIND_Y - 0.08, 0.58 + LIFT * 0.5)) + ho   # the knee a little forward
+        an = Vector((s * 0.46, HIND_Y + 0.02, 0.17)) + ho
         JOINTS.update({"sh." + side: sh, "el." + side: el, "wr." + side: wr, "fingers." + side: wr + Vector((0, -0.2, -0.12)),
                        "hp." + side: hp, "kn." + side: kn, "an." + side: an, "toe." + side: an + Vector((0, -0.2, -0.12))})
-        for pre, a, b, c, w0, w1 in (("front", sh, el, wr, 0.46, 0.42), ("hind", hp, kn, an, 0.5, 0.44)):   # Mechabeast V2 blind review (2026-10-15): his legs are thick stumps, ours read thin (was 0.3, 0.25 and 0.34, 0.27)
-            kit.limb_solid("%s_upper_%d" % (pre, s), "frame_dark", a, b, (s, 0, 0), [(0, 0.36, 0.34), (1, 0.33, 0.31)], [(0, w0), (1, w1)])   # legs part: charcoal columns
-            kit.limb_solid("%s_lower_%d" % (pre, s), "frame_dark", b, c, (s, 0, 0), [(0, 0.33, 0.31), (1, 0.31, 0.29)], [(0, w1), (1, w1 - 0.02)])
-            kit.disc("%s_knee_%d" % (pre, s) if pre == "hind" else "front_elbow_%d" % s, b + Vector((s * 0.05, 0, 0)), 0.2, depth=0.3)   # blind review 3 (2026-10-15): a round joint disc on every leg, as his (was 0.17)   # r5: 0.17, between the 0.14 that read small and the 0.2 that read as holes
-            kit.disc("%s_scale_%d_disc" % (pre, s), Vector((s * 0.76, a.y, a.z - 0.04)), 0.26 if pre == "hind" else 0.22, depth=0.12)   # blind review (2026-10-15): his round hip and shoulder wheels sit on the hull side (ours hid inside at 0.16)
-            # armour: a plum plate on the outer face of each segment (p11: smaller; the look-compare showed dark shards over the legs)
+        for pre, a, b, c in (("front", sh, el, wr), ("hind", hp, kn, an)):
+            # the columns: square, chamfered, grey (a value step lighter than the dark underbody and the hoof)
+            kit.limb_solid("%s_upper_%d" % (pre, s), "frame", a, b, (s, 0, 0), [(0, COL + 0.02, COL + 0.02), (1, COL, COL)],
+                           [(0, COL + 0.02), (1, COL)], chamfer=0.06)
+            kit.limb_solid("%s_lower_%d" % (pre, s), "frame", b, c + Vector((0, 0, 0.12)), (s, 0, 0), [(0, COL, COL), (1, COL - 0.01, COL - 0.01)],
+                           [(0, COL), (1, COL - 0.01)], chamfer=0.06)
             up, lo = bpy.data.objects["%s_upper_%d" % (pre, s)], bpy.data.objects["%s_lower_%d" % (pre, s)]
-            kit.plate("%s_scale_%d" % (pre, s), "main", kit.on_surface(up, a.lerp(b, 0.45), (s, 0, 0), 0.03), 0.58, 0.5,
-                      0.06, (-6, 0, s * 84), bend=0.4, bevel=0.01, recess=0.015, rim=0.04)   # legs part 2: bigger purple blocks; Mechabeast V2 blind review 3 (2026-10-15): his legs read purple over dark joints, ours a dark band (was 0.48, 0.42)
-            kit.plate("%s_shin_%d" % (pre, s), "main", kit.on_surface(lo, b.lerp(c, 0.4), (s, 0, 0), 0.03), 0.48, 0.4,
-                      0.05, (-4, 0, s * 84), bend=0.4, bevel=0.01, recess=0.012, rim=0.035)   # blind review 3 (2026-10-15): was 0.4, 0.34
-            kit.plate("%s_scale_front_%d" % (pre, s), "main", kit.on_surface(up, a.lerp(b, 0.5), (0, -1, 0), 0.03), 0.24, 0.26,
-                      0.045, (0, 0, 0), bend=0.4, bevel=0.01)   # v2: and one on the front face
-            # the round foot pad, and four nailed toes spread across its front
-            kit.shell("%s_foot_%d" % (pre, s), "frame", c + Vector((0, -0.08, -0.08)), (0.5, 0.54, 0.18), (0, 0, 0), 0.5, levels=1)   # blind review (2026-10-15): a broad planted pad (was 0.34, 0.36, 0.14)
-            for k, ang in enumerate((-80, -22, 22, 80)):   # claw pass (2026-10-13): the nails round the pad's front curve, so the side view shows them apart (in one row they merged into one nub)
+            # the round knee / elbow wheel on the outer face
+            kit.disc("%s_knee_%d" % (pre, s) if pre == "hind" else "front_elbow_%d" % s, b + Vector((s * (COL + 0.04), 0, 0)), 0.13, depth=0.08)
+            # the hip / shoulder wheel on the hull side, over the column's top
+            kit.disc("%s_scale_%d_disc" % (pre, s), Vector((a.x + s * (COL + 0.08), a.y, a.z - 0.04)), 0.26 if pre == "hind" else 0.22, depth=0.12)
+            # purple armour: a big plate on the outer face of the upper column, one on its front, a shin guard on the front
+            kit.plate("%s_scale_%d" % (pre, s), "main", kit.on_surface(up, a.lerp(b, 0.72), (s, 0, 0), 0.03), 0.54, 0.5,
+                      0.06, (-4, 0, s * 84), bend=0.4, bevel=0.012, recess=0.015, rim=0.04)
+            kit.plate("%s_scale_front_%d" % (pre, s), "main", kit.on_surface(up, a.lerp(b, 0.72), (0, -1, 0), 0.03), 0.48, 0.46,
+                      0.06, (0, 0, 0), bend=0.35, bevel=0.012)
+            kit.plate("%s_shin_%d" % (pre, s), "main", kit.on_surface(lo, b.lerp(c, 0.42), (0, -1, 0), 0.03), 0.42, 0.24,
+                      0.05, (-6, 0, 0), bend=0.35, bevel=0.01)
+            # the ankle cuff and the hoof: dark, the hoof wider than the column
+            kit.cyl("%s_shin_%d_cuff" % (pre, s), "frame_dark", Vector((c.x, c.y, HOOF_H - 0.02)), Vector((c.x, c.y, HOOF_H + 0.08)), COL + 0.06, 16)
+            hc = Vector((c.x, c.y - 0.04, HOOF_H / 2))
+            kit.drum("%s_foot_%d" % (pre, s), "frame_dark", hc, (0, 0, 1), HOOF_R, HOOF_H, round_=0.3, segments=20)
+            # big rounded cream toes round the hoof's front, dark hoof between them
+            for k, ang in enumerate(TOE_ANG):
                 a_ = math.radians(ang)
-                kit.shell("%s_claw_%d_%d" % (pre, s, k), "tusk", Vector((c.x + 0.34 * math.sin(a_), c.y - 0.06 - 0.38 * math.cos(a_), 0.1 + 0.02 * (k in (1, 2)))),
-                          (0.22, 0.24, 0.2), (0, 0, -ang), 0.5, levels=0)   # blind review (2026-10-15): his cream toes are about twice ours   # p21: bigger and wider round the pad (p20's read as one nub at sprite size)
+                p = Vector((hc.x + TOE_RAD * math.sin(a_), hc.y - TOE_RAD * math.cos(a_), TOE[2] / 2))
+                kit.shell("%s_claw_%d_%d" % (pre, s, k), "toe", p, TOE, (0, 0, ang), 0.3, levels=1)   # each faces out
+                # from the hoof's centre (p40's turned the other way, so neighbouring toes met corner to corner)
 
 
 CFG = {
@@ -242,7 +268,7 @@ CFG = {
     "stride": 0.26,
     # hippo pass (2026-10-13): the battle stance by foot positions (quad_rig.battle_pose_for), his stride: near fore paw
     # forward under the jaw, far fore a little forward, near hind back, far hind forward. dy < 0 is forward.
-    "battle_feet": {"R_arm": (-0.02, 0.0), "L_arm": (-0.3, 0.0), "R_leg": (0.0, 0.0), "L_leg": (-0.06, 0.0)},   # Mechabeast V2 blind review (2026-10-15): legs planted upright under the body, feet spaced as his four (was -0.45, -0.25, 0.0, -0.55)   # p19 (column profile): hind feet toward the middle, his lowest feet are mid-length   # p17: fore paws further forward, under his jaw
+    "battle_feet": {"R_arm": (0.0, 0.0), "L_arm": (-0.4, 0.0), "R_leg": (0.0, 0.0), "L_leg": (0.0, 0.0)},   # p41: the columns stand upright on their feet; only the far fore foot reaches forward, under the jaw, clear of the near one (was -0.02, -0.3, 0.0, -0.06)   # Mechabeast V2 blind review (2026-10-15): legs planted upright under the body, feet spaced as his four (was -0.45, -0.25, 0.0, -0.55)   # p19 (column profile): hind feet toward the middle, his lowest feet are mid-length   # p17: fore paws further forward, under his jaw
     "stance": "clip=battle;frame=1",
     "crouch": 0.04,
     "front_path": (0.04, 0.0, 0.09, -15),   # back, down, lift, curl
@@ -283,7 +309,8 @@ def main():
             o.scale = tuple(v * 1.12 for v in o.scale)
     legs()
     wpn.build_loadout(kit, "hippo_m", loadout())
-    greebles.run(kit, wpn, lambda n: quad.bone_for(n, CFG))
+    greebles.run(kit, wpn, lambda n: quad.bone_for(n, CFG), skip_prefix=("front_", "hind_"))   # p41: the legs stay a
+    # few big clean shapes (their panels and bolts were 1-2 sprite px each and read as speckle)
     quad.tag_parts(CFG)
     ob = kit.join_into_one()
     ob.name = "hippo_m"

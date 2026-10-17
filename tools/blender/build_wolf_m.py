@@ -12,7 +12,19 @@
 # Colours: near-black armour, charcoal frame, blood-red accents, teal eyes. Weapons (DRAFT, Claude's proposal for
 # Preston): Fang Lunge (the jaw, red fangs), Howl Burst (a red-grilled emitter in the throat), Shadow Dash (red
 # blade fins on the shoulders and hips, the lunge itself).
-import bpy, importlib.util, math, os
+#
+# Model pass v85 (2026-10-16, blind judges on the detail sprites: "the wolf's red is scattered rather than a few defined
+# plates, and its feet and head are weak"; tail spikes pale and tiny). The sprite is the render shrunk about 4.4x
+# (x4.4 pixelize at SPRITE_ORTHO 5.6: one sprite pixel is about 3 cm), so anything under 2 to 3 sprite px turns to
+# speckle. This pass trades many small red bits for a few big red plates, each a single piece: three red saddles
+# (withers, mid back, croup) wrapping the top and the upper flank, a red square on each shoulder and hip pad round a
+# dark panel (his hip plate's red square), the brow, the nose, the fangs, the claws and the tail tip. The small red bits
+# are gone or grey: limb stripes, pad rims, rivets, spine fins, the four raked mane plates, cheek fins, hinge rings,
+# missile caps, jet rings, rail tip, the red greeble layer plates and slats; the forearm blades are near-black.
+# Paws: a dark heel block, three dark toes staggered so each red claw (one swept hook each) stands apart from the side.
+# Head: a grey wedge skull over a dark lower jaw (the jaw line is the value step), a red brow and nose, a bigger cyan
+# eye. Tail: four big pale hooked spikes, one piece each.
+import bmesh, bpy, importlib.util, math, os, re
 from mathutils import Vector
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -43,10 +55,10 @@ PAL = {
     "frame": "4a4a54",       # grey limbs and joints, lighter than the body (the reference's legs read as steel)
     "frame_dark": "121214",  # the body under the plates
     "face": "4a4a54",
-    "tusk": "c42a2a",        # the fangs (the kit's "tusk" slot)
+    "tusk": "e01818",        # the fangs (the kit's "tusk" slot); v85: the accent red, his fangs are the plates' red (was c42a2a)
     "light": "9a9aa4",       # 2026-10-15, Mechabeast V2 blind review 2: his limb plating is near-white, ours read lavender-grey (was 6e6e7c)
     "blade": "d4d4da",       # 2026-10-15, blind review 2: the tail spikes, big pale blades as his
-    "claw": "ff3028",        # 2026-10-15, blind review 2: the talons in his brightest red
+    "claw": "e01818",        # v85: the accent red; ff3028 (blind review 2, his brightest red) landed on the ramp's salmon top shades
     "eye_src": "5fe1d0",     # teal eyes (player faction; Preston may want red)
 }
 
@@ -60,6 +72,96 @@ def make_materials():
         b.inputs["Roughness"].default_value = 0.5
         m.diffuse_color = kit.srgb(h)
         kit.MATS[key] = m
+
+
+# ---- v85 helpers: single-piece shapes, so the detail pixelizer draws each as one clean shape (no seams inside) ------
+def _bezier(p0, p1, p2, n):
+    return [p0 * (1 - t) ** 2 + p1 * 2 * t * (1 - t) + p2 * t * t for t in (i / (n - 1) for i in range(n))]
+
+
+def sweep(name, mat, pts, radii, side=(1, 0, 0), sides=8):
+    """A closed tube along the points, its cross-section an ellipse of radii (rx toward `side`, ry across): one piece
+    for a claw, a fang or a hooked spike. A radius near zero makes a point."""
+    pts = [Vector(p) for p in pts]
+    bm = bmesh.new()
+    rings = []
+    for i, p in enumerate(pts):
+        t = (pts[min(i + 1, len(pts) - 1)] - pts[max(i - 1, 0)]).normalized()
+        sx = Vector(side) - t * Vector(side).dot(t)
+        sx = sx.normalized() if sx.length > 1e-6 else t.orthogonal().normalized()
+        sy = t.cross(sx)
+        rx, ry = radii[i]
+        rings.append([bm.verts.new(p + sx * rx * math.cos(2 * math.pi * k / sides) + sy * ry * math.sin(2 * math.pi * k / sides))
+                      for k in range(sides)])
+    for a, b in zip(rings, rings[1:]):
+        for k in range(sides):
+            bm.faces.new((a[k], a[(k + 1) % sides], b[(k + 1) % sides], b[k]))
+    bm.faces.new(rings[0][::-1])
+    bm.faces.new(rings[-1])
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    me = bpy.data.meshes.new(name)
+    bm.to_mesh(me)
+    bm.free()
+    ob = bpy.data.objects.new(name, me)
+    bpy.context.scene.collection.objects.link(ob)
+    return kit._finish(ob, mat)
+
+
+def band(name, mat, y0, y1, th_max, standoff=0.035, t=0.07, ny=8, nt=16, bevel=0.014):
+    """A curved armour band laid on the torso core's real surface from y0 to y1, wrapping from -th_max to +th_max
+    degrees about the body's long axis (0 is the top): one big red saddle plate instead of a top plate, two flank plates,
+    rivets, seams and a spine fin."""
+    core = bpy.data.objects["torso_core"]
+    bm = bmesh.new()
+    go, gi = [], []
+    for i in range(ny + 1):
+        y = y0 + (y1 - y0) * i / ny
+        tz, bz = top_at(y), bottom_at(y)
+        zc, b = (tz + bz) / 2, (tz - bz) / 2
+        ro, ri = [], []
+        for j in range(nt + 1):
+            th = math.radians(-th_max + 2 * th_max * j / nt)
+            aim = Vector((HALF_W * math.sin(th), y, zc + b * math.cos(th)))
+            nrm = Vector((math.sin(th) / HALF_W, 0, math.cos(th) / b)).normalized()
+            hit = kit.surface_hit(core, aim + nrm * 3.0, -nrm)
+            p = hit[0] if hit else aim
+            ro.append(bm.verts.new(p + nrm * (standoff + t)))
+            ri.append(bm.verts.new(p + nrm * standoff))
+        go.append(ro)
+        gi.append(ri)
+    for i in range(ny):
+        for j in range(nt):
+            bm.faces.new((go[i][j], go[i][j + 1], go[i + 1][j + 1], go[i + 1][j]))
+            bm.faces.new((gi[i][j], gi[i + 1][j], gi[i + 1][j + 1], gi[i][j + 1]))
+        for j in (0, nt):
+            bm.faces.new((go[i][j], go[i + 1][j], gi[i + 1][j], gi[i][j]))
+    for i in (0, ny):
+        for j in range(nt):
+            bm.faces.new((go[i][j], gi[i][j], gi[i][j + 1], go[i][j + 1]))
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    me = bpy.data.meshes.new(name)
+    bm.to_mesh(me)
+    bm.free()
+    ob = bpy.data.objects.new(name, me)
+    bpy.context.scene.collection.objects.link(ob)
+    bev = ob.modifiers.new("edge", "BEVEL")
+    bev.width = bevel
+    bev.segments = 1
+    bev.limit_method = "ANGLE"
+    bev.angle_limit = math.radians(30)
+    return kit._finish(ob, mat)
+
+
+def wolf_disc(name, center, radius, axis=(1, 0, 0), depth=0.12, ring=True):
+    """The kit's joint disc for this machine only: the red ring wider (0.44r to 0.8r, about 2.5 sprite px on a knee;
+    the kit's 0.42r to 0.72r read as a broken one-pixel circle) and none on small discs, where it was a red speck."""
+    c, ax = Vector(center), Vector(axis).normalized()
+    if c.x < 0 and ax.x > 0:
+        ax = -ax
+    kit.cyl(name, "frame", c - ax * depth / 2, c + ax * depth / 2, radius, 12)
+    if ring:
+        kit.cyl(name + "_ring", "accent", c + ax * depth / 2, c + ax * (depth / 2 + 0.03), radius * 0.8, 14)
+    kit.cyl(name + "_hub", "frame_dark", c + ax * depth / 2, c + ax * (depth / 2 + 0.06), radius * 0.44, 10)
 
 
 # ---- the body: lean, a deep keel chest, the back level from withers to croup, a tucked belly ----------------
@@ -94,42 +196,49 @@ def body():
         t, b0 = top_at(y), bottom_at(y)
         zc, b = (t + b0) / 2, (t - b0) / 2
         pitch = math.degrees(math.atan2(-(top_at(y + 0.05) - top_at(y - 0.05)), 0.1))
-        for j, (th, w, h, mat) in enumerate(((0, 0.32, 0.3, "accent"), (-48, 0.3, 0.28, "main"), (48, 0.3, 0.28, "main"),   # V2 (v70): red-topped back, his
+        for j, (th, w, h, mat) in enumerate(((0, 0.32, 0.3, "main"), (-48, 0.3, 0.28, "main"), (48, 0.3, 0.28, "main"),   # v85: grey; the red is the saddles (red_plates())
                                              (-96, 0.26, 0.24, "main"), (96, 0.26, 0.24, "main"))):
+            if row in SADDLE_ROWS and abs(th) <= 48:   # v85: a red saddle covers these (one piece instead of three plates)
+                continue
             rt = math.radians(th)
             aim = Vector((HALF_W * math.sin(rt), y, zc + b * math.cos(rt)))
             normal = (math.sin(rt) / HALF_W, 0, math.cos(rt) / b)
             c = kit.on_surface(core, aim, normal, 0.03)
             tilt = math.degrees(math.atan2(math.sin(rt) / HALF_W, math.cos(rt) / b))
-            if abs(th) == 48 and row % 2 == 0:   # V2 (v72): red upper flank plates on alternate bands, his red reads from the side
-                mat = "accent"
             kit.plate("armor_%d_%d" % (row, j), mat, c, w, h, 0.05, (-90 - pitch, tilt, 0), bend=0.3, bevel=0.01,
                       recess=0.015, rim=0.04)
-            if abs(th) <= 48:   # v11 detail pass: two dark rivets and a seam on each upper plate (his plates carry bolts and lines)
-                for dy in (-0.09, 0.09):
-                    rv = kit.on_surface(core, aim + Vector((0, dy, 0)), normal, 0.045)
-                    kit.shell("rivet_%d_%d_%d" % (row, j, dy > 0), "trim", rv, (0.035, 0.035, 0.025), (-90 - pitch, tilt, 0), 0.5, levels=0)
-                sm = kit.on_surface(core, aim, normal, 0.05)
-                kit.shell("seam_%d_%d" % (row, j), "frame_dark", sm, (0.012, h * 0.4, 0.012), (-90 - pitch, tilt, 0), 0.5, levels=0)
-    # the mane: raked blood-red plates over the withers and the back of the neck, standing off the black
-    for k, (y, z, w) in enumerate(((-0.95, 1.4 + UP, 0.42), (-0.76, 1.44 + UP, 0.46), (-0.56, 1.46 + UP, 0.46), (-0.36, 1.44 + UP, 0.42))):
-        c = kit.on_surface(core, (0, y, z), (0, -0.35, 1), 0.07)
-        kit.plate("mane_%d" % k, "accent", c, w, 0.34, 0.06, (-58, 0, 0), bend=0.35, bevel=0.01, taper=0.4)   # v2: bigger, raked
-    # the keel chest, dark grey, and the Howl Burst emitter: a red-ribbed grille in the throat
+            # v85: the v11 rivets (3.5 cm, one sprite px of dark red) and seams (1.2 cm) are gone: speckle at sprite size
+    # the mane: v85, a red saddle over the withers (red_plates()); the four raked red plates (v2) overlapped at four
+    # angles and read as a crumpled red patch at sprite size. The raked red neck plates keep the mane's rise.
+    # the keel chest, dark grey, and the Howl Burst emitter in the throat (v85: the three thin red ribs, 1 sprite px
+    # each, are gone; the emitter keeps its red rim)
     c = kit.on_surface(core, (0, -1.05, 0.95 + UP), (0, -1, -0.2), 0.03)
     kit.plate("chest_keel", "frame", c, 0.4, 0.5, 0.08, (12, 0, 0), bend=0.5, bevel=0.012)
-    for k in range(3):
-        kit.segment("howl_rib_%d" % k, "accent", c + Vector((-0.14, -0.06, 0.14 - 0.1 * k)), c + Vector((0.14, -0.06, 0.14 - 0.1 * k)),
-                    0.035, 0.03, 0.5)
     # belly: dark grey plates under the tuck
     for k, y in enumerate((-0.5, 0.0, 0.5)):
         c = kit.on_surface(core, (0, y, bottom_at(y)), (0, 0, -1), 0.02)
         kit.plate("belly_%d" % k, "frame", c, 0.36, 0.34, 0.04, (90, 0, 0), bend=0.2, bevel=0.01)
-    # Shadow Dash: a blood-red blade fin over each shoulder and each hip, swept back
-    for sd in (-1, 1):
-        for name, y, z in (("fin_sh_%d" % sd, -0.7, 1.2 + UP), ("fin_hp_%d" % sd, 0.75, 1.14 + UP)):
-            c = kit.on_surface(core, (sd * HALF_W, y, z), (sd, 0, 0.2), 0.04)
-            kit.plate(name, "accent", c, 0.18, 0.62, 0.05, (-30, 0, sd * 84), bend=0.1, bevel=0.008, taper=0.3)   # v2: bigger fins
+    # Shadow Dash: v85 moves the red from the swept blade fins (thin red slivers behind the pads from the side) to a big
+    # red plate on each shoulder and hip pad (red_plates()); the forearm blades stay, near-black.
+
+
+SADDLE_ROWS = (0, 2, 4)   # v85: the back bands under the three red saddles (withers, mid back, croup)
+
+
+def red_plates():
+    """v85, after the greebles so none land on them: the few big red plates. Three saddles (withers, mid back, croup), each
+    wrapping the top and the upper flank (about 12 to 20 by 8 to 16 sprite px from the side, one piece each); a red square
+    plate on each shoulder and hip pad, behind the pad's dark greeble panel, so it reads as a red square about 3 px wide
+    round a dark centre with a hub (his hip plate's red square)."""
+    band("saddle_withers", "accent", -1.0, -0.62, 64)
+    band("saddle_mid", "accent", -0.26, 0.12, 64)
+    band("saddle_croup", "accent", 0.54, 0.92, 64)
+    for s in (-1, 1):
+        sd = "L" if s == 1 else "R"
+        for pre, j, face, size in (("front_scale", JOINTS["sh." + sd], 0.32, 0.42), ("hind_scale", JOINTS["hp." + sd], 0.35, 0.46)):   # v85b: bigger, so the red border round the greeble panel is about 3 px
+            c = j + Vector((s * (face + 0.012), 0, -0.04))   # on the pad's outer face (pad centre j + 0.24 or 0.27, 0.16 thick)
+            kit.plate("%s_%d_redplate" % (pre, s), "accent", c, size, size, 0.04, (0, 0, s * 90), bend=0.0, bevel=0.01)
+            kit.cyl("%s_%d_hub" % (pre, s), "frame_dark", c, c + Vector((s * 0.05, 0, 0)), 0.08, 10)
 
 
 # ---- the tail: long and bushy, carried level, black with a blood-red tip ------------------------------------
@@ -147,16 +256,20 @@ def tail():
     # that the tail droops as his (v82), six pale hooked blades on the first three segments, raked back toward the
     # tip (v77-v79 tried them on the high tail and lost side outline). None on the red tip, his has none; v83's raked
     # blades ran together into one pale crest, so these stand steeper and slimmer, each its own blade.
-    for k in range(3):
-        r0 = (0.17, 0.21, 0.2)[k]
+    # v85 (judges: the spikes read pale and tiny, 4 to 6 px, a fringe): four big hooked spikes, each ONE swept piece
+    # (the two-piece blades split into two small shapes at sprite size), about 6 sprite px long at the base and 11 tall,
+    # 8 px apart, smaller toward the tip, curving back toward it. Named "spine" so the greebles leave them bare.
+    for n, (f, sc) in enumerate(((0.14, 1.0), (0.4, 0.95), (0.66, 0.88), (0.92, 0.78))):
+        u = f * 3
+        k = min(int(u), 2)
         a, b = TAIL[k], TAIL[k + 1]
+        r0 = (0.17, 0.21, 0.2)[k]
         back = (b - a).normalized()
-        for j in range(2):
-            c = a.lerp(b, 0.25 + 0.5 * j) + Vector((0, 0, r0 * 1.05))
-            mid = c + Vector((0, 0, 0.18)) + back * 0.02
-            tip = c + Vector((0, 0, 0.3)) + back * 0.1
-            kit.segment("tail_core_%d_fin%d" % (k, j), "blade", c - back * 0.02, mid, 0.07, 0.11, 0.5)
-            kit.segment("tail_core_%d_fin%d_tip" % (k, j), "blade", mid, tip, 0.05, 0.06, 0.5)
+        base = a.lerp(b, u - k) + Vector((0, 0, r0 * 0.6))   # rooted in the tail's top plate
+        up = Vector((0, 0, 1))
+        pts = _bezier(base, base + up * 0.34 * sc - back * 0.03, base + up * 0.52 * sc + back * 0.26 * sc, 7)   # v85b: taller (v85a showed 4-6 px above the plates)
+        rad = [(0.05, 0.15 * sc), (0.048, 0.135 * sc), (0.044, 0.114 * sc), (0.038, 0.088 * sc), (0.03, 0.06 * sc), (0.02, 0.034 * sc), (0.007, 0.007)]   # v85c: fatter, a pale core inside the dark outline
+        sweep("tail_core_%d_spine%d" % (k, n), "blade", pts, rad, side=(1, 0, 0))
 
 
 def tail_bone(name):
@@ -177,35 +290,41 @@ def head():
         kit.plate("neckplate_%d" % k, "accent" if k < 2 else "main", c, 0.36, 0.16, 0.04, (-74, 0, 0), bend=0.4, bevel=0.008, taper=0.3)
     side = [(0.26, 0.0), (0.22, 0.22), (0.04, 0.3), (-0.18, 0.28), (-0.275, 0.16), (-0.425, 0.1), (-0.59, 0.04), (-0.635, -0.06), (-0.59, -0.14), (-0.388, -0.16), (-0.1, -0.2), (0.2, -0.16)]   # muzzle pass (2026-10-13, column profile): 25% shorter beyond the eyes, his head is 16% of the length, ours was 22%   # wolflike: a domed forehead and a stop down to the muzzle   # v2: muzzle 20% shorter (v1 read as a crocodile)
     front = kit.mirror_x([(0.12, 0.26), (0.24, 0.16), (0.27, 0.0), (0.22, -0.14), (0.12, -0.2)])
-    skull = kit.profile_solid("head_core", "main", hc, side, front, chamfer=0.012,
+    # v85 (judges: the head is weak and muddy): a grey wedge skull ("face", a step lighter than the near-black armour)
+    # over a dark lower jaw, so the jaw line is a value step the downscale keeps; a big red brow plate over the eye, a
+    # red nose block, a bigger cyan eye in a dark socket, grey ears with red inner faces. Gone: the hinge discs (a red
+    # ring speck on the cheek), the thin red cheek fins and the 7 cm brow crest.
+    skull = kit.profile_solid("head_core", "face", hc, side, front, chamfer=0.012,
                               top_xy=kit.mirror_x([(0.27, 0.3), (0.27, 0.0), (0.22, -0.275), (0.15, -0.463), (0.1, -0.65)]))   # wolflike: the muzzle tapers to a narrow nose
-    for k, (dy, dz, w, ang) in enumerate(((0.0, 0.25, 0.3, -88), (-0.275, 0.2, 0.26, -80), (-0.515, 0.1, 0.2, -70))):
-        kit.plate("headplate_%d" % k, "main", hc + Vector((0, dy, dz)), w, 0.22, 0.04, (ang, 0, 0), bend=0.4, bevel=0.008,
-                  recess=0.012, rim=0.03)
-    # the lower jaw and the Fang Lunge: red fangs at the front corners
-    jaw_side = [(0.1, -0.14), (-0.275, -0.18), (-0.545, -0.14), (-0.575, -0.24), (-0.425, -0.3), (0.05, -0.28)]
-    jaw_front = kit.mirror_x([(0.2, -0.14), (0.21, -0.24), (0.14, -0.3)])
+    kit.plate("headplate_0", "face", hc + Vector((0, 0.0, 0.25)), 0.3, 0.22, 0.04, (-88, 0, 0), bend=0.4, bevel=0.008, recess=0.012, rim=0.03)
+    kit.plate("headplate_1", "accent", hc + Vector((0, -0.19, 0.27)), 0.54, 0.42, 0.05, (-78, 0, 0), bend=0.7, bevel=0.01, taper=0.75)   # the red brow, his: bent down over the skull sides so the side view shows it as a band over the eye
+    kit.plate("headplate_2", "face", hc + Vector((0, -0.5, 0.1)), 0.22, 0.24, 0.04, (-70, 0, 0), bend=0.4, bevel=0.008)
+    # the lower jaw, 4 cm lower so the grey skull's lower edge shows above it, and the Fang Lunge: red fangs
+    jaw_side = [(y, z - 0.04) for y, z in ((0.1, -0.14), (-0.275, -0.18), (-0.545, -0.14), (-0.575, -0.24), (-0.425, -0.3), (0.05, -0.28))]
+    jaw_front = kit.mirror_x([(0.2, -0.18), (0.21, -0.28), (0.14, -0.34)])
     kit.profile_solid("head_jaw", "main", hc, jaw_side, jaw_front, chamfer=0.01,
                       top_xy=kit.mirror_x([(0.21, 0.12), (0.21, -0.1), (0.16, -0.35), (0.1, -0.59)]))
+    kit.shell("head_mouth", "frame_dark", hc + Vector((0, -0.3, -0.19)), (0.34, 0.5, 0.06), (0, 0, 0), 0.5, levels=0)   # the dark mouth line between
     for s in (-1, 1):
-        kit.segment("head_fang_%d" % s, "tusk", hc + Vector((s * 0.15, -0.53, -0.1)), hc + Vector((s * 0.16, -0.56, -0.36)), 0.06, 0.035, 0.5)
-        kit.segment("head_fang_low_%d" % s, "tusk", hc + Vector((s * 0.13, -0.485, -0.32)), hc + Vector((s * 0.14, -0.47, -0.1)), 0.05, 0.03, 0.5)
-        # eyes: a visor slot each side, forward on the skull
-        kit.shell("eye_%d_socket" % s, "frame_dark", hc + Vector((s * 0.2, -0.34, 0.1)), (0.07, 0.2, 0.09), (0, 0, 0), 0.5, levels=1)
-        kit.shell("eye_%d" % s, "eye_src", hc + Vector((s * 0.235, -0.34, 0.1)), (0.04, 0.15, 0.05), (0, 0, 0), 0.0, levels=0)
-        # erect triangular ears, black with a red inner face
+        # one tapered swept piece per fang (two box segments read as two specks): the upper canine long, the lower short
+        a = hc + Vector((s * 0.15, -0.5, -0.12))
+        sweep("head_fang_%d" % s, "tusk", _bezier(a, a + Vector((0, -0.03, -0.14)), a + Vector((0, 0.01, -0.3)), 5),
+              [(0.05, 0.05), (0.045, 0.045), (0.036, 0.036), (0.022, 0.022), (0.006, 0.006)])
+        a = hc + Vector((s * 0.12, -0.34, -0.3))
+        sweep("head_fang_low_%d" % s, "tusk", _bezier(a, a + Vector((0, -0.02, 0.08)), a + Vector((0, 0.0, 0.16)), 4),
+              [(0.04, 0.04), (0.032, 0.032), (0.018, 0.018), (0.005, 0.005)])
+        # eyes: a visor slot each side under the brow, bigger (about 8 by 3 sprite px after the head's 1.2 scale)
+        kit.shell("eye_%d_socket" % s, "frame_dark", hc + Vector((s * 0.205, -0.32, 0.1)), (0.08, 0.26, 0.12), (0, 0, 0), 0.5, levels=1)
+        kit.shell("eye_%d" % s, "eye_src", hc + Vector((s * 0.24, -0.32, 0.1)), (0.04, 0.2, 0.07), (0, 0, 0), 0.0, levels=0)
+        # erect triangular ears, grey with a red inner face
         base = hc + Vector((s * 0.12, 0.08, 0.24))
-        kit.plate("ear_%d" % s, "main", base + Vector((s * 0.02, 0.0, 0.18)), 0.2, 0.34, 0.04, (-10, 0, s * 38), bend=0.5, taper=0.2, bevel=0.008)   # v47 (column profile): turned out so the side view shows two broad ears, his
-        kit.plate("ear_%d_inner" % s, "accent", base + Vector((s * 0.02, -0.02, 0.17)), 0.11, 0.24, 0.015, (-10, 0, s * 38), bend=0.5, taper=0.2, bevel=0.004)
-        kit.disc("head_hinge_%d" % s, hc + Vector((s * 0.25, -0.1, -0.1)), 0.08, depth=0.1)
-        # red cheek fins swept back along the jaw hinge
-        kit.plate("head_fin_%d" % s, "accent", hc + Vector((s * 0.26, 0.05, -0.02)), 0.08, 0.26, 0.03, (0, 0, s * 70), bend=0.1, taper=0.3, bevel=0.006)
-    kit.shell("head_nose", "trim", hc + Vector((0, -0.63, -0.03)), (0.08, 0.07, 0.07), (0, 0, 0), 0.5, levels=1)
-    # pass 2 detail (foundation): a red brow crest, two antenna masts behind the ears, a chin guard
-    kit.plate("head_crest", "accent", hc + Vector((0, -0.2, 0.27)), 0.07, 0.42, 0.04, (-86, 0, 0), bend=0.2, taper=0.4, bevel=0.006)
+        kit.plate("ear_%d" % s, "face", base + Vector((s * 0.02, 0.0, 0.2)), 0.22, 0.38, 0.05, (-10, 0, s * 38), bend=0.5, taper=0.2, bevel=0.008)   # v47 (column profile): turned out so the side view shows two broad ears, his
+        kit.plate("ear_%d_inner" % s, "accent", base + Vector((s * 0.02, -0.025, 0.18)), 0.13, 0.26, 0.015, (-10, 0, s * 38), bend=0.5, taper=0.2, bevel=0.004)
+    kit.shell("head_nose", "accent", hc + Vector((0, -0.62, -0.04)), (0.15, 0.1, 0.13), (0, 0, 0), 0.5, levels=1)   # v85: a red nose block, his (was a 7 cm dark red bead)
+    # pass 2 detail (foundation): two antenna masts behind the ears (v85: thicker, the red tip about 2 px), a chin guard
     for s in (-1, 1):
-        weapons.antenna(kit, "head_mast_%d" % s, hc + Vector((s * 0.16, 0.2, 0.2)), hc + Vector((s * 0.2, 0.46, 0.42)))
-    kit.plate("head_chin", "frame", hc + Vector((0, -0.365, -0.31)), 0.22, 0.3, 0.03, (90, 0, 0), bend=0.3, bevel=0.006)
+        weapons.antenna(kit, "head_mast_%d" % s, hc + Vector((s * 0.16, 0.2, 0.2)), hc + Vector((s * 0.2, 0.46, 0.42)), r=0.024)
+    kit.plate("head_chin", "main", hc + Vector((0, -0.365, -0.35)), 0.22, 0.3, 0.03, (90, 0, 0), bend=0.3, bevel=0.006)
 
 
 # ---- legs: long, the elbows in and the paws out, big flexible feet with four red claws -----------------------
@@ -229,9 +348,9 @@ def legs():
         for pre, a, b, c, w0, w1 in (("front", sh, el, wr, 0.13, 0.1), ("hind", hp, kn, an, 0.2, 0.12)):   # v10: forelegs slimmer, his are lean columns
             kit.limb_solid("%s_upper_%d" % (pre, s), "frame", a, b, (s, 0, 0), [(0, w0, w0 - 0.02), (1, w1, w1 - 0.02)], [(0, w0), (1, w1)])
             kit.limb_solid("%s_lower_%d" % (pre, s), "frame", b, c, (s, 0, 0), [(0, w1, w1 - 0.02), (1, w1 - 0.03, w1 - 0.04)], [(0, w1), (1, w1 - 0.03)])
-            kit.disc("%s_knee_%d" % (pre, s) if pre == "hind" else "front_elbow_%d" % s, b + Vector((s * 0.2, 0, 0)), 0.19, depth=0.12)   # synthesis pass (2026-10-13): bigger and proud of the armour, his reference and the Zoids rips show big joint hubs   # v5: the reference's big joint discs
-            kit.disc("%s_scale_%d_hub" % (pre, s), a + Vector((s * 0.3, 0, -0.04)), 0.17, depth=0.1)
-            kit.disc("%s_shin_%d_wrist" % (pre, s), c + Vector((s * 0.03, 0, 0.04)), 0.09, depth=0.18)   # v10: a wrist and ankle disc, his joints
+            wolf_disc("%s_knee_%d" % (pre, s) if pre == "hind" else "front_elbow_%d" % s, b + Vector((s * 0.2, 0, 0)), 0.19, depth=0.12)   # synthesis pass (2026-10-13): bigger and proud of the armour, his reference and the Zoids rips show big joint hubs   # v5: the reference's big joint discs
+            # v85: the shoulder and hip hub discs are now a red square plate with a dark hub (red_plates())
+            wolf_disc("%s_shin_%d_wrist" % (pre, s), c + Vector((s * 0.03, 0, 0.04)), 0.09, depth=0.18, ring=False)   # v10: a wrist and ankle disc, his joints (v85: no red ring, a 4 px red speck)
             up, lo = bpy.data.objects["%s_upper_%d" % (pre, s)], bpy.data.objects["%s_lower_%d" % (pre, s)]
             kit.plate("%s_scale_%d" % (pre, s), "main", kit.on_surface(up, a.lerp(b, 0.45), (s, 0, 0), 0.025), 0.22, 0.34,
                       0.045, (-6, 0, s * 84), bend=0.35, bevel=0.008, recess=0.012, rim=0.03)   # black thigh and shoulder plates
@@ -241,28 +360,36 @@ def legs():
             if pre == "hind":   # pass 2: the pastern, a thin strut from the high hock to a paw on the floor
                 c = c + Vector((0, -0.1, -0.3))
                 kit.limb_solid("hind_foot_meta_%d" % s, "frame", an, c, (s, 0, 0), [(0, 0.1, 0.08), (1, 0.08, 0.07)], [(0, 0.1), (1, 0.08)])
-                kit.disc("hind_foot_hock_%d" % s, an + Vector((s * 0.03, 0, 0)), 0.09, depth=0.18)
+                wolf_disc("hind_foot_hock_%d" % s, an + Vector((s * 0.03, 0, 0)), 0.09, depth=0.18, ring=False)
             # pass 2 detail: a hydraulic ram along each upper limb, riding the upper bone
             weapons.piston(kit, "%s_upper_pst" % pre, a + (b - a) * 0.1 + Vector((s * 0.12, 0.06, 0)), a + (b - a) * 0.85 + Vector((s * 0.12, 0.06, 0)), 0.035, sfx="_%d" % s)
-            foot_c = c + Vector((0, -0.08, -0.14))   # v4: the paw's sole on the floor; the claws grow from its front edge
-            kit.shell("%s_foot_%d" % (pre, s), "frame_dark", foot_c, (0.22, 0.34, 0.2), (0, 0, 0), 0.5, levels=1)   # Legacy pass (v61): big feet
-            kit.plate("%s_foot_%d_cap" % (pre, s), "main", foot_c + Vector((0, -0.02, 0.1)), 0.24, 0.24, 0.03, (-70, 0, 0), bend=0.4, bevel=0.006)
-            # v49 (Preston: "the claws look like one line instead of 3"): three hooked claws, fanned so the side view shows
-            # each one. Four claws side by side at one angle stacked into a single red line from the side. Each claw is
-            # a knuckle segment and a hook curling down; the middle claw reaches longest and lowest, the outer two shorter
-            # and higher, so their tips sit at different points along the paw.
-            # 2026-10-15, Mechabeast V2 blind review 2: his talons are big bright red hooks about as long as the toe block;
-            # ours read as one- or two-pixel streaks (hidden in the paw armour). Now about twice as thick and long, three
-            # segments each (knuckle, hook, point) curling down to the floor, fanned wider. Reach kept near the old claws
-            # (v81 reached 0.64 m and the wider sprite cost 0.024 of side outline); the extra length goes into the curl.
-            for k, (dx, ty, tz) in enumerate(((-0.14, -0.38, 0.02), (0.0, -0.46, -0.06), (0.14, -0.33, 0.04))):
-                base = Vector((foot_c.x + dx * 0.7, foot_c.y - 0.14, foot_c.z + 0.1))
-                knuckle = Vector((foot_c.x + dx, foot_c.y + ty * 0.7, foot_c.z + tz + 0.16))
-                bend = Vector((foot_c.x + dx * 1.15, foot_c.y + ty * 1.02, foot_c.z + tz + 0.04))
-                tip = Vector((foot_c.x + dx * 1.25, foot_c.y + ty, foot_c.z + tz - 0.12))
-                kit.segment("%s_claw_%d_%d" % (pre, s, k), "claw", base, knuckle, 0.14, 0.13, 0.5)
-                kit.segment("%s_claw_%d_%d" % (pre, s, 10 + k), "claw", knuckle, bend, 0.12, 0.1, 0.5)
-                kit.segment("%s_claw_%d_%d" % (pre, s, 20 + k), "claw", bend, tip, 0.08, 0.06, 0.5)
+            PAWS.append((pre, s, c + Vector((0, -0.08, -0.14))))   # v4: the paw's sole on the floor; v85: built in paws()
+
+
+PAWS = []
+
+
+def paws():
+    """v85 (judges: the feet are weak; the claws a red blob): each paw a dark heel block and three dark toes, staggered
+    so that from the side the outer toe sits back and the inner one forward (about 5 to 6 sprite px apart on screen),
+    each with one red claw, a single swept hook about 3 px thick curling down to the floor in front of its toe. Built
+    after the greebles so no panels or bolts land on the blocks. History: v49 (Preston: "the claws look like one line
+    instead of 3") fanned them; 2026-10-15 (blind review 2) made them twice as thick in three segments each, which at
+    sprite size merged into one red blob with salmon highlights."""
+    for pre, s, fc in PAWS:
+        kit.shell("%s_foot_%d" % (pre, s), "main", fc + Vector((0, 0.07, 0.02)), (0.36, 0.32, 0.24), (0, 0, 0), 0.6, levels=1)   # the heel block
+        for k, (dx, dy, ln) in enumerate(((0.14, 0.17, 1.0), (0.0, 0.0, 1.12), (-0.14, -0.17, 1.06))):   # outer, middle, inner (v85e: wider stagger, the far paws' claws merged; a little longer)
+            x = fc.x + s * dx
+            toe_c = Vector((x, fc.y - 0.13 + dy, fc.z - 0.01))
+            kit.shell("%s_foot_%d_toe%d" % (pre, s, k), "frame_dark", toe_c, (0.12, 0.24, 0.16), (0, 0, 0), 0.6, levels=1)
+            front = toe_c.y - 0.12
+            # v85d: a steep talon hooking down in front of its toe (v85c's reached 0.2 m forward, longer than the toes'
+            # stagger, so the three overlapped on screen and merged into one red band at x4.4)
+            p0 = Vector((x, front + 0.06, toe_c.z + 0.04))
+            p1 = Vector((x, front - 0.15 * ln, toe_c.z + 0.07))
+            p2 = Vector((x, front - 0.12 * ln, toe_c.z - 0.12 * ln))
+            sweep("%s_claw_%d_%d" % (pre, s, k), "claw", _bezier(p0, p1, p2, 7),
+                  [(0.055, 0.065), (0.054, 0.063), (0.05, 0.058), (0.045, 0.05), (0.036, 0.038), (0.022, 0.022), (0.006, 0.006)])
 
 
 # ---- pass 2 detail layer (2026-10-13, Preston: "add more pieces and parts, it kind of looks like a bare prototype";
@@ -270,16 +397,14 @@ def legs():
 # cables, tail joint rings.
 def details():
     core = bpy.data.objects["torso_core"]
-    for k, y in enumerate((-0.2, 0.05, 0.3, 0.55, 0.8, 1.0)):
-        c = kit.on_surface(core, (0, y, top_at(y) + 0.1), (0, 0, 1), 0.1)
-        kit.plate("spine_%d" % k, "accent", c, 0.22, 0.32, 0.08, (-80, 0, 0), bend=0.2, taper=0.7, bevel=0.01)   # V2 (v68): taller, his back stands higher with red plates   # V2: bigger red plates along the back, his
+    # v85: the six red spine fins (V2 v68) are gone; the red back is three saddles now (red_plates())
     for sd in (-1, 1):
         c = kit.on_surface(core, (sd * HALF_W, 0.15, (top_at(0.15) + bottom_at(0.15)) / 2 + 0.05), (sd, 0, 0), 0.04)
-        weapons.vent(kit, "flank_vent_%d" % sd, c, 0.2, 0.3, (0, sd * 90, 0), slats=3)
-        weapons.jet(kit, "exhaust_%d" % sd, "", (sd * 0.14, 0.92, top_at(0.92) - 0.06), (sd * 0.2, 1.1, top_at(0.92) + 0.16), 0.05)
+        weapons.vent(kit, "flank_vent_%d" % sd, c, 0.2, 0.3, (0, sd * 90, 0), slats=3, slat_mat="frame")   # v85: grey slats (dark red was speckle)
+        weapons.jet(kit, "exhaust_%d" % sd, "", (sd * 0.14, 0.92, top_at(0.92) - 0.06), (sd * 0.2, 1.1, top_at(0.92) + 0.16), 0.05, tip_mat="frame")
         weapons.cable(kit, "belly_cable_%d" % sd, [(sd * 0.12, -0.7, bottom_at(-0.7) + 0.02), (sd * 0.14, -0.2, bottom_at(-0.2) - 0.02),
                                                    (sd * 0.12, 0.4, bottom_at(0.4) - 0.01)], 0.025)
-    kit.cyl("neck_collar", "trim", Vector((0, -0.9, 1.24 + UP)), Vector((0, -1.0, 1.26 + UP)), 0.3, 12)
+    kit.cyl("neck_collar", "frame_dark", Vector((0, -0.9, 1.24 + UP)), Vector((0, -1.0, 1.26 + UP)), 0.3, 12)   # v85: was dark red
     for k in range(1, TAIL_K):
         kit.cyl("tail_core_%d_ring" % k, "accent" if k == 3 else "frame", TAIL[k] - (TAIL[k + 1] - TAIL[k]).normalized() * 0.03,
                 TAIL[k] + (TAIL[k + 1] - TAIL[k]).normalized() * 0.03, 0.16 - 0.02 * k, 10)
@@ -306,31 +431,27 @@ def armor():
         paw = an + Vector((0, -0.1, -0.3))
         kit.segment("hind_foot_guard_%d" % s, "light",
                     an.lerp(paw, 0.12), an.lerp(paw, 0.78), 0.26, 0.3, 0.5)
-        for pre, a, b in (("front_scale", sh, el), ("front_shin", el, wr), ("hind_scale", hp, kn), ("hind_shin", kn, an)):
-            w = 0.25 if pre == "front_scale" else (0.3 if pre == "hind_scale" else 0.17)   # Legacy pass (v61): sit on the thicker sleeves
-            kit.segment("%s_stripe_%d" % (pre, s), "accent", a.lerp(b, 0.25) + Vector((s * w, 0, 0)), a.lerp(b, 0.65) + Vector((s * w, 0, 0)), 0.03, 0.05, 0.5)
-        # shoulder and hip pads, a red rim under each
+        # v85: the red limb stripes (3 to 5 cm, a broken one-pixel red line on every leg) are gone
+        # shoulder and hip pads (v85: the thin red rims under them are gone; a red square plate on each, red_plates())
         kit.shell("front_scale_pad_%d" % s, "main", sh + Vector((s * 0.24, -0.02, 0.0)), (0.16, 0.56, 0.5), (0, 0, 0), 0.6, levels=1)
-        kit.shell("front_scale_padrim_%d" % s, "accent", sh + Vector((s * 0.25, -0.02, -0.27)), (0.17, 0.54, 0.06), (0, 0, 0), 0.5, levels=0)
         kit.shell("hind_scale_pad_%d" % s, "main", hp + Vector((s * 0.27, 0.0, -0.06)), (0.16, 0.62, 0.52), (0, 0, 0), 0.6, levels=1)
-        kit.shell("hind_scale_padrim_%d" % s, "accent", hp + Vector((s * 0.28, 0.0, -0.34)), (0.17, 0.6, 0.06), (0, 0, 0), 0.5, levels=0)
-        # armored paws
-        for pre, c in (("front_foot", wr + Vector((0, -0.08, -0.14))), ("hind_foot", paw + Vector((0, -0.08, -0.14)))):
-            kit.shell("%s_armor_%d" % (pre, s), "main", c + Vector((0, -0.04, 0.13)), (0.36, 0.42, 0.14), (-10, 0, 0), 0.6, levels=1)
+        # armored paws: v85, the heel block in paws()
         # neck plates down each side, following the neck's rise
         n0, n1 = Vector((0, -0.95, 1.22 + UP)), HC + Vector((0, 0.18, -0.02))
         pitch = math.degrees(math.atan2(-(n1.z - n0.z), -(n1.y - n0.y)))
         for k, t in enumerate((0.22, 0.5, 0.78)):
-            kit.shell("neck_side_%d_%d" % (s, k), "main" if k != 1 else "trim", n0.lerp(n1, t) + Vector((s * 0.24, 0, -0.02)), (0.08, 0.26, 0.34), (pitch, 0, 0), 0.6, levels=1)
-        # cheek guards along the jaw hinge
-        kit.shell("head_cheek_%d" % s, "main", HC + Vector((s * 0.25, -0.1, -0.1)) * G, (0.07, 0.36, 0.2), (0, 0, 0), 0.6, levels=1)
+            kit.shell("neck_side_%d_%d" % (s, k), "main", n0.lerp(n1, t) + Vector((s * 0.24, 0, -0.02)), (0.08, 0.26, 0.34), (pitch, 0, 0), 0.6, levels=1)   # v85: the middle one no longer dark red
+        # cheek guards along the jaw hinge (v85: the skull's grey, not a dark patch under the eye)
+        kit.shell("head_cheek_%d" % s, "face", HC + Vector((s * 0.25, -0.1, -0.1)) * G, (0.07, 0.36, 0.2), (0, 0, 0), 0.6, levels=1)
     core = bpy.data.objects["torso_core"]
     for k, (ang, w, h, mat) in enumerate(((0, 0.5, 0.36, "main"), (-40, 0.36, 0.34, "accent"), (40, 0.36, 0.34, "accent"),
                                          (-75, 0.34, 0.4, "main"), (75, 0.34, 0.4, "main"))):   # v29: a ruff over the withers and shoulders
+        if k < 3:   # v85: the top three would stand over the withers saddle; the two side plates stay
+            continue
         rt = math.radians(ang)
         c = kit.on_surface(core, (HALF_W * math.sin(rt), -0.82, top_at(-0.82) - 0.1 + 0.1 * math.cos(rt)), (math.sin(rt), -0.3, math.cos(rt)), 0.1)
         kit.plate("ruff_%d" % k, mat, c, w, h, 0.06, (-62, 0, -ang * 0.9), bend=0.4, bevel=0.01, taper=0.55)
-    kit.shell("head_helm", "main", HC + Vector((0, 0.02, 0.3)) * G, (0.44, 0.46, 0.08), (-8, 0, 0), 0.6, levels=1)
+    # v85: no helm shell; it sat over the back half of the red brow and hid it from the side (headplate_0 is the crown)
     kit.shell("chest_armor", "main", kit.on_surface(bpy.data.objects["torso_core"], (0, -1.05, 1.05 + UP), (0, -1, 0.1), 0.06), (0.62, 0.12, 0.5), (12, 0, 0), 0.6, levels=1)
     # tail side armor on each segment
     for k in range(TAIL_K):
@@ -346,24 +467,51 @@ def armor():
 def loadout():
     A = weapons.anchor
     L = [
-        {"slot": "fang", "move": "Fang Lunge", "kind": "spikes", "prefix": "head_", "note": "red teeth along the upper jaw",
-         "args": {"points": [A("head_core", (fx, fy, 0.18)) for fx in (0.22, 0.78) for fy in (0.06, 0.14, 0.22)],
-                  "length": 0.1, "r": 0.03, "direction": (0, 0, -1), "mat": "tusk"}},
+        {"slot": "fang", "move": "Fang Lunge", "kind": "spikes", "prefix": "head_", "note": "pale teeth along the upper jaw (v85: were 2 px red ticks beside the fangs; his teeth are pale)",
+         "args": {"points": [A("head_core", (fx, fy, 0.18)) for fx in (0.22, 0.78) for fy in (0.1, 0.2)],
+                  "length": 0.1, "r": 0.04, "direction": (0, 0, -1), "mat": "light"}},
         {"slot": "howl", "move": "Howl Burst", "kind": "emitter", "prefix": "neck_", "note": "the throat emitter",
          "args": {"center": A("neck_core", (0.5, 0.2, 0.12)), "direction": (0, -1, -0.35), "r": 0.11}},
-        {"slot": "rail", "move": None, "kind": "cannon", "note": "spare: a long rail gun on the right of the back",
-         "args": {"base": (-0.2, 0.0, top_at(0.0) + 0.12), "direction": (0, -1, 0.04), "length": 1.05, "r": 0.05,
-                  "housing": (0.2, 0.46, 0.17)}},
+        {"slot": "rail", "move": None, "kind": "cannon", "note": "spare: a long rail gun on the left of the back (v85: was the right, where its barrel cut the red saddle in the side view)",
+         "args": {"base": (0.2, 0.0, top_at(0.0) + 0.12), "direction": (0, -1, 0.04), "length": 1.05, "r": 0.05,
+                  "housing": (0.2, 0.46, 0.17), "tip_mat": "frame"}},
     ]
     for sd in (-1, 1):
         side = "L" if sd == 1 else "R"
         el, wr = JOINTS["el." + side], JOINTS["wr." + side]
         L.append({"slot": "dash" + side, "move": "Shadow Dash", "kind": "blade", "prefix": "front_shin_", "suffix": "_%d" % sd,
-                  "note": "a swept blade on the outside of each forearm",
-                  "args": {"center": el.lerp(wr, 0.35) + Vector((sd * 0.11, 0.06, 0)), "w": 0.08, "h": 0.42, "rot": (-20, 0, sd * 84)}})
+                  "note": "a swept blade on the outside of each forearm (v85: near-black, a dark fin on the light forearm; red there read as a stray streak)",
+                  "args": {"center": el.lerp(wr, 0.35) + Vector((sd * 0.13, 0.06, 0)), "w": 0.16, "h": 0.46, "rot": (-20, 0, sd * 84), "mat": "main"}})   # v85b: twice as wide, one red fin shape (an 8 cm sliver was a broken red line)
         L.append({"slot": "pod" + side, "move": None, "kind": "missile_pod", "note": "spare: a 2x2 launcher on each haunch",
-                  "args": {"center": (sd * 0.28, 0.48, top_at(0.48) + 0.08), "size": (0.22, 0.3, 0.2), "rows": 2, "cols": 2, "rot": (-25, 0, 0)}})
+                  "args": {"center": (sd * 0.28, 0.42, top_at(0.42) + 0.08), "size": (0.22, 0.3, 0.2), "rows": 2, "cols": 2, "rot": (-25, 0, 0),
+                           "cap": "frame"}})   # v85: grey tube rims (eight 2 px red caps were speckle), 6 cm forward of the croup saddle
     return L
+
+
+def tidy_greebles():
+    """v85, this machine only (greebles.py is shared): the detail pass puts a red layer plate on one host in four and
+    dark red slats in its vents; at sprite size those were red specks across the grey. A greeble on a red host stays
+    red (it merges into the plate); a red or dark red greeble on any other host takes the host's colour (slats: grey)."""
+    inv = {m.name: k for k, m in kit.MATS.items()}
+    changed = 0
+    for o in list(bpy.context.scene.objects):
+        if o.type != "MESH" or not re.search(r"_9\d\d$", o.name) or not o.data.materials:
+            continue
+        host = bpy.data.objects.get(o.name[:-4])
+        hk = inv.get(host.data.materials[0].name) if host and host.data.materials else None
+        pk = inv.get(o.data.materials[0].name)
+        new = None
+        if hk == "accent" and pk != "accent":
+            new = "accent"
+        elif hk != "accent" and pk == "accent":
+            new = hk or "main"
+        elif pk == "trim":
+            new = "frame"
+        if new:
+            for i in range(len(o.data.materials)):
+                o.data.materials[i] = kit.MATS[new]
+            changed += 1
+    print("TIDY greebles recoloured %d" % changed)
 
 
 CFG = {
@@ -401,7 +549,10 @@ def main():
     legs()
     armor()
     weapons.build_loadout(kit, "wolf_m", loadout())
-    greebles.run(kit, weapons, lambda n: quad.bone_for(n, CFG), skip_prefix=("torso_core",))   # v71: the core is under armour already; its layer plate hid the red back
+    greebles.run(kit, weapons, lambda n: quad.bone_for(n, CFG), skip_prefix=("torso_core", "neckplate", "head_", "headplate", "ear_"))   # v71: the core is under armour already; its layer plate hid the red back. v85: the head and the red neck plates bare too (panels and bolts on them read as mud and crumpled red at sprite size)
+    tidy_greebles()
+    red_plates()
+    paws()
     quad.tag_parts(CFG)
     ob = kit.join_into_one()
     ob.name = "wolf_m"

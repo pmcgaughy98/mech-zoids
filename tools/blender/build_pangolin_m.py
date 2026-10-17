@@ -7,8 +7,9 @@
 # Rig: the shared quadruped rig (quad_rig.py, which began as this file's v16-v18 rig); walk and idle clips; the sprite
 # stance is written to docs/art/3d/pangolin_m.stance for SPRITE_STANCE.
 import re
+import bmesh
 import bpy, importlib.util, math, os, sys
-from mathutils import Vector
+from mathutils import Matrix, Vector
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
@@ -34,9 +35,10 @@ PAL = {   # material keys the kit's parts use, with this machine's colours
     "accent": "407090",      # delft: the snout
     "frame": "5f636b",       # grey limbs and joints (v2: darker, the pale limbs read washed out)
     "frame_dark": "4a4c53",  # the dark body under the scales (v2: lighter, less of the silhouette near-black)
-    "face": "55575e",        # the bare face
+    "face": "45464c",        # the bare face (p42: darker than the limbs' grey, so the head reads apart from the legs; was 55575e)
     "light": "a02010",       # part pass: the joint rings read red-centred, as in Preston's reference
     "eye_src": "5fe1d0",     # the eyes: the sprite render keeps this teal
+    "claw": "d0281a",        # p42: the claws a clear bright red (judges: "large red claws", "in clear red"); trim stays madder
 }
 
 
@@ -72,6 +74,9 @@ def body():
     front = kit.mirror_x([(0.1, 1.47), (0.29, 1.42), (0.49, 1.22), (0.56, 0.96), (0.5, 0.7), (0.38, 0.52),
                           (0.26, 0.42)])   # reference pass: the dome follows the higher back, a touch slimmer low down
     core = kit.profile_solid("torso_shell", "frame_dark", (0, 0, 0), side, front, chamfer=0.02)
+    if SCALE_TILES:
+        scale_tiles(core)
+        return
     row = 0
     y = -0.86
     while y <= 0.92:
@@ -92,6 +97,73 @@ def body():
                       bevel=0.01)
         row += 1
         y += 0.24   # p6: rows closer
+
+
+# Model pass p42 (2026-10-16; blind judges: "the pangolin's scales are not in ordered rows"). The leaf plates above
+# (bent, tapered, overlapping by more than half side by side) shrank to slivers and speckle at x4.4. The reference
+# has chunky bevelled tiles in rings round the body, a dark gap between rings, each tile overlapping the one below it
+# like roof shingles. So: SCALE_RINGS rings across the back, tiles about 10 x 8 sprite px each, the gap between rings
+# about 2 px of the dark core (the seam), each tile's lower edge lifted over the tile below and its rear edge over the
+# next ring (real pangolin scales point to the tail).
+SCALE_TILES = True
+# rings: (centre along the body, forward lean of the tiles, degrees left bare at the spine). The first is a collar on the
+# core's flat front wall beside the head (it showed as a dark slab in the side view), leaning forward, the spine left to
+# the neck plates
+SCALE_RINGS = ((-0.95, 1.0, 30), (-0.80, 0, 0), (-0.49, 0, 0), (-0.18, 0, 0), (0.13, 0, 0), (0.44, 0, 0), (0.74, 0, 0))
+TILE_LEN = 0.25     # along the body; leaves a 0.06 dark seam to the next ring
+TILE_W = 0.32       # round the body (arc), the tiles about touching
+TILE_T = 0.09       # thickness: 3 sprite px, its lower face the shaded seam under each tile
+TILE_ARC = 128      # degrees from the spine down each flank
+
+
+def scale_tiles(core):
+    """The rings of tiles. Spacing round each ring is measured on the core's real surface (ray cast every 2 degrees),
+    so the flank tiles touch as the top ones do (spacing on the aiming ellipse left 4 cm gaps down the flanks)."""
+    for r, (y, lean, arc0) in enumerate(SCALE_RINGS):
+        t, a = top_at(y), half_width(y) + 0.02
+        zc, b = (t + BOTTOM) / 2 + 0.04, (t - BOTTOM) / 2 + 0.02
+        slope = (top_at(y + 0.05) - top_at(y - 0.05)) / 0.1
+        da = (half_width(y + 0.05) - half_width(y - 0.05)) / 0.1
+        samples = []   # (th, surface point, normal) every 2 degrees down both flanks
+        for th in range(-TILE_ARC, TILE_ARC + 1, 2):
+            if abs(th) < arc0:
+                continue
+            rt = math.radians(th)
+            n0 = Vector((math.sin(rt) / a, 0, math.cos(rt) / b)).normalized()
+            nrm = n0.copy()
+            nrm.y = -slope * max(0.0, n0.z) - da * abs(n0.x) - lean   # follow the back's slope and the body's taper
+            nrm.normalize()
+            aim = Vector((a * math.sin(rt), y, zc + b * math.cos(rt)))
+            hit = kit.surface_hit(core, aim + nrm * 3.0, -nrm)
+            if hit:
+                samples.append((th, hit[0], nrm))
+        for half in ((s_ for s_ in samples if s_[0] < 0), (s_ for s_ in samples if s_[0] >= 0)) if arc0 else (samples,):
+            run = list(half)
+            if len(run) < 2:
+                continue
+            ss = [0.0]
+            for (_, p0, _), (_, p1, _) in zip(run, run[1:]):
+                ss.append(ss[-1] + (p1 - p0).length)
+            n = max(1, int(round(ss[-1] / TILE_W)))
+            step = ss[-1] / n
+            # alternate rings half a tile round, pine-cone style; their end tiles are half tiles
+            if r % 2 == 0 or arc0:
+                tiles = [(step * (j + 0.5), step) for j in range(n)]
+            else:
+                tiles = [(step * 0.25, step * 0.5)] + [(step * j, step) for j in range(1, n)] + [(ss[-1] - step * 0.25, step * 0.5)]
+            for s, wide in tiles:
+                i = min(range(len(ss)), key=lambda q: abs(ss[q] - s))
+                th, p, nrm = run[i]
+                xa = Vector((0, 1, 0)).cross(nrm).normalized()   # round the body (+x on the spine), toward larger th
+                ya = nrm.cross(xa).normalized()                 # along the body, toward the tail
+                frame = Matrix((xa, ya, nrm)).transposed()
+                down = 1 if th > 0 else -1                      # which way "down the flank" runs along xa
+                lift = frame @ Matrix.Rotation(math.radians(-10 * down if abs(th) > 12 else 0), 3, "Y") \
+                    @ Matrix.Rotation(math.radians(7), 3, "X")   # lower edge out over the tile below; rear edge out over the next ring
+                c = p + nrm * (TILE_T / 2 + 0.012)
+                k = len([o for o in bpy.data.objects if o.name.startswith("scale_%d_" % r)])
+                ob = kit.shell("scale_%d_%d" % (r, k), "main", (0, 0, 0), (wide * 0.94, TILE_LEN, TILE_T), (0, 0, 0), crease=0.4, levels=1)
+                ob.matrix_world = Matrix.Translation(c) @ lift.to_4x4()
 
 
 # ---- the tail: a tapering curve down to the ground, scaled on top and sides ----------------------------------
@@ -118,21 +190,30 @@ def tail():
 
 
 # ---- the head: small and pointed, bare grey face, delft snout, two rows of small scales on top ---------------
+HC = Vector((0, -1.02, 0.90))   # the head's centre (ref-5: 0.74, his head hangs low; p42: 16 cm up, so the snout's
+# underside clears the front feet in the side view: "the snout merges with the front leg")
+HEAD_TILT = 6   # p42: degrees nose-up about the head's back (main())
+
+
 def head():
-    hc = Vector((0, -1.02, 0.74))   # ref-5: a touch lower, his head hangs low
-    side = [(0.2, -0.12), (0.22, 0.08), (0.08, 0.2), (-0.15, 0.16), (-0.42, 0.04), (-0.55, -0.04), (-0.52, -0.12),
-            (-0.1, -0.2)]
+    hc = HC
+    # p42: a longer wedge with a level jaw line rising to the tip (the reference's snout runs well past the front feet,
+    # background showing under it); before: the wedge ended at -0.55 and its jaw sloped down onto the claws
+    side = [(0.2, -0.12), (0.22, 0.08), (0.08, 0.2), (-0.15, 0.16), (-0.46, 0.06), (-0.62, 0.0), (-0.62, -0.06),
+            (-0.42, -0.11), (-0.1, -0.19)]
     front = kit.mirror_x([(0.12, 0.2), (0.22, 0.06), (0.24, -0.04), (0.16, -0.18)])
     kit.profile_solid("head_core", "face", hc, side, front, chamfer=0.012)
-    snout_side = [(-0.4, 0.06), (-0.5, -0.02), (-0.53, -0.08), (-0.48, -0.13), (-0.4, -0.12)]   # pass 3 (column profile): snout shorter, his head is 15% of the length, ours was 25%
-    snout_front = kit.mirror_x([(0.08, 0.06), (0.11, -0.05), (0.08, -0.13)])
-    snout = kit.profile_solid("snout", "frame", hc, snout_side, snout_front, chamfer=0.01)   # v6: metal, no canopy
+    snout_side = [(-0.56, 0.03), (-0.68, -0.01), (-0.72, -0.04), (-0.69, -0.08), (-0.56, -0.08)]   # p42: the tip block moved out with the wedge
+    snout_front = kit.mirror_x([(0.08, 0.04), (0.11, -0.03), (0.08, -0.09)])
+    snout = kit.profile_solid("snout", "face", hc, snout_side, snout_front, chamfer=0.01)   # v6: metal, no canopy; p42: the dark face grey
     for s in (-1, 1):   # nostril vents at the tip
-        kit.groove(snout, hc + Vector((s * 0.025, -0.61, -0.07)), hc + Vector((s * 0.075, -0.61, -0.07)), (0, -1, 0),
+        kit.groove(snout, hc + Vector((s * 0.025, -0.71, -0.045)), hc + Vector((s * 0.075, -0.71, -0.045)), (0, -1, 0),
                    w=0.03, d=0.025, mat="trim")
-    for k in range(2):   # scale plates down the top of the snout
-        kit.plate("snoutscale_%d" % k, "main", hc + Vector((0, -0.3 - 0.12 * k, 0.11 - 0.06 * k)), 0.17 - 0.03 * k, 0.15,
-                  0.035, (-72, 0, 0), bend=0.3, bevel=0.008)
+    for k in range(3):   # scale plates down the top of the snout (p42: three, bigger and thicker, so the snout reads gold on top)
+        y = -0.36 - 0.13 * k
+        z = 0.17 + (y + 0.15) * 0.33 + 0.02
+        kit.plate("snoutscale_%d" % k, "main", hc + Vector((0, y, z)), 0.22 - 0.03 * k, 0.17, 0.05, (-72, 0, 0),
+                  bend=0.25, bevel=0.01)
     for s in (-1, 1):
         kit.shell("eye_%d_socket" % s, "frame_dark", hc + Vector((s * 0.165, -0.2, 0.07)), (0.12, 0.13, 0.11), (0, 0, 0), 0.5, levels=1)
         kit.shell("eye_%d" % s, "eye_src", hc + Vector((s * 0.18, -0.2, 0.07)), (0.09, 0.09, 0.07), (0, 0, 0), 0.0, levels=0)
@@ -166,8 +247,10 @@ def legs():
         kit.disc("front_elbow_%d" % s, el, 0.1)
         # v2, giant pangolin (Wikipedia): curls its front paws and walks on the outside of the wrists: the foot rolls
         # outward onto its outer edge, claws tucked in
-        kit.shell("front_foot_%d" % s, "frame", Vector((s * 0.52, -0.8, 0.09)) + fo, (0.3, 0.36, 0.15), (0, s * 28, 0), 0.5, levels=1)
-        claws(s, "front", Vector((s * 0.52, -0.95, 0.12)) + fo)   # claw pass (2026-10-13): three red hooks fanned forward, his; the curled-under claws stacked into one line from the side
+        # p42 (judges: "feet about 1.5x bigger with three distinct red claws"): the foot 1.4x wide and long, rolled less
+        # (28 to 12 degrees) so its top reads as a broad grey paw; before (0.3, 0.36, 0.15) at z 0.09
+        kit.shell("front_foot_%d" % s, "frame", Vector((s * 0.52, -0.78, 0.135)) + fo, (0.42, 0.5, 0.2), (0, s * 12, 0), 0.5, levels=1)
+        claws(s, "front", Vector((s * 0.52, -0.99, 0.13)) + fo, 0.17, 0.07, 1.0)   # claw pass (2026-10-13): three red hooks fanned forward, his; p42: one thick curved cone each
         # v2, giant pangolin (Wikipedia): "most of its weight on its columnar rear legs": straight under the hip
         hp = Vector((s * 0.42, 0.55, 0.62)) + ho
         kn = Vector((s * 0.46, 0.57, 0.36)) + ho
@@ -181,25 +264,64 @@ def legs():
         kit.plate("hind_scale_%d" % s, "main", hp.lerp(kn, 0.4) + Vector((s * 0.33, 0.02, 0.04)), 0.36, 0.38, 0.05,
                   (-15, 0, s * 70), bend=0.35, bevel=0.01)
         kit.disc("hind_knee_%d" % s, kn, 0.11)
-        kit.shell("hind_foot_%d" % s, "frame", Vector((s * 0.46, 0.52, 0.06)) + ho, (0.28, 0.46, 0.11), (0, 0, 0), 0.5, levels=1)
-        claws(s, "hind", Vector((s * 0.46, 0.3, 0.1)) + ho)
+        kit.shell("hind_foot_%d" % s, "frame", Vector((s * 0.46, 0.5, 0.085)) + ho, (0.4, 0.6, 0.16), (0, 0, 0), 0.5, levels=1)   # p42: 1.4x (was (0.28, 0.46, 0.11) at z 0.06)
+        claws(s, "hind", Vector((s * 0.46, 0.23, 0.1)) + ho, 0.12, 0.056, 0.85)
 
 
 
-def claws(s, pre, front):
-    """Three hooked claws fanned from a foot's front edge (claw pass, 2026-10-13, as the wolf's): a knuckle and a
-    hook each, the middle claw longest and lowest, so the side view shows three separate claws."""
-    for k, (dx, ty, tz) in enumerate(((-0.1, -0.2, 0.02), (0.0, -0.28, -0.05), (0.1, -0.15, -0.03))):
-        base = front + Vector((dx * 0.7, 0, 0))
-        knuckle = front + Vector((dx, ty + 0.06, tz + 0.05))
-        tip = front + Vector((dx * 1.1, ty, max(-front.z + 0.02, tz - 0.06)))
-        kit.segment("%s_claw_%d_%d" % (pre, s, k), "trim", base, knuckle, 0.08, 0.075, 0.5)
-        kit.segment("%s_claw_%d_%d" % (pre, s, 10 + k), "trim", knuckle, tip, 0.07, 0.055, 0.5)
+def claws(s, pre, front, spread, r0, size):
+    """Three hooked claws from a foot's front edge (claw pass, 2026-10-13, as the wolf's). p42: each claw one thick
+    curved cone (hook()) instead of two thin segments (0.07 m: about 2 sprite px, they read as red flecks), about 4 px
+    thick at the base, `spread` apart sideways and fanned in pitch: the outer claw short and steep, the middle one
+    longest, the inner one flatter, so the side view shows three separate tips as well as the front view."""
+    for k, (dx, pitch, length, curl, yaw) in enumerate(((1, 62, 0.26, 18, 34), (0, 36, 0.33, 22, 0), (-1, 0, 0.3, 38, 48))):
+        base = front + Vector((s * dx * spread, 0, 0.04 * (dx < 0)))   # the inner claw a little higher on the foot
+        hook("%s_claw_%d_%d" % (pre, s, k), "claw", base, pitch, length * size, r0, curl, yaw=s * dx * yaw)   # splayed: the tips about 0.3 m apart
+
+
+def hook(name, mat, base, pitch, length, r0, curl, yaw=0.0, rings=6, sides=8):
+    """A tapered claw curving forward (-y) and down: it leaves `base` tipped `pitch` degrees below level and turns
+    `curl` degrees further down by its tip, kept above the ground. One closed mesh, so it is one piece in the sprite."""
+    pts, dirs = [Vector(base)], []
+    step = length / rings
+    for i in range(rings + 1):
+        a = math.radians(pitch + curl * i / rings)
+        dirs.append(Matrix.Rotation(math.radians(yaw), 3, "Z") @ Vector((0, -math.cos(a), -math.sin(a))))   # yaw > 0 splays toward +x
+    for i in range(rings):
+        pts.append(pts[-1] + dirs[i] * step)
+    low = min(p.z for p in pts)
+    if low < 0.02:   # lift the whole claw so its tip stays on the ground line
+        pts = [p + Vector((0, 0, 0.02 - low)) for p in pts]
+    bm = bmesh.new()
+    loops = []
+    for i, (p, d) in enumerate(zip(pts[:-1], dirs[:-1])):
+        r = r0 * (1 - i / rings) ** 0.8
+        u = Vector((0, 0, 1)).cross(d).normalized()
+        if u.x < 0:
+            u = -u
+        v = d.cross(u).normalized()
+        loops.append([bm.verts.new(p + u * (0.85 * r * math.cos(2 * math.pi * k / sides)) + v * (r * math.sin(2 * math.pi * k / sides)))
+                      for k in range(sides)])
+    tip = bm.verts.new(pts[-1])
+    bm.faces.new(loops[0][::-1])
+    for la, lb in zip(loops, loops[1:]):
+        for k in range(sides):
+            bm.faces.new((la[k], la[(k + 1) % sides], lb[(k + 1) % sides], lb[k]))
+    for k in range(sides):
+        bm.faces.new((loops[-1][k], loops[-1][(k + 1) % sides], tip))
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    me = bpy.data.meshes.new(name)
+    bm.to_mesh(me)
+    bm.free()
+    ob = bpy.data.objects.new(name, me)
+    bpy.context.scene.collection.objects.link(ob)
+    ob.data.materials.append(kit.MATS[mat])
+    return ob
 
 
 def weapons():
     for s in (-1, 1):   # Scale Shot: a launcher rack on each shoulder, three madder barrels angled forward and up
-        base = kit.on_surface(bpy.data.objects["torso_shell"], (s * 0.33, -0.3, 1.4), (s * 0.5, 0, 1), 0.05)   # reference pass 2: low on the back, behind the head
+        base = kit.on_surface(bpy.data.objects["torso_shell"], (s * 0.33, -0.3, 1.4), (s * 0.5, 0, 1), 0.05 + (0.05 if SCALE_TILES else 0))   # reference pass 2: low on the back, behind the head; p42: up onto the tiles
         kit.shell("launcher_%d" % s, "frame", base, (0.26, 0.36, 0.14), (-10, 0, -s * 12), 0.5, levels=1)   # reference pass 2: lower profile
         for k in range(3):
             x = s * 0.33 + (k - 1) * 0.085
@@ -230,7 +352,7 @@ CFG = {
     "tail_bone": tail_bone,
     "tail_points": [tail_point(t) for t in (0.0, 1 / 3, 2 / 3, 1.0)],
     "body_bone": ((0, 0.6, 0.9), (0, -0.6, 0.9)),
-    "head_bone": ((0, -0.87, 0.8), (0, -1.62, 0.75)),
+    "head_bone": ((0, -0.87, 0.8 + HC.z - 0.74), (0, -1.62, 0.75 + HC.z - 0.74)),   # p42: rides up with the head
     "joints": JOINT,
     "stride": 0.24,
     "crouch": 0.04,
@@ -262,8 +384,13 @@ def main():
     head()
     for o in list(bpy.context.scene.objects):   # ref-5 (2026-10-13): his head is a quarter larger; the head group 1.25x about its centre
         if o.type == "MESH" and o.name.startswith(("head_core", "snout", "eye_", "ear_", "headscale", "nostril")):
-            o.location = Vector((0, -1.02, 0.74)) + (o.location - Vector((0, -1.02, 0.74))) * 1.25
+            o.location = HC + (o.location - HC) * 1.25
             o.scale = tuple(v * 1.25 for v in o.scale)
+            # p42: the head tipped HEAD_TILT degrees nose-up about its back, so the snout's underside runs level and
+            # clears the far front foot's claws in the side view (they touched it there)
+            piv = HC + Vector((0, 0.25, 0))
+            bpy.context.view_layer.update()
+            o.matrix_world = Matrix.Translation(piv) @ Matrix.Rotation(math.radians(-HEAD_TILT), 4, "X") @ Matrix.Translation(-piv) @ o.matrix_world
     legs()
     weapons()
     for k, (y, z, w, h) in enumerate(((-0.98, 1.16, 0.56, 0.42), (-1.1, 1.02, 0.48, 0.36), (-1.2, 0.9, 0.4, 0.3))):   # p20: overlapping scales over the neck, the armour reaching the head (his)

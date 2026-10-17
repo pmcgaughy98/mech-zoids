@@ -43,6 +43,7 @@ PAL = {
     "frame_dark": "1c1518",  # the body under the plates, the muzzle patch
     "face": "d4553a",
     "light": "8a8d92",
+    "steel": "c8cacd",       # model pass p69 (2026-10-17): the light inner face of the hip, knee and ankle joints
     "eye_src": "5fe1d0",     # teal eyes (player faction)
 }
 
@@ -103,31 +104,43 @@ def body():
 
 # ---- the tail: thick, curving down to the ground behind, the prop the animal leans on --------------------------
 def tail_point(t):
-    p0, p1, p2 = Vector((0, 0.52, 0.98)), Vector((0, 1.3, 0.3)), Vector((0, 2.0, 0.12))   # p15: lies along the ground for its outer half (his)
+    # model pass p69 (2026-10-17; judges: "the tail needs definition", his tail is a long thick brace sloping down to the
+    # ground behind): a near-straight line from high on the rump down toward the floor, a slight arch. The sprite camera
+    # (30 degrees up, turned 20) lifts whatever lies further back, so p15's curve (1.2 m drop, flat outer half) read
+    # level on screen. Posed in the battle stance the root sits at about 1.2 m and the tip about 0.35 m off the floor.
+    p0, p1, p2 = Vector((0, 0.48, 1.04)), Vector((0, 1.25, 0.66)), Vector((0, 2.05, 0.16))   # p15 had (0.52, 0.98), (1.3, 0.3), (2.0, 0.12)
     return p0 * (1 - t) ** 2 + p1 * 2 * t * (1 - t) + p2 * t ** 2
 
 
-TAIL_K = 9   # p15: his nine rounded segments
+TAIL_K = 6   # p69: six segments (p15's nine read as a fringe of thin fins, then as a stack of coins once pitched right)
+TAIL_R0, TAIL_R1 = 0.28, 0.085   # p69: root and tip radius (p15 0.43 to 0.075 drew a wedge up to the shoulders)
+_Q = (TAIL_R1 / TAIL_R0) ** (1.0 / TAIL_K)
+# p69: each segment about as long as it is tall, as his are (his root segment 75 px tall by 65 long, the tip 30 by 50):
+# lengths and radii shrink by the same ratio, so the segments run from 0.46 m at the root to 0.17 m at the tip
+TAIL_T = [(1 - _Q ** k) / (1 - _Q ** TAIL_K) for k in range(TAIL_K + 1)]
 
 
 def tail():
     pass   # p15: the Tail Spring rings are the dark gaps between segments now (the fat root rings read as a beehive)
     for k in range(TAIL_K):
-        t0, t1 = k / TAIL_K, (k + 1) / TAIL_K
+        t0, t1 = TAIL_T[k], TAIL_T[k + 1]
         a, b = tail_point(t0), tail_point(t1)
-        r = 0.43 * (1 - t0) + 0.075 * t0   # p15: measured from his sprite (root 0.29 of height, tip 0.05)
-        pitch0 = math.degrees(math.atan2(-(b - a).z, (b - a).y))
-        kit.shell("tail_core_%d" % k, "main", (a + b) / 2, (2 * r, (b - a).length * 0.9, 1.9 * r), (pitch0, 0, 0), 0.5, levels=2)   # p18: full extents (the kit's shell takes sizes, not radii; p15-p17 were half size inside the core)
-        gap = kit.segment("tail_core_%d_gap" % k, "trim", a, b, 1.3 * r, 1.2 * r, 0.5)   # the dark core showing between barrels
-        pitch = math.degrees(math.atan2(-(b - a).z, (b - a).y))
-        kit.plate_on(bpy.data.objects["tail_core_%d" % k], "tail_plate_%d" % k, "accent", (a + b) / 2, (0, 0.3, 1),
-                     1.7 * r + 0.06, 0.12, 0.045, 0.01, up=tuple(b - a), bend=0.6, bevel=0.01)   # v2: maroon bands
+        r = TAIL_R0 * _Q ** (k + 0.5)   # p15: measured from his sprite (root 0.29 of height, tip 0.05)
+        seg = (b - a).length
+        # p69: the barrel pitched along the tail. Before, atan2(-dz, dy) tipped every barrel up while the tail ran down
+        # (a 60 to 80 degree mismatch at the root), which drew the tail as a fan of slanted cards.
+        pitch = math.degrees(math.atan2((b - a).z, (b - a).y))
+        gap = 0.09 + 0.08 * seg   # p69: a dark band of 2 to 3 sprite px between barrels (the core shows through); p69b 0.05 + 0.05 seg drew 1 px lines
+        kit.shell("tail_core_%d" % k, "main", (a + b) / 2, (2 * r, seg - gap, 1.9 * r), (pitch, 0, 0), 0.75, levels=2)   # p18: full extents (the kit's shell takes sizes, not radii; p15-p17 were half size inside the core); p69: crease 0.5 to 0.75, a chunkier box
+        kit.segment("tail_core_%d_gap" % k, "trim", a, b, 1.55 * r, 1.5 * r, 0.5)   # the dark core showing between barrels; p69: fatter (1.3 by 1.2 r), so the camera looking down into a gap sees it past the barrel edge
     # Mechabeast V2 blind review (2026-10-15): lit orange bands, his tail is clean orange segments; the charcoal ones read as noise
+    # p69: the accent top plates are gone; on the short p69a barrels they read as a second stripe per segment
 
 
 def tail_bone(name):
     if name.startswith(("tail_core_", "tail_plate_")):
-        return min(3, 4 * int(name.split("_")[2]) // TAIL_K)
+        k = int(name.split("_")[2])
+        return min(3, int(2 * (TAIL_T[k] + TAIL_T[k + 1])))   # p69: by the segment's middle along the tail (4 bones)
     return None
 
 
@@ -175,6 +188,26 @@ STAGGER = 0.16   # legs part: both legs show in the side view
 JOINTS = {}
 
 
+def joint(name, center, radius, depth=0.16):
+    """model pass p69 (2026-10-17; judges: "the joint discs need definition"): the Zoids Legacy joint read, a dark rim, a
+    clearly lighter inner face and one shine, in pieces big enough to survive the x4.4 downscale (the gorilla's render-side
+    tries moved about one sprite pixel because its discs were too small). A near-black rim cylinder, a light steel face
+    standing 3 cm proud with a rounded edge (in the sprite its top half takes the lightest grey, the rest a step down),
+    and a small dark hub. The kit's disc() was a charcoal disc under an orange ring: dark on dark at sprite size. Faces outward
+    (+x on the far side, -x on the near side). Names stay '<limb prefix>_joint_<side>_<piece>' for the bone rule."""
+    c = Vector(center)
+    ax = Vector((-1, 0, 0)) if c.x < 0 else Vector((1, 0, 0))
+    kit.cyl(name + "_rim", "frame_dark", c - ax * depth, c, radius, 20)
+    # (p69f tried the face domed, its outer half rounded over: more shading on the hip but the hub slid off-centre and
+    # the knee went muddy at sprite size; the flat face reads as a clean light ring, lit top half, around a dark hub)
+    face = kit.cyl(name + "_face", "steel", c - ax * 0.02, c + ax * 0.03, radius * 0.78, 20)
+    kit.round_rim(face, radius * 0.16, segments=2)
+    kit.cyl(name + "_hub", "frame_dark", c + ax * 0.02, c + ax * 0.055, radius * 0.3, 12)
+
+
+JOINT_SKIP = ("thigh_joint", "knee_joint", "ankle_joint")   # p69: greebles kept off the joints (a bolt on the face broke the read)
+
+
 def limbs():
     for s in (-1, 1):
         side = "L" if s == 1 else "R"
@@ -204,7 +237,10 @@ def limbs():
                         wr + Vector(((k - 1) * 0.035, -0.16, -0.09)), 0.03, 0.03, 0.5)
         # hind legs: a huge armoured thigh, the shin back down to the heel, the long foot flat on the ground
         kit.limb_solid("thigh_frame_%d" % s, "main", hp, kn, (s, 0, 0), [(0, 0.39, 0.36), (1, 0.29, 0.26)], [(0, 0.34), (1, 0.26)])   # Mechabeast V2 blind review (2026-10-15): 1.3x, his big orange thigh; the legs read as a grey lump   # legs part 3: a compact thigh block, the reference's
-        kit.disc("thigh_frame_%d_hip" % s, hp + Vector((s * 0.22, 0, 0)), 0.2, depth=0.2)   # Mechabeast V2 blind review (2026-10-15): his round hip joint, 0.14 to 0.2   # torso part 2: hip bolt
+        # p69: the hip joint as joint() (dark rim, light face, hub), 13 sprite px across, its face outside the thigh's
+        # outer side (0.63 m out at the hip; the old disc's face sat at 0.56, inside it, and showed only past the thigh's
+        # end) and 0.28 of the way down the thigh, so the whole disc lies on the thigh as his does
+        joint("thigh_joint_%d" % s, hp.lerp(kn, 0.28) + Vector((s * 0.42, 0, 0)), 0.2)   # Mechabeast V2 blind review (2026-10-15): his round hip joint, 0.14 to 0.2   # torso part 2: hip bolt
         thigh = bpy.data.objects["thigh_frame_%d" % s]
         for k, (t, w, h) in enumerate(()):   # legs part 4: no thigh plate (it read as a slab over the shin)
             kit.plate_on(thigh, "thigh_plate_%d_%d" % (s, k), "main", hp.lerp(kn, t), (s, -0.2, 0), w, h, 0.05, 0.02,
@@ -217,8 +253,8 @@ def limbs():
         kit.cyl("heel_piston_%d" % s, "frame_dark", kn + Vector((0, 0.14, 0.02)), kn.lerp(an, 0.65) + Vector((0, 0.14, 0)), 0.075, 10)   # weapons pass: Piston Kick
         kit.cyl("heel_rod_%d" % s, "accent", kn.lerp(an, 0.65) + Vector((0, 0.14, 0)), an + Vector((0, 0.1, 0.02)), 0.04, 8)
         kit.cyl("heel_head_%d" % s, "trim", kn + Vector((0, 0.14, 0.06)), kn + Vector((0, 0.14, 0.0)), 0.09, 10)
-        kit.disc("knee_%d" % s, kn + Vector((s * 0.04, 0, 0)), 0.17, depth=0.3)   # legs part: the reference's big knee bolt
-        kit.disc("ankle_%d" % s, an + Vector((s * 0.02, 0, 0)), 0.1, depth=0.2)
+        joint("knee_joint_%d" % s, kn + Vector((s * 0.32, 0, 0)), 0.16, depth=0.2)   # legs part: the reference's big knee bolt; p69: joint(), face at 0.62 m out (the old one sat inside the thigh and shin)
+        joint("ankle_joint_%d" % s, an + Vector((s * 0.19, 0, 0)), 0.11, depth=0.14)   # p69: joint(), 7 sprite px across
         # the long hind foot, flat, with the big fourth toe and claws at the front
         kit.shell("foot_%d" % s, "main", an.lerp(toe, 0.5) + Vector((0, -0.1, -0.04)), (0.18, 0.9, 0.12), (0, 0, 0), 0.5, levels=1)   # Mechabeast V2 blind review (2026-10-15): orange, his feet are orange with grey toes   # legs part: a long foot
         kit.shell("toecap_%d" % s, "main", an.lerp(toe, 0.6) + Vector((0, -0.06, 0.05)), (0.17, 0.5, 0.1), (0, 0, 0), 0.5, levels=1)   # orange over the whole front
@@ -296,7 +332,7 @@ def hop_pose(t):
 
 
 BATTLE_FEET = {"R": 0.45, "L": -0.7}   # Mechabeast V2 blind review (2026-10-15): the near foot 25 cm less far back, his sits under the hip (ours stuck out as a grey lump)
-BATTLE_RISE, BATTLE_TAIL = 0.25, 2   # Mechabeast V2 blind review (2026-10-15): 10 to 2, column profile put our tail 7% of the height above his, which slopes down-left   # V2 (p50): his kangaroo stands tall on extended legs, the tail higher   # Mechabeast V2 (2026-10-14): a split boxing stance, the near foot back, the far one forward
+BATTLE_RISE, BATTLE_TAIL = 0.25, -6   # p69: -6, the hop's crouch already lifts the tail 6 degrees and the new curve carries the slope (the battle tail.0 nets 0)   # Mechabeast V2 blind review (2026-10-15): 10 to 2, column profile put our tail 7% of the height above his, which slopes down-left   # V2 (p50): his kangaroo stands tall on extended legs, the tail higher   # Mechabeast V2 (2026-10-14): a split boxing stance, the near foot back, the far one forward
 
 
 def battle_pose(t):
@@ -318,6 +354,25 @@ def battle_pose(t):
         p["shin." + side] = (w2 - w1, 0, 0)
         p["foot." + side] = (-w2, 0, 0)
     return p
+
+
+def flak_tail_lift(kangaroo_set, k=0.45):
+    """p69: the lower tail would plant on the floor in Pouch Flak Gun's recoil (the body leans back up to 17 degrees) and,
+    since every battle frame is grounded on its lowest point, lift both feet 0.17 m off it (0.07 m before p69). The tail
+    root lifts k degrees for each degree of lean, so the tail still braces near the floor and the feet stay planted."""
+    def wrapped(stance):
+        clips = kangaroo_set(stance)
+        flak = clips["flak"]
+
+        def pose(t):
+            p = flak(t)
+            lean = max(0.0, -p.get("body", (0, 0, 0))[0])   # negative rx leans back on this rig
+            rx, ry, rz = p.get("tail.0", (0, 0, 0))
+            p["tail.0"] = (rx + k * lean, ry, rz)
+            return p
+        clips["flak"] = pose
+        return clips
+    return wrapped
 
 
 def idle_pose(t):
@@ -360,7 +415,7 @@ def main():
             o.location = HC + (o.location - HC) * 1.08   # head pass: his head is small on the long neck; round 4 had 1.25
             o.scale *= 1.08   # head part 4: back to the round-4 size (1.45 overshot)
     wpn.build_loadout(kit, "kangaroo_m", loadout())
-    greebles.run(kit, wpn, kangaroo_bone, skip_prefix=("tail_",))   # Mechabeast V2 blind review (2026-10-15): the tail kept bare, its vents were dark noise
+    greebles.run(kit, wpn, kangaroo_bone, skip_prefix=("tail_",) + JOINT_SKIP)   # Mechabeast V2 blind review (2026-10-15): the tail kept bare, its vents were dark noise
     tag_parts()
     ob = kit.join_into_one()
     ob.name = "kangaroo_m"
@@ -371,6 +426,7 @@ def main():
     kit.clip(rig, "idle", 48, idle_pose)
     atk = _load("attacks", "attacks.py")   # battle clips (2026-10-13): from the hop's stance frame 3, held
     kit.clip(rig, "battle", 2, battle_pose)   # V2: the split stance the sprites and battle clips stand in
+    atk.SETS["kangaroo_m"] = flak_tail_lift(atk.SETS["kangaroo_m"])   # p69: this build only; attacks.py is shared
     atk.bake(kit, rig, "kangaroo_m", atk.fixed_stance(battle_pose, 0))
     with open(OUT_BLEND.replace(".blend", ".stance"), "w") as f:
         f.write("clip=battle;frame=1")   # V2 (2026-10-14): the split battle stance (was base=3, the hop's shallow crouch)

@@ -6,44 +6,32 @@
    "move": "Fang Lunge",
    "draft": false,
    "kind": "spikes",
-   "note": "red teeth along the upper jaw",
+   "note": "pale teeth along the upper jaw (v85: were 2 px red ticks beside the fangs; his teeth are pale)",
    "parts": [
     "head_wpn_fang_spike0",
     "head_wpn_fang_spike1",
     "head_wpn_fang_spike2",
-    "head_wpn_fang_spike3",
-    "head_wpn_fang_spike4",
-    "head_wpn_fang_spike5"
+    "head_wpn_fang_spike3"
    ],
    "muzzles": [
     [
      -0.181,
-     -2.352,
+     -2.309,
      1.789
     ],
     [
      -0.181,
-     -2.267,
-     1.789
-    ],
-    [
-     -0.181,
-     -2.181,
+     -2.202,
      1.789
     ],
     [
      0.181,
-     -2.352,
+     -2.309,
      1.789
     ],
     [
      0.181,
-     -2.267,
-     1.789
-    ],
-    [
-     0.181,
-     -2.181,
+     -2.202,
      1.789
     ]
    ]
@@ -72,7 +60,7 @@
    "move": null,
    "draft": true,
    "kind": "cannon",
-   "note": "spare: a long rail gun on the right of the back",
+   "note": "spare: a long rail gun on the left of the back (v85: was the right, where its barrel cut the red saddle in the side view)",
    "parts": [
     "wpn_rail_barrel0",
     "wpn_rail_mount",
@@ -80,7 +68,7 @@
    ],
    "muzzles": [
     [
-     -0.2,
+     0.2,
      -1.202,
      2.09
     ]
@@ -91,13 +79,13 @@
    "move": "Shadow Dash",
    "draft": false,
    "kind": "blade",
-   "note": "a swept blade on the outside of each forearm",
+   "note": "a swept blade on the outside of each forearm (v85: near-black, a dark fin on the light forearm; red there read as a stray streak)",
    "parts": [
     "front_shin_wpn_dashR_blade_-1"
    ],
    "muzzles": [
     [
-     -0.367,
+     -0.387,
      -1.136,
      0.755
     ]
@@ -123,23 +111,23 @@
    "muzzles": [
     [
      -0.335,
-     0.282,
-     2.0
+     0.222,
+     2.005
     ],
     [
      -0.225,
-     0.282,
-     2.0
+     0.222,
+     2.005
     ],
     [
      -0.335,
-     0.324,
-     2.091
+     0.264,
+     2.096
     ],
     [
      -0.225,
-     0.324,
-     2.091
+     0.264,
+     2.096
     ]
    ]
   },
@@ -148,13 +136,13 @@
    "move": "Shadow Dash",
    "draft": false,
    "kind": "blade",
-   "note": "a swept blade on the outside of each forearm",
+   "note": "a swept blade on the outside of each forearm (v85: near-black, a dark fin on the light forearm; red there read as a stray streak)",
    "parts": [
     "front_shin_wpn_dashL_blade_1"
    ],
    "muzzles": [
     [
-     0.367,
+     0.387,
      -0.936,
      0.755
     ]
@@ -180,25 +168,25 @@
    "muzzles": [
     [
      0.225,
-     0.282,
-     2.0
+     0.222,
+     2.005
     ],
     [
      0.335,
-     0.282,
-     2.0
+     0.222,
+     2.005
     ],
     [
      0.225,
-     0.324,
-     2.091
+     0.264,
+     2.096
     ],
     [
      0.335,
-     0.324,
-     2.091
+     0.264,
+     2.096
     ]
    ]
   }
  ]
-}
+}

@@ -35,6 +35,7 @@ OUT_BLEND = os.path.join(ROOT, "docs", "art", "3d", "shoebill_m.blend")
 LIFT = 0.5   # blind review 4 (2026-10-15): 0.63 for 10% longer legs cost 0.05 outline (p81), kept 0.5. part pass legs (2026-10-13): his bare legs are about 40% of the height with the body high on them; ours showed a quarter. Was 0.3 (p15; p5: the body rides higher still on long thin legs (the reference's legs are near half its height)
 PITCH = 0   # p18: the body is built level and small; his is wider than tall (p15: -42; reference pass 4: a little less upright, for width (round 3 was 35): the upper body stands up about the hips (the reference stands upright, neck straight
               # up, wings hanging as a cloak); the head keeps a level bill, tipped 10 degrees down
+HARD = os.environ.get("SHOEBILL_HARD", "1") == "1"   # p86 hard armour; SHOEBILL_HARD=0 builds p85's body and wings
 
 PAL = {
     "main": "7fa3d4",        # light blue plates (reference 82a6d7, the dominant colour)
@@ -44,9 +45,17 @@ PAL = {
     "frame": "6a7080",       # p23: steel-grey legs and joints as his (4c5058 read as black columns)
     "frame_dark": "2f333b",  # the body under the plates, the toes
     "face": "4a6fa5",
+    "plate": "8cb4ee",       # p86: the hard body blocks, as bright as the toon light allows without its centre band
+                             # clipping them to grey (a4c6f4 clipped 9% of their pixels out of the blue family)
+    "plate_lo": "7ea6e2",    # p86: the under-side row a step darker
+    "mid": "6d93cc",         # p86: the lower coverts and the feathers' lit edges, between the plates and the navy
+    "seam": "070b18",        # p86: the frame under the plates, a navy near-black as his seams (090d1d, 070a18); in the
+                             # blue family it also sets the dark end of the blue ramp, so the plates land on 82a6d7
     "light": "8a8d92",
     "eye_src": "5fe1d0",     # teal eyes and the Lance lens (player faction)
 }
+if HARD:   # p86: the deep blue a step darker, so it stays the ramp's darkest blue over the near-black seams
+    PAL["trim"] = "1b2d58"
 
 
 def make_materials():
@@ -60,6 +69,35 @@ def make_materials():
         kit.MATS[key] = m
 
 
+# ---- hard armour (model pass p86, 2026-10-16) ------------------------------------------------------------------
+# Blind judges on the detail sprites: "the shoebill's body reads as puffy blocks", "the wing reads as one slab". The
+# sprite is the render shrunk 4.4x (one sprite pixel is about 3 cm here), so a plate needs flat faces (one tone each,
+# no bend: a bent plate shades as a gradient, a pillow), a crisp chamfer (the lit lip), and a dark gap to its neighbour
+# wide enough to win its sprite pixels (GAP, 11 cm: one to two pixels of near-black navy seam, as his 090d1d seams).
+def hard_block(name, mat, center, xax, yax, zax, size, chamfer=0.025):
+    """A hard armour block: a box size (sx, sy, sz) along the axes xax, yax, zax, flat faces and one 45-degree chamfer
+    on every edge (sharpen() keeps the chamfers split-shaded, so each face stays one flat tone)."""
+    import bmesh
+    from mathutils import Matrix
+    bm = bmesh.new()
+    bmesh.ops.create_cube(bm, size=1.0)
+    for v in bm.verts:
+        v.co.x *= size[0]
+        v.co.y *= size[1]
+        v.co.z *= size[2]
+    if chamfer > 0:
+        bmesh.ops.bevel(bm, geom=list(bm.edges), offset=min(chamfer, min(size) * 0.4), offset_type="OFFSET", segments=1,
+                        profile=0.5, affect="EDGES", clamp_overlap=True)
+    me = bpy.data.meshes.new(name)
+    bm.to_mesh(me)
+    bm.free()
+    ob = bpy.data.objects.new(name, me)
+    bpy.context.scene.collection.objects.link(ob)
+    ob.matrix_world = Matrix.Translation(Vector(center)) @ Matrix((Vector(xax).normalized(), Vector(yax).normalized(),
+                                                                    Vector(zax).normalized())).transposed().to_4x4()
+    return kit._finish(ob, mat)
+
+
 # ---- the body: an egg, front high, plated in blue; long breast plates; a rounded deep-blue tail ---------------
 def body():
     side = [(-0.5, 1.45), (-0.42, 1.7), (-0.1, 1.8), (0.34, 1.72), (0.7, 1.45), (0.84, 1.2), (0.66, 0.98),
@@ -67,6 +105,11 @@ def body():
     front = kit.mirror_x([(0.16, 1.8), (0.36, 1.66), (0.46, 1.4), (0.42, 1.12), (0.22, 0.92)])
     side = [(y * 1.1 - 0.12, (z - 1.34) * 0.98 + 1.25 + LIFT) for y, z in side]   # pass 2 neck/body: the egg 12 cm forward, his breast pushes out under the neck (red at the front in both overlays); p22: p19's depth
     front = [(x * 1.0, (z - 1.34) * 0.98 + 1.25 + LIFT) for x, z in front]
+    if HARD:
+        # p86: the egg is the dark frame under the armour; only the seams between the blocks show it
+        core = kit.profile_solid("torso_core", "seam", (0, 0, 0), side, front, chamfer=0.03)
+        hard_body(core)
+        return
     core = kit.profile_solid("torso_core", "main", (0, 0, 0), side, front, chamfer=0.03)   # p16: the core light blue, so bare egg reads as pale body not a dark slab
     # Mechabeast V2 blind review 2 (2026-10-15): four large pale plates a side with clean seams, not 28 small plates;
     # his torso reads as big sky-blue plates, ours read as navy fragments (a navy rear band stood up as shards, p76)
@@ -93,10 +136,99 @@ def body():
     for k, x in enumerate((-0.16, -0.05, 0.05, 0.16)):
         c = kit.on_surface(core, Vector((x, -0.4, LIFT + 1.3)), (0, -1, -0.2), 0.03)
         kit.plate("breast_%d" % k, "main", c, 0.13, 0.46, 0.04, (8, 0, x * 60), bend=0.3, taper=0.5, bevel=0.008)
+    tail()
+
+
+def tail():
     # the rounded tail: a fan of deep-blue plates sloping down behind
     for k, x in enumerate((-0.18, 0.0, 0.18)):
         kit.plate("tail_%d" % k, "trim", Vector((x, 0.82, LIFT + 1.14 - abs(x) * 0.2)), 0.2, 0.36, 0.04, (-120, 0, x * 80),
                   bend=0.3, taper=0.7, bevel=0.008)
+
+
+ZC = 1.25 + LIFT   # the egg's middle height
+
+
+REAR_Y = 0.5   # behind this the rear end is two cap plates, upper and lower (cut round the axis there, the narrowing
+# rear end was mostly seam and the seams met in a star: the N view showed a black back)
+GAP = 0.11   # m between neighbouring plates: the seam; at 0.05 and 0.08 (1.6, 2.6 sprite px) the block vote lost most of them
+BODY_COLS = ((-0.56, -0.2), (-0.2, 0.15), (0.15, REAR_Y))   # along the body (y), front to back
+BODY_ROWS = (((-24, 24), "plate"), ((24, 66), "plate"), ((66, 112), "plate"), ((112, 172), "plate_lo"))
+# degrees round the body from the top: the back, the shoulder, the side, the under side
+CHEST_Y = -0.56   # the egg's front ahead of this is the chest, cut in two across at CHEST_Z
+CHEST_Z = 1.34 + LIFT
+
+
+def hull_plate(core, name, mat, cuts, t=0.06):
+    """An armour plate cut from the hull itself: the core's surface kept inside the half-spaces `cuts` (each a point and
+    a normal; the side the normal points to is kept), thickened outward by t and chamfered. Neighbouring plates follow
+    the egg exactly, so nothing floats; the GAP left between their cuts is the seam where the dark core shows."""
+    import bmesh
+    dg = bpy.context.evaluated_depsgraph_get()
+    eo = core.evaluated_get(dg)
+    me = eo.to_mesh()
+    bm = bmesh.new()
+    bm.from_mesh(me)
+    eo.to_mesh_clear()
+    bm.transform(core.matrix_world)
+    for co, no in cuts:
+        bmesh.ops.bisect_plane(bm, geom=bm.verts[:] + bm.edges[:] + bm.faces[:], dist=1e-5, plane_co=Vector(co),
+                               plane_no=Vector(no), clear_inner=True)
+    if not bm.faces:
+        bm.free()
+        print("BLOCK_MISS", name)
+        return None
+    me = bpy.data.meshes.new(name)
+    bm.to_mesh(me)
+    bm.free()
+    ob = bpy.data.objects.new(name, me)
+    bpy.context.scene.collection.objects.link(ob)
+    sol = ob.modifiers.new("thickness", "SOLIDIFY")
+    sol.thickness = t
+    sol.offset = 1.0
+    sol.use_even_offset = True
+    bev = ob.modifiers.new("edge", "BEVEL")
+    bev.width = 0.02
+    bev.segments = 1
+    bev.limit_method = "ANGLE"
+    bev.angle_limit = math.radians(60)   # the plate's rim (90 degrees) chamfered; the egg's facet creases (about 35) kept
+    return kit._finish(ob, mat)
+
+
+def _wedge(th0, th1, s):
+    """Half-spaces keeping the angles th0..th1 round the body axis (degrees from the top, toward side s), GAP/2 in."""
+    out = []
+    for th, keep in ((th0, 1), (th1, -1)):
+        r = math.radians(th)
+        n = Vector((s * math.cos(r), 0, -math.sin(r))) * keep   # toward growing angle for the lower bound
+        out.append((Vector((0, 0, ZC)) + n * GAP / 2, n))
+    return out
+
+
+def _span(y0, y1):
+    return [(Vector((0, y0 + GAP / 2, 0)), Vector((0, 1, 0))), (Vector((0, y1 - GAP / 2, 0)), Vector((0, -1, 0)))]
+
+
+def hard_body(core):
+    """p86: the egg's own surface cut into big light-blue plates, four along it and four round each side, with GAP
+    seams where the dark core shows; the chest two plates with a three-slot vent; his reference's torso is big
+    sky-blue plates on a near-black frame."""
+    for r, (ths, mat) in enumerate(BODY_ROWS):
+        for s in ((1,) if ths[0] < 0 else (-1, 1)):
+            for c, (y0, y1) in enumerate(BODY_COLS):
+                hull_plate(core, "plate_hb_%d_%d_%d" % (r, c, s), mat, _span(y0, y1) + _wedge(ths[0], ths[1], s))
+    front = (Vector((0, CHEST_Y - GAP / 2, 0)), Vector((0, -1, 0)))
+    hull_plate(core, "plate_chest_up", "plate", [front, (Vector((0, 0, CHEST_Z + GAP / 2)), Vector((0, 0, 1)))])
+    hull_plate(core, "plate_chest_lo", "plate", [front, (Vector((0, 0, CHEST_Z - GAP / 2)), Vector((0, 0, -1)))])
+    rear = (Vector((0, REAR_Y + GAP / 2, 0)), Vector((0, 1, 0)))
+    hull_plate(core, "plate_hb_rear_up", "plate", [rear, (Vector((0, 0, ZC + 0.12 + GAP / 2)), Vector((0, 0.5, 1)))])
+    hull_plate(core, "plate_hb_rear_lo", "plate_lo", [rear, (Vector((0, 0, ZC + 0.12 - GAP / 2)), Vector((0, -0.5, -1)))])
+    for k, x in enumerate((-0.2, -0.11, -0.02)):   # his chest vent: three dark slots on the lower chest plate
+        hit = kit.surface_hit(core, Vector((x, -3.0, CHEST_Z - 0.15)), Vector((0, 1, 0)))
+        if hit:
+            p = hit[0] + hit[1] * 0.06
+            kit.segment("plate_chestvent_%d" % k, "frame_dark", p + Vector((0, 0, 0.08)), p - Vector((0, 0, 0.08)), 0.05, 0.04, 0.5)
+    tail()
 
 
 # ---- the head: big on a short thick neck, the huge keeled gold bill ending in a hooked nail -------------------
@@ -157,6 +289,80 @@ def head():
 
 
 # ---- wings: folded along the sides; blue coverts, deep-blue primaries back to the tail, gold leading edges -----
+def slab(name, mat, origin, xax, yax, poly, t, chamfer=0.015):
+    """A flat plate cut from the polygon `poly` (local u along xax, v along yax), `t` thick and centred on that plane,
+    flat faces and a crisp chamfer: a feather blade or a backing plate."""
+    import bmesh
+    from mathutils import Matrix
+    xax, yax = Vector(xax).normalized(), Vector(yax).normalized()
+    zax = xax.cross(yax).normalized()
+    bm = bmesh.new()
+    a = [bm.verts.new((u, v, t / 2)) for u, v in poly]
+    b = [bm.verts.new((u, v, -t / 2)) for u, v in poly]
+    bm.faces.new(a)
+    bm.faces.new(b[::-1])
+    n = len(poly)
+    for i in range(n):
+        bm.faces.new((a[i], b[i], b[(i + 1) % n], a[(i + 1) % n]))
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    if chamfer > 0:
+        bmesh.ops.bevel(bm, geom=list(bm.edges), offset=min(chamfer, t * 0.4), offset_type="OFFSET", segments=1,
+                        profile=0.5, affect="EDGES", clamp_overlap=True)
+    me = bpy.data.meshes.new(name)
+    bm.to_mesh(me)
+    bm.free()
+    ob = bpy.data.objects.new(name, me)
+    bpy.context.scene.collection.objects.link(ob)
+    ob.matrix_world = Matrix.Translation(Vector(origin)) @ Matrix((xax, yax, zax)).transposed().to_4x4()
+    return kit._finish(ob, mat)
+
+
+def feather(name, mat, root, d, up, length, h, t, cut=0.7):
+    """A feather blade from `root` along `d`, `h` tall across `up`: the top edge runs the full length and the tip is cut
+    back at an angle, so a stack of them ends in a staircase of points (his wing)."""
+    return slab(name, mat, root, d, up, [(0, -h / 2), (length - cut * h, -h / 2), (length, h / 2), (0, h / 2)], t)
+
+
+FEATHERS = (10, 21, 32, 43)   # p86: four primaries, degrees below the back line, each running back to FAN_REACH so the
+# tips stand in one column with background between them (his fan). Swept against his side view: p86g's fan (12 to 48
+# degrees, the top blade 1.25 long) hung below and reached past his wing, outline 0.648 to 0.568; this one 0.681 (E)
+# and 0.643 (SE) with the four blades still apart at the tips
+FAN_REACH = 1.05
+FEATHER_H = 0.15   # each blade's height across: 5 sprite px, about 4 after the 35-degree turn
+COVERT_SLOPE = 16   # p86: degrees the covert rows slope down toward the back
+
+
+def hard_wing(s, sh, el, wr, tip):
+    """p86: the folded wing as hard plates. Coverts: two rows of three flat plates sloping down and back along the fold
+    (p86f's level rows read as a grid of tiles), the upper row light blue and outboard (a shingle over the lower), the
+    lower row mid blue; a grey joint disc at the front. Primaries: four flat deep-blue blades fanned from under the
+    coverts, 11 degrees apart, each with a lit top edge, so each blade reads as its own 4-5 px band ending in its own
+    point, on a near-black backing plate that turns the gaps near the root into seams."""
+    out = Vector((s, 0, 0.18)).normalized()   # the faces tipped up a little, so the toon light separates the rows
+    a = Vector((0, math.cos(math.radians(COVERT_SLOPE)), -math.sin(math.radians(COVERT_SLOPE))))
+    a = (a - out * a.dot(out)).normalized()
+    c = out.cross(a)
+    for row, (start, mat, h) in enumerate((((0.64, -0.26, 1.53), "plate", 0.2), ((0.6, -0.16, 1.31), "mid", 0.19))):
+        for k in range(3):
+            ctr = Vector((s * start[0], start[1], start[2] + LIFT)) + a * (0.31 * k)
+            hard_block("wing_upper_cov_%d_%d" % (s, row * 3 + k), mat, ctr, a, c, out, (0.27, h, 0.07), chamfer=0.022)
+    kit.disc("wing_upper_%d_bolt" % s, Vector((s * 0.7, -0.24, 1.4 + LIFT)), 0.12, depth=0.08)   # his grey shoulder disc
+    roots = []
+    for k, deg in enumerate(FEATHERS):
+        th = math.radians(deg)
+        d = Vector((0, math.cos(th), -math.sin(th)))
+        up = Vector((0, math.sin(th), math.cos(th)))
+        root = Vector((s * (0.52 - 0.022 * k), 0.14 + 0.05 * k, 1.33 + LIFT - 0.1 * k))
+        ln = (FAN_REACH - root.y) / math.cos(th)
+        roots.append((root, d))
+        feather("wing_hand_%d_%d" % (s, k), "trim", root, d, up, ln, FEATHER_H, 0.05)
+        feather("wing_hand_%d_%d_edge" % (s, k), "face", root + up * (FEATHER_H / 2 - 0.03) + Vector((s * 0.03, 0, 0)), d, up, ln - 0.06, 0.06, 0.02)
+    (r0, d0), (r3, d3) = roots[0], roots[-1]
+    back = [r0 + Vector((0, 0, 0.06)), r0 + d0 * 0.8, r3 + d3 * 0.62, r3 - Vector((0, 0, 0.06))]
+    xb = s * 0.45
+    slab("wing_hand_%d_back" % s, "seam", Vector((xb, 0, 0)), (0, 1, 0), (0, 0, 1), [(p.y, p.z) for p in back], 0.04)
+
+
 JOINTS = {}
 WING_DROP = 8   # blind review (2026-10-15): degrees the folded wing tips down about the shoulder
 
@@ -170,11 +376,15 @@ def wings():
         tip = Vector((s * 0.3, 1.3, 1.0 + LIFT))   # part pass body/wing (2026-10-13): the primaries fan back past the rump and down as his (red at the lower back in the overlay); p19: 0.98, 0.92
         JOINTS.update({"sh." + side: sh, "el." + side: el, "wr." + side: wr, "fingers." + side: tip})
         kit.limb_solid("wing_upper_%d" % s, "main", sh, el, (s, 0, 0), [(0, 0.2, 0.16), (1, 0.16, 0.12)], [(0, 0.34), (1, 0.28)])   # p15: pale folded wing   # p7: dark under the blocks, so the gaps read
-        kit.disc("wing_upper_%d_bolt" % s, sh + Vector((s * 0.16, 0.02, 0.02)), 0.1, depth=0.2)   # p7: the grey shoulder bolt
+        if not HARD:
+            kit.disc("wing_upper_%d_bolt" % s, sh + Vector((s * 0.16, 0.02, 0.02)), 0.1, depth=0.2)   # p7: the grey shoulder bolt
         kit.limb_solid("wing_fore_%d" % s, "main", el, wr, (s, 0, 0), [(0, 0.16, 0.12), (1, 0.12, 0.1)], [(0, 0.3), (1, 0.24)])   # p6: light blue
         # Wing Buffet: gold armour along the leading edge (the top of the folded forearm)
         kit.segment("wing_lead_%d" % s, "accent", el + Vector((s * 0.04, 0.02, 0.16)), wr + Vector((s * 0.04, -0.1, 0.18)), 0.12, 0.14, 0.5)   # w3: along the leading edge (w2 poked through the coverts)
         kit.segment("wing_lead_%d_edge" % s, "frame_dark", el + Vector((s * 0.04, 0.02, 0.26)), wr + Vector((s * 0.04, -0.1, 0.28)), 0.06, 0.06, 0.5)
+        if HARD:
+            hard_wing(s, sh, el, wr, tip)
+            continue
         # coverts: overlapping plates on the side of the folded wing
         for k in range(6):   # p5: six big rounded light-blue blocks in two columns, the reference's stacked plates
             col, rowk = k % 2, k // 2
@@ -314,7 +524,8 @@ def main():
     legs()
     wpn.build_loadout(kit, "shoebill_m", loadout())
     stand_up()
-    greebles.run(kit, wpn, lambda n: bird.bone_for(n, CFG), skip_prefix=("leg_foot", "leg_shin", "toe", "plate_", "torso_core"))   # blind review 2: no panels on the torso plates (their seams were the noise)
+    greebles.run(kit, wpn, lambda n: bird.bone_for(n, CFG), skip_prefix=("leg_foot", "leg_shin", "toe", "plate_", "torso_core")
+                 + (("wing_",) if HARD else ()))   # blind review 2: no panels on the torso plates (their seams were the noise); p86: none on the wing either (its bolts and vents were the speckle on the coverts)
     bird.tag_parts(CFG)
     ob = kit.join_into_one()
     ob.name = "shoebill_m"

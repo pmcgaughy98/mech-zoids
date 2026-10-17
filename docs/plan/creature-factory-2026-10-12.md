@@ -1237,3 +1237,27 @@ Preston: one more wolf part pass; "add more pieces and parts, it kind of looks l
 - **Before and after:** `docs/art/2d/detail_pass_2026-10-16_before_after.png`.
 - **Next** (the judges' notes are mostly model and design): guns and joints drawn as cylinders with a specular stripe, the wolf's red as a few defined plates with clean feet and head, the shoebill's body as hard plates, the hippo's feet and legs, pangolin scale rows and a separate snout, the kangaroo's tail and joint discs. Ramps need palette work and a less banded render.
 
+
+## Model pass in a cloud session: five machines, two blind rounds (2026-10-16 to 17, Preston: "do whatever cloud session would be best for")
+- **Where:** a Claude Code cloud session (Linux container) on the `cloud/model-pass-2026-10-16` branch, using cloud credits instead of the PC. New `tools/cloud/setup_cloud.sh` installs Godot 4.7.2 (Linux build of the same version) and Blender 5.2 as the `bpy` 5.2.2 module behind a `blender` shim (download.blender.org is blocked there, PyPI is not), with software EGL so Workbench renders without a GPU (about 8 s a view). The factory shell scripts now take `BLENDER` from the environment and default to the PC path, so nothing changes on the PC.
+- **Reproduction first:** every builder re-rendered its live views from the unchanged model before touching it. All 40 views came out the same size; 0.6 to 2.3% of pixels differ by one shade (the software renderer). All eight Godot checks passed in the container before any change.
+- **Round 1** (Workflow tool, one builder per machine, then three blind judges each with a different lens: design fidelity to Preston's painting, pixel craft, game read at 1x to 2x; about 3.5M subagent tokens). Each candidate against the live art, reference painting on top, A/B order hidden. All five won 3 of 3.
+  - **Wolf v85:** three red saddles and a red square on each shoulder and hip replace about 130 small red bits (red clusters 51 to 28); paws with a dark heel and three swept red claws; a grey wedge head with a red brow, nose and fangs; four big pale hooked tail spikes (8x11 to 12x14 px, were 12 pieces of 3 to 6 px). Shadow Dash fins and Fang Lunge teeth changed with it (drafts).
+  - **Hippo p41:** upright pillar legs with knee wheels; hooves with toe caps about 7x9 px (the foot was a 5 to 6 px cream strip).
+  - **Pangolin p42:** bevelled scale tiles in rings, head raised clear of the front leg, feet 1.4x with thicker claws.
+  - **Shoebill p86:** hull plates with navy seams; the wing as four feather blades.
+  - **Kangaroo p69:** segmented tail sloping down; larger joint discs with steel faces.
+- **Round 2** on the three the judges were least sure of (about 2.2M subagent tokens), judged against the installed round-1 art. All three won 3 of 3.
+  - **Shoebill p87:** the faceted egg (two straight prisms) replaced by a lofted rounded hull, so seven big plates per side view instead of a facet patchwork (E clusters 280 to 256); navy feather blades with a light top strip; light blue 82a6d7 now the largest light shade. `SHOEBILL_P87=0` rebuilds p86 exactly.
+  - **Pangolin p43:** overlapping shingle scales with a lit top row and a dark seam, shrinking toward the tail; the tail uses the same scales; a collar ruff covers the dark slab between head and body.
+  - **Kangaroo p70:** the tail tip rests 2.5 cm off the floor in the stance (p69: 0.30 m); joint discs as a dark rim, mid-grey face and a white bead (they read inverted before); 25 rounded torso blocks replaced by 7 flat chamfered slabs. The fists are light steel now so the joint faces could drop to mid grey.
+- **Installed:** all five machines' eight views and 40 battle frames, re-rendered from the new models with `anim_render_only.sh` (`PIXELIZER=pixelize_detail`) and `detail_install.sh`. The gorilla is unchanged (its joint question, the black shoulder hub, is Preston's call).
+- **Checks:** Godot import, view_art_check, views_check, battle_check, battle_fit_check, foundation_check, systems_check, start_chain_check and vfx_check PASS. The kangaroo p69 kick/5 reached 8 rows above a 320x180 screen (allowed 7); p70 is back to 127 rows above the feet, as before, and passes. Battles captured under Xvfb: `docs/art/2d/battle_wolf_m+hippo_m_vs_pangolin_m+shoebill_m.png`, `docs/art/2d/battle_kangaroo_m+shoebill_m_vs_hippo_m+wolf_m.png`.
+- **Before and after:** `docs/art/2d/model_pass_2026-10-17_before_after.png`.
+- **Codex:** the replaced views and frames were already raw detail-pixelizer output (the detail pass); they and Codex's earlier finish stay in git history. A Codex finish pass on the new art is open.
+- **Left, from the judges:**
+  - Wolf: the head is lighter grey than the body (the reference's is body grey); the far-side paws' claws still merge in E.
+  - Hippo: the legs stand a little tall against the reference; the toes are uniform.
+  - Pangolin: SE outline overlap fell slightly (0.757 to 0.739); the far collar shows as gold bars behind the head.
+  - Shoebill: the upper back reads as a deep-blue band in E and SE; the shoulder plate still splits into two or three tones.
+  - Kangaroo: the tail tip still floats about a sixth of body height above the ground line in E (the 3D tip rests on the floor; the 18-degree camera lifts it); the segments read more as stripes than overlapping plates.

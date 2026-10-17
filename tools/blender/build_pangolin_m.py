@@ -74,6 +74,9 @@ def body():
     front = kit.mirror_x([(0.1, 1.47), (0.29, 1.42), (0.49, 1.22), (0.56, 0.96), (0.5, 0.7), (0.38, 0.52),
                           (0.26, 0.42)])   # reference pass: the dome follows the higher back, a touch slimmer low down
     core = kit.profile_solid("torso_shell", "frame_dark", (0, 0, 0), side, front, chamfer=0.02)
+    if SHINGLES:
+        shingle_scales(core)
+        return
     if SCALE_TILES:
         scale_tiles(core)
         return
@@ -166,6 +169,145 @@ def scale_tiles(core):
                 ob.matrix_world = Matrix.Translation(c) @ lift.to_4x4()
 
 
+# Model pass p43 (2026-10-17; blind judges on p42: "square tiles laid in a grid ... they look like bricks, not the
+# reference's shingled scales", "too big and too few ... the reference has 8 to 10 tapering rows", "a wide dark grey ring
+# band cuts through the mid-body"). The tiles above become shingles, the way a real pangolin's scales lie and the way the
+# Mechabeast V2 references draw them:
+# - each scale is a plate with a rounded point at its free (tail) end, thin at its root and thicker at the free edge,
+#   bevelled twice round the top so its upper edge catches the light and its lower edge falls dark;
+# - each ring's free edges lie over the roots of the ring behind it (no dark core showing between rings, only the
+#   shadow line under each free edge), each scale's lower edge over the scale below it down the flank;
+# - alternate rings sit half a scale round, so each point covers the joint between two scales behind (fish scales);
+# - nine rings from shoulder to rump plus the collar, each ring shorter and narrower toward the tail (8 sprite px wide
+#   at the shoulder, 6 at the rump), then the tail's rings carry on shrinking to 4 px.
+SHINGLES = True
+SH_ARC = 128            # degrees from the spine down each flank
+SH_LIFT = 11            # degrees the free edge lifts off the surface (enough to clear the next ring's root)
+SH_ROLL = -10           # degrees each scale's lower edge rolls out over the scale below; negative: its upper edge rolls
+# out over the scale above, so the camera (above) sees every scale's top edge proud and lit, its lower edge tucked dark
+SH_T0, SH_T1 = 0.02, 0.07    # thickness at the root (hidden under the ring in front) and at the free edge
+SH_OVER = 1.5           # scale length / ring pitch: each ring covers the front third of the next
+SH_SPACE = 1.15         # spacing round a ring / scale width: a thin gap (about 1 sprite px) between neighbours, where the
+# dark core shows as the seam under each scale (0.92, overlapping, read as one flat orange quilt)
+SH_FIRST, SH_P0, SH_P1, SH_N = -0.88, 0.29, 0.21, 7   # first root, pitch at the shoulder and at the rump, rings
+
+
+def sh_width(p):
+    """A scale's width round the body for a ring pitch p (both shrink toward the tail)."""
+    return 0.9 * p + 0.03
+
+
+def shingle(name, mat, w, length, t0=SH_T0, t1=SH_T1, point=1.3, straight=0.5):
+    """One scale, built in its own frame: x round the body, y toward the tail, z out of the surface, the origin on its
+    underside at 45% of its length (the pivot it is lifted about). Outline: a straight root edge, straight sides for
+    `straight` of the length, then a rounded point (`point` > 1 narrows the arc toward the tip). Thickness runs t0 at
+    the root to t1 at the tip; the top is inset twice with a rise, so its rim is two bevels round a flat crown."""
+    pts = [(-w / 2, 0.0), (w / 2, 0.0)]
+    ys = straight * length
+    k = 10
+    for i in range(k + 1):
+        a = math.pi * i / k
+        c = math.cos(a)
+        pts.append((w / 2 * math.copysign(abs(c) ** point, c), ys + (length - ys) * math.sin(a)))
+    y0 = 0.45 * length
+    bm = bmesh.new()
+    bot = [bm.verts.new((x, y - y0, 0.0)) for x, y in pts]
+    top = [bm.verts.new((x, y - y0, t0 + (t1 - t0) * y / length)) for x, y in pts]
+    bm.faces.new(bot[::-1])
+    ftop = bm.faces.new(top)
+    n = len(pts)
+    for i in range(n):
+        bm.faces.new((bot[i], bot[(i + 1) % n], top[(i + 1) % n], top[i]))
+    c = min(0.035, 0.14 * w)   # the outer bevel about 1 sprite px wide at 42 degrees: the lit top edge, the dark lower lip
+    bmesh.ops.inset_region(bm, faces=[ftop], thickness=c, depth=c * 0.9, use_even_offset=True)
+    bmesh.ops.inset_region(bm, faces=[ftop], thickness=c * 0.6, depth=c * 0.15, use_even_offset=True)
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    me = bpy.data.meshes.new(name)
+    bm.to_mesh(me)
+    bm.free()
+    ob = bpy.data.objects.new(name, me)
+    bpy.context.scene.collection.objects.link(ob)
+    ob.data.materials.append(kit.MATS[mat])
+    return ob
+
+
+def lay_shingle(name, mat, p, nrm, xa, w, length, down, lift=SH_LIFT, roll=SH_ROLL, standoff=0.012, t0=SH_T0, t1=SH_T1):
+    """A shingle with its pivot on surface point p (outward normal nrm, xa round the body): the free edge lifted `lift`
+    degrees, the edge on the `down` side (+1: +xa) rolled `roll` degrees out over its neighbour."""
+    xa = (xa - nrm * xa.dot(nrm)).normalized()
+    ya = nrm.cross(xa).normalized()
+    frame = Matrix((xa, ya, nrm)).transposed()
+    rot = frame @ Matrix.Rotation(math.radians(-roll * down), 3, "Y") @ Matrix.Rotation(math.radians(lift), 3, "X")
+    ob = shingle(name, mat, w, length, t0, t1)
+    ob.matrix_world = Matrix.Translation(p + nrm * standoff) @ rot.to_4x4()
+    return ob
+
+
+def ring_layout(run, w, stagger):
+    """Places along one run of surface samples [(th, point, normal)]: n scales `w` apart by arc length, shifted half a
+    scale on staggered rings (their end scales stay inside the run). Returns [(th, point, normal)]."""
+    ss = [0.0]
+    for (_, p0, _), (_, p1, _) in zip(run, run[1:]):
+        ss.append(ss[-1] + (p1 - p0).length)
+    n = max(1, int(round(ss[-1] / w)))
+    step = ss[-1] / n
+    at = [step * (j + 0.5) for j in range(n)] if not stagger else [step * j for j in range(n + 1)]
+    out = []
+    for s in at:
+        i = min(range(len(ss)), key=lambda q: abs(ss[q] - s))
+        out.append(run[i])
+    return out
+
+
+def shingle_scales(core):
+    """The body's rings, the collar on the core's flat front wall first (it showed as a dark slab beside the head
+    without it), then SH_N rings from shoulder to rump. Each ring is sampled on the core's real surface (a ray every
+    2 degrees at the ring's mid-length), the scales spaced by arc length on it."""
+    # (aim y, pitch, forward lean of the normal, degrees left bare at the spine, arc down each flank, lift, ellipse).
+    # The collar: a ruff of bigger scales lying flat on the core's front wall, round the head on the wall's real outline
+    # (a 0.5 m by 0.42 m ellipse about the head's height), their free edges pointing out from the neck. The body's
+    # aiming ellipse is only 0.26 m wide there, so its collar sat behind the head and the wall's outer band showed as
+    # a dark slab between the head and the first ring.
+    rings = [(-0.95, 0.24, 2.0, 40, 150, 0, (0.5, 0.86, 0.42))]   # from 40 degrees: higher, the far side's stood up over the head edge-on
+    y = SH_FIRST
+    for i in range(SH_N):
+        p = SH_P0 + (SH_P1 - SH_P0) * i / (SH_N - 1)
+        rings.append((y + 0.45 * SH_OVER * p, p, 0, 0, SH_ARC, SH_LIFT, None))
+        y += p
+    for r, (y, pitch, lean, arc0, arc1, lift, ell) in enumerate(rings):
+        t, a = top_at(y), half_width(y) + 0.02
+        zc, b = (t + BOTTOM) / 2 + 0.04, (t - BOTTOM) / 2 + 0.02
+        if ell:
+            a, zc, b = ell
+        slope = (top_at(y + 0.05) - top_at(y - 0.05)) / 0.1
+        da = (half_width(y + 0.05) - half_width(y - 0.05)) / 0.1
+        samples = []
+        for th in range(-arc1, arc1 + 1, 2):
+            if abs(th) < arc0:
+                continue
+            rt = math.radians(th)
+            n0 = Vector((math.sin(rt) / a, 0, math.cos(rt) / b)).normalized()
+            nrm = n0.copy()
+            nrm.y = -slope * max(0.0, n0.z) - da * abs(n0.x) - lean
+            if ell:
+                nrm.y = -lean
+            nrm.normalize()
+            aim = Vector((a * math.sin(rt), y, zc + b * math.cos(rt)))
+            hit = kit.surface_hit(core, aim + nrm * 3.0, -nrm)
+            if hit:
+                samples.append((th, hit[0], nrm))
+        w = sh_width(pitch)
+        runs = ([s_ for s_ in samples if s_[0] < 0], [s_ for s_ in samples if s_[0] >= 0]) if arc0 else (samples,)
+        for run in runs:
+            if len(run) < 2:
+                continue
+            for k, (th, p, nrm) in enumerate(ring_layout(run, w * (0.85 if arc0 else SH_SPACE), stagger=(r % 2 == 1 and not arc0))):
+                xa = Vector((0, 1, 0)).cross(nrm)
+                down = 1 if th > 0 else -1
+                lay_shingle("scale_%d_%d" % (r, len([o for o in bpy.data.objects if o.name.startswith("scale_%d_" % r)])),
+                            "main", p, nrm, xa, w, SH_OVER * pitch, down, lift=lift, roll=SH_ROLL if abs(th) > 12 else 0)
+
+
 # ---- the tail: a tapering curve down to the ground, scaled on top and sides ----------------------------------
 def tail_point(t):
     p0, p1, p2 = Vector((0, 0.85, 0.78)), Vector((0, 1.85, 0.55)), Vector((0, 2.7, 0.12))   # ref-5: a straight decline to the tip, his (the 0.8 control held it level then high); reference pass: a longer tail
@@ -179,6 +321,8 @@ def tail():
         a, b = tail_point(t0), tail_point(t1)
         r = 0.32 * (1 - t0) + 0.06
         kit.segment("tail_core_%d" % k, "frame_dark", a, b, 2 * r, 1.6 * r, 0.5)
+        if SHINGLES:
+            continue
         pitch = math.degrees(math.atan2(-(b - a).z, (b - a).y))   # the tail slopes down: tip the scales with it
         mid = (a + b) / 2
         for j, th in enumerate((-70, -25, 25, 70) if r > 0.18 else (-40, 40)):
@@ -186,7 +330,95 @@ def tail():
             c = mid + Vector((r * math.sin(rt), 0, 0.8 * r * math.cos(rt) + 0.03))
             kit.plate("tailscale_%d_%d" % (k, j), "trim" if k >= 6 else "main", c, 0.34 * r / 0.3 + 0.08, 0.42, 0.045, (-78 - pitch, th, 0),   # v2: lie flat along the tail (v1 sign stood them up)
                       bend=0.35, bevel=0.01)
+    if SHINGLES:
+        tail_shingles()
+        # p43 (judges: "the tail tip red is a scattered smear of pixels, not a clean red cone"): one solid red cone
+        # from under the last ring of scales, in place of the madder blade and the madder leaf scales before it
+        cone("tail_tip", "claw", tail_point(TAIL_CONE_T), tail_point(1.0) + Vector((0, 0.42, -0.08)), 0.19, 10)
+        return
     kit.segment("tail_tip", "trim", tail_point(0.95), tail_point(1.0) + Vector((0, 0.24, -0.05)), 0.18, 0.05, 0.5)   # v6: blade
+
+
+TAIL_CONE_T = 0.82      # p43: where the red tip cone starts along the tail
+TAIL_ARC = 105          # degrees from the top down each side of the tail
+TAIL_P0, TAIL_P1 = 0.24, 0.17   # ring pitch at the tail's root and at the cone
+
+
+def tail_shingles():
+    """p43: the tail in the body's shingle language (judges: "the tail still has the old leaf scales"), rings walked
+    down the tail by arc length, each shorter than the last, scales a little narrower with the tail (never under
+    0.12 m, 4 sprite px), alternate rings staggered. Each scale sits on its own core segment's real surface and is named
+    for that segment, so it rides the right tail bone (tail_bone())."""
+    ts = [i / 400 for i in range(401)]
+    pts = [tail_point(t) for t in ts]
+    arc = [0.0]
+    for p0, p1 in zip(pts, pts[1:]):
+        arc.append(arc[-1] + (p1 - p0).length)
+
+    def t_at(s):
+        i = min(range(len(arc)), key=lambda q: abs(arc[q] - s))
+        return ts[i]
+
+    s_end = arc[int(TAIL_CONE_T * 400)]
+    s = arc[int(0.06 * 400)]   # the first root sits under the body's last ring
+    r_i = 0
+    while s + 0.45 * SH_OVER * TAIL_P1 < s_end:
+        f = s / s_end
+        pitch = TAIL_P0 + (TAIL_P1 - TAIL_P0) * f
+        length = SH_OVER * pitch
+        t = t_at(s + 0.45 * length)
+        k = min(8, int(t * 9))
+        seg = bpy.data.objects["tail_core_%d" % k]
+        c = tail_point(t)
+        tan = (tail_point(min(1.0, t + 0.01)) - tail_point(max(0.0, t - 0.01))).normalized()
+        up = Vector((0, 0, 1))
+        up = (up - tan * up.dot(tan)).normalized()
+        side = tan.cross(up).normalized()   # +x
+        r = 0.32 * (1 - k / 9) + 0.06
+        samples = []
+        for th in range(-TAIL_ARC, TAIL_ARC + 1, 3):
+            rt = math.radians(th)
+            n0 = (side * (math.sin(rt) / r) + up * (math.cos(rt) / (0.8 * r))).normalized()
+            aim = c + side * (r * math.sin(rt)) + up * (0.8 * r * math.cos(rt))
+            hit = kit.surface_hit(seg, aim + n0 * 2.0, -n0)
+            if hit:
+                samples.append((th, hit[0], n0))
+        w = max(0.13, min(sh_width(pitch), 0.5 * r + 0.05))
+        if len(samples) >= 2:
+            for th, p, nrm in ring_layout(samples, w * (SH_SPACE - 0.03), stagger=(r_i % 2 == 1)):
+                j = len([o for o in bpy.data.objects if o.name.startswith("tailscale_%d_" % k)])
+                lay_shingle("tailscale_%d_%d" % (k, j), "main", p, nrm, tan.cross(nrm), w, length,
+                            1 if th > 0 else -1, lift=9, roll=SH_ROLL if abs(th) > 12 else 0, standoff=0.008, t1=0.06)
+        s += pitch
+        r_i += 1
+
+
+def cone(name, mat, a, b, r0, sides=8):
+    """A closed cone from a base of radius r0 at a to a point at b."""
+    a, b = Vector(a), Vector(b)
+    d = (b - a).normalized()
+    u = d.cross(Vector((0, 0, 1)))
+    u = u.normalized() if u.length > 1e-4 else Vector((1, 0, 0))
+    v = d.cross(u).normalized()
+    bm = bmesh.new()
+    ring = [bm.verts.new(a + (u * math.cos(2 * math.pi * i / sides) + v * math.sin(2 * math.pi * i / sides)) * r0)
+            for i in range(sides)]
+    mid = [bm.verts.new(a.lerp(b, 0.45) + (u * math.cos(2 * math.pi * i / sides) + v * math.sin(2 * math.pi * i / sides)) * r0 * 0.62)
+           for i in range(sides)]
+    tip = bm.verts.new(b)
+    bm.faces.new(ring[::-1])
+    for i in range(sides):
+        j = (i + 1) % sides
+        bm.faces.new((ring[i], ring[j], mid[j], mid[i]))
+        bm.faces.new((mid[i], mid[j], tip))
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    me = bpy.data.meshes.new(name)
+    bm.to_mesh(me)
+    bm.free()
+    ob = bpy.data.objects.new(name, me)
+    bpy.context.scene.collection.objects.link(ob)
+    ob.data.materials.append(kit.MATS[mat])
+    return ob
 
 
 # ---- the head: small and pointed, bare grey face, delft snout, two rows of small scales on top ---------------
@@ -227,11 +459,16 @@ def head():
 
 # ---- legs: short; front feet with big curved claws tucked under, hind feet flat ------------------------------
 STAGGER = 0.12   # v2: a diagonal gait stance, near and far legs apart, so the side view shows four feet
+FAR_FRONT_FWD = -0.38   # p43: the far (+x) front leg this far forward (negative: back)
+FAR_HIND_FWD = -0.3   # p43: the far (+x) hind leg this far forward (negative: back)
 
 
 def legs():
     for s in (-1, 1):
         fo, ho = Vector((0, s * STAGGER - 0.12, 0)), Vector((0, -s * STAGGER, 0))   # r10 part pass: front legs 12 cm forward (red under the head in the overlay)
+        if s == 1:
+            fo.y -= FAR_FRONT_FWD
+            ho.y -= FAR_HIND_FWD
         sh = Vector((s * 0.42, -0.55, 0.62)) + fo
         el = Vector((s * 0.5, -0.62, 0.34)) + fo
         wr = Vector((s * 0.5, -0.72, 0.14)) + fo
@@ -368,9 +605,9 @@ def loadout():
     return [
         {"slot": "roll", "move": "Ball Roll", "kind": "spikes", "note": "Delft-blue studs along the spine, what it rolls on",
          "args": {"points": [on(kit, T, (0.5, fy, 1.0), (0, 0, 1), 0.0) for fy in (0.3, 0.45, 0.6, 0.75)],
-                  "length": 0.3, "r": 0.06, "direction": (0, 0.2, 1)}},
+                  "length": 0.32, "r": 0.1, "direction": (0, 0.2, 1)}},   # p43: thicker (judges: "thin 1 px stubs"; was r 0.06, 2 px)
         {"slot": "chin", "move": None, "kind": "gatling", "prefix": "snout_", "note": "spare: a rotary gun under the snout",
-         "args": {"base": A("snout", (0.5, 0.45, 0.0), (0, 0, -0.06)), "direction": (0, -1, 0), "length": 0.3, "ring": 0.05, "r": 0.02}},   # pass 3: shorter, it set the front of the sprite
+         "args": {"base": A("head_core", (0.5, 0.5, 0.0), (0, 0, 0.05)), "direction": (0, -1, 0), "length": 0.3, "ring": 0.05, "r": 0.02, "tip_mat": "frame"}},   # pass 3: shorter, it set the front of the sprite; p43: tucked under the jaw, its muzzle short of the snout tip (all three judges: "a thin blue-grey nub" at the tip, "it should be a solid tapered wedge"); was under the snout block, 0.2 m past the tip
         {"slot": "vls", "move": None, "kind": "missile_pod", "note": "spare: a 2x3 launcher on the rump, firing up and forward",
          "args": {"center": on(kit, T, (0.5, 0.78, 1.0), (0, 0, 1), 0.2), "size": (0.4, 0.26, 0.16), "rows": 2, "cols": 3, "rot": (-70, 0, 0)}},
     ]
@@ -396,7 +633,10 @@ def main():
     for k, (y, z, w, h) in enumerate(((-0.98, 1.16, 0.56, 0.42), (-1.1, 1.02, 0.48, 0.36), (-1.2, 0.9, 0.4, 0.3))):   # p20: overlapping scales over the neck, the armour reaching the head (his)
         kit.plate("neckscale_%d" % k, "main", Vector((0, y, z)), w, h, 0.06, (-58 + 6 * k, 0, 0), bend=0.45, taper=0.7, bevel=0.012)
     wpn.build_loadout(kit, "pangolin_m", loadout())
-    greebles.run(kit, wpn, lambda n: quad.bone_for(n, CFG), skip_prefix=("scale_", "tailscale", "snoutscale", "neckscale", "headscale"))
+    # p43: the shingled core and tail segments stay bare too: under the low shingles their big dark side panels and
+    # vents (0.76 by 0.6 m on the core) poked out between the scales as dark slabs ("a wide dark grey band")
+    greebles.run(kit, wpn, lambda n: quad.bone_for(n, CFG), skip_prefix=("scale_", "tailscale", "snoutscale", "neckscale", "headscale")
+                 + (("torso_shell", "tail_core", "tail_tip") if SHINGLES else ()))   # and the red tip cone (a vent plate landed on it)
     quad.tag_parts(CFG)
     ob = kit.join_into_one()
     ob.name = "pangolin_m"

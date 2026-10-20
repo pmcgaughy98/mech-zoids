@@ -25,7 +25,7 @@
 # Head: a grey wedge skull over a dark lower jaw (the jaw line is the value step), a red brow and nose, a bigger cyan
 # eye. Tail: four big pale hooked spikes, one piece each.
 import bmesh, bpy, importlib.util, math, os, re
-from mathutils import Vector
+from mathutils import Matrix, Vector
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
@@ -47,6 +47,29 @@ _gs = _gu.spec_from_file_location("greebles", os.path.join(os.path.dirname(os.pa
 greebles = _gu.module_from_spec(_gs)
 _gs.loader.exec_module(greebles)   # the detail pass (2026-10-14)
 OUT_BLEND = os.path.join(ROOT, "docs", "art", "3d", "wolf_m.blend")
+# v93 (2026-10-19, Codex's wolf sheet, docs/art/2d/codex_reference_pack_2026-10-19/returned/; Preston: "go"). Measured on
+# the side views at equal height: torso within 4% of Codex's, tail 29% longer (tail tip to hip plate 0.54 of the height
+# against 0.42), head and neck 15% longer (shoulder plate to nose 0.62 against 0.54). Codex's legs are clean light-grey
+# blocks and its body has no bolt specks. So: the corner bolts gone, the legs bare of the detail pass and the rams, the
+# elbow and knee rings thick, the tail 1.28x longer, the head 12% longer and 10 cm further forward. WOLF_V93=0 builds v92.
+V93 = os.environ.get("WOLF_V93", "1") == "1"
+TAIL_STRETCH = 1.28 if V93 else 1.0
+HEAD_LONG = 1.12 if V93 else 1.0
+# v94 (Preston: "go" on the stalking pose): Codex's battle sprite stalks, head below the back line. The battle clips
+# start from a body pitched 6 degrees nose down (feet held on the floor) and the head 16 degrees further down; the eight
+# views keep the level stance of Codex's model sheet. WOLF_V94=0 builds v93.
+V94 = V93 and os.environ.get("WOLF_V94", "1") == "1"
+# v95 (2026-10-20, factory pass part by part against Codex's sprite; Preston: "go wolf next"): body, saddles, square
+# plates and tail spikes match; its head is bigger, with a big curved red fang hanging from the front of the upper jaw
+# (ours a small tick), its claws bigger, its light-grey leg blocks chunkier. Head group 1.2 to 1.3, upper fangs 1.4 times
+# longer and 1.3 times thicker, claws 1.3 times longer and 1.25 thicker, light leg guards 1.15 thicker. =0 builds v94.
+V95 = V94 and os.environ.get("WOLF_V95", "1") == "1"
+HG = 1.3 if V95 else 1.2
+FANG_L, FANG_R = (1.4, 1.3) if V95 else (1.0, 1.0)
+CLAW_L, CLAW_R = (1.3, 1.25) if V95 else (1.0, 1.0)
+LEGW = 1.15 if V95 else 1.0
+LEG_BARE = ("front_upper", "front_lower", "front_scale_sleeve", "front_scale_-1", "front_scale_1", "front_shin", "front_elbow",
+            "hind_upper", "hind_lower", "hind_scale_sleeve", "hind_scale_-1", "hind_scale_1", "hind_shin", "hind_knee", "hind_foot")
 
 PAL = {
     "main": "1a1a1f",        # near-black armour
@@ -54,11 +77,17 @@ PAL = {
     "accent": "e01818",      # bright red: mane plates, fins, claws, fangs (2026-10-15, Mechabeast V2 blind review: his red is a saturated e01818, ours read as maroon; was b3131a)
     "frame": "4a4a54",       # grey limbs and joints, lighter than the body (the reference's legs read as steel)
     "frame_dark": "121214",  # the body under the plates
-    "face": "4a4a54",
+    # v91 (2026-10-19, the cloud model pass's judges: "the head is lighter grey than the body; the reference's is body
+    # grey"): the skull a step above the armour (32323a still read 10 lighter than the body; 24242b), so it stays a readable wedge (v85's ask) without
+    # reading as a separate grey part. WOLF_V91=0 rebuilds v85.
+    "face": "24242b" if os.environ.get("WOLF_V91", "1") == "1" else "4a4a54",
     "tusk": "e01818",        # the fangs (the kit's "tusk" slot); v85: the accent red, his fangs are the plates' red (was c42a2a)
     "light": "9a9aa4",       # 2026-10-15, Mechabeast V2 blind review 2: his limb plating is near-white, ours read lavender-grey (was 6e6e7c)
     "blade": "d4d4da",       # 2026-10-15, blind review 2: the tail spikes, big pale blades as his
     "claw": "e01818",        # v85: the accent red; ff3028 (blind review 2, his brightest red) landed on the ramp's salmon top shades
+    # v92 (2026-10-19, cloud judges: "the far-side paws' claws still merge in E"): the far (+x) claws a step darker, the
+    # sprite convention for far limbs, so they separate from the near paws' red. WOLF_V92=0 builds v91.
+    "claw_far": "8c1010" if os.environ.get("WOLF_V92", "1") == "1" else "e01818",
     "eye_src": "5fe1d0",     # teal eyes (player faction; Preston may want red)
 }
 
@@ -159,9 +188,9 @@ def wolf_disc(name, center, radius, axis=(1, 0, 0), depth=0.12, ring=True):
     if c.x < 0 and ax.x > 0:
         ax = -ax
     kit.cyl(name, "frame", c - ax * depth / 2, c + ax * depth / 2, radius, 12)
-    if ring:
-        kit.cyl(name + "_ring", "accent", c + ax * depth / 2, c + ax * (depth / 2 + 0.03), radius * 0.8, 14)
-    kit.cyl(name + "_hub", "frame_dark", c + ax * depth / 2, c + ax * (depth / 2 + 0.06), radius * 0.44, 10)
+    if ring:   # v93: the ring out to the disc's edge (Codex's thick red ring; 0.8r read as a thin outline)
+        kit.cyl(name + "_ring", "accent", c + ax * depth / 2, c + ax * (depth / 2 + 0.03), radius * (0.98 if V93 else 0.8), 14)
+    kit.cyl(name + "_hub", "frame_dark", c + ax * depth / 2, c + ax * (depth / 2 + 0.06), radius * (0.5 if V93 and ring else 0.44), 10)
 
 
 # ---- the body: lean, a deep keel chest, the back level from withers to croup, a tucked belly ----------------
@@ -244,6 +273,8 @@ def red_plates():
 # ---- the tail: long and bushy, carried level, black with a blood-red tip ------------------------------------
 TAIL = [Vector((0, 1.12, 1.22 + UP)), Vector((0, 1.42, 1.13 + UP)), Vector((0, 1.72, 1.0 + UP)), Vector((0, 2.02, 0.84 + UP)), Vector((0, 2.32, 0.64 + UP))]   # 2026-10-15, Mechabeast V2 blind review 2: the tip drooped 26 cm, his tail falls lower-left (column profile: his tip 0.29-0.40 of the height, ours 0.16-0.30)   # Mechabeast V2 pass (2026-10-14): nearly level at back height, as his V2 reference (it drooped to knee height)   # wolf part pass (2026-10-13): long and steep, down to about knee height as his; v17's slope was too shallow, v12 had angled it up
 TAIL_K = 4
+if V93:   # v93: Codex's tail is 29% longer; the same drop, stretched along the body
+    TAIL = [TAIL[0] + (p - TAIL[0]) * Vector((1, TAIL_STRETCH, 1)) for p in TAIL]
 
 
 def tail():
@@ -251,7 +282,7 @@ def tail():
         r0, r1 = (0.17, 0.21, 0.2, 0.15)[k], (0.21, 0.2, 0.15, 0.1)[k]   # wolflike: a bushy brush, thickest mid-tail; was 0.17 to 0.09 straight
         kit.segment("tail_core_%d" % k, "main" if k < 3 else "accent", TAIL[k], TAIL[k + 1], r0 * 1.2, r1 * 1.2, 0.5)   # 2026-10-15 blind review: a bright red tip, his (was dried-blood trim)
         kit.plate("tail_core_%d_plate" % k, "accent" if k == 3 else "main", TAIL[k].lerp(TAIL[k + 1], 0.5) + Vector((0, 0, r0 * 1.1)),
-                  0.18, 0.3, 0.035, (-70 - 8 * k, 0, 0), bend=0.4, bevel=0.008)
+                  0.18, 0.3 * TAIL_STRETCH, 0.035, (-70 - 8 * k, 0, 0), bend=0.4, bevel=0.008)
     # 2026-10-15, Mechabeast V2 blind review 2: his tail spikes are big white curved blades, ours tiny grey ticks. Now
     # that the tail droops as his (v82), six pale hooked blades on the first three segments, raked back toward the
     # tip (v77-v79 tried them on the high tail and lost side outline). None on the red tip, his has none; v83's raked
@@ -279,7 +310,7 @@ def tail_bone(name):
 
 
 # ---- the head: an elongate skull on a thick neck, a narrow muzzle, erect ears, red fangs ---------------------
-HC = Vector((0, -1.66, 1.48 + UP))   # wolf pass 4 (column profile): 10 cm lower, his back line sits higher against the ear tips; was 1.58   # wolflike pass (2026-10-13, Preston: "make wolf look more wolflike"): the head carried above the back on a rising neck; was (-1.72, 1.36)
+HC = Vector((0, -1.66 - (0.1 if V93 else 0.0), 1.48 + UP))   # wolf pass 4 (column profile): 10 cm lower, his back line sits higher against the ear tips; was 1.58   # wolflike pass (2026-10-13, Preston: "make wolf look more wolflike"): the head carried above the back on a rising neck; was (-1.72, 1.36)
 
 
 def head():
@@ -308,8 +339,8 @@ def head():
     for s in (-1, 1):
         # one tapered swept piece per fang (two box segments read as two specks): the upper canine long, the lower short
         a = hc + Vector((s * 0.15, -0.5, -0.12))
-        sweep("head_fang_%d" % s, "tusk", _bezier(a, a + Vector((0, -0.03, -0.14)), a + Vector((0, 0.01, -0.3)), 5),
-              [(0.05, 0.05), (0.045, 0.045), (0.036, 0.036), (0.022, 0.022), (0.006, 0.006)])
+        sweep("head_fang_%d" % s, "tusk", _bezier(a, a + Vector((0, -0.03, -0.14)) * FANG_L, a + Vector((0, 0.01, -0.3)) * FANG_L, 5),
+              [(r * FANG_R, r * FANG_R) for r in (0.05, 0.045, 0.036, 0.022, 0.006)])
         a = hc + Vector((s * 0.12, -0.34, -0.3))
         sweep("head_fang_low_%d" % s, "tusk", _bezier(a, a + Vector((0, -0.02, 0.08)), a + Vector((0, 0.0, 0.16)), 4),
               [(0.04, 0.04), (0.032, 0.032), (0.018, 0.018), (0.005, 0.005)])
@@ -348,7 +379,7 @@ def legs():
         for pre, a, b, c, w0, w1 in (("front", sh, el, wr, 0.13, 0.1), ("hind", hp, kn, an, 0.2, 0.12)):   # v10: forelegs slimmer, his are lean columns
             kit.limb_solid("%s_upper_%d" % (pre, s), "frame", a, b, (s, 0, 0), [(0, w0, w0 - 0.02), (1, w1, w1 - 0.02)], [(0, w0), (1, w1)])
             kit.limb_solid("%s_lower_%d" % (pre, s), "frame", b, c, (s, 0, 0), [(0, w1, w1 - 0.02), (1, w1 - 0.03, w1 - 0.04)], [(0, w1), (1, w1 - 0.03)])
-            wolf_disc("%s_knee_%d" % (pre, s) if pre == "hind" else "front_elbow_%d" % s, b + Vector((s * 0.2, 0, 0)), 0.19, depth=0.12)   # synthesis pass (2026-10-13): bigger and proud of the armour, his reference and the Zoids rips show big joint hubs   # v5: the reference's big joint discs
+            wolf_disc("%s_knee_%d" % (pre, s) if pre == "hind" else "front_elbow_%d" % s, b + Vector((s * (0.23 if V93 else 0.2), 0, 0)), 0.19, depth=0.12)   # synthesis pass (2026-10-13): bigger and proud of the armour, his reference and the Zoids rips show big joint hubs   # v5: the reference's big joint discs
             # v85: the shoulder and hip hub discs are now a red square plate with a dark hub (red_plates())
             wolf_disc("%s_shin_%d_wrist" % (pre, s), c + Vector((s * 0.03, 0, 0.04)), 0.09, depth=0.18, ring=False)   # v10: a wrist and ankle disc, his joints (v85: no red ring, a 4 px red speck)
             up, lo = bpy.data.objects["%s_upper_%d" % (pre, s)], bpy.data.objects["%s_lower_%d" % (pre, s)]
@@ -362,7 +393,8 @@ def legs():
                 kit.limb_solid("hind_foot_meta_%d" % s, "frame", an, c, (s, 0, 0), [(0, 0.1, 0.08), (1, 0.08, 0.07)], [(0, 0.1), (1, 0.08)])
                 wolf_disc("hind_foot_hock_%d" % s, an + Vector((s * 0.03, 0, 0)), 0.09, depth=0.18, ring=False)
             # pass 2 detail: a hydraulic ram along each upper limb, riding the upper bone
-            weapons.piston(kit, "%s_upper_pst" % pre, a + (b - a) * 0.1 + Vector((s * 0.12, 0.06, 0)), a + (b - a) * 0.85 + Vector((s * 0.12, 0.06, 0)), 0.035, sfx="_%d" % s)
+            if not V93:   # v93: no rams on the legs, Codex's are clean blocks
+                weapons.piston(kit, "%s_upper_pst" % pre, a + (b - a) * 0.1 + Vector((s * 0.12, 0.06, 0)), a + (b - a) * 0.85 + Vector((s * 0.12, 0.06, 0)), 0.035, sfx="_%d" % s)
             PAWS.append((pre, s, c + Vector((0, -0.08, -0.14))))   # v4: the paw's sole on the floor; v85: built in paws()
 
 
@@ -386,10 +418,10 @@ def paws():
             # v85d: a steep talon hooking down in front of its toe (v85c's reached 0.2 m forward, longer than the toes'
             # stagger, so the three overlapped on screen and merged into one red band at x4.4)
             p0 = Vector((x, front + 0.06, toe_c.z + 0.04))
-            p1 = Vector((x, front - 0.15 * ln, toe_c.z + 0.07))
-            p2 = Vector((x, front - 0.12 * ln, toe_c.z - 0.12 * ln))
-            sweep("%s_claw_%d_%d" % (pre, s, k), "claw", _bezier(p0, p1, p2, 7),
-                  [(0.055, 0.065), (0.054, 0.063), (0.05, 0.058), (0.045, 0.05), (0.036, 0.038), (0.022, 0.022), (0.006, 0.006)])
+            p1 = Vector((x, front - 0.15 * ln * CLAW_L, toe_c.z + 0.07))
+            p2 = Vector((x, front - 0.12 * ln * CLAW_L, toe_c.z - 0.12 * ln * CLAW_L))
+            sweep("%s_claw_%d_%d" % (pre, s, k), "claw_far" if s == 1 else "claw", _bezier(p0, p1, p2, 7),
+                  [(a_ * CLAW_R, b_ * CLAW_R) for a_, b_ in ((0.055, 0.065), (0.054, 0.063), (0.05, 0.058), (0.045, 0.05), (0.036, 0.038), (0.022, 0.022), (0.006, 0.006))])
 
 
 # ---- pass 2 detail layer (2026-10-13, Preston: "add more pieces and parts, it kind of looks like a bare prototype";
@@ -414,7 +446,7 @@ def details():
 # robot with weapons"): sleeves over every limb segment, shoulder and hip pads, armored paws, neck plates, cheek
 # guards and a helmet, tail side armor. Black armor, red trim; the grey frame shows only at the joints.
 def armor():
-    G = 1.2   # the head group's scale in main(); head parts made here are placed in the scaled frame
+    G = HG   # the head group's scale in main(); head parts made here are placed in the scaled frame
     for s in (-1, 1):
         sd = "L" if s == 1 else "R"
         sh, el, wr = JOINTS["sh." + sd], JOINTS["el." + sd], JOINTS["wr." + sd]
@@ -424,13 +456,13 @@ def armor():
         # feet (our wolf filled 0.37 of its box against Legacy's median 0.51, tools/art/legacy_gap.py)
         kit.segment("front_scale_sleeve_%d" % s, "main", sh.lerp(el, 0.05) + out, sh.lerp(el, 0.88) + out, 0.4, 0.48, 0.5)   # v29: bulkier, a muscled shoulder (v28 0.22)
         kit.segment("front_shin_guard_%d" % s, "light",   # synthesis pass: light steel lower legs, his reference
-                    el.lerp(wr, 0.1) + out, el.lerp(wr, 0.8) + out, 0.3, 0.34, 0.5)
+                    el.lerp(wr, 0.1) + out, el.lerp(wr, 0.8) + out, 0.3 * LEGW, 0.34 * LEGW, 0.5)
         kit.segment("hind_scale_sleeve_%d" % s, "main", hp.lerp(kn, 0.0) + out, hp.lerp(kn, 0.88) + out, 0.5, 0.56, 0.5)   # v29: a heavy haunch (v28 0.3)
         kit.segment("hind_shin_guard_%d" % s, "light",
-                    kn.lerp(an, 0.1) + out, kn.lerp(an, 0.8) + out, 0.3, 0.34, 0.5)
+                    kn.lerp(an, 0.1) + out, kn.lerp(an, 0.8) + out, 0.3 * LEGW, 0.34 * LEGW, 0.5)
         paw = an + Vector((0, -0.1, -0.3))
         kit.segment("hind_foot_guard_%d" % s, "light",
-                    an.lerp(paw, 0.12), an.lerp(paw, 0.78), 0.26, 0.3, 0.5)
+                    an.lerp(paw, 0.12), an.lerp(paw, 0.78), 0.26 * LEGW, 0.3 * LEGW, 0.5)
         # v85: the red limb stripes (3 to 5 cm, a broken one-pixel red line on every leg) are gone
         # shoulder and hip pads (v85: the thin red rims under them are gone; a red square plate on each, red_plates())
         kit.shell("front_scale_pad_%d" % s, "main", sh + Vector((s * 0.24, -0.02, 0.0)), (0.16, 0.56, 0.5), (0, 0, 0), 0.6, levels=1)
@@ -442,7 +474,7 @@ def armor():
         for k, t in enumerate((0.22, 0.5, 0.78)):
             kit.shell("neck_side_%d_%d" % (s, k), "main", n0.lerp(n1, t) + Vector((s * 0.24, 0, -0.02)), (0.08, 0.26, 0.34), (pitch, 0, 0), 0.6, levels=1)   # v85: the middle one no longer dark red
         # cheek guards along the jaw hinge (v85: the skull's grey, not a dark patch under the eye)
-        kit.shell("head_cheek_%d" % s, "face", HC + Vector((s * 0.25, -0.1, -0.1)) * G, (0.07, 0.36, 0.2), (0, 0, 0), 0.6, levels=1)
+        kit.shell("head_cheek_%d" % s, "face", HC + Vector((s * 0.25 * G, -0.1 * G * HEAD_LONG, -0.1 * G)), (0.07, 0.36, 0.2), (0, 0, 0), 0.6, levels=1)
     core = bpy.data.objects["torso_core"]
     for k, (ang, w, h, mat) in enumerate(((0, 0.5, 0.36, "main"), (-40, 0.36, 0.34, "accent"), (40, 0.36, 0.34, "accent"),
                                          (-75, 0.34, 0.4, "main"), (75, 0.34, 0.4, "main"))):   # v29: a ruff over the withers and shoulders
@@ -514,6 +546,18 @@ def tidy_greebles():
     print("TIDY greebles recoloured %d" % changed)
 
 
+def drop_bolts():
+    """v93 (Codex's wolf has none): the detail pass's 5 cm corner bolts, drawn as single white or grey specks all over the
+    sprite. Its panels and vents stay."""
+    bpy.context.view_layer.update()
+    gone = 0
+    for o in list(bpy.context.scene.objects):
+        if o.type == "MESH" and re.search(r"_9\d\d$", o.name) and max(o.dimensions) < 0.08:
+            bpy.data.objects.remove(o, do_unlink=True)
+            gone += 1
+    print("V93 bolts removed %d" % gone)
+
+
 CFG = {
     "battle_set": "wolf_m",   # battle clips: tools/blender/attacks.py (2026-10-13)
     "name": "wolf_m",
@@ -530,6 +574,8 @@ CFG = {
     "stance": "clip=battle;frame=1",
     "battle_feet": {"R_arm": (-0.6, 0.0), "L_arm": (0.2, 0.0), "R_leg": (0.25, 0.0), "L_leg": (-0.55, 0.0)},   # V2: hind feet 25-30 cm back, his stalking reach   # v47: far fore back to two-thirds of the length (column profile); v37: all forward, his fore paw under the nose
     "crouch": 0.03,
+    "battle_body": (6, 0, 0) if V94 else (0, 0, 0),
+    "battle_head": (16, 0, 0) if V94 else (0, 0, 0),
     "front_path": (0.06, 0.0, 0.14, -8),   # back, down, lift, curl: a trotting reach (v3: less curl, the paw stayed on the leg)
     "hind_path": (-0.06, 0.0, 0.14, 0),
 }
@@ -541,16 +587,25 @@ def main():
     body()
     tail()
     head()
+    bpy.context.view_layer.update()
     for o in list(bpy.context.scene.objects):   # v12 (look-compare): his head is bigger; the head group 1.2x about HC
         if o.type == "MESH" and o.name.startswith(("head_", "headplate", "eye_", "ear_")):
-            o.location = HC + (o.location - HC) * 1.2
-            o.scale = tuple(v * 1.2 for v in o.scale)
+            if V93:   # v93: 12% longer as well, along the body only (Codex's head is longer, not taller)
+                if o.data.users > 1:
+                    o.data = o.data.copy()
+                S = Matrix.Translation(HC) @ Matrix.Diagonal((HG, HG * HEAD_LONG, HG, 1.0)) @ Matrix.Translation(-HC)
+                o.data.transform(o.matrix_world.inverted() @ S @ o.matrix_world)
+            else:
+                o.location = HC + (o.location - HC) * 1.2
+                o.scale = tuple(v * 1.2 for v in o.scale)
     details()
     legs()
     armor()
     weapons.build_loadout(kit, "wolf_m", loadout())
-    greebles.run(kit, weapons, lambda n: quad.bone_for(n, CFG), skip_prefix=("torso_core", "neckplate", "head_", "headplate", "ear_"))   # v71: the core is under armour already; its layer plate hid the red back. v85: the head and the red neck plates bare too (panels and bolts on them read as mud and crumpled red at sprite size)
+    greebles.run(kit, weapons, lambda n: quad.bone_for(n, CFG), skip_prefix=("torso_core", "neckplate", "head_", "headplate", "ear_") + (LEG_BARE if V93 else ()))   # v71: the core is under armour already; its layer plate hid the red back. v85: the head and the red neck plates bare too (panels and bolts on them read as mud and crumpled red at sprite size)
     tidy_greebles()
+    if V93:
+        drop_bolts()
     red_plates()
     paws()
     quad.tag_parts(CFG)

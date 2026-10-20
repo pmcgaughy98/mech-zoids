@@ -357,11 +357,13 @@ def big_body(core):
         hull_plate(core, "plate_rear_lo", "plate_lo", [rear, (Vector((0, 0, ZC + 0.08 - GAP / 2)), Vector((0, -0.5, -1)))], t=P87_T, flat=P87_FLAT)
     finally:
         GAP = keep
-    for k, x in enumerate((-0.2, -0.11, -0.02)):   # his chest vent: three dark slots on the chest plate
-        hit = kit.surface_hit(core, Vector((x, -3.0, CHEST_Z - 0.15)), Vector((0, 1, 0)))
+    for k, x in enumerate((-0.13, -0.02) if P95 else (-0.2, -0.11, -0.02)):   # his chest vent: dark slots on the chest plate (p95: two, Codex's)
+        # p95: hit the chest plate itself (the core lies under it, so p87 to p94's slots were buried behind the plate)
+        hit = kit.surface_hit(bpy.data.objects["plate_chest"] if P95 else core, Vector((x, -3.0, CHEST_Z - 0.15)), Vector((0, 1, 0)))
         if hit:
-            p = hit[0] + hit[1] * 0.05
-            kit.segment("plate_chestvent_%d" % k, "frame_dark", p + Vector((0, 0, 0.08)), p - Vector((0, 0, 0.08)), 0.05, 0.04, 0.5)
+            p = hit[0] + hit[1] * (0.02 if P95 else 0.05)
+            hl, r0, r1 = (0.13, 0.065, 0.055) if P95 else (0.08, 0.05, 0.04)
+            kit.segment("plate_chestvent_%d" % k, "frame_dark", p + Vector((0, 0, hl)), p - Vector((0, 0, hl)), r0, r1, 0.5)
     tail()
 
 
@@ -386,7 +388,7 @@ def head():
     skull = kit.profile_solid("head_core", "main", hc, side, front, chamfer=0.015)
     # a small crest tuft at the back of the head
     for k in range(5):   # p25: his spiky crest, five raked deep-blue blades fanned over the back of the head
-        kit.plate("crest_%d" % k, "trim", hc + Vector(((k - 2) * 0.06, 0.16 + 0.03 * abs(k - 2), 0.22 - 0.02 * abs(k - 2))), 0.09, 0.26, 0.03,
+        kit.plate("crest_%d" % k, "trim", hc + Vector(((k - 2) * 0.06, 0.16 + 0.03 * abs(k - 2), 0.22 - 0.02 * abs(k - 2))), 0.1, 0.46 if P95 else 0.26, 0.03,
                   (-130, 0, (k - 2) * 16), bend=0.2, taper=0.3, bevel=0.006)
     # the upper mandible: bulbous and keeled, the shoe
     up_side = [(-0.16, 0.16), (-0.36, 0.22), (-0.6, 0.18), (-0.78, 0.09), (-0.87, 0.0), (-0.8, -0.06), (-0.5, -0.06),
@@ -416,10 +418,12 @@ def head():
         kit.shell("eye_%d" % s, "eye_src", hc + Vector((s * 0.2, -0.13, 0.07)), (0.05, 0.08, 0.07), (0, 0, 0), 0.0, levels=0)
     # Stillwater Lance: a lens under the hooked nail
     pass   # p15 (Preston): no gun on the head until the shape is right
-    kit.cyl("bill_lancemuzzle", "frame_dark", hc + Vector((0, -0.95, 0.15)), hc + Vector((0, -1.04, 0.14)), 0.06, 10)
+    if not P93:
+        kit.cyl("bill_lancemuzzle", "frame_dark", hc + Vector((0, -0.95, 0.15)), hc + Vector((0, -1.04, 0.14)), 0.06, 10)
     for sd in (-1, 1):   # p5: the reference's grey jaw bolt at the back of the skull
         kit.disc("head_jawbolt_%d" % sd, hc + Vector((sd * 0.2, 0.08, -0.04)), 0.09, depth=0.1)
-    kit.shell("bill_lens", "eye_src", hc + Vector((0, -0.95, -0.09)), (0.05, 0.05, 0.05), (0, 0, 0), 0.0, levels=0)
+    if not P93:
+        kit.shell("bill_lens", "eye_src", hc + Vector((0, -0.95, -0.09)), (0.05, 0.05, 0.05), (0, 0, 0), 0.0, levels=0)
 
 
 # ---- wings: folded along the sides; blue coverts, deep-blue primaries back to the tail, gold leading edges -----
@@ -461,6 +465,27 @@ FEATHERS = (10, 21, 32, 43)   # p86: four primaries, degrees below the back line
 # tips stand in one column with background between them (his fan). Swept against his side view: p86g's fan (12 to 48
 # degrees, the top blade 1.25 long) hung below and reached past his wing, outline 0.648 to 0.568; this one 0.681 (E)
 # and 0.643 (SE) with the four blades still apart at the tips
+P90 = os.environ.get("SHOEBILL_P90", "1") == "1"   # p90 (2026-10-19, refine pass part by part against Preston's painting):
+# his primaries hang down and back as long navy blades ending near knee height; ours fanned out sideways (10 to 43
+# degrees). Steeper, each capped at FEATHER_MAX so the lowest stays off the floor. SHOEBILL_P90=0 builds p89.
+if P90:
+    FEATHERS = (28, 38, 48, 58)
+P94 = os.environ.get("SHOEBILL_P94", "1") == "1"   # p94: the lower bill on its own jaw bone; =0 builds p93
+# p95 (2026-10-20, Codex's shoebill sheet; Preston: "go"): its crest stands up as a spiky tuft and its chest plate carries two
+# bold dark slits; ours had a low crest and three 1-2 px slots. Crest blades 0.26 to 0.36 m; the vent two slots, longer
+# and wider. (Its wing is already two calm plates, p87; its battle sprite's width matches ours, 0.78 against 0.77.)
+P95 = P94 and os.environ.get("SHOEBILL_P95", "1") == "1"   # =0 builds p94
+# p96 (2026-10-20, factory pass part by part against Codex's sprite; Preston: "go shoebill next"): the body, bill, crest,
+# chest and wing match; Codex's legs are about twice as thick, dark tubes with big gold collars and thick toes with big
+# gold claws, where ours read as 1 to 2 px lines. Earlier passes thinned them on purpose to Preston's painting (r10 "thin
+# grey rods", p63 "his legs fill half what ours did"), so halfway: shins and tarsi 1.5x, collars and joint blocks 1.3x,
+# toes 1.2x, claws 1.25x. SHOEBILL_P96=0 builds p95.
+P96 = P95 and os.environ.get("SHOEBILL_P96", "1") == "1"
+LW, CW, TW, KW = (1.5, 1.3, 1.2, 1.25) if P96 else (1.0, 1.0, 1.0, 1.0)
+P93 = os.environ.get("SHOEBILL_P93", "1") == "1"   # p93: the head gun and the breast guns removed; =0 builds p92
+P92 = os.environ.get("SHOEBILL_P92", "1") == "1"   # p92: hips mirrored; =0 builds p91
+P91 = os.environ.get("SHOEBILL_P91", "1") == "1"   # p91: thighs flared up into the hull, gold hip rings; =0 builds p90
+FEATHER_MAX = 0.95 if P90 else 99.0
 FAN_REACH = float(os.environ.get("SHOEBILL_FAN_REACH", "1.05"))   # p87 tried 1.16 (longer blades): outline E 0.677 to 0.645
 FEATHER_H = 0.15   # each blade's height across: 5 sprite px, about 4 after the 35-degree turn
 COVERT_SLOPE = 16   # p86: degrees the covert rows slope down toward the back
@@ -505,7 +530,7 @@ def hard_wing(s, sh, el, wr, tip):
         d = Vector((0, math.cos(th), -math.sin(th)))
         up = Vector((0, math.sin(th), math.cos(th)))
         root = Vector((s * (0.52 - 0.022 * k), 0.14 + 0.05 * k, 1.33 + LIFT - 0.1 * k))
-        ln = (FAN_REACH - root.y) / math.cos(th)
+        ln = min(FEATHER_MAX, (FAN_REACH - root.y) / math.cos(th))
         roots.append((root, d))
         if P87:
             # p87: a deep navy blade with one thin light strip near its top edge (about one sprite px), the tip cut on
@@ -597,35 +622,55 @@ def legs():
         o = Vector((0, s * STAGGER - (0.1 if s == -1 else 0.0), 0))   # blind review 2 (2026-10-15): the near leg 10 cm further forward (p78 overlay: his front leg ahead of ours)
         # Mechabeast V2 blind review 2 (2026-10-15): hip, knee and ankle nearly in line and the tarsus upright, so each
         # leg reads as one straight strut (ours bowed back into a C); the legs 27 cm forward, his stand under the breast (p77 at 15 cm: overlay red ahead of both legs)
-        hp = Vector((s * 0.17, -0.15, 0.8 + LIFT)) + o   # p18: the hips inside the small body's bottom; legs nearly 40% of the height
-        kn = Vector((s * 0.26, -0.2, 0.6 + LIFT * 0.85)) + o   # ref-5 part pass (2026-10-13): the legs splay apart to the feet, his stand with a gap between them
+        oh = Vector((0, -0.05, 0)) if P92 else o   # p92 (Preston: "Still a gap ... compare to the other hip"): the hips
+        # mirrored, both at the mean of the two staggers, so both thighs leave the hull at the same place (the far hip
+        # 0.36 m back hid its thigh behind the hull and its gold ring hung under it in S); the knees go halfway, the
+        # feet keep the full stagger, so the legs still separate in the side view
+        hp = Vector((s * 0.17, -0.15, 0.8 + LIFT)) + oh   # p18: the hips inside the small body's bottom; legs nearly 40% of the height
+        kn = Vector((s * 0.26, -0.2, 0.6 + LIFT * 0.85)) + (oh + (o - oh) * 0.5)   # ref-5 part pass (2026-10-13): the legs splay apart to the feet, his stand with a gap between them
+        if s == 1 and os.environ.get("SHOEBILL_P89", "1") == "1" and not P92:   # p92 mirrored: no far-knee drop. p89: the far knee 12 cm lower (longer thigh, shorter shin).
+            kn = kn + Vector((0, 0, -0.12))   # The 18-degree camera draws the far leg higher, so its knee sat at the hull's
+            # bottom edge and the hull hid the thigh: the leg read as hanging from its gold collar
         an = Vector((s * 0.3, -0.21, 0.4)) + o   # blind review 2: the ankle low, his ankle ring sits just above the toes
         tb = Vector((s * 0.32, -0.21, 0.08)) + o
         JOINTS.update({"hp." + side: hp, "kn." + side: kn, "an." + side: an, "toe." + side: tb})
-        kit.limb_solid("leg_thigh_%d" % s, "main", hp, kn, (s, 0, 0), [(0, 0.15, 0.13), (1, 0.1, 0.09)], [(0, 0.15), (1, 0.1)])   # p63 (column profile): thinner, his legs fill half what ours did at shin height   # r10: slimmer thighs
-        kit.limb_solid("leg_shin_%d" % s, "frame", kn, an, (s, 0, 0), [(0, 0.06, 0.055), (1, 0.05, 0.045)], [(0, 0.06), (1, 0.05)])   # r10 (look-compare): his legs are thin grey rods
-        kit.plate("leg_shin_plate_%d" % s, "main", kn.lerp(an, 0.25) + Vector((s * 0.08, 0, 0)), 0.16, 0.22, 0.04,
+        # p89 (2026-10-19, Preston: "what would be its left leg ... is floating and not connected to torso"): the far (+x)
+        # thigh is there in 3D (22 render rows from the hull to the knee in E) but in the hull's light blue it merged into
+        # the belly plates at sprite size, so the far leg seemed to start at its gold knee collar under the body. The far
+        # thigh and shin plate take the mid blue, the far-limb convention, so the leg reads from the hip down.
+        fl = "mid" if (s == 1 and os.environ.get("SHOEBILL_P89", "1") == "1") else "main"   # SHOEBILL_P89=0 builds p87
+        if P91:   # p91 (2026-10-19, Preston: "its leg is still not connected"): both thighs read as blocks hung under the
+            # hull's dark bottom edge. His thighs are broad armour that runs up into the body, with gold rings at the joints:
+            # the thigh starts 14 cm higher inside the hull, flares to 0.24 m at the top, and a gold ring marks the hip
+            top = hp + Vector((0, 0, 0.14))
+            kit.limb_solid("leg_thigh_%d" % s, fl, top, kn, (s, 0, 0), [(0, 0.24, 0.2), (0.55, 0.16, 0.14), (1, 0.1, 0.09)], [(0, 0.24), (0.55, 0.16), (1, 0.1)])
+            ax_ = (kn - hp).normalized()
+            kit.cyl("leg_thigh_ring_%d" % s, "accent", hp + ax_ * 0.06, hp + ax_ * 0.13, 0.16, 16)
+        else:
+            kit.limb_solid("leg_thigh_%d" % s, fl, hp, kn, (s, 0, 0), [(0, 0.15, 0.13), (1, 0.1, 0.09)], [(0, 0.15), (1, 0.1)])   # p63 (column profile): thinner, his legs fill half what ours did at shin height   # r10: slimmer thighs
+        kit.limb_solid("leg_shin_%d" % s, "frame", kn, an, (s, 0, 0), [(0, 0.06 * LW, 0.055 * LW), (1, 0.05 * LW, 0.045 * LW)], [(0, 0.06 * LW), (1, 0.05 * LW)])   # r10 (look-compare): his legs are thin grey rods
+        kit.plate("leg_shin_plate_%d" % s, fl, kn.lerp(an, 0.25) + Vector((s * 0.08, 0, 0)), 0.16, 0.22, 0.04,
                   (-10, 0, s * 84), bend=0.4, bevel=0.008)   # the feathered top of the shin
         # Mechabeast V2 blind review 4 (2026-10-15): joint names end in the side, so bird_rig binds them to their own leg
         # ("leg_shin_1_knee" bound to shin.R and floated off as stray gold specks); a gold collar round the leg at knee
         # and ankle, his bright gold rings
         axis = (an - kn).normalized()
         for nm, pt in (("leg_ankle_%d" % s, an), ("leg_shin_knee_%d" % s, kn)):   # legs part 2: gold hex joint blocks, as the reference
-            kit.shell(nm, "accent", pt + Vector((s * 0.02, 0, 0)), (0.11, 0.1, 0.11), (0, 0, 0), 0.4, levels=1)   # blind review 2 (2026-10-15): smaller still, his small knee joint; was 0.14   # p67: smaller, to suit the thinner legs (his joints are small gold rings)
+            kit.shell(nm, "accent", pt + Vector((s * 0.02, 0, 0)), (0.11 * CW, 0.1 * CW, 0.11 * CW), (0, 0, 0), 0.4, levels=1)   # blind review 2 (2026-10-15): smaller still, his small knee joint; was 0.14   # p67: smaller, to suit the thinner legs (his joints are small gold rings)
             kit.shell(nm.replace("_%d" % s, "_hub_%d" % s), "frame_dark", pt + Vector((s * 0.1, 0, 0)), (0.05, 0.08, 0.08), (0, 0, 0), 0.5, levels=0)
             lo, hi = (0.0, 0.08) if pt is kn else (-0.1, -0.02)   # on the shin: just under the knee, just over the ankle
-            kit.cyl(nm.replace("_%d" % s, "_ring_%d" % s), "accent", pt + axis * lo, pt + axis * hi, 0.12 if pt is kn else 0.1, 12)
-        kit.limb_solid("leg_foot_%d" % s, "frame", an, tb, (s, 0, 0), [(0, 0.055, 0.05), (1, 0.05, 0.045)], [(0, 0.055), (1, 0.05)])   # r10: thin tarsus
+            kit.cyl(nm.replace("_%d" % s, "_ring_%d" % s), "accent", pt + axis * lo, pt + axis * hi, (0.12 if pt is kn else 0.1) * CW, 12)
+        kit.limb_solid("leg_foot_%d" % s, "frame", an, tb, (s, 0, 0), [(0, 0.055 * LW, 0.05 * LW), (1, 0.05 * LW, 0.045 * LW)], [(0, 0.055 * LW), (1, 0.05 * LW)])   # r10: thin tarsus
         # three very long forward toes splayed, one hind toe; dark, with gold claw tips
         for k, ang in enumerate((-24, 0, 24, 180)):
             r = math.radians(ang)
             ln = 0.3 if ang == 180 else (0.5 if ang == 0 else 0.46)   # p59 (column profile): toes shorter, ours ran past his   # pass 2: longer toes, his spread wide forward; legs part had 0.26/0.5/0.42
             d = Vector((s * 0 + math.sin(r) * (1 if s == 1 else -1), -math.cos(r), 0))
             tip = tb + d * ln + Vector((0, 0, -0.05))
-            kit.segment("toe_%d_%d" % (s, k), "frame", tb + Vector((0, 0, 0.02)), tip, 0.1, 0.12, 0.5)   # legs part 2: toes raised, with gaps between
+            kit.segment("toe_%d_%d" % (s, k), "frame", tb + Vector((0, 0, 0.02)), tip, 0.1 * TW, 0.12 * TW, 0.5)   # legs part 2: toes raised, with gaps between
             cw, ch = (0.13, 0.12) if (P87 and ang == 180) else (0.1, 0.09)   # p87: the hind claw a size up (its dark
             # shade alone read as one stray brown pixel at the back toe)
-            kit.segment("toe_claw_%d_%d" % (s, k), "accent", tip - d * 0.04, tip + d * 0.16 + Vector((0, 0, -0.02)), cw, ch, 0.5)   # blind review 4 (2026-10-15): bigger gold claw tips, his read at sprite size; was 0.09 long
+            kit.segment("toe_claw_%d_%d" % (s, k), "accent", tip - d * 0.04, tip + d * 0.16 * KW + Vector((0, 0, -0.02)), cw * KW, ch * KW, 0.5)   # blind review 4 (2026-10-15): bigger gold claw tips, his read at sprite size; was 0.09 long
             jc = tb + d * (ln * 0.5) + Vector((0, 0, -0.04))   # gold toe joints; blind review 4: built here, named by side (disc's "_ring" names bound to the R foot)
             kit.cyl("toe_jnt_%d_%d" % (s, k), "frame", jc - Vector((0, 0, 0.03)), jc + Vector((0, 0, 0.03)), 0.045, 10)
             kit.cyl("toe_jring_%d_%d" % (s, k), "accent", jc + Vector((0, 0, 0.03)), jc + Vector((0, 0, 0.055)), 0.032, 10)
@@ -673,6 +718,12 @@ CFG = {
 # hardware; move None marks a spare hardpoint, DRAFT, Preston's to name. Shared builders: tools/blender/weapons.py.
 def loadout():
     A, on, T = wpn.anchor, wpn.on, "torso_core"
+    if P93:   # p93 (2026-10-19, Preston: the shoebill pivots to its real bird's weapons, bill-clatter gunfire, the
+        # decapitating bill, sentry stillness and a lunge; "you have permission to remove top weapon also the two bulbs
+        # sticking out of chest that look like nipples"): the Lance gun on the head and the two breast guns go; the
+        # bill's clamp teeth stay. SHOEBILL_P93=0 builds p92.
+        return [{"slot": "clamp", "move": "Apex Decapitation", "kind": "spikes", "prefix": "bill_", "note": "teeth along the upper bill's edge",
+                 "args": {"points": [A("bill_upper", (fx, fy, 0.05)) for fx in (0.15, 0.85) for fy in (0.2, 0.45)], "length": 0.08, "r": 0.025, "direction": (0, 0, -1)}}]
     L = [
         {"slot": "lance", "move": "Stillwater Lance", "kind": "cannon", "prefix": "head_", "note": "the beam gun on top of the head, as his reference",
          "args": {"base": A("head_core", (0.5, 0.55, 1.0), (0, 0, 0.11)), "direction": (0, -1, 0), "length": 1.15, "r": 0.04, "housing": (0.13, 0.3, 0.11),
@@ -701,6 +752,19 @@ def main():
     stand_up()
     greebles.run(kit, wpn, lambda n: bird.bone_for(n, CFG), skip_prefix=("leg_foot", "leg_shin", "toe", "plate_", "torso_core")
                  + (("wing_",) if HARD else ()))   # blind review 2: no panels on the torso plates (their seams were the noise); p86: none on the wing either (its bolts and vents were the speckle on the coverts)
+    if P94:   # p94 (2026-10-19, Preston: "do it"): the lower bill rides its own jaw bone, hinged at the back of the gape and
+        # parented to the head, so the bill really claps (Bill Clatter), gapes and bites (Apex Decapitation, Sentry Lunge).
+        # The bone is laid along the finished lower bill (after the head's scale and the stand-up turn); positive rx
+        # opens it, as positive rx tips the head down.
+        jaw = bpy.data.objects["bill_lower"]
+        jaw.name = "jaw_bill_lower"
+        bpy.context.view_layer.update()
+        cs = [jaw.matrix_world @ v.co for v in jaw.data.vertices]
+        back = max(cs, key=lambda c: c.y)
+        tip = min(cs, key=lambda c: c.y)
+        hinge = Vector((0, back.y, max(c.z for c in cs)))
+        CFG["extra_bones"] = [("jaw", tuple(hinge), (0, tip.y, (tip.z + hinge.z) / 2), "head")]
+        CFG["part_bones"] = (("jaw_", "jaw"),)
     bird.tag_parts(CFG)
     ob = kit.join_into_one()
     ob.name = "shoebill_m"

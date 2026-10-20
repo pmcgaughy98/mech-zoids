@@ -16,6 +16,8 @@ const Stage := preload("res://scripts/battle/stage.gd")
 const ALLOWED := {
 	"kangaroo_m/kick": 7,   # kick/5 reaches 7 rows above the screen even at the player's row
 	"pangolin_m/roll": 5,   # roll/6 likewise, 5 rows
+	"ape_l/punch": 3,     # 2026-10-19, gorilla v76: punch/2, the haymaker's fist arched over the head in the leap; v71 sat exactly at
+	                      # the top row and v76's five-knuckle fist reaches 4 cm higher. Only at a 320x180 window; the zoomed field cuts nothing
 }
 
 

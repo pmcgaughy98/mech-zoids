@@ -144,7 +144,7 @@ scene.view_settings.view_transform = "Standard"
 SQUASH_Y = float(os.environ.get("SPRITE_SQUASH_Y", "1.0"))   # per run (2026-10-13, wolf part pass); the gorilla tried 0.85 in pass 34: worse (0.551 to 0.518)
 cam_data = bpy.data.cameras.new("sprite_cam"); cam_data.type = "ORTHO"; cam_data.ortho_scale = ORTHO
 cam = bpy.data.objects.new("sprite_cam", cam_data); scene.collection.objects.link(cam); scene.camera = cam
-target = Vector((0, 0, 1.25))
+target = Vector((0, 0, float(os.environ.get("SPRITE_TARGET_Z", "1.25"))))   # SPRITE_TARGET_Z (2026-10-19): the combiner stands 9.9 m tall
 elev = math.radians(float(os.environ.get("SPRITE_ELEV", "10")))   # near side-on like Legacy battle sprites and Preston's side sprite (25 showed a flat top)
 for k, name in enumerate(["e", "ne", "n", "nw", "w", "sw", "s", "se"]):
     if name not in VIEWS:

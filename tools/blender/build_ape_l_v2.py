@@ -415,6 +415,32 @@ def cyl(name, mat, a, b, radius, verts=10):
 # Gorilla model pass (2026-10-16; blind judges: "the gorilla's guns and joints should read as cylinders with a shine").
 # Only the gorilla's own build rounds them; the creature factory imports this file as a kit and keeps the flat discs.
 ROUND_JOINTS = os.environ.get("MECH_KIT_IMPORT") != "1"
+# v76 (2026-10-19, after Codex's gorilla reference; Preston: "knuckles proportions were generated correctly so make sure
+# theres five and it looks right on the model"): each fist a big back-of-hand block over a row of five grey segments and
+# five chunky orange knuckle blocks on the ground (no thumb, no knuckle spikes, no curled three-segment fingers), and
+# the black hubs on the fists and shoulders become layered light-grey wheels. APE_V76=0 builds v71.
+V76 = os.environ.get("APE_V76", "1") == "1"
+# v77 (2026-10-19, the rest of Codex's gorilla; Preston: "go"): the ballast blocks in a row along the spine (Codex's
+# rack along the top) instead of across the back, the throwing arm gone with them; one big grey forward cannon on the
+# right of the back in place of the shoulder gatling; the rear stretched STRETCH m and lowered up to REAR_DROP m
+# (Codex's sprite is 1.47 times as wide as tall against our 1.25, its rump lower than the shoulders); hind legs HT times
+# thicker with a layered grey ankle wheel, as the fists'. APE_V77=0 builds v76.
+V77 = V76 and os.environ.get("APE_V77", "1") == "1"
+STRETCH, REAR_DROP = (0.3, 0.2) if V77 else (0.0, 0.0)
+HT = 1.3 if V77 else 1.0
+# v77b: the haymaker's lean back pivots the body about its middle and the grounding then stands the hind feet on the
+# floor; with the hind feet 0.3 m further back the same 12 degrees lifted the whole leap about 9 cm (the fist 3 sprite rows
+# higher at 320x180). The lean scaled by the lever (about 1.24 against 1.54 m) and the hop 2 cm lower keep v76's apex.
+LEAN, AIR = (0.8, 0.10) if V77 else (1.0, 0.12)
+# v78 (2026-10-20, factory pass part by part against Codex's sprite; Preston: "go gorilla next"): its back cannon is a
+# light grey barrel with dark bands (ours one dark bar), its hind haunch is broken into plates (ours a big flat pale
+# face: the near thigh armour, 3359 render px, lit by the camera; v77 made it 1.3x thicker), its visor a thicker teal
+# band. A light-steel barrel with two dark bands, a framed plate on each thigh's outer face, the visor 7 to 10 cm tall.
+# Synthesis, Legacy's Iron Kong (docs/art/reference/legacy/iron_kong.png, structure only): its hind legs read as separate
+# columns because they are a step darker than the body with a highlight only on top edges; the thigh and shin armour in
+# the darker green (trim 3e5a33) under the lighter framed plate.
+# (Its hind legs reach further back: a stance change, not this pass.) APE_V78=0 builds v77.
+V78 = V77 and os.environ.get("APE_V78", "1") == "1"
 
 
 def round_rim(ob, offset, segments=3):
@@ -534,11 +560,12 @@ def build():
     plate("rump_plate", "trim", (0, 1.06, 1.2), 0.66, 0.36, 0.06, (-8, 0, 180), bend=0.35, recess=0.02, rim=0.05)
     # Weapons (2026-10-12): Ballast Throw. A throwing arm on the rack: a grey rail along the spine behind the blocks,
     # a pivot drum at its base and an orange claw folded over the rearmost block.
-    cyl("ballast_rail", "frame", (0, 0.3, 2.0), (0, 0.68, 1.97), 0.06, 8)   # pass 35: shorter, inside the silhouette
-    cyl("ballast_pivot", "frame_dark", (-0.1, 0.68, 1.97), (0.1, 0.68, 1.97), 0.08, 12)
-    for sd in (-1, 1):
-        segment("ballast_claw_%d" % sd, "accent", (sd * 0.1, 0.1, 2.04), (sd * 0.22, -0.1, 2.16), 0.07, 0.07, 0.4)
-    shell("ballast_clawbase", "accent", (0, 0.12, 2.04), (0.3, 0.14, 0.1), (0, 0, 0), 0.5, levels=1)
+    if not V77:   # v77: the blocks run along the spine now; the arm sat where they are
+        cyl("ballast_rail", "frame", (0, 0.3, 2.0), (0, 0.68, 1.97), 0.06, 8)   # pass 35: shorter, inside the silhouette
+        cyl("ballast_pivot", "frame_dark", (-0.1, 0.68, 1.97), (0.1, 0.68, 1.97), 0.08, 12)
+        for sd in (-1, 1):
+            segment("ballast_claw_%d" % sd, "accent", (sd * 0.1, 0.1, 2.04), (sd * 0.22, -0.1, 2.16), 0.07, 0.07, 0.4)
+        shell("ballast_clawbase", "accent", (0, 0.12, 2.04), (0.3, 0.14, 0.1), (0, 0, 0), 0.5, levels=1)
     shell("rump_slot", "frame_dark", (0, 1.08, 1.22), (0.3, 0.04, 0.06), (lean, 0, 0), 0.6, levels=1)
     # Chest in bands, learned from Grimlock's chest: an upper framed band, a dark band with three round teal lights,
     # the big orange framed shield below with glowing inlays along its bottom edges
@@ -580,9 +607,9 @@ def build():
         pod_c = c + Vector((s * 0.2, 0, 0.06))   # pass 28: in and up, higher narrower shoulders (front view measure)
         drum("shoulder_outer_%d" % s, "main", pod_c, pod_axis, 0.42, 0.5)
         pod_face = pod_c + pod_axis * 0.25
-        cyl("shoulder_podring_%d" % s, "frame_dark", pod_face - pod_axis * 0.01, pod_face + pod_axis * 0.025, 0.24, 16)   # Mechabeast V2 pass (2026-10-14): a black hub as his   # pass 35: a plain disc, not a segmented glow pod
+        cyl("shoulder_podring_%d" % s, "frame" if V76 else "frame_dark", pod_face - pod_axis * 0.01, pod_face + pod_axis * 0.025, 0.24, 16)   # Mechabeast V2 pass (2026-10-14): a black hub as his   # pass 35: a plain disc, not a segmented glow pod
         cyl("shoulder_podhub_%d" % s, "frame", pod_face - pod_axis * 0.02, pod_face + pod_axis * 0.03, 0.15, 16)
-        cyl("shoulder_podcap_%d" % s, "frame_dark", pod_face + pod_axis * 0.03, pod_face + pod_axis * 0.05, 0.08, 12)
+        cyl("shoulder_podcap_%d" % s, "steel" if V76 else "frame_dark", pod_face + pod_axis * 0.03, pod_face + pod_axis * 0.05, 0.08, 12)
         plate("shoulder_front_%d" % s, "main", c + Vector((0, -0.44, -0.02)), 0.78, 0.6, 0.08, (lean, 0, 0), bend=0.35)
         plate("shoulder_cap_%d" % s, "trim", c + Vector((s * 0.02, 0.02, 0.45)), 0.52, 0.56, 0.06, (lean - 90, 0, s * 8), bend=0.4)
         disc("neck_joint_%d" % s, (s * 0.46, -0.9, 1.72), 0.14)
@@ -625,9 +652,20 @@ def build():
         # carrying the weight, the fingertips curl up into the palm; the outer finger is held off the ground.
         hand_before = set(bpy.context.scene.objects)
         shell("fist_%d" % s, "accent", (s * 1.24, -1.16, 0.38), (0.62, 0.36, 0.44), (0, 0, 0), 0.35)   # pass 41: a squarer, bigger block (Preston's second reference)
-        cyl("fist_%d_ring" % s, "frame_dark", (s * 1.53, -1.16, 0.4), (s * 1.58, -1.16, 0.4), 0.12, 16)   # V2 pass: a black hub on the fist's outer side, as his
-        cyl("fist_%d_hub" % s, "frame", (s * 1.56, -1.16, 0.4), (s * 1.6, -1.16, 0.4), 0.06, 12)
-        for k in range(4):
+        if V76:   # v76: a layered light-grey wheel on the fist's outer side: grey rim, light steel ring, grey hub, light cap
+            cyl("fist_%d_ring" % s, "frame", (s * 1.53, -1.16, 0.4), (s * 1.58, -1.16, 0.4), 0.15, 20)
+            cyl("fist_%d_ring_2" % s, "steel", (s * 1.57, -1.16, 0.4), (s * 1.6, -1.16, 0.4), 0.11, 20)
+            cyl("fist_%d_hub" % s, "frame", (s * 1.59, -1.16, 0.4), (s * 1.62, -1.16, 0.4), 0.065, 16)
+            cyl("fist_%d_hub_2" % s, "steel", (s * 1.61, -1.16, 0.4), (s * 1.63, -1.16, 0.4), 0.03, 12)
+            # five knuckles across the fist's 0.62 m: a grey segment under the hand block, an orange knuckle block on
+            # the ground in front of it, each a separate piece with a gap so the five read at sprite size
+            for k in range(5):
+                x = s * 1.24 + (k - 2) * 0.124
+                shell("knucklecap_%d_%d" % (s, k), "frame", (x, -1.33, 0.185), (0.11, 0.12, 0.095), (0, 0, 0), 0.35, levels=1)   # v76b: forward, a grey band between the hand and the knuckles as his
+                shell("finger_%d_%d" % (s, k), "accent", (x, -1.31, 0.075), (0.112, 0.2, 0.13), (0, 0, 0), 0.4, levels=1)
+        cyl("fist_%d_ring" % s, "frame_dark", (s * 1.53, -1.16, 0.4), (s * 1.58, -1.16, 0.4), 0.12, 16) if not V76 else None   # V2 pass: a black hub on the fist's outer side, as his
+        cyl("fist_%d_hub" % s, "frame", (s * 1.56, -1.16, 0.4), (s * 1.6, -1.16, 0.4), 0.06, 12) if not V76 else None
+        for k in (range(4) if not V76 else ()):
             x = s * 1.24 + (k - 1.5) * 0.15
             lift = 0.05 if k == (3 if s > 0 else 0) else 0.0
             j1, j2, j3, j4 = (x, -1.28, 0.24 + lift), (x, -1.3, 0.09 + lift), (x, -1.1, 0.07 + lift), (x, -1.08, 0.18 + lift)
@@ -636,11 +674,12 @@ def build():
             for n, j in enumerate((j1, j2)):
                 cyl("knucklecap_%d_%d" % (s, k * 2 + n), "frame_dark", Vector(j) - Vector((0.065, 0, 0)), Vector(j) + Vector((0.065, 0, 0)), 0.075, 10)   # V2 pass: black rollers between the orange knuckles, as his
         t1, t2, t3, t4 = (s * 1.0, -1.16, 0.4), (s * 0.98, -1.28, 0.3), (s * 1.0, -1.32, 0.18), (s * 1.04, -1.26, 0.12)
-        for n, (a_, b_, w, h) in enumerate([(t1, t2, 0.13, 0.13), (t2, t3, 0.12, 0.12), (t3, t4, 0.1, 0.1)]):
+        for n, (a_, b_, w, h) in enumerate([(t1, t2, 0.13, 0.13), (t2, t3, 0.12, 0.12), (t3, t4, 0.1, 0.1)] if not V76 else []):
             segment("thumb_%d_%d" % (s, n), "accent", a_, b_, w, h, 0.45)
         plate("handplate_%d" % s, "accent", (s * 1.24, -1.33, 0.36), 0.56, 0.34, 0.06, (-5, 0, 0), bend=0.4,
               recess=0.02, rim=0.05)   # framed armour on the back of the hand, like Grimlock's wrist plate
-        shell("knuckle_guard_%d" % s, "accent", (s * 1.24, -1.34, 0.16), (0.62, 0.08, 0.1), (0, 0, 0), 0.6, levels=1)
+        if not V76:   # v76: the knuckle row is the guard now
+            shell("knuckle_guard_%d" % s, "accent", (s * 1.24, -1.34, 0.16), (0.62, 0.08, 0.1), (0, 0, 0), 0.6, levels=1)
         # Pass 36 (Preston: "bigger hands, its knuckles look thin compared to arm" after the forearms went 30% thicker):
         # the whole hand 1.35 times larger about its base, so the knuckles stay on the ground.
         HAND_GROW, hand_base = 1.9, Vector((s * 1.24, -1.2, 0.05))   # ref-4 part pass (2026-10-13): 1.9, his fists stand bigger in the SE view; pass 45 (part pass): 1.7, fists region 0.605 to 0.630; pass 41 had 1.35 to 1.5
@@ -654,7 +693,7 @@ def build():
         cyl("upper_tankcap_%d_0" % s, "accent", tank_a - (tank_b - tank_a).normalized() * 0.03, tank_a, 0.1, 12)
         cyl("upper_tankcap_%d_1" % s, "accent", tank_b, tank_b + (tank_b - tank_a).normalized() * 0.03, 0.1, 12)
         cyl("fist_line_%d" % s, "frame_dark", Vector(el) + Vector((s * 0.14, 0.12, 0.0)), Vector(wr) + Vector((s * 0.12, 0.08, 0.1)), 0.04, 8)
-        for k in range(4):
+        for k in (range(4) if not V76 else ()):   # v76: no spikes, Codex's fists have clean knuckles
             x = s * 1.24 + (k - 1.5) * 0.14
             segment("knuckle_spike_%d_%d" % (s, k), "accent", Vector((x, -1.4, 0.14)), Vector((x, -1.58, 0.1)), 0.09, 0.09, 0.4)
         # Hind legs: splayed, short and bent; plated struts, a disc knee, a green foot with orange claws
@@ -664,14 +703,19 @@ def build():
         JOINTS["toe." + side] = (s * 0.9, 0.46, 0.08)
         disc("hip_joint_%d" % s, (s * 0.92, 0.62, 1.04), 0.18)   # pass 36: smaller bolt, as the master's
         cyl("hip_piston_%d" % s, "frame", (s * 0.5, 0.3, 1.2), (s * 0.78, 0.74, 0.62), 0.05, 8)
-        cyl("thigh_frame_%d" % s, "frame", hp, kn, 0.2, 8)
-        limb_solid("thigh_armor_%d" % s, "main", hp, kn, (s, 0, 0), [(0, 0.39, 0.338), (0.4, 0.442, 0.364), (1, 0.312, 0.26)],   # pass 34: 30% thicker (side view: limbs too thin under the torso)
-                   [(0, 0.3), (0.5, 0.32), (1, 0.24)],
+        cyl("thigh_frame_%d" % s, "frame", hp, kn, 0.2 * HT, 8)
+        limb_solid("thigh_armor_%d" % s, "trim" if V78 else "main", hp, kn, (s, 0, 0), [(t, w * HT, d * HT) for t, w, d in ((0, 0.39, 0.338), (0.4, 0.442, 0.364), (1, 0.312, 0.26))],   # pass 34: 30% thicker (side view: limbs too thin under the torso)
+                   [(t, w * HT) for t, w in ((0, 0.3), (0.5, 0.32), (1, 0.24))],
                    grooves=[((gx, -0.333, -0.03), (gx, -0.247, 0.24), (0, -0.95, 0.3)) for gx in (-0.12, 0.12)])
+        if V78:   # a framed plate on the thigh's outer face, so seams break the big lit face (Codex's haunch plates)
+            bpy.context.view_layer.update()
+            plate_on(bpy.data.objects["thigh_armor_%d" % s], "thigh_plate_%d" % s, "main", Vector(hp).lerp(Vector(kn), 0.42),
+                     (s, 0, 0), 0.44 * HT, 0.5, 0.05, standoff=0.015, up=tuple(Vector(hp) - Vector(kn)), bend=0.3,
+                     recess=0.02, rim=0.05)
         disc("knee_%d" % s, kn, 0.21, depth=0.6)   # pass 42: the reference's knee discs are the biggest joints on it (pass 36 had 0.16)
         cyl("knee_%d_seam" % s, "frame_dark", Vector(kn) + Vector((0, 0, 0.19)), Vector(kn) + Vector((0, 0, 0.23)), 0.3, 12)   # pass 42: a dark seam between thigh and shin
-        cyl("shin_core_%d" % s, "frame", kn, an, 0.17, 8)
-        limb_solid("shin_armor_%d" % s, "main", kn, an, (0, -1, 0), [(0, 0.26, 0.208), (1, 0.312, 0.234)], [(0, 0.2), (1, 0.24)],   # pass 34: 30% thicker (side view: limbs too thin under the torso)
+        cyl("shin_core_%d" % s, "frame", kn, an, 0.17 * HT, 8)
+        limb_solid("shin_armor_%d" % s, "trim" if V78 else "main", kn, an, (0, -1, 0), [(t, w * HT, d * HT) for t, w, d in ((0, 0.26, 0.208), (1, 0.312, 0.234))], [(t, w * HT) for t, w in ((0, 0.2), (1, 0.24))],   # pass 34: 30% thicker (side view: limbs too thin under the torso)
                    grooves=[((gx, -0.205, -0.14), (gx, -0.235, 0.14), (0, -0.99, -0.11)) for gx in (-0.09, 0.09)])
         # Feet (pass 24): a sculpted foot solid rising to the ankle hump (the profile-solid lesson), three toes of two
         # tapering segments with knuckle caps (the fingers' construction, from Grimlock's hand), a dark heel pad, an
@@ -689,6 +733,11 @@ def build():
         # Pass 25: the heel block is orange again, as in the sprite's rear view (pass 24's dark pad cost 2 points of orange)
         shell("heel_%d" % s, "accent", (s * 0.86, 1.12, 0.08), (0.3, 0.16, 0.14), (0, 0, 0), 0.5, levels=1)
         disc("ankle_%d" % s, an, 0.14, depth=0.5)
+        if V77:   # v77: a layered light-grey wheel on the ankle's outer face, as the fists' (Codex's hind leg)
+            ax = an[0] + s * 0.32   # HIND_IN below pulls each piece's centre in by 0.8, not the disc's depth: 0.32 clears the ankle disc's face
+            for nm, mat, x0, x1, r in (("ring", "frame", 0.0, 0.05, 0.2), ("ring_2", "steel", 0.04, 0.07, 0.15),
+                                       ("hub", "frame", 0.06, 0.09, 0.085), ("hub_2", "steel", 0.08, 0.1, 0.04)):
+                cyl("ankle_%d_%s" % (s, nm), mat, (ax + s * x0 * 1.25, an[1], an[2]), (ax + s * x1 * 1.25, an[1], an[2]), r, 20)
         cyl("heel_piston_%d" % s, "frame", (s * 0.8, 0.96, 0.5), (s * 0.84, 1.08, 0.16), 0.04, 8)
         cyl("heel_rod_%d" % s, "frame_dark", (s * 0.82, 1.02, 0.33), (s * 0.85, 1.1, 0.1), 0.025, 8)
         # Pass 27: Preston, "the rear legs should connect to the rear more". The whole hind leg moves back so the hip
@@ -783,7 +832,7 @@ def build():
     # pass 38 (Preston: "the face visor thing ... the eye one line across"): one dark visor band sunk across the face
     # under the brow shelf, one teal line across it, run just past the skull sides so the line shows in profile
     shell("socket_visor", "frame_dark", (0, -1.64, 2.07), (0.38, 0.1, 0.085), (lean, 0, 0), 0.5, levels=1)
-    plate("eye_visor", "light", (0, -1.76, 2.07), 0.78, 0.07, 0.03, (lean, 0, 0), bend=0.45)   # 38c: flat, proud of the face, out of the brow's shadow
+    plate("eye_visor", "light", (0, -1.76, 2.07), 0.78, 0.1 if V78 else 0.07, 0.03, (lean, 0, 0), bend=0.45)   # 38c: flat, proud of the face, out of the brow's shadow
     # pass 32c: raised and slimmer; its lower edge blocked the eyes from the sprite camera (a ray test found it)
     for s in (-1, 1):   # pass 40: two brow plates, one over each eye, with a seam between (his front view); green (39b)
         plate("brow_bar_%d" % s, "main", (s * 0.19, -1.79, 2.29), 0.36, 0.13, 0.15, (lean - 30, 0, -s * 6), bend=0.12)
@@ -798,17 +847,26 @@ def build():
         o.scale = tuple(v * grow for v in o.scale)
     for s in (-1, 1):   # glow strips: chest vents either side of the shield
         shell("chest_glow_%d" % s, "light", (s * 0.36, -1.26, 1.52), (0.04, 0.03, 0.22), (lean - 6, 0, 0), 0.0, levels=0)
-    shell("rack_glow", "light", (0, 0.04, 1.75), (0.9, 0.03, 0.03), (lean, 0, 0), 0.0, levels=0)
+    if not V77:
+        shell("rack_glow", "light", (0, 0.04, 1.75), (0.9, 0.03, 0.03), (lean, 0, 0), 0.0, levels=0)
     # Ballast: three grey blocks with orange caps, straight across the back, side by side (Preston, 2026-10-12: the
     # back view is right; the front view only made them look like they climbed the back). Pass 26 had run them along
     # the spine; reverted.
     BACK_UP = 0.12   # ref-4 part pass (2026-10-13): the rack 12 cm higher, his back stands taller over the shoulders (back region 0.653, red along the top)
-    shell("rack_mount", "frame", (0, 0.04, 1.62 + BACK_UP), (0.72, 0.4, 0.24), (lean, 0, 0), 0.6, levels=1)
-    shell("rack_frame", "frame", (0, 0.04, 1.72 + BACK_UP), (1.1, 0.44, 0.1), (lean, 0, 0), 0.7, levels=1)
-    for k in range(3):
-        x = (k - 1) * 0.36   # pass 29: smaller, closer, lower and further back, on the back below the head crest
-        shell("ballast_%d" % k, "frame", (x, 0.04, 1.88 + BACK_UP), (0.34, 0.4, 0.38), (lean, 0, 0), 0.7, levels=1)
-        shell("ballast_cap_%d" % k, "accent", (x, 0.0, 2.11 + BACK_UP), (0.37, 0.42, 0.13), (lean, 0, 0), 0.5, levels=1)
+    if not V77:
+        shell("rack_mount", "frame", (0, 0.04, 1.62 + BACK_UP), (0.72, 0.4, 0.24), (lean, 0, 0), 0.6, levels=1)
+        shell("rack_frame", "frame", (0, 0.04, 1.72 + BACK_UP), (1.1, 0.44, 0.1), (lean, 0, 0), 0.7, levels=1)
+        for k in range(3):
+            x = (k - 1) * 0.36   # pass 29: smaller, closer, lower and further back, on the back below the head crest
+            shell("ballast_%d" % k, "frame", (x, 0.04, 1.88 + BACK_UP), (0.34, 0.4, 0.38), (lean, 0, 0), 0.7, levels=1)
+            shell("ballast_cap_%d" % k, "accent", (x, 0.0, 2.11 + BACK_UP), (0.37, 0.42, 0.13), (lean, 0, 0), 0.5, levels=1)
+    else:   # v77: Codex's rack along the top: a grey rail down the spine, three blocks in a row on it with orange caps
+        zb = lambda y: 2.12 - 0.21 * y   # the back's slope (lean -12)
+        shell("rack_mount", "frame", (0, 0.0, 1.95), (0.36, 1.2, 0.2), (lean, 0, 0), 0.6, levels=1)
+        shell("rack_frame", "frame", (0, 0.0, zb(0.0) - 0.16), (0.52, 1.36, 0.08), (lean, 0, 0), 0.7, levels=1)
+        for k, y in enumerate((-0.42, 0.0, 0.42)):
+            shell("ballast_%d" % k, "frame", (0, y, zb(y)), (0.44, 0.44, 0.34), (lean, 0, 0), 0.7, levels=1)
+            shell("ballast_cap_%d" % k, "accent", (0, y - 0.01, zb(y) + 0.2), (0.47, 0.46, 0.11), (lean, 0, 0), 0.5, levels=1)
     # (pass 24: the feet are separate pieces like the fists now, nothing is fused)
 
 
@@ -1435,12 +1493,12 @@ def punch_pose(t):
     # lower), the anticipation frame barely dips, and the cable pull's forearm crosses the chest.
     ua = 168 * wind + 20 * launch + 104 * swing + 8 * land + 68 * settle   # 0, 168 cocked, 188 over the head, 292 contact, 360 down
     fa = 165 * wind - 95 * launch - 80 * swing + 10 * settle            # the cable fold, opened overhead in the leap, snapped straight
-    hd = 25 * wind - 45 * swing + 20 * settle                           # the wrist cocked, the knuckles lead at contact
+    hd = 25 * wind - 45 * swing + 20 * settle   # the wrist cocked, the knuckles lead at contact
     return {"upper_arm.R": (ua, 0, -12 * wind + 12 * swing), "forearm.R": (fa, 0, 0), "hand.R": (hd, 0, 0),
             "upper_arm.L": (-10 * wind + 22 * swing - 12 * settle, 0, 10 * wind - 10 * swing), "forearm.L": (8 * wind - 8 * settle, 0, 0),
             # body X: negative leans BACK onto the hind legs (the render showed +X lifting the hind legs: v1's "pitches up"
             # had the sign backwards), positive pitches forward over the front
-            "body": (-12 * wind + 24 * swing - 8 * plant - 4 * settle + 6 * crouch, 0, -24 * wind + 14 * launch + 24 * swing - 14 * settle),
+            "body": (-12 * LEAN * wind + 24 * swing - 8 * plant - 4 * settle + 6 * crouch, 0, -24 * wind + 14 * launch + 24 * swing - 14 * settle),
             "head": (14 * wind - 6 * launch - 10 * swing + 2 * settle + 12 * head_snap, 0, 14 * wind - 8 * launch - 12 * swing + 6 * settle),   # eyes stay on the target
             # the hind legs coil deep under the lean (2026-10-15 battle capture: battle.gd stands the player's feet on screen row
             # 121, so the canvas starts 10 rows above the screen and the reared elbow was cut by up to 7 rows). Measured in
@@ -1448,7 +1506,7 @@ def punch_pose(t):
             # the foot back; thigh +20 / shin -25 lowers the hip 0.11 m with the foot still under it.
             "thigh.L": (12 * load - 14 * lunge + 8 * land, 0, 0), "thigh.R": (12 * load + 16 * lunge + 8 * land, 0, 0),
             "shin.L": (-16 * load - 12 * land, 0, 0), "shin.R": (-16 * load - 12 * land, 0, 0),
-            "body_move": (0, 0.10 * load - 0.50 * lunge, 0), "air": 0.12 * hop,   # the leap, kept after grounding
+            "body_move": (0, 0.10 * load - 0.50 * lunge, 0), "air": AIR * hop,   # the leap, kept after grounding
             "stance": ["hand.L", "foot.L", "foot.R"] + (["hand.R"] if f < 2 or f > 33 else [])}
 
 
@@ -1648,10 +1706,19 @@ def weaponize():
     A = wpn.anchor
     wpn.build_loadout(sys.modules[__name__], "ape_l", [
         {"slot": "shgun", "move": None, "kind": "gatling", "note": "spare: a rotary gun on the right shoulder",
-         "args": {"base": A("shoulder_top_-1", (0.5, 0.45, 1.0), (0, 0, 0.1)), "direction": (0, -1, 0), "length": 0.8, "ring": 0.07, "r": 0.03}},
+         "args": {"base": A("shoulder_top_-1", (0.5, 0.45, 1.0), (0, 0, 0.1)), "direction": (0, -1, 0), "length": 0.8, "ring": 0.07, "r": 0.03}}
+        if not V77 else
+        {"slot": "backgun", "move": None, "kind": "cannon", "note": "spare: one big forward cannon along the right of the back (v77, Codex's)",
+         "args": {"base": (-0.36, 0.22, 2.12), "direction": (0, -1, 0.1), "length": 1.2, "r": 0.12, "housing": (0.32, 0.42, 0.3),
+                  "mat": "frame", "barrel_mat": "steel" if V78 else "frame", "tip_mat": "frame_dark"}},
         {"slot": "pod", "move": None, "kind": "missile_pod", "note": "spare: a 2x3 launcher on the left shoulder",
          "args": {"center": A("shoulder_top_1", (0.5, 0.5, 1.0), (0, 0, 0.15)), "size": (0.42, 0.36, 0.26), "rows": 2, "cols": 3, "rot": (-20, 0, 0)}},
     ])
+    if V78:   # two dark bands round the back cannon's light barrel (named "barrel" so the detail pass leaves them)
+        d = Vector((0, -1, 0.1)).normalized()
+        a = Vector((-0.36, 0.22, 2.12)) + d * 0.42 * 0.3   # where weapons.cannon starts the barrel
+        for k, f in enumerate((0.3, 0.62)):
+            cyl("wpn_backgun_barrelband%d" % k, "frame", a + d * (1.2 * f), a + d * (1.2 * f + 0.07), 0.15, 16)
 
 
 def _greebles():
@@ -1665,12 +1732,45 @@ def _greebles():
     gm.run(sys.modules[__name__], wm, bone_for)
 
 
+def _stretch_rear():
+    """v77: everything behind the middle moves back STRETCH m, blended over the mid-body (smoothstep from y -0.6 to 0.8)
+    so the torso stretches smoothly, and drops by up to REAR_DROP m in proportion to its height, so the feet stay on the
+    floor and the hind legs come out squatter. The big body pieces bend vertex by vertex; every other part moves whole
+    (discs and wheels stay round). The rig's joints move the same way."""
+    y0, y1, ztop = -0.6, 0.8, 2.2
+
+    def f(p):
+        u = max(0.0, min(1.0, (p[1] - y0) / (y1 - y0)))
+        w = u * u * (3 - 2 * u)
+        return Vector((p[0], p[1] + STRETCH * w, p[2] - REAR_DROP * w * max(0.0, min(1.0, p[2] / ztop))))
+    bpy.context.view_layer.update()
+    bent = moved = 0
+    for o in [o for o in bpy.context.scene.objects if o.type == "MESH"]:
+        M = o.matrix_world.copy()
+        if o.name.startswith(("torso_shell", "rack_frame", "rack_mount", "back_plate")) and not re.search(r"_9\d\d$", o.name):
+            if o.data.users > 1:
+                o.data = o.data.copy()
+            Mi = M.inverted()
+            for v in o.data.vertices:
+                v.co = Mi @ f(M @ v.co)
+            bent += 1
+        elif len(o.data.vertices):
+            c = M @ (sum((v.co for v in o.data.vertices), Vector()) / len(o.data.vertices))
+            o.location += f(c) - c
+            moved += 1
+    for k, p in list(JOINTS.items()):
+        JOINTS[k] = tuple(f(Vector(p)))
+    print("V77 stretch: %d bent, %d moved" % (bent, moved))
+
+
 def main():
     bpy.ops.wm.read_factory_settings(use_empty=True)
     make_materials()
     build()
     weaponize()
     _greebles()
+    if V77:
+        _stretch_rear()
     tag_parts()
     ob = join_into_one()
     bake_atlas(ob)

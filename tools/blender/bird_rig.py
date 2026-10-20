@@ -27,6 +27,9 @@ WALK_FRAMES = 40   # slow: the shoebill "strides very slowly"
 
 
 def bone_for(name, cfg):
+    for prefix, bone in cfg.get("part_bones", ()):   # extra bones (2026-10-19): a jaw, a hatch, a flip-out gun
+        if name.startswith(prefix):
+            return bone
     if name.startswith(cfg["head"]):
         return "head"
     for prefix, bone in PART_BONE:

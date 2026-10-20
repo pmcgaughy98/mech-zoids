@@ -28,6 +28,18 @@ _gs = _gu.spec_from_file_location("greebles", os.path.join(os.path.dirname(os.pa
 greebles = _gu.module_from_spec(_gs)
 _gs.loader.exec_module(greebles)   # the detail pass (2026-10-14)
 OUT_BLEND = os.path.join(ROOT, "docs", "art", "3d", "pangolin_m.blend")
+P44 = os.environ.get("PANGOLIN_P44", "1") == "1"
+# p45 (2026-10-20, Codex's pangolin sheet; Preston: "go both"): Codex's is 2.48 to 2.57 times as wide as tall against our
+# 1.79 to 2.03, mostly the tail: long, sloping to the floor, a long red cone. Ours already ends 12 cm off the floor in 3D;
+# the 35-degree side-view turn (legacy_look.json, from the 2026-10-15 V2 references) put the tip deep in the scene and
+# drew it level, and the hind feet a fifth of the height above the front ones. Now the turn is 20 as the other five, and
+# the tail 1.3 times longer with a longer, fatter cone. PANGOLIN_P45=0 builds p44 (and set SPRITE_E_TURN back to 35).
+P45 = P44 and os.environ.get("PANGOLIN_P45", "1") == "1"
+# p46 (2026-10-20, factory pass part by part against Codex's sprite; Preston: "Do factory pass as well"): its legs read as
+# chunky grey blocks with a gold knee plate and big red claws on the ground line; ours hid under the flank scales and
+# their own gold shin plates, the claws red flecks. Shin plates off (the knee plates stay), the flank scales stop at 112
+# degrees from the spine (were 128), claws 1.35 times bigger, and a red nose tip on the snout (Codex's). =0 builds p45.
+P46 = P45 and os.environ.get("PANGOLIN_P46", "1") == "1"   # p44 (2026-10-19): far collar trimmed; PANGOLIN_P44=0 rebuilds p43
 
 PAL = {   # material keys the kit's parts use, with this machine's colours
     "main": "da8600",        # ochre scales
@@ -181,7 +193,7 @@ def scale_tiles(core):
 # - nine rings from shoulder to rump plus the collar, each ring shorter and narrower toward the tail (8 sprite px wide
 #   at the shoulder, 6 at the rump), then the tail's rings carry on shrinking to 4 px.
 SHINGLES = True
-SH_ARC = 128            # degrees from the spine down each flank
+SH_ARC = 112 if P46 else 128            # degrees from the spine down each flank (p46: legs show below)
 SH_LIFT = 11            # degrees the free edge lifts off the surface (enough to clear the next ring's root)
 SH_ROLL = -10           # degrees each scale's lower edge rolls out over the scale below; negative: its upper edge rolls
 # out over the scale above, so the camera (above) sees every scale's top edge proud and lit, its lower edge tucked dark
@@ -285,6 +297,8 @@ def shingle_scales(core):
         for th in range(-arc1, arc1 + 1, 2):
             if abs(th) < arc0:
                 continue
+            if ell and P44 and 0 < th < 110:   # (80 left one bar)   # p44 (2026-10-19, cloud judges: "the far collar shows as gold bars behind
+                continue   # the head"): the far side's upper collar scales stood up behind the head; they start lower
             rt = math.radians(th)
             n0 = Vector((math.sin(rt) / a, 0, math.cos(rt) / b)).normalized()
             nrm = n0.copy()
@@ -310,7 +324,7 @@ def shingle_scales(core):
 
 # ---- the tail: a tapering curve down to the ground, scaled on top and sides ----------------------------------
 def tail_point(t):
-    p0, p1, p2 = Vector((0, 0.85, 0.78)), Vector((0, 1.85, 0.55)), Vector((0, 2.7, 0.12))   # ref-5: a straight decline to the tip, his (the 0.8 control held it level then high); reference pass: a longer tail
+    p0, p1, p2 = Vector((0, 0.85, 0.78)), (Vector((0, 2.15, 0.5)) if P45 else Vector((0, 1.85, 0.55))), (Vector((0, 3.25, 0.1)) if P45 else Vector((0, 2.7, 0.12)))   # ref-5: a straight decline to the tip, his (the 0.8 control held it level then high); reference pass: a longer tail
     return p0 * (1 - t) ** 2 + p1 * 2 * t * (1 - t) + p2 * t ** 2
 
 
@@ -334,12 +348,12 @@ def tail():
         tail_shingles()
         # p43 (judges: "the tail tip red is a scattered smear of pixels, not a clean red cone"): one solid red cone
         # from under the last ring of scales, in place of the madder blade and the madder leaf scales before it
-        cone("tail_tip", "claw", tail_point(TAIL_CONE_T), tail_point(1.0) + Vector((0, 0.42, -0.08)), 0.19, 10)
+        cone("tail_tip", "claw", tail_point(TAIL_CONE_T), tail_point(1.0) + (Vector((0, 0.6, -0.08)) if P45 else Vector((0, 0.42, -0.08))), 0.23 if P45 else 0.19, 10)
         return
     kit.segment("tail_tip", "trim", tail_point(0.95), tail_point(1.0) + Vector((0, 0.24, -0.05)), 0.18, 0.05, 0.5)   # v6: blade
 
 
-TAIL_CONE_T = 0.82      # p43: where the red tip cone starts along the tail
+TAIL_CONE_T = 0.78 if P45 else 0.82      # p43: where the red tip cone starts along the tail (p45: a longer cone)
 TAIL_ARC = 105          # degrees from the top down each side of the tail
 TAIL_P0, TAIL_P1 = 0.24, 0.17   # ring pitch at the tail's root and at the cone
 
@@ -437,7 +451,9 @@ def head():
     kit.profile_solid("head_core", "face", hc, side, front, chamfer=0.012)
     snout_side = [(-0.56, 0.03), (-0.68, -0.01), (-0.72, -0.04), (-0.69, -0.08), (-0.56, -0.08)]   # p42: the tip block moved out with the wedge
     snout_front = kit.mirror_x([(0.08, 0.04), (0.11, -0.03), (0.08, -0.09)])
-    snout = kit.profile_solid("snout", "face", hc, snout_side, snout_front, chamfer=0.01)   # v6: metal, no canopy; p42: the dark face grey
+    snout = kit.profile_solid("snout", "face", hc, snout_side, snout_front, chamfer=0.01)
+    if P46:   # p46: a red nose tip, Codex's (on the head bone with the snout)
+        kit.shell("snout_nose", "claw", hc + Vector((0, -0.715, -0.035)), (0.14, 0.08, 0.11), (0, 0, 0), 0.5, levels=1)   # v6: metal, no canopy; p42: the dark face grey
     for s in (-1, 1):   # nostril vents at the tip
         kit.groove(snout, hc + Vector((s * 0.025, -0.71, -0.045)), hc + Vector((s * 0.075, -0.71, -0.045)), (0, -1, 0),
                    w=0.03, d=0.025, mat="trim")
@@ -477,8 +493,9 @@ def legs():
                       "fingers." + side: Vector((s * 0.5, -0.97, 0.06)) + fo})
         kit.limb_solid("front_upper_%d" % s, "frame", sh, el, (s, 0, 0), [(0, 0.34, 0.31), (1, 0.28, 0.26)], [(0, 0.34), (1, 0.28)])   # r4: thicker, the reference's columns
         kit.limb_solid("front_lower_%d" % s, "frame", el, wr, (s, 0, 0), [(0, 0.28, 0.26), (1, 0.25, 0.23)], [(0, 0.28), (1, 0.25)])   # r4
-        kit.plate("front_shin_%d" % s, "main", el.lerp(wr, 0.45) + Vector((s * 0.28, -0.06, 0.02)), 0.34, 0.32, 0.045,
-                  (-8, 0, s * 70), bend=0.35, bevel=0.01)   # v2: scales down the forearm
+        if not P46:   # p46: the lower leg a bare grey block, Codex's
+            kit.plate("front_shin_%d" % s, "main", el.lerp(wr, 0.45) + Vector((s * 0.28, -0.06, 0.02)), 0.34, 0.32, 0.045,
+                      (-8, 0, s * 70), bend=0.35, bevel=0.01)   # v2: scales down the forearm
         kit.plate("front_scale_%d" % s, "main", sh.lerp(el, 0.4) + Vector((s * 0.33, -0.04, 0.04)), 0.38, 0.42, 0.05,
                   (-15, 0, s * 70), bend=0.35, bevel=0.01)
         kit.disc("front_elbow_%d" % s, el, 0.1)
@@ -487,7 +504,7 @@ def legs():
         # p42 (judges: "feet about 1.5x bigger with three distinct red claws"): the foot 1.4x wide and long, rolled less
         # (28 to 12 degrees) so its top reads as a broad grey paw; before (0.3, 0.36, 0.15) at z 0.09
         kit.shell("front_foot_%d" % s, "frame", Vector((s * 0.52, -0.78, 0.135)) + fo, (0.42, 0.5, 0.2), (0, s * 12, 0), 0.5, levels=1)
-        claws(s, "front", Vector((s * 0.52, -0.99, 0.13)) + fo, 0.17, 0.07, 1.0)   # claw pass (2026-10-13): three red hooks fanned forward, his; p42: one thick curved cone each
+        claws(s, "front", Vector((s * 0.52, -0.99, 0.13)) + fo, 0.19 if P46 else 0.17, 0.09 if P46 else 0.07, 1.35 if P46 else 1.0)   # claw pass (2026-10-13): three red hooks fanned forward, his; p42: one thick curved cone each
         # v2, giant pangolin (Wikipedia): "most of its weight on its columnar rear legs": straight under the hip
         hp = Vector((s * 0.42, 0.55, 0.62)) + ho
         kn = Vector((s * 0.46, 0.57, 0.36)) + ho
@@ -496,13 +513,14 @@ def legs():
                       "toe." + side: Vector((s * 0.46, 0.25, 0.05)) + ho})
         kit.limb_solid("hind_upper_%d" % s, "frame", hp, kn, (s, 0, 0), [(0, 0.36, 0.34), (1, 0.29, 0.27)], [(0, 0.36), (1, 0.29)])   # r5: hind columns thicker, as the front
         kit.limb_solid("hind_lower_%d" % s, "frame", kn, an, (s, 0, 0), [(0, 0.29, 0.27), (1, 0.24, 0.22)], [(0, 0.29), (1, 0.24)])   # r5
-        kit.plate("hind_shin_%d" % s, "main", kn.lerp(an, 0.45) + Vector((s * 0.26, 0.04, 0.02)), 0.3, 0.28, 0.045,
-                  (-8, 0, s * 70), bend=0.35, bevel=0.01)   # v2: scales down the shin
+        if not P46:
+            kit.plate("hind_shin_%d" % s, "main", kn.lerp(an, 0.45) + Vector((s * 0.26, 0.04, 0.02)), 0.3, 0.28, 0.045,
+                      (-8, 0, s * 70), bend=0.35, bevel=0.01)   # v2: scales down the shin
         kit.plate("hind_scale_%d" % s, "main", hp.lerp(kn, 0.4) + Vector((s * 0.33, 0.02, 0.04)), 0.36, 0.38, 0.05,
                   (-15, 0, s * 70), bend=0.35, bevel=0.01)
         kit.disc("hind_knee_%d" % s, kn, 0.11)
         kit.shell("hind_foot_%d" % s, "frame", Vector((s * 0.46, 0.5, 0.085)) + ho, (0.4, 0.6, 0.16), (0, 0, 0), 0.5, levels=1)   # p42: 1.4x (was (0.28, 0.46, 0.11) at z 0.06)
-        claws(s, "hind", Vector((s * 0.46, 0.23, 0.1)) + ho, 0.12, 0.056, 0.85)
+        claws(s, "hind", Vector((s * 0.46, 0.23, 0.1)) + ho, 0.14 if P46 else 0.12, 0.075 if P46 else 0.056, 1.15 if P46 else 0.85)
 
 
 

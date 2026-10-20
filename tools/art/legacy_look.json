@@ -12,8 +12,8 @@
   "pangolin_m": {
     "SPRITE_MATCAP": "toon_light.exr",
     "SPRITE_CAVITY": "1",
-    "SPRITE_ELEV": "14",
-    "SPRITE_E_TURN": "35",
+    "SPRITE_ELEV": "12",
+    "SPRITE_E_TURN": "20",
     "PIXEL_SEAM_SHARE": "0.35",
     "PIXEL_SHADOW_SPAN": "0.12",
     "SPRITE_SIDE_ELEV": "18",
@@ -27,7 +27,7 @@
     "PIXEL_SEAM_SHARE": "0.35",
     "PIXEL_SHADOW_SPAN": "0.12",
     "SPRITE_SIDE_ELEV": "24",
-    "PIXEL_MIN_CLUSTER": "4"
+    "PIXEL_MIN_CLUSTER": "4", "PIXEL_GLINT_CAP": "1.5"
   },
   "kangaroo_m": {
     "SPRITE_MATCAP": "toon_light.exr",

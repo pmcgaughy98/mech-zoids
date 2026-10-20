@@ -15,6 +15,7 @@
 # body), unless a clip lets them travel. Sign conventions (checked on renders): on a bone pointing forward (body, head)
 # negative rx lifts the front; on a tail bone positive rx lifts it; rz on body or tail swings it sideways.
 import math
+import os
 
 ANT, HOLD, HIT, OVER, REC = 0.42, 0.5, 0.56, 0.62, 0.85   # anticipation peak, held, first strike frame, past, recovered
 ATTACK_FRAMES = 36
@@ -63,6 +64,11 @@ def quad_stance(ik2, cfg):
     J, crouch, feet = cfg["joints"], cfg.get("crouch", 0.04), cfg.get("battle_feet", {})
     legs = {"arm": ("upper_arm", "sh", "el", "wr", "forearm", "hand") + tuple(cfg["front_path"]),
             "leg": ("thigh", "hp", "kn", "an", "shin", "foot") + tuple(cfg["hind_path"])}
+    # 2026-10-19 (wolf v94, Codex's stalking sprite): cfg["battle_body"] pitches the body in every battle clip, about the
+    # body bone's head (positive is nose down), with each foot target turned back by the same angle so the feet stay
+    # where they stood; cfg["battle_head"] adds to the head. Both default to none.
+    th = math.radians(cfg.get("battle_body", (0, 0, 0))[0])
+    pv = cfg["body_bone"][0]
 
     def fn(t, shift, extra):
         p = {}
@@ -73,10 +79,18 @@ def quad_stance(ik2, cfg):
                 key = "%s_%s" % (side, kind)
                 dy, dz = feet.get(key, (0.0, 0.0))
                 ex = extra.get(key, (0.0, 0.0))
-                w1, w2 = ik2(a, b, (a[0] + b[0] + back + dy + shift + ex[0], a[1] + b[1] + crouch + down + dz + ex[1]))
+                tgt = (a[0] + b[0] + back + dy + shift + ex[0], a[1] + b[1] + crouch + down + dz + ex[1])
+                if th:   # the target in the pitched body's frame (turned by -th about the pivot)
+                    wy, wz = r.y + tgt[0] - pv[1], r.z + tgt[1] - pv[2]
+                    tgt = (wy * math.cos(th) + wz * math.sin(th) + pv[1] - r.y, -wy * math.sin(th) + wz * math.cos(th) + pv[2] - r.z)
+                w1, w2 = ik2(a, b, tgt)
                 p[upper + "." + side] = (w1, 0, 0)
                 p[lower + "." + side] = (w2 - w1, 0, 0)
-                p[end + "." + side] = (-w2, 0, 0)
+                p[end + "." + side] = (-w2 - math.degrees(th), 0, 0)
+        if th:
+            p["body"] = (math.degrees(th), 0, 0)
+        if cfg.get("battle_head"):
+            p["head"] = tuple(cfg["battle_head"])
         return p
     return fn
 
@@ -159,6 +173,11 @@ def death(stance, side_fall=True):
                             "head": [(0.0, X(0)), (0.5, X(5)), (1.0, X(28))]}, plant=False)
 
 
+# Pangolin p45 (2026-10-20): its tail is 1.3 times longer, so the same curl stood the cone 13 rows above a 320x180 screen
+# in the roll (5 allowed): the body dives nose down and the tail points up. Less curl (0.8) stood it straighter, 18 rows;
+# a tighter curl wraps the longer tail over the back into the ball and brings the tip down. PANGOLIN_P45=0 restores both.
+RC = 1.4 if os.environ.get("PANGOLIN_P45", "1") == "1" else 1.0
+
 # ---- the attacks, one set per machine ----------------------------------------------------------------------------
 
 def wolf(stance):
@@ -211,9 +230,9 @@ def pangolin(stance):
         "roll": compose(stance, {"move": strike((0, 0.1, -0.05), (0, -0.5, 0.05), (0, -0.56, 0), (0, -0.15, 0)),
                                  "body": strike(X(8), X(18), X(20), X(4)),   # a curl, not a dive (40 stood it on its head)
                                  "head": strike(X(40), X(45), X(45), X(10)),
-                                 "tail.0": strike(X(30), X(40), X(40), X(8)),
-                                 "tail.1": strike(X(30), X(40), X(40), X(8)),
-                                 "tail.2": strike(X(30), X(40), X(40), X(8))}, plant=False),
+                                 "tail.0": strike(X(30 * RC), X(40 * RC), X(40 * RC), X(8)),
+                                 "tail.1": strike(X(30 * RC), X(40 * RC), X(40 * RC), X(8)),
+                                 "tail.2": strike(X(30 * RC), X(40 * RC), X(40 * RC), X(8))}, plant=False),
     }
 
 
@@ -228,7 +247,11 @@ def kangaroo(stance):
         # Pouch Flak Gun: leans back to open the hatch, fires, the recoil rocks it further back
         "flak": compose(stance, {"move": strike((0, 0.03, 0), (0, 0.08, 0), (0, 0.09, 0)),
                                  "body": strike(X(-12), X(-16), X(-17), X(-4)),
-                                 "head": strike(X(6), X(8), X(8))}),
+                                 "head": strike(X(6), X(8), X(8)),
+                                 # p72 (2026-10-19): the stomach hatch swings up, the gun flips forward through it,
+                                 # fires, starts back in on the recovery, then both close (bones only on kangaroo p72)
+                                 "hatch": strike(X(-110), X(-110), X(-110), X(-110), hold=X(-110)),
+                                 "cannon": strike(X(60), X(90), X(84), X(25), hold=X(90))}),   # stowed pointing up
         # Tail Spring: leans back onto the tail, then both feet kick forward past the target
         "kick": compose(stance, {"move": strike((0, 0.15, 0.05), (0, 0.05, 0.12), (0, 0.04, 0.12), (0, 0.04, 0.02)),
                                  "body": strike(X(-25), X(-30), X(-30), X(-6)),
@@ -242,20 +265,34 @@ def kangaroo(stance):
 
 def shoebill(stance):
     return {
-        # Bill Clamp: the head rises, then the bill drives down past the target (positive rx tips the bill down)
+        # Apex Decapitation (2026-10-19 pivot to the real bird: its hooked bill crushes and decapitates): the head rises,
+        # the bill drives down past the target, then wrenches sideways (positive rx tips the bill down)
         "clamp": compose(stance, {"move": strike((0, 0.02, 0), (0, -0.1, -0.02), (0, -0.11, -0.02)),
                                   "body": strike(X(-3), X(6), X(6)),
-                                  "head": strike(X(-14), X(28), X(30), X(6), hold=X(-16))}),
-        # Stillwater Lance: the real bird stands dead still to aim; a long level hold, then the beam's recoil
-        "lance": compose(stance, {"move": strike((0, 0, 0), (0, 0.06, 0), (0, 0.07, 0)),
-                                  "head": strike(X(-6), X(-12), X(-13), X(-3), hold=X(-6))}),
-        # Wing Buffet: both wings lift and open, then one big downbeat
-        "buffet": compose(stance, {"move": strike((0, 0.02, 0.04), (0, -0.05, 0.02), (0, -0.06, 0)),
-                                   "upper_arm.L": strike(Z(50), Z(-20), Z(-22), Z(5)),
-                                   "upper_arm.R": strike(Z(-50), Z(20), Z(22), Z(-5)),
-                                   "forearm.L": strike(Z(20), Z(-10), Z(-10)),
-                                   "forearm.R": strike(Z(-20), Z(10), Z(10)),
-                                   "body": strike(X(-6), X(6), X(6))}),
+                                  "head": strike(X(-14), (28.0, 0.0, 14.0), (30.0, 0.0, -16.0), X(6), hold=X(-16)),
+                                  "jaw": strike(X(34), X(0), X(0), X(0), hold=X(36))}),   # p94: gapes on the wind-up, slams shut on the bite
+        # Bill Clatter (the real bird slams its bill together and it sounds like machine-gun fire): the head snaps shut
+        # and open on every sampled frame of the burst (the battle plan samples t .31 .42 .50 .58 .64), the body rocks
+        "lance": compose(stance, {"move": [(0.0, (0, 0, 0)), (0.17, (0, 0.02, 0)), (0.31, (0, 0.04, 0)), (0.5, (0, 0.06, 0)),
+                                           (0.64, (0, 0.07, 0)), (0.78, (0, 0.03, 0)), (1.0, (0, 0, 0))],
+                                  "head": [(0.0, X(0)), (0.17, X(-6)), (0.31, X(-14)), (0.42, X(4)), (0.5, X(-14)),
+                                           (0.58, X(4)), (0.64, X(-14)), (0.78, X(-4)), (1.0, X(0))],
+                                  "body": [(0.0, X(0)), (0.31, X(-2)), (0.42, X(1)), (0.5, X(-2)), (0.58, X(1)),
+                                           (0.64, X(-2)), (0.78, X(0)), (1.0, X(0))],
+                                  # p94: the lower bill claps open and shut against the head's snaps (shoebill only)
+                                  "jaw": [(0.0, X(0)), (0.17, X(10)), (0.31, X(30)), (0.42, X(0)), (0.5, X(30)),
+                                          (0.58, X(0)), (0.64, X(30)), (0.78, X(6)), (1.0, X(0))]}),
+        # Sentry Lunge (it stands motionless like a statue, then a lightning-fast ballistic lunge): dead still for the
+        # first three sampled frames, a short draw back, then the whole body and bill shoot forward
+        "buffet": compose(stance, {"move": [(0.0, (0, 0, 0)), (0.31, (0, 0, 0)), (0.42, (0, 0.06, 0.01)), (0.5, (0, -0.48, -0.04)),
+                                            (0.64, (0, -0.52, -0.04)), (0.78, (0, -0.2, 0)), (1.0, (0, 0, 0))],
+                                   "head": [(0.0, X(0)), (0.31, X(0)), (0.42, X(-12)), (0.5, X(30)), (0.64, X(32)),
+                                            (0.78, X(8)), (1.0, X(0))],
+                                   "body": [(0.0, X(0)), (0.31, X(0)), (0.42, X(-5)), (0.5, X(14)), (0.64, X(14)),
+                                            (0.78, X(4)), (1.0, X(0))],
+                                   # p94: the bill opens as it shoots forward and bites shut at contact
+                                   "jaw": [(0.0, X(0)), (0.31, X(0)), (0.42, X(8)), (0.5, X(32)), (0.64, X(2)),
+                                           (0.78, X(0)), (1.0, X(0))]}),
     }
 
 

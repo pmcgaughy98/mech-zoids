@@ -35,6 +35,31 @@ greebles = _gu.module_from_spec(_gs)
 _gs.loader.exec_module(greebles)   # the detail pass (2026-10-14)
 OUT_BLEND = os.path.join(ROOT, "docs", "art", "3d", "kangaroo_m.blend")
 
+P71 = os.environ.get("KANGAROO_P71", "1") == "1"   # p71 (2026-10-19, refine pass part by part against Preston's painting):
+# the hip boosters, rocket pod and shoulder gun mid grey as his (his pods are light-to-mid grey with dark grilles; ours
+# were charcoal and read as one near-black mass behind the body). KANGAROO_P71=0 builds p70.
+POD = "light" if P71 else "frame"
+P72 = os.environ.get("KANGAROO_P72", "1") == "1"   # p72 (2026-10-19, Preston: "the middle pillar like gun thing bottom of
+# torso looks like a phallus. So we will put a pouch there but the cannon will shoot from there but more near stomach"):
+# the pillar was the left shin, stood under the belly by the split stance (its foot 0.7 m forward); that foot goes back
+# beside the right one. A rounded pouch covers the lower belly; the Pouch Flak Gun moves up to the stomach behind a
+# top-hinged hatch, and flips out on two deploy bones (hatch, cannon). KANGAROO_P72=0 builds p71.
+# p73 (2026-10-20, Codex's kangaroo sheet, codex_reference_pack_2026-10-19/returned/; Preston: "go"). Codex kept the
+# design; measured on the grid, its orange share matches ours (52-53% against 51-54%) but ours is darker (30% near-black
+# against 24-25%), most of the extra on the hips: the joint discs' thick near-black rims and the detail pass's vents and
+# rams on the thighs and shins. Codex's discs are a big grey face in a thin dark rim; its torso is a smooth egg where
+# our back plates step out of the outline; its tail is thicker at the root. So: joint faces 0.68 to 0.82 of the rim,
+# thighs and shins bare of the detail pass, the armour slabs thinner and flush, the tail root thicker with an even
+# taper. KANGAROO_P73=0 builds p72.
+P73 = P72 and os.environ.get("KANGAROO_P73", "1") == "1"
+PT, PS, PB = (0.04, 0.005, 0.018) if P73 else (0.07, 0.02, 0.035)
+# p74 (2026-10-20, factory pass part by part against Codex's sprite; Preston: "go kangaroo next"): Codex's stands tall,
+# the body lifted so each leg reads as a Z under the torso (orange thigh, big grey hip disc, dark shin back to a grey
+# ankle disc, long orange foot); ours sat squat, the lower legs pressed into a dark lump at the floor. The stance rise
+# 0.25 to 0.4 m (the IK keeps the feet on the floor), the tail pitched 4.3 degrees further down so its tip stays on the
+# floor, and the ankle disc 0.11 to 0.15 m with its shine bead. KANGAROO_P74=0 builds p73.
+P74 = P73 and os.environ.get("KANGAROO_P74", "1") == "1"   # armour slab thickness, standoff, rim bevel
+
 PAL = {
     "main": "d4553a",        # orange-red armour (reference: e6724c lit, ae301d shadow)
     "trim": "2b2429",        # charcoal: panel trim, tail bands, claws (reference 231b1e)
@@ -77,14 +102,48 @@ def armour_plates(core):
     the greeble pass's host count where p69's 25 'plate_' blocks had it (25 out, 1 in: 24, a multiple of its 2, 3 and 4
     cycles), so every other part gets the same panel, vent or layer as in p69."""
     for row, (y, z, w, h) in enumerate(((0.46, 1.1, 0.66, 0.36), (0.32, 1.44, 0.62, 0.32), (0.1, 1.74, 0.5, 0.26))):
-        kit.plate_on(core, "armor_back_%d" % row, "main", Vector((0, y - LEAN * (z - 0.9), z)), (0, 1, 0.25), w, h, 0.07,
-                     standoff=0.02, bend=0.0, bevel=0.035)
+        kit.plate_on(core, "armor_back_%d" % row, "main", Vector((0, y - LEAN * (z - 0.9), z)), (0, 1, 0.25), w, h, PT,
+                     standoff=PS, bend=0.0, bevel=PB)
     for s in (-1, 1):
         for row, (y, z, w, h) in enumerate(((0.04, 1.4, 0.56, 0.3), (-0.06, 1.7, 0.46, 0.26))):
             kit.plate_on(core, "armor_side_%d_%d" % (s, row), "main", Vector((s * 0.2, y - LEAN * (z - 0.9), z)),
-                         (s, 0, 0.12), w, h, 0.07, standoff=0.02, bend=0.0, bevel=0.035)
+                         (s, 0, 0.12), w, h, PT, standoff=PS, bend=0.0, bevel=PB)
     kit.plate_on(core, "plate_nape", "main", Vector((0, -0.12 - LEAN, 1.9)), (0, 0.8, 0.6), 0.26, 0.16, 0.05,
                  standoff=0.02, bend=0.0, bevel=0.025)
+
+
+def pouch_and_gun(core):
+    """p72: the pouch over the lower belly, and the Pouch Flak Gun moved up to the stomach behind a hatch.
+    Pouch: a rounded shell in the lighter orange with a darker lip along its top, as a kangaroo's pouch opening.
+    Hatch: an orange plate hinged along its top edge (bone "hatch", head at the hinge), over a dark recess, so the
+    opening reads when it swings up. Gun: a dark barrel stowed pointing down inside the body behind the hatch (bone
+    "cannon", head at its pivot); the flak clip swings it 90 degrees forward through the open hatch."""
+    zc = 1.14   # the stomach, just above the pouch (1.28 sat at the chest, behind the near arm in E)
+    n = Vector((0, -1, 0.1)).normalized()
+    c = kit.on_surface(core, Vector((0, -0.4 - LEAN * (zc - 0.9), zc)), (0, -1, 0.1), 0.03)
+    kit.plate("flak_recess", "frame_dark", c + n * -0.01, 0.44, 0.4, 0.03, (8, 0, 0), bend=0.35, bevel=0.008)
+    kit.plate("flak_hatch", "accent", c + n * 0.02, 0.4, 0.36, 0.05, (8, 0, 0), bend=0.35, bevel=0.01)
+    kit.segment("flak_hatch_seam", "trim", c + n * 0.05 + Vector((-0.16, 0, -0.18)), c + n * 0.05 + Vector((0.16, 0, -0.18)), 0.03, 0.02, 0.4)
+    top, bot = c + Vector((0, 0.0, 0.18)), c + Vector((0, -0.03, -0.18))
+    # the Pouch Cannon (Preston, 2026-10-19: "A little bigger, like a pirate cannon. This attack will be pouch cannon"):
+    # a fat iron barrel with two raised bands, a flared muzzle and a knob at the breech, stowed pointing up inside the
+    # chest (0.55 m would not fit pointing down) and swung 90 degrees forward and down through the open hatch
+    gp = c + Vector((0, 0.2, -0.08))   # its pivot, 20 cm inside the surface in the hatch's lower half
+    L = 0.55
+    up = Vector((0, 0, 1))
+    kit.cyl("flak_gun", "frame", gp, gp + up * L, 0.11, 16)
+    for k, f in enumerate((0.18, 0.62)):   # raised bands
+        kit.cyl("flak_gun_band%d" % k, POD, gp + up * (L * f), gp + up * (L * f + 0.05), 0.125, 16)
+    kit.cyl("flak_gun_muzzle", POD, gp + up * (L - 0.07), gp + up * (L + 0.02), 0.145, 16)   # the flared lip
+    kit.cyl("flak_gun_bore", "frame_dark", gp + up * (L - 0.02), gp + up * (L + 0.025), 0.08, 12)
+    kit.cyl("flak_gun_breech", "frame", gp + up * -0.06, gp + up * 0.02, 0.12, 16)
+    kit.cyl("flak_gun_knob", POD, gp + up * -0.13, gp + up * -0.06, 0.06, 12)   # the cascabel
+    CFG["extra_bones"] = [("hatch", tuple(top), tuple(bot), "body"),
+                          ("cannon", tuple(gp), tuple(gp + up * L), "body")]
+    # the pouch: below the hatch, over the lower belly and the groin
+    pc = kit.on_surface(core, Vector((0, -0.34 - LEAN * (0.9 - 0.9), 0.9)), (0, -1, -0.1), 0.06)
+    kit.shell("pouch", "accent", pc + Vector((0, -0.04, 0)), (0.44, 0.2, 0.28), (6, 0, 0), 0.7, levels=2)
+    kit.segment("pouch_lip", "trim", pc + Vector((-0.2, -0.13, 0.14)), pc + Vector((0.2, -0.13, 0.14)), 0.035, 0.03, 0.5)
 
 
 def body():
@@ -95,11 +154,14 @@ def body():
     core = kit.profile_solid("torso_core", "main", (0, 0, 0), side, front, chamfer=0.03)   # v2: red
     armour_plates(core)
     # the cream underside down the chest and belly
-    for k, z in enumerate((1.62, 1.36, 1.1)):
+    for k, z in enumerate((1.62,) if P72 else (1.62, 1.36, 1.1)):   # p72: the hatch and the pouch take the lower two
         c = kit.on_surface(core, Vector((0, -0.4 - LEAN * (z - 0.9), z)), (0, -1, 0.1), 0.03)
         kit.plate("belly_%d" % k, "accent", c, 0.34 - 0.02 * k, 0.24, 0.045, (8, 0, 0), bend=0.35, bevel=0.01)
     # Pouch Flak Gun: a closed ventral hatch, flat to the belly, with a dark seam across it and two latch discs.
     # The gun is concealed (Preston's loadout text), so nothing protrudes.
+    if P72:
+        pouch_and_gun(core)
+        return
     c = kit.on_surface(core, Vector((0, -0.3, 0.95)), (0, -1, -0.2), 0.05)   # the pouch stays at the hips
     hatch = kit.shell("pouch_hatch", "trim", c, (0.3, 0.08, 0.16), (14, 0, 0), 0.6, levels=1)
     kit.groove(hatch, c + Vector((-0.2, -0.085, 0.0)), c + Vector((0.2, -0.085, 0.0)), (0, -1, -0.2), w=0.03, d=0.02)
@@ -110,7 +172,7 @@ def body():
         a, b = Vector((sd * 0.38, 0.26, 1.36)), Vector((sd * 0.4, 0.6, 1.28))   # r10 (back region 0.22): pods shorter and tucked to the hips, still clear of the plates
         ax = (b - a).normalized()
         kit.cyl("booster_%d_mount" % sd, "frame_dark", a - ax * 0.08, a + ax * 0.1, 0.11, 10)
-        kit.cyl("booster_%d" % sd, "frame", a, b, 0.17, 14)
+        kit.cyl("booster_%d" % sd, POD, a, b, 0.17, 14)
         kit.cyl("booster_%d_band" % sd, "trim", a + ax * 0.14, a + ax * 0.2, 0.185, 14)
         kit.cyl("booster_%d_nozzle" % sd, "trim", b - ax * 0.02, b + ax * 0.12, 0.2, 14)
         kit.cyl("booster_%d_throat" % sd, "frame_dark", b + ax * 0.07, b + ax * 0.14, 0.14, 12)
@@ -137,7 +199,7 @@ def tail_point(t):
 TAIL_K = 6   # p69: six segments (p15's nine read as a fringe of thin fins, then as a stack of coins once pitched right)
 # p70: root-end radius per segment, thick for four segments and tapering over the last two (p69 shrank every segment by
 # 0.82: 0.25, 0.21, 0.17, 0.14, 0.115, 0.094, a thin spike by the tip)
-TAIL_R = (0.27, 0.27, 0.26, 0.23, 0.18, 0.12)
+TAIL_R = (0.32, 0.29, 0.26, 0.22, 0.18, 0.13) if P73 else (0.27, 0.27, 0.26, 0.23, 0.18, 0.12)   # p73: thicker at the root, an even taper (Codex's)
 TAIL_LEN = (1.15, 1.1, 1.05, 1.0, 0.9, 0.8)   # p70: relative segment lengths along the curve, each about as long as tall
 TAIL_TAPER = 0.86   # p70: each segment's tip end is this much of its root end, so the next one's root end steps out past it
 
@@ -259,7 +321,7 @@ def head():
 
 
 # ---- arms: short, held up in a guard; legs: huge thighs, knee forward, long hind feet flat on the ground --------
-STAGGER = 0.16   # legs part: both legs show in the side view
+STAGGER = 0.0 if P72 else 0.16   # p72 (Preston: "make sure legs are mirroring each other"): no front-back offset; was 0.16, the left hip 32 cm behind the right   # legs part: both legs show in the side view
 JOINTS = {}
 
 
@@ -281,7 +343,7 @@ def joint(name, center, radius, depth=0.16, glint=0.028):
     # no dark hub; the face mid grey and a little smaller (0.78 to 0.68 of the rim), so the near-black rim shows as a
     # ring 2 sprite px wide on the hip; one white bead on the face's upper left (back and up on the near side, the side
     # the E and SE views show; forward and up on the far side, which W shows) for the shine.
-    face = kit.cyl(name + "_face", "jointface", c - ax * 0.02, c + ax * 0.03, radius * 0.68, 20)
+    face = kit.cyl(name + "_face", "jointface", c - ax * 0.02, c + ax * 0.03, radius * (0.82 if P73 else 0.68), 20)
     kit.round_rim(face, radius * 0.14, segments=2)
     if glint:
         back = 1.0 if c.x < 0 else -1.0
@@ -337,12 +399,17 @@ def limbs():
         shin = bpy.data.objects["shin_core_%d" % s]
         kit.plate_on(shin, "calf_plate_%d" % s, "main", kn.lerp(an, 0.5), (s, -0.3, 0), 0.24, 0.56, 0.04, 0.02,   # Mechabeast V2 blind review (2026-10-15): larger, orange over the dark shin slab
                      up=tuple(kn - an), bend=0.4, bevel=0.01)   # v2: flush
+        if P71:   # p71: an orange plate on the shin's front as well. The calf plate faces out, so on the far leg it faces away
+            # from the camera and E showed the bare charcoal column as a tall near-black slab (3564 render px of it); the far
+            # one faces in and forward, toward the E and SE cameras (straight forward hid behind the belly)
+            kit.plate_on(shin, "calf_front_%d" % s, "main", kn.lerp(an, 0.45), (0, -1, 0) if P72 else ((-0.8, -0.6, 0) if s == 1 else (0, -1, 0)), 0.3, 0.6, 0.04, 0.02,   # p72: both face forward, mirrored
+                         up=tuple(kn - an), bend=0.4, bevel=0.01)
         # Piston Kick: a piston along the back of each shin
         kit.cyl("heel_piston_%d" % s, "frame_dark", kn + Vector((0, 0.14, 0.02)), kn.lerp(an, 0.65) + Vector((0, 0.14, 0)), 0.075, 10)   # weapons pass: Piston Kick
         kit.cyl("heel_rod_%d" % s, "accent", kn.lerp(an, 0.65) + Vector((0, 0.14, 0)), an + Vector((0, 0.1, 0.02)), 0.04, 8)
         kit.cyl("heel_head_%d" % s, "trim", kn + Vector((0, 0.14, 0.06)), kn + Vector((0, 0.14, 0.0)), 0.09, 10)
         joint("knee_joint_%d" % s, kn + Vector((s * 0.32, 0, 0)), 0.16, depth=0.2)   # legs part: the reference's big knee bolt; p69: joint(), face at 0.62 m out (the old one sat inside the thigh and shin)
-        joint("ankle_joint_%d" % s, an + Vector((s * 0.19, 0, 0)), 0.11, depth=0.14, glint=0)   # p69: joint(), 7 sprite px across; p70: no bead, a 5 px face has no room for one
+        joint("ankle_joint_%d" % s, an + Vector((s * 0.19, 0, 0)), 0.15 if P74 else 0.11, depth=0.14, glint=0.024 if P74 else 0)   # p69: joint(), 7 sprite px across; p70: no bead, a 5 px face has no room for one
         # the long hind foot, flat, with the big fourth toe and claws at the front
         kit.shell("foot_%d" % s, "main", an.lerp(toe, 0.5) + Vector((0, -0.1, -0.04)), (0.18, 0.9, 0.12), (0, 0, 0), 0.5, levels=1)   # Mechabeast V2 blind review (2026-10-15): orange, his feet are orange with grey toes   # legs part: a long foot
         kit.shell("toecap_%d" % s, "main", an.lerp(toe, 0.6) + Vector((0, -0.06, 0.05)), (0.17, 0.5, 0.1), (0, 0, 0), 0.5, levels=1)   # orange over the whole front
@@ -358,6 +425,10 @@ KBONES = (("upper_arm", "upper_arm"), ("forearm", "forearm"), ("fore_plate", "fo
 def kangaroo_bone(n):
     """The bone a part rides (2026-10-14: out of tag_parts so the detail pass can check its pieces against it)."""
     import re
+    if n.startswith("flak_hatch"):   # p72: the deploy bones
+        return "hatch"
+    if n.startswith("flak_gun"):
+        return "cannon"
     if n.startswith(("head_", "neck", "eye_", "ear_")):
         return "head"
     if tail_bone(n) is not None:
@@ -419,8 +490,9 @@ def hop_pose(t):
     return p
 
 
-BATTLE_FEET = {"R": 0.45, "L": -0.7}   # Mechabeast V2 blind review (2026-10-15): the near foot 25 cm less far back, his sits under the hip (ours stuck out as a grey lump)
-BATTLE_RISE, BATTLE_TAIL = 0.25, -15.9   # p70: -15.9, the tail pitched about 10 degrees down past the hop's crouch lift (9 x 0.68), which takes the new tail's tip from 0.2 m to 2.5 cm off the floor in the stance (tuned on the posed mesh); p69: -6, the hop's crouch already lifts the tail 6 degrees and the new curve carries the slope (the battle tail.0 nets 0)   # Mechabeast V2 blind review (2026-10-15): 10 to 2, column profile put our tail 7% of the height above his, which slopes down-left   # V2 (p50): his kangaroo stands tall on extended legs, the tail higher   # Mechabeast V2 (2026-10-14): a split boxing stance, the near foot back, the far one forward
+BATTLE_FEET = {"R": 0.3, "L": 0.3} if P72 else {"R": 0.45, "L": -0.7}   # p72: both feet 0.3 m back, mirrored (with STAGGER 0)   # p72: the left foot back beside the right (at -0.7 its shin stood under the belly)
+# was   # Mechabeast V2 blind review (2026-10-15): the near foot 25 cm less far back, his sits under the hip (ours stuck out as a grey lump)
+BATTLE_RISE, BATTLE_TAIL = (0.4, -20.2) if P74 else (0.25, -15.9)   # p70: -15.9, the tail pitched about 10 degrees down past the hop's crouch lift (9 x 0.68), which takes the new tail's tip from 0.2 m to 2.5 cm off the floor in the stance (tuned on the posed mesh); p69: -6, the hop's crouch already lifts the tail 6 degrees and the new curve carries the slope (the battle tail.0 nets 0)   # Mechabeast V2 blind review (2026-10-15): 10 to 2, column profile put our tail 7% of the height above his, which slopes down-left   # V2 (p50): his kangaroo stands tall on extended legs, the tail higher   # Mechabeast V2 (2026-10-14): a split boxing stance, the near foot back, the far one forward
 
 
 BATTLE_CURL = (0, 4, 5, 6)   # p70: degrees of yaw per tail bone in the stance, the tip about 0.3 m toward the near side: the E camera, turned 20 degrees, lifts whatever lies further back, and this brings the tip 2 sprite px nearer the ground line there; (0, 6, 8, 10) gained 2 px more in E but lifted the W tip 13 px off its ground line
@@ -500,9 +572,9 @@ def loadout():
     on, T = wpn.on, "torso_core"
     return [
         {"slot": "rockets", "move": None, "kind": "missile_pod", "note": "spare: a 3x2 rocket pod on the right shoulder",
-         "args": {"center": on(kit, T, *HARDPOINTS["rockets"]), "size": (0.3, 0.36, 0.36), "rows": 3, "cols": 2, "rot": (-15, 0, 0)}},   # p30: 0.12 sank under the shoulder plates
+         "args": {"center": on(kit, T, *HARDPOINTS["rockets"]), "size": (0.3, 0.36, 0.36), "rows": 3, "cols": 2, "rot": (-15, 0, 0), "mat": POD}},   # p30: 0.12 sank under the shoulder plates
         {"slot": "shgun", "move": None, "kind": "gatling", "note": "spare: a rotary gun on the left shoulder",
-         "args": {"base": on(kit, T, *HARDPOINTS["shgun"]), "direction": (0, -1, 0.1), "length": 0.6, "ring": 0.06, "r": 0.025}},
+         "args": {"base": on(kit, T, *HARDPOINTS["shgun"]), "direction": (0, -1, 0.1), "length": 0.6, "ring": 0.06, "r": 0.025, "mat": POD}},
     ]
 
 
@@ -528,7 +600,7 @@ def main():
             o.location = HC + (o.location - HC) * 1.08   # head pass: his head is small on the long neck; round 4 had 1.25
             o.scale *= 1.08   # head part 4: back to the round-4 size (1.45 overshot)
     wpn.build_loadout(kit, "kangaroo_m", loadout())
-    greebles.run(kit, wpn, kangaroo_bone, skip_prefix=("tail_", "armor_") + JOINT_SKIP)   # Mechabeast V2 blind review (2026-10-15): the tail kept bare, its vents were dark noise
+    greebles.run(kit, wpn, kangaroo_bone, skip_prefix=("tail_", "armor_") + JOINT_SKIP + (("thigh_frame", "shin_core") if P73 else ()))   # Mechabeast V2 blind review (2026-10-15): the tail kept bare, its vents were dark noise
     # p70 (craft judge: "torso behind the arm: large near-black panels with little interior structure, so they read as
     # holes"): the greeble pass's vent on each flank of the torso (a 0.4 by 0.7 m charcoal plate with slats) goes; the
     # side armour plates cover that face now

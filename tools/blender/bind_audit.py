@@ -34,7 +34,7 @@ CHAINS = (("upper_arm", "forearm", "hand"), ("thigh", "shin", "foot"))
 # Reviewed and right as built (2026-10-16): (blend name, bone, piece centre). The gorilla's fists are rams far longer than
 # their hand bone, so a fist and its bolts and piston sit nearer the forearm or upper arm and still belong to the hand;
 # the hippo's hind knee caps sit 12 cm above the knee on the shin (1 to 2 sprite pixels of drift at its leg angles).
-KNOWN = [("ape_l_v2", "hand.%s" % s, (x * k, -1.081, z)) for s, k in (("R", -1), ("L", 1)) for x, z in ((1.24, 0.677), (1.24, 1.109))] +     [("ape_l_v2", "hand.%s" % s, (x * k, y, z)) for s, k in (("R", -1), ("L", 1)) for x, y, z in ((1.869, -0.971, 0.849), (1.926, -1.055, 0.805))] +     [("hippo_m", "shin.R", (-0.52, 0.676, 0.757)), ("hippo_m", "shin.L", (0.52, 0.476, 0.757))]
+KNOWN = [("ape_l_v2", "hand.%s" % s, (x * k, -1.081, z)) for s, k in (("R", -1), ("L", 1)) for x, z in ((1.24, 0.677), (1.24, 1.109))] +     [("ape_l_v2", "hand.%s" % s, (x * k, y, z)) for s, k in (("R", -1), ("L", 1)) for x, y, z in ((1.869, -0.971, 0.849), (1.926, -1.055, 0.805), (1.926, -1.037, 0.828))]   # v76 (2026-10-19): the fist wheel's light cap, on the hand, nearer the forearm line +     [("hippo_m", "shin.R", (-0.52, 0.676, 0.757)), ("hippo_m", "shin.L", (0.52, 0.476, 0.757))]
 
 
 def seg_dist(p, a, b):

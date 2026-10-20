@@ -130,3 +130,15 @@ Three study agents (Workflow tool, about 0.5M subagent tokens).
   round" in either version. Not installed. Legacy's joint, per the judge: a dark rim, a clear inner face, one specular
   highlight from a consistent light. Three tries today (rounded geometry, steel faces, crescents) each moved about one
   sprite pixel; at 126 px wide the joint is too small for render-side changes to draw it.
+
+## Model pass, gorilla, first result (2026-10-16 evening)
+- Shape rules in pixelize_detail.py (PIXEL_SHAPES, step 6b). v1 painted a top-shade centre on every squarish plate of
+  9 to 120 px: polka dots on all six machines and darkened hippo toenails (scratchpad compare8). v2 needs a true round
+  outline (corners empty, fill 0.66 to 0.9, metal only) and draws one step either side of the median; tube stripes
+  are one under the top shade. v2 is close to invisible: c8 177.8 to 172.9, glints 12.7 to 12.5 on the gorilla E view.
+- The rounder joint geometry in build_ape_l_v2.py (16-sided discs, rounded rims, steel faces; renders_detail_steel)
+  pixelizes almost identically to the installed sprite (c8 175.3, contrast 25.7 against 26.2). Joints are 4 to 6 px
+  across at this size, so their 3D shape does not survive the downscale.
+- Nothing from this pass is installed, and PIXEL_SHAPES now defaults to 0 so PC reinstalls match the cloud-installed art. Conclusion: per-part micro shape, in the model or the pixelizer, has stopped
+  moving the sprite. What still shows at sprite size is silhouette and big masses (the judges' notes: hippo feet,
+  shoebill body, wolf red scatter, pangolin scale rows, kangaroo tail) and hand-placed pixels (Codex's finish).

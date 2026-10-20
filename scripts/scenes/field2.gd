@@ -24,13 +24,14 @@ var won := false
 func _ready() -> void:
 	won = Run.has_flag("canyon_battle_won")
 	add_child(Slot.make("res://art/field/canyon.png", Vector2i(320, 180), Color("8a5a3c"), ""))
-	var floor_band := ColorRect.new()  # the canyon floor you can walk on
-	floor_band.position = Vector2(0, 40)
-	floor_band.size = Vector2(320, 116)
-	floor_band.color = Color("b07a4f")
-	add_child(floor_band)
+	if not ResourceLoader.exists("res://art/field/canyon.png"):   # placeholder floor until the art is in (2026-10-20: it is)
+		var floor_band := ColorRect.new()  # the canyon floor you can walk on
+		floor_band.position = Vector2(0, 40)
+		floor_band.size = Vector2(320, 116)
+		floor_band.color = Color("b07a4f")
+		add_child(floor_band)
+		add_child(Slot.text("CANYON (placeholder)", Vector2(8, 166), Color(1, 1, 1, 0.4)))
 	add_child(Slot.text("< grassland", Vector2(2, 92), Color(1, 1, 1, 0.7)))
-	add_child(Slot.text("CANYON (placeholder)", Vector2(8, 166), Color(1, 1, 1, 0.4)))
 	if not won:
 		var rival := Slot.machine("hawk_s", true)
 		rival.position = RIVAL.position - Vector2(0, 16)  # it flies

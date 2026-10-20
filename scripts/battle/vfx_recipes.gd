@@ -86,33 +86,35 @@ const BY_CLIP := {
 		],
 		"hitstop": 0.07, "jolt": 2.0, "knock": 8.0,
 	},
-	# A beam from the bill's hook; it stands dead still to aim.
+	# Bill Clatter (2026-10-19 pivot): the bill slams shut and open like machine-gun fire; three bursts from its tip.
 	"shoebill_m/lance": {
-		"cues": [{"frame": 2, "fx": "charge_in", "at": {"of": "actor", "pt": "front", "y": 0.3, "frame": 3}, "r": 22.0, "count": 12, "life": 0.42}],
-		"shot": {"frame": 4, "fx": "beam", "ramp": "cyan", "width": 5, "grow": 0.1, "life": 0.42, "glow": false,
-			"from": {"of": "actor", "pt": "front", "y": 0.3, "frame": 4}, "to": "target"},
+		"shot": {"frame": 3, "fx": "projectile", "style": "pellet", "time": 0.14, "count": 4, "spread": 6.0, "stagger": 0.03,
+			"bursts": 3, "gap": 0.09, "muzzle": {"fx": "star", "r": 5.0, "ramp": "fire"},
+			"from": {"of": "actor", "pt": "front", "y": 0.3, "frame": 4}, "to": "target",
+			"land": {"fx": "star", "r": 2.5}},
 		"impact": [
-			{"fx": "burst", "at": "target", "r": 15.3, "ramp": "cyan"},
-			{"fx": "sparks", "at": "target", "count": 14, "ramp": "cyan"},
-			{"fx": "rings", "at": "target", "count": 2, "r0": 3.0, "r1": 24.0, "ramp": "cyan", "glow": true},
+			{"fx": "sparks", "at": "target", "count": 10},
+			{"fx": "sparks", "at": "target", "count": 8, "t": 0.09},
+			{"fx": "sparks", "at": "target", "count": 8, "t": 0.18},
 		],
-		"hitstop": 0.05, "jolt": 2.0, "knock": 8.0,
-		"miss": [{"fx": "burst", "r": 10.2, "ramp": "cyan"}, {"fx": "dust", "count": 6}],
+		"hitstop": 0.04, "jolt": 2.0, "knock": 8.0,
+		"miss": [{"fx": "dust", "count": 6}],
 	},
-	# One huge downbeat of the broad wings, armoured leading edges first.
+	# Sentry Lunge (2026-10-19 pivot): statue-still, then a ballistic lunge, bill first.
 	"shoebill_m/buffet": {
-		"advance": true, "go": 2, "back": 7, "depth": 0.4, "overlap": -6.0, "lead": [0.35, 0.9],   # the wing's edge, not its tip
+		"advance": true, "go": 4, "back": 7, "depth": 0.5,
 		"cues": [
-			{"frame": 4, "fx": "dust", "r": 4.5, "at": "actor_feet", "count": 10, "speed": 60.0},   # the downwash
-			{"frame": 4, "fx": "speed_lines", "at": "actor_center", "h": 18.0, "count": 6},
+			{"frame": 4, "fx": "speed_lines", "at": "actor_center", "h": 14.0, "count": 7},
+			{"frame": 4, "fx": "dust", "r": 4.0, "at": "actor_feet", "count": 6, "speed": 50.0},
 		],
 		"impact": [
-			{"fx": "slash", "at": "contact", "r": 24.0, "a0": -80.0, "a1": 60.0, "squash": 0.8, "w": 3},
-			{"fx": "burst", "at": "contact", "r": 15.3, "ramp": "steel"},
-			{"fx": "dust", "r": 4.5, "at": "target_feet", "count": 8, "both": false, "speed": 55.0},
+			{"fx": "star", "at": "contact", "r": 14.0},
+			{"fx": "slash", "at": "contact", "r": 14.0, "a0": -30.0, "a1": 30.0, "squash": 0.6, "w": 3},
+			{"fx": "sparks", "at": "contact", "count": 14},
 		],
-		"hitstop": 0.08, "jolt": 3.0, "knock": 16.0, "shake": 2.0,
+		"hitstop": 0.08, "jolt": 3.0, "knock": 14.0, "shake": 1.5,
 	},
+
 	# Pangolin: the heavy tail sweeps sideways; its scale edges are the blade.
 	"pangolin_m/rake": {
 		"advance": true, "go": 2, "back": 7, "depth": 0.5,
@@ -200,19 +202,19 @@ const BY_CLIP := {
 		],
 		"hitstop": 0.08, "jolt": 3.0, "knock": 18.0,
 	},
-	# A short-range automatic shotgun behind the pouch hatch.
+	# Pouch Cannon (kangaroo p72, 2026-10-19): a pirate-style cannon swings out of a stomach hatch above the pouch and fires
+	# one heavy iron ball on a low arc; a big flash and a cloud of powder smoke at the muzzle, a heavy hit.
 	"kangaroo_m/flak": {
-		"shot": {"frame": 4, "fx": "projectile", "style": "pellet", "time": 0.16, "count": 4, "spread": 12.0, "stagger": 0.03,
-			"bursts": 3, "gap": 0.08, "muzzle": MUZZLE_FLASH,
+		"shot": {"frame": 4, "fx": "projectile", "style": "ball", "ramp": "steel", "time": 0.3, "arc": 5.0, "count": 1,
+			"muzzle": {"fx": "star", "r": 10.0, "ramp": "fire"},
 			"from": {"of": "actor", "pt": "front", "y": 0.55, "frame": 4}, "to": "target",
-			"land": {"fx": "star", "r": 3.0}},
-		"cues": [{"frame": 4, "fx": "debris", "at": {"of": "actor", "pt": "front", "y": 0.55, "frame": 4, "dx": -4}, "count": 3, "ramp": "brass", "speed": 50.0, "lean": -40.0}],
+			"land": {"fx": "star", "r": 6.0}},
+		"cues": [{"frame": 4, "fx": "smoke", "at": {"of": "actor", "pt": "front", "y": 0.55, "frame": 4, "dx": 4}, "count": 5, "r": 4.0, "life": 0.6, "rise": 6.0, "ramp": "steel"}],
 		"impact": [
-			{"fx": "sparks", "at": "target", "count": 12},
-			{"fx": "sparks", "at": "target", "count": 10, "t": 0.08},
-			{"fx": "sparks", "at": "target", "count": 10, "t": 0.16},
+			{"fx": "sparks", "at": "target", "count": 16},
+			{"fx": "smoke", "at": "target", "count": 3, "r": 3.5, "life": 0.5, "ramp": "steel"},
 		],
-		"hitstop": 0.04, "jolt": 2.0, "knock": 8.0,
+		"hitstop": 0.08, "jolt": 3.5, "knock": 16.0,
 	},
 	# A jet-boosted leap off the tail, both feet first; the hip boosters fire on the way up.
 	"kangaroo_m/kick": {

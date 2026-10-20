@@ -2,28 +2,8 @@
  "machine": "shoebill_m",
  "weapons": [
   {
-   "slot": "lance",
-   "move": "Stillwater Lance",
-   "draft": false,
-   "kind": "cannon",
-   "note": "the beam gun on top of the head, as his reference",
-   "parts": [
-    "head_wpn_lance_barrel0",
-    "head_wpn_lance_mount",
-    "head_wpn_lance_muzzle0",
-    "head_wpn_lance_post"
-   ],
-   "muzzles": [
-    [
-     0.0,
-     -1.753,
-     3.102
-    ]
-   ]
-  },
-  {
    "slot": "clamp",
-   "move": "Bill Clamp",
+   "move": "Apex Decapitation",
    "draft": false,
    "kind": "spikes",
    "note": "teeth along the upper bill's edge",
@@ -53,44 +33,6 @@
      0.148,
      -1.246,
      2.62
-    ]
-   ]
-  },
-  {
-   "slot": "rootR",
-   "move": null,
-   "draft": true,
-   "kind": "cannon",
-   "note": "spare: a gun on each side of the breast",
-   "parts": [
-    "wpn_rootR_barrel0",
-    "wpn_rootR_mount",
-    "wpn_rootR_muzzle0"
-   ],
-   "muzzles": [
-    [
-     -0.205,
-     -1.003,
-     1.893
-    ]
-   ]
-  },
-  {
-   "slot": "rootL",
-   "move": null,
-   "draft": true,
-   "kind": "cannon",
-   "note": "spare: a gun on each side of the breast",
-   "parts": [
-    "wpn_rootL_barrel0",
-    "wpn_rootL_mount",
-    "wpn_rootL_muzzle0"
-   ],
-   "muzzles": [
-    [
-     0.205,
-     -1.003,
-     1.893
     ]
    ]
   }

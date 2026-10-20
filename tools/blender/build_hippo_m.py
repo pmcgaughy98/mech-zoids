@@ -59,7 +59,22 @@ def make_materials():
 
 
 # ---- the body: a barrel, the back sloping down to the shoulders, armour plates on its real surface ------------
-SQ, LIFT = 0.9, 0.25   # p41 model pass (2026-10-16, judges: "feet read as flat bricks", the reference stands on pillars): the body 15 cm higher on longer legs (was 0.1).   # Mechabeast V2 (2026-10-14): a little taller (p28 at 1.0, 0.2 overshot: front-right view 0.802 to 0.763)   # r10 (look-compare): legs 10 cm shorter, the body sits low as his (width/height 1.79 against 1.97); was 0.1
+P46 = os.environ.get("HIPPO_P46", "1") == "1"   # p46 (2026-10-19, after the cloud model pass's judges: "the legs stand a
+# little tall against the reference; the toes are uniform"): body 15 cm lower (p40's height, on p41's pillar feet; 0.18 took only 2 px off), toes graded. HIPPO_P46=0 rebuilds p41.
+# p47 (2026-10-20, Codex's hippo sheet; Preston: "go both"): Codex's body is a long low barrel, 1.81 to 1.88 times as
+# wide as tall in its side view and sprite against our 1.45 to 1.49 (his own painting measured 1.56). Preston took the
+# middle, about 1.65: every front-to-back position scales with SQ, so 0.9 to 1.2 stretches the barrel, moves the legs
+# apart and the head forward, while the head, legs and toes keep their size (1.04 measured 1.53: the 35-degree side
+# view hides length; the slope gave 1.2 for 1.65). The back gear bigger (Codex's grey share
+# 7% against our 2 to 3%). HIPPO_P47=0 builds p46.
+P47 = P46 and os.environ.get("HIPPO_P47", "1") == "1"
+SQ, LIFT = (1.2 if P47 else 0.9), (0.1 if P46 else 0.25)
+# p48 (2026-10-20, factory pass part by part against Codex's sprite; Preston: "go hippo next"): Codex's hippo carries a grey
+# hose tail curled up off the rump (ours a short stub pointing down, hidden), and its upper legs read as rounded plum
+# thighs and shoulders, dark only at the cuff and hoof (ours grey columns top to bottom). The tail three grey hose
+# segments curling up and back with dark rings between, below the back's top; the upper columns plum under a bigger
+# outer plate. HIPPO_P48=0 builds p47.
+P48 = P47 and os.environ.get("HIPPO_P48", "1") == "1"   # p41 model pass (2026-10-16, judges: "feet read as flat bricks", the reference stands on pillars): the body 15 cm higher on longer legs (was 0.1).   # Mechabeast V2 (2026-10-14): a little taller (p28 at 1.0, 0.2 overshot: front-right view 0.802 to 0.763)   # r10 (look-compare): legs 10 cm shorter, the body sits low as his (width/height 1.79 against 1.97); was 0.1
 TOP = [(-1.05 * SQ, 1.26 + LIFT), (-0.75 * SQ, 1.45 + LIFT), (-0.3 * SQ, 1.51 + LIFT), (0.3 * SQ, 1.55 + LIFT),
        (0.8 * SQ, 1.55 + LIFT), (1.12 * SQ, 1.35 + LIFT)]   # (y, top height); Mechabeast V2 blind review 3 (2026-10-15): a taller back, his shoulders as high as the rump (the overlay: his top stood above ours over the shoulders; was 1.12, 1.33, 1.43, 1.53)
 BOTTOM = 0.5 + LIFT
@@ -127,9 +142,20 @@ def body():
 
 # ---- the tail: short, a stub with a dark tuft ----------------------------------------------------------------
 TAIL = [Vector((0, 1.16 * SQ, 1.24 + LIFT)), Vector((0, 1.38 * SQ, 1.06 + LIFT)), Vector((0, 1.48 * SQ, 0.86 + LIFT))]
+if P48:   # the hose: up and back off the rump, curling over to point back and down at the tip
+    TAIL = [Vector((0, 1.14 * SQ, 1.26 + LIFT)), Vector((0, 1.26 * SQ, 1.44 + LIFT)), Vector((0, 1.42 * SQ, 1.52 + LIFT)),
+            Vector((0, 1.56 * SQ, 1.4 + LIFT))]
 
 
 def tail():
+    if P48:
+        for k in range(len(TAIL) - 1):
+            kit.segment("tail_core_%d" % k, "frame", TAIL[k], TAIL[k + 1], 0.1, 0.09, 0.5)
+            if k:   # a dark ring at each joint, the hose's bands
+                d = (TAIL[k + 1] - TAIL[k]).normalized()
+                kit.cyl("tail_core_%d_ring" % k, "trim", TAIL[k] - d * 0.03, TAIL[k] + d * 0.03, 0.115, 12)
+        kit.shell("tail_core_%d_tip" % (len(TAIL) - 2), "trim", TAIL[-1], (0.14, 0.14, 0.14), (0, 0, 0), 0.5, levels=1)
+        return
     kit.segment("tail_core_0", "frame", TAIL[0], TAIL[1], 0.16, 0.14, 0.5)
     kit.segment("tail_core_1", "trim", TAIL[1], TAIL[2], 0.11, 0.09, 0.5)
 
@@ -227,7 +253,7 @@ def legs():
                        "hp." + side: hp, "kn." + side: kn, "an." + side: an, "toe." + side: an + Vector((0, -0.2, -0.12))})
         for pre, a, b, c in (("front", sh, el, wr), ("hind", hp, kn, an)):
             # the columns: square, chamfered, grey (a value step lighter than the dark underbody and the hoof)
-            kit.limb_solid("%s_upper_%d" % (pre, s), "frame", a, b, (s, 0, 0), [(0, COL + 0.02, COL + 0.02), (1, COL, COL)],
+            kit.limb_solid("%s_upper_%d" % (pre, s), "main" if P48 else "frame", a, b, (s, 0, 0), [(0, COL + 0.02, COL + 0.02), (1, COL, COL)],
                            [(0, COL + 0.02), (1, COL)], chamfer=0.06)
             kit.limb_solid("%s_lower_%d" % (pre, s), "frame", b, c + Vector((0, 0, 0.12)), (s, 0, 0), [(0, COL, COL), (1, COL - 0.01, COL - 0.01)],
                            [(0, COL), (1, COL - 0.01)], chamfer=0.06)
@@ -237,7 +263,7 @@ def legs():
             # the hip / shoulder wheel on the hull side, over the column's top
             kit.disc("%s_scale_%d_disc" % (pre, s), Vector((a.x + s * (COL + 0.08), a.y, a.z - 0.04)), 0.26 if pre == "hind" else 0.22, depth=0.12)
             # purple armour: a big plate on the outer face of the upper column, one on its front, a shin guard on the front
-            kit.plate("%s_scale_%d" % (pre, s), "main", kit.on_surface(up, a.lerp(b, 0.72), (s, 0, 0), 0.03), 0.54, 0.5,
+            kit.plate("%s_scale_%d" % (pre, s), "main", kit.on_surface(up, a.lerp(b, 0.55 if P48 else 0.72), (s, 0, 0), 0.03), 0.6 if P48 else 0.54, 0.66 if P48 else 0.5,
                       0.06, (-4, 0, s * 84), bend=0.4, bevel=0.012, recess=0.015, rim=0.04)
             kit.plate("%s_scale_front_%d" % (pre, s), "main", kit.on_surface(up, a.lerp(b, 0.72), (0, -1, 0), 0.03), 0.48, 0.46,
                       0.06, (0, 0, 0), bend=0.35, bevel=0.012)
@@ -251,7 +277,12 @@ def legs():
             for k, ang in enumerate(TOE_ANG):
                 a_ = math.radians(ang)
                 p = Vector((hc.x + TOE_RAD * math.sin(a_), hc.y - TOE_RAD * math.cos(a_), TOE[2] / 2))
-                kit.shell("%s_claw_%d_%d" % (pre, s, k), "toe", p, TOE, (0, 0, ang), 0.3, levels=1)   # each faces out
+                # p46: graded toes as the reference's, the middle one biggest, the outer pair small and low
+                g = (0.72, 0.88, 1.08, 0.88, 0.72)[k] if P46 else 1.0
+                size = (TOE[0] * g, TOE[1] * (0.85 + 0.15 * g), TOE[2] * g)
+                if P46:
+                    p = Vector((p.x, p.y, size[2] / 2))
+                kit.shell("%s_claw_%d_%d" % (pre, s, k), "toe", p, size, (0, 0, ang), 0.3, levels=1)   # each faces out
                 # from the hoof's centre (p40's turned the other way, so neighbouring toes met corner to corner)
 
 
@@ -282,9 +313,10 @@ def loadout():
     on, T = wpn.on, "torso_core"
     L = [
         {"slot": "turret", "move": None, "kind": "cannon", "note": "spare: a short twin cannon on the front of the back",
-         "args": {"base": on(kit, T, (0.5, 0.25, 1.0), (0, 0, 1), 0.1), "direction": (0, -1, 0.05), "length": 0.55, "r": 0.05, "barrels": 2}},
+         "args": {"base": on(kit, T, (0.5, 0.25, 1.0), (0, 0, 1), 0.1), "direction": (0, -1, 0.05), "length": 0.55, "r": 0.07 if P47 else 0.05, "barrels": 2,
+                  **({"housing": (0.46, 0.5, 0.28)} if P47 else {})}},
         {"slot": "torpedo", "move": None, "kind": "missile_pod", "note": "spare: two torpedo tubes on the back, forward",
-         "args": {"center": on(kit, T, (0.5, 0.6, 1.0), (0, 0, 1), 0.13), "size": (0.5, 0.6, 0.22), "rows": 1, "cols": 2, "rot": (-8, 0, 0)}},
+         "args": {"center": on(kit, T, (0.5, 0.6, 1.0), (0, 0, 1), 0.13), "size": (0.62, 0.74, 0.3) if P47 else (0.5, 0.6, 0.22), "rows": 1, "cols": 2, "rot": (-8, 0, 0)}},
     ]
     for sd in (-1, 1):
         a = on(kit, T, (0.0 if sd < 0 else 1.0, 0.72, 0.55), (sd, 0, 0), 0.1)

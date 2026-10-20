@@ -659,6 +659,10 @@ func projectile(pos: Vector2, to: Vector2, p: Dictionary) -> void:
 	var style: String = p.get("style", "pellet")
 	var ramp: Array = RAMPS[p.get("ramp", "spark")]
 	var at := func(u: float) -> Vector2: return pos.lerp(to, u) + Vector2(0, -arc * 4.0 * u * (1.0 - u))
+	if style == "ball":   # a cannonball: a few puffs of powder smoke left along its path
+		for i in 3:
+			var u := (i + 0.5) / 5.0
+			after(life * u, func() -> void: smoke(at.call(u), {"count": 1, "r": 2.5, "life": 0.4, "rise": 4.0, "in_front": false}))
 	if style == "missile":   # its smoke trail stays behind it
 		for i in 6:
 			var u := (i + 0.5) / 6.0
@@ -684,6 +688,9 @@ func _draw_projectile(ci: CanvasItem, style: String, ramp: Array, at: Callable, 
 		ci.draw_rect(Rect2(c.round() - s / 2, s), ramp[2])
 		ci.draw_rect(Rect2(c.round() - s / 2, Vector2(s.x, 1)), ramp[0])
 		ci.draw_rect(Rect2(c.round() - s / 2 + Vector2(0, s.y - 1), Vector2(s.x, 1)), ramp[3])
+	elif style == "ball":   # dark iron, lit on its upper left
+		disc(ci, c, 3.5, ramp[3])
+		dot(ci, c + Vector2(-1, -1), ramp[1], 2)
 	elif style == "missile":
 		var back_pt: Vector2 = at.call(maxf(0.0, u - 0.06))
 		line(ci, back_pt, c, ramp[1], 2)

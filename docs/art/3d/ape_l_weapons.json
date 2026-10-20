@@ -2,26 +2,21 @@
  "machine": "ape_l",
  "weapons": [
   {
-   "slot": "shgun",
+   "slot": "backgun",
    "move": null,
    "draft": true,
-   "kind": "gatling",
-   "note": "spare: a rotary gun on the right shoulder",
+   "kind": "cannon",
+   "note": "spare: one big forward cannon along the right of the back (v77, Codex's)",
    "parts": [
-    "wpn_shgun_barrel0",
-    "wpn_shgun_barrel1",
-    "wpn_shgun_barrel2",
-    "wpn_shgun_barrel3",
-    "wpn_shgun_barrel4",
-    "wpn_shgun_barrel5",
-    "wpn_shgun_collar",
-    "wpn_shgun_drum"
+    "wpn_backgun_barrel0",
+    "wpn_backgun_mount",
+    "wpn_backgun_muzzle0"
    ],
    "muzzles": [
     [
-     -0.85,
-     -1.528,
-     2.174
+     -0.36,
+     -1.135,
+     2.256
     ]
    ]
   },

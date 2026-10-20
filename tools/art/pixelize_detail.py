@@ -57,7 +57,11 @@ PLATE_MODE = ENV("PIXEL_PLATE_MODE", "1") == "1"   # a 3x3 majority inside each 
 # larger clean shapes (round 2 judges: "mottled fill", "puffy stone blocks", "random patchwork")
 SPURS = ENV("PIXEL_SPURS", "1") == "1"   # silhouette cleanup: one-pixel spurs off, one-pixel notches filled (round 2:
 # "a ragged fringe of loose pixels with no closed outline")
-DARK_OUTLINE = ENV("PIXEL_DARK_OUTLINE", "1") == "1"   # the silhouette in each part's own darkest shade, the top edge one
+DARK_OUTLINE = ENV("PIXEL_DARK_OUTLINE", "1") == "1"
+SHAPES = ENV("PIXEL_SHAPES", "0") == "1"   # shape-aware parts (model pass, 2026-10-16; blind judges: "joints are blobs of
+# mid-grey without a socket ring", "guns should read as cylinders with a specular stripe", "stray grey dots on the green"):
+# round pieces are drawn as joint discs (dark rim, lit upper-left arc, pale centre, as Legacy's joints), long metal pieces
+# as tubes (a highlight stripe along their length), and a 1-2 px piece of another colour inside a plate is dropped   # the silhouette in each part's own darkest shade, the top edge one
 # lighter, a lit row just inside it (all six blind judges: "no consistent dark outline, the silhouette fades")
 N4 = ((1, 0), (-1, 0), (0, 1), (0, -1))
 
@@ -346,6 +350,63 @@ def main(src, dst, scale=4.4):
                 if m[hy, hx]:
                     res[hy, hx] = tops[f]
             round_px[ys, xs] = True
+    # 6b. shapes: specks out, joint discs, tubes
+    shaped = np.zeros((oh, ow), bool)
+    if SHAPES:
+        for m in regions:
+            n = int(m.sum())
+            ys, xs = np.nonzero(m)
+            f = famname[ys[0], xs[0]]
+            if f == "teal":
+                continue
+            if n <= 2:   # a speck: inside another family's plate it takes that plate's colour
+                ring = ndimage.binary_dilation(m) & ~m & solid
+                if ring.sum() >= 4:
+                    rf = famname[ring]
+                    vals, cnts = np.unique(rf, return_counts=True)
+                    other = vals[cnts.argmax()]
+                    if other != f and cnts.max() >= 0.75 * ring.sum() and other != "teal":
+                        rk = names.index(other)
+                        near = res[ring & (winf == rk)]
+                        winf[m] = rk
+                        famname[m] = other
+                        res[m] = int(np.median(near))
+                        idx[m] = res[m]
+                continue
+            if len(set(famname[m])) > 1:   # a piece split between two colour families keeps its plate shading
+                continue
+            h, w = ys.max() - ys.min() + 1, xs.max() - xs.min() + 1
+            fill = n / float(h * w)
+            # a disc (a joint or a hub): a round outline, not a square plate. v1 took any squarish plate and painted
+            # its centre the top shade, which scattered bright dots over every machine (compare8, 2026-10-16), so a
+            # disc now needs its four bounding-box corners empty and a fill near a circle's pi/4, and is drawn one
+            # step either side of its own median: the far rim a shade down, a lit pixel just inside the near rim
+            corners = sum(bool(m[yy, xx]) for yy in (ys.min(), ys.max()) for xx in (xs.min(), xs.max()))
+            if f in GLINT_FAMILIES and 12 <= n <= 120 and min(h, w) >= 4 and 0.75 <= h / w <= 1.33 \
+                    and 0.66 <= fill <= 0.9 and corners == 0:
+                cy, cx = ys.mean(), xs.mean()
+                rad = np.hypot(ys - cy, xs - cx)
+                r = rad.max()
+                base = int(np.median(res[ys, xs]))
+                res[ys, xs] = base
+                for y, x, d in zip(ys, xs, rad):
+                    side = ((y - cy) + (x - cx)) / (r * 1.414)   # -1 toward the upper-left light, +1 away
+                    if d >= r - 0.9 and side > 0.2:
+                        res[y, x] = max(0, base - 1)
+                hy, hx = int(round(cy - r * 0.35)), int(round(cx - r * 0.35))
+                if m[hy, hx]:
+                    res[hy, hx] = min(tops[f], base + 2)
+                shaped[m] = True
+            elif f in GLINT_FAMILIES and n >= 8 and min(h, w) >= 2 and max(h, w) >= 4 * min(h, w):   # a tube
+                if w >= h:   # lying along x: a stripe a third of the way down each column, one under the top shade
+                    for x in np.unique(xs):
+                        col = ys[xs == x]
+                        res[col.min() + (col.max() - col.min()) // 3, x] = max(res[col.min(), x], tops[f] - 1)
+                else:
+                    for y in np.unique(ys):
+                        row = xs[ys == y]
+                        res[y, row.min() + (row.max() - row.min()) // 3] = max(res[y, row.min()], tops[f] - 1)
+                shaped[m] = True
     # 7. glints on metal
     spec = n_img @ HALF
     glint = np.zeros((oh, ow), bool)
@@ -358,7 +419,7 @@ def main(src, dst, scale=4.4):
             continue
         j = spec[ys, xs].argmax()
         y, x = ys[j], xs[j]
-        if famname[y, x] in GLINT_FAMILIES and spec[y, x] >= GLINT_MIN:
+        if famname[y, x] in GLINT_FAMILIES and spec[y, x] >= GLINT_MIN and not shaped[y, x]:
             cands.append((spec[y, x], y, x))
     for _s, y, x in sorted(cands, reverse=True)[:int(GLINT_CAP * solid.sum() / 1000)]:
         res[y, x] = tops[famname[y, x]]
@@ -407,7 +468,7 @@ def main(src, dst, scale=4.4):
     keyimg = np.where(solid, winf * 64 + final, -1)
     for y in range(1, oh - 1):
         for x in range(1, ow - 1):
-            if not solid[y, x] or eye[y, x] or glint[y, x] or seam[y, x] or rim[y, x]:
+            if not solid[y, x] or eye[y, x] or glint[y, x] or seam[y, x] or rim[y, x] or shaped[y, x]:
                 continue
             nbk = {keyimg[y + dy, x + dx] for dy, dx in N4}
             if len(nbk) == 1 and -1 not in nbk and keyimg[y, x] not in nbk:
@@ -420,7 +481,7 @@ def main(src, dst, scale=4.4):
         out = final.copy()
         for y in range(1, oh - 1):
             for x in range(1, ow - 1):
-                if not solid[y, x] or eye[y, x] or glint[y, x] or seam[y, x] or rim[y, x]:
+                if not solid[y, x] or eye[y, x] or glint[y, x] or seam[y, x] or rim[y, x] or shaped[y, x]:
                     continue
                 nbr = keyimg[y - 1:y + 2, x - 1:x + 2].ravel().tolist()
                 me = nbr.pop(4)

@@ -30,6 +30,9 @@ WALK_FRAMES = 36
 
 
 def bone_for(name, cfg):
+    for prefix, bone in cfg.get("part_bones", ()):   # extra bones (2026-10-19): a jaw, a hatch, a flip-out gun
+        if name.startswith(prefix):
+            return bone
     if name.startswith(cfg["head"]):
         return "head"
     k = cfg["tail_bone"](name) if cfg.get("tail_bone") else None
@@ -88,6 +91,8 @@ def make_rig(ob, cfg):
         bone("thigh." + side, J["hp." + side], J["kn." + side], "body")
         bone("shin." + side, J["kn." + side], J["an." + side], "thigh." + side)
         bone("foot." + side, J["an." + side], J["toe." + side], "shin." + side)
+    for name, head, tail, parent in cfg.get("extra_bones", ()):   # deploy hardware (2026-10-19): a hatch that swings
+        bone(name, head, tail, parent)   # open, a gun that flips out; attacks.py keys them like any other bone
     bpy.ops.object.mode_set(mode="OBJECT")
     ob.parent = rig
     ob.modifiers.new("rig", "ARMATURE").object = rig

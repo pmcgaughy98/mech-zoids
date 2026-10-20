@@ -1,0 +1,176 @@
+{
+ "note": "Combination machine v1 (Claude, 2026-10-19): its own colours, pearl armour at the top of a long grey ramp, gold trim, crimson, and the six starters' colours as short gem ramps. A draft, Preston's to change.",
+ "families": {
+  "grey": {
+   "edge_floor": 1,
+   "top_rim": 0,
+   "dither": 0,
+   "despeckle": true,
+   "gamma": 0.5,
+   "side_drop": 2,
+   "under_drop": 2,
+   "seam_shade": 0,
+   "ramp": [
+    "1c1e24",
+    "2a2c34",
+    "3a3d46",
+    "4e525c",
+    "686c76",
+    "8a8d94",
+    "aeb0b2",
+    "cbc8c0",
+    "e2ddd2"
+   ],
+   "extra_top": [
+    "f4f0e6"
+   ],
+   "extra_bottom": [],
+   "match_style": false
+  },
+  "gold": {
+   "edge_floor": 1,
+   "top_rim": 0,
+   "dither": 0,
+   "despeckle": true,
+   "gamma": 0.85,
+   "side_drop": 2,
+   "under_drop": 2,
+   "seam_shade": 0,
+   "hue": [
+    0.07,
+    0.18
+   ],
+   "min_sat": 0.3,
+   "ramp": [
+    "3a2808",
+    "6a4a12",
+    "9c7020",
+    "c4942c",
+    "e0b24a",
+    "f0c85e",
+    "f8dc8c"
+   ]
+  },
+  "red": {
+   "edge_floor": 1,
+   "top_rim": 0,
+   "dither": 0,
+   "despeckle": true,
+   "gamma": 0.85,
+   "side_drop": 2,
+   "under_drop": 2,
+   "seam_shade": 0,
+   "hue": [
+    0.0,
+    0.06
+   ],
+   "min_sat": 0.4,
+   "ramp": [
+    "4a0a0e",
+    "7a1418",
+    "b02028",
+    "d83a3a",
+    "f07060"
+   ]
+  },
+  "crimson": {
+   "edge_floor": 1,
+   "top_rim": 0,
+   "dither": 0,
+   "despeckle": true,
+   "gamma": 0.85,
+   "side_drop": 2,
+   "under_drop": 2,
+   "seam_shade": 0,
+   "hue": [
+    0.93,
+    1.0
+   ],
+   "min_sat": 0.4,
+   "ramp": [
+    "4a0a0e",
+    "7a1418",
+    "b02028",
+    "d83a3a",
+    "f07060"
+   ]
+  },
+  "green": {
+   "edge_floor": 1,
+   "top_rim": 0,
+   "dither": 0,
+   "despeckle": true,
+   "gamma": 0.85,
+   "side_drop": 2,
+   "under_drop": 2,
+   "seam_shade": 0,
+   "hue": [
+    0.22,
+    0.45
+   ],
+   "min_sat": 0.3,
+   "ramp": [
+    "1c3a1a",
+    "2f6a2a",
+    "3f9a3a",
+    "6cc45a",
+    "a6e48a"
+   ]
+  },
+  "blue": {
+   "edge_floor": 1,
+   "top_rim": 0,
+   "dither": 0,
+   "despeckle": true,
+   "gamma": 0.85,
+   "side_drop": 2,
+   "under_drop": 2,
+   "seam_shade": 0,
+   "hue": [
+    0.53,
+    0.72
+   ],
+   "min_sat": 0.3,
+   "ramp": [
+    "1a2a5a",
+    "2c4a8e",
+    "3c6ec8",
+    "6e9ae4",
+    "a8c6f4"
+   ]
+  },
+  "purple": {
+   "edge_floor": 1,
+   "top_rim": 0,
+   "dither": 0,
+   "despeckle": true,
+   "gamma": 0.85,
+   "side_drop": 2,
+   "under_drop": 2,
+   "seam_shade": 0,
+   "hue": [
+    0.74,
+    0.92
+   ],
+   "min_sat": 0.3,
+   "ramp": [
+    "2e1638",
+    "5a2e6e",
+    "8c4aa0",
+    "b47ccc",
+    "d8b0e8"
+   ]
+  },
+  "teal": {
+   "ramp": [
+    "1f6e66",
+    "5fe1d0",
+    "bff7ef"
+   ]
+  }
+ },
+ "shadow": [
+  "2e2640",
+  "463a5e"
+ ]
+}

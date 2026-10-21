@@ -71,6 +71,10 @@ def quad_stance(ik2, cfg):
     pv = cfg["body_bone"][0]
 
     def fn(t, shift, extra):
+        # 2026-10-20 (Codex's wolf v95 audit: the idle paws rose and sank a row): extra["_bob"] (metres) and
+        # extra["_pitch"] (degrees, positive nose down) are the idle's breathing; the feet are held against them too.
+        bob = extra.get("_bob", 0.0)
+        tt = th + math.radians(extra.get("_pitch", 0.0))
         p = {}
         for side in ("L", "R"):
             for kind, (upper, j0, j1, j2, lower, end, back, down, lift_h, curl) in legs.items():
@@ -80,13 +84,13 @@ def quad_stance(ik2, cfg):
                 dy, dz = feet.get(key, (0.0, 0.0))
                 ex = extra.get(key, (0.0, 0.0))
                 tgt = (a[0] + b[0] + back + dy + shift + ex[0], a[1] + b[1] + crouch + down + dz + ex[1])
-                if th:   # the target in the pitched body's frame (turned by -th about the pivot)
-                    wy, wz = r.y + tgt[0] - pv[1], r.z + tgt[1] - pv[2]
-                    tgt = (wy * math.cos(th) + wz * math.sin(th) + pv[1] - r.y, -wy * math.sin(th) + wz * math.cos(th) + pv[2] - r.z)
+                if tt or bob:   # the target in the moved, pitched body's frame (down by the bob, turned by -tt about the pivot)
+                    wy, wz = r.y + tgt[0] - pv[1], r.z + tgt[1] - bob - pv[2]
+                    tgt = (wy * math.cos(tt) + wz * math.sin(tt) + pv[1] - r.y, -wy * math.sin(tt) + wz * math.cos(tt) + pv[2] - r.z)
                 w1, w2 = ik2(a, b, tgt)
                 p[upper + "." + side] = (w1, 0, 0)
                 p[lower + "." + side] = (w2 - w1, 0, 0)
-                p[end + "." + side] = (-w2 - math.degrees(th), 0, 0)
+                p[end + "." + side] = (-w2 - math.degrees(tt), 0, 0)
         if th:
             p["body"] = (math.degrees(th), 0, 0)
         if cfg.get("battle_head"):
@@ -150,7 +154,8 @@ def idle(stance):
     """Breathing on the stance: the body rises and settles 1.5 cm, the head lags a little."""
     def pose(t):
         w = 2 * math.pi * t
-        p = stance(t, 0.0, {})
+        # IDLE_PLANT=0 restores the old idle, whose quadruped feet rode the breathing (1.5 cm and 0.8 degrees)
+        p = stance(t, 0.0, {"_bob": 0.015 * math.sin(w), "_pitch": -0.8 * math.sin(w)} if IDLE_PLANT else {})
         p.pop("body_move", None)
         p["body"] = tuple(a + b for a, b in zip(p.get("body", (0, 0, 0)), X(-0.8 * math.sin(w))))
         p["head"] = tuple(a + b for a, b in zip(p.get("head", (0, 0, 0)), X(1.5 * math.sin(w - 0.7))))
@@ -177,6 +182,7 @@ def death(stance, side_fall=True):
 # in the roll (5 allowed): the body dives nose down and the tail points up. Less curl (0.8) stood it straighter, 18 rows;
 # a tighter curl wraps the longer tail over the back into the ball and brings the tip down. PANGOLIN_P45=0 restores both.
 RC = 1.4 if os.environ.get("PANGOLIN_P45", "1") == "1" else 1.0
+IDLE_PLANT = os.environ.get("IDLE_PLANT", "1") == "1"
 
 # ---- the attacks, one set per machine ----------------------------------------------------------------------------
 

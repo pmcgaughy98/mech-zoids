@@ -58,6 +58,14 @@ only).
   top edges (Iron Kong, `docs/art/reference/legacy/iron_kong.png`): use the machine's darker family colour.
 - **Scenes can paint opaque placeholders over new art** (the canyon's floor band): check the scene script when a slot
   gets art.
+- **A part name that repeats another gets ".001" from Blender, and the bone rule cannot read it**, so the part rides
+  the body and comes loose in motion (the gorilla's ankle wheel). The bind audit treats the body as the catch-all and
+  never flags it: grep a builder for names it creates twice before adding parts near joints.
+- **Renaming a part can change the detail pass everywhere:** it skips names containing words like "seam", "ring",
+  "barrel", and assigns panels and vents by each host's place in a sorted list. Compare triangle counts before and
+  after a rename.
+- **After a source fix on a Codex-finished machine, install with `tools/art/patch_frames.py`**, which replaces only
+  the frames that changed.
 - Never `rm -rf` a variable path; renders overwrite their files anyway.
 
 ## Synthesis: what each source contributes

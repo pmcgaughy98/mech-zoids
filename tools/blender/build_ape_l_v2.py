@@ -441,6 +441,15 @@ LEAN, AIR = (0.8, 0.10) if V77 else (1.0, 0.12)
 # the darker green (trim 3e5a33) under the lighter framed plate.
 # (Its hind legs reach further back: a stance change, not this pass.) APE_V78=0 builds v77.
 V78 = V77 and os.environ.get("APE_V78", "1") == "1"
+# v79 (2026-10-20, Codex's v77 audit: "a loose grey disc below the falling rear leg" in the death frames). The disc was
+# v77's ankle wheel: two of its pieces took the ankle disc's names, Blender renamed them ".001", and the bone rule read
+# neither; now "ankle_wheel_<side>_<n>" on the shin, so the wheel follows the leg. Also the knee seam
+# ring was named "knee_<side>_seam", which the bone rule cannot read (text after the side), so it rode the body bone and
+# stayed behind when the leg fell; the bind audit treats the body as the catch-all and never flagged it. The bone rule now
+# strips "_seam" as it strips "_ring" and "_hub", so it rides the shin with the knee disc. (A first try renamed it
+# "knee_<side>_1": the detail pass skips names with "seam", so the ring became a greeble host and shifted the pass's
+# panel/vent/layer cycle over the whole model, 232 fewer triangles and every frame changed.) APE_V79=0 builds v78.
+V79 = V78 and os.environ.get("APE_V79", "1") == "1"
 
 
 def round_rim(ob, offset, segments=3):
@@ -735,9 +744,11 @@ def build():
         disc("ankle_%d" % s, an, 0.14, depth=0.5)
         if V77:   # v77: a layered light-grey wheel on the ankle's outer face, as the fists' (Codex's hind leg)
             ax = an[0] + s * 0.32   # HIND_IN below pulls each piece's centre in by 0.8, not the disc's depth: 0.32 clears the ankle disc's face
-            for nm, mat, x0, x1, r in (("ring", "frame", 0.0, 0.05, 0.2), ("ring_2", "steel", 0.04, 0.07, 0.15),
-                                       ("hub", "frame", 0.06, 0.09, 0.085), ("hub_2", "steel", 0.08, 0.1, 0.04)):
-                cyl("ankle_%d_%s" % (s, nm), mat, (ax + s * x0 * 1.25, an[1], an[2]), (ax + s * x1 * 1.25, an[1], an[2]), r, 20)
+            for i, (nm, mat, x0, x1, r) in enumerate((("ring", "frame", 0.0, 0.05, 0.2), ("ring_2", "steel", 0.04, 0.07, 0.15),
+                                                      ("hub", "frame", 0.06, 0.09, 0.085), ("hub_2", "steel", 0.08, 0.1, 0.04))):
+                # v79: own names on the shin; "ankle_<side>_ring"/"_hub" were the ankle disc's, so Blender renamed these
+                # ".001" and the bone rule dropped them to the body (Codex's loose disc in the death frames)
+                cyl(("ankle_wheel_%d_%d" % (s, i + 1)) if V79 else ("ankle_%d_%s" % (s, nm)), mat, (ax + s * x0 * 1.25, an[1], an[2]), (ax + s * x1 * 1.25, an[1], an[2]), r, 20)
         cyl("heel_piston_%d" % s, "frame", (s * 0.8, 0.96, 0.5), (s * 0.84, 1.08, 0.16), 0.04, 8)
         cyl("heel_rod_%d" % s, "frame_dark", (s * 0.82, 1.02, 0.33), (s * 0.85, 1.1, 0.1), 0.025, 8)
         # Pass 27: Preston, "the rear legs should connect to the rear more". The whole hind leg moves back so the hip
@@ -1212,7 +1223,7 @@ BONE_OF = {"upper_frame": "upper_arm", "upper_arm": "upper_arm", "shoulder_joint
            "elbow": "forearm", "fore_frame": "forearm", "forearm": "forearm", "fore_guard": "forearm",
            "piston_sleeve": "forearm", "piston_rod": "forearm", "wrist_cuff": "forearm",
            "fist": "hand", "finger": "hand", "handplate": "hand", "fore_piston": "forearm", "fore_rod": "forearm",
-           "toecap": "foot", "ankle": "foot", "heel_piston": "shin", "heel_rod": "shin", "knucklecap": "hand", "handglow": "hand", "forelight": "forearm", "upperslit": "upper_arm", "upper_armor": "upper_arm", "fore_armor": "forearm", "thigh_armor": "thigh", "shin_armor": "shin", "upper_plate": "upper_arm", "fore_plate": "forearm", "thigh_plate": "thigh", "thigh_frame": "thigh", "hip_piston": "thigh", "calf_plate": "shin", "shin_core": "shin", "wrist": "forearm", "arm_slot": "upper_arm", "finger_joint": "hand", "thumb": "hand", "knuckle_guard": "hand",
+           "toecap": "foot", "ankle": "foot", "ankle_wheel": "shin", "heel_piston": "shin", "heel_rod": "shin", "knucklecap": "hand", "handglow": "hand", "forelight": "forearm", "upperslit": "upper_arm", "upper_armor": "upper_arm", "fore_armor": "forearm", "thigh_armor": "thigh", "shin_armor": "shin", "upper_plate": "upper_arm", "fore_plate": "forearm", "thigh_plate": "thigh", "thigh_frame": "thigh", "hip_piston": "thigh", "calf_plate": "shin", "shin_core": "shin", "wrist": "forearm", "arm_slot": "upper_arm", "finger_joint": "hand", "thumb": "hand", "knuckle_guard": "hand",
            "hip_joint": "thigh", "thigh": "thigh", "knee": "shin", "shin_frame": "shin", "shin_plate": "shin",
            "upper_tank": "upper_arm", "upper_tankcap": "upper_arm", "knuckle_spike": "hand", "fist_line": "forearm",
            "foot": "foot", "toe": "foot", "heel": "foot", "shin": "shin"}
@@ -1224,7 +1235,7 @@ def bone_for(name):
     """Which bone a part rides on. Machines are rigid: every part follows exactly one bone, weight 1."""
     if name.startswith(HEAD_PARTS):
         return "head"
-    m = re.match(r"^(.*?)_(-1|1)(_\d+)?$", name.replace("_hub", "").replace("_ring", "").replace("_glow", "").replace("_housing", "").replace("_lamp", ""))
+    m = re.match(r"^(.*?)_(-1|1)(_\d+)?$", name.replace("_hub", "").replace("_ring", "").replace("_glow", "").replace("_housing", "").replace("_lamp", "").replace("_seam", "" if V79 else "_seam"))
     if m and m.group(1) in BONE_OF:
         return "%s.%s" % (BONE_OF[m.group(1)], "L" if m.group(2) == "1" else "R")
     return "body"

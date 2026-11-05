@@ -89,6 +89,8 @@ const ICONS := {
 	"ring": ["..#####..", ".#.....#.", "#..###..#", "#.#...#.#", "#.#.#.#.#", "#.#...#.#", "#..###..#", ".#.....#.", "..#####.."],
 }
 const DIAMOND := ["..#..", ".###.", "#####", ".###.", "..#.."]
+const PIT_RING := [".###.", "#...#", "#...#", "#...#", ".###."] ## a side pit, open to take
+const PIT_SHUT := [".###.", "#####", "#####", "#####", ".###."] ## a side pit, locked for its owners
 const WARN := ["...#...", "..###..", "..#.#..", ".##.##.", ".#####.", "##.#.##", "#######"]
 
 var director: MatchDirector
@@ -112,6 +114,7 @@ var _hooked := {}
 var _cd_was := {}
 var _flash := {}
 var _map_rect := Rect2()
+var _pits: Array = [] ## the arena's ArenaPit nodes, found once they exist
 
 
 func _ready() -> void:
@@ -185,6 +188,7 @@ func _process(delta: float) -> void:
 	_canvas.size = view
 	_over.size = view
 	_watch_machines(delta)
+	_hook_pits()
 	_bars.queue_redraw()
 	_canvas.queue_redraw()
 	_over.queue_redraw()
@@ -443,6 +447,36 @@ func _top(vs: Vector2) -> void:
 		_text(_canvas, Vector2(cx - floorf(_tw(label_s) / 2.0), 22), label_s, col, 2)
 		_canvas.draw_rect(Rect2(cx - 30, 28, 60, 4), EDGE)
 		_pbar(Rect2(cx - 29, 29, 58, 2), near.hp / near.max_hp, col)
+	for p in _pits: # either side of the wave timer: your half's pit on the left, theirs on the right
+		_pit_marker(Vector2(cx - 31 if p.home_team == own else cx + 26, 14), p)
+
+
+## A side pit in the top stack: a ring in the owner's colour (gold while nobody holds it), filled while it is
+## locked, blinking the taker's colour with a fill line under it while a team is taking it.
+func _pit_marker(at: Vector2, p: ArenaPit) -> void:
+	var col: Color = GOLD.darkened(0.3) if p.owner_team == "" else _rel(p.owner_team)
+	var taking: bool = p.capturing != "" and p.progress > 0.0
+	if taking and fmod(director.elapsed, 0.5) < 0.25:
+		col = _rel(p.capturing)
+	_glyph(at, PIT_SHUT if p.locked_left > 0.0 else PIT_RING, col)
+	if taking:
+		_canvas.draw_rect(Rect2(at.x, at.y + 6, 5, 1), EDGE)
+		_canvas.draw_rect(Rect2(at.x, at.y + 6, floorf(5.0 * p.progress), 1), _rel(p.capturing))
+
+
+func _hook_pits() -> void:
+	if not _pits.is_empty():
+		return
+	for p in get_tree().get_nodes_in_group("arena_pits"):
+		_pits.append(p)
+		p.pit_taken.connect(_on_pit_taken.bind(p))
+
+
+func _on_pit_taken(team: String, p: ArenaPit) -> void:
+	var what := "back its pit" if p.home_team == team else "the %s pit" % p.home_team
+	_feed.push_front({"text": "%s took %s" % [team.capitalize(), what], "colour": MatchTeams.COLOURS.get(team, WHITE), "t": 0.0})
+	if _feed.size() > 5:
+		_feed.pop_back()
 
 
 func _near_structure() -> MatchStructure:

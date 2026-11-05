@@ -216,13 +216,14 @@ The parent session relayed Preston's ask: "sel-out moba map. Hook it up so it fe
 - The minimap has a palette per theme.
 
 ## Open choices for Preston
+What SMITE Joust, Vainglory and Twisted Treeline do with choices 2 to 6, with a recommendation for each: `moba-map-skillup-2026-11-05.md` (2026-11-05).
 1. **Settled 2026-11-05: 3 v 3 on this one-lane map, as a side mode** (Preston, via the hub: "For this particular map
    3v3 you are right"). **The main mode will be 5 v 5 on a new map** (Preston, same day, via the hub). That map is
    future work: don't start it until he says so. When he does, give him the lane count, a cost and a first slice.
 2. One tower per team (as approved) or two.
 3. No stealth bushes, so camouflage stays the chameleon's alone? Bushes would hand every machine a weaker
    version of it.
-4. What sits in the side pits.
+4. **Settled 2026-11-05: a point you take and hold** (Preston: "Side pit capture"). Built: see `moba-map-skillup-2026-11-05.md`, "Built 2026-11-05".
 5. Later: something to hold on the plaza.
 6. The stream: looks only, or does it slow machines?
 7. The look: picked, foundry (2026-11-04).

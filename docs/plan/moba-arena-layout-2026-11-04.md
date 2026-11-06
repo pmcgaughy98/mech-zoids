@@ -224,7 +224,7 @@ What SMITE Joust, Vainglory and Twisted Treeline do with choices 2 to 6, with a 
 3. No stealth bushes, so camouflage stays the chameleon's alone? Bushes would hand every machine a weaker
    version of it.
 4. **Settled 2026-11-05: a point you take and hold** (Preston: "Side pit capture"). Built: see `moba-map-skillup-2026-11-05.md`, "Built 2026-11-05".
-5. Later: something to hold on the plaza.
+5. **Built 2026-11-05: the plaza beacon** (after the pits, on Preston's "continue"): see `moba-map-skillup-2026-11-05.md`, "Built 2026-11-05: the plaza beacon".
 6. The stream: looks only, or does it slow machines?
 7. The look: picked, foundry (2026-11-04).
 8. The art pass's numbers: edge cliffs 3.5 m (were 6), and towers and cores topping out at 4.3 m (were 7 and 5).

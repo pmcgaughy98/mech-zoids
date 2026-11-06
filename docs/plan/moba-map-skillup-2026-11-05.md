@@ -164,7 +164,44 @@ These are the open choices from the layout doc, numbered as they are there.
   below, just after the take.
 - **Not done:**
   - Numbers not tuned in play. Game feel's note: 9 s alone is long unless someone contests it.
-  - The plaza beacon (choice 5) isn't picked.
+  - The plaza beacon (choice 5) is built next, below.
+
+## Built 2026-11-05: the plaza beacon (Preston: "continue", after picking the pits first)
+- **Map lane:**
+  - `scenes/moba3d/arena_beacon.gd`, class ArenaBeacon, extends ArenaPit. arena_blockout.gd builds it at
+    runtime as Built/PlazaBeacon, at the plaza centre, counting machines within 4.5 m.
+    - It comes up at 4:00 of match time, and 5:00 after each take: Joust's Demon King timings.
+    - Taking it works like a pit (9 s, 6 s, 4.5 s; pauses when contested). Nobody keeps it: a take sends it
+      down.
+    - It reads the clock from the director (group "match_director") and keeps its own without one.
+    - Signals: `beacon_up()` and `beacon_taken(team)`.
+  - Looks:
+    - a 3.8 m light beam with a pulsing light, under the camera's 4.45 m frame top;
+    - the capture ring, gold until a team takes the beacon;
+    - on a take, the beam bursts in the taker's colour and goes out, and the camera shakes within 22 m.
+  - `arena_blockout.set_structure_off(structure, off)`: the tower's head stops turning, its team light drops
+    to 15%, and its range ring hides.
+  - HUD:
+    - Under the wave timer, a "BEACON 0:30" countdown for its last 30 s, then "BEACON UP" with a blinking
+      mark and a fill line in the taker's colour. The near-structure bar moves down a row while that shows.
+    - A switched-off tower: its icon in the score plate blinks dark, "OFF 24" sits over it, and the
+      near-structure label reads "red tower off 24".
+    - Feed: "The beacon is up", "Blue took the beacon".
+  - Minimap: a gold plus while it's up, blinking in the taker's colour.
+  - `ArenaPit` now takes its ring size from its counting radius, and its group from `group`. The pits are
+    unchanged.
+- **Game feel lane:**
+  - The director joins "match_director" and connects to the beacon.
+  - A take switches the other team's tower off for `MatchRules.beacon_tower_off` through
+    `MatchStructure.off_left`: no targeting, no shots, no beam.
+  - If that tower is already down, nothing happens, because cores don't shoot.
+- **Checks:** `tools/map/beacon_check.gd` (headless).
+  - On the bench: timings, nothing taken before 4:00, the take, the 5:00 return, the two-machine time, and
+    set_structure_off on and off.
+  - Live in arena_play: it comes up, the player takes it, and the feed lines show.
+- **Picture:** `moba-beacon-2026-11-05.png`, from `tools/map/beacon_shot.gd`.
+- **Not done:** sounds for beacon_up and beacon_taken (the sound lane's). Numbers not tuned in play. Whether a
+  bot match even reaches 4:00 hasn't been measured.
 
 ## 5. Not checked
 - SMITE 2's Joust may differ from the SMITE 1 wiki page.

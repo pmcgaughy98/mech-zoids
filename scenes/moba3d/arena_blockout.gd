@@ -76,6 +76,9 @@ const BLUE_PAVING := Color(0.84, 0.91, 1.0) ## each base's paving leans to its t
 const RED_PAVING := Color(1.0, 0.86, 0.81)
 const CAMP_COLOR := Color(1.0, 0.86, 0.35) ## camp rings
 const PIT_COLOR := Color(1.0, 0.6, 0.22) ## side pit rings and the stripe on the rim
+const BEACON_R := 4.5 ## the plaza beacon counts machines inside this (arena_beacon.gd)
+const BEACON_COLOR := Color(1.0, 0.86, 0.45)
+const BEACON_SCRIPT := preload("res://scenes/moba3d/arena_beacon.gd")
 const STONE := Color(1.0, 0.96, 0.9) ## a warm lean on the grey cliff tile for walls and rims
 
 ## Light and mood. Applied to the scene's Sun and WorldEnvironment by build().
@@ -189,7 +192,7 @@ func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
 	for s in _structures.values():
-		if is_instance_valid(s.gem):
+		if is_instance_valid(s.gem) and not s.get("off", false):
 			s.gem.rotate_y(delta * HEAD_TURN)
 
 
@@ -310,6 +313,20 @@ func structure_list() -> Array:
 
 
 ## 0 to 1: turns that tower's range ring to the alert red while it aims at the player.
+## A structure the plaza beacon has switched off (game feel's MatchStructure decides when): its head stops
+## turning, its team light drops to 15% and its range ring hides. Looks only. A fallen structure stays fallen.
+func set_structure_off(structure: String, off: bool) -> void:
+	var s: Dictionary = _structures.get(structure, {})
+	if s.is_empty() or s.down:
+		return
+	s["off"] = off
+	if not s.has("light_energy"):
+		s["light_energy"] = s.light.light_energy
+	s.light.light_energy = s.light_energy * (0.15 if off else 1.0)
+	if s.ring:
+		s.ring.visible = not off
+
+
 func set_tower_alert(structure: String, amount: float) -> void:
 	var s: Dictionary = _structures.get(structure, {})
 	if not s.is_empty() and s.ring:
@@ -517,6 +534,12 @@ func _features() -> void:
 			_ring_decal(c * t, CAMP_R, th.get("camp", CAMP_COLOR), 0.2, 16.0, 0.05)
 			_feature(team + " camp", "camp", team, c * t, CAMP_R, col)
 	_feature("plaza", "plaza", "", Vector2.ZERO, PLAZA_R, Color.WHITE)
+	if not Engine.is_editor_hint(): # the plaza beacon (map skill-up choice 5, 2026-11-05): arena_beacon.gd
+		var beacon = BEACON_SCRIPT.new()
+		beacon.name = "PlazaBeacon"
+		var bcols := {"blue": BLUE.lerp(Color.WHITE, 0.25), "red": RED.lerp(Color.WHITE, 0.15), "": BEACON_COLOR}
+		beacon.setup("", BEACON_R, bcols, null, TEXELS_PER_M)
+		_root.add_child(beacon)
 
 
 ## A tower or core: a pillar with a team stripe, a turning head on top, a team light, and for a tower its range

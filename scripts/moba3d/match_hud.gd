@@ -91,6 +91,8 @@ const ICONS := {
 const DIAMOND := ["..#..", ".###.", "#####", ".###.", "..#.."]
 const PIT_RING := [".###.", "#...#", "#...#", "#...#", ".###."] ## a side pit, open to take
 const PIT_SHUT := [".###.", "#####", "#####", "#####", ".###."] ## a side pit, locked for its owners
+const BEACON_GLYPH := ["..#..", ".###.", "##.##", ".###.", "..#.."] ## the plaza beacon
+const BEACON_WARN := 30.0 ## its countdown shows this many seconds before it comes up
 const WARN := ["...#...", "..###..", "..#.#..", ".##.##.", ".#####.", "##.#.##", "#######"]
 
 var director: MatchDirector
@@ -115,6 +117,7 @@ var _cd_was := {}
 var _flash := {}
 var _map_rect := Rect2()
 var _pits: Array = [] ## the arena's ArenaPit nodes, found once they exist
+var _beacon = null ## the plaza ArenaBeacon once it exists (untyped: found by group)
 
 
 func _ready() -> void:
@@ -434,19 +437,25 @@ func _top(vs: Vector2) -> void:
 		var tw_s: MatchStructure = director.structures.get(team.capitalize() + "Tower")
 		var co_s: MatchStructure = director.structures.get(team.capitalize() + "Core")
 		var col := _rel(team)
-		_canvas.draw_rect(Rect2(x0, 5, 3, 4), col if tw_s != null and tw_s.alive else DOWN)
+		var tcol := col if tw_s != null and tw_s.alive else DOWN
+		if tw_s != null and tw_s.alive and _off(tw_s) > 0.0: # switched off by the beacon: blinks dark
+			tcol = col.darkened(0.6) if fmod(director.elapsed, 0.6) < 0.3 else DOWN
+		_canvas.draw_rect(Rect2(x0, 5, 3, 4), tcol)
 		_glyph(Vector2(x0 + 4, 4), DIAMOND, col if co_s != null and co_s.alive else DOWN)
 	var wave := "WAVE " + _mmss(ceilf(maxf(director.next_wave - director.elapsed, 0.0)))
 	_text(_canvas, Vector2(cx - floorf(_tw(wave) / 2.0), 14), wave, DIM, 2)
+	var by := 29.0 if _beacon_row(cx) else 22.0
 	var near := _near_structure()
 	if near != null:
 		var label_s := "%s %s" % [near.team, near.kind]
+		if _off(near) > 0.0:
+			label_s += " off %d" % ceili(_off(near))
 		var col := _rel(near.team)
 		if near.kind == "core" and not near.can_be_hit():
 			col = col.darkened(0.45)
-		_text(_canvas, Vector2(cx - floorf(_tw(label_s) / 2.0), 22), label_s, col, 2)
-		_canvas.draw_rect(Rect2(cx - 30, 28, 60, 4), EDGE)
-		_pbar(Rect2(cx - 29, 29, 58, 2), near.hp / near.max_hp, col)
+		_text(_canvas, Vector2(cx - floorf(_tw(label_s) / 2.0), by), label_s, col, 2)
+		_canvas.draw_rect(Rect2(cx - 30, by + 6, 60, 4), EDGE)
+		_pbar(Rect2(cx - 29, by + 7, 58, 2), near.hp / near.max_hp, col)
 	for p in _pits: # either side of the wave timer: your half's pit on the left, theirs on the right
 		_pit_marker(Vector2(cx - 31 if p.home_team == own else cx + 26, 14), p)
 
@@ -465,11 +474,63 @@ func _pit_marker(at: Vector2, p: ArenaPit) -> void:
 
 
 func _hook_pits() -> void:
-	if not _pits.is_empty():
-		return
-	for p in get_tree().get_nodes_in_group("arena_pits"):
-		_pits.append(p)
-		p.pit_taken.connect(_on_pit_taken.bind(p))
+	if _pits.is_empty():
+		for p in get_tree().get_nodes_in_group("arena_pits"):
+			_pits.append(p)
+			p.pit_taken.connect(_on_pit_taken.bind(p))
+	if _beacon == null:
+		_beacon = get_tree().get_first_node_in_group("arena_beacons")
+		if _beacon != null:
+			_beacon.beacon_up.connect(_on_beacon_up)
+			_beacon.beacon_taken.connect(_on_beacon_taken)
+
+
+func _on_beacon_up() -> void:
+	_push_feed("The beacon is up", GOLD)
+
+
+func _on_beacon_taken(team: String) -> void:
+	_push_feed("%s took the beacon" % team.capitalize(), MatchTeams.COLOURS.get(team, WHITE))
+
+
+## The plaza beacon's row under the wave timer: its countdown in the last 30 s before it comes up, then
+## "BEACON UP" with a blinking mark (and a fill line in the taker's colour while a team takes it). Hidden
+## otherwise. True when it drew, so the near-structure bar moves down a row.
+func _beacon_row(cx: float) -> bool:
+	if _beacon == null or not is_instance_valid(_beacon):
+		return false
+	var s := ""
+	var col: Color = GOLD
+	var taking: bool = _beacon.active and _beacon.capturing != "" and _beacon.progress > 0.0
+	if _beacon.active:
+		s = "BEACON UP"
+		if taking:
+			col = _rel(_beacon.capturing)
+	elif _beacon.up_in() <= BEACON_WARN:
+		s = "BEACON " + _mmss(ceilf(_beacon.up_in()))
+	else:
+		return false
+	var wide := _tw(s) + 7
+	var x := cx - floorf(wide / 2.0)
+	var blink: bool = _beacon.active and fmod(director.elapsed, 0.6) < 0.3
+	_glyph(Vector2(x, 21), BEACON_GLYPH, col.lightened(0.4) if blink else col)
+	_text(_canvas, Vector2(x + 7, 21), s, col, 2)
+	if taking:
+		_canvas.draw_rect(Rect2(x, 27, wide, 1), EDGE)
+		_canvas.draw_rect(Rect2(x, 27, floorf(wide * _beacon.progress), 1), col)
+	return true
+
+
+## Seconds a structure stays switched off by the beacon (game feel's MatchStructure.off_left; 0 without it).
+func _off(s) -> float:
+	var v = s.get("off_left") if s != null else null
+	return float(v) if v != null else 0.0
+
+
+func _push_feed(text: String, colour: Color) -> void:
+	_feed.push_front({"text": text, "colour": colour, "t": 0.0})
+	if _feed.size() > 5:
+		_feed.pop_back()
 
 
 func _on_pit_taken(team: String, p: ArenaPit) -> void:
@@ -572,7 +633,7 @@ func _player_bar(vs: Vector2) -> void:
 		var slot := str(i + 1)
 		_slot(Vector2(hx + i * 16.0, sy), 13, slot, ICON_OF.get(names[i], ""), float(p.cooldowns.get(slot, 0.0)),
 				MatchRules.cooldown(kind, slot), float(_flash.get(slot, 0.0)))
-	_slot(Vector2(hx + 66, sy + 2), 11, "SP", "", p.attack_cd, MatchRules.basic_cooldown, 0.0, true)
+	_slot(Vector2(hx + 66, sy + 2), 11, "SP", "", p.attack_cd, director.basic_cooldown_of(p), 0.0, true) # each kit's own basic (game feel, 2026-11-05)
 	_slot(Vector2(hx + 80, sy + 2), 11, "B", "", 0.0, 0.0, 0.0, true)
 	var rec := float(director.recalls.get(p, -1.0))
 	if rec >= 0.0:
@@ -737,5 +798,7 @@ func _world_bar(cam: Camera3D, u: Node3D, vs: Vector2) -> void:
 	if k == "core" and not u.can_be_hit():
 		col = col.darkened(0.55)
 	_bar(Rect2(sp.x - w / 2.0, sp.y, w, t), u.hp / u.max_hp, col)
+	if _off(u) > 0.0: # switched off by the plaza beacon
+		_label(Vector2(sp.x - w / 2.0, sp.y - 4.0), "OFF %d" % ceili(_off(u)), 14, Color(1, 1, 1, 0.9))
 	if k == "machine" and u != director.player:
 		_label(Vector2(sp.x - w / 2.0, sp.y - 3.0), MatchTeams.machine_kind(u), 11, col.lightened(0.25))

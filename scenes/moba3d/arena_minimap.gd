@@ -121,6 +121,17 @@ func _draw() -> void:
 		if p.capturing != "" and p.progress > 0.0 and fmod(Time.get_ticks_msec() / 1000.0, 0.5) < 0.25:
 			rim = TEAM.get(p.capturing, rim)
 		_dot(o + _to_map(Vector2(p.global_position.x, p.global_position.z)), 1, rim if p.locked_left > 0.0 else FRAME, rim)
+	for b in get_tree().get_nodes_in_group("arena_beacons"): # the plaza beacon, a plus while it is up
+		if not b.active:
+			continue
+		var bc: Color = TEAM[""]
+		if b.capturing != "" and b.progress > 0.0 and fmod(Time.get_ticks_msec() / 1000.0, 0.5) < 0.25:
+			bc = TEAM.get(b.capturing, bc)
+		var bp := (o + _to_map(Vector2(b.global_position.x, b.global_position.z))).floor()
+		draw_rect(Rect2(bp - Vector2(3, 1), Vector2(7, 3)), FRAME)
+		draw_rect(Rect2(bp - Vector2(1, 3), Vector2(3, 7)), FRAME)
+		draw_rect(Rect2(bp - Vector2(2, 0), Vector2(5, 1)), bc)
+		draw_rect(Rect2(bp - Vector2(0, 2), Vector2(1, 5)), bc)
 	var viewer := _viewer_team()
 	for s in arena.structure_list():
 		var c: Color = DOWN if s.down else TEAM[s.team]

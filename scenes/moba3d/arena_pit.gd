@@ -26,12 +26,13 @@ const LOCK_TIME := 90.0
 const DECAY_DELAY := 3.0
 const DECAY_RATE := 0.1 ## share of the fill lost per second once nobody is inside
 const SIGHT := 10.0 ## metres the pit shows its owners while locked
-const RING_OUT := 4.9 ## the ring's outer radius; inside the rim's painted dashes at 5.3 m
+const RING_INSET := 0.6 ## the ring's outer edge sits this far inside `radius` (4.9 m in a pit, inside the rim's dashes at 5.3)
 const RING_WIDTH := 0.7
 const FLASH_TIME := 0.6
 const SHAKE := 0.35 ## KitFeel's stomp
 const SHAKE_NEAR := 22.0 ## the camera feels a take within this many metres
 
+var group := "arena_pits" ## ArenaBeacon sets its own, so held() and the pit markers never count it
 var home_team := "" ## whose half the pit sits in
 var radius := 5.5 ## machines count inside this
 var owner_team := "" ## "" until someone takes it
@@ -69,17 +70,17 @@ func setup(home: String, inside: float, team_colours: Dictionary, light: OmniLig
 
 
 func _ready() -> void:
-	add_to_group("arena_pits")
+	add_to_group(group)
 	if glow:
 		_glow_colour = glow.light_color
 		_glow_energy = glow.light_energy
 	_mat = ShaderMaterial.new()
 	_mat.shader = preload("res://shaders/world/capture_ring.gdshader")
-	_mat.set_shader_parameter("radius", RING_OUT)
+	_mat.set_shader_parameter("radius", radius - RING_INSET)
 	_mat.set_shader_parameter("width", RING_WIDTH)
 	_mat.set_shader_parameter("texels_per_metre", texels_per_metre)
 	var plane := PlaneMesh.new()
-	plane.size = Vector2.ONE * (RING_OUT * 2.0 + 0.2)
+	plane.size = Vector2.ONE * ((radius - RING_INSET) * 2.0 + 0.2)
 	plane.material = _mat
 	var mi := MeshInstance3D.new()
 	mi.name = "Ring"

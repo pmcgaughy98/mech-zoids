@@ -16,12 +16,12 @@ extends CanvasLayer
 
 const SLOT_NAMES := {
 	"rhino": ["horn toss", "ground pound", "brace", "stampede"],
-	"gorilla": ["hex shield", "chest beat", "bound", "hex dome"],
+	"gorilla": ["hex shield", "none", "bound", "chest beat"], # 2026-11-09: the chest beat is the ult on 4; 2 waits on Preston
 	"fennec": ["sand kick", "blink gate", "tunnel", "sonic boom"],
 }
 const ICON_OF := {
 	"horn toss": "horn", "ground pound": "pound", "brace": "shield", "stampede": "dash",
-	"hex shield": "shield", "chest beat": "pound", "bound": "dash", "hex dome": "dome",
+	"hex shield": "shield", "chest beat": "dome", "bound": "dash", # the ult ends in the hex dome, so it keeps the dome's icon
 	"sand kick": "horn", "blink gate": "ring", "tunnel": "pound", "sonic boom": "ring",
 }
 const GREEN := Color(0.42, 1.0, 0.45)
@@ -373,8 +373,17 @@ func _diamond(at: Vector2, share: float) -> void:
 		_px(at.x + 2, at.y + 1, WHITE)
 
 
-func _slot(at: Vector2, n: int, key: String, icon: String, left: float, total: float, flash: float, small := false) -> void:
+func _slot(at: Vector2, n: int, key: String, icon: String, left: float, total: float, flash: float, small := false,
+		empty := false) -> void:
 	_canvas.draw_rect(Rect2(at - Vector2.ONE, Vector2(n + 2, n + 2)), EDGE)
+	if empty: # a kit's slot named "none": nothing on this key yet. Sunk, hatched, the key dimmed; no sweep or flash
+		_canvas.draw_rect(Rect2(at, Vector2(n, n)), PLATE_LO)
+		for k in range(2, n * 2, 4):
+			for t in range(1, n - 1):
+				if k - t >= 1 and k - t < n - 1:
+					_canvas.draw_rect(Rect2(at.x + k - t, at.y + t, 1, 1), PLATE)
+		_text(_canvas, at + Vector2(1, 1), key, DOWN, 1)
+		return
 	_canvas.draw_rect(Rect2(at, Vector2(n, n)), SLOT_BG)
 	_canvas.draw_rect(Rect2(at, Vector2(n, 1)), PLATE_HI)
 	if icon != "":
@@ -632,7 +641,7 @@ func _player_bar(vs: Vector2) -> void:
 	for i in 4:
 		var slot := str(i + 1)
 		_slot(Vector2(hx + i * 16.0, sy), 13, slot, ICON_OF.get(names[i], ""), float(p.cooldowns.get(slot, 0.0)),
-				MatchRules.cooldown(kind, slot), float(_flash.get(slot, 0.0)))
+				MatchRules.cooldown(kind, slot), float(_flash.get(slot, 0.0)), false, names[i] == "none")
 	_slot(Vector2(hx + 66, sy + 2), 11, "SP", "", p.attack_cd, director.basic_cooldown_of(p), 0.0, true) # each kit's own basic (game feel, 2026-11-05)
 	_slot(Vector2(hx + 80, sy + 2), 11, "B", "", 0.0, 0.0, 0.0, true)
 	var rec := float(director.recalls.get(p, -1.0))

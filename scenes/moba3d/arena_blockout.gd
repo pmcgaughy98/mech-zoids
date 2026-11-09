@@ -166,6 +166,8 @@ const HEAD_TURN := 0.8
 @export var dressing := true ## trees, bushes, tufts, flowers and banners (structures, rings and lights stay)
 @export var minimap := true ## the minimap, bottom right, while the game runs (Built/Minimap/Map)
 @export var fog_of_war := true ## dim what the player's team can't see; the vision grid (can_see) runs either way
+@export var border_kit := true ## foundry's border pass (2026-11-06): plinths, wall tops, panels, the backdrop past the edge
+@export var floor_zones := true ## foundry's floor zones (2026-11-06): the plaza stage and the spawn emblems (the slag jungle is its tile)
 
 ## Filled by build(); the check reads these.
 var vision: Node = null ## Built/Vision while the game runs (scenes/moba3d/arena_vision.gd): can_see(team, pos)
@@ -235,6 +237,8 @@ func build() -> void:
 		_dress_world()
 	if th.has("detail"): # 2026-11-04 quality pass: posts and lamps, floor marks, baked contact shade and lamp light
 		_wall_posts()
+		if border_kit:
+			_wall_kit() # 2026-11-06 border pass: plinths, wall tops, panels, the backdrop past the edge
 		_decals()
 		_floor_map()
 	vision = null
@@ -394,6 +398,7 @@ func _ground() -> void:
 	for i in 4:
 		m.set_shader_parameter(["water_deep", "water_mid", "water_light", "water_foam"][i], th.water[i])
 	m.set_shader_parameter("water_glow", th.water_glow)
+	m.set_shader_parameter("stage", th.has("detail") and floor_zones) # 2026-11-06 floor zones: the plaza stage and the spawn emblems
 	m.set_shader_parameter("texels_per_metre", TEXELS_PER_M)
 	m.set_shader_parameter("tile_px", TILE_PX)
 	var pts := PackedVector2Array(LANE)
@@ -943,7 +948,7 @@ func _dress_world() -> void:
 	var pines: Array = []
 	var out_x := HALF_X + WALL_THICK
 	var out_z := HALF_Z + WALL_THICK
-	for row in [1.7, 3.9, 6.3]:
+	for row in ([3.9, 6.3] if th.has("detail") and border_kit else [1.7, 3.9, 6.3]): # foundry's backdrop (_wall_kit) takes the nearest row
 		for side in 4:
 			var along_x := side < 2
 			var reach: float = (out_x if along_x else out_z) + 7.0
@@ -1057,6 +1062,130 @@ func _wall_posts() -> void:
 	lamp.size = Vector3(0.3, 0.16, 0.12)
 	lamp.material = _fade("lamp")
 	_multi(lamp, lamps, false).name = "WallLamps"
+
+
+## Border pass (2026-11-06; Preston: "quality and looking a legit moba map"). Finished MOBA maps build their borders
+## in layers: a base where they meet the floor, a face with its own rhythm, a broken line on top, and a world past
+## the edge. Every wall here was one corrugated box with a straight top. This adds, foundry only and with no bodies
+## (play, the nav mesh and the fog of war are as before):
+## - a plinth along every wall over 2 m, 0.15 m proud of each face;
+## - an armour panel set into some pieces' faces, 0.06 m proud (not on the base walls, which carry the team band);
+## - on some pieces' tops a pipe pair with flanges, a squat tank, or a vent housing with a glowing grille, all under
+##   3.9 m, so the chase camera (4.45 m) still looks over them;
+## - past the map's edge walls, where nothing walks: tanks, chimneys with a lit band, and blocks with a lamp strip,
+##   in front of the skyline sprites (whose nearest row these replace).
+## Which piece gets what is a hash of its position with the signs dropped, so red's half matches blue's turned round.
+func _wall_kit() -> void:
+	var box := BoxMesh.new()
+	var cyl := CylinderMesh.new()
+	cyl.top_radius = 0.5
+	cyl.bottom_radius = 0.5
+	cyl.height = 1.0
+	cyl.radial_segments = 12
+	cyl.rings = 1
+	var steel_dark := _fade("armor", Color(0.46, 0.48, 0.56))
+	var steel := _fade("armor", Color(0.66, 0.68, 0.78))
+	var steel_light := _fade("armor", Color(0.8, 0.82, 0.9))
+	var pipe_amber := _fade("armor", Color(0.98, 0.72, 0.3))
+	var chimney := _fade("armor", Color(0.62, 0.6, 0.66), false, Color(1.0, 0.62, 0.22), 6.2, 6.45, 1.6)
+	var lamp := _fade("lamp")
+	var parts := {} # one MultiMesh per shape and material
+	var add := func(shape: String, mat: Material, xf: Transform3D) -> void:
+		var key := "%s%d" % [shape, mat.get_instance_id()]
+		if not parts.has(key):
+			parts[key] = {"shape": shape, "mat": mat, "xf": []}
+		parts[key].xf.append(xf)
+	var lying := Basis(Vector3(0, 0, 1), -PI / 2) # a cylinder's axis turned from up to along the wall
+
+	for w in walls:
+		var h: float = w.h
+		if h < 2.0:
+			continue # the pit rims stay low and bare
+		var c: Vector2 = w.c
+		var u: Vector2 = w.u
+		var n := Vector2(-u.y, u.x)
+		var hl: float = w.half_len
+		var ht: float = w.half_thick
+		var b := Basis(Vector3.UP, atan2(-u.y, u.x)) # x along the wall, z across it
+		add.call("box", steel_dark, Transform3D(b * Basis.from_scale(Vector3(hl * 2.0 + 0.02, 0.42, ht * 2.0 + 0.3)), Vector3(c.x, 0.21, c.y)))
+		if hl > 3.0:
+			continue # the long edge walls: the plinth only; the backdrop stands past them
+		var on_base := false
+		for t in [1.0, -1.0]:
+			if absf(c.distance_to(BASE_CENTRE * t) - BASE_R) < 0.8:
+				on_base = true
+		if not on_base and _kit_hash(c, 1.0) < 0.4:
+			add.call("box", steel, Transform3D(b * Basis.from_scale(Vector3(hl * 2.0 - 0.5, 1.5, ht * 2.0 + 0.12)), Vector3(c.x, 1.3, c.y)))
+		var k := _kit_hash(c, 2.0)
+		if k < 0.3: # a pipe pair along the top, flanged at the piece's ends so the joints read as joints
+			for pp in [[0.17, -0.24, pipe_amber], [0.12, 0.24, steel_light]]:
+				var r: float = pp[0]
+				var o: Vector2 = c + n * float(pp[1])
+				add.call("cyl", pp[2], Transform3D(b * lying * Basis.from_scale(Vector3(r * 2.0, hl * 2.0 + 0.02, r * 2.0)), Vector3(o.x, h + r, o.y)))
+				for e in [-1.0, 1.0]:
+					var f: Vector2 = o + u * e * (hl - 0.06)
+					add.call("cyl", steel_dark, Transform3D(b * lying * Basis.from_scale(Vector3(r * 2.0 + 0.1, 0.1, r * 2.0 + 0.1)), Vector3(f.x, h + r, f.y)))
+		elif k < 0.46: # a squat tank with a rim
+			add.call("cyl", steel_light, Transform3D(Basis.from_scale(Vector3(0.84, 0.72, 0.84)), Vector3(c.x, h + 0.36, c.y)))
+			add.call("cyl", steel_dark, Transform3D(Basis.from_scale(Vector3(0.94, 0.1, 0.94)), Vector3(c.x, h + 0.74, c.y)))
+		elif k < 0.6: # a vent housing; its grille glows out of both faces
+			add.call("box", steel, Transform3D(b * Basis.from_scale(Vector3(1.2, 0.5, ht * 2.0 - 0.3)), Vector3(c.x, h + 0.25, c.y)))
+			add.call("box", lamp, Transform3D(b * Basis.from_scale(Vector3(0.9, 0.1, ht * 2.0 - 0.26)), Vector3(c.x, h + 0.33, c.y)))
+
+	var rng := RandomNumberGenerator.new()
+	rng.seed = DRESS_SEED + 11
+	for side in 4:
+		var along_x := side < 2
+		var sgn := 1.0 if side % 2 == 0 else -1.0
+		var reach := (HALF_X if along_x else HALF_Z) - 2.0
+		var out: float = (HALF_Z if along_x else HALF_X) + WALL_THICK
+		var inward := Vector2(0, -sgn) if along_x else Vector2(-sgn, 0)
+		var bb := Basis() if along_x else Basis(Vector3.UP, PI / 2)
+		var s := -reach + rng.randf() * 2.0
+		while s < reach:
+			var roll := rng.randf()
+			var size := 0.0
+			if roll < 0.45: # a storage tank
+				var r := rng.randf_range(1.1, 1.7)
+				var hh := rng.randf_range(4.3, 6.0)
+				var p := _edge_spot(along_x, sgn, s + r, out + r + rng.randf_range(0.3, 0.9))
+				add.call("cyl", steel, Transform3D(Basis.from_scale(Vector3(r * 2.0, hh, r * 2.0)), Vector3(p.x, hh * 0.5, p.y)))
+				add.call("cyl", steel_dark, Transform3D(Basis.from_scale(Vector3(r * 2.0 + 0.16, 0.2, r * 2.0 + 0.16)), Vector3(p.x, hh, p.y)))
+				size = r * 2.0
+			elif roll < 0.75: # a plant block with a lamp strip toward the map
+				var wd := rng.randf_range(3.0, 5.0)
+				var hh := rng.randf_range(4.0, 5.4)
+				var dp := rng.randf_range(2.2, 3.2)
+				var p := _edge_spot(along_x, sgn, s + wd * 0.5, out + dp * 0.5 + 0.3)
+				add.call("box", steel_dark, Transform3D(bb * Basis.from_scale(Vector3(wd, hh, dp)), Vector3(p.x, hh * 0.5, p.y)))
+				var lp: Vector2 = p + inward * (dp * 0.5 + 0.04)
+				add.call("box", lamp, Transform3D(bb * Basis.from_scale(Vector3(wd * 0.8, 0.14, 0.08)), Vector3(lp.x, hh - 0.5, lp.y)))
+				size = wd
+			else: # a chimney, banded and lit at the top
+				var r := rng.randf_range(0.45, 0.6)
+				var hh := rng.randf_range(7.0, 9.0)
+				var p := _edge_spot(along_x, sgn, s + r, out + r + rng.randf_range(0.4, 1.6))
+				add.call("cyl", chimney, Transform3D(Basis.from_scale(Vector3(r * 2.0, hh, r * 2.0)), Vector3(p.x, hh * 0.5, p.y)))
+				add.call("box", lamp, Transform3D(Basis.from_scale(Vector3(r * 1.3, 0.12, r * 1.3)), Vector3(p.x, hh + 0.06, p.y)))
+				size = r * 2.0
+			s += size + rng.randf_range(0.8, 2.6)
+
+	var i := 0
+	for key in parts:
+		var part: Dictionary = parts[key]
+		var mesh: PrimitiveMesh = (box if part.shape == "box" else cyl).duplicate()
+		mesh.material = part.mat
+		_multi(mesh, part.xf, true).name = "Kit%s%d" % [String(part.shape).capitalize(), i]
+		i += 1
+
+
+func _kit_hash(c: Vector2, salt: float) -> float: # 0..1 from a wall piece's spot, the same for its turned-round twin
+	var v := absf(sin(absf(c.x) * 12.9898 + absf(c.y) * 78.233 + salt * 37.719) * 43758.5453)
+	return v - floorf(v)
+
+
+func _edge_spot(along_x: bool, sgn: float, s: float, out: float) -> Vector2: # s along a map edge, out past it
+	return Vector2(s, sgn * out) if along_x else Vector2(sgn * out, s)
 
 
 func _multi(mesh: Mesh, xforms: Array, shadow: bool) -> MultiMeshInstance3D:

@@ -316,3 +316,50 @@ side pit and the props are as they were.
 Deliverables: moba-polish-before-after-2026-11-05.png (five chase-camera shots, before and after; from
 tools/map/polish_look.gd), moba-polish-clip-2026-11-05.mp4 (up red's lane to its felled tower;
 `arena_clip.gd -- <dir> tower felled`).
+
+## 11. Border pass (2026-11-06)
+
+Preston: "I was thinking more in quality and looking a legit moba map." Finished MOBA maps build their borders in
+layers: a base at the floor, a face with its own rhythm, a broken top line, and a world past the edge. Ours were one
+corrugated box per 2 m with a straight top. Added in `arena_blockout._wall_kit()`, foundry only, as MultiMeshes under
+Built/Dressing with no bodies (play, nav, sight and fog of war unchanged):
+- a plinth along every wall over 2 m, 0.15 m proud of each face;
+- an armour panel on about 40% of pieces' faces, 0.06 m proud (not on the base walls, which carry the team band);
+- on about 60% of pieces' tops: a flanged pipe pair (amber and steel), a squat tank, or a vent housing with a glowing
+  grille, all under 3.9 m;
+- past the edge walls: tanks, plant blocks with a lamp strip, and banded chimneys lit at the top. They take the
+  nearest skyline row's place.
+- Picks hash each piece's position with the signs dropped, so red's half matches blue's turned round.
+
+Also fixed: `tools/map/arena_check.gd` skips the pits' and beacon's overlays (ring and beam, no bodies by design).
+The check had failed 3 since the pit and beacon commits; it was not rerun then. Now 24/24.
+
+Picture: `moba-border-before-after-2026-11-06.png` (polish_look's six shots, before on top).
+Read honestly: the change shows (panels, pipes and vents on the right-hand walls) but it is small from the chase
+camera. The floor fills most of every frame and is still one plate tile everywhere, and the edges sit in haze. Next
+moves, biggest first: floor zones (jungle, lane, plaza and base each read apart, with curbs, a plaza emblem and
+base pads); props along the walls that give scale (with bodies, so a small change to the walkable space); and
+brighter, more colourful light.
+
+## 12. Floor zones (2026-11-06)
+
+Preston picked floor zones as the next slice. The ground shader already had zones (jungle, lane shoulder, path,
+plaza, bases, pads), but in foundry every zone but the path was steel plate in another shade, so they read as one.
+- **Jungle:** a slag yard, not plating: warm mid-tone ground with soft patches, gravel, pebbles, hairline cracks
+  and rust (`make_theme_tiles.slag`, its own seed, so every other tile is unchanged; only `foundry/jungle.png` was
+  rewritten). Lane plates are light and cool, the jungle is mid and warm, the path is black.
+  - The first try had two half-sunk plates per tile. They repeated every 2.56 m as a grid of pale squares and were
+    taken out. A darker ramp read near black at dusk and was lifted.
+- **Plaza as a stage** (ground.gdshader `stage`): a light dais under the beacon (r 4.7), a dark ring, twelve sectors
+  in two shades split by dark spokes out to r 9, and a lit amber inlay ring at r 9.
+- **Spawn pads:** a lit team ring and three chevrons pointing up the map.
+- **Switches:** `arena_blockout.border_kit` and `floor_zones` (both on) turn each 2026-11-06 slice off; zones_look's
+  `--before` uses them for the before shots.
+- **Tool:** `tools/map/zones_look.gd`, six chase-camera shots with vision as in play: a jungle camp, the jungle
+  toward the west edge, the stream, the plaza from the lane's mouth, blue's spawn pad, the side pit.
+- **Picture:** `moba-floor-zones-before-after-2026-11-06.png`. Before (both passes off, the old jungle tile) on top.
+- **Read honestly:**
+  - The plaza stage and the spawn chevrons are the clearest change.
+  - The jungle now reads as ground, not plates, but its soft patches still repeat as a spotty pattern at range.
+  - From the chase camera, the backdrop past the edge barely shows over the 3.5 m wall.
+  - Nothing is tuned in play.

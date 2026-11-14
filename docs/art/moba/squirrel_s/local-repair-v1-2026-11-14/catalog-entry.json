@@ -1,0 +1,99 @@
+{
+  "id": "squirrel",
+  "name": "Squirrel",
+  "source_model": {
+    "path": "res://art/model_catalog/sources/squirrel_front - Hunyuan 3D v3.1 Pro.glb",
+    "source": "D:\\user\\Downloads\\squirrel_front - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "302d0a4989abd318c2fdeddff365847a971cddaa313d88ab0e043a295aae7407",
+    "bytes": 50313868
+  },
+  "display_model": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/squirrel-rigged-local-repair-v1.glb",
+  "status": "Five small gaps and 58 malformed triangles repaired. Both paws, feet, ears and plated tail retained. Original 26-joint rig, all skin weights and textures preserved.",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/squirrel/front.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\squirrel_front.png",
+      "sha256": "ac475a16a8c8d9fdc4a98252a518238a7517994a109cf219dd2a38758f8fca48",
+      "bytes": 237702,
+      "project_matches": [
+        "docs/art/moba/squirrel_s/take-c-power/white_views/squirrel_front.png"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/squirrel/left.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\squirrel_left.png",
+      "sha256": "c48657ed2293ec8b8d139de4ba4366633dbd3b83c60dfb8515c3c100a5a53975",
+      "bytes": 282461,
+      "project_matches": [
+        "docs/art/moba/squirrel_s/take-c-power/white_views/squirrel_left.png"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/squirrel/back.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\squirrel_back.png",
+      "sha256": "d2c475a941c8ce8956713727c0340e26a6d920a2c2cc2307460f457c62051dd4",
+      "bytes": 230372,
+      "project_matches": [
+        "docs/art/moba/squirrel_s/take-c-power/white_views/squirrel_back.png"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/squirrel/right.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\squirrel_right.png",
+      "sha256": "8c2a5b2493b33831521c855100d28bb79df8a30ad8914fa5fc498a1e75a68e93",
+      "bytes": 289796,
+      "project_matches": [
+        "docs/art/moba/squirrel_s/take-c-power/white_views/squirrel_right.png"
+      ]
+    }
+  },
+  "artist_workspace": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/squirrel-rigged-local-repair-v1.blend",
+  "review_models": [
+    {
+      "label": "INTACT QUALITY ARCHIVE\nOriginal generated geometry",
+      "path": "res://art/model_catalog/sources/squirrel_front - Hunyuan 3D v3.1 Pro.glb",
+      "display_scale": 3.1098051872662698
+    },
+    {
+      "label": "DOWNLOADED RIG\nBefore local triangle cleanup",
+      "path": "res://art/model_catalog/sources/Meshy_AI_squirrel_remeshed_25k_20261107_character.glb",
+      "display_scale": 1.5294117647058825
+    },
+    {
+      "label": "LOCAL REPAIR\nSame 26-joint rig and skin",
+      "path": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/squirrel-rigged-local-repair-v1.glb",
+      "display_scale": 1.5294117647058825
+    }
+  ],
+  "review_views": {
+    "front": {
+      "path": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/review-front.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "left": {
+      "path": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/review-left.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "back": {
+      "path": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/review-back.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "right": {
+      "path": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/review-right.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    }
+  },
+  "review_provenance": {
+    "date": "2026-11-14",
+    "report": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/repair-verification.json",
+    "independent_audit": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/independent-export-audit.json",
+    "joint_count": 26,
+    "rigged_input_sha256": "63a164377740ac29db9f31dc4bbec2ba929c233426f0d17af3240942dd9da1f8",
+    "repaired_sha256": "0427c30992c70e6ea1e74289618a032aa3b59fc3852667ddc95c82ca16d3d1c3",
+    "intact_pre_remesh_available": true,
+    "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+    "scope": "Local topology repair. Both arms/paws and legs/feet, two ears/eyes, muzzle/teeth and one plated tail retained. Original vertex attributes, skin, 26-joint skeleton/rest/binds and textures preserved; no remesh or rerig. Three duplicate corner rows on closure 3 use one healthy neighboring UV island. All original attribute/skin rows remain exact; duplicate skin rows copy the same corners. All 22,499 healthy source faces retained. No gameplay replacement.",
+    "runtime_report": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/final-review-verification.json"
+  }
+}

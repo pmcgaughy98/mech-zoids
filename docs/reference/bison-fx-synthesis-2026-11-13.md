@@ -397,4 +397,38 @@ Recorder: `rec/caps_record.sh [--shots]` with `caps_rec.gd`.
 - It stays out of the bison fx launcher, which runs its own stand-in.
 
 **The kit's haul slag** (`bison_kit.gd`, game feel lane): the kit drops a burning patch behind the hauler every 0.6 s.
-It sets `slag_spots` before each `"slag"` cue. With s
+It sets `slag_spots` before each `"slag"` cue. With such a kit, the effect pours each molten glob onto that spot, 0.3 s
+from a rear stack, and drops none on the clip's beats. With the launcher's stub, the beats still drive the globs.
+
+**Status:** Preston's "also turn on" (2026-11-14) came relayed through the bison 3D lane. The edit that puts the
+installer node into `scenes/moba3d/arena_play.tscn` was refused by this session's permission check, because the
+go-ahead was relayed rather than typed here. That edit is two lines, an `ext_resource` and a `BisonFxInstaller` node,
+and waits on Preston's direct yes. `arena_play.tscn` is the game feel lane's file: it is asking him, and on his yes it
+adds the two lines itself.
+
+**Proved in the real match without it:** `rec/match_rec.gd` loads `arena_play.tscn`, adds the installer at runtime,
+switches to the bison and runs the kit's own `eruption()`, `chain()`, `plow()` and `freight()`. The installer hung the
+effects under the kit. Every kit cue drove them: eruption, the four bomb landings, chain fire and couple, plow and its
+hit, freight chains to three minions, and seven slag spots, each glob landing 0.30 s after its cue. The chains then
+dropped at the haul's end. Video: `D:/dev/_scratch/bison-fx/rec/bison-in-match.mp4` (also in the shared notes folder).
+
+**A chain carried into Freight, by design.** In that take, the slot-1 chain coupled at 5.80 s stayed up until the
+haul's end at 13.18 s, past its 3.0 s hold. A rerun at a fixed 60 fps logged the kit's targets on every cue. The
+chained minion was first in `freight_targets` at `freight_chains`, 2.88 s after the couple and 0.12 s before the chain's
+own break. Freight takes in any enemy already on a chain and holds every car to the haul's end (game feel lane), so
+this is the kit working as designed.
+
+**Checks:** check-only clean on `bison_fx.gd`, `bison_fx_installer.gd` and `match_rec.gd`. match_check's first run was
+63 pass, 4 fail, all on the flaky tower checks; the rerun was 67 pass, 0 fail.
+
+## What is next (ordered)
+1. Done: magma orange (Preston, 2026-11-13).
+2. Done: Coupling Chain (slot 1), in the launcher.
+3. Done: Plow (slot 3), in the launcher.
+4. Done: Freight (ult), in the launcher.
+5. Done: footfall dust (Walk, Trot, Walk_Back, both strafes) and the Hit_Heavy replant stamp, in the launcher.
+6. Done: cooldown stacks, in the launcher.
+7. Built: `bison_fx_installer.gd`, proved in the real match. Adding its node to `arena_play.tscn` waits on Preston's
+   direct yes; the game feel lane, whose file it is, adds it (see "In the match: the installer").
+8. A `steps` row with hoof names in the bison's body row (3D lane, proposed), so the body's `step` signal carries the
+   footfalls for sound too.

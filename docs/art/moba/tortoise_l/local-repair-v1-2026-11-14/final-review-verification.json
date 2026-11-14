@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "tested_sha256": "a80abeb7904044c061f4d892583227dce2d7025edfba339e971337b9d0ab5d87",
+  "triangles": 22626,
+  "joint_count": 23,
+  "native_joint_tests_with_surface_motion": 20,
+  "maximum_seam_gap_m": 0.0,
+  "godot_check": "Three native GLB versions, original/revised sheets, original 23-joint rig and actual ChaseCamera3D",
+  "screenshots": "res://reports/model_catalog/tortoise-local-v1",
+  "intact_archive_sha256": "429c9c39161ee14c391b1ece63a5b322183796e3a9a26496039e24295f4db7ea",
+  "original_reference_sha256": {
+    "front": "9fdd798fdc84838b29d0c1c9870209b63749a35aacf666fbdcfbe9f02668a68d",
+    "left": "9a97f212b318c5a7df978a38dca1878bc4033f73ee448bae34d87308e7bce124",
+    "back": "0244959965fbb1cb2c8e38b913aae4e4d5acdf3c1f510ec37e107401ebac96b4",
+    "right": "6cfd9de2fda8ced0edfbb1a24fea05989589fcf171a18f342ecf02002bc11727"
+  },
+  "boundary_edges": 0,
+  "over_shared_edges": 2,
+  "protected_contacts": "Two balanced four-face assembly contacts remain after local closure; underlying healthy source surfaces retained.",
+  "collapsed_triangles": 0,
+  "healthy_source_triangles_retained": 22624,
+  "all_original_vertex_and_skin_rows_preserved": true,
+  "duplicate_uv_corner_rows": 3,
+  "native_joint_tests_below_1mm_motion_threshold": [
+    {
+      "label": "bone-006",
+      "bone": "Bone_006",
+      "degrees": 8,
+      "max_displacement_m": 1.6839911083937283e-05,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-012",
+      "bone": "Bone_012",
+      "degrees": 8,
+      "max_displacement_m": 2.0567123625164313e-05,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-018",
+      "bone": "Bone_018",
+      "degrees": 8,
+      "max_displacement_m": 0.00010373660597843193,
+      "coincident_surface_gap_m": 0.0
+    }
+  ]
+}

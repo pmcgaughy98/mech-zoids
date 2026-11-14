@@ -411,7 +411,7 @@
     }
   },
   "rhino": {
-    "source_file": "D:\\dev\\_scratch\\rhino-donor-2026-11-08\\game-export-v60\\rhino_game_v60.glb",
+    "source_file": "D:\\dev\\_scratch\\rhino-donor-2026-11-08\\game-export-v61\\rhino_game_v61.glb",
     "body": {
       "scale": 1.0,
       "turn_rate": 12.0,
@@ -444,7 +444,8 @@
         "Death": "death",
         "brace_release": "brace_release",
         "piston_charge": "piston_charge",
-        "stampede_windup": "stampede_windup"
+        "stampede_windup": "stampede_windup",
+        "heave": "heave"
       },
       "events": {
         "horn_hook": [
@@ -581,6 +582,18 @@
           [
             "stride",
             0.2,
+            false
+          ]
+        ],
+        "heave": [
+          [
+            "thump",
+            0.4,
+            true
+          ],
+          [
+            "lift",
+            0.6,
             false
           ]
         ]
@@ -2404,7 +2417,7 @@
     }
   },
   "fennec": {
-    "source_file": "D:\\dev\\_scratch\\fennec-3d\\r1\\game-export-r1\\fennec-r1.glb",
+    "source_file": "D:\\dev\\_scratch\\fennec-3d\\r3\\game-export-r3\\fennec-r3.glb",
     "body": {
       "scale": 0.647,
       "turn_rate": 16.0,
@@ -2412,10 +2425,11 @@
       "walk": "Walk",
       "walk_speed": 1.2,
       "rest_height": 1.7,
-      "kit": "r1 (fennec 3D lane, Claude, 2026-11-14): idle and trot only, on Codex's repaired rigged fennec. The kit still times itself on the hidden sprite. Numbers are placeholders.",
+      "kit": "r3 (fennec 3D lane, Claude, 2026-11-14): idle, trot and a stronger Cast (0.85 s: rears up on the hind legs with the front paws tucked, then drives down at the release, 0.30 s, ears flared out and tail up; Preston: Make it stronger). The kit does not call Cast yet and still times itself on the hidden sprite. Numbers are placeholders.",
       "clips": {
         "Idle": "Fennec_Idle",
-        "Walk": "Fennec_Walk"
+        "Walk": "Fennec_Walk",
+        "Cast": "Fennec_Cast"
       },
       "events": {
         "Walk": [
@@ -2427,6 +2441,13 @@
           [
             "step",
             0.1833,
+            false
+          ]
+        ],
+        "Cast": [
+          [
+            "release",
+            0.3,
             false
           ]
         ]

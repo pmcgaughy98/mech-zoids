@@ -1,0 +1,168 @@
+{
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_tortoise_remeshed_25k_20261108_character.glb",
+  "source_sha256": "14a2e65b2125e47d63cf29da881978abe5905df91d2eabd5593bc251a37a34e2",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\tortoise_l\\local-repair-v1-2026-11-14\\tortoise-rigged-local-repair-v1.glb",
+  "output_sha256": "a80abeb7904044c061f4d892583227dce2d7025edfba339e971337b9d0ab5d87",
+  "before_triangles": 22677,
+  "final_triangles": 22626,
+  "joint_count": 23,
+  "removed_malformed_triangles": 53,
+  "removed_face_ids": [
+    15,
+    859,
+    860,
+    885,
+    1280,
+    1601,
+    1958,
+    2572,
+    2988,
+    3184,
+    3397,
+    3729,
+    4126,
+    4228,
+    4361,
+    4413,
+    4628,
+    4657,
+    6034,
+    6736,
+    8509,
+    8975,
+    9416,
+    10063,
+    10310,
+    10420,
+    10890,
+    11493,
+    12746,
+    13926,
+    14201,
+    14493,
+    14901,
+    15747,
+    15784,
+    15819,
+    16064,
+    16163,
+    17305,
+    17684,
+    18098,
+    18867,
+    19091,
+    20143,
+    20406,
+    20660,
+    20722,
+    20888,
+    21007,
+    21137,
+    21277,
+    21819,
+    22378
+  ],
+  "holes_closed": [
+    {
+      "triangle": [
+        23410,
+        23412,
+        22659
+      ],
+      "bounds": [
+        [
+          -1.0424212217330933,
+          0.7253739237785339,
+          -0.08131752163171768
+        ],
+        [
+          -1.0259902477264404,
+          0.7418962717056274,
+          -0.05737604945898056
+        ]
+      ],
+      "normal": [
+        -0.7830625772476196,
+        -0.2169191539287567,
+        0.5828886032104492
+      ],
+      "normal_alignment": 0.9287401437759399,
+      "uv_perimeter": 0.17614130734000355
+    },
+    {
+      "triangle": [
+        1848,
+        1958,
+        1864
+      ],
+      "bounds": [
+        [
+          0.674771249294281,
+          0.9435731172561646,
+          0.6621411442756653
+        ],
+        [
+          0.6946925520896912,
+          0.9534347057342529,
+          0.6691094636917114
+        ]
+      ],
+      "normal": [
+        0.32254689931869507,
+        -0.01716243103146553,
+        0.9463979005813599
+      ],
+      "normal_alignment": 0.6737850904464722,
+      "uv_perimeter": 0.010640704538673162
+    }
+  ],
+  "boundary_edges": 0,
+  "over_shared_edges": 2,
+  "protected_closed_contact_edges": [
+    [
+      25702,
+      25705
+    ],
+    [
+      1958,
+      2232
+    ]
+  ],
+  "contact_note": "Two gaps closed; two balanced four-face assembly contacts remain, preserving the underlying source surfaces.",
+  "collapsed_triangles": 0,
+  "healthy_main_body_source_faces_retained": 22616,
+  "all_original_vertex_attribute_rows_weights_materials_skeleton_rest_binds_preserved": true,
+  "new_geometric_vertices": 0,
+  "scope": "Local topology repair. Four legs/feet, head/eyes, shell/rim, top dome, lights and short tail retained. Original vertex attributes, skin, 23-joint skeleton/rest/binds and textures preserved; no remesh or rerig. Three duplicate corner rows on closure 1 use one healthy neighboring UV island. All original attribute/skin rows remain exact; duplicate skin rows copy the same corners.",
+  "new_attribute_rows": 3,
+  "uv_repair": {
+    "patch": 1,
+    "source_neighbor_face": 10200,
+    "method": "Three duplicate corner rows, original positions/normals/joints/weights copied exactly; UVs sampled inside one adjacent healthy texture island to avoid atlas stripe.",
+    "old_corner_rows": [
+      23410,
+      23412,
+      22659
+    ],
+    "new_corner_rows": [
+      27268,
+      27269,
+      27270
+    ],
+    "uv": [
+      [
+        0.5323889851570129,
+        0.9703410267829895
+      ],
+      [
+        0.5336719751358032,
+        0.9701129794120789
+      ],
+      [
+        0.5324686169624329,
+        0.9703269004821777
+      ]
+    ],
+    "uv_perimeter": 0.002606199588626623
+  }
+}

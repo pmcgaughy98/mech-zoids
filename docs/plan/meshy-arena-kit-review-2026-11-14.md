@@ -83,4 +83,5 @@ Reviewed by the game feel lane and the kit design lane, from the off/on contact 
 
 - Plaza (kit design's floor tweak): with the kit on, the plaza's inlay ring and rim line use their own cool steel colour (0.55, 0.6, 0.7, glow 0.15) in place of the theme's yellow line, and the alternating sectors are softer (0.9 instead of 0.8). The lane's yellow path edges stay. New ground.gdshader uniforms: plaza_line (alpha 0 keeps line_color, so other maps are unchanged) and plaza_sector_shade (default 0.8).
 - Edge walls: the 3.5 m map edge walls get a neutral lit cap ("KitEdgeCaps", cool white). Base walls already had team-lit caps, so a lit cap now always means a wall the cobra can't cross; inner walls keep the plain steel cap.
-- 
+- Checks: arena_check 24/0, match_check 67/0. Rough frame time: kit on 1.42 to 1.69 ms, kit off 1.13 to 1.94 ms.
+- Sheet: kit_look7.png. The edge cap is the brightest thin line on the horizon; dim it if it pulls the eye.

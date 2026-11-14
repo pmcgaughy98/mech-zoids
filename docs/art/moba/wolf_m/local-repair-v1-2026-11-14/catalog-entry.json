@@ -1,0 +1,99 @@
+{
+  "id": "wolf",
+  "name": "Wolf",
+  "source_model": {
+    "path": "res://art/model_catalog/sources/wolf_front - Hunyuan 3D v3.1 Pro.glb",
+    "source": "D:\\user\\Downloads\\wolf_front - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "b40438b083509e7c43bf8429ff2e430f214b809bc6455be72b2608b6b29e2324",
+    "bytes": 51251372
+  },
+  "display_model": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/wolf-rigged-local-repair-v1.glb",
+  "status": "Two small gaps and 40 malformed triangles repaired. Four legs and paws, head and eyes, ears, armor and segmented tail retained. Original 46-joint rig, all skin weights and textures preserved.",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/wolf/front.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\wolf_front.png",
+      "sha256": "e5a9188f9bced1fd18930eca0878df55395d79de82e01db98695830a16cc404e",
+      "bytes": 126258,
+      "project_matches": [
+        "docs/art/moba/wolf_m/take-c-power/white_views/wolf_front.png"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/wolf/left.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\wolf_left.png",
+      "sha256": "bfb6ee64e86e75f4ba94cfc6ad2659eca112f4074c21a00c427ac969e3bb6567",
+      "bytes": 230928,
+      "project_matches": [
+        "docs/art/moba/wolf_m/take-c-power/white_views/wolf_left.png"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/wolf/back.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\wolf_back.png",
+      "sha256": "3cb0422da50215425b57f4dcebbec7f0062ac7d1648e76c0e4eda5aa23d8eb78",
+      "bytes": 122071,
+      "project_matches": [
+        "docs/art/moba/wolf_m/take-c-power/white_views/wolf_back.png"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/wolf/right.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\wolf_right.png",
+      "sha256": "5efd71efabff9924da05c137600d65f719452bee98b82e2e94e4198ef9f319d4",
+      "bytes": 250877,
+      "project_matches": [
+        "docs/art/moba/wolf_m/take-c-power/white_views/wolf_right.png"
+      ]
+    }
+  },
+  "artist_workspace": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/wolf-rigged-local-repair-v1.blend",
+  "review_models": [
+    {
+      "label": "INTACT QUALITY ARCHIVE\nOriginal generated geometry",
+      "path": "res://art/model_catalog/sources/wolf_front - Hunyuan 3D v3.1 Pro.glb",
+      "display_scale": 2.4184303484035974
+    },
+    {
+      "label": "DOWNLOADED RIG\nBefore local triangle cleanup",
+      "path": "res://art/model_catalog/sources/Meshy_AI_wolf_remeshed_25k_20261108_character.glb",
+      "display_scale": 0.6098658478619691
+    },
+    {
+      "label": "LOCAL REPAIR\nSame 46-joint rig and skin",
+      "path": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/wolf-rigged-local-repair-v1.glb",
+      "display_scale": 0.6098658478619691
+    }
+  ],
+  "review_views": {
+    "front": {
+      "path": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/review-front.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "left": {
+      "path": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/review-left.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "back": {
+      "path": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/review-back.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "right": {
+      "path": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/review-right.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    }
+  },
+  "review_provenance": {
+    "date": "2026-11-14",
+    "report": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/repair-verification.json",
+    "independent_audit": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/independent-export-audit.json",
+    "joint_count": 46,
+    "rigged_input_sha256": "cb0fb5981637c29f62d89536d5b21e150a531c3bb6a3fabd5fd85f163e9f45fd",
+    "repaired_sha256": "c6e9f18355b10bf1207c717d346166b3595f591454c1706f9933e6da90ee2372",
+    "intact_pre_remesh_available": true,
+    "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+    "scope": "Local topology repair. Four legs/paws, head/eyes/muzzle/teeth, ears, shoulder and rib armor, lights and complete segmented tail retained. Original vertex attributes, skin, 46-joint skeleton/rest/binds and textures preserved; no remesh or rerig. All 24,344 healthy source faces retained. No gameplay replacement.",
+    "runtime_report": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/final-review-verification.json"
+  }
+}

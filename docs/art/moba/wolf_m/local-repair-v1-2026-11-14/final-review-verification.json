@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "tested_sha256": "c6e9f18355b10bf1207c717d346166b3595f591454c1706f9933e6da90ee2372",
+  "triangles": 24346,
+  "joint_count": 46,
+  "native_joint_tests_with_surface_motion": 46,
+  "native_joint_tests_below_1mm_motion_threshold": [],
+  "maximum_seam_gap_m": 0.0,
+  "godot_check": "Three native GLB versions, original/revised sheets, original 46-joint rig and actual ChaseCamera3D",
+  "screenshots": "res://reports/model_catalog/wolf-local-v1",
+  "intact_archive_sha256": "b40438b083509e7c43bf8429ff2e430f214b809bc6455be72b2608b6b29e2324",
+  "original_reference_sha256": {
+    "front": "e5a9188f9bced1fd18930eca0878df55395d79de82e01db98695830a16cc404e",
+    "left": "bfb6ee64e86e75f4ba94cfc6ad2659eca112f4074c21a00c427ac969e3bb6567",
+    "back": "3cb0422da50215425b57f4dcebbec7f0062ac7d1648e76c0e4eda5aa23d8eb78",
+    "right": "5efd71efabff9924da05c137600d65f719452bee98b82e2e94e4198ef9f319d4"
+  },
+  "boundary_edges": 0,
+  "over_shared_edges": 1,
+  "protected_contacts": "One balanced original four-face assembly contact retained; underlying healthy source surfaces preserved.",
+  "collapsed_triangles": 0,
+  "healthy_source_triangles_retained": 24344,
+  "all_original_vertex_and_skin_rows_preserved": true,
+  "duplicate_uv_corner_rows": 0
+}

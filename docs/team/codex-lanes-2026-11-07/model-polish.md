@@ -102,4 +102,30 @@ The current export has 499,148 triangles, three 4096 maps, one material and no r
 
 ## Correction and superseded work
 
-The earlier old-gorilla capture actually finished all 24 images before process exit. The initial status below incorrectly reported no captures because the directory was checked before completion. That old model was reje
+The earlier old-gorilla capture actually finished all 24 images before process exit. The initial status below incorrectly reported no captures because the directory was checked before completion. That old model was rejected by Preston and is excluded from the current recommendation. All old-gorilla images in the parent result folder are obsolete. Only `rhino-generated/` contains the supplied current gorilla test.
+
+## Completed inspection
+
+- Read project guidance, team/lane index, roster and rendering notes. Latest direction supersedes the initial non-gorilla preference and older pixel-only assumptions.
+- Actual arena: `scenes/moba3d/arena_blockout.tscn`, built by its existing script, selected `foundry` theme. Chase camera: perspective FOV 60, distance 6.5 m, pitch 30 degrees, look height 1.2 m. Compatibility renderer. Project canvas-items stretch means native 3D output resolution must be measured in the capture rather than inferred from the 320x180 design viewport.
+- Local gorilla: `art/machines/ape_l/ape_l.glb`, 80,068 triangles, one mesh with two surfaces, one skin, three 2048x2048 embedded textures (albedo, normal, ORM), eight animation clips. This is the older local modeled gorilla, not a verified MeshForge export matching the later approved MOBA reference. Its fidelity to that reference still needs visual review.
+- Preserved byte-identical copy: `D:/dev/_scratch/mech-art-direction/ape_l-original.glb`. SHA256 `74a5c710ef626e7e856445cdf322b6abcc0d8e75d12263e769004141204a13ff`, rechecked against source after stopping.
+- Results folder: `docs/art/moba/art-direction-2026-11-07/`. Contains machine-readable inventory and a reduced source texture-atlas preview only. That preview is not a model render.
+
+## Interrupted pilot, not validated
+
+An isolated capture script was prepared at `D:/dev/_scratch/mech-art-direction/pilot.gd` to compare original, satin and graphic materials in an instantiated arena. It was launched immediately before the hold arrived. The process completed 24 captures and a manifest before exit; completion was discovered on resumption. The old asset was subsequently rejected by Preston. Those results and shader parameters are obsolete and unapproved.
+
+The launched Godot process was terminated (PID 11568). No renderer process remained at the post-stop check. Shared arena, renderer settings, source GLB, rig, weights and animation lane output were not edited by this lane. No downloads, installations, paid tools, commits or peer messages were performed.
+
+## Resume only after toolbox audit
+
+1. Read `TOOLBOX.md` and Preston's next direction before running production again.
+2. Review the local model beside the approved bulky green gorilla reference; state any design mismatch before treating it as the target export.
+3. Complete controlled comparison on isolated copies, same pose/camera/arena lighting. Inspect front, rear and three-quarter views at player and opponent distances. Measure actual rendering resolution and screen coverage.
+4. Keep material findings, arena-light findings and ability VFX recommendations separate. Preserve green hex shield-tech identity without silently installing ability effects.
+5. Deliver inspected images and proposed reusable rules, then wait for Preston's style choice. No roster-wide repaint.
+
+## Tools inspected
+
+Free/local: Godot 4.7.2 Compatibility renderer, Blender 5.2 executable present, Python/Pillow for GLB inventory and atlas inspection. Applied project `game-3d-asset-design` skill and read its pipeline checklist; read `dom-blender-render-automation`, but Blender was not launched. Other installed/connected tools are for the toolbox audit to evaluate. Firecrawl retrieval uses credits, so it was read but not invoked. Free web research used primary developer sources, recorded in the results folder; no model/texture budgets have been inferred from those games.

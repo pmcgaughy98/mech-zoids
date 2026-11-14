@@ -26,4 +26,7 @@ void fragment() {
 	float m = fwd * max(swell * 0.9, line) * amount;
 	vec2 off = (p / max(r, 0.001)) * swell * 0.014 * fwd * amount;
 	vec3 bg = texture(screen_tex, SCREEN_UV + off).rgb;
-	vec3 col = mix(bg, mix(warm_col, hot_col, 0.6) * 1.15, clamp(line * fwd * amount * 0.6, 0.0
+	vec3 col = mix(bg, mix(warm_col, hot_col, 0.6) * 1.15, clamp(line * fwd * amount * 0.6, 0.0, 1.0));
+	ALBEDO = col;
+	ALPHA = clamp(m, 0.0, 1.0);
+}

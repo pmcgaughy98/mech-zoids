@@ -1417,4 +1417,28 @@ func _make_caps() -> void:
 ## Lights each cap while its slot is off cooldown (see COOLDOWN STACKS).
 func _step_caps(delta: float) -> void:
 	if _caps.is_empty():
-	
+		return
+	var cds: Variant = machine.get("cooldowns") if is_instance_valid(machine) else null
+	var map: Variant = kit.get("stack_slot") if is_instance_valid(kit) else null
+	if not (map is Dictionary):
+		map = STACK_SLOT
+	var shown: bool = is_instance_valid(machine) and machine.is_visible_in_tree() and machine.get("alive") != false
+	var up := _frame().basis.y.normalized()
+	for st in _caps:
+		var c: Dictionary = _caps[st]
+		if _cap_palette != palette:
+			_tint(c["mat"])
+		var slot := String((map as Dictionary).get(st, ""))
+		var left := float((cds as Dictionary).get(slot, 0.0)) if cds is Dictionary else 0.0
+		var ready: bool = shown and slot != "" and left <= 0.0
+		if ready and not bool(c["ready"]):
+			c["flash"] = 1.0
+		c["ready"] = ready
+		c["flash"] = maxf(float(c["flash"]) - delta * 4.0, 0.0)
+		var want := CAP_GLOW + 1.1 * float(c["flash"]) if ready else 0.0
+		c["amount"] = move_toward(float(c["amount"]), want, delta * 9.0)
+		var n: MeshInstance3D = c["node"]
+		n.visible = float(c["amount"]) > 0.01
+		n.global_position = _socket("stack_" + st) + up * CAP_LIFT
+		(c["mat"] as ShaderMaterial).set_shader_parameter("amount", c["amount"])
+	_cap_palette = palette

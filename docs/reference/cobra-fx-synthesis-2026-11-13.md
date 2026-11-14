@@ -231,4 +231,24 @@ exit hit, the off-path one not, section hard again 4.75 s after the clip starts.
 - A take that rendered all black (the window drew nothing, HUD included) was a one-off of the machine. A probe frame
   right after rendered normally, and the re-run matched take 1's brightness.
 
-## Other effects that belo
+## Other effects that belong to this lane (proposals, not built)
+Built from the clip notes and events; each needs Preston's go and, for most, a kit cue.
+- **Ghost Run** (slot 1, the 6 m/s loop; the soft look is ours): the body goes see-through with a bright edge, the
+  kangaroo's afterimage method (blend_mix copies) but one or two copies only and in the cobra's colour, so it reads as
+  going soft rather than fast. A thin ripple where it passes through an enemy machine or shot (needs a kit cue). Needs
+  the cobra's materials touched through `mech_look`, which is the look lane's: ask first.
+- **Breach:** built, see the Breach section above.
+- **Seam** (slot 3): Seam_In `contact` 0.22: the face ripples where the snout enters; `hidden` 0.88: a ripple line runs
+  along the wall face for the 2.0 s inside (the kit text: "a ripple along the wall face gives it away"), its position
+  from the kit each frame; Seam_Out `emerge` 0.02: the face ripples and parts round the snout, `clear` 0.92 closes it.
+- **Wall Line passive:** the empowered first basic after leaving a wall: the strips stay lit until that basic fires.
+
+## What Preston decides (in order)
+1. Colour: decided, **gold** (Preston, 2026-11-14). Power: phase, not petrify (Preston, 2026-11-14).
+2. The cone's numbers: 6 m, 70 degrees, stun 1.2 s, slow 2.0 s, all placeholders (kit numbers).
+3. The stun read: decided, held out of phase (drained to gold, wobbling, a drifting double, snaps back solid).
+   Preston, 2026-11-14: "Yes, keep it".
+4. Which effect next: decided, Breach (Preston, 2026-11-14), built. After it: Seam or Ghost Run (Ghost Run touches
+   the cobra's materials: the look lane's, ask first).
+5. Breach's numbers: section width 2.2 m, gap 4.0 s, hit radius 2.4 m, push 2.2 m (placeholders, kit numbers).
+6. The game feel lane builds `cobra_kit.gd` to the contract above; the effects go live in matches on Preston's "turn on".

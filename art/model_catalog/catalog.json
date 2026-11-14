@@ -2323,8 +2323,8 @@
         "sha256": "429c9c39161ee14c391b1ece63a5b322183796e3a9a26496039e24295f4db7ea",
         "bytes": 50163008
       },
-      "display_model": "res://art/model_catalog/display/tortoise.glb",
-      "status": "Source static export; unrigged. Display proxy is not final game geometry.",
+      "display_model": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/tortoise-rigged-local-repair-v1.glb",
+      "status": "Two small gaps and 53 malformed triangles repaired. Four legs and feet, head and eyes, shell and short tail retained. Original 23-joint rig, all skin weights and textures preserved.",
       "reference_only": false,
       "views": {
         "front": {
@@ -2364,7 +2364,54 @@
           ]
         }
       },
-      "artist_workspace": "res://art/model_catalog/workspaces/tortoise.blend"
+      "artist_workspace": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/tortoise-rigged-local-repair-v1.blend",
+      "review_models": [
+        {
+          "label": "INTACT QUALITY ARCHIVE\nOriginal generated geometry",
+          "path": "res://art/model_catalog/sources/tortoise_front - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 2.7831966665064005
+        },
+        {
+          "label": "DOWNLOADED RIG\nBefore local triangle cleanup",
+          "path": "res://art/model_catalog/sources/Meshy_AI_tortoise_remeshed_25k_20261108_character.glb",
+          "display_scale": 0.9145358679276933
+        },
+        {
+          "label": "LOCAL REPAIR\nSame 23-joint rig and skin",
+          "path": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/tortoise-rigged-local-repair-v1.glb",
+          "display_scale": 0.9145358679276933
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/review-front.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "left": {
+          "path": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/review-left.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "back": {
+          "path": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/review-back.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "right": {
+          "path": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/review-right.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-14",
+        "report": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/repair-verification.json",
+        "independent_audit": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/independent-export-audit.json",
+        "joint_count": 23,
+        "rigged_input_sha256": "14a2e65b2125e47d63cf29da881978abe5905df91d2eabd5593bc251a37a34e2",
+        "repaired_sha256": "a80abeb7904044c061f4d892583227dce2d7025edfba339e971337b9d0ab5d87",
+        "intact_pre_remesh_available": true,
+        "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+        "scope": "Local topology repair. Four legs/feet, head/eyes, shell/rim, top dome, lights and short tail retained. Original vertex attributes, skin, 23-joint skeleton/rest/binds and textures preserved; no remesh or rerig. Three duplicate corner rows on closure 1 use one healthy neighboring UV island. All original attribute/skin rows remain exact; duplicate skin rows copy the same corners. All 22,624 healthy source faces retained. No gameplay replacement.",
+        "runtime_report": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/final-review-verification.json"
+      }
     },
     {
       "id": "wolf",
@@ -2375,8 +2422,8 @@
         "sha256": "b40438b083509e7c43bf8429ff2e430f214b809bc6455be72b2608b6b29e2324",
         "bytes": 51251372
       },
-      "display_model": "res://art/model_catalog/display/wolf.glb",
-      "status": "Source static export; unrigged. Display proxy is not final game geometry.",
+      "display_model": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/wolf-rigged-local-repair-v1.glb",
+      "status": "Two small gaps and 40 malformed triangles repaired. Four legs and paws, head and eyes, ears, armor and segmented tail retained. Original 46-joint rig, all skin weights and textures preserved.",
       "reference_only": false,
       "views": {
         "front": {
@@ -2416,7 +2463,54 @@
           ]
         }
       },
-      "artist_workspace": "res://art/model_catalog/workspaces/wolf.blend"
+      "artist_workspace": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/wolf-rigged-local-repair-v1.blend",
+      "review_models": [
+        {
+          "label": "INTACT QUALITY ARCHIVE\nOriginal generated geometry",
+          "path": "res://art/model_catalog/sources/wolf_front - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 2.4184303484035974
+        },
+        {
+          "label": "DOWNLOADED RIG\nBefore local triangle cleanup",
+          "path": "res://art/model_catalog/sources/Meshy_AI_wolf_remeshed_25k_20261108_character.glb",
+          "display_scale": 0.6098658478619691
+        },
+        {
+          "label": "LOCAL REPAIR\nSame 46-joint rig and skin",
+          "path": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/wolf-rigged-local-repair-v1.glb",
+          "display_scale": 0.6098658478619691
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/review-front.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "left": {
+          "path": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/review-left.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "back": {
+          "path": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/review-back.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "right": {
+          "path": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/review-right.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-14",
+        "report": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/repair-verification.json",
+        "independent_audit": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/independent-export-audit.json",
+        "joint_count": 46,
+        "rigged_input_sha256": "cb0fb5981637c29f62d89536d5b21e150a531c3bb6a3fabd5fd85f163e9f45fd",
+        "repaired_sha256": "c6e9f18355b10bf1207c717d346166b3595f591454c1706f9933e6da90ee2372",
+        "intact_pre_remesh_available": true,
+        "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+        "scope": "Local topology repair. Four legs/paws, head/eyes/muzzle/teeth, ears, shoulder and rib armor, lights and complete segmented tail retained. Original vertex attributes, skin, 46-joint skeleton/rest/binds and textures preserved; no remesh or rerig. All 24,344 healthy source faces retained. No gameplay replacement.",
+        "runtime_report": "res://docs/art/moba/wolf_m/local-repair-v1-2026-11-14/final-review-verification.json"
+      }
     },
     {
       "id": "gold_beetle",
@@ -2545,4 +2639,61 @@
         "back": {
           "path": "res://art/model_catalog/references/wyvern/back.png",
           "source": "D:\\user\\Downloads\\wyvern_back.png",
-          "sha256": "00b03fea257cb7b4bc1c4f42c24c505915f58f9405a9ca8739d57c81ec995
+          "sha256": "00b03fea257cb7b4bc1c4f42c24c505915f58f9405a9ca8739d57c81ec995385",
+          "bytes": 338579,
+          "project_matches": [],
+          "provenance_note": "Exact downloaded reference; creature identity and limb intent visually checked. No exact historical generation-job linkage verified."
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/wyvern/right.png",
+          "source": "D:\\user\\Downloads\\wyvern_right.png",
+          "sha256": "27dbe88d7e9e54354fc17d3f97af10107409443c3a6576a44aae1703974d4244",
+          "bytes": 323830,
+          "project_matches": [],
+          "provenance_note": "Exact downloaded reference; creature identity and limb intent visually checked. No exact historical generation-job linkage verified."
+        }
+      },
+      "artist_workspace": "res://docs/art/moba/wyvern_objective/repair-v1-2026-11-11/wyvern-objective-repaired-v1.blend",
+      "review_models": [
+        {
+          "label": "DOWNLOADED RIG\nBefore local repair",
+          "path": "res://art/model_catalog/sources/Meshy_AI_Cyber_Wyvern_Sentinel_1110211655_texture.glb",
+          "display_scale": 0.8761529512464642
+        },
+        {
+          "label": "REPAIRED\nSame 46-joint skeleton",
+          "path": "res://docs/art/moba/wyvern_objective/repair-v1-2026-11-11/wyvern-objective-repaired-v1.glb",
+          "display_scale": 0.8761529512464642
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/wyvern_objective/repair-v1-2026-11-11/review-front.png",
+          "kind": "Labeled rigged-download/local-repair comparison; true pre-remesh original unavailable"
+        },
+        "left": {
+          "path": "res://docs/art/moba/wyvern_objective/repair-v1-2026-11-11/review-side.png",
+          "kind": "Labeled rigged-download/local-repair comparison; true pre-remesh original unavailable"
+        },
+        "back": {
+          "path": "res://docs/art/moba/wyvern_objective/repair-v1-2026-11-11/review-back.png",
+          "kind": "Labeled rigged-download/local-repair comparison; true pre-remesh original unavailable"
+        },
+        "right": {
+          "path": "res://docs/art/moba/wyvern_objective/repair-v1-2026-11-11/review-right.png",
+          "kind": "Labeled rigged-download/local-repair comparison; true pre-remesh original unavailable"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-13",
+        "report": "res://docs/art/moba/wyvern_objective/repair-v1-2026-11-11/repair-verification.json",
+        "independent_audit": "res://docs/art/moba/wyvern_objective/repair-v1-2026-11-11/independent-export-audit.json",
+        "joint_count": 46,
+        "rigged_input_sha256": "de6feb0f20655e289e8cae2de8ad6f9589050c93acb2feecd0e073194cd8d512",
+        "repaired_sha256": "400b4030afb72959a5d265a97cf992c2ecee6e6ab417fb4e237ab0fd98ba09d9",
+        "intact_pre_remesh_available": false,
+        "scope": "Extra inner walking forelegs removed; two hind legs and two wing forelimbs retained. Closed jaw detail preserved. Original hierarchy/rest/binds/materials retained. True pre-remesh source unavailable; two-version comparison only. Review asset, no authored-map or gameplay replacement."
+      }
+    }
+  ]
+}

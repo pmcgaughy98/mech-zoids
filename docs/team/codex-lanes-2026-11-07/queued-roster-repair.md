@@ -60,4 +60,32 @@ Authority: Preston's direction in docs/team/MODEL_REMESH_REPAIR_HANDOFF_2026-11-
 
 Preston says everybody is now rigged. Earlier missing-rig inventories are historical and must not drive new rigging recommendations. At the start of each repair, inspect the newest actual export for skin, skeleton, weights and clips, and compare it with intact pre-remesh meshes and accepted lane refinements. A rigged filename alone is not enough, but a stale unrigged file is not evidence that the current rig is missing.
 
-The already deliver
+The already delivered cobra correction is based on the static source available during that correction:
+
+D:/user/Downloads/cobra_front - single tail corrected.glb
+
+It is a geometry reference, not a replacement for a newer rigged export. Keep the single-tail anatomy correction when addressing the latest rigged cobra; preserve that export's actual rig and weights. Do not silently replace it with the earlier static corrected mesh.
+
+## Start sequence, after dependency is met
+
+1. Read the handoff and docs/art/moba/MODEL_WORKBENCH.md again if they changed.
+2. Inventory latest downloads, lane outputs, intact pre-remesh sources and accepted revisions. Preserve exact inputs and hashes.
+3. Refresh the lineup and reference review desk for new mechs and updated versions, keeping objectives/minions distinguished from playable roster entries. Do not rebuild over edited workspaces.
+4. Triage missing geometry, holes, normal/texture patches, duplicated anatomy and rig/deformation problems separately. Select one concrete model repair at a time.
+5. Make an isolated local repair or restore intact geometry with justified weight transfer. Preserve skeleton hierarchy, bind/rest transforms, weights, materials and clips. Record every necessary change.
+6. Inspect textured front, side, back and underside views, plus the actual game camera and a basic deformation check on the actual rig.
+7. Deliver a versioned textured GLB and editable source. Update the viewer/catalog entry only to the verified revision and its correct review sheets. Keep unrepaired and intact comparison sources.
+
+## References and anatomy
+
+Preston's additional direction, November 10: the refreshed lineup and review sheets must visibly include the intact model from BEFORE remeshing alongside the current remeshed/rigged model, so lost detail and damage can be compared directly. Use matched orientation, framing and display scale, with explicit version labels and source paths/hashes. Where an accepted geometry correction was uploaded for rigging, identify that exact pre-remesh input separately from the original generated archive. Do not present an old reduced gallery proxy as the intact source. Keep original generation sheets distinct from rendered model comparison sheets.
+
+These are separate review instances, not a replacement of the current rigged asset. Remeshing was done to enable rigging. Preserve the current skeleton, bind/rest transforms, weights and clips; do not swap in static pre-remesh geometry and thereby remove or break the rig. Any later restored geometry must be a versioned candidate with justified weight handling and deformation verification before promotion. If that cannot be verified, leave the current rigged version active and label the candidate pending.
+
+Original generation sheets and source GLBs stay immutable. Generated images can have extra limbs, wrong proportions and inconsistent perspective. Reconcile intended anatomy across all views rather than copying an obvious generated error. Record limb counts, proportions and attachment choices. Take consequential design ambiguities to Preston.
+
+Corrected review sheets must be separately labeled revisions with source provenance. Show in the viewer/workspace whether a sheet is original or reviewed. Do not relabel edited art as original generation input, or fill missing sheets with unrelated art.
+
+## Constraints
+
+No new paid generation, paid retexture, rerigging or blanket remesh. Do not erase authored Gorilla/Rhino/Kangaroo refinements; coordinate before touching their assets. Respect the single-Godot-app rule. The Grok dependency authorizes neither launching Grok nor inventing an API integration.

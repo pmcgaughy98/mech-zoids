@@ -1,0 +1,99 @@
+{
+  "id": "tortoise",
+  "name": "Tortoise",
+  "source_model": {
+    "path": "res://art/model_catalog/sources/tortoise_front - Hunyuan 3D v3.1 Pro.glb",
+    "source": "D:\\user\\Downloads\\tortoise_front - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "429c9c39161ee14c391b1ece63a5b322183796e3a9a26496039e24295f4db7ea",
+    "bytes": 50163008
+  },
+  "display_model": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/tortoise-rigged-local-repair-v1.glb",
+  "status": "Two small gaps and 53 malformed triangles repaired. Four legs and feet, head and eyes, shell and short tail retained. Original 23-joint rig, all skin weights and textures preserved.",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/tortoise/front.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\tortoise_front.png",
+      "sha256": "9fdd798fdc84838b29d0c1c9870209b63749a35aacf666fbdcfbe9f02668a68d",
+      "bytes": 301575,
+      "project_matches": [
+        "docs/art/moba/tortoise_l/take-a/white_views/tortoise_front.png"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/tortoise/left.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\tortoise_left.png",
+      "sha256": "9a97f212b318c5a7df978a38dca1878bc4033f73ee448bae34d87308e7bce124",
+      "bytes": 301106,
+      "project_matches": [
+        "docs/art/moba/tortoise_l/take-a/white_views/tortoise_left.png"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/tortoise/back.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\tortoise_back.png",
+      "sha256": "0244959965fbb1cb2c8e38b913aae4e4d5acdf3c1f510ec37e107401ebac96b4",
+      "bytes": 280346,
+      "project_matches": [
+        "docs/art/moba/tortoise_l/take-a/white_views/tortoise_back.png"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/tortoise/right.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\tortoise_right.png",
+      "sha256": "6cfd9de2fda8ced0edfbb1a24fea05989589fcf171a18f342ecf02002bc11727",
+      "bytes": 304513,
+      "project_matches": [
+        "docs/art/moba/tortoise_l/take-a/white_views/tortoise_right.png"
+      ]
+    }
+  },
+  "artist_workspace": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/tortoise-rigged-local-repair-v1.blend",
+  "review_models": [
+    {
+      "label": "INTACT QUALITY ARCHIVE\nOriginal generated geometry",
+      "path": "res://art/model_catalog/sources/tortoise_front - Hunyuan 3D v3.1 Pro.glb",
+      "display_scale": 2.7831966665064005
+    },
+    {
+      "label": "DOWNLOADED RIG\nBefore local triangle cleanup",
+      "path": "res://art/model_catalog/sources/Meshy_AI_tortoise_remeshed_25k_20261108_character.glb",
+      "display_scale": 0.9145358679276933
+    },
+    {
+      "label": "LOCAL REPAIR\nSame 23-joint rig and skin",
+      "path": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/tortoise-rigged-local-repair-v1.glb",
+      "display_scale": 0.9145358679276933
+    }
+  ],
+  "review_views": {
+    "front": {
+      "path": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/review-front.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "left": {
+      "path": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/review-left.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "back": {
+      "path": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/review-back.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "right": {
+      "path": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/review-right.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    }
+  },
+  "review_provenance": {
+    "date": "2026-11-14",
+    "report": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/repair-verification.json",
+    "independent_audit": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/independent-export-audit.json",
+    "joint_count": 23,
+    "rigged_input_sha256": "14a2e65b2125e47d63cf29da881978abe5905df91d2eabd5593bc251a37a34e2",
+    "repaired_sha256": "a80abeb7904044c061f4d892583227dce2d7025edfba339e971337b9d0ab5d87",
+    "intact_pre_remesh_available": true,
+    "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+    "scope": "Local topology repair. Four legs/feet, head/eyes, shell/rim, top dome, lights and short tail retained. Original vertex attributes, skin, 23-joint skeleton/rest/binds and textures preserved; no remesh or rerig. Three duplicate corner rows on closure 1 use one healthy neighboring UV island. All original attribute/skin rows remain exact; duplicate skin rows copy the same corners. All 22,624 healthy source faces retained. No gameplay replacement.",
+    "runtime_report": "res://docs/art/moba/tortoise_l/local-repair-v1-2026-11-14/final-review-verification.json"
+  }
+}

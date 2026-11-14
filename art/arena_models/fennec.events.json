@@ -25,6 +25,15 @@
     }
    ],
    "speed": 1.2
+  },
+  "Fennec_Cast": {
+   "events": [
+    {
+     "name": "release",
+     "time": 0.3,
+     "damage": false
+    }
+   ]
   }
  }
 }

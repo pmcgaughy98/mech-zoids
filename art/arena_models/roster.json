@@ -1056,11 +1056,12 @@
       "workspace": "res://art/model_catalog/workspaces/fennec.blend",
       "source_sha256": "ef9263888aae6b09e00da3bc33cbe09b4a89999e1419bd76d3759bb204f0cbf8",
       "notes": "Current completed local animation trial; art and final kit polish remain open.",
-      "source_file": "D:\\dev\\_scratch\\fennec-3d\\r1\\game-export-r1\\fennec-r1.glb",
-      "runtime_sha256": "c648bd52da7ecb6f1dc2f4c0a4e7029240a45093518c9960c4aab40defd54f4e",
+      "source_file": "D:\\dev\\_scratch\\fennec-3d\\r3\\game-export-r3\\fennec-r3.glb",
+      "runtime_sha256": "fa14768bc89a08b532262080b5f927dc54e6e8aeaf2491e8980e6c73add86a07",
       "clips": [
         "Fennec_Idle",
-        "Fennec_Walk"
+        "Fennec_Walk",
+        "Fennec_Cast"
       ],
       "body": {
         "scale": 0.647,
@@ -1069,10 +1070,11 @@
         "walk": "Walk",
         "walk_speed": 1.2,
         "rest_height": 1.7,
-        "kit": "r1 (fennec 3D lane, Claude, 2026-11-14): idle and trot only, on Codex's repaired rigged fennec. The kit still times itself on the hidden sprite. Numbers are placeholders.",
+        "kit": "r3 (fennec 3D lane, Claude, 2026-11-14): idle, trot and a stronger Cast (0.85 s: rears up on the hind legs with the front paws tucked, then drives down at the release, 0.30 s, ears flared out and tail up; Preston: Make it stronger). The kit does not call Cast yet and still times itself on the hidden sprite. Numbers are placeholders.",
         "clips": {
           "Idle": "Fennec_Idle",
-          "Walk": "Fennec_Walk"
+          "Walk": "Fennec_Walk",
+          "Cast": "Fennec_Cast"
         },
         "events": {
           "Walk": [
@@ -1084,6 +1086,13 @@
             [
               "step",
               0.1833,
+              false
+            ]
+          ],
+          "Cast": [
+            [
+              "release",
+              0.3,
               false
             ]
           ]
@@ -2776,8 +2785,8 @@
       "workspace": "res://art/model_catalog/workspaces/rhino.blend",
       "source_sha256": "180de3054e84adf9c45ce1d51b413b6530eef3d9af4b8b19729c69a8948936ad",
       "notes": "Current completed local animation trial; art and final kit polish remain open.",
-      "source_file": "D:\\dev\\_scratch\\rhino-donor-2026-11-08\\game-export-v60\\rhino_game_v60.glb",
-      "runtime_sha256": "ea2852ce71487bc27fdeae45f2f7eef5ca07b39f2c99569e765470b6ca984a91",
+      "source_file": "D:\\dev\\_scratch\\rhino-donor-2026-11-08\\game-export-v61\\rhino_game_v61.glb",
+      "runtime_sha256": "78b4de3150ee5f20f36a578ee03c650712655f0165798e4b5457cd86691a848e",
       "clips": [
         "MF_brace_exit",
         "MF_brace_hold",
@@ -2802,7 +2811,8 @@
         "death",
         "brace_release",
         "piston_charge",
-        "stampede_windup"
+        "stampede_windup",
+        "heave"
       ],
       "body": {
         "scale": 1.0,
@@ -2836,7 +2846,8 @@
           "Death": "death",
           "brace_release": "brace_release",
           "piston_charge": "piston_charge",
-          "stampede_windup": "stampede_windup"
+          "stampede_windup": "stampede_windup",
+          "heave": "heave"
         },
         "events": {
           "horn_hook": [
@@ -2973,6 +2984,18 @@
             [
               "stride",
               0.2,
+              false
+            ]
+          ],
+          "heave": [
+            [
+              "thump",
+              0.4,
+              true
+            ],
+            [
+              "lift",
+              0.6,
               false
             ]
           ]

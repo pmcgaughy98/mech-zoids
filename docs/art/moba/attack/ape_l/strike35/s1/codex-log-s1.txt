@@ -1,0 +1,164 @@
+Reading prompt from stdin...
+OpenAI Codex v0.166.0
+--------
+workdir: D:\dev\_scratch\codex-cwd
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR, D:\dev\new-mech-rpg\docs\art\moba]
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a1b111-c645-7270-aeb4-9c544b03945e
+--------
+user
+Job from Claude (the attack lane of the mech MOBA in D:/dev/new-mech-rpg), approved by Preston on 2026-11-06 ("Yes, gorilla strike", for this price): a DRAW-ONLY sheet of the robot gorilla's basic attack, a one-arm forward punch, in two views (southeast and east), from the approved 35 degree stills. Only the image is made; the attack lane finishes it by script.
+Run tag: ape-strike35-s1. Write only inside OUT = D:/dev/new-mech-rpg/docs/art/moba/attack/ape_l/strike35/s1
+Open no image and no file except OUT/prompt-sheet.txt and the one attachment. Do not write outside OUT. Do not commit.
+
+1. Generate exactly ONE image with your built-in image tool from OUT/prompt-sheet.txt word for word, attaching exactly one image: OUT/refs/look_35.png. Save it unchanged as OUT/sheet_raw.png. Never make a second image or a redo; if it fails, report and stop.
+
+2. Write OUT/REPORT.txt, under 12 lines, and the same in your final answer: tokens used if known; the image size; then by eye for each row (se, e) and each of columns 2 to 6: does it keep its row's facing (se faces the lower right, toward the viewer; e faces right)? Is the punching arm the near arm, with the far fist and both feet still planted (exactly three ground contacts)? Is column 4 the longest reach? Does the arm keep its length and parts (no extra joint, no second forearm)? Anything extra, missing or broken (gems, eyes, legs)?
+
+3. Stop. Do not shrink, recolour, slice, measure or check anything else.
+
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\pmcga\.codex\config.toml): `computer_use.windows.always_allowed_app_ids` is ignored.
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\pmcga\.codex\config.toml): `computer_use.windows.always_allowed_app_ids` is ignored.
+codex
+I’ll read the supplied prompt, attach only `look_35.png`, and generate once. Then I’ll save the image unchanged and write the brief visual report.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -Raw -LiteralPath 'D:/dev/new-mech-rpg/docs/art/moba/attack/ape_l/strike35/s1/prompt-sheet.txt'" in D:\dev\_scratch\codex-cwd
+ succeeded in 645ms:
+. : File C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be loaded because 
+running scripts is disabled on this system. For more information, see about_Execution_Policies at 
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:3
++ . 'C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.Powe ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+Use case: stylized-concept. Create exactly ONE pixel sprite sheet of 2 rows by 6 columns showing the SAME robot gorilla as the attached image throwing ONE short, heavy FORWARD PUNCH with one fist, from the SAME camera (looking DOWN at it from 35 degrees above level, the way a third-person arena game camera sees it) in EVERY cell.
+THE ATTACHED IMAGE, look_35.png: the approved robot gorilla in two views on magenta, left to right: front three-quarter facing lower right (southeast), side view facing right (east), already drawn from the 35 degree camera, standing in its knuckle stance. Keep EVERYTHING about this robot gorilla and this camera: its parts, proportions, colours, shading style, pixel clusters, how each material runs through its shades, the thin dark seam lines, the big rounded green armour plates, the broad back with the glowing green octagonal gem plate in a steel rim on top, the small head low between the shoulders with its dark steel jaw and two small glowing green eyes, the two huge orange forearms each with a big glowing green octagonal gem in a steel rim on its outer side, the big fists with grey steel knuckles, the round steel joint discs, the short green legs and the orange feet with grey steel toes. ONLY THE POSE CHANGES. Invent NO new parts: no spikes, vents, lights, hatches, markings, stripes, panels, weapons, claws, blades or details the image does not show. Never copy any existing game's gorilla, ape, robot or mech.
+THE PUNCHING ARM, in every row: the gorilla's RIGHT arm, which is the NEAR arm, the one closest to the camera: in row 1 the big forearm at the lower LEFT of the body, in row 2 the big forearm in FRONT of the body. The other arm (the far arm) stays down with its fist planted on the ground in every column, exactly where it is in column 1. Both feet NEVER move in any column: same place, flat on the ground. So in every column exactly three things touch the ground: the far fist and the two feet.
+THE ARM PARTS when the punching arm moves: the same arm as standing, the same length: the green upper arm, the steel elbow disc, the huge orange forearm with its gem, the big fist with steel knuckles. NO extra joint, NO extra segment, NO second forearm, NO longer arm. The forearm keeps its gem on its outer side in every column. The fist stays a closed fist.
+THE FACING NEVER CHANGES: each row keeps column 1's facing in all six columns, even at full reach. Row 1 always faces the LOWER RIGHT corner, toward the viewer: the punch drives out toward the lower right, toward the viewer, the fist and forearm coming closer to the camera. Row 2 always faces RIGHT: the punch drives straight out to the right at chest height. The body twists a little with the punch, but it never turns to another view.
+THE MOVE, column by column, the same in every row:
+column 1: standing still, exactly as in the attached image, both fists on the ground.
+column 2: LIFT: the near fist lifts off the ground and draws back toward the shoulder, the near shoulder pulling back, the weight shifting onto the far fist.
+column 3: WIND-UP: the near fist cocked back and up beside the head, elbow bent and pointing back, the upper body twisted away from the punch, coiled.
+column 4: CONTACT: the near arm thrust fully straight forward in the row's facing direction, the fist at full reach at chest height, the knuckles leading, the near shoulder driven forward, the body leaning into the punch. The longest reach of the sheet. A clear, strong silhouette.
+column 5: FOLLOW-THROUGH: the arm still forward but slightly bent, the fist a little lower and a little closer than in column 4, the body settling back.
+column 6: RECOVER: the near fist coming back down toward its place on the ground, almost back to the standing pose of column 1, just above the ground.
+No effects anywhere: no impact flash, no shock ring, no motion lines, no speed trails, no dust, no glow burst, no shadow; effects are added later.
+WHAT THE 35 DEGREE CAMERA SHOWS, as in the attached image: the top of the back, the gem plate on top and the tops of the shoulders as surfaces seen from above; the FAR fist and far foot sit HIGHER on the page than the near ones, because the ground is seen from above.
+EYES: two small glowing green eyes in the dark jaw plate in EVERY cell, never hidden behind the punching arm for more than one eye, never bigger than in the attached image.
+COUNT THE PARTS in every cell: two arms, two legs, one head, one back gem plate, one gem on each forearm (so at most three glowing gems, fewer only when the body hides one). Never an extra or missing arm, fist, leg or gem.
+PLATES AND SEAMS, as in the attached image: big rounded green armour plates with firm edges, each with a lit top edge and a shaded lower edge, never smeared, soft, melted or blobby. Thin dark seam lines between plates, around the head, around each gem rim and at the joints, as many as in the attached image. Where the lifted arm uncovers part of the body, draw that part whole with its plates and seams.
+Exact layout, 2 rows by 6 equal columns, every cell from 35 degrees above:
+row 1: FRONT three-quarter facing lower RIGHT (southeast): the head and chest turned toward the lower right, both eyes showing, the near arm at the lower left of the body. In every column.
+row 2: SIDE view facing RIGHT (east): the head at the right of the body, the near arm in front of the body, the far arm mostly hidden behind it. In every column.
+VOLUME AND CRAFT, exactly as in the attached image: light from the upper left on every cell. Green armour: bright highlight on the top of the back, the shoulders and the top edge of each plate, base across the middle, shadow on the lower body and the side away from the light, deep shadow under the belly and under each plate edge. Orange forearms and feet: highlight, base, shadow, deep. Steel rims, knuckles, joint discs and toes: light, base, shadow. Gems: a green glow with a pale highlight. Big flat colour clusters, every cluster at least 3 pixels across. No texture, no rivets, no dithering, no speckle, no stray single pixels. NO dark line around the outside of the silhouette: the outermost pixels use the green, orange and steel colours.
+PALETTE, the same colours as the attached image and no others: green highlight 9ccb62, base 6c9b4a, shadow 47693a, deep 22301d; orange highlight f2ac5c, base d4853b, shadow 9c5e28, deep 55331a; steel light dfe2e9, base 8a8a93, shadow 4a4950; gem glow pale d6ffe6, glow 3fe07f, deep 1b9a52; dark accent 141a16 for the seams, overlap lines and the jaw.
+Twelve copies of the exact same robot gorilla, the same anatomy and proportions, the same SCALE in every cell. Within each row the feet and the far fist stand at exactly the same place in every column and the ground line is at the same height. Each gorilla entirely inside its cell with ample margins, with room in front of it for the full reach of column 4; in column 1 it fills about two thirds of the cell height. Flat uniform solid #FF00FF magenta background everywhere, no labels, text, letters, numbers, glyphs, grid lines, frames, shadows on the ground, floor, scenery, effects or extra objects. One image only.
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content -Raw -LiteralPath 'D:/dev/new-mech-rpg/docs/art/moba/attack/ape_l/strike35/s1/prompt-sheet.txt'" in D:\dev\_scratch\codex-cwd
+ succeeded in 142ms:
+Use case: stylized-concept. Create exactly ONE pixel sprite sheet of 2 rows by 6 columns showing the SAME robot gorilla as the attached image throwing ONE short, heavy FORWARD PUNCH with one fist, from the SAME camera (looking DOWN at it from 35 degrees above level, the way a third-person arena game camera sees it) in EVERY cell.
+THE ATTACHED IMAGE, look_35.png: the approved robot gorilla in two views on magenta, left to right: front three-quarter facing lower right (southeast), side view facing right (east), already drawn from the 35 degree camera, standing in its knuckle stance. Keep EVERYTHING about this robot gorilla and this camera: its parts, proportions, colours, shading style, pixel clusters, how each material runs through its shades, the thin dark seam lines, the big rounded green armour plates, the broad back with the glowing green octagonal gem plate in a steel rim on top, the small head low between the shoulders with its dark steel jaw and two small glowing green eyes, the two huge orange forearms each with a big glowing green octagonal gem in a steel rim on its outer side, the big fists with grey steel knuckles, the round steel joint discs, the short green legs and the orange feet with grey steel toes. ONLY THE POSE CHANGES. Invent NO new parts: no spikes, vents, lights, hatches, markings, stripes, panels, weapons, claws, blades or details the image does not show. Never copy any existing game's gorilla, ape, robot or mech.
+THE PUNCHING ARM, in every row: the gorilla's RIGHT arm, which is the NEAR arm, the one closest to the camera: in row 1 the big forearm at the lower LEFT of the body, in row 2 the big forearm in FRONT of the body. The other arm (the far arm) stays down with its fist planted on the ground in every column, exactly where it is in column 1. Both feet NEVER move in any column: same place, flat on the ground. So in every column exactly three things touch the ground: the far fist and the two feet.
+THE ARM PARTS when the punching arm moves: the same arm as standing, the same length: the green upper arm, the steel elbow disc, the huge orange forearm with its gem, the big fist with steel knuckles. NO extra joint, NO extra segment, NO second forearm, NO longer arm. The forearm keeps its gem on its outer side in every column. The fist stays a closed fist.
+THE FACING NEVER CHANGES: each row keeps column 1's facing in all six columns, even at full reach. Row 1 always faces the LOWER RIGHT corner, toward the viewer: the punch drives out toward the lower right, toward the viewer, the fist and forearm coming closer to the camera. Row 2 always faces RIGHT: the punch drives straight out to the right at chest height. The body twists a little with the punch, but it never turns to another view.
+THE MOVE, column by column, the same in every row:
+column 1: standing still, exactly as in the attached image, both fists on the ground.
+column 2: LIFT: the near fist lifts off the ground and draws back toward the shoulder, the near shoulder pulling back, the weight shifting onto the far fist.
+column 3: WIND-UP: the near fist cocked back and up beside the head, elbow bent and pointing back, the upper body twisted away from the punch, coiled.
+column 4: CONTACT: the near arm thrust fully straight forward in the row's facing direction, the fist at full reach at chest height, the knuckles leading, the near shoulder driven forward, the body leaning into the punch. The longest reach of the sheet. A clear, strong silhouette.
+column 5: FOLLOW-THROUGH: the arm still forward but slightly bent, the fist a little lower and a little closer than in column 4, the body settling back.
+column 6: RECOVER: the near fist coming back down toward its place on the ground, almost back to the standing pose of column 1, just above the ground.
+No effects anywhere: no impact flash, no shock ring, no motion lines, no speed trails, no dust, no glow burst, no shadow; effects are added later.
+WHAT THE 35 DEGREE CAMERA SHOWS, as in the attached image: the top of the back, the gem plate on top and the tops of the shoulders as surfaces seen from above; the FAR fist and far foot sit HIGHER on the page than the near ones, because the ground is seen from above.
+EYES: two small glowing green eyes in the dark jaw plate in EVERY cell, never hidden behind the punching arm for more than one eye, never bigger than in the attached image.
+COUNT THE PARTS in every cell: two arms, two legs, one head, one back gem plate, one gem on each forearm (so at most three glowing gems, fewer only when the body hides one). Never an extra or missing arm, fist, leg or gem.
+PLATES AND SEAMS, as in the attached image: big rounded green armour plates with firm edges, each with a lit top edge and a shaded lower edge, never smeared, soft, melted or blobby. Thin dark seam lines between plates, around the head, around each gem rim and at the joints, as many as in the attached image. Where the lifted arm uncovers part of the body, draw that part whole with its plates and seams.
+Exact layout, 2 rows by 6 equal columns, every cell from 35 degrees above:
+row 1: FRONT three-quarter facing lower RIGHT (southeast): the head and chest turned toward the lower right, both eyes showing, the near arm at the lower left of the body. In every column.
+row 2: SIDE view facing RIGHT (east): the head at the right of the body, the near arm in front of the body, the far arm mostly hidden behind it. In every column.
+VOLUME AND CRAFT, exactly as in the attached image: light from the upper left on every cell. Green armour: bright highlight on the top of the back, the shoulders and the top edge of each plate, base across the middle, shadow on the lower body and the side away from the light, deep shadow under the belly and under each plate edge. Orange forearms and feet: highlight, base, shadow, deep. Steel rims, knuckles, joint discs and toes: light, base, shadow. Gems: a green glow with a pale highlight. Big flat colour clusters, every cluster at least 3 pixels across. No texture, no rivets, no dithering, no speckle, no stray single pixels. NO dark line around the outside of the silhouette: the outermost pixels use the green, orange and steel colours.
+PALETTE, the same colours as the attached image and no others: green highlight 9ccb62, base 6c9b4a, shadow 47693a, deep 22301d; orange highlight f2ac5c, base d4853b, shadow 9c5e28, deep 55331a; steel light dfe2e9, base 8a8a93, shadow 4a4950; gem glow pale d6ffe6, glow 3fe07f, deep 1b9a52; dark accent 141a16 for the seams, overlap lines and the jaw.
+Twelve copies of the exact same robot gorilla, the same anatomy and proportions, the same SCALE in every cell. Within each row the feet and the far fist stand at exactly the same place in every column and the ground line is at the same height. Each gorilla entirely inside its cell with ample margins, with room in front of it for the full reach of column 4; in column 1 it fills about two thirds of the cell height. Flat uniform solid #FF00FF magenta background everywhere, no labels, text, letters, numbers, glyphs, grid lines, frames, shadows on the ground, floor, scenery, effects or extra objects. One image only.
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "[Console]::Write([System.IO.File]::ReadAllText('D:/dev/new-mech-rpg/docs/art/moba/attack/ape_l/strike35/s1/prompt-sheet.txt'))" in D:\dev\_scratch\codex-cwd
+ succeeded in 51ms:
+Use case: stylized-concept. Create exactly ONE pixel sprite sheet of 2 rows by 6 columns showing the SAME robot gorilla as the attached image throwing ONE short, heavy FORWARD PUNCH with one fist, from the SAME camera (looking DOWN at it from 35 degrees above level, the way a third-person arena game camera sees it) in EVERY cell.
+THE ATTACHED IMAGE, look_35.png: the approved robot gorilla in two views on magenta, left to right: front three-quarter facing lower right (southeast), side view facing right (east), already drawn from the 35 degree camera, standing in its knuckle stance. Keep EVERYTHING about this robot gorilla and this camera: its parts, proportions, colours, shading style, pixel clusters, how each material runs through its shades, the thin dark seam lines, the big rounded green armour plates, the broad back with the glowing green octagonal gem plate in a steel rim on top, the small head low between the shoulders with its dark steel jaw and two small glowing green eyes, the two huge orange forearms each with a big glowing green octagonal gem in a steel rim on its outer side, the big fists with grey steel knuckles, the round steel joint discs, the short green legs and the orange feet with grey steel toes. ONLY THE POSE CHANGES. Invent NO new parts: no spikes, vents, lights, hatches, markings, stripes, panels, weapons, claws, blades or details the image does not show. Never copy any existing game's gorilla, ape, robot or mech.
+THE PUNCHING ARM, in every row: the gorilla's RIGHT arm, which is the NEAR arm, the one closest to the camera: in row 1 the big forearm at the lower LEFT of the body, in row 2 the big forearm in FRONT of the body. The other arm (the far arm) stays down with its fist planted on the ground in every column, exactly where it is in column 1. Both feet NEVER move in any column: same place, flat on the ground. So in every column exactly three things touch the ground: the far fist and the two feet.
+THE ARM PARTS when the punching arm moves: the same arm as standing, the same length: the green upper arm, the steel elbow disc, the huge orange forearm with its gem, the big fist with steel knuckles. NO extra joint, NO extra segment, NO second forearm, NO longer arm. The forearm keeps its gem on its outer side in every column. The fist stays a closed fist.
+THE FACING NEVER CHANGES: each row keeps column 1's facing in all six columns, even at full reach. Row 1 always faces the LOWER RIGHT corner, toward the viewer: the punch drives out toward the lower right, toward the viewer, the fist and forearm coming closer to the camera. Row 2 always faces RIGHT: the punch drives straight out to the right at chest height. The body twists a little with the punch, but it never turns to another view.
+THE MOVE, column by column, the same in every row:
+column 1: standing still, exactly as in the attached image, both fists on the ground.
+column 2: LIFT: the near fist lifts off the ground and draws back toward the shoulder, the near shoulder pulling back, the weight shifting onto the far fist.
+column 3: WIND-UP: the near fist cocked back and up beside the head, elbow bent and pointing back, the upper body twisted away from the punch, coiled.
+column 4: CONTACT: the near arm thrust fully straight forward in the row's facing direction, the fist at full reach at chest height, the knuckles leading, the near shoulder driven forward, the body leaning into the punch. The longest reach of the sheet. A clear, strong silhouette.
+column 5: FOLLOW-THROUGH: the arm still forward but slightly bent, the fist a little lower and a little closer than in column 4, the body settling back.
+column 6: RECOVER: the near fist coming back down toward its place on the ground, almost back to the standing pose of column 1, just above the ground.
+No effects anywhere: no impact flash, no shock ring, no motion lines, no speed trails, no dust, no glow burst, no shadow; effects are added later.
+WHAT THE 35 DEGREE CAMERA SHOWS, as in the attached image: the top of the back, the gem plate on top and the tops of the shoulders as surfaces seen from above; the FAR fist and far foot sit HIGHER on the page than the near ones, because the ground is seen from above.
+EYES: two small glowing green eyes in the dark jaw plate in EVERY cell, never hidden behind the punching arm for more than one eye, never bigger than in the attached image.
+COUNT THE PARTS in every cell: two arms, two legs, one head, one back gem plate, one gem on each forearm (so at most three glowing gems, fewer only when the body hides one). Never an extra or missing arm, fist, leg or gem.
+PLATES AND SEAMS, as in the attached image: big rounded green armour plates with firm edges, each with a lit top edge and a shaded lower edge, never smeared, soft, melted or blobby. Thin dark seam lines between plates, around the head, around each gem rim and at the joints, as many as in the attached image. Where the lifted arm uncovers part of the body, draw that part whole with its plates and seams.
+Exact layout, 2 rows by 6 equal columns, every cell from 35 degrees above:
+row 1: FRONT three-quarter facing lower RIGHT (southeast): the head and chest turned toward the lower right, both eyes showing, the near arm at the lower left of the body. In every column.
+row 2: SIDE view facing RIGHT (east): the head at the right of the body, the near arm in front of the body, the far arm mostly hidden behind it. In every column.
+VOLUME AND CRAFT, exactly as in the attached image: light from the upper left on every cell. Green armour: bright highlight on the top of the back, the shoulders and the top edge of each plate, base across the middle, shadow on the lower body and the side away from the light, deep shadow under the belly and under each plate edge. Orange forearms and feet: highlight, base, shadow, deep. Steel rims, knuckles, joint discs and toes: light, base, shadow. Gems: a green glow with a pale highlight. Big flat colour clusters, every cluster at least 3 pixels across. No texture, no rivets, no dithering, no speckle, no stray single pixels. NO dark line around the outside of the silhouette: the outermost pixels use the green, orange and steel colours.
+PALETTE, the same colours as the attached image and no others: green highlight 9ccb62, base 6c9b4a, shadow 47693a, deep 22301d; orange highlight f2ac5c, base d4853b, shadow 9c5e28, deep 55331a; steel light dfe2e9, base 8a8a93, shadow 4a4950; gem glow pale d6ffe6, glow 3fe07f, deep 1b9a52; dark accent 141a16 for the seams, overlap lines and the jaw.
+Twelve copies of the exact same robot gorilla, the same anatomy and proportions, the same SCALE in every cell. Within each row the feet and the far fist stand at exactly the same place in every column and the ground line is at the same height. Each gorilla entirely inside its cell with ample margins, with room in front of it for the full reach of column 4; in column 1 it fills about two thirds of the cell height. Flat uniform solid #FF00FF magenta background everywhere, no labels, text, letters, numbers, glyphs, grid lines, frames, shadows on the ground, floor, scenery, effects or extra objects. One image only.
+
+codex
+The single image is generated. By eye, both rows keep their facing and column 4 has the longest reach. The main issues are shifting feet, recovery fists that appear grounded, and broken underside details in the east row. I’ll record those in the report and save the unchanged image.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Copy-Item -LiteralPath 'C:/Users/pmcga/.codex/generated_images/01a1b111-c645-7270-aeb4-9c544b03945e/exec-b9ad2f54-df7e-4aa7-8eda-0aa37054f983.png' -Destination 'D:/dev/new-mech-rpg/docs/art/moba/attack/ape_l/strike35/s1/sheet_raw.png'
+"'$report = @'"'
+Tokens: unknown. Image: 2048 x 683. Visual assessment only; occluded contacts/anatomy cannot be confirmed.
+se C2: facing yes; near arm yes; far fist planted; both feet fixed/three contacts uncertain; arm length/parts plausible; gems/eyes intact.
+se C3: facing yes; near arm yes; far fist planted; near foot shifts/reveals, three contacts uncertain; arm compact but no obvious extra segment; gems/eyes intact.
+se C4: facing yes; near arm yes; far fist planted; feet shift, three contacts uncertain; longest reach yes; arm foreshortened, length uncertain, no obvious extra joint; gems/eyes intact.
+se C5: facing yes; near arm yes; far fist planted; feet shift, three contacts uncertain; reach shorter than C4; arm parts plausible; gems/eyes intact.
+se C6: facing yes; near arm yes; far fist planted; near fist appears grounded (four contacts); arm parts plausible; feet partly hidden; gems/eyes intact.
+e C2: facing right yes; near arm yes; far fist appears planted; feet fixed/three contacts uncertain; arm length/parts plausible; one eye visible, far gem occluded.
+e C3: facing right yes; near arm yes; far fist appears planted; foot shifts, three contacts uncertain; no obvious extra forearm; broken magenta gaps under torso, far leg unclear.
+e C4: facing right yes; near arm yes; far fist partly occluded; feet shift/three contacts uncertain; longest reach yes; elbow/upper arm compressed, length uncertain; broken underside, far leg unclear.
+e C5: facing right yes; near arm yes; far fist partly occluded; feet shift/three contacts uncertain; reach shorter than C4; no clear extra segment; broken underside, far leg unclear.
+e C6: facing right yes; near arm yes; far fist planted; near fist appears grounded (four contacts); stacked rear joint discs look extra; far leg unclear; one eye visible, far gem occluded.
+'@
+[System.IO.File]::WriteAllText('D:/dev/new-mech-rpg/docs/art/moba/attack/ape_l/strike35/s1/REPORT.txt', "'$report)' in D:\dev\_scratch\codex-cwd
+ succeeded in 158ms:
+codex
+Tokens: unknown. Image: 2048 x 683. Visual assessment only; occluded contacts/anatomy cannot be confirmed.
+se C2: facing yes; near arm yes; far fist planted; both feet fixed/three contacts uncertain; arm length/parts plausible; gems/eyes intact.
+se C3: facing yes; near arm yes; far fist planted; near foot shifts/reveals, three contacts uncertain; arm compact but no obvious extra segment; gems/eyes intact.
+se C4: facing yes; near arm yes; far fist planted; feet shift, three contacts uncertain; longest reach yes; arm foreshortened, length uncertain, no obvious extra joint; gems/eyes intact.
+se C5: facing yes; near arm yes; far fist planted; feet shift, three contacts uncertain; reach shorter than C4; arm parts plausible; gems/eyes intact.
+se C6: facing yes; near arm yes; far fist planted; near fist appears grounded (four contacts); arm parts plausible; feet partly hidden; gems/eyes intact.
+e C2: facing right yes; near arm yes; far fist appears planted; feet fixed/three contacts uncertain; arm length/parts plausible; one eye visible, far gem occluded.
+e C3: facing right yes; near arm yes; far fist appears planted; foot shifts, three contacts uncertain; no obvious extra forearm; broken magenta gaps under torso, far leg unclear.
+e C4: facing right yes; near arm yes; far fist partly occluded; feet shift/three contacts uncertain; longest reach yes; elbow/upper arm compressed, length uncertain; broken underside, far leg unclear.
+e C5: facing right yes; near arm yes; far fist partly occluded; feet shift/three contacts uncertain; reach shorter than C4; no clear extra segment; broken underside, far leg unclear.
+e C6: facing right yes; near arm yes; far fist planted; near fist appears grounded (four contacts); stacked rear joint discs look extra; far leg unclear; one eye visible, far gem occluded.
+tokens used
+16,290
+Tokens: unknown. Image: 2048 x 683. Visual assessment only; occluded contacts/anatomy cannot be confirmed.
+se C2: facing yes; near arm yes; far fist planted; both feet fixed/three contacts uncertain; arm length/parts plausible; gems/eyes intact.
+se C3: facing yes; near arm yes; far fist planted; near foot shifts/reveals, three contacts uncertain; arm compact but no obvious extra segment; gems/eyes intact.
+se C4: facing yes; near arm yes; far fist planted; feet shift, three contacts uncertain; longest reach yes; arm foreshortened, length uncertain, no obvious extra joint; gems/eyes intact.
+se C5: facing yes; near arm yes; far fist planted; feet shift, three contacts uncertain; reach shorter than C4; arm parts plausible; gems/eyes intact.
+se C6: facing yes; near arm yes; far fist planted; near fist appears grounded (four contacts); arm parts plausible; feet partly hidden; gems/eyes intact.
+e C2: facing right yes; near arm yes; far fist appears planted; feet fixed/three contacts uncertain; arm length/parts plausible; one eye visible, far gem occluded.
+e C3: facing right yes; near arm yes; far fist appears planted; foot shifts, three contacts uncertain; no obvious extra forearm; broken magenta gaps under torso, far leg unclear.
+e C4: facing right yes; near arm yes; far fist partly occluded; feet shift/three contacts uncertain; longest reach yes; elbow/upper arm compressed, length uncertain; broken underside, far leg unclear.
+e C5: facing right yes; near arm yes; far fist partly occluded; feet shift/three contacts uncertain; reach shorter than C4; no clear extra segment; broken underside, far leg unclear.
+e C6: facing right yes; near arm yes; far fist planted; near fist appears grounded (four contacts); stacked rear joint discs look extra; far leg unclear; one eye visible, far gem occluded.

@@ -1,0 +1,1908 @@
+Reading prompt from stdin...
+OpenAI Codex v0.166.0
+--------
+workdir: C:\Users\pmcga\dev\hollowtide
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR, D:\dev\new-mech-rpg\docs\art\moba]
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a1a763-575d-74f0-a3af-354edfdb311e
+--------
+user
+You are making pixel-art animation frames for a game. Write only inside
+D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\anim\codex-set-d\. Read anything under D:\dev\new-mech-rpg\docs\art\moba.
+Another Codex job is writing the sibling folder anim\codex-set-c at the same time, and others may be writing under
+docs\art\moba\rhino_l; do not touch them.
+
+Job: the gorilla mech (ape_l) is drawn in front, side and back (sets A and B). This job adds its two three-quarter
+views for the same moves: se (three-quarter front, facing down-right) and ne (three-quarter back, facing up-right).
+Method: you made the gorilla's sets A and B. Read anim\codex-set-a and anim\codex-set-b (brief.txt, REPORT.txt,
+prompts\, finish.py, polish.py, gems.py, final_pose.py, seam_fill.py, gem_cleanup.py, verify.py) and follow the method
+that worked: one sheet per move from your image tool with the approved stills attached, slice it, finish every frame
+against the stills at their native pixel scale, check, and board it. Copy and adapt those scripts; do not start over.
+Generate exactly ONE image per move. Never make a second image or a redo; if one fails, report it and go on.
+
+Approved stills, 160x160, feet on row 130, in D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\views\: se.png and
+ne.png (copied with 6x enlargements on magenta in codex-set-d\refs\). Attach refs\se_6x.png then refs\ne_6x.png, in
+that order. Keep the design exactly: the mossy green armoured body and head, the grey face plate with green eyes, the
+big orange forearm gauntlets each carrying a large green octagonal hex gem, the grey knuckle fists, the green hex gem
+on the back, the same 15 colours, the dark outline and the chunky pixel size. Only the pose changes. Never redesign.
+No effects of any kind.
+
+Prompts: for each move write codex-set-d\prompts\<move>.txt from that move's existing prompt: change the sentence about
+the attached images to say they are the approved se (three-quarter front, facing down-right) and ne (three-quarter
+back, facing up-right) views, replace the layout part with this text word for word (N = the move's column count):
+"Layout: a grid of 2 rows and {n} columns of equal cells, one whole gorilla per cell, nothing crossing a cell edge, no labels, no text, no grid lines. Row 1 is the three-quarter front view facing down and to the right, exactly the camera angle of the first attached sprite: we see its face plate and green eyes. Row 2 is the three-quarter back view facing up and to the right, exactly the camera angle of the second attached sprite: we see its back and the back hex gem, and its head points away. Every cell in a row keeps that row's angle: never turn it to a straight front, side or back view, and never mirror it. Each column is one moment seen from two angles, so the two rows match frame for frame. The gorilla is the same size in every cell and the ground line is at the same height in every cell."
+and keep every column description word for word, so the new rows match the drawn rows beat for beat.
+
+Moves:
+- bound: 9 columns; column text from anim\codex-set-b\prompts\bound.txt; frames se/ne; preview ms 300, 120, 80, 90, 200, 90, 80, 150, 250.
+- hex_dome: 8 columns; column text from anim\codex-set-b\prompts\hex_dome.txt; frames se/ne; preview ms 300, 150, 150, 300, 60, 350, 150, 300.
+- death: 8 columns; column text from anim\codex-set-b\prompts\death.txt; frames se/ne; preview ms 80, 120, 120, 140, 160, 180, 250, 1000.
+
+Output for each move, in codex-set-d\<move>\ :
+- frames\se_f<i>.png and ne_f<i>.png on 192x192 transparent canvases, at the stills' pixel scale (never resize the
+  design), placed like the still shifted by +16 x and +30 y, so the feet stand on row 160.
+- Frame 0 of every move, and the last frame of hex_shield, chest_beat, bound and hex_dome, must be the exact approved
+  se or ne still; report the IoU. The same holds for the idle's frame 0.
+- Bound's frames 3, 4 and 5 are in the air, lifted exactly like the drawn rows (16, 28 and 12 px); every other frame
+  stands on row 160. The walk's planted knuckles and feet keep their coordinates (no sliding), as in set A.
+- Snap every pixel to the stills' colours; one-texel dark outline like the stills; no anti-aliasing, no stray pixels,
+  nothing touching the canvas edge. No see-through seams or holes inside the silhouette: run the seam and hole checks
+  from set B and fill what you find.
+- Keep sheet_raw.png, grid.json (cut edges, row factors, every frame's placement), checks.txt, a preview gif per view
+  with the listed timing, and a review.png board with the approved still at the left of each row.
+Also write codex-set-d\REPORT.txt (under 30 lines): tokens used if known, each sheet's size and hash, whether each grid
+was clean, the checks, and by eye per move: same gorilla in both rows? the move as asked, rows matching column for
+column and matching the drawn front/side/back frames? each row at its still's three-quarter angle in every cell, not
+turned straight and not mirrored? limbs keep their length? Look at your boards before finishing and fix drift from
+the stills; the eyes, the hex gems and the gauntlet shapes are where drift usually shows. Do not touch anything
+outside codex-set-d, do not touch assets\ or art\, do not commit.
+
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\pmcga\.codex\config.toml): `computer_use.windows.always_allowed_app_ids` is ignored.
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\pmcga\.codex\config.toml): `computer_use.windows.always_allowed_app_ids` is ignored.
+codex
+I’ll read sets A and B, adapt their finishing scripts, and generate one sheet for each move. All outputs will stay inside `codex-set-d`.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content C:\\Users\\pmcga\\.codex\\skills\\.system\\imagegen\\SKILL.md" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 272ms:
+. : File C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be loaded because 
+running scripts is disabled on this system. For more information, see about_Execution_Policies at 
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:3
++ . 'C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.Powe ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+---
+name: "imagegen"
+description: "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas."
+---
+
+# Image Generation Skill
+
+Generates or edits images for the current project (for example website assets, game assets, UI mockups, product mockups, wireframes, logo design, photorealistic images, or infographics).
+
+## Top-level modes and rules
+
+This skill has exactly two top-level modes:
+
+- **Default built-in tool mode (preferred):** built-in `image_gen` tool for image generation, editing, and transparent-image requests. Does not require `OPENAI_API_KEY`.
+- **Fallback CLI mode:** `scripts/image_gen.py` CLI. Use when the user explicitly asks for or confirms the CLI/API/model path. Requires `OPENAI_API_KEY`.
+
+Within CLI fallback, the CLI exposes three subcommands:
+
+- `generate`
+- `edit`
+- `generate-batch`
+
+Rules:
+- Use the built-in `image_gen` tool by default for normal image generation and editing requests.
+- Do not switch to CLI fallback for ordinary quality, size, or file-path control.
+- For transparent images, ask built-in `image_gen` for a transparent background and preserve the generated alpha.
+- Never silently switch from built-in `image_gen` or CLI `gpt-image-2` to CLI `gpt-image-1.5`; ask the user first unless they explicitly requested `gpt-image-1.5`.
+- The word `batch` by itself does not mean CLI fallback. If the user asks for many assets or says to batch-generate assets without explicitly asking for CLI/API/model controls, stay on the built-in path and issue one built-in call per requested asset or variant.
+- If the built-in tool fails or is unavailable, tell the user the CLI fallback exists and that it requires `OPENAI_API_KEY`. Proceed only if the user explicitly asks for that fallback.
+- If the user explicitly asks for CLI mode, use the bundled `scripts/image_gen.py` workflow. Do not create one-off SDK runners.
+- Never modify `scripts/image_gen.py`. If something is missing, ask the user before doing anything else.
+
+Built-in save-path policy:
+- In built-in tool mode, Codex saves generated images under `$CODEX_HOME/*` by default.
+- Do not describe or rely on OS temp as the default built-in destination.
+- Do not describe or rely on a destination-path argument (if any) on the built-in `image_gen` tool. If a specific location is needed, generate first and then move or copy the selected output from `$CODEX_HOME/generated_images/...`.
+- Save-path precedence in built-in mode:
+  1. If the user names a destination, move or copy the selected output there.
+  2. If the image is meant for the current project, move or copy the final selected image into the workspace before finishing.
+  3. If the image is only for preview or brainstorming, render it inline; the underlying file can remain at the default `$CODEX_HOME/*` path.
+- Never leave a project-referenced asset only at the default `$CODEX_HOME/*` path.
+- Do not overwrite an existing asset unless the user explicitly asked for replacement; otherwise create a sibling versioned filename such as `hero-v2.png` or `item-icon-edited.png`.
+
+Shared prompt guidance for both modes lives in `references/prompting.md` and `references/sample-prompts.md`.
+
+Fallback-only docs/resources for CLI mode:
+- `references/cli.md`
+- `references/image-api.md`
+- `references/codex-network.md`
+- `scripts/image_gen.py`
+
+## When to use
+- Generate a new image (concept art, product shot, cover, website hero)
+- Generate a new image using one or more reference images for style, composition, or mood
+- Edit an existing image (inpainting, lighting or weather transformations, background replacement, object removal, compositing, transparent background)
+- Produce many assets or variants for one task
+
+## When not to use
+- Extending or matching an existing SVG/vector icon set, logo system, or illustration library inside the repo
+- Creating simple shapes, diagrams, wireframes, or icons that are better produced directly in SVG, HTML/CSS, or canvas
+- Making a small project-local asset edit when the source file already exists in an editable native format
+- Any task where the user clearly wants deterministic code-native output instead of a generated bitmap
+
+## Decision tree
+
+Think about two separate questions:
+
+1. **Intent:** is this a new image or an edit of an existing image?
+2. **Execution strategy:** is this one asset or many assets/variants?
+
+Intent:
+- If the user wants to modify an existing image while preserving parts of it, treat the request as **edit**.
+- If the user provides images only as references for style, composition, mood, or subject guidance, treat the request as **generate**.
+- If the user provides no images, treat the request as **generate**.
+
+Built-in edit semantics:
+- Built-in edit mode is for images already visible in the conversation context, such as attached images or images generated earlier in the thread.
+- If the user wants to edit a local image file with the built-in tool, first load it with built-in `view_image` tool so the image is visible in the conversation context, then proceed with the built-in edit flow.
+- Do not promise arbitrary filesystem-path editing through the built-in tool.
+- If a local file still needs direct file-path control, masks, or other explicit CLI-only parameters, use the explicit CLI fallback only when the user asks for it.
+- For edits, preserve invariants aggressively and save non-destructively by default.
+
+Execution strategy:
+- In the built-in default path, produce many assets or variants by issuing one `image_gen` call per requested asset or variant.
+- In the CLI fallback path, use the CLI `generate-batch` subcommand only when the user explicitly chose CLI mode and needs many prompts/assets.
+- For many distinct assets, do not use `n` as a substitute for separate prompts. `n` is for variants of one prompt; distinct assets need distinct built-in calls or distinct CLI `generate-batch` jobs.
+
+Assume the user wants a new image unless they clearly ask to change an existing one.
+
+## Workflow
+1. Decide the top-level mode: built-in by default, including transparent-output requests; fallback CLI only if explicitly requested or confirmed.
+2. Decide the intent: `generate` or `edit`.
+3. Decide whether the output is preview-only or meant to be consumed by the current project.
+4. Decide the execution strategy: single asset vs repeated built-in calls vs CLI `generate-batch`.
+5. Collect inputs up front: prompt(s), exact text (verbatim), constraints/avoid list, and any input images.
+6. For every input image, label its role explicitly:
+   - reference image
+   - edit target
+   - supporting insert/style/compositing input
+7. If the edit target is only on the local filesystem and you are staying on the built-in path, inspect it with `view_image` first so the image is available in conversation context.
+8. If the user asked for a photo, illustration, sprite, product image, banner, or other explicitly raster-style asset, use `image_gen` rather than substituting SVG/HTML/CSS placeholders. If the request is for an icon, logo, or UI graphic that should match existing repo-native SVG/vector/code assets, prefer editing those directly instead.
+9. Augment the prompt based on specificity:
+   - If the user's prompt is already specific and detailed, normalize it into a clear spec without adding creative requirements.
+   - If the user's prompt is generic, add tasteful augmentation only when it materially improves output quality.
+10. Use the built-in `image_gen` tool by default.
+11. For transparent-output requests, ask built-in `image_gen` for a transparent background and preserve the generated alpha channel.
+12. Inspect outputs and validate: subject, style, composition, text accuracy, and invariants/avoid items.
+13. Iterate with a single targeted change, then re-check.
+14. For preview-only work, render the image inline; the underlying file may remain at the default `$CODEX_HOME/generated_images/...` path.
+15. For project-bound work, move or copy the selected artifact into the workspace and update any consuming code or references. Never leave a project-referenced asset only at the default `$CODEX_HOME/generated_images/...` path.
+16. For batches or multi-asset requests, persist every requested deliverable final in the workspace unless the user explicitly asked to keep outputs preview-only. Discarded variants do not need to be kept unless requested.
+17. If the user explicitly chooses or confirms the CLI fallback, then use the fallback-only docs for model, quality, size, `input_fidelity`, masks, output format, output paths, and network setup.
+18. Always report the final saved path(s) for any workspace-bound asset(s), plus the final prompt or prompt set and whether the built-in tool or fallback CLI mode was used.
+
+## Transparent image requests
+
+Ask built-in `image_gen` for a genuinely transparent background and preserve its alpha.
+
+## Prompt augmentation
+
+Reformat user prompts into a structured, production-oriented spec. Make the user's goal clearer and more actionable, but do not blindly add detail.
+
+Treat this as prompt-shaping guidance, not a closed schema. Use only the lines that help, and add a short extra labeled line when it materially improves clarity.
+
+### Specificity policy
+
+Use the user's prompt specificity to decide how much augmentation is appropriate:
+
+- If the prompt is already specific and detailed, preserve that specificity and only normalize/structure it.
+- If the prompt is generic, you may add tasteful augmentation when it will materially improve the result.
+
+Allowed augmentations:
+- composition or framing hints
+- polish level or intended-use hints
+- practical layout guidance
+- reasonable scene concreteness that supports the stated request
+
+Not allowed augmentations:
+- extra characters or objects that are not implied by the request
+- brand names, slogans, palettes, or narrative beats that are not implied
+- arbitrary side-specific placement unless the surrounding layout supports it
+
+## Use-case taxonomy (exact slugs)
+
+Classify each request into one of these buckets and keep the slug consistent across prompts and references.
+
+Generate:
+- photorealistic-natural â€” candid/editorial lifestyle scenes with real texture and natural lighting.
+- product-mockup â€” product/packaging shots, catalog imagery, merch concepts.
+- ui-mockup â€” app/web interface mockups and wireframes; specify the desired fidelity.
+- infographic-diagram â€” diagrams/infographics with structured layout and text.
+- scientific-educational â€” classroom explainers, scientific diagrams, and learning visuals with required labels and accuracy constraints.
+- ads-marketing â€” campaign concepts and ad creatives with audience, brand position, scene, and exact tagline/copy.
+- productivity-visual â€” slide, chart, workflow, and data-heavy business visuals.
+- logo-brand â€” logo/mark exploration, vector-friendly.
+- illustration-story â€” comics, childrenâ€™s book art, narrative scenes.
+- stylized-concept â€” style-driven concept art, 3D/stylized renders.
+- historical-scene â€” period-accurate/world-knowledge scenes.
+
+Edit:
+- text-localization â€” translate/replace in-image text, preserve layout.
+- identity-preserve â€” try-on, person-in-scene; lock face/body/pose.
+- precise-object-edit â€” remove/replace a specific element (including interior swaps).
+- lighting-weather â€” time-of-day/season/atmosphere changes only.
+- background-extraction â€” transparent background / clean cutout. Ask built-in `image_gen` for actual transparency.
+- style-transfer â€” apply reference style while changing subject/scene.
+- compositing â€” multi-image insert/merge with matched lighting/perspective.
+- sketch-to-render â€” drawing/line art to photoreal render.
+
+## Shared prompt schema
+
+Use the following labeled spec as shared prompt scaffolding for both top-level modes:
+
+```text
+Use case: <taxonomy slug>
+Asset type: <where the asset will be used>
+Primary request: <user's main prompt>
+Input images: <Image 1: role; Image 2: role> (optional)
+Scene/backdrop: <environment>
+Subject: <main subject>
+Style/medium: <photo/illustration/3D/etc>
+Composition/framing: <wide/close/top-down; placement>
+Lighting/mood: <lighting + mood>
+Color palette: <palette notes>
+Materials/textures: <surface details>
+Text (verbatim): "<exact text>"
+Constraints: <must keep/must avoid>
+Avoid: <negative constraints>
+```
+
+Notes:
+- `Asset type` and `Input images` are prompt scaffolding, not dedicated CLI flags.
+- `Scene/backdrop` refers to the visual setting. It is not the same as the fallback CLI `background` parameter, which controls output transparency behavior.
+- Fallback-only execution notes such as `Quality:`, `Input fidelity:`, masks, output format, and output paths belong in the CLI path only. Do not treat them as built-in `image_gen` tool arguments.
+
+Augmentation rules:
+- Keep it short.
+- Add only the details needed to improve the prompt materially.
+- For edits, explicitly list invariants (`change only X; keep Y unchanged`).
+- If any critical detail is missing and blocks success, ask a question; otherwise proceed.
+
+## Examples
+
+### Generation example (hero image)
+```text
+Use case: product-mockup
+Asset type: landing page hero
+Primary request: a minimal hero image of a ceramic coffee mug
+Style/medium: clean product photography
+Composition/framing: wide composition with usable negative space for page copy if needed
+Lighting/mood: soft studio lighting
+Constraints: no logos, no text, no watermark
+```
+
+### Edit example (invariants)
+```text
+Use case: precise-object-edit
+Asset type: product photo background replacement
+Primary request: replace only the background with a warm sunset gradient
+Constraints: change only the background; keep the product and its edges unchanged; no text; no watermark
+```
+
+## Prompting best practices
+- Structure prompt as scene/backdrop -> subject -> details -> constraints.
+- Include intended use (ad, UI mock, infographic) to set the mode and polish level.
+- Use camera/composition language for photorealism.
+- Only use SVG/vector stand-ins when the user explicitly asked for vector output or a non-image placeholder.
+- Quote exact text and specify typography + placement.
+- For tricky words, spell them letter-by-letter and require verbatim rendering.
+- For multi-image inputs, reference images by index and describe how they should be used.
+- For edits, repeat invariants every iteration to reduce drift.
+- Iterate with single-change follow-ups.
+- If the prompt is generic, add only the extra detail that will materially help.
+- If the prompt is already detailed, normalize it instead of expanding it.
+- For CLI fallback only, see `references/cli.md` and `references/image-api.md` for model, `quality`, `input_fidelity`, masks, output format, and output-path guidance.
+- For transparent images, ask built-in `image_gen` for actual transparency and preserve its alpha.
+
+More principles shared by both modes: `references/prompting.md`.
+Copy/paste specs shared by both modes: `references/sample-prompts.md`.
+
+## Guidance by asset type
+Asset-type templates (website assets, game assets, wireframes, logo) are consolidated in `references/sample-prompts.md`.
+
+## gpt-image-2 guidance for CLI fallback
+
+The fallback CLI defaults to `gpt-image-2`.
+
+- Use `gpt-image-2` for new CLI/API workflows unless the user confirms a different model.
+- CLI `gpt-image-2` does not support `background=transparent`; ask before using `gpt-image-1.5` unless the user explicitly requested that model.
+- `gpt-image-2` always uses high fidelity for image inputs; do not set `input_fidelity` with this model.
+- `gpt-image-2` supports `quality` values `low`, `medium`, `high`, and `auto`.
+- Use `quality low` for fast drafts, thumbnails, and quick iterations. Use `medium`, `high`, or `auto` for final assets, dense text, diagrams, identity-sensitive edits, or high-resolution outputs.
+- Square images are typically fastest to generate. Use `1024x1024` for fast square drafts.
+- If the user asks for 4K-style output, use `3840x2160` for landscape or `2160x3840` for portrait.
+- `gpt-image-2` size may be `auto` or `WIDTHxHEIGHT` if all constraints hold: max edge `<= 3840px`, both edges multiples of `16px`, long-to-short ratio `<= 3:1`, total pixels between `655,360` and `8,294,400`.
+
+Popular `gpt-image-2` sizes:
+- `1024x1024` square
+- `1536x1024` landscape
+- `1024x1536` portrait
+- `2048x2048` 2K square
+- `2048x1152` 2K landscape
+- `3840x2160` 4K landscape
+- `2160x3840` 4K portrait
+- `auto`
+
+## Fallback CLI mode only
+
+### Temp and output conventions
+These conventions apply only to the CLI fallback. They do not describe built-in `image_gen` output behavior.
+- Use `tmp/imagegen/` for intermediate files (for example JSONL batches); delete them when done.
+- Write final artifacts under `output/imagegen/`.
+- Use `--out` or `--out-dir` to control output paths; keep filenames stable and descriptive.
+
+### Dependencies
+Prefer `uv` for dependency management in this repo.
+
+Required Python package:
+```bash
+uv pip install openai
+```
+
+Optional for image inspection and downscaling:
+```bash
+uv pip install pillow
+```
+
+Portability note:
+- If you are using the installed skill outside this repo, install dependencies into that environment with its package manager.
+- In uv-managed environments, `uv pip install ...` remains the preferred path.
+
+### Environment
+- `OPENAI_API_KEY` must be set for live API calls.
+- Do not ask the user for `OPENAI_API_KEY` when using the built-in `image_gen` tool.
+- Never ask the user to paste the full key in chat. Ask them to set it locally and confirm when ready.
+
+If the key is missing, give the user these steps:
+1. Create an API key in the OpenAI platform UI: https://platform.openai.com/api-keys
+2. Set `OPENAI_API_KEY` as an environment variable in their system.
+3. Offer to guide them through setting the environment variable for their OS/shell if needed.
+
+If installation is not possible in this environment, tell the user which dependency is missing and how to install it into their active environment.
+
+### Script-mode notes
+- CLI commands + examples: `references/cli.md`
+- API parameter quick reference: `references/image-api.md`
+- Network approvals / sandbox settings for CLI mode: `references/codex-network.md`
+
+## Reference map
+- `references/prompting.md`: shared prompting principles for both modes.
+- `references/sample-prompts.md`: shared copy/paste prompt recipes for both modes.
+- `references/cli.md`: fallback-only CLI usage via `scripts/image_gen.py`.
+- `references/image-api.md`: fallback-only API/CLI parameter reference.
+- `references/codex-network.md`: fallback-only network/sandbox troubleshooting for CLI mode.
+- `scripts/image_gen.py`: fallback-only CLI implementation. Use only when the user explicitly chooses or confirms CLI mode.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-ChildItem -Force D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d; Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-b\\REPORT.txt; Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-b\\brief.txt" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 221ms:
+. : File C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be loaded because 
+running scripts is disabled on this system. For more information, see about_Execution_Policies at 
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:3
++ . 'C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.Powe ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+
+
+    Directory: D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\anim\codex-set-d
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         11/4/2026  10:27 AM                prompts                                                              
+d-----         11/4/2026  10:27 AM                refs                                                                 
+-a----         11/4/2026  10:27 AM           5299 brief.txt                                                            
+-a----         11/4/2026  10:27 AM              0 codex-log.txt                                                        
+APE L / CODEX SET B / 2026-11-04
+75 native-scale transparent 192x192 frames: bound 27, hex_dome 24, death 24.
+Tokens used: unavailable. Built-in image tool: exactly 3 calls, ONE sheet per animation; no redo.
+Copied and adapted set A finish.py, polish.py, gems.py, seam_fill.py and verify.py.
+Prompts in prompts/; attached approved stills copied in refs/; unmodified generated sheets retained.
+bound: sheet 2172x724, clean 3x9 grid, no source cut contacts; SHA256 c16f2ea728f45c872715d1eb72081ab553c8435dbe0eb2eb26334170f69c22d8
+hex_dome: sheet 2172x724, clean 3x8 grid, no source cut contacts; SHA256 dea78f1e1686ad4556d86825797f20392941e0b9ae7364e991521123161684d1
+death: sheet 2172x724, clean 3x8 grid, no source cut contacts; SHA256 bf3e1c5033f4672723271402e874e849ce2f42ed2c9c44d945f1b6b0aa2bc2ae
+All 75: approved 15-colour palette only, binary alpha, no pixels below row160, no canvas-edge contacts, no tiny stray components.
+Exact stills at (+16,+30): all frame0s and bound/hex_dome final frames have silhouette AND exact-colour IoU 1.000000 in all views.
+Bound airborne f3/f4/f5 lowest rows 144/132/148; lifts 16/28/12 native pixels in every view. Peak frame4 is the highest.
+Death f6/f7 lowest row160; f7 body settles one pixel down while ground contact texels remain planted. Eyes take approved darkest faceplate grey (74,73,80); gems stay green.
+Seam check from set A plus enclosed-hole flood fill run on every frame; checks.txt records found/filled counts per frame.
+Exception: exact approved endpoints retain original front 3 and back 6 enclosed transparent pixels. No newly drawn frame retains enclosed holes.
+Viewed all final three-view boards, including eyes, gems, gauntlets and contact lines. Patched native faces/gems, gem-face pinholes, crouch and overhead lead-in.
+Bound by eye: same gorilla in every row; crouch, push, airborne arc, two-fist low impact, recovery read in matched columns. Front/back straight on; no obvious limb elongation.
+Hex dome by eye: same gorilla; both fists overhead together in f2/f3, down together into f5; differs from chest beat. Rows match; front/back straight; short heavy limbs retained.
+Death by eye: same gorilla; recoil/stagger/buckle/forward sink/prone progression matches across rows; arms spread, final eyes dark. Front/back straight; no obvious stretched limbs.
+Generated drawings vary slightly in armour contour during extreme poses; palette, native face/gem details and fixed row scale were enforced. No effects present.
+All nine GIFs verified against requested timings. Frames, raw sheets, slices, grids, checks, GIFs and review boards are local to this set.
+Rebuild: python finish.py; python polish.py; python gems.py; python final_pose.py; python seam_fill.py; python gem_cleanup.py; python verify.py; python report.py.
+No installation, assets changes, commit, or writes to the other jobs.
+You are making pixel-art animation frames for a game. Write only inside
+D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\anim\codex-set-b\. Read anything under D:\dev\new-mech-rpg\docs\art\moba.
+Another Codex job may be writing in docs\art\moba\rhino_l\take-a\anim\codex-set-c or codex-set-d; do not touch them.
+
+Method: you made the gorilla's set A the same way. Read D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\anim\codex-set-a
+(brief.txt, REPORT.txt, prompts\, refs\, finish.py, polish.py, gems.py, seam_fill.py, verify.py, grid.json files) and
+follow the method that worked there: one sheet per animation from your image tool with the approved stills attached,
+slice it, finish every frame against the stills at their native pixel scale, check, and board it. Copy and adapt set A's
+scripts into codex-set-b; do not start over.
+Generate exactly ONE image per animation. Never make a second image or a redo; if one fails, report it and go on.
+
+The creature is the gorilla mech (ape_l). Approved stills, 160x160, feet on row 130, in
+D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\views\: s.png (front), e.png (side facing right), n.png (back). Keep the
+design exactly: the mossy green armoured body and head, the grey face plate with green eyes, the big orange forearm
+gauntlets each carrying a large green octagonal hex gem, the grey knuckle fists, the green hex gem on the back, the same
+15 colours, the dark outline and the chunky pixel size. Only the pose changes. Never redesign: no new parts, no gloss,
+no realistic fur, no longer or thinner limbs. No effects of any kind (no dome, no shockwave, no dust, no glow, no
+motion lines); effects are made separately.
+
+Kit context (D:\dev\new-mech-rpg\docs\plan\moba-kits.md, Gorilla section): bound leaps to an ally or a spot and the
+landing knocks enemies back; hex dome is the ultimate that raises a dome of green hex panels over an area.
+
+Set B is three animations. Each is drawn in three rows: front (like s.png), side facing right (like e.png), back (like
+n.png). Each column is one moment seen from the three sides, so the rows match frame for frame.
+1. bound (ability 3): 9 frames. 0 idle (the exact still). 1 crouch: weight drops onto the knuckles and the hind legs
+   bend, body 3-4 px lower. 2 push-off: arms and legs drive the body up, feet and knuckles still touching. 3 rising:
+   the whole gorilla off the ground, arms swinging forward. 4 peak: highest point, arms raised and forward, legs tucked.
+   5 falling: arms reaching down for the ground. 6 landing impact: both fists slam onto the ground in front, body low,
+   hind feet planted. 7 pushing back up toward idle. 8 idle (the exact still).
+   Frames 3, 4 and 5 are in the air: lift the whole gorilla so its lowest pixel sits 12 to 28 px above row 160 (4 the
+   highest), and record each frame's lift. The engine moves the gorilla across the ground and holds frame 4 in flight.
+2. hex_dome (ability 4, the ultimate cast): 8 frames. 0 idle (exact still). 1 rising onto the hind legs. 2 both fists
+   raised overhead together, gauntlet gems facing outward. 3 top hold: the highest pose. 4 swinging both fists down.
+   5 impact: both fists slammed onto the ground together in front, body low and wide. 6 pushing back up. 7 idle (exact
+   still). Feet stay planted on row 160 throughout; the fists come back down onto the ground line, never below it.
+   This must read differently from chest_beat (alternating fists on the chest): here both fists move together, overhead
+   then down onto the ground.
+3. death: 8 frames. 0 idle (exact still). 1 recoil: head and shoulders snap back. 2 stagger: leaning back, one fist
+   lifting off the ground. 3 knees buckle. 4 sinking forward onto its fists. 5 falling forward onto its belly. 6 lying
+   flat on its belly, arms splayed out to the sides, the green eyes gone dark (eye pixels take the face plate's darkest
+   grey). 7 settled one pixel lower, eyes dark. The gems stay as they are. Its body never crosses the canvas edge.
+
+Output for each animation, in anim\codex-set-b\<name>\ :
+- frames\front_f<i>.png, side_f<i>.png, back_f<i>.png on 192x192 transparent canvases. Keep the gorilla at the stills'
+  pixel scale (never resize the design), placed like the still shifted by +16 x and +30 y, so the feet stand on row 160
+  (bound's air frames excepted, as above).
+- Frame 0 of every animation and the last frame of bound and hex_dome must be the exact approved still in each view;
+  report the IoU.
+- Snap every pixel to the stills' colours. Keep a one-texel dark outline like the stills. No anti-aliasing, no stray
+  pixels, nothing touching the canvas edge. No see-through seams or holes inside the silhouette (set A needed
+  seam_fill.py beside the gauntlets; run the same check here and fill any you find).
+- Keep sheet_raw.png, grid.json, checks.txt (per frame: lowest row, colour count, any pixel below row 160, enclosed
+  holes found and filled, frame-0 and last-frame IoU), a preview gif per view, and a review.png board.
+- Preview timings in ms: bound 300, 120, 80, 90, 200, 90, 80, 150, 250. hex_dome 300, 150, 150, 300, 60, 350, 150, 300.
+  death 80, 120, 120, 140, 160, 180, 250, 1000.
+Also write anim\codex-set-b\REPORT.txt for the whole set (under 30 lines): tokens used if known, each sheet's size and
+hash, whether each grid was clean, the checks, and by eye per animation: same gorilla in every row? the move as asked,
+rows matching column for column? front and back straight on? limbs keep their length? Look at your own boards before
+finishing and fix anything that drifts from the stills; the eyes, the hex gems and the gauntlet shapes are where drift
+usually shows. Do not touch anything outside codex-set-b, do not touch assets\ or art\, do not commit.
+
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content C:\\Users\\pmcga\\.codex\\skills\\.system\\imagegen\\SKILL.md -TotalCount 85; Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-b\\finish.py" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 117ms:
+---
+name: "imagegen"
+description: "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas."
+---
+
+# Image Generation Skill
+
+Generates or edits images for the current project (for example website assets, game assets, UI mockups, product mockups, wireframes, logo design, photorealistic images, or infographics).
+
+## Top-level modes and rules
+
+This skill has exactly two top-level modes:
+
+- **Default built-in tool mode (preferred):** built-in `image_gen` tool for image generation, editing, and transparent-image requests. Does not require `OPENAI_API_KEY`.
+- **Fallback CLI mode:** `scripts/image_gen.py` CLI. Use when the user explicitly asks for or confirms the CLI/API/model path. Requires `OPENAI_API_KEY`.
+
+Within CLI fallback, the CLI exposes three subcommands:
+
+- `generate`
+- `edit`
+- `generate-batch`
+
+Rules:
+- Use the built-in `image_gen` tool by default for normal image generation and editing requests.
+- Do not switch to CLI fallback for ordinary quality, size, or file-path control.
+- For transparent images, ask built-in `image_gen` for a transparent background and preserve the generated alpha.
+- Never silently switch from built-in `image_gen` or CLI `gpt-image-2` to CLI `gpt-image-1.5`; ask the user first unless they explicitly requested `gpt-image-1.5`.
+- The word `batch` by itself does not mean CLI fallback. If the user asks for many assets or says to batch-generate assets without explicitly asking for CLI/API/model controls, stay on the built-in path and issue one built-in call per requested asset or variant.
+- If the built-in tool fails or is unavailable, tell the user the CLI fallback exists and that it requires `OPENAI_API_KEY`. Proceed only if the user explicitly asks for that fallback.
+- If the user explicitly asks for CLI mode, use the bundled `scripts/image_gen.py` workflow. Do not create one-off SDK runners.
+- Never modify `scripts/image_gen.py`. If something is missing, ask the user before doing anything else.
+
+Built-in save-path policy:
+- In built-in tool mode, Codex saves generated images under `$CODEX_HOME/*` by default.
+- Do not describe or rely on OS temp as the default built-in destination.
+- Do not describe or rely on a destination-path argument (if any) on the built-in `image_gen` tool. If a specific location is needed, generate first and then move or copy the selected output from `$CODEX_HOME/generated_images/...`.
+- Save-path precedence in built-in mode:
+  1. If the user names a destination, move or copy the selected output there.
+  2. If the image is meant for the current project, move or copy the final selected image into the workspace before finishing.
+  3. If the image is only for preview or brainstorming, render it inline; the underlying file can remain at the default `$CODEX_HOME/*` path.
+- Never leave a project-referenced asset only at the default `$CODEX_HOME/*` path.
+- Do not overwrite an existing asset unless the user explicitly asked for replacement; otherwise create a sibling versioned filename such as `hero-v2.png` or `item-icon-edited.png`.
+
+Shared prompt guidance for both modes lives in `references/prompting.md` and `references/sample-prompts.md`.
+
+Fallback-only docs/resources for CLI mode:
+- `references/cli.md`
+- `references/image-api.md`
+- `references/codex-network.md`
+- `scripts/image_gen.py`
+
+## When to use
+- Generate a new image (concept art, product shot, cover, website hero)
+- Generate a new image using one or more reference images for style, composition, or mood
+- Edit an existing image (inpainting, lighting or weather transformations, background replacement, object removal, compositing, transparent background)
+- Produce many assets or variants for one task
+
+## When not to use
+- Extending or matching an existing SVG/vector icon set, logo system, or illustration library inside the repo
+- Creating simple shapes, diagrams, wireframes, or icons that are better produced directly in SVG, HTML/CSS, or canvas
+- Making a small project-local asset edit when the source file already exists in an editable native format
+- Any task where the user clearly wants deterministic code-native output instead of a generated bitmap
+
+## Decision tree
+
+Think about two separate questions:
+
+1. **Intent:** is this a new image or an edit of an existing image?
+2. **Execution strategy:** is this one asset or many assets/variants?
+
+Intent:
+- If the user wants to modify an existing image while preserving parts of it, treat the request as **edit**.
+- If the user provides images only as references for style, composition, mood, or subject guidance, treat the request as **generate**.
+- If the user provides no images, treat the request as **generate**.
+
+Built-in edit semantics:
+- Built-in edit mode is for images already visible in the conversation context, such as attached images or images generated earlier in the thread.
+- If the user wants to edit a local image file with the built-in tool, first load it with built-in `view_image` tool so the image is visible in the conversation context, then proceed with the built-in edit flow.
+- Do not promise arbitrary filesystem-path editing through the built-in tool.
+- If a local file still needs direct file-path control, masks, or other explicit CLI-only parameters, use the explicit CLI fallback only when the user asks for it.
+- For edits, preserve invariants aggressively and save non-destructively by default.
+
+Execution strategy:
+- In the built-in default path, produce many assets or variants by issuing one `image_gen` call per requested asset or variant.
+- In the CLI fallback path, use the CLI `generate-batch` subcommand only when the user explicitly chose CLI mode and needs many prompts/assets.
+from pathlib import Path
+import json,hashlib
+import numpy as np
+from PIL import Image,ImageDraw,ImageFilter
+from scipy import ndimage as ndi
+ROOT=Path(__file__).resolve().parent
+NAMES=['front','side','back']
+COUNTS={'bound':9,'hex_dome':8,'death':8}
+TIMINGS={'bound':[300,120,80,90,200,90,80,150,250],'hex_dome':[300,150,150,300,60,350,150,300],'death':[80,120,120,140,160,180,250,1000]}
+LIFTS={3:16,4:28,5:12}
+REFS={n:Image.open(ROOT/'refs'/f'{n}.png').convert('RGBA') for n in NAMES}
+PAL=np.unique(np.concatenate([np.array(im)[np.array(im)[:,:,3]>0,:3] for im in REFS.values()]),axis=0)
+
+def approved(n):
+ out=Image.new('RGBA',(192,192));out.paste(REFS[n],(16,30));return out
+
+def process(name):
+ out=ROOT/name; (out/'frames').mkdir(exist_ok=True);(out/'slices').mkdir(exist_ok=True)
+ raw=Image.open(out/'sheet_raw.png').convert('RGBA');a=np.array(raw);W,H=raw.size;N=COUNTS[name]
+ rgb0=a[:,:,:3].astype(int)
+ m=(a[:,:,3]>127)&~((rgb0.min(2)>195)&(np.ptp(rgb0,axis=2)<24))
+ # Real alpha first; fallback only for opaque generated backgrounds.
+ if m.mean()>.9:
+  rgb=a[:,:,:3].astype(int);m &= ~((rgb[:,:,0]-rgb[:,:,1]>45)&(rgb[:,:,2]-rgb[:,:,1]>45))
+ lab,_=ndi.label(m);sz=np.bincount(lab.ravel());m &= sz[lab]>max(16,m.sum()*.0001)
+ bands=[s[0] for s in ndi.find_objects(ndi.label(m.any(1))[0]) if s[0].stop-s[0].start>H*.1]
+ if len(bands)!=3: raise ValueError(f'{name}: row bands {bands}')
+ ys=[0]+[(bands[i].stop+bands[i+1].start)//2 for i in range(2)]+[H]
+ xs=np.rint(np.linspace(0,W,N+1)).astype(int)
+ for i in range(1,N):
+  candidates=[x for x in range(max(2,xs[i]-W//(N*5)),min(W-2,xs[i]+W//(N*5))) if not m[:,x-1:x+2].any()]
+  if candidates: xs[i]=min(candidates,key=lambda x:abs(x-xs[i]))
+ cells=[]; factors={}
+ for r,n in enumerate(NAMES):
+  local=m[ys[r]:ys[r+1],xs[0]:xs[1]]; yy,xx=np.where(local);rb=REFS[n].getbbox()
+  # Fixed factor per row based on reference neutral size, never normalize each pose.
+  factor=((rb[2]-rb[0])/(xx.max()-xx.min()+1)*(rb[3]-rb[1])/(yy.max()-yy.min()+1))**.5
+  factors[n]=factor
+  for c in range(N):
+   box=[int(xs[c]),ys[r],int(xs[c+1]),ys[r+1]];cell=raw.crop(box);cm=m[box[1]:box[3],box[0]:box[2]]
+   ca=np.array(cell);ca[:,:,3]=cm*255;ca[~cm]=0;cell=Image.fromarray(ca);b=cell.getbbox();sprite=cell.crop(b)
+   sprite.save(out/'slices'/f'{n}_f{c}.png')
+   scaled=sprite.resize((round(sprite.width*factor),round(sprite.height*factor)),Image.Resampling.NEAREST)
+   sa=np.array(scaled);sm=sa[:,:,3]>127
+   # Restore pure native palette and a one-texel dark silhouette.
+   rgb=sa[:,:,:3].astype(np.int32);idx=((rgb[:,:,None,:]-PAL.astype(np.int32)[None,None,:,:])**2).sum(3).argmin(2)
+   sa[:,:,:3]=PAL[idx];sa[:,:,3]=sm*255
+   labels,_=ndi.label(sm);sizes=np.bincount(labels.ravel());sm &= sizes[labels]>2
+   rim=sm&~ndi.binary_erosion(sm);sa[rim,:3]=PAL[0];sa[:,:,3]=sm*255;sa[~sm]=0
+   fin=Image.fromarray(sa);fr=Image.new('RGBA',(192,192))
+   # Native reference center anchor; all ground contacts at 160.
+   center=(rb[0]+rb[2]-1)/2+16;x=round(center-(fin.width-1)/2);y=161-fin.height-(LIFTS.get(c,0) if name=='bound' else 0)
+   fr.paste(fin,(x,y));fr.save(out/'frames'/f'{n}_f{c}.png')
+   cells.append(dict(view=n,frame=c,source_box=box,source_opaque_box=list(b),scale=factor,placement=[x,y],touches_cut=bool(b[0]==0 or b[1]==0 or b[2]==cell.width or b[3]==cell.height)))
+ (out/'grid.json').write_text(json.dumps(dict(raw_size=[W,H],columns=N,rows=NAMES,x_edges=xs.tolist(),y_edges=ys,row_scale=factors,cells=cells),indent=2))
+
+def board(name):
+ out=ROOT/name;N=COUNTS[name];checks=[];rows=[]
+ review=Image.new('RGB',(100+N*384,90+3*420),(53,57,62));d=ImageDraw.Draw(review);d.text((10,12),f'APE L / {name} / native frames at 2x; cyan = ground y160',fill='white')
+ for r,n in enumerate(NAMES):
+  row=[];ref=np.array(approved(n));rm=ref[:,:,3]>0
+  d.text((8,90+r*420+180),n,fill='white')
+  for c in range(N):
+   fr=Image.open(out/'frames'/f'{n}_f{c}.png').convert('RGBA');a=np.array(fr);m=a[:,:,3]>0;yy,xx=np.where(m);colors=np.unique(a[m,:3],axis=0);union=m|rm
+   iou=float((m&rm).sum()/union.sum());exact=float((np.all(a==ref,2)&union).sum()/union.sum())
+   labels,k=ndi.label(m,structure=np.ones((3,3)));sizes=np.bincount(labels.ravel())[1:]
+   checks.append(dict(frame=f'{n}_f{c}',bottom_row=int(yy.max()),colour_count=len(colors),pixels_below_160=int(m[161:].sum()),lift=160-int(yy.max()),enclosed_hole_pixels=int((ndi.binary_fill_holes(m)&~m).sum()),last_frame_IoU=iou if c==N-1 else None,last_frame_exact_colour_IoU=exact if c==N-1 else None,frame0_IoU=iou if c==0 else None,frame0_exact_colour_IoU=exact if c==0 else None,palette_ok=all(any(np.array_equal(v,p) for p in PAL) for v in colors),binary_alpha=bool(np.isin(a[:,:,3],[0,255]).all()),canvas_edge=bool(m[0].any() or m[-1].any() or m[:,0].any() or m[:,-1].any()),stray_components=int((sizes<3).sum())))
+   bg=Image.new('RGB',(192,192),(101,106,112));bg.paste(fr,mask=fr.getchannel('A'));z=bg.resize((384,384),Image.Resampling.NEAREST);review.paste(z,(100+c*384,90+r*420));d.line((100+c*384,90+r*420+322,100+(c+1)*384-1,90+r*420+322),fill=(83,180,183));d.text((110+c*384,70+r*420),f'F{c}',fill='white');row.append(bg.resize((576,576),Image.Resampling.NEAREST))
+  durations=TIMINGS[name]
+  row[0].save(out/f'preview_{n}.gif',save_all=True,append_images=row[1:],duration=durations,loop=0,disposal=2,optimize=False)
+ review.save(out/'review.png');review.resize((min(review.width,1800),round(review.height*min(review.width,1800)/review.width)),Image.Resampling.NEAREST).save(out/'review_small.png')
+ (out/'checks.txt').write_text('Native palette: 15 opaque colours. IoU uses approved still at (+16,+30).\n'+'\n'.join(json.dumps(c) for c in checks)+'\n')
+ return checks
+
+if __name__=='__main__':
+ import sys
+ for name in sys.argv[1:] or COUNTS:
+  process(name)
+  for n in NAMES:
+   approved(n).save(ROOT/name/'frames'/f'{n}_f0.png')
+   if name in ['bound','hex_dome']:approved(n).save(ROOT/name/'frames'/f'{n}_f{COUNTS[name]-1}.png')
+  board(name)
+  print(name,'finished')
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-b\\prompts\\bound.txt; Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-b\\polish.py; Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-b\\gems.py" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 86ms:
+Pixel-art animation sheet of ONE gorilla mech. Attached images in order: approved FRONT, SIDE FACING RIGHT, BACK. Exact design references. Preserve moss green armoured body/head, grey faceplate and small green eyes, enormous orange forearm gauntlets each carrying a large green octagonal gem, grey block knuckles, green octagonal back gem, flat 15-colour chunky native pixel art and dark outline. Same short thick limbs and same parts. Only pose changes. No fur, gloss, gradients, added parts, thinning or lengthening. Exactly 3 rows of equal square cells, front straight toward viewer / true side facing RIGHT / straight BACK with no face. Each column is the SAME moment in all three rows. All figures same native pixel scale, generous transparent gutters, no text/grid/labels, no shadows or effects of any kind, no dome/dust/shockwave/glow/motion lines. Exactly 9 columns, 27 figures. Heavy knuckle gorilla leap. Frame 0 exact reference idle. 1 deep crouch: torso drops 3-4 pixels, knees bend, weight onto knuckles. 2 push-off arms and legs extend upward, contacts still touch ground. 3 rising airborne whole creature lifted, arms swing forward. 4 airborne PEAK highest point, both arms raised and forward, legs tucked, engine holds this frame in flight. 5 falling airborne, both arms reach down. 6 landing impact BOTH fists slam ground in front together, torso very low and hind feet planted. 7 pushing back toward idle. 8 exact reference idle. Frames 3/4/5 visibly above ground, peak higher than adjacent frames. No effects.
+from finish import *
+
+def piece(im,mask):
+ a=np.array(im).copy();a[~mask]=0;return Image.fromarray(a)
+
+def shift(im,dx,dy):
+ out=Image.new('RGBA',im.size);out.paste(im,(dx,dy));return out
+
+def compose(parts):
+ out=Image.new('RGBA',(192,192))
+ for im,dx,dy in parts:out.alpha_composite(shift(im,dx,dy))
+ return out
+
+# Restore native face plates/eyes and back gem, fitting a translated template
+# inside the generated head area. Pose silhouettes elsewhere remain generated.
+boxes={'front':(69,80,90,95),'side':(104,82,116,97),'back':(65,61,94,86)}
+log=[]
+for name in ['bound','hex_dome','death']:
+ for n in NAMES:
+  ref=REFS[n];box=boxes[n];patch=ref.crop(box);pa=np.array(patch);pm=pa[:,:,3]>0
+  base=approved(n);bb0=base.getbbox()
+  for c in range(1,COUNTS[name]-(0 if name=='death' else 1)):
+   path=ROOT/name/'frames'/f'{n}_f{c}.png';fr=Image.open(path).convert('RGBA');a=np.array(fr);bb=fr.getbbox()
+   if n=='side' and name=='chest_beat' and c in [3,4]:
+    log.append(f'{name}/{n}_f{c}: chest fist occludes face; no stamp')
+    continue
+   # Locate actual generated eye/gem pixels before stamping. Body-top offsets
+   # are unreliable when the gorilla rears or the throwing arm is raised.
+   green=(a[:,:,1]>185)&(a[:,:,0]<110)&(a[:,:,2]>70)&(a[:,:,3]>0)
+   labels,k=ndi.label(green);candidates=[]
+   for j in range(1,k+1):
+    gy,gx=np.where(labels==j);cx,cy=gx.mean(),gy.mean()
+    if n=='back': ok=len(gx)>20 and cy<bb[1]+(bb[3]-bb[1])*.45
+    elif n=='front':ok=len(gx)<30 and abs(cx-96)<17 and cy<bb[1]+(bb[3]-bb[1])*.58
+    else:ok=len(gx)<24 and cx>bb[0]+(bb[2]-bb[0])*.70 and cy<bb[1]+(bb[3]-bb[1])*.49
+    if ok:candidates.append((cx,cy,len(gx)))
+   if not candidates:
+    log.append(f'{name}/{n}_f{c}: face occluded; no stamp')
+    continue
+   if n=='front':cx=np.mean([v[0] for v in candidates]);cy=np.mean([v[1] for v in candidates])
+   elif n=='side':cx,cy,_=max(candidates,key=lambda v:v[0])
+   else:cx,cy,_=min(candidates,key=lambda v:(v[0]-96)**2+(v[1]-bb[1]-12)**2)
+   pg=(pa[:,:,1]>185)&(pa[:,:,0]<110)&(pa[:,:,2]>70)&pm
+   py,px=np.where(pg)
+   ex=round(cx-px.mean());ey=round(cy-py.mean());best=None
+   for dy in range(-1,2):
+    for dx in range(-1,2):
+     x,y=ex+dx,ey+dy;t=a[y:y+patch.height,x:x+patch.width]
+     if t.shape!=pa.shape:continue
+     score=((t[:,:,:3].astype(float)-pa[:,:,:3])**2).mean(2)[pm].mean()+80*(dx*dx+dy*dy)
+     if best is None or score<best[0]:best=(score,x,y)
+   _,x,y=best;original=a[:,:,3]>0;fr.alpha_composite(patch,(x,y));a=np.array(fr);a[~original]=0;Image.fromarray(a).save(path)
+   log.append(f'{name}/{n}_f{c}: native {"back gem" if n=="back" else "head/face/eyes"} at {x},{y}')
+(ROOT/'native_finish_log.txt').write_text('\n'.join(log)+'\n')
+for name in COUNTS:board(name)
+print('Native detail and cycle finish complete')
+from finish import *
+
+def template(n,box):
+ a=np.array(REFS[n].crop(box));g=(a[:,:,1]>185)&(a[:,:,0]<110)&(a[:,:,2]>70)&(a[:,:,3]>0)
+ lab,k=ndi.label(g);sz=np.bincount(lab.ravel());sz[0]=0;g=lab==sz.argmax()
+ mask=ndi.binary_dilation(g,iterations=4)&(a[:,:,3]>0)
+ # Keep gem and its grey bezel; orange gauntlet corners belong to the pose.
+ orange=(a[:,:,0]>a[:,:,1]*1.1)&(a[:,:,1]>a[:,:,2]*1.3)
+ mask &= ~orange;a[~mask]=0;yy,xx=np.where(g)
+ return Image.fromarray(a),(xx.mean(),yy.mean())
+tiles={'flat':template('side',(77,95,105,122)),'left':template('front',(33,94,51,120)),'right':template('front',(109,94,126,120))}
+log=[]
+for name in ['bound','hex_dome','death']:
+ for n in NAMES:
+  for c in range(1,COUNTS[name]-(0 if name=='death' else 1)):
+   if name=='death' and c>=5:continue
+   p=ROOT/name/'frames'/f'{n}_f{c}.png';fr=Image.open(p).convert('RGBA');a=np.array(fr);bb=fr.getbbox()
+   g=(a[:,:,1]>185)&(a[:,:,0]<110)&(a[:,:,2]>70)&(a[:,:,3]>0);lab,k=ndi.label(g)
+   for j in range(1,k+1):
+    y,x=np.where(lab==j)
+    if len(x)<35:continue
+    cx,cy=x.mean(),y.mean();w=x.max()-x.min()+1;h=y.max()-y.min()+1
+    if n=='back' and cy<bb[1]+28:continue
+    key=('left' if cx<96 else 'right') if w/h<.72 else 'flat'
+    patch,center=tiles[key];dx,dy=round(cx-center[0]),round(cy-center[1]);fr.alpha_composite(patch,(dx,dy));log.append(f'{name}/{n}_f{c}: {key} native gem/bezel at {dx},{dy}')
+   # Remove any detached single-pixel debris after all compositing.
+   original_mask=a[:,:,3]>0
+   a=np.array(fr);a[~original_mask]=0;m=a[:,:,3]>0;labs,k=ndi.label(m,structure=np.ones((3,3)));sz=np.bincount(labs.ravel());drop=(sz[labs]<3)&m;a[drop]=0
+   # A projected gem stays inside the generated gauntlet silhouette.
+   rim=m&~ndi.binary_erosion(m);a[rim,:3]=PAL[0];Image.fromarray(a).save(p)
+for name in COUNTS:board(name)
+(ROOT/'gem_finish_log.txt').write_text('\n'.join(log)+'\n')
+print('Native gem finishing done')
+
+codex
+I’m using the imagegen skill for the sheets. Set B provides the fixed scale per row, exact still endpoints, palette snapping, native detail patches, and seam checks I’ll adapt for these two angles.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-b\\final_pose.py; Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-b\\seam_fill.py; Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-b\\gem_cleanup.py; Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-b\\verify.py; Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-b\\prompts\\hex_dome.txt; Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-b\\prompts\\death.txt" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 112ms:
+"""Local pixel corrections following the first review, without regeneration."""
+from finish import *
+for n in NAMES:
+ # Crouch has exactly a four-native-pixel torso drop and fixed contacts.
+ ref=approved(n);a=np.array(ref);yy,xx=np.indices(a.shape[:2]);sx=xx-16;sy=yy-30
+ upper=sy<100
+ if n=='front':upper &= ~(((sx<61)|(sx>=99))&(sy>=90))
+ elif n=='side':upper &= ~((sx>=73)&(sy>=92))
+ else:upper &= ~(((sx<55)|(sx>=104))&(sy>=90))
+ fixed=a.copy();fixed[upper]=0;moving=a.copy();moving[~upper]=0
+ fr=Image.fromarray(fixed);layer=Image.new('RGBA',(192,192));layer.paste(Image.fromarray(moving),(0,4));fr.alpha_composite(layer)
+ fr.save(ROOT/'bound'/'frames'/f'{n}_f1.png')
+ # Both fists are overhead already in column 2; column 3 rises four pixels.
+ a=np.array(Image.open(ROOT/'hex_dome'/'frames'/f'{n}_f3.png'));m=a[:,:,3]>0;yy,xx=np.indices(m.shape);bb=Image.fromarray(a).getbbox()
+ arm=(yy<bb[1]+46)&((xx<83)|(xx>109)) if n!='side' else (yy<bb[1]+32)
+ fixed=a.copy();fixed[arm]=0;moving=a.copy();moving[~arm]=0
+ fr=Image.fromarray(fixed);layer=Image.new('RGBA',(192,192));layer.paste(Image.fromarray(moving),(0,4));fr.alpha_composite(layer)
+ fr.save(ROOT/'hex_dome'/'frames'/f'{n}_f2.png')
+ # The prone body settles one pixel; ground contact texels remain planted.
+ p=ROOT/'death'/'frames'/f'{n}_f6.png';fr=Image.open(p).convert('RGBA');a=np.array(fr);bb=fr.getbbox()
+ if n!='back':
+  green=(a[:,:,1]>185)&(a[:,:,0]<110)&(a[:,:,2]>70)&(a[:,:,3]>0);lab,k=ndi.label(green)
+  for j in range(1,k+1):
+   y,x=np.where(lab==j)
+   # Eyes are small islands inside the head. The large gem islands stay green.
+   if len(x)<28 and ((n=='front' and abs(x.mean()-96)<13) or (n=='side' and x.mean()>bb[0]+.70*(bb[2]-bb[0]))):
+    a[lab==j,:3]=(71,71,79)
+  # Use the faceplate's darkest actual grey from approved palette.
+  grey=PAL[(np.ptp(PAL.astype(int),axis=1)<18)&(PAL[:,0]>35)]
+  mask=np.all(a[:,:,:3]==(71,71,79),axis=2)&(a[:,:,3]>0);a[mask,:3]=grey[np.sum(grey.astype(int),axis=1).argmin()]
+ fr=Image.fromarray(a);fr.save(p);settle=Image.new('RGBA',(192,192));settle.paste(fr,(0,1));sa=np.array(settle);sa[159:]=np.array(fr)[159:];settle=Image.fromarray(sa);settle.save(ROOT/'death'/'frames'/f'{n}_f7.png')
+print('Crouch, overhead lead-in and prone settle corrected')
+"""Closes the one-texel see-through seams left between moved parts (Claude, 2026-11-04).
+A seam is a run of 4 or more transparent texels, each with opaque texels on both sides (left and right, or above and
+below). Each is filled with the stills' outline colour, so the parts read as separated by ink, not by a gap.
+Originals are kept in <animation>/frames_pre_seam/. Rerun is safe: it always starts from those originals."""
+import shutil,json
+from scipy import ndimage as ndi
+log={}
+from pathlib import Path
+import numpy as np
+from PIL import Image
+
+INK = (0x14, 0x1A, 0x16, 255)
+HERE = Path(__file__).parent
+
+def runs(mask_1d):
+    out, start = [], None
+    for i, m in enumerate(list(mask_1d) + [False]):
+        if m and start is None:
+            start = i
+        elif not m and start is not None:
+            out.append((start, i))
+            start = None
+    return out
+
+for anim in ["bound", "hex_dome", "death"]:
+    src, keep = HERE / anim / "frames", HERE / anim / "frames_pre_seam"
+    if not keep.exists():
+        shutil.copytree(src, keep)
+    for f in sorted(src.glob("*.png")):
+        a = np.array(Image.open(f).convert("RGBA"))
+        op = a[:, :, 3] > 0
+        hv = np.zeros_like(op)
+        hv[:, 1:-1] = (~op[:, 1:-1]) & op[:, :-2] & op[:, 2:]   # gap between left and right
+        hh = np.zeros_like(op)
+        hh[1:-1, :] = (~op[1:-1, :]) & op[:-2, :] & op[2:, :]   # gap between above and below
+        fill = np.zeros_like(op)
+        for x in range(op.shape[1]):
+            for s, e in runs(hv[:, x]):
+                if e - s >= 4:
+                    fill[s:e, x] = True
+        for y in range(op.shape[0]):
+            for s, e in runs(hh[y, :]):
+                if e - s >= 4:
+                    fill[y, s:e] = True
+        enclosed=ndi.binary_fill_holes(op)&~op
+        _,count=ndi.label(enclosed)
+        fill |= enclosed
+        # Exact approved endpoints take precedence over seam repair.
+        endpoint=f.stem.endswith('_f0') or (anim=='bound' and f.stem.endswith('_f8')) or (anim=='hex_dome' and f.stem.endswith('_f7'))
+        if endpoint: fill[:]=False
+        log[f'{anim}/{f.stem}']={'enclosed_holes_found':count,'enclosed_hole_pixels_found':int(enclosed.sum()),'hole_pixels_filled':int((fill&enclosed).sum()),'seam_pixels_filled':int((fill&~enclosed).sum())}
+        a[fill] = INK
+        Image.fromarray(a).save(src / f.name)
+        if fill.sum():
+            print(anim, f.name, int(fill.sum()))
+
+(HERE/'seam_log.json').write_text(json.dumps(log,indent=2))
+"""Remove dark pinholes inside gem faces, preserving bezel and native highlights."""
+from finish import *
+from scipy.spatial import ConvexHull
+log=[]
+for name,N in COUNTS.items():
+ for n in NAMES:
+  for c in range(1,N-(1 if name in ['bound','hex_dome'] else 0)):
+   p=ROOT/name/'frames'/f'{n}_f{c}.png';a=np.array(Image.open(p));g=(a[:,:,1]>185)&(a[:,:,0]<110)&(a[:,:,2]>70)&(a[:,:,3]>0);lab,k=ndi.label(g)
+   fixed=0
+   for j in range(1,k+1):
+    y,x=np.where(lab==j)
+    if len(x)<35:continue
+    pts=np.column_stack([x,y]);hull=ConvexHull(pts);mask=Image.new('1',(192,192));ImageDraw.Draw(mask).polygon([tuple(map(int,p)) for p in pts[hull.vertices]],fill=1)
+    inside=np.array(mask,dtype=bool)&(a[:,:,3]>0)
+    # The still's gem face has green facets and pale highlights, no ink flecks.
+    dark=inside&(a[:,:,:3].max(2)<160)&~g
+    fixed+=int(dark.sum());a[dark,:3]=(63,224,127)
+   Image.fromarray(a).save(p);log.append(f'{name}/{n}_f{c}: {fixed} internal gem ink flecks repaired')
+(ROOT/'gem_cleanup_log.txt').write_text('\n'.join(log)+'\n')
+print('Gem face pinholes repaired')
+from finish import *
+summary={};palette=set()
+for name,N in COUNTS.items():
+ checks=board(name)
+ seams=json.loads((ROOT/'seam_log.json').read_text())
+ for c in checks:c.update(seams.get(name+'/'+c['frame'],{}))
+ (ROOT/name/'checks.txt').write_text('Native 15-colour palette; exact still offset (+16,+30); lift is 160 minus lowest row.\n'+'\n'.join(json.dumps(c) for c in checks)+'\n')
+ grid=json.loads((ROOT/name/'grid.json').read_text())
+ print(name,'cut contacts',[(c['view'],c['frame']) for c in grid['cells'] if c['touches_cut']])
+ for n in NAMES:
+  assert len(list((ROOT/name/'frames').glob(f'{n}_f*.png')))==N
+  if name in ['bound','hex_dome']:assert np.array_equal(np.array(Image.open(ROOT/name/'frames'/f'{n}_f{N-1}.png')),np.array(approved(n)))
+  for c in range(N):
+   im=Image.open(ROOT/name/'frames'/f'{n}_f{c}.png');assert im.size==(192,192)
+   a=np.array(im);palette.update(map(tuple,a[a[:,:,3]>0,:3]))
+ for c in checks:
+  assert c['bottom_row']==(160-LIFTS.get(int(c['frame'].split('_f')[1]),0) if name=='bound' else 160) and (not c['enclosed_hole_pixels'] or c['frame'].endswith('_f0') or (name=='bound' and c['frame'].endswith('_f8')) or (name=='hex_dome' and c['frame'].endswith('_f7'))) and not c['pixels_below_160'] and not c['canvas_edge'] and not c['stray_components'] and c['palette_ok'] and c['binary_alpha'],c
+ summary[name]={'frames':N*3,'bottom_rows':sorted(set(c['bottom_row'] for c in checks)),'below_ground_pixels':0,'edge_contacts':0,'stray_components':0,'frame0_iou':{c['frame']:c['frame0_IoU'] for c in checks if c['frame0_IoU'] is not None},'raw_sha256':hashlib.sha256((ROOT/name/'sheet_raw.png').read_bytes()).hexdigest(),'raw_size':grid['raw_size']}
+ grid.update(clean=not any(c['touches_cut'] for c in grid['cells']),final_canvas=[192,192],approved_offset=[16,30],ground_row=160,finishing=['finish.py','polish.py','gems.py','final_pose.py','seam_fill.py','verify.py'])
+ (ROOT/name/'grid.json').write_text(json.dumps(grid,indent=2)+'\n')
+print('Frames',sum(v['frames'] for v in summary.values()),'palette',len(palette))
+(ROOT/'verification.json').write_text(json.dumps({'animations':summary,'palette_opaque_colours':len(palette),'total_frames':75},indent=2)+'\n')
+# Compact board for visual motion review, every frame at 2x native pixels.
+for name,N in COUNTS.items():
+ im=Image.new('RGB',(N*260,3*230+32),'#636A70');d=ImageDraw.Draw(im)
+ for r,n in enumerate(NAMES):
+  for c in range(N):
+   f=Image.open(ROOT/name/'frames'/f'{n}_f{c}.png').crop((25,55,155,170)).resize((260,230),Image.Resampling.NEAREST)
+   im.paste(f,(c*260,32+r*230),f);d.text((c*260+4,32+r*230),f'{n} {c}',fill='white')
+ im.save(ROOT/name/'detail_board.png')
+# Root board uses representative key poses, labelled with their frame IDs.
+im=Image.new('RGB',(5*320,3*300),'#555B61');d=ImageDraw.Draw(im)
+for r,(name,N) in enumerate(COUNTS.items()):
+ ids={'bound':[0,3,4,6,8],'hex_dome':[0,2,3,5,7],'death':[0,2,4,6,7]}[name]
+ for c,j in enumerate(ids):
+  f=Image.open(ROOT/name/'frames'/f'front_f{j}.png').crop((20,35,180,175)).resize((320,280),Image.Resampling.NEAREST);im.paste(f,(c*320,r*300+20),f);d.text((c*320+5,r*300+5),f'{name} front F{j}',fill='white')
+im.save(ROOT/'review.png')
+Pixel-art animation sheet of ONE gorilla mech. Attached images in order: approved FRONT, SIDE FACING RIGHT, BACK. Exact design references. Preserve moss green armoured body/head, grey faceplate and small green eyes, enormous orange forearm gauntlets each carrying a large green octagonal gem, grey block knuckles, green octagonal back gem, flat 15-colour chunky native pixel art and dark outline. Same short thick limbs and same parts. Only pose changes. No fur, gloss, gradients, added parts, thinning or lengthening. Exactly 3 rows of equal square cells, front straight toward viewer / true side facing RIGHT / straight BACK with no face. Each column is the SAME moment in all three rows. All figures same native pixel scale, generous transparent gutters, no text/grid/labels, no shadows or effects of any kind, no dome/dust/shockwave/glow/motion lines. Exactly 8 columns, 24 figures. Synchronized TWO-FIST overhead ground slam cast, both arms act TOGETHER, never alternating chest beating. 0 exact reference idle. 1 rear onto planted hind legs. 2 both fists raised OVERHEAD together with orange gauntlets and large green gems facing outward. 3 tallest overhead hold both fists clearly ABOVE HEAD. 4 both arms swing down together. 5 both fists hit ground together, low wide crouch. 6 pushing back up. 7 exact reference idle. Feet stay on same ground line throughout, fists never below ground. NO dome or any effects, only creature.
+Pixel-art animation sheet of ONE gorilla mech. Attached images in order: approved FRONT, SIDE FACING RIGHT, BACK. Exact design references. Preserve moss green armoured body/head, grey faceplate and small green eyes, enormous orange forearm gauntlets each carrying a large green octagonal gem, grey block knuckles, green octagonal back gem, flat 15-colour chunky native pixel art and dark outline. Same short thick limbs and same parts. Only pose changes. No fur, gloss, gradients, added parts, thinning or lengthening. Exactly 3 rows of equal square cells, front straight toward viewer / true side facing RIGHT / straight BACK with no face. Each column is the SAME moment in all three rows. All figures same native pixel scale, generous transparent gutters, no text/grid/labels, no shadows or effects of any kind, no dome/dust/shockwave/glow/motion lines. Exactly 8 columns, 24 figures. Collapse forward onto belly, not onto back. 0 exact reference idle. 1 head shoulders snap backward recoil. 2 stagger leaning back one fist lifts. 3 knees buckle, body drops. 4 sink forward onto fists. 5 fall FORWARD onto belly. 6 lying FLAT on belly, arms splayed to sides, eyes dark grey instead of green. 7 same prone settled pose one native pixel lower, dark eyes. Keep every green gauntlet/back GEM green and same size, only eye pixels darken. Front prone face still toward viewer; side prone head right; back prone shows back with gem. No disappearing parts, no edge cropping.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-a\\brief.txt; Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-a\\REPORT.txt; Get-ChildItem D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-a\\prompts; Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-a\\finish.py; Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-a\\polish.py; Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-a\\gems.py; Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-a\\seam_fill.py; Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-a\\verify.py" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 135ms:
+You are making pixel-art animation frames for a game. Write only inside
+D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\anim\codex-set-a\. Read anything under D:\dev\new-mech-rpg\docs\art\moba.
+
+Method: you made the rhino's set A the same way before. Read D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-a
+(prompts\, refs\, REPORT.txt, grid.json, checks.txt) and follow the method that worked there: generate a sheet with your
+image tool from the approved stills as references, slice it, finish every frame against the stills, check, and board it.
+
+The creature is the gorilla mech (ape_l). Approved stills, 160x160, feet on row 130, in
+D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\views\: s.png (front), e.png (side facing right), n.png (back); se, ne,
+sw, w, nw also exist. Keep the design exactly: the mossy green armoured body and head, the grey face plate with green
+eyes, the big orange forearm gauntlets each carrying a large green octagonal hex gem, the grey knuckle fists, the green
+hex gem on the back, the same 15 colours, the dark outline and the chunky pixel size. Only the pose changes. Never
+redesign: no new parts, no gloss, no realistic fur, no longer or thinner limbs.
+
+Kit context, from the designer's kit doc (D:\dev\new-mech-rpg\docs\plan\moba-kits.md, Gorilla section): a protector tank
+with hex shield, chest beat, bound and hex dome. Effects (the shield, the dome) are separate and are NOT part of this set.
+
+Set A is four animations. Each is drawn in three rows: front (like s.png), side facing right (like e.png), back (like
+n.png). Each column is one moment seen from the three sides, so the rows match frame for frame.
+1. idle: 5 frames, looping. A slow breath: chest and shoulders rise and settle 1-2 px; fists and feet stay planted.
+2. walk: 8 frames, looping. A knuckle walk in place: weight on the knuckles of the big forearms, the hind legs stepping,
+   the gorilla's diagonal-pair gait, the body bobbing. Planted knuckles and feet touch the ground line; nothing sinks
+   below it and nothing slides.
+3. chest_beat (ability 2): 8 frames. Rears up onto the hind legs, beats the chest with alternating fists (two or three
+   beats), drops back onto the knuckles. Frame 0 and the last frame match the idle pose.
+4. hex_shield (ability 1): 6 frames. Winds one forearm back and flings it forward, the throw that sends a hex shield,
+   then recovers. Draw the arm motion only. Frame 0 and the last frame match the idle pose.
+
+Output for each animation, in anim\codex-set-a\<name>\ :
+- frames\front_f<i>.png, side_f<i>.png, back_f<i>.png on 192x192 transparent canvases. Keep the gorilla at the stills'
+  pixel scale (never resize the design), placed like the still shifted by +16 x and +30 y, so the feet stand on row 160.
+- Idle frame 0 in each view must match its approved still; report the IoU.
+- Snap every pixel to the stills' colours. Keep a one-texel dark outline like the stills. No anti-aliasing, no stray
+  pixels, nothing touching the canvas edge.
+- Keep sheet_raw.png, grid.json, checks.txt (per frame: bottom row, colour count, any pixel below row 160, frame-0 IoU),
+  a preview gif per view, and a review.png board.
+Also write anim\codex-set-a\REPORT.txt for the whole set. Look at your own boards before finishing and fix anything that
+drifts from the stills; the eyes, the hex gems and the gauntlet shapes are where drift usually shows.
+APE L - CODEX SET A
+Completed 2026-11-04. 81 transparent native-scale frames; 4 animations x front/side/back.
+
+METHOD
+Read the rhino codex-set-a prompts, refs, REPORT, finishing scripts, grids and checks. Used the built-in image tool with the approved front/side/back sprites attached in that order. One new sheet per animation. Exact prompts are in prompts/. Original generated sheets are retained unmodified as <animation>/sheet_raw.png. refs/ holds copied approved stills and nearest-neighbour inspection enlargements.
+
+Each raw sheet was separated into three row bands and the requested number of columns using empty gutters. grid.json records source cuts, opaque bounds, fixed row factors and placements. slices/ retains the individual generated cells. A fixed factor per view brought generated drawings to the approved still pixel scale; no independent resizing of individual action poses. Final canvases are 192x192, with the approved reference at (+16,+30), ground row 160.
+
+FINISHING
+The generated idle and walk changed planted contacts and small armour details. Their final cycles were finished from the native approved pixel parts following the generated action plan. Idle lifts the upper body 0,1,2,1,0 pixels, with lower contacts fixed. Walk alternates anatomical right forearm + left hind foot against the opposite diagonal, with a small torso bob and lifted swing contacts. Planted contacts retain their coordinates. No whole-sprite translations or resizes in these cycles.
+
+Chest beat and shield retain generated action silhouettes, palette-snapped and cleaned at native resolution. Visible face plates/eyes and back gems were restored from approved pixel patches. A fist may obscure the side-view face during a chest beat or shield release. Gem/bezel patches were restored inside the gauntlet silhouettes, without extending beyond them. The penultimate chest-beat frame uses the one-pixel idle settle. All ability start/end frames use the exact approved still. Finishing records: native_finish_log.txt and gem_finish_log.txt.
+
+CHECK RESULTS
+Idle frame 0, silhouette IoU AND exact-colour IoU against the approved still at (+16,+30): front 1.000000; side 1.000000; back 1.000000.
+All four animations also have exact reference frame 0 in all three views. Both abilities have exact reference final frames in all three views.
+81/81: 192x192 RGBA, binary alpha, only approved palette colours, bottom row exactly 160, zero opaque pixels below 160, zero canvas-edge contacts, zero detached components smaller than 3 pixels. The set uses all 15 approved opaque colours. Per-frame results are in each checks.txt; aggregate machine-readable checks and raw hashes are in verification.json.
+
+VISUAL REVIEW
+Viewed all final front/side/back boards after finishing. Checked face direction, eyes, back gem, gauntlet silhouettes, ground contact, diagonal timing, chest alternation and throw timing. Corrected idle seam gaps, two one-pixel rear walk ground overflows, face stamps on occluding fists, misplaced back-gem stamps and gem patches protruding beyond gauntlet silhouettes. Rebuilt previews and boards after these corrections.
+
+Animation timings and files:
+- idle: 5 moments x 3 views = 15 PNGs. Clean 3x5 raw grid. GIF frame counts [5, 5, 5].
+
+Each animation contains frames/, sheet_raw.png, slices/, grid.json, checks.txt, preview_front.gif, preview_side.gif, preview_back.gif, review.png, detail_board.png and review_small.png. Previews use nearest-neighbour enlargement on grey; production PNGs remain transparent and unscaled. Root review.png is a front-view key-pose overview.
+
+Rebuild: python finish.py; python polish.py; python gems.py; python verify.py (from this directory). Verification is local pixel/geometry QA and visual review, not an in-engine playback test. No effects, shield or dome included. No asset installation or commit.
+- walk: 8 moments x 3 views = 24 PNGs. Clean 3x8 raw grid. GIF frame counts [8, 8, 8].
+
+Each animation contains frames/, sheet_raw.png, slices/, grid.json, checks.txt, preview_front.gif, preview_side.gif, preview_back.gif, review.png, detail_board.png and review_small.png. Previews use nearest-neighbour enlargement on grey; production PNGs remain transparent and unscaled. Root review.png is a front-view key-pose overview.
+
+Rebuild: python finish.py; python polish.py; python gems.py; python verify.py (from this directory). Verification is local pixel/geometry QA and visual review, not an in-engine playback test. No effects, shield or dome included. No asset installation or commit.
+- chest_beat: 8 moments x 3 views = 24 PNGs. Clean 3x8 raw grid. GIF frame counts [8, 8, 8].
+
+Each animation contains frames/, sheet_raw.png, slices/, grid.json, checks.txt, preview_front.gif, preview_side.gif, preview_back.gif, review.png, detail_board.png and review_small.png. Previews use nearest-neighbour enlargement on grey; production PNGs remain transparent and unscaled. Root review.png is a front-view key-pose overview.
+
+Rebuild: python finish.py; python polish.py; python gems.py; python verify.py (from this directory). Verification is local pixel/geometry QA and visual review, not an in-engine playback test. No effects, shield or dome included. No asset installation or commit.
+- hex_shield: 6 moments x 3 views = 18 PNGs. Clean 3x6 raw grid. GIF frame counts [6, 6, 6].
+
+Each animation contains frames/, sheet_raw.png, slices/, grid.json, checks.txt, preview_front.gif, preview_side.gif, preview_back.gif, review.png, detail_board.png and review_small.png. Previews use nearest-neighbour enlargement on grey; production PNGs remain transparent and unscaled. Root review.png is a front-view key-pose overview.
+
+Rebuild: python finish.py; python polish.py; python gems.py; python verify.py (from this directory). Verification is local pixel/geometry QA and visual review, not an in-engine playback test. No effects, shield or dome included. No asset installation or commit.
+
+
+    Directory: D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\anim\codex-set-a\prompts
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----         11/4/2026   9:26 AM           1675 chest_beat.txt                                                       
+-a----         11/4/2026   9:26 AM           1690 hex_shield.txt                                                       
+-a----         11/4/2026   9:26 AM           1448 idle.txt                                                             
+-a----         11/4/2026   9:26 AM           1815 walk.txt                                                             
+from pathlib import Path
+import json,hashlib
+import numpy as np
+from PIL import Image,ImageDraw,ImageFilter
+from scipy import ndimage as ndi
+ROOT=Path(__file__).resolve().parent
+NAMES=['front','side','back']
+COUNTS={'idle':5,'walk':8,'chest_beat':8,'hex_shield':6}
+REFS={n:Image.open(ROOT/'refs'/f'{n}.png').convert('RGBA') for n in NAMES}
+PAL=np.unique(np.concatenate([np.array(im)[np.array(im)[:,:,3]>0,:3] for im in REFS.values()]),axis=0)
+
+def approved(n):
+ out=Image.new('RGBA',(192,192));out.paste(REFS[n],(16,30));return out
+
+def process(name):
+ out=ROOT/name; (out/'frames').mkdir(exist_ok=True);(out/'slices').mkdir(exist_ok=True)
+ raw=Image.open(out/'sheet_raw.png').convert('RGBA');a=np.array(raw);W,H=raw.size;N=COUNTS[name]
+ rgb0=a[:,:,:3].astype(int)
+ m=(a[:,:,3]>127)&~((rgb0.min(2)>195)&(np.ptp(rgb0,axis=2)<24))
+ # Real alpha first; fallback only for opaque generated backgrounds.
+ if m.mean()>.9:
+  rgb=a[:,:,:3].astype(int);m &= ~((rgb[:,:,0]-rgb[:,:,1]>45)&(rgb[:,:,2]-rgb[:,:,1]>45))
+ lab,_=ndi.label(m);sz=np.bincount(lab.ravel());m &= sz[lab]>max(16,m.sum()*.0001)
+ bands=[s[0] for s in ndi.find_objects(ndi.label(m.any(1))[0]) if s[0].stop-s[0].start>H*.1]
+ if len(bands)!=3: raise ValueError(f'{name}: row bands {bands}')
+ ys=[0]+[(bands[i].stop+bands[i+1].start)//2 for i in range(2)]+[H]
+ xs=np.rint(np.linspace(0,W,N+1)).astype(int)
+ for i in range(1,N):
+  candidates=[x for x in range(max(2,xs[i]-W//(N*5)),min(W-2,xs[i]+W//(N*5))) if not m[:,x-1:x+2].any()]
+  if candidates: xs[i]=min(candidates,key=lambda x:abs(x-xs[i]))
+ cells=[]; factors={}
+ for r,n in enumerate(NAMES):
+  local=m[ys[r]:ys[r+1],xs[0]:xs[1]]; yy,xx=np.where(local);rb=REFS[n].getbbox()
+  # Fixed factor per row based on reference neutral size, never normalize each pose.
+  factor=((rb[2]-rb[0])/(xx.max()-xx.min()+1)*(rb[3]-rb[1])/(yy.max()-yy.min()+1))**.5
+  factors[n]=factor
+  for c in range(N):
+   box=[int(xs[c]),ys[r],int(xs[c+1]),ys[r+1]];cell=raw.crop(box);cm=m[box[1]:box[3],box[0]:box[2]]
+   ca=np.array(cell);ca[:,:,3]=cm*255;ca[~cm]=0;cell=Image.fromarray(ca);b=cell.getbbox();sprite=cell.crop(b)
+   sprite.save(out/'slices'/f'{n}_f{c}.png')
+   scaled=sprite.resize((round(sprite.width*factor),round(sprite.height*factor)),Image.Resampling.NEAREST)
+   sa=np.array(scaled);sm=sa[:,:,3]>127
+   # Restore pure native palette and a one-texel dark silhouette.
+   rgb=sa[:,:,:3].astype(np.int32);idx=((rgb[:,:,None,:]-PAL.astype(np.int32)[None,None,:,:])**2).sum(3).argmin(2)
+   sa[:,:,:3]=PAL[idx];sa[:,:,3]=sm*255
+   labels,_=ndi.label(sm);sizes=np.bincount(labels.ravel());sm &= sizes[labels]>2
+   rim=sm&~ndi.binary_erosion(sm);sa[rim,:3]=PAL[0];sa[:,:,3]=sm*255;sa[~sm]=0
+   fin=Image.fromarray(sa);fr=Image.new('RGBA',(192,192))
+   # Native reference center anchor; all ground contacts at 160.
+   center=(rb[0]+rb[2]-1)/2+16;x=round(center-(fin.width-1)/2);y=161-fin.height
+   fr.paste(fin,(x,y));fr.save(out/'frames'/f'{n}_f{c}.png')
+   cells.append(dict(view=n,frame=c,source_box=box,source_opaque_box=list(b),scale=factor,placement=[x,y],touches_cut=bool(b[0]==0 or b[1]==0 or b[2]==cell.width or b[3]==cell.height)))
+ (out/'grid.json').write_text(json.dumps(dict(raw_size=[W,H],columns=N,rows=NAMES,x_edges=xs.tolist(),y_edges=ys,row_scale=factors,cells=cells),indent=2))
+
+def board(name):
+ out=ROOT/name;N=COUNTS[name];checks=[];rows=[]
+ review=Image.new('RGB',(100+N*384,90+3*420),(53,57,62));d=ImageDraw.Draw(review);d.text((10,12),f'APE L / {name} / native frames at 2x; cyan = ground y160',fill='white')
+ for r,n in enumerate(NAMES):
+  row=[];ref=np.array(approved(n));rm=ref[:,:,3]>0
+  d.text((8,90+r*420+180),n,fill='white')
+  for c in range(N):
+   fr=Image.open(out/'frames'/f'{n}_f{c}.png').convert('RGBA');a=np.array(fr);m=a[:,:,3]>0;yy,xx=np.where(m);colors=np.unique(a[m,:3],axis=0);union=m|rm
+   iou=float((m&rm).sum()/union.sum());exact=float((np.all(a==ref,2)&union).sum()/union.sum())
+   labels,k=ndi.label(m,structure=np.ones((3,3)));sizes=np.bincount(labels.ravel())[1:]
+   checks.append(dict(frame=f'{n}_f{c}',bottom_row=int(yy.max()),colour_count=len(colors),pixels_below_160=int(m[161:].sum()),frame0_IoU=iou if c==0 else None,frame0_exact_colour_IoU=exact if c==0 else None,palette_ok=all(any(np.array_equal(v,p) for p in PAL) for v in colors),binary_alpha=bool(np.isin(a[:,:,3],[0,255]).all()),canvas_edge=bool(m[0].any() or m[-1].any() or m[:,0].any() or m[:,-1].any()),stray_components=int((sizes<3).sum())))
+   bg=Image.new('RGB',(192,192),(101,106,112));bg.paste(fr,mask=fr.getchannel('A'));z=bg.resize((384,384),Image.Resampling.NEAREST);review.paste(z,(100+c*384,90+r*420));d.line((100+c*384,90+r*420+322,100+(c+1)*384-1,90+r*420+322),fill=(83,180,183));d.text((110+c*384,70+r*420),f'F{c}',fill='white');row.append(bg.resize((576,576),Image.Resampling.NEAREST))
+  durations={'idle':[220]*N,'walk':[110]*N,'chest_beat':[350,130,100,100,100,150,140,350],'hex_shield':[350,130,170,100,170,350]}[name]
+  row[0].save(out/f'preview_{n}.gif',save_all=True,append_images=row[1:],duration=durations,loop=0,disposal=2,optimize=False)
+ review.save(out/'review.png');review.resize((min(review.width,1800),round(review.height*min(review.width,1800)/review.width)),Image.Resampling.NEAREST).save(out/'review_small.png')
+ (out/'checks.txt').write_text('Native palette: 15 opaque colours. IoU uses approved still at (+16,+30).\n'+'\n'.join(json.dumps(c) for c in checks)+'\n')
+ return checks
+
+if __name__=='__main__':
+ import sys
+ for name in sys.argv[1:] or COUNTS:
+  process(name)
+  for n in NAMES:
+   approved(n).save(ROOT/name/'frames'/f'{n}_f0.png')
+   if name in ['chest_beat','hex_shield']:approved(n).save(ROOT/name/'frames'/f'{n}_f{COUNTS[name]-1}.png')
+  board(name)
+  print(name,'finished')
+from finish import *
+
+def piece(im,mask):
+ a=np.array(im).copy();a[~mask]=0;return Image.fromarray(a)
+
+def shift(im,dx,dy):
+ out=Image.new('RGBA',im.size);out.paste(im,(dx,dy));return out
+
+def compose(parts):
+ out=Image.new('RGBA',(192,192))
+ for im,dx,dy in parts:out.alpha_composite(shift(im,dx,dy))
+ return out
+
+# Finish the small cyclic motions with the approved native texels. Generated
+# pose sheets supply the action plan; no whole-frame translations or resizing.
+for n in NAMES:
+ ref=approved(n);a=np.array(ref);yy,xx=np.indices((192,192));sx=xx-16;sy=yy-30
+ # Forearms/feet stay fixed during breathing. Chest, head and shoulders lift.
+ upper=(sy<100)
+ if n=='front': upper &= ~(((sx<61)|(sx>=99))&(sy>=90))
+ elif n=='side':upper &= ~((sx>=73)&(sy>=92))
+ else:upper &= ~(((sx<55)|(sx>=104))&(sy>=90))
+ body=piece(ref,upper);fixed=piece(ref,~upper)
+ for c,d in enumerate([0,1,2,1,0]):
+  fr=compose([(ref,0,0),(body,0,-d),(fixed,0,0)])
+  fr.save(ROOT/'idle'/'frames'/f'{n}_f{c}.png')
+
+ # Anatomical right forearm + left hind foot form diagonal A.
+ if n=='front':
+  arms=[(sx<61)&(sy>=89),(sx>=99)&(sy>=89)]
+  legs=[(sx>=84)&(sx<99)&(sy>=105),(sx>=61)&(sx<76)&(sy>=105)]
+ elif n=='back':
+  arms=[(sx>=104)&(sy>=90),(sx<55)&(sy>=90)]
+  legs=[(sx>=48)&(sx<73)&(sy>=108),(sx>=87)&(sx<111)&(sy>=108)]
+ else:
+  arms=[(sx>=72)&(sx<108)&(sy>=92),(sx>=108)&(sy>=95)]
+  legs=[(sx>=100)&(sy>=116),(sx<67)&(sy>=109)]
+ # Give each texel exactly one owner, including overlaps hidden by forearms.
+ used=np.zeros((192,192),bool);layers=[]
+ for mask in arms+legs:
+  mask &= ~used;used |= mask;layers.append(piece(ref,mask))
+ torso=piece(ref,~used)
+ liftsA=[0,0,0,0,0,-2,-3,-1];liftsB=[0,-2,-3,-1,0,0,0,0]
+ bob=[0,-1,0,1,0,-1,0,1]
+ for c in range(8):
+  # Contact coordinates are constant. The swing pair lifts and returns to
+  # those coordinates; there is no lateral drift of a planted endpoint.
+  da,db=liftsA[c],liftsB[c]
+  xa=([0,0,0,0,0,-3,0,3][c] if n=='side' else [0,0,0,0,0,-1,0,1][c])
+  xb=([0,-3,0,3,0,0,0,0][c] if n=='side' else [0,-1,0,1,0,0,0,0][c])
+  # Keep every ground texel out of the bobbing torso, including the small
+  # outside corners which sit beyond the hind-foot masks in the rear still.
+  torso_a=np.array(torso);ground=torso_a.copy();ground[:159]=0;torso_a[159:]=0
+  moving=Image.fromarray(torso_a)
+  fr=compose([(moving,0,0),(moving,0,bob[c]),(Image.fromarray(ground),0,0),(layers[2],xa,da),(layers[3],xb,db),(layers[0],xa,da),(layers[1],xb,db)])
+  # Back view uses the same anatomical pair, reversed on screen.
+  fr.save(ROOT/'walk'/'frames'/f'{n}_f{c}.png')
+
+# Restore native face plates/eyes and back gem, fitting a translated template
+# inside the generated head area. Pose silhouettes elsewhere remain generated.
+boxes={'front':(69,80,90,95),'side':(104,82,116,97),'back':(65,61,94,86)}
+log=[]
+for name in ['chest_beat','hex_shield']:
+ for n in NAMES:
+  ref=REFS[n];box=boxes[n];patch=ref.crop(box);pa=np.array(patch);pm=pa[:,:,3]>0
+  base=approved(n);bb0=base.getbbox()
+  for c in range(1,COUNTS[name]-1):
+   path=ROOT/name/'frames'/f'{n}_f{c}.png';fr=Image.open(path).convert('RGBA');a=np.array(fr);bb=fr.getbbox()
+   if n=='side' and name=='chest_beat' and c in [3,4]:
+    log.append(f'{name}/{n}_f{c}: chest fist occludes face; no stamp')
+    continue
+   # Locate actual generated eye/gem pixels before stamping. Body-top offsets
+   # are unreliable when the gorilla rears or the throwing arm is raised.
+   green=(a[:,:,1]>185)&(a[:,:,0]<110)&(a[:,:,2]>70)&(a[:,:,3]>0)
+   labels,k=ndi.label(green);candidates=[]
+   for j in range(1,k+1):
+    gy,gx=np.where(labels==j);cx,cy=gx.mean(),gy.mean()
+    if n=='back': ok=len(gx)>20 and cy<bb[1]+(bb[3]-bb[1])*.45
+    elif n=='front':ok=len(gx)<30 and abs(cx-96)<17 and cy<bb[1]+(bb[3]-bb[1])*.58
+    else:ok=len(gx)<24 and cx>100 and cy<bb[1]+(bb[3]-bb[1])*.55
+    if ok:candidates.append((cx,cy,len(gx)))
+   if not candidates:
+    log.append(f'{name}/{n}_f{c}: face occluded; no stamp')
+    continue
+   if n=='front':cx=np.mean([v[0] for v in candidates]);cy=np.mean([v[1] for v in candidates])
+   elif n=='side':cx,cy,_=max(candidates,key=lambda v:v[0])
+   else:cx,cy,_=min(candidates,key=lambda v:(v[0]-96)**2+(v[1]-bb[1]-12)**2)
+   pg=(pa[:,:,1]>185)&(pa[:,:,0]<110)&(pa[:,:,2]>70)&pm
+   py,px=np.where(pg)
+   ex=round(cx-px.mean());ey=round(cy-py.mean());best=None
+   for dy in range(-1,2):
+    for dx in range(-1,2):
+     x,y=ex+dx,ey+dy;t=a[y:y+patch.height,x:x+patch.width]
+     if t.shape!=pa.shape:continue
+     score=((t[:,:,:3].astype(float)-pa[:,:,:3])**2).mean(2)[pm].mean()+80*(dx*dx+dy*dy)
+     if best is None or score<best[0]:best=(score,x,y)
+   _,x,y=best;fr.alpha_composite(patch,(x,y));fr.save(path)
+   log.append(f'{name}/{n}_f{c}: native {"back gem" if n=="back" else "head/face/eyes"} at {x},{y}')
+(ROOT/'native_finish_log.txt').write_text('\n'.join(log)+'\n')
+for name in COUNTS:board(name)
+print('Native detail and cycle finish complete')
+from finish import *
+
+def template(n,box):
+ a=np.array(REFS[n].crop(box));g=(a[:,:,1]>185)&(a[:,:,0]<110)&(a[:,:,2]>70)&(a[:,:,3]>0)
+ lab,k=ndi.label(g);sz=np.bincount(lab.ravel());sz[0]=0;g=lab==sz.argmax()
+ mask=ndi.binary_dilation(g,iterations=4)&(a[:,:,3]>0)
+ # Keep gem and its grey bezel; orange gauntlet corners belong to the pose.
+ orange=(a[:,:,0]>a[:,:,1]*1.1)&(a[:,:,1]>a[:,:,2]*1.3)
+ mask &= ~orange;a[~mask]=0;yy,xx=np.where(g)
+ return Image.fromarray(a),(xx.mean(),yy.mean())
+tiles={'flat':template('side',(77,95,105,122)),'left':template('front',(33,94,51,120)),'right':template('front',(109,94,126,120))}
+log=[]
+for name in ['chest_beat','hex_shield']:
+ for n in NAMES:
+  for c in range(1,COUNTS[name]-1):
+   p=ROOT/name/'frames'/f'{n}_f{c}.png';fr=Image.open(p).convert('RGBA');a=np.array(fr);bb=fr.getbbox()
+   g=(a[:,:,1]>185)&(a[:,:,0]<110)&(a[:,:,2]>70)&(a[:,:,3]>0);lab,k=ndi.label(g)
+   for j in range(1,k+1):
+    y,x=np.where(lab==j)
+    if len(x)<35:continue
+    cx,cy=x.mean(),y.mean();w=x.max()-x.min()+1;h=y.max()-y.min()+1
+    if n=='back' and cy<bb[1]+28:continue
+    key=('left' if cx<96 else 'right') if w/h<.72 else 'flat'
+    patch,center=tiles[key];dx,dy=round(cx-center[0]),round(cy-center[1]);fr.alpha_composite(patch,(dx,dy));log.append(f'{name}/{n}_f{c}: {key} native gem/bezel at {dx},{dy}')
+   # Remove any detached single-pixel debris after all compositing.
+   original_mask=a[:,:,3]>0
+   a=np.array(fr);a[~original_mask]=0;m=a[:,:,3]>0;labs,k=ndi.label(m,structure=np.ones((3,3)));sz=np.bincount(labs.ravel());drop=(sz[labs]<3)&m;a[drop]=0
+   # A projected gem stays inside the generated gauntlet silhouette.
+   rim=m&~ndi.binary_erosion(m);a[rim,:3]=PAL[0];Image.fromarray(a).save(p)
+for n in NAMES:
+ # Penultimate beat frame is the final one-pixel settle onto planted knuckles.
+ Image.open(ROOT/'idle'/'frames'/f'{n}_f1.png').save(ROOT/'chest_beat'/'frames'/f'{n}_f6.png')
+for name in COUNTS:board(name)
+(ROOT/'gem_finish_log.txt').write_text('\n'.join(log)+'\n')
+print('Native gem finishing done')
+"""Closes the one-texel see-through seams left between moved parts (Claude, 2026-11-04).
+A seam is a run of 4 or more transparent texels, each with opaque texels on both sides (left and right, or above and
+below). Each is filled with the stills' outline colour, so the parts read as separated by ink, not by a gap.
+Originals are kept in <animation>/frames_pre_seam/. Rerun is safe: it always starts from those originals."""
+import shutil
+from pathlib import Path
+import numpy as np
+from PIL import Image
+
+INK = (0x14, 0x1A, 0x16, 255)
+HERE = Path(__file__).parent
+
+def runs(mask_1d):
+    out, start = [], None
+    for i, m in enumerate(list(mask_1d) + [False]):
+        if m and start is None:
+            start = i
+        elif not m and start is not None:
+            out.append((start, i))
+            start = None
+    return out
+
+for anim in ["idle", "walk", "chest_beat", "hex_shield"]:
+    src, keep = HERE / anim / "frames", HERE / anim / "frames_pre_seam"
+    if not keep.exists():
+        shutil.copytree(src, keep)
+    for f in sorted(keep.glob("*.png")):
+        a = np.array(Image.open(f).convert("RGBA"))
+        op = a[:, :, 3] > 0
+        hv = np.zeros_like(op)
+        hv[:, 1:-1] = (~op[:, 1:-1]) & op[:, :-2] & op[:, 2:]   # gap between left and right
+        hh = np.zeros_like(op)
+        hh[1:-1, :] = (~op[1:-1, :]) & op[:-2, :] & op[2:, :]   # gap between above and below
+        fill = np.zeros_like(op)
+        for x in range(op.shape[1]):
+            for s, e in runs(hv[:, x]):
+                if e - s >= 4:
+                    fill[s:e, x] = True
+        for y in range(op.shape[0]):
+            for s, e in runs(hh[y, :]):
+                if e - s >= 4:
+                    fill[y, s:e] = True
+        a[fill] = INK
+        Image.fromarray(a).save(src / f.name)
+        if fill.sum():
+            print(anim, f.name, int(fill.sum()))
+from finish import *
+summary={};palette=set()
+for name,N in COUNTS.items():
+ checks=board(name);grid=json.loads((ROOT/name/'grid.json').read_text())
+ print(name,'cut contacts',[(c['view'],c['frame']) for c in grid['cells'] if c['touches_cut']])
+ for n in NAMES:
+  assert len(list((ROOT/name/'frames').glob(f'{n}_f*.png')))==N
+  if name in ['chest_beat','hex_shield']:assert np.array_equal(np.array(Image.open(ROOT/name/'frames'/f'{n}_f{N-1}.png')),np.array(approved(n)))
+  for c in range(N):
+   im=Image.open(ROOT/name/'frames'/f'{n}_f{c}.png');assert im.size==(192,192)
+   a=np.array(im);palette.update(map(tuple,a[a[:,:,3]>0,:3]))
+ for c in checks:
+  assert c['bottom_row']==160 and not c['pixels_below_160'] and not c['canvas_edge'] and not c['stray_components'] and c['palette_ok'] and c['binary_alpha'],c
+ summary[name]={'frames':N*3,'bottom_row':160,'below_ground_pixels':0,'edge_contacts':0,'stray_components':0,'frame0_iou':{c['frame']:c['frame0_IoU'] for c in checks if c['frame0_IoU'] is not None},'raw_sha256':hashlib.sha256((ROOT/name/'sheet_raw.png').read_bytes()).hexdigest(),'raw_size':grid['raw_size']}
+ grid.update(clean=not any(c['touches_cut'] for c in grid['cells']),final_canvas=[192,192],approved_offset=[16,30],ground_row=160,finishing=['finish.py','polish.py','gems.py'])
+ (ROOT/name/'grid.json').write_text(json.dumps(grid,indent=2)+'\n')
+print('Frames',sum(v['frames'] for v in summary.values()),'palette',len(palette))
+(ROOT/'verification.json').write_text(json.dumps({'animations':summary,'palette_opaque_colours':len(palette),'total_frames':81},indent=2)+'\n')
+# Compact board for visual motion review, every frame at 2x native pixels.
+for name,N in COUNTS.items():
+ im=Image.new('RGB',(N*260,3*230+32),'#636A70');d=ImageDraw.Draw(im)
+ for r,n in enumerate(NAMES):
+  for c in range(N):
+   f=Image.open(ROOT/name/'frames'/f'{n}_f{c}.png').crop((25,55,155,170)).resize((260,230),Image.Resampling.NEAREST)
+   im.paste(f,(c*260,32+r*230),f);d.text((c*260+4,32+r*230),f'{n} {c}',fill='white')
+ im.save(ROOT/name/'detail_board.png')
+# Root board uses representative key poses, labelled with their frame IDs.
+im=Image.new('RGB',(5*320,4*300),'#555B61');d=ImageDraw.Draw(im)
+for r,(name,N) in enumerate(COUNTS.items()):
+ ids={'idle':[0,1,2,3,4],'walk':[0,2,4,6,7],'chest_beat':[0,2,3,4,7],'hex_shield':[0,1,2,3,5]}[name]
+ for c,j in enumerate(ids):
+  f=Image.open(ROOT/name/'frames'/f'front_f{j}.png').crop((20,35,180,175)).resize((320,280),Image.Resampling.NEAREST);im.paste(f,(c*320,r*300+20),f);d.text((c*320+5,r*300+5),f'{name} front F{j}',fill='white')
+im.save(ROOT/'review.png')
+
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+import shutil
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d'); b=r.parent/'codex-set-b'
+layout='Layout: a grid of 2 rows and {n} columns of equal cells, one whole gorilla per cell, nothing crossing a cell edge, no labels, no text, no grid lines. Row 1 is the three-quarter front view facing down and to the right, exactly the camera angle of the first attached sprite: we see its face plate and green eyes. Row 2 is the three-quarter back view facing up and to the right, exactly the camera angle of the second attached sprite: we see its back and the back hex gem, and its head points away. Every cell in a row keeps that row\\'s angle: never turn it to a straight front, side or back view, and never mirror it. Each column is one moment seen from two angles, so the two rows match frame for frame. The gorilla is the same size in every cell and the ground line is at the same height in every cell.'
+for move,n in [('bound',9),('hex_dome',8),('death',8)]:
+ s=(b/'prompts'/f'{move}.txt').read_text();s=s.replace('Attached images in order: approved FRONT, SIDE FACING RIGHT, BACK.','Attached images in order: the approved se (three-quarter front, facing down-right) and ne (three-quarter back, facing up-right) views.')
+ start=s.index('Exactly 3 rows');end=s.index(f'Exactly {n} columns, {n*3} figures.')+len(f'Exactly {n} columns, {n*3} figures.')
+ s=s[:start]+layout.format(n=n)+' All figures same native pixel scale, generous transparent gutters, no shadows or effects of any kind, no dome/dust/shockwave/glow/motion lines. '+s[end:]
+ (r/'prompts'/f'{move}.txt').write_text(s);(r/move).mkdir(exist_ok=True)
+for n in ['se','ne']:shutil.copyfile(r.parent.parent/'views'/f'{n}.png',r/'refs'/f'{n}.png')
+for f in ['finish.py','polish.py','gems.py','final_pose.py','seam_fill.py','gem_cleanup.py','verify.py']:shutil.copyfile(b/f,r/f)
+print((r/'prompts'/'bound.txt').read_text())
+'@ | python -" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 242ms:
+Pixel-art animation sheet of ONE gorilla mech. Attached images in order: the approved se (three-quarter front, facing down-right) and ne (three-quarter back, facing up-right) views. Exact design references. Preserve moss green armoured body/head, grey faceplate and small green eyes, enormous orange forearm gauntlets each carrying a large green octagonal gem, grey block knuckles, green octagonal back gem, flat 15-colour chunky native pixel art and dark outline. Same short thick limbs and same parts. Only pose changes. No fur, gloss, gradients, added parts, thinning or lengthening. Layout: a grid of 2 rows and 9 columns of equal cells, one whole gorilla per cell, nothing crossing a cell edge, no labels, no text, no grid lines. Row 1 is the three-quarter front view facing down and to the right, exactly the camera angle of the first attached sprite: we see its face plate and green eyes. Row 2 is the three-quarter back view facing up and to the right, exactly the camera angle of the second attached sprite: we see its back and the back hex gem, and its head points away. Every cell in a row keeps that row's angle: never turn it to a straight front, side or back view, and never mirror it. Each column is one moment seen from two angles, so the two rows match frame for frame. The gorilla is the same size in every cell and the ground line is at the same height in every cell. All figures same native pixel scale, generous transparent gutters, no shadows or effects of any kind, no dome/dust/shockwave/glow/motion lines.  Heavy knuckle gorilla leap. Frame 0 exact reference idle. 1 deep crouch: torso drops 3-4 pixels, knees bend, weight onto knuckles. 2 push-off arms and legs extend upward, contacts still touch ground. 3 rising airborne whole creature lifted, arms swing forward. 4 airborne PEAK highest point, both arms raised and forward, legs tucked, engine holds this frame in flight. 5 falling airborne, both arms reach down. 6 landing impact BOTH fists slam ground in front together, torso very low and hind feet planted. 7 pushing back toward idle. 8 exact reference idle. Frames 3/4/5 visibly above ground, peak higher than adjacent frames. No effects.
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\prompts\\bound.txt -Raw" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 80ms:
+Pixel-art animation sheet of ONE gorilla mech. Attached images in order: the approved se (three-quarter front, facing down-right) and ne (three-quarter back, facing up-right) views. Exact design references. Preserve moss green armoured body/head, grey faceplate and small green eyes, enormous orange forearm gauntlets each carrying a large green octagonal gem, grey block knuckles, green octagonal back gem, flat 15-colour chunky native pixel art and dark outline. Same short thick limbs and same parts. Only pose changes. No fur, gloss, gradients, added parts, thinning or lengthening. Layout: a grid of 2 rows and 9 columns of equal cells, one whole gorilla per cell, nothing crossing a cell edge, no labels, no text, no grid lines. Row 1 is the three-quarter front view facing down and to the right, exactly the camera angle of the first attached sprite: we see its face plate and green eyes. Row 2 is the three-quarter back view facing up and to the right, exactly the camera angle of the second attached sprite: we see its back and the back hex gem, and its head points away. Every cell in a row keeps that row's angle: never turn it to a straight front, side or back view, and never mirror it. Each column is one moment seen from two angles, so the two rows match frame for frame. The gorilla is the same size in every cell and the ground line is at the same height in every cell. All figures same native pixel scale, generous transparent gutters, no shadows or effects of any kind, no dome/dust/shockwave/glow/motion lines.  Heavy knuckle gorilla leap. Frame 0 exact reference idle. 1 deep crouch: torso drops 3-4 pixels, knees bend, weight onto knuckles. 2 push-off arms and legs extend upward, contacts still touch ground. 3 rising airborne whole creature lifted, arms swing forward. 4 airborne PEAK highest point, both arms raised and forward, legs tucked, engine holds this frame in flight. 5 falling airborne, both arms reach down. 6 landing impact BOTH fists slam ground in front together, torso very low and hind feet planted. 7 pushing back toward idle. 8 exact reference idle. Frames 3/4/5 visibly above ground, peak higher than adjacent frames. No effects.
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Copy-Item -LiteralPath C:\\Users\\pmcga\\.codex\\generated_images\\01a1a763-575d-74f0-a3af-354edfdb311e\\exec-2362c1ed-f89e-45e2-9503-ac52e443e86b.png -Destination D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\bound\\sheet_raw.png" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 120ms:
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\prompts\\hex_dome.txt -Raw" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 91ms:
+Pixel-art animation sheet of ONE gorilla mech. Attached images in order: the approved se (three-quarter front, facing down-right) and ne (three-quarter back, facing up-right) views. Exact design references. Preserve moss green armoured body/head, grey faceplate and small green eyes, enormous orange forearm gauntlets each carrying a large green octagonal gem, grey block knuckles, green octagonal back gem, flat 15-colour chunky native pixel art and dark outline. Same short thick limbs and same parts. Only pose changes. No fur, gloss, gradients, added parts, thinning or lengthening. Layout: a grid of 2 rows and 8 columns of equal cells, one whole gorilla per cell, nothing crossing a cell edge, no labels, no text, no grid lines. Row 1 is the three-quarter front view facing down and to the right, exactly the camera angle of the first attached sprite: we see its face plate and green eyes. Row 2 is the three-quarter back view facing up and to the right, exactly the camera angle of the second attached sprite: we see its back and the back hex gem, and its head points away. Every cell in a row keeps that row's angle: never turn it to a straight front, side or back view, and never mirror it. Each column is one moment seen from two angles, so the two rows match frame for frame. The gorilla is the same size in every cell and the ground line is at the same height in every cell. All figures same native pixel scale, generous transparent gutters, no shadows or effects of any kind, no dome/dust/shockwave/glow/motion lines.  Synchronized TWO-FIST overhead ground slam cast, both arms act TOGETHER, never alternating chest beating. 0 exact reference idle. 1 rear onto planted hind legs. 2 both fists raised OVERHEAD together with orange gauntlets and large green gems facing outward. 3 tallest overhead hold both fists clearly ABOVE HEAD. 4 both arms swing down together. 5 both fists hit ground together, low wide crouch. 6 pushing back up. 7 exact reference idle. Feet stay on same ground line throughout, fists never below ground. NO dome or any effects, only creature.
+
+
+codex
+The bound and hex_dome sheets are generated. Both keep the requested three-quarter directions; hex_dome’s frame 2 needs its fists raised higher to match set B’s beat. I’ll correct that locally and restore the native details without generating another sheet.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Copy-Item -LiteralPath C:\\Users\\pmcga\\.codex\\generated_images\\01a1a763-575d-74f0-a3af-354edfdb311e\\exec-c7829418-a1f3-4a0c-9e1b-79c6f9d53179.png -Destination D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\hex_dome\\sheet_raw.png" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 97ms:
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\prompts\\death.txt -Raw" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 91ms:
+Pixel-art animation sheet of ONE gorilla mech. Attached images in order: the approved se (three-quarter front, facing down-right) and ne (three-quarter back, facing up-right) views. Exact design references. Preserve moss green armoured body/head, grey faceplate and small green eyes, enormous orange forearm gauntlets each carrying a large green octagonal gem, grey block knuckles, green octagonal back gem, flat 15-colour chunky native pixel art and dark outline. Same short thick limbs and same parts. Only pose changes. No fur, gloss, gradients, added parts, thinning or lengthening. Layout: a grid of 2 rows and 8 columns of equal cells, one whole gorilla per cell, nothing crossing a cell edge, no labels, no text, no grid lines. Row 1 is the three-quarter front view facing down and to the right, exactly the camera angle of the first attached sprite: we see its face plate and green eyes. Row 2 is the three-quarter back view facing up and to the right, exactly the camera angle of the second attached sprite: we see its back and the back hex gem, and its head points away. Every cell in a row keeps that row's angle: never turn it to a straight front, side or back view, and never mirror it. Each column is one moment seen from two angles, so the two rows match frame for frame. The gorilla is the same size in every cell and the ground line is at the same height in every cell. All figures same native pixel scale, generous transparent gutters, no shadows or effects of any kind, no dome/dust/shockwave/glow/motion lines.  Collapse forward onto belly, not onto back. 0 exact reference idle. 1 head shoulders snap backward recoil. 2 stagger leaning back one fist lifts. 3 knees buckle, body drops. 4 sink forward onto fists. 5 fall FORWARD onto belly. 6 lying FLAT on belly, arms splayed to sides, eyes dark grey instead of green. 7 same prone settled pose one native pixel lower, dark eyes. Keep every green gauntlet/back GEM green and same size, only eye pixels darken. Front prone face still toward viewer; side prone head right; back prone shows back with gem. No disappearing parts, no edge cropping.
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Copy-Item -LiteralPath C:\\Users\\pmcga\\.codex\\generated_images\\01a1a763-575d-74f0-a3af-354edfdb311e\\exec-8aa5b099-6a16-48f6-844d-8a84d41c5eb9.png -Destination D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\death\\sheet_raw.png
+@'
+from pathlib import Path
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d')
+p=r/'finish.py';s=p.read_text().replace(\"NAMES=['front','side','back']\",\"NAMES=['se','ne']\").replace('len(bands)"'!=3'"','len(bands)"'!=2'"').replace('for i in range(2)]+[H]','for i in range(1)]+[H]')
+s=s.replace('90+3*420','90+2*420').replace('100+N*384','100+(N+1)*384')
+s=s.replace(\"d.text((8,90+r*420+180),n,fill='white')\", \"d.text((8,90+r*420+180),n,fill='white')\\n  reference_bg=Image.new('RGB',(192,192),(101,106,112));reference_bg.paste(approved(n),mask=approved(n).getchannel('A'));review.paste(reference_bg.resize((384,384),Image.Resampling.NEAREST),(100,90+r*420));d.text((110,70+r*420),'APPROVED',fill='white')\")
+s=s.replace('100+c*384','100+(c+1)*384').replace('100+(c+1)*384-1','100+(c+2)*384-1').replace('110+c*384','110+(c+1)*384')
+p.write_text(s)
+# Verify adapts the existing checks, no fixed three-view totals or front filenames.
+p=r/'verify.py';s=p.read_text().replace('N*3','N*2').replace(\"'total_frames':75\",\"'total_frames':50\").replace('3*230+32','2*230+32').replace(\"f'front_f{j}.png'\",\"f'se_f{j}.png'\").replace('front F','se F');p.write_text(s)
+print('adapted scripts')
+'@ | python -
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\finish.py" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 4901ms:
+adapted scripts
+bound finished
+hex_dome finished
+death finished
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from PIL import Image
+import numpy as np
+from scipy import ndimage as ndi
+from pathlib import Path
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d')
+for n in ['se','ne']:
+ a=np.array(Image.open(r/'refs'/f'{n}.png'));g=(a[:,:,1]>185)&(a[:,:,0]<110)&(a[:,:,2]>70)&(a[:,:,3]>0);lab,k=ndi.label(g)
+ print(n,Image.fromarray(a).getbbox())
+ for j in range(1,k+1):
+  y,x=np.where(lab==j); print(len(x),(x.min(),y.min(),x.max()+1,y.max()+1),(x.mean(),y.mean()))
+for m in ['bound','hex_dome','death']:
+ import json
+ d=json.loads((r/m/'grid.json').read_text());print(m,d['row_scale'],[(c['view'],c['frame']) for c in d['cells'] if c['touches_cut']])
+'@ | python -" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 980ms:
+se (36, 59, 125, 131)
+3 (np.int64(92), np.int64(83), np.int64(94), np.int64(85)) (np.float64(92.33333333333333), np.float64(83.33333333333333))
+5 (np.int64(94), np.int64(84), np.int64(97), np.int64(86)) (np.float64(95.2), np.float64(84.6))
+3 (np.int64(101), np.int64(84), np.int64(103), np.int64(86)) (np.float64(101.33333333333333), np.float64(84.33333333333333))
+192 (np.int64(55), np.int64(99), np.int64(70), np.int64(115)) (np.float64(62.197916666666664), np.float64(106.69270833333333))
+1 (np.int64(57), np.int64(100), np.int64(58), np.int64(101)) (np.float64(57.0), np.float64(100.0))
+39 (np.int64(118), np.int64(100), np.int64(123), np.int64(113)) (np.float64(119.82051282051282), np.float64(105.87179487179488))
+1 (np.int64(56), np.int64(101), np.int64(57), np.int64(102)) (np.float64(56.0), np.float64(101.0))
+ne (37, 61, 123, 131)
+1 (np.int64(68), np.int64(67), np.int64(69), np.int64(68)) (np.float64(68.0), np.float64(67.0))
+131 (np.int64(64), np.int64(67), np.int64(78), np.int64(80)) (np.float64(70.13740458015268), np.float64(73.25190839694656))
+1 (np.int64(67), np.int64(68), np.int64(68), np.int64(69)) (np.float64(67.0), np.float64(68.0))
+1 (np.int64(66), np.int64(69), np.int64(67), np.int64(70)) (np.float64(66.0), np.float64(69.0))
+134 (np.int64(108), np.int64(99), np.int64(119), np.int64(116)) (np.float64(113.3955223880597), np.float64(107.40298507462687))
+2 (np.int64(110), np.int64(100), np.int64(111), np.int64(102)) (np.float64(110.0), np.float64(100.5))
+bound {'se': 0.36860442145381006, 'ne': 0.3572708098447427} [('se', 4), ('se', 5), ('ne', 4), ('ne', 5)]
+hex_dome {'se': 0.3323436309359901, 'ne': 0.3250401600588851} []
+death {'se': 0.3338169983182837, 'ne': 0.3262880297022804} []
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+import numpy as np
+from PIL import Image
+from scipy import ndimage as ndi
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d')
+for move in ['bound','hex_dome','death']:
+ a=np.array(Image.open(r/move/'sheet_raw.png').convert('RGBA'));print(move,a.shape, np.unique(a[:,:,3],return_counts=True)[0][:20]);m=a[:,:,3]>127
+ for sl in [slice(0,a.shape[0]//2),slice(a.shape[0]//2,None)]:
+  mm=m[sl];lab,k=ndi.label(mm);out=[]
+  for j,s in enumerate(ndi.find_objects(lab),1):
+   if (lab[s]==j).sum()>1000:out.append((s[1].start,s[1].stop,s[0].start,s[0].stop,(lab[s]==j).sum()))
+  print(out)
+'@ | python -" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 1168ms:
+bound (724, 2172, 4) [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19]
+[(989, 1223, 54, 239, np.int64(29762)), (752, 978, 82, 279, np.int64(31004)), (1231, 1442, 92, 290, np.int64(31086)), (508, 730, 119, 319, np.int64(32322)), (18, 255, 120, 319, np.int64(33935)), (1921, 2155, 120, 319, np.int64(33528)), (1687, 1905, 128, 319, np.int64(30862)), (268, 492, 148, 322, np.int64(28671)), (1450, 1676, 164, 322, np.int64(27320))]
+[(987, 1217, 28, 206, np.int64(27172)), (743, 978, 56, 255, np.int64(30057)), (1224, 1442, 69, 266, np.int64(30520)), (508, 731, 99, 300, np.int64(32533)), (18, 255, 105, 304, np.int64(34230)), (1920, 2155, 105, 303, np.int64(33823)), (1685, 1907, 114, 306, np.int64(31257)), (272, 494, 133, 307, np.int64(28444)), (1447, 1676, 145, 312, np.int64(28333))]
+hex_dome (724, 2172, 4) [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19]
+[(838, 1076, 29, 308, np.int64(44246)), (572, 820, 72, 308, np.int64(38231)), (295, 538, 75, 309, np.int64(39384)), (1116, 1356, 84, 310, np.int64(38033)), (10, 269, 92, 316, np.int64(41196)), (1657, 1897, 92, 310, np.int64(38832)), (1917, 2168, 92, 316, np.int64(39925)), (1380, 1630, 128, 318, np.int64(35336))]
+[(840, 1079, 20, 301, np.int64(44945)), (294, 539, 58, 300, np.int64(40682)), (572, 821, 61, 300, np.int64(38682)), (1104, 1354, 71, 302, np.int64(39045)), (10, 269, 82, 302, np.int64(41902)), (1645, 1897, 82, 302, np.int64(40440)), (1913, 2168, 83, 302, np.int64(40948)), (1372, 1625, 111, 307, np.int64(37098))]
+death (724, 2172, 4) [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19]
+[(296, 543, 76, 312, np.int64(39824)), (566, 810, 85, 312, np.int64(36551)), (14, 279, 95, 312, np.int64(40615)), (831, 1080, 104, 312, np.int64(36940)), (1101, 1352, 125, 310, np.int64(32850)), (1375, 1623, 154, 310, np.int64(26201)), (1647, 1898, 197, 311, np.int64(19969)), (1920, 2166, 204, 314, np.int64(19064))]
+[(291, 543, 56, 290, np.int64(42555)), (559, 810, 61, 290, np.int64(37484)), (14, 277, 75, 290, np.int64(40894)), (826, 1081, 87, 290, np.int64(37708)), (1101, 1351, 109, 291, np.int64(33046)), (1373, 1622, 139, 291, np.int64(26246)), (1644, 1896, 180, 292, np.int64(20243)), (1918, 2165, 190, 298, np.int64(19446))]
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d')
+p=r/'finish.py';s=p.read_text().replace('sz[lab]>max(16,m.sum()*.0001)','sz[lab]>max(1000,m.sum()*.0001)');p.write_text(s)
+p=r/'polish.py';s=p.read_text();s=s.replace(\"boxes={'front':(69,80,90,95),'side':(104,82,116,97),'back':(65,61,94,86)}\",\"boxes={'se':(89,80,105,96),'ne':(60,62,84,85)}\")
+s=s.replace(\"n=='back'\",\"n=='ne'\").replace(\"n=='front'\",\"n=='se'\").replace(\"elif n=='se':ok=len(gx)<30 and abs(cx-96)<17 and cy<bb[1]+(bb[3]-bb[1])*.58\",\"elif n=='se':ok=len(gx)<25 and cx>96 and cy<bb[1]+(bb[3]-bb[1])*.55\")
+s=s.replace(\"if n=='se':cx=np.mean([v[0] for v in candidates]);cy=np.mean([v[1] for v in candidates])\",\"if n=='se':cx,cy,_=min(candidates,key=lambda v:v[1])\")
+s=s.replace(\"(v[0]-96)**2+(v[1]-bb[1]-12)**2\",\"(v[0]-86)**2+(v[1]-bb[1]-12)**2\")
+p.write_text(s)
+p=r/'gems.py';s=p.read_text();start=s.index('tiles=');end=s.index('\\nlog=[]',start)
+s=s[:start]+\"tiles={'flat':template('se',(50,94,76,121)),'edge':template('se',(114,95,125,119)),'back_angle':template('ne',(103,94,123,121))}\"+s[end:]
+s=s.replace(\"n=='back'\",\"n=='ne'\");start=s.index(\"    key=('left'\");end=s.index('\\n    patch,center=',start)
+s=s[:start]+\"    key='edge' if w/h<.55 else ('flat' if n=='se' else 'back_angle')\"+s[end:];p.write_text(s)
+p=r/'final_pose.py';s=p.read_text();start=s.index(\" if n=='front':\");end=s.index('\\n fixed=',start)
+s=s[:start]+\" if n=='se':upper &= ~(((sx<80)|(sx>=106))&(sy>=91))\\n else:upper &= ~(((sx<55)|(sx>=98))&(sy>=91))\"+s[end:]
+s=s.replace(\"arm=(yy<bb[1]+46)&((xx<83)|(xx>109)) if n"'!='"'side' else (yy<bb[1]+32)\",\"arm=(yy<bb[1]+42)\")
+s=s.replace(\"n"'!='"'back'\",\"n"'!='"'ne'\").replace(\"((n=='front' and abs(x.mean()-96)<13) or (n=='side' and x.mean()>bb[0]+.70*(bb[2]-bb[0])))\",\"(x.mean()>100 and y.mean()<bb[1]+(bb[3]-bb[1])*.75)\")
+p.write_text(s)
+'@ | python -
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\finish.py
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\polish.py
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\gems.py
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\final_pose.py
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\seam_fill.py
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\gem_cleanup.py
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\verify.py" in C:\Users\pmcga\dev\hollowtide
+ exited 1 in 12601ms:
+bound finished
+hex_dome finished
+death finished
+Native detail and cycle finish complete
+Native gem finishing done
+Crouch, overhead lead-in and prone settle corrected
+bound ne_f2.png 41
+bound ne_f3.png 57
+bound ne_f4.png 24
+bound ne_f5.png 66
+bound ne_f6.png 34
+bound ne_f7.png 32
+bound se_f2.png 78
+bound se_f3.png 78
+bound se_f4.png 57
+bound se_f5.png 89
+bound se_f6.png 61
+bound se_f7.png 72
+hex_dome ne_f1.png 39
+hex_dome ne_f2.png 36
+hex_dome ne_f3.png 36
+hex_dome ne_f4.png 44
+hex_dome ne_f5.png 50
+hex_dome ne_f6.png 49
+hex_dome se_f1.png 52
+hex_dome se_f2.png 29
+hex_dome se_f3.png 30
+hex_dome se_f4.png 33
+hex_dome se_f5.png 81
+hex_dome se_f6.png 50
+death ne_f1.png 57
+death ne_f2.png 81
+death ne_f3.png 50
+death ne_f4.png 45
+death ne_f5.png 36
+death ne_f6.png 12
+death ne_f7.png 12
+death se_f1.png 55
+death se_f2.png 58
+death se_f3.png 30
+death se_f4.png 37
+death se_f5.png 12
+death se_f6.png 9
+death se_f7.png 9
+Gem face pinholes repaired
+Traceback (most recent call last):
+bound cut contacts [('se', 4), ('se', 5), ('ne', 4), ('ne', 5)]
+  File "D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\anim\codex-set-d\verify.py", line 17, in <module>
+    assert c['bottom_row']==(160-LIFTS.get(int(c['frame'].split('_f')[1]),0) if name=='bound' else 160) and (not c['enclosed_hole_pixels'] or c['frame'].endswith('_f0') or (name=='bound' and c['frame'].endswith('_f8')) or (name=='hex_dome' and c['frame'].endswith('_f7'))) and not c['pixels_below_160'] and not c['canvas_edge'] and not c['stray_components'] and c['palette_ok'] and c['binary_alpha'],c
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'frame': 'se_f7', 'bottom_row': 160, 'colour_count': 15, 'pixels_below_160': 0, 'lift': 0, 'enclosed_hole_pixels': 8, 'last_frame_IoU': None, 'last_frame_exact_colour_IoU': None, 'frame0_IoU': None, 'frame0_exact_colour_IoU': None, 'palette_ok': True, 'binary_alpha': True, 'canvas_edge': False, 'stray_components': 0, 'enclosed_holes_found': 14, 'enclosed_hole_pixels_found': 68, 'hole_pixels_filled': 68, 'seam_pixels_filled': 4}
+
+codex
+All three sheets are generated—exactly one per move. I’ve sliced and finished the 50 frames, applied the 16/28/12-pixel bound lifts, and filled seams and enclosed holes. Next I’ll check the boards against the approved stills and set B’s poses.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+import json
+from pathlib import Path
+from PIL import Image
+import numpy as np
+from scipy import ndimage as ndi
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d')
+g=json.loads((r/'bound'/'grid.json').read_text());print(g['x_edges'],g['y_edges']);print([c for c in g['cells'] if c['touches_cut']])
+a=np.array(Image.open(r/'bound'/'sheet_raw.png'));m=a[:,:,3]>127;lab,k=ndi.label(m);sz=np.bincount(lab.ravel());m&=sz[lab]>1000
+print([(x,int(m[:,x-1:x+2].sum())) for x in range(1205,1235)])
+'@ | python -" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 919ms:
+[0, 256, 495, 732, 979, 1207, 1445, 1683, 1918, 2172] [0, 356, 724]
+[{'view': 'se', 'frame': 4, 'source_box': [979, 0, 1207, 356], 'source_opaque_box': [10, 54, 228, 239], 'scale': 0.36860442145381006, 'placement': [56, 65], 'touches_cut': True}, {'view': 'se', 'frame': 5, 'source_box': [1207, 0, 1445, 356], 'source_opaque_box': [0, 92, 235, 290], 'scale': 0.36860442145381006, 'placement': [53, 76], 'touches_cut': True}, {'view': 'ne', 'frame': 4, 'source_box': [979, 356, 1207, 724], 'source_opaque_box': [8, 34, 228, 212], 'scale': 0.3572708098447427, 'placement': [56, 69], 'touches_cut': True}, {'view': 'ne', 'frame': 5, 'source_box': [1207, 356, 1445, 724], 'source_opaque_box': [0, 75, 235, 272], 'scale': 0.3572708098447427, 'placement': [54, 79], 'touches_cut': True}]
+[(1205, 404), (1206, 392), (1207, 378), (1208, 361), (1209, 342), (1210, 325), (1211, 291), (1212, 260), (1213, 222), (1214, 189), (1215, 153), (1216, 115), (1217, 94), (1218, 77), (1219, 68), (1220, 60), (1221, 50), (1222, 31), (1223, 32), (1224, 42), (1225, 68), (1226, 81), (1227, 93), (1228, 105), (1229, 114), (1230, 133), (1231, 160), (1232, 187), (1233, 215), (1234, 237)]
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\native_finish_log.txt
+@'
+from pathlib import Path
+from PIL import Image,ImageDraw
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d');im=Image.new('RGB',(6*384,3*384),'#656a70');d=ImageDraw.Draw(im)
+for y,move in enumerate(['bound','hex_dome','death']):
+ for x,(n,c) in enumerate([('se',2),('se',4),('se',6),('ne',2),('ne',4),('ne',6)]):
+  f=Image.open(r/move/'frames'/f'{n}_f{c}.png').resize((384,384),Image.Resampling.NEAREST);im.paste(f,(x*384,y*384),f);d.text((x*384+4,y*384+4),f'{move}/{n}/{c}',fill='white')
+im.save(r/'inspect.png')
+'@ | python -" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 370ms:
+bound/se_f1: native head/face/eyes at 105,122
+bound/se_f2: native head/face/eyes at 102,107
+bound/se_f3: native head/face/eyes at 106,92
+bound/se_f4: native head/face/eyes at 98,83
+bound/se_f5: native head/face/eyes at 103,99
+bound/se_f6: native head/face/eyes at 102,128
+bound/se_f7: native head/face/eyes at 111,114
+bound/ne_f1: native head/face/eyes at 77,102
+bound/ne_f2: native head/face/eyes at 77,91
+bound/ne_f3: native head/face/eyes at 76,76
+bound/ne_f4: native head/face/eyes at 73,72
+bound/ne_f5: native head/face/eyes at 77,82
+bound/ne_f6: native head/face/eyes at 80,103
+bound/ne_f7: native head/face/eyes at 78,94
+hex_dome/se_f1: native head/face/eyes at 100,100
+hex_dome/se_f2: native head/face/eyes at 92,95
+hex_dome/se_f3: native head/face/eyes at 96,96
+hex_dome/se_f4: native head/face/eyes at 95,105
+hex_dome/se_f5: native head/face/eyes at 101,123
+hex_dome/se_f6: native head/face/eyes at 101,112
+hex_dome/ne_f1: native head/face/eyes at 70,87
+hex_dome/ne_f2: native head/face/eyes at 68,89
+hex_dome/ne_f3: native head/face/eyes at 75,86
+hex_dome/ne_f4: native head/face/eyes at 71,88
+hex_dome/ne_f5: native head/face/eyes at 74,98
+hex_dome/ne_f6: native head/face/eyes at 72,93
+death/se_f1: native head/face/eyes at 101,92
+death/se_f2: native head/face/eyes at 97,93
+death/se_f3: native head/face/eyes at 109,118
+death/se_f4: native head/face/eyes at 102,128
+death/se_f5: face occluded; no stamp
+death/se_f6: native head/face/eyes at 121,139
+death/se_f7: native head/face/eyes at 122,140
+death/ne_f1: native head/face/eyes at 69,91
+death/ne_f2: native head/face/eyes at 67,91
+death/ne_f3: native head/face/eyes at 70,99
+death/ne_f4: native head/face/eyes at 72,106
+death/ne_f5: native head/face/eyes at 72,115
+death/ne_f6: native head/face/eyes at 73,124
+death/ne_f7: native head/face/eyes at 74,125
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d')
+p=r/'finish.py';s=p.read_text().replace('cells=[]; factors={}','cells=[]; factors={}; row_edges={}')
+s=s.replace(\" for r,n in enumerate(NAMES):\\n  local=\", \" for r,n in enumerate(NAMES):\\n  xs=np.rint(np.linspace(0,W,N+1)).astype(int)\\n  for i in range(1,N):\\n   candidates=[x for x in range(max(2,xs[i]-W//(N*4)),min(W-2,xs[i]+W//(N*4))) if not m[ys[r]:ys[r+1],x-1:x+2].any()]\\n   if candidates:xs[i]=min(candidates,key=lambda x:abs(x-xs[i]))\\n  row_edges[n]=xs.tolist()\\n  local=\")
+s=s.replace('x_edges=xs.tolist(),y_edges=ys','x_edges_by_row=row_edges,y_edges=ys');p.write_text(s)
+p=r/'seam_fill.py';s=p.read_text().replace('fill |= enclosed','fill |= enclosed\\n        # Closing an open seam can enclose another pocket; fill that too.\\n        fill |= ndi.binary_fill_holes(op|fill)&~op')
+p.write_text(s)
+p=r/'polish.py';s=p.read_text();s=s.replace(\"   if not candidates:\",\"   if name=='death' and n=='se' and c>=5:\\n    # Low prone eyes sit centrally above the mouth, away from fist highlights.\\n    candidates=[v for v in candidates if v[0]<120]\\n   if not candidates:\")
+p.write_text(s)
+'@ | python -
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\finish.py
+@'
+from pathlib import Path
+from PIL import Image,ImageDraw
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d');im=Image.new('RGB',(3*640,640),'#656a70');d=ImageDraw.Draw(im)
+for x,c in enumerate([5,6,7]):
+ f=Image.open(r/'death'/'frames'/f'se_f{c}.png').crop((40,90,150,170)).resize((640,464),Image.Resampling.NEAREST);im.paste(f,(x*640,40),f);d.text((x*640+4,4),f'death/se/{c}',fill='white')
+im.save(r/'prone_inspect.png')
+'@ | python -" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 3431ms:
+bound finished
+hex_dome finished
+death finished
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+import numpy as np
+from PIL import Image
+from scipy import ndimage as ndi
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d')
+for c in [5,6,7]:
+ a=np.array(Image.open(r/'death'/'frames'/f'se_f{c}.png'));g=(a[:,:,1]>185)&(a[:,:,0]<110)&(a[:,:,2]>70)&(a[:,:,3]>0);lab,k=ndi.label(g);print(c)
+ for j in range(1,k+1):
+  y,x=np.where(lab==j);print(len(x),round(x.mean(),1),round(y.mean(),1))
+'@ | python -" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 925ms:
+5
+66 71.2 141.9
+14 128.9 142.9
+6 107.5 144.0
+1 63.0 149.0
+13 64.8 152.0
+6
+16 128.8 143.3
+30 68.6 144.5
+1 103.0 145.0
+2 61.0 150.5
+5 62.6 152.8
+7
+26 70.5 144.4
+15 129.0 144.0
+2 104.5 146.0
+1 113.0 146.0
+1 68.0 147.0
+1 107.0 147.0
+1 112.0 147.0
+4 63.2 152.2
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d')
+p=r/'finish.py';s=p.read_text().replace('m=(a[:,:,3]>127)&~((rgb0.min(2)>195)&(np.ptp(rgb0,axis=2)<24))','m=a[:,:,3]>127\\n if (a[:,:,3]==0).mean()<.05:m &= ~((rgb0.min(2)>195)&(np.ptp(rgb0,axis=2)<24))');p.write_text(s)
+p=r/'polish.py';s=p.read_text();s=s.replace(\"   if not candidates:\",\"   if name=='death' and n=='se' and c>=5:\\n    candidates=[(108,144 if c==5 else 145,4)]\\n   if not candidates:\")
+s=s.replace(\"   _,x,y=best;original=\", \"   _,x,y=best\\n   if name=='death' and n=='se' and c>=5:x,y=100,(140 if c==5 else 141)\\n   original=\")
+p.write_text(s)
+'@ | python -
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\finish.py
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\polish.py
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\gems.py
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\final_pose.py
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\seam_fill.py
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\gem_cleanup.py
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\verify.py" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 13618ms:
+bound finished
+hex_dome finished
+death finished
+Native detail and cycle finish complete
+Native gem finishing done
+Crouch, overhead lead-in and prone settle corrected
+bound se_f7.png 12
+hex_dome se_f5.png 16
+death ne_f4.png 2
+Gem face pinholes repaired
+bound cut contacts []
+hex_dome cut contacts []
+death cut contacts []
+Frames 50 palette 15
+
+codex
+The board review caught a clipped bound gauntlet and a face patch misplaced onto a fist in prone death. I corrected the row cuts and patch placement, and preserved the generated sheet’s opaque highlight pixels. I’m checking the final boards and GIF timings now.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\verification.json" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 106ms:
+{
+  "animations": {
+    "bound": {
+      "frames": 18,
+      "bottom_rows": [
+        132,
+        144,
+        148,
+        160
+      ],
+      "below_ground_pixels": 0,
+      "edge_contacts": 0,
+      "stray_components": 0,
+      "frame0_iou": {
+        "se_f0": 1.0,
+        "ne_f0": 1.0
+      },
+      "raw_sha256": "7d2ea26099d38c702ba44f2b9dc559237363cb016f3ff4a77b5c7f1099f12c06",
+      "raw_size": [
+        2172,
+        724
+      ]
+    },
+    "hex_dome": {
+      "frames": 16,
+      "bottom_rows": [
+        160
+      ],
+      "below_ground_pixels": 0,
+      "edge_contacts": 0,
+      "stray_components": 0,
+      "frame0_iou": {
+        "se_f0": 1.0,
+        "ne_f0": 1.0
+      },
+      "raw_sha256": "04c065faf6b5546418def428210601c5388a70ed5bbda7deed5d0a406c638361",
+      "raw_size": [
+        2172,
+        724
+      ]
+    },
+    "death": {
+      "frames": 16,
+      "bottom_rows": [
+        160
+      ],
+      "below_ground_pixels": 0,
+      "edge_contacts": 0,
+      "stray_components": 0,
+      "frame0_iou": {
+        "se_f0": 1.0,
+        "ne_f0": 1.0
+      },
+      "raw_sha256": "411a46e65bdd8e431ecc1f7126d12eef0e62c7c136e16b1741d79948c8d5fee9",
+      "raw_size": [
+        2172,
+        724
+      ]
+    }
+  },
+  "palette_opaque_colours": 15,
+  "total_frames": 50
+}
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d')
+p=r/'final_pose.py';s=p.read_text().replace('(x.mean()>100 and y.mean()<bb[1]+(bb[3]-bb[1])*.75)','(100<x.mean()<120 and y.mean()<bb[1]+(bb[3]-bb[1])*.75)');p.write_text(s)
+p=r/'verify.py';s=p.read_text();s=s.replace(\"  assert len(list((ROOT/name/'frames').glob(f'{n}_f*.png')))==N\", \"  assert len(list((ROOT/name/'frames').glob(f'{n}_f*.png')))==N\\n  assert np.array_equal(np.array(Image.open(ROOT/name/'frames'/f'{n}_f0.png')),np.array(approved(n)))\\n  gif=Image.open(ROOT/name/f'preview_{n}.gif');durations=[]\\n  for gi in range(gif.n_frames):gif.seek(gi);durations.append(gif.info['duration'])\\n  assert durations==TIMINGS[name],(name,n,durations)\")
+s=s.replace(\" grid.update(clean=\", \" for cell in grid['cells']:\\n  n,j=cell['view'],cell['frame'];fr=Image.open(ROOT/name/'frames'/f'{n}_f{j}.png')\\n  cell['final_opaque_box']=list(fr.getbbox());cell['lift']=LIFTS.get(j,0) if name=='bound' else 0\\n  cell['exact_approved_still']=j==0 or (name in ['bound','hex_dome'] and j==N-1)\\n  if cell['exact_approved_still']:cell['placement']=[16,30]\\n  cell['finishing_coordinates']='Native face/gem patches and local pose changes recorded in finishing scripts and logs.'\\n grid.update(clean=\")
+p.write_text(s)
+'@ | python -
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\finish.py
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\polish.py
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\gems.py
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\final_pose.py
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\seam_fill.py
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\gem_cleanup.py
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\verify.py" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 13589ms:
+bound finished
+hex_dome finished
+death finished
+Native detail and cycle finish complete
+Native gem finishing done
+Crouch, overhead lead-in and prone settle corrected
+bound se_f7.png 12
+hex_dome se_f5.png 16
+death ne_f4.png 2
+Gem face pinholes repaired
+bound cut contacts []
+hex_dome cut contacts []
+death cut contacts []
+Frames 50 palette 15
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+import json
+from PIL import Image
+import numpy as np
+from scipy import ndimage as ndi
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d')
+for move in ['bound','hex_dome','death']:
+ stats=[]
+ for f in sorted((r/move/'frames').glob('*.png')):
+  a=np.array(Image.open(f));m=a[:,:,3]>0;hv=np.zeros_like(m);hh=np.zeros_like(m);hv[:,1:-1]=~m[:,1:-1]&m[:,:-2]&m[:,2:];hh[1:-1]=~m[1:-1]&m[:-2]&m[2:];seams=0
+  for line in list(hv.T)+list(hh):
+   labels,k=ndi.label(line);sizes=np.bincount(labels)[1:];seams+=int(sizes[sizes>=4].sum())
+  if seams:stats.append((f.stem,seams))
+ print(move,'remaining seams',stats)
+print('endpoint native holes',[(n,int((ndi.binary_fill_holes(np.array(Image.open(r/'refs'/f'{n}.png'))[:,:,3]>0)&~(np.array(Image.open(r/'refs'/f'{n}.png'))[:,:,3]>0)).sum())) for n in ['se','ne']])
+'@ | python -" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 1696ms:
+bound remaining seams []
+hex_dome remaining seams []
+death remaining seams []
+endpoint native holes [('se', 0), ('ne', 0)]
+
+codex
+All 50 frames pass the checks: 15 approved colours, binary transparency, no remaining seams or holes, no stray pixels or edge contacts, exact bound lifts, and the requested GIF timings. Required still endpoints have silhouette and exact-colour IoU of 1.0. The final boards have been reviewed; I’m writing the report.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-a\\prompts\\*.txt
+@'
+from pathlib import Path
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d')
+s='''\"\"\"Report retained sheets and verified results, without generating any images.\"\"\"
+from finish import *
+v=json.loads((ROOT/'verification.json').read_text())
+lines=[
+'APE L / CODEX SET D / 2026-11-04',
+'50 transparent native-scale 192x192 frames: bound 18, hex_dome 16, death 16; views se/ne.',
+'Tokens used: unavailable. Exactly THREE built-in image calls, ONE sheet per move; no redo or failed call.',
+'Copied and adapted set B finish.py, polish.py, gems.py, final_pose.py, seam_fill.py, gem_cleanup.py and verify.py; read set A method.',
+'Prompts preserve set B column descriptions verbatim and use the requested two-row layout; refs attached se_6x then ne_6x.'
+]
+for name,a in v['animations'].items():
+ g=json.loads((ROOT/name/'grid.json').read_text())
+ lines.append(f\"{name}: sheet {a['raw_size'][0]}x{a['raw_size'][1]}, clean 2x{COUNTS[name]} grid, zero cut contacts; SHA256 {a['raw_sha256']}\")
+lines += [
+'Cuts use empty gutters per row; grid.json records all cuts, fixed row factors, source bounds, placement, final bounds and lifts.',
+'No independent per-pose resizing. Approved native face/eye, back-gem and gauntlet-gem/bezel patches fitted inside generated silhouettes.',
+'All 50: approved 15-colour palette only, binary alpha, zero pixels below row160, zero edge contacts and zero tiny stray components.',
+'All frame0s and bound/hex_dome final frames equal approved stills at (+16,+30): silhouette AND exact-colour IoU 1.000000 in both views.',
+'Bound f3/f4/f5 bottom rows 144/132/148: exact lifts 16/28/12. All other frames bottom row160.',
+'Set B seam-run check and enclosed-hole flood fill run; zero remaining seams or enclosed holes in any frame, including exact endpoints.',
+'checks.txt records per-frame geometry, colours, alpha, IoU and holes/seams found and filled; all six GIF frame counts/timings verified.',
+'Viewed all final two-view boards against approved stills and set B boards. Approved still is at the left of each review row.',
+'Corrected bound gauntlet clipping with row-specific cuts; restored opaque cap highlights; fixed misplaced prone face patch.',
+'Bound by eye: same gorilla in both rows; crouch/push/rise/peak/fall/low two-fist landing/recovery match column by column and set B beats.',
+'Hex dome by eye: same gorilla; both fists overhead in f2/f3, together down into f5, recovery; two rows and set B beats match.',
+'Death by eye: same gorilla; recoil/stagger/buckle/forward sink/prone progression matches rows and set B; f7 body settles 1px with contacts fixed.',
+'Death f6/f7: face eyes use approved darkest faceplate grey; gauntlet and back gems stay green.',
+'Angles by eye: se stays down-right with asymmetric face/eyes; ne stays up-right with back gem and head away; no straight-view switch or mirror.',
+'Limbs by eye: short heavy proportions retained, with no obvious length stretch. Extreme poses retain small generated armour-contour differences.',
+'No effects. Raw sheets, slices, prompts, refs, frames, grids, checks, GIFs, review boards and adapted scripts retained in codex-set-d.',
+'Rebuild: finish.py; polish.py; gems.py; final_pose.py; seam_fill.py; gem_cleanup.py; verify.py; report.py.',
+'All requested deliverables are inside codex-set-d. No sibling, assets or art changes; no commit.'
+]
+assert len(lines)<30
+(ROOT/'REPORT.txt').write_text('\\\\n'.join(lines)+'\\\\n')
+print('REPORT.txt:',len(lines),'lines')
+'''
+(r/'report.py').write_text(s)
+# Confirm column descriptions were kept byte-for-byte as text.
+for move,n in [('bound',9),('hex_dome',8),('death',8)]:
+ b=(r.parent/'codex-set-b'/'prompts'/f'{move}.txt').read_text();d=(r/'prompts'/f'{move}.txt').read_text();suffix=b.split(f'Exactly {n} columns, {n*3} figures.')[1];assert d.endswith(suffix)
+print('All move descriptions preserved verbatim')
+'@ | python -
+python D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ape_l\\take-a\\anim\\codex-set-d\\report.py" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 1115ms:
+Pixel-art animation sheet of ONE gorilla mech. Attached images in order are approved FRONT, SIDE FACING RIGHT, BACK. Exact design references, not loose inspiration. Preserve moss green armoured body and head, grey face plate with green eyes, very large orange forearm gauntlets each carrying a LARGE green octagonal gem, grey blocky knuckle fists, green octagonal gem on back, dark outline, flat 15-colour chunky pixel art. No fur, gloss, gradients, new parts, thinner or longer limbs. Only pose changes.
+Layout: exactly 3 rows and 8 columns of equal cells. Row 1 front straight toward viewer; row 2 true side facing RIGHT; row 3 straight back, no face. Each column is precisely the SAME MOMENT across three views. One complete creature per cell, generous empty gutters, no cropped pixels, no text, labels or grid. Uniform native design scale throughout, no shrinking for tall poses. Transparent background. Same ground line per cell. No shadows, dust, effects, shield, dome or motion lines.
+Animation: Rears onto the hind legs, beats chest with alternating heavy fists, then drops onto knuckles. Two or three clear beats. No extra arms. Feet stay on ground.
+Columns numbered from zero: 0 exact approved idle; 1 lift torso off knuckles, elbows bend; 2 fully rear up, right fist contacts chest while left drawn away; 3 left fist contacts chest, right withdrawn; 4 right fist contacts chest, left withdrawn; 5 both fists lower, torso starts dropping; 6 nearly back on knuckles; 7 exact approved idle.
+Frame zero must copy the reference pose exactly. Keep recognisable exact eye pixels, green gem sizes and octagonal geometry, orange gauntlet shapes and knuckles throughout.
+Pixel-art animation sheet of ONE gorilla mech. Attached images in order are approved FRONT, SIDE FACING RIGHT, BACK. Exact design references, not loose inspiration. Preserve moss green armoured body and head, grey face plate with green eyes, very large orange forearm gauntlets each carrying a LARGE green octagonal gem, grey blocky knuckle fists, green octagonal gem on back, dark outline, flat 15-colour chunky pixel art. No fur, gloss, gradients, new parts, thinner or longer limbs. Only pose changes.
+Layout: exactly 3 rows and 6 columns of equal cells. Row 1 front straight toward viewer; row 2 true side facing RIGHT; row 3 straight back, no face. Each column is precisely the SAME MOMENT across three views. One complete creature per cell, generous empty gutters, no cropped pixels, no text, labels or grid. Uniform native design scale throughout, no shrinking for tall poses. Transparent background. Same ground line per cell. No shadows, dust, effects, shield, dome or motion lines.
+Animation: One forearm winds back and flings forward to throw a shield. ARM MOTION ONLY, no shield or energy. Opposite knuckle and hind feet support weight.
+Columns numbered from zero: 0 exact approved idle; 1 lift right forearm, elbow bends; 2 right forearm winds far back; 3 decisive forward extension and release, orange gauntlet and fist intact; 4 retract and lower throwing arm; 5 exact approved idle. In front view anatomical right arm is viewer left; back view viewer right; side view near arm throws to the right.
+Frame zero must copy the reference pose exactly. Keep recognisable exact eye pixels, green gem sizes and octagonal geometry, orange gauntlet shapes and knuckles throughout.
+Pixel-art animation sheet of ONE gorilla mech. Attached images in order are approved FRONT, SIDE FACING RIGHT, BACK. Exact design references, not loose inspiration. Preserve moss green armoured body and head, grey face plate with green eyes, very large orange forearm gauntlets each carrying a LARGE green octagonal gem, grey blocky knuckle fists, green octagonal gem on back, dark outline, flat 15-colour chunky pixel art. No fur, gloss, gradients, new parts, thinner or longer limbs. Only pose changes.
+Layout: exactly 3 rows and 5 columns of equal cells. Row 1 front straight toward viewer; row 2 true side facing RIGHT; row 3 straight back, no face. Each column is precisely the SAME MOMENT across three views. One complete creature per cell, generous empty gutters, no cropped pixels, no text, labels or grid. Uniform native design scale throughout, no shrinking for tall poses. Transparent background. Same ground line per cell. No shadows, dust, effects, shield, dome or motion lines.
+Animation: Slow looping breath, chest and shoulders move up only 1-2 native pixels, ALL fists and feet remain planted at identical positions.
+Columns numbered from zero: 0 approved still; 1 inhale by one pixel; 2 inhale peak two pixels; 3 exhale one pixel; 4 settle to reference.
+Frame zero must copy the reference pose exactly. Keep recognisable exact eye pixels, green gem sizes and octagonal geometry, orange gauntlet shapes and knuckles throughout.
+Pixel-art animation sheet of ONE gorilla mech. Attached images in order are approved FRONT, SIDE FACING RIGHT, BACK. Exact design references, not loose inspiration. Preserve moss green armoured body and head, grey face plate with green eyes, very large orange forearm gauntlets each carrying a LARGE green octagonal gem, grey blocky knuckle fists, green octagonal gem on back, dark outline, flat 15-colour chunky pixel art. No fur, gloss, gradients, new parts, thinner or longer limbs. Only pose changes.
+Layout: exactly 3 rows and 8 columns of equal cells. Row 1 front straight toward viewer; row 2 true side facing RIGHT; row 3 straight back, no face. Each column is precisely the SAME MOMENT across three views. One complete creature per cell, generous empty gutters, no cropped pixels, no text, labels or grid. Uniform native design scale throughout, no shrinking for tall poses. Transparent background. Same ground line per cell. No shadows, dust, effects, shield, dome or motion lines.
+Animation: Looping heavy gorilla KNUCKLE WALK IN PLACE. Weight through enormous grey knuckles, hind legs step in diagonal pairs. Body bobs subtly. No upright human walk. Grounded contacts stay fixed until lifted.
+Columns numbered from zero: 0 neutral reference; 1 right knuckle and left hind foot support, opposite diagonal lifts; 2 opposite diagonal passes forward, body dips; 3 opposite diagonal lowers toward contact; 4 left knuckle and right hind foot support; 5 original pair lifts, body rises; 6 original pair passes forward, body dips; 7 original pair lowers toward neutral contact. Keep anatomical left/right phase consistent across rows.
+Frame zero must copy the reference pose exactly. Keep recognisable exact eye pixels, green gem sizes and octagonal geometry, orange gauntlet shapes and knuckles throughout.
+All move descriptions preserved verbatim
+REPORT.txt: 26 lines
+
+codex
+Completed 50 se/ne frames using exactly one sheet per move, with six timed GIFs and reviewed boards.
+
+All checks pass; required still endpoints have IoU 1.0.
+
+[REPORT.txt](D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/anim/codex-set-d/REPORT.txt)
+tokens used
+80,664
+Completed 50 se/ne frames using exactly one sheet per move, with six timed GIFs and reviewed boards.
+
+All checks pass; required still endpoints have IoU 1.0.
+
+[REPORT.txt](D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/anim/codex-set-d/REPORT.txt)

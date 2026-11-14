@@ -1,0 +1,24 @@
+{
+  "hand.L": {
+    "lowest_z_m": -9.499490261077881e-08,
+    "highest_min_z_m": -9.499490261077881e-08,
+    "max_center_displacement_m": 0.0
+  },
+  "hand.R": {
+    "lowest_z_m": 0.003193426877260208,
+    "highest_min_z_m": 0.5517572164535522,
+    "max_center_displacement_m": 1.6409883399641152
+  },
+  "foot.L": {
+    "lowest_z_m": 0.026346668601036072,
+    "highest_min_z_m": 0.026346668601036072,
+    "max_center_displacement_m": 0.0
+  },
+  "foot.R": {
+    "lowest_z_m": 0.026346668601036072,
+    "highest_min_z_m": 0.026346668601036072,
+    "max_center_displacement_m": 0.0
+  },
+  "armor_weight_check": "41,510 vertices, each assigned to exactly one bone; no scaling animated",
+  "sampling": "32 integer frames at 30fps; not a continuous collision or engine check"
+}

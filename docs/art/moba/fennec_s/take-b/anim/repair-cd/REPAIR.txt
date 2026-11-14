@@ -1,0 +1,37 @@
+Fennec take B, sets C/D: pixel repair, 2026-11-04. Tokens: unavailable; image generation calls: 0.
+Started from current frames, including diag-touchup; no raw-sheet rebuild or finish/polish run.
+43 of 102 frames changed (2,785 pixels). Each original saved once in its move/frames_pre_repair/.
+Idle SE: f0-4 clean, unchanged. Idle NE: f0-4 clean, unchanged.
+Walk SE: f0-7 removed duplicate chin, old ear wedge, throat scraps and shin spurs; finished jaw/neck edge.
+Walk NE: f0-7 removed rectangular rear-skull/neck stub; joined skull outline to neck.
+Sand_kick SE: f1,2,4 rebuilt chopped haunch-to-tail join; f2 removed lower duplicate muzzle and outline bar.
+Sand_kick SE clean unchanged: f0,3,5.
+Sand_kick NE: f1-4 rounded cut rear armour lips, shaded continuous flank-to-tail joins; removed lip remnant f3.
+Sand_kick NE clean unchanged: f0,5.
+Ear_burst SE: f0-5 clean, unchanged.
+Ear_burst NE: f3 tapered protruding neck stub; f0,1,2,4,5 clean unchanged.
+Sonic_boom SE: f1-5 rebuilt clipped rear armour/tail-root joins; wider crouch lips redrawn f2,3.
+Sonic_boom SE clean unchanged: f0,6,7.
+Sonic_boom NE: f1-6 rebuilt clipped rear armour/tail-root joins; removed lip remnant f4.
+Sonic_boom NE clean unchanged: f0,7. Prior face/ear touchups retained.
+Dig SE: f1,2 replaced clipped horizontal back with shallow stepped armour arch into neck.
+Dig NE: f1,2 same back repair; f1 closed outline-revealed neck gap.
+Dig SE/NE clean unchanged: f0,3,4,5; underground ground cuts retained.
+Pop_out SE: f3 completed clipped landing back; f0,1,2,4 clean unchanged.
+Pop_out NE: f1 removed hanging rectangular neck/back bar and completed shoulder; f3 rebuilt clipped landing back.
+Pop_out NE clean unchanged: f0,2,4. Emerging ear tips and airborne pose retained.
+Death SE: f1 removed rear-neck spur and completed contour; f0,2-6 clean unchanged.
+Death NE: f0-6 clean unchanged.
+All eight final before/after boards inspected, with approved still leftmost and #141218 sel-out.
+Each board is 3x; additional per-view inspection boards are 4x; coordinate inspections reached 10-12x.
+Palette: 102/102 use only the 15 allowed colours. Alpha: 102/102 binary. Canvas: all 192x192.
+Ground: 100/102 end on row160; pop_out f2 SE/NE end on145. Zero pixels below160; zero canvas-edge contact.
+Still locks: all22 required frames equal approved RGBA at(+16,+20); none edited or backed up as repairs.
+Raw holes: zero. Strays: zero; all single components except the two intended emerging ear tips in pop_out f0.
+Sel-out gaps at repaired joins closed. Native stills themselves enclose one texel per view after sel-out.
+Those native gaps remain in locked still frames and unchanged idle breathing frames; see outline-checks.json.
+16 move preview GIFs refreshed; every decoded image and duration matches current frames/grid timeline exactly.
+Live GIF playback unverified: browser host unavailable; automatic approval review denied Chrome access.
+Playable 4x sel-out before/after GIFs and local play-<move>.html pages supplied here; no external hosting needed.
+Checks: verify_repair.py, checks.json, gif-checks.json, outline-checks.json, manifest.json. All raw checks PASS.
+No sets A/B, runtime assets, shared art/tools or commits touched. Only the three authorized directories written.

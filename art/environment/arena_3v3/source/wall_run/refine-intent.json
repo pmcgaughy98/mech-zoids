@@ -1,0 +1,16 @@
+{
+  "request": {
+    "mode": "refine",
+    "ai_model": "meshy-6",
+    "target_formats": [
+      "glb"
+    ],
+    "preview_task_id": "01a1da7d-44d3-7747-a82c-5d3fb16f2acd",
+    "texture_resolution": "2k",
+    "enable_pbr": true,
+    "remove_lighting": true,
+    "texture_prompt": "Dark blue charcoal steel plate, darker than mid grey, warm iron plinth band, one thin amber light line, sparse yellow hazard marks on the plinth. Broad clean colour blocks, gentle edge wear. No pale or white panels, no text or logos. Neutral illumination, no baked shadows."
+  },
+  "reserved_credits": 10,
+  "at": "2026-11-14T14:38:27.095041+00:00"
+}

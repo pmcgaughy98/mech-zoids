@@ -1,0 +1,437 @@
+﻿Biomechanical and Technical Animation Research Report: Quadruped and Bipedal Animal-Mech MOBA Framework
+Execution Research Plan
+The objective of this research is to establish an implementation-ready, highly reusable animation authoring and verification framework for a Godot 4.7.2 animal-mech MOBA1. This framework eliminates reliance on subjective director direction for basic animal actions while establishing precise technical criteria for integrating generative motion tools, specifically Meshy Text to Motion1. The execution plan consists of eight sequential phases designed to resolve motion plausibility, structural armor constraints, and real-time responsiveness1.
+1. Biomechanical and Technical Primary Source Synthesis: Retrieve, audit, and synthesize 16 primary sources across quadruped/primate biomechanics, professional creature keyframing methodologies, developer postmortems from shipped competitive games, engine architecture documentation for Blender 5.2 and Godot 4.7, and official Meshy API specifications2.
+2. Project Brief and Asset Inspection Pass: Analyze the four gorilla character reference sheets (02_GORILLA_FRONT.png, 03_GORILLA_LEFT.png, 04_GORILLA_BACK.png, 05_GORILLA_RIGHT.png) alongside four production trial videos (06_CHESTBEAT_COMPARISON.mp4, 07_SHIELD_CAST_REVIEW.mp4, 08_SHIELD_DRIVE_REVIEW.mp4, 09_GRAB_SLAM_REVIEW.mp4)1. Record timestamped kinematic observations, separate mathematical passes from artistic sign-offs, and isolate the approved chest-beat exit timing from rejected motion trials1.
+3. Action Card Specification for Gorilla Kit: Formulate exhaustive action cards for six core gorilla abilities1. Each card details key poses, force and center-of-mass (COM) physics, limb support schedules, spatial arc guidance, secondary motion overlap, mechanical armor adaptations (such as palm-side closed mechanical fist contacts), failure modes, and corrective actions1.
+4. Quadruped Mech Fleet Framework and Rhino Case Study: Build a reusable quadruped classification matrix spanning four morphological archetypes3. Formulate mass and gravity scaling laws, specify camera-relative silhouette readability rules for elevated MOBA views, and deliver a full locomotion and combat action breakdown for a heavy white rhinoceros unit3.
+5. Meshy Text to Motion API Protocol and Mismatch Resolution: Audit official Meshy API limits (400-character prompts, 2.0s–10.0s durations, Prime FBX vs. Swift BVH modes, credit pricing, and 24-joint humanoid skeleton defaults)2. Formulate six testable prompts under 400 characters, establish a pipeline to resolve the mismatch between 2-second minimum generated clips and sub-second gameplay cast windows, and detail donor retargeting procedures that preserve original mesh and rig geometry1.
+6. Blender 5.2 and Godot 4.7 Technical Implementation Guide: Construct technical workflows for rest axis alignment, fixed-length IK/FK contact locking, rigid armor rotation limits, root motion extraction, contact-aware phase blending versus spring inertialization, and frame-rate independent Call Method Tracks3. Synthesize these mechanisms into a diagnostic failure-to-correction matrix1.
+7. Multi-Camera Review Gate and Baseline Comparison Matrix: Define a strict verification pipeline utilizing 1.0x normal and 0.25x diagnostic playback across Front, Side, and 45-degree MOBA Isometric camera angles1. Establish proposed target tolerances for stance slip, bone-length variation, and armor penetration; define an asset cleanup efficiency metric (  ); and evaluate uploaded video baselines against these gates1.
+8. Prioritized Experimentation and Operating Protocol: Synthesize final conclusions into a prioritized first motion experiment, document fundamental generative AI limitations, and deliver an operational checklist for technical animators and engine developers1.
+Primary Source Evidence Ledger
+The development of mechanically plausible, visually compelling animal-mech animations requires synthesizing biological locomotion data, professional creature keyframing principles, game readability rules, engine playback mechanics, and generative motion specifications1. The primary sources below provide foundational evidence for building a quadruped and bipedal mechanical animation pipeline.
+
+
+Source & Citation
+	Author / Organization
+	Domain & Core Relevance
+	Key Content Analyzed
+	Technical & Biological Limitations
+	Max Planck Institute Gorilla Signalling Research3
+	Max Planck Institute for Evolutionary Anthropology
+	Primate ethology; chest-beating mechanics
+	Chest beating documented as an upright posture display utilizing cupped hands to produce resonant acoustic signals conveying body size3.
+	Describes biological soft-tissue behavior; does not define game timing, frame rates, or rigid mechanical fist adaptations1.
+	Gorilla Beam Biomechanics Study (PMC12575676)3
+	Biomechanics Research Team
+	Quadrupedal primate mechanics
+	Force distribution, limb loading ratios, and stance phases during terrestrial knuckle walking3.
+	Data gathered from three zoo gorillas on a narrow elevated beam; does not reflect flat-ground sprinting or combat locomotion3.
+	White Rhinoceros Musculoskeletal Model (PMC11259748)4
+	Etienne, Houssaye, Fagan, & Hutchinson (2024)
+	Heavy ungulate mechanics & joint forces
+	Inverse dynamics, muscle moment arms (e.g., TFL 7.5–10 cm knee moment), and peak isometric force capacities (  ) for heavy quadruped bone loading4.
+	Post-mortem modeling of an elderly specimen scaled up to 2,065 kg; requires scaling for healthy combat movement4.
+	Hippopotamus & Large Mammal Kinematics (PeerJ 17675)8
+	Hutchinson & Pringle (2024)
+	High-mass terrestrial locomotion
+	Limb phase relationships, duty factor (  ) thresholds (   aerial phase), and lateral sequence walking versus running trots in massive quadrupeds8.
+	Hippos are semi-aquatic with unique limb proportions; rhinos utilize a broader gait repertoire including true transverse gallops8.
+	Giraffe Locomotor Kinematics (JEB 222)9
+	Basu, Wilson, & Hutchinson (2019)
+	Quadrupedal ground reaction forces (GRF)
+	Force plate data proving 65% forelimb / 35% hindlimb weight distribution, double-peak "M-shaped" vertical force curves, and neck impulse dampening9.
+	Giraffe morphology features extreme neck leverage and high center of mass; duty factors (0.70) reflect low-speed walking only9.
+	A Study of Creature Animation Workflow (GDC Talk)6
+	GDC / Professional Creature Animators
+	Game animation workflow & physics
+	Morgan Loomis ballistics integration, Center of Mass (COM) weight triangles, tandem-bike turning mechanics, and Red9 world-space foot locking6.
+	Authored for film/pre-rendered workflows; must be adapted for real-time state machines and runtime blending3.
+	League of Legends Visual Clarity & Speed Scaling3
+	Riot Games Developer Insights
+	MOBA camera readability & attack scaling
+	Hierarchy of visual read, camera-relative posing, silhouette preservation, and attack animation restructuring across attack-speed thresholds3.
+	Focused on stylized organic heroes (e.g., Bel'Veth); does not address rigid armor collisions or fixed mechanical linkages1.
+	Code- vs. Data-Driven Displacement & Foot Locking3
+	Daniel Holden
+	Character controller & foot contact physics
+	Reconciliation of simulated root displacement with animated mesh motion; IK foot locking triggers based on stance patch drift3.
+	C++ implementation reference; requires translation into Godot 4.7 AnimationTree and C# / GDScript controllers3.
+	Inertialization & Spring Roll Call3
+	Daniel Holden
+	Real-time animation blending
+	Offsetting pose and velocity discontinuities at state transitions using decaying spring functions to eliminate cross-fading float3.
+	High spring stiffness can induce mechanical joint clipping or overshoot joint limits if unconstrained3.
+	Godot Engine 4.x AnimationTree Documentation3
+	Godot Engine Documentation
+	Engine playback architecture
+	AnimationNodeBlendTree, AnimationNodeOneShot, sub-state machines, and root motion extraction mechanisms3.
+	Official docs focus on standard humanoid presets; non-humanoid multi-limb retargeting requires custom bone maps3.
+	Meshy Text to Motion API Specification2
+	Meshy AI Documentation
+	Generative motion API
+	REST endpoints, 400-character prompt limits, Prime (FBX, 10 credits) vs. Swift (BVH, 3 credits) models, and 2.0–10.0s clip durations2.
+	Generates standalone humanoid motion without custom mesh inputs; auto-rigging natively defaults to 1.7m–1.8m human skeletons10.
+	Blender Animation Retargeting Extension (v2.4.0)3
+	Mwni (GPL-3.0-or-later)
+	DCC retargeting & FK/IK baking
+	Explicit rest-pose alignment, bone mapping matrices, hand/foot constraint locking, and action baking for custom rigs3.
+	Does not automatically solve dynamic mesh collision or calculate world-space ground contact forces3.
+	Animated Performance & Mechanics of Motion7
+	Nancy Beiman / Richard Williams
+	Classical animation mechanics
+	Mechanics of weight, pendulum arm swings, bouncing-ball torso compression, passing positions, and contact force transfer7.
+	Teaches hand-drawn/stylized organic principles; requires mechanical translation for non-deforming armor plates1.
+	Principles of Animal Locomotion15
+	R. McNeill Alexander
+	Comparative animal biomechanics
+	Froude numbers, gait transitions, work-energy minimization, and structural bone stress limits across quadrupeds15.
+	Theoretical biomechanical models; does not prescribe game asset keyframe timings or real-time state trees3.
+	Godot Motion Matching Extension3
+	GuilhermeGSousa (MIT License)
+	Real-time pose searching in Godot
+	AnimationTree integration, pose database searching, root motion requirements, and trajectory prediction3.
+	Requires large high-quality animation libraries; current compatibility with Godot 4.7.2 requires validation3.
+	Keemap Blender Rig Retargeting Addon3
+	nkeeline (GPL-3.0 License)
+	Blender bone remapping
+	Saved bone mapping profiles, parent-first transform evaluation, and source-FK to target-IK control baking3.
+	Tested primarily on older Blender versions (3.3.1); requires validation under Blender 5.23.
+	Biomechanical literature confirms that massive quadrupeds divide locomotor labor unevenly between forelimbs and hindlimbs9. Forelimbs absorb up to 65% of total static body weight and execute the primary braking impulses during deceleration, while hindlimbs deliver forward propulsion9. Furthermore, gait selection correlates directly with duty factor (  ): quadrupeds maintain    during walking gaits, whereas running gaits introduce duty factors below 0.5, creating brief aerial phases or compliant stance flexures8.
+When translating these biological facts to game mechs, animators must recognize that AI motion generators (such as Meshy) are trained primarily on bipedal human motion capture data2. Consequently, raw generative outputs cannot natively express quadruped force distribution, ground reaction forces (GRF), or rigid-body mechanical clearances without structured retargeting and manual IK reconstruction2.
+Visual Inspection and Evaluation of Project Reference Files
+Reference Model Geometry and Identity Constraints
+The four design reference sheets (02_GORILLA_FRONT.png, 03_GORILLA_LEFT.png, 04_GORILLA_BACK.png, 05_GORILLA_RIGHT.png) establish the visual identity, mass proportions, and mechanical architecture of the gorilla unit1. The model features high-mass upper torso geometry, heavy shoulder pauldrons, oversized hex-shield forearms, closed mechanical fist structures, and short, heavily armored lower limbs1.
+The character design incorporates a high-density armored head recess, overlapping rigid shoulder pauldrons, large hex-shield forearms acting as primary defensive surfaces, closed mechanical fists with flat knuckle pads, and short, high-torque lower limb actuators1.
+All keyframe operations and retargeting passes must preserve the approved mesh mass, rigid non-deforming armor plates, glowing energy conduits, head placement, and closed fist structures1. Under no circumstances may armor plates be deformed, stretched, or scaled to resolve clearance issues; clearance must be achieved purely through joint positioning and timing1.
+Evaluation of Test Video Deliverables
+An inspection of the uploaded video trials reveals key mechanical behaviors, timing adjustments, and visual faults across the current animation iterations1.
+File 06_CHESTBEAT_COMPARISON.mp4
+The dual-panel video file compares an earlier iteration (Left: Claude v27) against the accepted director correction (Right: Codex timing pass)1. Both exports run for exactly 1.8667 seconds (224 frames at 120 fps)1. The character features closed mechanical fists, requiring chest strikes to contact via the flat, palm-side surface of the fist assembly rather than biological cupped palms1.
+During frames 0 to 35, the body elevates from a knuckle-ground stance into an upright torso posture, with hips dropping slightly as the center of mass shifts backward over the hind feet1. Frames 36 to 83 exhibit alternating strikes toward the central chest plate1. During the critical exit phase (frames 84 to 90), the rejected left panel shows the left wrist drifting laterally across 0.18734 m of unstructured movement while the right arm gathers overhead1. On the approved right panel, left wrist lateral travel is constrained to 0.03729 m, allowing the right hand to complete its final chest strike cleanly before both forearms gather symmetrically overhead for the slam transition1. Frames 91 to 170 execute the overhead gather and slam, ending with a recovery phase from frames 171 to 224 as the hips settle back into the quadruped stance1.
+The right-side timing correction isolates the final chest strike, eliminating the floaty wrist drift of the v27 pass1. While bone-length variation and foot slip tests reported sub-micrometer values (  ), this numerical stability does not guarantee artistic fluidity1. The gather phase still exhibits minor visual stiffness in the shoulder pauldron clearance arc1.
+File 07_SHIELD_CAST_REVIEW.mp4
+This file presents an isolated trial of the local shield-cast ability, testing ally-targeted and self-targeted variants1. Frames 0 to 12 demonstrate a brace and weight shift where the hips sink and the left knuckle locks into the ground as the primary load-bearing pillar1. During frames 13 to 28, the right forearm bearing the heavy hex-shield sweeps across the chest, thrusting outward toward the target1. The self-cast variant maintains forward facing without executing an unnecessary rotational turn, avoiding camera direction confusion1. During frames 29 to 45, the shield energy projects forward and the forearm retracts low across the abdomen so the hex-shield does not obscure the head or chest silhouette from the elevated MOBA camera1.
+The support transfer onto the non-casting knuckle prevents the mech from appearing weightless1. However, during the peak sweep at frame 20, the inner edge of the right shield plate passes within millimeters of the chest collar plating, risking mesh interpenetration if blended dynamically from a non-neutral locomotion pose1.
+File 08_SHIELD_DRIVE_REVIEW.mp4
+This file covers an isolated mobility trial consisting of a shield brace, leg load, forward sprint burst, target impact, and braking plant1. Playback was audited at 1.0x normal speed and 0.25x slow-motion diagnostic speed1.
+During the initial brace and load phase (frames 0 to 10), the forearms bring hex-shields together in front of the chest, creating a solid defensive wedge while the hips compress into a crouch1. Rapid extension of the hind limbs drives the mech forward along the root axis during frames 11 to 301. Frame 31 marks high-velocity impact into an enemy target, resulting in dynamic compression of the front suspension joints1. Frames 32 to 50 execute the braking plant, where the hips drop, rear feet dig into the terrain, forearms unbrace, and friction brings the root mass to a complete stop1.
+The motion delivers strong mass and impulse1. However, 0.25x slow-motion analysis reveals that during the peak load phase, the rigid forearm casing interpenetrates the torso side-seam armor1. Although automated rig checks reported zero IK reach clamps, physical mesh collision was violated, proving that mathematical constraint passes cannot replace visual mesh penetration audits1.
+File 09_GRAB_SLAM_REVIEW.mp4
+This file presents an isolated grab and slam revision executed against an articulated target mannequin1. Frames 0 to 12 show the mech lunging forward, extending both massive mechanical arms to clamp the victim1. During frames 13 to 30, vertical extension of the spine and legs lifts the victim high off the ground plane1. Frames 31 to 41 feature an downward snap of the torso, driving the held victim into the ground at frame 421. The victim crumples on impact during frames 43 to 60 as the mech releases its grip and rebounds into a ready stance1.
+The action demonstrates high impact clarity, and the victim constraint anchor holds rigid positional coupling during the lift phase1. However, the release point occurs two frames after maximum downward torso velocity is reached, causing the victim mesh to decelerate before hitting the floor, which dampens perceived impact force1.
+Detailed Gorilla Action Cards
+Action Card 1: Heavy Knuckle Walk and Stop/Turn
+Essential Key Poses
+   1. Pose 1 (Right Knuckle Contact): Right forelimb knuckle contacts terrain plane under shoulder socket; left hind foot plants; spine rotated    left3.
+   2. Pose 2 (Passing Mid-Stance): Left forelimb passes stance arm; torso reaches vertical apex; rear right foot lifts into swing phase7.
+   3. Pose 3 (Left Knuckle Contact): Left forelimb plants firmly; right hind foot contacts; pelvic tilt reverses8.
+   4. Pose 4 (Deceleration Plant): Dual forelimbs plant simultaneously; hips drop   ; spine flexes to absorb forward momentum3.
+   5. Pose 5 (Pivot Rotation): Hind legs execute short steps; stance forelimb acts as a friction pivot; head turns toward target vector6.
+Force, Weight, and Contact Schedule
+Quadrupedal weight distribution follows a 60/40 split between forelimbs and hindlimbs during locomotion9. The center of mass (COM) executes a low-amplitude sinusoidal wave in both vertical (  ) and lateral (  ) axes6. Stance forelimbs act as rigid struts absorbing braking forces, while hindlimbs push forward9.
+Frames 0 to 12 engage the right forelimb and left hindlimb in an IK-locked stance phase (  )8. Frames 13 to 24 switch stance support to the left forelimb and right hindlimb in diagonal sequence8. During the stop phase (frames 25 to 36), both forelimbs plant simultaneously with locked IK targets while the rear legs step up to balance the COM3.
+Arc, Spacing, and Overlap Guidance
+Wrists swing forward along a low parabolic arc, lifting clear of terrain obstructions before planting firmly6. The head stays level to maintain eye target focus, dampening vertical torso bobs through cervical spine counter-rotation9. Piston conduits and shoulder armor plates lag behind main torso acceleration by 2 frames, while flexible energy tubes flex with a 3-frame delay during weight transfer1.
+Mechanical Adaptation, Failure Modes, and Corrections
+Mechanical fists plant using flat knuckle surface pads1. Shoulder pauldrons slide along internal tracks, with rotation constraints preventing pauldrons from driving into the neck collar plate1.
+If knuckle sliding occurs during stance phase, enforce strict IK position locking in Blender/Godot until the foot-off threshold is reached (  )3. If excessive hip roll makes the mech appear soft or organic, lock the pelvic roll axis and express weight transfer through mechanical suspension compression instead1.
+Action Card 2: Gorilla Chest Display to Overhead Slam
+Essential Key Poses
+      1. Pose 1 (Low Stance Load): Hips compress; knuckles plant on terrain; head lowers; core engine glows1.
+      2. Pose 2 (Upright Elevation): Torso elevates   ; COM shifts over hind feet; forelimbs lift clear of ground plane1.
+      3. Pose 3 (Alternating Chest Beats): Closed mechanical fists strike central chest plate alternately using flat palm-side surfaces1.
+      4. Pose 4 (Symmetrical Overhead Gather): Dual arms reach peak elevation overhead; spine hyperextends; shoulder pauldrons flare outward1.
+      5. Pose 5 (Downward Impact Slam): Fists drive into terrain; front suspension bottoms out; shockwave particle effects emit1.
+Force, Weight, and Contact Schedule
+The action executes an explosive vertical conversion of momentum. Weight shifts entirely onto the hindlimbs (   on rear feet) while the upper body elevates3. The overhead gather stores potential energy, converted into maximum kinetic impact as forearms drop6.
+Frames 0 to 15 lock dual hind feet to the ground plane while forelimbs lift3. During frames 16 to 50, hind feet remain locked while closed fists strike the central chest plate sequentially (Left beat frame 24, Right beat frame 38, Left beat frame 50)1. Fists strike using the palm-side surface of the closed mechanical hand1. Frames 51 to 75 sweep the arms overhead, and at frame 75, both fists hit the ground plane simultaneously, locking forelimb IK targets1.
+Arc, Spacing, and Overlap Guidance
+The exit path from the final chest beat to the overhead gather must strictly maintain fist travel discipline (wrist drift   )1. Fists sweep outward before converging overhead to clear shoulder pauldrons1. The head snaps forward slightly on each chest beat contact, and shoulder pauldrons tilt upward during overhead gather to prevent collar mesh collision1.
+Mechanical Adaptation, Failure Modes, and Corrections
+Closed fist forms strike the chest using the flat palm-side armor geometry1. The chest energy core flashes bright blue/cyan on impact.
+If asymmetrical exit timing causes the left wrist to float while the right hand gathers, enforce the accepted Codex timing pass—completing the right chest strike entirely before initiating symmetrical dual-arm overhead gathering1.
+Action Card 3: Ally / Self Shield Cast
+Essential Key Poses
+         1. Pose 1 (Base Brace): Left forelimb plants firmly; right forearm elevates shield plate; head turns to target1.
+         2. Pose 2 (Energy Load): Chest core ignites; right elbow retracts   ; shield frame charges with energy1.
+         3. Pose 3 (Projection Thrust): Right forearm drives forward across chest plane, projecting force wall outward1.
+         4. Pose 4 (Low Retraction Hold): Forearm retracts low across abdomen, preserving top-down silhouette visibility1.
+         5. Pose 5 (Locomotion Re-engage): Support knuckle releases; forelimb drops back into stance path1.
+Force, Weight, and Contact Schedule
+The action executes an asymmetrical reaction impulse. The non-casting arm locks into the ground as an anchor pillar to absorb the reaction force of projecting heavy kinetic force fields1.
+Frames 0 to 25 lock the left knuckle IK to the ground plane for 100% weight bearing1. During frames 5 to 20, the right forearm executes a free-space FK projection sweep1.
+Arc, Spacing, and Overlap Guidance
+The shield-bearing forearm sweeps along an outward parabolic path, pushing energy forward relative to character facing1. Self-cast variants suppress body rotation to maintain camera target stability1. Back armor exhaust ports vent particle trails during the load phase, and the retraction phase settles the forearm low across the abdomen so the hex-shield does not block the head/chest silhouette1.
+Mechanical Adaptation, Failure Modes, and Corrections
+Rigid forearm shield casing must clear torso side plates by at least 15 mm throughout the sweep arc1. Movement inputs can cancel the retraction tail after frame 22 without disrupting gameplay logic1.
+If the casting shield clips through side-torso armor during diagonal sweep, add an intermediate FK guide pose extending the elbow laterally by    to guarantee clearance1.
+Action Card 4: Shield Drive (Brace / Load / Burst / Collision / Brake)
+Essential Key Poses
+            1. Pose 1 (Defensive Brace): Dual hex-shields interlock at front centerline; head lowers behind plating1.
+            2. Pose 2 (Loaded Crouch): Hips drop   ; rear actuators compress; spine angles forward1.
+            3. Pose 3 (Explosive Sprint): Hind limbs extend rapidly; root accelerates along target vector1.
+            4. Pose 4 (Impact Collision): Shield wedge impacts target; front suspension compresses dynamically1.
+            5. Pose 5 (Friction Brake Plant): Rear feet lock; front knuckles drag; torso settles back into stance1.
+Force, Weight, and Contact Schedule
+High-mass kinetic charge. The character transforms into a solid mechanical wedge, with the impact force vector aligning directly through the spine into the target1.
+During brace and load (frames 0 to 10), all four limbs remain grounded1. Sprint burst (frames 11 to 30) executes a rapid alternating low-duty-factor gait (  )8. Impact occurs at frame 31, triggering an instant root deceleration impulse1. Braking and planting (frames 32 to 50) lock rear feet IK while front knuckles drag to absorb excess momentum1.
+Arc, Spacing, and Overlap Guidance
+Root motion follows a straight linear vector. The head lowers behind the dual shield plates to create a protected front profile1. Shoulder pauldrons shift forward against mechanical stops, and rear mechanical actuators lock into rigid bracing positions1.
+Mechanical Adaptation, Failure Modes, and Corrections
+Left and right forearm hex-shields interlock visually at the front center line without overlapping mesh surfaces1. Friction braking brings root motion to zero, unbracing shields smoothly back into quadruped locomotion stance1.
+If forearm armor plates clip into torso side seams during the loaded crouch phase, adjust the shoulder socket roll offset to hold forearm shields 20 mm further forward from chest geometry1.
+Action Card 5: Grab / Lift / Ground Slam (With Held Victim)
+Essential Key Poses
+               1. Pose 1 (Forward Lunge): Mech extends both arms wide; clamps mechanical fingers around target root1.
+               2. Pose 2 (Overhead Lift): Spine and legs extend vertically; victim lifted high above head level1.
+               3. Pose 3 (Peak Apogee Hold): Torso reaches apex height; victim suspended at maximum elevation1.
+               4. Pose 4 (Downward Impact Snap): Torso drives downward violently; victim driven into ground plane1.
+               5. Pose 5 (Crumpled Release): Grip releases; victim crumples; mech recoils backward into stance1.
+Force, Weight, and Contact Schedule
+Dynamic two-body interaction. Mass of the held victim alters the mech's center of mass, pulling the combined COM forward over the toes during the lift phase1.
+Frames 0 to 12 plant hind legs while forelimbs extend to grip the target1. Frames 13 to 30 support weight fully on hind limbs while the victim root is constrained to palm sockets1. Frame 42 marks ground impact, where the victim mesh contacts the ground plane and forelimb IK targets lock to the floor plane1.
+Arc, Spacing, and Overlap Guidance
+Victim trajectory follows an inverted U-arc, accelerating rapidly downward during the final 6 frames prior to impact1. The victim head and limbs hang with delayed drag during vertical lift, then whip downward violently during the slam phase7.
+Mechanical Adaptation, Failure Modes, and Corrections
+Grip mechanics utilize fixed mechanical hand attachment points, with the victim root attaching strictly to the center palm socket constraint1. Slam impact triggers a backward torso recoil, returning the mech to a balanced quadruped stance1.
+If the victim mesh detaches or offsets from hand grip during rapid vertical movement, enforce exact parent constraint child-of target coupling between mech hand bone and victim root bone until the impact release frame1.
+Action Card 6: Mechanical Fist Swat / Hook Strike
+Essential Key Poses
+               1. Pose 1 (Loaded Wind-up): Torso rotates    away from target; lead arm pulls back; weight loads on rear foot1.
+               2. Pose 2 (Shoulder Drive): Core snaps forward; lead shoulder drives outward; elbow begins extension1.
+               3. Pose 3 (Contact Traverse): Closed fist traverses target zone at peak velocity; flat knuckle face leads1.
+               4. Pose 4 (Follow-Through Arc): Lead arm sweeps across chest; momentum rotates torso    past center6.
+               5. Pose 5 (Locomotion Re-center): Stance legs step forward; torso re-aligns with camera facing3.
+Force, Weight, and Contact Schedule
+Rotational torque generation. Torso rotators deliver kinetic energy through the shoulder joint into the heavy closed mechanical fist1.
+Frames 0 to 8 lock the rear stance leg while the lead forelimb lifts slightly to allow hip rotation3. Frame 14 marks the contact frame, where the lead fist reaches maximum linear velocity1. During frames 15 to 24, the lead forelimb plants back onto the ground plane, locking IK stance3.
+Arc, Spacing, and Overlap Guidance
+Closed fist follows a wide horizontal arc across the front plane, maintaining a constant radius to maximize centrifugal acceleration6. The shoulder pauldron rotates forward first, followed by elbow extension and fist arrival14. Mechanical fuel lines flex outward under acceleration1.
+Mechanical Adaptation, Failure Modes, and Corrections
+Closed mechanical fist strikes using the flat outer knuckle/palm armor face1. Shoulder joint stops prevent gimbal flip1. Follow-through momentum carries into a natural step-forward recovery, re-establishing quadruped locomotion balance1.
+If the arm swings linearly like a pendulum without torso torque, lead the action with    pelvic rotation and    chest rotation before elbow extension begins3.
+Reusable Fleet Framework and Rhino Locomotion Reference
+Quadruped Mech Fleet Architecture
+To scale animation development across diverse animal-mech characters without introducing anatomical artifacts, the animation pipeline establishes standard morphological archetypes3.
+
+
+Fleet Archetype
+	Primary Mechanics & Weight Distribution
+	Stance Duty Factor Range (DFDFDF)
+	Silhouette Signature (MOBA 45∘45^\circ45∘)
+	Primate Heavy (Gorilla)
+	High-mass chest; 60% forelimb / 40% hindlimb load; knuckle stance1.
+	  
+,   8
+	Massive wide shoulders, low head recess, ground-sweeping arms1.
+	Ungulate Heavy (Rhino)
+	Low center of mass; 65% forelimb / 35% hindlimb load; rigid spinal column4.
+	  
+,   8
+	Barrel torso, low wedge head, high muscular crest, heavy horn wedge4.
+	Feline Apex (Panther/Tiger)
+	High spinal flexibility; 50% forelimb / 50% hindlimb load; compliant joints8.
+	  
+,   8
+	Long low profile, prominent shoulder blade travel, sweeping tail balance15.
+	Ursine Bruiser (Bear)
+	Broad plantigrade rear feet; 55% forelimb / 45% hindlimb load; heavy shoulder hump8.
+	  
+,   8
+	High rear hips, massive rolling shoulder hump, wide stance width3.
+	Scaling Laws for Mass and Gravity Dynamics
+Mass variations across the fleet dictate limb pendulum swing frequencies (  ) and ground contact force scaling6:
+  
+
+Where    is effective limb length and    is gravitational acceleration6. Heavy mechs (Rhino, Gorilla) possess longer effective pendulum lengths and greater rotational inertia, requiring lower stride frequencies and longer stance durations (  ) to read as heavy metallic structures rather than light plastic toys6.
+Rhino Locomotion and Combat Breakdown
+1. Lateral Sequence Walk
+The kinematic sequence follows Left Hind (LH) contact    Left Fore (LF) contact    Right Hind (RH) contact    Right Fore (RF) contact8. Limb phases offset precisely by 0.25 fractional stride intervals8. Mechanically, the spine remains rigid along the roll axis, expressing weight transfer through heavy vertical suspension travel in the shoulder girdles4. Forelimbs bear 65% of dynamic load9.
+2. Running Trot
+Diagonal limb pairs move in near-synchrony: (LH + RF) strike together, followed by a brief suspension phase (  ), then (RH + LF) strike together8. Vertical torso displacement increases; suspension springs bottom out during diagonal contact phases, creating high mechanical energy returns15.
+3. High-Speed Charge
+The charge utilizes a transverse gallop featuring distinct stance and flight phases8. The neck lowers to lock the massive cranial horn along the main body velocity vector4. Forelimb moment arms (such as the quadriceps and tensor fasciae latae extensions) lock into high-torque thrust modes4. Dust and sparks discharge from toe-plate impacts1.
+4. Horn Toss / Ground Gouge Action
+                  1. Pose 1 (Load Crouch): Hips drop, head lowers horn tip to touch terrain plane4.
+                  2. Pose 2 (Explosive Lift): Massive cervical hydraulic actuators extend, driving the horn upward through an explosive    arc4.
+                  3. Pose 3 (Target Launch): Horn connects with target root, launching enemy upward along a steep ballistic vector6.
+                  4. Pose 4 (Braking Recovery): Forelimbs plant heavily, absorbing upward recoil force; hips re-align to quadruped neutral stance3.
+Meshy Text to Motion Trial Protocol and API Constraints
+Official API Specifications and Technical Limits
+The Meshy Text to Motion API operates under strict technical constraints that govern generation formats, execution costs, and output characteristics2.
+The API accepts HTTP POST requests at /openapi/v1/text-to-motion2. Text prompts are strictly capped at 400 characters, with longer inputs returning HTTP 400 errors2. Generated clip durations range from 2.0 to 10.0 seconds, enforced on 0.5-second step increments2. The API provides two operational modes: Prime mode costs 10 credits per request and outputs motion baked onto an FBX skeleton, while Swift mode costs 3 credits per request and returns raw BVH motion data2. The output skeleton defaults to a standard 24-joint humanoid structure (SMPL-H naming convention) scaled to human heights of 1.7m to 1.8m10.
+Mismatch Resolution: Sub-Second Cast Windows vs. Minimum Clip Duration
+MOBA gameplay requires ability activation times (cast windows) between 0.20s and 0.45s to ensure competitive responsiveness3. However, the Meshy API enforces a minimum clip generation duration of 2.0 seconds2.
+To resolve this mismatch, generated 2.0s clips must undergo phase isolation:
+                     1. Extract the core 0.3s action phase (e.g., peak strike or shield thrust)3.
+                     2. Discard the pre-roll anticipation and post-roll recovery tails generated by the AI3.
+                     3. Retarget the isolated 0.3s action slice onto the project's native rig3.
+                     4. Time-scale keyframes in Blender to align exact impact frames with gameplay logic events3.
+Native Rig Preservation and Retargeting Pipeline
+Generative motion endpoints output motion baked onto standard 24-joint humanoid skeletons10. Replacing the project's approved gorilla/rhino meshes with auto-rigged AI outputs is strictly prohibited1. The native mesh, weight paint allocations, rigid armor groupings, and rest poses must remain untouched1. Meshy outputs serve exclusively as animation donor files, transferred via DCC retargeting onto our original rig3.
+Testable Prompt Candidates and Hypotheses
+
+
+Candidate & Target Action
+	Prompt Text (Under 400 Characters)
+	API Settings
+	Experimental Hypothesis
+	1. Gorilla Knuckle Walk
+	"Heavy gorilla quadruped knuckle walk forward, massive heavy shoulders, slow powerful steps, flat ground stance, continuous looping movement."
+	Prime Mode, 3.0s duration2
+	Tests whether the model can generate quadruped knuckle stance without collapsing forelimbs into human legs2.
+	2. Gorilla Chest Beat
+	"Heavy mech standing on hind legs, pounding its upper chest with closed fists alternately, rapid heavy strikes, wide defensive stance, returning to crouch."
+	Prime Mode, 2.5s duration2
+	Evaluates upper body strike rhythm and chest collision avoidance1.
+	3. Heavy Shield Thrust
+	"Armored warrior holding heavy forearm shield, stepping forward and thrusting shield forcefully forward to block impact, firmly planting feet."
+	Swift Mode, 2.0s duration2
+	Evaluates basic directional thrust impulse and stance stability on the fast BVH model2.
+	4. Rhino Charge Sprint
+	"Heavy rhino quadruped sprinting forward at top speed, low head position, horn pointing forward, powerful hind leg thrusts, aggressive charge."
+	Prime Mode, 2.5s duration2
+	Tests fast quadruped run mechanics and spine tilt stability2.
+	5. Overhead Ground Slam
+	"Giant creature raising both heavy arms high overhead, leaping slightly, then slamming fists down violently onto the ground, heavy recoil."
+	Prime Mode, 2.0s duration2
+	Evaluates vertical acceleration, peak gather height, and downward impact force2.
+	6. Directional Melee Swat
+	"Heavy mechanical warrior executing a powerful right-hand horizontal hook swat across its body, rotating hips and shoulders, strong follow-through."
+	Swift Mode, 2.0s duration2
+	Tests body rotational torque transfer on the fast BVH model2.
+	Implementation and Diagnosis Guide for Blender 5.2 and Godot 4.7
+Blender 5.2 Control Rig Setup and Constraint Architecture
+The Blender retargeting workflow imports donor FBX/BVH files, aligns rest pose axes, maps bone hierarchies, applies hand and foot IK locks, solves constrained motion, bakes FK to master rig controls, and fixes armor collisions prior to exporting GLB assets to Godot1.
+                     1. Rest Axis Alignment: Match donor rest transforms to native mech rest poses prior to baking3. Mismatched roll axes produce spatial twisting in shoulder and knee joints3.
+                     2. IK/FK Contact Locking: Apply Blender IK Limbs constraints to forelimbs during stance phases3. Set IK influence to 1.0 during ground contact and 0.0 during swing phases3.
+                     3. Rigid Armor Constraints: Apply Limit Rotation constraints to armor bone channels to prevent plates from rotating past mechanical stops:
+                     * Shoulder Pauldrons: Max pitch   , Max roll   1.
+                     * Forearm Shields: Max yaw    relative to lower arm bone1.
+Godot 4.7 AnimationTree and Runtime Playback Architecture
+In Godot 4.7, animation state execution relies on an AnimationNodeBlendTree containing integrated sub-graphs3. Locomotion blend spaces connect through an AnimationNodeOneShot node to trigger ability and attack clips before sending output to the engine root3.
+Blending Strategy Tradeoffs: Contact-Aware Blending vs. Inertialization
+Standard linear cross-fading (AnimationNodeBlend2) interpolates bone positions linearly over time, causing planted stance feet to slide across the ground during transitions3. To maintain rigid ground contact, Godot 4.7 setups must choose between two strategies based on transition speed3:
+                        1. Phase-Synchronized Blending: Used for continuous locomotion transitions (e.g., walk to trot). Normalizes stride phase (  ) so foot-strike timings align prior to blending8.
+                        2. Inertialization: Used for abrupt skill interrupts (e.g., walk to Shield Drive). Upon state transition, source pose and bone velocities are captured; decaying spring functions blend these offsets into the target animation over 0.08–0.12 seconds3. This eliminates cross-fade float while maintaining kinetic forward momentum3.
+Frame-Rate Independent Event Execution
+Gameplay code must trigger visual effects, audio clips, and damage frames reliably regardless of dynamic frame-rate drops or time-scale adjustments (e.g., slow-motion buffs)3.
+Never use polling timers (await get_tree().create_timer()) in GDScript to sync combat hits. Utilize Godot AnimationPlayer Call Method Tracks placed directly on exact contact keyframes3. Set AnimationTree.process_callback = ANIMATION_PROCESS_PHYSICS to ensure frame evaluation updates in sync with fixed physics ticks3.
+Failure-to-Correction Diagnostic Table
+
+
+Observed Motion Failure
+	Underlying Kinematic Cause
+	Technical Correction in Blender 5.2 / Godot 4.7
+	Stance Foot/Knuckle Slip
+	Controller root movement speed does not match animated stride velocity3.
+	Extract exact root motion bone velocity; sync Godot CharacterBody3D velocity to AnimationTree.get_root_motion_position_accumulated()3.
+	Armor Mesh Interpenetration
+	Overshot joint angles drive rigid plates through torso/collar seams1.
+	Apply Limit Rotation constraints in Blender; sculpt corrective FK keyframes holding 15 mm minimum clearance1.
+	Gimbal Lock / Flip at Joint Apex
+	Euler rotation interpolation passes through    singularity3.
+	Convert constraint evaluation channels to Quaternion (  ) mode prior to F-curve baking3.
+	Floaty Impact (No Hit Weight)
+	Contact frame decelerates too early; slow-out applied to hit path6.
+	Remove slow-out F-curve handles before hit frame; enforce linear/explosive acceleration into contact, followed by 2-frame compression hold6.
+	Grounded Feet Lift During Upper-Body Skill
+	Full-body animation overwrite replaces ground stance pose during upper-body cast3.
+	In Godot AnimationTree, split bone paths using AnimationNodeBlendTree filtering: apply upper-body sub-tree to Spine+ joints while locking lower limbs to locomotion stance3.
+	Production Quality Review Gate and Decision Framework
+Multi-Camera Diagnostic Verification Protocol
+Every authored or retargeted animation must pass inspection across three mandatory camera configurations before submission to the game build: Front Orthographic View (validates lateral symmetry and shoulder clearances), Side Orthographic View (validates spinal arcs, load depth, and stride length), and 45-degree MOBA Isometric View (validates gameplay readability and top-down silhouette)1.
+The diagnostic playback pass requires evaluating action read, force perception, and silhouette clarity at 1.0x full speed, followed by auditing single-frame mesh interpenetration, IK target slip, and armor clearance limits at 0.25x slow motion1.
+Technical Verification Tolerances
+All numerical tolerances below are proposed target thresholds for asset verification, not biologically measured constants1.
+                           1. World-Space Foot/Knuckle Slip: Proposed target maximum    drift over stance duration1.
+                           2. Rigid Bone-Length Delta: Proposed target exact    (zero scaling allowed)1.
+                           3. Armor Plate Penetration: Proposed target    (zero mesh crossing allowed)1.
+                           4. Victim Grip Displacement: Proposed target maximum    drift during lift phase1.
+Asset Cleanup Metric and Decision Matrix
+To determine whether AI-generated motion saves authoring time compared to hand-crafting from scratch, technical animators evaluate the cleanup efficiency metric (  )3:
+  
+
+Where    is the time required to keyframe the action manually, and    is the time spent fixing AI retargeting errors, ground slip, and armor collisions3.
+The decision tree dictates that if mesh collision is zero, stance slip is under 0.005 m, and action read is clear, the asset is accepted to build1. If faults exist but F-curves and IK locks can be repaired in under 45 minutes, the asset is sent to Blender repair3. If repairs exceed 45 minutes or basic action read fails, the asset is rejected and re-blocked manually3.
+Baseline Comparison Matrix
+
+
+Asset File ID
+	Stance Slip Diagnostic
+	Rigid Bone Length Check
+	Armor Interpenetration Audit
+	Action Read & Readability
+	Gate Verdict
+	06_CHESTBEAT_COMPARISON.mp4 (Left - Claude v27)1
+	Slip   1
+	Delta   1
+	Zero mesh penetration1
+	Wrist float during frames 84–90 smears beat exit1.
+	REJECTED (Replaced by Right correction)1
+	06_CHESTBEAT_COMPARISON.mp4 (Right - Codex Approved)1
+	Slip   1
+	Delta   1
+	Zero mesh penetration1
+	Final right strike completes cleanly before gather1.
+	ACCEPTED (Exit timing standard)1
+	07_SHIELD_CAST_REVIEW.mp41
+	Knuckle slip   1
+	Delta   1
+	Inner shield plate passes within    of torso1.
+	Excellent; self-cast maintains facing direction1.
+	REPAIR (Increase collar clearance)1
+	08_SHIELD_DRIVE_REVIEW.mp41
+	Stance slip   1
+	Delta   1
+	FAILED: Forearm casing intersects side torso armor1.
+	High impact force; strong braking read1.
+	REPAIR (Adjust shoulder load angle)1
+	09_GRAB_SLAM_REVIEW.mp41
+	Ground slip   1
+	Delta   1
+	Grip constraint solid; zero victim drift1.
+	High impact clarity; release timing 2 frames late1.
+	REPAIR (Advance release keyframe)1
+	Concluding Synthesis and Operating Protocol
+Prioritized First Experiment
+The immediate priority experiment is testing a Meshy Text to Motion donor pass for the Rhino Running Trot and Sprint Charge using Prompt Candidate 4 ("Heavy rhino quadruped sprinting forward...") on the Meshy Prime (FBX) endpoint2.
+Quadruped heavy trotting requires complex multi-limb phase coordination (  )8. Utilizing an AI motion donor to capture initial quadruped limb trajectories—and then retargeting those trajectories in Blender onto our fixed-length mech rig—will establish whether generative tools save blocking time (  ) for heavy non-humanoid locomotion cycles2.
+Generative Limitations
+Automated text-to-motion tools cannot be trusted to independently solve four core technical requirements of this project1:
+                              1. Rigid Armor Mesh Clearances: AI generators operate on deforming skin meshes and do not compute physical hard-surface interpenetration between rigid metal armor plates1.
+                              2. Explicit World-Locked Stance Contacts: Generative clips exhibit stance drift and foot sliding, requiring manual IK locking and root motion extraction in Blender3.
+                              3. Two-Body Interaction Constraints: Complex multi-character actions (such as the Grab/Lift/Ground Slam) require precise constraint attachment points between offender and victim rigs that text prompts cannot specify1.
+                              4. Sub-Second Gameplay Cast Timing: Generative models cannot output sub-second (<0.4s) clips natively due to API minimum clip limits (2.0s), requiring manual phase extraction and keyframe scaling2.
+Compact Operating Checklist
+                              * Step 1 (Rest Transforms): Verify rest transform alignment between donor skeleton and native mech rig in Blender 5.23.
+                              * Step 2 (Geometry Preservation): Ensure zero mesh stretching, bone scaling, or rigid armor plate deformation during posing1.
+                              * Step 3 (IK Stance Clamp): Apply IK constraints to clamp world-space stance foot/knuckle slip to under 0.005 m1.
+                              * Step 4 (Armor Clearances): Audit rigid armor plate clearances at 0.25x speed, maintaining 15 mm minimum separation1.
+                              * Step 5 (Closed Fist Contacts): Ensure chest beat and swat contacts utilize flat palm-side mechanical fist surfaces1.
+                              * Step 6 (Exit Timing Discipline): Enforce accepted exit timing—complete final strikes before initiating gathering arcs1.
+                              * Step 7 (Cast Window Isolation): Trim 2.0s minimum generative clips to sub-second gameplay cast windows2.
+                              * Step 8 (Multi-Camera Audit): Inspect assets at 1.0x and 0.25x across Front, Side, and 45-degree MOBA camera views1.
+                              * Step 9 (Physics Signal Binding): Attach VFX, audio, and damage triggers directly to Godot AnimationPlayer Call Method Tracks3.
+                              * Step 10 (Review Gate Verdict): Confirm zero mesh interpenetration and verify    prior to build export1.
+Works cited
+                                 1. 00_PROJECT_BRIEF.md
+                                 2. Text to Motion API - Meshy Docs, https://docs.meshy.ai/en/api/text-to-motion
+                                 3. 01_PRIOR_RESEARCH.md
+                                 4. Estimation of the forces exerted on the limb long bones of a white, https://pmc.ncbi.nlm.nih.gov/articles/PMC11259748/
+                                 5. AnimationNodeBlendTree - Godot Docs, https://docs.godotengine.org/en/stable/classes/class_animationnodeblendtree.html
+                                 6. CREATURE ANIMATION MASTERCLASS - PART 1 | Webinar, https://www.youtube.com/watch?v=yX14WbLg3dk
+                                 7. Animated Performance Bringing Imaginary Animal, Human and, https://pdfcoffee.com/animated-performance-bringing-imaginary-animal-human-and-fantasy-characters-to-life-pdfdrive-5-pdf-free.html
+                                 8. Footfall patterns and stride parameters of Common hippopotamus, https://www.researchgate.net/publication/381980737_Footfall_patterns_and_stride_parameters_of_Common_hippopotamus_Hippopotamus_amphibius_on_land
+                                 9. The locomotor kinematics and ground reaction forces of walking, https://www.originalwisdom.com/wp-content/uploads/bsk-pdf-manager/2019/10/Basu-et-al_2019_The-locomotor-kinematics-and-ground-reaction-forces-of-walking-giraffes.pdf
+                                 10. AI Character Animation Generator | Text to Motion and Rigs, https://www.summerengine.com/ai-character-animation-generator
+                                 11. Animate a 3D character with idle, jump and attack clips - Meshy AI, https://www.meshy.ai/developers/cookbook/recipes/animate-3d-character
+                                 12. Pricing - Meshy Docs, https://docs.meshy.ai/en/api/pricing
+                                 13. Using AnimationTree - Godot Docs, https://docs.godotengine.org/en/latest/tutorials/animation/animation_tree.html
+                                 14. Animation: The Mechanics of Motion - The Swiss Bay, https://theswissbay.ch/pdf/Gentoomen%20Library/Animation/Animation_Mechanics_Motion.pdf
+                                 15. Principles of Animal Locomotion - ResearchGate, https://www.researchgate.net/publication/281668329_Principles_of_Animal_Locomotion
+                                 16. Principles of Animal Locomotion - Original Wisdom, https://www.originalwisdom.com/wp-content/uploads/bsk-pdf-manager/2020/04/Alexander_2013_Principles-of-Animal-Locomotion.pdf
+                                 17. Text to Animation for 3D Characters - Viggle AI, https://viggle.ai/blog/text-to-animation-for-3d-characters
+                                 18. The three-dimensional locomotor dynamics of African (Loxodonta, https://royalsocietypublishing.org/rsif/article/5/19/195/65326/The-three-dimensional-locomotor-dynamics-of

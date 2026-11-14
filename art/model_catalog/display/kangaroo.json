@@ -1,0 +1,41 @@
+{
+  "id": "kangaroo",
+  "source_sha256": "badc14dd2f91d85e74d43f42e78c7294fa422654ebb2951fb0524ec1154be179",
+  "source_triangles": 497658,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8509849528198145,
+  "blender_bounds_min": [
+    -4.0757598876953125,
+    -1.600893497467041,
+    0.11950769275426865
+  ],
+  "blender_bounds_max": [
+    -1.9241501092910767,
+    1.6003358364105225,
+    3.0572800636291504
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

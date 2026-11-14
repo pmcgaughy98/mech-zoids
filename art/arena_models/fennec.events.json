@@ -1,0 +1,30 @@
+{
+ "rest_height": 1.7,
+ "source_fps": 60,
+ "times": "seconds",
+ "loops": [
+  "Idle",
+  "Walk"
+ ],
+ "units": "rest_height is in the model's own size (the game multiplies by the profile scale, 0.647). speed is game metres per second at that scale.",
+ "clips": {
+  "Fennec_Idle": {
+   "events": []
+  },
+  "Fennec_Walk": {
+   "events": [
+    {
+     "name": "step",
+     "time": 0.0,
+     "damage": false
+    },
+    {
+     "name": "step",
+     "time": 0.1833,
+     "damage": false
+    }
+   ],
+   "speed": 1.2
+  }
+ }
+}

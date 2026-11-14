@@ -1,0 +1,11 @@
+COMMAND C:\Users\pmcga\AppData\Local\Programs\Python\Python312\python.exe -B D:\dev\new-mech-rpg\docs\art\moba\walk\tools\walk_tools.py footlock --targets D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run2\targets.json --frames D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run2\walk\frames --views s n --still-dir D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run2\stills --out D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run2\footlock.json
+== s: planted step [-0.0, -1.721]
+   RF: planted f[0, 1, 2, 3, 4], lock spread x 2.00 y 0.88 px, max off target 2.00 px -> pass
+   LF: planted f[4, 5, 6, 7, 0], lock spread x 2.00 y 0.88 px, max off target 2.00 px -> pass
+   frames: f0 low 163 pieces 1; f1 low 162 pieces 1; f2 low 160 pieces 1; f3 low 160 pieces 1; f4 low 163 pieces 1; f5 low 162 pieces 1; f6 low 160 pieces 1; f7 low 160 pieces 1
+== n: planted step [-0.0, 1.721]
+   LH: planted f[6, 7, 0, 1, 2], lock spread x 0.00 y 0.88 px, max off target 0.44 px -> pass
+   RH: planted f[2, 3, 4, 5, 6], lock spread x 0.00 y 0.88 px, max off target 0.44 px -> pass
+   frames: f0 low 160 pieces 1; f1 low 162 pieces 1; f2 low 163 pieces 1; f3 low 160 pieces 1; f4 low 160 pieces 1; f5 low 162 pieces 1; f6 low 163 pieces 1; f7 low 160 pieces 1
+ALL FEET LOCKED
+EXIT 0

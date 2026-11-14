@@ -1,0 +1,43 @@
+You are making pixel-art death frames for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\death35. Read anything under
+D:\dev\new-mech-rpg\docs\art\moba. Do not touch any other folder, assets, art or tools, and do not commit.
+
+The machine: the violet S fennec (mech fox with very large ears), approved stills at 35 degrees in
+D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\views_cam35_touchup (s, se, e, ne, n), 160x160, binary alpha, raw (no outline: the game adds it),
+lowest foot on row 140, 15 colours across the five views. Preston, the game's owner, approved these stills; they are
+the fennec's idle in the game, so frame 0 of the death must equal the still exactly or the switch pops.
+Read D:\dev\new-mech-rpg\docs\art\moba\ANIMATION_PLAYBOOK.md sections 1, 2, 4 and 5 first. For the beats only (not the angle, not the
+pixels), look at the old low-camera death: anim\codex-set-b\death\frames (front, side, back) and
+anim\codex-set-d\death (se, ne). Those were drawn for a lower camera; this one is the same fall seen from 35 degrees.
+
+Job: a 7-frame death in all five views: s, se, e, ne, n. Timings 300, 100, 130, 140, 160, 180, 1400 ms; it does not
+loop, the last frame is held.
+  f0 = the still, pixel for pixel.
+  f1 hit: the body jolts back 1-2 px, the ears flick back.
+  f2 stagger: the head drops, the ears begin to droop.
+  f3 the front legs buckle and the chest lowers.
+  f4 the hindquarters sag and the body tips onto its right flank (its own right side; the same fall in every view).
+  f5 it lies on its side, the tail drops flat, the ears lie flat.
+  f6 the same pose, settled; the eyes go dark (use the still's darkest violets for the eye, no new colour). Held.
+It stays where it stood: the body falls in place, it does not slide across the canvas. Everything stays on or above
+row 140 (the ground line) and nothing touches the canvas edge.
+
+Method: no image generation tool. Native pixels, from the still's own parts. Head, ears, chest, body plates, legs and
+tail are the still's own pixels, TRANSLATED, never rotated or resampled (rotation leaves dark specks and slivers that
+had to be cleaned by hand before). Where a part tilts, step it 1 px per row or redraw it by hand in the still's colours
+and shading bands. Every joint and every join with the body is redrawn by hand: no seams, no straight cut edges, no
+gaps, no part ending abruptly (pasted parts that did not join are what Preston rejected before). Parts that the new pose
+shows and the still hides (the belly, the far legs) are drawn by hand in the still's colours. The ears are what the
+player reads on this machine: keep their shape and inner colour as they droop and flatten.
+
+Pass marks (report each):
+- f0 equals the still exactly, every view.
+- Only the stills' colours; binary alpha; no holes, no stray pixels, nothing touching the canvas edge.
+- Lowest opaque row per frame (must be 140 or above) and the body's centre x per frame (it falls in place: the
+  centre may move by the width of the fall, not wander).
+- Judge boards with the game's sel-out: D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\selout_rhino.py, function selout, with
+  selout_rhino.OUTLINE set to the fennec's darkest colour (#141218), at 4x, the still beside the frames.
+
+Output in D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\death35: frames\<name>_f0-6.png where <name> is front (s), se, side (e),
+ne, back (n); a preview gif per view (the timings above); board.png (per view: the still, then the 7 frames, sel-out,
+4x); checks.txt; and REPORT.txt (under 30 lines): tokens if known, the pass marks, and by eye: does each view read as
+this fennec collapsing onto its side and dying, whole and clean, the same fall in all five views?

@@ -1,0 +1,52 @@
+{
+  "id": "shoebill",
+  "name": "Shoebill",
+  "source_model": {
+    "path": "res://art/model_catalog/sources/shoebill_front - Hunyuan 3D v3.1 Pro.glb",
+    "source": "D:\\user\\Downloads\\shoebill_front - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "0130e8e37491cb50f1aedcbd9a2c3c9e93fc2eeb160925765ed0b8bbeb5e7366",
+    "bytes": 49106876
+  },
+  "display_model": "res://art/model_catalog/display/shoebill.glb",
+  "status": "Source static export; unrigged. Display proxy is not final game geometry.",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/shoebill/front.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\shoebill_front.png",
+      "sha256": "c22386c55e14f859c884a748a2565925ce3a3e6327c71beae1cea520a503d276",
+      "bytes": 277341,
+      "project_matches": [
+        "docs/art/moba/shoebill_m/take-i-sidefix-original/white_views/shoebill_front.png"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/shoebill/left.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\shoebill_left.png",
+      "sha256": "81e511006435619e17430a830e56d1d94947b713bbaecb3b1c01659f3f9366d0",
+      "bytes": 244728,
+      "project_matches": [
+        "docs/art/moba/shoebill_m/take-i-sidefix-original/white_views/shoebill_left.png"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/shoebill/back.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\shoebill_back.png",
+      "sha256": "99c15bb9a1e083cf5e5d935cc29e8581bab28126b548f1f4adf49bf2aae5e465",
+      "bytes": 283094,
+      "project_matches": [
+        "docs/art/moba/shoebill_m/take-i-sidefix-original/white_views/shoebill_back.png"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/shoebill/right.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\shoebill_right.png",
+      "sha256": "1e3f39ca8e3385e7c53717c9c679c4caae1974fdc6a5c6e155b90fd7f5fb34de",
+      "bytes": 248204,
+      "project_matches": [
+        "docs/art/moba/shoebill_m/take-i-sidefix-original/white_views/shoebill_right.png"
+      ]
+    }
+  },
+  "artist_workspace": "res://art/model_catalog/workspaces/shoebill.blend"
+}

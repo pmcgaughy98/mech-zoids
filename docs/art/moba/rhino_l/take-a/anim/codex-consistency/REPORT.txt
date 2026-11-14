@@ -1,0 +1,169 @@
+RHINO_L TAKE A: ONE DETAIL-CONSISTENCY PASS
+
+Edited supplied frames only. No image generation, installs, commits or asset integration.
+All writes confined to this codex-consistency folder. References opened only from refs/.
+Canvas 192x192, 8 frames per view, same order. Body edits made once in f0 coordinates,
+carried by measured upper-body translation. Disc shading follows each moving joint locally.
+No alpha, silhouette edge, outline, ankle/foot rows 150..191 or leg geometry changed.
+Every per-frame alpha IoU is 1.000000. The exterior outline is byte-identical.
+Feet/material and outline bottom remain at their exact input rows.
+INPUT BASELINE DISCREPANCY: supplied opaque bottom rows range from 160 to 165,
+not uniformly 161 as described in the brief. No grounding correction was made
+because the job requires the same pose and foot rows. The table gives actual output
+bottom rows; each is equal to its own input bottom row.
+
+Palette: #141218, #211E27, #3D3A44, #7A4A06, #58555E, #FF3A2A, #D18A0A, #9D9BA2, #FFCF1F, #D6D6DC, #FFE6D8, #FFF4A8
+Craft targets used: <=16 colours (job limit 12); broad clusters, upper-left light,
+four armour tones where space permits; top-five share target >=0.65, no added texture.
+3D/evolution/lore/full eight-direction judgement does not apply to this constrained walk edit.
+
+frame        alpha_IoU colours bottom_y changed_pixels interior_ink top5_share
+front_f0     1.000000  12      165       269          0.0789       0.6960
+front_f1     1.000000  12      165       262          0.0742       0.6929
+front_f2     1.000000  12      163       251          0.0743       0.7010
+front_f3     1.000000  12      162       270          0.0772       0.6945
+front_f4     1.000000  12      164       276          0.0760       0.6886
+front_f5     1.000000  12      163       268          0.0744       0.6935
+front_f6     1.000000  12      162       256          0.0741       0.6952
+front_f7     1.000000  12      161       274          0.0782       0.6952
+back_f0     1.000000  10      162       263          0.1185       0.7266
+back_f1     1.000000  10      162       263          0.1228       0.7351
+back_f2     1.000000  10      163       264          0.1183       0.7470
+back_f3     1.000000  10      161       265          0.1171       0.7450
+back_f4     1.000000  10      162       249          0.1202       0.7302
+back_f5     1.000000  10      162       261          0.1192       0.7363
+back_f6     1.000000  10      163       266          0.1230       0.7407
+back_f7     1.000000  10      163       261          0.1154       0.7302
+ne_f0     1.000000  10      160       219          0.0944       0.7299
+ne_f1     1.000000  10      160       221          0.1006       0.7276
+ne_f2     1.000000  10      160       222          0.0999       0.7400
+ne_f3     1.000000  10      160       223          0.0948       0.7288
+ne_f4     1.000000  10      161       224          0.0996       0.7185
+ne_f5     1.000000  10      162       210          0.1058       0.7290
+ne_f6     1.000000  10      163       199          0.0929       0.7308
+ne_f7     1.000000  10      163       209          0.0982       0.7199
+
+Body translations from f0 (dx,dy), frames 0..7:
+{
+  "front": [
+    [
+      0,
+      0
+    ],
+    [
+      -1,
+      0
+    ],
+    [
+      -1,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "back": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "ne": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      -1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ]
+}
+
+Changes: front has compact dark eye sockets with red irises/glints, a brighter horn
+plane, dark horn attachment, shoulder/arm overlaps and cuff bevels. Back has a dark
+upper-shell overlap, side bevels and tail-root attachment. NE receives restrained
+plate-overlap and horn-collar definition. Grey joint discs receive a light upper-left
+rim, dark lower-right rim and recessed centre, keeping the existing joint contour.
+
+Limitations / not fixed:
+Underlying PixelLab body shapes and per-frame non-rigid variations remain. A single
+body translation cannot eliminate those variations; no pose or plate shape was redrawn.
+Front/back still have simpler armour geometry than SE. This pass adds volume to the
+existing shapes; it does not invent SE-specific plates on unseen surfaces.
+No eyes added to NE or back. No anatomy, gait, camera angle or silhouette corrections.
+One pass only; no alternate generated takes.
+
+Artifacts: board.png = SE, front before/after, back before/after, NE before/after;
+all 8 frames in columns at exactly 3x on #3D4350.
+preview.gif = SE/front/NE/back, 2x nearest, 8fps average (alternating 120/130ms).
+GIF palette is exact, without dithering.

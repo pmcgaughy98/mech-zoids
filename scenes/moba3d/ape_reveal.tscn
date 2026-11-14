@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/moba3d/ape_reveal.gd" id="1_reveal"]
+
+[node name="ApeReveal" type="Node3D"]
+script = ExtResource("1_reveal")

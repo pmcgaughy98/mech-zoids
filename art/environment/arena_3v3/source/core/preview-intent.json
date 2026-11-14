@@ -1,0 +1,15 @@
+{
+  "request": {
+    "mode": "preview",
+    "ai_model": "meshy-6",
+    "target_formats": [
+      "glb"
+    ],
+    "prompt": "Stylized industrial science fiction MOBA Foundry environment piece. Broad clean beveled armor forms, dark blue charcoal steel, warm worn iron inset plates, small amber light strips, sparse yellow hazard trim. Strong readable silhouette, no text, no logos, no characters, no ground, isolated single object, flat bottom. One team base core machine: broad octagonal plinth, four heavy armored clamps holding a tall glowing energy reactor drum at the center, a cap ring on top. Imposing, about as wide as tall.",
+    "should_remesh": true,
+    "topology": "triangle",
+    "target_polycount": 8000
+  },
+  "reserved_credits": 20,
+  "at": "2026-11-14T13:40:22.533582+00:00"
+}

@@ -1,0 +1,24 @@
+{
+  "method": "Restore intact high-detail original; transfer approved floating-piece and middle walking-pair cuts via nearest proxy surface and smoothed classification. Close new cut roots and discard only detached remnants created by this cut. No remeshing or broad hole fill.",
+  "before": {
+    "faces": 499822,
+    "vertices": 249917,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0
+  },
+  "after": {
+    "faces": 406520,
+    "vertices": 203640,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0
+  },
+  "removed_source_faces": 94780,
+  "cut_boundary_edges": 2086,
+  "cut_caps": 9,
+  "cut_scrap_components_removed": 7,
+  "cut_scrap_vertices_removed": 1485,
+  "proxy_alignment_scale": 3.5110064008763398,
+  "rig_alignment_scale": 0.7124408294725758,
+  "rig_status": "Surface staging only; actual 44-joint rig retained in following weight transfer.",
+  "source_to_proxy_surface_distance_99pct": 0.0027734069153666488
+}

@@ -1,0 +1,48 @@
+{
+  "asset": "tower_head",
+  "raw_sha256": "8a6f41487570bcd74bb7e77f0494f2c9ffb957fe09b978a67fa5e61c882bfe48",
+  "runtime_sha256": "c549f4164cf9c377275964b31589788749c5f38c3255591139ebd376e6b22b5c",
+  "raw_triangles": 4013,
+  "runtime_triangles": 2500,
+  "materials": 1,
+  "images": [
+    {
+      "name": "Image_0",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_1",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_2",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_3",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "size_godot_xyz_m": [
+    2.4,
+    0.9,
+    4.0
+  ],
+  "turned_deg": 90,
+  "pivot": "bottom centre",
+  "up": "+Y",
+  "collision": "none: the blockout keeps its own bodies and nav mesh",
+  "provider_metadata": "../source/tower_head/refine-status.json"
+}

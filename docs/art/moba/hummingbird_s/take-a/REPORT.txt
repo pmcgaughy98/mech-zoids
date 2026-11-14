@@ -1,0 +1,13 @@
+Sizes W x H/area: s46x72/2247; se75x70/2308; e92x69/2407; ne69x73/2327; n44x73/2209.
+Shape (+/-2px): beak26/head28=0.929; wing48.80/body35.90=1.359; e69/s72=0.958; south wings46/chest26=1.769; cyan ne0/nw0; planted/visible feet2/2 every view.
+ONE built-in image, prompt-sheet.txt verbatim, only craft_drembit.png attached; raw unchanged SHA256 in generation.json; tokens/cost unknown; no redo.
+view_check: front/back0.88 PASS; area0.05; height0.05; colour0.82; dips none; lone0.17 ->0.02296 after ONE eye-preserving despeckle pass (2358 pixels), then fringe cleanup.
+sheet_judge: all eight ok; FIX nothing; REDO nothing; mirrors e/w0.985, ne/nw0.905, se/sw0.920; binary alpha; feet140; border contact NONE.
+15 shared colours, full specified material ramps; cyan and e8ffff glint distinct and kept in lenses; top-five64.39% FAIL65% target; edge plum/magenta0, lone pale0 excluding eyes, seam ink0.
+Depth e/se/s/n: p05 18.86/18.86/18.86/31.29; p95 214.43/214.43/214.43/225.06; ranges195.57/195.57/195.57/193.77; dominant20.94/16.68/12.51/37.66%; heights69/70/72/73.
+By eye FIRST, MACHINE YES: flat hard plates, straight cuts, charcoal joint frame, joint discs, lens eyes, rigid armour blades rather than feathers.
+BOLD/LIVELY YES: saturated emerald, ruby throat, glowing cyan lenses, long steel needle beak; lively swept silhouette stays clear at40px.
+HUMMINGBIRD YES: compact round body/head, long straight beak, both wings folded resting on sides, short forked tail, short legs and planted hooked claws; nothing held, no bow/arrows/hearts.
+Emerald four-step shading retained; ruby/steel three tones as brief, charcoal two; internal overlap lines present; no continuous painted dark silhouette line.
+Profiles69 vs front72 FAIL equality; n73 vs s72 and rear diagonals73 vs front diagonals70 FAIL no-taller rule; camera similar low height, rear no eyes/face PASS; rear heels FAIL/weak, claws still face camera.
+SE/SW true three-quarter with head turned and far eye hidden PASS; reviews, eight views, adapted scripts and audits saved entirely in take-a; no installation, commits or reverts.

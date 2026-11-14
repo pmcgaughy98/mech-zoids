@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "f7236a5c7f09a59357f28caa88cabc032827b1a9a733156006a078aadd546aed",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 0.8568486096807415,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "power_ankylosaur_front.png",
+      "source_box": [
+        44,
+        90,
+        457,
+        460
+      ],
+      "source_dimensions": [
+        413,
+        370
+      ],
+      "output_box": [
+        335,
+        619,
+        689,
+        936
+      ]
+    },
+    "left": {
+      "file": "power_ankylosaur_left.png",
+      "source_box": [
+        536,
+        119,
+        1506,
+        459
+      ],
+      "source_dimensions": [
+        970,
+        340
+      ],
+      "output_box": [
+        96,
+        645,
+        927,
+        936
+      ]
+    },
+    "back": {
+      "file": "power_ankylosaur_back.png",
+      "source_box": [
+        43,
+        570,
+        457,
+        940
+      ],
+      "source_dimensions": [
+        414,
+        370
+      ],
+      "output_box": [
+        334,
+        619,
+        689,
+        936
+      ]
+    },
+    "right": {
+      "file": "power_ankylosaur_right.png",
+      "source_box": [
+        533,
+        598,
+        1504,
+        939
+      ],
+      "source_dimensions": [
+        971,
+        341
+      ],
+      "output_box": [
+        96,
+        644,
+        928,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.08108108108108109
+}

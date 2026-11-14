@@ -1,0 +1,589 @@
+{
+  "raw_size": [
+    2172,
+    724
+  ],
+  "columns": 6,
+  "rows": [
+    "se",
+    "ne"
+  ],
+  "x_edges": {
+    "se": [
+      0,
+      362,
+      724,
+      1086,
+      1448,
+      1810,
+      2172
+    ],
+    "ne": [
+      0,
+      362,
+      724,
+      1086,
+      1448,
+      1810,
+      2172
+    ]
+  },
+  "y_edges": [
+    0,
+    350,
+    724
+  ],
+  "row_scale": {
+    "se": 0.23508117299081363,
+    "ne": 0.2354048100545208
+  },
+  "cells": [
+    {
+      "view": "se",
+      "frame": 0,
+      "source_box": [
+        0,
+        0,
+        362,
+        350
+      ],
+      "source_opaque_box": [
+        60,
+        30,
+        345,
+        318
+      ],
+      "scale": 0.23508117299081363,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 300,
+      "touches_cut": false,
+      "generated_placement": [
+        62,
+        93
+      ],
+      "final_opaque_box": [
+        64,
+        89,
+        127,
+        161
+      ],
+      "source_override": "exact approved 160x160 still"
+    },
+    {
+      "view": "se",
+      "frame": 1,
+      "source_box": [
+        362,
+        0,
+        724,
+        350
+      ],
+      "source_opaque_box": [
+        33,
+        37,
+        347,
+        317
+      ],
+      "scale": 0.23508117299081363,
+      "placement": [
+        58,
+        95
+      ],
+      "duration_ms": 120,
+      "touches_cut": false,
+      "generated_placement": [
+        58,
+        95
+      ],
+      "final_opaque_box": [
+        58,
+        95,
+        130,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "se",
+      "frame": 2,
+      "source_box": [
+        724,
+        0,
+        1086,
+        350
+      ],
+      "source_opaque_box": [
+        19,
+        69,
+        352,
+        315
+      ],
+      "scale": 0.23508117299081363,
+      "placement": [
+        56,
+        103
+      ],
+      "duration_ms": 90,
+      "touches_cut": false,
+      "generated_placement": [
+        56,
+        103
+      ],
+      "final_opaque_box": [
+        56,
+        106,
+        129,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "se",
+      "frame": 3,
+      "source_box": [
+        1086,
+        0,
+        1448,
+        350
+      ],
+      "source_opaque_box": [
+        90,
+        137,
+        305,
+        312
+      ],
+      "scale": 0.23508117299081363,
+      "placement": [
+        70,
+        120
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "generated_placement": [
+        70,
+        120
+      ],
+      "final_opaque_box": [
+        70,
+        120,
+        121,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "se",
+      "frame": 4,
+      "source_box": [
+        1448,
+        0,
+        1810,
+        350
+      ],
+      "source_opaque_box": [
+        82,
+        160,
+        265,
+        312
+      ],
+      "scale": 0.23508117299081363,
+      "placement": [
+        74,
+        131
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "generated_placement": [
+        74,
+        131
+      ],
+      "final_opaque_box": [
+        74,
+        131,
+        114,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "se",
+      "frame": 5,
+      "source_box": [
+        1810,
+        0,
+        2172,
+        350
+      ],
+      "source_opaque_box": [
+        121,
+        284,
+        179,
+        313
+      ],
+      "scale": 0.23508117299081363,
+      "placement": [
+        91,
+        155
+      ],
+      "duration_ms": 180,
+      "touches_cut": false,
+      "generated_placement": [
+        88,
+        154
+      ],
+      "final_opaque_box": [
+        91,
+        155,
+        99,
+        161
+      ],
+      "source_override": "native gold-cream tail tip, rigid 90-degree rotation; clipped y160"
+    },
+    {
+      "view": "ne",
+      "frame": 0,
+      "source_box": [
+        0,
+        350,
+        362,
+        724
+      ],
+      "source_opaque_box": [
+        60,
+        32,
+        327,
+        326
+      ],
+      "scale": 0.2354048100545208,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 300,
+      "touches_cut": false,
+      "generated_placement": [
+        64,
+        92
+      ],
+      "final_opaque_box": [
+        67,
+        86,
+        125,
+        161
+      ],
+      "source_override": "exact approved 160x160 still"
+    },
+    {
+      "view": "ne",
+      "frame": 1,
+      "source_box": [
+        362,
+        350,
+        724,
+        724
+      ],
+      "source_opaque_box": [
+        34,
+        41,
+        338,
+        325
+      ],
+      "scale": 0.2354048100545208,
+      "placement": [
+        60,
+        94
+      ],
+      "duration_ms": 120,
+      "touches_cut": false,
+      "generated_placement": [
+        60,
+        94
+      ],
+      "final_opaque_box": [
+        60,
+        94,
+        125,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "ne",
+      "frame": 2,
+      "source_box": [
+        724,
+        350,
+        1086,
+        724
+      ],
+      "source_opaque_box": [
+        23,
+        68,
+        340,
+        325
+      ],
+      "scale": 0.2354048100545208,
+      "placement": [
+        58,
+        101
+      ],
+      "duration_ms": 90,
+      "touches_cut": false,
+      "generated_placement": [
+        58,
+        101
+      ],
+      "final_opaque_box": [
+        58,
+        101,
+        125,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "ne",
+      "frame": 3,
+      "source_box": [
+        1086,
+        350,
+        1448,
+        724
+      ],
+      "source_opaque_box": [
+        93,
+        143,
+        302,
+        325
+      ],
+      "scale": 0.2354048100545208,
+      "placement": [
+        72,
+        118
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "generated_placement": [
+        72,
+        118
+      ],
+      "final_opaque_box": [
+        72,
+        118,
+        121,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "ne",
+      "frame": 4,
+      "source_box": [
+        1448,
+        350,
+        1810,
+        724
+      ],
+      "source_opaque_box": [
+        83,
+        171,
+        269,
+        321
+      ],
+      "scale": 0.2354048100545208,
+      "placement": [
+        74,
+        132
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "generated_placement": [
+        74,
+        132
+      ],
+      "final_opaque_box": [
+        74,
+        132,
+        116,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "ne",
+      "frame": 5,
+      "source_box": [
+        1810,
+        350,
+        2172,
+        724
+      ],
+      "source_opaque_box": [
+        122,
+        295,
+        179,
+        322
+      ],
+      "scale": 0.2354048100545208,
+      "placement": [
+        91,
+        155
+      ],
+      "duration_ms": 180,
+      "touches_cut": false,
+      "generated_placement": [
+        90,
+        155
+      ],
+      "final_opaque_box": [
+        91,
+        155,
+        99,
+        161
+      ],
+      "source_override": "native gold-cream tail tip, rigid 90-degree rotation; clipped y160"
+    }
+  ],
+  "final_canvas": [
+    192,
+    192
+  ],
+  "approved_offset": [
+    16,
+    20
+  ],
+  "ground_row": 160,
+  "durations_ms": [
+    300,
+    120,
+    90,
+    100,
+    100,
+    180
+  ],
+  "loop": false,
+  "hold_last_frame": false,
+  "frames": [
+    {
+      "view": "se",
+      "index": 0,
+      "path": "frames/se_f0.png",
+      "duration_ms": 300
+    },
+    {
+      "view": "se",
+      "index": 1,
+      "path": "frames/se_f1.png",
+      "duration_ms": 120
+    },
+    {
+      "view": "se",
+      "index": 2,
+      "path": "frames/se_f2.png",
+      "duration_ms": 90
+    },
+    {
+      "view": "se",
+      "index": 3,
+      "path": "frames/se_f3.png",
+      "duration_ms": 100
+    },
+    {
+      "view": "se",
+      "index": 4,
+      "path": "frames/se_f4.png",
+      "duration_ms": 100
+    },
+    {
+      "view": "se",
+      "index": 5,
+      "path": "frames/se_f5.png",
+      "duration_ms": 180
+    },
+    {
+      "view": "ne",
+      "index": 0,
+      "path": "frames/ne_f0.png",
+      "duration_ms": 300
+    },
+    {
+      "view": "ne",
+      "index": 1,
+      "path": "frames/ne_f1.png",
+      "duration_ms": 120
+    },
+    {
+      "view": "ne",
+      "index": 2,
+      "path": "frames/ne_f2.png",
+      "duration_ms": 90
+    },
+    {
+      "view": "ne",
+      "index": 3,
+      "path": "frames/ne_f3.png",
+      "duration_ms": 100
+    },
+    {
+      "view": "ne",
+      "index": 4,
+      "path": "frames/ne_f4.png",
+      "duration_ms": 100
+    },
+    {
+      "view": "ne",
+      "index": 5,
+      "path": "frames/ne_f5.png",
+      "duration_ms": 180
+    }
+  ],
+  "finishing": [
+    "finish.py",
+    "polish.py",
+    "details.py",
+    "seam_fill.py",
+    "final_pass.py",
+    "verify.py",
+    "finalize.py"
+  ],
+  "verified": true,
+  "raw_sha256": "83f759e73fb0bbc8f91d42b496ad55bb4e26c1a3762e4074a9bb3a6eb17847e5",
+  "grid_clean": true,
+  "source_grid_note": "Clean gutters.",
+  "scale_note": "One conversion factor per row, calibrated from seated source endpoint. No per-frame fitting. Restored native parts never resized."
+}

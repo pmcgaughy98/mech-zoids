@@ -1,0 +1,6 @@
+NOT APPLIED (walk lane, 2026-11-05). clean_belly.py tried to remove run 1's body fill below the belly in se and ne with a
+straight belly line between the columns beside each leg. It found the wrong pixels: 0 removed in se's RH area and 1 in
+ne's LH area, where the defects are, and about 200 a frame in ne's RH and LF spans, where the line ran too high and
+would have cut real body. Its frames were deleted; run1/walk/frames is untouched. The se and ne defects (dark fill below
+the belly by se RH and right of ne LH, the split ne LH foot, loose specks by the se RH knee) go to the touch-up pass by
+hand, or to a better-targeted script that starts from the exact defect boxes.

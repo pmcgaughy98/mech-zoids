@@ -1,0 +1,16 @@
+{
+  "request": {
+    "mode": "refine",
+    "ai_model": "meshy-6",
+    "target_formats": [
+      "glb"
+    ],
+    "preview_task_id": "01a1da7d-5259-76f6-9d00-551a030efba3",
+    "texture_resolution": "2k",
+    "enable_pbr": true,
+    "remove_lighting": true,
+    "texture_prompt": "Dark cold basalt in blue grey and charcoal, dull grey steel plates, a little dark rust. No orange, no glow, no lava. Broad clean colour blocks, gentle wear. No text or logos. Neutral illumination, no baked shadows."
+  },
+  "reserved_credits": 10,
+  "at": "2026-11-14T14:38:30.339510+00:00"
+}

@@ -1,0 +1,31 @@
+WOLF M / TAKE B / CODEX SET B / 2026-11-04
+STATUS: review candidates, not a full brief pass. 57 PNGs, 9 GIFs. Nothing installed or committed.
+Exactly THREE built-in image_gen calls: hamstring, howl, death, one sheet each. No redo or variations. Token usage unavailable.
+Prompts: prompts/hamstring.txt, howl.txt, death.txt. Attached refs s_6x, e_6x, n_6x in that order; reference RGBA copies match fixed/.
+hamstring: sheet 1774x887, SHA256 36ea296991f3ea6c63fa174404b6a139517156272f1c4bb1a038f5ca3f398f7e
+howl: sheet 1774x887, SHA256 7bf30e3b9a32d8d98fcbe0a1b6fe1836df1f86267edf0d30502d24c912ea72ed
+death: sheet 1774x887, SHA256 4559854737ae5648f8bf9750e2dc08144805567c0466d13fcf7c5b245ed7f2b9
+Method: empty-gutter slicing, one X/Y whole-drawing calibration per view, native nearest-neighbour sampling, 12-colour snap, direct pixel ink, alpha and contour cleanup.
+No approved still parts were composited onto posed frames. Approved fixed PNGs used only at required exact endpoints.
+Weak sheets: hamstring open bite needed new mouth/teeth; splayed support reduced by continuous whole-drawing deformation. Side tails were short and repainted natively, with continuous armour sockets and tapered fin joins.
+Death raw f5/f6 flattened anatomy and switched front/back cameras. Final f5 uses the sheet's complete f4 drawing rolled rigidly (-20 front, +5 side, +40 back degrees); f6 same drawing, cyan eyes changed to #444452.
+Pixel checks PASS 57/57: transparent 192x192 RGBA, binary alpha, approved palette only, one connected silhouette, bottom row160, zero pixels below160, no canvas-edge contact.
+42/42 newly posed frames: zero enclosed transparent holes or detached components. Exact reference exceptions: front still 1 enclosed transparent pixel, side still 96, back0, preserved verbatim.
+Exact endpoints PASS 15/15 PNG file bytes and RGBA bytes: hamstring/front/side/back f0/f5, howl/front/side/back f0/f5, death/front/side/back f0. Silhouette AND colour IoU 1.000000 for all15.
+9/9 GIFs reopened and fully decoded: exact frame counts and requested millisecond durations. Sel-out applied before 4x display. Browser playback attempt denied: Computer Use was not approved to use Google Chrome. Live playback NOT observed.
+Every source cut has empty gutters; source cuts, X/Y scales, placement, final bbox/placement and durations in grid.json. verification.json and per-move checks.txt retain individual results.
+Proportion method: manually tagged visible side axes/cross-sections and joint chains; Euclidean distance+1 native pixel. Annotation uncertainty2px. These projected lengths do not recover hidden anatomy. Details and flags in proportions.json.
+Reference SIDE axis px: ear=14.15, head=27.25, muzzle=12.7, body_length=36.13, body_depth=18.0, foreleg=35.76, hindleg=37.55, tail_length=43.45, tail_thickness=9.49. Three visible grey tail plates plus one red tip.
+Hamstring SIDE ranges: ear14.15-18.80, head25.74-27.68, muzzle12.40-12.70, body33.25-36.13/depth16-19, fore34.82-38.10, hind34.49-37.55, tail43.45-43.50.
+Howl SIDE ranges: ear12.18-16.62, head26-27.25, muzzle12.40-12.70, body34.38-36.13/depth17-19.11, fore34.15-37.36, hind28.27-38.12, tail43.45-43.50.
+Death visible SIDE ranges: ear13.53-18.03, head20.72-29.23, muzzle8.81-14, body36.13-39.05/depth16-21, fore34.73-36.51, hind27.27-37.55, tail43.45-43.50. Final rolled lengths inherited from f4; hidden chains unmeasured.
+New side tails: 43.5px straight axis, 10-11px broad root, three grey plates and one red tip; no thin rods. Front/back still bbox33x72/35x72, side110x66; all posed whole-frame extents recorded individually.
+2PX PROPORTION GATE NOT PASSED: visible projected ear/body/leg flags remain, especially bent and rolled poses. Full axial dimensions for every front/back part are not independently measured. Do not interpret structural checks as a proportions pass.
+Hamstring hind-ground centroid side x70.58-72.09 vs still71.10, y157.63-157.70; close support but pixels are not perfectly fixed. support_checks.json retains actual measurements.
+By eye HAMSTRING: same armour/colour identity in all rows; low open f2 and closed turned f3 readable; columns agree. Front f3 turns somewhat too far; rear reach mostly occluded. Whole connected parts, no visible cutoff seams on inspected boards.
+By eye HOWL: same wolf in three rows, seated settle and raised open muzzle f3 readable, chest out, no effects. Columns agree; upward head foreshortens. Whole parts, tapered joins; back head motion subtle.
+By eye DEATH: flinch, buckle, chest fall, side roll and eye-off hold readable; rows share timing and front/back cameras retained after roll correction. Final legs remain partly folded, so strict legs-out requirement is not fully met.
+Viewed 4x sel-out review pages alongside approved stills; inspected key frames and corrected tail/fin root cutoffs. Per move review.png, review_pages/, frames/, slices/, sheet_raw.png, grid.json, checks.txt, preview_front/side/back.gif and playback.html.
+Open review.html for links to the three playback pages and full boards. This is a local review index, not a published site.
+Rebuild ONCE FROM RAW: python -B finish.py extract hamstring howl death; python -B polish.py; python -B verify.py; python -B finalize.py; python -B measure.py. polish.py is a finishing pass, not idempotent.
+All task-authored deliverables are inside codex-set-b. Built-in image tool automatically retained originals in its managed .codex/generated_images cache. No assets/tools or sibling animation folders edited; no commit.

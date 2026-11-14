@@ -1,0 +1,33 @@
+{
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_hummingbird_remeshed_25k_20261111_character.glb",
+  "source_sha256": "90bd5b6b343f848437c1f59e66ef3eb6f026363f451e0d6aaa44d85457a6a8e6",
+  "output_sha256": "a85b4f4df6c1936b67aed5b0be2549f751e41ec9520f9e3c6fd2e50988af2429",
+  "joints": 21,
+  "triangles": 22236,
+  "vertices_changed": 580,
+  "max_displacement_m": 0.01908239535987377,
+  "protected_body_max_error": 0.0,
+  "needle_forward_extent_preserved": true,
+  "axis_gltf_y_up": {
+    "shaft_start_z": 0.3,
+    "tip_z": 1.3550587892532349,
+    "base_xy": [
+      -0.003,
+      1.26
+    ],
+    "tip_xy": [
+      -0.003,
+      1.075
+    ]
+  },
+  "weights_uvs_skeleton_binds_materials_textures_byte_preserved": true,
+  "before_topology": {
+    "boundaries": 139,
+    "over_shared": 63
+  },
+  "after_topology": {
+    "boundaries": 139,
+    "over_shared": 63
+  },
+  "scope": "Needle straightening only; keep length and slight downward aim. Collar and body protected. Existing unrelated remesh topology remains unapproved."
+}

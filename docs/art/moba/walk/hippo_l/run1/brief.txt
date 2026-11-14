@@ -1,0 +1,84 @@
+You are making pixel-art walk frames for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run1.
+Read anything under D:\dev\new-mech-rpg\docs\art\moba. Do not touch any other folder, assets, art or tools, and do not
+commit. Run tag: hippo-walk35-run1.
+
+The machine: the violet L robot hippo. Its approved standing stills at 35 degrees are in run1\stills (s, se, e, ne, n;
+192x192, feet row 160, 14 colours, raw with no outline; copied from
+D:\dev\new-mech-rpg\docs\art\moba\hippo_l\take-b\views_cam35_touchup_shade1, whose APPROVED.txt says how they were made).
+Preston, the game's owner, approved these stills; above the legs the walk must match them exactly.
+Read first: D:\dev\new-mech-rpg\docs\art\moba\walk\WALK_PLAYBOOK.md (sections 1, 4, 5, 7, 9 and 11). Then the two walks
+that worked, and reuse their method and scripts rather than starting again: the fennec's trot,
+D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run1 and run2 (brief.txt, REPORT.txt, LANE_REVIEW.txt, build.py,
+rig.json, checks.txt) and fennec_s\final\README.txt; and the green gorilla's walk, ape_l\run1 (brief.txt, REPORT.txt,
+build.py, verify.py, rig.json). What went wrong there, so do not repeat it: the fennec's ne far hind leg was drawn over
+its tail (fix: a draw order per view, below); the fennec's gold chest plate broke into loose specks as the near front
+leg moved (fix: plates stay whole, below); the gorilla's ne far limb came out cut off; and a limb sliding back left a
+transparent slit inside the body.
+
+Keep run1\REPORT.txt current: write it once the first view is drawn and update it after each view, so a report exists even
+if the run is stopped by its token cap.
+
+Job, run 1: an 8-frame four-beat walk, 125 ms a frame (8 fps), looping, in these views: e, se, ne. The gait is the
+rhino's four-beat walk, one foot after another: the left front foot (LF) swings f1-f3, the left hind (LH) f3-f5, the
+right front (RF) f5-f7, the right hind (RH) f7, f0, f1 (wrapping). Each foot swings for 3 frames with lifts of 2, 3 and
+2 px. The body, head and leg discs dip 1 px on f0 and f4. This is a heavy machine: short firm steps, feet flat when down,
+no bounce beyond the 1 px dip. Each foot's path (offset along the body in side-view px, + = forward, and lift) is in
+run1\targets.json "paths"; per view the path turns into screen px as offset * f * u, with the lift straight up:
+  e: u = (1, 0), f = 1.0; a planted foot moves (-3.00, +0.00) px a frame on the canvas (x, y; y down)
+  se: u = (0.8674, 0.4975), f = 0.8152; a planted foot moves (-2.12, -1.22) px a frame on the canvas
+  ne: u = (0.8674, -0.4975), f = 0.8152; a planted foot moves (-2.12, +1.22) px a frame on the canvas
+In se and ne the targets fall between pixels: round each frame's position so a planted foot's total travel stays within
+0.5 px of the target. targets.json "views" gives the sole centre of every labelled foot in each still for every frame;
+run1\guide_<view>.png shows them (the still faded, then a bar per foot per frame, filled when planted and outlined when
+lifted, with a tick for the lift). R and L are the hippo's own right and left; its right side is the near side in e, se
+and ne. The labels are in D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\feet.json: check them and say if one is wrong.
+Hidden in the stills: e LH and LF, se LH, ne LF; se LF only peeks out under the jaw. Draw a hidden foot only where the new
+pose shows it; the jaw stays drawn over se's LF in every frame.
+
+Method: no image tool, native pixels, as the fennec and gorilla walks did it. The body, head, jaw, tusks, eyes and armour
+plates are the still, pixel for pixel, dipping 1 px on f0 and f4. Each leg, top to bottom, is: the big round violet hip or
+shoulder disc, a steel knee joint, a short steel lower leg, and a wide foot pad (violet heel, steel toes, dark recess).
+The hip and shoulder discs belong to the body: they stay whole and pinned to it and dip with it. The foot and lower leg
+move together to the target, the knee joint moves about half as far, and the short leg between disc and knee is redrawn
+as a leaning band in the still's own colours and shading bands, stepped 1 px per row or two, with its lit edge and dark
+seam kept. On a lifted foot the lower leg rises with it and the foot stays flat (a hippo does not tip its toes). Every
+part is the still's own pixels TRANSLATED, never rotated or resampled. Every joint and every join with the body is redrawn
+by hand: no seams, no straight cut edges, no gaps, no part ending abruptly. Where a leg slides back, draw the body behind
+it: no slit may show the background inside the body. Keep each leg's length within 1 px of the still's. The far legs
+(darker in the still) are built the same way, one shade darker on their own ramp.
+Draw order, every frame: far legs (in e and se: LH, LF; in ne: LF, LH), then the body and head, then the near legs (RH,
+RF); in se the jaw is drawn over LF. Nothing of a far leg may sit on top of the body, head or a near leg.
+Plates stay whole: where a moving leg uncovers part of a plate or disc, draw that part whole with its bands and seams;
+where a leg covers it, draw the leg's edge cleanly over it. No loose specks.
+
+Pass marks (report each):
+- Foot lock: for each foot, its sole centre on its k-th planted frame (k = 0 to 4 in order, wrapping past f7) minus k
+  times the planted step above stays within 2 px in x and y. Measure from the frame pixels, not from your targets. Write
+  a footprint picture per view. Also run these and report their results:
+  python D:\dev\new-mech-rpg\docs\art\moba\walk\tools\walk_tools.py footlock
+    --targets D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run1\targets.json
+    --frames D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run1\walk\frames --views e se ne
+    --still-dir D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run1\stills
+    --out D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run1\footlock.json
+  python D:\dev\new-mech-rpg\docs\art\moba\walk\tools\walk_tools.py seams
+    --targets D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run1\targets.json
+    --frames D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run1\walk\frames --views e se ne
+    --still-dir D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run1\stills --body a990e0 7258b4 4a347e 26183f
+  For a foot hidden behind the body in a frame, measure it from your leg layer and say so. Seams must report no slits
+  inside the body (a flag between two legs is a real gap and stays open).
+- Each visible foot meets its target within 1 px; lifts exact.
+- Above the legs every frame equals the still after the 1 px dip: report the % of differing pixels per frame.
+- Specks: per frame, count the 8-connected single-colour pieces of 1 or 2 px in rows 120-164; no frame may have more
+  than the still has in that view plus 2. Report the still's count and each frame's.
+- 192x192 transparent frames, the stills' 14 colours only, binary alpha, no holes, no stray pixels, nothing touching the
+  canvas edge. A planted foot nearer the camera than in the still may sit up to 3 px below row 160 (se RF's target
+  reaches 162.4); report each frame's lowest row.
+- Judge boards at 4x with the game's 1 px dark sel-out added (the packer adds it; use the selout function in
+  D:\dev\new-mech-rpg\docs\art\moba\touchup\touchup_machine.py), with the still beside them, then a 5x zoom of the legs
+  of every frame: look at every disc, knee and foot.
+
+Output in run1: walk\frames\<view>_f0.png to <view>_f7.png for e, se and ne (raw, no outline, like the stills), a preview
+gif per view (125 ms, loop), footprint pictures, board.png (per view: the still, then your 8 frames, with sel-out, at
+4x), legs_zoom.png, checks.txt, footlock.json, and REPORT.txt (under 30 lines): tokens if known, the foot names you used,
+the foot-lock spreads, target errors, the seams result, upper-body match, speck counts, lowest rows, and by eye: does each
+view read as this heavy hippo walking forward one foot at a time, legs like the still, discs and plates whole, feet flat?

@@ -1,0 +1,49 @@
+{
+  "id": "jellyfish",
+  "source_sha256": "ee41e3e07e10ce85e1750ca9324a3de7fa380bb5cb5301a81203d5d2e8473268",
+  "source_triangles": 495512,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8624745245054147,
+  "blender_bounds_min": [
+    -4.602093696594238,
+    -1.472880482673645,
+    0.11808797717094421
+  ],
+  "blender_bounds_max": [
+    -1.4009169340133667,
+    1.476852297782898,
+    3.0167243480682373
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

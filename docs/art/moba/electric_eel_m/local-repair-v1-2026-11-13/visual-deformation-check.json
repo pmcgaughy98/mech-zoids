@@ -1,0 +1,132 @@
+{
+  "tested_sha256": "4d73849a9bfd3c02c8ce70f8ecf1844b1d57f6084f0e9f1cbb5582e7d187431c",
+  "joint_count": 56,
+  "poses": [
+    {
+      "label": "body-root",
+      "bone": "Bone_000",
+      "degrees": 6,
+      "max_displacement_m": 0.667792541168377,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "body-mid",
+      "bone": "Bone_004",
+      "degrees": 8,
+      "max_displacement_m": 0.743172192168068,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "body-rear",
+      "bone": "Bone_017",
+      "degrees": -8,
+      "max_displacement_m": 0.44799180494642976,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "tail-root",
+      "bone": "Bone_023",
+      "degrees": 8,
+      "max_displacement_m": 0.24010881436766088,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "fork-right",
+      "bone": "Bone_033",
+      "degrees": 8,
+      "max_displacement_m": 0.16440257509730477,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "fork-left",
+      "bone": "Bone_037",
+      "degrees": -8,
+      "max_displacement_m": 0.16817674471251123,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "removed-upper-root",
+      "bone": "Bone_048",
+      "degrees": 8,
+      "max_displacement_m": 0.0,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "removed-upper-mid",
+      "bone": "Bone_047",
+      "degrees": 12,
+      "max_displacement_m": 0.0,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "removed-upper-tip",
+      "bone": "Bone_046",
+      "degrees": 12,
+      "max_displacement_m": 0.0,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "head-right",
+      "bone": "Bone_049",
+      "degrees": 6,
+      "max_displacement_m": 0.19716566814389463,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "head-left",
+      "bone": "Bone_038",
+      "degrees": -6,
+      "max_displacement_m": 0.19847355990899035,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "fin-right",
+      "bone": "Bone_053",
+      "degrees": 10,
+      "max_displacement_m": 0.164459897975965,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "fin-left",
+      "bone": "Bone_055",
+      "degrees": -10,
+      "max_displacement_m": 0.1780342863505043,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "dorsal-rear",
+      "bone": "Bone_010",
+      "degrees": 6,
+      "max_displacement_m": 0.15131301230675628,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "dorsal-mid",
+      "bone": "Bone_022",
+      "degrees": 6,
+      "max_displacement_m": 0.08904170743054764,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "dorsal-front",
+      "bone": "Bone_032",
+      "degrees": -6,
+      "max_displacement_m": 0.15446237113670433,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "dorsal-fore",
+      "bone": "Bone_042",
+      "degrees": 6,
+      "max_displacement_m": 0.1127919017418958,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "head-roof",
+      "bone": "Bone_051",
+      "degrees": -6,
+      "max_displacement_m": 0.04941608315977282,
+      "coincident_surface_gap_m": 0.0
+    }
+  ]
+}

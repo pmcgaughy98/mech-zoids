@@ -1,0 +1,49 @@
+{
+  "id": "falcon",
+  "source_sha256": "34d77973b951d096ff136061a7c820378e09fdc4c8b97c402b2989c0ed509947",
+  "source_triangles": 500000,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.875010613480797,
+  "blender_bounds_min": [
+    -4.09282112121582,
+    -1.6009408235549927,
+    0.11989813297986984
+  ],
+  "blender_bounds_max": [
+    -1.906985878944397,
+    1.5990204811096191,
+    2.3225536346435547
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

@@ -1,0 +1,74 @@
+You are redrawing pixel-art animation frames for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\codex-backviews.
+Read anything under D:\dev\new-mech-rpg\docs\art\moba. Do not write anywhere else, do not touch assets, art or
+tools, and do not commit.
+
+Why: Preston, the game's owner, looked at the fennec fox mech's back views and said "too many cutoffs and
+misproportions. mainly backviews." That is the walk and the sand kick in the straight back view (n; frames back_f<i> in
+anim\codex-set-a) and the three-quarter back view (ne; frames ne_f<i> in anim\codex-set-c). A Retro Diffusion redo
+(anim\retro) was rejected: "Nvm retry with codex". This job redraws those four rows: walk n, walk ne, sand_kick n,
+sand_kick ne. You made the current rows: read your briefs, REPORT.txt and scripts in codex-set-a and codex-set-c, then
+look at the current frames with the sel-out outline at 4x next to the stills to see the problems.
+
+What went wrong last time, so do not repeat it:
+- Cutoffs came from pasting native parts of the approved stills (head, ears, haunches, tail pieces, joint discs) onto
+  the generated bodies. Where a pasted part and the body did not line up, frames show straight cut edges, parts ending
+  abruptly, leftover generated pieces beside a pasted part, see-through gaps and seams. This time do NOT paste still
+  parts onto generated frames. Each frame is one whole drawing: the generated cell, scaled to the stills' pixel scale,
+  snapped to the 15 colours and cleaned by hand pixel by pixel. Fix drift by redrawing pixels, never by pasting.
+- Misproportions: parts changed size between frames and against the stills (tail too long in ne, body too narrow or too
+  squat in the back view, legs stubby or stretched). Every frame keeps the still's proportions: ear size, head width,
+  body width, leg length and thickness, tail segment count and length, within 2 px. Measure them on the stills and on
+  every frame and report the numbers.
+
+The creature is the fennec fox mech (fennec_s, take B). Approved stills, 160x160, feet on row 140, in
+D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\views\: s.png (front), e.png (side facing right), n.png (back); se, ne,
+sw, w, nw also exist. The approved pose is SEATED on its haunches, front legs straight, the straight segmented tail lying
+on the ground behind it. Keep the design exactly: the violet armoured body and head, the huge pointed ears with cream
+insides, the half-closed glowing teal eyes (calm, sleepy, uncanny), the cream muzzle, chest and tail tip, the grey joint
+discs and grey foot pads, the straight segmented tail with the gold-cream tip, the same 15 colours (#141218 #211e27
+#2e1a6e #3d3a44 #6a3cc8 #9d9ba2 #a46bff #b8923a #d6d6dc #e0c8ff #f0d27a #3fe8b0 #c8fff0 #fff4d6 #f6fffb), the dark outline
+and the chunky pixel size. Only the pose changes. Never redesign: no new parts, no gloss, no fur, no longer or thinner
+limbs, no bigger head. The tail NEVER curls (Preston: "no curved tails as they are hard to rotate"); it can lift, swing
+and angle but stays a straight line of segments. The eyes stay half-closed and glowing except where a move says
+otherwise. It is a robot: no realistic animal anatomy beyond what the stills show.
+
+Approved stills, updated today with a little detail ink (use these, not views_pre_ink): n.png and ne.png in
+D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\views, 160x160, feet on row 140, placed at +16 x and +20 y in the 192 canvas. Sizes: n 44x77 px (x 58-101, y 64-140);
+ne 58x75 px (x 51-108, y 66-140). Copies with 6x enlargements on magenta are in codex-backviews\refs; attach refs\n_6x.png then
+refs\ne_6x.png, in that order. The other views (s, se, e) are in the same folder if you need to see the design.
+
+Method: one sheet per move from your image tool, 2 rows. Row 1 is the straight back view, exactly the angle of the
+first attached sprite (we see its back and the backs of both ears, no face). Row 2 is the three-quarter back view
+facing up and to the right, exactly the angle of the second attached sprite. Each column is one moment in both rows.
+Same size and the same ground line in every cell, generous gutters, nothing crossing a cell edge, no labels, no grid
+lines, transparent or flat magenta background. Generate exactly ONE image per move (two images in all). Never make a
+second image or a redo; if one fails, say so in the report and go on. Keep each move's prompt in
+codex-backviews\prompts\<move>.txt.
+- walk: 8 columns, the standing trot on all four short legs, NOT seated, looping, preview 100 ms a frame. Keep the
+  beats of anim\codex-set-a\prompts\walk.txt (diagonal pairs: f0 pair A planted and pair B lifting, through f7 pair
+  A landing into the loop) and match the side trot already drawn (anim\codex-set-a\walk\frames\side_f0-7.png) beat
+  for beat. Planted feet keep their coordinates (no sliding), as in codex-set-a's gait_finish.py. Each lifted foot
+  clears the ground by 2-4 px. Head steady, ears upright, straight tail held back, slightly raised, tiny sway.
+- sand_kick: 6 columns, the beats of anim\codex-set-a\prompts\sand_kick.txt: f0 seated still, f1 rises onto all
+  fours and crouches, f2 both front paws dig, f3 both front paws fling up and forward as the release while the hind
+  feet stay planted, f4 follow-through settling, f5 seated still. From behind the front paws are mostly hidden by the
+  body: show the dig and the fling through the head dipping and the shoulders and haunches working, and the paws where
+  the angle shows them. No sand. Preview ms 260, 130, 130, 90, 160, 280.
+
+Output, in codex-backviews\<move>:
+- frames\back_f<i>.png and ne_f<i>.png on 192x192 transparent canvases, at the stills' pixel scale (never resize the
+  design per frame), placed like the still (+16, +20), feet on row 160, nothing below row 160, nothing touching the
+  canvas edge.
+- sand_kick frames 0 and 5 must be byte-identical to the approved still at (+16, +20) (IoU 1.0); those two frames are
+  the only place the still itself is used. The walk does not start on the still.
+- Snap every pixel to the 15 colours; binary alpha; a dark outline like the stills; no anti-aliasing, no stray pixels,
+  no enclosed holes, no see-through seams, no straight cut edges, no part ending abruptly. The tail stays straight.
+- The game adds a one-texel sel-out outline at pack time (D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\selout_rhino.py, function selout, OUTLINE #141218). Judge every
+  board with it applied, at 4x or more.
+- Keep sheet_raw.png, grid.json (cut edges, scale, each frame's placement), checks.txt, a preview gif per view with the
+  listed timing, and board.png: per view the approved still leftmost, the current live row (codex-set-a back_f or
+  codex-set-c ne_f) and your new row under it, sel-out on, 4x.
+Also write codex-backviews\REPORT.txt (under 40 lines): tokens used if known, each sheet's size and hash, the checks
+and their results, the proportion numbers per frame against the stills, and by eye per move and view: whole parts, no
+cutoffs? proportions held? the angle held in every cell? the move as asked? Look at your boards before finishing and
+fix anything still cut off or out of proportion.

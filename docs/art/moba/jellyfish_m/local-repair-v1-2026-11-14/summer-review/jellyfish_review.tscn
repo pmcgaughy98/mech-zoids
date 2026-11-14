@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://vodtq8enko4a"]
+
+[ext_resource type="Script" uid="uid://bfyi3x1wloa8k" path="res://jellyfish_review.gd" id="1_atk0t"]
+[ext_resource type="PackedScene" uid="uid://g5kwswh7l60k" path="res://assets/original-source.glb" id="2_npglm"]
+[ext_resource type="PackedScene" uid="uid://c4lucep7bhi31" path="res://assets/downloaded-rig.glb" id="3_oe2pf"]
+[ext_resource type="PackedScene" uid="uid://cavpfemp1f133" path="res://assets/repaired-jellyfish.glb" id="4_i6y3d"]
+
+[sub_resource type="Environment" id="Environment_uiqro"]
+background_mode = 1
+background_color = Color(0.035, 0.045, 0.065, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.74, 0.82, 1, 1)
+ambient_light_energy = 0.8
+tonemap_mode = 2
+
+[node name="JellyfishReview" type="Node3D" unique_id=424361343]
+script = ExtResource("1_atk0t")
+
+[node name="OriginalSource" type="Node3D" parent="." unique_id=184052581 instance=ExtResource("2_npglm")]
+transform = Transform3D(2.1291704, 0, 0, 0, 2.1291704, 0, 0, 0, 2.1291704, -2.7032747, 0, -0.0018854141)
+
+[node name="OriginalSourceLabel" type="Label3D" parent="." unique_id=948702666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, 2.05, 0)
+pixel_size = 0.0019
+billboard = 1
+no_depth_test = true
+text = "INTACT GENERATED SOURCE
+Before remesh"
+font_size = 40
+
+[node name="DownloadedRig" type="Node3D" parent="." unique_id=1128119421 instance=ExtResource("3_oe2pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9604645e-08, -3.727546e-08, 0)
+
+[node name="DownloadedRigLabel" type="Label3D" parent="." unique_id=524953456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05, 0)
+pixel_size = 0.0019
+billboard = 1
+no_depth_test = true
+text = "DOWNLOADED RIG
+Before triangle cleanup"
+font_size = 40
+
+[node name="RepairedJellyfish" type="Node3D" parent="." unique_id=1209403598 instance=ExtResource("4_i6y3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, -3.727546e-08, 0)
+
+[node name="RepairedJellyfishLabel" type="Label3D" parent="." unique_id=1072795466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 2.05, 0)
+pixel_size = 0.0019
+billboard = 1
+no_depth_test = true
+text = "LOCAL REPAIR
+Original 49-joint rig and weights"
+font_size = 40
+
+[node name="StudioEnvironment" type="WorldEnvironment" parent="." unique_id=1618149907]
+environment = SubResource("Environment_uiqro")
+
+[node name="KeyLight" type="DirectionalLight3D" parent="." unique_id=1321705466]
+transform = Transform3D(0.81915206, 0.4055798, -0.4055798, 0, 0.70710677, 0.70710677, 0.57357645, -0.579228, 0.579228, 0, 0, 0)
+light_color = Color(1, 0.91, 0.76, 1)
+light_energy = 1.7
+
+[node name="FillLight" type="DirectionalLight3D" parent="." unique_id=1020321111]
+transform = Transform3D(-0.81915206, -0.24240388, 0.5198368, 0, 0.90630776, 0.42261827, -0.57357645, 0.34618863, -0.74240386, 0, 0, 0)
+light_color = Color(0.65, 0.8, 1, 1)
+light_energy = 1.1
+
+[node name="ReviewCamera" type="Camera3D" parent="." unique_id=42933622]
+transform = Transform3D(1, 0, 0, 0, 0.9866593, 0.16279876, 0, -0.16279876, 0.9866593, 0, 2.6, 10)
+projection = 1
+current = true
+size = 6.2

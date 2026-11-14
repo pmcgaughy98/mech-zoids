@@ -1,0 +1,121 @@
+{
+  "part_topology": {
+    "Body_static": {
+      "vertices": 40701,
+      "faces": 80691,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0
+    },
+    "ShoulderArm_R": {
+      "vertices": 10261,
+      "faces": 19799,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0
+    },
+    "ShoulderSocket_R": {
+      "vertices": 266,
+      "faces": 288,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0
+    }
+  },
+  "poses": [
+    {
+      "angle_degrees": 0,
+      "arm_ground_min_source_z": 4.60943701909855e-05,
+      "arm_height_max_source_z": 0.6175803542137146,
+      "arm_matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "angle_degrees": -6,
+      "arm_ground_min_source_z": 0.017009709030389786,
+      "arm_height_max_source_z": 0.6203150749206543,
+      "arm_matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9945219159126282,
+          0.10452846437692642,
+          -0.052346400916576385
+        ],
+        [
+          0.0,
+          -0.10452846437692642,
+          0.9945219159126282,
+          0.0011711150873452425
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "angle_degrees": -12,
+      "arm_ground_min_source_z": 0.03861147537827492,
+      "arm_height_max_source_z": 0.6220906972885132,
+      "arm_matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9781476259231567,
+          0.20791170001029968,
+          -0.1042836382985115
+        ],
+        [
+          0.0,
+          -0.20791170001029968,
+          0.9781476259231567,
+          0.0078075118362903595
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "note": "Source units at approx 0.719 m tall; review applies same 2m normalization. Arm moved by rigid matrix only; collision-free range not established."
+}

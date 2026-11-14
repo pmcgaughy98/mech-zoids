@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "2a7637fe657d1140077c80790a302c16982d1e568a3a07c8450c4ad2e1487789",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.1063829787234043,
+  "lowest_body_row_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "cobra_front.png",
+      "source_box": [
+        37,
+        76,
+        699,
+        434
+      ],
+      "source_dimensions": [
+        662,
+        358
+      ],
+      "output_box": [
+        146,
+        540,
+        878,
+        936
+      ]
+    },
+    "left": {
+      "file": "cobra_left.png",
+      "source_box": [
+        745,
+        77,
+        1497,
+        435
+      ],
+      "source_dimensions": [
+        752,
+        358
+      ],
+      "output_box": [
+        96,
+        540,
+        928,
+        936
+      ]
+    },
+    "back": {
+      "file": "cobra_back.png",
+      "source_box": [
+        40,
+        582,
+        700,
+        958
+      ],
+      "source_dimensions": [
+        660,
+        376
+      ],
+      "output_box": [
+        147,
+        520,
+        877,
+        936
+      ]
+    },
+    "right": {
+      "file": "cobra_right.png",
+      "source_box": [
+        777,
+        587,
+        1465,
+        961
+      ],
+      "source_dimensions": [
+        688,
+        374
+      ],
+      "output_box": [
+        131,
+        522,
+        892,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.047872340425531915
+}

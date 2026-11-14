@@ -15,7 +15,7 @@ func _ready() -> void:
 	logo.position = Vector2(60, 34)
 	add_child(logo)
 	add_child(Slot.text("working title", Vector2(128, 76), Color(1, 1, 1, 0.5)))
-	choices = (["Continue"] if Run.has_save() else []) + ["New Game", "Quit"]
+	choices = (["Continue"] if Run.has_save() else []) + ["New Game", "Mech Workshop", "Quit"]
 	for i in choices.size():
 		var l := Slot.text("", Vector2(130, 100 + i * 12))
 		rows.append(l)
@@ -47,6 +47,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _pick(i: int) -> void:
 	match choices[i]:
+		"Mech Workshop":
+			get_tree().change_scene_to_file("res://scenes/mech_catalog.tscn")
 		"Quit":
 			get_tree().quit()
 		"Continue":

@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "bf3a346b70c136738b4634782f3c5a4a98e9be6d0ab15b751bf900ab3ff434c3",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.4149659863945578,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "red_ranger_front.png",
+      "source_box": [
+        152,
+        6,
+        498,
+        581
+      ],
+      "source_dimensions": [
+        346,
+        575
+      ],
+      "output_box": [
+        267,
+        122,
+        757,
+        936
+      ]
+    },
+    "left": {
+      "file": "red_ranger_left.png",
+      "source_box": [
+        863,
+        7,
+        979,
+        582
+      ],
+      "source_dimensions": [
+        116,
+        575
+      ],
+      "output_box": [
+        430,
+        122,
+        594,
+        936
+      ]
+    },
+    "back": {
+      "file": "red_ranger_back.png",
+      "source_box": [
+        149,
+        628,
+        504,
+        1216
+      ],
+      "source_dimensions": [
+        355,
+        588
+      ],
+      "output_box": [
+        261,
+        104,
+        763,
+        936
+      ]
+    },
+    "right": {
+      "file": "red_ranger_right.png",
+      "source_box": [
+        866,
+        628,
+        980,
+        1216
+      ],
+      "source_dimensions": [
+        114,
+        588
+      ],
+      "output_box": [
+        431,
+        104,
+        592,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.022108843537414966
+}

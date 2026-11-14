@@ -1,0 +1,363 @@
+{
+  "raw_sha256": "bc955c2ef620f87adfe0d5aeb9cbfa52f44c6100e3719eaefbfe802cb262f7e0",
+  "raw_size": [
+    1774,
+    887
+  ],
+  "heads": {
+    "e": {
+      "raw": [
+        [
+          261,
+          109
+        ],
+        [
+          229.5,
+          168
+        ]
+      ],
+      "still": [
+        [
+          139,
+          98
+        ],
+        [
+          127.2,
+          123.4
+        ]
+      ],
+      "raw_length": 66.88235940814289,
+      "still_length": 28.00714194629649,
+      "factor": 0.4187523017151012
+    },
+    "se": {
+      "raw": [
+        [
+          236,
+          130
+        ],
+        [
+          197.5,
+          181
+        ]
+      ],
+      "still": [
+        [
+          128,
+          112
+        ],
+        [
+          113.5,
+          132.75
+        ]
+      ],
+      "raw_length": 63.90031298827886,
+      "still_length": 25.31427462914946,
+      "factor": 0.3961525921444676
+    },
+    "ne": {
+      "raw": [
+        [
+          233,
+          46
+        ],
+        [
+          215,
+          138
+        ]
+      ],
+      "still": [
+        [
+          127,
+          58
+        ],
+        [
+          116,
+          99
+        ]
+      ],
+      "raw_length": 93.74433316206373,
+      "still_length": 42.44997055358225,
+      "factor": 0.4528270576120629
+    }
+  },
+  "median_factor": 0.4187523017151012,
+  "actual_xy_scale": [
+    0.41882750845546785,
+    0.4182638105975197
+  ],
+  "finished_size": [
+    743,
+    371
+  ],
+  "rows": {
+    "e": {
+      "width": 103,
+      "height": 74,
+      "still_wh": [
+        103,
+        75
+      ],
+      "head_length_scaled": 28.00714194629649,
+      "head_error": 0.0
+    },
+    "se": {
+      "width": 90,
+      "height": 84,
+      "still_wh": [
+        85,
+        83
+      ],
+      "head_length_scaled": 26.75840314415715,
+      "head_error": 0.05704799114981429
+    },
+    "ne": {
+      "width": 87,
+      "height": 87,
+      "still_wh": [
+        83,
+        103
+      ],
+      "head_length_scaled": 39.255655284361474,
+      "head_error": -0.07524893957673695
+    }
+  },
+  "eye_restored": [
+    "e_f0 @(96,70) local cell",
+    "e_f1 @(95,79) local cell",
+    "e_f2 @(92,55) local cell",
+    "e_f3 @(90,37) local cell",
+    "e_f4 @(94,81) local cell",
+    "e_f5 @(93,75) local cell",
+    "se_f0 @(82,74) local cell",
+    "se_f1 @(81,77) local cell",
+    "se_f2 @(81,51) local cell",
+    "se_f3 @(75,32) local cell",
+    "se_f4 @(83,78) local cell",
+    "se_f5 @(82,72) local cell"
+  ],
+  "discarded_tiny_alpha": {
+    "e0": 0,
+    "e1": 0,
+    "e2": 1,
+    "e3": 0,
+    "e4": 0,
+    "e5": 0,
+    "se0": 0,
+    "se1": 0,
+    "se2": 0,
+    "se3": 10,
+    "se4": 0,
+    "se5": 0,
+    "ne0": 0,
+    "ne1": 0,
+    "ne2": 0,
+    "ne3": 0,
+    "ne4": 0,
+    "ne5": 0
+  },
+  "despeckle": {
+    "e0": {
+      "before": 220,
+      "after": 220,
+      "passes": 0
+    },
+    "e1": {
+      "before": 271,
+      "after": 271,
+      "passes": 0
+    },
+    "e2": {
+      "before": 293,
+      "after": 293,
+      "passes": 0
+    },
+    "e3": {
+      "before": 279,
+      "after": 279,
+      "passes": 0
+    },
+    "e4": {
+      "before": 275,
+      "after": 275,
+      "passes": 0
+    },
+    "e5": {
+      "before": 246,
+      "after": 246,
+      "passes": 0
+    },
+    "se0": {
+      "before": 332,
+      "after": 332,
+      "passes": 0
+    },
+    "se1": {
+      "before": 356,
+      "after": 356,
+      "passes": 0
+    },
+    "se2": {
+      "before": 306,
+      "after": 306,
+      "passes": 0
+    },
+    "se3": {
+      "before": 291,
+      "after": 291,
+      "passes": 0
+    },
+    "se4": {
+      "before": 334,
+      "after": 334,
+      "passes": 0
+    },
+    "se5": {
+      "before": 335,
+      "after": 335,
+      "passes": 0
+    },
+    "ne0": {
+      "before": 308,
+      "after": 308,
+      "passes": 0
+    },
+    "ne1": {
+      "before": 265,
+      "after": 265,
+      "passes": 0
+    },
+    "ne2": {
+      "before": 299,
+      "after": 299,
+      "passes": 0
+    },
+    "ne3": {
+      "before": 315,
+      "after": 315,
+      "passes": 0
+    },
+    "ne4": {
+      "before": 286,
+      "after": 286,
+      "passes": 0
+    },
+    "ne5": {
+      "before": 298,
+      "after": 298,
+      "passes": 0
+    }
+  },
+  "ink": {
+    "e0": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.0917048770320967
+    },
+    "e1": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08686257562662057
+    },
+    "e2": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.09242957746478873
+    },
+    "e3": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08457609805924413
+    },
+    "e4": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.0893709327548807
+    },
+    "e5": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08769633507853403
+    },
+    "se0": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.07774699907663897
+    },
+    "se1": {
+      "eligible": 5,
+      "added": 0,
+      "share": 0.08944723618090453
+    },
+    "se2": {
+      "eligible": 8,
+      "added": 0,
+      "share": 0.08941721018304229
+    },
+    "se3": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08609958506224066
+    },
+    "se4": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08155457108336689
+    },
+    "se5": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08738664468260511
+    },
+    "ne0": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08013589128697042
+    },
+    "ne1": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08170006606474345
+    },
+    "ne2": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08154066789592297
+    },
+    "ne3": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.07309644670050762
+    },
+    "ne4": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08037508372404555
+    },
+    "ne5": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08135810377962845
+    }
+  },
+  "closed_pinholes": {
+    "e0": 0,
+    "e1": 0,
+    "e2": 0,
+    "e3": 2,
+    "e4": 0,
+    "e5": 0,
+    "se0": 0,
+    "se1": 0,
+    "se2": 1,
+    "se3": 0,
+    "se4": 0,
+    "se5": 0,
+    "ne0": 0,
+    "ne1": 1,
+    "ne2": 1,
+    "ne3": 0,
+    "ne4": 0,
+    "ne5": 0
+  }
+}

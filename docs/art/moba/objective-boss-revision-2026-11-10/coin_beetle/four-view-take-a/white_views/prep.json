@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "aefbc3438d579eff25ad7cac77227dc6e0e2b8754cfad40e33572814a592aab6",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.1834992887624467,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "coin_beetle_front.png",
+      "source_box": [
+        35,
+        20,
+        738,
+        482
+      ],
+      "source_dimensions": [
+        703,
+        462
+      ],
+      "output_box": [
+        96,
+        389,
+        928,
+        936
+      ]
+    },
+    "left": {
+      "file": "coin_beetle_left.png",
+      "source_box": [
+        779,
+        33,
+        1459,
+        478
+      ],
+      "source_dimensions": [
+        680,
+        445
+      ],
+      "output_box": [
+        109,
+        409,
+        914,
+        936
+      ]
+    },
+    "back": {
+      "file": "coin_beetle_back.png",
+      "source_box": [
+        34,
+        536,
+        737,
+        996
+      ],
+      "source_dimensions": [
+        703,
+        460
+      ],
+      "output_box": [
+        96,
+        392,
+        928,
+        936
+      ]
+    },
+    "right": {
+      "file": "coin_beetle_right.png",
+      "source_box": [
+        799,
+        540,
+        1488,
+        990
+      ],
+      "source_dimensions": [
+        689,
+        450
+      ],
+      "output_box": [
+        104,
+        403,
+        919,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.0367965367965368
+}

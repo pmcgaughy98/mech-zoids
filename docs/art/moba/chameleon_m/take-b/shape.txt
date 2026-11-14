@@ -1,0 +1,11 @@
+Shape estimates are manual projected anatomical bounds on the finished sprites, +/-2 px; body height excludes legs and tail, head length excludes the neck, turret width is its projected diameter.
+East: tail coil height 39 px / torso height 32 px = 1.219.
+East: eye turret width 14 px / wedge head length 29 px = 0.483.
+East height 59 px / south height 65 px = 0.908; same-height requirement FAIL.
+South: span across both eye turrets 38 px / central head width 26 px = 1.462.
+South tail appears viewer-left only; PASS.
+Rear glowing lens pixels: ne 0, nw 0; PASS.
+Feet planted / visible (occluded feet cannot be judged): e 4/4, w 4/4, se 3/3, sw 3/3, s 2/2, n 2/2, ne 3/3, nw 3/3. None visibly lifted; four planted anatomical feet in EVERY view cannot be verified through occlusion.
+Feet are broad steel toe blocks; split clamp design only partial. Rear heels look like camera-facing toes, FAIL.
+Back heights n63/s65=0.969; ne62/se62=1.000 and nw62/sw62=1.000. No rear face. North camera somewhat elevated, ambiguous.
+SE/SW head turned three-quarter, far lens hidden (steel far turret edge only); PASS.

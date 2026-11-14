@@ -1,0 +1,36 @@
+{
+  "reference": "v2/v2_fore.blend handmade fists",
+  "method": "Uniformly enlarge the downward fists to match the previous bounding-envelope volume. Preserve aspect ratios and floor contact; retain recessed wrist bearings.",
+  "hands": {
+    "L": {
+      "before_min": [
+        0.4412583112716675,
+        -0.6919999718666077,
+        0.0
+      ],
+      "before_max": [
+        1.0405000448226929,
+        -0.3799999952316284,
+        0.38499999046325684
+      ],
+      "uniform_scale": 1.173769405797041,
+      "previous_envelope_volume": 0.11640340608032212,
+      "matched_envelope_volume": 0.1164034060803221
+    },
+    "R": {
+      "before_min": [
+        -1.0405000448226929,
+        -0.6919999718666077,
+        0.0
+      ],
+      "before_max": [
+        -0.4412583112716675,
+        -0.3799999952316284,
+        0.38499999046325684
+      ],
+      "uniform_scale": 1.173769405797041,
+      "previous_envelope_volume": 0.11640340608032212,
+      "matched_envelope_volume": 0.1164034060803221
+    }
+  }
+}

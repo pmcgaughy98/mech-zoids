@@ -1,0 +1,20 @@
+{
+  "walk": {
+    "size": [
+      1914,
+      822
+    ],
+    "sha256": "4ccd96e61222e43a1942ac8fe13305e96252927b5eb5d8a08d3310a1c47d6f56",
+    "grid_clean": true,
+    "row_factors": {
+      "front": 0.32954102182865386,
+      "side": 0.40234375,
+      "back": 0.30825739964255383
+    },
+    "issues": [
+      "side_f2: ground offset +7 exceeds 3 px; left at y=153",
+      "back_f2: ground offset +6 exceeds 3 px; left at y=154",
+      "back_f5: ground offset +6 exceeds 3 px; left at y=154"
+    ]
+  }
+}

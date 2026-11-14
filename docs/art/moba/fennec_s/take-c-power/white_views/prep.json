@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "5eaa8f2a2b8aa56c4d6a89af7e8e89923ee21ce8152581e567e34e65a6ee5007",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.239940387481371,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "fennec_front.png",
+      "source_box": [
+        105,
+        41,
+        425,
+        552
+      ],
+      "source_dimensions": [
+        320,
+        511
+      ],
+      "output_box": [
+        313,
+        302,
+        710,
+        936
+      ]
+    },
+    "left": {
+      "file": "fennec_left.png",
+      "source_box": [
+        562,
+        44,
+        1229,
+        552
+      ],
+      "source_dimensions": [
+        667,
+        508
+      ],
+      "output_box": [
+        98,
+        306,
+        925,
+        936
+      ]
+    },
+    "back": {
+      "file": "fennec_back.png",
+      "source_box": [
+        105,
+        638,
+        411,
+        1146
+      ],
+      "source_dimensions": [
+        306,
+        508
+      ],
+      "output_box": [
+        322,
+        306,
+        701,
+        936
+      ]
+    },
+    "right": {
+      "file": "fennec_right.png",
+      "source_box": [
+        526,
+        637,
+        1197,
+        1136
+      ],
+      "source_dimensions": [
+        671,
+        499
+      ],
+      "output_box": [
+        96,
+        317,
+        928,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.023483365949119372
+}

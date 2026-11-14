@@ -1,0 +1,73 @@
+{
+  "idle": {
+    "frames": 15,
+    "missing_red_front_side": [
+      "front_f2",
+      "front_f3",
+      "front_f4",
+      "side_f2"
+    ],
+    "red_pixels": 10,
+    "glint_pixels": 0,
+    "bottoms": [
+      160
+    ],
+    "gif_timing_verified": true,
+    "raw_hash_verified": true
+  },
+  "walk": {
+    "frames": 21,
+    "missing_red_front_side": [
+      "front_f5",
+      "side_f0",
+      "side_f1",
+      "side_f3",
+      "side_f6"
+    ],
+    "red_pixels": 13,
+    "glint_pixels": 0,
+    "bottoms": [
+      160
+    ],
+    "gif_timing_verified": true,
+    "raw_hash_verified": true
+  },
+  "horn-jab": {
+    "frames": 18,
+    "missing_red_front_side": [
+      "front_f1",
+      "front_f2",
+      "side_f1"
+    ],
+    "red_pixels": 24,
+    "glint_pixels": 0,
+    "bottoms": [
+      160
+    ],
+    "gif_timing_verified": true,
+    "raw_hash_verified": true
+  },
+  "horn-toss": {
+    "frames": 21,
+    "missing_red_front_side": [
+      "front_f0",
+      "front_f2",
+      "front_f3",
+      "front_f4",
+      "front_f5",
+      "side_f0",
+      "side_f1",
+      "side_f2",
+      "side_f5",
+      "side_f6"
+    ],
+    "red_pixels": 10,
+    "glint_pixels": 0,
+    "bottoms": [
+      156,
+      160
+    ],
+    "gif_timing_verified": true,
+    "raw_hash_verified": true
+  }
+}

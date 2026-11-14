@@ -1,0 +1,9 @@
+camera at (0.0, 4.45, 5.629165), fov 60, looking at (0.0, 1.2, 0.0)
+drone 0.736 m tall spans 55.3 px on screen at 1280x720 (1.20 px per texel)
+voxel glb imported material: shading_mode 0 (0 = unshaded), texture_filter 0 (0 or 2 = nearest)
+lite: scaled x0.554 to 0.736 m tall; AnimationPlayer found
+  animation 'hover_idle' length 3.00 s, 10 tracks, loop_mode 0
+lite anim t=0.00 bounds centre (-0.049467, 0.528, -0.049467) size (0.970045, 0.736, 0.970045)
+lite anim t=0.75 bounds centre (-0.032111, 0.573938, -0.050489) size (0.982508, 0.749752, 1.027259)
+lite anim t=1.50 bounds centre (-0.049467, 0.529321, -0.049467) size (0.970045, 0.74834, 0.970045)
+lite anim t=2.25 bounds centre (-0.048148, 0.56616, -0.037076) size (1.007685, 0.750006, 0.95431)

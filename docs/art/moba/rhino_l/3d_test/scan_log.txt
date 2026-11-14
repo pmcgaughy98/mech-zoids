@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\dev\new-mech-rpg\docs\art\moba\rhino_l\3d_test\rhino_cam30.py", line 332, in <module>
+    scan()
+  File "D:\dev\new-mech-rpg\docs\art\moba\rhino_l\3d_test\rhino_cam30.py", line 157, in scan
+    s, dx, dy = fit(canvas(col, row), v["mask"], range(-14, 15), range(-50, 11))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dev\new-mech-rpg\docs\art\moba\rhino_l\3d_test\rhino_cam30.py", line 105, in fit
+    inter = (w & mask).sum()
+             ~~^~~~~~
+ValueError: operands could not be broadcast together with shapes (190,192) (192,192) 

@@ -1,0 +1,127 @@
+{
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_fennec_remeshed_25k_20261108_character.glb",
+  "source_sha256": "4d24a78a3d63979264e78af1209109e0f6f3c3257d071731f7cdcd229407dde7",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\local-repair-v1-2026-11-13\\fennec-rigged-local-repair-v1.glb",
+  "output_sha256": "b9ab24f020ce2a83c78b122969a6f4880d0a0d3353ef6c54fe5206d54660f31f",
+  "before_triangles": 23772,
+  "final_triangles": 23722,
+  "joint_count": 44,
+  "removed_malformed_triangles": 52,
+  "removed_face_ids": [
+    286,
+    1917,
+    2179,
+    2344,
+    2347,
+    2537,
+    2569,
+    2916,
+    3214,
+    3339,
+    3688,
+    4552,
+    4916,
+    5152,
+    5255,
+    5718,
+    5998,
+    6277,
+    6327,
+    7733,
+    9219,
+    10017,
+    10272,
+    10504,
+    10565,
+    10579,
+    10968,
+    11657,
+    11827,
+    12037,
+    12154,
+    12642,
+    13495,
+    13736,
+    14003,
+    14006,
+    14007,
+    14772,
+    14930,
+    15474,
+    15659,
+    16012,
+    16153,
+    16579,
+    17925,
+    18771,
+    19734,
+    21337,
+    21972,
+    22363,
+    23426,
+    23671
+  ],
+  "holes_closed": [
+    {
+      "triangle": [
+        29511,
+        29509,
+        29510
+      ],
+      "bounds": [
+        [
+          0.05508112907409668,
+          0.5456914901733398,
+          -0.6886569857597351
+        ],
+        [
+          0.05701716989278793,
+          0.5525488257408142,
+          -0.6756327748298645
+        ]
+      ],
+      "normal": [
+        0.8668931722640991,
+        0.4747856557369232,
+        -0.1519039422273636
+      ],
+      "normal_alignment": 0.6851924657821655,
+      "uv_perimeter": 0.005147027084603906
+    },
+    {
+      "triangle": [
+        7189,
+        7190,
+        7197
+      ],
+      "bounds": [
+        [
+          -0.1588621735572815,
+          0.9955559968948364,
+          0.8739275336265564
+        ],
+        [
+          -0.15430641174316406,
+          0.9993221163749695,
+          0.8757033944129944
+        ]
+      ],
+      "normal": [
+        -0.04364577308297157,
+        0.45941078662872314,
+        0.8871508836746216
+      ],
+      "normal_alignment": 0.8627656698226929,
+      "uv_perimeter": 0.002986920007970184
+    }
+  ],
+  "boundary_edges": 0,
+  "over_shared_edges": 0,
+  "protected_closed_contact_edges": [],
+  "contact_note": "No residual open or over-shared contacts after local cleanup.",
+  "collapsed_triangles": 0,
+  "healthy_main_body_source_faces_retained": 23720,
+  "all_original_vertex_attribute_rows_weights_materials_skeleton_rest_binds_preserved": true,
+  "new_geometric_vertices": 0,
+  "scope": "Local topology repair. Four legs, two ears, two eyes, one segmented tail and hip/shoulder mechanisms retained. Original vertex attributes, skin, 44-joint skeleton/rest/binds and textures preserved; no remesh or rerig."
+}

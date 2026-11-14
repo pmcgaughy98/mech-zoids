@@ -1,0 +1,104 @@
+{
+  "melee": {
+    "source_sha256": "3036c1312680e0303e791c503541295a1a94de74dbc9779758eab070af069a89",
+    "height_spread": 0.022058823529411766,
+    "views": {
+      "front": {
+        "size": [
+          806,
+          627
+        ],
+        "local_nonwhite_fraction": 0.6996
+      },
+      "left": {
+        "size": [
+          840,
+          624
+        ],
+        "local_nonwhite_fraction": 0.6896
+      },
+      "back": {
+        "size": [
+          808,
+          638
+        ],
+        "local_nonwhite_fraction": 0.6676
+      },
+      "right": {
+        "size": [
+          838,
+          635
+        ],
+        "local_nonwhite_fraction": 0.6985
+      }
+    }
+  },
+  "ranged": {
+    "source_sha256": "45e8ca80ef8420d64cae3150a907d015f09356c534d21d88a1125fc57ac8bc5e",
+    "height_spread": 0.005154639175257732,
+    "views": {
+      "front": {
+        "size": [
+          801,
+          605
+        ],
+        "local_nonwhite_fraction": 0.7026
+      },
+      "left": {
+        "size": [
+          838,
+          606
+        ],
+        "local_nonwhite_fraction": 0.6659
+      },
+      "back": {
+        "size": [
+          803,
+          608
+        ],
+        "local_nonwhite_fraction": 0.7055
+      },
+      "right": {
+        "size": [
+          840,
+          605
+        ],
+        "local_nonwhite_fraction": 0.6665
+      }
+    }
+  },
+  "siege": {
+    "source_sha256": "f607c706e5308326b40745d5e0d4ae65bc82c78ddab6f2f7de0d1088cb538a51",
+    "height_spread": 0.01580135440180587,
+    "views": {
+      "front": {
+        "size": [
+          751,
+          609
+        ],
+        "local_nonwhite_fraction": 0.7338
+      },
+      "left": {
+        "size": [
+          839,
+          605
+        ],
+        "local_nonwhite_fraction": 0.8149
+      },
+      "back": {
+        "size": [
+          755,
+          614
+        ],
+        "local_nonwhite_fraction": 0.7426
+      },
+      "right": {
+        "size": [
+          840,
+          611
+        ],
+        "local_nonwhite_fraction": 0.8134
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "original_body_geometry_uvs_normals_materials_unchanged": true,
+    "skeleton_unchanged": true,
+    "all_previous_hand_and_foot_geometry_weights_unchanged": true,
+    "new_accents_closed_bound_shells": true,
+    "finish_uvs_in_range": true,
+    "finish_image_packed": true,
+    "glb_skin_material_image_reimport": true
+  },
+  "original_parts_preserved": 38,
+  "new_parts": 4,
+  "atlas_dimensions": [
+    2304,
+    2304
+  ],
+  "bone_count": 34,
+  "source_sha256": "8a9ed545fe740d4b481ef26df009f7c5990f138881a79fb9491f2103b7407b3e"
+}

@@ -1,0 +1,422 @@
+{
+ "glb": "res://art/arena_models/hippo.glb",
+ "forward": "+Z",
+ "rest_height": 1.47,
+ "source_fps": 120,
+ "times": "seconds",
+ "loops": [
+  "Idle",
+  "Walk",
+  "Walk_Back",
+  "Strafe_Left",
+  "Strafe_Right",
+  "Stun",
+  "Lockjaw_Carry"
+ ],
+ "one_shots": [
+  "Idle_Fidget",
+  "bite",
+  "Hit_Front",
+  "Hit_Heavy",
+  "Death",
+  "Jaw_Swing",
+  "Stomp",
+  "Yawn",
+  "Belly_Flop",
+  "Wallow",
+  "Chomp",
+  "Lockjaw_Clamp",
+  "Lockjaw_Slam",
+  "Toxic_Flood"
+ ],
+ "clips": {
+  "Idle": {
+   "name": "Hippo_Idle",
+   "length": 3.2,
+   "loop": true,
+   "events": []
+  },
+  "Idle_Fidget": {
+   "name": "Hippo_Idle_Fidget",
+   "length": 2.6,
+   "loop": false,
+   "events": [
+    {
+     "name": "stamp",
+     "time": 0.92,
+     "damage": false
+    },
+    {
+     "name": "head_shake",
+     "time": 1.45,
+     "damage": false
+    }
+   ]
+  },
+  "Walk": {
+   "name": "Hippo_Walk",
+   "length": 0.35,
+   "loop": true,
+   "speed": 4.375,
+   "events": [
+    {
+     "name": "step",
+     "time": 0.0,
+     "damage": false
+    },
+    {
+     "name": "step",
+     "time": 0.17,
+     "damage": false
+    }
+   ]
+  },
+  "Walk_Back": {
+   "name": "Hippo_Walk_Back",
+   "length": 0.35,
+   "loop": true,
+   "speed": 4.375,
+   "events": [
+    {
+     "name": "step",
+     "time": 0.0,
+     "damage": false
+    },
+    {
+     "name": "step",
+     "time": 0.17,
+     "damage": false
+    }
+   ]
+  },
+  "Strafe_Left": {
+   "name": "Hippo_Strafe_Left",
+   "length": 0.283333,
+   "loop": true,
+   "speed": 4.375,
+   "events": [
+    {
+     "name": "step",
+     "time": 0.0,
+     "damage": false
+    },
+    {
+     "name": "step",
+     "time": 0.137,
+     "damage": false
+    }
+   ]
+  },
+  "Strafe_Right": {
+   "name": "Hippo_Strafe_Right",
+   "length": 0.283333,
+   "loop": true,
+   "speed": 4.375,
+   "events": [
+    {
+     "name": "step",
+     "time": 0.0,
+     "damage": false
+    },
+    {
+     "name": "step",
+     "time": 0.137,
+     "damage": false
+    }
+   ]
+  },
+  "bite": {
+   "name": "Hippo_Bite",
+   "length": 0.7,
+   "loop": false,
+   "events": [
+    {
+     "name": "jaw_open",
+     "time": 0.05,
+     "damage": false
+    },
+    {
+     "name": "hit",
+     "time": 0.26,
+     "damage": true
+    },
+    {
+     "name": "recover",
+     "time": 0.45,
+     "damage": false
+    }
+   ]
+  },
+  "Hit_Front": {
+   "name": "Hippo_Hit_Front",
+   "length": 0.3,
+   "loop": false,
+   "events": []
+  },
+  "Hit_Heavy": {
+   "name": "Hippo_Hit_Heavy",
+   "length": 0.6,
+   "loop": false,
+   "events": [
+    {
+     "name": "replant",
+     "time": 0.3,
+     "damage": false
+    }
+   ]
+  },
+  "Stun": {
+   "name": "Hippo_Stun",
+   "length": 1.6,
+   "loop": true,
+   "events": []
+  },
+  "Death": {
+   "name": "Hippo_Death",
+   "length": 1.8,
+   "loop": false,
+   "hold_last_frame": true,
+   "events": [
+    {
+     "name": "body_down",
+     "time": 0.88,
+     "damage": false
+    },
+    {
+     "name": "head_down",
+     "time": 1.18,
+     "damage": false
+    }
+   ]
+  },
+  "Jaw_Swing": {
+   "name": "Hippo_Jaw_Swing",
+   "length": 0.65,
+   "loop": false,
+   "events": [
+    {
+     "name": "hit",
+     "time": 0.24,
+     "damage": true
+    },
+    {
+     "name": "recover",
+     "time": 0.42,
+     "damage": false
+    }
+   ]
+  },
+  "Stomp": {
+   "name": "Hippo_Stomp",
+   "length": 0.9,
+   "loop": false,
+   "events": [
+    {
+     "name": "rear_up",
+     "time": 0.1,
+     "damage": false
+    },
+    {
+     "name": "hit",
+     "time": 0.42,
+     "damage": true
+    },
+    {
+     "name": "recover",
+     "time": 0.65,
+     "damage": false
+    }
+   ]
+  },
+  "Yawn": {
+   "name": "Hippo_Yawn",
+   "length": 1.3,
+   "loop": false,
+   "events": [
+    {
+     "name": "jaw_open",
+     "time": 0.1,
+     "damage": false
+    },
+    {
+     "name": "cone_start",
+     "time": 0.35,
+     "damage": false
+    },
+    {
+     "name": "hit",
+     "time": 0.45,
+     "damage": true
+    },
+    {
+     "name": "cone_end",
+     "time": 0.95,
+     "damage": false
+    }
+   ]
+  },
+  "Belly_Flop": {
+   "name": "Hippo_Belly_Flop",
+   "length": 1.4,
+   "loop": false,
+   "events": [
+    {
+     "name": "push_off",
+     "time": 0.22,
+     "damage": false
+    },
+    {
+     "name": "hit",
+     "time": 0.72,
+     "damage": true
+    },
+    {
+     "name": "get_up",
+     "time": 0.98,
+     "damage": false
+    }
+   ],
+   "peak_height": 2.09,
+   "note": "in place: the game moves the hippo between push_off and hit"
+  },
+  "Wallow": {
+   "name": "Hippo_Wallow",
+   "length": 1.3,
+   "loop": false,
+   "events": [
+    {
+     "name": "mud",
+     "time": 0.22,
+     "damage": false
+    },
+    {
+     "name": "rise",
+     "time": 1.0,
+     "damage": false
+    }
+   ]
+  },
+  "Chomp": {
+   "name": "Hippo_Chomp",
+   "length": 1.7,
+   "loop": false,
+   "events": [
+    {
+     "name": "capture",
+     "time": 0.24,
+     "damage": true
+    },
+    {
+     "name": "release",
+     "time": 1.12,
+     "damage": false
+    }
+   ],
+   "mouth_godot_xyz_m": {
+    "capture": [
+     0.012,
+     0.367,
+     1.643
+    ],
+    "release": [
+     0.489,
+     1.157,
+     1.504
+    ]
+   }
+  },
+  "Lockjaw_Clamp": {
+   "name": "Hippo_Lockjaw_Clamp",
+   "length": 0.5,
+   "loop": false,
+   "events": [
+    {
+     "name": "capture",
+     "time": 0.24,
+     "damage": true
+    }
+   ],
+   "note": "ends in the carry stance, not on the idle"
+  },
+  "Lockjaw_Carry": {
+   "name": "Hippo_Lockjaw_Carry",
+   "length": 0.5,
+   "loop": true,
+   "events": [
+    {
+     "name": "step",
+     "time": 0.0,
+     "damage": false
+    },
+    {
+     "name": "step",
+     "time": 0.25,
+     "damage": false
+    }
+   ],
+   "speed": 2.1875
+  },
+  "Lockjaw_Slam": {
+   "name": "Hippo_Lockjaw_Slam",
+   "length": 0.85,
+   "loop": false,
+   "events": [
+    {
+     "name": "slam",
+     "time": 0.28,
+     "damage": true
+    },
+    {
+     "name": "release",
+     "time": 0.31,
+     "damage": false
+    }
+   ],
+   "note": "starts in the carry stance (equals Lockjaw_Clamp's last frame), ends on the idle"
+  },
+  "Toxic_Flood": {
+   "name": "Hippo_Toxic_Flood",
+   "length": 1.7,
+   "loop": false,
+   "events": [
+    {
+     "name": "charge",
+     "time": 0.05,
+     "damage": false
+    },
+    {
+     "name": "rear_up",
+     "time": 0.35,
+     "damage": false
+    },
+    {
+     "name": "burst",
+     "time": 0.75,
+     "damage": true
+    },
+    {
+     "name": "drain_end",
+     "time": 1.3,
+     "damage": false
+    }
+   ]
+  }
+ },
+ "basic_chain_proposal": [
+  "bite",
+  "Jaw_Swing",
+  "Stomp"
+ ],
+ "ability_slots_proposal": {
+  "1": "Yawn",
+  "2": "Belly_Flop",
+  "3": [
+   "Lockjaw_Clamp",
+   "Lockjaw_Carry",
+   "Lockjaw_Slam"
+  ],
+  "4": "Toxic_Flood"
+ },
+ "source_file": "D:/dev/_scratch/hippo-3d/game-export-r16-s125/hippo-kit-r16.glb",
+ "scale_note": "speeds are world m/s at profile scale 1.25; times are unchanged"
+}

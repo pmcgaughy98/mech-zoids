@@ -1,0 +1,36 @@
+Clean 2x7 grid: True; binary alpha; transparent RGB zero.
+Front/back symmetry and side facing-right checks: N/A (se/ne only).
+se: factor=0.3383986387; fixed cell offset=(39,63); f0 best exact-colour overlap search +/-16px from ref centre.
+se_f0: width=91, height=69, colours=11, red=4, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0, applied_shift=0
+se_f1: width=89, height=69, colours=11, red=3, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0, applied_shift=0
+se_f2: width=96, height=69, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=1, applied_shift=1
+se_f3: width=96, height=69, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=1, applied_shift=1
+se_f4: width=89, height=68, colours=11, red=3, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0, applied_shift=0
+se_f5: width=88, height=68, colours=11, red=4, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=2, applied_shift=2
+se_f6: width=88, height=69, colours=11, red=1, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0, applied_shift=0
+se column1 vs ref: 91x69 vs 89x70; exact-colour share over opaque union feet aligned=0.3357; mirrored-ref best share=0.1876; direction=PASS
+ne: factor=0.3085370885; fixed cell offset=(47,69); f0 best exact-colour overlap search +/-16px from ref centre.
+ne_f0: width=80, height=72, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0, applied_shift=0
+ne_f1: width=78, height=72, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0, applied_shift=0
+ne_f2: width=83, height=71, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=2, applied_shift=2
+ne_f3: width=84, height=71, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=2, applied_shift=2
+ne_f4: width=79, height=70, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0, applied_shift=0
+ne_f5: width=77, height=72, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=2, applied_shift=2
+ne_f6: width=77, height=72, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0, applied_shift=0
+ne column1 vs ref: 80x72 vs 77x74; exact-colour share over opaque union feet aligned=0.3306; mirrored-ref best share=0.1458; direction=PASS
+Palette audit hex total rim rim_share:
+#141218 1431 317 0.2215
+#211E27 6124 828 0.1352
+#3D3A44 5476 1176 0.2148
+#58555E 4514 753 0.1668
+#7A4A06 7103 584 0.0822
+#9D9BA2 3692 420 0.1138
+#D18A0A 7660 456 0.0595
+#D6D6DC 1293 305 0.2359
+#FF3A2A 15 0 0.0000
+#FFCF1F 14654 601 0.0410
+#FFE6D8 0 0 0.0000
+#FFF4A8 5417 570 0.1052
+Top5 share=0.7148; near-black (<48 each) share=0.1317
+se lone same-colour pixel shares: 0.0108, 0.0099, 0.0118, 0.0133, 0.0097, 0.0110, 0.0107
+ne lone same-colour pixel shares: 0.0078, 0.0069, 0.0089, 0.0082, 0.0091, 0.0079, 0.0060

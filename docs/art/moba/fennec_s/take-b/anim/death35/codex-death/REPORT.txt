@@ -1,0 +1,31 @@
+﻿codex-death-front-2026-11-05 -- front death candidate
+Tokens: watcher snapshot 18:37:07 82607; final total and image-generation tokens unknown.
+Image calls: exactly ONE built-in call; no retry. sheet_raw.png is an untouched byte copy.
+Prompt: prompts/death_front.txt; native whole-cell extraction and explicit pixel polygons: redraw.py.
+Authored writes confined to codex-death; built-in image tool also created its automatic default cache. No live frames changed; no build/check scripts run; no commit.
+All f0-f6: 160x160, binary alpha, 15-colour palette, one 8-connected piece, no holes/strays/edge contact.
+All f0-f6: lowest opaque row 140. f0 byte-identical to still; f6 exactly f5 with all eye colours -> #2E1A6E.
+GIF: 3x, exact supplied selout, 300/100/130/140/160/180/1400 ms, no loop extension.
+Board: 4x selout, still + live/new rows. Close: 7x, individually cropped, no outline. Grey #5A6058.
+Numbers: ink/cap in %, gold is mean 4-connected material cluster area; eye count is all three teal/white colours.
+Light angles below are an INDEPENDENT PROXY (violet/gold/steel), not refs/measure.json light_deg.
+Proxy fits brightness-rank = bx+cy+d over each material; angle = atan2(-c,b).
+Refs supplied no angle formula; unable to reproduce its angle values. Same-metric lighting requirement remains unverified.
+Still supplied: ink 5.04, cap 2.32, light 115/117/-46, gold 160.3, eyes 28.
+Still proxy: 102.9/133.9/82.4. Full colour shares and estimator details: checks.txt, measurements.json.
+f0: IoU 1.00000; outline 0.0px; ink 5.04; cap 2.32; proxy 102.9/133.9/82.4; gold 160.3; eyes 28.
+f1: IoU 1.00000; outline 0.0px; ink 5.85; cap 2.34; proxy 123.0/-50.2/92.4; gold 172.7; eyes 25.
+f2: IoU 1.00000; outline 0.0px; ink 5.87; cap 2.30; proxy 107.3/-34.9/83.2; gold 157.3; eyes 25.
+f3: IoU 1.00000; outline 0.0px; ink 5.57; cap 2.24; proxy 88.6/119.1/98.3; gold 142.0; eyes 12.
+f4: IoU 1.00000; outline 0.0px; ink 5.84; cap 2.29; proxy 99.1/129.2/87.9; gold 117.7; eyes 17.
+f5: IoU 1.00000; outline 0.0px; ink 5.81; cap 2.35; proxy 82.8/114.4/97.4; gold 123.0; eyes 16.
+f6: IoU 1.00000; outline 0.0px; ink 5.81; cap 2.35; proxy 82.4/114.4/97.4; gold 123.0; eyes 0.
+By eye: pose alpha is exact throughout, but I do not certify an indistinguishable same-artist match.
+f1: close; stepped plates and dome clusters improved, but the dome pattern is more regular and the chest too symmetrical.
+f2: close; similar material language, but head highlights and boot chamfers remain more schematic than the still.
+f3: partial; cleaner ears/dome and half-closed eyes, but crouched elbows and folded legs remain busier than the still.
+f4: partial; tipping pose held, but far-leg compression and broad exposed back/tail facets are less convincing.
+f5: partial; washed-out cap and stray eye-colour flecks corrected; dense limb overlaps and neck joins still feel less deliberate.
+f6: identical drawing to f5 with eye colours extinguished; inherits the same visual limitations.
+Final judgement: improved candidate, not a full visual pass. Lighting direction was drawn by eye; exact reference-angle scoring unresolved.
+

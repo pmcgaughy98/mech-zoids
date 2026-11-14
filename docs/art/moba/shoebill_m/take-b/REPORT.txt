@@ -1,0 +1,13 @@
+Sizes W x H/area: s 40x80/1955; se 51x80/2157; e 62x80/1883; ne 40x77/1759; n 38x78/1652.
+Shape east (+/-2px): bill24/head17=1.412; legs32/body23=1.391; landmarks in shape.txt and measure-e-grid.png.
+ONE built-in image, prompt-sheet.txt verbatim, only craft_drembit.png attached; raw SHA256 unchanged; tokens/cost unknown; no redo.
+view_check: front/back0.78 FAIL (<0.80); area0.13; height0.04; colour0.92; dips none; lone0.16 FAIL (>0.11); 14 shared colours; top-five71.38% PASS.
+sheet_judge: all eight ok; FIX nothing; REDO nothing; mirrors e/w0.992, ne/nw0.984, se/sw0.891; binary alpha; no border contact; north feet139, others140.
+Finish: one whole-sheet nearest shrink0.229885 to288x288, south80px; four blue and four gold tones retained; remaining plum/magenta fringe0, lone pale rim0, exterior ink0; repainted61 pale and287 ink rim pixels.
+Depth e/se/s/n: p05=24.16, p95=207.15, range182.99 each PASS; dominant shares19.22/19.52/20.20/24.46% PASS; heights80/80/80/78px; colours respectively #3f5b92/#1f2f58/#1f2f58/#6f92c8.
+By eye FIRST, MACHINE: YES, hard bevelled plates, straight cut edges, visible round joints/pistons, ring neck and turquoise lens eyes; no organic feathers, though stacked wing blades retain a feather-like silhouette.
+SHOEBILL: PARTIAL; deep gold bill with blunt hooked tip and hinge, but profile remains tapered and front bill is narrower than head; big block head/short thick neck, stout upright body, long straight strut legs and large feet; calm/dignified, not cute; exact four toes unclear.
+Slate-blue armour, turquoise eyes behind bill base, gold ankle bands/claws PASS; rigid folded wing plates and short plate tail present, crossed wing tips unclear; blue/gold banded crest visible all eight and dominates rear; nothing held, no symbols/text.
+Four-step volume and internal overlap lines present; no dark exterior ink after cleanup, but speckled clusters miss Drembit craft; at40px crest, gold bill and machine silhouette survive while eyes/joints/toes weaken.
+Backs n78<=s80 and ne/nw77<=se/sw80 PASS, consistent camera and no rear eye/face; straight north has small gold bill slivers at both sides FAIL; rear feet show forward-facing gold toe/claw marks rather than clear heels FAIL.
+SE/SW are turned three-quarter with bill length visible, but far eye remains visible FAIL; overall candidate misses canon and anatomy targets. All deliverables in take-b only; no assets installation, commits or reverts.

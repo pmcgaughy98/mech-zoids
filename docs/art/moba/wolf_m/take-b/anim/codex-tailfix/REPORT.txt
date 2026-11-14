@@ -1,0 +1,23 @@
+WOLF M TAKE B: SIDE TAIL REPAIR; tokens used unavailable.
+14 source frames read only; all writes in codex-tailfix; no image tool, no commit.
+Still: thickness at metal plate centers 12.15/12.15/10.95 px; axis length 36.23 px; 4 plates (3 metal + red terminal).
+Widths sample perpendicular to the tail axis; lengths use rounded native axis endpoints, inclusive. Plate counts checked by eye.
+walk f0: thickness 12.15/12.15/10.95; length 36.23; plates 4; changed outside tail 0 (rump join only).
+walk f1: thickness 11.92/11.92/11.92; length 36.51; plates 4; changed outside tail 0 (rump join only).
+walk f2: thickness 11.95/12.85/10.68; length 36.51; plates 4; changed outside tail 0 (rump join only).
+walk f3: thickness 12.00/12.00/10.80; length 35.67; plates 4; changed outside tail 0 (rump join only).
+walk f4: thickness 12.15/12.15/10.95; length 36.23; plates 4; changed outside tail 0 (rump join only).
+walk f5: thickness 12.38/12.38/10.82; length 36.00; plates 4; changed outside tail 0 (rump join only).
+walk f6: thickness 12.45/11.28/11.20; length 36.00; plates 4; changed outside tail 0 (rump join only).
+walk f7: thickness 12.30/12.30/11.08; length 36.81; plates 4; changed outside tail 0 (rump join only).
+sprint f0: thickness 13.08/11.08/11.05; length 36.23; plates 4; changed outside tail 1 (rump join only).
+sprint f1: thickness 12.05/12.05/11.05; length 36.23; plates 4; changed outside tail 2 (rump join only).
+sprint f2: thickness 12.02/12.02/12.02; length 36.13; plates 4; changed outside tail 2 (rump join only).
+sprint f3: thickness 12.05/12.05/11.05; length 36.23; plates 4; changed outside tail 2 (rump join only).
+sprint f4: thickness 13.08/11.08/11.05; length 36.23; plates 4; changed outside tail 2 (rump join only).
+sprint f5: thickness 12.05/12.05/11.05; length 36.23; plates 4; changed outside tail 2 (rump join only).
+PASS 14/14: 192x192, 12 approved colours, binary alpha, connected, no holes/edge contact/below160 pixels; original source hashes unchanged.
+PASS: old thin tails fully removed; all pixels outside tail + documented rump join unchanged. Axis lengths differ from still by at most 0.58 px.
+GIFs reopened: walk 8x100ms, sprint 6x70ms, loop=0. Boards/GIFs apply supplied selout(), OUTLINE #141418, nearest 4x.
+EYE: reviewed final boards + all native enlarged tail details: whole straight plated tails, clean attached joins, no gaps or cutoffs.
+EYE: walk f0 retains still angle; tip sways 1-2px with opposite gait halves and root bob. Sprint streams nearly level with 1-2px angle flick.

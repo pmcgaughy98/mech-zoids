@@ -1,0 +1,23 @@
+Set D: exactly ONE built-in generation per sheet, supplied prompt text and ordered refs; all raws wide landscape; no redos. Tokens used unavailable.
+brace: 1774x887; sha256 652463b27e06d227713bcdfc862fae1554fa5c8b16f5d785dc0ae4f3dcb74dbb
+death: 2098x749; sha256 a12538f8ccdc2d65461061fe4182f60c54687375689f192cde9f443b08bff347
+idle: 1983x793; sha256 7c244c95d2d0baf414baeb47156718883bdb75b33ea9aba6c8e870513e83157f
+brace-shuffle: 1774x887; sha256 87ef27ff0380dd14bdf1812f8bbf9299b3e81f715e87caa9985714c779f9f184
+brace: clean grid YES; se factor=0.2834201494, ne factor=0.2604483314
+se f0/ref: 89x70 vs 89x70; exact-colour share=0.6754; mirrored ref=0.1905; orientation=PASS | ne f0/ref: 79x73 vs 77x74; exact-colour share=0.6175; mirrored ref=0.2112; orientation=PASS
+brace checks: 10 frames; colours 10-11; red 0-5 px/frame; glint 0; eye rim 0; feet y160; no borders; max ground correction 0 px. Top5 share=0.7005; near-black (<48 each) share=0.1240
+brace by eye: Same rhino in both rows: yellow hex plates/dark frame, grey disc joints/flat feet, two-tone horn and tail retained; se red retained, glints lost. Brace reads and columns agree broadly; se/ne angles held throughout, no mirroring/straightening. Rear shins visibly shorten at deepest brace; not a full leg-length pass.
+death: clean grid YES; se factor=0.3110774549, ne factor=0.2921546591
+se f0/ref: 91x69 vs 89x70; exact-colour share=0.6592; mirrored ref=0.1872; orientation=PASS | ne f0/ref: 81x71 vs 77x74; exact-colour share=0.6163; mirrored ref=0.2205; orientation=PASS
+death checks: 14 frames; colours 10-11; red 0-6 px/frame; glint 0; eye rim 0; feet y160; no borders; max ground correction 1 px. Top5 share=0.7106; near-black (<48 each) share=0.1176
+death by eye: Same rhino in both rows with listed design anchors; se red retained early, glints lost, final eyes dark. Belly-collapse sequence agrees broadly across rows; se/ne angles held, no mirroring/straightening. Legs tuck and visually shorten at collapse rather than keeping clear full length; chest-down/back-standing beat is weak.
+idle: clean grid YES; se factor=0.2617752845, ne factor=0.2419767060
+se f0/ref: 91x69 vs 89x70; exact-colour share=0.6856; mirrored ref=0.1845; orientation=PASS | ne f0/ref: 80x71 vs 77x74; exact-colour share=0.3944; mirrored ref=0.1862; orientation=PASS
+idle checks: 10 frames; colours 10-11; red 0-5 px/frame; glint 0; eye rim 0; feet y160; no borders; max ground correction 1 px. Top5 share=0.6946; near-black (<48 each) share=0.1138
+idle by eye: Same rhino in both rows with listed design anchors; se red retained, glints lost. Small breathing motion and column beats read; se/ne angles held in every cell, no mirroring/straightening. Leg lengths mostly hold, but feet drift slightly instead of remaining exactly planted.
+brace-shuffle: clean grid YES; front factor=0.3420157744, side factor=0.3940520446, back factor=0.3231067955
+front f0/ref: 87x59 vs 87x60; exact-colour share=0.6154; mirrored ref=0.5759; orientation=PASS | side f0/ref: 106x61 vs 106x59; exact-colour share=0.7021; mirrored ref=0.2337; orientation=PASS | back f0/ref: 83x64 vs 81x65; exact-colour share=0.4616; mirrored ref=0.4482; orientation=PASS
+brace-shuffle checks: 18 frames; colours 10-11; red 0-3 px/frame; glint 0; eye rim 0; feet y160; no borders; max ground correction 1 px. Top5 share=0.7493; near-black (<48 each) share=0.0833; front mirror colour similarities: 0.739, 0.659, 0.579, 0.479, 0.546, 0.705; back mirror colour similarities: 0.804, 0.739, 0.775, 0.752, 0.666, 0.885; side right YES.
+brace-shuffle by eye: Same rhino in all three rows with listed design anchors, but red eyes disappear in several finished front/side cells and glints are lost. Front/back stay straight; side faces RIGHT. Body stays low/braced and legs remain short; shuffle reads. One visible foot lifts in some cells, but exact hind-foot order, only-one-foot lifting throughout, and column-for-column row agreement cannot be certified from occluded feet.
+Validation PASS: 52 frames, 192x192 binary alpha, transparent RGB zero, union palette (12 colours), no magenta/plum fringe, no clipped frames; raw hashes and GIF total timings/loops verified. Palette edge/near-black and lone-pixel audits in each checks.txt; dark frame/rim tones retained from refs.
+Saved unchanged raws, generation.json, adapted set-B refinish.py, frames, traceable grid.json, checks.txt, 3x reviews with refs, and timed GIFs. Writes confined to set D; no installs, commits, or sibling changes.

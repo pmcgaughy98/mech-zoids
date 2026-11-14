@@ -1,0 +1,252 @@
+{
+  "source": "D:\\dev\\_scratch\\gorilla\\v2\\v2_fore.blend",
+  "source_sha256": "39c327297a6842ec7c4af84be6294d956e8384d3db036ac867d0abfa98979071",
+  "parts": [
+    {
+      "name": "Hand_R_PalmHousing",
+      "bone": "Bone_026",
+      "role": "downward metacarpal housing; elevated off floor",
+      "vertices": 32,
+      "triangles": 60,
+      "min": [
+        -1.0839424133300781,
+        -0.6503873467445374,
+        0.18780308961868286
+      ],
+      "max": [
+        -0.49705764651298523,
+        -0.3628138601779938,
+        0.4519011974334717
+      ]
+    },
+    {
+      "name": "Hand_R_WristBearing",
+      "bone": "Bone_026",
+      "role": "recessed wrist bearing",
+      "vertices": 48,
+      "triangles": 88,
+      "min": [
+        -0.9735000133514404,
+        -0.5809999704360962,
+        0.24399998784065247
+      ],
+      "max": [
+        -0.6154999732971191,
+        -0.36899998784065247,
+        0.4560000002384186
+      ]
+    },
+    {
+      "name": "Hand_R_Digit_2",
+      "bone": "Bone_026",
+      "role": "curled finger; dorsal middle-segment contact",
+      "vertices": 216,
+      "triangles": 412,
+      "min": [
+        -0.6338018178939819,
+        -0.7090758085250854,
+        0.0
+      ],
+      "max": [
+        -0.5011658668518066,
+        -0.3892808258533478,
+        0.2512805461883545
+      ]
+    },
+    {
+      "name": "Hand_R_Digit_3",
+      "bone": "Bone_026",
+      "role": "curled finger; dorsal middle-segment contact",
+      "vertices": 216,
+      "triangles": 412,
+      "min": [
+        -0.7957819700241089,
+        -0.7290298938751221,
+        0.0
+      ],
+      "max": [
+        -0.6431919932365417,
+        -0.3918003737926483,
+        0.27483808994293213
+      ]
+    },
+    {
+      "name": "Hand_R_Digit_4",
+      "bone": "Bone_026",
+      "role": "curled finger; dorsal middle-segment contact",
+      "vertices": 216,
+      "triangles": 412,
+      "min": [
+        -0.9507194757461548,
+        -0.720813512802124,
+        0.0
+      ],
+      "max": [
+        -0.8051720857620239,
+        -0.3932698369026184,
+        0.26175057888031006
+      ]
+    },
+    {
+      "name": "Hand_R_Digit_5",
+      "bone": "Bone_026",
+      "role": "curled finger; dorsal middle-segment contact",
+      "vertices": 216,
+      "triangles": 412,
+      "min": [
+        -1.0798341035842896,
+        -0.6856003999710083,
+        0.0
+      ],
+      "max": [
+        -0.9601097106933594,
+        -0.3890514671802521,
+        0.219870463013649
+      ]
+    },
+    {
+      "name": "Hand_R_Thumb",
+      "bone": "Bone_026",
+      "role": "short medial thumb; not load-bearing",
+      "vertices": 136,
+      "triangles": 260,
+      "min": [
+        -0.5791215896606445,
+        -0.6535953879356384,
+        0.10114162415266037
+      ],
+      "max": [
+        -0.38057079911231995,
+        -0.3701799511909485,
+        0.381475031375885
+      ]
+    },
+    {
+      "name": "Hand_L_PalmHousing",
+      "bone": "Bone_030",
+      "role": "downward metacarpal housing; elevated off floor",
+      "vertices": 32,
+      "triangles": 60,
+      "min": [
+        0.49705764651298523,
+        -0.6503873467445374,
+        0.18780308961868286
+      ],
+      "max": [
+        1.0839424133300781,
+        -0.3628138601779938,
+        0.4519011974334717
+      ]
+    },
+    {
+      "name": "Hand_L_WristBearing",
+      "bone": "Bone_030",
+      "role": "recessed wrist bearing",
+      "vertices": 48,
+      "triangles": 88,
+      "min": [
+        0.6154999732971191,
+        -0.5809999704360962,
+        0.24399998784065247
+      ],
+      "max": [
+        0.9735000133514404,
+        -0.36899998784065247,
+        0.4560000002384186
+      ]
+    },
+    {
+      "name": "Hand_L_Digit_2",
+      "bone": "Bone_030",
+      "role": "curled finger; dorsal middle-segment contact",
+      "vertices": 216,
+      "triangles": 412,
+      "min": [
+        0.5011658668518066,
+        -0.7090758085250854,
+        0.0
+      ],
+      "max": [
+        0.6338018178939819,
+        -0.3892808258533478,
+        0.2512805461883545
+      ]
+    },
+    {
+      "name": "Hand_L_Digit_3",
+      "bone": "Bone_030",
+      "role": "curled finger; dorsal middle-segment contact",
+      "vertices": 216,
+      "triangles": 412,
+      "min": [
+        0.6431919932365417,
+        -0.7290298938751221,
+        0.0
+      ],
+      "max": [
+        0.7957819700241089,
+        -0.3918003737926483,
+        0.27483808994293213
+      ]
+    },
+    {
+      "name": "Hand_L_Digit_4",
+      "bone": "Bone_030",
+      "role": "curled finger; dorsal middle-segment contact",
+      "vertices": 216,
+      "triangles": 412,
+      "min": [
+        0.8051720857620239,
+        -0.720813512802124,
+        0.0
+      ],
+      "max": [
+        0.9507194757461548,
+        -0.3932698369026184,
+        0.26175057888031006
+      ]
+    },
+    {
+      "name": "Hand_L_Digit_5",
+      "bone": "Bone_030",
+      "role": "curled finger; dorsal middle-segment contact",
+      "vertices": 216,
+      "triangles": 412,
+      "min": [
+        0.9601097106933594,
+        -0.6856003999710083,
+        0.0
+      ],
+      "max": [
+        1.0798341035842896,
+        -0.3890514671802521,
+        0.219870463013649
+      ]
+    },
+    {
+      "name": "Hand_L_Thumb",
+      "bone": "Bone_030",
+      "role": "short medial thumb; not load-bearing",
+      "vertices": 136,
+      "triangles": 260,
+      "min": [
+        0.38057079911231995,
+        -0.6535953879356384,
+        0.10114162415266037
+      ],
+      "max": [
+        0.5791215896606445,
+        -0.3701799511909485,
+        0.381475031375885
+      ]
+    }
+  ],
+  "notes": [
+    "Four curled fingers plus one medial thumb per hand.",
+    "Hands hang downward: metacarpals descend from wrist; middle finger segments contact floor.",
+    "Old handmade hands replaced; generated lower cuff fragments clipped at z=.300 inside the hand region.",
+    "Original hand bones retained; every new vertex has one 1.0 hand-bone weight.",
+    "Review candidate, no approved catalog or gameplay asset replaced.",
+    "Downward fists uniformly enlarged to previous v2_fore bounding-envelope volume; original shape aspect ratios and ground contact retained."
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_pistol_shrimp_remeshed_25k_20261111_character.glb",
+  "source_sha256": "999b901e08ad73df77f908dab8aa4159609e624fb961a45ce03d516501618d43",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\pistol_shrimp_l\\local-repair-v1-2026-11-14\\pistol-shrimp-rigged-local-repair-v1.glb",
+  "output_sha256": "823c26de99e963c6486cc8d92b31b41a6649018e4c7cfcac1e0c6b87a2b9349c",
+  "before_triangles": 25635,
+  "final_triangles": 25626,
+  "joint_count": 53,
+  "removed_malformed_triangles": 10,
+  "removed_face_ids": [
+    3013,
+    4788,
+    5874,
+    6138,
+    7696,
+    11450,
+    11482,
+    11706,
+    14299,
+    14349
+  ],
+  "holes_closed": [
+    {
+      "triangle": [
+        2526,
+        2524,
+        2521
+      ],
+      "bounds": [
+        [
+          -0.8865497708320618,
+          0.6815333366394043,
+          1.080012321472168
+        ],
+        [
+          -0.8805643320083618,
+          0.69488525390625,
+          1.0912375450134277
+        ]
+      ],
+      "normal": [
+        0.5086126923561096,
+        -0.6365222334861755,
+        0.5797865986824036
+      ],
+      "normal_alignment": 0.34499695897102356,
+      "uv_perimeter": 0.4688953682780266
+    }
+  ],
+  "boundary_edges": 0,
+  "over_shared_edges": 2,
+  "protected_closed_contact_edges": [
+    {
+      "edge": [
+        2521,
+        2522
+      ],
+      "incident_faces": 4,
+      "balanced_orientation": true
+    },
+    {
+      "edge": [
+        2482,
+        2521
+      ],
+      "incident_faces": 4,
+      "balanced_orientation": true
+    }
+  ],
+  "collapsed_triangles": 0,
+  "healthy_source_faces_retained": 25625,
+  "all_original_vertex_attribute_rows_weights_materials_skeleton_rest_binds_preserved": true,
+  "new_geometric_vertices": 0,
+  "scope": "Remove ten verified single-triangle flaps and close one tiny large-claw opening using original vertex corners. Retain snapping claw, smaller claw, eight walking legs, two antennae, two dorsal vessels and tail fan. Preserve original vertex/skin rows, 53-joint hierarchy/rest/binds and materials/textures. No remesh or rerig.",
+  "limitations": "Two balanced original closed-surface assembly contacts remain on the large claw. Existing baked surface roughness and grouped rig controls remain. No authored clips or gameplay replacement."
+}

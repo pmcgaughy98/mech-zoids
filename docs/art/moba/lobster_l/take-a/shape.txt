@@ -1,0 +1,11 @@
+Every view W x H: ne 119x78, n 87x80, nw 119x78, e 129x53, w 129x53, se 123x64, s 92x66, sw 123x64
+East/south height 53/66=0.8030; north/south 1.2121; matching heights FAIL; rear no-taller FAIL.
+Eye centres above nearest-foot baseline y160, divided by opaque view height: s: [0.5638, 0.5684], se: [0.5699, 0.5859], sw: [0.5833, 0.5713], e: [0.6074], w: [0.6063]
+Eye height max/min ratio 1.0774; spread 7.74%; within 10% True. Eye components and coordinates in eye-metrics.json; far eyes sit higher due to perspective.
+Rear cyan lens pixels NE/N/NW: 6/0/1; rear-eye rule FAIL. Includes reserved pale eye glints.
+By eye: claw above bottom of eye 0 apparent; claw overlapping/occluding eye 0 apparent. Claws are geometrically in front of the head as requested, but do not block eyes. Pixel-exact semantic claw segmentation unavailable.
+Tail curled/raised/bent: no curl or lateral bend apparent; fan grounded, tail tapers straight back and slopes down from carapace. No upturned or raised tip. Rear camera is too high. Antennae have slight curves and are not perfectly straight.
+Planted/clearly visible feet by eye: ne 3/3, n 6/6, nw 3/3, e 3/3, w 3/3, se 3/3, s 6/6, sw 3/3. None visibly lifted. Occluded far feet cannot be verified; local projected ground varies with depth.
+Eyes stay in front-head sockets by eye, never migrate to stalks; SE/SW true three-quarter with two eyes, far partly occluded. N no face; NE/NW wrongly expose one lens.
+Both claws appear resting; tail has five bands and broad fan; no held objects, markings, crest, or Egyptian cues.
+Remaining 1-3px enclosed shade islands: ne 17, n 14, nw 9, e 15, w 14, se 17, s 14, sw 20. Includes claws; clean-band rule FAIL.

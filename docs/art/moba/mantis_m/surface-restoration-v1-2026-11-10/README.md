@@ -1,0 +1,25 @@
+# Mantis surface and anatomy restoration v1
+
+Final saved candidate verified and Workshop review completed November 11, 2026. The November 10 folder date identifies the start of this pass.
+
+Preston selected removal of walking-leg pair 2 in walking-pair-choice.png: keep the front pair 1 and rearmost pair 3. The restored anatomy therefore has four walking legs plus two scythe arms. The two previously rejected floating pieces also remain removed. The old damaged front view initially obscured the extra attached pair; the full underside review exposed it before any candidate was promoted.
+
+The actual downloaded input is Meshy_AI_mantis_touchup_remeshed_25k_20261111_character.glb, SHA256 `4b8460fd7ceb392105b7af5bcaf965f8ec0f2e3090bcca7c4a351f75bd52567e`, with 44 bound joints and no clips. It had extensive surface loss: 19,704 geometric boundary edges and five over-shared edges. Rather than fill that fragmented surface wholesale, the intact original was restored and the rejected limb regions removed on an isolated copy.
+
+## Result
+
+`mantis-restored-six-limbs-rigged-v1.glb`, SHA256 `a0a9769c0a66291f83081ee9ad7f88501e65f137a3cf4e9d9b5dc97f1c504476`. Editable model: `mantis-restored-six-limbs-rigged-v1.blend`. This is a high-detail review asset: 407,276 triangles and 241,820 attribute vertices. Optimisation and gameplay installation remain separate.
+
+Source anatomy choices were mapped to the original proxy labels: FL1/FR1 for the floating pieces and L3/R3 for the selected middle walking pair. The labels were reproduced using the prior proportion lane's segmentation method. Classification was transferred by nearest proxy surface and smoothed as a scalar field only; source positions were not broadly smoothed or remeshed. Continuous cut contours were closed locally. Nine contour caps cover the source's separated armor/root shells at the removed walking pair. Seven disconnected cut remnants (1,485 welded vertices) were discarded after this cut. The original source and exported result are closed; no source file was overwritten.
+
+The downloaded skeleton nodes, hierarchy, skin, scene, rest transforms and inverse binds are retained exactly, and its entire binary buffer remains a prefix in the new GLB. Weights were transferred from the actual downloaded rig using four nearest samples with inverse-fourth-power weighting, keeping the strongest four influences and normalizing. Main-surface mean sample distance is 5.44 cm, 99th percentile 10.58 cm, maximum 12.46 cm. Cut-root mean distance is 3.51 cm, 99th percentile 9.25 cm, maximum 10.01 cm. These distances describe the geometry correspondence, not a claimed skinning accuracy. Original-source UV/material/texture detail is restored; local removed-root finishes use a matching dark green. This is weight transfer onto the existing skeleton, not rerigging. The ten removed-middle-leg joints remain in the preserved hierarchy; their residual surface influence was reassigned to the existing body parent Bone_001 so those unused controls cannot pull the closed roots.
+
+## Evidence and limits
+
+`export-topology-audit.json`: actual exported geometry has zero boundaries, zero over-shared edges and zero collapsed triangles at a 1 micrometre seam-aware audit tolerance. Weights are finite; maximum normalization error 1.79e-7, maximum joint index 43.
+
+`visual-rig-check.json`: fresh import of the exact final hash, eight native-joint diagnostic poses and zero measured UV-split seam separation in every pose. The joint tests cover original roots influencing retained walking limbs, scythe regions, head and torso. A generic joint name or successful bend does not establish polished independent anatomical controls: source rig mapping and gait/contact animation remain refinement work. No new clips are claimed.
+
+Textured front, both sides, back, top, underside and three-quarter proof, plus native-joint poses, were inspected. The original quality archive has unapproved extra/floating anatomy and is explicitly labeled as a quality reference. The raw rigged input and original generation sheets remain unchanged. The final Workshop review compares archive/damaged input/restored selection; R toggles original and revised sheets, C toggles native versions. Godot's review fixture passed with all three native versions, original/review sheets, the expected 44 joints and current chase-camera settings. Screenshots in reports/model_catalog/mantis-restoration-v1/ were inspected; this fixture does not substitute for a full playable match or crowd benchmark. The successful log is D:/dev/_scratch/mech-art-direction/mantis-review-2026-11-10/godot-restoration-v1.log.
+
+Local Blender 5.2.2, Python/NumPy/SciPy/Pillow and Godot 4.7.2, following project rigging/export/render guidance. No paid tools, generation, installs, source overwrites or commits. Reproduction scripts retain absolute source paths; accepted-cut-mask.npz records the approved removal classification. Blender's optional thumbnail-cache write outside workspace can fail while the actual scene saves correctly. walking-pair-choice.png is the BEFORE-selection diagram, not the final anatomy.

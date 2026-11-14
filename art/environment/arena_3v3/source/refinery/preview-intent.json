@@ -1,0 +1,15 @@
+{
+  "request": {
+    "mode": "preview",
+    "ai_model": "meshy-6",
+    "target_formats": [
+      "glb"
+    ],
+    "prompt": "Stylized industrial science fiction MOBA Foundry environment piece. Broad clean beveled armor forms, dark blue charcoal steel, warm worn iron inset plates, small amber light strips, sparse yellow hazard trim. Strong readable silhouette, no text, no logos, no characters, no ground, isolated single object, flat bottom. One distant refinery block for a far background: tall boxy factory hall with two smokestacks, pipe racks, catwalks and small amber windows. Big simple shapes.",
+    "should_remesh": true,
+    "topology": "triangle",
+    "target_polycount": 6000
+  },
+  "reserved_credits": 20,
+  "at": "2026-11-14T13:40:32.284984+00:00"
+}

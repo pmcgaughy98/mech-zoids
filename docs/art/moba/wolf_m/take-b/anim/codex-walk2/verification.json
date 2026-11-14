@@ -1,0 +1,782 @@
+{
+  "structural": [
+    {
+      "frame": 0,
+      "size": [
+        192,
+        192
+      ],
+      "bbox": [
+        41,
+        95,
+        151,
+        161
+      ],
+      "binary_alpha": true,
+      "palette_ok": true,
+      "colour_count": 12,
+      "holes": 0,
+      "components": 1,
+      "below160": 0,
+      "canvas_edge": false
+    },
+    {
+      "frame": 1,
+      "size": [
+        192,
+        192
+      ],
+      "bbox": [
+        42,
+        95,
+        151,
+        161
+      ],
+      "binary_alpha": true,
+      "palette_ok": true,
+      "colour_count": 12,
+      "holes": 0,
+      "components": 1,
+      "below160": 0,
+      "canvas_edge": false
+    },
+    {
+      "frame": 2,
+      "size": [
+        192,
+        192
+      ],
+      "bbox": [
+        42,
+        95,
+        151,
+        161
+      ],
+      "binary_alpha": true,
+      "palette_ok": true,
+      "colour_count": 12,
+      "holes": 0,
+      "components": 1,
+      "below160": 0,
+      "canvas_edge": false
+    },
+    {
+      "frame": 3,
+      "size": [
+        192,
+        192
+      ],
+      "bbox": [
+        41,
+        95,
+        151,
+        161
+      ],
+      "binary_alpha": true,
+      "palette_ok": true,
+      "colour_count": 12,
+      "holes": 0,
+      "components": 1,
+      "below160": 0,
+      "canvas_edge": false
+    },
+    {
+      "frame": 4,
+      "size": [
+        192,
+        192
+      ],
+      "bbox": [
+        41,
+        95,
+        151,
+        161
+      ],
+      "binary_alpha": true,
+      "palette_ok": true,
+      "colour_count": 12,
+      "holes": 0,
+      "components": 1,
+      "below160": 0,
+      "canvas_edge": false
+    },
+    {
+      "frame": 5,
+      "size": [
+        192,
+        192
+      ],
+      "bbox": [
+        40,
+        95,
+        151,
+        161
+      ],
+      "binary_alpha": true,
+      "palette_ok": true,
+      "colour_count": 12,
+      "holes": 0,
+      "components": 1,
+      "below160": 0,
+      "canvas_edge": false
+    },
+    {
+      "frame": 6,
+      "size": [
+        192,
+        192
+      ],
+      "bbox": [
+        40,
+        95,
+        151,
+        161
+      ],
+      "binary_alpha": true,
+      "palette_ok": true,
+      "colour_count": 12,
+      "holes": 0,
+      "components": 1,
+      "below160": 0,
+      "canvas_edge": false
+    },
+    {
+      "frame": 7,
+      "size": [
+        192,
+        192
+      ],
+      "bbox": [
+        41,
+        95,
+        151,
+        161
+      ],
+      "binary_alpha": true,
+      "palette_ok": true,
+      "colour_count": 12,
+      "holes": 0,
+      "components": 1,
+      "below160": 0,
+      "canvas_edge": false
+    }
+  ],
+  "paw_measurements": [
+    {
+      "paw": "near_fore",
+      "frame": 0,
+      "target_x": 122,
+      "measured_x": 122.0,
+      "target_lift": 0,
+      "measured_lift": 0,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        117,
+        127
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "near_fore",
+      "frame": 1,
+      "target_x": 117,
+      "measured_x": 117.0,
+      "target_lift": 0,
+      "measured_lift": 0,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        112,
+        122
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "near_fore",
+      "frame": 2,
+      "target_x": 112,
+      "measured_x": 112.0,
+      "target_lift": 0,
+      "measured_lift": 0,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        107,
+        117
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "near_fore",
+      "frame": 3,
+      "target_x": 107,
+      "measured_x": 107.0,
+      "target_lift": 0,
+      "measured_lift": 0,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        102,
+        112
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "near_fore",
+      "frame": 4,
+      "target_x": 110,
+      "measured_x": 110.0,
+      "target_lift": 2,
+      "measured_lift": 2,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        105,
+        115
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "near_fore",
+      "frame": 5,
+      "target_x": 113,
+      "measured_x": 113.0,
+      "target_lift": 4,
+      "measured_lift": 4,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        108,
+        118
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "near_fore",
+      "frame": 6,
+      "target_x": 116,
+      "measured_x": 116.0,
+      "target_lift": 4,
+      "measured_lift": 4,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        111,
+        121
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "near_fore",
+      "frame": 7,
+      "target_x": 119,
+      "measured_x": 119.0,
+      "target_lift": 2,
+      "measured_lift": 2,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        114,
+        124
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "far_hind",
+      "frame": 0,
+      "target_x": 87,
+      "measured_x": 87.0,
+      "target_lift": 0,
+      "measured_lift": 0,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        82,
+        92
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "far_hind",
+      "frame": 1,
+      "target_x": 82,
+      "measured_x": 82.0,
+      "target_lift": 0,
+      "measured_lift": 0,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        77,
+        87
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "far_hind",
+      "frame": 2,
+      "target_x": 77,
+      "measured_x": 77.0,
+      "target_lift": 0,
+      "measured_lift": 0,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        72,
+        82
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "far_hind",
+      "frame": 3,
+      "target_x": 72,
+      "measured_x": 72.0,
+      "target_lift": 0,
+      "measured_lift": 0,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        67,
+        77
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "far_hind",
+      "frame": 4,
+      "target_x": 75,
+      "measured_x": 75.0,
+      "target_lift": 2,
+      "measured_lift": 2,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        70,
+        80
+      ],
+      "matching_final_sole_pixels": 3
+    },
+    {
+      "paw": "far_hind",
+      "frame": 5,
+      "target_x": 78,
+      "measured_x": 78.0,
+      "target_lift": 4,
+      "measured_lift": 4,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        73,
+        83
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "far_hind",
+      "frame": 6,
+      "target_x": 81,
+      "measured_x": 81.0,
+      "target_lift": 4,
+      "measured_lift": 4,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        76,
+        86
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "far_hind",
+      "frame": 7,
+      "target_x": 84,
+      "measured_x": 84.0,
+      "target_lift": 2,
+      "measured_lift": 2,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        79,
+        89
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "far_fore",
+      "frame": 0,
+      "target_x": 116,
+      "measured_x": 116.0,
+      "target_lift": 2,
+      "measured_lift": 2,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        111,
+        121
+      ],
+      "matching_final_sole_pixels": 7
+    },
+    {
+      "paw": "far_fore",
+      "frame": 1,
+      "target_x": 119,
+      "measured_x": 119.0,
+      "target_lift": 4,
+      "measured_lift": 4,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        114,
+        124
+      ],
+      "matching_final_sole_pixels": 9
+    },
+    {
+      "paw": "far_fore",
+      "frame": 2,
+      "target_x": 122,
+      "measured_x": 122.0,
+      "target_lift": 4,
+      "measured_lift": 4,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        117,
+        127
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "far_fore",
+      "frame": 3,
+      "target_x": 125,
+      "measured_x": 125.0,
+      "target_lift": 2,
+      "measured_lift": 2,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        120,
+        130
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "far_fore",
+      "frame": 4,
+      "target_x": 128,
+      "measured_x": 128.0,
+      "target_lift": 0,
+      "measured_lift": 0,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        123,
+        133
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "far_fore",
+      "frame": 5,
+      "target_x": 123,
+      "measured_x": 123.0,
+      "target_lift": 0,
+      "measured_lift": 0,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        118,
+        128
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "far_fore",
+      "frame": 6,
+      "target_x": 118,
+      "measured_x": 118.0,
+      "target_lift": 0,
+      "measured_lift": 0,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        113,
+        123
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "far_fore",
+      "frame": 7,
+      "target_x": 113,
+      "measured_x": 113.0,
+      "target_lift": 0,
+      "measured_lift": 0,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        108,
+        118
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "near_hind",
+      "frame": 0,
+      "target_x": 64,
+      "measured_x": 64.0,
+      "target_lift": 2,
+      "measured_lift": 2,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        59,
+        69
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "near_hind",
+      "frame": 1,
+      "target_x": 67,
+      "measured_x": 67.0,
+      "target_lift": 4,
+      "measured_lift": 4,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        62,
+        72
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "near_hind",
+      "frame": 2,
+      "target_x": 70,
+      "measured_x": 70.0,
+      "target_lift": 4,
+      "measured_lift": 4,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        65,
+        75
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "near_hind",
+      "frame": 3,
+      "target_x": 73,
+      "measured_x": 73.0,
+      "target_lift": 2,
+      "measured_lift": 2,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        68,
+        78
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "near_hind",
+      "frame": 4,
+      "target_x": 76,
+      "measured_x": 76.0,
+      "target_lift": 0,
+      "measured_lift": 0,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        71,
+        81
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "near_hind",
+      "frame": 5,
+      "target_x": 71,
+      "measured_x": 71.0,
+      "target_lift": 0,
+      "measured_lift": 0,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        66,
+        76
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "near_hind",
+      "frame": 6,
+      "target_x": 66,
+      "measured_x": 66.0,
+      "target_lift": 0,
+      "measured_lift": 0,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        61,
+        71
+      ],
+      "matching_final_sole_pixels": 11
+    },
+    {
+      "paw": "near_hind",
+      "frame": 7,
+      "target_x": 61,
+      "measured_x": 61.0,
+      "target_lift": 0,
+      "measured_lift": 0,
+      "x_error": 0.0,
+      "lift_error": 0,
+      "sole_span": [
+        56,
+        66
+      ],
+      "matching_final_sole_pixels": 11
+    }
+  ],
+  "footlock": {
+    "near_fore": {
+      "samples": [
+        {
+          "frame": 0,
+          "sprite_x": 122.0,
+          "body_world_x": 0,
+          "world_x": 122.0
+        },
+        {
+          "frame": 1,
+          "sprite_x": 117.0,
+          "body_world_x": 5,
+          "world_x": 122.0
+        },
+        {
+          "frame": 2,
+          "sprite_x": 112.0,
+          "body_world_x": 10,
+          "world_x": 122.0
+        },
+        {
+          "frame": 3,
+          "sprite_x": 107.0,
+          "body_world_x": 15,
+          "world_x": 122.0
+        }
+      ],
+      "spread": 0.0,
+      "actual_tool_stamp_spread_max": 0.0
+    },
+    "far_hind": {
+      "samples": [
+        {
+          "frame": 0,
+          "sprite_x": 87.0,
+          "body_world_x": 0,
+          "world_x": 87.0
+        },
+        {
+          "frame": 1,
+          "sprite_x": 82.0,
+          "body_world_x": 5,
+          "world_x": 87.0
+        },
+        {
+          "frame": 2,
+          "sprite_x": 77.0,
+          "body_world_x": 10,
+          "world_x": 87.0
+        },
+        {
+          "frame": 3,
+          "sprite_x": 72.0,
+          "body_world_x": 15,
+          "world_x": 87.0
+        }
+      ],
+      "spread": 0.0,
+      "actual_tool_stamp_spread_max": 0.0
+    },
+    "far_fore": {
+      "samples": [
+        {
+          "frame": 4,
+          "sprite_x": 128.0,
+          "body_world_x": 20,
+          "world_x": 148.0
+        },
+        {
+          "frame": 5,
+          "sprite_x": 123.0,
+          "body_world_x": 25,
+          "world_x": 148.0
+        },
+        {
+          "frame": 6,
+          "sprite_x": 118.0,
+          "body_world_x": 30,
+          "world_x": 148.0
+        },
+        {
+          "frame": 7,
+          "sprite_x": 113.0,
+          "body_world_x": 35,
+          "world_x": 148.0
+        }
+      ],
+      "spread": 0.0,
+      "actual_tool_stamp_spread_max": 0.0
+    },
+    "near_hind": {
+      "samples": [
+        {
+          "frame": 4,
+          "sprite_x": 76.0,
+          "body_world_x": 20,
+          "world_x": 96.0
+        },
+        {
+          "frame": 5,
+          "sprite_x": 71.0,
+          "body_world_x": 25,
+          "world_x": 96.0
+        },
+        {
+          "frame": 6,
+          "sprite_x": 66.0,
+          "body_world_x": 30,
+          "world_x": 96.0
+        },
+        {
+          "frame": 7,
+          "sprite_x": 61.0,
+          "body_world_x": 35,
+          "world_x": 96.0
+        }
+      ],
+      "spread": 0.0,
+      "actual_tool_stamp_spread_max": 0.0
+    }
+  },
+  "gif": {
+    "frames": 8,
+    "ms": [
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "loop": 0
+  }
+}

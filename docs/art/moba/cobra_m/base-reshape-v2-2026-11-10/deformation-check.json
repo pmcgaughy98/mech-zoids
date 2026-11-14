@@ -1,0 +1,45 @@
+{
+  "poses": [
+    {
+      "bone": "Bone_001",
+      "local_x_degrees": 8,
+      "finite": true,
+      "vertices_moved_over_1mm": 27352,
+      "max_displacement": 0.3820560775178001,
+      "edge_stretch_ratio_99th_percentile": 1.0208875867652167,
+      "edge_stretch_ratio_max": 1.0805557635755016,
+      "maximum_uv_split_position_gap_m": 0.0
+    },
+    {
+      "bone": "Bone_001",
+      "local_x_degrees": -8,
+      "finite": true,
+      "vertices_moved_over_1mm": 27352,
+      "max_displacement": 0.3820566151222731,
+      "edge_stretch_ratio_99th_percentile": 1.0268323198154419,
+      "edge_stretch_ratio_max": 1.062209577305389,
+      "maximum_uv_split_position_gap_m": 0.0
+    },
+    {
+      "bone": "Bone_014",
+      "local_x_degrees": 10,
+      "finite": true,
+      "vertices_moved_over_1mm": 11856,
+      "max_displacement": 0.4233038771456372,
+      "edge_stretch_ratio_99th_percentile": 1.0363025753019803,
+      "edge_stretch_ratio_max": 1.158742097655549,
+      "maximum_uv_split_position_gap_m": 0.0
+    },
+    {
+      "bone": "Bone_014",
+      "local_x_degrees": -10,
+      "finite": true,
+      "vertices_moved_over_1mm": 11856,
+      "max_displacement": 0.4233048814986878,
+      "edge_stretch_ratio_99th_percentile": 1.02667329695155,
+      "edge_stretch_ratio_max": 1.2077469999018293,
+      "maximum_uv_split_position_gap_m": 0.0
+    }
+  ],
+  "tested_glb_sha256": "7996566b080693278f24e26a104618fea5f4e8eb8fa697edacafd1bbfa0bc12e"
+}

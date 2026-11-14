@@ -1,0 +1,38 @@
+{
+  "brace": {
+    "size": [
+      1774,
+      887
+    ],
+    "sha256": "652463b27e06d227713bcdfc862fae1554fa5c8b16f5d785dc0ae4f3dcb74dbb",
+    "prompt": "prompts/brace.txt",
+    "generations": 1
+  },
+  "death": {
+    "size": [
+      2098,
+      749
+    ],
+    "sha256": "a12538f8ccdc2d65461061fe4182f60c54687375689f192cde9f443b08bff347",
+    "prompt": "prompts/death.txt",
+    "generations": 1
+  },
+  "idle": {
+    "size": [
+      1983,
+      793
+    ],
+    "sha256": "7c244c95d2d0baf414baeb47156718883bdb75b33ea9aba6c8e870513e83157f",
+    "prompt": "prompts/idle.txt",
+    "generations": 1
+  },
+  "brace-shuffle": {
+    "size": [
+      1774,
+      887
+    ],
+    "sha256": "87ef27ff0380dd14bdf1812f8bbf9299b3e81f715e87caa9985714c779f9f184",
+    "prompt": "prompts/brace-shuffle.txt",
+    "generations": 1
+  }
+}

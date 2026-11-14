@@ -1,0 +1,9 @@
+Job from Claude (the attack lane of the mech MOBA in D:/dev/new-mech-rpg), approved by Preston on 2026-11-06 ("Yes, gorilla strike", then "Yes, run 2 and 3" after seeing sheet 1): a DRAW-ONLY sheet of the robot gorilla's basic attack, a one-arm forward punch, in two views (northeast and north), from the approved 35 degree stills. Only the image is made; the attack lane finishes it by script.
+Run tag: ape-strike35-s2. Write only inside OUT = D:/dev/new-mech-rpg/docs/art/moba/attack/ape_l/strike35/s2
+Open no image and no file except OUT/prompt-sheet.txt and the one attachment. Do not write outside OUT. Do not commit.
+
+1. Generate exactly ONE image with your built-in image tool from OUT/prompt-sheet.txt word for word, attaching exactly one image: OUT/refs/look_35.png. Save it unchanged as OUT/sheet_raw.png. Never make a second image or a redo; if it fails, report and stop.
+
+2. Write OUT/REPORT.txt, under 12 lines, and the same in your final answer: tokens used if known; the image size; then by eye for each row (ne, n) and each of columns 2 to 6: does it keep its row's facing (ne faces the upper right, away from the viewer; n faces straight away)? Any eye or face showing (there must be none)? Is the punching arm the near arm, with the far fist and both feet still planted (exactly three ground contacts)? Is column 4 the longest reach? Does the arm keep its length and parts (no extra joint, no second forearm)? Anything extra, missing or broken (gems, eyes, legs)?
+
+3. Stop. Do not shrink, recolour, slice, measure or check anything else.

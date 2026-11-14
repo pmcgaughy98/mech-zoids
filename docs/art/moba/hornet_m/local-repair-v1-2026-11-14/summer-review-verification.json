@@ -1,0 +1,108 @@
+{
+  "date": "2026-11-14",
+  "engine": "Summer Engine 0.7.0",
+  "status": "passed_isolated_local_runtime_review",
+  "project": "D:/dev/_scratch/mech-art-direction/hornet-summer-review-2026-11-14",
+  "restored_sha256": "483471b77e49fb6983ce026c6217014f3d3a3853c8b90949ccbe650b90a82762",
+  "restored_triangles": 445372,
+  "downloaded_joint_count": 51,
+  "restored_joint_count": 51,
+  "version_count": 4,
+  "comparison_order_front": [
+    "Intact source; extra limbs unapproved",
+    "Approved six-leg cut; pre-rig cracked surface",
+    "Downloaded damaged rig",
+    "Restored six-leg surface on original 51-joint rig"
+  ],
+  "runtime_assertions": [
+    "Downloaded rig has one skeleton with 51 bones",
+    "Restored rig has one skeleton with 51 bones",
+    "All seven viewport frames saved successfully"
+  ],
+  "capture_results": {
+    "duration_ms": 5274,
+    "errors_seen": [],
+    "finished": true,
+    "frame_warnings": [],
+    "shots": [
+      {
+        "file": "shot-01.png",
+        "height": 900,
+        "width": 1600
+      }
+    ]
+  },
+  "frames": [
+    {
+      "file": "summer-review/comparison-front.png",
+      "sha256": "98cf087bc0efba70cbe446aa1a1594abb984ed7446c62e913fb404512a546ece",
+      "resolution": [
+        1600,
+        900
+      ],
+      "visually_inspected": true
+    },
+    {
+      "file": "summer-review/comparison-back.png",
+      "sha256": "742bb4d44d5be736cbd10bfa9ce6125c72f33473391ea625a8203825294fbb2d",
+      "resolution": [
+        1600,
+        900
+      ],
+      "visually_inspected": true
+    },
+    {
+      "file": "summer-review/restored-front.png",
+      "sha256": "2d6889c911f67fe6bd6137fd38f51c46f286d997a5c88d11e29fcb0f9dc27500",
+      "resolution": [
+        1600,
+        900
+      ],
+      "visually_inspected": true
+    },
+    {
+      "file": "summer-review/restored-back.png",
+      "sha256": "7877ddf1a5f378a229eb92a0f6e0cd622d6b361de9de7e702995553384606ff7",
+      "resolution": [
+        1600,
+        900
+      ],
+      "visually_inspected": true
+    },
+    {
+      "file": "summer-review/restored-left.png",
+      "sha256": "d21c58c87353e8cbf44a87a5a67b1fdb94677f127469405b52449a26cf5ef61f",
+      "resolution": [
+        1600,
+        900
+      ],
+      "visually_inspected": true
+    },
+    {
+      "file": "summer-review/restored-right.png",
+      "sha256": "af26df3e8f04ba15c44c1513bb5e8d6f4bea3dcfa1f4ff10a962701d13239d55",
+      "resolution": [
+        1600,
+        900
+      ],
+      "visually_inspected": true
+    },
+    {
+      "file": "summer-review/restored-underside.png",
+      "sha256": "b7ce333e02d6a900e293debd420c6f64cf5c798aa538ca516f4070eff1321d60",
+      "resolution": [
+        1600,
+        900
+      ],
+      "visually_inspected": true
+    }
+  ],
+  "observed": "Restored head, wing, abdomen and approved six-leg surfaces render from front, back, both sides and underneath; local cut-root caps remain visible underneath.",
+  "limitations": [
+    "This is an isolated review fixture, not the main Godot 4.7.2 Workshop or ChaseCamera3D check.",
+    "Main project native Workshop check remains pending while another Godot run is active.",
+    "High-detail review asset; optimisation and authored movement remain pending.",
+    "Summer inspect_asset supplied complete counts/bounds only; its triangle-budget-limited topology analysis was not used as a closed-mesh verdict.",
+    "Summer embedded screenshot API failed under Compatibility rendering; dedicated capture_gameplay plus in-game viewport captures produced the verified 1600x900 evidence."
+  ]
+}

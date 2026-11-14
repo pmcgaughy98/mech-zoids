@@ -1,0 +1,7 @@
+East anatomical spans are manual crop-local landmarks, +/-2px; no silhouette redrawing.
+Tail y0..59: 60px; non-tail body INCLUDING ears y11..70: 60px; tail/body 1.000.
+Body excluding ears (helmet crown through sole) y22..70: 49px; tail/body without ears 1.224.
+Ear plate y11..24: 14px; helmet head y22..37: 16px; ear/head 0.875.
+East/south height: 71/71 = 1.000. North/south: 70/71 = 0.986.
+Amber lens pixels: ne 1 (dark amber #c46a0e at crop-local x46,y29); nw 0. FAIL no-eye-pixel rule. All three prompt lens colours checked.
+Tail tip fan: three broad ends visible on n/s, not four distinct fins; profile more C-curve than S-curve.

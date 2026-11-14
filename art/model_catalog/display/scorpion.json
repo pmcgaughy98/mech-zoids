@@ -1,0 +1,49 @@
+{
+  "id": "scorpion",
+  "source_sha256": "ee4b557292cc1ee6006446a467fa638e993d7c7b3f2ac6b36fb7cb1579727c4c",
+  "source_triangles": 500000,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8749236531121637,
+  "blender_bounds_min": [
+    -4.3977580070495605,
+    -1.6005247831344604,
+    0.11695396155118942
+  ],
+  "blender_bounds_max": [
+    -1.6009840965270996,
+    1.5997545719146729,
+    2.609640121459961
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

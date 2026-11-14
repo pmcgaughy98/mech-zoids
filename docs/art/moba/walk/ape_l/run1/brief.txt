@@ -1,0 +1,63 @@
+You are making pixel-art walk frames for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\walk\ape_l\run1.
+Read anything under D:\dev\new-mech-rpg\docs\art\moba. Do not touch any other folder, assets, art or tools, and do not
+commit. Run tag: ape-walk35-run1.
+
+The machine: the green L gorilla (mech). Its approved stills at 35 degrees are in
+D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\views_cam35_touchup (s, se, e, ne, n; 160x160, feet row 130, 15 colours,
+raw with no outline). The same stills placed on the game's 192x192 canvas (at +16, +30, so the lowest foot is on row
+160) are in run1\stills; work on those. Preston, the game's owner, approved these stills; they are the idle in the
+game, so the walk must match them exactly above the limbs or the switch from idle to walk pops.
+Read first: D:\dev\new-mech-rpg\docs\art\moba\walk\WALK_PLAYBOOK.md (sections 1, 5, 7 and 9),
+D:\dev\new-mech-rpg\docs\art\moba\ANIMATION_PLAYBOOK.md (sections 1, 4, 5 and 9), and the rhino's 35-degree walk, the
+method that worked last: D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\walk35 (brief_run1.txt, REPORT.txt,
+build.py, verify.py, and clean\REPORT.txt with cleanup.py for what went wrong there). The gorilla's earlier walk at the
+old angle is in D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\anim\codex-set-a (how its fists and forearms moved).
+
+Job, run 1: an 8-frame walk, 125 ms a frame (8 fps), looping, in these views: e, se, ne. The gait Preston chose is a
+knuckle walk in diagonal pairs: the right fist and left hind foot swing f5-f7; the left fist and right hind foot swing
+f1-f3; both pairs are planted on f0 and f4. Each foot swings for 3 frames with lifts of 2, 3 and 2 px. Each foot's path
+(offset along the body in side-view px, + = forward, and lift) is in run1\targets.json "paths"; per view the path turns
+into screen px as offset * f * u, with the lift straight up:
+  e: u = (1, 0), f = 1.0; a planted foot moves (-3.00, +0.00) px a frame on the canvas (x, y; y down)
+  se: u = (0.8674, 0.4975), f = 0.8152; a planted foot moves (-2.12, -1.22) px a frame on the canvas
+  ne: u = (0.8674, -0.4975), f = 0.8152; a planted foot moves (-2.12, +1.22) px a frame on the canvas
+So a planted foot keeps one spot on the ground while the body moves forward. targets.json "views" gives the sole centre
+of every foot visible in each still for every frame. run1\guide_<view>.png shows them: the still faded, then a bar per
+foot per frame, filled when planted and outlined when lifted, with a tick for the lift. F = fist (the shielded forearms),
+H = hind foot. The foot names are my reading of the stills; check them and say if one is wrong (the least certain is
+LH in ne). A foot hidden in the still: draw it only where the new pose shows it (in se both hind feet are hidden).
+
+Method: no image tool, native pixels, the way the rhino walk did it. The body, head, visor, back plate and shoulders are
+the approved still, pixel for pixel, dipping 1 px on f0 and f4 (the frames where a pair lands). The limbs are the still's
+own limbs re-posed: each forearm moves as one block with its fist and hex shield, and each hind leg as its thigh, shin
+and foot. Every part is the still's own pixels TRANSLATED, never rotated or resampled (the rhino's first run rotated its
+shanks, and the rotation left dark specks and slivers that a 78k-token cleanup had to remove). The hex shields and their
+green gems are carried whole by translation, never redrawn smaller or reshaped (the gorilla's gems broke once, in its
+hex_shield ne frames). Where a limb leans, step its parts 1 px per row or redraw the joint by hand in the still's
+colours and bands. Every joint and every join with the body (shoulder, elbow, hip, knee) is redrawn by hand: no seams,
+no straight cut edges, no gaps, no part ending abruptly. Pasted parts that did not join are what Preston rejected
+before ("Too many cutoff etc."). Keep each limb's length within 1 px of the still's.
+
+Pass marks (report each):
+- Foot lock: for each foot, its sole centre on its k-th planted frame (k = 0 to 4 in order, wrapping past f7) minus k
+  times the planted step above stays within 2 px in x and y. Measure from the frame pixels, not from your targets. Write
+  a footprint picture per view. Also run this and report its result:
+  python D:\dev\new-mech-rpg\docs\art\moba\walk\tools\walk_tools.py footlock
+    --targets D:\dev\new-mech-rpg\docs\art\moba\walk\ape_l\run1\targets.json
+    --frames D:\dev\new-mech-rpg\docs\art\moba\walk\ape_l\run1\walk\frames --views e se ne
+    --still-dir D:\dev\new-mech-rpg\docs\art\moba\walk\ape_l\run1\stills
+    --out D:\dev\new-mech-rpg\docs\art\moba\walk\ape_l\run1\footlock.json
+  For a foot hidden behind the body in a frame, measure it from your limb layer and say so.
+- Each visible foot meets its target within 1 px; lifts exact.
+- Above the limbs every frame equals the still (after the 1 px dip): report the % of differing pixels per frame.
+- 192x192 transparent frames, the stills' 15 colours only, binary alpha, no holes, no stray pixels, nothing touching the
+  canvas edge. A planted foot nearer the camera than in the still may sit up to 3 px below row 160 (perspective); report
+  each frame's lowest row.
+- Judge boards at 4x with the game's 1 px dark sel-out added (the packer adds it; use the selout function in
+  D:\dev\new-mech-rpg\docs\art\moba\touchup\touchup_machine.py), with the still beside them.
+
+Output in run1: walk\frames\<view>_f0.png to <view>_f7.png for e, se and ne (raw, no outline, like the stills), a preview
+gif per view (125 ms, loop), footprint pictures, board.png (per view: the still, then your 8 frames, with sel-out, at
+4x), checks.txt, footlock.json, and REPORT.txt (under 30 lines): tokens if known, the foot names you used, the
+foot-lock spreads, target errors, upper-body match, lowest rows, and by eye: does each view read as this gorilla
+knuckle-walking forward in diagonal pairs, with limbs like the still, whole and clean?

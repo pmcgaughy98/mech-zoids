@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "check": "MODEL REPAIR CHECK PASS: dragonfly, 3 comparison versions, original/review sheets, 46-bone rig, current ChaseCamera3D",
+  "tested_sha256": "d21585337fb2f4d48ef8a333afc05c89823e3a2ecd18bf807ea0493d5744ec67",
+  "verified_at_utc": "2026-11-14T01:27:37.934753+00:00",
+  "screenshots": "res://reports/model_catalog/dragonfly-six-legs-v1/",
+  "inspected": [
+    "native three-version comparison",
+    "actual ChaseCamera3D fixture",
+    "both socket closeups",
+    "joint motion and textured views"
+  ],
+  "pose_count": 17,
+  "maximum_pose_seam_gap_m": 1.228781230931777e-07
+}

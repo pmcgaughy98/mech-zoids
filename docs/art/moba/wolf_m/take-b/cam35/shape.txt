@@ -1,0 +1,23 @@
+approved s: gunmetal 61.7609%; red 28.0848%; fang 2.5064%; eye 0.2571%; dark accent 7.3907%; eye pixels 4; height/width 2.1818; lowest opaque row 160; foot rows: see visual notes below
+approved se: gunmetal 65.5249%; red 26.5562%; fang 1.3260%; eye 0.1473%; dark accent 6.4457%; eye pixels 4; height/width 0.8434; lowest opaque row 160; foot rows: see visual notes below
+approved e: gunmetal 68.9097%; red 25.0081%; fang 1.2941%; eye 0.1294%; dark accent 4.6587%; eye pixels 4; height/width 0.6000; lowest opaque row 160; foot rows: see visual notes below
+approved ne: gunmetal 64.2260%; red 30.0438%; fang 0.4377%; eye 0.0000%; dark accent 5.2925%; eye pixels 0; height/width 0.8974; lowest opaque row 160; foot rows: see visual notes below
+approved n: gunmetal 65.1149%; red 29.2280%; fang 0.8839%; eye 0.0000%; dark accent 4.7731%; eye pixels 0; height/width 2.0571; lowest opaque row 160; foot rows: see visual notes below
+new s: gunmetal 57.8486%; red 33.0563%; fang 1.4312%; eye 0.2770%; dark accent 7.3869%; eye pixels 6; height/width 2.4286; lowest opaque row 160; foot rows: see visual notes below
+new se: gunmetal 61.3172%; red 31.2652%; fang 0.7972%; eye 0.2080%; dark accent 6.4125%; eye pixels 6; height/width 0.8471; lowest opaque row 160; foot rows: see visual notes below
+new e: gunmetal 62.2132%; red 32.1244%; fang 0.8142%; eye 0.1480%; dark accent 4.7002%; eye pixels 4; height/width 0.5800; lowest opaque row 160; foot rows: see visual notes below
+new ne: gunmetal 64.0206%; red 30.6529%; fang 0.0000%; eye 0.0344%; dark accent 5.2921%; eye pixels 1; height/width 1.2817; lowest opaque row 160; foot rows: see visual notes below
+new n: gunmetal 66.2021%; red 29.0070%; fang 0.0000%; eye 0.0000%; dark accent 4.7909%; eye pixels 0; height/width 2.6667; lowest opaque row 160; foot rows: see visual notes below
+Rows are zero-based on 192x192 canvases. Feet must be identified visually; opaque bottom alone does not identify a far foot.
+
+approved s: lightest gunmetal 11.70%; lightest red 3.53%; eye 6ff0dc 4, largest group 2, groups [2, 2]; accent 7.39% vs approved target 7.4%
+approved se: lightest gunmetal 7.18%; lightest red 2.50%; eye 6ff0dc 4, largest group 4, groups [4]; accent 6.45% vs approved target 6.4%
+approved e: lightest gunmetal 6.66%; lightest red 2.75%; eye 6ff0dc 4, largest group 4, groups [4]; accent 4.66% vs approved target 4.7%
+approved ne: lightest gunmetal 6.25%; lightest red 2.75%; eye 6ff0dc 0, largest group 0, groups []; accent 5.29% vs approved target 5.3%
+approved n: lightest gunmetal 7.78%; lightest red 4.48%; eye 6ff0dc 0, largest group 0, groups []; accent 4.77% vs approved target 4.8%
+new s: lightest gunmetal 18.14%; lightest red 6.46%; eye 6ff0dc 6, largest group 3, groups [3, 3]; accent 7.39% vs approved target 7.4%
+new se: lightest gunmetal 18.82%; lightest red 4.82%; eye 6ff0dc 6, largest group 6, groups [6]; accent 6.41% vs approved target 6.4%
+new e: lightest gunmetal 15.73%; lightest red 5.88%; eye 6ff0dc 4, largest group 4, groups [4]; accent 4.70% vs approved target 4.7%
+new ne: lightest gunmetal 17.35%; lightest red 4.54%; eye 6ff0dc 1, largest group 1, groups [1]; accent 5.29% vs approved target 5.3%
+new n: lightest gunmetal 12.41%; lightest red 5.44%; eye 6ff0dc 0, largest group 0, groups []; accent 4.79% vs approved target 4.8%
+New foot rows: s near 160/160, far occluded; se near fore/hind 160/142, far 154/132; e near 160/160, far 147/145; ne near fore/hind 133/158, far 126/153; n hind heels 151/151, far forefeet occluded (tail reaches 160). Approved: s near 160/160 far occluded; se near fore/hind 160/157 far 158/154; e near 160/160, far partly occluded 158; ne near fore/hind 155/160 far 149/157; n heels 155/155 far occluded (tail 160). Identifications visual and approximate where parts overlap.

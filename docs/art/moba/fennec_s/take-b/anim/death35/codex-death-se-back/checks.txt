@@ -1,0 +1,67 @@
+Raw sprite checks; all coordinates zero-based; no live build/check scripts run.
+Light_deg source: refs/measure.json supplies values but no algorithm. Referenced relight.py is outside allowed read area.
+Exact same-metric violet light angle: UNVERIFIED. Proxy below is least-squares brightness-rank plane atan2(-by,bx).
+The proxy is NOT light_deg and must not be compared numerically to supplied 54/96 degree targets.
+Colour shares are % of opaque pixels. Proportions below are manual projected landmarks, not automated segmentation.
+Ear lengths = Euclidean root-to-tip; head/body sizes = visible plate width x height. Occlusion/rotation affect these.
+Body centre x = manually identified torso plate midpoint, independent of tail/ear extent.
+se f0: structural PASS; 160x160 binary=True palette=True pieces=1 holes=0 edge=False bottom=140
+  px=2173 ink=6.12% cap=2.35% violet_light_deg=UNVERIFIED proxy=95.5 eyes=18
+  shares% {"141218": 6.12, "211e27": 2.02, "2e1a6e": 15.19, "3d3a44": 3.36, "3fe8b0": 0.41, "6a3cc8": 16.8, "9d9ba2": 6.81, "a46bff": 21.08, "b8923a": 4.19, "c8fff0": 0.28, "d6d6dc": 5.89, "e0c8ff": 2.35, "f0d27a": 13.48, "f6fffb": 0.14, "fff4d6": 1.89}
+  ear lengths=[26.2, 26.2] vs still=[26.2, 26.2]; head projected WH=[20, 21] vs still=[20, 21]; body projected WH=[26, 22] vs still=[26, 22]; body centre x=78.5
+se f1: structural PASS; 160x160 binary=True palette=True pieces=1 holes=0 edge=False bottom=140
+  px=2278 ink=6.72% cap=2.63% violet_light_deg=UNVERIFIED proxy=94.6 eyes=25
+  shares% {"141218": 6.72, "211e27": 3.25, "2e1a6e": 13.87, "3d3a44": 3.56, "3fe8b0": 0.4, "6a3cc8": 16.94, "9d9ba2": 7.2, "a46bff": 19.71, "b8923a": 3.86, "c8fff0": 0.13, "d6d6dc": 6.67, "e0c8ff": 2.63, "f0d27a": 12.73, "f6fffb": 0.57, "fff4d6": 1.76}
+  ear lengths=[26.8, 27.0] vs still=[26.2, 26.2]; head projected WH=[20, 20] vs still=[20, 21]; body projected WH=[25, 21] vs still=[26, 22]; body centre x=77.0
+se f2: structural PASS; 160x160 binary=True palette=True pieces=1 holes=0 edge=False bottom=140
+  px=2017 ink=6.89% cap=1.83% violet_light_deg=UNVERIFIED proxy=85.8 eyes=18
+  shares% {"141218": 6.89, "211e27": 3.52, "2e1a6e": 15.57, "3d3a44": 4.02, "3fe8b0": 0.4, "6a3cc8": 15.07, "9d9ba2": 7.04, "a46bff": 19.53, "b8923a": 3.67, "c8fff0": 0.2, "d6d6dc": 7.54, "e0c8ff": 1.83, "f0d27a": 12.69, "f6fffb": 0.3, "fff4d6": 1.74}
+  ear lengths=[27.7, 25.0] vs still=[26.2, 26.2]; head projected WH=[21, 20] vs still=[20, 21]; body projected WH=[26, 19] vs still=[26, 22]; body centre x=77.5
+se f3: structural PASS; 160x160 binary=True palette=True pieces=1 holes=0 edge=False bottom=140
+  px=1844 ink=6.4% cap=2.49% violet_light_deg=UNVERIFIED proxy=76.1 eyes=20
+  shares% {"141218": 6.4, "211e27": 4.83, "2e1a6e": 14.7, "3d3a44": 4.72, "3fe8b0": 0.49, "6a3cc8": 15.51, "9d9ba2": 7.21, "a46bff": 18.93, "b8923a": 4.07, "c8fff0": 0.11, "d6d6dc": 6.45, "e0c8ff": 2.49, "f0d27a": 11.98, "f6fffb": 0.49, "fff4d6": 1.63}
+  ear lengths=[27.5, 29.8] vs still=[26.2, 26.2]; head projected WH=[20, 20] vs still=[20, 21]; body projected WH=[26, 17] vs still=[26, 22]; body centre x=77.5
+se f4: structural PASS; 160x160 binary=True palette=True pieces=1 holes=0 edge=False bottom=140
+  px=1647 ink=6.74% cap=2.73% violet_light_deg=UNVERIFIED proxy=80.1 eyes=20
+  shares% {"141218": 6.74, "211e27": 8.32, "2e1a6e": 16.88, "3d3a44": 2.91, "3fe8b0": 0.43, "6a3cc8": 14.21, "9d9ba2": 4.01, "a46bff": 17.24, "b8923a": 4.49, "c8fff0": 0.12, "d6d6dc": 6.07, "e0c8ff": 2.73, "f0d27a": 13.36, "f6fffb": 0.67, "fff4d6": 1.82}
+  ear lengths=[28.3, 28.4] vs still=[26.2, 26.2]; head projected WH=[21, 20] vs still=[20, 21]; body projected WH=[25, 16] vs still=[26, 22]; body centre x=78.0
+se f5: structural PASS; 160x160 binary=True palette=True pieces=1 holes=0 edge=False bottom=140
+  px=1222 ink=6.46% cap=3.03% violet_light_deg=UNVERIFIED proxy=93.3 eyes=10
+  shares% {"141218": 6.46, "211e27": 11.29, "2e1a6e": 20.38, "3d3a44": 0.08, "3fe8b0": 0.41, "6a3cc8": 14.57, "9d9ba2": 3.03, "a46bff": 14.24, "b8923a": 7.53, "c8fff0": 0.25, "d6d6dc": 5.07, "e0c8ff": 3.03, "f0d27a": 10.07, "f6fffb": 0.16, "fff4d6": 3.44}
+  ear lengths=[29.0, 28.2] vs still=[26.2, 26.2]; head projected WH=[19, 20] vs still=[20, 21]; body projected WH=[25, 18] vs still=[26, 22]; body centre x=75.0
+se f6: structural PASS; 160x160 binary=True palette=True pieces=1 holes=0 edge=False bottom=140
+  px=1222 ink=6.46% cap=3.03% violet_light_deg=UNVERIFIED proxy=94.9 eyes=0
+  shares% {"141218": 6.46, "211e27": 11.29, "2e1a6e": 21.19, "3d3a44": 0.08, "3fe8b0": 0.0, "6a3cc8": 14.57, "9d9ba2": 3.03, "a46bff": 14.24, "b8923a": 7.53, "c8fff0": 0.0, "d6d6dc": 5.07, "e0c8ff": 3.03, "f0d27a": 10.07, "f6fffb": 0.0, "fff4d6": 3.44}
+  ear lengths=[29.0, 28.2] vs still=[26.2, 26.2]; head projected WH=[19, 20] vs still=[20, 21]; body projected WH=[25, 18] vs still=[26, 22]; body centre x=75.0
+se: GIF seven frames, 3x exact selout, timings=[300, 100, 130, 140, 160, 180, 1400], no loop extension PASS.
+se: f0 byte-identical still PASS; f6 exact f5 eyes-out PASS.
+back f0: structural PASS; 160x160 binary=True palette=True pieces=1 holes=0 edge=False bottom=140
+  px=2084 ink=6.24% cap=5.13% violet_light_deg=UNVERIFIED proxy=104.0 eyes=0
+  shares% {"141218": 6.24, "211e27": 1.34, "2e1a6e": 12.38, "3d3a44": 3.98, "3fe8b0": 0.0, "6a3cc8": 25.0, "9d9ba2": 3.21, "a46bff": 32.05, "b8923a": 2.06, "c8fff0": 0.0, "d6d6dc": 5.37, "e0c8ff": 5.13, "f0d27a": 2.21, "f6fffb": 0.0, "fff4d6": 1.01}
+  ear lengths=[35.5, 35.1] vs still=[35.5, 35.1]; head projected WH=[21, 20] vs still=[21, 20]; body projected WH=[24, 19] vs still=[24, 19]; body centre x=79.5
+back f1: structural PASS; 160x160 binary=True palette=True pieces=1 holes=0 edge=False bottom=140
+  px=2062 ink=5.48% cap=3.49% violet_light_deg=UNVERIFIED proxy=73.4 eyes=0
+  shares% {"141218": 5.48, "211e27": 3.39, "2e1a6e": 13.63, "3d3a44": 3.98, "3fe8b0": 0.0, "6a3cc8": 25.12, "9d9ba2": 3.15, "a46bff": 30.31, "b8923a": 1.5, "c8fff0": 0.0, "d6d6dc": 6.69, "e0c8ff": 3.49, "f0d27a": 2.04, "f6fffb": 0.0, "fff4d6": 1.21}
+  ear lengths=[35.8, 35.5] vs still=[35.5, 35.1]; head projected WH=[19, 20] vs still=[21, 20]; body projected WH=[22, 18] vs still=[24, 19]; body centre x=79.5
+back f2: structural PASS; 160x160 binary=True palette=True pieces=1 holes=0 edge=False bottom=140
+  px=1872 ink=5.45% cap=4.97% violet_light_deg=UNVERIFIED proxy=78.9 eyes=0
+  shares% {"141218": 5.45, "211e27": 3.58, "2e1a6e": 14.0, "3d3a44": 3.58, "3fe8b0": 0.0, "6a3cc8": 23.72, "9d9ba2": 3.15, "a46bff": 28.69, "b8923a": 1.55, "c8fff0": 0.0, "d6d6dc": 7.91, "e0c8ff": 4.97, "f0d27a": 2.35, "f6fffb": 0.0, "fff4d6": 1.07}
+  ear lengths=[35.0, 31.8] vs still=[35.5, 35.1]; head projected WH=[20, 19] vs still=[21, 20]; body projected WH=[19, 16] vs still=[24, 19]; body centre x=81.0
+back f3: structural PASS; 160x160 binary=True palette=True pieces=1 holes=0 edge=False bottom=140
+  px=1828 ink=6.35% cap=6.51% violet_light_deg=UNVERIFIED proxy=135.5 eyes=0
+  shares% {"141218": 6.35, "211e27": 3.39, "2e1a6e": 22.1, "3d3a44": 2.08, "3fe8b0": 0.0, "6a3cc8": 20.19, "9d9ba2": 2.46, "a46bff": 28.67, "b8923a": 2.24, "c8fff0": 0.0, "d6d6dc": 3.28, "e0c8ff": 6.51, "f0d27a": 1.81, "f6fffb": 0.0, "fff4d6": 0.93}
+  ear lengths=[33.0, 33.0] vs still=[35.5, 35.1]; head projected WH=[22, 19] vs still=[21, 20]; body projected WH=[21, 16] vs still=[24, 19]; body centre x=83.0
+back f4: structural PASS; 160x160 binary=True palette=True pieces=1 holes=0 edge=False bottom=140
+  px=1722 ink=4.99% cap=5.34% violet_light_deg=UNVERIFIED proxy=118.3 eyes=0
+  shares% {"141218": 4.99, "211e27": 5.69, "2e1a6e": 22.76, "3d3a44": 3.83, "3fe8b0": 0.0, "6a3cc8": 18.58, "9d9ba2": 1.86, "a46bff": 28.22, "b8923a": 2.26, "c8fff0": 0.0, "d6d6dc": 3.95, "e0c8ff": 5.34, "f0d27a": 1.16, "f6fffb": 0.0, "fff4d6": 1.34}
+  ear lengths=[33.0, 33.0] vs still=[35.5, 35.1]; head projected WH=[23, 22] vs still=[21, 20]; body projected WH=[22, 18] vs still=[24, 19]; body centre x=80.5
+back f5: structural PASS; 160x160 binary=True palette=True pieces=1 holes=0 edge=False bottom=140
+  px=1905 ink=5.77% cap=6.46% violet_light_deg=UNVERIFIED proxy=96.8 eyes=0
+  shares% {"141218": 5.77, "211e27": 3.36, "2e1a6e": 21.99, "3d3a44": 2.05, "3fe8b0": 0.0, "6a3cc8": 20.0, "9d9ba2": 2.2, "a46bff": 29.19, "b8923a": 1.73, "c8fff0": 0.0, "d6d6dc": 4.57, "e0c8ff": 6.46, "f0d27a": 1.26, "f6fffb": 0.0, "fff4d6": 1.42}
+  ear lengths=[33.0, 33.0] vs still=[35.5, 35.1]; head projected WH=[25, 25] vs still=[21, 20]; body projected WH=[22, 18] vs still=[24, 19]; body centre x=87.5
+back f6: structural PASS; 160x160 binary=True palette=True pieces=1 holes=0 edge=False bottom=140
+  px=1905 ink=5.77% cap=6.46% violet_light_deg=UNVERIFIED proxy=96.8 eyes=0
+  shares% {"141218": 5.77, "211e27": 3.36, "2e1a6e": 21.99, "3d3a44": 2.05, "3fe8b0": 0.0, "6a3cc8": 20.0, "9d9ba2": 2.2, "a46bff": 29.19, "b8923a": 1.73, "c8fff0": 0.0, "d6d6dc": 4.57, "e0c8ff": 6.46, "f0d27a": 1.26, "f6fffb": 0.0, "fff4d6": 1.42}
+  ear lengths=[33.0, 33.0] vs still=[35.5, 35.1]; head projected WH=[25, 25] vs still=[21, 20]; body projected WH=[22, 18] vs still=[24, 19]; body centre x=87.5
+back: GIF seven frames, 3x exact selout, timings=[300, 100, 130, 140, 160, 180, 1400], no loop extension PASS.
+back: f0 byte-identical still PASS; f6 exact f5 eyes-out PASS.

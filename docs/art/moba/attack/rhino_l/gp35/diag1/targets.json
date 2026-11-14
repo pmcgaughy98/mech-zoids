@@ -1,0 +1,384 @@
+{
+ "holds_100ms": [
+  1,
+  1,
+  1,
+  2,
+  3,
+  3
+ ],
+ "slam_frame": 4,
+ "rise_frame": 5,
+ "pitch_deg": [
+  0,
+  0,
+  15,
+  30,
+  0,
+  0
+ ],
+ "hip_height_texels": 34,
+ "sole_span_texels": 40,
+ "palette": [
+  "fff4a8",
+  "ffcf1f",
+  "d18a0a",
+  "7a4a06",
+  "d6d6dc",
+  "9d9ba2",
+  "58555e",
+  "3d3a44",
+  "211e27",
+  "ff3a2a",
+  "ffe6d8",
+  "141218"
+ ],
+ "views": {
+  "e": {
+   "soles": [
+    {
+     "x": 62.5,
+     "y": 160,
+     "leg": "hind"
+    },
+    {
+     "x": 102.5,
+     "y": 160,
+     "leg": "front_near"
+    }
+   ],
+   "axis_on_screen": [
+    1.0,
+    0.0
+   ],
+   "hind_ground_mid": [
+    62.5,
+    148.5
+   ],
+   "hip_pivot": [
+    62.5,
+    120.6
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 0,
+     "body_shift_px": [
+      0,
+      0
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 1,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 0,
+     "body_shift_px": [
+      -2.0,
+      1.0
+     ],
+     "head_extra_drop_px": 1,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 2,
+     "front_feet_shift_px": [
+      -1.4,
+      -8.5
+     ],
+     "near_front_lift_px": 8.5,
+     "body_shift_px": [
+      0,
+      0
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 3,
+     "front_feet_shift_px": [
+      -5.4,
+      -16.4
+     ],
+     "near_front_lift_px": 16.4,
+     "body_shift_px": [
+      0,
+      0
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 4,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 0,
+     "body_shift_px": [
+      0,
+      2
+     ],
+     "head_extra_drop_px": 1,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 5,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 2,
+     "body_shift_px": [
+      0,
+      1
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    }
+   ]
+  },
+  "se": {
+   "soles": [
+    {
+     "x": 65,
+     "y": 143,
+     "leg": "hind"
+    },
+    {
+     "x": 88.5,
+     "y": 160,
+     "leg": "front_near"
+    },
+    {
+     "x": 116.5,
+     "y": 155,
+     "leg": "front"
+    }
+   ],
+   "axis_on_screen": [
+    0.707,
+    0.405
+   ],
+   "hind_ground_mid": [
+    74.2,
+    135.8
+   ],
+   "hip_pivot": [
+    74.2,
+    107.9
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 0,
+     "body_shift_px": [
+      0,
+      0
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 1,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 0,
+     "body_shift_px": [
+      -1.4,
+      0.2
+     ],
+     "head_extra_drop_px": 1,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 2,
+     "front_feet_shift_px": [
+      -1.0,
+      -9.0
+     ],
+     "near_front_lift_px": 9.0,
+     "body_shift_px": [
+      0,
+      0
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 3,
+     "front_feet_shift_px": [
+      -3.8,
+      -18.6
+     ],
+     "near_front_lift_px": 18.6,
+     "body_shift_px": [
+      0,
+      0
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 4,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 0,
+     "body_shift_px": [
+      0,
+      2
+     ],
+     "head_extra_drop_px": 1,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 5,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 2,
+     "body_shift_px": [
+      0,
+      1
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    }
+   ]
+  },
+  "ne": {
+   "soles": [
+    {
+     "x": 89,
+     "y": 160,
+     "leg": "hind"
+    },
+    {
+     "x": 65,
+     "y": 150,
+     "leg": "hind"
+    },
+    {
+     "x": 116,
+     "y": 141,
+     "leg": "front_near"
+    }
+   ],
+   "axis_on_screen": [
+    0.707,
+    -0.405
+   ],
+   "hind_ground_mid": [
+    75.0,
+    152.0
+   ],
+   "hip_pivot": [
+    75.0,
+    124.1
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 0,
+     "body_shift_px": [
+      0,
+      0
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 1,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 0,
+     "body_shift_px": [
+      -1.4,
+      1.8
+     ],
+     "head_extra_drop_px": 1,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 2,
+     "front_feet_shift_px": [
+      -1.0,
+      -7.9
+     ],
+     "near_front_lift_px": 7.9,
+     "body_shift_px": [
+      0,
+      0
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 3,
+     "front_feet_shift_px": [
+      -3.8,
+      -14.2
+     ],
+     "near_front_lift_px": 14.2,
+     "body_shift_px": [
+      0,
+      0
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 4,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 0,
+     "body_shift_px": [
+      0,
+      2
+     ],
+     "head_extra_drop_px": 1,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 5,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 2,
+     "body_shift_px": [
+      0,
+      1
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    }
+   ]
+  }
+ }
+}

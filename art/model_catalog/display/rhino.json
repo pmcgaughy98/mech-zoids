@@ -1,0 +1,49 @@
+{
+  "id": "rhino",
+  "source_sha256": "180de3054e84adf9c45ce1d51b413b6530eef3d9af4b8b19729c69a8948936ad",
+  "source_triangles": 499390,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8751230226545889,
+  "blender_bounds_min": [
+    -4.146266937255859,
+    -1.599748969078064,
+    0.11439035087823868
+  ],
+  "blender_bounds_max": [
+    -1.8559198379516602,
+    1.5998013019561768,
+    1.8238897323608398
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

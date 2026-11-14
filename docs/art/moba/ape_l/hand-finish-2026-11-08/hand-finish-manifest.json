@@ -1,0 +1,31 @@
+{
+  "source": "D:\\dev\\new-mech-rpg\\art\\model_catalog\\workspaces\\gorilla_integrated_review.blend",
+  "source_sha256": "dd92f388685e0789d5eaf94d34829a808c8fcd83fd8bc84c6ef52cf53dd38abf",
+  "changed": [
+    {
+      "object": "Hand_L_PalmHousing",
+      "painted_faces": 26
+    },
+    {
+      "object": "Hand_L_Thumb",
+      "painted_faces": 30
+    },
+    {
+      "object": "Hand_R_PalmHousing",
+      "painted_faces": 26
+    },
+    {
+      "object": "Hand_R_Thumb",
+      "painted_faces": 30
+    }
+  ],
+  "checks": {
+    "all_pixels_outside_selected_hand_tiles_unchanged": true,
+    "all_foot_tiles_untouched": true
+  },
+  "notes": [
+    "Green metacarpal housings and thumb roots now match the finished feet and forearm palette.",
+    "Gray fingers, gray thumb tips, dark wrist bearings and floor pads retained.",
+    "No geometry, sizes, UVs, weights or skeleton changed."
+  ]
+}

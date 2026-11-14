@@ -1,0 +1,15 @@
+{
+  "request": {
+    "mode": "preview",
+    "ai_model": "meshy-6",
+    "target_formats": [
+      "glb"
+    ],
+    "prompt": "Stylized industrial science fiction MOBA Foundry environment piece. Broad clean beveled armor forms, dark blue charcoal steel, warm worn iron inset plates, small amber light strips, sparse yellow hazard trim. Strong readable silhouette, no text, no logos, no characters, no ground, isolated single object, flat bottom. One defense tower pedestal with no weapon: stepped octagonal plinth, four angled buttresses, a tapering faceted armored shaft and a flat round socket on top. Stout, a little taller than wide.",
+    "should_remesh": true,
+    "topology": "triangle",
+    "target_polycount": 5000
+  },
+  "reserved_credits": 20,
+  "at": "2026-11-14T13:40:16.433784+00:00"
+}

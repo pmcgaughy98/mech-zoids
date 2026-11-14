@@ -1,0 +1,220 @@
+{
+  "materials": [
+    {
+      "name": "BakedMaterial",
+      "nodes": [
+        [
+          "BSDF_PRINCIPLED",
+          ""
+        ],
+        [
+          "OUTPUT_MATERIAL",
+          ""
+        ],
+        [
+          "TEX_IMAGE",
+          "texture_0"
+        ],
+        [
+          "SEPARATE_COLOR",
+          ""
+        ],
+        [
+          "TEX_IMAGE",
+          "texture_0_metallic_roughness"
+        ]
+      ]
+    },
+    {
+      "name": "eye_glow",
+      "nodes": [
+        [
+          "BSDF_PRINCIPLED",
+          ""
+        ],
+        [
+          "OUTPUT_MATERIAL",
+          ""
+        ]
+      ]
+    },
+    {
+      "name": "hand_armor",
+      "nodes": [
+        [
+          "BSDF_PRINCIPLED",
+          ""
+        ],
+        [
+          "OUTPUT_MATERIAL",
+          ""
+        ]
+      ]
+    },
+    {
+      "name": "hand_joint",
+      "nodes": [
+        [
+          "BSDF_PRINCIPLED",
+          ""
+        ],
+        [
+          "OUTPUT_MATERIAL",
+          ""
+        ]
+      ]
+    },
+    {
+      "name": "hand_pad",
+      "nodes": [
+        [
+          "BSDF_PRINCIPLED",
+          ""
+        ],
+        [
+          "OUTPUT_MATERIAL",
+          ""
+        ]
+      ]
+    },
+    {
+      "name": "foot_armor",
+      "nodes": [
+        [
+          "BSDF_PRINCIPLED",
+          ""
+        ],
+        [
+          "OUTPUT_MATERIAL",
+          ""
+        ]
+      ]
+    },
+    {
+      "name": "foot_joint",
+      "nodes": [
+        [
+          "BSDF_PRINCIPLED",
+          ""
+        ],
+        [
+          "OUTPUT_MATERIAL",
+          ""
+        ]
+      ]
+    },
+    {
+      "name": "foot_pad",
+      "nodes": [
+        [
+          "BSDF_PRINCIPLED",
+          ""
+        ],
+        [
+          "OUTPUT_MATERIAL",
+          ""
+        ]
+      ]
+    }
+  ],
+  "samples": {
+    "shin_green": {
+      "count": 895,
+      "p25": [
+        0.019607843831181526,
+        0.26274511218070984,
+        0.14509804546833038
+      ],
+      "median": [
+        0.0313725508749485,
+        0.3019607961177826,
+        0.1568627506494522
+      ],
+      "p75": [
+        0.06666667014360428,
+        0.3450980484485626,
+        0.18431372940540314
+      ]
+    },
+    "body_green": {
+      "count": 15708,
+      "p25": [
+        0.027450982481241226,
+        0.2823529541492462,
+        0.08627451211214066
+      ],
+      "median": [
+        0.06666667014360428,
+        0.35686275362968445,
+        0.14509804546833038
+      ],
+      "p75": [
+        0.2245098203420639,
+        0.572549045085907,
+        0.18431372940540314
+      ]
+    },
+    "body_gray": {
+      "count": 846,
+      "p25": [
+        0.24411766231060028,
+        0.2666666805744171,
+        0.26274511218070984
+      ],
+      "median": [
+        0.3078431487083435,
+        0.3333333432674408,
+        0.33725491166114807
+      ],
+      "p75": [
+        0.40392160415649414,
+        0.41960787773132324,
+        0.43137258291244507
+      ]
+    },
+    "body_dark": {
+      "count": 2190,
+      "p25": [
+        0.09019608050584793,
+        0.12941177189350128,
+        0.1098039299249649
+      ],
+      "median": [
+        0.10196079313755035,
+        0.13725490868091583,
+        0.12156863510608673
+      ],
+      "p75": [
+        0.1098039299249649,
+        0.14509804546833038,
+        0.12941177189350128
+      ]
+    }
+  },
+  "texture": {
+    "name": "texture_0",
+    "colorspace": "sRGB",
+    "size": [
+      4096,
+      4096
+    ]
+  },
+  "images": [
+    {
+      "name": "texture_0",
+      "colorspace": "sRGB",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "texture_0_metallic_roughness",
+      "colorspace": "Non-Color",
+      "size": [
+        4096,
+        4096
+      ]
+    }
+  ]
+}

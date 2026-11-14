@@ -1,0 +1,3 @@
+﻿p='verify.py';s=open(p,encoding='utf-8-sig').read();s=s.replace("exec(compile(s,",'''s=s.replace("ky,kx=np.where(knee[:,:,3]>0)","km=knee[:,:,3]>0; contamination=np.logical_or.reduce([np.all(knee[:,:,:3]==list(bytes.fromhex(h)),axis=2) for h in ['fff4d6','f0d27a','b8923a']]) if v=='e' else np.zeros_like(km); ky,kx=np.where(km&~contamination)")
+s=s.replace("lines=['fennec-trot35-run2: native pixel audit.'", "lines=['fennec-trot35-run2: native pixel audit.','e RF/LF knee comparison excludes five native chest-shadow pixels accidentally extracted into each run1 knee; these are replaced by deepest violet, leaving the steel disc unchanged.'")
+exec(compile(s,''');open(p,'w',encoding='utf-8').write(s)

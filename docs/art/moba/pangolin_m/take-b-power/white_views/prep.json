@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "537bccc65a190113858be617b8e6cf1581de0680df80f6b9e847597cca7dec46",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 0.8085519922254616,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "pangolin_front.png",
+      "source_box": [
+        109,
+        20,
+        514,
+        402
+      ],
+      "source_dimensions": [
+        405,
+        382
+      ],
+      "output_box": [
+        348,
+        627,
+        675,
+        936
+      ]
+    },
+    "left": {
+      "file": "pangolin_left.png",
+      "source_box": [
+        695,
+        23,
+        1719,
+        399
+      ],
+      "source_dimensions": [
+        1024,
+        376
+      ],
+      "output_box": [
+        98,
+        632,
+        926,
+        936
+      ]
+    },
+    "back": {
+      "file": "pangolin_back.png",
+      "source_box": [
+        107,
+        462,
+        518,
+        857
+      ],
+      "source_dimensions": [
+        411,
+        395
+      ],
+      "output_box": [
+        346,
+        617,
+        678,
+        936
+      ]
+    },
+    "right": {
+      "file": "pangolin_right.png",
+      "source_box": [
+        660,
+        466,
+        1689,
+        841
+      ],
+      "source_dimensions": [
+        1029,
+        375
+      ],
+      "output_box": [
+        96,
+        633,
+        928,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.05063291139240506
+}

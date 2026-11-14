@@ -1,0 +1,2548 @@
+{
+  "version": 1,
+  "date": "2026-11-07",
+  "generation_chat": "01a1b3d2-bd2d-78f1-922f-9db2d803864e",
+  "purpose": "Shared in-game model/reference archive. Gallery display does not approve roster or polish.",
+  "entries": [
+    {
+      "id": "bison",
+      "name": "Bison",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/bison_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\bison_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "45586e24104722d455498fc882e945d1d5b23a091035d98f7df425b14c1c11ee",
+        "bytes": 34626808
+      },
+      "display_model": "res://docs/art/moba/bison_l/topology-repair-v1-2026-11-11/bison-rigged-local-repair-v1.glb",
+      "status": "Local folds and gaps repaired; four legs, two horns, one tail. Original 47-joint rig, weights and textures retained. Surface detail still compared against intact original.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/bison/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\bison_front.png",
+          "sha256": "3339e0d32fee985b652c04135119d13ae2ac65a87dbb445cdfca655d98d25cd2",
+          "bytes": 250184,
+          "project_matches": [
+            "docs/art/moba/bison_l/take-a/white_views/bison_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/bison/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\bison_left.png",
+          "sha256": "e43b6d070bea2665b6925112b5dd1302472a074a632a2e83ac20c13c4811d2cb",
+          "bytes": 311713,
+          "project_matches": [
+            "docs/art/moba/bison_l/take-a/white_views/bison_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/bison/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\bison_back.png",
+          "sha256": "0190c616c7598eec89a64dd47c9d6cae3e4a3c94301340282904d1d8a9a97f0c",
+          "bytes": 227406,
+          "project_matches": [
+            "docs/art/moba/bison_l/take-a/white_views/bison_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/bison/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\bison_right.png",
+          "sha256": "0af63ea8f324ccaccdd109a41649a3e427cc39999b00c0998ef608c657ca8a4e",
+          "bytes": 319897,
+          "project_matches": [
+            "docs/art/moba/bison_l/take-a/white_views/bison_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://art/model_catalog/workspaces/bison.blend",
+      "review_models": [
+        {
+          "label": "INTACT ORIGINAL\nBefore remeshing",
+          "path": "res://art/model_catalog/sources/bison_front - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 2.4833209279388213,
+          "display_basis": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "label": "DOWNLOADED RIG\nLocal folds and gaps",
+          "path": "res://docs/art/moba/bison_l/topology-repair-v1-2026-11-11/bison-unrepaired-rigged-input.glb",
+          "display_scale": 1.0126452504301384
+        },
+        {
+          "label": "LOCAL REPAIR\nSame 47-joint rig and weights",
+          "path": "res://docs/art/moba/bison_l/topology-repair-v1-2026-11-11/bison-rigged-local-repair-v1.glb",
+          "display_scale": 1.0126452504301384
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/bison_l/topology-repair-v1-2026-11-11/review-front.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        },
+        "left": {
+          "path": "res://docs/art/moba/bison_l/topology-repair-v1-2026-11-11/review-side.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        },
+        "back": {
+          "path": "res://docs/art/moba/bison_l/topology-repair-v1-2026-11-11/review-back.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        },
+        "right": {
+          "path": "res://docs/art/moba/bison_l/topology-repair-v1-2026-11-11/review-right.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-11",
+        "report": "res://docs/art/moba/bison_l/topology-repair-v1-2026-11-11/repair-verification.json",
+        "joint_count": 47,
+        "rigged_input_sha256": "0a688dc0dc7b69f509ed427f0f9c78ab4f8503ec508e91aded136eac07eb80f0",
+        "repaired_sha256": "23fc1f64d22ecab9fc70351cfcfd1b3323b504cbda45c394739579fa58690354",
+        "scope": "Local triangle repair plus a grey material on one new closure. Original skeleton, weights, positions, normals, UVs and original material/texture data retained. No full-detail reconstruction or gameplay installation."
+      }
+    },
+    {
+      "id": "bombardier_beetle",
+      "name": "Bombardier Beetle",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/bombardier_beetle_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\bombardier_beetle_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "84c287011472b8cc2a8ec68ad4369cedb61d8a02f86840a9b9ba021a4d5b8b49",
+        "bytes": 56707980
+      },
+      "display_model": "res://docs/art/moba/bombardier_beetle_m/joint-restoration-v2-2026-11-11/bombardier-beetle-joints-restored-v2.glb",
+      "status": "Front ball joints and shared shoulder armor restored. Six legs; pair 2 remains removed. Small rounded closures; original 64-joint skeleton retained.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/bombardier_beetle/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\bombardier_beetle_front.png",
+          "sha256": "30b5ed1f246756700b8b7c21131845d4ba935e3320c0dd053d4b0f34fc9aa441",
+          "bytes": 272700,
+          "project_matches": [
+            "docs/art/moba/bombardier_beetle_m/take-b-forward/white_views/bombardier_beetle_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/bombardier_beetle/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\bombardier_beetle_left.png",
+          "sha256": "6649a56e9fb237f4b17ac4f03071311615645aa3f704d708449bb3e20fadb624",
+          "bytes": 314937,
+          "project_matches": [
+            "docs/art/moba/bombardier_beetle_m/take-b-forward/white_views/bombardier_beetle_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/bombardier_beetle/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\bombardier_beetle_back.png",
+          "sha256": "b87cdadf098952e8021b491681f9ea0dea60ac8a4f6862c7c2d2a3dac58baee7",
+          "bytes": 283703,
+          "project_matches": [
+            "docs/art/moba/bombardier_beetle_m/take-b-forward/white_views/bombardier_beetle_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/bombardier_beetle/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\bombardier_beetle_right.png",
+          "sha256": "ec4d05359194e3e1c6763f5408141a7f9b0a93720a24e78da971cb4ffd3e7e7a",
+          "bytes": 313213,
+          "project_matches": [
+            "docs/art/moba/bombardier_beetle_m/take-b-forward/white_views/bombardier_beetle_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://art/model_catalog/workspaces/bombardier_beetle.blend",
+      "review_models": [
+        {
+          "label": "INTACT QUALITY ARCHIVE\nExtra pair is not approved",
+          "path": "res://art/model_catalog/sources/bombardier_beetle_front - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 2.9616493345029227,
+          "display_basis": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "label": "DOWNLOADED RIG\nEight walking legs",
+          "path": "res://docs/art/moba/bombardier_beetle_m/joint-restoration-v2-2026-11-11/beetle-unrepaired-rigged-input.glb",
+          "display_scale": 1.080967181594081
+        },
+        {
+          "label": "JOINTS RESTORED / SIX LEGS\nOriginal 64-joint skeleton",
+          "path": "res://docs/art/moba/bombardier_beetle_m/joint-restoration-v2-2026-11-11/bombardier-beetle-joints-restored-v2.glb",
+          "display_scale": 1.080967181594081
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/bombardier_beetle_m/joint-restoration-v2-2026-11-11/review-front.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        },
+        "left": {
+          "path": "res://docs/art/moba/bombardier_beetle_m/joint-restoration-v2-2026-11-11/review-side.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        },
+        "back": {
+          "path": "res://docs/art/moba/bombardier_beetle_m/joint-restoration-v2-2026-11-11/review-back.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        },
+        "right": {
+          "path": "res://docs/art/moba/bombardier_beetle_m/joint-restoration-v2-2026-11-11/review-right.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-11",
+        "report": "res://docs/art/moba/bombardier_beetle_m/joint-restoration-v2-2026-11-11/repair-verification.json",
+        "joint_count": 64,
+        "rigged_input_sha256": "4ab1d8eac7802448813f95edc29e3be959c075268d4b6a28ca149897d3fcb0a1",
+        "repaired_sha256": "430d478ef15416b45805c2396894ac57e8c3e602c44d833c5435c8f8119b598a",
+        "scope": "V2 restores original front ball joints and shared shoulder armor damaged by v1. Pair 2 stays removed at its narrower distal joint with rounded beveled closures. Original skeleton/rest/binds retained; local socket weights handled on existing rig. No remesh or gameplay installation."
+      }
+    },
+    {
+      "id": "chameleon",
+      "name": "Chameleon",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/chameleon_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\chameleon_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "9199eccfebf19216cad0e1100b9ba35236f0941394aed89d8ca090843e8770e4",
+        "bytes": 51069420
+      },
+      "display_model": "res://docs/art/moba/chameleon_m/local-repair-v1-2026-11-11/chameleon-rigged-local-repair-v1.glb",
+      "status": "Four small gaps and malformed folds repaired. Four legs, two eyes, one segmented tail; original 51-joint rig and skin weights retained.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/chameleon/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\chameleon_front.png",
+          "sha256": "0e21c953567651b5853a67ce62bb2f31975f97b520cc0d7e7478696da3b883de",
+          "bytes": 151431,
+          "project_matches": [
+            "docs/art/moba/chameleon_m/take-d-muted-prisms/white_views/chameleon_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/chameleon/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\chameleon_left.png",
+          "sha256": "7a2cb40fb2edefea0b16989c211780940c73f7e1f981a4d73ad2e103c25fdeb2",
+          "bytes": 233966,
+          "project_matches": [
+            "docs/art/moba/chameleon_m/take-d-muted-prisms/white_views/chameleon_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/chameleon/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\chameleon_back.png",
+          "sha256": "f512bbaabf8cd6c76cfaa93d2bf2caf9fad90ca0ac756640e9bd8336d58c2085",
+          "bytes": 155180,
+          "project_matches": [
+            "docs/art/moba/chameleon_m/take-d-muted-prisms/white_views/chameleon_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/chameleon/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\chameleon_right.png",
+          "sha256": "80d616953a542041433c89135df7f088949db4a33fc064e28e9dd08fbaf0cab5",
+          "bytes": 238803,
+          "project_matches": [
+            "docs/art/moba/chameleon_m/take-d-muted-prisms/white_views/chameleon_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://art/model_catalog/workspaces/chameleon.blend",
+      "review_models": [
+        {
+          "label": "INTACT ORIGINAL\nBefore remeshing",
+          "path": "res://art/model_catalog/sources/chameleon_front - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 2.425302361323592,
+          "display_basis": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "label": "DOWNLOADED RIG\nLocal folds and gaps",
+          "path": "res://docs/art/moba/chameleon_m/local-repair-v1-2026-11-11/chameleon-unrepaired-rigged-input.glb",
+          "display_scale": 0.5527723594332199
+        },
+        {
+          "label": "LOCAL REPAIR\nSame 51-joint rig and weights",
+          "path": "res://docs/art/moba/chameleon_m/local-repair-v1-2026-11-11/chameleon-rigged-local-repair-v1.glb",
+          "display_scale": 0.5527723594332199
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/chameleon_m/local-repair-v1-2026-11-11/review-front.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        },
+        "left": {
+          "path": "res://docs/art/moba/chameleon_m/local-repair-v1-2026-11-11/review-side.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        },
+        "back": {
+          "path": "res://docs/art/moba/chameleon_m/local-repair-v1-2026-11-11/review-back.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        },
+        "right": {
+          "path": "res://docs/art/moba/chameleon_m/local-repair-v1-2026-11-11/review-right.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-11",
+        "report": "res://docs/art/moba/chameleon_m/local-repair-v1-2026-11-11/repair-verification.json",
+        "joint_count": 51,
+        "rigged_input_sha256": "9cda17916f12b1b576a1a6b20ff48166bdf073bdbd56fc266dc046599d2f4ba4",
+        "repaired_sha256": "8672cbd2d2dc49b5b2bb8c6d69c10ba56d0ea3c445270bfa45298cc481d6e5b0",
+        "scope": "Local triangle-index repair only. Original skeleton, weights, positions, normals, UVs and material/texture data retained byte-for-byte. No new vertices, materials, full-detail reconstruction or gameplay installation."
+      }
+    },
+    {
+      "id": "cobra",
+      "name": "Cobra",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/cobra_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\cobra_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "af7353fcb7967f579bd715e64df339f52e6488958990dde25d652b47078bcfa3",
+        "bytes": 52445024
+      },
+      "display_model": "res://docs/art/moba/cobra_m/base-reshape-v2-2026-11-10/cobra-rigged-base-reshape-v2.glb",
+      "status": "Base repair v2: left junction rebuilt from healthy right side. Existing 21-bone skeleton retained; local weights transferred and bend-tested.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/cobra/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\cobra_front.png",
+          "sha256": "b5436f159ae7425d39bdcf0ff2b6517c4914b639d70e544001ccf3614c6071df",
+          "bytes": 198008,
+          "project_matches": [
+            "docs/art/moba/cobra_m/take-a/white_views/cobra_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/cobra/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\cobra_left.png",
+          "sha256": "444bae09b32fae7dd8c32224de3e39a4e1dfa86730bd5bf90055a591a64444fa",
+          "bytes": 176049,
+          "project_matches": [
+            "docs/art/moba/cobra_m/take-a/white_views/cobra_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/cobra/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\cobra_back.png",
+          "sha256": "eefebeb7639e8759e04756eac8748f27ed8209858edb3ff8486c5cae4589fb28",
+          "bytes": 181491,
+          "project_matches": [
+            "docs/art/moba/cobra_m/take-a/white_views/cobra_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/cobra/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\cobra_right.png",
+          "sha256": "28c49f2f04c8ff3d35507512ab3a41190da2a6b85e2a8fc148c5d0b24d0003fc",
+          "bytes": 172627,
+          "project_matches": [
+            "docs/art/moba/cobra_m/take-a/white_views/cobra_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://art/model_catalog/workspaces/cobra.blend",
+      "review_models": [
+        {
+          "label": "INTACT BEFORE REMESH\nSingle-tail correction",
+          "path": "res://docs/art/moba/cobra_m/tail-correction-2026-11-10/cobra_front - single tail corrected.glb",
+          "display_scale": 3.7413458681354306
+        },
+        {
+          "label": "REMESHED + RIGGED\nDownloaded input",
+          "path": "res://docs/art/moba/cobra_m/rigged-repair-v1-2026-11-10/cobra-remeshed-rigged-input.glb",
+          "display_scale": 0.9314673836096172
+        },
+        {
+          "label": "BASE REPAIR v2\nExisting 21-bone skeleton",
+          "path": "res://docs/art/moba/cobra_m/base-reshape-v2-2026-11-10/cobra-rigged-base-reshape-v2.glb",
+          "display_scale": 0.9314673836096172
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/cobra_m/base-reshape-v2-2026-11-10/review-front.png",
+          "kind": "Rendered comparison, not original generation input",
+          "versions": [
+            "intact before remesh, earlier tail cut",
+            "remeshed rigged input",
+            "left-base repair v2"
+          ]
+        },
+        "left": {
+          "path": "res://docs/art/moba/cobra_m/base-reshape-v2-2026-11-10/review-side.png",
+          "kind": "Rendered comparison, not original generation input",
+          "versions": [
+            "intact before remesh, earlier tail cut",
+            "remeshed rigged input",
+            "left-base repair v2"
+          ]
+        },
+        "back": {
+          "path": "res://docs/art/moba/cobra_m/base-reshape-v2-2026-11-10/review-back.png",
+          "kind": "Rendered comparison, not original generation input",
+          "versions": [
+            "intact before remesh, earlier tail cut",
+            "remeshed rigged input",
+            "left-base repair v2"
+          ]
+        },
+        "right": {
+          "path": "res://docs/art/moba/cobra_m/base-reshape-v2-2026-11-10/review-right.png",
+          "kind": "Rendered comparison, not original generation input",
+          "versions": [
+            "intact before remesh, earlier tail cut",
+            "remeshed rigged input",
+            "left-base repair v2"
+          ]
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-10",
+        "report": "res://docs/art/moba/cobra_m/base-reshape-v2-2026-11-10/verification.json",
+        "intact_comparator_sha256": "78c2b9be88ffcc69f03c20e079449633cad43a548586eafd8a748eabb578a5b8",
+        "exact_meshy_upload_independently_verified": false,
+        "rigged_input_sha256": "a331b088dc4339b67a81071c9c2a621ec7a94708e81bf2fb15d6e1cdda5a3dac",
+        "repaired_sha256": "7996566b080693278f24e26a104618fea5f4e8eb8fa697edacafd1bbfa0bc12e",
+        "scope": "Local left-base geometry and UV restoration using mirrored right patch. Existing skeleton/binds/materials/textures retained; local weights transferred with seam fade. No gameplay installation."
+      }
+    },
+    {
+      "id": "dragonfly",
+      "name": "Dragonfly",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/dragonfly_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\dragonfly_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "984ed353af641da84b90dc5e3ee7719cd58668096696ed87651ef2db1a9e2641",
+        "bytes": 58884904
+      },
+      "display_model": "res://docs/art/moba/dragonfly_m/local-repair-v1-2026-11-13/dragonfly-rigged-local-repair-v1.glb",
+      "status": "Pair 2 removed: six legs and four wings. Local flaps/sockets repaired; original 46-joint skeleton retained.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/dragonfly/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\dragonfly_front.png",
+          "sha256": "7b801ef0588b65377ce5eb7d47541d791b8b409567b0ea5b297b8a2330c57065",
+          "bytes": 272183,
+          "project_matches": [
+            "docs/art/moba/dragonfly_m/take-b-angles/white_views/dragonfly_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/dragonfly/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\dragonfly_left.png",
+          "sha256": "ca4961d0a52f2f6b551d72cd01272ab149a8adaa1d48fd13c7f3dd912bbdfd0a",
+          "bytes": 128145,
+          "project_matches": [
+            "docs/art/moba/dragonfly_m/take-b-angles/white_views/dragonfly_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/dragonfly/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\dragonfly_back.png",
+          "sha256": "346597e3b1ded722a6988b189303c93a02a13d706f46d65b2b43e3978488e559",
+          "bytes": 269255,
+          "project_matches": [
+            "docs/art/moba/dragonfly_m/take-b-angles/white_views/dragonfly_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/dragonfly/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\dragonfly_right.png",
+          "sha256": "1cdb81ecf604f114edec071ef5265eea574f44eb55e3c70a67c481af45ac35d1",
+          "bytes": 131969,
+          "project_matches": [
+            "docs/art/moba/dragonfly_m/take-b-angles/white_views/dragonfly_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://docs/art/moba/dragonfly_m/local-repair-v1-2026-11-13/dragonfly-rigged-local-repair-v1.blend",
+      "review_models": [
+        {
+          "label": "QUALITY ARCHIVE\nAnatomy not approved",
+          "path": "res://art/model_catalog/sources/dragonfly_front - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 2.740664383210881
+        },
+        {
+          "label": "DOWNLOADED RIG\nFour leg pairs",
+          "path": "res://art/model_catalog/sources/Meshy_AI_dragonfly_remeshed_25k_20261111_character.glb",
+          "display_scale": 1.2522823391065454
+        },
+        {
+          "label": "SIX-LEG REPAIR\nSame 46-joint skeleton",
+          "path": "res://docs/art/moba/dragonfly_m/local-repair-v1-2026-11-13/dragonfly-rigged-local-repair-v1.glb",
+          "display_scale": 1.2522823391065454
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/dragonfly_m/local-repair-v1-2026-11-13/review-front.png",
+          "kind": "Original quality archive / downloaded four-pair rig / six-leg repair; archive anatomy not approved"
+        },
+        "left": {
+          "path": "res://docs/art/moba/dragonfly_m/local-repair-v1-2026-11-13/review-left.png",
+          "kind": "Original quality archive / downloaded four-pair rig / six-leg repair; archive anatomy not approved"
+        },
+        "back": {
+          "path": "res://docs/art/moba/dragonfly_m/local-repair-v1-2026-11-13/review-back.png",
+          "kind": "Original quality archive / downloaded four-pair rig / six-leg repair; archive anatomy not approved"
+        },
+        "right": {
+          "path": "res://docs/art/moba/dragonfly_m/local-repair-v1-2026-11-13/review-right.png",
+          "kind": "Original quality archive / downloaded four-pair rig / six-leg repair; archive anatomy not approved"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-13",
+        "report": "res://docs/art/moba/dragonfly_m/local-repair-v1-2026-11-13/repair-verification.json",
+        "independent_audit": "res://docs/art/moba/dragonfly_m/local-repair-v1-2026-11-13/independent-export-audit.json",
+        "joint_count": 46,
+        "rigged_input_sha256": "4aa5552ba0601f5006e7e4a06eb93c67f7721a1cf50e811ef67349cf6c47eeaf",
+        "repaired_sha256": "d21585337fb2f4d48ef8a333afc05c89823e3a2ecd18bf807ea0493d5744ec67",
+        "selected_removed_pair": 2,
+        "remaining_pairs": [
+          1,
+          3,
+          4
+        ],
+        "intact_pre_remesh_available": true,
+        "source_archive_scope": "Original generated quality archive; exact historical remesh upload not verified. Original archive anatomy is not approved.",
+        "scope": "User selected pair 2. Removed outer-front pair, retained front/middle/rear pairs and four wings. Local sockets and 15 malformed flaps repaired. Original nodes/rest/binds and source texture/UV/position rows retained. Local removed-chain skin reassigned to existing body parent; small new socket finish. No gameplay replacement."
+      }
+    },
+    {
+      "id": "electric_eel",
+      "name": "Electric Eel",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/electric_eel_front_hunyuan - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\electric_eel_front_hunyuan - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "23d480d94c3c50c987c9ed59cba69162961b589cbfe300ae12d857c37c6ee127",
+        "bytes": 56561152
+      },
+      "display_model": "res://docs/art/moba/electric_eel_m/local-repair-v1-2026-11-13/electric-eel-rigged-local-repair-v1.glb",
+      "status": "Upper tail prong 1 removed; two lower prongs retained. Six gaps and malformed strips repaired. Original 56-joint rig and textures preserved, deleted-chain weights cleaned locally.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/electric_eel/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\electric_eel_front_hunyuan.png",
+          "sha256": "ff0b71424fe7319d411ae48d8c8b1f1f4b0d60230ae07cf75d93e555f024b56a",
+          "bytes": 75218,
+          "project_matches": [
+            "docs/art/moba/electric_eel_m/take-b-level/hunyuan_uploads_v1/electric_eel_front_hunyuan.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/electric_eel/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\electric_eel_left_hunyuan.png",
+          "sha256": "6f7628a82efb8bd0f154d00bc45551d4fc6dd27d7807d67462d186269f2edb33",
+          "bytes": 271116,
+          "project_matches": [
+            "docs/art/moba/electric_eel_m/take-b-level/hunyuan_uploads_v1/electric_eel_left_hunyuan.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/electric_eel/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\electric_eel_back_hunyuan.png",
+          "sha256": "3b3e5e7f26c1af7547b415a246f2c822a66aff3c517b92b564e8b8cd7610fa92",
+          "bytes": 70239,
+          "project_matches": [
+            "docs/art/moba/electric_eel_m/take-b-level/hunyuan_uploads_v1/electric_eel_back_hunyuan.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/electric_eel/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\electric_eel_right_hunyuan.png",
+          "sha256": "f2e534c60d462cbeabdc34480df28c1b45c2017db84f877bf7125dbf533e0097",
+          "bytes": 269030,
+          "project_matches": [
+            "docs/art/moba/electric_eel_m/take-b-level/hunyuan_uploads_v1/electric_eel_right_hunyuan.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://docs/art/moba/electric_eel_m/local-repair-v1-2026-11-13/electric-eel-rigged-local-repair-v1.blend",
+      "review_models": [
+        {
+          "label": "INTACT QUALITY ARCHIVE\nExtra upper prong unapproved",
+          "path": "res://art/model_catalog/sources/electric_eel_front_hunyuan - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 2.4281751374035054
+        },
+        {
+          "label": "DOWNLOADED RIG\nUnrepaired / three prongs",
+          "path": "res://art/model_catalog/sources/Meshy_AI_electric_eel_remeshed_25k_20261108_character.glb",
+          "display_scale": 0.22868006348266678
+        },
+        {
+          "label": "LOCAL REPAIR\nTwo prongs / original 56-joint rig",
+          "path": "res://docs/art/moba/electric_eel_m/local-repair-v1-2026-11-13/electric-eel-rigged-local-repair-v1.glb",
+          "display_scale": 0.22868006348266678
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/electric_eel_m/local-repair-v1-2026-11-13/review-front.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "left": {
+          "path": "res://docs/art/moba/electric_eel_m/local-repair-v1-2026-11-13/review-left.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "back": {
+          "path": "res://docs/art/moba/electric_eel_m/local-repair-v1-2026-11-13/review-back.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "right": {
+          "path": "res://docs/art/moba/electric_eel_m/local-repair-v1-2026-11-13/review-right.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-13",
+        "report": "res://docs/art/moba/electric_eel_m/local-repair-v1-2026-11-13/repair-verification.json",
+        "independent_audit": "res://docs/art/moba/electric_eel_m/local-repair-v1-2026-11-13/independent-export-audit.json",
+        "joint_count": 56,
+        "rigged_input_sha256": "a6a9a6fd5ec89724436a60d05352ac42c1d5a55dc721f3b57425897d109ebfb9",
+        "repaired_sha256": "4d73849a9bfd3c02c8ce70f8ecf1844b1d57f6084f0e9f1cbb5582e7d187431c",
+        "intact_pre_remesh_available": true,
+        "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+        "scope": "User selected upper prong 1. Retained the two lower prongs and closed the upper mounting opening. Six pre-existing surface gaps and malformed strips repaired. Original 56-joint hierarchy, rest/binds, healthy shapes and textures preserved; residual deleted-chain weights reassigned locally to existing Bone_033. One original balanced four-face contact between closed assembly surfaces is protected; no new contact edges. No gameplay replacement."
+      }
+    },
+    {
+      "id": "falcon",
+      "name": "Falcon",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/falcon_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\falcon_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "34d77973b951d096ff136061a7c820378e09fdc4c8b97c402b2989c0ed509947",
+        "bytes": 47610196
+      },
+      "display_model": "res://docs/art/moba/falcon_m/local-repair-v1-2026-11-13/falcon-rigged-local-repair-v1.glb",
+      "status": "Four toes per foot: three forward and one rear. Extra outer rear toes removed, chest gap and malformed triangles repaired. Original 45-joint rig retained; deleted-chain skin cleaned locally.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/falcon/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\falcon_front.png",
+          "sha256": "8c715a55e39e95ed74953cc3a3e9f901eb64ec0c1f766385f2d18a523ce1d392",
+          "bytes": 257744,
+          "project_matches": [
+            "docs/art/moba/falcon_m/take-c-power/white_views/falcon_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/falcon/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\falcon_left.png",
+          "sha256": "c1a034f90d8603d32df8ccb261065835da27de72fcaafab75d6ef20be42dc1a7",
+          "bytes": 293370,
+          "project_matches": [
+            "docs/art/moba/falcon_m/take-c-power/white_views/falcon_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/falcon/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\falcon_back.png",
+          "sha256": "f903cc31adc6c3592f9282693ce5f367a40f2e9f99cbd14905ed8883bd0c737b",
+          "bytes": 266410,
+          "project_matches": [
+            "docs/art/moba/falcon_m/take-c-power/white_views/falcon_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/falcon/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\falcon_right.png",
+          "sha256": "842719c556e88179aebc3cfd63cb48059a58ff6d203647d76e9f578875d8b745",
+          "bytes": 301628,
+          "project_matches": [
+            "docs/art/moba/falcon_m/take-c-power/white_views/falcon_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://docs/art/moba/falcon_m/local-repair-v1-2026-11-13/falcon-rigged-local-repair-v1.blend",
+      "review_models": [
+        {
+          "label": "INTACT QUALITY ARCHIVE\nExtra rear toes unapproved",
+          "path": "res://art/model_catalog/sources/falcon_front - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 2.5521338852852917
+        },
+        {
+          "label": "DOWNLOADED RIG\nUnrepaired / five toes per foot",
+          "path": "res://art/model_catalog/sources/Meshy_AI_falcon_remeshed_25k_20261108_character.glb",
+          "display_scale": 1.173333405359499
+        },
+        {
+          "label": "LOCAL REPAIR\nFour toes / original 45-joint rig",
+          "path": "res://docs/art/moba/falcon_m/local-repair-v1-2026-11-13/falcon-rigged-local-repair-v1.glb",
+          "display_scale": 1.173333405359499
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/falcon_m/local-repair-v1-2026-11-13/review-front.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "left": {
+          "path": "res://docs/art/moba/falcon_m/local-repair-v1-2026-11-13/review-left.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "back": {
+          "path": "res://docs/art/moba/falcon_m/local-repair-v1-2026-11-13/review-back.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "right": {
+          "path": "res://docs/art/moba/falcon_m/local-repair-v1-2026-11-13/review-right.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-13",
+        "report": "res://docs/art/moba/falcon_m/local-repair-v1-2026-11-13/repair-verification.json",
+        "independent_audit": "res://docs/art/moba/falcon_m/local-repair-v1-2026-11-13/independent-export-audit.json",
+        "joint_count": 45,
+        "rigged_input_sha256": "245e6242746f7e4daf179299621fac0f372bfe6b0b9bef0edbfdf394b5f3db37",
+        "repaired_sha256": "4d189d5083c141b424a282e1e68a87701c65338870bf2ee36b38e89d03f49807",
+        "intact_pre_remesh_available": true,
+        "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+        "scope": "User approved removing marked outer rear toe 1 on both feet. Retained three forward toes and one rear toe per foot; closed gunmetal mounting sockets. Chest opening and 26 malformed surface triangles repaired. Original 45-joint hierarchy/rest/binds and textures preserved; only removed-chain residual skin reassigned locally to the existing foot parents Bone_009 and Bone_013. Protected one original balanced four-face contact between closed assembly surfaces. No gameplay replacement."
+      }
+    },
+    {
+      "id": "fennec",
+      "name": "Fennec",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/fennec_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\fennec_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "ef9263888aae6b09e00da3bc33cbe09b4a89999e1419bd76d3759bb204f0cbf8",
+        "bytes": 55258280
+      },
+      "display_model": "res://docs/art/moba/fennec_s/local-repair-v1-2026-11-13/fennec-rigged-local-repair-v1.glb",
+      "status": "Two small gaps and 52 malformed triangles repaired. Four legs, two ears and one tail retained. Original 44-joint rig, all skin weights and textures unchanged.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/fennec/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\fennec_front.png",
+          "sha256": "b03e22758459e1cf0626e4cbb7d8990b722ed8391cf629d11b1b671ceddf7760",
+          "bytes": 240619,
+          "project_matches": [
+            "docs/art/moba/fennec_s/take-c-power/white_views/fennec_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/fennec/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\fennec_left.png",
+          "sha256": "a57fc30bc4337b85e21ab7cb48d6949229dfae49df3f3cfe1d9f7533bbb906f0",
+          "bytes": 249794,
+          "project_matches": [
+            "docs/art/moba/fennec_s/take-c-power/white_views/fennec_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/fennec/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\fennec_back.png",
+          "sha256": "074941b7c51bfdf565dd20f55b4362b9a8211327098f448a8b6fa096748f36d6",
+          "bytes": 212229,
+          "project_matches": [
+            "docs/art/moba/fennec_s/take-c-power/white_views/fennec_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/fennec/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\fennec_right.png",
+          "sha256": "ea1260235d62805ca2e2ab6b34807bca996bde7bb109e5574df3299f0ab673c6",
+          "bytes": 251781,
+          "project_matches": [
+            "docs/art/moba/fennec_s/take-c-power/white_views/fennec_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://docs/art/moba/fennec_s/local-repair-v1-2026-11-13/fennec-rigged-local-repair-v1.blend",
+      "review_models": [
+        {
+          "label": "INTACT QUALITY ARCHIVE\nOriginal generated geometry",
+          "path": "res://art/model_catalog/sources/fennec_front - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 2.554990037629816
+        },
+        {
+          "label": "DOWNLOADED RIG\nLocal gaps and folds",
+          "path": "res://art/model_catalog/sources/Meshy_AI_fennec_remeshed_25k_20261108_character.glb",
+          "display_scale": 1.1324741779482872
+        },
+        {
+          "label": "LOCAL REPAIR\nSame 44-joint rig and skin",
+          "path": "res://docs/art/moba/fennec_s/local-repair-v1-2026-11-13/fennec-rigged-local-repair-v1.glb",
+          "display_scale": 1.1324741779482872
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/fennec_s/local-repair-v1-2026-11-13/review-front.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "left": {
+          "path": "res://docs/art/moba/fennec_s/local-repair-v1-2026-11-13/review-left.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "back": {
+          "path": "res://docs/art/moba/fennec_s/local-repair-v1-2026-11-13/review-back.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "right": {
+          "path": "res://docs/art/moba/fennec_s/local-repair-v1-2026-11-13/review-right.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-13",
+        "report": "res://docs/art/moba/fennec_s/local-repair-v1-2026-11-13/repair-verification.json",
+        "independent_audit": "res://docs/art/moba/fennec_s/local-repair-v1-2026-11-13/independent-export-audit.json",
+        "joint_count": 44,
+        "rigged_input_sha256": "4d24a78a3d63979264e78af1209109e0f6f3c3257d071731f7cdcd229407dde7",
+        "repaired_sha256": "b9ab24f020ce2a83c78b122969a6f4880d0a0d3353ef6c54fe5206d54660f31f",
+        "intact_pre_remesh_available": true,
+        "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+        "scope": "Local topology repair. Four legs, two ears, two eyes, one segmented tail and hip/shoulder mechanisms retained. Original vertex attributes, skin, 44-joint skeleton/rest/binds and textures preserved; no remesh or rerig. All 23,720 healthy main-body source faces retained. No gameplay replacement."
+      }
+    },
+    {
+      "id": "gorilla",
+      "name": "Gorilla",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/Gorilla_s - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\Gorilla_s - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "5c223ba84c7cde87be15d75b9414b13630c6e75760c019eb9bedc2828ff6d915",
+        "bytes": 50001268
+      },
+      "display_model": "res://docs/art/moba/archive-refresh-2026-11-13/models/gorilla-v38.glb",
+      "status": "Current authored game export v38; 38 joints, 38 clips. Original design sheets retained; C compares the old proxy. Archive snapshot, not a new readiness approval.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/gorilla/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\gorilla_front.png",
+          "sha256": "f9921f28b215ea0f3e9e44702e597b4bfe3a6d91b9524237f77992efba10955e",
+          "bytes": 388249,
+          "project_matches": [
+            "docs/art/moba/ape_l/take-b-power/white_views/gorilla_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/gorilla/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\gorilla_left.png",
+          "sha256": "44a4f509246f571082d4df3030742e763098d007267d5ad8e63b99594ce1e8fa",
+          "bytes": 305704,
+          "project_matches": [
+            "docs/art/moba/ape_l/take-b-power/white_views/gorilla_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/gorilla/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\gorilla_back.png",
+          "sha256": "ed692ab18faeb65be594319f3f131aaa088f0e7e7c47b002e8213c68ef084403",
+          "bytes": 353524,
+          "project_matches": [
+            "docs/art/moba/ape_l/take-b-power/white_views/gorilla_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/gorilla/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\gorilla_right.png",
+          "sha256": "8da92d771d3dc75fac7e65b09565322b2a95e1934db4954f72a8b2cbca0663f0",
+          "bytes": 317703,
+          "project_matches": [
+            "docs/art/moba/ape_l/take-b-power/white_views/gorilla_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://art/model_catalog/workspaces/gorilla.blend",
+      "runtime_archive_provenance": {
+        "id": "gorilla",
+        "version": "v38",
+        "source": "D:\\dev\\new-mech-rpg\\art\\arena_models\\gorilla.glb",
+        "authored_source": "D:\\dev\\_scratch\\gorilla\\meshforge-2026-11-08\\round24\\gorilla-kit-v38.glb",
+        "sha256": "f20b8381759d93103dfb5c6cec48a5c7b5a1418186b9fb5584d7428986e544ba",
+        "snapshot": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\archive-refresh-2026-11-13\\models\\gorilla-v38.glb",
+        "previous_display_model": "res://art/model_catalog/display/gorilla.glb",
+        "joint_count": 38,
+        "animation_count": 38
+      },
+      "review_models": [
+        {
+          "label": "OLD STATIC PROXY\nHistorical archive display",
+          "path": "res://art/model_catalog/display/gorilla.glb"
+        },
+        {
+          "label": "CURRENT GAME EXPORT v38\nRig and animations retained",
+          "path": "res://docs/art/moba/archive-refresh-2026-11-13/models/gorilla-v38.glb"
+        }
+      ]
+    },
+    {
+      "id": "gorilla_rigged",
+      "name": "Gorilla (Meshy rig)",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/Meshy_AI_gorilla_rigged_v2_20261107.glb",
+        "source": "D:\\user\\Downloads\\Meshy_AI_gorilla_connected_100k_2k_20261107_character.glb",
+        "sha256": "f147adff9da6a807193b36c4d4b7f264c86a02c2e570f76fa19ef3b0e9174a06",
+        "bytes": 28567856
+      },
+      "display_model": "res://art/model_catalog/display/gorilla_rigged.glb",
+      "status": "New Meshy rig: split shields, eyes, built knuckle-walk hands and feet.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/gorilla/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\gorilla_front.png",
+          "sha256": "f9921f28b215ea0f3e9e44702e597b4bfe3a6d91b9524237f77992efba10955e",
+          "bytes": 388249,
+          "project_matches": [
+            "docs/art/moba/ape_l/take-b-power/white_views/gorilla_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/gorilla/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\gorilla_left.png",
+          "sha256": "44a4f509246f571082d4df3030742e763098d007267d5ad8e63b99594ce1e8fa",
+          "bytes": 305704,
+          "project_matches": [
+            "docs/art/moba/ape_l/take-b-power/white_views/gorilla_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/gorilla/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\gorilla_back.png",
+          "sha256": "ed692ab18faeb65be594319f3f131aaa088f0e7e7c47b002e8213c68ef084403",
+          "bytes": 353524,
+          "project_matches": [
+            "docs/art/moba/ape_l/take-b-power/white_views/gorilla_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/gorilla/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\gorilla_right.png",
+          "sha256": "8da92d771d3dc75fac7e65b09565322b2a95e1934db4954f72a8b2cbca0663f0",
+          "bytes": 317703,
+          "project_matches": [
+            "docs/art/moba/ape_l/take-b-power/white_views/gorilla_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://art/model_catalog/workspaces/gorilla_rigged.blend",
+      "touch_up": [
+        "toe joints open slightly when toes bend",
+        "small orange chip inside front shield, lower left",
+        "refine toward the other catalog art's quality"
+      ]
+    },
+    {
+      "id": "hippo",
+      "name": "Hippo",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/hippo_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\hippo_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "21644d9326cc0ed72c5e6cd2f7efe665b9ec8de8f1a067d00ec259a08be04575",
+        "bytes": 34883028
+      },
+      "display_model": "res://docs/art/moba/archive-refresh-2026-11-13/models/hippo-r13.glb",
+      "status": "Current authored game export r13; 23 joints, 21 clips. Original design sheets retained; C compares the old proxy. Archive snapshot, not a new readiness approval.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/hippo/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\hippo_front.png",
+          "sha256": "ed5c6079b3d3c6d33929eab148dbdb6dec525b07e60b033400b80d5cc8d5b25d",
+          "bytes": 218956,
+          "project_matches": [
+            "docs/art/moba/hippo_l/take-c-power/white_views/hippo_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/hippo/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\hippo_left.png",
+          "sha256": "7e74c5506061e11508616f76d84b4fefd10cd540c62de365eca4b8c85173f533",
+          "bytes": 325833,
+          "project_matches": [
+            "docs/art/moba/hippo_l/take-c-power/white_views/hippo_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/hippo/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\hippo_back.png",
+          "sha256": "9b55f75efa5c01cb6fe7fdb6ea8303daa62f859895531c1fce09ca7f69945e7e",
+          "bytes": 207042,
+          "project_matches": [
+            "docs/art/moba/hippo_l/take-c-power/white_views/hippo_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/hippo/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\hippo_right.png",
+          "sha256": "cbbd26f554aa7e0ddd0a3c5c76c2a21350eb8fb6bb2c537652a8f6a7a14d089c",
+          "bytes": 329780,
+          "project_matches": [
+            "docs/art/moba/hippo_l/take-c-power/white_views/hippo_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://art/model_catalog/workspaces/hippo.blend",
+      "runtime_archive_provenance": {
+        "id": "hippo",
+        "version": "r13",
+        "source": "D:\\dev\\new-mech-rpg\\art\\arena_models\\hippo.glb",
+        "authored_source": "D:\\dev\\_scratch\\hippo-3d\\game-export-r13-s125\\hippo-kit-r13.glb",
+        "sha256": "86d770ac8ec34f1f20bf07b5e4e819b87e86af31a79607e4a5574d021bf50ba0",
+        "snapshot": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\archive-refresh-2026-11-13\\models\\hippo-r13.glb",
+        "previous_display_model": "res://art/model_catalog/display/hippo.glb",
+        "joint_count": 23,
+        "animation_count": 21
+      },
+      "review_models": [
+        {
+          "label": "OLD STATIC PROXY\nHistorical archive display",
+          "path": "res://art/model_catalog/display/hippo.glb"
+        },
+        {
+          "label": "CURRENT GAME EXPORT r13\nRig and animations retained",
+          "path": "res://docs/art/moba/archive-refresh-2026-11-13/models/hippo-r13.glb"
+        }
+      ]
+    },
+    {
+      "id": "hornet",
+      "name": "Hornet",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/hornet_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\hornet_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "1abdd53ffe957aa022deb629644ca5f0e7c6d357bedc1998565ea627773240c1",
+        "bytes": 52442088
+      },
+      "display_model": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/hornet-rigged-local-repair-v1.glb",
+      "status": "Approved six-leg layout restored from intact source. Original 51-joint skeleton retained; skin transferred and tested. High-detail review (445k triangles); optimisation and authored movement pending.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/hornet/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\hornet_front.png",
+          "sha256": "e210855ec616446c93f032acead3b39bc285367b70120f9b9fca5ce27a058943",
+          "bytes": 252323,
+          "project_matches": [
+            "docs/art/moba/hornet_m/take-b-forward/white_views/hornet_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/hornet/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\hornet_left.png",
+          "sha256": "ea58aace4e85edc1b062be77aeab3d80b86f6dc618655e4a284f08c4facdc9a1",
+          "bytes": 299388,
+          "project_matches": [
+            "docs/art/moba/hornet_m/take-b-forward/white_views/hornet_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/hornet/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\hornet_back.png",
+          "sha256": "770d794f0046f3989dd362688d2b0ba4973ea0d630ad244f07d21b2991c6a1c9",
+          "bytes": 258912,
+          "project_matches": [
+            "docs/art/moba/hornet_m/take-b-forward/white_views/hornet_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/hornet/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\hornet_right.png",
+          "sha256": "9ee2bc82a8334cad6c76cc5da1ed215a4cfb79901ca95a5593ba0dcc9138435a",
+          "bytes": 302150,
+          "project_matches": [
+            "docs/art/moba/hornet_m/take-b-forward/white_views/hornet_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/hornet-rigged-local-repair-v1.blend",
+      "review_models": [
+        {
+          "label": "INTACT SOURCE ARCHIVE\nExtra limbs unapproved",
+          "path": "res://art/model_catalog/sources/hornet_front - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 3.204471100036714
+        },
+        {
+          "label": "APPROVED SIX-LEG CUT\nPre-rig / cracked surface",
+          "path": "res://art/model_catalog/sources/hornet_front - 6 legs touchup.glb",
+          "display_scale": 0.905447484112799
+        },
+        {
+          "label": "DOWNLOADED RIG\nDamaged surface",
+          "path": "res://art/model_catalog/sources/Meshy_AI_hornet_touchup_remeshed_25k_20261111_character.glb",
+          "display_scale": 1.0111033337366337
+        },
+        {
+          "label": "RESTORED SURFACE\nSix legs / original 51-joint rig",
+          "path": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/hornet-rigged-local-repair-v1.glb",
+          "display_scale": 1.0111033337366337
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/review-front.png",
+          "kind": "Intact generated archive (extra anatomy unapproved) / approved six-leg pre-rig touch-up (cracked) / damaged rig / restored surface; matched framing"
+        },
+        "left": {
+          "path": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/review-left.png",
+          "kind": "Intact generated archive (extra anatomy unapproved) / approved six-leg pre-rig touch-up (cracked) / damaged rig / restored surface; matched framing"
+        },
+        "back": {
+          "path": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/review-back.png",
+          "kind": "Intact generated archive (extra anatomy unapproved) / approved six-leg pre-rig touch-up (cracked) / damaged rig / restored surface; matched framing"
+        },
+        "right": {
+          "path": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/review-right.png",
+          "kind": "Intact generated archive (extra anatomy unapproved) / approved six-leg pre-rig touch-up (cracked) / damaged rig / restored surface; matched framing"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-14",
+        "report": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/repair-verification.json",
+        "independent_audit": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/independent-export-audit.json",
+        "summer_runtime_report": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/summer-review-verification.json",
+        "joint_count": 51,
+        "rigged_input_sha256": "02e61d1695fca6a5cf80591de4f4a1ebffe9a427f50ad556df1c81f76ba4b8a0",
+        "repaired_sha256": "483471b77e49fb6983ce026c6217014f3d3a3853c8b90949ccbe650b90a82762",
+        "intact_pre_remesh_available": true,
+        "accepted_pre_rig_touchup": "res://art/model_catalog/sources/hornet_front - 6 legs touchup.glb",
+        "accepted_pre_rig_touchup_sha256": "84622e39a7a46413ab9676789fcac12a9599da71614f5c12462550d220837bb2",
+        "source_archive_scope": "Original generated archive plus the documented approved six-leg pre-rig touch-up. Exact historical Meshy upload not independently verified. Both damaged inputs remain visible.",
+        "scope": "Restore intact generated surface with the documented approved six-leg/floating-claw cuts. Delete only two verified cut-created remnants. Transfer weights from the actual 51-joint downloaded rig; preserve its full hierarchy/rest/binds. Original and pre-rig sources archived. High-detail review asset; optimisation and authored flight/gait work remain."
+      }
+    },
+    {
+      "id": "hummingbird",
+      "name": "Hummingbird",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/hummingbird_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\hummingbird_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "4d8b4161267de42bca0197b1ed72e360d04f4ccc182a06b25fa88c8144ff13bb",
+        "bytes": 52824232
+      },
+      "display_model": "res://docs/art/moba/hummingbird_s/needle-length-v3-2026-11-10/hummingbird-rigged-needle-length-v3.glb",
+      "status": "Hummingbird v3: approved 30% shorter straight shaft; repaired topology retained. Original rig, weights, collar/body and textures preserved.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/hummingbird/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\hummingbird_front.png",
+          "sha256": "ae0d003914fd4d00d952c5db7fe62cfc597205d200cf2af24d0252b32ed95146",
+          "bytes": 211367,
+          "project_matches": [
+            "docs/art/moba/hummingbird_s/take-c-sidefix/white_views/hummingbird_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/hummingbird/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\hummingbird_left.png",
+          "sha256": "f4e7ed177536c561642045e3d8904cd5bf9edcf4c8ed11ed47e9461e51f94cff",
+          "bytes": 183995,
+          "project_matches": [
+            "docs/art/moba/hummingbird_s/take-c-sidefix/white_views/hummingbird_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/hummingbird/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\hummingbird_back.png",
+          "sha256": "2de19dfa1b612ddeb12e78986158ca4b6e0d4c2817a33b2048a2c285f5a7d664",
+          "bytes": 202380,
+          "project_matches": [
+            "docs/art/moba/hummingbird_s/take-c-sidefix/white_views/hummingbird_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/hummingbird/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\hummingbird_right.png",
+          "sha256": "3b5ca7d03c917a65624b8bf28543c8b948f05523324a24c14c65d5ce40707a62",
+          "bytes": 184966,
+          "project_matches": [
+            "docs/art/moba/hummingbird_s/take-c-sidefix/white_views/hummingbird_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://art/model_catalog/workspaces/hummingbird.blend",
+      "review_models": [
+        {
+          "label": "INTACT PRE-REMESH\nOriginal source",
+          "path": "res://art/model_catalog/sources/hummingbird_front - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 2.9788715194251445
+        },
+        {
+          "label": "REMESHED + RIGGED\nDownloaded input",
+          "path": "res://docs/art/moba/hummingbird_s/needle-repair-v1-2026-11-10/hummingbird-remeshed-rigged-input.glb",
+          "display_scale": 0.737680431546105
+        },
+        {
+          "label": "APPROVED LENGTH v3\nShaft 30% shorter",
+          "path": "res://docs/art/moba/hummingbird_s/needle-length-v3-2026-11-10/hummingbird-rigged-needle-length-v3.glb",
+          "display_scale": 0.737680431546105
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/hummingbird_s/needle-length-v3-2026-11-10/review-front.png",
+          "kind": "Rendered version comparison, not generation input"
+        },
+        "left": {
+          "path": "res://docs/art/moba/hummingbird_s/needle-length-v3-2026-11-10/review-side.png",
+          "kind": "Rendered version comparison, not generation input"
+        },
+        "back": {
+          "path": "res://docs/art/moba/hummingbird_s/needle-length-v3-2026-11-10/review-back.png",
+          "kind": "Rendered version comparison, not generation input"
+        },
+        "right": {
+          "path": "res://docs/art/moba/hummingbird_s/needle-length-v3-2026-11-10/review-right.png",
+          "kind": "Rendered version comparison, not generation input"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-10",
+        "report": "res://docs/art/moba/hummingbird_s/needle-length-v3-2026-11-10/verification.json",
+        "rigged_input_sha256": "90bd5b6b343f848437c1f59e66ef3eb6f026363f451e0d6aaa44d85457a6a8e6",
+        "repaired_sha256": "fc56b9f43e02c3c06e159b248e1d47746ebf494d9b5a12366fdf8d41f1083f34",
+        "scope": "Approved 30% shorter shaft, straightening and topology v2 retained. Original rig/weights/body preserved."
+      }
+    },
+    {
+      "id": "jellyfish",
+      "name": "Jellyfish",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/jellyfish_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\jellyfish_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "ee41e3e07e10ce85e1750ca9324a3de7fa380bb5cb5301a81203d5d2e8473268",
+        "bytes": 45161652
+      },
+      "display_model": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/jellyfish-rigged-local-repair-v1.glb",
+      "status": "Seven stray triangles removed; twelve tentacles retained. Original 49-joint rig, all skin weights and textures unchanged. Existing opaque baked dome remains.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/jellyfish/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\jellyfish_front.png",
+          "sha256": "0b635823062e5a3cf76d098caf2b2655dd2ff975cf70fa13699754ed95b12a6a",
+          "bytes": 366257,
+          "project_matches": [
+            "docs/art/moba/jellyfish_m/take-a/white_views/jellyfish_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/jellyfish/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\jellyfish_left.png",
+          "sha256": "ed6cfad425ee9a052335a769fe2b3507efa0a85b29740eacb4a049d8170f2972",
+          "bytes": 348022,
+          "project_matches": [
+            "docs/art/moba/jellyfish_m/take-a/white_views/jellyfish_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/jellyfish/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\jellyfish_back.png",
+          "sha256": "dd27a859428e239e2e102e467c340c65ba923291045fcf2c6934bc5d99beaa4e",
+          "bytes": 367233,
+          "project_matches": [
+            "docs/art/moba/jellyfish_m/take-a/white_views/jellyfish_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/jellyfish/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\jellyfish_right.png",
+          "sha256": "f19722ef7d334dbc8780833a16c6423f48a5e32ac8e1687e6f850cb5787c00e7",
+          "bytes": 359216,
+          "project_matches": [
+            "docs/art/moba/jellyfish_m/take-a/white_views/jellyfish_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/jellyfish-rigged-local-repair-v1.blend",
+      "review_models": [
+        {
+          "label": "INTACT QUALITY ARCHIVE\nOriginal generated geometry",
+          "path": "res://art/model_catalog/sources/jellyfish_front - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 3.2563774549988675
+        },
+        {
+          "label": "DOWNLOADED RIG\nBefore local triangle cleanup",
+          "path": "res://art/model_catalog/sources/Meshy_AI_jellyfish_remeshed_25k_20261108_character.glb",
+          "display_scale": 1.5294117647058825
+        },
+        {
+          "label": "LOCAL REPAIR\nSame 49-joint rig and skin",
+          "path": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/jellyfish-rigged-local-repair-v1.glb",
+          "display_scale": 1.5294117647058825
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/review-front.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "left": {
+          "path": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/review-left.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "back": {
+          "path": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/review-back.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "right": {
+          "path": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/review-right.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-14",
+        "report": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/repair-verification.json",
+        "independent_audit": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/independent-export-audit.json",
+        "joint_count": 49,
+        "rigged_input_sha256": "f36af9f26735370980e4c5e89e2a0ab3a04358f8193957ed8b52c281b808bf6c",
+        "repaired_sha256": "7e589f0e4d26f67b1b0226044f6deaad315181b12f0c8b5eee2c0675c254a33f",
+        "intact_pre_remesh_available": true,
+        "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+        "scope": "Remove seven verified single-triangle flaps. Retain all twelve tentacles, dome, rim, collars, cap and lights. Original vertex attributes, weights, 49-joint rig, rest/binds and textures remain exact. No remesh or rerig. All 25,912 healthy source faces retained. No gameplay replacement.",
+        "summer_runtime_report": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/summer-review-verification.json",
+        "native_workshop_check": "Pending; isolated Summer review passed."
+      }
+    },
+    {
+      "id": "kangaroo",
+      "name": "Kangaroo",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/kangaroo_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\kangaroo_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "badc14dd2f91d85e74d43f42e78c7294fa422654ebb2951fb0524ec1154be179",
+        "bytes": 33520080
+      },
+      "display_model": "res://docs/art/moba/archive-refresh-2026-11-13/models/kangaroo-r12.glb",
+      "status": "Current authored game export r12; 34 joints, 25 clips. Original design sheets retained; C compares the old proxy. Archive snapshot, not a new readiness approval.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/kangaroo/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\kangaroo_front.png",
+          "sha256": "78b664b2e7cff3fa73f61dd4c89d8a0376eba474efa9d6cd6c455710f5598619",
+          "bytes": 247244,
+          "project_matches": [
+            "docs/art/moba/kangaroo_m/take-c-power/white_views/kangaroo_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/kangaroo/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\kangaroo_left.png",
+          "sha256": "058ca0636ad1a91a72cd88c56b9893e4f29ff2e2a7b10ab06dd9e6bf99a64a9f",
+          "bytes": 217617,
+          "project_matches": [
+            "docs/art/moba/kangaroo_m/take-c-power/white_views/kangaroo_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/kangaroo/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\kangaroo_back.png",
+          "sha256": "5c952c41ca5146475c1ea75a1720e23214c109c9f8fce143346038532833acc0",
+          "bytes": 239199,
+          "project_matches": [
+            "docs/art/moba/kangaroo_m/take-c-power/white_views/kangaroo_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/kangaroo/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\kangaroo_right.png",
+          "sha256": "deabc6baca90de7050cef17d9d0e8b671f09693d72dd3c01f59612692effb30c",
+          "bytes": 217541,
+          "project_matches": [
+            "docs/art/moba/kangaroo_m/take-c-power/white_views/kangaroo_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://art/model_catalog/workspaces/kangaroo.blend",
+      "runtime_archive_provenance": {
+        "id": "kangaroo",
+        "version": "r12",
+        "source": "D:\\dev\\new-mech-rpg\\art\\arena_models\\kangaroo.glb",
+        "authored_source": "D:\\dev\\_scratch\\kangaroo-3d\\game-export-r12\\kangaroo-kit-r12.glb",
+        "sha256": "fcf8e55631f57b151f5e8a3239284928a6f75894c7f2b8979cc502d47a9987f0",
+        "snapshot": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\archive-refresh-2026-11-13\\models\\kangaroo-r12.glb",
+        "previous_display_model": "res://art/model_catalog/display/kangaroo.glb",
+        "joint_count": 34,
+        "animation_count": 25
+      },
+      "review_models": [
+        {
+          "label": "OLD STATIC PROXY\nHistorical archive display",
+          "path": "res://art/model_catalog/display/kangaroo.glb"
+        },
+        {
+          "label": "CURRENT GAME EXPORT r12\nRig and animations retained",
+          "path": "res://docs/art/moba/archive-refresh-2026-11-13/models/kangaroo-r12.glb"
+        }
+      ]
+    },
+    {
+      "id": "mantis",
+      "name": "Mantis",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/mantis_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\mantis_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "5d4433ff71394d77ab71cd419d6c776427b653e34ae0e6fc762eccb78d9a90b5",
+        "bytes": 51503880
+      },
+      "display_model": "res://docs/art/moba/mantis_m/surface-restoration-v1-2026-11-10/mantis-restored-six-limbs-rigged-v1.glb",
+      "status": "Surface restored; walking pair 2 removed as selected. Four walking legs + two scythes; original 44-joint skeleton retained, weights transferred. High-detail review; optimisation pending.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/mantis/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\mantis_front.png",
+          "sha256": "84f897929652de9ed8aa3ad3e5952d6c259fb7fc9049a9c009fd6dccb3ca9045",
+          "bytes": 275204,
+          "project_matches": [
+            "docs/art/moba/mantis_m/take-a/white_views/mantis_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/mantis/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\mantis_left.png",
+          "sha256": "20139232437361f7617c6440385409fcf6bf02f69af39bd864ebcfa5d9fe49ca",
+          "bytes": 274369,
+          "project_matches": [
+            "docs/art/moba/mantis_m/take-a/white_views/mantis_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/mantis/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\mantis_back.png",
+          "sha256": "89e9d6b407c683ceb99ad7a570f95b02cf5f54d139c6523b4c938566e02a3757",
+          "bytes": 272692,
+          "project_matches": [
+            "docs/art/moba/mantis_m/take-a/white_views/mantis_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/mantis/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\mantis_right.png",
+          "sha256": "e8747f6081c549d80f237ceb2e9393036b686bea311ec7e1be0f23177ee15a38",
+          "bytes": 274510,
+          "project_matches": [
+            "docs/art/moba/mantis_m/take-a/white_views/mantis_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://art/model_catalog/workspaces/mantis.blend",
+      "review_models": [
+        {
+          "label": "INTACT QUALITY ARCHIVE\nExtra limbs are not approved",
+          "path": "res://art/model_catalog/sources/mantis_front - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 3.181892887097697
+        },
+        {
+          "label": "DOWNLOADED RIG\nExtra walking pair / damage",
+          "path": "res://docs/art/moba/mantis_m/surface-restoration-v1-2026-11-10/mantis-damaged-rigged-input.glb",
+          "display_scale": 1.2720529012587798
+        },
+        {
+          "label": "RESTORED / PAIR 2 REMOVED\nOriginal 44-joint skeleton",
+          "path": "res://docs/art/moba/mantis_m/surface-restoration-v1-2026-11-10/mantis-restored-six-limbs-rigged-v1.glb",
+          "display_scale": 1.2720529012587798
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/mantis_m/surface-restoration-v1-2026-11-10/review-front.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        },
+        "left": {
+          "path": "res://docs/art/moba/mantis_m/surface-restoration-v1-2026-11-10/review-side.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        },
+        "back": {
+          "path": "res://docs/art/moba/mantis_m/surface-restoration-v1-2026-11-10/review-back.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        },
+        "right": {
+          "path": "res://docs/art/moba/mantis_m/surface-restoration-v1-2026-11-10/review-right.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-10",
+        "report": "res://docs/art/moba/mantis_m/surface-restoration-v1-2026-11-10/rig-transfer-verification.json",
+        "joint_count": 44,
+        "rigged_input_sha256": "4b8460fd7ceb392105b7af5bcaf965f8ec0f2e3090bcca7c4a351f75bd52567e",
+        "repaired_sha256": "a0a9769c0a66291f83081ee9ad7f88501e65f137a3cf4e9d9b5dc97f1c504476",
+        "scope": "High-detail original surface restored with accepted six-limb cuts. Original Meshy skeleton/binds retained, weights transferred; not an optimised gameplay replacement."
+      }
+    },
+    {
+      "id": "pangolin",
+      "name": "Pangolin",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/pangolin_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\pangolin_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "a766e089536e882578f2c38037780652702aedd787211a151eb3b793cafd71f7",
+        "bytes": 51412240
+      },
+      "display_model": "res://docs/art/moba/archive-refresh-2026-11-13/models/pangolin-r10.glb",
+      "status": "Current authored game export r10; 35 joints, 23 clips. Original design sheets retained; C compares the old proxy. Archive snapshot, not a new readiness approval.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/pangolin/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\pangolin_front.png",
+          "sha256": "758746b313d88988036d3093888123aac4d67ae2e1005190344ee83f9a301f46",
+          "bytes": 141264,
+          "project_matches": [
+            "docs/art/moba/pangolin_m/take-b-power/white_views/pangolin_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/pangolin/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\pangolin_left.png",
+          "sha256": "a10675f22627a47654318477f507aa6f02de41e3da8f4ba746ea30882e21f245",
+          "bytes": 227686,
+          "project_matches": [
+            "docs/art/moba/pangolin_m/take-b-power/white_views/pangolin_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/pangolin/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\pangolin_back.png",
+          "sha256": "ecc9f254227c923a758ba0282bb9cdfbdd790a0cfcae4762c513b87dc97b4260",
+          "bytes": 147757,
+          "project_matches": [
+            "docs/art/moba/pangolin_m/take-b-power/white_views/pangolin_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/pangolin/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\pangolin_right.png",
+          "sha256": "81e550db5db9205339e00a64112359ba6d5650da56ebd8a34fd967497a7a2e1e",
+          "bytes": 229706,
+          "project_matches": [
+            "docs/art/moba/pangolin_m/take-b-power/white_views/pangolin_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://art/model_catalog/workspaces/pangolin.blend",
+      "runtime_archive_provenance": {
+        "id": "pangolin",
+        "version": "r10",
+        "source": "D:\\dev\\new-mech-rpg\\art\\arena_models\\pangolin.glb",
+        "authored_source": "D:\\dev\\_scratch\\pangolin-3d\\game-export-r10\\pangolin-kit-r10.glb",
+        "sha256": "75fc520238f85690f630e7f2a4e46934b9a7eb4bdcf1b64a3f9f3faee5e57e69",
+        "snapshot": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\archive-refresh-2026-11-13\\models\\pangolin-r10.glb",
+        "previous_display_model": "res://art/model_catalog/display/pangolin.glb",
+        "joint_count": 35,
+        "animation_count": 23
+      },
+      "review_models": [
+        {
+          "label": "OLD STATIC PROXY\nHistorical archive display",
+          "path": "res://art/model_catalog/display/pangolin.glb"
+        },
+        {
+          "label": "CURRENT GAME EXPORT r10\nRig and animations retained",
+          "path": "res://docs/art/moba/archive-refresh-2026-11-13/models/pangolin-r10.glb"
+        }
+      ]
+    },
+    {
+      "id": "pistol_shrimp",
+      "name": "Pistol Shrimp",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/pistol_shrimp_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\pistol_shrimp_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "147f24029faa293ae1d19281ee582f2f15281ba3c0190aa8135acfa78e189d73",
+        "bytes": 55975880
+      },
+      "display_model": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/pistol-shrimp-rigged-local-repair-v1.glb",
+      "status": "Ten stray triangles removed and one large-claw gap closed. Claws, eight walking legs and tail retained. Original 53-joint rig, all skin weights and textures unchanged.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/pistol_shrimp/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\pistol_shrimp_front.png",
+          "sha256": "0fb4c87bc06a5cdc72f334c4055fab1c5f5a450b089bb33b46d0f77f14b46f5a",
+          "bytes": 270640,
+          "project_matches": [
+            "docs/art/moba/pistol_shrimp_l/take-a/white_views/pistol_shrimp_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/pistol_shrimp/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\pistol_shrimp_left.png",
+          "sha256": "a3fda308806d554825e55c6527e6bb7302ac37d59f2e0412854a52f9c7c91c99",
+          "bytes": 318452,
+          "project_matches": [
+            "docs/art/moba/pistol_shrimp_l/take-a/white_views/pistol_shrimp_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/pistol_shrimp/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\pistol_shrimp_back.png",
+          "sha256": "be1f0d79b855b3cbb83ad712ce79cc1caa38e34c0557bf01f52657c6e2962167",
+          "bytes": 271515,
+          "project_matches": [
+            "docs/art/moba/pistol_shrimp_l/take-a/white_views/pistol_shrimp_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/pistol_shrimp/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\pistol_shrimp_right.png",
+          "sha256": "5ffdd8a8a1ed38142aa4cffe2a4334abccd600fc9563503316e59745090b6558",
+          "bytes": 360577,
+          "project_matches": [
+            "docs/art/moba/pistol_shrimp_l/take-a/white_views/pistol_shrimp_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/pistol-shrimp-rigged-local-repair-v1.blend",
+      "review_models": [
+        {
+          "label": "INTACT QUALITY ARCHIVE\nOriginal generated geometry",
+          "path": "res://art/model_catalog/sources/pistol_shrimp_front - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 2.7125310992801985
+        },
+        {
+          "label": "DOWNLOADED RIG\nBefore local repair",
+          "path": "res://art/model_catalog/sources/Meshy_AI_pistol_shrimp_remeshed_25k_20261111_character.glb",
+          "display_scale": 0.7426546529443506
+        },
+        {
+          "label": "LOCAL REPAIR\nSame 53-joint rig and skin",
+          "path": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/pistol-shrimp-rigged-local-repair-v1.glb",
+          "display_scale": 0.7426546529443506
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/review-front.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "left": {
+          "path": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/review-left.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "back": {
+          "path": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/review-back.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "right": {
+          "path": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/review-right.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-14",
+        "report": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/repair-verification.json",
+        "independent_audit": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/independent-export-audit.json",
+        "joint_count": 53,
+        "rigged_input_sha256": "999b901e08ad73df77f908dab8aa4159609e624fb961a45ce03d516501618d43",
+        "repaired_sha256": "823c26de99e963c6486cc8d92b31b41a6649018e4c7cfcac1e0c6b87a2b9349c",
+        "intact_pre_remesh_available": true,
+        "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+        "scope": "Remove ten verified single-triangle flaps and close one tiny large-claw opening using original vertex corners. Retain snapping claw, smaller claw, eight walking legs, two antennae, two dorsal vessels and tail fan. Preserve original vertex/skin rows, 53-joint hierarchy/rest/binds and materials/textures. No remesh or rerig. All 25,625 healthy source faces retained. No gameplay replacement.",
+        "runtime_report": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/final-review-verification.json"
+      }
+    },
+    {
+      "id": "rhino",
+      "name": "Rhino",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/rhino_s - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\rhino_s - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "180de3054e84adf9c45ce1d51b413b6530eef3d9af4b8b19729c69a8948936ad",
+        "bytes": 55104504
+      },
+      "display_model": "res://docs/art/moba/archive-refresh-2026-11-13/models/rhino-v57.glb",
+      "status": "Current authored game export v57; 41 joints, 24 clips. Original design sheets retained; C compares the old proxy. Archive snapshot, not a new readiness approval.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/rhino/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\rhino_front.png",
+          "sha256": "20d5cdfcde2ff333d29c95877178a23b02602992b541403596e4c2834d8c30a8",
+          "bytes": 331748,
+          "project_matches": [
+            "docs/art/moba/rhino_l/take-c-armoured-legs/white_views/rhino_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/rhino/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\rhino_left.png",
+          "sha256": "d7c81678d4de785a125e61b49c688a3471f25cbc5dbefe6ce9325b63f1c091f7",
+          "bytes": 384860,
+          "project_matches": [
+            "docs/art/moba/rhino_l/take-c-armoured-legs/white_views/rhino_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/rhino/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\rhino_back.png",
+          "sha256": "52339e9af47fb17743ce9b6e4ebdb416efd50353f78274d21154c263053e2a53",
+          "bytes": 307528,
+          "project_matches": [
+            "docs/art/moba/rhino_l/take-c-armoured-legs/white_views/rhino_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/rhino/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\rhino_right.png",
+          "sha256": "4e2ec7b9730de4eea85b1cb0bbe2a7465f07ffaeef3ebb133e5df4a49fe12731",
+          "bytes": 384795,
+          "project_matches": [
+            "docs/art/moba/rhino_l/take-c-armoured-legs/white_views/rhino_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://art/model_catalog/workspaces/rhino.blend",
+      "runtime_archive_provenance": {
+        "id": "rhino",
+        "version": "v57",
+        "source": "D:\\dev\\new-mech-rpg\\art\\arena_models\\rhino.glb",
+        "authored_source": "D:\\dev\\_scratch\\rhino-donor-2026-11-08\\game-export-v57\\rhino_game_v57.glb",
+        "sha256": "23068f5991c7db3b1666fb01fec87e612efd0151365fc14cea281ddd80c3eec4",
+        "snapshot": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\archive-refresh-2026-11-13\\models\\rhino-v57.glb",
+        "previous_display_model": "res://art/model_catalog/display/rhino.glb",
+        "joint_count": 41,
+        "animation_count": 24
+      },
+      "review_models": [
+        {
+          "label": "OLD STATIC PROXY\nHistorical archive display",
+          "path": "res://art/model_catalog/display/rhino.glb"
+        },
+        {
+          "label": "CURRENT GAME EXPORT v57\nRig and animations retained",
+          "path": "res://docs/art/moba/archive-refresh-2026-11-13/models/rhino-v57.glb"
+        }
+      ]
+    },
+    {
+      "id": "scorpion",
+      "name": "Scorpion",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/scorpion_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\scorpion_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "ee4b557292cc1ee6006446a467fa638e993d7c7b3f2ac6b36fb7cb1579727c4c",
+        "bytes": 49013988
+      },
+      "display_model": "res://docs/art/moba/scorpion_m/local-repair-v1-2026-11-14/scorpion-rigged-local-repair-v1.glb",
+      "status": "23 malformed triangles removed. Eight walking legs, both pincers and raised tail retained. New supplied 52-joint rig, all skin weights and textures preserved.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/scorpion/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\scorpion_front.png",
+          "sha256": "05488e17d542c0760611e82fb81a5f1a0376ca940fe226f6637b3887afb62c63",
+          "bytes": 252122,
+          "project_matches": [
+            "docs/art/moba/scorpion_m/take-a/white_views/scorpion_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/scorpion/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\scorpion_left.png",
+          "sha256": "2b5f4156c3b59b836db0ab8f6dd4a4d7616fe6ea5c1b2ac43de323864cbbb36a",
+          "bytes": 276444,
+          "project_matches": [
+            "docs/art/moba/scorpion_m/take-a/white_views/scorpion_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/scorpion/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\scorpion_back.png",
+          "sha256": "e61246c4dfada58d92d65da791c3eaadbfd6b745cb1a851e7fef30a42ab814bf",
+          "bytes": 248156,
+          "project_matches": [
+            "docs/art/moba/scorpion_m/take-a/white_views/scorpion_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/scorpion/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\scorpion_right.png",
+          "sha256": "9fefecd807068a9396f95b6c0829364716d9a1fe3255a33aa20a4f80e1246984",
+          "bytes": 282956,
+          "project_matches": [
+            "docs/art/moba/scorpion_m/take-a/white_views/scorpion_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://docs/art/moba/scorpion_m/local-repair-v1-2026-11-14/scorpion-rigged-local-repair-v1.blend",
+      "review_models": [
+        {
+          "label": "INTACT QUALITY ARCHIVE\nOriginal generated geometry",
+          "path": "res://art/model_catalog/sources/scorpion_front - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 3.2606694687309736
+        },
+        {
+          "label": "DOWNLOADED RIG\nBefore local triangle cleanup",
+          "path": "res://art/model_catalog/sources/Meshy_AI_scorpion_remeshed_25k_20261114_character.glb",
+          "display_scale": 1.3269912289821824
+        },
+        {
+          "label": "LOCAL REPAIR\nSame 52-joint rig and skin",
+          "path": "res://docs/art/moba/scorpion_m/local-repair-v1-2026-11-14/scorpion-rigged-local-repair-v1.glb",
+          "display_scale": 1.3269912289821824
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/scorpion_m/local-repair-v1-2026-11-14/review-front.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "left": {
+          "path": "res://docs/art/moba/scorpion_m/local-repair-v1-2026-11-14/review-left.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "back": {
+          "path": "res://docs/art/moba/scorpion_m/local-repair-v1-2026-11-14/review-back.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "right": {
+          "path": "res://docs/art/moba/scorpion_m/local-repair-v1-2026-11-14/review-right.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-14",
+        "report": "res://docs/art/moba/scorpion_m/local-repair-v1-2026-11-14/repair-verification.json",
+        "independent_audit": "res://docs/art/moba/scorpion_m/local-repair-v1-2026-11-14/independent-export-audit.json",
+        "joint_count": 52,
+        "rigged_input_sha256": "0013e0c29cc4b65a780f1cec3edcda351fb38afa089772628b26f58088d30306",
+        "repaired_sha256": "3cb9fa1f8c04fb2ca8348a151f4f56d57a6953e976f5f42493d2957a47186f73",
+        "intact_pre_remesh_available": true,
+        "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+        "scope": "Remove 21 single-triangle flaps and one two-triangle folded fragment. Retain eight walking legs, both pincers, two side vessels and the complete raised tail. Original vertex attributes, weights, 52-joint rig, rest/binds and textures remain exact. No remesh or rerig. All 23,970 healthy source faces retained. No gameplay replacement.",
+        "runtime_report": "res://docs/art/moba/scorpion_m/local-repair-v1-2026-11-14/final-review-verification.json"
+      }
+    },
+    {
+      "id": "shark",
+      "name": "Shark",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/shark_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\shark_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "a350f3d282e4b719eec3224b23031452e655588b3cdbd8f77021bb05a83e57e4",
+        "bytes": 53827604
+      },
+      "display_model": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/shark-rigged-local-repair-v1.glb",
+      "status": "Seven small gaps and 56 malformed triangles repaired. Mouth, fins and tail retained. Original 19-joint rig, all skin weights and textures unchanged.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/shark/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\shark_front.png",
+          "sha256": "ba3fbb7d31e47b6351a8ce3949bec796460dd2eec333e5eb7e4bae2a28b24d4a",
+          "bytes": 152969,
+          "project_matches": [
+            "docs/art/moba/shark_l/take-a/white_views/shark_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/shark/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\shark_left.png",
+          "sha256": "b9cca6284753fbc4cd020a6bb13137abf655a9292264279080179c40fae232bc",
+          "bytes": 249883,
+          "project_matches": [
+            "docs/art/moba/shark_l/take-a/white_views/shark_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/shark/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\shark_back.png",
+          "sha256": "cb2cdb030f3637d74f06f9c166ddd609895ec8db575391c2a4fe0f9d91ace792",
+          "bytes": 139461,
+          "project_matches": [
+            "docs/art/moba/shark_l/take-a/white_views/shark_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/shark/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\shark_right.png",
+          "sha256": "a5b5db5f26d2d031338ba16772f408a8722cd1b9279c121966f718078bb7e1e9",
+          "bytes": 253990,
+          "project_matches": [
+            "docs/art/moba/shark_l/take-a/white_views/shark_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/shark-rigged-local-repair-v1.blend",
+      "review_models": [
+        {
+          "label": "INTACT QUALITY ARCHIVE\nOriginal generated geometry",
+          "path": "res://art/model_catalog/sources/shark_front - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 2.6314644006752124
+        },
+        {
+          "label": "DOWNLOADED RIG\nBefore local triangle cleanup",
+          "path": "res://art/model_catalog/sources/Meshy_AI_shark_remeshed_25k_20261108_character.glb",
+          "display_scale": 0.7677223498745818
+        },
+        {
+          "label": "LOCAL REPAIR\nSame 19-joint rig and skin",
+          "path": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/shark-rigged-local-repair-v1.glb",
+          "display_scale": 0.7677223498745818
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/review-front.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "left": {
+          "path": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/review-left.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "back": {
+          "path": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/review-back.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "right": {
+          "path": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/review-right.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-14",
+        "report": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/repair-verification.json",
+        "independent_audit": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/independent-export-audit.json",
+        "joint_count": 19,
+        "rigged_input_sha256": "67cb0c7d6bb00a15bf0bf9f7ddf9a163023aedce2e241fd9117debdefc237e7e",
+        "repaired_sha256": "9f66099793171fefa584f4cc1d91fac5f193c0e72a7a5eaadb2d214d77717b22",
+        "intact_pre_remesh_available": true,
+        "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+        "scope": "Local topology repair. Mouth and teeth, two eyes, dorsal and paired fins, tail and armor retained. Original vertex attributes, skin, 19-joint skeleton/rest/binds and textures preserved; no remesh or rerig. Three duplicate corner rows on closure 4 use one healthy neighboring UV island. All original attribute/skin rows remain exact; duplicate skin rows copy the same corners. All 23,245 healthy source faces retained. No gameplay replacement.",
+        "runtime_report": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/final-review-verification.json"
+      }
+    },
+    {
+      "id": "shoebill_back_plate_reference",
+      "name": "Shoebill (back plate reference)",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/shoebill_front - Hunyuan 3D v3.1 Pro (1)(correct moon plate on back only use for that other model is best).glb",
+        "source": "D:\\user\\Downloads\\shoebill_front - Hunyuan 3D v3.1 Pro (1)(correct moon plate on back only use for that other model is best).glb",
+        "sha256": "edf0be0c7dad74f1c828b25a9db6c847d836355d1af8dc7cffd326fe9207ab78",
+        "bytes": 51756772
+      },
+      "display_model": "res://art/model_catalog/display/shoebill_back_plate_reference.glb",
+      "status": "Alternate shoebill: back moon plate reference ONLY. Primary shoebill is the other model.",
+      "reference_only": true,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/shoebill_back_plate_reference/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\shoebill_front.png",
+          "sha256": "c22386c55e14f859c884a748a2565925ce3a3e6327c71beae1cea520a503d276",
+          "bytes": 277341,
+          "project_matches": [
+            "docs/art/moba/shoebill_m/take-i-sidefix-original/white_views/shoebill_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/shoebill_back_plate_reference/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\shoebill_left.png",
+          "sha256": "81e511006435619e17430a830e56d1d94947b713bbaecb3b1c01659f3f9366d0",
+          "bytes": 244728,
+          "project_matches": [
+            "docs/art/moba/shoebill_m/take-i-sidefix-original/white_views/shoebill_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/shoebill_back_plate_reference/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\shoebill_back.png",
+          "sha256": "99c15bb9a1e083cf5e5d935cc29e8581bab28126b548f1f4adf49bf2aae5e465",
+          "bytes": 283094,
+          "project_matches": [
+            "docs/art/moba/shoebill_m/take-i-sidefix-original/white_views/shoebill_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/shoebill_back_plate_reference/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\shoebill_right.png",
+          "sha256": "1e3f39ca8e3385e7c53717c9c679c4caae1974fdc6a5c6e155b90fd7f5fb34de",
+          "bytes": 248204,
+          "project_matches": [
+            "docs/art/moba/shoebill_m/take-i-sidefix-original/white_views/shoebill_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://art/model_catalog/workspaces/shoebill_back_plate_reference.blend"
+    },
+    {
+      "id": "shoebill",
+      "name": "Shoebill",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/shoebill_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\shoebill_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "0130e8e37491cb50f1aedcbd9a2c3c9e93fc2eeb160925765ed0b8bbeb5e7366",
+        "bytes": 49106876
+      },
+      "display_model": "res://docs/art/moba/shoebill_m/circular-rim-v2-2026-11-13/shoebill-circular-moon-rim-v2.glb",
+      "status": "Circular silver rim and blue casing cover grey backing. Moon face, brass mounts and original 38-joint rig retained.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/shoebill/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\shoebill_front.png",
+          "sha256": "c22386c55e14f859c884a748a2565925ce3a3e6327c71beae1cea520a503d276",
+          "bytes": 277341,
+          "project_matches": [
+            "docs/art/moba/shoebill_m/take-i-sidefix-original/white_views/shoebill_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/shoebill/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\shoebill_left.png",
+          "sha256": "81e511006435619e17430a830e56d1d94947b713bbaecb3b1c01659f3f9366d0",
+          "bytes": 244728,
+          "project_matches": [
+            "docs/art/moba/shoebill_m/take-i-sidefix-original/white_views/shoebill_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/shoebill/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\shoebill_back.png",
+          "sha256": "99c15bb9a1e083cf5e5d935cc29e8581bab28126b548f1f4adf49bf2aae5e465",
+          "bytes": 283094,
+          "project_matches": [
+            "docs/art/moba/shoebill_m/take-i-sidefix-original/white_views/shoebill_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/shoebill/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\shoebill_right.png",
+          "sha256": "1e3f39ca8e3385e7c53717c9c679c4caae1974fdc6a5c6e155b90fd7f5fb34de",
+          "bytes": 248204,
+          "project_matches": [
+            "docs/art/moba/shoebill_m/take-i-sidefix-original/white_views/shoebill_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://docs/art/moba/shoebill_m/circular-rim-v2-2026-11-13/shoebill-circular-moon-rim-v2.blend",
+      "review_models": [
+        {
+          "label": "INTACT BODY ARCHIVE\nOriginal backplate",
+          "path": "res://art/model_catalog/sources/shoebill_front - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 2.3604047660945735
+        },
+        {
+          "label": "RIGGED DOWNLOAD\nFitted plate / overlap",
+          "path": "res://art/model_catalog/sources/Meshy_AI_shoebill_single_material_25k_20261111_character.glb",
+          "display_scale": 1.5294117647058825
+        },
+        {
+          "label": "CIRCULAR MOON RIM\nSame 38-joint skeleton",
+          "path": "res://docs/art/moba/shoebill_m/circular-rim-v2-2026-11-13/shoebill-circular-moon-rim-v2.glb",
+          "display_scale": 1.5294117647058825
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/shoebill_m/circular-rim-v2-2026-11-13/review-front.png",
+          "kind": "Body archive / downloaded composite / circular rim v2; prior backplate labeled"
+        },
+        "left": {
+          "path": "res://docs/art/moba/shoebill_m/circular-rim-v2-2026-11-13/review-left.png",
+          "kind": "Body archive / downloaded composite / circular rim v2; prior backplate labeled"
+        },
+        "back": {
+          "path": "res://docs/art/moba/shoebill_m/circular-rim-v2-2026-11-13/review-back.png",
+          "kind": "Body archive / downloaded composite / circular rim v2; prior backplate labeled"
+        },
+        "right": {
+          "path": "res://docs/art/moba/shoebill_m/circular-rim-v2-2026-11-13/review-right.png",
+          "kind": "Body archive / downloaded composite / circular rim v2; prior backplate labeled"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-13",
+        "report": "res://docs/art/moba/shoebill_m/circular-rim-v2-2026-11-13/repair-verification.json",
+        "independent_audit": "res://docs/art/moba/shoebill_m/circular-rim-v2-2026-11-13/independent-export-audit.json",
+        "joint_count": 38,
+        "rigged_input_sha256": "c0afacfd4294556e98220d6e89996a6e246430ffaf58ec3805941bd8240cb4a0",
+        "repaired_sha256": "d6e52a3b322ef0bd3d5f65823c337eb7dc34f46a41ae30a5caa8f26d3f5de6f4",
+        "intact_pre_remesh_body_available": true,
+        "exact_composite_pre_remesh_source_available": false,
+        "body_archive_scope": "Original generated body archive with its earlier backplate; not verified as the exact historical upload of the fitted composite. Current approved moon plate retained.",
+        "scope": "User confirmed a circular rim with moon design visible. Added a smooth circular silver rim and fitted blue outer casing over exposed gray backing. Original brass mounts remain visible in fitted recesses; original rig and weights unchanged. New frame is rigidly attached to existing Bone_003; no original skin rows changed. No gameplay replacement.",
+        "previous_repair": "res://docs/art/moba/shoebill_m/backplate-repair-v1-2026-11-13/shoebill-backplate-repaired-v1.glb"
+      }
+    },
+    {
+      "id": "spider",
+      "name": "Spider",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/spider_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\spider_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "fa85fcecba929d7f3b6527ab5c3db77e7042ae2866d309e8255c0231f77d2bae",
+        "bytes": 54437808
+      },
+      "display_model": "res://docs/art/moba/spider_m/surface-restoration-v1-2026-11-10/spider-restored-eight-legs-rigged-v1.glb",
+      "status": "Surface restored from intact source; accepted 8 legs, original 52-joint skeleton retained, weights transferred. High-detail review (411k triangles); optimisation pending.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/spider/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\spider_front.png",
+          "sha256": "82e57ef019aadb1db87b7b21556dc1afa81926e42584fe790e4789fd68f7f296",
+          "bytes": 361612,
+          "project_matches": [
+            "docs/art/moba/spider_m/take-b-eight-legs/white_views/spider_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/spider/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\spider_left.png",
+          "sha256": "a8219e053421e1b5f3c9b1e29a2625e075ba1fa8356ae87c21763f50599d2c21",
+          "bytes": 352790,
+          "project_matches": [
+            "docs/art/moba/spider_m/take-b-eight-legs/white_views/spider_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/spider/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\spider_back.png",
+          "sha256": "6a5597a44b30fa0f5e290743d35c75c8b57b07d4d02b59b3d610c54c3f5d2ee9",
+          "bytes": 358852,
+          "project_matches": [
+            "docs/art/moba/spider_m/take-b-eight-legs/white_views/spider_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/spider/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\spider_right.png",
+          "sha256": "9d3e8514c1e65e59403eeb6fadc8dc471b14dd86cf680a3ac86080ad78286a69",
+          "bytes": 361371,
+          "project_matches": [
+            "docs/art/moba/spider_m/take-b-eight-legs/white_views/spider_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://art/model_catalog/workspaces/spider.blend",
+      "review_models": [
+        {
+          "label": "INTACT QUALITY ARCHIVE\nExtra legs are not approved",
+          "path": "res://art/model_catalog/sources/spider_front - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 3.044146091453535
+        },
+        {
+          "label": "DOWNLOADED RIG\nEight legs / damaged surface",
+          "path": "res://docs/art/moba/spider_m/surface-restoration-v1-2026-11-10/spider-damaged-rigged-input.glb",
+          "display_scale": 1.0081746976240729
+        },
+        {
+          "label": "RESTORED EIGHT LEGS\nOriginal 52-joint skeleton",
+          "path": "res://docs/art/moba/spider_m/surface-restoration-v1-2026-11-10/spider-restored-eight-legs-rigged-v1.glb",
+          "display_scale": 1.0081746976240729
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/spider_m/surface-restoration-v1-2026-11-10/review-front.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        },
+        "left": {
+          "path": "res://docs/art/moba/spider_m/surface-restoration-v1-2026-11-10/review-side.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        },
+        "back": {
+          "path": "res://docs/art/moba/spider_m/surface-restoration-v1-2026-11-10/review-back.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        },
+        "right": {
+          "path": "res://docs/art/moba/spider_m/surface-restoration-v1-2026-11-10/review-right.png",
+          "kind": "Rendered version comparison; original generation sheets preserved separately"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-10",
+        "report": "res://docs/art/moba/spider_m/surface-restoration-v1-2026-11-10/rig-transfer-verification.json",
+        "joint_count": 52,
+        "rigged_input_sha256": "b7b81dfbc4100d628ed1316ec3e4987e3745ac0e2139be546fbf1a94dd12128b",
+        "repaired_sha256": "23116d1f765452b7850f3d83007e3d1b7bea2137fd4a8535b4dfc15402f223f8",
+        "scope": "High-detail original surface restored with accepted eight-leg cuts. Original Meshy skeleton/binds retained, weights transferred; not an optimised gameplay replacement."
+      }
+    },
+    {
+      "id": "squirrel",
+      "name": "Squirrel",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/squirrel_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\squirrel_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "302d0a4989abd318c2fdeddff365847a971cddaa313d88ab0e043a295aae7407",
+        "bytes": 50313868
+      },
+      "display_model": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/squirrel-rigged-local-repair-v1.glb",
+      "status": "Five small gaps and 58 malformed triangles repaired. Both paws, feet, ears and plated tail retained. Original 26-joint rig, all skin weights and textures preserved.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/squirrel/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\squirrel_front.png",
+          "sha256": "ac475a16a8c8d9fdc4a98252a518238a7517994a109cf219dd2a38758f8fca48",
+          "bytes": 237702,
+          "project_matches": [
+            "docs/art/moba/squirrel_s/take-c-power/white_views/squirrel_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/squirrel/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\squirrel_left.png",
+          "sha256": "c48657ed2293ec8b8d139de4ba4366633dbd3b83c60dfb8515c3c100a5a53975",
+          "bytes": 282461,
+          "project_matches": [
+            "docs/art/moba/squirrel_s/take-c-power/white_views/squirrel_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/squirrel/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\squirrel_back.png",
+          "sha256": "d2c475a941c8ce8956713727c0340e26a6d920a2c2cc2307460f457c62051dd4",
+          "bytes": 230372,
+          "project_matches": [
+            "docs/art/moba/squirrel_s/take-c-power/white_views/squirrel_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/squirrel/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\squirrel_right.png",
+          "sha256": "8c2a5b2493b33831521c855100d28bb79df8a30ad8914fa5fc498a1e75a68e93",
+          "bytes": 289796,
+          "project_matches": [
+            "docs/art/moba/squirrel_s/take-c-power/white_views/squirrel_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/squirrel-rigged-local-repair-v1.blend",
+      "review_models": [
+        {
+          "label": "INTACT QUALITY ARCHIVE\nOriginal generated geometry",
+          "path": "res://art/model_catalog/sources/squirrel_front - Hunyuan 3D v3.1 Pro.glb",
+          "display_scale": 3.1098051872662698
+        },
+        {
+          "label": "DOWNLOADED RIG\nBefore local triangle cleanup",
+          "path": "res://art/model_catalog/sources/Meshy_AI_squirrel_remeshed_25k_20261107_character.glb",
+          "display_scale": 1.5294117647058825
+        },
+        {
+          "label": "LOCAL REPAIR\nSame 26-joint rig and skin",
+          "path": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/squirrel-rigged-local-repair-v1.glb",
+          "display_scale": 1.5294117647058825
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/review-front.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "left": {
+          "path": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/review-left.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "back": {
+          "path": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/review-back.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        },
+        "right": {
+          "path": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/review-right.png",
+          "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-14",
+        "report": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/repair-verification.json",
+        "independent_audit": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/independent-export-audit.json",
+        "joint_count": 26,
+        "rigged_input_sha256": "63a164377740ac29db9f31dc4bbec2ba929c233426f0d17af3240942dd9da1f8",
+        "repaired_sha256": "0427c30992c70e6ea1e74289618a032aa3b59fc3852667ddc95c82ca16d3d1c3",
+        "intact_pre_remesh_available": true,
+        "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+        "scope": "Local topology repair. Both arms/paws and legs/feet, two ears/eyes, muzzle/teeth and one plated tail retained. Original vertex attributes, skin, 26-joint skeleton/rest/binds and textures preserved; no remesh or rerig. Three duplicate corner rows on closure 3 use one healthy neighboring UV island. All original attribute/skin rows remain exact; duplicate skin rows copy the same corners. All 22,499 healthy source faces retained. No gameplay replacement.",
+        "runtime_report": "res://docs/art/moba/squirrel_s/local-repair-v1-2026-11-14/final-review-verification.json"
+      }
+    },
+    {
+      "id": "tortoise",
+      "name": "Tortoise",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/tortoise_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\tortoise_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "429c9c39161ee14c391b1ece63a5b322183796e3a9a26496039e24295f4db7ea",
+        "bytes": 50163008
+      },
+      "display_model": "res://art/model_catalog/display/tortoise.glb",
+      "status": "Source static export; unrigged. Display proxy is not final game geometry.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/tortoise/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\tortoise_front.png",
+          "sha256": "9fdd798fdc84838b29d0c1c9870209b63749a35aacf666fbdcfbe9f02668a68d",
+          "bytes": 301575,
+          "project_matches": [
+            "docs/art/moba/tortoise_l/take-a/white_views/tortoise_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/tortoise/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\tortoise_left.png",
+          "sha256": "9a97f212b318c5a7df978a38dca1878bc4033f73ee448bae34d87308e7bce124",
+          "bytes": 301106,
+          "project_matches": [
+            "docs/art/moba/tortoise_l/take-a/white_views/tortoise_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/tortoise/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\tortoise_back.png",
+          "sha256": "0244959965fbb1cb2c8e38b913aae4e4d5acdf3c1f510ec37e107401ebac96b4",
+          "bytes": 280346,
+          "project_matches": [
+            "docs/art/moba/tortoise_l/take-a/white_views/tortoise_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/tortoise/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\tortoise_right.png",
+          "sha256": "6cfd9de2fda8ced0edfbb1a24fea05989589fcf171a18f342ecf02002bc11727",
+          "bytes": 304513,
+          "project_matches": [
+            "docs/art/moba/tortoise_l/take-a/white_views/tortoise_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://art/model_catalog/workspaces/tortoise.blend"
+    },
+    {
+      "id": "wolf",
+      "name": "Wolf",
+      "source_model": {
+        "path": "res://art/model_catalog/sources/wolf_front - Hunyuan 3D v3.1 Pro.glb",
+        "source": "D:\\user\\Downloads\\wolf_front - Hunyuan 3D v3.1 Pro.glb",
+        "sha256": "b40438b083509e7c43bf8429ff2e430f214b809bc6455be72b2608b6b29e2324",
+        "bytes": 51251372
+      },
+      "display_model": "res://art/model_catalog/display/wolf.glb",
+      "status": "Source static export; unrigged. Display proxy is not final game geometry.",
+      "reference_only": false,
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/wolf/front.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\wolf_front.png",
+          "sha256": "e5a9188f9bced1fd18930eca0878df55395d79de82e01db98695830a16cc404e",
+          "bytes": 126258,
+          "project_matches": [
+            "docs/art/moba/wolf_m/take-c-power/white_views/wolf_front.png"
+          ]
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/wolf/left.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\wolf_left.png",
+          "sha256": "bfb6ee64e86e75f4ba94cfc6ad2659eca112f4074c21a00c427ac969e3bb6567",
+          "bytes": 230928,
+          "project_matches": [
+            "docs/art/moba/wolf_m/take-c-power/white_views/wolf_left.png"
+          ]
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/wolf/back.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\wolf_back.png",
+          "sha256": "3cb0422da50215425b57f4dcebbec7f0062ac7d1648e76c0e4eda5aa23d8eb78",
+          "bytes": 122071,
+          "project_matches": [
+            "docs/art/moba/wolf_m/take-c-power/white_views/wolf_back.png"
+          ]
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/wolf/right.png",
+          "source": "C:\\Users\\pmcga\\Downloads\\wolf_right.png",
+          "sha256": "5efd71efabff9924da05c137600d65f719452bee98b82e2e94e4198ef9f319d4",
+          "bytes": 250877,
+          "project_matches": [
+            "docs/art/moba/wolf_m/take-c-power/white_views/wolf_right.png"
+          ]
+        }
+      },
+      "artist_workspace": "res://art/model_catalog/workspaces/wolf.blend"
+    },
+    {
+      "id": "gold_beetle",
+      "name": "Golden Beetle",
+      "category": "objective",
+      "reference_only": false,
+      "source_model": {
+        "path": "res://art/model_catalog/sources/Meshy_AI_coinclaw_mech_remeshed_25k_20261111_character.glb",
+        "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_coinclaw_mech_remeshed_25k_20261111_character.glb",
+        "sha256": "100b37f26e5f279080350e7111df45f2bd7539f1937a9123165d5ea5d14b7946",
+        "bytes": 31593612,
+        "kind": "rigged_download",
+        "source_stage": "remeshed/rigged input; not an intact pre-remesh original"
+      },
+      "display_model": "res://docs/art/moba/gold_beetle_objective/front-leg-restoration-v2-2026-11-13/gold_beetle-front-legs-restored-v2.glb",
+      "status": "Fused front legs rebuilt from the healthy legs: six single shins/feet. Original 23-joint skeleton; local skin transfer.",
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/gold_beetle/front.png",
+          "source": "D:\\user\\Downloads\\coin_beetle_front.png",
+          "sha256": "dd118838faca8366fdf82933324e2a667744de85bf50fbcd2cde0261c4502f5d",
+          "bytes": 448571,
+          "project_matches": [],
+          "provenance_note": "Exact downloaded reference; creature identity and limb intent visually checked. No exact historical generation-job linkage verified."
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/gold_beetle/left.png",
+          "source": "D:\\user\\Downloads\\coin_beetle_left.png",
+          "sha256": "12ba0bbbee42ee862a332be143fcd78dab49b034023a44436b1c3780701a70c1",
+          "bytes": 387545,
+          "project_matches": [],
+          "provenance_note": "Exact downloaded reference; creature identity and limb intent visually checked. No exact historical generation-job linkage verified."
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/gold_beetle/back.png",
+          "source": "D:\\user\\Downloads\\coin_beetle_back.png",
+          "sha256": "28496292853755e953d18cb6068e50f924fbc7c5b19ba7b7313347ed2910f97f",
+          "bytes": 404805,
+          "project_matches": [],
+          "provenance_note": "Exact downloaded reference; creature identity and limb intent visually checked. No exact historical generation-job linkage verified."
+        },
+        "right": {
+          "path": "res://art/model_catalog/references/gold_beetle/right.png",
+          "source": "D:\\user\\Downloads\\coin_beetle_right.png",
+          "sha256": "3283876944f177f1b1cfeaab4825d670226b205674afa481f06d6812f9b4094e",
+          "bytes": 394958,
+          "project_matches": [],
+          "provenance_note": "Exact downloaded reference; creature identity and limb intent visually checked. No exact historical generation-job linkage verified."
+        }
+      },
+      "artist_workspace": "res://docs/art/moba/gold_beetle_objective/front-leg-restoration-v2-2026-11-13/gold_beetle-front-legs-restored-v2.blend",
+      "review_models": [
+        {
+          "label": "DOWNLOADED RIG\nBefore local repair",
+          "path": "res://art/model_catalog/sources/Meshy_AI_coinclaw_mech_remeshed_25k_20261111_character.glb",
+          "display_scale": 1.0229694863892331
+        },
+        {
+          "label": "FRONT LEGS FIXED\nSame 23-joint skeleton",
+          "path": "res://docs/art/moba/gold_beetle_objective/front-leg-restoration-v2-2026-11-13/gold_beetle-front-legs-restored-v2.glb",
+          "display_scale": 1.0229694863892331
+        }
+      ],
+      "review_views": {
+        "front": {
+          "path": "res://docs/art/moba/gold_beetle_objective/front-leg-restoration-v2-2026-11-13/review-front.png",
+          "kind": "Prior fused rig / reconstructed six-leg review; true pre-remesh source unavailable"
+        },
+        "left": {
+          "path": "res://docs/art/moba/gold_beetle_objective/front-leg-restoration-v2-2026-11-13/review-side.png",
+          "kind": "Prior fused rig / reconstructed six-leg review; true pre-remesh source unavailable"
+        },
+        "back": {
+          "path": "res://docs/art/moba/gold_beetle_objective/front-leg-restoration-v2-2026-11-13/review-back.png",
+          "kind": "Prior fused rig / reconstructed six-leg review; true pre-remesh source unavailable"
+        },
+        "right": {
+          "path": "res://docs/art/moba/gold_beetle_objective/front-leg-restoration-v2-2026-11-13/review-right.png",
+          "kind": "Prior fused rig / reconstructed six-leg review; true pre-remesh source unavailable"
+        }
+      },
+      "review_provenance": {
+        "date": "2026-11-13",
+        "report": "res://docs/art/moba/gold_beetle_objective/front-leg-restoration-v2-2026-11-13/repair-verification.json",
+        "independent_audit": "res://docs/art/moba/gold_beetle_objective/front-leg-restoration-v2-2026-11-13/independent-export-audit.json",
+        "joint_count": 23,
+        "rigged_input_sha256": "100b37f26e5f279080350e7111df45f2bd7539f1937a9123165d5ea5d14b7946",
+        "repaired_sha256": "e0c071ba0b6af6f9b9f38e4d974fd99ec3c12a0ec41e3cb659422709020017a5",
+        "intact_pre_remesh_available": false,
+        "scope": "Both front legs reconstructed from the healthy middle legs, aligned to existing front chains; source joint connections protected and locally bridged. Six feet independently verified, eleven native joint poses checked. Original hierarchy/rest/binds/materials/textures retained; local donor weights and one gray collar material added. True pre-remesh unavailable; no gameplay/map replacement.",
+        "previous_repair": "res://docs/art/moba/gold_beetle_objective/repair-v1-2026-11-11/gold_beetle-objective-repaired-v1.glb"
+      }
+    },
+    {
+      "id": "wyvern",
+      "name": "Wyvern",
+      "category": "objective",
+      "reference_only": false,
+      "source_model": {
+        "path": "res://art/model_catalog/sources/Meshy_AI_Cyber_Wyvern_Sentinel_1110211655_texture.glb",
+        "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_Cyber_Wyvern_Sentinel_1110211655_texture.glb",
+        "sha256": "de6feb0f20655e289e8cae2de8ad6f9589050c93acb2feecd0e073194cd8d512",
+        "bytes": 37778492,
+        "kind": "rigged_download",
+        "source_stage": "remeshed/rigged input; not an intact pre-remesh original"
+      },
+      "display_model": "res://docs/art/moba/wyvern_objective/repair-v1-2026-11-11/wyvern-objective-repaired-v1.glb",
+      "status": "Extra chest forelegs removed: two hind legs plus two wing arms. Original 46-joint rig retained.",
+      "views": {
+        "front": {
+          "path": "res://art/model_catalog/references/wyvern/front.png",
+          "source": "D:\\user\\Downloads\\wyvern_front.png",
+          "sha256": "a305c11d38ffd43c7704bbd8659930cf4ae32e29aece02da3507d920a137dca9",
+          "bytes": 339506,
+          "project_matches": [],
+          "provenance_note": "Exact downloaded reference; creature identity and limb intent visually checked. No exact historical generation-job linkage verified."
+        },
+        "left": {
+          "path": "res://art/model_catalog/references/wyvern/left.png",
+          "source": "D:\\user\\Downloads\\wyvern_left.png",
+          "sha256": "249a2679c86c18104d4f3c275ceb66aae69259f7bc5328b18d70ced00a1ec26e",
+          "bytes": 323865,
+          "project_matches": [],
+          "provenance_note": "Exact downloaded reference; creature identity and limb intent visually checked. No exact historical generation-job linkage verified."
+        },
+        "back": {
+          "path": "res://art/model_catalog/references/wyvern/back.png",
+          "source": "D:\\user\\Downloads\\wyvern_back.png",
+          "sha256": "00b03fea257cb7b4bc1c4f42c24c505915f58f9405a9ca8739d57c81ec995

@@ -1,0 +1,53 @@
+{
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB\\cobra_front - Hunyuan 3D v3.1 Pro.glb",
+  "source_sha256": "af7353fcb7967f579bd715e64df339f52e6488958990dde25d652b47078bcfa3",
+  "source_unchanged": true,
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\cobra_m\\tail-correction-2026-11-10\\cobra_front - single tail corrected.glb",
+  "output_sha256": "78c2b9be88ffcc69f03c20e079449633cad43a548586eafd8a748eabb578a5b8",
+  "bytes": 47825100,
+  "triangles": 352420,
+  "skin_count": 0,
+  "animations": [],
+  "embedded_textures": {
+    "texture_pbr_20250901_normal": {
+      "png_sha256": "94d7dcb5bf6b33726ef3ab20647bd267d7eedc2aea7a76a90fa9c2a0bf662004",
+      "rgba_sha256": "002fb655558a805947abf132c5ec1f69417baa2ff02c6ea893486145cd6b80f2",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    "texture_pbr_20250901": {
+      "png_sha256": "0f35aaf92d854c0d62f90eeff346dd4e9863b0fc8ae160c73116f324c233b129",
+      "rgba_sha256": "cdd94be44376a4569db8c635bed15f73ec4caefe805647ee2a2f090f333fbe75",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    "texture_pbr_20250901_metallic-texture_pbr_20250901_roughness": {
+      "png_sha256": "3b2f6b33f0645aa014213044d40888ad7bf129aa885bdf3b340d11951d244546",
+      "rgba_sha256": "1d65ed555fa50251bada0dd57bc16007aa4e11434315bf4de3052e7c5611df5c",
+      "size": [
+        4096,
+        4096
+      ]
+    }
+  },
+  "source_texture_pixels_identical": true,
+  "source_png_bytes_identical": true,
+  "material_count": 3,
+  "render_size_checks": true,
+  "reimport": {
+    "boundary_edges_after_seam_weld": 0,
+    "nonmanifold_edges_after_seam_weld": 0,
+    "strict_zero_area_faces": 0,
+    "positive_area_faces_under_1e_12": 0,
+    "minimum_positive_face_area": 1.069886041739354e-12,
+    "vertices_after_seam_weld": 176212,
+    "faces": 352420
+  },
+  "delivered_path": "D:\\user\\Downloads\\cobra_front - single tail corrected.glb",
+  "delivered_sha256": "78c2b9be88ffcc69f03c20e079449633cad43a548586eafd8a748eabb578a5b8",
+  "delivery_matches_reviewed_export": true
+}

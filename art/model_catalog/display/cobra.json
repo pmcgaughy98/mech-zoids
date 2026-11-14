@@ -1,0 +1,49 @@
+{
+  "id": "cobra",
+  "source_sha256": "af7353fcb7967f579bd715e64df339f52e6488958990dde25d652b47078bcfa3",
+  "source_triangles": 500000,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8752434837907387,
+  "blender_bounds_min": [
+    -4.600483417510986,
+    -1.474982500076294,
+    0.11977148801088333
+  ],
+  "blender_bounds_max": [
+    -1.4013736248016357,
+    1.4734597206115723,
+    1.7297097444534302
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

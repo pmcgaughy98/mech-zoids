@@ -1,0 +1,32 @@
+{
+  "status": "Resolved: user approved removal of toe 1 on both feet",
+  "current_toes_per_foot": 5,
+  "current_forward_toes_per_foot": 3,
+  "current_rear_toes_per_foot": 2,
+  "recommended_action": "Remove labeled outer rear toe 1 on both feet; retain three forward toes and one rear toe each.",
+  "selection_image": "foot-extra-toe-labeled.png",
+  "proposed_removed_chains": [
+    "Bone_028/Bone_027",
+    "Bone_038/Bone_037"
+  ],
+  "proposed_existing_parents": [
+    "Bone_009",
+    "Bone_013"
+  ],
+  "no_anatomy_cut_yet": true,
+  "catalog_unchanged": true,
+  "source_model_sha256": "34d77973b951d096ff136061a7c820378e09fdc4c8b97c402b2989c0ed509947",
+  "reference_sha256": {
+    "front": "8c715a55e39e95ed74953cc3a3e9f901eb64ec0c1f766385f2d18a523ce1d392",
+    "left": "c1a034f90d8603d32df8ccb261065835da27de72fcaafab75d6ef20be42dc1a7",
+    "back": "f903cc31adc6c3592f9282693ce5f367a40f2e9f99cbd14905ed8883bd0c737b",
+    "right": "842719c556e88179aebc3cfd63cb48059a58ff6d203647d76e9f578875d8b745"
+  },
+  "independent_skin_rig_audit_passed": true,
+  "native_joint_tests": 18,
+  "max_coincident_surface_gap_m": 0.0,
+  "staged_sha256": "cd21484d08362cccf7b7029c988b8fd8989fe02a8e44a9a21d258d80a4b3efc4",
+  "staged_grok_foundation_scope": "Separate staged Falcon foundation and its draft clips inspected for lineage only; neither modified nor merged. Current downloaded source and local repair have no animation clips.",
+  "historical_checkpoint_only": true,
+  "resolution_report": "final-review-verification.json"
+}

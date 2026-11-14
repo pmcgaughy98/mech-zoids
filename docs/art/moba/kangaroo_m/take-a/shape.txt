@@ -1,0 +1,5 @@
+East view, native pixels, crop-local landmarks; approximate +/-2px. See measure-e-grid.png.
+Thigh horizontal span x25..49 at y51 =25px; chest depth x35..54 at y37 =20px (arm overlaps boundary); thigh/chest =1.250.
+Tall near ear y0..17 =18px; head rear x44 to muzzle tip x64 =21px; ear/head length =0.857.
+Visible overlapping fist assembly bbox x55..68,y29..43 =14x15px; head excluding ears bbox x44..64,y16..26 =21x11px.
+Fist/head width =0.667; height =1.364; bbox area =0.909. Far fist is occluded, so this is the visible assembly, not a separate far-fist measure.

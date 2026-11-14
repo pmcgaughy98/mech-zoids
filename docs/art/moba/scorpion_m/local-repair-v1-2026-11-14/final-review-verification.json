@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "tested_sha256": "3cb9fa1f8c04fb2ca8348a151f4f56d57a6953e976f5f42493d2957a47186f73",
+  "triangles": 23970,
+  "joint_count": 52,
+  "native_joint_tests_with_surface_motion": 52,
+  "native_joint_tests_without_surface_motion": [],
+  "maximum_seam_gap_m": 0.0,
+  "godot_check": "Three native GLB versions, original/revised sheets, supplied 52-joint rig and current ChaseCamera3D",
+  "screenshots": "res://reports/model_catalog/scorpion-local-v1",
+  "intact_archive_sha256": "ee4b557292cc1ee6006446a467fa638e993d7c7b3f2ac6b36fb7cb1579727c4c",
+  "original_reference_sha256": {
+    "front": "05488e17d542c0760611e82fb81a5f1a0376ca940fe226f6637b3887afb62c63",
+    "left": "2b5f4156c3b59b836db0ab8f6dd4a4d7616fe6ea5c1b2ac43de323864cbbb36a",
+    "back": "e61246c4dfada58d92d65da791c3eaadbfd6b745cb1a851e7fef30a42ab814bf",
+    "right": "9fefecd807068a9396f95b6c0829364716d9a1fe3255a33aa20a4f80e1246984"
+  },
+  "boundary_edges": 0,
+  "over_shared_edges": 0,
+  "collapsed_triangles": 0,
+  "healthy_source_triangles_retained": 23970,
+  "all_original_vertex_and_skin_rows_preserved": true,
+  "initial_static_file_superseded_by": "Meshy_AI_scorpion_remeshed_25k_20261114_character.glb"
+}

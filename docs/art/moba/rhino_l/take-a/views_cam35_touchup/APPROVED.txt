@@ -1,0 +1,10 @@
+Approved by Preston 2026-11-04, after seeing ../cam35_touchup/board.png: he picked "Keep, game sel-out".
+What he approved: the touch-up of the cam35 views in this folder (s, se, e, ne, n), raw, with the game's existing
+sel-out added at pack time (selout_rhino.selout, uniform #141218). The light-following sel-out option (board row 4)
+was not picked, so the packer stays as it is.
+Same silhouette as ../views_cam35 (alpha identical, 0 px differ): 192 canvas, lowest foot on row 160, the 12 colours.
+Known flaws left as they are: charcoal frame lighter than the approved views (13.6-18.4% dark against 20-28%);
+rounded plate corners and the head and hump drift (both in the outline, so a redraw); se eye 4 px (70% of the
+tilt-expected size), untouched.
+Not installed by the touch-up lane. Installing it means pointing whatever reads ../views_cam35 at this folder; that
+is the game feel lane's step. ../views_cam35 and ../views are unchanged.

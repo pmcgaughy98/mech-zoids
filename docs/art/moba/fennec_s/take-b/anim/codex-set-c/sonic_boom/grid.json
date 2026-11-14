@@ -1,0 +1,745 @@
+{
+  "raw_size": [
+    1774,
+    887
+  ],
+  "columns": 8,
+  "rows": [
+    "se",
+    "ne"
+  ],
+  "x_edges": [
+    0,
+    222,
+    444,
+    666,
+    887,
+    1109,
+    1330,
+    1552,
+    1774
+  ],
+  "y_edges": [
+    0,
+    429,
+    887
+  ],
+  "row_scale": {
+    "se": 0.326571755143347,
+    "ne": 0.31163021075086533
+  },
+  "cells": [
+    {
+      "view": "se",
+      "frame": 0,
+      "source_box": [
+        14,
+        110,
+        214,
+        331
+      ],
+      "nominal_cell_box": [
+        0,
+        0,
+        222,
+        429
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": true,
+      "source_opaque_box": [
+        2,
+        2,
+        198,
+        219
+      ],
+      "scale": 0.326571755143347,
+      "placement": [
+        64,
+        90
+      ],
+      "touches_cut": false,
+      "duration_ms": 300,
+      "final_opaque_box": [
+        64,
+        89,
+        127,
+        161
+      ],
+      "final_path": "frames/se_f0.png"
+    },
+    {
+      "view": "se",
+      "frame": 1,
+      "source_box": [
+        230,
+        113,
+        442,
+        329
+      ],
+      "nominal_cell_box": [
+        222,
+        0,
+        444,
+        429
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": true,
+      "source_opaque_box": [
+        2,
+        2,
+        210,
+        214
+      ],
+      "scale": 0.326571755143347,
+      "placement": [
+        62,
+        92
+      ],
+      "touches_cut": false,
+      "duration_ms": 150,
+      "final_opaque_box": [
+        64,
+        97,
+        128,
+        161
+      ],
+      "final_path": "frames/se_f1.png"
+    },
+    {
+      "view": "se",
+      "frame": 2,
+      "source_box": [
+        450,
+        184,
+        667,
+        329
+      ],
+      "nominal_cell_box": [
+        444,
+        0,
+        666,
+        429
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": true,
+      "source_opaque_box": [
+        2,
+        2,
+        215,
+        143
+      ],
+      "scale": 0.326571755143347,
+      "placement": [
+        60,
+        115
+      ],
+      "touches_cut": false,
+      "duration_ms": 230,
+      "final_opaque_box": [
+        64,
+        115,
+        130,
+        161
+      ],
+      "final_path": "frames/se_f2.png"
+    },
+    {
+      "view": "se",
+      "frame": 3,
+      "source_box": [
+        673,
+        188,
+        888,
+        329
+      ],
+      "nominal_cell_box": [
+        666,
+        0,
+        887,
+        429
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": true,
+      "source_opaque_box": [
+        2,
+        2,
+        213,
+        139
+      ],
+      "scale": 0.326571755143347,
+      "placement": [
+        61,
+        116
+      ],
+      "touches_cut": false,
+      "duration_ms": 260,
+      "final_opaque_box": [
+        64,
+        116,
+        130,
+        161
+      ],
+      "final_path": "frames/se_f3.png"
+    },
+    {
+      "view": "se",
+      "frame": 4,
+      "source_box": [
+        899,
+        136,
+        1129,
+        329
+      ],
+      "nominal_cell_box": [
+        887,
+        0,
+        1109,
+        429
+      ],
+      "raw_nominal_overlap": true,
+      "component_isolated": true,
+      "source_opaque_box": [
+        2,
+        2,
+        228,
+        191
+      ],
+      "scale": 0.326571755143347,
+      "placement": [
+        58,
+        99
+      ],
+      "touches_cut": false,
+      "duration_ms": 100,
+      "final_opaque_box": [
+        64,
+        99,
+        132,
+        161
+      ],
+      "final_path": "frames/se_f4.png"
+    },
+    {
+      "view": "se",
+      "frame": 5,
+      "source_box": [
+        1118,
+        128,
+        1327,
+        329
+      ],
+      "nominal_cell_box": [
+        1109,
+        0,
+        1330,
+        429
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": true,
+      "source_opaque_box": [
+        2,
+        2,
+        207,
+        199
+      ],
+      "scale": 0.326571755143347,
+      "placement": [
+        62,
+        97
+      ],
+      "touches_cut": false,
+      "duration_ms": 140,
+      "final_opaque_box": [
+        64,
+        97,
+        129,
+        161
+      ],
+      "final_path": "frames/se_f5.png"
+    },
+    {
+      "view": "se",
+      "frame": 6,
+      "source_box": [
+        1345,
+        117,
+        1536,
+        331
+      ],
+      "nominal_cell_box": [
+        1330,
+        0,
+        1552,
+        429
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": true,
+      "source_opaque_box": [
+        2,
+        2,
+        189,
+        212
+      ],
+      "scale": 0.326571755143347,
+      "placement": [
+        65,
+        92
+      ],
+      "touches_cut": false,
+      "duration_ms": 180,
+      "final_opaque_box": [
+        64,
+        93,
+        125,
+        161
+      ],
+      "final_path": "frames/se_f6.png"
+    },
+    {
+      "view": "se",
+      "frame": 7,
+      "source_box": [
+        1563,
+        110,
+        1762,
+        331
+      ],
+      "nominal_cell_box": [
+        1552,
+        0,
+        1774,
+        429
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": true,
+      "source_opaque_box": [
+        2,
+        2,
+        197,
+        219
+      ],
+      "scale": 0.326571755143347,
+      "placement": [
+        64,
+        90
+      ],
+      "touches_cut": false,
+      "duration_ms": 350,
+      "final_opaque_box": [
+        64,
+        89,
+        127,
+        161
+      ],
+      "final_path": "frames/se_f7.png"
+    },
+    {
+      "view": "ne",
+      "frame": 0,
+      "source_box": [
+        14,
+        527,
+        207,
+        768
+      ],
+      "nominal_cell_box": [
+        0,
+        429,
+        222,
+        887
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": true,
+      "source_opaque_box": [
+        2,
+        2,
+        191,
+        239
+      ],
+      "scale": 0.31163021075086533,
+      "placement": [
+        66,
+        87
+      ],
+      "touches_cut": false,
+      "duration_ms": 300,
+      "final_opaque_box": [
+        67,
+        86,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f0.png"
+    },
+    {
+      "view": "ne",
+      "frame": 1,
+      "source_box": [
+        228,
+        529,
+        429,
+        768
+      ],
+      "nominal_cell_box": [
+        222,
+        429,
+        444,
+        887
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": true,
+      "source_opaque_box": [
+        2,
+        2,
+        199,
+        237
+      ],
+      "scale": 0.31163021075086533,
+      "placement": [
+        66,
+        88
+      ],
+      "touches_cut": false,
+      "duration_ms": 150,
+      "final_opaque_box": [
+        67,
+        88,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f1.png"
+    },
+    {
+      "view": "ne",
+      "frame": 2,
+      "source_box": [
+        451,
+        615,
+        660,
+        765
+      ],
+      "nominal_cell_box": [
+        444,
+        429,
+        666,
+        887
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": true,
+      "source_opaque_box": [
+        2,
+        2,
+        207,
+        148
+      ],
+      "scale": 0.31163021075086533,
+      "placement": [
+        64,
+        116
+      ],
+      "touches_cut": false,
+      "duration_ms": 230,
+      "final_opaque_box": [
+        67,
+        116,
+        128,
+        161
+      ],
+      "final_path": "frames/ne_f2.png"
+    },
+    {
+      "view": "ne",
+      "frame": 3,
+      "source_box": [
+        674,
+        623,
+        881,
+        765
+      ],
+      "nominal_cell_box": [
+        666,
+        429,
+        887,
+        887
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": true,
+      "source_opaque_box": [
+        2,
+        2,
+        205,
+        140
+      ],
+      "scale": 0.31163021075086533,
+      "placement": [
+        64,
+        118
+      ],
+      "touches_cut": false,
+      "duration_ms": 260,
+      "final_opaque_box": [
+        67,
+        118,
+        127,
+        161
+      ],
+      "final_path": "frames/ne_f3.png"
+    },
+    {
+      "view": "ne",
+      "frame": 4,
+      "source_box": [
+        896,
+        554,
+        1114,
+        768
+      ],
+      "nominal_cell_box": [
+        887,
+        429,
+        1109,
+        887
+      ],
+      "raw_nominal_overlap": true,
+      "component_isolated": true,
+      "source_opaque_box": [
+        2,
+        2,
+        216,
+        212
+      ],
+      "scale": 0.31163021075086533,
+      "placement": [
+        62,
+        96
+      ],
+      "touches_cut": false,
+      "duration_ms": 100,
+      "final_opaque_box": [
+        67,
+        84,
+        131,
+        161
+      ],
+      "final_path": "frames/ne_f4.png"
+    },
+    {
+      "view": "ne",
+      "frame": 5,
+      "source_box": [
+        1118,
+        543,
+        1326,
+        768
+      ],
+      "nominal_cell_box": [
+        1109,
+        429,
+        1330,
+        887
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": true,
+      "source_opaque_box": [
+        2,
+        2,
+        206,
+        223
+      ],
+      "scale": 0.31163021075086533,
+      "placement": [
+        64,
+        92
+      ],
+      "touches_cut": false,
+      "duration_ms": 140,
+      "final_opaque_box": [
+        67,
+        92,
+        128,
+        161
+      ],
+      "final_path": "frames/ne_f5.png"
+    },
+    {
+      "view": "ne",
+      "frame": 6,
+      "source_box": [
+        1344,
+        535,
+        1533,
+        768
+      ],
+      "nominal_cell_box": [
+        1330,
+        429,
+        1552,
+        887
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": true,
+      "source_opaque_box": [
+        2,
+        2,
+        187,
+        231
+      ],
+      "scale": 0.31163021075086533,
+      "placement": [
+        67,
+        90
+      ],
+      "touches_cut": false,
+      "duration_ms": 180,
+      "final_opaque_box": [
+        67,
+        90,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f6.png"
+    },
+    {
+      "view": "ne",
+      "frame": 7,
+      "source_box": [
+        1566,
+        527,
+        1760,
+        768
+      ],
+      "nominal_cell_box": [
+        1552,
+        429,
+        1774,
+        887
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": true,
+      "source_opaque_box": [
+        2,
+        2,
+        192,
+        239
+      ],
+      "scale": 0.31163021075086533,
+      "placement": [
+        66,
+        87
+      ],
+      "touches_cut": false,
+      "duration_ms": 350,
+      "final_opaque_box": [
+        67,
+        86,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f7.png"
+    }
+  ],
+  "final_canvas": [
+    192,
+    192
+  ],
+  "approved_offset": [
+    16,
+    20
+  ],
+  "ground_row": 160,
+  "durations_ms": [
+    300,
+    150,
+    230,
+    260,
+    100,
+    140,
+    180,
+    350
+  ],
+  "loop": false,
+  "frames": {
+    "se": [
+      {
+        "file": "frames/se_f0.png",
+        "duration_ms": 300
+      },
+      {
+        "file": "frames/se_f1.png",
+        "duration_ms": 150
+      },
+      {
+        "file": "frames/se_f2.png",
+        "duration_ms": 230
+      },
+      {
+        "file": "frames/se_f3.png",
+        "duration_ms": 260
+      },
+      {
+        "file": "frames/se_f4.png",
+        "duration_ms": 100
+      },
+      {
+        "file": "frames/se_f5.png",
+        "duration_ms": 140
+      },
+      {
+        "file": "frames/se_f6.png",
+        "duration_ms": 180
+      },
+      {
+        "file": "frames/se_f7.png",
+        "duration_ms": 350
+      }
+    ],
+    "ne": [
+      {
+        "file": "frames/ne_f0.png",
+        "duration_ms": 300
+      },
+      {
+        "file": "frames/ne_f1.png",
+        "duration_ms": 150
+      },
+      {
+        "file": "frames/ne_f2.png",
+        "duration_ms": 230
+      },
+      {
+        "file": "frames/ne_f3.png",
+        "duration_ms": 260
+      },
+      {
+        "file": "frames/ne_f4.png",
+        "duration_ms": 100
+      },
+      {
+        "file": "frames/ne_f5.png",
+        "duration_ms": 140
+      },
+      {
+        "file": "frames/ne_f6.png",
+        "duration_ms": 180
+      },
+      {
+        "file": "frames/ne_f7.png",
+        "duration_ms": 350
+      }
+    ]
+  },
+  "finishing": [
+    "finish.py",
+    "polish.py",
+    "details.py",
+    "gait_finish.py",
+    "final_pass.py",
+    "seam_fill.py",
+    "finalize.py"
+  ],
+  "native_detail_log": "../native_finish_log.txt",
+  "raw_sha256": "5c13e935aac0d1a3348ce78731522370f94881bdc7f332837d2a1d8d495d2aee",
+  "native_placements": "../native_finish_log.txt and ../detail_finish_log.txt; tails in ../final_pass_log.txt",
+  "source_grid_clean": false,
+  "extraction_clean": true
+}

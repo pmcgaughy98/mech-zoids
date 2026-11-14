@@ -1,0 +1,38 @@
+{
+  "brace": {
+    "size": [
+      1619,
+      971
+    ],
+    "sha256": "203753a4309077179ca698490ae4a9916a85c3b9344d5dbd1cf6c285f1ad76d7",
+    "prompt": "prompts/brace.txt",
+    "generations": 1
+  },
+  "stampede": {
+    "size": [
+      1914,
+      822
+    ],
+    "sha256": "fc75d7f3aaf463421f2495b56ea07c4110172f9ec6d84490e81a97686d4c88ba",
+    "prompt": "prompts/stampede.txt",
+    "generations": 1
+  },
+  "death": {
+    "size": [
+      1915,
+      821
+    ],
+    "sha256": "47bd417b45d5ec27b68c2f41bef33891dc6a6a44bbf1f9d7ec1923f692c2edd2",
+    "prompt": "prompts/death.txt",
+    "generations": 1
+  },
+  "effects": {
+    "size": [
+      1289,
+      1221
+    ],
+    "sha256": "2037238c333c3177cc9df6787dc58f1eec7590799e68a90283413528078fc817",
+    "prompt": "prompts/effects.txt",
+    "generations": 1
+  }
+}

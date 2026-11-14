@@ -1,0 +1,14 @@
+Order throughout: s,se,e,ne,n. Tokens unavailable. One built-in image; prompt-sheet.txt used verbatim; no redo.
+W/approved: 35/33=1.061, 85/83=1.024, 100/110=0.909, 71/78=0.910, 36/35=1.029; anchor mean 0.9994 (s 1.061,n 1.029,e .909).
+H/approved: 85/72=1.181, 72/70=1.029, 58/66=0.879, 91/70=1.300, 96/72=1.333; spread 0.455.
+H/W new/target: 2.429/2.152, 0.847/0.762, 0.580/0.583, 1.282/1.103, 2.667/2.909; top rows 76,89,103,70,65; no borders touched.
+Lightest gunmetal% new/approved: 18.1/11.7, 18.8/7.2, 15.7/6.7, 17.4/6.2, 12.4/7.8.
+Lightest red% new/approved: 6.5/3.5, 4.8/2.5, 5.9/2.7, 4.5/2.7, 5.4/4.5.
+Eyes count(largest group) new: 6(3), 6(6), 4(4), 1(1), 0(0); approved 4(2),4(4),4(4),0(0),0(0). Rear ne 1 is a MISS; front counts >=3.
+Accent% new/approved: 7.4/7.4, 6.4/6.4, 4.7/4.7, 5.3/5.3, 4.8/4.8.
+Palette PASS: 12 fixed colours, no extras; no magenta/plum fringe or lone pale rim; eye glow protected. Edge counts in edge-audit.json.
+view_check: front/back .70; area .25; height .36; colour .89; dips none; lone 0.0788; 12 colours; top5 0.725; no despeckle required.
+sheet_judge: FIX none; REDO e,ne,n,nw,w for height only, informational under camera exception; mirrors .977/.874/.863; no repairs or redo.
+Depth p05/p95/dominant%: 20.3/188.9/23.0, 20.3/188.9/20.2, 27.9/188.9/19.5, 20.3/188.9/21.2, 27.9/188.9/26.4.
+By eye: recognizable same wolf; four legs where exposed, two ears/fangs/fins and one tail consistent, no obvious new parts; firm plates/seams and clean bands. Occlusion prevents certifying all counts in all views.
+Camera FAIL: front too overhead; side 9% short and stays too low despite a back band and raised far feet; angle inconsistent. Rear taller with head/ears atop; lit top faces increased, but fangs smaller and rear ne cyan remains. Foot rows in shape.txt.

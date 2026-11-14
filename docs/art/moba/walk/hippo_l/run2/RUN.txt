@@ -1,0 +1,6 @@
+Hippo walk at 35, run 2: s and n, four-beat walk (lateral4), 8 frames at 8 fps. Preston: "Yes, start run 2" (2026-11-05).
+Run 1 used 224,713 tokens (cap 160,000, overshot by one step). Estimate 90k-110k; cap 100,000; worst case about 175k if one
+step overshoots the way run 1's did. Hippo total likely 315k-335k, told to Preston.
+Command:
+  sh D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/walk35/codex_cap/run_codex_capped_d.sh D:/dev/new-mech-rpg/docs/art/moba/walk/hippo_l/run2 D:/dev/new-mech-rpg/docs/art/moba/walk/hippo_l/run2/brief.txt run2 100000 hippo-walk35-run2
+Started: 2026-11-05 17:54

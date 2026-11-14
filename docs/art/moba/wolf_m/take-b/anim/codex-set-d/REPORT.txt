@@ -1,0 +1,27 @@
+WOLF M / TAKE B / CODEX SET D / 2026-11-04
+STATUS: review candidates. Structural checks PASS; strict all-part 2px gate NOT PASSED. Not certified final art.
+38 native transparent PNG frames (SE/NE), 6 timed GIFs, 3 raw sheets and full 4x sel-out boards. Tokens used unavailable.
+Exactly THREE built-in image_gen calls: one per move, no redo/variation. Prompts saved in prompts/; all f0... column sentences verified unchanged from set B.
+References: fixed/se.png then fixed/ne.png; supplied refs/se_6x.png and ne_6x.png attached in that order and checked against fixed/.
+hamstring: sheet 2172x724; SHA256 7810b95d676e026cb87e25d842323993bc6449cb06cd4cfb90d5e0a286895180.
+howl: sheet 2172x724; SHA256 f260f34677225a4a6a5e9d1cf9af968e28aada15ad1db4502c8395cfd1585fcd.
+death: sheet 1914x822; SHA256 d0df261c3ac2bd2117e4c4e76e63fa5fc4713d14bf4cdca05f594b3e5e872e7f.
+Method: adapted A/B scripts, one whole generated drawing per posed frame, row-specific empty-gutter cuts, fixed per-row X/Y calibration, nearest-neighbour native corrections, direct pixel ink. No still parts pasted.
+Native finishing: low bite mouth/fangs, continuous hind-paw contact correction, howl knee bend held through f2-f4, rear cyan removed, straight tails extended/thickened through continuous whole-drawing maps, prone ear and foreleg pixel ink.
+PASS 38/38: 192x192 RGBA, binary alpha, approved 12-colour subset, one connected silhouette, bottom160, no pixels below160, no canvas-edge contact. All cuts have empty gutters.
+PASS 28/28 posed frames: no enclosed holes or detached components. Exact still exception: SE has9 enclosed transparent pixels, NE11; preserved verbatim to honour exact identity.
+Exact endpoints, silhouette AND colour IoU: hamstring se_f0=1.0 se_f5=1.0 ne_f0=1.0 ne_f5=1.0; all PNG bytes identical to fixed/.
+Exact endpoints, silhouette AND colour IoU: howl se_f0=1.0 se_f5=1.0 ne_f0=1.0 ne_f5=1.0; death se_f0=1.0 ne_f0=1.0; all PNG bytes identical to fixed/.
+PASS 6/6 GIFs reopened/decoded: exact frame counts and requested timing. Death f6 equals f5 body/alpha; SE cyan eye becomes #444452, NE eye is occluded so f5/f6 are identical.
+Measurement method: manually tagged visible projected axes/joint chains (+1 endpoint pixel), uncertainty2px. Hidden intrinsic lengths cannot be recovered. Every frame and remaining >2px flags are in proportions.json.
+Reference SE px: ear15.04 head22.93 muzzle11.30 body29.02/depth22 fore33.75 hind31.65; visible tail39.60, cross-section10.75. NE: ear14 head10.43 muzzle occluded body30.15/depth21 fore29.03 hind29.16; tail42.23/cross12.25.
+Hamstring SE ranges px: ear13.65-16.13 head17.97-22.95 muzzle9.94-11.30 body29.02-30.41/depth18-22 fore29.64-33.79 hind26.77-31.65. NE projected leg chains22.81-29.93/22.82-29.16; tail axes SE38.54-40.05 NE39.95-42.23.
+Howl SE ranges px: ear15.04-15.32 head19.03-22.93 muzzle10.85-12.18 body28.66-30.12/depth19-22 fore33.75-33.98 hind29.63-31.65. NE raised head10.43-18.00 body29.79-32.30; tail axes SE39.29-40.05 NE39.95-42.23.
+Death SE ranges px: ear14-15.14 head12.40-24.32 muzzle9.06-12.66 body27.08-29.02/depth19-22. Occluded bent limb chains shorten: fore20.72-34.92/hind20.23-31.65; NE18.06-30.90/15.83-29.23. Tail axes SE39.60-39.64 NE39.95-42.23.
+Tail review: straight broad plated line, three visible grey plates plus red tip retained, no rods. SE sampled widths9.75-12.50, NE generally10-13. NE howl at one cross-section intersects haunch/leg (22.5px); that does not certify intrinsic tail width.
+Hamstring eye: same wolf in both rows; low open f2, closed f3 and yank-back read; broad columns match set B. Both bodies stay in place. Three-quarter body cameras retained, no mirrors, but low SE head leans too profile. Whole connected parts; exact fixed hind support not certified (SE far contact drifts ~3px/1row).
+Howl eye: same wolf, backward settle, raised open muzzle and chest read, matched f0-f5 beats against set B; body cameras remain SE/NE, no mirrors. Whole joined parts. Raised head/haunch proportions and one tail overlap remain uncertified.
+Death eye: same wolf, flinch/buckle/chest/prone/eye-off read, columns broadly match set B, SE/NE bodies retained without mirroring. f4 side-roll remains weak and some legs remain partly folded; strict roll/legs-out and 2px anatomy requirements are not fully met. No visible pasted cutoffs.
+Inspected final 4x sel-out pages beside approved stills for every frame, compared set B front/side/back boards. Review index: review.html. All requested per-move deliverables retained; details in checks.txt, grid.json, verification.json, support_checks.json.
+Rebuild: python -B finish.py extract hamstring howl death; python -B polish.py; python -B finalize.py; python -B verify.py; python -B measure.py; python -B measure_board.py.
+All task-authored writes confined to codex-set-d. Built-in tool retained its automatic managed cache originals. No sibling folders, assets or tools edited; no commit.

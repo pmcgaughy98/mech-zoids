@@ -1,0 +1,80 @@
+{
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_falcon_remeshed_25k_20261108_character.glb",
+  "source_sha256": "245e6242746f7e4daf179299621fac0f372bfe6b0b9bef0edbfdf394b5f3db37",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\falcon_m\\local-repair-v1-2026-11-13\\falcon-rigged-local-repair-v1.glb",
+  "output_sha256": "cd21484d08362cccf7b7029c988b8fd8989fe02a8e44a9a21d258d80a4b3efc4",
+  "before_triangles": 23579,
+  "final_triangles": 23554,
+  "joint_count": 45,
+  "removed_malformed_triangles": 26,
+  "removed_face_ids": [
+    616,
+    633,
+    6023,
+    6570,
+    7007,
+    7789,
+    7793,
+    7802,
+    8465,
+    8958,
+    9110,
+    9397,
+    9412,
+    9445,
+    11995,
+    12502,
+    13747,
+    14861,
+    16113,
+    16168,
+    16267,
+    16687,
+    16982,
+    19565,
+    19845,
+    19973
+  ],
+  "holes_closed": [
+    {
+      "triangle": [
+        2651,
+        2659,
+        2805
+      ],
+      "bounds": [
+        [
+          -0.054149169474840164,
+          0.8069314360618591,
+          0.858329713344574
+        ],
+        [
+          -0.03789232298731804,
+          0.82757568359375,
+          0.8890501856803894
+        ]
+      ],
+      "normal": [
+        0.7615737318992615,
+        0.3329193592071533,
+        0.5560306310653687
+      ],
+      "normal_alignment": 0.8958558440208435,
+      "uv_perimeter": 0.006935234647244215
+    }
+  ],
+  "boundary_edges": 0,
+  "over_shared_edges": 1,
+  "protected_closed_contact_edges": [
+    [
+      6462,
+      6465
+    ]
+  ],
+  "contact_note": "Original positive-volume closed four-triangle assembly detail retained with its balanced four-face contact.",
+  "collapsed_triangles": 0,
+  "healthy_main_body_source_faces_retained": 23549,
+  "all_original_vertex_attribute_rows_weights_materials_skeleton_rest_binds_preserved": true,
+  "new_geometric_vertices": 0,
+  "scope": "Local topology repair only. Original two legs, folded wings, eyes, head, tail, all source vertex attributes and 45-joint rig retained. Anatomy review in progress."
+}

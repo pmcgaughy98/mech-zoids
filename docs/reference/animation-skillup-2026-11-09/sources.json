@@ -1,0 +1,32 @@
+{
+  "checked": "2026-11-09",
+  "scope": "Public-source research for creature/mech animation; no installs, downloads or runtime tests",
+  "sources": [
+    {"url": "https://www.mpg.de/16678047/gorillas-don-t-bluff-when-they-chest-beat-honest-signalling-indicates-body-size", "read": "Firecrawl page text", "supports": "Upright chest-beating display with cupped hands; individual variation", "limit": "No frame-analyzed video or measured game timing"},
+    {"url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12575676/", "read": "Primary paper methods and results", "supports": "Gorilla support and ground-reaction-force study", "limit": "Three animals on a narrow elevated beam; not a universal terrestrial gait prescription"},
+    {"url": "https://www.animationmentor.com/blog/5-tips-to-make-the-perfect-creature-animation-locomotion-recipe/", "read": "Firecrawl page text", "supports": "Creature masses, scale, foot plants and spacing"},
+    {"url": "https://www.animationmentor.com/blog/tutorial-animate-animals-in-motion/", "read": "Firecrawl page text", "supports": "Pose-by-pose quadruped workflow and loop cleanup", "limit": "Dog/Maya example, not a verified gorilla or rhino clip"},
+    {"url": "https://www.animationmentor.com/blog/tutorial-animating-pushing-and-pulling-motions/", "read": "Firecrawl page text", "supports": "Reference thumbnails, intentional breakdowns, FK approach and IK contact"},
+    {"url": "https://www.animationmentor.com/blog/6-animation-tips-every-creature-animator-should-know/", "read": "Firecrawl page text", "supports": "Anatomical rig limits and deliberate reference adaptation"},
+    {"url": "https://www.animationmentor.com/blog/tutorial-animating-big-and-small-characters/", "read": "Firecrawl page text", "supports": "Scale-dependent timing and layered secondary motion"},
+    {"url": "https://www.leagueoflegends.com/en-us/news/dev/why-bel-veth-slaps/", "read": "Firecrawl developer article", "supports": "Animation sets adapted to attack-speed regimes"},
+    {"url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/", "read": "Web and Firecrawl developer article", "supports": "Silhouette, facing, readable gameplay and feedback hierarchy"},
+    {"url": "https://www.theorangeduck.com/page/code-vs-data-driven-displacement", "read": "Firecrawl author article; related repository controller source", "supports": "Simulation/render displacement reconciliation, contact locking and release"},
+    {"url": "https://www.theorangeduck.com/page/spring-roll-call", "read": "Firecrawl author article including inertialization section", "supports": "Position/velocity continuity and spring caveats"},
+    {"url": "https://docs.blender.org/manual/en/latest/animation/constraints/tracking/ik_solver.html", "read": "Firecrawl official documentation", "supports": "IK target/chain and stretch controls", "limit": "Documentation, not an executed local rig test"},
+    {"url": "https://docs.godotengine.org/en/stable/tutorials/animation/animation_tree.html", "read": "Firecrawl official documentation", "supports": "Native blend/state/one-shot/filter facilities"},
+    {"url": "https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/retargeting_3d_skeletons.html", "read": "Firecrawl official documentation", "supports": "Rest-transform compatibility and custom skeleton profiles"},
+    {"url": "https://github.com/Mwni/blender-animation-retargeting", "read": "GitHub README, blender_manifest.toml, ik.py and repository metadata", "supports": "Mapped retargeting with four hand/foot correction slots", "version": "2.4.0; manifest minimum Blender 4.4.0", "license_evidence": "GPL-3.0-or-later in extension manifest", "local_test": false},
+    {"url": "https://github.com/nkeeline/Keemap-Blender-Rig-ReTargeting-Addon", "read": "GitHub README and repository metadata", "supports": "Explicit mapping/offsets and source FK to target IK", "limit": "README tested Blender 3.3.1; last reported push 2023", "local_test": false},
+    {"url": "https://github.com/orangeduck/Motion-Matching", "read": "GitHub README and selected controller.cpp sections", "supports": "Inspectable controller/contact/inertialization demo", "limit": "Code MIT; referenced dataset has separate noncommercial/no-derivatives terms", "local_test": false},
+    {"url": "https://github.com/GuilhermeGSousa/godot-motion-matching", "read": "GitHub README and repository metadata", "supports": "Godot 4.4 AnimationTree-integrated motion matching", "limit": "Needs root-motion library/root at foot level; Godot 4.7.2 not tested", "local_test": false},
+    {"url": "https://github.com/BobbyAnguelov/Esoterica", "read": "GitHub README and repository metadata", "supports": "Animation technology/documentation reference", "limit": "Prototype engine; source animation subsystem not audited; README MIT claim not independently resolved against actual license file", "local_test": false},
+    {"url": "https://github.com/Rokoko/rokoko-studio-live-blender", "read": "GitHub official README", "supports": "Rest-pose and bone-map workflow", "limit": "Studio/live-capture setup and human source motion do not solve creature behavior", "local_test": false},
+    {"url": "https://github.com/abrykajlo/MotionMatchingGodot", "read": "GitHub README", "supports": "Additional Godot motion-matching experiment", "limit": "Course project targeting Godot 4.5", "local_test": false}
+  ],
+  "retrieval_gaps": [
+    {"url": "https://www.nature.com/articles/s41598-021-86261-8", "status": "No usable article text returned; did not claim full-paper read"},
+    {"url": "https://www.riotgames.com/en/artedu/animation", "status": "Returned 404; replaced with actual Riot developer articles"}
+  ],
+  "not_claimed": ["Installed add-ons", "Local Blender/Godot compatibility", "New motion donor acquired", "Frame-by-frame observation of linked source videos", "New animation accepted", "Independent action-recognition model"]
+}

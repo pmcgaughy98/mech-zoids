@@ -1,0 +1,84 @@
+{
+ "folder": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\walk\\fennec_s\\stand35\\slices",
+ "fails": {
+  "e": [],
+  "ne": [
+   "height: 69 px, the set's median 61"
+  ],
+  "n": [
+   "height: 68 px, the set's median 61"
+  ],
+  "nw": [
+   "height: 69 px, the set's median 61"
+  ],
+  "w": [],
+  "sw": [],
+  "s": [],
+  "se": []
+ },
+ "notes": {
+  "e": {
+   "h": 60,
+   "feet": 140,
+   "palette": 1.0,
+   "colours": 15
+  },
+  "ne": {
+   "h": 69,
+   "feet": 140,
+   "palette": 1.0,
+   "colours": 12
+  },
+  "n": {
+   "h": 68,
+   "feet": 140,
+   "palette": 1.0,
+   "colours": 12
+  },
+  "nw": {
+   "h": 69,
+   "feet": 140,
+   "palette": 1.0,
+   "colours": 12
+  },
+  "w": {
+   "h": 60,
+   "feet": 140,
+   "palette": 1.0,
+   "colours": 14
+  },
+  "sw": {
+   "h": 61,
+   "feet": 140,
+   "palette": 1.0,
+   "colours": 15
+  },
+  "s": {
+   "h": 57,
+   "feet": 140,
+   "palette": 1.0,
+   "colours": 15
+  },
+  "se": {
+   "h": 61,
+   "feet": 140,
+   "palette": 1.0,
+   "colours": 15
+  },
+  "mirror e/w": 0.898,
+  "mirror ne/nw": 0.895,
+  "mirror se/sw": 0.993,
+  "same n/s": 0.095,
+  "even n/s": [
+   0.888,
+   0.995
+  ]
+ },
+ "fix": [],
+ "mirror_from": null,
+ "redo": [
+  "ne",
+  "n",
+  "nw"
+ ]
+}

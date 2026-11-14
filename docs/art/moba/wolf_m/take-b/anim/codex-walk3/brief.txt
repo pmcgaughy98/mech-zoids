@@ -1,0 +1,48 @@
+You are correcting pixel-art animation frames for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\codex-walk3. Read anything under
+D:\dev\new-mech-rpg\docs\art\moba. Do not touch any other folder, assets, art or tools, and do not commit.
+
+The creature is the wolf mech (wolf_m, take B), the game's assassin. Approved stills, 192x192, already placed with
+the feet on row 160, in D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\fixed\: s.png (front), e.png (side facing right), n.png (back); se, ne, sw, w, nw also
+exist. Use fixed\, not views\ (Preston approved the fixed back views; the n still carries a little detail ink added
+today). The approved pose is STANDING on four long legs. Keep the design exactly: an armoured gunmetal wolf with a long
+narrow muzzle, two pale sabre fangs, small cyan eyes under a heavy brow, a hood and tall swept-back ears, two red-edged
+folded blade-fins along the back, red lower legs and paws, and a plated tail with a red tip; the same 12 colours
+(#141418 #22222b #5c0a10 #a8141a #444452 #e8251f #6e6e7e #ff6a55 #6ff0dc #bcbcc8 #c9c2b8 #f0ece4), the dark outline and the chunky pixel size. Sizes: front 33x72, side 110x66, back 35x72 px. Only the pose changes.
+Never redesign: no new parts, no fur, no gloss, no longer or thinner limbs, no bigger head. The tail stays a straight
+line of plates (Preston: "no curved tails as they are hard to rotate"); it can lift, swing and angle, but it keeps the
+still's thickness, plate count and red tip in every frame and every view (in the side view as thick as in e.png, never
+a thin rod; set A's first side walk and sprint got this wrong). It is a robot: no
+realistic animal anatomy beyond what the stills show.
+
+Job: you drew the wolf's side-view trot in anim\codex-walk2 (read its REPORT.txt, targets.json, checks.txt,
+articulation.json and scripts). The motion is right and stays: the foot-lock test passes (every planted paw keeps one
+spot on the ground at 0.90 m/s) and each paw meets the foot path in targets.json. Preston, the game's owner, agreed the
+gait but the legs no longer look like the approved still (D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\..\fixed\e.png); see
+D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\codex-walk2\claude-still-vs-frames.png (the still top left, then your 8 frames, sel-out on, 3x). Compared
+with the still, the legs are drawn heavier:
+- the grey upper legs (thigh and shoulder) are bigger, blockier plates than the still's;
+- the red lower legs are thick straight posts; the still's are narrower, with the still's joints and plate lines;
+- the paws are flat red blocks; the still's paws are clawed, with separate toes and the claw shapes the still shows.
+Redraw all four legs in all 8 frames so each leg is the still's leg in a new pose: the same widths (measure the
+still's upper legs, shanks and paws and stay within 1 px), the same plate shapes and colour bands, the same paw and
+claw drawing, bending at the still's joints. Pixel work at the native scale; do not use the image tool. You may take
+each leg segment's shape from the still and turn it to the pose (a 2D rig), but every joint and every join with the
+body must be redrawn by hand: no seams, no straight cut edges, no gaps, no part ending abruptly, nothing pasted that
+does not join (that caused the cutoffs Preston rejected before). The body, head, fins and tail stay exactly as in
+codex-walk2, except the few pixels where a leg meets the body.
+
+Keep the motion exactly:
+- Every paw's ground contact (its sole's x span on row 160) and its lift stay as in codex-walk2 within 1 px, so the
+  foot path in targets.json still holds.
+- foot_lock_test.py must still pass at 0.90 m/s:
+  python D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\foot_lock_test.py codex-walk3/walk/frames side 0.90 check_new D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\codex-walk3
+  (report each planted paw's world-x spread over its ground frames; it must be 2 px or less).
+- 192x192 transparent frames, feet on row 160, nothing below it, the stills' 12 colours, binary alpha, dark outline,
+  no holes, no stray pixels, nothing touching the canvas edge.
+- Judge the boards with the game's sel-out (D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\selout_rhino.py, function selout, OUTLINE #141418) at 4x, the still beside them.
+
+Output in D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\codex-walk3: walk\frames\side_f0-7.png, a preview gif (100 ms, loop), check_new.png/.mp4, board.png (the still,
+codex-walk2's row, then your row, sel-out, 4x), checks.txt, and REPORT.txt (under 25 lines): tokens if known; per leg
+the still's widths against yours (upper leg, shank, paw); the contact and lift check against targets.json; the
+foot-lock spreads; and by eye: do the legs look like the still's legs, clawed paws included? whole legs, clean joints,
+no cutoffs? does it still read as a wolf trotting forward?

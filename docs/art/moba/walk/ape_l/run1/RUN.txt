@@ -1,0 +1,6 @@
+Gorilla walk at 35, run 1 (e, se, ne). NOT STARTED: waits for Preston's go and his choice of when (C: is nearly full,
+and Codex writes its session logs to C:\Users\pmcga\.codex).
+Estimate (rhino run 1 was 102,921 tokens): 95k-115k. Cap: 140,000 tokens, then the watcher stops it.
+Command (Git Bash), using the rhino lane's generic capped runner:
+sh D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/walk35/codex_cap/run_codex_capped.sh D:/dev/new-mech-rpg/docs/art/moba/walk/ape_l/run1 D:/dev/new-mech-rpg/docs/art/moba/walk/ape_l/run1/brief.txt run1 140000 ape-walk35-run1
+Run 2 (s, n) is a separate brief after run 1 is judged: estimate 85k-105k.

@@ -1,0 +1,1610 @@
+Reading prompt from stdin...
+OpenAI Codex v0.166.0
+--------
+workdir: C:\Users\pmcga\dev\hollowtide
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR, D:\dev\new-mech-rpg\docs\art\moba]
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a1ac5a-c297-7e91-afc9-e33d0f0f7611
+--------
+user
+You are making pixel-art death frames for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\death35. Read anything under
+D:\dev\new-mech-rpg\docs\art\moba. Do not touch any other folder, assets, art or tools, and do not commit.
+
+The machine: the violet S fennec (mech fox with very large ears), approved stills at 35 degrees in
+D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\views_cam35_touchup (s, se, e, ne, n), 160x160, binary alpha, raw (no outline: the game adds it),
+lowest foot on row 140, 15 colours across the five views. Preston, the game's owner, approved these stills; they are
+the fennec's idle in the game, so frame 0 of the death must equal the still exactly or the switch pops.
+Read D:\dev\new-mech-rpg\docs\art\moba\ANIMATION_PLAYBOOK.md sections 1, 2, 4 and 5 first. For the beats only (not the angle, not the
+pixels), look at the old low-camera death: anim\codex-set-b\death\frames (front, side, back) and
+anim\codex-set-d\death (se, ne). Those were drawn for a lower camera; this one is the same fall seen from 35 degrees.
+
+Job: a 7-frame death in all five views: s, se, e, ne, n. Timings 300, 100, 130, 140, 160, 180, 1400 ms; it does not
+loop, the last frame is held.
+  f0 = the still, pixel for pixel.
+  f1 hit: the body jolts back 1-2 px, the ears flick back.
+  f2 stagger: the head drops, the ears begin to droop.
+  f3 the front legs buckle and the chest lowers.
+  f4 the hindquarters sag and the body tips onto its right flank (its own right side; the same fall in every view).
+  f5 it lies on its side, the tail drops flat, the ears lie flat.
+  f6 the same pose, settled; the eyes go dark (use the still's darkest violets for the eye, no new colour). Held.
+It stays where it stood: the body falls in place, it does not slide across the canvas. Everything stays on or above
+row 140 (the ground line) and nothing touches the canvas edge.
+
+Method: no image generation tool. Native pixels, from the still's own parts. Head, ears, chest, body plates, legs and
+tail are the still's own pixels, TRANSLATED, never rotated or resampled (rotation leaves dark specks and slivers that
+had to be cleaned by hand before). Where a part tilts, step it 1 px per row or redraw it by hand in the still's colours
+and shading bands. Every joint and every join with the body is redrawn by hand: no seams, no straight cut edges, no
+gaps, no part ending abruptly (pasted parts that did not join are what Preston rejected before). Parts that the new pose
+shows and the still hides (the belly, the far legs) are drawn by hand in the still's colours. The ears are what the
+player reads on this machine: keep their shape and inner colour as they droop and flatten.
+
+Pass marks (report each):
+- f0 equals the still exactly, every view.
+- Only the stills' colours; binary alpha; no holes, no stray pixels, nothing touching the canvas edge.
+- Lowest opaque row per frame (must be 140 or above) and the body's centre x per frame (it falls in place: the
+  centre may move by the width of the fall, not wander).
+- Judge boards with the game's sel-out: D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\selout_rhino.py, function selout, with
+  selout_rhino.OUTLINE set to the fennec's darkest colour (#141218), at 4x, the still beside the frames.
+
+Output in D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\death35: frames\<name>_f0-6.png where <name> is front (s), se, side (e),
+ne, back (n); a preview gif per view (the timings above); board.png (per view: the still, then the 7 frames, sel-out,
+4x); checks.txt; and REPORT.txt (under 30 lines): tokens if known, the pass marks, and by eye: does each view read as
+this fennec collapsing onto its side and dying, whole and clean, the same fall in all five views?
+
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\pmcga\.codex\config.toml): `computer_use.windows.always_allowed_app_ids` is ignored.
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\pmcga\.codex\config.toml): `computer_use.windows.always_allowed_app_ids` is ignored.
+codex
+I’ll read the playbook and inspect the approved stills and old death beats, then build and check the frames using native pixels. I’ll write only inside `death35` and won’t commit.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ANIMATION_PLAYBOOK.md'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 3758ms:
+. : File C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be loaded because 
+running scripts is disabled on this system. For more information, see about_Execution_Policies at 
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:3
++ . 'C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.Powe ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+# Machine animation playbook
+
+How to make a MOBA machine animation, or fix one, without relearning the rhino walk. This is what worked and
+what failed from 2026-11-03 to 2026-11-04. The full logs are `rhino_l/take-a/anim/forge/RUNS.md` and each Codex
+set's `REPORT.txt`.
+
+Written by the hub session (Mech-Zoids Game) and the animation lane, 2026-11-04. Update this file whenever a lesson
+changes.
+
+## 1. Preston's rules
+- **The approved stills are the truth.** They are each machine's `<machine>/take-*/views/` (rhino `rhino_l/take-a`,
+  gorilla `ape_l/take-a`, fennec `fennec_s/take-b`). Frame 0 of every idle and every ability is the still itself.
+  Every frame is judged side by side against the still.
+- **He rejects "barely acceptable".** Show a board with the approved still in column 1, and let him pick.
+- **Feet stay planted.** Feet sit on the foot row in every frame, and a planted foot must not slide in the game.
+- **Paid runs need a cost estimate and his yes first.** This covers Retro Diffusion, ElevenLabs, and any credits.
+  PixelLab's free daily generations (20) are fine to use. Codex runs on his plan: quote the token estimate
+  (section 3) when you ask.
+- **His picks are permanent.** Eyes he chose are in `eye_overrides.json`, and no script re-places them.
+- **Numbers are his to set.** Lengths, speeds and sizes are placeholders until he sets them.
+- **Sel-out only, unless he says otherwise.** The packer adds sel-out to the stills as drawn. Detail ink is a
+  per-view fix for a view that is clearly flat (the rhino front), never a blanket pass. The gorilla is sel-out only
+  ("sel out only").
+- **No curled tails** ("no curved tails as they are hard to rotate"). Tails lift and swing but stay straight.
+
+## 2. Canvas, feet and views
+- **Every machine animates on a 192x192 canvas with the feet on y=160.** Place a still at
+  (+16, 160 - its foot row):
+
+  | Machine | Still | Foot row | Offset in 192 |
+  |---|---|---|---|
+  | Rhino (L) | 192x192 | 160 (outline under a light foot edge on 161, so `feet_edge_row` = 161) | 0, 0 |
+  | Gorilla (L) | 160x160 | 130 | +16, +30 |
+  | Fennec (S) | 160x160 | 140 | +16, +20 |
+
+  Most other stills are 160x160 with a foot row of 140 (`STILLS_STOCKTAKE_2026-11-04.md`). Measure; don't assume.
+- **Views:**
+  - Five are drawn: s, se, e, ne and n. The engine mirrors sw, w and nw, so a fix in ne also fixes nw.
+  - An action drawn only in s, e and n shows its e frames in se and ne.
+  - An action that has its own se and ne frames plays them (the own-view rule in `directional_sprite_3d.gd`).
+- **Size classes:** L is 0.020 m a texel, M 0.018, S 0.016. The world stays at 50 texels a metre.
+  `size_scale()` sizes the ring, the shadow and shields against the L rhino.
+- **Seated stills (fennec):** the walk cannot start on the still, so the walk is the one animation exempt from
+  "frame 0 = still". Every ability still starts and ends on it.
+
+## 3. The generators: what each is good and bad at (measured)
+| Tool | Good | Bad | Cost |
+|---|---|---|---|
+| Codex, 3-row sheet (front, side, back) | Same machine in every row, rows match frame for frame, legs really lift | Drifts from the stills (front face, back tail plate), a Codex idle carries only half the stills' interior ink, eyes land in the wrong place | ~58k-105k tokens a sheet |
+| Codex, 2-row se/ne job | Reuses the move's original column text word for word, with the approved se/ne views as refs; grids clean, every row faced the right way | ne drifts on rump plates and hip discs; se head turns side-on at attack peaks; parts on the far side break (the gorilla's back hex plate in hex_shield ne f1-f4) | rhino set C 104,506 tokens, set D 71,728; gorilla set D 80,664 |
+| PixelLab `animate_with_skeleton_v3`, pose-guided from keypoints copied off an approved side walk | **The only tool that made a straight front or back walk** (section 9): design held (alpha IoU 0.87-0.99 against the still), one leg at a time | Stretched the front shoulder plates into the knee; the forward foot dips 1-5 px. **Lost the design on the fennec** (2026-11-04, job 6555b2ae, template bear, front): legs alternate, but it drew a generic fox with long thin legs, a grey ruff and no chest plate, alpha IoU 0.63 with the input (fennec_s/take-b/anim/pose-walk/). It holds a bulky machine, not a small big-headed one. Before redoing a Codex front or back walk, measure its foot lift per leg band first: the fennec's Codex trot already lifted 2-4 px | 3 free generations a view, ~4 min each |
+| PixelLab, text-prompted walk | | Grew ~9 px taller mid-step and sprouted claw arms | free generations |
+| Retro Diffusion walking style | Side and se walks that read as walks | Paid per run | $0.14 a run |
+| Build from the still with a script | Exact design, exact ink | Limited motion | free |
+
+- **Codex walk B failed its own check:** the side reach frames floated 6-7 px, the diagonal pairs mismatched, and
+  the back legs shortened. Run the checks in section 5 before trusting any generator.
+- **Codex briefs that worked** (`ape_l/take-a/anim/codex-set-a/brief.txt`, `fennec_s/take-b/anim/common.txt`):
+  - Name the still files, the canvas offset, the exact colour list and what must never change (parts, limb length,
+    head size, the outline).
+  - Point Codex at the previous machine's set folder as the method (finish, polish, gems, seam_fill, verify).
+  - **One image-tool call per animation, no redo.** Weak sheets are fixed in finishing, not regenerated.
+  - **No generated idle.** Ask for the idle to be built from the still (section 4, step 6).
+  - Give each move its frame plan with the key frames (release, blast, landing) agreed with the game feel lane.
+  - Ask for preview durations in ms, `grid.json`, `checks.txt`, gifs, a board with the still leftmost, and tokens.
+  - Effects are never in the body frames.
+- **se/ne after the fact:** `make_codex_diag.py` (rhino) and `make_codex_diag_ape.py` (gorilla) build 2-row jobs from
+  the original column text and the se/ne stills on a flat key colour at 6x with a 48 px margin.
+- **Codex launch** (from `C:/Users/pmcga/dev/hollowtide`, in the background; one set per folder, two sets can run at
+  once):
+  `codex exec --sandbox workspace-write --add-dir "D:\dev\new-mech-rpg\docs\art\moba" --skip-git-repo-check < "$A/brief.txt" > "$A/codex-log.txt" 2>&1`
+- **Uploading to a web forge:**
+  1. Add a file input to the top page.
+  2. Fill it with the exact local PNG using Claude in Chrome's `file_upload`.
+  3. Hand it to the forge's own input when "Upload from Device" is clicked.
+  Never type base64 by hand.
+
+## 4. Finishing, in this order
+Most scripts are in `rhino_l/take-a/anim/`. Exceptions are named.
+1. **Eyes:** `fix_set.py`.
+   - It template-matches the cleaned eyes, then tracks the head on posed frames.
+   - It maps Codex's own red eye through the exact finishing shrink and offset.
+   - `se_eyes.py` tracks eyes into se frames from the nearest frame that has one (min score 0.55), and skips any
+     frame where the fit is poor.
+   - List every frame left without an eye for Preston. **Open:** rhino horn toss se f1 and f4, horn jab se f1, f3
+     and f4.
+2. **Broken parts (plates, gems, faces):** `ape_l/take-a/anim/back_plate.py`.
+   - Cut the part from the still (its colours plus the ring they enclose), find it in each frame by matching the
+     still's gem mask within 10 px, paste it there, then clear the box above it and dark texels stranded next to
+     it.
+   - Frames whose part already matches the still at 0.9 or better are left alone. Broken frames measured 0.76-0.80.
+   - Cut with a square dilation (7 px) so corners such as the bezel's cap are included; a diamond cut them off.
+3. **Shoulder line (rhino front):**
+   - Geometry first: `retro-walk/pixellab/fix_front_shoulders.py` restores the still's shoulder plates.
+   - `front_shoulder_ink.py` draws a domed dark arc over each knee-disc plate and lifts the texel under it to the
+     highlight.
+   - Where that can't fit the pose (braced, rearing), `shoulder_transfer.py` copies the line from the nearest frame
+     that has it (match 0.76-0.87 on the braced shuffle).
+4. **Detail ink:** `detail_ink.py` uses only the contour part of the Hollowtide detail-ink rule, in the machine's own
+   darkest colour (`darkest()`). It brings a view up to the liked views' interior ink share and no further. The full
+   rule (22-28%) was rejected.
+   - **Gate with a margin:** ink a view only when its share is clearly below the target (under about 0.75 times).
+     A view a point under the target doubled its ink and grew hard rings (the gorilla's n and ne trial).
+5. **Seams:** each Codex set's `seam_fill.py` fills runs of 4+ transparent texels with ink on both sides. The
+   originals go in `frames_pre_seam/`.
+6. **Walk upper body (front, back):** `walk_to_still.py` puts the still's upper body, moved by each frame's bob,
+   over the walk's own legs (section 9, step 7). Use it on any walk whose body drifts from the still.
+7. **Idle:** `diag_idle.py` builds the idle from the approved still: the body above a cut row 13 px over the feet
+   rises 0, 1, 1, 1, 0 px, the cut row is repeated to close the gap, and the feet never move.
+   - Never rerun `fix_set.py` on an idle: it rebuilds from Codex's frames.
+   - **Views drawn from the game camera (35 degrees):** set the cut per view. Far feet sit up to about 30 rows above
+     the feet row there, so a fixed 13-row cut lifts them. The rhino's cam35 idle cuts at s 152, se 131, e 141,
+     ne 131 and n 142, chosen on a marked strip of the lower bodies. A gap search by run count mistook the horn,
+     jaw and tail for leg gaps. (`rhino_l/take-a/anim/cam35-idle/build_cam35_idle.py`, 2026-11-04.)
+8. **Sel-out:** last, at pack time. `selout_rhino.selout()` with `selout_rhino.OUTLINE` set to the machine's darkest
+   colour (rhino #141218, gorilla #141a16, fennec #141218). The rhino also keeps `frames_selout/`. Rerun after any
+   frame fix.
+
+**Last finishing step: a Codex repair pass (fennec, 2026-11-04).** Codex's finishing pastes native parts from the stills (face, ears, discs, tail pieces) onto generated bodies, and where they do not line up it leaves cutoffs: straight cut edges, a second chin under the pasted head, chopped haunches, gaps and spurs. Preston: "Too many cutoff etc." Deleting pixels (diag-touchup/touchup.py) only removes the leftovers; the cut areas need redrawing. What worked: a Codex job per two sets with no image calls, starting from the current frames (never rebuilding from raw sheets), keeping originals in frames_pre_repair/, judging boards with sel-out at 4x. Fennec: sets A+B 45 of 153 frames, 147,657 tokens; sets C+D 43 of 102 frames, 189,814 tokens (fennec_s/take-b/anim/make_codex_repair_fennec.py, repair-ab/, repair-cd/). Budget it with every new machine's sets.
+
+Retro Diffusion custom_action on the fennec (sand kick, n and ne, $0.25 each) failed both views: from frame 2 it
+stood the fox on its hind legs with clawed arms. Retro walking held the fennec's back and ne. Check a style's
+price with estimate_inference_cost for each style, not only the first. (`fennec_s/take-b/anim/retro/RUN.md`)
+
+## 5. Checks, with the numbers that passed
+| Check | Pass |
+|---|---|
+| Feet on the foot row, every frame | bottom row 160 (161 under a light edge); list any dip |
+| Air and underground frames | named in the packer; the gorilla bound's air frames bottom at 132-148, the fennec pop-out at 140-150; dug-in frames never below 160 |
+| Frame 0 (and the end frame of moves that end on the still) | identical to the still (IoU 1.0); the old Codex idle matched only 42-62% of pixels, which caused the pop |
+| Gait (a walk alternates) | about -0.7; not valid for three-quarter views, judge those on the board |
+| Alpha IoU against the still | 0.87 or higher |
+| Interior ink share against the still | rhino front 6.8-6.9%, side 10.0-10.2%, back 10.1%; gorilla s 10.9, se 9.1, e 9.5, ne 8.3, n 9.0% |
+| Part match (plates, gems) against the still | 0.9 or better; broken frames read 0.76-0.80 |
+| Colours | the machine's palette only, eyes kept, no new parts |
+| Facing | exact share well above the mirrored ref |
+| Pack check | each packer's `check()`: frame counts match the timings, f0 = still, feet rows; prints `check: OK` |
+| Engine | `rhino3d_check.gd` / `ape3d_check.gd` with `--headless --fixed-fps 60`, 0 failures |
+
+## 6. Speed: the drawn stride has to match the movement
+- **Measure the stride:** `tools/debug/walk_stride_measure.py <frames dir> side --fps N` gives the speed a planted
+  foot moves at the drawn frame rate.
+- **The rhino walk:** planted feet move at 0.48 m/s, while the placeholder movement speed is 3.5 m/s. Unless the
+  two match, the feet slide. Settled 2026-11-04, Preston: "Keep 0.48 m/s"; game feel plays the walk at
+  `full_speed_walk_rate = move_speed / 0.48`.
+- **The braced shuffle:** drawn by Codex from brace f3 (set D). The planted feet slide 2 px a frame, which is
+  0.40 m/s at 10 fps; braced movement is 1.225 m/s, so the feet slide about 3x. Open as of 2026-11-04: slow the
+  brace to 0.4 m/s or accept the slide. Preston picks.
+- **The fix options:**
+  - slow the move;
+  - raise the playback rate (`speed_scale`, `full_speed_walk_rate`);
+  - draw a longer stride or a faster gait.
+- **Engine rules that hide seams:**
+  - Turning mid-step keeps the step: the new view picks up at the same frame.
+  - A held action (brace) plays its `<action>_shuffle_<view>` while moving, and plants the held frame again on stop.
+
+### 6b. Walks drawn at 35 degrees (rhino, 2026-11-04, installed)
+- **Scripts** (`rhino_l/take-a/anim/`): `make_walk35_rhino.py` (refs, `walk35/targets.json`, guides, the two Codex
+  briefs), `make_walk35_clean_rhino.py` (leg cleanup brief), `make_walk35_review.py` (review video),
+  `walk35_selout.py`, `walk35_touchup.py`. Frames: `walk35/walk/frames`, with every earlier stage kept beside them.
+- **Gait (four-beat walk):** LF swings f1-f3, LH f3-f5, RF f5-f7, RH f7-f1. One foot is up on even frames, two on
+  odd frames (not "one at a time"; Codex caught that wording). Stance offsets +2P, +P, 0, -P, -2P; swing -P, 0, +P
+  with lifts 2, 3, 2 px. P = 3 px a frame in the side view at 8 fps = 0.48 m/s at 0.020 m a texel.
+- **Camera axis per view:** a ground step d shows on screen as d x f x u. e: u (1, 0), f 1; se: (0.867, 0.497),
+  0.815; ne: (0.867, -0.497), 0.815; s: (0, 1), 0.574; n: (0, -1), 0.574. Planted step per frame on screen = -P x f x u
+  (e -3, 0; se -2.12, -1.22; ne -2.12, +1.22; s 0, -1.72; n 0, +1.72).
+- **Foot lock in the brief:** the k-th planted frame sits at the plant position minus k times the planted step.
+- **Legs:** taken from the still's own pixels and TRANSLATED, never rotated. Rotation left speck noise and needed a
+  cleanup pass. Joints hand-drawn; the body pixel for pixel with a 1 px dip on f0 and f4.
+- **Cost:** run 1 (e, se, ne) 102,921 tokens, leg cleanup 78,180, run 2 (s, n) 93,859: 274,960 in all. Runs were
+  capped by a token watcher (Codex rollouts in `~/.codex/sessions/YYYY/MM/DD/rollout-*.jsonl`; tokens = input -
+  cached + output, which matches Codex's "tokens used"; kill the tree at the cap). Tools: `walk35/codex_cap/`
+  (`run_codex_capped.sh`, `codex_tokens.py`, and `run_rhino_walk35.sh` as the worked example).
+- **Result:** foot lock e 0 px, se/ne under 0.9 px, s/n 0.88 px in y; front and back steps are small (about 3 px
+  lift, 3.4 px travel). Body equals the still.
+- **Review:** `make_walk35_review.py` plays 8 fps over a dot grid that scrolls at the planted step along each view's
+  axis, the still beside it; a locked foot moves with the dots, a sliding one drifts.
+- **Build from the newest approved views.** The walk was drawn from `views_cam35` after Preston kept the touch-up
+  (`views_cam35_touchup`), so walk and idle differed in colour and the back flickered at n. `walk35_touchup.py`
+  recoloured it by source position (Preston: "Looks right"). Look for a `*_touchup` folder before writing a brief.
+- **In game:** `tilt_anims` includes `walk`. Toes reaching toward the camera draw 2-3 px under the foot row (raw s/n
+  163, se/ne 162; one more with sel-out); the floor hides 0 rows (game feel). Walk and idle both end on row 161 with
+  sel-out, so the walk needs no lift. Walk-to-idle plant gap 0.000 m in all views (camera lane).
+- **Wolf:** the se/ne trot (`wolf_m/take-b/anim/make_codex_walk4_wolf.py`, 116,093 tokens) and the retimed
+  front/back (`retime_walk.py`, pairs on f0/f4) are at the old angle. No 35-degree wolf walk yet.
+
+## 7. Packing and the engine
+- **Packers** (`tools/art/`), one per machine: `pack_rhino_3d.py`, `pack_ape_3d.py`, `pack_fennec_3d.py`.
+  - Each has `STILL_AT` (the offset), a `KIT` list of (name, ms per frame, loop), `SET_OF` (which Codex set folder),
+    and `DIAG_SET` for se/ne. A frame lasts ms/100 ticks at speed 10.
+  - The ape and fennec packers pick up se/ne rows by themselves once `<view>_f0.png` exists in the set named in
+    `DIAG_SET`; until then the walk plays the side walk and the idle the still.
+  - `still()` takes the approved views for every facing.
+  - **Rhino:** run only `pack()` (`cd tools/art && python -c "import pack_rhino_3d as p; p.pack()"`). Its main block
+    also runs `fx()` and `kit_art()`, which write other lanes' folders.
+- **New PNGs:** they need `Godot --headless --path . --import` before a check or a recording sees them.
+- **Recording:**
+  - Movie Maker: `--resolution 1280x720 --fixed-fps 30 --position 20000,20000`.
+  - Then ffmpeg libx264 at crf 20, plus a phone copy at crf 27 with `-preset slow` and `+faststart`.
+
+## 8. Safety: keep every stage
+- Every batch edit first moves the originals into a sibling folder. Names used so far:
+  - `frames_codex/`
+  - `frames_pre_codex/`
+  - `frames_pre_retro/`
+  - `frames_pre_seam/`
+  - `frames_pre_still/`
+  - `frames_pre_eyes/`
+  - `frames_pre_plate/`
+  - `frames_pre_still_body/`
+  - `pre_shoulder/` (`front_shoulder_ink.py` restores from it first, so remove it before rerunning on purpose)
+- Ink or style trials run on copies, never on `art/machines/*/` views or the approved stills.
+- **Before a repack, check the stills' timestamps against the packed sheet.** On 2026-11-04 a rejected ink trial
+  overwrote the gorilla's n and ne stills. Frame 0 of every Codex set equals the still, so the exact originals were
+  recovered from the frames (561 and 518 px differed, every one of them ink).
+- After any restore, prove it is pixel-identical to the backup (0 px differ).
+- **When a still changes under drawn frames** (the sprite factory's capped ink on the fennec n +49 px and ne +50 px,
+  2026-11-04): `fennec_s/take-b/anim/ink-carry/carry_ink.py`. Frames equal to the old still become the new still;
+  in every other frame each ink cluster is carried with its part (the old still's pixels around it matched within
+  6 px, 85% or more), only onto opaque texels. Built-from-still idles take all of it; redrawn Codex parts take what
+  matches. Originals in `<move>/frames_pre_ink/`, log in `carry-log.json`.
+- Don't rerun `tools/art/pack_ape_fx.py`: it overwrites the `ape_still_*` backups.
+
+## 9. The rhino walk, start to finish
+**The rule to carry forward:** for a straight front or back walk on a four-legged machine, take the gait from an
+approved side walk and pose it frame by frame. Don't prompt for it. Then put the still's upper body back over the
+posed legs (step 8).
+
+1. **Side and se were the easy part.** Retro Diffusion's walking style gave side and se walks that read as walks; the
+   legs are spread apart from those angles.
+2. **Straight front and back failed five times:** Codex twice (walk A weak, walk B floating 6-7 px with mismatched
+   pairs and shortening legs), Retro twice, and text-prompted PixelLab once (it grew about 9 px taller mid-step and
+   sprouted blue claws like arms). From straight in front or behind the legs stack, so every tool moved both legs
+   together, stretched them, or invented parts. `walk_frontback.py` (a bob from the side row, whole-leg lifts in
+   diagonal pairs) was a stopgap.
+3. **The fix: PixelLab pose-guided** (`animate_with_skeleton_v3`, beta, built around a human skeleton). Preston:
+   "that ended up fixing the gallop to a consistent walk".
+   - Give it the leg position for every frame instead of describing the walk. Copy the positions from the approved
+     side walk, so the gait matches by construction: `front_skeleton.py` built `front_keypoints.json` (8 frames) from
+     the side walk's timing.
+   - Map the front legs to the skeleton's arms and the back legs to its legs.
+   - Cost: 3 free generations per view, about 4 minutes each. Run one view at a time.
+   - Result: the first front walk from any tool that kept the rhino intact and stepped one leg at a time. Same size
+     and shape as the still, rhino colours only, red eyes kept, nothing grown, gait check read it as a walk (back
+     -0.72); the body stayed put and the head leaned slightly toward the planted foot. Alpha IoU against the still
+     0.87-0.99.
+   - `finish_pixellab.py`: colour snap, eyes and outline, no grounding. The forward foot dips up to 4 px below the
+     line as perspective; grounding every frame would make the body bounce.
+   - Preston: "yes run back and ne that looks great though". The same method made back and ne.
+     `retro-walk/walk_final.py` assembled all five (PixelLab front, back, ne; Retro se, side).
+4. Swapped in. `fix_front_shoulders.py` restored the still's shoulder plates (PixelLab had stretched them into the
+   knee), and detail ink went on front and back.
+5. **Codex consistency pass:** Codex took the pose-guided front, back and ne frames as its input and the Retro se and
+   side as the look to match, with the same pose, the same foot rows and alpha IoU 0.97 or more against each input.
+   So the live walk's gait is the pose-guided one; Codex only restyled shading and ink. The front shoulder line went
+   on after (`front_shoulder_ink.py`, 8 frames, 0.0% mismatch). The pre-Codex walk is in
+   `codex-set-a/walk/frames_pre_codex/`.
+6. The idle was rebuilt from the approved stills (`diag_idle.py --set-a`): ink matches (front 6.9%, side 10.2%, back
+   10.1%) and f0 is the still. That moved the pop to the moment the walk started, because the restyled walk matched
+   the stills on only 59-66% of pixels (front chin plate smaller, back tail plate a round knob).
+7. **Upper body back to the still** (Preston: "fix em up with our tools as well"): `walk_to_still.py` takes the
+   still's head, horn, chin plate, shoulder blocks, rump and tail plate, moved by each frame's bob (front dx 0-2,
+   dy 1; back dx 1-2, dy 2-3), and keeps the pose-guided legs from each knee-disc top down (rows 133-139) and the
+   middle band below row 150. The idle-to-walk switch no longer changes the upper body. The shoulder line now comes
+   from sel-out over the still's shoulder blocks, which are silhouette in its geometry. `rhino3d_check` 0 failures.
+   Originals, with `pre_shoulder/`, are in `codex-set-a/walk/frames_pre_still_body/`. Board:
+   `walk-to-still-board.png`.
+
+## 10. A new machine, step by step
+1. Approved stills for s, se, e, ne and n. Record the canvas, the foot row and the offset to y=160 (section 2).
+2. Agree the animation names and key frames with the game feel lane, which owns the mechanics.
+3. Generate motion. Walks: the side and se from a walk tool, then front, back and ne pose-guided from the side
+   walk's keypoints (section 9). Abilities: Codex sheets in front, side and back first (sets A and B), se and ne later (sets C and D) from the
+   same column text. PixelLab posed for walks that hold the design. A script for idles. Quote the cost first.
+4. Finish in the order of section 4.
+5. Run the checks in section 5, plus the stride against the movement speed in section 6.
+6. Make a board with the still in column 1, and Preston picks.
+7. Write the machine's packer from the closest one, pack, import, run the engine check, and record if asked.
+8. Log the run in the machine's `RUNS.md` or the set's `REPORT.txt`, and update this playbook if anything new was
+   learned.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-ChildItem -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\views_cam35_touchup'; Get-ChildItem -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\codex-set-b\\death\\frames'; Get-ChildItem -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\codex-set-d\\death'; Get-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\selout_rhino.py'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 1354ms:
+. : File C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be loaded because 
+running scripts is disabled on this system. For more information, see about_Execution_Policies at 
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:3
++ . 'C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.Powe ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+
+
+    Directory: D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\views_cam35_touchup
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----         11/5/2026   8:06 AM            544 APPROVED.txt                                                         
+-a----         11/5/2026   8:03 AM           2467 e.png                                                                
+-a----         11/5/2026   8:03 AM           2110 n.png                                                                
+-a----         11/5/2026   8:03 AM           2187 ne.png                                                               
+-a----         11/5/2026   8:03 AM           2439 s.png                                                                
+-a----         11/5/2026   8:03 AM           2698 se.png                                                               
+
+
+    Directory: D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\codex-set-b\death\frames
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----         11/4/2026   3:00 PM           1852 back_f0.png                                                          
+-a----         11/4/2026   3:00 PM           1873 back_f1.png                                                          
+-a----         11/4/2026   3:00 PM           1987 back_f2.png                                                          
+-a----         11/4/2026   3:00 PM           1863 back_f3.png                                                          
+-a----         11/4/2026   3:00 PM           1721 back_f4.png                                                          
+-a----         11/4/2026   3:00 PM           1360 back_f5.png                                                          
+-a----         11/4/2026   3:00 PM           1373 back_f6.png                                                          
+-a----         11/4/2026   1:19 PM           2338 front_f0.png                                                         
+-a----         11/4/2026   2:43 PM           2460 front_f1.png                                                         
+-a----         11/4/2026   1:19 PM           2499 front_f2.png                                                         
+-a----         11/4/2026   1:19 PM           2203 front_f3.png                                                         
+-a----         11/4/2026   2:43 PM           2086 front_f4.png                                                         
+-a----         11/4/2026   1:19 PM           1835 front_f5.png                                                         
+-a----         11/4/2026   1:19 PM           1786 front_f6.png                                                         
+-a----         11/4/2026   1:19 PM           2239 side_f0.png                                                          
+-a----         11/4/2026   1:19 PM           2312 side_f1.png                                                          
+-a----         11/4/2026   1:19 PM           2594 side_f2.png                                                          
+-a----         11/4/2026   1:19 PM           2364 side_f3.png                                                          
+-a----         11/4/2026   1:19 PM           2126 side_f4.png                                                          
+-a----         11/4/2026   1:19 PM           1895 side_f5.png                                                          
+-a----         11/4/2026   1:19 PM           1786 side_f6.png                                                          
+
+
+    Directory: D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\codex-set-d\death
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         11/4/2026   2:20 PM                frames                                                               
+d-----         11/4/2026   3:00 PM                frames_pre_ink                                                       
+d-----         11/4/2026   2:43 PM                frames_pre_repair                                                    
+d-----         11/4/2026   2:20 PM                slices                                                               
+-a----         11/4/2026   2:22 PM           5608 checks.txt                                                           
+-a----         11/4/2026   2:22 PM          50915 detail_board.png                                                     
+-a----         11/4/2026   2:22 PM          34710 detail_small.png                                                     
+-a----         11/4/2026   2:22 PM          12669 grid.json                                                            
+-a----         11/4/2026   2:50 PM          25752 preview_ne.gif                                                       
+-a----         11/4/2026   2:50 PM          28463 preview_se.gif                                                       
+-a----         11/4/2026   2:22 PM          45477 review.png                                                           
+-a----         11/4/2026   2:22 PM          32828 review_small.png                                                     
+-a----         11/4/2026   2:19 PM        1145495 sheet_raw.png                                                        
+"""Sel-out for the MOBA style, baked into the rhino's frames (Claude, 2026-11-04). Preston: "ok now sel out for
+our moba style using what we've collected".
+
+The MOBA creatures follow the Hollowtide sprite canon, where the outline comes from the sel-out shader
+(hollowtide docs/art/crew-dungeon-selout-2026-10-10/candidate/scripts/arena/sel_out.gdshaderinc) instead of being
+painted. This game has no such shader, so its creature rules are applied here per pixel, exactly:
+  1. a transparent pixel whose up, down, left or right neighbour is a light or material colour (luma 0.23 or more)
+     becomes the outline colour: one texel of outline outside the silhouette;
+  2. a silhouette edge pixel (a transparent pixel up, down, left or right of it) darker than luma 0.23 is darkened
+     to the outline colour (per channel minimum), so existing dark edges get no extra thickness;
+  3. the shader's speck cleanup only merges colours closer than 0.12 with luma over 0.16; no two rhino colours
+     are that close, so it changes nothing here and is left out; its detail-ink mode is off for creatures.
+Outline colour: the rhino palette's darkest, #141218 (the shader's #0B0E11 would add a 13th colour; they differ by
+under 10 per channel). The feet still stand on y=160; under a light foot edge the outline sits on y=161.
+Reads every sheet's frames/ and writes frames_selout/ beside it, so rerun after any fix to the frames.
+"""
+from pathlib import Path
+
+import numpy as np
+from PIL import Image, ImageDraw
+
+ANIM = Path(__file__).parent
+OUTLINE = np.array([0x14, 0x12, 0x18], np.uint8)
+SHEETS = [ANIM / "codex-set-a" / s for s in ("idle", "walk", "horn-jab", "horn-toss")] + \
+         [ANIM / "codex-set-b" / s for s in ("brace", "stampede", "death")] + [ANIM / "codex-ground-pound/clean"] + \
+         [ANIM / "codex-set-c" / s for s in ("stampede", "horn-toss", "ground-pound", "horn-jab")] + \
+         [ANIM / "codex-set-d" / s for s in ("brace", "death", "idle", "brace-shuffle")]  # se/ne rows, shuffle
+
+
+def selout(a):
+    op = a[..., 3] > 127
+    luma = (a[..., :3].astype(float) / 255) @ np.array([0.2126, 0.7152, 0.0722])
+    light = op & (luma >= 0.23)
+
+    def nb(m, fill):
+        p = np.pad(m, 1, constant_values=fill)
+        return p[:-2, 1:-1], p[2:, 1:-1], p[1:-1, :-2], p[1:-1, 2:]
+
+    repair = ~op & np.logical_or.reduce(nb(light, False))
+    edge = op & np.logical_or.reduce([~x for x in nb(op, False)])
+    dark_edge = edge & (luma < 0.23)
+    out = a.copy()
+    out[dark_edge, :3] = np.minimum(a[dark_edge, :3], OUTLINE)
+    out[repair, :3] = OUTLINE
+    out[repair, 3] = 255
+    return out, int(repair.sum()), int(dark_edge.sum())
+
+
+def main():
+    total, pairs = [], []
+    for d in SHEETS:
+        src, dst = d / "frames", d / "frames_selout"
+        dst.mkdir(exist_ok=True)
+        for p in sorted(src.glob("*_f[0-9].png")):
+            a = np.asarray(Image.open(p).convert("RGBA"))
+            b, added, darkened = selout(a)
+            Image.fromarray(b).save(dst / p.name)
+            total.append((d.name, p.stem, added, darkened))
+            if p.stem in ("front_f0", "side_f0", "back_f0") and d.name == "idle" or \
+               (d.name, p.stem) in {("horn-jab", "side_f3"), ("stampede", "front_f3"), ("death", "side_f4")}:
+                pairs.append((f"{d.name} {p.stem}", a, b))
+    added = [t[2] for t in total]
+    print(f"{len(total)} frames; outline pixels added per frame {min(added)}-{max(added)}; "
+          f"dark edge pixels darkened {sum(t[3] for t in total)} in all")
+    # before | after at 4x on the MOBA map grey
+    k, box = 4, (24, 72, 168, 166)
+    w, h = (box[2] - box[0]) * k, (box[3] - box[1]) * k
+    board = Image.new("RGBA", (2 * w + 8, len(pairs) * (h + 16)), (0x5A, 0x60, 0x58, 255))
+    dr = ImageDraw.Draw(board)
+    for j, (lab, a, b) in enumerate(pairs):
+        y = j * (h + 16)
+        dr.text((4, y + 2), f"{lab}   left: before   right: sel-out", fill=(240, 240, 240, 255))
+        for i, im in enumerate((a, b)):
+            board.alpha_composite(Image.fromarray(im).crop(box).resize((w, h), Image.NEAREST), (i * (w + 8), y + 16))
+    board.save(ANIM / "selout-board.png")
+    print("board", board.size)
+
+
+if __name__ == "__main__":
+    main()
+
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command '$dest='"'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35'; New-Item -ItemType Directory -Force -Path "'$dest | Out-Null; @'"'
+from PIL import Image,ImageDraw
+from pathlib import Path
+root=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b')
+out=root/'anim/death35'
+b=Image.new('RGB',(5*640,660),(85,90,85)); d=ImageDraw.Draw(b)
+for i,v in enumerate(['s','se','e','ne','n']):
+ im=Image.open(root/'views_cam35_touchup'/f'{v}.png').convert('RGBA');b.paste(im.resize((640,640),Image.Resampling.NEAREST),(i*640,20),im.resize((640,640),Image.Resampling.NEAREST));d.text((i*640+20,4),v)
+b.save(out/'stills-inspect.png')
+b=Image.new('RGB',(7*384,5*404),(85,90,85));d=ImageDraw.Draw(b)
+for j,v in enumerate(['front','se','side','ne','back']):
+ folder=root/('anim/codex-set-d/death/frames' if v in ['se','ne'] else 'anim/codex-set-b/death/frames')
+ for f in range(7):
+  im=Image.open(folder/f'{v}_f{f}.png').convert('RGBA'); im=im.resize((384,384),Image.Resampling.NEAREST);b.paste(im,(384*f,404*j+20),im); d.text((384*f+5,404*j+4),f'{v} {f}')
+b.save(out/'old-beats-inspect.png')
+'@ | Set-Content -LiteralPath \""'$dest'"\\inspect.py\"; python \""'$dest'"\\inspect.py\"" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 1761ms:
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from PIL import Image,ImageDraw
+from pathlib import Path
+import numpy as np
+p=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b')
+for v in ['s','se','e','ne','n']:
+ im=Image.open(p/'views_cam35_touchup'/f'{v}.png').convert('RGBA');a=np.array(im);yy,xx=np.where(a[:,:,3]>0); print(v,(xx.min(),yy.min(),xx.max(),yy.max()),sorted(set(map(tuple,a[a[:,:,3]>0,:3]))))
+ b=Image.new('RGB',(1000,900),(73,78,73));d=ImageDraw.Draw(b);b.paste(im.resize((1280,1280),Image.Resampling.NEAREST),(-320,-400),im.resize((1280,1280),Image.Resampling.NEAREST))
+ for x in range(40,160,5):
+  xp=(x-40)*8; d.line((xp,0,xp,900),fill=(100,100,100));d.text((xp+1,0),str(x),fill='white')
+ for y in range(50,160,5):
+  yp=(y-50)*8; d.line((0,yp,1000,yp),fill=(100,100,100));d.text((0,yp+1),str(y),fill='white')
+ b.save(p/'anim/death35'/f'coords_{v}.png')
+'@ | Set-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\coords.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\coords.py'" in C:\Users\pmcga\dev\hollowtide
+ exited 1 in 776ms:
+Traceback (most recent call last):
+  File "D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\death35\coords.py", line 3, in <module>
+    import numpy as np
+  File "C:\Users\pmcga\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\__init__.py", line 122, in <module>
+    from numpy.__config__ import show_config
+  File "C:\Users\pmcga\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\__config__.py", line 4, in <module>
+    from numpy._core._multiarray_umath import (
+  File "C:\Users\pmcga\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\_core\__init__.py", line 24, in <module>
+    from . import multiarray
+  File "C:\Users\pmcga\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\_core\multiarray.py", line 115, in <module>
+    @array_function_from_c_func_and_dispatcher(_multiarray_umath.empty_like)
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pmcga\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\_core\overrides.py", line 185, in decorator
+    return array_function_dispatch(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pmcga\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\_core\overrides.py", line 161, in decorator
+    doc = inspect.cleandoc(dispatcher.__doc__)
+          ^^^^^^^^^^^^^^^^
+AttributeError: module 'inspect' has no attribute 'cleandoc'
+
+2026-11-05T15:37:35.740391Z ERROR codex_core::tools::router: error=unable to locate image at `D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\death35\coords_s.png`: The system cannot find the file specified. (os error 2)
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Rename-Item -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\inspect.py' -NewName 'make_reference_boards.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\coords.py'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 566ms:
+s (np.int64(56), np.int64(78), np.int64(102), np.int64(140)) [(np.uint8(20), np.uint8(18), np.uint8(24)), (np.uint8(33), np.uint8(30), np.uint8(39)), (np.uint8(46), np.uint8(26), np.uint8(110)), (np.uint8(61), np.uint8(58), np.uint8(68)), (np.uint8(63), np.uint8(232), np.uint8(176)), (np.uint8(106), np.uint8(60), np.uint8(200)), (np.uint8(157), np.uint8(155), np.uint8(162)), (np.uint8(164), np.uint8(107), np.uint8(255)), (np.uint8(184), np.uint8(146), np.uint8(58)), (np.uint8(200), np.uint8(255), np.uint8(240)), (np.uint8(214), np.uint8(214), np.uint8(220)), (np.uint8(224), np.uint8(200), np.uint8(255)), (np.uint8(240), np.uint8(210), np.uint8(122)), (np.uint8(246), np.uint8(255), np.uint8(251)), (np.uint8(255), np.uint8(244), np.uint8(214))]
+se (np.int64(51), np.int64(73), np.int64(108), np.int64(140)) [(np.uint8(20), np.uint8(18), np.uint8(24)), (np.uint8(33), np.uint8(30), np.uint8(39)), (np.uint8(46), np.uint8(26), np.uint8(110)), (np.uint8(61), np.uint8(58), np.uint8(68)), (np.uint8(63), np.uint8(232), np.uint8(176)), (np.uint8(106), np.uint8(60), np.uint8(200)), (np.uint8(157), np.uint8(155), np.uint8(162)), (np.uint8(164), np.uint8(107), np.uint8(255)), (np.uint8(184), np.uint8(146), np.uint8(58)), (np.uint8(200), np.uint8(255), np.uint8(240)), (np.uint8(214), np.uint8(214), np.uint8(220)), (np.uint8(224), np.uint8(200), np.uint8(255)), (np.uint8(240), np.uint8(210), np.uint8(122)), (np.uint8(246), np.uint8(255), np.uint8(251)), (np.uint8(255), np.uint8(244), np.uint8(214))]
+e (np.int64(43), np.int64(73), np.int64(116), np.int64(140)) [(np.uint8(20), np.uint8(18), np.uint8(24)), (np.uint8(33), np.uint8(30), np.uint8(39)), (np.uint8(46), np.uint8(26), np.uint8(110)), (np.uint8(61), np.uint8(58), np.uint8(68)), (np.uint8(63), np.uint8(232), np.uint8(176)), (np.uint8(106), np.uint8(60), np.uint8(200)), (np.uint8(157), np.uint8(155), np.uint8(162)), (np.uint8(164), np.uint8(107), np.uint8(255)), (np.uint8(184), np.uint8(146), np.uint8(58)), (np.uint8(200), np.uint8(255), np.uint8(240)), (np.uint8(214), np.uint8(214), np.uint8(220)), (np.uint8(224), np.uint8(200), np.uint8(255)), (np.uint8(240), np.uint8(210), np.uint8(122)), (np.uint8(246), np.uint8(255), np.uint8(251)), (np.uint8(255), np.uint8(244), np.uint8(214))]
+ne (np.int64(51), np.int64(65), np.int64(108), np.int64(140)) [(np.uint8(20), np.uint8(18), np.uint8(24)), (np.uint8(33), np.uint8(30), np.uint8(39)), (np.uint8(46), np.uint8(26), np.uint8(110)), (np.uint8(61), np.uint8(58), np.uint8(68)), (np.uint8(106), np.uint8(60), np.uint8(200)), (np.uint8(157), np.uint8(155), np.uint8(162)), (np.uint8(164), np.uint8(107), np.uint8(255)), (np.uint8(184), np.uint8(146), np.uint8(58)), (np.uint8(214), np.uint8(214), np.uint8(220)), (np.uint8(224), np.uint8(200), np.uint8(255)), (np.uint8(240), np.uint8(210), np.uint8(122)), (np.uint8(255), np.uint8(244), np.uint8(214))]
+n (np.int64(59), np.int64(59), np.int64(100), np.int64(140)) [(np.uint8(20), np.uint8(18), np.uint8(24)), (np.uint8(33), np.uint8(30), np.uint8(39)), (np.uint8(46), np.uint8(26), np.uint8(110)), (np.uint8(61), np.uint8(58), np.uint8(68)), (np.uint8(106), np.uint8(60), np.uint8(200)), (np.uint8(157), np.uint8(155), np.uint8(162)), (np.uint8(164), np.uint8(107), np.uint8(255)), (np.uint8(184), np.uint8(146), np.uint8(58)), (np.uint8(214), np.uint8(214), np.uint8(220)), (np.uint8(224), np.uint8(200), np.uint8(255)), (np.uint8(240), np.uint8(210), np.uint8(122)), (np.uint8(255), np.uint8(244), np.uint8(214))]
+
+codex
+The stills’ ear shapes, gold panels, and violet shading are clear. I’ll keep those readable through the collapse and map the right-flank fall across all five views: toward screen-left from the front, toward the camera in profile, and toward screen-right from the back.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+\"\"\"Native-pixel death construction. All coordinates refer to 160px approved stills.
+No rotations, filtering, image synthesis, or writes outside this directory.
+\"\"\"
+from pathlib import Path
+import importlib.util, sys, shutil
+import numpy as np
+from PIL import Image, ImageDraw, ImageFont
+ROOT=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba')
+HERE=Path(__file__).parent
+(HERE/'frames').mkdir(exist_ok=True)
+D=(20,18,24,255); INK=(33,30,39,255); VS=(46,26,110,255); M=(61,58,68,255)
+V=(106,60,200,255); G=(157,155,162,255); L=(164,107,255,255); GO=(184,146,58,255)
+S=(214,214,220,255); H=(224,200,255,255); Y=(240,210,122,255); W=(255,244,214,255)
+VIEWS=['s','se','e','ne','n']; NAMES=['front','se','side','ne','back']; MS=[300,100,130,140,160,180,1400]
+def poly(im,pts,c): ImageDraw.Draw(im).polygon(pts,fill=c)
+def line(im,pts,c,w=1): ImageDraw.Draw(im).line(pts,fill=c,width=w)
+def maskpoly(pts):
+ m=Image.new('1',(160,160));ImageDraw.Draw(m).polygon(pts,fill=1);return np.array(m)
+# Hand traced boundaries: source fragments never undergo resampling.
+SPECS={
+'s':dict(ears=[[(60,78),(72,81),(79,91),(76,96),(70,100),(67,107),(60,103),(56,97),(56,87)],[(98,78),(102,88),(102,98),(96,104),(92,107),(88,100),(82,94),(83,88),(89,82)]],head=[(73,93),(85,93),(91,98),(93,105),(90,111),(86,114),(84,116),(75,116),(70,112),(67,107),(68,100)],tail=[],legs=[[(68,122),(77,122),(79,130),(79,140),(68,140)],[(81,122),(91,122),(93,140),(81,140)],[(60,119),(68,119),(70,134),(60,134)],[(91,119),(98,119),(99,134),(91,134)]],hip=(80,123),headcenter=(80,104),cut=116),
+'se':dict(ears=[[(76,84),(83,85),(90,91),(91,99),(88,105),(83,111),(77,110),(72,103),(71,96)],[(101,73),(105,76),(106,87),(106,99),(100,100),(94,97),(91,90),(94,81)]],head=[(95,99),(102,99),(106,104),(106,110),(109,112),(108,118),(100,120),(92,117),(87,113),(87,106)],tail=[(51,113),(62,113),(68,116),(73,117),(75,125),(71,131),(64,129),(57,126),(54,121),(51,118)],legs=[[(77,125),(88,125),(90,139),(82,140),(76,134)],[(91,122),(99,122),(99,136),(102,138),(100,140),(91,140)],[(99,120),(104,120),(105,132),(102,136),(99,136)]],hip=(80,127),headcenter=(98,109),cut=119),
+'e':dict(ears=[[(90,81),(94,83),(98,91),(100,99),(96,107),(90,113),(86,111),(83,104),(83,96),(85,88)],[(91,73),(94,78),(92,85),(88,92),(86,101),(81,99),(80,92),(83,84)]],head=[(99,94),(105,96),(108,101),(109,105),(115,106),(117,110),(114,113),(106,115),(99,114),(95,111),(95,105)],tail=[(43,136),(47,131),(54,127),(63,123),(68,118),(75,118),(80,125),(79,134),(74,139),(53,140)],legs=[[(78,123),(89,123),(96,128),(95,135),(99,137),(99,140),(81,140)],[(99,119),(104,119),(106,136),(109,137),(109,140),(99,140)],[(106,117),(110,117),(111,128),(109,133),(105,133)]],hip=(84,128),headcenter=(105,105),cut=115),
+'ne':dict(ears=[[(81,65),(86,71),(90,77),(92,85),(87,90),(81,92),(75,86),(73,78),(76,72)],[(104,72),(107,77),(107,90),(105,96),(100,100),(94,99),(90,93),(91,83),(97,77)]],head=[(86,83),(91,84),(94,89),(100,91),(107,91),(109,94),(106,98),(100,101),(91,101),(84,98),(79,93),(80,88)],tail=[(51,137),(57,129),(64,123),(68,119),(75,118),(80,122),(79,129),(75,135),(65,139),(55,140)],legs=[[(88,114),(96,114),(100,119),(100,125),(98,129),(88,130),(85,123)],[(100,111),(104,112),(104,119),(107,120),(108,124),(105,127),(101,125)]],hip=(86,121),headcenter=(94,94),cut=102),
+'n':dict(ears=[[(62,59),(70,63),(76,70),(79,78),(77,85),(73,91),(66,91),(61,85),(59,77),(59,67)],[(97,59),(100,67),(100,79),(97,86),(91,92),(85,89),(81,82),(83,73),(90,65)]],head=[(76,81),(83,81),(88,87),(91,94),(87,99),(82,102),(75,101),(70,97),(68,92),(72,86)],tail=[(76,119),(84,119),(87,125),(88,134),(84,140),(78,140),(73,135),(72,127)],legs=[[(64,109),(70,109),(71,119),(70,130),(66,133),(61,132),(62,124)],[(89,110),(96,110),(99,121),(99,131),(94,133),(89,129)]],hip=(80,118),headcenter=(80,92),cut=103)
+}
+
+def extract(a,sp):
+ remain=a[:,:,3]>0; parts={}
+ # Head in front of the ears, retaining the exact approved face and eyes.
+ for key,pts in [('head',sp['head'])]+[(f'ear{i}',p) for i,p in enumerate(sp['ears'])]+([('tail',sp['tail'])] if sp['tail'] else [])+[(f'leg{i}',p) for i,p in enumerate(sp['legs'])]:
+  m=maskpoly(pts)&remain;b=np.zeros_like(a);b[m]=a[m];parts[key]=b;remain &= ~m
+ b=np.zeros_like(a);b[remain]=a[remain];parts['body']=b
+ return parts
+
+def paste(im,a,dx=0,dy=0,shear=0,pivot=100):
+ # Integer row stepping (never a rotation or interpolation).
+ dst=np.array(im); ys,xs=np.where(a[:,:,3]>0)
+ for y,x in zip(ys,xs):
+  xx=int(x+dx+round((int(y)-pivot)*shear));yy=int(y+dy)
+  if 0<=xx<160 and 0<=yy<160:dst[yy,xx]=a[y,x]
+ im.paste(Image.fromarray(dst))
+
+def leaf(im,base,kind,back=False,scale=1):
+ # Hand drawn ear silhouettes for successive hinge positions. Local coordinates.
+ shapes={
+ 'left':[(1,2),(-5,2),(-13,-3),(-21,-6),(-25,-4),(-22,-10),(-17,-13),(-10,-11),(-3,-6)],
+ 'right':[(-1,2),(5,2),(14,-2),(23,-3),(25,0),(22,-7),(17,-11),(9,-10),(2,-5)],
+ 'leftlow':[(1,1),(-4,4),(-12,5),(-22,3),(-26,5),(-23,0),(-18,-5),(-10,-6),(-3,-4)],
+ 'rightlow':[(-1,1),(4,5),(13,7),(24,6),(28,7),(25,2),(20,-3),(11,-5),(3,-3)],
+ 'leftflat':[(1,2),(-5,4),(-14,4),(-25,1),(-29,2),(-25,-3),(-17,-6),(-9,-6),(-2,-3)],
+ 'rightflat':[(-1,2),(5,4),(14,5),(25,3),(29,4),(25,-2),(17,-5),(9,-5),(2,-2)]}
+ pts=shapes[kind];bx,by=base
+ def p(q):return [(bx+int(round(x*scale)),by+int(round(y*scale))) for x,y in q]
+ poly(im,p(pts),VS)
+ # Faceted top cap and lower band follow the silhouette, not a rectangular crop.
+ poly(im,p([(0,-1),(-3,-4),(-10,-9),(-17,-11),(-22,-8),(-20,-5),(-12,-3),(-5,0)] if kind=='left' else
+             [(0,-1),(3,-4),(9,-8),(17,-9),(22,-5),(20,-2),(13,-1),(5,1)] if kind=='right' else
+             [(0,0),(-4,-3),(-10,-5),(-18,-4),(-23,-1),(-20,1),(-12,2),(-5,2)] if kind in ['leftlow','leftflat'] else
+             [(0,0),(4,-2),(11,-4),(18,-2),(24,1),(22,3),(14,3),(5,2)]),L)
+ if back:
+  poly(im,p([(-3,-3),(-10,-8),(-17,-10),(-22,-7),(-17,-6),(-10,-5)] if kind=='left' else
+                [(3,-3),(10,-7),(17,-8),(22,-5),(17,-4),(10,-4)] if kind=='right' else
+                [(-4,-3),(-11,-5),(-18,-4),(-23,-1),(-17,-1),(-11,-2)] if kind in ['leftlow','leftflat'] else
+                [(4,-2),(11,-4),(18,-2),(23,0),(18,0),(11,-1)]),H)
+  line(im,p([(-22,-2),(-14,2),(-6,2),(0,0)] if kind.startswith('left') else [(0,0),(6,3),(15,5),(23,3)]),V,2)
+ else:
+  poly(im,p([(-3,-2),(-10,-5),(-18,-8),(-22,-6),(-17,-3),(-9,0),(-4,1)] if kind=='left' else
+                [(3,-2),(10,-5),(18,-7),(22,-3),(16,-2),(9,0),(4,1)] if kind=='right' else
+                [(-3,0),(-10,-2),(-18,-2),(-24,0),(-18,2),(-11,3),(-5,2)] if kind.startswith('left') else
+                [(3,0),(10,-1),(18,0),(24,3),(18,4),(11,4),(5,2)]),Y)
+  line(im,p([(-4,1),(-11,3),(-18,2)] if kind.startswith('left') else [(4,2),(11,4),(18,4)]),GO)
+  line(im,p([(-17,-8),(-21,-7)] if kind=='left' else [(16,-8),(20,-5)] if kind=='right' else [(-18,-4),(-23,-1)] if kind.startswith('left') else [(17,-3),(22,0)]),H)
+
+def belly(im,cx,cy,view,phase):
+ # Newly exposed ventral plates: hand drawn stepped outline and shaded bands.
+ w=14 if view in ['s','n'] else 18;h=10
+ poly(im,[(cx-w,cy-3),(cx-w+3,cy-8),(cx-4,cy-11),(cx+8,cy-8),(cx+w,cy-2),(cx+w-1,cy+7),(cx+9,cy+10),(cx-6,cy+9),(cx-w,cy+4)],INK)
+ poly(im,[(cx-w+2,cy-3),(cx-w+5,cy-7),(cx-3,cy-8),(cx+8,cy-6),(cx+w-2,cy),(cx+w-3,cy+5),(cx+7,cy+7),(cx-6,cy+6),(cx-w+2,cy+2)],VS)
+ poly(im,[(cx-w+4,cy-4),(cx-3,cy-7),(cx+7,cy-5),(cx+12,cy-1),(cx+8,cy+2),(cx-4,cy+1)],V)
+ poly(im,[(cx-w+6,cy-5),(cx-3,cy-7),(cx+6,cy-5),(cx+7,cy-3),(cx-5,cy-2)],L)
+ line(im,[(cx-4,cy+2),(cx+1,cy+6),(cx+8,cy+7)],INK)
+ line(im,[(cx+7,cy-3),(cx+11,cy),(cx+11,cy+3)],M,2)
+
+def joint(im,x,y):
+ poly(im,[(x-4,y-3),(x,y-5),(x+4,y-3),(x+5,y+2),(x+2,y+5),(x-3,y+4),(x-5,y)],VS)
+ poly(im,[(x-3,y-2),(x,y-3),(x+3,y-2),(x+3,y+2),(x,y+3),(x-3,y+1)],G)
+ line(im,[(x-2,y-2),(x+1,y-2),(x+2,y-1)],S)
+ line(im,[(x-4,y+2),(x-2,y+4),(x+2,y+4)],INK)
+
+def limb(im,a,b,near=True):
+ # Folded limb, redesigned joint transition, no abrupt source-part cuts.
+ x,y=a;u,v=b
+ poly(im,[(x-3,y-3),(x+3,y-3),(u+3,v-2),(u+4,v+2),(u+1,v+4),(u-4,v+3),(x-4,y+2)],VS)
+ line(im,[(x,y-2),(u,v)],L if near else V,3)
+ poly(im,[(u-4,v),(u+2,v-1),(u+5,v+2),(u+5,v+4),(u-3,v+4),(u-5,v+2)],M)
+ line(im,[(u-3,v),(u+1,v),(u+3,v+1)],G,2)
+ line(im,[(u-3,v+4),(u+4,v+4)],INK)
+
+# Translation paths. Head drop, front buckle, rear sag, then right-side roll.
+HEAD={
+'s':[(0,0),(0,-2),(0,4),(-2,10),(-7,18),(-14,25),(-14,25)],
+'se':[(0,0),(-1,-1),(0,4),(0,9),(-3,16),(-6,23),(-6,23)],
+'e':[(0,0),(-2,-1),(-1,4),(0,10),(1,17),(1,24),(1,24)],
+'ne':[(0,0),(-1,1),(0,4),(2,9),(5,16),(10,23),(10,23)],
+'n':[(0,0),(0,2),(0,5),(2,10),(7,17),(14,23),(14,23)]}
+BODY={
+'s':[(0,0),(0,-1),(0,1),(-1,4),(-4,7),(-6,10),(-6,10)],
+'se':[(0,0),(-1,0),(0,1),(0,3),(-2,6),(-3,8),(-3,8)],
+'e':[(0,0),(-1,0),(0,1),(0,3),(0,6),(0,8),(0,8)],
+'ne':[(0,0),(-1,0),(0,1),(1,3),(3,6),(5,9),(5,9)],
+'n':[(0,0),(0,1),(0,2),(1,4),(4,8),(7,11),(7,11)]}
+
+def pose(view,f,parts,src):
+ if f==0:return Image.fromarray(src)
+ sp=SPECS[view];im=Image.new('RGBA',(160,160));hdx,hdy=HEAD[view][f];bdx,bdy=BODY[view][f]
+ hc=sp['headcenter'];hx,hy=hc[0]+hdx,hc[1]+hdy
+ # Tail first; its base stays close to the original support polygon.
+ if 'tail' in parts:
+  if f<=3:paste(im,parts['tail'],0,0)
+  elif view=='n':
+   paste(im,parts['tail'],5 if f==4 else 8,-1, .25 if f>=5 else .1,128)
+  elif view=='se':paste(im,parts['tail'],-1,3 if f==4 else 6,-.12,125)
+  elif view=='ne':paste(im,parts['tail'],2,-2 if f==4 else -4,.18,128)
+  else:paste(im,parts['tail'],0,-1)
+ if f<=2:
+  paste(im,parts['body'],bdx,bdy)
+  for k in parts:
+   if k.startswith('leg'):paste(im,parts[k])
+ elif f==3:
+  # Underpainting at the chest-to-upper-leg hinge, then original plates.
+  cx,cy=sp['hip'];belly(im,cx+bdx,cy-2,view,f)
+  paste(im,parts['body'],bdx,bdy)
+  for i,k in enumerate(k for k in parts if k.startswith('leg')):
+   a=parts[k].copy();y,x=np.where(a[:,:,3]>0)
+   # Crouched leg translated intact; original foot remains the planted contact.
+   paste(im,a,(-1 if view=='s' else 1) if i==1 else 0,0)
+  if view in ['se','e','ne']:
+   limb(im,(102+bdx,123),(106,136 if view"'!='"'ne' else 126))
+ else:
+  cx,cy=sp['hip'];cx+=bdx;cy+=min(bdy,7)
+  # Far limbs are drawn before the flank, visible only at their folded ends.
+  if view=='s':
+   limb(im,(cx+3,cy-2),(cx+19,cy+1),False);limb(im,(cx+4,cy+4),(cx+17,136),False)
+  elif view=='n':
+   limb(im,(cx-2,cy),(cx-18,cy+3),False);limb(im,(cx-1,cy+6),(cx-15,136),False)
+  else:
+   limb(im,(cx+7,cy-4),(cx+20,cy-1),False);limb(im,(cx-2,cy+2),(cx+5,cy+5),False)
+  belly(im,cx,cy,view,f)
+  # Transfer the dorsal/haunch armour, with hand traced narrow crop masks.
+  body=parts['body'].copy()
+  yy,xx=np.indices((160,160))
+  if view=='s':keep=(yy>=116)&(yy<=124)&(xx<76)
+  elif view=='n':keep=(yy>=104)&(yy<=119)&(xx>=70)&(xx<=89)
+  elif view=='se':keep=(yy>=113)&(yy<=127)&(xx<87)
+  elif view=='e':keep=(yy>=110)&(yy<=126)&(xx<96)
+  else:keep=(yy>=102)&(yy<=117)&(xx<96)
+  body[~keep]=0
+  paste(im,body,bdx, min(bdy,7),(.14 if view=='n' else -.12 if view=='s' else .15),sp['hip'][1])
+  # Hand-redrawn seams run around, and into, those native plates.
+  if view=='s':
+   joint(im,cx+5,cy+1);limb(im,(cx+6,cy+3),(cx+15,136))
+   if f>=5:
+    # Tail newly revealed behind the rolled seated body.
+    poly(im,[(cx+7,cy-5),(cx+16,cy-10),(cx+21,cy-9),(cx+19,cy-4),(cx+12,cy)],VS)
+    poly(im,[(cx+9,cy-6),(cx+16,cy-9),(cx+19,cy-8),(cx+16,cy-5)],L)
+    poly(im,[(cx+19,cy-9),(cx+25,cy-11),(cx+23,cy-6),(cx+19,cy-4)],Y)
+    line(im,[(cx+20,cy-9),(cx+24,cy-10)],W)
+  elif view=='n':joint(im,cx-6,cy+2);limb(im,(cx-8,cy+4),(cx-18,cy+7))
+  else:
+   joint(im,cx-1,cy+1);limb(im,(cx+7,cy+1),(cx+17,cy+5))
+  # Gold chest peeks around the folded front shoulder, using original colours.
+  if view in ['s','se','e']:
+   poly(im,[(hx-3,hy+6),(hx+4,hy+4),(hx+7,hy+8),(hx+5,min(139,hy+14)),(hx-1,min(140,hy+13)),(hx-5,hy+9)],GO)
+   poly(im,[(hx-3,hy+6),(hx+3,hy+5),(hx+5,hy+8),(hx+2,hy+11),(hx-2,hy+10)],Y)
+ # Neck connector must be a continuous shaped bridge under head and torso.
+ if f<=3:
+  x0,y0=sp['headcenter']; nc=(x0+bdx,y0+(13 if view in ['s','se','e'] else 11)+bdy)
+ else:nc=(sp['hip'][0]+bdx,sp['hip'][1]+min(bdy,7)-3)
+ poly(im,[(nc[0]-5,nc[1]-4),(nc[0]+5,nc[1]-3),(hx+5,hy+7),(hx+2,hy+12),(hx-5,hy+10),(nc[0]-6,nc[1]+3)],VS)
+ line(im,[(nc[0]-3,nc[1]-3),(hx-2,hy+7)],V,4)
+ # Ears behind the transferred face, manually posed from f2 onwards.
+ if f==1:
+  for i in range(2):paste(im,parts[f'ear{i}'],hdx+(-1 if i==0 else 1),hdy-1,(-.08 if i==0 else .08),100)
+ else:
+  back=view in ['ne','n'];drop=f>=4
+  if view=='s':
+   leaf(im,(hx-8,hy-6), 'left' if f==2 else 'leftlow' if f<5 else 'leftflat',False,.85)
+   leaf(im,(hx+7,hy-7 if f<5 else hy-9),'right' if f<=3 else 'rightlow' if f==4 else 'rightflat',False,.85)
+  elif view=='n':
+   leaf(im,(hx-6,hy-6),'left' if f<=3 else 'leftlow' if f==4 else 'leftflat',True,.85)
+   leaf(im,(hx+7,hy-4),'right' if f==2 else 'rightlow' if f<5 else 'rightflat',True,.85)
+  elif view=='e':
+   leaf(im,(hx-7,hy-9),'left' if f<=3 else 'leftlow' if f==4 else 'leftflat',True,.85)
+   leaf(im,(hx-10,hy-4),'left' if f==2 else 'leftlow' if f<5 else 'leftflat',False,1)
+  elif view=='se':
+   leaf(im,(hx+1,hy-9),'right' if f<=3 else 'rightlow' if f==4 else 'rightflat',False,.8)
+   leaf(im,(hx-9,hy-4),'left' if f==2 else 'leftlow' if f<5 else 'leftflat',False,.95)
+  else:
+   leaf(im,(hx-7,hy-9),'left' if f<=3 else 'leftlow' if f==4 else 'leftflat',True,.85)
+   leaf(im,(hx+4,hy-4),'right' if f==2 else 'rightlow' if f<5 else 'rightflat',True,.9)
+ # Integer stepped head lean during the roll. Every source face pixel stays whole.
+ sh=0 if f<=2 else (.12 if view=='s' else -.12 if view=='n' else .08) if f==3 else (.28 if view=='s' else -.28 if view=='n' else .12)
+ paste(im,parts['head'],hdx,hdy,sh,sp['headcenter'][1])
+ if f>=2:
+  # Draw the cheek/ear hinge over the native fragment edge.
+  line(im,[(hx-7,hy-3),(hx-5,hy-5),(hx-3,hy-5)],V)
+ if f==6:
+  a=np.array(im);eye=np.isin(a[:,:,0],[63,200,246]) & ((a[:,:,1]==232)|(a[:,:,1]==255)) & (a[:,:,3]>0)
+  a[eye]=VS
+  im=Image.fromarray(a)
+ return im
+
+def clean(im,src,f):
+ a=np.array(im);op=a[:,:,3]>0
+ # Fill enclosed pinholes with their local, existing material colour.
+ from scipy.ndimage import binary_fill_holes,label
+ holes=binary_fill_holes(op)&~op
+ for y,x in zip(*np.where(holes)):
+  ns=[tuple(a[yy,xx]) for yy,xx in [(y-1,x),(y,x-1),(y+1,x),(y,x+1)] if a[yy,xx,3]]
+  a[y,x]=max(set(ns),key=ns.count) if ns else VS
+ if f:
+  lab,n=label(a[:,:,3]>0,structure=np.ones((3,3)))
+  sizes=np.bincount(lab.ravel());sizes[0]=0
+  for i in range(1,n+1):
+   if sizes[i]<5:a[lab==i]=0
+ return Image.fromarray(a)
+
+spec=importlib.util.spec_from_file_location('game_selout',ROOT/'rhino_l/take-a/anim/selout_rhino.py');sel=importlib.util.module_from_spec(spec);spec.loader.exec_module(sel);sel.OUTLINE=np.array([20,18,24],np.uint8)
+allframes={}
+for v,n in zip(VIEWS,NAMES):
+ src=np.array(Image.open(ROOT/'fennec_s/take-b/views_cam35_touchup'/f'{v}.png').convert('RGBA'))
+ parts=extract(src,SPECS[v]);frames=[]
+ for f in range(7):
+  im=pose(v,f,parts,src)
+  if f:im=clean(im,src,f)
+  im.save(HERE/'frames'/f'{n}_f{f}.png');frames.append(im)
+ allframes[v]=frames
+# Review, full-canvas, 4x nearest with requested exact game sel-out.
+board=Image.new('RGB',(8*640,5*668),(86,93,84));dr=ImageDraw.Draw(board)
+for j,(v,n) in enumerate(zip(VIEWS,NAMES)):
+ still=Image.open(ROOT/'fennec_s/take-b/views_cam35_touchup'/f'{v}.png').convert('RGBA')
+ for col,im in enumerate([still]+allframes[v]):
+  b=Image.fromarray(sel.selout(np.array(im))[0]).resize((640,640),Image.Resampling.NEAREST)
+  x=col*640;y=j*668;board.paste(b,(x,y+28),b);dr.text((x+8,y+7),f'{n}: '+('approved still' if col==0 else f'f{col-1} {MS[col-1]}ms'),fill=(244,244,234))
+ board.crop((0,j*668,5120,(j+1)*668)).save(HERE/f'board_{n}.png')
+board.save(HERE/'board.png')
+# GIF palette is shared across all frames; omit NETSCAPE loop extension (one play).
+for v,n in zip(VIEWS,NAMES):
+ gifs=[]
+ for im in allframes[v]:
+  b=Image.new('RGB',(640,640),(86,93,84));o=Image.fromarray(sel.selout(np.array(im))[0]).resize((640,640),Image.Resampling.NEAREST);b.paste(o,(0,0),o);gifs.append(b)
+ palette=gifs[0].quantize(colors=64)
+ gifs=[b.quantize(palette=palette,dither=Image.Dither.NONE) for b in gifs]
+ gifs[0].save(HERE/f'preview_{n}.gif',save_all=True,append_images=gifs[1:],duration=MS,disposal=2,optimize=False)
+print('Built 35 raw frames and review artifacts.')
+'@ | Set-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\build_death.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\build_death.py'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 3798ms:
+Built 35 raw frames and review artifacts.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+from PIL import Image,ImageDraw
+p=Path(__file__).parent
+for n in ['front','se','side','ne','back']:
+ b=Image.open(p/f'board_{n}.png');o=Image.new('RGB',(8*400,400),(86,93,84))
+ for i in range(8):o.paste(b.crop((i*640+32,240,i*640+432,640)),(i*400,0))
+ o.save(p/f'detail_{n}.png')
+'@ | Set-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\details.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\details.py'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 483ms:
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+from PIL import Image
+import numpy as np
+from scipy.ndimage import label,binary_fill_holes
+p=Path(__file__).parent
+for n in ['front','se','side','ne','back']:
+ print(n)
+ for f in range(7):
+  a=np.array(Image.open(p/'frames'/f'{n}_f{f}.png'));m=a[:,:,3]>0;y,x=np.where(m);lab,k=label(m,structure=np.ones((3,3)));print(f,'bottom',y.max(),'bounds',x.min(),y.min(),x.max(),y.max(),'COM',round(x.mean(),2),'holes',int((binary_fill_holes(m)&~m).sum()),'components',k)
+'@ | Set-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\quickcheck.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\quickcheck.py'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 9791ms:
+front
+0 bottom 140 bounds 56 78 102 140 COM 79.09 holes 0 components 1
+1 bottom 140 bounds 55 76 103 140 COM 78.98 holes 0 components 1
+2 bottom 140 bounds 51 79 108 140 COM 79.21 holes 0 components 2
+3 bottom 143 bounds 48 82 106 143 COM 78.41 holes 0 components 2
+4 bottom 140 bounds 43 111 104 140 COM 76.57 holes 0 components 1
+5 bottom 141 bounds 33 116 99 141 COM 72.06 holes 0 components 1
+6 bottom 141 bounds 33 116 99 141 COM 72.06 holes 0 components 1
+se
+0 bottom 140 bounds 51 73 108 140 COM 86.48 holes 0 components 1
+1 bottom 140 bounds 51 72 107 140 COM 85.71 holes 0 components 1
+2 bottom 141 bounds 51 74 119 141 COM 86.0 holes 0 components 4
+3 bottom 141 bounds 51 76 119 141 COM 87.42 holes 0 components 4
+4 bottom 143 bounds 51 112 118 143 COM 82.87 holes 0 components 1
+5 bottom 144 bounds 51 119 116 144 COM 80.69 holes 0 components 1
+6 bottom 144 bounds 51 119 116 144 COM 80.69 holes 0 components 1
+side
+0 bottom 140 bounds 43 73 116 140 COM 86.55 holes 0 components 1
+1 bottom 140 bounds 42 72 115 140 COM 85.89 holes 0 components 1
+2 bottom 140 bounds 43 74 115 140 COM 85.74 holes 0 components 2
+3 bottom 141 bounds 43 76 116 141 COM 86.41 holes 0 components 2
+4 bottom 144 bounds 44 108 117 144 COM 84.91 holes 0 components 1
+5 bottom 145 bounds 44 115 117 145 COM 83.67 holes 0 components 1
+6 bottom 145 bounds 44 115 117 145 COM 83.67 holes 0 components 1
+ne
+0 bottom 140 bounds 51 65 108 140 COM 85.48 holes 0 components 1
+1 bottom 140 bounds 50 65 107 140 COM 84.95 holes 0 components 1
+2 bottom 140 bounds 51 66 120 140 COM 85.43 holes 0 components 2
+3 bottom 139 bounds 51 68 125 139 COM 86.99 holes 0 components 4
+4 bottom 137 bounds 55 96 128 137 COM 89.78 holes 0 components 1
+5 bottom 138 bounds 55 103 134 138 COM 91.9 holes 0 components 1
+6 bottom 138 bounds 55 103 134 138 COM 91.9 holes 0 components 1
+back
+0 bottom 140 bounds 59 59 100 140 COM 79.15 holes 0 components 1
+1 bottom 140 bounds 60 60 99 140 COM 79.09 holes 0 components 1
+2 bottom 140 bounds 53 61 108 140 COM 79.52 holes 0 components 3
+3 bottom 140 bounds 55 63 113 140 COM 81.07 holes 0 components 3
+4 bottom 140 bounds 59 98 118 140 COM 83.86 holes 0 components 1
+5 bottom 140 bounds 63 104 126 140 COM 88.53 holes 0 components 1
+6 bottom 140 bounds 63 104 126 140 COM 88.53 holes 0 components 1
+
+codex
+The first board shows detached remnants from the upright ears and a few joints below row 140. I’m fixing the part masks and folded joints, then restoring more of the native hip plates so the settled pose keeps the fennec’s mechanical structure.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path(__file__).parent/'build_death.py'
+s=p.read_text()
+s=s.replace(\"b=np.zeros_like(a);b[remain]=a[remain];parts['body']=b\", \"\"\"# Assign the fine boundary texels left outside the hand traces to the same
+ # anatomical piece, so no old ear contour can survive in the torso.
+ headbounds={116:(67,93,97),119:(87,109,102),115:(95,118,100),102:(79,110,88),103:(68,92,88)}
+ lo,hi,top=headbounds[sp['cut']]
+ floor={116:128,119:132,115:133,102:126,103:128}[sp['cut']]
+ ec=[np.argwhere(parts[f'ear{i}'][:,:,3]>0).mean(axis=0) for i in range(2)]
+ lc=[np.argwhere(parts[f'leg{i}'][:,:,3]>0).mean(axis=0) for i in range(len(sp['legs']))]
+ for y,x in zip(*np.where(remain)):
+  if y<sp['cut']:
+   if y>=top and lo<=x<=hi:key='head'
+   else:key=f'ear{min(range(2),key=lambda i:abs(x-ec[i][1])+abs(y-ec[i][0]))}'
+  elif y>=floor:
+   key=f'leg{min(range(len(lc)),key=lambda i:abs(x-lc[i][1]))}'
+  else:continue
+  parts[key][y,x]=a[y,x];remain[y,x]=False
+ b=np.zeros_like(a);b[remain]=a[remain];parts['body']=b\"\"\")
+s=s.replace(\"def leaf(im,base,kind,back=False,scale=1):\",\"def leaf(im,base,kind,back=False,scale=1,semi=False):\")
+s=s.replace(\"def p(q):return [(bx+int(round(x*scale)),by+int(round(y*scale))) for x,y in q]\",\"def p(q):return [(bx+int(round(x*scale)),by+int(round((y-(max(0,abs(x)-4)//2 if semi else 0))*scale))) for x,y in q]\")
+s=s.replace(\"cx,cy=sp['hip'];belly(im,cx+bdx,cy-2,view,f)\",\"cx,cy=sp['hip']\")
+s=s.replace(\"cx+=bdx;cy+=min(bdy,7)\",\"cx+=bdx;cy=min(130,cy+min(bdy,7))\")
+s=s.replace(\"limb(im,(102+bdx,123),(106,136 if view"'!='"'ne' else 126))\",\"limb(im,(102+bdx,123),(106,135 if view"'!='"'ne' else 126))\")
+# Exposed original hip plates: hand traced circular joints without source feet.
+s=s.replace(\"# Gold chest peeks around\", \"\"\"# Native joint rings and the surrounding violet armour, translated intact.
+  disc_trace={
+   's':[(63,116),(67,114),(70,117),(71,122),(68,126),(64,125),(62,122)],
+   'se':[(78,123),(83,122),(87,125),(89,130),(86,134),(81,135),(77,131)],
+   'e':[(81,122),(87,121),(93,124),(96,128),(93,133),(87,135),(81,132),(78,127)],
+   'ne':[(90,114),(94,114),(98,117),(99,121),(96,125),(90,126),(86,122),(87,118)],
+   'n':[(64,111),(67,110),(70,113),(71,118),(68,122),(64,121),(62,117)]}
+  disc=np.zeros_like(src);dm=maskpoly(disc_trace[view])&(src[:,:,3]>0);disc[dm]=src[dm]
+  dd={'s':(5,9),'se':(-1,3),'e':(0,2),'ne':(4,5),'n':(5,8)}[view]
+  paste(im,disc,dd[0],dd[1])
+  # Gold chest peeks around\"\"\")
+# Bound gold chest to ground without clipping a whole final frame.
+s=s.replace(\"(hx+7,hy+8)\",\"(hx+7,min(138,hy+8))\").replace(\"(hx-5,hy+9)\",\"(hx-5,min(139,hy+9))\")
+s=s.replace(\"(hx-2,hy+10)\",\"(hx-2,min(139,hy+10))\").replace(\"(hx+2,hy+11)\",\"(hx+2,min(139,hy+11))\")
+# Enlarge ears to retain the machine's characteristic silhouette.
+s=s.replace(\"False,.85)\",\"False,1.05,semi=f==2)\").replace(\"True,.85)\",\"True,1.05,semi=f==2)\")
+s=s.replace(\"False,.8)\",\"False,.95,semi=f==2)\").replace(\"False,.95)\",\"False,1.05,semi=f==2)\").replace(\"True,.9)\",\"True,1.05,semi=f==2)\")
+s=s.replace(\"False,1)\",\"False,1.1,semi=f==2)\")
+p.write_text(s)
+'@ | Set-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\refine.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\refine.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\build_death.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\quickcheck.py'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 3546ms:
+D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\death35\build_death.py:39: RuntimeWarning: Mean of empty slice
+  lc=[np.argwhere(parts[f'leg{i}'][:,:,3]>0).mean(axis=0) for i in range(len(sp['legs']))]
+C:\Users\pmcga\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\_core\_methods.py:134: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Built 35 raw frames and review artifacts.
+front
+0 bottom 140 bounds 56 78 102 140 COM 79.09 holes 0 components 1
+1 bottom 140 bounds 55 75 103 140 COM 79.21 holes 0 components 1
+2 bottom 140 bounds 46 82 113 140 COM 79.1 holes 0 components 1
+3 bottom 140 bounds 43 95 111 140 COM 78.3 holes 0 components 1
+4 bottom 140 bounds 38 110 109 140 COM 76.32 holes 0 components 1
+5 bottom 141 bounds 28 115 103 141 COM 70.79 holes 0 components 1
+6 bottom 141 bounds 28 115 103 141 COM 70.79 holes 0 components 1
+se
+0 bottom 140 bounds 51 73 108 140 COM 86.48 holes 0 components 1
+1 bottom 140 bounds 49 71 107 140 COM 85.61 holes 0 components 1
+2 bottom 140 bounds 51 88 123 140 COM 86.55 holes 0 components 1
+3 bottom 140 bounds 51 99 123 140 COM 88.18 holes 0 components 1
+4 bottom 140 bounds 51 111 123 140 COM 84.96 holes 0 components 1
+5 bottom 144 bounds 51 118 121 144 COM 83.46 holes 0 components 1
+6 bottom 144 bounds 51 118 121 144 COM 83.46 holes 0 components 1
+side
+0 bottom 140 bounds 43 73 116 140 COM 86.55 holes 0 components 1
+1 bottom 140 bounds 43 71 114 140 COM 85.61 holes 0 components 1
+2 bottom 140 bounds 43 80 115 140 COM 84.17 holes 0 components 1
+3 bottom 140 bounds 43 92 116 140 COM 85.17 holes 0 components 1
+4 bottom 140 bounds 44 107 117 140 COM 85.03 holes 0 components 1
+5 bottom 141 bounds 44 114 117 141 COM 83.84 holes 0 components 1
+6 bottom 141 bounds 44 114 117 141 COM 83.84 holes 0 components 1
+ne
+0 bottom 140 bounds 51 65 108 140 COM 85.48 holes 0 components 1
+1 bottom 140 bounds 51 65 107 140 COM 84.94 holes 0 components 1
+2 bottom 140 bounds 51 69 124 140 COM 85.76 holes 0 components 1
+3 bottom 140 bounds 51 80 129 140 COM 87.14 holes 0 components 1
+4 bottom 137 bounds 55 95 132 137 COM 90.34 holes 0 components 1
+5 bottom 138 bounds 55 102 138 138 COM 92.64 holes 0 components 1
+6 bottom 138 bounds 55 102 138 138 COM 92.64 holes 0 components 1
+back
+0 bottom 140 bounds 59 59 100 140 COM 79.15 holes 0 components 1
+1 bottom 140 bounds 60 60 99 140 COM 79.17 holes 0 components 1
+2 bottom 140 bounds 48 71 113 140 COM 79.51 holes 0 components 1
+3 bottom 140 bounds 50 82 118 140 COM 81.06 holes 0 components 1
+4 bottom 140 bounds 54 97 123 140 COM 84.27 holes 0 components 1
+5 bottom 140 bounds 58 103 131 140 COM 88.68 holes 0 components 1
+6 bottom 140 bounds 58 103 131 140 COM 88.68 holes 0 components 1
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path(__file__).parent/'build_death.py';s=p.read_text().replace('(-14,25),(-14,25)','(-14,24),(-14,24)').replace('(-6,23),(-6,23)','(-6,20),(-6,20)').replace('(1,24),(1,24)','(1,23),(1,23)');s=s.replace(\"lc=[np.argwhere(parts[f'leg{i}'][:,:,3]>0).mean(axis=0) for i in range(len(sp['legs']))]\",\"lc=[np.array(sp['legs'][i])[:,::-1].mean(axis=0) for i in range(len(sp['legs']))]\")
+p.write_text(s)
+'@ | Set-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\ground_fix.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\ground_fix.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\build_death.py'; @'
+from pathlib import Path
+from PIL import Image,ImageDraw
+p=Path(__file__).parent
+for n in ['front','se','side','ne','back']:
+ b=Image.open(p/f'board_{n}.png');o=Image.new('RGB',(8*480,440),(86,93,84))
+ for i in range(8):o.paste(b.crop((i*640+88,160,i*640+568,600)),(i*480,0))
+ o.save(p/f'detail_{n}.png')
+ for side,cols in [('early',[0,2,3,4]),('late',[0,5,6,7])]:
+  q=Image.new('RGB',(4*480,440),(86,93,84))
+  for i,col in enumerate(cols):q.paste(o.crop((col*480,0,(col+1)*480,440)),(i*480,0))
+  q.save(p/f'{side}_{n}.png')
+'@ | Set-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\details.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\details.py'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 4974ms:
+Built 35 raw frames and review artifacts.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path(__file__).parent/'build_death.py';s=p.read_text()
+s=s.replace('(-14,24),(-14,24)','(-20,24),(-20,24)').replace('(7,17),(14,23),(14,23)','(11,20),(22,27),(22,27)')
+s=s.replace(\"if view in ['s','se','e']:\\n   poly\", \"if view in ['s','se','e'] and f==4:\\n   poly\")
+s=s.replace(\"leaf(im,(hx-8,hy-6),\", \"leaf(im,(hx-8 if f<5 else hx-6,hy-6 if f<5 else hy+1),\")
+s=s.replace(\"(hx+7,hy-7 if f<5 else hy-9)\",\"(hx+7 if f<5 else hx+5,hy-7 if f<5 else hy-10)\")
+s=s.replace(\"leaf(im,(hx-6,hy-6),\", \"leaf(im,(hx-6,hy-6 if f<4 else hy-9),\")
+s=s.replace(\"leaf(im,(hx+7,hy-4),\", \"leaf(im,(hx+7 if f<5 else hx+5,hy-4 if f<4 else hy+1 if f==4 else hy+6),\")
+s=s.replace(\"(.28 if view=='s' else -.28 if view=='n' else .12)\",\"(.4 if view=='s' else -.4 if view=='n' else .12)\")
+p.write_text(s)
+'@ | Set-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\flank_fix.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\flank_fix.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\build_death.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\details.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\quickcheck.py'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 3794ms:
+Built 35 raw frames and review artifacts.
+front
+0 bottom 140 bounds 56 78 102 140 COM 79.09 holes 0 components 1
+1 bottom 140 bounds 55 75 103 140 COM 79.21 holes 0 components 1
+2 bottom 140 bounds 46 82 113 140 COM 79.1 holes 0 components 1
+3 bottom 140 bounds 43 95 111 140 COM 78.3 holes 0 components 1
+4 bottom 140 bounds 38 110 109 140 COM 76.33 holes 0 components 1
+5 bottom 140 bounds 24 113 99 140 COM 68.01 holes 0 components 1
+6 bottom 140 bounds 24 113 99 140 COM 68.01 holes 0 components 1
+se
+0 bottom 140 bounds 51 73 108 140 COM 86.48 holes 0 components 1
+1 bottom 140 bounds 49 71 107 140 COM 85.61 holes 0 components 1
+2 bottom 140 bounds 51 88 123 140 COM 86.55 holes 0 components 1
+3 bottom 140 bounds 51 99 123 140 COM 88.18 holes 0 components 1
+4 bottom 140 bounds 51 111 123 140 COM 84.96 holes 0 components 1
+5 bottom 141 bounds 51 115 121 141 COM 83.42 holes 0 components 1
+6 bottom 141 bounds 51 115 121 141 COM 83.42 holes 0 components 1
+side
+0 bottom 140 bounds 43 73 116 140 COM 86.55 holes 0 components 1
+1 bottom 140 bounds 43 71 114 140 COM 85.61 holes 0 components 1
+2 bottom 140 bounds 43 80 115 140 COM 84.17 holes 0 components 1
+3 bottom 140 bounds 43 92 116 140 COM 85.17 holes 0 components 1
+4 bottom 140 bounds 44 107 117 140 COM 85.03 holes 0 components 1
+5 bottom 140 bounds 44 113 117 140 COM 83.76 holes 0 components 1
+6 bottom 140 bounds 44 113 117 140 COM 83.76 holes 0 components 1
+ne
+0 bottom 140 bounds 51 65 108 140 COM 85.48 holes 0 components 1
+1 bottom 140 bounds 51 65 107 140 COM 84.94 holes 0 components 1
+2 bottom 140 bounds 51 69 124 140 COM 85.76 holes 0 components 1
+3 bottom 140 bounds 51 80 129 140 COM 87.14 holes 0 components 1
+4 bottom 137 bounds 55 95 132 137 COM 90.34 holes 0 components 1
+5 bottom 138 bounds 55 102 138 138 COM 92.64 holes 0 components 1
+6 bottom 138 bounds 55 102 138 138 COM 92.64 holes 0 components 1
+back
+0 bottom 140 bounds 59 59 100 140 COM 79.15 holes 0 components 1
+1 bottom 140 bounds 60 60 99 140 COM 79.17 holes 0 components 1
+2 bottom 140 bounds 48 71 113 140 COM 79.51 holes 0 components 1
+3 bottom 140 bounds 50 82 118 140 COM 81.06 holes 0 components 1
+4 bottom 140 bounds 58 97 127 140 COM 86.35 holes 0 components 1
+5 bottom 140 bounds 64 104 137 140 COM 92.79 holes 0 components 1
+6 bottom 140 bounds 64 104 137 140 COM 92.79 holes 0 components 1
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path(__file__).parent/'build_death.py';s=p.read_text()
+s=s.replace(\"if y<sp['cut']:\\n   if y>=top\", \"if y<sp['cut']:\\n   if (sp['cut']==115 and y>=110 and x<=94) or (sp['cut']==119 and y>=112 and x<=88) or (sp['cut']==102 and y>=100) or (sp['cut']==116 and y>=112):continue\\n   if y>=top\")
+s=s.replace(\"b=np.zeros_like(a);b[remain]=a[remain];parts['body']=b\\n return parts\", \"\"\"b=np.zeros_like(a);b[remain]=a[remain];parts['body']=b
+ if sp['cut']==119:
+  yy,xx=np.indices((160,160));m=(yy>=118)&(xx<100)&(parts['head'][:,:,3]>0)
+  parts['body'][m]=parts['head'][m];parts['head'][m]=0
+ return parts\"\"\")
+start=s.index(' # Neck connector must be a continuous shaped bridge')
+end=s.index(' # Ears behind the transferred face',start)
+block=s[start:end]
+s=s[:start]+s[end:]
+block=block.replace('(hx+2,hy+12)','(hx+2,hy+(12 if f<4 else 10))')
+s=s.replace(' # Tail first; its base stays close to the original support polygon.',block+' # Tail first; its base stays close to the original support polygon.')
+p.write_text(s)
+'@ | Set-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\join_fix.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\join_fix.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\build_death.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\details.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\quickcheck.py'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 3716ms:
+Built 35 raw frames and review artifacts.
+front
+0 bottom 140 bounds 56 78 102 140 COM 79.09 holes 0 components 1
+1 bottom 140 bounds 55 75 103 140 COM 79.19 holes 0 components 1
+2 bottom 140 bounds 46 82 113 140 COM 79.1 holes 0 components 1
+3 bottom 140 bounds 43 95 111 140 COM 78.32 holes 0 components 1
+4 bottom 140 bounds 38 110 109 140 COM 76.33 holes 0 components 1
+5 bottom 140 bounds 24 113 99 140 COM 68.15 holes 0 components 1
+6 bottom 140 bounds 24 113 99 140 COM 68.15 holes 0 components 1
+se
+0 bottom 140 bounds 51 73 108 140 COM 86.48 holes 0 components 1
+1 bottom 140 bounds 51 71 107 140 COM 85.9 holes 0 components 3
+2 bottom 140 bounds 51 88 123 140 COM 85.87 holes 0 components 1
+3 bottom 140 bounds 51 99 123 140 COM 88.18 holes 0 components 1
+4 bottom 140 bounds 51 111 123 140 COM 84.96 holes 0 components 1
+5 bottom 140 bounds 51 115 121 140 COM 83.36 holes 0 components 1
+6 bottom 140 bounds 51 115 121 140 COM 83.36 holes 0 components 1
+side
+0 bottom 140 bounds 43 73 116 140 COM 86.55 holes 0 components 1
+1 bottom 140 bounds 43 71 114 140 COM 85.83 holes 0 components 1
+2 bottom 140 bounds 43 80 115 140 COM 84.17 holes 0 components 1
+3 bottom 140 bounds 43 92 116 140 COM 85.14 holes 0 components 1
+4 bottom 140 bounds 44 107 117 140 COM 85.03 holes 0 components 1
+5 bottom 140 bounds 44 113 117 140 COM 83.65 holes 0 components 1
+6 bottom 140 bounds 44 113 117 140 COM 83.65 holes 0 components 1
+ne
+0 bottom 140 bounds 51 65 108 140 COM 85.48 holes 0 components 1
+1 bottom 140 bounds 51 65 107 140 COM 84.94 holes 0 components 1
+2 bottom 140 bounds 51 69 124 140 COM 85.75 holes 0 components 1
+3 bottom 140 bounds 51 80 129 140 COM 87.14 holes 0 components 1
+4 bottom 137 bounds 55 95 132 137 COM 90.33 holes 0 components 1
+5 bottom 138 bounds 55 102 138 138 COM 92.64 holes 0 components 1
+6 bottom 138 bounds 55 102 138 138 COM 92.64 holes 0 components 1
+back
+0 bottom 140 bounds 59 59 100 140 COM 79.15 holes 0 components 1
+1 bottom 140 bounds 60 60 99 140 COM 79.17 holes 0 components 1
+2 bottom 140 bounds 48 71 113 140 COM 79.51 holes 0 components 1
+3 bottom 140 bounds 50 82 118 140 COM 81.06 holes 0 components 1
+4 bottom 140 bounds 58 97 127 140 COM 86.35 holes 0 components 1
+5 bottom 140 bounds 64 104 137 140 COM 92.75 holes 0 components 1
+6 bottom 140 bounds 64 104 137 140 COM 92.75 holes 0 components 1
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path(__file__).parent/'build_death.py';s=p.read_text()
+s=s.replace(' # Ears behind the transferred face, manually posed from f2 onwards.', ''' # Hit-frame repair: keep native shoulder-to-tail transitions continuous.
+ if f==1 and view in ['se','e','s']:
+  a=np.array(im);yy,xx=np.indices((160,160))
+  zone=((yy>=112)&(xx<=88)&(yy<=134) if view=='se' else
+        (yy>=110)&(xx<=95)&(yy<=134) if view=='e' else (yy>=116)&(yy<=134))
+  a[zone]=src[zone];im=Image.fromarray(a)
+ # Ears behind the transferred face, manually posed from f2 onwards.''')
+p.write_text(s)
+'@ | Set-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\hit_fix.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\hit_fix.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\build_death.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\details.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\quickcheck.py'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 3803ms:
+Built 35 raw frames and review artifacts.
+front
+0 bottom 140 bounds 56 78 102 140 COM 79.09 holes 0 components 1
+1 bottom 140 bounds 55 75 103 140 COM 79.18 holes 0 components 1
+2 bottom 140 bounds 46 82 113 140 COM 79.1 holes 0 components 1
+3 bottom 140 bounds 43 95 111 140 COM 78.32 holes 0 components 1
+4 bottom 140 bounds 38 110 109 140 COM 76.33 holes 0 components 1
+5 bottom 140 bounds 24 113 99 140 COM 68.15 holes 0 components 1
+6 bottom 140 bounds 24 113 99 140 COM 68.15 holes 0 components 1
+se
+0 bottom 140 bounds 51 73 108 140 COM 86.48 holes 0 components 1
+1 bottom 140 bounds 51 71 107 140 COM 85.93 holes 0 components 3
+2 bottom 140 bounds 51 88 123 140 COM 85.87 holes 0 components 1
+3 bottom 140 bounds 51 99 123 140 COM 88.18 holes 0 components 1
+4 bottom 140 bounds 51 111 123 140 COM 84.96 holes 0 components 1
+5 bottom 140 bounds 51 115 121 140 COM 83.36 holes 0 components 1
+6 bottom 140 bounds 51 115 121 140 COM 83.36 holes 0 components 1
+side
+0 bottom 140 bounds 43 73 116 140 COM 86.55 holes 0 components 1
+1 bottom 140 bounds 43 71 114 140 COM 85.99 holes 0 components 1
+2 bottom 140 bounds 43 80 115 140 COM 84.17 holes 0 components 1
+3 bottom 140 bounds 43 92 116 140 COM 85.14 holes 0 components 1
+4 bottom 140 bounds 44 107 117 140 COM 85.03 holes 0 components 1
+5 bottom 140 bounds 44 113 117 140 COM 83.65 holes 0 components 1
+6 bottom 140 bounds 44 113 117 140 COM 83.65 holes 0 components 1
+ne
+0 bottom 140 bounds 51 65 108 140 COM 85.48 holes 0 components 1
+1 bottom 140 bounds 51 65 107 140 COM 84.94 holes 0 components 1
+2 bottom 140 bounds 51 69 124 140 COM 85.75 holes 0 components 1
+3 bottom 140 bounds 51 80 129 140 COM 87.14 holes 0 components 1
+4 bottom 137 bounds 55 95 132 137 COM 90.33 holes 0 components 1
+5 bottom 138 bounds 55 102 138 138 COM 92.64 holes 0 components 1
+6 bottom 138 bounds 55 102 138 138 COM 92.64 holes 0 components 1
+back
+0 bottom 140 bounds 59 59 100 140 COM 79.15 holes 0 components 1
+1 bottom 140 bounds 60 60 99 140 COM 79.17 holes 0 components 1
+2 bottom 140 bounds 48 71 113 140 COM 79.51 holes 0 components 1
+3 bottom 140 bounds 50 82 118 140 COM 81.06 holes 0 components 1
+4 bottom 140 bounds 58 97 127 140 COM 86.35 holes 0 components 1
+5 bottom 140 bounds 64 104 137 140 COM 92.75 holes 0 components 1
+6 bottom 140 bounds 64 104 137 140 COM 92.75 holes 0 components 1
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+from PIL import Image
+import numpy as np
+from scipy.ndimage import label
+p=Path(__file__).parent;a=np.array(Image.open(p/'frames/se_f1.png'));m=a[:,:,3]>0;l,n=label(m,structure=np.ones((3,3)))
+for i in range(1,n+1):
+ y,x=np.where(l==i);print(i,len(x),(x.min(),y.min(),x.max(),y.max()))
+'@ | Set-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\components.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\components.py'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 1169ms:
+1 830 (np.int64(70), np.int64(71), np.int64(107), np.int64(109))
+2 1356 (np.int64(51), np.int64(98), np.int64(107), np.int64(140))
+3 7 (np.int64(52), np.int64(109), np.int64(58), np.int64(109))
+
+codex
+The ground check now passes in all 35 frames. I’m finishing the hit-frame joins and checking the held pose: f6 must keep f5’s silhouette and pose, with only the visible eye lights going dark.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path(__file__).parent/'build_death.py';s=p.read_text()
+s=s.replace(\"if f==0:return Image.fromarray(src)\\n sp=SPECS[view]\", \"\"\"if f==0:return Image.fromarray(src)
+ if f==1:
+  yy,xx=np.indices((160,160))
+  upper={
+   's':(yy<=115),
+   'se':((xx<=88)&(yy<=111))|((xx>88)&(yy<=118)),
+   'e':((xx<=95)&(yy<=109))|((xx>95)&(yy<=114)),
+   'ne':(yy<=100),
+   'n':(yy<=102)}[view]
+  a=src.copy();part=np.zeros_like(a);part[upper]=a[upper];a[upper]=0;im=Image.fromarray(a)
+  hx,hy=SPECS[view]['headcenter']
+  # Hand-drawn hinge backing follows the cheek-to-chest join.
+  poly(im,[(hx-5,hy+5),(hx+4,hy+6),(hx+4,hy+15),(hx-4,hy+14),(hx-6,hy+10)],VS)
+  line(im,[(hx-3,hy+8),(hx-2,hy+13)],V,2)
+  dx,dy=HEAD[view][1]
+  paste(im,part,dx,dy,.035 if view in ['e','se','ne'] else 0,hy)
+  return im
+ sp=SPECS[view]\"\"\")
+p.write_text(s)
+'@ | Set-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\hit_continuity.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\hit_continuity.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\build_death.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\details.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\quickcheck.py'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 3934ms:
+Built 35 raw frames and review artifacts.
+front
+0 bottom 140 bounds 56 78 102 140 COM 79.09 holes 0 components 1
+1 bottom 140 bounds 56 76 102 140 COM 79.09 holes 0 components 1
+2 bottom 140 bounds 46 82 113 140 COM 79.1 holes 0 components 1
+3 bottom 140 bounds 43 95 111 140 COM 78.32 holes 0 components 1
+4 bottom 140 bounds 38 110 109 140 COM 76.33 holes 0 components 1
+5 bottom 140 bounds 24 113 99 140 COM 68.15 holes 0 components 1
+6 bottom 140 bounds 24 113 99 140 COM 68.15 holes 0 components 1
+se
+0 bottom 140 bounds 51 73 108 140 COM 86.48 holes 0 components 1
+1 bottom 140 bounds 51 72 107 140 COM 85.9 holes 0 components 2
+2 bottom 140 bounds 51 88 123 140 COM 85.87 holes 0 components 1
+3 bottom 140 bounds 51 99 123 140 COM 88.18 holes 0 components 1
+4 bottom 140 bounds 51 111 123 140 COM 84.96 holes 0 components 1
+5 bottom 140 bounds 51 115 121 140 COM 83.36 holes 0 components 1
+6 bottom 140 bounds 51 115 121 140 COM 83.36 holes 0 components 1
+side
+0 bottom 140 bounds 43 73 116 140 COM 86.55 holes 0 components 1
+1 bottom 140 bounds 43 72 114 140 COM 86.23 holes 0 components 1
+2 bottom 140 bounds 43 80 115 140 COM 84.17 holes 0 components 1
+3 bottom 140 bounds 43 92 116 140 COM 85.14 holes 0 components 1
+4 bottom 140 bounds 44 107 117 140 COM 85.03 holes 0 components 1
+5 bottom 140 bounds 44 113 117 140 COM 83.65 holes 0 components 1
+6 bottom 140 bounds 44 113 117 140 COM 83.65 holes 0 components 1
+ne
+0 bottom 140 bounds 51 65 108 140 COM 85.48 holes 0 components 1
+1 bottom 140 bounds 51 66 107 140 COM 84.91 holes 0 components 1
+2 bottom 140 bounds 51 69 124 140 COM 85.75 holes 0 components 1
+3 bottom 140 bounds 51 80 129 140 COM 87.14 holes 0 components 1
+4 bottom 137 bounds 55 95 132 137 COM 90.33 holes 0 components 1
+5 bottom 138 bounds 55 102 138 138 COM 92.64 holes 0 components 1
+6 bottom 138 bounds 55 102 138 138 COM 92.64 holes 0 components 1
+back
+0 bottom 140 bounds 59 59 100 140 COM 79.15 holes 0 components 1
+1 bottom 140 bounds 59 61 100 140 COM 79.16 holes 0 components 1
+2 bottom 140 bounds 48 71 113 140 COM 79.51 holes 0 components 1
+3 bottom 140 bounds 50 82 118 140 COM 81.06 holes 0 components 1
+4 bottom 140 bounds 58 97 127 140 COM 86.35 holes 0 components 1
+5 bottom 140 bounds 64 104 137 140 COM 92.75 holes 0 components 1
+6 bottom 140 bounds 64 104 137 140 COM 92.75 holes 0 components 1
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path(__file__).parent/'build_death.py';s=p.read_text();start=s.index(' if f==1:\\n  yy,xx=');end=s.index(' sp=SPECS[view]',start)
+s=s[:start]+''' if f==1:
+  # One rigid native-pixel recoil; the ear tips flick at the hinge in 1px steps.
+  # No joints are cut in the hit pose.
+  dx,dy={'s':(0,-2),'se':(-1,-1),'e':(-2,0),'ne':(-1,0),'n':(1,0)}[view]
+  threshold={'s':93,'se':96,'e':96,'ne':85,'n':82}[view]
+  a=np.zeros_like(src)
+  for y,x in zip(*np.where(src[:,:,3]>0)):
+   flick=round(max(0,threshold-int(y))*.065)
+   sign=(-1 if x<80 else 1) if view in ['s','n'] else -1
+   a[y+dy,x+dx+sign*flick]=src[y,x]
+  return Image.fromarray(a)
+''' + s[end:]
+p.write_text(s)
+'@ | Set-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\hit_final.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\hit_final.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\build_death.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\details.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\quickcheck.py'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 4530ms:
+Built 35 raw frames and review artifacts.
+front
+0 bottom 140 bounds 56 78 102 140 COM 79.09 holes 0 components 1
+1 bottom 138 bounds 56 76 102 138 COM 79.09 holes 0 components 1
+2 bottom 140 bounds 46 82 113 140 COM 79.1 holes 0 components 1
+3 bottom 140 bounds 43 95 111 140 COM 78.32 holes 0 components 1
+4 bottom 140 bounds 38 110 109 140 COM 76.33 holes 0 components 1
+5 bottom 140 bounds 24 113 99 140 COM 68.15 holes 0 components 1
+6 bottom 140 bounds 24 113 99 140 COM 68.15 holes 0 components 1
+se
+0 bottom 140 bounds 51 73 108 140 COM 86.48 holes 0 components 1
+1 bottom 139 bounds 50 72 107 139 COM 85.36 holes 0 components 1
+2 bottom 140 bounds 51 88 123 140 COM 85.87 holes 0 components 1
+3 bottom 140 bounds 51 99 123 140 COM 88.18 holes 0 components 1
+4 bottom 140 bounds 51 111 123 140 COM 84.96 holes 0 components 1
+5 bottom 140 bounds 51 115 121 140 COM 83.36 holes 0 components 1
+6 bottom 140 bounds 51 115 121 140 COM 83.36 holes 0 components 1
+side
+0 bottom 140 bounds 43 73 116 140 COM 86.55 holes 0 components 1
+1 bottom 140 bounds 41 73 114 140 COM 84.46 holes 0 components 1
+2 bottom 140 bounds 43 80 115 140 COM 84.17 holes 0 components 1
+3 bottom 140 bounds 43 92 116 140 COM 85.14 holes 0 components 1
+4 bottom 140 bounds 44 107 117 140 COM 85.03 holes 0 components 1
+5 bottom 140 bounds 44 113 117 140 COM 83.65 holes 0 components 1
+6 bottom 140 bounds 44 113 117 140 COM 83.65 holes 0 components 1
+ne
+0 bottom 140 bounds 51 65 108 140 COM 85.48 holes 0 components 1
+1 bottom 140 bounds 50 65 107 140 COM 84.39 holes 0 components 1
+2 bottom 140 bounds 51 69 124 140 COM 85.75 holes 0 components 1
+3 bottom 140 bounds 51 80 129 140 COM 87.14 holes 0 components 1
+4 bottom 137 bounds 55 95 132 137 COM 90.33 holes 0 components 1
+5 bottom 138 bounds 55 102 138 138 COM 92.64 holes 0 components 1
+6 bottom 138 bounds 55 102 138 138 COM 92.64 holes 0 components 1
+back
+0 bottom 140 bounds 59 59 100 140 COM 79.15 holes 0 components 1
+1 bottom 140 bounds 59 59 102 140 COM 80.16 holes 0 components 1
+2 bottom 140 bounds 48 71 113 140 COM 79.51 holes 0 components 1
+3 bottom 140 bounds 50 82 118 140 COM 81.06 holes 0 components 1
+4 bottom 140 bounds 58 97 127 140 COM 86.35 holes 0 components 1
+5 bottom 140 bounds 64 104 137 140 COM 92.75 holes 0 components 1
+6 bottom 140 bounds 64 104 137 140 COM 92.75 holes 0 components 1
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path(__file__).parent/'build_death.py';s=p.read_text().replace('from PIL import Image, ImageDraw, ImageFont','from PIL import Image, ImageDraw, ImageFont, GifImagePlugin')
+s=s.replace(\"gifs[0].save(HERE/f'preview_{n}.gif',save_all=True,append_images=gifs[1:],duration=MS,disposal=2,optimize=False)\",\"\"\"with (HERE/f'preview_{n}.gif').open('wb') as fp:
+  for chunk in GifImagePlugin._get_global_header(gifs[0],{'duration':MS[0]}):fp.write(chunk)
+  for gif,ms in zip(gifs,MS):GifImagePlugin._write_frame_data(fp,gif,(0,0),{'duration':ms,'disposal':2})
+  fp.write(b';')\"\"\")
+p.write_text(s)
+'@ | Set-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\gif_final.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\gif_final.py'; @'
+\"\"\"Independent pixel and playback assertions; all writes confined to death35.\"\"\"
+from pathlib import Path
+import runpy
+import numpy as np
+from PIL import Image
+from scipy.ndimage import label,binary_fill_holes
+P=Path(__file__).parent
+b=runpy.run_path(str(P/'build_death.py'))
+lines=['DEATH35: raw 160x160 PNG checks (coordinates zero-based).',
+       'Body centre = mean opaque x inside the anatomically traced torso mask.',
+       'f0-f3: source torso mask carried with torso; f4-f6: exposed flank contour.',
+       'Silhouette centre = mean x of ALL opaque texels (includes ears and tail).',
+       'Connectivity uses 8-neighbours; holes use enclosed transparent regions.','']
+summary=[]
+for v,n in zip(b['VIEWS'],b['NAMES']):
+ src=np.array(Image.open(b['ROOT']/'fennec_s/take-b/views_cam35_touchup'/f'{v}.png').convert('RGBA'))
+ pal=set(map(tuple,src[src[:,:,3]>0,:3]));parts=b['extract'](src,b['SPECS'][v]);bottom=[];cx=[];ac=[];seq=[]
+ lines.append(f'{n} ({v})')
+ for f in range(7):
+  a=np.array(Image.open(P/'frames'/f'{n}_f{f}.png').convert('RGBA'));op=a[:,:,3]>0;yy,xx=np.where(op)
+  assert a.shape==(160,160,4)
+  assert set(np.unique(a[:,:,3]))<={0,255}
+  extra=set(map(tuple,a[op,:3]))-pal;assert not extra,(n,f,extra)
+  assert not (op[0].any() or op[-1].any() or op[:,0].any() or op[:,-1].any())
+  assert not (binary_fill_holes(op)&~op).any()
+  _,nc=label(op,structure=np.ones((3,3)));assert nc==1,(n,f,nc)
+  assert yy.max()<=140
+  if f==0:assert np.array_equal(a,src)
+  if f<=3:
+   tm=Image.new('RGBA',(160,160));dx,dy=b['BODY'][v][f]
+   if f==1:dx,dy={'s':(0,-2),'se':(-1,-1),'e':(-2,0),'ne':(-1,0),'n':(1,0)}[v]
+   b['paste'](tm,parts['body'],dx,dy);mask=np.array(tm)[:,:,3]>0
+  else:
+   x,y=b['SPECS'][v]['hip'];dx,dy=b['BODY'][v][f];x+=dx;y=min(130,y+min(dy,7));w=14 if v in ['s','n'] else 18
+   mask=b['maskpoly']([(x-w,y-3),(x-w+3,y-8),(x-4,y-11),(x+8,y-8),(x+w,y-2),(x+w-1,y+7),(x+9,y+10),(x-6,y+9),(x-w,y+4)])
+  mask &= op;ty,tx=np.where(mask);assert tx.size
+  bottom.append(int(yy.max()));cx.append(round(float(tx.mean()),2));ac.append(round(float(xx.mean()),2));seq.append(a)
+  lines.append(f'  f{f}: bottom={bottom[-1]}, torso_centre_x={cx[-1]:.2f}, silhouette_centre_x={ac[-1]:.2f}; palette/alpha/holes/components/edges PASS')
+ assert np.array_equal(seq[5][:,:,3],seq[6][:,:,3])
+ diff=np.any(seq[5]"'!=seq[6],axis=2)
+ eye=set([(63,232,176),(200,255,240),(246,255,251)])
+ assert all(tuple(c) in eye for c in seq[5][diff,:3])
+ assert all(tuple(c) in [(46,26,110),(20,18,24),(33,30,39)] for c in seq[6][diff,:3])
+ gif=Image.open(P/f'"'preview_{n}.gif');dur=[]
+ for f in range(gif.n_frames):gif.seek(f);dur.append(gif.info.get('duration'))
+ assert gif.n_frames==7 and dur==b['MS'],(n,gif.n_frames,dur)
+ assert 'loop' not in gif.info
+ lines += [f'  f0 exact: PASS (0 differing RGBA pixels)',f'  f5/f6 same pose: PASS; eye texels darkened: {int(diff.sum())}',f'  GIF: 7 frames; {dur} ms; no loop extension; held final.','']
+ summary.append((n,bottom,cx,ac,int(diff.sum())))
+lines += ['All 35 raw frames PASS. Palette: each view uses only its own approved still colours.',
+          'All five f0 RGBA arrays equal approved stills exactly.',
+          'No opaque row below 140, no alpha holes, no detached components, no canvas-edge contacts.',
+          'board.png: 5120x3340, five rows; approved still then f0-f6, exact selout_rhino.selout at 4x.',
+          'OUTLINE is #141218; outline is review-only, raw deliverable frames have none baked in.',
+          'Body movement: early recoil then one-way flank roll; f5/f6 centres identical.']
+(P/'checks.txt').write_text('\\n'.join(lines)+'\\n')
+rep=['Violet S fennec death35 -- 35 raw native-pixel frames; no image generation.',
+     'Tokens: exact usage is not exposed in this session.',
+     'Approved inputs: views_cam35_touchup; old death viewed only for beats.',
+     'PASS f0: exact RGBA equality in all five views (zero changed pixels).',
+     'PASS palette: each view stays within its own still palette (union 15 colours).',
+     'PASS alpha: binary; no enclosed holes, detached components, or edge contacts.',
+     'Lowest opaque rows f0..f6:']
+for n,bot,cx,ac,eye in summary:rep.append(f'  {n}: '+', '.join(map(str,bot)))
+rep.append('Measured torso centre x f0..f6 (explicit anatomical mask; see checks.txt):')
+for n,bot,cx,ac,eye in summary:rep.append(f'  {n}: '+', '.join(f'{x:.2f}' for x in cx)))
+rep += ['PASS in-place: torso shifts only with recoil/roll; no progressive canvas slide.',
+        'PASS timing: all GIFs have 7 frames, 300/100/130/140/160/180/1400 ms, play once.',
+        'PASS settle: f6 preserves f5 pose/alpha; visible eyes darken to #2E1A6E.',
+        'n/ne have no visible eye lights to extinguish; their f6 equals f5 exactly.',
+        'PASS review: board.png + five boards, exact game sel-out #141218 at 4x.',
+        'By eye front: whole violet fox, asymmetric ear drop and roll onto its right.',
+        'By eye se: recognisable face/hips; chest buckles, flank lowers, ears flatten.',
+        'By eye side: head/chest descend over folded legs; straight tail rests behind.',
+        'By eye ne: native back/hip plates retained; right roll exposes folded limbs.',
+        'By eye back: head rolls screen-right; near ear rests low, legs fold left.',
+        'All five read as the same fall; back/ne death is conveyed by pose, with eyes hidden.',
+        'Native part translation and integer row stepping; new belly/joints/ear contours hand-drawn.',
+        'No approved inputs, external assets, tools, or Git state were changed.']
+assert len(rep)<30,len(rep)
+(P/'REPORT.txt').write_text('\\n'.join(rep)+'\\n')
+print('\\n'.join(rep))
+'@ | Set-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\check_death.py'; python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\check_death.py'" in C:\Users\pmcga\dev\hollowtide
+ exited 1 in 1117ms:
+  File "D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\death35\check_death.py", line 66
+    for n,bot,cx,ac,eye in summary:rep.append(f'  {n}: '+', '.join(f'{x:.2f}' for x in cx)))
+                                                                                           ^
+SyntaxError: unmatched ')'
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command '$p='"'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\check_death.py'; "'$s=Get-Content -LiteralPath $p -Raw; $s=$s.Replace("for x in cx)))","for x in cx))"); $s=$s.Replace("     '"'Approved inputs: views_cam35_touchup; old death viewed only for beats.',"'`n",'"''); "'$s=$s.Replace("        '"'Native part translation and integer row stepping; new belly/joints/ear contours hand-drawn.',"'`n",'"''); "'$s=$s.Replace("        '"'No approved inputs, external assets, tools, or Git state were changed.'\",\"        'Native translations/hand redrawing; no external files or Git state changed.'\"); "'$s=$s.Replace("        '"'All five read as the same fall; back/ne death is conveyed by pose, with eyes hidden.',"'`n",'"''); Set-Content -LiteralPath "'$p -Value $s; python $p' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 2288ms:
+Built 35 raw frames and review artifacts.
+Violet S fennec death35 -- 35 raw native-pixel frames; no image generation.
+Tokens: exact usage is not exposed in this session.
+PASS f0: exact RGBA equality in all five views (zero changed pixels).
+PASS palette: each view stays within its own still palette (union 15 colours).
+PASS alpha: binary; no enclosed holes, detached components, or edge contacts.
+Lowest opaque rows f0..f6:
+  front: 140, 138, 140, 140, 140, 140, 140
+  se: 140, 139, 140, 140, 140, 140, 140
+  side: 140, 140, 140, 140, 140, 140, 140
+  ne: 140, 140, 140, 140, 137, 138, 138
+  back: 140, 140, 140, 140, 140, 140, 140
+Measured torso centre x f0..f6 (explicit anatomical mask; see checks.txt):
+  front: 79.21, 79.21, 79.21, 78.21, 75.88, 73.88, 73.88
+  se: 80.31, 79.31, 80.31, 80.31, 77.67, 76.67, 76.67
+  side: 86.64, 84.64, 86.64, 86.64, 83.67, 83.67, 83.67
+  ne: 84.95, 83.95, 84.95, 85.95, 88.67, 90.67, 90.67
+  back: 79.21, 80.21, 79.21, 80.21, 83.88, 86.88, 86.88
+PASS in-place: torso shifts only with recoil/roll; no progressive canvas slide.
+PASS timing: all GIFs have 7 frames, 300/100/130/140/160/180/1400 ms, play once.
+PASS settle: f6 preserves f5 pose/alpha; visible eyes darken to #2E1A6E.
+n/ne have no visible eye lights to extinguish; their f6 equals f5 exactly.
+PASS review: board.png + five boards, exact game sel-out #141218 at 4x.
+By eye front: whole violet fox, asymmetric ear drop and roll onto its right.
+By eye se: recognisable face/hips; chest buckles, flank lowers, ears flatten.
+By eye side: head/chest descend over folded legs; straight tail rests behind.
+By eye ne: native back/hip plates retained; right roll exposes folded limbs.
+By eye back: head rolls screen-right; near ear rests low, legs fold left.
+Native translations/hand redrawing; no external files or Git state changed.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command '$p='"'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\build_death.py'; "'$s=Get-Content -LiteralPath $p -Raw; $s=$s.Replace("'"'ne':(-1,0),'n':(1,0)\",\"'ne':(-1,1),'n':(0,1)\"); "'$s=$s.Replace('"'a[y+dy,x+dx+sign*flick]=src[y,x]',\"a[y+(0 if (view=='n' and y>=130) or (view=='ne' and y>=138) else dy),x+dx+sign*flick]=src[y,x]\"); Set-Content -LiteralPath "'$p -Value $s; $p='"'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\check_death.py'; "'$s=Get-Content -LiteralPath $p -Raw; $s=$s.Replace("'"'ne':(-1,0),'n':(1,0)\",\"'ne':(-1,1),'n':(0,1)\"); Set-Content -LiteralPath "'$p -Value $s; python $p' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 2947ms:
+Built 35 raw frames and review artifacts.
+Violet S fennec death35 -- 35 raw native-pixel frames; no image generation.
+Tokens: exact usage is not exposed in this session.
+PASS f0: exact RGBA equality in all five views (zero changed pixels).
+PASS palette: each view stays within its own still palette (union 15 colours).
+PASS alpha: binary; no enclosed holes, detached components, or edge contacts.
+Lowest opaque rows f0..f6:
+  front: 140, 138, 140, 140, 140, 140, 140
+  se: 140, 139, 140, 140, 140, 140, 140
+  side: 140, 140, 140, 140, 140, 140, 140
+  ne: 140, 140, 140, 140, 137, 138, 138
+  back: 140, 140, 140, 140, 140, 140, 140
+Measured torso centre x f0..f6 (explicit anatomical mask; see checks.txt):
+  front: 79.21, 79.21, 79.21, 78.21, 75.88, 73.88, 73.88
+  se: 80.31, 79.31, 80.31, 80.31, 77.67, 76.67, 76.67
+  side: 86.64, 84.64, 86.64, 86.64, 83.67, 83.67, 83.67
+  ne: 84.95, 83.95, 84.95, 85.95, 88.67, 90.67, 90.67
+  back: 79.21, 79.21, 79.21, 80.21, 83.88, 86.88, 86.88
+PASS in-place: torso shifts only with recoil/roll; no progressive canvas slide.
+PASS timing: all GIFs have 7 frames, 300/100/130/140/160/180/1400 ms, play once.
+PASS settle: f6 preserves f5 pose/alpha; visible eyes darken to #2E1A6E.
+n/ne have no visible eye lights to extinguish; their f6 equals f5 exactly.
+PASS review: board.png + five boards, exact game sel-out #141218 at 4x.
+By eye front: whole violet fox, asymmetric ear drop and roll onto its right.
+By eye se: recognisable face/hips; chest buckles, flank lowers, ears flatten.
+By eye side: head/chest descend over folded legs; straight tail rests behind.
+By eye ne: native back/hip plates retained; right roll exposes folded limbs.
+By eye back: head rolls screen-right; near ear rests low, legs fold left.
+Native translations/hand redrawing; no external files or Git state changed.
+
+codex
+All checks pass: f0 matches the still exactly in every view; all 35 frames use approved colours and binary alpha, stay at or above row 140, and have no holes, detached pixels, or edge contacts. Each GIF has seven frames with the requested timings and plays once. The per-frame row and body-centre measurements are in `checks.txt`, and the visual assessment is in `REPORT.txt`.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command '$dest=[System.IO.Path]::GetFullPath('"'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35'); "'$names=@('"'make_reference_boards.py','coords.py','refine.py','ground_fix.py','flank_fix.py','join_fix.py','hit_fix.py','hit_continuity.py','hit_final.py','gif_final.py','quickcheck.py','components.py','details.py','stills-inspect.png','old-beats-inspect.png'); foreach("'$v in @('"'s','se','e','ne','n')){"'$names += "coords_$v.png"}; foreach($n in @('"'front','se','side','ne','back')){"'$names += "detail_$n.png"; $names += "early_$n.png"; $names += "late_$n.png"}; foreach($name in $names){$target=[System.IO.Path]::GetFullPath((Join-Path $dest $name)); if(-not $target.StartsWith($dest+'"'\\')){throw 'Outside target'}; if(Test-Path -LiteralPath "'$target){Remove-Item -LiteralPath $target}}; Get-ChildItem -LiteralPath $dest | Select-Object Name,Length; Get-Content -LiteralPath (Join-Path $dest '"'checks.txt') -Tail 7" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 630ms:
+
+Name                    Length
+----                    ------
+frames                        
+.start-death35          0     
+board.png               150201
+board_back.png          29330 
+board_front.png         31384 
+board_ne.png            30514 
+board_se.png            31172 
+board_side.png          28225 
+brief.txt               3750  
+build_death.py          19866 
+checks.txt              5678  
+check_death.py          5356  
+codex-log-death35.txt   95192 
+preview_back.gif        36231 
+preview_front.gif       37490 
+preview_ne.gif          37980 
+preview_se.gif          36854 
+preview_side.gif        38545 
+REPORT.txt              1810  
+token-watch-death35.txt 602   
+
+All 35 raw frames PASS. Palette: each view uses only its own approved still colours.
+All five f0 RGBA arrays equal approved stills exactly.
+No opaque row below 140, no alpha holes, no detached components, no canvas-edge contacts.
+board.png: 5120x3340, five rows; approved still then f0-f6, exact selout_rhino.selout at 4x.
+OUTLINE is #141218; outline is review-only, raw deliverable frames have none baked in.
+Body movement: early recoil then one-way flank roll; f5/f6 centres identical.
+
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35\\token-watch-death35.txt'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 120ms:
+codex pid 6195 win 33912 cap 280000
+09:36:58 0
+09:37:18 4934
+09:37:38 21352
+09:37:58 43097
+09:38:18 43097
+09:38:39 43097
+09:38:59 43097
+09:39:19 43097
+09:39:39 43097
+09:40:01 43097
+09:40:21 43097
+09:40:41 43097
+09:41:01 57213
+09:41:22 57213
+09:41:46 57213
+09:42:06 61168
+09:42:27 61168
+09:42:47 64316
+09:43:07 64316
+09:43:27 66540
+09:43:48 66540
+09:44:08 66540
+09:44:28 71703
+09:44:48 71703
+09:45:08 79057
+09:45:28 79057
+09:45:49 79057
+09:46:09 85335
+09:46:29 85335
+09:46:49 87378
+09:47:09 87378
+09:47:30 92687
+09:47:50 92687
+09:48:10 92687
+09:48:30 92687
+09:48:50 97855
+09:49:10 98421
+09:49:31 100193
+09:49:51 101919
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command '$dest='"'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\anim\\death35'; "'$watch=Get-Content -LiteralPath (Join-Path $dest '"'token-watch-death35.txt') | Select-Object -Last 1; "'$tokensLine="Tokens: watcher snapshot $watch (time, tokens); final total not yet known."; $p=Join-Path $dest '"'REPORT.txt'; "'$s=Get-Content -LiteralPath $p -Raw; $s=$s.Replace('"'Tokens: exact usage is not exposed in this session.',"'$tokensLine); Set-Content -LiteralPath $p -Value $s -NoNewline; $p=Join-Path $dest '"'check_death.py'; "'$s=Get-Content -LiteralPath $p -Raw; $s=$s.Replace("'"'Tokens: exact usage is not exposed in this session.'\",\"'Tokens: watcher snapshot '+(P/'token-watch-death35.txt').read_text().splitlines()[-1]+' (time, tokens); final total unknown.'\"); Set-Content -LiteralPath "'$p -Value $s -NoNewline' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 228ms:
+codex
+Created all 35 frames, five timed GIFs, and 4× sel-out boards inside `death35`.
+
+All pixel checks pass. Per-frame ground rows, body centres, and visual assessments are recorded.
+
+[Board](D:/dev/new-mech-rpg/docs/art/moba/fennec_s/take-b/anim/death35/board.png) · [Checks](D:/dev/new-mech-rpg/docs/art/moba/fennec_s/take-b/anim/death35/checks.txt) · [Report](D:/dev/new-mech-rpg/docs/art/moba/fennec_s/take-b/anim/death35/REPORT.txt)
+
+No image generation or commits.
+tokens used
+106,847
+Created all 35 frames, five timed GIFs, and 4× sel-out boards inside `death35`.
+
+All pixel checks pass. Per-frame ground rows, body centres, and visual assessments are recorded.
+
+[Board](D:/dev/new-mech-rpg/docs/art/moba/fennec_s/take-b/anim/death35/board.png) · [Checks](D:/dev/new-mech-rpg/docs/art/moba/fennec_s/take-b/anim/death35/checks.txt) · [Report](D:/dev/new-mech-rpg/docs/art/moba/fennec_s/take-b/anim/death35/REPORT.txt)
+
+No image generation or commits.

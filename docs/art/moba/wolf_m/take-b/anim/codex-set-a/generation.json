@@ -1,0 +1,52 @@
+{
+  "tool": "built-in image_gen",
+  "calls": 4,
+  "calls_per_move": 1,
+  "redoes": 0,
+  "variations": 0,
+  "tokens_used": null,
+  "automatic_tool_cache": "C:/Users/pmcga/.codex/generated_images/01a1a8d5-6bc3-7970-a867-00fbbf629eed",
+  "references_in_order": [
+    "refs/s_6x.png",
+    "refs/e_6x.png",
+    "refs/n_6x.png"
+  ],
+  "moves": {
+    "walk": {
+      "source_cache_basename": "exec-c35eff0b-3a29-4c57-84c4-948e9c04f0d9.png",
+      "size": [
+        2172,
+        724
+      ],
+      "sha256": "26287131775e393e037322df09bf71df71cd24108b4e48460fb506463d234e6b",
+      "prompt": "prompts/walk.txt"
+    },
+    "sprint": {
+      "source_cache_basename": "exec-3a15d905-3dad-45af-8f4f-f7aa49e7af28.png",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "b06d929fd3a10c609215195c8c772c9710ef5d875515e75cbedbe16e016b3c82",
+      "prompt": "prompts/sprint.txt"
+    },
+    "lunge": {
+      "source_cache_basename": "exec-0bd43286-8465-4b30-a8cf-b4d852bb122a.png",
+      "size": [
+        1915,
+        821
+      ],
+      "sha256": "409df3f0f7645afb1fb0cff03941f6580b77bcc909218868c56a2d6d4c5c8831",
+      "prompt": "prompts/lunge.txt"
+    },
+    "bite": {
+      "source_cache_basename": "exec-b4ee59a3-4d47-4149-90f1-657e9ca93ea1.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "f00a550a22f854da4a2ceec2ce32de358ea03d2dce5dc6c40d5f724677c8b223",
+      "prompt": "prompts/bite.txt"
+    }
+  }
+}

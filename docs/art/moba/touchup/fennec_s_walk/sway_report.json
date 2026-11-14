@@ -1,0 +1,572 @@
+{
+ "method": "sway.py (per-row warp, feet locked) + pinhole fill",
+ "views": {
+  "s": {
+   "dx": [
+    -1,
+    -2,
+    -2,
+    -1,
+    1,
+    2,
+    2,
+    1
+   ],
+   "dy": [
+    0,
+    2,
+    1,
+    0,
+    0,
+    2,
+    1,
+    0
+   ],
+   "hip": 142,
+   "ear_base": 113,
+   "frames": [
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    }
+   ]
+  },
+  "se": {
+   "dx": [
+    -1,
+    -2,
+    -2,
+    -1,
+    1,
+    2,
+    2,
+    1
+   ],
+   "dy": [
+    0,
+    2,
+    1,
+    0,
+    0,
+    2,
+    1,
+    0
+   ],
+   "hip": 132,
+   "ear_base": 105,
+   "frames": [
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 17,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": [
+      {
+       "px": 1,
+       "at": [
+        105,
+        149
+       ],
+       "colour": "6a3cc8"
+      }
+     ]
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": [
+      {
+       "px": 1,
+       "at": [
+        106,
+        141
+       ],
+       "colour": "141218"
+      }
+     ]
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    }
+   ]
+  },
+  "e": {
+   "dx": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "dy": [
+    0,
+    2,
+    1,
+    0,
+    0,
+    2,
+    1,
+    0
+   ],
+   "hip": 140,
+   "ear_base": 110,
+   "frames": [
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    }
+   ]
+  },
+  "ne": {
+   "dx": [
+    1,
+    2,
+    2,
+    1,
+    -1,
+    -2,
+    -2,
+    -1
+   ],
+   "dy": [
+    0,
+    2,
+    1,
+    0,
+    0,
+    2,
+    1,
+    0
+   ],
+   "hip": 140,
+   "ear_base": 100,
+   "frames": [
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": [
+      {
+       "px": 4,
+       "at": [
+        87,
+        139
+       ],
+       "colour": "6a3cc8"
+      }
+     ]
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": [
+      {
+       "px": 8,
+       "at": [
+        84,
+        143
+       ],
+       "colour": "141218"
+      }
+     ]
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    }
+   ]
+  },
+  "n": {
+   "dx": [
+    1,
+    2,
+    2,
+    1,
+    -1,
+    -2,
+    -2,
+    -1
+   ],
+   "dy": [
+    0,
+    2,
+    1,
+    0,
+    0,
+    2,
+    1,
+    0
+   ],
+   "hip": 144,
+   "ear_base": 101,
+   "frames": [
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    },
+    {
+     "pieces": 1,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "foot_rows_same": true,
+     "eyes_same": true,
+     "hole_px": 0,
+     "pass": true,
+     "filled": []
+    }
+   ]
+  }
+ },
+ "all_pass": true
+}

@@ -1,0 +1,84 @@
+{
+ "folder": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\fennec_s\\take-b\\cam35\\slices",
+ "fails": {
+  "e": [],
+  "ne": [
+   "height: 76 px, the set's median 68"
+  ],
+  "n": [
+   "height: 82 px, the set's median 68"
+  ],
+  "nw": [
+   "height: 76 px, the set's median 68"
+  ],
+  "w": [],
+  "sw": [],
+  "s": [],
+  "se": []
+ },
+ "notes": {
+  "e": {
+   "h": 68,
+   "feet": 140,
+   "palette": 1.0,
+   "colours": 15
+  },
+  "ne": {
+   "h": 76,
+   "feet": 139,
+   "palette": 1.0,
+   "colours": 12
+  },
+  "n": {
+   "h": 82,
+   "feet": 140,
+   "palette": 1.0,
+   "colours": 12
+  },
+  "nw": {
+   "h": 76,
+   "feet": 139,
+   "palette": 1.0,
+   "colours": 12
+  },
+  "w": {
+   "h": 68,
+   "feet": 140,
+   "palette": 1.0,
+   "colours": 15
+  },
+  "sw": {
+   "h": 67,
+   "feet": 140,
+   "palette": 1.0,
+   "colours": 15
+  },
+  "s": {
+   "h": 63,
+   "feet": 140,
+   "palette": 1.0,
+   "colours": 15
+  },
+  "se": {
+   "h": 68,
+   "feet": 140,
+   "palette": 1.0,
+   "colours": 15
+  },
+  "mirror e/w": 0.988,
+  "mirror ne/nw": 0.987,
+  "mirror se/sw": 0.992,
+  "same n/s": 0.081,
+  "even n/s": [
+   0.924,
+   0.986
+  ]
+ },
+ "fix": [],
+ "mirror_from": null,
+ "redo": [
+  "ne",
+  "n",
+  "nw"
+ ]
+}

@@ -1,0 +1,16 @@
+BlenderMCP addon registered
+BlenderMCP addon unregistered
+14:59:54 | INFO: Data are loaded, start creating Blender stuff
+14:59:54 | INFO: Blender create Mesh node output_unwrapped
+14:59:55 | INFO: glTF import finished in 0.58s
+AVAILABLE ACTIONS [('Cobra_Breach', ['OBSmartRigArmature']), ('Cobra_Death', ['OBSmartRigArmature']), ('Cobra_Ghost_Run', ['OBSmartRigArmature']), ('Cobra_Hit_Front', ['OBSmartRigArmature']), ('Cobra_Hood_Gaze', ['OBSmartRigArmature']), ('Cobra_Idle', ['OBSmartRigArmature']), ('Cobra_Seam_In', ['OBSmartRigArmature']), ('Cobra_Seam_Out', ['OBSmartRigArmature']), ('Cobra_Slither', ['OBSmartRigArmature']), ('Cobra_Strike_1', ['OBSmartRigArmature']), ('Cobra_Strike_2', ['OBSmartRigArmature']), ('Cobra_Strike_3', ['OBSmartRigArmature']), ('Cobra_Wall_Over', ['OBSmartRigArmature']), ('Cobra_Wall_Over_3m', ['OBSmartRigArmature'])]
+D:\dev\new-mech-rpg\docs\art\moba\portraits-2026-11-08\cobra\breach-2026-11-13\render_reference.py:20: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  scene.world=bpy.data.worlds.new('Neutral Reference');scene.world.use_nodes=True
+00:11.015  render           | Saved: 'D:\dev\new-mech-rpg\docs\art\moba\portraits-2026-11-08\cobra\breach-2026-11-13\cobra-current-front.png'
+00:18.359  render           | Saved: 'D:\dev\new-mech-rpg\docs\art\moba\portraits-2026-11-08\cobra\breach-2026-11-13\cobra-current-side.png'
+00:26.015  render           | Saved: 'D:\dev\new-mech-rpg\docs\art\moba\portraits-2026-11-08\cobra\breach-2026-11-13\cobra-current-back.png'
+00:31.953  render           | Saved: 'D:\dev\new-mech-rpg\docs\art\moba\portraits-2026-11-08\cobra\breach-2026-11-13\cobra-current-hero.png'
+CURRENT COBRA REFERENCES RENDERED
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

@@ -1,0 +1,90 @@
+{
+ "folder": "D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-d/views",
+ "fails": {
+  "e": [
+   "height: 55 px, the set's median 64"
+  ],
+  "ne": [
+   "height: 74 px, the set's median 64"
+  ],
+  "n": [
+   "height: 75 px, the set's median 64"
+  ],
+  "nw": [
+   "height: 74 px, the set's median 64"
+  ],
+  "w": [
+   "height: 55 px, the set's median 64"
+  ],
+  "sw": [],
+  "s": [],
+  "se": []
+ },
+ "notes": {
+  "e": {
+   "h": 55,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 13
+  },
+  "ne": {
+   "h": 74,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 12
+  },
+  "n": {
+   "h": 75,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 12
+  },
+  "nw": {
+   "h": 74,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 12
+  },
+  "w": {
+   "h": 55,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 13
+  },
+  "sw": {
+   "h": 63,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 13
+  },
+  "s": {
+   "h": 66,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 14
+  },
+  "se": {
+   "h": 63,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 14
+  },
+  "mirror e/w": 0.995,
+  "mirror ne/nw": 0.992,
+  "mirror se/sw": 0.995,
+  "same n/s": 0.096,
+  "even n/s": [
+   0.993,
+   0.995
+  ]
+ },
+ "fix": [],
+ "mirror_from": null,
+ "redo": [
+  "e",
+  "ne",
+  "n",
+  "nw",
+  "w"
+ ]
+}

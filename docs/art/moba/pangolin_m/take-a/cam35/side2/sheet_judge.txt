@@ -1,0 +1,15 @@
+sheet judge: D:\dev\new-mech-rpg\docs\art\moba\pangolin_m\take-a\cam35\side2\slices
+  e   h  41 feet 160 palette   1.0 colours  13  ok
+  ne  h   - feet   - palette     - colours   -  files: missing
+  n   h   - feet   - palette     - colours   -  files: missing
+  nw  h   - feet   - palette     - colours   -  files: missing
+  w   h  41 feet 159 palette   1.0 colours  13  ok
+  sw  h   - feet   - palette     - colours   -  files: missing
+  s   h   - feet   - palette     - colours   -  files: missing
+  se  h   - feet   - palette     - colours   -  files: missing
+  mirror e/w 0.903
+  FIX (code, --fix): nothing
+  REDO (generate again): ne, n, nw, sw, s, se
+
+Exit 1
+Only e/w requested; missing other directions intentional. No automatic fixes.

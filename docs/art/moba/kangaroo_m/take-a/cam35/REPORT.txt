@@ -1,0 +1,14 @@
+FAILED candidate; exactly one built-in image generation, exact prompt and two ordered references; tokens used unknown. Raw preserved unchanged.
+Order s/se/e/ne/n. Widths 55/64/69/66/49; W/approved 1.000/1.000/1.000/1.015/1.000. S/N/E anchor ratios 1/1/1, mean 1.000; side/front 69/55=1.2545 vs approved 1.2545 (~1.25).
+Heights 74/80/78/81/82; H/approved .9250/1.0127/1.0000/1.0519/1.0380; H/target 74/73,80/80,78/83,81/89,82/90; not repaired.
+H/approved spread .1269; se/ne 80/81=.9877 (slightly less); top rows 67/61/63/60/59, all eight borders clear, feet baseline 140.
+Lightest orange-red shares %, new/approved: s 14.24/7.38, se 14.58/5.99, e 16.35/8.11, ne 11.35/3.67, n 12.54/7.43.
+Lightest steel shares %, new/approved: s 4.11/1.74, se 4.19/1.06, e 3.56/1.42, ne 1.25/0.34, n 1.42/0.18. Both light shares rise in all five views.
+Eyes: s 3 in groups [2,1] MISS (needs >=2 each); se 7 [7] vs approved 6, expected ~5; e 4 [4] vs approved 4, expected ~3; ne 3 [3] MISS, n 0. Rear requirement 0.
+Accent shares %, new/approved target: s 7.78/7.8, se 7.71/7.7, e 7.51/7.5, ne 5.99/6.0, n 5.78/5.8.
+Palette PASS: all opaque colours in five VIEWS belong to fixed 13; no magenta/plum, outer accent rim or lone pale edge pixels. Roles and per-colour edge counts saved.
+Checks: view_check front/back .69 FAIL (<.80), area .09, height .07, colour .85, dips none, lone 0.10318->0.04161 after one final despeckle pass; 13 colours, top-five .7771. sheet_judge all eight OK, FIX/REDO nothing.
+Depth p05/p95 all five 18.86/158.25 (span 139.39 below 180); most common shares s 23.97%, se 25.81%, e 30.00%, ne 27.58%, n 29.64%.
+By eye: same kangaroo identity, two ears, <=2 arms/fists, two hind legs, one grounded tail; no obvious new appendages. Lit head/shoulder/fist/thigh/tail tops, firm plates/seams, clean bands; front clear and not overhead, width held but one eye too small.
+By eye: side length held and far foot/fist higher; rear ears uppermost and rear views taller, but side/rear pitch insufficient against guide; ne eye/face remains. Unified 35-degree camera and exact design preservation NOT certified. Foot rows near/far: s 140/140, se 140/131, e 140/123, ne 136/occluded, n heels 135/135.
+Review: [review.png](D:/dev/new-mech-rpg/docs/art/moba/kangaroo_m/take-a/cam35/review.png). Five 160px views in views_cam35; all requested audits in cam35. No redo, install, commit, or edits outside OUT/VIEWS.

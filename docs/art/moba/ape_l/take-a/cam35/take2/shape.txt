@@ -1,0 +1,34 @@
+approved s: armour green 36.3445%; orange 23.7815%; steel 22.0168%; shield and visor glow 7.6891%; dark accent 10.1681%; visor-only 18, ROI (72, 82, 87, 87); light green 6.9958%, light orange 0.5672%, combined 7.5630%
+approved se: armour green 36.9854%; orange 26.4342%; steel 21.0124%; shield and visor glow 7.0866%; dark accent 8.4814%; visor-only 17, ROI (91, 82, 104, 87); light green 6.6817%, light orange 1.0349%, combined 7.7165%
+approved e: armour green 45.0401%; orange 22.1693%; steel 16.6583%; shield and visor glow 7.2645%; dark accent 8.8677%; visor-only 9, ROI (105, 83, 111, 88); light green 5.7114%, light orange 0.5762%, combined 6.2876%
+approved ne: armour green 44.2550%; orange 23.0500%; steel 17.5385%; shield and visor glow 7.5199%; dark accent 7.6366%; visor-only 0, ROI (92, 65, 111, 91); light green 3.0360%, light orange 0.8174%, combined 3.8533%
+approved n: armour green 44.9426%; orange 27.0981%; steel 13.3834%; shield and visor glow 6.1617%; dark accent 8.4143%; visor-only 0, ROI (69, 85, 90, 97); light green 2.3852%, light orange 0.2650%, combined 2.6502%
+new s: armour green 36.0637%; orange 25.9196%; steel 19.2833%; shield and visor glow 8.5703%; dark accent 10.1631%; visor-only 21, ROI (72, 82, 88, 88); light green 11.4524%, light orange 9.4615%, combined 20.9139%
+ accent 10.1631% vs 10.2% approved; delta -0.0369 percentage points
+new se: armour green 35.9614%; orange 25.9324%; steel 19.2271%; shield and visor glow 8.6184%; dark accent 10.2609%; visor-only 18, ROI (91, 77, 105, 85); light green 11.4589%, light orange 4.5024%, combined 15.9614%
+ accent 10.2609% vs 8.5% approved; delta +1.7609 percentage points
+new e: armour green 44.9564%; orange 21.3159%; steel 16.1685%; shield and visor glow 8.7381%; dark accent 8.8211%; visor-only 10, ROI (106, 71, 114, 78); light green 9.5268%, light orange 5.9776%, combined 15.5044%
+ accent 8.8211% vs 8.9% approved; delta -0.0789 percentage points
+new ne: armour green 47.0324%; orange 20.3141%; steel 15.0112%; shield and visor glow 8.5866%; dark accent 9.0557%; visor-only 0, ROI (96, 58, 112, 78); light green 6.7306%, light orange 2.3455%, combined 9.0761%
+ accent 9.0557% vs 7.6% approved; delta +1.4557 percentage points
+new n: armour green 47.1919%; orange 25.3298%; steel 12.9853%; shield and visor glow 6.1063%; dark accent 8.3867%; visor-only 0, ROI (68, 78, 91, 91); light green 5.7294%, light orange 1.8658%, combined 7.5952%
+ accent 8.3867% vs 8.4% approved; delta -0.0133 percentage points
+Contact rows, zero-based 160px canvas; manual limb identification, opaque max within recorded ROI:
+new s near fist: lowest row 130; ROI (34, 117, 61, 135)
+new s far hind foot: lowest row 114; ROI (61, 98, 75, 116)
+new se near fist: lowest row 130; ROI (48, 118, 82, 135)
+new se far fist: lowest row 118; ROI (107, 101, 128, 120)
+new se near hind foot: lowest row 106; ROI (34, 91, 51, 107)
+new se far hind foot: lowest row 109; ROI (82, 97, 96, 113)
+new e near fist: lowest row 130; ROI (81, 117, 111, 135)
+new e far fist: lowest row 100; ROI (108, 86, 120, 101)
+new e near hind foot: lowest row 120; ROI (39, 109, 67, 124)
+new ne near hind foot: lowest row 130; ROI (59, 119, 86, 135)
+new ne far hind foot: lowest row 118; ROI (37, 108, 59, 120)
+new ne near fist: lowest row 128; ROI (100, 114, 123, 135)
+new n near hind foot: lowest row 130; ROI (49, 121, 72, 135)
+new n far fist: lowest row 114; ROI (34, 106, 51, 119)
+new e far hind foot and ne far fist are occluded/not confidently separable; no invented contact rows.
+Approved near contacts all row 130; far feet overlap at low camera, no confident separate row.
+Rear ROIs cover the head/face region, excluding generators and shields. No glow there; visual inspection confirms no rear visor.
+Thin seams below luminance 70 with opposed lighter neighbours map to accent; broad deep shadows retain material ramps. Accent targets remain missed, especially n.

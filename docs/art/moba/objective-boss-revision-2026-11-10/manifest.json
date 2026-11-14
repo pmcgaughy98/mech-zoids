@@ -1,0 +1,29 @@
+{
+  "coin_beetle": {
+    "file": "coin_beetle/concept_raw.png",
+    "sha256": "1bd28a6c9ecb9fbac1e5b550be3ab7d42e660f6c7141bef1c43cf61d3ff3f993",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "prompt": "coin_beetle/prompt.txt"
+  },
+  "power_wyvern": {
+    "file": "power_wyvern/concept_raw.png",
+    "sha256": "54c77c07c42d1cf363f130da9641cd1058e5871f3e2804ee6a639d41e253c33b",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "prompt": "power_wyvern/prompt.txt"
+  },
+  "power_ankylosaur": {
+    "file": "power_ankylosaur/concept_raw.png",
+    "sha256": "f4c43258ede9e8b87b151acdd1d44f63526053687a02a93b12e6e5ba6ad56e7e",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "prompt": "power_ankylosaur/prompt.txt"
+  }
+}

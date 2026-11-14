@@ -1,0 +1,60 @@
+{
+  "machine": "gorilla",
+  "forge": "https://opal.google/app/1RcIDskmAl_88l4vGOCydQxdE35gz8hB_",
+  "model": {
+    "path": "res://art/model_catalog/sources/Gorilla_s - Hunyuan 3D v3.1 Pro.glb",
+    "source": "D:\\user\\Downloads\\Gorilla_s - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "5c223ba84c7cde87be15d75b9414b13630c6e75760c019eb9bedc2828ff6d915",
+    "bytes": 50001268
+  },
+  "sources": [
+    {
+      "view": "front",
+      "source": "D:\\dev\\new-mech-rpg\\art\\model_catalog\\references\\gorilla\\front.png",
+      "copy": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\portraits-2026-11-08\\gorilla\\input\\front.png",
+      "sha256": "f9921f28b215ea0f3e9e44702e597b4bfe3a6d91b9524237f77992efba10955e",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "view": "left",
+      "source": "D:\\dev\\new-mech-rpg\\art\\model_catalog\\references\\gorilla\\left.png",
+      "copy": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\portraits-2026-11-08\\gorilla\\input\\left.png",
+      "sha256": "44a4f509246f571082d4df3030742e763098d007267d5ad8e63b99594ce1e8fa",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "view": "back",
+      "source": "D:\\dev\\new-mech-rpg\\art\\model_catalog\\references\\gorilla\\back.png",
+      "copy": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\portraits-2026-11-08\\gorilla\\input\\back.png",
+      "sha256": "ed692ab18faeb65be594319f3f131aaa088f0e7e7c47b002e8213c68ef084403",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "view": "right",
+      "source": "D:\\dev\\new-mech-rpg\\art\\model_catalog\\references\\gorilla\\right.png",
+      "copy": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\portraits-2026-11-08\\gorilla\\input\\right.png",
+      "sha256": "8da92d771d3dc75fac7e65b09565322b2a95e1934db4954f72a8b2cbca0663f0",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "upload": {
+    "path": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\portraits-2026-11-08\\gorilla\\input\\gorilla_catalog_approved_view_9x16.png",
+    "dimensions": [
+      1152,
+      2048
+    ],
+    "method": "unchanged front at 1:1 above left/back/right thumbnails at nearest-neighbour; white canvas; no anatomy or color edits"
+  }
+}

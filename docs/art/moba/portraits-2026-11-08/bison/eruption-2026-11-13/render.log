@@ -1,0 +1,16 @@
+BlenderMCP addon registered
+BlenderMCP addon unregistered
+14:59:28 | INFO: Data are loaded, start creating Blender stuff
+14:59:28 | INFO: Blender create Mesh node output_unwrapped
+14:59:28 | INFO: glTF import finished in 0.67s
+AVAILABLE ACTIONS [('Bison_Chain_Throw', ['OBSmartRigArmature']), ('Bison_Death', ['OBSmartRigArmature']), ('Bison_Eruption', ['OBSmartRigArmature']), ('Bison_Freight_Brace', ['OBSmartRigArmature']), ('Bison_Freight_Haul', ['OBSmartRigArmature']), ('Bison_Hit_Front', ['OBSmartRigArmature']), ('Bison_Hook_Left', ['OBSmartRigArmature']), ('Bison_Hook_Right', ['OBSmartRigArmature']), ('Bison_Idle', ['OBSmartRigArmature']), ('Bison_Plow', ['OBSmartRigArmature']), ('Bison_Trot', ['OBSmartRigArmature']), ('Bison_Walk', ['OBSmartRigArmature']), ('Bison_Whistle', ['OBSmartRigArmature'])]
+D:\dev\new-mech-rpg\docs\art\moba\portraits-2026-11-08\bison\eruption-2026-11-13\render_reference.py:20: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  scene.world=bpy.data.worlds.new('Neutral Reference');scene.world.use_nodes=True
+00:08.859  render           | Saved: 'D:\dev\new-mech-rpg\docs\art\moba\portraits-2026-11-08\bison\eruption-2026-11-13\bison-current-front.png'
+00:14.500  render           | Saved: 'D:\dev\new-mech-rpg\docs\art\moba\portraits-2026-11-08\bison\eruption-2026-11-13\bison-current-side.png'
+00:19.578  render           | Saved: 'D:\dev\new-mech-rpg\docs\art\moba\portraits-2026-11-08\bison\eruption-2026-11-13\bison-current-back.png'
+00:25.422  render           | Saved: 'D:\dev\new-mech-rpg\docs\art\moba\portraits-2026-11-08\bison\eruption-2026-11-13\bison-current-hero.png'
+CURRENT BISON REFERENCES RENDERED
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

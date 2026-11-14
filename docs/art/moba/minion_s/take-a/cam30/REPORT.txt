@@ -1,0 +1,13 @@
+Sizes W x H/area: new s 69x56/2504, se 61x54/2485; approved s 69x46/2098, se 62x46/2018.
+Palette: PASS; all 14 fixed colours used, no additions; material ramps kept separate; top-five share 68.75%.
+view_check: SKIPPED, requires eight views; exact lone metric s 0.06789, se 0.07968; neither exceeds 0.11, no despeckle run.
+sheet_judge: SKIPPED, full verdict requires eight views; only the authorized two supplied.
+Checks: binary alpha, 96x96 canvases, bottom row78, no border contact; only bottom-left se and bottom-middle s occupied.
+Rim: magenta/plum 0, lone pale 0, accent 0 after cleanup; four accent rim pixels repainted; alpha unchanged.
+Depth s: p05 31.29, p95 199.91, range168.63; dominant #3a8cff 16.33%.
+Depth se: p05 31.29, p95 199.91, range168.63; dominant #3a8cff 19.92%; both ranges below canon180 target.
+By eye: same drone and original parts, no new parts apparent; big blue top shell and both pod caps show; belly nozzle hidden.
+Lens is smaller and lower, but foreshortening reads subtly; barrels remain fairly prominent. Clean broad bands, no obvious mottling.
+Scale/angle: broadly agree; se is 2px shorter, 1px narrower than approved se; shared whole-sheet shrink, south width exactly69.
+ONE built-in image, supplied prompt verbatim and approved_views reference only; raw unchanged (hash in generation.json); tokens/cost unknown.
+review.png and all requested audits saved; VIEWS contains s.png and se.png only; no commits, reverts or project asset writes.

@@ -1,0 +1,63 @@
+{
+  "animations": {
+    "bound": {
+      "frames": 18,
+      "bottom_rows": [
+        132,
+        144,
+        148,
+        160
+      ],
+      "below_ground_pixels": 0,
+      "edge_contacts": 0,
+      "stray_components": 0,
+      "frame0_iou": {
+        "se_f0": 1.0,
+        "ne_f0": 1.0
+      },
+      "raw_sha256": "7d2ea26099d38c702ba44f2b9dc559237363cb016f3ff4a77b5c7f1099f12c06",
+      "raw_size": [
+        2172,
+        724
+      ]
+    },
+    "hex_dome": {
+      "frames": 16,
+      "bottom_rows": [
+        160
+      ],
+      "below_ground_pixels": 0,
+      "edge_contacts": 0,
+      "stray_components": 0,
+      "frame0_iou": {
+        "se_f0": 1.0,
+        "ne_f0": 1.0
+      },
+      "raw_sha256": "04c065faf6b5546418def428210601c5388a70ed5bbda7deed5d0a406c638361",
+      "raw_size": [
+        2172,
+        724
+      ]
+    },
+    "death": {
+      "frames": 16,
+      "bottom_rows": [
+        160
+      ],
+      "below_ground_pixels": 0,
+      "edge_contacts": 0,
+      "stray_components": 0,
+      "frame0_iou": {
+        "se_f0": 1.0,
+        "ne_f0": 1.0
+      },
+      "raw_sha256": "411a46e65bdd8e431ecc1f7126d12eef0e62c7c136e16b1741d79948c8d5fee9",
+      "raw_size": [
+        2172,
+        724
+      ]
+    }
+  },
+  "palette_opaque_colours": 15,
+  "total_frames": 50
+}

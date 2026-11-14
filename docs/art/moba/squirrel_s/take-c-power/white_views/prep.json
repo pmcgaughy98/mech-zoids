@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "c6131a91e8bdc436783a5ba991471cd03b9a55b303f1b20fd983dc1295cdd73d",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.5551401869158878,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "squirrel_front.png",
+      "source_box": [
+        200,
+        28,
+        447,
+        553
+      ],
+      "source_dimensions": [
+        247,
+        525
+      ],
+      "output_box": [
+        320,
+        120,
+        704,
+        936
+      ]
+    },
+    "left": {
+      "file": "squirrel_left.png",
+      "source_box": [
+        685,
+        27,
+        1182,
+        553
+      ],
+      "source_dimensions": [
+        497,
+        526
+      ],
+      "output_box": [
+        125,
+        118,
+        898,
+        936
+      ]
+    },
+    "back": {
+      "file": "squirrel_back.png",
+      "source_box": [
+        194,
+        644,
+        450,
+        1177
+      ],
+      "source_dimensions": [
+        256,
+        533
+      ],
+      "output_box": [
+        313,
+        107,
+        711,
+        936
+      ]
+    },
+    "right": {
+      "file": "squirrel_right.png",
+      "source_box": [
+        648,
+        644,
+        1152,
+        1179
+      ],
+      "source_dimensions": [
+        504,
+        535
+      ],
+      "output_box": [
+        120,
+        104,
+        904,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.018691588785046728
+}

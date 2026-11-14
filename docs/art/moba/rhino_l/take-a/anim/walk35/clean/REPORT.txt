@@ -1,0 +1,22 @@
+RHINO L WALK35 / CLEAN / e,se,ne / 24 frames
+Tokens: exact final session count unavailable; see token-watch-clean.txt. No image tool. No commit.
+Native source-pixel translations; original foot/cuff/knee shapes, drawn metal sockets; no rotations/resampling.
+RF ne: original leg armour stays at its still socket (with body dip); native foot block follows run1 targets.
+Body/head/horn/shell/tail: original run1 pinned-body mask, 0 changed opaque pixels (0%) every frame.
+Mask follows run1 traced articulated regions; RF ne gold leg armour is in the leg region, not the pinned torso.
+Contact max difference to run1 x/y: e LH/RH/LF/RF all 0/0px; se all 0/0px; ne all 0/0px.
+Every foot lowest row and lift unchanged. Visible feet measured from final composite pixels.
+Occluded e LH/LF and se/ne LF measured from saved limb PNGs; invisible contacts cannot be recovered from composites.
+Foot-lock e x/y px: LH 0.000/0.000; RH 0.000/0.000; LF 0.000/0.000; RF 0.000/0.000. PASS <=2px.
+Foot-lock se x/y px: LH 0.879/0.868; RH 0.879/0.868; LF 0.484/0.868; RF 0.484/0.868. PASS <=2px.
+Foot-lock ne x/y px: LH 0.879/0.868; RH 0.879/0.868; LF 0.484/0.868; RF 0.484/0.868. PASS <=2px.
+Noise e f0..7 run1 -> clean: [15, 10, 7, 5, 9, 13, 10, 11] -> [0,0,0,0,0,0,0,0].
+Noise se f0..7 run1 -> clean: [8, 8, 5, 7, 9, 7, 7, 6] -> [0,0,0,0,0,0,0,0].
+Noise ne f0..7 run1 -> clean: [12, 12, 9, 15, 14, 13, 12, 11] -> [0,0,0,0,0,0,0,0].
+Noise: #141218/#211e27/#3d3a44 surrounded on all 4 sides by opaque non-dark gold/grey; excludes pinned body.
+24/24 PASS:192x192 RGBA, binary alpha, still palette, one connected silhouette, no holes/strays/edge contact.
+Timing:8 frames; APNG125ms exact. GIF alternates120/130ms (format10ms ticks),1000ms loop, matching run1.
+By eye, all24 inspected with sel-out at4x: YES, cuff bands and sole blocks as clean as the still in every view.
+No broken scratch bands, dangling slivers, smeared ne hind foot or noisy ne RF foot remain.
+board.png: each view still, run1 f0..7, clean f0..7; legs crop, exact sel-out, nearest4x.
+checks.txt has each frame/foot measurement; audit.py and cleanup.py reproduce outputs inside clean only.

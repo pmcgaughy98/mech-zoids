@@ -1,0 +1,425 @@
+{
+	"checks": [
+		{
+			"label": "ten real training bodies",
+			"pass": true
+		},
+		{
+			"label": "blue five bodies",
+			"pass": true
+		},
+		{
+			"label": "blue spawn clear 0.0",
+			"pass": true
+		},
+		{
+			"label": "blue spawn clear -4.0",
+			"pass": true
+		},
+		{
+			"label": "blue spawn clear 4.0",
+			"pass": true
+		},
+		{
+			"label": "blue spawn clear -8.0",
+			"pass": true
+		},
+		{
+			"label": "blue spawn clear 8.0",
+			"pass": true
+		},
+		{
+			"label": "red five bodies",
+			"pass": true
+		},
+		{
+			"label": "red spawn clear 0.0",
+			"pass": true
+		},
+		{
+			"label": "red spawn clear -4.0",
+			"pass": true
+		},
+		{
+			"label": "red spawn clear 4.0",
+			"pass": true
+		},
+		{
+			"label": "red spawn clear -8.0",
+			"pass": true
+		},
+		{
+			"label": "red spawn clear 8.0",
+			"pass": true
+		},
+		{
+			"label": "approved native camera preserved",
+			"pass": true
+		},
+		{
+			"label": "camera apron preserves full arm at outer wall",
+			"pass": true
+		},
+		{
+			"label": "outer-wall rear-foot clearance above player HUD",
+			"pass": true
+		},
+		{
+			"label": "current roster available",
+			"pass": true
+		},
+		{
+			"label": "spawn to route -58.0",
+			"pass": true
+		},
+		{
+			"label": "spawn to route -58.0 physics clearance",
+			"pass": true
+		},
+		{
+			"label": "spawn to route 0.0",
+			"pass": true
+		},
+		{
+			"label": "spawn to route 0.0 physics clearance",
+			"pass": true
+		},
+		{
+			"label": "spawn to route 58.0",
+			"pass": true
+		},
+		{
+			"label": "spawn to route 58.0 physics clearance",
+			"pass": true
+		},
+		{
+			"label": "base to base",
+			"pass": true
+		},
+		{
+			"label": "base to base physics clearance",
+			"pass": true
+		},
+		{
+			"label": "objective entrance -29.0 / -10.0",
+			"pass": true
+		},
+		{
+			"label": "objective entrance -29.0 / -10.0 physics clearance",
+			"pass": true
+		},
+		{
+			"label": "objective entrance -29.0 / 10.0",
+			"pass": true
+		},
+		{
+			"label": "objective entrance -29.0 / 10.0 physics clearance",
+			"pass": true
+		},
+		{
+			"label": "objective entrance 29.0 / -10.0",
+			"pass": true
+		},
+		{
+			"label": "objective entrance 29.0 / -10.0 physics clearance",
+			"pass": true
+		},
+		{
+			"label": "objective entrance 29.0 / 10.0",
+			"pass": true
+		},
+		{
+			"label": "objective entrance 29.0 / 10.0 physics clearance",
+			"pass": true
+		},
+		{
+			"label": "camp -27.0 / -48.0",
+			"pass": true
+		},
+		{
+			"label": "camp -27.0 / -48.0 physics clearance",
+			"pass": true
+		},
+		{
+			"label": "camp -27.0 / 48.0",
+			"pass": true
+		},
+		{
+			"label": "camp -27.0 / 48.0 physics clearance",
+			"pass": true
+		},
+		{
+			"label": "camp 27.0 / -48.0",
+			"pass": true
+		},
+		{
+			"label": "camp 27.0 / -48.0 physics clearance",
+			"pass": true
+		},
+		{
+			"label": "camp 27.0 / 48.0",
+			"pass": true
+		},
+		{
+			"label": "camp 27.0 / 48.0 physics clearance",
+			"pass": true
+		},
+		{
+			"label": "swept movement stops at island",
+			"pass": true
+		},
+		{
+			"label": "current gorilla grab and Drive installed",
+			"pass": true
+		},
+		{
+			"label": "current Drive Slam holds real target in foundation",
+			"pass": true
+		},
+		{
+			"label": "interruption releases target",
+			"pass": true
+		},
+		{
+			"label": "Drive hits one real foundation target",
+			"pass": true
+		},
+		{
+			"label": "current Drive Slam contact plus slam damage once each",
+			"pass": true
+		},
+		{
+			"label": "current redesigned kit names inherited",
+			"pass": true
+		},
+		{
+			"label": "full 3.1m Ult height fits camera above player HUD",
+			"pass": true
+		},
+		{
+			"label": "current rhino body available",
+			"pass": true
+		},
+		{
+			"label": "native capture (1280, 720)",
+			"pass": true
+		},
+		{
+			"label": "native capture (1920, 1080)",
+			"pass": true
+		},
+		{
+			"label": "native wall/module fade changes occluded body region",
+			"pass": true
+		},
+		{
+			"label": "runtime batch module wall",
+			"pass": true
+		},
+		{
+			"label": "runtime batch module pillar",
+			"pass": true
+		},
+		{
+			"label": "runtime batch module camp",
+			"pass": true
+		},
+		{
+			"label": "runtime batch module landmark",
+			"pass": true
+		},
+		{
+			"label": "existing objective model placed gold_beetle",
+			"pass": true
+		},
+		{
+			"label": "existing objective model placed wyvern",
+			"pass": true
+		},
+		{
+			"label": "authored boss body footprints block movement",
+			"pass": true
+		}
+	],
+	"fails": 0,
+	"metrics": {
+		"base to base": {
+			"meters": 193.6,
+			"seconds_at_3_5": 55.3
+		},
+		"camp -27.0 / -48.0": {
+			"meters": 150.7,
+			"seconds_at_3_5": 43.1
+		},
+		"camp -27.0 / 48.0": {
+			"meters": 59.2,
+			"seconds_at_3_5": 16.9
+		},
+		"camp 27.0 / -48.0": {
+			"meters": 154.8,
+			"seconds_at_3_5": 44.2
+		},
+		"camp 27.0 / 48.0": {
+			"meters": 55.1,
+			"seconds_at_3_5": 15.7
+		},
+		"current_roster_snapshot": [
+			{
+				"id": "bison",
+				"source_sha256": "45586e24104722d455498fc882e945d1d5b23a091035d98f7df425b14c1c11ee",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "bombardier_beetle",
+				"source_sha256": "84c287011472b8cc2a8ec68ad4369cedb61d8a02f86840a9b9ba021a4d5b8b49",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "chameleon",
+				"source_sha256": "9199eccfebf19216cad0e1100b9ba35236f0941394aed89d8ca090843e8770e4",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "cobra",
+				"source_sha256": "af7353fcb7967f579bd715e64df339f52e6488958990dde25d652b47078bcfa3",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "dragonfly",
+				"source_sha256": "984ed353af641da84b90dc5e3ee7719cd58668096696ed87651ef2db1a9e2641",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "electric_eel",
+				"source_sha256": "23d480d94c3c50c987c9ed59cba69162961b589cbfe300ae12d857c37c6ee127",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "falcon",
+				"source_sha256": "34d77973b951d096ff136061a7c820378e09fdc4c8b97c402b2989c0ed509947",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "fennec",
+				"source_sha256": "ef9263888aae6b09e00da3bc33cbe09b4a89999e1419bd76d3759bb204f0cbf8",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "gorilla",
+				"source_sha256": "5c223ba84c7cde87be15d75b9414b13630c6e75760c019eb9bedc2828ff6d915",
+				"stage": "authored_trial"
+			},
+			{
+				"id": "hippo",
+				"source_sha256": "21644d9326cc0ed72c5e6cd2f7efe665b9ec8de8f1a067d00ec259a08be04575",
+				"stage": "authored_trial"
+			},
+			{
+				"id": "hornet",
+				"source_sha256": "1abdd53ffe957aa022deb629644ca5f0e7c6d357bedc1998565ea627773240c1",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "hummingbird",
+				"source_sha256": "4d8b4161267de42bca0197b1ed72e360d04f4ccc182a06b25fa88c8144ff13bb",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "jellyfish",
+				"source_sha256": "ee41e3e07e10ce85e1750ca9324a3de7fa380bb5cb5301a81203d5d2e8473268",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "kangaroo",
+				"source_sha256": "badc14dd2f91d85e74d43f42e78c7294fa422654ebb2951fb0524ec1154be179",
+				"stage": "authored_trial"
+			},
+			{
+				"id": "mantis",
+				"source_sha256": "5d4433ff71394d77ab71cd419d6c776427b653e34ae0e6fc762eccb78d9a90b5",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "pangolin",
+				"source_sha256": "a766e089536e882578f2c38037780652702aedd787211a151eb3b793cafd71f7",
+				"stage": "authored_trial"
+			},
+			{
+				"id": "pistol_shrimp",
+				"source_sha256": "147f24029faa293ae1d19281ee582f2f15281ba3c0190aa8135acfa78e189d73",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "rhino",
+				"source_sha256": "180de3054e84adf9c45ce1d51b413b6530eef3d9af4b8b19729c69a8948936ad",
+				"stage": "authored_trial"
+			},
+			{
+				"id": "scorpion",
+				"source_sha256": "ee4b557292cc1ee6006446a467fa638e993d7c7b3f2ac6b36fb7cb1579727c4c",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "shark",
+				"source_sha256": "a350f3d282e4b719eec3224b23031452e655588b3cdbd8f77021bb05a83e57e4",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "shoebill",
+				"source_sha256": "0130e8e37491cb50f1aedcbd9a2c3c9e93fc2eeb160925765ed0b8bbeb5e7366",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "spider",
+				"source_sha256": "fa85fcecba929d7f3b6527ab5c3db77e7042ae2866d309e8255c0231f77d2bae",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "squirrel",
+				"source_sha256": "302d0a4989abd318c2fdeddff365847a971cddaa313d88ab0e043a295aae7407",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "tortoise",
+				"source_sha256": "429c9c39161ee14c391b1ece63a5b322183796e3a9a26496039e24295f4db7ea",
+				"stage": "base_proxy"
+			},
+			{
+				"id": "wolf",
+				"source_sha256": "b40438b083509e7c43bf8429ff2e430f214b809bc6455be72b2608b6b29e2324",
+				"stage": "base_proxy"
+			}
+		],
+		"dressing_instances": 54,
+		"fade_changed_pixels_in_body_region": 10473,
+		"nav_bake_ms": 370.27,
+		"objective entrance -29.0 / -10.0": {
+			"meters": 110.6,
+			"seconds_at_3_5": 31.6
+		},
+		"objective entrance -29.0 / 10.0": {
+			"meters": 96.4,
+			"seconds_at_3_5": 27.6
+		},
+		"objective entrance 29.0 / -10.0": {
+			"meters": 117.0,
+			"seconds_at_3_5": 33.4
+		},
+		"objective entrance 29.0 / 10.0": {
+			"meters": 92.9,
+			"seconds_at_3_5": 26.5
+		},
+		"spawn to route -58.0": {
+			"meters": 112.8,
+			"seconds_at_3_5": 32.2
+		},
+		"spawn to route 0.0": {
+			"meters": 96.8,
+			"seconds_at_3_5": 27.7
+		},
+		"spawn to route 58.0": {
+			"meters": 119.4,
+			"seconds_at_3_5": 34.1
+		}
+	}
+}

@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "hands_and_feet_preserved": true,
+    "skeleton_preserved": true,
+    "outside_forearm_body_geometry_uvs_weights_preserved": true,
+    "new_shells_closed": true,
+    "left_right_mirror": true,
+    "cells_regular_hexagons": true,
+    "casing_behind_shield_plane": true,
+    "rigid_forearm_bind": true,
+    "glb_skin_texture_reimport": true
+  },
+  "unchanged_body_faces_outside_edit_envelope": 16054,
+  "max_body_normal_vector_error": 0.0004840208310725038,
+  "max_mirror_error_m": 0,
+  "max_skin_error_m": 2.9200193199910854e-07,
+  "forearm_pose_tests_degrees": [
+    -20,
+    0,
+    20
+  ],
+  "new_parts": 18,
+  "bone_count": 34,
+  "source_sha256": "df62df0ad1ed74702e0b6a4de787e9b012d567e2c0ab9cb45bfb4361ec22368d"
+}

@@ -1,0 +1,763 @@
+{
+  "frames": {
+    "e": [
+      {
+        "hind_drift": [
+          0.0
+        ],
+        "front_measured": [
+          [
+            102.5,
+            160.0
+          ]
+        ],
+        "front_target": [
+          [
+            102.5,
+            160.0
+          ]
+        ],
+        "front_error": [
+          0.0
+        ],
+        "near_front_lift": 0.0,
+        "lowest": 160,
+        "pieces": 1,
+        "specks": 322,
+        "ink": 0.08135524447149524,
+        "eye": 5,
+        "slits": 0,
+        "holes": 0,
+        "border": false,
+        "binary_alpha": true
+      },
+      {
+        "hind_drift": [
+          0.5
+        ],
+        "front_measured": [
+          [
+            99.5,
+            160.0
+          ]
+        ],
+        "front_target": [
+          [
+            102.5,
+            160.0
+          ]
+        ],
+        "front_error": [
+          3.0
+        ],
+        "near_front_lift": 0.0,
+        "lowest": 160,
+        "pieces": 1,
+        "specks": 267,
+        "ink": 0.08686257562662057,
+        "eye": 5,
+        "slits": 0,
+        "holes": 0,
+        "border": false,
+        "binary_alpha": true
+      },
+      {
+        "hind_drift": [
+          0.0
+        ],
+        "front_measured": [
+          [
+            100.5,
+            145.0
+          ]
+        ],
+        "front_target": [
+          [
+            101.1,
+            151.5
+          ]
+        ],
+        "front_error": [
+          6.527633568147035
+        ],
+        "near_front_lift": 15.0,
+        "lowest": 160,
+        "pieces": 1,
+        "specks": 285,
+        "ink": 0.09242957746478873,
+        "eye": 5,
+        "slits": 0,
+        "holes": 0,
+        "border": false,
+        "binary_alpha": true
+      },
+      {
+        "hind_drift": [
+          0.0
+        ],
+        "front_measured": [
+          [
+            103.0,
+            126.0
+          ]
+        ],
+        "front_target": [
+          [
+            97.1,
+            143.6
+          ]
+        ],
+        "front_error": [
+          18.562596801094394
+        ],
+        "near_front_lift": 34.0,
+        "lowest": 160,
+        "pieces": 1,
+        "specks": 270,
+        "ink": 0.08457609805924413,
+        "eye": 5,
+        "slits": 0,
+        "holes": 0,
+        "border": false,
+        "binary_alpha": true
+      },
+      {
+        "hind_drift": [
+          0.0
+        ],
+        "front_measured": [
+          [
+            99.0,
+            160.0
+          ]
+        ],
+        "front_target": [
+          [
+            102.5,
+            160.0
+          ]
+        ],
+        "front_error": [
+          3.5
+        ],
+        "near_front_lift": 0.0,
+        "lowest": 160,
+        "pieces": 1,
+        "specks": 268,
+        "ink": 0.0893709327548807,
+        "eye": 5,
+        "slits": 0,
+        "holes": 0,
+        "border": false,
+        "binary_alpha": true
+      },
+      {
+        "hind_drift": [
+          1.0
+        ],
+        "front_measured": [
+          [
+            97.5,
+            158.0
+          ]
+        ],
+        "front_target": [
+          [
+            102.5,
+            158.0
+          ]
+        ],
+        "front_error": [
+          5.0
+        ],
+        "near_front_lift": 2.0,
+        "lowest": 160,
+        "pieces": 1,
+        "specks": 238,
+        "ink": 0.08769633507853403,
+        "eye": 5,
+        "slits": 0,
+        "holes": 0,
+        "border": false,
+        "binary_alpha": true
+      }
+    ],
+    "se": [
+      {
+        "hind_drift": [
+          0.0
+        ],
+        "front_measured": [
+          [
+            88.5,
+            160.0
+          ],
+          [
+            116.5,
+            155.0
+          ]
+        ],
+        "front_target": [
+          [
+            88.5,
+            160.0
+          ],
+          [
+            116.5,
+            155.0
+          ]
+        ],
+        "front_error": [
+          0.0,
+          0.0
+        ],
+        "near_front_lift": 0.0,
+        "lowest": 160,
+        "pieces": 1,
+        "specks": 414,
+        "ink": 0.07788036932958652,
+        "eye": 5,
+        "slits": 0,
+        "holes": 2,
+        "border": false,
+        "binary_alpha": true
+      },
+      {
+        "hind_drift": [
+          0.5
+        ],
+        "front_measured": [
+          [
+            88.5,
+            155.0
+          ],
+          [
+            114.5,
+            149.0
+          ]
+        ],
+        "front_target": [
+          [
+            88.5,
+            160.0
+          ],
+          [
+            116.5,
+            155.0
+          ]
+        ],
+        "front_error": [
+          5.0,
+          6.324555320336759
+        ],
+        "near_front_lift": 5.0,
+        "lowest": 155,
+        "pieces": 1,
+        "specks": 358,
+        "ink": 0.08944723618090453,
+        "eye": 5,
+        "slits": 0,
+        "holes": 0,
+        "border": false,
+        "binary_alpha": true
+      },
+      {
+        "hind_drift": [
+          0.0
+        ],
+        "front_measured": [
+          [
+            94.5,
+            136.0
+          ],
+          [
+            119.5,
+            117.0
+          ]
+        ],
+        "front_target": [
+          [
+            87.5,
+            151.0
+          ],
+          [
+            115.5,
+            146.0
+          ]
+        ],
+        "front_error": [
+          16.55294535724685,
+          29.274562336608895
+        ],
+        "near_front_lift": 24.0,
+        "lowest": 143,
+        "pieces": 1,
+        "specks": 310,
+        "ink": 0.08941721018304229,
+        "eye": 5,
+        "slits": 0,
+        "holes": 0,
+        "border": false,
+        "binary_alpha": true
+      },
+      {
+        "hind_drift": [
+          0.0
+        ],
+        "front_measured": [
+          [
+            90.5,
+            119.0
+          ],
+          [
+            120.5,
+            103.0
+          ]
+        ],
+        "front_target": [
+          [
+            84.7,
+            141.4
+          ],
+          [
+            112.7,
+            136.4
+          ]
+        ],
+        "front_error": [
+          23.138712150852307,
+          34.298688021555584
+        ],
+        "near_front_lift": 41.0,
+        "lowest": 143,
+        "pieces": 1,
+        "specks": 287,
+        "ink": 0.08609958506224066,
+        "eye": 5,
+        "slits": 0,
+        "holes": 0,
+        "border": false,
+        "binary_alpha": true
+      },
+      {
+        "hind_drift": [
+          0.5
+        ],
+        "front_measured": [
+          [
+            88.5,
+            155.0
+          ],
+          [
+            114.5,
+            149.0
+          ]
+        ],
+        "front_target": [
+          [
+            88.5,
+            160.0
+          ],
+          [
+            116.5,
+            155.0
+          ]
+        ],
+        "front_error": [
+          5.0,
+          6.324555320336759
+        ],
+        "near_front_lift": 5.0,
+        "lowest": 155,
+        "pieces": 1,
+        "specks": 333,
+        "ink": 0.08155457108336689,
+        "eye": 5,
+        "slits": 0,
+        "holes": 0,
+        "border": false,
+        "binary_alpha": true
+      },
+      {
+        "hind_drift": [
+          1.0
+        ],
+        "front_measured": [
+          [
+            91.5,
+            153.0
+          ],
+          [
+            118.0,
+            143.0
+          ]
+        ],
+        "front_target": [
+          [
+            88.5,
+            158.0
+          ],
+          [
+            116.5,
+            155.0
+          ]
+        ],
+        "front_error": [
+          5.830951894845301,
+          12.093386622447824
+        ],
+        "near_front_lift": 7.0,
+        "lowest": 153,
+        "pieces": 1,
+        "specks": 326,
+        "ink": 0.08738664468260511,
+        "eye": 5,
+        "slits": 0,
+        "holes": 0,
+        "border": false,
+        "binary_alpha": true
+      }
+    ],
+    "ne": [
+      {
+        "hind_drift": [
+          0.0,
+          0.0
+        ],
+        "front_measured": [
+          [
+            116,
+            141
+          ]
+        ],
+        "front_target": [
+          [
+            116.0,
+            141.0
+          ]
+        ],
+        "front_error": [
+          0.0
+        ],
+        "near_front_lift": 0.0,
+        "lowest": 160,
+        "pieces": 1,
+        "specks": 346,
+        "ink": 0.0825147347740668,
+        "eye": 0,
+        "slits": 0,
+        "holes": 1,
+        "border": false,
+        "binary_alpha": true
+      },
+      {
+        "hind_drift": [
+          3.640054944640259,
+          3.5
+        ],
+        "front_measured": [
+          [
+            118.5,
+            149.0
+          ]
+        ],
+        "front_target": [
+          [
+            116.0,
+            141.0
+          ]
+        ],
+        "front_error": [
+          8.381527307120106
+        ],
+        "near_front_lift": -8.0,
+        "lowest": 159,
+        "pieces": 1,
+        "specks": 259,
+        "ink": 0.08170006606474345,
+        "eye": 0,
+        "slits": 0,
+        "holes": 0,
+        "border": false,
+        "binary_alpha": true
+      },
+      {
+        "hind_drift": [
+          4.123105625617661,
+          3.1622776601683795
+        ],
+        "front_measured": [
+          [
+            116.0,
+            133.0
+          ]
+        ],
+        "front_target": [
+          [
+            115.0,
+            133.1
+          ]
+        ],
+        "front_error": [
+          1.0049875621120885
+        ],
+        "near_front_lift": 8.0,
+        "lowest": 159,
+        "pieces": 1,
+        "specks": 296,
+        "ink": 0.08154066789592297,
+        "eye": 0,
+        "slits": 0,
+        "holes": 0,
+        "border": false,
+        "binary_alpha": true
+      },
+      {
+        "hind_drift": [
+          4.123105625617661,
+          4.6097722286464435
+        ],
+        "front_measured": [
+          [
+            123.0,
+            110.0
+          ]
+        ],
+        "front_target": [
+          [
+            112.2,
+            126.8
+          ]
+        ],
+        "front_error": [
+          19.971980372511883
+        ],
+        "near_front_lift": 31.0,
+        "lowest": 159,
+        "pieces": 1,
+        "specks": 307,
+        "ink": 0.07309644670050762,
+        "eye": 0,
+        "slits": 0,
+        "holes": 0,
+        "border": false,
+        "binary_alpha": true
+      },
+      {
+        "hind_drift": [
+          4.0,
+          3.0
+        ],
+        "front_measured": [
+          [
+            117.5,
+            149.0
+          ]
+        ],
+        "front_target": [
+          [
+            116.0,
+            141.0
+          ]
+        ],
+        "front_error": [
+          8.139410298049853
+        ],
+        "near_front_lift": -8.0,
+        "lowest": 160,
+        "pieces": 1,
+        "specks": 283,
+        "ink": 0.08037508372404555,
+        "eye": 0,
+        "slits": 0,
+        "holes": 0,
+        "border": false,
+        "binary_alpha": true
+      },
+      {
+        "hind_drift": [
+          3.640054944640259,
+          4.0
+        ],
+        "front_measured": [
+          [
+            117.5,
+            138.0
+          ]
+        ],
+        "front_target": [
+          [
+            116.0,
+            139.0
+          ]
+        ],
+        "front_error": [
+          1.8027756377319946
+        ],
+        "near_front_lift": 3.0,
+        "lowest": 159,
+        "pieces": 1,
+        "specks": 295,
+        "ink": 0.08135810377962845,
+        "eye": 0,
+        "slits": 0,
+        "holes": 0,
+        "border": false,
+        "binary_alpha": true
+      }
+    ]
+  },
+  "f1": {
+    "e": {
+      "alpha_iou": 0.7704705446461653,
+      "same_colour_union": 0.33697665802148946
+    },
+    "se": {
+      "alpha_iou": 0.8479955456570156,
+      "same_colour_union": 0.4036748329621381
+    },
+    "ne": {
+      "alpha_iou": 0.6354219731703176,
+      "same_colour_union": 0.25165562913907286
+    }
+  },
+  "f3_iou": {
+    "e": 0.4036290898699814,
+    "se": 0.36025534276991394,
+    "ne": 0.6622406639004149
+  },
+  "movement": {
+    "F4-F5": {
+      "silhouette_hausdorff": {
+        "e": 7.0710678118654755,
+        "se": 7.810249675906654,
+        "ne": 13.038404810405298
+      },
+      "foot_landmark_max": {
+        "e": 2.5,
+        "se": 6.946221994724902,
+        "ne": 11.0
+      },
+      "motion_lower_bound": {
+        "e": 7.0710678118654755,
+        "se": 7.810249675906654,
+        "ne": 13.038404810405298
+      }
+    },
+    "F5-still": {
+      "silhouette_hausdorff": {
+        "e": 7.810249675906654,
+        "se": 15.033296378372908,
+        "ne": 15.811388300841896
+      },
+      "foot_landmark_max": {
+        "e": 5.385164807134504,
+        "se": 12.093386622447824,
+        "ne": 4.0
+      },
+      "motion_lower_bound": {
+        "e": 7.810249675906654,
+        "se": 15.033296378372908,
+        "ne": 15.811388300841896
+      }
+    }
+  },
+  "fringe": {
+    "e": [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "se": [
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "ne": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ]
+  }
+}

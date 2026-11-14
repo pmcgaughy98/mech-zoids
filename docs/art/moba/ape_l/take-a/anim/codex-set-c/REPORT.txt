@@ -1,0 +1,27 @@
+APE L / CODEX SET C / 2026-11-04
+54 transparent native-scale 192x192 frames: idle 10, walk 16, chest_beat 16, hex_shield 12.
+Tokens used: unavailable. Built-in imagegen: exactly ONE sheet per requested move (3 calls); no redo; NO generated idle.
+Method: copied/adapted A/B finish, polish, gems, final_pose, seam_fill, gem_cleanup, verify; refs attached se_6x then ne_6x.
+Prompts retain each original column description verbatim and use the requested two-row layout.
+walk: sheet 2172x724, SHA256 7ec722e6641c3361be73b05e5dcd7010bf2b5c7fb53f0c830b94290233175c80
+walk grid: correct 2x8; NOT pristine raw (saturated fringe debris/tight gutters); no main-component cut contacts; cleaned slices separate.
+chest_beat: sheet 2172x724, SHA256 045db44dcf40310144085a3774806e8d21322147fdc8472d3f0fc3b31b86f60a
+chest_beat grid: correct 2x8; NOT pristine raw (saturated fringe debris/tight gutters); no main-component cut contacts; cleaned slices separate.
+hex_shield: sheet 2172x724, SHA256 13f7dc4bb261f83b5fc5384fb4ea92863af56e3db27a2fbac5aba436a6c53c15
+hex_shield grid: correct 2x6; NOT pristine raw (saturated fringe debris/tight gutters); no main-component cut contacts; cleaned slices separate.
+Idle sheet_raw.png is a labelled-in-grid native contact sheet, not a generated source; 960x384, SHA256 f5bfc66ff4b6b30fe6051d3ee50e0d0bb76e884d51bdf8d648f678e9b3a1efab
+Idle lifts upper body 0,1,2,1,0 px; native lower contacts fixed. Walk uses native approved part masks and the generated diagonal action plan.
+Walk: planted support coordinates fixed per phase; swing pairs lift 2/3/1 px. SE far support gauntlet extends down 2 px in f4-f7 to ground row160.
+All frame0s and chest_beat/hex_shield final frames: exact approved still at (+16,+30), silhouette AND exact-colour IoU 1.000000 for se and ne.
+54/54: 15 approved opaque colours only; binary alpha; lowest row160; zero below-ground pixels, edge contacts, tiny stray components or enclosed transparent holes.
+Set B seam-run and flood-fill hole checks applied. Per-frame found/filled counts in checks.txt and seam_log.json; native face/back-gem and gauntlet gem/bezel patches restored.
+All 8 GIFs verified frame-by-frame against requested durations; loop enabled. Approved still is leftmost in each review.png row.
+Viewed final boards against approved stills and set A front/side/back boards; no effects in final frames.
+Idle by eye: same gorilla in both rows; matching breath, native limb lengths; se down-right and ne up-right throughout, neither straight nor mirrored.
+Walk by eye: same gorilla; diagonal swing/bob matches set A phases column for column; native short limbs; three-quarter directions stay locked, no mirroring.
+Chest beat by eye: same gorilla; rise, alternating f2/f3/f4 beats, lower and native settle match set A beats. NE alternation is partly occluded and less legible than SE.
+Chest beat angles remain three-quarter front/back, not straight or mirrored; frame1 rise is milder than set A. No obvious limb elongation; raised armour contours vary slightly.
+Hex shield by eye: same gorilla; lift, wind-back f2, forward release f3, retract f4 match set A columns; se/ne angles maintained, not straight or mirrored; short heavy arms retained.
+Visual limitation: generated ability armour/gauntlet contours vary modestly from the stills during extreme poses despite native palette, face, gem and bezel restoration.
+Rebuild in order: python finish.py; python polish.py; python gems.py; python final_pose.py; python seam_fill.py; python gem_cleanup.py; python verify.py; python report.py.
+All deliverables confined to codex-set-c; no sibling, asset installation or commit. Bound/hex_dome/death belong to the other job and are not generated here.

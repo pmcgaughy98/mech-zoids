@@ -1,0 +1,52 @@
+[
+  {
+    "version": "rig",
+    "path": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_chameleon_remeshed_25k_20261108_character.glb",
+    "sha256": "9cda17916f12b1b576a1a6b20ff48166bdf073bdbd56fc266dc046599d2f4ba4",
+    "triangles": 23932,
+    "vertices": 30845,
+    "boundary_edges": 86,
+    "over_shared_edges": 35,
+    "collapsed": 0,
+    "bounds": [
+      [
+        -0.8560091257095337,
+        1.455417120155289e-09,
+        -2.623141288757324
+      ],
+      [
+        0.8560091853141785,
+        1.7000000476837158,
+        2.623141288757324
+      ]
+    ],
+    "joint_count": 51,
+    "clips": 0,
+    "primitive_count": 1
+  },
+  {
+    "version": "intact",
+    "path": "D:\\dev\\new-mech-rpg\\art\\model_catalog\\sources\\chameleon_front - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "9199eccfebf19216cad0e1100b9ba35236f0941394aed89d8ca090843e8770e4",
+    "triangles": 500000,
+    "vertices": 310563,
+    "boundary_edges": 0,
+    "over_shared_edges": 0,
+    "collapsed": 0,
+    "bounds": [
+      [
+        -0.19520699977874756,
+        -0.7665629982948303,
+        -0.38762399554252625
+      ],
+      [
+        0.1951490044593811,
+        0.42916399240493774,
+        0.0
+      ]
+    ],
+    "joint_count": 0,
+    "clips": 0,
+    "primitive_count": 1
+  }
+]

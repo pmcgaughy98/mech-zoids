@@ -1,0 +1,23 @@
+Native frames before preview sel-out.
+8/8 PASS canvas192, binary alpha, approved palette, connected body, holes0, stray components0, below160=0, edge contacts0.
+8/8 bottom row160; bounding boxes width109-111 height66-67, reference110x66.
+32/32 paw samples x error0px, lift error0px; measured from full native paw sole, with final-composite overlap recorded.
+Far paws baseline x from approved still; original perspective sole y158 normalized to shared y160 gameplay ground.
+Paw contacts: x is midpoint of eleven-pixel flat dark sole; those same eleven pixels translate -5 each planted frame.
+GIF reopened: 8 frames, each100ms, loop0.
+near_fore: {'samples': [{'frame': 0, 'sprite_x': 122.0, 'body_world_x': 0, 'world_x': 122.0}, {'frame': 1, 'sprite_x': 117.0, 'body_world_x': 5, 'world_x': 122.0}, {'frame': 2, 'sprite_x': 112.0, 'body_world_x': 10, 'world_x': 122.0}, {'frame': 3, 'sprite_x': 107.0, 'body_world_x': 15, 'world_x': 122.0}], 'spread': 0.0, 'actual_tool_stamp_spread_max': 0.0}
+far_hind: {'samples': [{'frame': 0, 'sprite_x': 87.0, 'body_world_x': 0, 'world_x': 87.0}, {'frame': 1, 'sprite_x': 82.0, 'body_world_x': 5, 'world_x': 87.0}, {'frame': 2, 'sprite_x': 77.0, 'body_world_x': 10, 'world_x': 87.0}, {'frame': 3, 'sprite_x': 72.0, 'body_world_x': 15, 'world_x': 87.0}], 'spread': 0.0, 'actual_tool_stamp_spread_max': 0.0}
+far_fore: {'samples': [{'frame': 4, 'sprite_x': 128.0, 'body_world_x': 20, 'world_x': 148.0}, {'frame': 5, 'sprite_x': 123.0, 'body_world_x': 25, 'world_x': 148.0}, {'frame': 6, 'sprite_x': 118.0, 'body_world_x': 30, 'world_x': 148.0}, {'frame': 7, 'sprite_x': 113.0, 'body_world_x': 35, 'world_x': 148.0}], 'spread': 0.0, 'actual_tool_stamp_spread_max': 0.0}
+near_hind: {'samples': [{'frame': 4, 'sprite_x': 76.0, 'body_world_x': 20, 'world_x': 96.0}, {'frame': 5, 'sprite_x': 71.0, 'body_world_x': 25, 'world_x': 96.0}, {'frame': 6, 'sprite_x': 66.0, 'body_world_x': 30, 'world_x': 96.0}, {'frame': 7, 'sprite_x': 61.0, 'body_world_x': 35, 'world_x': 96.0}], 'spread': 0.0, 'actual_tool_stamp_spread_max': 0.0}
+f0 near_fore x122 lift0 (target 122/0); far_hind x87 lift0 (target 87/0); far_fore x116 lift2 (target 116/2); near_hind x64 lift2 (target 64/2)
+f1 near_fore x117 lift0 (target 117/0); far_hind x82 lift0 (target 82/0); far_fore x119 lift4 (target 119/4); near_hind x67 lift4 (target 67/4)
+f2 near_fore x112 lift0 (target 112/0); far_hind x77 lift0 (target 77/0); far_fore x122 lift4 (target 122/4); near_hind x70 lift4 (target 70/4)
+f3 near_fore x107 lift0 (target 107/0); far_hind x72 lift0 (target 72/0); far_fore x125 lift2 (target 125/2); near_hind x73 lift2 (target 73/2)
+f4 near_fore x110 lift2 (target 110/2); far_hind x75 lift2 (target 75/2); far_fore x128 lift0 (target 128/0); near_hind x76 lift0 (target 76/0)
+f5 near_fore x113 lift4 (target 113/4); far_hind x78 lift4 (target 78/4); far_fore x123 lift0 (target 123/0); near_hind x71 lift0 (target 71/0)
+f6 near_fore x116 lift4 (target 116/4); far_hind x81 lift4 (target 81/4); far_fore x118 lift0 (target 118/0); near_hind x66 lift0 (target 66/0)
+f7 near_fore x119 lift2 (target 119/2); far_hind x84 lift2 (target 84/2); far_fore x113 lift0 (target 113/0); near_hind x61 lift0 (target 61/0)
+PROPORTIONS PASS: projected upper axes max change0.854px; all32 rounded leg chains and upper/lower links within2px; max whole-chain change1.708px.
+Tail PASS:4 plates including red tip; straight axis36.228px, reference36.228; widths10.95/12.95/10.95px vs reference12.15/12.15/10.95 (max1.20px). Rigid1px lateral sway, no curvature.
+Head PASS: native x130..191,y0..131 region pixel-identical across eight frames. Torso dip1px atf1/f5.
+Actual whole silhouette sizes: [(110, 66), (109, 66), (109, 66), (110, 66), (110, 66), (111, 66), (111, 66), (110, 66)]; still110x66.

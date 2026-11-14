@@ -1,0 +1,35 @@
+Clean 2x7 grid: True; binary alpha; transparent RGB zero.
+se: factor=0.3110774549; fixed cell anchor offset=(43,62)
+se_f0: width=91, height=69, colours=11, red=3, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+se_f1: width=83, height=79, colours=11, red=6, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+se_f2: width=84, height=68, colours=11, red=3, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+se_f3: width=83, height=62, colours=11, red=3, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+se_f4: width=86, height=49, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+se_f5: width=85, height=48, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+se_f6: width=86, height=47, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+se column1 vs ref: 91x69 vs 89x70; exact-colour share=0.6592; mirrored ref=0.1872; orientation=PASS (opaque union; feet aligned; best x overlap each)
+ne: factor=0.2921546591; fixed cell anchor offset=(49,67)
+ne_f0: width=81, height=71, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+ne_f1: width=78, height=81, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+ne_f2: width=79, height=69, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+ne_f3: width=77, height=61, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=1
+ne_f4: width=82, height=48, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=1
+ne_f5: width=83, height=44, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=1
+ne_f6: width=82, height=43, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=1
+ne column1 vs ref: 81x71 vs 77x74; exact-colour share=0.6163; mirrored ref=0.2205; orientation=PASS (opaque union; feet aligned; best x overlap each)
+Palette audit hex total rim rim_share:
+#141218 957 304 0.3177
+#211E27 4908 836 0.1703
+#3D3A44 4882 835 0.1710
+#58555E 3883 641 0.1651
+#7A4A06 5176 252 0.0487
+#9D9BA2 3606 359 0.0996
+#D18A0A 8344 559 0.0670
+#D6D6DC 1089 286 0.2626
+#FF3A2A 15 0 0.0000
+#FFCF1F 11558 494 0.0427
+#FFE6D8 0 0 0.0000
+#FFF4A8 5453 690 0.1265
+Top5 share=0.7106; near-black (<48 each) share=0.1176
+se lone-colour-pixel shares: 0.0063, 0.0095, 0.0100, 0.0086, 0.0160, 0.0157, 0.0139
+ne lone-colour-pixel shares: 0.0054, 0.0062, 0.0077, 0.0101, 0.0112, 0.0083, 0.0078

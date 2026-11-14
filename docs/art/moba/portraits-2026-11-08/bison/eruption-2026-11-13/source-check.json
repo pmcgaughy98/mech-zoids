@@ -1,0 +1,7 @@
+{
+  "source": "D:\\dev\\new-mech-rpg\\art\\arena_models\\bison.glb",
+  "authored_source": "D:\\dev\\_scratch\\bison-3d\\game-export-r4\\bison-kit-r4.glb",
+  "sha256": "9746d8bcffc42d6637da4f9124faa2d06b49e18160bb44e5adff9cd39430ff59",
+  "authored_matches": true,
+  "profile_note": "r4 (bison-3d, 2026-11-12): Idle, Walk (four-beat walk), Trot (proposed for the run slot), the alternating horn-hook basic (Hook_Left, Hook_Right), Hit_Front, Death, and the draft kit's clips (Chain_Throw for Coupling Chain, Whistle for War Whistle, Plow, Freight_Brace and Freight_Haul for Freight). Clips and events only; the kit is a draft and its code is not written. scale, turn_rate and every length are placeholders for Preston. Ares + Vulcan draft (2026-11-12): Eruption replaces War Whistle in slot 2 (the four stacks fire in turn, events erupt_fl/rr/fr/rl); Whistle stays in the GLB, unused. Plow has a stack flare event, Freight_Haul has slag drop events."
+}

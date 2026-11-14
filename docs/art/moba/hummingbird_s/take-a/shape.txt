@@ -1,0 +1,10 @@
+Projected image-space landmarks, cropped sprite coordinates; manual landmarks +/-2px, lengths include perspective.
+East beak x66..91: 26px; head x38..65: 28px; beak/head 0.929.
+East folded wing shoulder(44,25) to tip(9,59): 48.80px; body neck(51,20) to hip(43,55): 35.90px; wing/body 1.359.
+East height/south height: 69/72=0.958 (profile equality FAIL).
+South folded-wing span 46px / ruby chest width about26px = 1.769.
+Cyan eye-colour pixels: ne 0, nw 0 (PASS; neither has a visible lens or face).
+Feet planted / visible feet by eye: ne2/2, n2/2, nw2/2, e2/2 (overlap), w2/2 (overlap), se2/2, s2/2, sw2/2.
+Far feet rest on the same ground plane, slightly higher in diagonals; nearest contact row140 in all views.
+Rear heels: FAIL/weak; camera-facing claw projections persist.
+Back heights n73/s72=1.014; ne73/se70=1.043; nw73/sw70=1.043: rear no-taller target FAIL.

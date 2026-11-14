@@ -1,0 +1,160 @@
+{
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_bison_remeshed_25k_20261108_character.glb",
+  "source_sha256": "0a688dc0dc7b69f509ed427f0f9c78ab4f8503ec508e91aded136eac07eb80f0",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\bison_l\\topology-repair-v1-2026-11-11\\bison-rigged-local-repair-v1.glb",
+  "output_sha256": "23fc1f64d22ecab9fc70351cfcfd1b3323b504cbda45c394739579fa58690354",
+  "scope": "Local topology repair and one-triangle grey closure finish. No surface reconstruction or quality restoration claimed.",
+  "removed_fin_triangle_ids": [
+    1443,
+    1784,
+    2055,
+    2509,
+    2511,
+    2802,
+    2844,
+    2848,
+    2850,
+    2851,
+    2884,
+    3239,
+    3832,
+    3885,
+    4399,
+    4881,
+    4973,
+    5020,
+    5088,
+    5289,
+    5533,
+    6341,
+    6928,
+    7531,
+    9070,
+    9193,
+    9427,
+    9428,
+    9429,
+    9452,
+    10378,
+    10482,
+    10956,
+    11119,
+    11476,
+    13451,
+    13913,
+    13939,
+    14776,
+    15550,
+    15810,
+    16720,
+    16760,
+    17073,
+    17721,
+    17951,
+    18448,
+    18730,
+    18779,
+    18854,
+    18873,
+    18992,
+    19117,
+    19473,
+    19669,
+    19738,
+    19739,
+    20417,
+    20592,
+    20623,
+    20629
+  ],
+  "removed_fin_area_total_m2": 0.002401829930022359,
+  "removed_fin_area_max_m2": 0.0003914650878868997,
+  "holes_closed": [
+    {
+      "boundary_vertices": [
+        19101,
+        19464,
+        19661
+      ],
+      "raw_indices": [
+        19864,
+        19534,
+        19661
+      ],
+      "new_triangles": [
+        [
+          19864,
+          19534,
+          19661
+        ]
+      ],
+      "uv_seam_spread": 0.24997177720069885,
+      "bounds": [
+        [
+          -0.5487979650497437,
+          0.17483584582805634,
+          0.4379466772079468
+        ],
+        [
+          -0.5292016267776489,
+          0.18505826592445374,
+          0.4457705020904541
+        ]
+      ],
+      "normal_alignment_score": 0.8876876831054688
+    },
+    {
+      "boundary_vertices": [
+        26742,
+        26744,
+        26956
+      ],
+      "raw_indices": [
+        26742,
+        26744,
+        29306
+      ],
+      "new_triangles": [
+        [
+          26742,
+          26744,
+          29306
+        ]
+      ],
+      "uv_seam_spread": 0.5455462336540222,
+      "bounds": [
+        [
+          -0.4356350898742676,
+          0.5664173364639282,
+          -0.9342714548110962
+        ],
+        [
+          -0.4120214581489563,
+          0.5962188243865967,
+          -0.899223804473877
+        ]
+      ],
+      "normal_alignment_score": 0.9460929036140442
+    }
+  ],
+  "before": {
+    "triangles": 22181,
+    "boundary_edges": 115,
+    "edges_over_two_faces": 53
+  },
+  "after": {
+    "triangles": 22122,
+    "boundary_edges": 0,
+    "edges_over_two_faces": 0
+  },
+  "preservation": {
+    "all_original_binary_bytes_unchanged": true,
+    "existing_positions_normals_uvs_joints_weights_byte_identical": true,
+    "nodes_skins_images_textures_samplers_animations_scene_json_unchanged": true,
+    "original_materials_unchanged": true,
+    "new_materials": 1,
+    "new_vertices": 0,
+    "source_untouched": true
+  },
+  "method": "Append replacement triangle index accessors; assign only the second new closure to a local grey material. Keep original entire binary buffer as immutable prefix, including unused original indices. No Blender re-export or weight transfer."
+}

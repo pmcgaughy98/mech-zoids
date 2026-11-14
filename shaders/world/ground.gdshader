@@ -43,6 +43,8 @@ uniform vec4 red_line : source_color = vec4(0.0);
 uniform float line_width = 0.08;
 uniform bool stage = false; // foundry (2026-11-06 floor zones): the plaza drawn as a stage, the spawn pads with a team emblem
 uniform vec4 stage_dark : source_color = vec4(0.12, 0.11, 0.14, 1.0);
+uniform vec4 plaza_line : source_color = vec4(0.0); // the plaza's inlay ring and rim line; alpha 0 keeps line_color (kit on: cool steel, 2026-11-14)
+uniform float plaza_sector_shade = 0.8; // every other plaza sector is this much darker
 // Detail pass (themes with a "detail" entry, 2026-11-04): a map baked by arena_blockout.gd (_floor_map) with contact
 // shade by walls, rocks and structures in r and the wall lamps' light in g, both stepped in thirds with a dithered
 // edge, plus a slow three-step brightness drift so a big floor never reads as one repeated tile.
@@ -150,6 +152,7 @@ void fragment() {
 	}
 	vec4 pave = tile(paving_tex, uv);
 	float pr = length(q);
+	vec4 pl = plaza_line.a > 0.0 ? plaza_line : line_color;
 	if (pr < plaza_r + 0.3) {
 		col = vec4(pave.rgb * plaza_tint.rgb, pave.a);
 		lit = vec3(0.0);
@@ -161,19 +164,19 @@ void fragment() {
 			} else if (pr < 5.1) {
 				col = vec4(stage_dark.rgb, 1.0);
 			} else if (pr < 9.0) {
-				col.rgb *= mod(floor(turns * 12.0), 2.0) > 0.5 ? 0.8 : 1.0;
+				col.rgb *= mod(floor(turns * 12.0), 2.0) > 0.5 ? plaza_sector_shade : 1.0;
 				if (min(sec, 1.0 - sec) * 6.2831853 / 12.0 * pr < 0.07) {
 					col = vec4(stage_dark.rgb, 1.0);
 				}
 			} else if (pr < 9.36) {
-				col = vec4(line_color.rgb, 1.0);
-				lit = line_color.rgb * line_color.a;
+				col = vec4(pl.rgb, 1.0);
+				lit = pl.rgb * pl.a;
 			}
 		}
 	}
 	if (line_color.a > 0.0 && abs(pr - plaza_r - 0.3) < line_width) {
-		col = vec4(line_color.rgb, 1.0);
-		lit = line_color.rgb * line_color.a;
+		col = vec4(pl.rgb, 1.0);
+		lit = pl.rgb * pl.a;
 	}
 	for (int i = 0; i < 2; i++) {
 		vec4 b = bases[i];

@@ -1,0 +1,13 @@
+Sizes W x H/opaque area: s77x70/4294; se113x70/5988; e123x62/5430; ne105x77/5816; n73x76/4439.
+Shape (+/-2px): east torso72/48=1.500; nose-to-rump115/torso-height48=2.396; belly gap10px; head48/torso72=0.667 (head/full-length0.417); e/s height0.886; south head52/body77=0.675.
+ONE built-in image, prompt-sheet.txt verbatim, only refs/craft_drembit.png attached; raw unchanged SHA256 in generation.json; tokens/cost unknown; no second generation.
+view_check: front/back0.88 PASS; area0.28; height0.19; colour0.87; dips none; lone0.07 PASS; shared14 colours; top-five78.08% PASS.
+sheet_judge: REDO e,w (62px vs median70); FIX nothing; mirrors e/w0.975, ne/nw0.958, se/sw0.992; binary alpha; no canvas border contact; feet160 all.
+Depth e/se/s/n p05-p95:18.86-155.09/18.86-155.09/18.86-191.72/29.79-155.09; ranges136.23/136.23/172.86/125.30 all FAIL180; dominant31.86/23.10/18.93/28.29% PASS40; heights62/70/70/76.
+By eye FIRST, MACHINE: YES, heavy hard bevelled plates, straight edges, charcoal neck/frame/joints, joint discs, steel leg pistons, amber lens eyes; no skin/wrinkles, nothing held, no god/cask theme.
+HIPPO: YES, huge low body, four short pillar legs, flat segmented deck, huge box muzzle, tusks, squared ears, high eyes/nostril vents and stubby tail; head only0.675 of body width, short of almost body-wide.
+Steel bulldozer jaw and hinge discs read in all non-north views; rear diagonal jaw/tusk edges present; north has no jaw. Profiles as tall as front FAIL62vs70.
+Four purple and four steel shades retained in each measured view; internal overlap lines present; darkest exterior ink0 after cleanup, dark material edges remain; clusters still speckled, not fully Drembit-clean.
+Back heights FAIL: n76/s70=1.086 and ne/nw77 vs se/sw70; rear camera looks higher; north has no face/eyes, rear diagonals FAIL no-eye rule with tiny amber eye slivers; rear feet have visible toe-like divisions, heels ambiguous.
+SE/SW are turned three-quarter views but FAIL far-eye-hidden (tiny far amber lens visible). At40px machine/hippo/jaw silhouette survives, pistons/hinges weaken.
+Finish one whole-sheet nearest shrink0.294118 to369x369; rim cleanup5317 raw fringe,29 pale,470 ink pixels; remaining fringe/pale/ink0. All audits/previews saved in take-b; candidate FAIL, stopped; no installation/commit/revert/Hollowtide writes.

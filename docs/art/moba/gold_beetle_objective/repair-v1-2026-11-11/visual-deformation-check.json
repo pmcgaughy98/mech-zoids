@@ -1,0 +1,79 @@
+{
+  "tested_sha256": "50833a9affe40bbb55d541987babef09d9233bfca9dd7bb47bb874d24d45ca19",
+  "joint_count": 23,
+  "poses": [
+    {
+      "label": "front-left",
+      "bone": "Bone_016",
+      "local_x_degrees": 10,
+      "max_displacement_m": 0.08342793946224145,
+      "vertices_moved_over_1mm": 2887,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "front-right",
+      "bone": "Bone_013",
+      "local_x_degrees": -10,
+      "max_displacement_m": 0.0832958735005664,
+      "vertices_moved_over_1mm": 2953,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "middle-left",
+      "bone": "Bone_010",
+      "local_x_degrees": 10,
+      "max_displacement_m": 0.07894883504237593,
+      "vertices_moved_over_1mm": 6161,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "middle-right",
+      "bone": "Bone_007",
+      "local_x_degrees": -10,
+      "max_displacement_m": 0.07893359168736064,
+      "vertices_moved_over_1mm": 5438,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "rear-left",
+      "bone": "Bone_019",
+      "local_x_degrees": 10,
+      "max_displacement_m": 0.0820502947921225,
+      "vertices_moved_over_1mm": 4394,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "rear-right",
+      "bone": "Bone_022",
+      "local_x_degrees": -10,
+      "max_displacement_m": 0.08203195123149054,
+      "vertices_moved_over_1mm": 4098,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "head",
+      "bone": "Bone_004",
+      "local_x_degrees": 8,
+      "max_displacement_m": 0.1807312924418992,
+      "vertices_moved_over_1mm": 18497,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "mandibles",
+      "bone": "Bone_002",
+      "local_x_degrees": 6,
+      "max_displacement_m": 0.05282420026360552,
+      "vertices_moved_over_1mm": 4521,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "shell",
+      "bone": "Bone_001",
+      "local_x_degrees": 5,
+      "max_displacement_m": 0.15783320125345063,
+      "vertices_moved_over_1mm": 35942,
+      "coincident_surface_gap_m": 0.0
+    }
+  ],
+  "intact_pre_remesh_source_available": false
+}

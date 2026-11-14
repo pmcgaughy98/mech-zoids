@@ -11,12 +11,18 @@ config_version=5
 [application]
 
 config/name="new-mech-rpg (working title)"
-run/main_scene="res://scenes/title.tscn"
+run/main_scene="res://scenes/moba3d/arena_play.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+
+[audio]
+
+buses/default_bus_layout="uid://cgmm0ex2vtja0"
 
 [autoload]
 
 Run="*res://scripts/run.gd"
+KitAudio="*res://scripts/audio/kit_audio.gd"
+MapAudio="*res://scripts/audio/map_audio.gd"
 
 [display]
 
@@ -40,6 +46,17 @@ theme/default_font_size=8
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[shader_globals]
+
+machine_pos={
+"type": "vec3",
+"value": Vector3(0, -1000, 0)
+}
+machine_hidden={
+"type": "float",
+"value": 1.0
+}
 
 [summer]
 

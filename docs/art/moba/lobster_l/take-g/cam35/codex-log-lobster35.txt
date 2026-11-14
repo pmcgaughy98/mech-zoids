@@ -1,0 +1,1911 @@
+Reading prompt from stdin...
+OpenAI Codex v0.166.0
+--------
+workdir: D:\dev\_scratch\codex-cwd
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR, D:\dev\new-mech-rpg\docs\art\moba]
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a1aebc-2fa0-7a33-9e3f-c7525d840ccb
+--------
+user
+Job from Claude (the lobster session of the mech MOBA in D:/dev/new-mech-rpg): redraw the APPROVED robot lobster (working id lobster_l, take G, its approved stills are in the take's views folder) in all eight views from the game camera's angle, 35 degrees down, in ONE image. Preston picked it in his own words: "35-degree redraw". It is the SAME lobster: no new design, no new parts. On another machine a first try only stretched the views taller and narrower and read as "a taller front view"; this one must read as seen from above. On two long machines the side view came back about 10% too short; this one must keep the side view's full length.
+The tools live in HT = C:/Users/pmcga/dev/hollowtide (read only). This is NOT Hollowtide work: write nothing in HT. Write only inside OUT and VIEWS:
+- OUT = D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35
+- VIEWS = D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/views_cam35 (create it; it gets s.png, se.png, e.png, ne.png and n.png only)
+- TAKE = D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g (read only)
+- EX = D:/dev/new-mech-rpg/docs/art/moba/hippo_l/take-b/cam35 (read only: the last long-machine run's finishing scripts, made for a different machine on the same 192 canvas; adapt them to this lobster)
+Images you may open: the two attachments, and TAKE/views/s.png, se.png, e.png, ne.png and n.png to measure them. Open NO other image anywhere: not TAKE/review*.png, OUT/guide_6and35_prep.png, the other lobster takes (take-a to take-f), any image in EX or any other machine's folder, nor anything under D:/dev/new-mech-rpg/art/. Text you may read: OUT/palette.json, OUT/guide_sizes.txt, OUT/prompt-sheet.txt, and EX/finish.py, EX/defringe.py, EX/despeckle.py, EX/audit.py.
+Read first: HT/docs/art/sprite-canon-2026-11-02.md and HT/.codex/skills/hollowtide-sprites/SKILL.md (their craft, view and check rules apply; the lore and evolution sections, and the rule that every view is drawn from a low camera, do not).
+1. Generate exactly ONE image with your built-in image tool from OUT/prompt-sheet.txt word for word, attaching exactly two images: OUT/refs/approved_views.png first and OUT/refs/angle_guide.png second. Save it unchanged as OUT/sheet_raw.png. Never make a second image or a redo; if it fails, report and stop.
+2. Finish it the way EX was finished (copy EX/finish.py, defringe.py, despeckle.py and audit.py into OUT and adapt the paths and the palette): one whole-sheet nearest shrink, magenta to transparent, no magenta or plum fringe, no lone pale pixels on the outer edge. BEFORE the shrink, measure the raw east view's length over the raw south view's width and report it against the approved 1.39 (124 / 89). SCALE ANCHOR: width does not change with camera pitch for the front and back views, nor length for the side view, so choose the one whole-sheet shrink so that the AVERAGE of (south width / 89, north width / 81, east length / 124) is 1.00 on the shrunk views. Report the three ratios. The palette is FIXED: map every pixel to the 14 colours in OUT/palette.json and add none, each material on its own ramp. Keep the eyes: every cyan eye pixel stays in the two eye colours (5ff0ff, e8ffff); never map eye glow to steel, gunmetal or red, and never map pale steel (eeeef2) to the eye glint. Keep the dark accent seam lines: if the shrink or the mapping thins them, map thin dark seam pixels (lines one or two pixels wide between lighter shades) to accent 141218, but leave broad deep-shadow areas on their own ramp's deep shade (gunmetal deep 26262e, red deep 6a0a10, steel shadow 9a9aa6). The target is the approved accent share in each view: s 5.9%, se 7.9%, e 10.6%, ne 8.2%, n 5.5% of opaque pixels. Smooth lightly before the mapping so shading becomes clean bands. If view_check's lone value is over 0.11, run one despeckle pass and report the before and after.
+3. Slice: python HT/tools/art/slice_grid.py OUT/sheet_finished.png OUT/slices --canvas 192 --feet 160 ; then copy the s, se, e, ne and n slices to VIEWS. Check that no view touches its canvas border, and note the top row of each view in its 192 canvas.
+4. Checks, each saved as a .txt in OUT:
+   - python HT/tools/art/view_check.py OUT/slices and python HT/tools/art/sheet_judge.py OUT/slices (all eight). The canon's same-height rule does not apply: the views are now from above. Note heights, do not fix them.
+   - heights.txt, information only: for each of the five new views, W x H; W / approved W (approved s 89, se 114, e 124, ne 112, n 81; target 1.00, the width must hold); H / approved H (approved s 66, se 63, e 55, ne 65, n 66); H / W against the target H / W from the 35 degree line of OUT/guide_sizes.txt (s 89x74, se 115x63, e 124x71, ne 112x80, n 89x90; the guide leaves out the thin antenna rods, so a view may stand a little taller where they rise above the body). Also e length over s width against the approved 1.39, the spread of H / approved H across the five, se's height against s and e (target: not flatter than either by much), and the top row of each view in its canvas.
+   - palette-check.txt: every opaque colour in VIEWS is in OUT/palette.json; list any that are not.
+   - shape.txt: for the new and the approved five views, the share of opaque pixels in each role (gunmetal, red, steel, eye, accent); the accent share against the approved shares above; the share of opaque pixels in the three LIGHTEST shades (gunmetal 7e7e8e, red f85a4a and steel eeeef2) in each view, new against approved, because lit top faces should raise it; the EYE pixel count (both eye colours) and the size of each eye as a connected group (approved: s two eyes of 44 and 41, se near eye 43 plus a far eye of 24, e 30; expected at 35 degrees about s 36 and 34, se 35 plus a far eye near 20, e 25; under s 30, se 30 or e 21 is a miss), and eye pixels in ne and n (must be 0); the rows of the lowest pixel of the near and the far feet where you can tell them apart.
+   - depth.txt: for the new five views, the 5th and 95th percentile of luminance (0.2126 R + 0.7152 G + 0.0722 B) over opaque pixels and the share of the most common colour.
+5. Save OUT/review.png: the approved and the new s, se, e, ne and n at 3x, nearest, on mid grey, approved row above new row, each labelled.
+6. Do not touch anything outside OUT and VIEWS: not TAKE/views, the other lobster takes, EX, art/ or assets/ in either repo. Do not commit, do not revert other files.
+7. Report in under 15 lines, also saved as OUT/REPORT.txt: tokens used if known; the widths (W / approved W), e over s against 1.39, and the heights (H / approved H, H / W against the target, the spread, se against s and e, the top rows) first; the lightest-shade shares; the eye counts; the accent share against the approved; the palette check; the check lines; the depth numbers; and by eye: is it the same lobster with exactly two big claws, two eyes, two red-tipped antenna rods, one straight banded tail with one flat fan, the same walking legs and no new parts (no tail spikes), every view seen from above at one angle with lit top faces on the carapace, the tail segments, the claws and the legs, the side view as long as the reference with the carapace top as a wide band and the far legs higher, the front view as wide as the reference with the tail rising behind the head and the eyes, face and claws clear, not seen from overhead, the front three-quarter view not flatter than the reference, the plates firm with seams, clean bands, no eye pixel in the rear views?
+
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\pmcga\.codex\config.toml): `computer_use.windows.always_allowed_app_ids` is ignored.
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\pmcga\.codex\config.toml): `computer_use.windows.always_allowed_app_ids` is ignored.
+codex
+I’ll read the sprite rules and specified files, then generate the single sheet and run the finishing and checks inside OUT and VIEWS.
+
+2026-11-06T02:42:45.733620Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest("HTTP request timed out")))
+2026-11-06T02:42:45.733622Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest("HTTP request timed out")))
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath 'C:/Users/pmcga/dev/hollowtide/docs/art/sprite-canon-2026-11-02.md'; Get-Content -LiteralPath 'C:/Users/pmcga/dev/hollowtide/.codex/skills/hollowtide-sprites/SKILL.md'; Get-Content -LiteralPath 'C:/Users/pmcga/.codex/skills/.system/imagegen/SKILL.md'" in D:\dev\_scratch\codex-cwd
+ succeeded in 10290ms:
+. : File C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be loaded because 
+running scripts is disabled on this system. For more information, see about_Execution_Policies at 
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:3
++ . 'C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.Powe ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+# Sprite canon: what every new creature sheet carries
+
+Preston, 2026-11-02, after Huskward take E drifted from Drembit's style and read "a bit too detailed": "reevaluate all we've collected and learned ... then lets make it". Every Codex sprite job reads this first and puts its numbers in the brief. References are measured for structure only: no pixels from PokeAPI, PMD, Emerald or any ROM go into the repo, a prompt or a reference image.
+
+## 1. Draw for the size it is seen at
+
+- Handheld monster sprites of the 16-colour era use one palette of 15 visible colours. Our PokeAPI sample measured 14 to 15 a sprite.
+- Sky's creatures stand 20 to 26 px on a 24 px tile. Ours are drawn at 128 to 176 px and shrunk 3.3 to 5 times for the dungeon (stage masses 15.5, 21, 30).
+- So a part or shading cluster narrower than about 4 drawn px vanishes or turns to speckle at game size. No grain, crease lines or texture strokes, but keep the volume: give each main material 4 tones (highlight, base, shadow, deep shadow) in big masses, small parts 2 or 3. (Changed 2026-11-02: the old "2 or 3 tones" rule made the Rimefin and Cinderhide sheets read flat next to Drembit. Preston: "the creatures are starting to look flatter".)
+- Judge the sheet shrunk to game size as well as full size.
+
+## 2. Numbers to hit
+
+Measured 2026-11-02 on s, se, e, ne and n (`view_check.py` for lone pixels).
+
+| | Reference sample | Tallowroot A | Drembit | Huskward E | Target |
+|---|---|---|---|---|---|
+| Colours across all views | 14 to 15 a sprite | 12 | 19 | 15 | 16 or fewer, shared |
+| Share of the top 5 colours | 0.73 mean | 0.70 | 0.40 | 0.50 | 0.65 or more |
+| Lone pixels | 0.11 mean | 0.04 | 0.14 | 0.17 | 0.11 or less |
+| Front/back outline | | 0.79 | 0.86 | 0.87 | 0.80 or more, raw |
+| Back height over front | 0.99 mean | | | | 0.95 to 1.05 |
+
+Drembit is the model for shapes and for eight views agreeing, not for colour: two near-blacks cover 15% of it. Take E spread its colour over six bark browns and dark crease lines (13% on one crease colour), which is what reads as too detailed.
+
+Depth, measured on e, se and s 2026-11-02 (luminance 0 to 255, 5th to 95th percentile): Drembit 1 to 225 with about 5 tones on its main material; Tallowroot A 33 to 197; Cinderhide take B 41 to 192 with one tone on 60% of the body; Cinderhide A 56 to 167. Aim for a range of 180 or more and no single tone on more than about 40% of the body.
+
+## 3. Style
+
+- Tallowroot is the house style reference, never Preostmar. Drembit is the reference for views agreeing and for clear shapes.
+- Chunky clean clusters, angular volumes, light from the upper left on every view, a clear shadow side and underside away from it. No painted outline around the silhouette (the shader draws it), but a dark line inside the body wherever one part overlaps another (leg over belly, head over neck, crest base on the back), as Drembit has. The shader (`sel_out.gdshaderinc`) adds a dark texel round the silhouette and has an internal "detail ink" mode, but that mode is off for creatures by default, so the inside lines have to be painted.
+- Fantasy colours in the line's family, given as hex values. Later stages go darker in shade.
+- Eyes: an almond tucked under the brow, with a dark rim, an iris in a mid colour and a dark pupil. Flat pale blocks read as googly (Preston, 2026-11-02). Huskward take F's eyes are restamped this way in Aseprite.
+
+## 4. Eight views, one image
+
+- One 3x3 sheet with Drembit's layout and its "eight copies" paragraph word for word. Neutral standing pose. The signature shows from all eight views and clears the head.
+- Raw front/back at least 0.80, heights within 10%, no face on ne or nw, north points north.
+- Back views (`.claude/skills/sprite-back-view`): feet keep the front's claw family seen from behind (outer toes whole, the heel hides the middle toe); armour and bark lines sit at one height on a leg in every view; on the rear diagonals the farther feet stand 5 to 9 px higher; the tail slopes toward the camera; no chest V on the rump.
+
+## 5. Evolution
+
+- `stage_step.py` against the stage before: 0.28 to 0.55, as in real lines. Area grows 1.3 to 2.7 times a stage. Every Huskward take so far missed (A 0.72, B 0.70, C 0.77, E 0.60). Rampartroot take A, measured against Huskward F with F given only as a rendering reference, came in at 0.49: the first take on the line inside the range.
+- Keep two or three anchors (face and eye motif, the signature, the colour family). Change the silhouette, head, proportions, posture and palette shade, and turn the signature into something new.
+- Later stages read older: smaller head against the body, small deep-set eyes, thick neck, angular planes, and real weight: thick legs and a heavy body, never skinny or lanky (Preston 2026-11-02 on Caller take A, which this line used to push toward long jointed legs: "its too skinny"). Image references outweigh words, so attach Stage I art only for lineage, never as the craft reference, and never attach the old drawing of the creature being remade: Codex copies it ("You went back to remaking the original sprites again").
+
+## 6. Process
+
+- Codex draws, code judges, Aseprite fixes (a layered `.aseprite`, one frame per view), Preston approves. Nothing goes into `assets/` without his yes.
+- A fresh `codex.cmd exec` with a written brief costs about 60k to 110k tokens a sheet. Resuming the Claude-jobs chat cost 786,677 tokens for Huskward take F on 2026-11-02, because it carries the chat's whole history: use a fresh exec.
+- Image references outweigh words. Take F was given take E as its design picture and came back as take E made squatter, crease lines and oval patches included, against a brief that said otherwise. Give the design in words, or as a picture already at game size. Say the cost first; one image job at a time; two tries at most.
+- After the sheet: `slice_grid.py`, `view_check.py`, `sheet_judge.py`, `stage_step.py`, the palette edge audit (fringe), the numbers in section 2, then look at full size and game size.
+- Walks stay Retro's. Sky's timing (a 24-frame step, about 3 drawings held 4 to 10 frames, lift set per creature) is a game setting, not sprite art.
+
+## Sources
+
+`docs/art/reference-measurements-2026-10-30.md` (PokeAPI sample), `docs/research/sky-walk-measure-2026-10-30.md`, `docs/research/sky-fight-measure-2026-11-02.md`, `docs/research/emerald-arena-study-2026-10-30.md` (its creature sprites are PMDCollab sheets: never usable), `docs/art/pro-sprite-standards-2026-10-31.md`, `docs/art/back-view-feet-study-2026-11-02.md`, `docs/creatures/codex-new-creature-2026-10-31/DESIGN.md` (Drembit), `docs/creatures/codex-remake-2026-10-31/tallowroot/huskward/REPORT.md`, `docs/research/japanese-tools-2026-10-31.md`. Memory notes: evolve-not-grow, stage-two-reads-older, eight-views-one-image, creature-palettes, sprite-reference-choices.
+
+Not used for stills, and why: the Opal Forge (it stops on 2026-11-17, and Codex beat it on Drembit), SpriteCook and Retro Diffusion (paid; Retro stays the walk source and is on hold), Hugging Face Spaces (sending art to one needs Preston's yes), Pixel Refiner (tried, not adopted).
+---
+name: hollowtide-sprites
+description: Make or repair a Hollowtide creature's eight-angle views (and then its walk) in the house style, with image generation drawing and tools/art/sheet_judge.py deciding which views pass, which code can fix, and which to generate again. Use for any new creature, new stage, or broken angle set.
+---
+
+# Hollowtide creature sprites
+
+Written by Claude on 2026-10-28 for Codex, from what the project has measured since 2026-10-12. Preston approves
+every creature; nothing here replaces his eye. Read `CLAUDE.md` and `docs/AI_COLLABORATION.md` first.
+
+## The split of work
+
+- **Image generation draws.** Code never redraws a creature. A code renderer reads as 3D ("roblox"), and Preston
+  judged Nano Banana 2.1's raw output better than our heavy finishing (2026-10-13).
+- **Code judges and corrects.** `tools/art/sheet_judge.py` measures the eight views, fixes what moving or flipping
+  can fix, and names the views to generate again. Nothing is copied from other games or repos; references are
+  structure only.
+- **Ask before paying.** Every generation costs credits. Give Preston the tool, the count and the estimate first.
+
+## House style
+
+- **References:** the creature's own approved views, then Tallowroot (`assets/sprites/arena/tallowroot/`). Never
+  Preostmar; Preston called it one of the worst. Ask him before adding other style references.
+- **Colours:** fantasy colours, not Earth-animal browns and greys. Keep the line's colour family across stages.
+- **A new stage evolves, it does not grow.** Keep only two or three anchors (the face and eye motif, the signature
+  part, the colour family). Change the silhouette, head shape, proportions, posture and palette shade, and turn the
+  signature part into something new. Keep a line's named parts, for example the Flintram line's horn.
+- **Canvas:** transparent, alpha 0 or 255 only, the creature bottom-centred. Use the size of the creature's own
+  existing views: Rimefin is 128 px, Sparkwick 144, and Riftfin and Scourmaw 160. Do not assume a size from the
+  creature's stage. For a new line, match the line's other stages.
+- **Finishing Codex image output:** shrink the whole sheet once so that its median view height matches the target,
+  give all eight views one shared palette (16 or fewer, see `docs/art/sprite-canon-2026-11-02.md`), then slice. Shrinking views one at a time, or giving
+  each view its own palette, makes the views drift apart.
+- **One Codex image job at a time.** Concurrent jobs share `~/.codex/generated_images`, and both logs of the
+  2026-10-28 pair named the same file. Neither picked the wrong image that time, but Retro Diffusion misfiled a walk
+  the same way.
+- **Outline:** the game draws the black outline with a shader (`scripts/arena/creature_finish.gd`). Do not paint a
+  heavy outline around the silhouette. Do paint a dark line inside the body where one part overlaps another, and give
+  each main material 4 tones (highlight, base, shadow, deep shadow): sheets with 2 or 3 tones read flat (2026-11-02).
+- **Lighting:** from the upper left, the same in every view.
+
+## Read the canon first
+
+Before every sheet, read `docs/art/sprite-canon-2026-11-02.md` and copy its numbers into the brief: colours, top-5 share, lone pixels, drawing for game size, the evolution step and the back-view rules. Preston, 2026-11-02: "dont forget to use what we need everytime we make new sprites with codex".
+
+## Why Drembit's views agreed
+
+Preston, 2026-10-31: "drembit was almost perfect ... future creatures should account for that so we dont keep
+creating creatures we have to scrap eventually." Front and back are one body seen from opposite sides, so their
+outlines should nearly cover each other. `python tools/art/view_check.py <folder>` prints that as front/back, where
+1.0 is the same shape.
+
+| Set | front/back |
+| --- | --- |
+| Drembit, raw sheet | 0.88 |
+| Kithflare, raw sheet | 0.83 |
+| Kithflare after its front was replaced by a separate redraw | 0.67 |
+| The same set after three repair passes | 0.77 |
+| Game Sparkwick | 0.33 |
+| Kithflare, one fresh sheet under the rules below, first try | 0.88 |
+
+The sheet agreed with itself, the separate redraw broke it, and repairs never won it back. Body length is not the
+cause: Drembit is a long body, and across 51 creatures length has no link to this score.
+
+Every new creature takes these from it:
+
+- **One image.** All eight views come from one sheet. A view drawn later is drawn by a different hand.
+- **Start from Drembit's brief,** `docs/creatures/codex-new-creature-2026-10-31/prompt-sheet.txt`. Keep its cell
+  layout and its "eight copies of the exact same creature" paragraph word for word, and change only the design.
+- **Neutral standing pose.** Legs under the body, no lean, no crouch, no action. Kithflare's brief asked for a body
+  leaning forward ready to spring.
+- **The signature shows from all eight views and clears the head.** Drembit's tail stands taller than its head, on
+  both sides of the centre line. Kithflare's sat at head height on the centre line, so from behind it covered the
+  head and the raw north view had no head at all.
+- **A tail grows from a root as wide as the hips.** Preston on a thin stem rising from a round rump: "look like a
+  monkeys". Give a bird a feathered tail that flows out of the back, and cover the rear in rows of feathers or scales
+  with no round cheeks and no crease.
+- **The signature keeps its height as it turns.** Kithflare's tail tip stood 78 to 79 px tall on e, w, ne and nw against
+  81 to 86 on the other four, and Preston saw that as wrong perspective. The tip stands tallest from the front and
+  lowest from behind, and east and west show the most reach, about 1.4 times the diagonals.
+- **To change one part of a sheet, redraw the whole sheet with the old sheet attached,** naming what stays and what
+  changes. Kithflare's tail and rear were replaced this way and front/back held at 0.88. The parts you meant to keep
+  can still drift: both peacock tail takes came back with rounder heads and bigger eyes despite "keep exactly", so
+  compare the result to the old sheet and report any drift. Say so plainly, Claude can move the new part onto the
+  approved body by code.
+- **A tail needs volume, not only the right height.** A stripe down one long shape reads as a flat feather from the
+  side and back. Draw layered feathers instead, and remember a bigger tail draws the whole creature smaller in the
+  game, because game size comes from solid area.
+- **Keep the identity in what shows from behind:** shape, colour and the signature. Huge eyes and cheek patches exist
+  only from the front, so they can't hold eight views together, and hard numbers on eye size pull the front away from
+  the rest. Drembit's face is a small eye and a bill.
+- **One head.** The front and side views must be the same head. Kithflare's front is a round chick and its side a
+  hooked hawk. No number sees this, so look.
+
+## The loop
+
+1. **Eight angles first, in one image** (Preston, 2026-10-14). Generate one 3x3 sheet before any single front view,
+   with the previous stage's sheet as the pose guide. Cell layout, the creature facing the middle:
+
+   ```
+   ne  n  nw
+   e   .  w
+   se  s  sw
+   ```
+
+   For a creature that is the same on both sides, the west column can be left to code (step 3). The pipelines that
+   hold eight views together generate five directions and mirror three.
+2. **Slice:** `python tools/art/slice_grid.py <sheet.png> <out_dir> [--canvas 128] [--feet 104]`. It cuts and
+   places, and never changes pixels.
+3. **Score the raw sheet first:** `python tools/art/view_check.py <out_dir>`, before any repair. Under 0.80 front/back
+   means generate the whole sheet again with a changed prompt. Stop after two tries and report what is failing.
+4. **Judge:** `python tools/art/sheet_judge.py <out_dir>`. It prints two verdicts:
+   - **FIX:** code corrects these. Run `python tools/art/sheet_judge.py <out_dir> --fix <fixed_dir>
+     [--mirror-from east|west]` and judge `<fixed_dir>` again. Mirror only a creature that is the same on both
+     sides. For one-sided parts (a horn or blade on one side, a lopsided body), pass `--asymmetric`; mirror faults
+     then become REDO.
+   - **REDO:** do not redraw one view of a new creature. If the drawing only needs moving, trimming or recolouring,
+     do that in Aseprite. Otherwise generate the whole sheet again with the correction in the prompt. An installed
+     creature whose other views are approved may get one view redrawn as a last resort: keep it only if front/back
+     stays at or above where it was. Stop after two tries and report what is still failing. Do not loop on credits.
+     Claude wrote the earlier rule here, "generate only those views again", and following it is what broke Kithflare.
+5. **Look.** Things the judge cannot measure:
+   - The back diagonals (ne, nw) must not show the face. A colour test for this failed in both directions on
+     2026-10-28.
+   - The north view must point north. The judge's `turned` check caught Sparkwick, but lopsided creatures trip it.
+   - Before paying to redraw a view the judge flags, check that another file doesn't already hold it. Sparkwick's
+     (2026-10-28) north file held its northeast view, its northwest file held its north view, and its northeast
+     file showed the face. Putting the files back in the right slots and flipping the northeast for the northwest
+     fixed the back views for free (`docs/creatures/sheet-judge-2026-10-28/sparkwick/`).
+   - Before paying to redraw a view flagged `turned`, check whether it only leans. `tools/art/aseprite/fix_view.lua`
+     slides pixel rows and repaints named pixels with no new colours, and it passed Gruntle's north on 2026-10-30
+     (`docs/art/reference-measurements-2026-10-30.md`). A view truly drawn turned, like Sparkwick's, stays a redo.
+     `tools/art/north_straighten.py` does this and gives every north frame the same lean, so the walk still matches.
+6. **Show Preston** the sheet before anything goes into `assets/`. When he approves, install it into
+   `assets/sprites/arena/<name>/`, then rebuild with `tools/arena/build_small.py` and
+   `tools/arena/build_dungeon_set.py`, then run `tools/art/walk_lock.py <name>` for the walk.
+   Then run `python tools/art/pose_fix.py plan <name>`: west walks are flips of east walks, so a west still drawn on
+   its own sits a turn off them (45 creatures on 2026-10-31). `apply` flips the still that disagrees.
+
+## What the judge checks
+
+- **files:** all eight views, on one canvas size.
+- **alpha:** no partial alpha.
+- **ground:** every view on the same foot row.
+- **centre:** every view on the middle column.
+- **height:** no view more than 10% off the set's median height.
+- **palette:** at least 85% of each view's pixels near the south view's colours.
+- **specks:** few lone pixels.
+- **mirror:** each pair's silhouettes overlap at 0.85 or more when flipped.
+- **face:** the north view is not the south view again.
+- **turned:** the north view is about as even left to right as the south view, and is not shaped like a diagonal.
+
+The thresholds are in `LIMITS` at the top of the script. On 2026-10-28 it ran over all 50 in-game sets: 22 need
+views generated again, and 29 need no new generation. Run `python tools/art/sheet_judge.py --all` for the current
+list.
+
+## Before showing Preston anything
+
+`sheet_judge.py` checks one set of views. `python tools/art/sprite_director.py <creature> --look` then reviews the whole
+creature: whether the body carries its walk, whether it stands on its shadow, whether the eight views agree in size and
+colour, the attack beats, hurt and sleep. Read its worklist and look at the strips in `docs/creatures/sprite-director/look`.
+Standards are in `docs/art/pro-sprite-standards-2026-10-31.md`. Every line of its regression list must print `found`.
+
+## Don'ts
+
+- Do not invent creature names, lore or stats. Label new ideas as proposals.
+- Do not edit Route 1.
+- Do not restore the Cinderpelt evolution link.
+- Do not overwrite game sprites without Preston's yes. Originals for walk work live in
+  `docs/creatures/walk-lock-2026-10-28/before/`.
+- Do not run two Retro Diffusion creature jobs at once.
+
+After finishing, list the palette and count how much of each colour sits on the sprite's edge. A plum colour mostly on the rim is the magenta background bled into edge pixels, and it can also show through gaps between legs. `defringe.py` can repaint 0 pixels and still leave it. Clear it, and report near-black outlines, which the brief rules out. Red creatures hide this; green ones show it (Tallowroot, 2026-10-31).
+
+## Making the next stage of a line
+
+Design it from the measured numbers before drawing. Real evolution lines match the last stage's outline only 0.28 to 0.55 at equal height, and area grows 1.3 to 2.7 times a stage. Run `python tools/art/stage_step.py <last stage folder> <new folder>` and report the line; over 0.55 is the old body made bigger. Game size comes from solid area, so a big tail or fan shrinks the body: Stormwick's closed train gave it 17 percent more scale than the open burst. Change the tail's shape, not only its size. When two takes share a body brief, the bodies still drift, so compare them.
+A fan or big tail on a rear diagonal is not the side view's. From behind at an angle it sits on the rump, nearer than the body, so it crosses the back: centre it halfway between the side and back spreads, and shorten the blades toward the edges. If every blade leans one way, Preston reads that side as having more feathers (Stormwick, 2026-10-31). Generators miscount repeated parts, so count them by eye in every view; code can then copy one clean blade to fix the count without a new image.
+
+Feet and tails change from behind too. On the straight back view the feet are never the front's toes pointing at the camera, and nothing from the chest or face sits on the rump. A trunk leg stands on its roots, with one or two short claws or roots toward the camera, in the same bark as the leg; no smooth rounded heel. On the rear diagonals a tail slopes down toward the camera at about the front diagonal's length. Say this in the prompt, and check it by eye: Huskward's sheet passed every number with front feet on its back (Preston, 2026-10-31), and hand-drawn rounded heels were rejected as looking edited (2026-11-01).
+
+---
+name: "imagegen"
+description: "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas."
+---
+
+# Image Generation Skill
+
+Generates or edits images for the current project (for example website assets, game assets, UI mockups, product mockups, wireframes, logo design, photorealistic images, or infographics).
+
+## Top-level modes and rules
+
+This skill has exactly two top-level modes:
+
+- **Default built-in tool mode (preferred):** built-in `image_gen` tool for image generation, editing, and transparent-image requests. Does not require `OPENAI_API_KEY`.
+- **Fallback CLI mode:** `scripts/image_gen.py` CLI. Use when the user explicitly asks for or confirms the CLI/API/model path. Requires `OPENAI_API_KEY`.
+
+Within CLI fallback, the CLI exposes three subcommands:
+
+- `generate`
+- `edit`
+- `generate-batch`
+
+Rules:
+- Use the built-in `image_gen` tool by default for normal image generation and editing requests.
+- Do not switch to CLI fallback for ordinary quality, size, or file-path control.
+- For transparent images, ask built-in `image_gen` for a transparent background and preserve the generated alpha.
+- Never silently switch from built-in `image_gen` or CLI `gpt-image-2` to CLI `gpt-image-1.5`; ask the user first unless they explicitly requested `gpt-image-1.5`.
+- The word `batch` by itself does not mean CLI fallback. If the user asks for many assets or says to batch-generate assets without explicitly asking for CLI/API/model controls, stay on the built-in path and issue one built-in call per requested asset or variant.
+- If the built-in tool fails or is unavailable, tell the user the CLI fallback exists and that it requires `OPENAI_API_KEY`. Proceed only if the user explicitly asks for that fallback.
+- If the user explicitly asks for CLI mode, use the bundled `scripts/image_gen.py` workflow. Do not create one-off SDK runners.
+- Never modify `scripts/image_gen.py`. If something is missing, ask the user before doing anything else.
+
+Built-in save-path policy:
+- In built-in tool mode, Codex saves generated images under `$CODEX_HOME/*` by default.
+- Do not describe or rely on OS temp as the default built-in destination.
+- Do not describe or rely on a destination-path argument (if any) on the built-in `image_gen` tool. If a specific location is needed, generate first and then move or copy the selected output from `$CODEX_HOME/generated_images/...`.
+- Save-path precedence in built-in mode:
+  1. If the user names a destination, move or copy the selected output there.
+  2. If the image is meant for the current project, move or copy the final selected image into the workspace before finishing.
+  3. If the image is only for preview or brainstorming, render it inline; the underlying file can remain at the default `$CODEX_HOME/*` path.
+- Never leave a project-referenced asset only at the default `$CODEX_HOME/*` path.
+- Do not overwrite an existing asset unless the user explicitly asked for replacement; otherwise create a sibling versioned filename such as `hero-v2.png` or `item-icon-edited.png`.
+
+Shared prompt guidance for both modes lives in `references/prompting.md` and `references/sample-prompts.md`.
+
+Fallback-only docs/resources for CLI mode:
+- `references/cli.md`
+- `references/image-api.md`
+- `references/codex-network.md`
+- `scripts/image_gen.py`
+
+## When to use
+- Generate a new image (concept art, product shot, cover, website hero)
+- Generate a new image using one or more reference images for style, composition, or mood
+- Edit an existing image (inpainting, lighting or weather transformations, background replacement, object removal, compositing, transparent background)
+- Produce many assets or variants for one task
+
+## When not to use
+- Extending or matching an existing SVG/vector icon set, logo system, or illustration library inside the repo
+- Creating simple shapes, diagrams, wireframes, or icons that are better produced directly in SVG, HTML/CSS, or canvas
+- Making a small project-local asset edit when the source file already exists in an editable native format
+- Any task where the user clearly wants deterministic code-native output instead of a generated bitmap
+
+## Decision tree
+
+Think about two separate questions:
+
+1. **Intent:** is this a new image or an edit of an existing image?
+2. **Execution strategy:** is this one asset or many assets/variants?
+
+Intent:
+- If the user wants to modify an existing image while preserving parts of it, treat the request as **edit**.
+- If the user provides images only as references for style, composition, mood, or subject guidance, treat the request as **generate**.
+- If the user provides no images, treat the request as **generate**.
+
+Built-in edit semantics:
+- Built-in edit mode is for images already visible in the conversation context, such as attached images or images generated earlier in the thread.
+- If the user wants to edit a local image file with the built-in tool, first load it with built-in `view_image` tool so the image is visible in the conversation context, then proceed with the built-in edit flow.
+- Do not promise arbitrary filesystem-path editing through the built-in tool.
+- If a local file still needs direct file-path control, masks, or other explicit CLI-only parameters, use the explicit CLI fallback only when the user asks for it.
+- For edits, preserve invariants aggressively and save non-destructively by default.
+
+Execution strategy:
+- In the built-in default path, produce many assets or variants by issuing one `image_gen` call per requested asset or variant.
+- In the CLI fallback path, use the CLI `generate-batch` subcommand only when the user explicitly chose CLI mode and needs many prompts/assets.
+- For many distinct assets, do not use `n` as a substitute for separate prompts. `n` is for variants of one prompt; distinct assets need distinct built-in calls or distinct CLI `generate-batch` jobs.
+
+Assume the user wants a new image unless they clearly ask to change an existing one.
+
+## Workflow
+1. Decide the top-level mode: built-in by default, including transparent-output requests; fallback CLI only if explicitly requested or confirmed.
+2. Decide the intent: `generate` or `edit`.
+3. Decide whether the output is preview-only or meant to be consumed by the current project.
+4. Decide the execution strategy: single asset vs repeated built-in calls vs CLI `generate-batch`.
+5. Collect inputs up front: prompt(s), exact text (verbatim), constraints/avoid list, and any input images.
+6. For every input image, label its role explicitly:
+   - reference image
+   - edit target
+   - supporting insert/style/compositing input
+7. If the edit target is only on the local filesystem and you are staying on the built-in path, inspect it with `view_image` first so the image is available in conversation context.
+8. If the user asked for a photo, illustration, sprite, product image, banner, or other explicitly raster-style asset, use `image_gen` rather than substituting SVG/HTML/CSS placeholders. If the request is for an icon, logo, or UI graphic that should match existing repo-native SVG/vector/code assets, prefer editing those directly instead.
+9. Augment the prompt based on specificity:
+   - If the user's prompt is already specific and detailed, normalize it into a clear spec without adding creative requirements.
+   - If the user's prompt is generic, add tasteful augmentation only when it materially improves output quality.
+10. Use the built-in `image_gen` tool by default.
+11. For transparent-output requests, ask built-in `image_gen` for a transparent background and preserve the generated alpha channel.
+12. Inspect outputs and validate: subject, style, composition, text accuracy, and invariants/avoid items.
+13. Iterate with a single targeted change, then re-check.
+14. For preview-only work, render the image inline; the underlying file may remain at the default `$CODEX_HOME/generated_images/...` path.
+15. For project-bound work, move or copy the selected artifact into the workspace and update any consuming code or references. Never leave a project-referenced asset only at the default `$CODEX_HOME/generated_images/...` path.
+16. For batches or multi-asset requests, persist every requested deliverable final in the workspace unless the user explicitly asked to keep outputs preview-only. Discarded variants do not need to be kept unless requested.
+17. If the user explicitly chooses or confirms the CLI fallback, then use the fallback-only docs for model, quality, size, `input_fidelity`, masks, output format, output paths, and network setup.
+18. Always report the final saved path(s) for any workspace-bound asset(s), plus the final prompt or prompt set and whether the built-in tool or fallback CLI mode was used.
+
+## Transparent image requests
+
+Ask built-in `image_gen` for a genuinely transparent background and preserve its alpha.
+
+## Prompt augmentation
+
+Reformat user prompts into a structured, production-oriented spec. Make the user's goal clearer and more actionable, but do not blindly add detail.
+
+Treat this as prompt-shaping guidance, not a closed schema. Use only the lines that help, and add a short extra labeled line when it materially improves clarity.
+
+### Specificity policy
+
+Use the user's prompt specificity to decide how much augmentation is appropriate:
+
+- If the prompt is already specific and detailed, preserve that specificity and only normalize/structure it.
+- If the prompt is generic, you may add tasteful augmentation when it will materially improve the result.
+
+Allowed augmentations:
+- composition or framing hints
+- polish level or intended-use hints
+- practical layout guidance
+- reasonable scene concreteness that supports the stated request
+
+Not allowed augmentations:
+- extra characters or objects that are not implied by the request
+- brand names, slogans, palettes, or narrative beats that are not implied
+- arbitrary side-specific placement unless the surrounding layout supports it
+
+## Use-case taxonomy (exact slugs)
+
+Classify each request into one of these buckets and keep the slug consistent across prompts and references.
+
+Generate:
+- photorealistic-natural â€” candid/editorial lifestyle scenes with real texture and natural lighting.
+- product-mockup â€” product/packaging shots, catalog imagery, merch concepts.
+- ui-mockup â€” app/web interface mockups and wireframes; specify the desired fidelity.
+- infographic-diagram â€” diagrams/infographics with structured layout and text.
+- scientific-educational â€” classroom explainers, scientific diagrams, and learning visuals with required labels and accuracy constraints.
+- ads-marketing â€” campaign concepts and ad creatives with audience, brand position, scene, and exact tagline/copy.
+- productivity-visual â€” slide, chart, workflow, and data-heavy business visuals.
+- logo-brand â€” logo/mark exploration, vector-friendly.
+- illustration-story â€” comics, childrenâ€™s book art, narrative scenes.
+- stylized-concept â€” style-driven concept art, 3D/stylized renders.
+- historical-scene â€” period-accurate/world-knowledge scenes.
+
+Edit:
+- text-localization â€” translate/replace in-image text, preserve layout.
+- identity-preserve â€” try-on, person-in-scene; lock face/body/pose.
+- precise-object-edit â€” remove/replace a specific element (including interior swaps).
+- lighting-weather â€” time-of-day/season/atmosphere changes only.
+- background-extraction â€” transparent background / clean cutout. Ask built-in `image_gen` for actual transparency.
+- style-transfer â€” apply reference style while changing subject/scene.
+- compositing â€” multi-image insert/merge with matched lighting/perspective.
+- sketch-to-render â€” drawing/line art to photoreal render.
+
+## Shared prompt schema
+
+Use the following labeled spec as shared prompt scaffolding for both top-level modes:
+
+```text
+Use case: <taxonomy slug>
+Asset type: <where the asset will be used>
+Primary request: <user's main prompt>
+Input images: <Image 1: role; Image 2: role> (optional)
+Scene/backdrop: <environment>
+Subject: <main subject>
+Style/medium: <photo/illustration/3D/etc>
+Composition/framing: <wide/close/top-down; placement>
+Lighting/mood: <lighting + mood>
+Color palette: <palette notes>
+Materials/textures: <surface details>
+Text (verbatim): "<exact text>"
+Constraints: <must keep/must avoid>
+Avoid: <negative constraints>
+```
+
+Notes:
+- `Asset type` and `Input images` are prompt scaffolding, not dedicated CLI flags.
+- `Scene/backdrop` refers to the visual setting. It is not the same as the fallback CLI `background` parameter, which controls output transparency behavior.
+- Fallback-only execution notes such as `Quality:`, `Input fidelity:`, masks, output format, and output paths belong in the CLI path only. Do not treat them as built-in `image_gen` tool arguments.
+
+Augmentation rules:
+- Keep it short.
+- Add only the details needed to improve the prompt materially.
+- For edits, explicitly list invariants (`change only X; keep Y unchanged`).
+- If any critical detail is missing and blocks success, ask a question; otherwise proceed.
+
+## Examples
+
+### Generation example (hero image)
+```text
+Use case: product-mockup
+Asset type: landing page hero
+Primary request: a minimal hero image of a ceramic coffee mug
+Style/medium: clean product photography
+Composition/framing: wide composition with usable negative space for page copy if needed
+Lighting/mood: soft studio lighting
+Constraints: no logos, no text, no watermark
+```
+
+### Edit example (invariants)
+```text
+Use case: precise-object-edit
+Asset type: product photo background replacement
+Primary request: replace only the background with a warm sunset gradient
+Constraints: change only the background; keep the product and its edges unchanged; no text; no watermark
+```
+
+## Prompting best practices
+- Structure prompt as scene/backdrop -> subject -> details -> constraints.
+- Include intended use (ad, UI mock, infographic) to set the mode and polish level.
+- Use camera/composition language for photorealism.
+- Only use SVG/vector stand-ins when the user explicitly asked for vector output or a non-image placeholder.
+- Quote exact text and specify typography + placement.
+- For tricky words, spell them letter-by-letter and require verbatim rendering.
+- For multi-image inputs, reference images by index and describe how they should be used.
+- For edits, repeat invariants every iteration to reduce drift.
+- Iterate with single-change follow-ups.
+- If the prompt is generic, add only the extra detail that will materially help.
+- If the prompt is already detailed, normalize it instead of expanding it.
+- For CLI fallback only, see `references/cli.md` and `references/image-api.md` for model, `quality`, `input_fidelity`, masks, output format, and output-path guidance.
+- For transparent images, ask built-in `image_gen` for actual transparency and preserve its alpha.
+
+More principles shared by both modes: `references/prompting.md`.
+Copy/paste specs shared by both modes: `references/sample-prompts.md`.
+
+## Guidance by asset type
+Asset-type templates (website assets, game assets, wireframes, logo) are consolidated in `references/sample-prompts.md`.
+
+## gpt-image-2 guidance for CLI fallback
+
+The fallback CLI defaults to `gpt-image-2`.
+
+- Use `gpt-image-2` for new CLI/API workflows unless the user confirms a different model.
+- CLI `gpt-image-2` does not support `background=transparent`; ask before using `gpt-image-1.5` unless the user explicitly requested that model.
+- `gpt-image-2` always uses high fidelity for image inputs; do not set `input_fidelity` with this model.
+- `gpt-image-2` supports `quality` values `low`, `medium`, `high`, and `auto`.
+- Use `quality low` for fast drafts, thumbnails, and quick iterations. Use `medium`, `high`, or `auto` for final assets, dense text, diagrams, identity-sensitive edits, or high-resolution outputs.
+- Square images are typically fastest to generate. Use `1024x1024` for fast square drafts.
+- If the user asks for 4K-style output, use `3840x2160` for landscape or `2160x3840` for portrait.
+- `gpt-image-2` size may be `auto` or `WIDTHxHEIGHT` if all constraints hold: max edge `<= 3840px`, both edges multiples of `16px`, long-to-short ratio `<= 3:1`, total pixels between `655,360` and `8,294,400`.
+
+Popular `gpt-image-2` sizes:
+- `1024x1024` square
+- `1536x1024` landscape
+- `1024x1536` portrait
+- `2048x2048` 2K square
+- `2048x1152` 2K landscape
+- `3840x2160` 4K landscape
+- `2160x3840` 4K portrait
+- `auto`
+
+## Fallback CLI mode only
+
+### Temp and output conventions
+These conventions apply only to the CLI fallback. They do not describe built-in `image_gen` output behavior.
+- Use `tmp/imagegen/` for intermediate files (for example JSONL batches); delete them when done.
+- Write final artifacts under `output/imagegen/`.
+- Use `--out` or `--out-dir` to control output paths; keep filenames stable and descriptive.
+
+### Dependencies
+Prefer `uv` for dependency management in this repo.
+
+Required Python package:
+```bash
+uv pip install openai
+```
+
+Optional for image inspection and downscaling:
+```bash
+uv pip install pillow
+```
+
+Portability note:
+- If you are using the installed skill outside this repo, install dependencies into that environment with its package manager.
+- In uv-managed environments, `uv pip install ...` remains the preferred path.
+
+### Environment
+- `OPENAI_API_KEY` must be set for live API calls.
+- Do not ask the user for `OPENAI_API_KEY` when using the built-in `image_gen` tool.
+- Never ask the user to paste the full key in chat. Ask them to set it locally and confirm when ready.
+
+If the key is missing, give the user these steps:
+1. Create an API key in the OpenAI platform UI: https://platform.openai.com/api-keys
+2. Set `OPENAI_API_KEY` as an environment variable in their system.
+3. Offer to guide them through setting the environment variable for their OS/shell if needed.
+
+If installation is not possible in this environment, tell the user which dependency is missing and how to install it into their active environment.
+
+### Script-mode notes
+- CLI commands + examples: `references/cli.md`
+- API parameter quick reference: `references/image-api.md`
+- Network approvals / sandbox settings for CLI mode: `references/codex-network.md`
+
+## Reference map
+- `references/prompting.md`: shared prompting principles for both modes.
+- `references/sample-prompts.md`: shared copy/paste prompt recipes for both modes.
+- `references/cli.md`: fallback-only CLI usage via `scripts/image_gen.py`.
+- `references/image-api.md`: fallback-only API/CLI parameter reference.
+- `references/codex-network.md`: fallback-only network/sandbox troubleshooting for CLI mode.
+- `scripts/image_gen.py`: fallback-only CLI implementation. Use only when the user explicitly chooses or confirms CLI mode.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath 'C:/Users/pmcga/dev/hollowtide/docs/art/sprite-canon-2026-11-02.md'" in D:\dev\_scratch\codex-cwd
+ succeeded in 4553ms:
+. : File C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be loaded because 
+running scripts is disabled on this system. For more information, see about_Execution_Policies at 
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:3
++ . 'C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.Powe ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+# Sprite canon: what every new creature sheet carries
+
+Preston, 2026-11-02, after Huskward take E drifted from Drembit's style and read "a bit too detailed": "reevaluate all we've collected and learned ... then lets make it". Every Codex sprite job reads this first and puts its numbers in the brief. References are measured for structure only: no pixels from PokeAPI, PMD, Emerald or any ROM go into the repo, a prompt or a reference image.
+
+## 1. Draw for the size it is seen at
+
+- Handheld monster sprites of the 16-colour era use one palette of 15 visible colours. Our PokeAPI sample measured 14 to 15 a sprite.
+- Sky's creatures stand 20 to 26 px on a 24 px tile. Ours are drawn at 128 to 176 px and shrunk 3.3 to 5 times for the dungeon (stage masses 15.5, 21, 30).
+- So a part or shading cluster narrower than about 4 drawn px vanishes or turns to speckle at game size. No grain, crease lines or texture strokes, but keep the volume: give each main material 4 tones (highlight, base, shadow, deep shadow) in big masses, small parts 2 or 3. (Changed 2026-11-02: the old "2 or 3 tones" rule made the Rimefin and Cinderhide sheets read flat next to Drembit. Preston: "the creatures are starting to look flatter".)
+- Judge the sheet shrunk to game size as well as full size.
+
+## 2. Numbers to hit
+
+Measured 2026-11-02 on s, se, e, ne and n (`view_check.py` for lone pixels).
+
+| | Reference sample | Tallowroot A | Drembit | Huskward E | Target |
+|---|---|---|---|---|---|
+| Colours across all views | 14 to 15 a sprite | 12 | 19 | 15 | 16 or fewer, shared |
+| Share of the top 5 colours | 0.73 mean | 0.70 | 0.40 | 0.50 | 0.65 or more |
+| Lone pixels | 0.11 mean | 0.04 | 0.14 | 0.17 | 0.11 or less |
+| Front/back outline | | 0.79 | 0.86 | 0.87 | 0.80 or more, raw |
+| Back height over front | 0.99 mean | | | | 0.95 to 1.05 |
+
+Drembit is the model for shapes and for eight views agreeing, not for colour: two near-blacks cover 15% of it. Take E spread its colour over six bark browns and dark crease lines (13% on one crease colour), which is what reads as too detailed.
+
+Depth, measured on e, se and s 2026-11-02 (luminance 0 to 255, 5th to 95th percentile): Drembit 1 to 225 with about 5 tones on its main material; Tallowroot A 33 to 197; Cinderhide take B 41 to 192 with one tone on 60% of the body; Cinderhide A 56 to 167. Aim for a range of 180 or more and no single tone on more than about 40% of the body.
+
+## 3. Style
+
+- Tallowroot is the house style reference, never Preostmar. Drembit is the reference for views agreeing and for clear shapes.
+- Chunky clean clusters, angular volumes, light from the upper left on every view, a clear shadow side and underside away from it. No painted outline around the silhouette (the shader draws it), but a dark line inside the body wherever one part overlaps another (leg over belly, head over neck, crest base on the back), as Drembit has. The shader (`sel_out.gdshaderinc`) adds a dark texel round the silhouette and has an internal "detail ink" mode, but that mode is off for creatures by default, so the inside lines have to be painted.
+- Fantasy colours in the line's family, given as hex values. Later stages go darker in shade.
+- Eyes: an almond tucked under the brow, with a dark rim, an iris in a mid colour and a dark pupil. Flat pale blocks read as googly (Preston, 2026-11-02). Huskward take F's eyes are restamped this way in Aseprite.
+
+## 4. Eight views, one image
+
+- One 3x3 sheet with Drembit's layout and its "eight copies" paragraph word for word. Neutral standing pose. The signature shows from all eight views and clears the head.
+- Raw front/back at least 0.80, heights within 10%, no face on ne or nw, north points north.
+- Back views (`.claude/skills/sprite-back-view`): feet keep the front's claw family seen from behind (outer toes whole, the heel hides the middle toe); armour and bark lines sit at one height on a leg in every view; on the rear diagonals the farther feet stand 5 to 9 px higher; the tail slopes toward the camera; no chest V on the rump.
+
+## 5. Evolution
+
+- `stage_step.py` against the stage before: 0.28 to 0.55, as in real lines. Area grows 1.3 to 2.7 times a stage. Every Huskward take so far missed (A 0.72, B 0.70, C 0.77, E 0.60). Rampartroot take A, measured against Huskward F with F given only as a rendering reference, came in at 0.49: the first take on the line inside the range.
+- Keep two or three anchors (face and eye motif, the signature, the colour family). Change the silhouette, head, proportions, posture and palette shade, and turn the signature into something new.
+- Later stages read older: smaller head against the body, small deep-set eyes, thick neck, angular planes, and real weight: thick legs and a heavy body, never skinny or lanky (Preston 2026-11-02 on Caller take A, which this line used to push toward long jointed legs: "its too skinny"). Image references outweigh words, so attach Stage I art only for lineage, never as the craft reference, and never attach the old drawing of the creature being remade: Codex copies it ("You went back to remaking the original sprites again").
+
+## 6. Process
+
+- Codex draws, code judges, Aseprite fixes (a layered `.aseprite`, one frame per view), Preston approves. Nothing goes into `assets/` without his yes.
+- A fresh `codex.cmd exec` with a written brief costs about 60k to 110k tokens a sheet. Resuming the Claude-jobs chat cost 786,677 tokens for Huskward take F on 2026-11-02, because it carries the chat's whole history: use a fresh exec.
+- Image references outweigh words. Take F was given take E as its design picture and came back as take E made squatter, crease lines and oval patches included, against a brief that said otherwise. Give the design in words, or as a picture already at game size. Say the cost first; one image job at a time; two tries at most.
+- After the sheet: `slice_grid.py`, `view_check.py`, `sheet_judge.py`, `stage_step.py`, the palette edge audit (fringe), the numbers in section 2, then look at full size and game size.
+- Walks stay Retro's. Sky's timing (a 24-frame step, about 3 drawings held 4 to 10 frames, lift set per creature) is a game setting, not sprite art.
+
+## Sources
+
+`docs/art/reference-measurements-2026-10-30.md` (PokeAPI sample), `docs/research/sky-walk-measure-2026-10-30.md`, `docs/research/sky-fight-measure-2026-11-02.md`, `docs/research/emerald-arena-study-2026-10-30.md` (its creature sprites are PMDCollab sheets: never usable), `docs/art/pro-sprite-standards-2026-10-31.md`, `docs/art/back-view-feet-study-2026-11-02.md`, `docs/creatures/codex-new-creature-2026-10-31/DESIGN.md` (Drembit), `docs/creatures/codex-remake-2026-10-31/tallowroot/huskward/REPORT.md`, `docs/research/japanese-tools-2026-10-31.md`. Memory notes: evolve-not-grow, stage-two-reads-older, eight-views-one-image, creature-palettes, sprite-reference-choices.
+
+Not used for stills, and why: the Opal Forge (it stops on 2026-11-17, and Codex beat it on Drembit), SpriteCook and Retro Diffusion (paid; Retro stays the walk source and is on hold), Hugging Face Spaces (sending art to one needs Preston's yes), Pixel Refiner (tried, not adopted).
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath 'C:/Users/pmcga/dev/hollowtide/.codex/skills/hollowtide-sprites/SKILL.md'" in D:\dev\_scratch\codex-cwd
+ succeeded in 18304ms:
+. : File C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be loaded because 
+running scripts is disabled on this system. For more information, see about_Execution_Policies at 
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:3
++ . 'C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.Powe ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+---
+name: hollowtide-sprites
+description: Make or repair a Hollowtide creature's eight-angle views (and then its walk) in the house style, with image generation drawing and tools/art/sheet_judge.py deciding which views pass, which code can fix, and which to generate again. Use for any new creature, new stage, or broken angle set.
+---
+
+# Hollowtide creature sprites
+
+Written by Claude on 2026-10-28 for Codex, from what the project has measured since 2026-10-12. Preston approves
+every creature; nothing here replaces his eye. Read `CLAUDE.md` and `docs/AI_COLLABORATION.md` first.
+
+## The split of work
+
+- **Image generation draws.** Code never redraws a creature. A code renderer reads as 3D ("roblox"), and Preston
+  judged Nano Banana 2.1's raw output better than our heavy finishing (2026-10-13).
+- **Code judges and corrects.** `tools/art/sheet_judge.py` measures the eight views, fixes what moving or flipping
+  can fix, and names the views to generate again. Nothing is copied from other games or repos; references are
+  structure only.
+- **Ask before paying.** Every generation costs credits. Give Preston the tool, the count and the estimate first.
+
+## House style
+
+- **References:** the creature's own approved views, then Tallowroot (`assets/sprites/arena/tallowroot/`). Never
+  Preostmar; Preston called it one of the worst. Ask him before adding other style references.
+- **Colours:** fantasy colours, not Earth-animal browns and greys. Keep the line's colour family across stages.
+- **A new stage evolves, it does not grow.** Keep only two or three anchors (the face and eye motif, the signature
+  part, the colour family). Change the silhouette, head shape, proportions, posture and palette shade, and turn the
+  signature part into something new. Keep a line's named parts, for example the Flintram line's horn.
+- **Canvas:** transparent, alpha 0 or 255 only, the creature bottom-centred. Use the size of the creature's own
+  existing views: Rimefin is 128 px, Sparkwick 144, and Riftfin and Scourmaw 160. Do not assume a size from the
+  creature's stage. For a new line, match the line's other stages.
+- **Finishing Codex image output:** shrink the whole sheet once so that its median view height matches the target,
+  give all eight views one shared palette (16 or fewer, see `docs/art/sprite-canon-2026-11-02.md`), then slice. Shrinking views one at a time, or giving
+  each view its own palette, makes the views drift apart.
+- **One Codex image job at a time.** Concurrent jobs share `~/.codex/generated_images`, and both logs of the
+  2026-10-28 pair named the same file. Neither picked the wrong image that time, but Retro Diffusion misfiled a walk
+  the same way.
+- **Outline:** the game draws the black outline with a shader (`scripts/arena/creature_finish.gd`). Do not paint a
+  heavy outline around the silhouette. Do paint a dark line inside the body where one part overlaps another, and give
+  each main material 4 tones (highlight, base, shadow, deep shadow): sheets with 2 or 3 tones read flat (2026-11-02).
+- **Lighting:** from the upper left, the same in every view.
+
+## Read the canon first
+
+Before every sheet, read `docs/art/sprite-canon-2026-11-02.md` and copy its numbers into the brief: colours, top-5 share, lone pixels, drawing for game size, the evolution step and the back-view rules. Preston, 2026-11-02: "dont forget to use what we need everytime we make new sprites with codex".
+
+## Why Drembit's views agreed
+
+Preston, 2026-10-31: "drembit was almost perfect ... future creatures should account for that so we dont keep
+creating creatures we have to scrap eventually." Front and back are one body seen from opposite sides, so their
+outlines should nearly cover each other. `python tools/art/view_check.py <folder>` prints that as front/back, where
+1.0 is the same shape.
+
+| Set | front/back |
+| --- | --- |
+| Drembit, raw sheet | 0.88 |
+| Kithflare, raw sheet | 0.83 |
+| Kithflare after its front was replaced by a separate redraw | 0.67 |
+| The same set after three repair passes | 0.77 |
+| Game Sparkwick | 0.33 |
+| Kithflare, one fresh sheet under the rules below, first try | 0.88 |
+
+The sheet agreed with itself, the separate redraw broke it, and repairs never won it back. Body length is not the
+cause: Drembit is a long body, and across 51 creatures length has no link to this score.
+
+Every new creature takes these from it:
+
+- **One image.** All eight views come from one sheet. A view drawn later is drawn by a different hand.
+- **Start from Drembit's brief,** `docs/creatures/codex-new-creature-2026-10-31/prompt-sheet.txt`. Keep its cell
+  layout and its "eight copies of the exact same creature" paragraph word for word, and change only the design.
+- **Neutral standing pose.** Legs under the body, no lean, no crouch, no action. Kithflare's brief asked for a body
+  leaning forward ready to spring.
+- **The signature shows from all eight views and clears the head.** Drembit's tail stands taller than its head, on
+  both sides of the centre line. Kithflare's sat at head height on the centre line, so from behind it covered the
+  head and the raw north view had no head at all.
+- **A tail grows from a root as wide as the hips.** Preston on a thin stem rising from a round rump: "look like a
+  monkeys". Give a bird a feathered tail that flows out of the back, and cover the rear in rows of feathers or scales
+  with no round cheeks and no crease.
+- **The signature keeps its height as it turns.** Kithflare's tail tip stood 78 to 79 px tall on e, w, ne and nw against
+  81 to 86 on the other four, and Preston saw that as wrong perspective. The tip stands tallest from the front and
+  lowest from behind, and east and west show the most reach, about 1.4 times the diagonals.
+- **To change one part of a sheet, redraw the whole sheet with the old sheet attached,** naming what stays and what
+  changes. Kithflare's tail and rear were replaced this way and front/back held at 0.88. The parts you meant to keep
+  can still drift: both peacock tail takes came back with rounder heads and bigger eyes despite "keep exactly", so
+  compare the result to the old sheet and report any drift. Say so plainly, Claude can move the new part onto the
+  approved body by code.
+- **A tail needs volume, not only the right height.** A stripe down one long shape reads as a flat feather from the
+  side and back. Draw layered feathers instead, and remember a bigger tail draws the whole creature smaller in the
+  game, because game size comes from solid area.
+- **Keep the identity in what shows from behind:** shape, colour and the signature. Huge eyes and cheek patches exist
+  only from the front, so they can't hold eight views together, and hard numbers on eye size pull the front away from
+  the rest. Drembit's face is a small eye and a bill.
+- **One head.** The front and side views must be the same head. Kithflare's front is a round chick and its side a
+  hooked hawk. No number sees this, so look.
+
+## The loop
+
+1. **Eight angles first, in one image** (Preston, 2026-10-14). Generate one 3x3 sheet before any single front view,
+   with the previous stage's sheet as the pose guide. Cell layout, the creature facing the middle:
+
+   ```
+   ne  n  nw
+   e   .  w
+   se  s  sw
+   ```
+
+   For a creature that is the same on both sides, the west column can be left to code (step 3). The pipelines that
+   hold eight views together generate five directions and mirror three.
+2. **Slice:** `python tools/art/slice_grid.py <sheet.png> <out_dir> [--canvas 128] [--feet 104]`. It cuts and
+   places, and never changes pixels.
+3. **Score the raw sheet first:** `python tools/art/view_check.py <out_dir>`, before any repair. Under 0.80 front/back
+   means generate the whole sheet again with a changed prompt. Stop after two tries and report what is failing.
+4. **Judge:** `python tools/art/sheet_judge.py <out_dir>`. It prints two verdicts:
+   - **FIX:** code corrects these. Run `python tools/art/sheet_judge.py <out_dir> --fix <fixed_dir>
+     [--mirror-from east|west]` and judge `<fixed_dir>` again. Mirror only a creature that is the same on both
+     sides. For one-sided parts (a horn or blade on one side, a lopsided body), pass `--asymmetric`; mirror faults
+     then become REDO.
+   - **REDO:** do not redraw one view of a new creature. If the drawing only needs moving, trimming or recolouring,
+     do that in Aseprite. Otherwise generate the whole sheet again with the correction in the prompt. An installed
+     creature whose other views are approved may get one view redrawn as a last resort: keep it only if front/back
+     stays at or above where it was. Stop after two tries and report what is still failing. Do not loop on credits.
+     Claude wrote the earlier rule here, "generate only those views again", and following it is what broke Kithflare.
+5. **Look.** Things the judge cannot measure:
+   - The back diagonals (ne, nw) must not show the face. A colour test for this failed in both directions on
+     2026-10-28.
+   - The north view must point north. The judge's `turned` check caught Sparkwick, but lopsided creatures trip it.
+   - Before paying to redraw a view the judge flags, check that another file doesn't already hold it. Sparkwick's
+     (2026-10-28) north file held its northeast view, its northwest file held its north view, and its northeast
+     file showed the face. Putting the files back in the right slots and flipping the northeast for the northwest
+     fixed the back views for free (`docs/creatures/sheet-judge-2026-10-28/sparkwick/`).
+   - Before paying to redraw a view flagged `turned`, check whether it only leans. `tools/art/aseprite/fix_view.lua`
+     slides pixel rows and repaints named pixels with no new colours, and it passed Gruntle's north on 2026-10-30
+     (`docs/art/reference-measurements-2026-10-30.md`). A view truly drawn turned, like Sparkwick's, stays a redo.
+     `tools/art/north_straighten.py` does this and gives every north frame the same lean, so the walk still matches.
+6. **Show Preston** the sheet before anything goes into `assets/`. When he approves, install it into
+   `assets/sprites/arena/<name>/`, then rebuild with `tools/arena/build_small.py` and
+   `tools/arena/build_dungeon_set.py`, then run `tools/art/walk_lock.py <name>` for the walk.
+   Then run `python tools/art/pose_fix.py plan <name>`: west walks are flips of east walks, so a west still drawn on
+   its own sits a turn off them (45 creatures on 2026-10-31). `apply` flips the still that disagrees.
+
+## What the judge checks
+
+- **files:** all eight views, on one canvas size.
+- **alpha:** no partial alpha.
+- **ground:** every view on the same foot row.
+- **centre:** every view on the middle column.
+- **height:** no view more than 10% off the set's median height.
+- **palette:** at least 85% of each view's pixels near the south view's colours.
+- **specks:** few lone pixels.
+- **mirror:** each pair's silhouettes overlap at 0.85 or more when flipped.
+- **face:** the north view is not the south view again.
+- **turned:** the north view is about as even left to right as the south view, and is not shaped like a diagonal.
+
+The thresholds are in `LIMITS` at the top of the script. On 2026-10-28 it ran over all 50 in-game sets: 22 need
+views generated again, and 29 need no new generation. Run `python tools/art/sheet_judge.py --all` for the current
+list.
+
+## Before showing Preston anything
+
+`sheet_judge.py` checks one set of views. `python tools/art/sprite_director.py <creature> --look` then reviews the whole
+creature: whether the body carries its walk, whether it stands on its shadow, whether the eight views agree in size and
+colour, the attack beats, hurt and sleep. Read its worklist and look at the strips in `docs/creatures/sprite-director/look`.
+Standards are in `docs/art/pro-sprite-standards-2026-10-31.md`. Every line of its regression list must print `found`.
+
+## Don'ts
+
+- Do not invent creature names, lore or stats. Label new ideas as proposals.
+- Do not edit Route 1.
+- Do not restore the Cinderpelt evolution link.
+- Do not overwrite game sprites without Preston's yes. Originals for walk work live in
+  `docs/creatures/walk-lock-2026-10-28/before/`.
+- Do not run two Retro Diffusion creature jobs at once.
+
+After finishing, list the palette and count how much of each colour sits on the sprite's edge. A plum colour mostly on the rim is the magenta background bled into edge pixels, and it can also show through gaps between legs. `defringe.py` can repaint 0 pixels and still leave it. Clear it, and report near-black outlines, which the brief rules out. Red creatures hide this; green ones show it (Tallowroot, 2026-10-31).
+
+## Making the next stage of a line
+
+Design it from the measured numbers before drawing. Real evolution lines match the last stage's outline only 0.28 to 0.55 at equal height, and area grows 1.3 to 2.7 times a stage. Run `python tools/art/stage_step.py <last stage folder> <new folder>` and report the line; over 0.55 is the old body made bigger. Game size comes from solid area, so a big tail or fan shrinks the body: Stormwick's closed train gave it 17 percent more scale than the open burst. Change the tail's shape, not only its size. When two takes share a body brief, the bodies still drift, so compare them.
+A fan or big tail on a rear diagonal is not the side view's. From behind at an angle it sits on the rump, nearer than the body, so it crosses the back: centre it halfway between the side and back spreads, and shorten the blades toward the edges. If every blade leans one way, Preston reads that side as having more feathers (Stormwick, 2026-10-31). Generators miscount repeated parts, so count them by eye in every view; code can then copy one clean blade to fix the count without a new image.
+
+Feet and tails change from behind too. On the straight back view the feet are never the front's toes pointing at the camera, and nothing from the chest or face sits on the rump. A trunk leg stands on its roots, with one or two short claws or roots toward the camera, in the same bark as the leg; no smooth rounded heel. On the rear diagonals a tail slopes down toward the camera at about the front diagonal's length. Say this in the prompt, and check it by eye: Huskward's sheet passed every number with front feet on its back (Preston, 2026-10-31), and hand-drawn rounded heels were rejected as looking edited (2026-11-01).
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command '$out='"'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35'; "'$ex='"'D:/dev/new-mech-rpg/docs/art/moba/hippo_l/take-b/cam35'; foreach("'$f in @('"'palette.json','guide_sizes.txt','prompt-sheet.txt')) { Write-Output "'$f; Get-Content -LiteralPath (Join-Path $out $f) }; foreach($f in @('"'finish.py','defringe.py','despeckle.py','audit.py')) { Write-Output "'$f; Get-Content -LiteralPath (Join-Path $ex $f) }' in D:\dev\_scratch\codex-cwd
+ succeeded in 15614ms:
+palette.json
+[
+{"hex": "7e7e8e", "role": "gunmetal", "shade": "highlight"},
+{"hex": "555562", "role": "gunmetal", "shade": "base"},
+{"hex": "34343e", "role": "gunmetal", "shade": "shadow"},
+{"hex": "26262e", "role": "gunmetal", "shade": "deep"},
+{"hex": "f85a4a", "role": "red", "shade": "highlight"},
+{"hex": "ee2c26", "role": "red", "shade": "base"},
+{"hex": "c41216", "role": "red", "shade": "shadow"},
+{"hex": "6a0a10", "role": "red", "shade": "deep"},
+{"hex": "eeeef2", "role": "steel", "shade": "light"},
+{"hex": "b8b8c2", "role": "steel", "shade": "base"},
+{"hex": "9a9aa6", "role": "steel", "shade": "shadow"},
+{"hex": "5ff0ff", "role": "eye", "shade": "glow"},
+{"hex": "e8ffff", "role": "eye", "shade": "glint"},
+{"hex": "141218", "role": "accent", "shade": "accent"}
+]
+guide_sizes.txt
+hull (124, 89, 66) (long, wide, high texels)
+hull guide at 6 deg (W x H texels): s 89x54, se 115x53, e 124x54, ne 112x57, n 89x60
+hull guide at 35 deg (W x H texels): s 89x74, se 115x63, e 124x71, ne 112x80, n 89x90
+prompt-sheet.txt
+Use case: stylized-concept. Create exactly ONE square 3x3 eight-direction still pixel sprite sheet showing the SAME heavy robot lobster as the first attached image, drawn from a HIGHER CAMERA: looking DOWN at it from 35 degrees above level, the way a third-person arena game camera sees it, in EVERY view.
+TWO ATTACHED IMAGES:
+1. approved_views.png: the approved robot lobster in five views on magenta, left to right: front (south), front three-quarter (southeast), right side (east), rear three-quarter (northeast), back (north). They are drawn from a LOW camera, almost level. Keep EVERYTHING about this robot lobster: its parts, proportions, colours, shading style, pixel clusters, how each material runs through its shades, the thin dark seam lines, the long low dark gunmetal body with bold red panels, the thick pale white-steel legs with red joint rings and red feet, the two big red claws resting on the ground in front of the head, the big cyan visor eyes, the two thin antenna rods with red tips, the banded tail lying straight back flat on the ground and ending in a flat tail fan, the planted heavy stance. ONLY THE CAMERA MOVES UP. Invent NO new parts: no spikes or spines on the tail or back, no hatches, vents, lights, markings, stripes, panels, guns, blades or details the reference does not show. Exactly two big claws, two eyes, two antenna rods, one banded tail and one tail fan, and the same number of walking legs as the reference shows, no more. Never copy any existing game's lobster, robot or mech.
+2. angle_guide.png: an ANGLE GUIDE ONLY, not a design. A rough grey solid cut from this lobster's own outlines, in the same five views and order, in ONE ROW, already at the 35 degree camera. Its pale surfaces are the TOP, its green surfaces the FRONT (the face and the claws), its grey surfaces the sides. Draw each lobster view at this angle: the same amount of pale top showing, the same height on the page relative to its width. Never copy the solid's lumpy shape, colours or outline: the lobster's head, claws, legs, antennae, tail and fan sit inside it.
+A TRY ON ANOTHER MACHINE FAILED: it only stretched the reference taller and narrower, and it read as "a taller front view", not as a view from above. Avoid that in two ways:
+WIDTH STAYS, HEIGHT GROWS: every view keeps EXACTLY the reference's width and grows only in height, because its top now shows. This lobster is long and its tail is far from its antennae, so the views do NOT all grow the same: the back and the rear three-quarter views grow the most, the front three-quarter view the least. On the page: the front view stays exactly as wide as the reference's front view and becomes about five sixths as tall as it is wide, an eighth taller than the reference, because the tail now shows running away up the page behind the head; the front three-quarter view stays as wide as the reference's and becomes about three fifths as tall as it is wide, a little taller than the reference and never flatter; the SIDE VIEW is the longest view, about one and two fifths times as long as the front view is wide, exactly as long as the reference's side view, and becomes a little more than half as tall as it is long, a third taller than the reference; the rear three-quarter view stays as wide as the reference's and becomes about seven tenths as tall as it is wide, a quarter taller than the reference; the back view stays exactly as wide as the reference's back view and becomes about a tenth taller than it is wide, a third taller than the reference. The antenna rods keep their thin straight shape and may stick up past these heights where they rise above the body. Never make a view narrower to make it look taller, and never shorten the side view.
+FLAT TOP FACES THAT FACE UP: what makes a view read as seen from above is the tops of things, drawn as broad lit surfaces with the bright highlight, lighter than the side faces below them, with a firm edge between top and side. The carapace is the biggest top face: a broad lit surface of a few big angular gunmetal plates with the bold red top plate set into it, running back from the head. The banded tail is the second: each tail segment shows its lit top as a band across the tail, one band per segment, running away to the flat tail fan, whose top is lit too. The tops of the two big claws are lit red. The tops of the thick white-steel legs, the red joint rings and the steel joint discs are lit. Front and side faces (the face plate, the front of the claws, the flanks of the carapace) get SHORTER on the page; top faces get LONGER. The FAR legs sit HIGHER on the page than the near legs, because the ground is seen from above. The belly and the undersides are HIDDEN. The front views must NOT turn into a view from straight overhead, and the side view must NOT stay low: the five views agree on how much top shows.
+THE EYES KEEP THEIR SIZE: the two big glowing cyan visor eyes in the face are as BIG as in the reference and stay visible: the carapace edge and the claws never cover them, and they never turn steel, grey or white. In the front view both eyes show; in the front three-quarter view the near eye shows and the far eye is partly hidden, as in the reference; in the side view the near eye shows. The rear views show NO eye, NOT EVEN ONE EYE PIXEL. The two big claws keep their size in every view.
+PLATES AND SEAMS, as in the reference: the same big hard flat gunmetal armour plates with the bold red panels set into them, straight cut edges and bevelled corners, each with its lit top edge and a firm shaded edge, never a smooth glossy shell, never round pillows, smeared, soft, melted together or blobby. The dark gunmetal frame showing between the plates and at the joints, the pistons on the claw arms, the red ring armour at the leg joints, as in the reference. Thin dark accent seam lines between the plates, between the tail segments, around the red panels, around the visor and at the leg joints, as many as in the reference. Continue the plates, panels and segment seams over the newly visible top the way the reference implies them, and add nothing new up there. The tail stays straight, flat on the ground and smooth along its top edge: no spikes, spines, fins or notches.
+Exact 3x3 layout, every view from 35 degrees above:
+top left northeast: rear three-quarter facing upper RIGHT, as wide as the reference's rear three-quarter view and about seven tenths as tall as wide: the flat tail fan and the banded tail near the viewer at the lower left, every segment top lit, running up the page to the carapace; the carapace top a broad lit surface with its red top plate; the back of the head at the upper right with both antenna rods rising from it; the claws past the head at the upper right, higher on the page; the far legs higher on the page than the near legs; NO eye, NO face.
+top middle north: straight BACK, left-right symmetric, exactly as wide as the reference's back view and about a tenth taller than wide: the flat tail fan near the viewer low in the view, the banded tail running away up the page as a column of lit segment tops; the carapace beyond it a broad lit surface with its red top plate; the back of the head and both antenna rods at the TOP; the legs on both sides, the front legs higher on the page than the rear legs; NO eye, NO face.
+top right northwest: rear three-quarter facing upper LEFT, as wide as the reference's rear three-quarter view and about seven tenths as tall as wide: the flat tail fan and the banded tail near the viewer at the lower right, every segment top lit, running up the page to the carapace; the carapace top a broad lit surface with its red top plate; the back of the head at the upper left with both antenna rods rising from it; the claws past the head at the upper left, higher on the page; the far legs higher on the page than the near legs; NO eye, NO face.
+middle left east: SIDE VIEW facing RIGHT seen from 35 degrees above, the LONGEST view, about one and two fifths times as long as the front view is wide, as LONG as the reference's side view and a little more than half as tall as long: the head on the right with the near cyan eye, the antenna rods and the big claw resting on the ground in front of it, the claw's top lit; the carapace top showing as a WIDE lit BAND above the near flank, with its red top plate and the red side panel; the banded tail on the left lying straight back flat on the ground, the segment tops a lit band, ending in the flat tail fan; all the legs planted, the far legs clearly HIGHER on the page than the near ones.
+middle center EMPTY solid magenta.
+middle right west: SIDE VIEW facing LEFT seen from 35 degrees above, the LONGEST view, about one and two fifths times as long as the front view is wide, as LONG as the reference's side view and a little more than half as tall as long: the head on the left with the near cyan eye, the antenna rods and the big claw resting on the ground in front of it, the claw's top lit; the carapace top showing as a WIDE lit BAND above the near flank, with its red top plate and the red side panel; the banded tail on the right lying straight back flat on the ground, the segment tops a lit band, ending in the flat tail fan; all the legs planted, the far legs clearly HIGHER on the page than the near ones.
+bottom left southeast: FRONT three-quarter facing lower RIGHT seen from above, as WIDE as the reference's front three-quarter view and about three fifths as tall as wide, never flatter than the reference: the body turned, the head out to the right and forward with the near eye big and the far eye partly hidden, both antenna rods, both claws resting on the ground in front, their tops lit; the carapace seen from above behind the head as a broad lit surface with its red top plate; the banded tail running back UP the page to the upper left, its segment tops lit, the flat fan at its far end; the far legs higher on the page than the near ones.
+bottom middle south: straight FRONT seen from above, exactly as WIDE as the reference's front view and about five sixths as tall as wide: both big claws resting on the ground in front, their tops lit; the face with both big cyan eyes, a little shorter on the page than in the reference; the two antenna rods rising from the head; the carapace top a broad lit surface with its red top plate; behind and ABOVE the carapace the banded tail running away up the page, its segment tops lit, the flat fan at the top of the view; the legs planted on both sides. Not seen from straight overhead: the eyes, the face and the claws stay clear.
+bottom right southwest: FRONT three-quarter facing lower LEFT seen from above, as WIDE as the reference's front three-quarter view and about three fifths as tall as wide, never flatter than the reference: the body turned, the head out to the left and forward with the near eye big and the far eye partly hidden, both antenna rods, both claws resting on the ground in front, their tops lit; the carapace seen from above behind the head as a broad lit surface with its red top plate; the banded tail running back UP the page to the upper right, its segment tops lit, the flat fan at its far end; the far legs higher on the page than the near ones.
+VOLUME AND CRAFT, exactly as in the reference: light from the upper left on every view. Gunmetal armour: highlight on the carapace top, the tail segment tops and the top edge of each plate, base across the middle, shadow on the sides away from the light, deep shadow under the carapace edge, between the legs and under each plate edge. Red: highlight on the tops of the red panels and claws, base, shadow, deep red in the claw grooves and under the panels. White-steel legs: light on the tops, base, shadow. Eyes: cyan glow and one pale glint. Big flat colour clusters, every cluster at least 2 pixels across. No texture, no rivets, no panel scribbles, no dithering, no speckle, no stray single pixels. NO dark line around the outside of the silhouette: the outermost pixels use the gunmetal, red and white-steel colours.
+PALETTE, the same fourteen colours as the reference and no others: gunmetal highlight 7e7e8e, base 555562, shadow 34343e, deep 26262e; red highlight f85a4a, base ee2c26, shadow c41216, deep 6a0a10; white-steel light eeeef2, base b8b8c2, shadow 9a9aa6; cyan eye 5ff0ff and its glint e8ffff; dark accent 141218 for the seams, the overlap lines and the panel insets. Cyan only in the eyes.
+Eight copies of the exact same robot lobster in the same neutral planted stance, same anatomy and proportions, same SCALE, the same 35 degree camera in every view, each entirely inside its cell with ample margins. Nearest feet at exactly the same baseline within each row. The side views are the widest, about 75% of their cell width; the tallest view, the back view, at most 55% of cell height. Flat uniform solid #FF00FF magenta background everywhere, no labels, text, letters, glyphs, grid lines, shadows on the ground, floor, scenery, effects or extra objects. One image only.
+finish.py
+"""Approved take finishing adapted for fixed ramps and hippo camera anchor; no drawing."""
+from pathlib import Path
+import json, hashlib
+import numpy as np
+from PIL import Image
+from scipy import ndimage
+ROOT=Path(__file__).resolve().parent
+im=Image.open(ROOT/'sheet_raw.png').convert('RGBA'); a=np.array(im)
+r,g,b=a[...,:3].astype(int).transpose(2,0,1)
+bg=(r>190)&(g<85)&(b>185)
+a[bg]=0
+# Remove blended magenta/plum before palette mapping, preserving the silhouette.
+solid=a[...,3]>127
+bad=solid&(r-g>25)&(b-g>25)&(r>b*.85) # magenta hue, not legitimate violet armour
+good=solid&~bad
+idx=ndimage.distance_transform_edt(~good,return_distances=False,return_indices=True)
+a[bad,:3]=a[idx[0][bad],idx[1][bad],:3]
+# Light raw-resolution median smoothing, before the one nearest sheet shrink.
+smooth=ndimage.median_filter(a[...,:3],size=(3,3,1),mode='nearest')
+interior=ndimage.binary_erosion(solid,iterations=2)
+raw_eye=solid&(r>g*1.04)&(g>b*1.12)&(r>110)&(g>65)
+seam=((np.dot(a[...,:3],[.2126,.7152,.0722])<55)|raw_eye)&solid
+interior &= ~seam
+a[interior,:3]=smooth[interior]
+# One shared nearest shrink, anchored by mean south/north/east width ratios.
+CELLS={'s':(2,1),'n':(0,1),'e':(1,0)}
+ANCHOR={'s':77,'n':73,'e':123}
+def widths(mask):
+ h,w=mask.shape; result={}
+ # Components allow a sprite to extend a pixel into the empty middle cell,
+ # matching slice_grid's subject extent instead of clipping at a cell divider.
+ labels,n=ndimage.label(mask)
+ objects=ndimage.find_objects(labels)
+ for d,(row,col) in CELLS.items():
+  found=[]
+  for i,box in enumerate(objects,1):
+   if box is None: continue
+   sy,sx=box; cy=(sy.start+sy.stop-1)/2; cx=(sx.start+sx.stop-1)/2
+   if int(cy*3/h)==row and int(cx*3/w)==col:
+    found.append((int((labels[box]==i).sum()),sx.stop-sx.start))
+  result[d]=max(found)[1]
+ return result
+
+raw_widths=widths(solid); raw_width=raw_widths['e']
+scale=1/np.mean([raw_widths[d]/ANCHOR[d] for d in CELLS])
+w0=round(im.width*scale); candidates=[]
+for w in range(w0-20,w0+21):
+ h=round(im.height*w/im.width)
+ sampled=np.array(Image.fromarray((solid*255).astype('uint8')).resize((w,h),Image.Resampling.NEAREST))>0
+ ws=widths(sampled); ratios={d:ws[d]/ANCHOR[d] for d in CELLS}
+ candidates.append((abs(np.mean(list(ratios.values()))-1),abs(w-w0),w,h,ws,ratios))
+err,_,w,h,anchor_widths,anchor_ratios=min(candidates)
+small=Image.fromarray(a).resize((w,h),Image.Resampling.NEAREST)
+src=np.array(small); vis=src[...,3]>127; rgb=src[...,:3].astype(float)
+palette=json.loads((ROOT/'palette.json').read_text())
+triples=np.array([list(bytes.fromhex(c['hex'])) for c in palette],np.uint8)
+r,g,b=rgb.transpose(2,0,1); lum=rgb@[.2126,.7152,.0722]
+# Classify material before shade mapping: each material keeps its own ramp.
+glow=vis&(r>g*1.04)&(g>b*1.12)&(r>110)&(g>65)
+purple=vis&~glow&(b-r>15)&(b-g>35)
+charcoal=vis&~glow&~purple&(lum<76)
+role=np.full(vis.shape,1); role[purple]=0; role[charcoal]=2; role[glow]=3
+# Internal opposed bright neighbours distinguish thin seams from broad shadows.
+inside=ndimage.binary_erosion(vis)
+thin=np.zeros(vis.shape,bool)
+for dy,dx in [(0,1),(1,0),(1,1),(1,-1)]:
+ for dist in [1,2]:
+  plus=ndimage.shift(lum,(dy*dist,dx*dist),order=0,mode='constant',cval=0)
+  minus=ndimage.shift(lum,(-dy*dist,-dx*dist),order=0,mode='constant',cval=0)
+  thin|=(plus>lum+18)&(minus>lum+18)
+ink=vis&inside&~glow&(lum<90)&thin
+# Retain the darkest eligible thin seams to the approved accent share per view.
+# This changes colour roles only, with the same fixed palette throughout.
+target={(2,1):.061,(2,0):.061,(1,0):.059,(0,0):.060,(0,1):.059,(0,2):.060,(1,2):.059,(2,2):.061}
+keep=np.zeros(vis.shape,bool)
+for (row,col),share in target.items():
+ y0,y1=row*h//3,(row+1)*h//3; x0,x1=col*w//3,(col+1)*w//3
+ local=ink[y0:y1,x0:x1]; yy,xx=np.where(local)
+ count=min(len(yy),round(vis[y0:y1,x0:x1].sum()*share))
+ order=np.argsort(lum[y0+yy,x0+xx],kind='stable')[:count]
+ keep[y0+yy[order],x0+xx[order]]=True
+role[keep]=4
+source_lab=np.array(small.convert('RGB').convert('LAB')).astype(float)
+choices_lab=np.array(Image.fromarray(triples[None]).convert('LAB')).astype(float)[0]
+source_lab[...,1:]=(source_lab[...,1:]+128)%256-128
+choices_lab[...,1:]=(choices_lab[...,1:]+128)%256-128
+cost=((source_lab[:,:,None]-choices_lab[None,None])**2*[1,3,3]).sum(3)
+for k,c in enumerate(palette):
+ ri=['purple','steel','charcoal frame','eye','dark accent'].index(c['role'])
+ cost[...,k]=np.where(role==ri,cost[...,k],1e12)
+nearest=cost.argmin(2)
+
+out=np.zeros_like(src); out[...,:3]=triples[nearest]; out[...,3]=np.where(vis,255,0); out[~vis]=0
+Image.fromarray(out).save(ROOT/'sheet_finished.png')
+meta={'raw_size':im.size,'anchor_widths':anchor_widths,'anchor_ratios':anchor_ratios,'anchor_mean':float(np.mean(list(anchor_ratios.values()))),'raw_east_width':raw_width,'target_east_width':123,'shared_scale':w/im.width,'finished_sheet_size':[w,h],'raw_plum_repainted':int(bad.sum()),'smooth':'3x3 median at raw resolution, interior only','raw_sha256':hashlib.sha256((ROOT/'sheet_raw.png').read_bytes()).hexdigest()}
+(ROOT/'preparation.json').write_text(json.dumps(meta,indent=2)); print(json.dumps(meta))
+defringe.py
+"""Squirrel cleanup, adapted from wolf take B: whole-sheet nearest-solid-colour cleanup.
+Checks every colour, dark plum and internal leg gaps, not one historical RGB.
+Alpha and silhouettes stay fixed.
+"""
+from pathlib import Path
+import json
+import numpy as np
+from PIL import Image
+from scipy import ndimage
+HERE = Path(__file__).resolve().parent
+
+def clean(px):
+    solid = px[..., 3] > 0
+    rgb = px[..., :3].astype(float)
+    r, g, b = rgb[..., 0], rgb[..., 1], rgb[..., 2]
+    bad = solid & (r - g > 25) & (b - g > 25) & (r > b * .85)
+    # The mech's near-black is deliberate internal ink, never magenta fringe.
+    bad &= ~np.all(px[..., :3] == (20, 18, 24), axis=2)
+    good = solid & ~bad
+    if bad.any() and not good.any():
+        raise ValueError("No clean palette pixels remain")
+    out = px.copy()
+    if bad.any():
+        idx = ndimage.distance_transform_edt(~good, return_distances=False, return_indices=True)
+        out[bad] = px[idx[0][bad], idx[1][bad]]
+    assert np.array_equal(out[..., 3], px[..., 3])
+    # A lone pale rim pixel has no same-colour neighbour in its 8-neighbourhood.
+    edge = solid & ~ndimage.binary_erosion(solid)
+    # The prompt reserves ink for overlaps inside the body, never the silhouette.
+    ink = solid & np.all(out[..., :3] == (20, 18, 24), axis=2)
+    rim_ink = edge & ink
+    if rim_ink.any():
+        donor = solid & ~ink
+        idx = ndimage.distance_transform_edt(~donor, return_distances=False, return_indices=True)
+        out[rim_ink] = out[idx[0][rim_ink], idx[1][rim_ink]]
+    pale = solid & (np.dot(out[..., :3], [0.2126, 0.7152, 0.0722]) >= 145)
+    lone = np.zeros(solid.shape, bool)
+    for colour in np.unique(out[pale, :3], axis=0):
+        same = solid & np.all(out[..., :3] == colour, axis=2)
+        neighbours = ndimage.convolve(same.astype(int), np.ones((3,3),int), mode='constant') - same
+        lone |= same & edge & (neighbours == 0) & ~np.isin(out[...,:3].dot(np.array([65536,256,1])),[0xc4720e,0xffc23c,0xfff1c4])
+    donor = solid & ~pale & ~np.all(out[..., :3] == (20, 18, 24), axis=2)
+    # Keep every material on its own ramp, including pale rim cleanup.
+    roles={tuple(bytes.fromhex(c['hex'])):c['role'] for c in json.loads((HERE/'palette.json').read_text())}
+    for colour in np.unique(out[lone,:3],axis=0):
+        local=lone & np.all(out[...,:3]==colour,axis=2)
+        own=np.zeros(solid.shape,bool)
+        for rgb,role in roles.items():
+            if role==roles.get(tuple(colour)): own |= solid & ~lone & np.all(out[...,:3]==rgb,axis=2)
+        if own.any():
+            idx=ndimage.distance_transform_edt(~own,return_distances=False,return_indices=True)
+            out[local]=out[idx[0][local],idx[1][local]]
+    original_lone=lone.copy()
+    lone[:]=False
+    if lone.any():
+        idx = ndimage.distance_transform_edt(~donor, return_distances=False, return_indices=True)
+        out[lone] = out[idx[0][lone], idx[1][lone]]
+    return out, int(bad.sum()), int(original_lone.sum()), int(rim_ink.sum())
+
+if __name__ == "__main__":
+    path = HERE / "sheet_finished.png"
+    px, count, pale_count, ink_count = clean(np.array(Image.open(path).convert("RGBA")))
+    Image.fromarray(px).save(path)
+    result = {"plum_or_magenta_pixels_repainted": count,
+              "remaining_plum_or_magenta_pixels": clean(px)[1], "lone_pale_edge_pixels_repainted": pale_count,
+              "remaining_lone_pale_edge_pixels": clean(px)[2],
+              "dark_ink_rim_pixels_repainted": ink_count,
+              "remaining_dark_ink_rim_pixels": clean(px)[3], "alpha_unchanged": True}
+    (HERE / "defringe.json").write_text(json.dumps(result, indent=2))
+    print(json.dumps(result))
+despeckle.py
+"""One simultaneous four-neighbour despeckle pass, from shoebill take C; green and white lens colours kept."""
+from pathlib import Path
+from collections import Counter
+import numpy as np
+from PIL import Image
+import json
+P=Path(__file__).resolve().parent
+LENS={(196,114,14),(255,194,60),(255,241,196),(20,18,24)}
+ROLES={tuple(bytes.fromhex(c['hex'])):c['role'] for c in json.loads((P/'palette.json').read_text())}
+def despeckle(a):
+    h, w = a.shape[:2]
+    out = a.copy()
+    fixed = 0
+    for y in range(h):
+        for x in range(w):
+            if a[y, x, 3] == 0 or tuple(a[y, x, :3]) in LENS:
+                continue
+            nbrs = [tuple(a[yy, xx]) for yy, xx in ((y - 1, x), (y + 1, x), (y, x - 1), (y, x + 1))
+                    if 0 <= yy < h and 0 <= xx < w and a[yy, xx, 3] > 0]
+            nbrs=[n for n in nbrs if ROLES.get(tuple(n[:3]))==ROLES.get(tuple(a[y,x,:3]))]
+            if not nbrs:
+                continue
+            here = a[y, x, :3].astype(int)
+            if any(np.abs(here - np.array(n[:3], int)).sum() < 30 for n in nbrs):
+                continue
+            out[y, x] = Counter(nbrs).most_common(1)[0][0]
+            fixed += 1
+    return out, fixed
+
+
+a,n=despeckle(np.array(Image.open(P/'sheet_finished.png').convert('RGBA')))
+Image.fromarray(a).save(P/'sheet_finished.png')
+(P/'despeckle.json').write_text(json.dumps({'passes':1,'pixels_changed':n,'lens_colours_preserved':['c4720e','ffc23c','fff1c4','141218']},indent=2))
+print('despeckle pixels changed',n)
+audit.py
+"""Five-view hippo camera audit, adapted from EX audit.py; no sprite drawing."""
+from pathlib import Path
+import json, subprocess, os, shutil
+import numpy as np
+from PIL import Image, ImageDraw
+from scipy import ndimage
+P=Path(__file__).resolve().parent; TAKE=P.parent; V=TAKE/'views_cam35'; V.mkdir(exist_ok=True)
+NAMES=['s','se','e','ne','n']; ALL=NAMES+['nw','w','sw']
+AW=dict(zip(NAMES,[77,113,123,105,73])); AH=dict(zip(NAMES,[70,70,62,77,76]))
+TW=dict(zip(NAMES,[77,113,123,106,77])); TH=dict(zip(NAMES,[90,89,82,98,98]))
+ACC=dict(zip(NAMES,[6.1,6.1,5.9,6.0,5.9]))
+pal=json.loads((P/'palette.json').read_text()); roles={tuple(bytes.fromhex(c['hex'])):c['role'] for c in pal}; valid=set(roles)
+for d in NAMES: shutil.copyfile(P/'slices'/f'{d}.png',V/f'{d}.png')
+metrics={'approved':{},'new':{}}; edges={}; shape=[]; depth=[]; invalid={}; border={}; allpix=[]
+for tag,folder in [('approved',TAKE/'views'),('new',P/'slices')]:
+ for d in (NAMES if tag=='approved' else ALL):
+  a=np.array(Image.open(folder/f'{d}.png').convert('RGBA')); m=a[...,3]>0; yy,xx=np.where(m); pix=a[m,:3]
+  cs,counts=np.unique(pix,axis=0,return_counts=True); lum=pix@[.2126,.7152,.0722]; k=counts.argmax()
+  shares={r:sum(int(n) for c,n in zip(cs,counts) if roles.get(tuple(c))==r)/len(pix) for r in ['purple','steel','charcoal frame','eye','dark accent']}
+  eye=np.zeros(m.shape,bool)
+  for rgb,role in roles.items():
+   if role=='eye': eye |= m & np.all(a[...,:3]==rgb,axis=2)
+  labels,n=ndimage.label(eye,structure=np.ones((3,3)))
+  groups=sorted([int((labels==i).sum()) for i in range(1,n+1)],reverse=True)
+  lights={c:float((m&np.all(a[...,:3]==tuple(bytes.fromhex(c)),axis=2)).sum()/m.sum()) for c in ['a990e0','e4e4ea']}
+  rec={'width':int(np.ptp(xx)+1),'height':int(np.ptp(yy)+1),'area':int(m.sum()),'role_shares':shares,'eye_pixels':int(eye.sum()),'eye_groups':groups,'light_shares':lights,'p05':float(np.percentile(lum,5)),'p95':float(np.percentile(lum,95)),'dominant_share':float(counts[k]/len(pix)),'dominant_colour':bytes(cs[k]).hex(),'lowest_row':int(yy.max()),'top_row':int(yy.min())}
+  metrics[tag][d]=rec
+  if d in NAMES:
+   shape.append(f"{tag} {d}: "+'; '.join(f'{r} {v:.4%}' for r,v in shares.items())+f"; accent target {ACC[d]:.1f}%; light purple {lights['a990e0']:.3%}, steel {lights['e4e4ea']:.3%}; eyes {int(eye.sum())}, 8-connected groups {groups}; top/bottom {yy.min()}/{yy.max()}")
+  if tag=='new':
+   border[d]=bool(m[0].any() or m[-1].any() or m[:,0].any() or m[:,-1].any())
+   invalid[d]=[bytes(c).hex() for c in cs if tuple(c) not in valid]
+   edge=m&~ndimage.binary_erosion(m); ec,ct=np.unique(a[edge,:3],axis=0,return_counts=True)
+   edges[d]={'edge_pixels':int(edge.sum()),'colours':{c['hex']:{'edge_count':int(sum(n for rgb,n in zip(ec,ct) if bytes(rgb).hex()==c['hex'])),'body_count':int(sum(n for rgb,n in zip(cs,counts) if bytes(rgb).hex()==c['hex']))} for c in pal}}
+   allpix.append(pix)
+   if d in NAMES: depth.append(f"{d}: p05 {rec['p05']:.2f}; p95 {rec['p95']:.2f}; most common #{rec['dominant_colour']} {rec['dominant_share']:.2%}")
+heights=[]
+for d in NAMES:
+ r=metrics['new'][d]
+ heights.append(f"{d}: {r['width']}x{r['height']}; W/approved W {r['width']/AW[d]:.4f}; H/approved H {r['height']/AH[d]:.4f}; H/W {r['height']/r['width']:.4f} vs target {TH[d]/TW[d]:.4f}; top row {r['top_row']}; border {border[d]}")
+spread=max(metrics['new'][d]['height']/AH[d] for d in NAMES)-min(metrics['new'][d]['height']/AH[d] for d in NAMES)
+se_ne=metrics['new']['se']['height']/metrics['new']['ne']['height']
+heights.append(f'H/approved H spread max-min {spread:.4f}; se/ne height {se_ne:.4f} ({metrics["new"]["se"]["height"]}/{metrics["new"]["ne"]["height"]}); target nearly equal. Rows zero-based; heights informational, no height repair.')
+(P/'heights.txt').write_text('\n'.join(heights))
+(P/'depth.txt').write_text('\n'.join(depth)+'\nLuminance = .2126 R + .7152 G + .0722 B, opaque pixels only.\n')
+(P/'shape.txt').write_text('\n'.join(shape)+'\nEye misses: south each group below 14; se near below 13; east below 15; any eye in ne/n. Expected s about 16 each, se about 15, east about 17.\n')
+(P/'palette-check.txt').write_text('Allowed fixed palette: '+', '.join(c['hex'] for c in pal)+'\n'+ '\n'.join(f'{d}: '+('PASS, no colours outside palette' if not invalid[d] else 'FAIL '+str(invalid[d])) for d in NAMES)+'\nAll eight border contacts: '+str(border))
+cs,ct=np.unique(np.concatenate(allpix),axis=0,return_counts=True)
+metrics.update(border_contact=border,top_five_share=float(np.sort(ct)[-5:].sum()/ct.sum()),colours=len(cs),height_spread=spread,se_ne=se_ne)
+(P/'metrics.json').write_text(json.dumps(metrics,indent=2)); (P/'edge-audit.json').write_text(json.dumps(edges,indent=2))
+board=Image.new('RGB',(5*576,2*576),(128,128,128)); draw=ImageDraw.Draw(board)
+for row,(tag,folder) in enumerate([('approved',TAKE/'views'),('new',V)]):
+ for col,d in enumerate(NAMES):
+  im=Image.open(folder/f'{d}.png').convert('RGBA'); board.paste(im.resize((576,576),Image.Resampling.NEAREST),(col*576,row*576),im.resize((576,576),Image.Resampling.NEAREST)); draw.text((col*576+12,row*576+12),f'{tag} {d} - 3x',fill='white')
+board.save(P/'review.png')
+env=os.environ.copy(); env['PYTHONDONTWRITEBYTECODE']='1'
+for name in ['view_check','sheet_judge']:
+ args=['python','-B',f'tools/art/{name}.py',str(P/'slices')]
+ if name=='sheet_judge': args+=['--json',str(P/'sheet-judge.json')]
+ result=subprocess.run(args,capture_output=True,text=True,env=env)
+ txt=result.stdout+result.stderr
+ (P/f'{name}.txt').write_text(txt+f'\nExit code: {result.returncode}\nHeights informational for elevated camera; no height repairs.\n')
+ print(txt)
+print('\n'.join(heights)); print('\n'.join(shape)); print('\n'.join(depth)); print('top5',metrics['top_five_share'])
+
+codex
+I’m applying the sprite craft and imagegen skills, with your camera, width-anchor, and one-generation instructions taking precedence. I’ll use the built-in image tool once; I don’t have a reliable credit estimate.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content -Raw -LiteralPath 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/prompt-sheet.txt'" in D:\dev\_scratch\codex-cwd
+ succeeded in 4511ms:
+Use case: stylized-concept. Create exactly ONE square 3x3 eight-direction still pixel sprite sheet showing the SAME heavy robot lobster as the first attached image, drawn from a HIGHER CAMERA: looking DOWN at it from 35 degrees above level, the way a third-person arena game camera sees it, in EVERY view.
+TWO ATTACHED IMAGES:
+1. approved_views.png: the approved robot lobster in five views on magenta, left to right: front (south), front three-quarter (southeast), right side (east), rear three-quarter (northeast), back (north). They are drawn from a LOW camera, almost level. Keep EVERYTHING about this robot lobster: its parts, proportions, colours, shading style, pixel clusters, how each material runs through its shades, the thin dark seam lines, the long low dark gunmetal body with bold red panels, the thick pale white-steel legs with red joint rings and red feet, the two big red claws resting on the ground in front of the head, the big cyan visor eyes, the two thin antenna rods with red tips, the banded tail lying straight back flat on the ground and ending in a flat tail fan, the planted heavy stance. ONLY THE CAMERA MOVES UP. Invent NO new parts: no spikes or spines on the tail or back, no hatches, vents, lights, markings, stripes, panels, guns, blades or details the reference does not show. Exactly two big claws, two eyes, two antenna rods, one banded tail and one tail fan, and the same number of walking legs as the reference shows, no more. Never copy any existing game's lobster, robot or mech.
+2. angle_guide.png: an ANGLE GUIDE ONLY, not a design. A rough grey solid cut from this lobster's own outlines, in the same five views and order, in ONE ROW, already at the 35 degree camera. Its pale surfaces are the TOP, its green surfaces the FRONT (the face and the claws), its grey surfaces the sides. Draw each lobster view at this angle: the same amount of pale top showing, the same height on the page relative to its width. Never copy the solid's lumpy shape, colours or outline: the lobster's head, claws, legs, antennae, tail and fan sit inside it.
+A TRY ON ANOTHER MACHINE FAILED: it only stretched the reference taller and narrower, and it read as "a taller front view", not as a view from above. Avoid that in two ways:
+WIDTH STAYS, HEIGHT GROWS: every view keeps EXACTLY the reference's width and grows only in height, because its top now shows. This lobster is long and its tail is far from its antennae, so the views do NOT all grow the same: the back and the rear three-quarter views grow the most, the front three-quarter view the least. On the page: the front view stays exactly as wide as the reference's front view and becomes about five sixths as tall as it is wide, an eighth taller than the reference, because the tail now shows running away up the page behind the head; the front three-quarter view stays as wide as the reference's and becomes about three fifths as tall as it is wide, a little taller than the reference and never flatter; the SIDE VIEW is the longest view, about one and two fifths times as long as the front view is wide, exactly as long as the reference's side view, and becomes a little more than half as tall as it is long, a third taller than the reference; the rear three-quarter view stays as wide as the reference's and becomes about seven tenths as tall as it is wide, a quarter taller than the reference; the back view stays exactly as wide as the reference's back view and becomes about a tenth taller than it is wide, a third taller than the reference. The antenna rods keep their thin straight shape and may stick up past these heights where they rise above the body. Never make a view narrower to make it look taller, and never shorten the side view.
+FLAT TOP FACES THAT FACE UP: what makes a view read as seen from above is the tops of things, drawn as broad lit surfaces with the bright highlight, lighter than the side faces below them, with a firm edge between top and side. The carapace is the biggest top face: a broad lit surface of a few big angular gunmetal plates with the bold red top plate set into it, running back from the head. The banded tail is the second: each tail segment shows its lit top as a band across the tail, one band per segment, running away to the flat tail fan, whose top is lit too. The tops of the two big claws are lit red. The tops of the thick white-steel legs, the red joint rings and the steel joint discs are lit. Front and side faces (the face plate, the front of the claws, the flanks of the carapace) get SHORTER on the page; top faces get LONGER. The FAR legs sit HIGHER on the page than the near legs, because the ground is seen from above. The belly and the undersides are HIDDEN. The front views must NOT turn into a view from straight overhead, and the side view must NOT stay low: the five views agree on how much top shows.
+THE EYES KEEP THEIR SIZE: the two big glowing cyan visor eyes in the face are as BIG as in the reference and stay visible: the carapace edge and the claws never cover them, and they never turn steel, grey or white. In the front view both eyes show; in the front three-quarter view the near eye shows and the far eye is partly hidden, as in the reference; in the side view the near eye shows. The rear views show NO eye, NOT EVEN ONE EYE PIXEL. The two big claws keep their size in every view.
+PLATES AND SEAMS, as in the reference: the same big hard flat gunmetal armour plates with the bold red panels set into them, straight cut edges and bevelled corners, each with its lit top edge and a firm shaded edge, never a smooth glossy shell, never round pillows, smeared, soft, melted together or blobby. The dark gunmetal frame showing between the plates and at the joints, the pistons on the claw arms, the red ring armour at the leg joints, as in the reference. Thin dark accent seam lines between the plates, between the tail segments, around the red panels, around the visor and at the leg joints, as many as in the reference. Continue the plates, panels and segment seams over the newly visible top the way the reference implies them, and add nothing new up there. The tail stays straight, flat on the ground and smooth along its top edge: no spikes, spines, fins or notches.
+Exact 3x3 layout, every view from 35 degrees above:
+top left northeast: rear three-quarter facing upper RIGHT, as wide as the reference's rear three-quarter view and about seven tenths as tall as wide: the flat tail fan and the banded tail near the viewer at the lower left, every segment top lit, running up the page to the carapace; the carapace top a broad lit surface with its red top plate; the back of the head at the upper right with both antenna rods rising from it; the claws past the head at the upper right, higher on the page; the far legs higher on the page than the near legs; NO eye, NO face.
+top middle north: straight BACK, left-right symmetric, exactly as wide as the reference's back view and about a tenth taller than wide: the flat tail fan near the viewer low in the view, the banded tail running away up the page as a column of lit segment tops; the carapace beyond it a broad lit surface with its red top plate; the back of the head and both antenna rods at the TOP; the legs on both sides, the front legs higher on the page than the rear legs; NO eye, NO face.
+top right northwest: rear three-quarter facing upper LEFT, as wide as the reference's rear three-quarter view and about seven tenths as tall as wide: the flat tail fan and the banded tail near the viewer at the lower right, every segment top lit, running up the page to the carapace; the carapace top a broad lit surface with its red top plate; the back of the head at the upper left with both antenna rods rising from it; the claws past the head at the upper left, higher on the page; the far legs higher on the page than the near legs; NO eye, NO face.
+middle left east: SIDE VIEW facing RIGHT seen from 35 degrees above, the LONGEST view, about one and two fifths times as long as the front view is wide, as LONG as the reference's side view and a little more than half as tall as long: the head on the right with the near cyan eye, the antenna rods and the big claw resting on the ground in front of it, the claw's top lit; the carapace top showing as a WIDE lit BAND above the near flank, with its red top plate and the red side panel; the banded tail on the left lying straight back flat on the ground, the segment tops a lit band, ending in the flat tail fan; all the legs planted, the far legs clearly HIGHER on the page than the near ones.
+middle center EMPTY solid magenta.
+middle right west: SIDE VIEW facing LEFT seen from 35 degrees above, the LONGEST view, about one and two fifths times as long as the front view is wide, as LONG as the reference's side view and a little more than half as tall as long: the head on the left with the near cyan eye, the antenna rods and the big claw resting on the ground in front of it, the claw's top lit; the carapace top showing as a WIDE lit BAND above the near flank, with its red top plate and the red side panel; the banded tail on the right lying straight back flat on the ground, the segment tops a lit band, ending in the flat tail fan; all the legs planted, the far legs clearly HIGHER on the page than the near ones.
+bottom left southeast: FRONT three-quarter facing lower RIGHT seen from above, as WIDE as the reference's front three-quarter view and about three fifths as tall as wide, never flatter than the reference: the body turned, the head out to the right and forward with the near eye big and the far eye partly hidden, both antenna rods, both claws resting on the ground in front, their tops lit; the carapace seen from above behind the head as a broad lit surface with its red top plate; the banded tail running back UP the page to the upper left, its segment tops lit, the flat fan at its far end; the far legs higher on the page than the near ones.
+bottom middle south: straight FRONT seen from above, exactly as WIDE as the reference's front view and about five sixths as tall as wide: both big claws resting on the ground in front, their tops lit; the face with both big cyan eyes, a little shorter on the page than in the reference; the two antenna rods rising from the head; the carapace top a broad lit surface with its red top plate; behind and ABOVE the carapace the banded tail running away up the page, its segment tops lit, the flat fan at the top of the view; the legs planted on both sides. Not seen from straight overhead: the eyes, the face and the claws stay clear.
+bottom right southwest: FRONT three-quarter facing lower LEFT seen from above, as WIDE as the reference's front three-quarter view and about three fifths as tall as wide, never flatter than the reference: the body turned, the head out to the left and forward with the near eye big and the far eye partly hidden, both antenna rods, both claws resting on the ground in front, their tops lit; the carapace seen from above behind the head as a broad lit surface with its red top plate; the banded tail running back UP the page to the upper right, its segment tops lit, the flat fan at its far end; the far legs higher on the page than the near ones.
+VOLUME AND CRAFT, exactly as in the reference: light from the upper left on every view. Gunmetal armour: highlight on the carapace top, the tail segment tops and the top edge of each plate, base across the middle, shadow on the sides away from the light, deep shadow under the carapace edge, between the legs and under each plate edge. Red: highlight on the tops of the red panels and claws, base, shadow, deep red in the claw grooves and under the panels. White-steel legs: light on the tops, base, shadow. Eyes: cyan glow and one pale glint. Big flat colour clusters, every cluster at least 2 pixels across. No texture, no rivets, no panel scribbles, no dithering, no speckle, no stray single pixels. NO dark line around the outside of the silhouette: the outermost pixels use the gunmetal, red and white-steel colours.
+PALETTE, the same fourteen colours as the reference and no others: gunmetal highlight 7e7e8e, base 555562, shadow 34343e, deep 26262e; red highlight f85a4a, base ee2c26, shadow c41216, deep 6a0a10; white-steel light eeeef2, base b8b8c2, shadow 9a9aa6; cyan eye 5ff0ff and its glint e8ffff; dark accent 141218 for the seams, the overlap lines and the panel insets. Cyan only in the eyes.
+Eight copies of the exact same robot lobster in the same neutral planted stance, same anatomy and proportions, same SCALE, the same 35 degree camera in every view, each entirely inside its cell with ample margins. Nearest feet at exactly the same baseline within each row. The side views are the widest, about 75% of their cell width; the tallest view, the back view, at most 55% of cell height. Flat uniform solid #FF00FF magenta background everywhere, no labels, text, letters, glyphs, grid lines, shadows on the ground, floor, scenery, effects or extra objects. One image only.
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Copy-Item -LiteralPath 'C:/Users/pmcga/.codex/generated_images/01a1aebc-2fa0-7a33-9e3f-c7525d840ccb/exec-5db79a2b-50af-46ae-a3da-90685c391f31.png' -Destination 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/sheet_raw.png'; "'$out='"'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35'; "'$ex='"'D:/dev/new-mech-rpg/docs/art/moba/hippo_l/take-b/cam35'; foreach("'$f in @('"'finish.py','defringe.py','despeckle.py','audit.py')) { Copy-Item -LiteralPath (Join-Path "'$ex $f) -Destination (Join-Path $out $f) }; python -B -c "import PIL,numpy,scipy; print('"'dependencies ready')\"" in D:\dev\_scratch\codex-cwd
+codex
+The single image is generated. The top faces are visibly exposed, but the side and front proportions need measurement against the approved sheet. I’ll keep the raw image unchanged and report any misses after the shared shrink.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+P=Path('D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35')
+p=P/'finish.py'; s=p.read_text()
+s=s.replace('hippo camera anchor','lobster camera anchor').replace(\"'s':77,'n':73,'e':123\",\"'s':89,'n':81,'e':124\").replace(\"'target_east_width':123\",\"'target_east_width':124\")
+s=s.replace('(r>g*1.04)&(g>b*1.12)&(r>110)&(g>65)','(g>r+18)&(b>r+18)&(g>120)')
+a=s.index('purple=vis'); b=s.index('# Internal opposed',a)
+s=s[:a]+'''red=vis&~glow&(r>g*1.35)&(r>b*1.35)&(r>65)
+steel=vis&~glow&~red&(lum>=145)
+role=np.full(vis.shape,0); role[red]=1; role[steel]=2; role[glow]=3
+'''+s[b:]
+s=s.replace(\"target={(2,1):.061,(2,0):.061,(1,0):.059,(0,0):.060,(0,1):.059,(0,2):.060,(1,2):.059,(2,2):.061}\",\"target={(2,1):.059,(2,0):.079,(1,0):.106,(0,0):.082,(0,1):.055,(0,2):.082,(1,2):.106,(2,2):.079}\")
+s=s.replace(\"['purple','steel','charcoal frame','eye','dark accent']\",\"['gunmetal','red','steel','eye','accent']\")
+s=s.replace(\"raw_widths=widths(solid); raw_width=raw_widths['e']\",\"raw_widths=widths(solid); raw_width=raw_widths['e']\\nprint('BEFORE SHRINK raw widths',raw_widths,'east/south',raw_widths['e']/raw_widths['s'],'vs approved',124/89,flush=True)\\n(ROOT/'raw-proportions.txt').write_text(str(raw_widths)+'; e/s '+str(raw_widths['e']/raw_widths['s'])+' vs approved 1.3933 (124/89)')\")
+s=s.replace(\"'raw_size':im.size,\",\"'raw_size':im.size,'raw_widths':raw_widths,'raw_e_over_s':raw_widths['e']/raw_widths['s'],\")
+p.write_text(s)
+p=P/'defringe.py';s=p.read_text().replace('[0xc4720e,0xffc23c,0xfff1c4]','[0x5ff0ff,0xe8ffff]');p.write_text(s)
+p=P/'despeckle.py';s=p.read_text().replace('(196,114,14),(255,194,60),(255,241,196)','(95,240,255),(232,255,255)').replace(\"['c4720e','ffc23c','fff1c4','141218']\",\"['5ff0ff','e8ffff','141218']\");p.write_text(s)
+p=P/'audit.py';s=p.read_text().replace('hippo','lobster').replace('[77,113,123,105,73]','[89,114,124,112,81]').replace('[70,70,62,77,76]','[66,63,55,65,66]').replace('[77,113,123,106,77]','[89,115,124,112,89]').replace('[90,89,82,98,98]','[74,63,71,80,90]').replace('[6.1,6.1,5.9,6.0,5.9]','[5.9,7.9,10.6,8.2,5.5]').replace(\"['purple','steel','charcoal frame','eye','dark accent']\",\"['gunmetal','red','steel','eye','accent']\").replace(\"['a990e0','e4e4ea']\",\"['7e7e8e','f85a4a','eeeef2']\").replace(\"f\\\"; accent target {ACC[d]:.1f}%; light purple {lights['a990e0']:.3%}, steel {lights['e4e4ea']:.3%}; eyes\", \"f\\\"; accent target {ACC[d]:.1f}%; light gunmetal {lights['7e7e8e']:.3%}, red {lights['f85a4a']:.3%}, steel {lights['eeeef2']:.3%}; eyes\")
+s=s.replace(\"args=['python','-B',f'tools/art/{name}.py',str(P/'slices')]\",\"args=['python','-B',f'C:/Users/pmcga/dev/hollowtide/tools/art/{name}.py',str(P/'slices')]\")
+s=s.replace('Eye misses: south each group below 14; se near below 13; east below 15; any eye in ne/n. Expected s about 16 each, se about 15, east about 17.','Eye misses: south each below 30; se near below 30; east below 21; any eye in ne/n. Expected s 36+34, se 35+20, e 25. Approved s 44+41, se 43+24, e 30.')
+s=s.replace(\"target nearly equal. Rows\", \"Rows\")
+s=s.replace(\"(P/'heights.txt').write_text\", \"heights.append(f\\\"east/south width {metrics['new']['e']['width']/metrics['new']['s']['width']:.4f} vs approved {124/89:.4f}; se/s height {metrics['new']['se']['height']/metrics['new']['s']['height']:.4f}; se/e height {metrics['new']['se']['height']/metrics['new']['e']['height']:.4f}\\\")\\n(P/'heights.txt').write_text\")
+p.write_text(s)
+'@ | python -B -
+python -B 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/finish.py'" in D:\dev\_scratch\codex-cwd
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Process python*, powershell* | Select-Object Id,ProcessName,CPU,StartTime; Get-Item -LiteralPath 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/sheet_raw.png','D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/finish.py' | Select-Object Name,Length,LastWriteTime; Get-Command python | Select-Object Source" in D:\dev\_scratch\codex-cwd
+codex
+The local finishing commands are taking unusually long and have returned no output yet. I’m checking execution before continuing; I won’t make another image call.
+
+ succeeded in 56940ms:
+
+   Id ProcessName       CPU StartTime            
+   -- -----------       --- ---------            
+ 1588 powershell   1.140625 11/5/2026 8:27:08 PM 
+ 1608 powershell       3.25 11/5/2026 8:31:59 AM 
+11724 powershell    0.78125 11/5/2026 8:23:59 PM 
+12644 powershell   3.234375 11/5/2026 8:42:28 AM 
+16720 powershell   2.921875 11/5/2026 8:37:57 AM 
+17112 powershell   2.890625 11/5/2026 8:36:47 AM 
+17640 powershell    2.15625 11/5/2026 8:38:06 AM 
+19656 powershell     0.9375 11/5/2026 8:27:50 PM 
+21144 powershell     0.4375 11/5/2026 8:49:40 PM 
+21888 powershell   2.765625 11/5/2026 8:36:09 AM 
+22716 powershell   3.328125 11/5/2026 8:42:11 AM 
+23300 powershell   0.890625 11/5/2026 8:42:48 PM 
+23528 powershell    0.40625 11/5/2026 8:46:53 PM 
+23748 powershell      1.125 11/5/2026 8:39:48 PM 
+28396 powershell     3.3125 11/5/2026 8:38:00 AM 
+32172 powershell    2.90625 11/5/2026 8:37:51 AM 
+32384 powershell   3.203125 11/5/2026 8:35:56 AM 
+34052 powershell   2.546875 11/5/2026 8:38:01 AM 
+34332 powershell       0.75 11/5/2026 8:31:49 PM 
+34648 powershell     0.6875 11/5/2026 8:49:21 PM 
+35324 powershell   0.796875 11/5/2026 8:47:04 PM 
+38268 powershell   0.890625 11/5/2026 8:12:19 PM 
+39844 powershell   3.328125 11/5/2026 8:35:59 AM 
+41504 powershell      0.875 11/5/2026 8:37:41 PM 
+45320 powershell   0.421875 11/5/2026 8:48:14 PM 
+45972 powershell   0.921875 11/5/2026 8:23:47 PM 
+46480 powershell   0.921875 11/5/2026 8:30:39 PM 
+46984 powershell       0.75 11/5/2026 8:46:50 PM 
+47384 powershell    0.96875 11/5/2026 8:37:56 PM 
+47516 powershell   0.765625 11/5/2026 8:37:29 PM 
+48376 powershell    0.90625 11/5/2026 8:40:37 PM 
+48636 powershell   0.890625 11/5/2026 8:41:19 PM 
+ 1480 python          3.125 11/5/2026 8:49:07 AM 
+ 2728 python              0 11/5/2026 6:48:07 PM 
+ 2780 python              0 11/5/2026 8:48:59 AM 
+ 4332 python       1.484375 11/5/2026 6:06:45 PM 
+ 4452 python              0 11/5/2026 8:48:33 AM 
+ 4912 python       0.015625 11/5/2026 6:50:37 PM 
+ 6000 python       0.046875 11/5/2026 6:47:38 PM 
+ 6084 python              0 11/5/2026 10:04:23 AM
+ 6120 python       0.015625 11/5/2026 6:14:15 PM 
+ 6212 python              0 11/5/2026 8:57:59 AM 
+ 6224 python       0.015625 11/5/2026 6:07:03 PM 
+ 8512 python        0.28125 11/5/2026 8:42:54 AM 
+ 8588 python              0 11/5/2026 8:46:58 AM 
+ 8652 python       2.671875 11/5/2026 8:46:58 AM 
+ 8992 python              0 11/5/2026 6:07:03 PM 
+ 9292 python       0.015625 11/5/2026 9:33:37 AM 
+ 9660 python       1.953125 11/5/2026 8:57:58 AM 
+10020 python              0 11/5/2026 8:48:18 AM 
+10776 python       2.109375 11/5/2026 5:24:34 PM 
+10784 python              0 11/5/2026 8:48:17 AM 
+10956 python       1.546875 11/5/2026 8:47:14 AM 
+11112 python       2.140625 11/5/2026 6:50:39 PM 
+11516 python       0.015625 11/5/2026 8:58:09 AM 
+12584 python              0 11/5/2026 8:46:50 AM 
+12640 python       1.171875 11/5/2026 9:33:47 AM 
+12768 python       5.578125 11/5/2026 8:16:03 PM 
+12776 python              0 11/5/2026 8:48:34 AM 
+13496 python       2.546875 11/5/2026 8:48:59 AM 
+14044 python      79.390625 11/5/2026 8:47:14 AM 
+14132 python          3.125 11/5/2026 8:48:28 AM 
+14496 python       0.015625 11/5/2026 8:49:07 AM 
+14560 python        79.3125 11/5/2026 8:48:59 AM 
+14812 python                                     
+15084 python              0 11/5/2026 6:47:39 PM 
+15320 python       0.015625 11/5/2026 8:58:09 AM 
+15432 python       0.015625 11/5/2026 8:16:01 PM 
+16368 python              0 11/5/2026 10:04:22 AM
+17512 python              0 11/5/2026 10:04:23 AM
+17856 python              0 11/5/2026 8:57:58 AM 
+18100 python         0.0625 11/5/2026 8:49:34 PM 
+18372 python       0.015625 11/5/2026 6:13:37 PM 
+18416 python         2.4375 11/5/2026 6:48:08 PM 
+18712 python       2.671875 11/5/2026 8:48:34 AM 
+18852 python              0 11/5/2026 8:48:17 AM 
+18984 python       0.015625 11/5/2026 8:46:56 AM 
+19300 python       0.984375 11/5/2026 8:12:33 PM 
+19416 python            2.5 11/5/2026 8:48:18 AM 
+19488 python       2.609375 11/5/2026 8:48:26 AM 
+19724 python       1.484375 11/5/2026 8:48:33 AM 
+19860 python       3.140625 11/5/2026 8:48:28 AM 
+19864 python       2.046875 11/5/2026 6:50:39 PM 
+20108 python        1.46875 11/5/2026 6:06:45 PM 
+20360 python       1.609375 11/5/2026 8:48:17 AM 
+20736 python       0.015625 11/5/2026 8:51:17 AM 
+20976 python              0 11/5/2026 8:51:05 AM 
+21448 python         1.4375 11/5/2026 8:51:05 AM 
+21864 python      78.265625 11/5/2026 8:57:59 AM 
+21924 python        0.03125 11/5/2026 8:57:59 AM 
+22404 python              0 11/5/2026 8:48:56 AM 
+22520 python       0.015625 11/5/2026 8:51:12 AM 
+22856 python       0.015625 11/5/2026 8:48:33 AM 
+23056 python              0 11/5/2026 8:46:56 AM 
+23344 python              0 11/5/2026 8:47:14 AM 
+23348 python       1.328125 11/5/2026 6:13:38 PM 
+23432 python              0 11/5/2026 8:48:26 AM 
+23536 python       0.015625 11/5/2026 8:46:56 AM 
+23884 python       0.015625 11/5/2026 8:49:07 AM 
+24108 python       1.296875 11/5/2026 5:13:31 PM 
+24208 python       0.015625 11/5/2026 8:58:09 AM 
+24632 python          1.625 11/5/2026 6:07:10 PM 
+24948 python              0 11/5/2026 8:46:58 AM 
+25216 python       1.140625 11/5/2026 5:24:32 PM 
+25240 python              0 11/5/2026 6:48:09 PM 
+25356 python       0.015625 11/5/2026 6:50:27 PM 
+25580 python           1.25 11/5/2026 6:14:18 PM 
+25636 python        1.40625 11/5/2026 8:48:26 AM 
+25688 python        1.84375 11/5/2026 8:46:56 AM 
+26060 python        1.03125 11/5/2026 6:50:38 PM 
+26384 python        1.21875 11/5/2026 8:48:33 AM 
+26440 python        15.5625 11/5/2026 6:50:39 PM 
+26524 python       1.265625 11/5/2026 6:48:08 PM 
+26568 python              0 11/5/2026 6:50:39 PM 
+26608 python       0.015625 11/5/2026 8:48:59 AM 
+26840 python       0.015625 11/5/2026 5:24:34 PM 
+26876 python       0.015625 11/5/2026 8:16:03 PM 
+27116 python         2.3125 11/5/2026 8:16:00 PM 
+27132 python         79.625 11/5/2026 8:46:58 AM 
+27224 python       0.015625 11/5/2026 8:48:26 AM 
+27588 python       0.015625 11/5/2026 8:12:01 PM 
+28060 python       0.015625 11/5/2026 8:48:59 AM 
+28176 python      78.171875 11/5/2026 8:51:05 AM 
+28244 python         1.3125 11/5/2026 6:47:36 PM 
+28248 python              0 11/5/2026 6:50:28 PM 
+28288 python        2.46875 11/5/2026 8:47:14 AM 
+28760 python              0 11/5/2026 8:58:09 AM 
+29040 python       2.984375 11/5/2026 8:48:59 AM 
+29404 python        1.53125 11/5/2026 5:13:29 PM 
+29420 python              0 11/5/2026 8:46:56 AM 
+29572 python         1.4375 11/5/2026 6:50:35 PM 
+30292 python       1.359375 11/5/2026 8:47:14 AM 
+30468 python         1.5625 11/5/2026 8:46:56 AM 
+30580 python        1.40625 11/5/2026 8:57:59 AM 
+30676 python       0.015625 11/5/2026 5:13:29 PM 
+30840 python              0 11/5/2026 6:50:24 PM 
+31056 python        79.4375 11/5/2026 8:48:27 AM 
+31432 python       2.140625 11/5/2026 5:24:31 PM 
+31440 python        0.03125 11/5/2026 5:13:30 PM 
+31684 python              0 11/5/2026 8:47:14 AM 
+31700 python        1.53125 11/5/2026 8:49:06 AM 
+31864 python       2.359375 11/5/2026 8:51:17 AM 
+32532 python       0.015625 11/5/2026 8:51:05 AM 
+32540 python       0.015625 11/5/2026 6:50:38 PM 
+32548 python              0 11/5/2026 6:06:44 PM 
+32708 python        2.53125 11/5/2026 6:48:09 PM 
+32936 python       0.015625 11/5/2026 10:04:22 AM
+33184 python       1.578125 11/5/2026 8:48:17 AM 
+33452 python        1.53125 11/5/2026 10:04:22 AM
+33772 python       1.609375 11/5/2026 8:58:09 AM 
+33896 python       0.046875 11/5/2026 6:06:44 PM 
+34240 python       0.015625 11/5/2026 8:46:58 AM 
+34336 python      80.171875 11/5/2026 8:48:18 AM 
+34404 python       0.015625 11/5/2026 9:33:47 AM 
+34696 python       0.015625 11/5/2026 5:13:33 PM 
+34872 python       1.515625 11/5/2026 6:07:10 PM 
+35392 python       0.015625 11/5/2026 8:49:05 AM 
+35484 python       1.609375 11/5/2026 8:46:56 AM 
+35604 python       1.453125 11/5/2026 8:48:27 AM 
+35680 python       2.296875 11/5/2026 6:50:25 PM 
+35728 python        1.96875 11/5/2026 9:33:37 AM 
+35856 python        1.84375 11/5/2026 8:46:56 AM 
+35916 python              0 11/5/2026 6:07:03 PM 
+36216 python          2.625 11/5/2026 8:46:58 AM 
+36368 python      79.421875 11/5/2026 8:48:33 AM 
+36404 python       78.46875 11/5/2026 8:58:09 AM 
+36424 python       0.015625 11/5/2026 8:49:06 AM 
+36428 python              0 11/5/2026 8:46:58 AM 
+36748 python         2.6875 11/5/2026 8:58:09 AM 
+36772 python       2.859375 11/5/2026 8:58:00 AM 
+36868 python       2.296875 11/5/2026 5:13:34 PM 
+37180 python              1 11/5/2026 8:51:15 AM 
+37336 python       0.015625 11/5/2026 8:49:07 AM 
+37428 python       1.296875 11/5/2026 8:49:00 AM 
+37432 python              0 11/5/2026 8:48:27 AM 
+37472 python        0.96875 11/5/2026 8:12:28 PM 
+37580 python       0.953125 11/5/2026 8:49:07 AM 
+37596 python       0.046875 11/5/2026 8:48:26 AM 
+37828 python              0 11/5/2026 8:48:17 AM 
+38020 python          1.625 11/5/2026 8:48:57 AM 
+38192 python         79.375 11/5/2026 8:46:58 AM 
+38228 python              0 11/5/2026 8:47:14 AM 
+38400 python      79.109375 11/5/2026 8:49:08 AM 
+38596 python              0 11/5/2026 8:48:32 AM 
+38688 python       1.984375 11/5/2026 8:46:50 AM 
+38708 python       0.015625 11/5/2026 8:58:00 AM 
+38764 python       1.890625 11/5/2026 8:58:09 AM 
+38868 python       2.703125 11/5/2026 8:49:07 AM 
+38944 python              0 11/5/2026 6:50:25 PM 
+39008 python       0.015625 11/5/2026 8:48:28 AM 
+39072 python       7.578125 11/5/2026 8:12:01 PM 
+39100 python              0 11/5/2026 5:24:32 PM 
+39168 python        0.03125 11/5/2026 8:48:59 AM 
+39608 python              0 11/5/2026 8:47:14 AM 
+39752 python       0.015625 11/5/2026 8:48:28 AM 
+39796 python              0 11/5/2026 6:07:03 PM 
+39916 python              0 11/5/2026 6:07:03 PM 
+40132 python              0 11/5/2026 9:33:35 AM 
+40144 python              0 11/5/2026 8:12:27 PM 
+40260 python         2.3125 11/5/2026 10:04:23 AM
+40328 python       1.484375 11/5/2026 5:24:30 PM 
+40428 python        1.65625 11/5/2026 6:07:09 PM 
+40440 python       1.265625 11/5/2026 6:48:07 PM 
+40584 python              0 11/5/2026 5:24:31 PM 
+40952 python        1.59375 11/5/2026 6:07:10 PM 
+40956 python              0 11/5/2026 6:50:34 PM 
+41252 python      74.078125 11/5/2026 9:33:36 AM 
+41284 python              0 11/5/2026 9:33:36 AM 
+41312 python       0.015625 11/5/2026 5:24:29 PM 
+41520 python       1.640625 11/5/2026 9:33:35 AM 
+41660 python              0 11/5/2026 8:12:32 PM 
+41932 python       1.421875 11/5/2026 8:34:33 PM 
+42116 python        1.34375 11/5/2026 10:04:23 AM
+42176 python        2.03125 11/5/2026 6:47:39 PM 
+42216 python        2.34375 11/5/2026 6:50:28 PM 
+42404 python      70.859375 11/5/2026 10:04:22 AM
+43100 python        2.15625 11/5/2026 6:47:39 PM 
+43328 python              0 11/5/2026 6:07:03 PM 
+43468 python       1.015625 11/5/2026 6:47:40 PM 
+43488 python        0.03125 11/5/2026 8:16:00 PM 
+43544 python       2.546875 11/5/2026 6:06:58 PM 
+43588 python        1.59375 11/5/2026 6:07:09 PM 
+43700 python         1.5625 11/5/2026 6:07:11 PM 
+43880 python       1.640625 11/5/2026 6:07:09 PM 
+43916 python        1.65625 11/5/2026 6:07:10 PM 
+44264 python              0 11/5/2026 6:47:36 PM 
+44488 python          2.625 11/5/2026 6:06:58 PM 
+44504 python        0.03125 11/5/2026 6:47:40 PM 
+45060 python              0 11/5/2026 6:07:00 PM 
+45212 python         2.5625 11/5/2026 6:07:01 PM 
+45308 python              0 11/5/2026 6:50:36 PM 
+45476 python       0.015625 11/5/2026 6:07:02 PM 
+45520 python       2.890625 11/5/2026 6:07:03 PM 
+45532 python       0.015625 11/5/2026 6:48:22 PM 
+45728 python              0 11/5/2026 6:07:03 PM 
+46164 python              0 11/5/2026 6:07:03 PM 
+46168 python              0 11/5/2026 6:07:03 PM 
+46200 python       1.359375 11/5/2026 6:06:49 PM 
+46372 python              0 11/5/2026 6:06:48 PM 
+46440 python       1.015625 11/5/2026 6:50:28 PM 
+46792 python        14.8125 11/5/2026 6:48:22 PM 
+47392 python       1.421875 11/5/2026 6:50:25 PM 
+47696 python              0 11/5/2026 6:06:56 PM 
+47720 python       0.015625 11/5/2026 6:06:56 PM 
+47752 python              0 11/5/2026 6:48:08 PM 
+47804 python        0.15625 11/5/2026 8:48:50 PM 
+47824 python       0.046875 11/5/2026 6:06:56 PM 
+47888 python       0.015625 11/5/2026 6:06:56 PM 
+47968 python       3.140625 11/5/2026 6:06:56 PM 
+47980 python        3.03125 11/5/2026 6:06:56 PM 
+48008 python        1.71875 11/5/2026 6:07:09 PM 
+48440 python       0.015625 11/5/2026 6:48:07 PM 
+48792 python          1.125 11/5/2026 8:16:01 PM 
+49568 python              0 11/5/2026 8:34:32 PM 
+15708 pythonw             3 11/5/2026 8:41:45 PM 
+20500 pythonw      0.015625 11/5/2026 8:41:37 PM 
+                                                 
+                                                 
+                                                 
+
+
+
+exec
+"C:\\WINDOWS\\system32\\cmd.exe" /c 'echo ready' in D:\dev\_scratch\codex-cwd
+ succeeded in 4456ms:
+ready
+
+exec
+"C:\\WINDOWS\\system32\\cmd.exe" /c 'python -B D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/finish.py' in D:\dev\_scratch\codex-cwd
+ succeeded in 241099ms:
+dependencies ready
+
+exec
+"C:\\WINDOWS\\system32\\cmd.exe" /c "dir D:\\dev\\new-mech-rpg\\docs\\art\\moba\\lobster_l\\take-g\\cam35" in D:\dev\_scratch\codex-cwd
+ succeeded in 103ms:
+ Volume in drive D is New Volume
+ Volume Serial Number is BEE4-D8F5
+
+ Directory of D:\dev\new-mech-rpg\docs\art\moba\lobster_l\take-g\cam35
+
+11/05/2026  08:48 PM    <DIR>          .
+11/05/2026  08:48 PM    <DIR>          ..
+11/05/2026  08:42 PM                 0 .start-lobster35
+11/05/2026  08:49 PM             6,148 audit.py
+11/05/2026  08:32 PM             7,509 brief.txt
+11/05/2026  08:42 PM                 0 codex-log-lobster35.txt
+11/05/2026  08:49 PM             3,732 defringe.py
+11/05/2026  08:49 PM             1,516 despeckle.py
+11/05/2026  08:49 PM             5,503 finish.py
+11/05/2026  06:54 PM            20,763 guide_6and35_prep.png
+11/05/2026  06:54 PM               219 guide_sizes.txt
+11/05/2026  06:54 PM               782 palette.json
+11/05/2026  06:58 PM            13,011 prompt-sheet.txt
+11/05/2026  06:57 PM    <DIR>          refs
+11/05/2026  08:46 PM         1,670,762 sheet_raw.png
+11/05/2026  08:50 PM               210 token-watch-lobster35.txt
+              13 File(s)      1,730,155 bytes
+               3 Dir(s)  402,227,310,592 bytes free
+
+exec
+"C:\\WINDOWS\\system32\\cmd.exe" /c "python -B -c \"print('python alive',flush=True); import numpy; print('numpy ready',flush=True); import scipy.ndimage; print('scipy ready',flush=True)\"" in D:\dev\_scratch\codex-cwd
+ exited 1 in 317ms:
+  File "<string>", line 1
+    "print('python
+    ^
+SyntaxError: unterminated string literal (detected at line 1)
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-CimInstance Win32_Process -Filter \"name='python.exe'\" | Where-Object { "'$_.CommandLine -like '"'*lobster*' } | Select-Object ProcessId,ExecutablePath,CommandLine | Format-List" in D:\dev\_scratch\codex-cwd
+ exited 1 in 6915ms:
+Get-CimInstance : Access denied 
+At line:2 char:1
++ Get-CimInstance Win32_Process -Filter "name='python.exe'" | Where-Obj ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (:) [Get-CimInstance], CimException
+    + FullyQualifiedErrorId : HRESULT 0x80041003,Microsoft.Management.Infrastructure.CimCmdlets.GetCimInstanceCommand
+ 
+
+ succeeded in 52345ms:
+BEFORE SHRINK raw widths {'s': 276, 'n': 276, 'e': 433} east/south 1.568840579710145 vs approved 1.3932584269662922
+{"raw_size": [1254, 1254], "raw_widths": {"s": 276, "n": 276, "e": 433}, "raw_e_over_s": 1.568840579710145, "anchor_widths": {"s": 83, "n": 83, "e": 129}, "anchor_ratios": {"s": 0.9325842696629213, "n": 1.0246913580246915, "e": 1.0403225806451613}, "anchor_mean": 0.9991994027775913, "raw_east_width": 433, "target_east_width": 124, "shared_scale": 0.29904306220095694, "finished_sheet_size": [375, 375], "raw_plum_repainted": 12412, "smooth": "3x3 median at raw resolution, interior only", "raw_sha256": "308dacde3fb5954c85cedb025d53b9c0057b422ca9412bd1e3a6ab8509418b48"}
+
+ succeeded in 190535ms:
+BEFORE SHRINK raw widths {'s': 276, 'n': 276, 'e': 433} east/south 1.568840579710145 vs approved 1.3932584269662922
+{"raw_size": [1254, 1254], "raw_widths": {"s": 276, "n": 276, "e": 433}, "raw_e_over_s": 1.568840579710145, "anchor_widths": {"s": 83, "n": 83, "e": 129}, "anchor_ratios": {"s": 0.9325842696629213, "n": 1.0246913580246915, "e": 1.0403225806451613}, "anchor_mean": 0.9991994027775913, "raw_east_width": 433, "target_east_width": 124, "shared_scale": 0.29904306220095694, "finished_sheet_size": [375, 375], "raw_plum_repainted": 12412, "smooth": "3x3 median at raw resolution, interior only", "raw_sha256": "308dacde3fb5954c85cedb025d53b9c0057b422ca9412bd1e3a6ab8509418b48"}
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command '$env:OPENBLAS_NUM_THREADS='"'1'; "'$env:OMP_NUM_THREADS='"'1'; "'$env:MKL_NUM_THREADS='"'1'; python -u -B 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/finish.py'" in D:\dev\_scratch\codex-cwd
+ succeeded in 14999ms:
+BEFORE SHRINK raw widths {'s': 276, 'n': 276, 'e': 433} east/south 1.568840579710145 vs approved 1.3932584269662922
+{"raw_size": [1254, 1254], "raw_widths": {"s": 276, "n": 276, "e": 433}, "raw_e_over_s": 1.568840579710145, "anchor_widths": {"s": 83, "n": 83, "e": 129}, "anchor_ratios": {"s": 0.9325842696629213, "n": 1.0246913580246915, "e": 1.0403225806451613}, "anchor_mean": 0.9991994027775913, "raw_east_width": 433, "target_east_width": 124, "shared_scale": 0.29904306220095694, "finished_sheet_size": [375, 375], "raw_plum_repainted": 12412, "smooth": "3x3 median at raw resolution, interior only", "raw_sha256": "308dacde3fb5954c85cedb025d53b9c0057b422ca9412bd1e3a6ab8509418b48"}
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "python -u -B -c 'print(123,flush=True)'" in D:\dev\_scratch\codex-cwd
+ succeeded in 2377ms:
+123
+
+codex
+Before shrinking, raw east/south is 433/276 = 1.569 versus approved 1.393. The shared shrink gives south, north, and east width ratios of 0.933, 1.025, and 1.040, averaging 0.9992. The side keeps its length, but the front is about 6.7% too narrow; one shared scale cannot correct that mismatch.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command '$env:OPENBLAS_NUM_THREADS='"'1'; python -B 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/defringe.py'; python -B 'C:/Users/pmcga/dev/hollowtide/tools/art/slice_grid.py' 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/sheet_finished.png' 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/slices' --canvas 192 --feet 160; python -B 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/audit.py'" in D:\dev\_scratch\codex-cwd
+ succeeded in 45392ms:
+{"plum_or_magenta_pixels_repainted": 0, "remaining_plum_or_magenta_pixels": 0, "lone_pale_edge_pixels_repainted": 16, "remaining_lone_pale_edge_pixels": 2, "dark_ink_rim_pixels_repainted": 0, "remaining_dark_ink_rim_pixels": 0, "alpha_unchanged": true}
+sliced 8 views: e n ne nw s se sw w
+cam35/slices                           front/back 0.76 (under 0.8)  area 0.10 (w>sw)  height 0.28 (nw>w)  colour 0.90 (w>sw)  dips none  lone 0.13  colours 14
+
+sheet judge: D:\dev\new-mech-rpg\docs\art\moba\lobster_l\take-g\cam35\slices
+  e   h  70 feet 160 palette   1.0 colours  14  height: 70 px, the set's median 95
+  ne  h  96 feet 160 palette   1.0 colours  13  ok
+  n   h 106 feet 160 palette   1.0 colours  13  height: 106 px, the set's median 95
+  nw  h  96 feet 160 palette   1.0 colours  12  ok
+  w   h  69 feet 160 palette   1.0 colours  14  height: 69 px, the set's median 95
+  sw  h  95 feet 160 palette   1.0 colours  14  ok
+  s   h 105 feet 160 palette   1.0 colours  14  ok
+  se  h  95 feet 160 palette   1.0 colours  13  ok
+  mirror e/w 0.981  mirror ne/nw 0.965  mirror se/sw 0.987  same n/s 0.081  even n/s [0.986, 0.991]
+  FIX (code, --fix): nothing
+  REDO (generate again): e, n, w
+
+s: 83x105; W/approved W 0.9326; H/approved H 1.5909; H/W 1.2651 vs target 0.8315; top row 56; border False
+se: 100x95; W/approved W 0.8772; H/approved H 1.5079; H/W 0.9500 vs target 0.5478; top row 66; border False
+e: 129x70; W/approved W 1.0403; H/approved H 1.2727; H/W 0.5426 vs target 0.5726; top row 91; border False
+ne: 107x96; W/approved W 0.9554; H/approved H 1.4769; H/W 0.8972 vs target 0.7143; top row 65; border False
+n: 83x106; W/approved W 1.0247; H/approved H 1.6061; H/W 1.2771 vs target 1.0112; top row 55; border False
+H/approved H spread max-min 0.3333; se/ne height 0.9896 (95/96); Rows zero-based; heights informational, no height repair.
+east/south width 1.5542 vs approved 1.3933; se/s height 0.9048; se/e height 1.3571
+approved s: gunmetal 47.3577%; red 35.5401%; steel 8.7398%; eye 2.4681%; accent 5.8943%; accent target 5.9%; light gunmetal 9.001%, red 7.056%, steel 1.016%; eyes 85, 8-connected groups [44, 41]; top/bottom 95/160
+approved se: gunmetal 48.0676%; red 35.2444%; steel 7.1154%; eye 1.7149%; accent 7.8577%; accent target 7.9%; light gunmetal 9.189%, red 7.807%, steel 0.410%; eyes 67, 8-connected groups [43, 24]; top/bottom 98/160
+approved e: gunmetal 53.3913%; red 28.8696%; steel 6.2609%; eye 0.8696%; accent 10.6087%; accent target 10.6%; light gunmetal 9.420%, red 2.957%, steel 0.319%; eyes 30, 8-connected groups [30]; top/bottom 106/160
+approved ne: gunmetal 67.2439%; red 20.3111%; steel 4.2266%; eye 0.0000%; accent 8.2184%; accent target 8.2%; light gunmetal 17.112%, red 2.612%, steel 0.235%; eyes 0, 8-connected groups []; top/bottom 96/160
+approved n: gunmetal 72.3062%; red 17.4976%; steel 4.6639%; eye 0.0000%; accent 5.5323%; accent target 5.5%; light gunmetal 17.691%, red 0.901%, steel 0.322%; eyes 0, 8-connected groups []; top/bottom 95/160
+new s: gunmetal 50.3268%; red 32.0433%; steel 10.3715%; eye 1.3588%; accent 5.8996%; accent target 5.9%; light gunmetal 19.367%, red 10.922%, steel 1.445%; eyes 79, 8-connected groups [38, 37, 2, 2]; top/bottom 56/160
+new se: gunmetal 49.9566%; red 32.6860%; steel 8.0631%; eye 1.3872%; accent 7.9071%; accent target 7.9%; light gunmetal 15.849%, red 9.745%, steel 1.023%; eyes 80, 8-connected groups [59, 17, 2, 1, 1]; top/bottom 66/160
+new e: gunmetal 54.6932%; red 26.8047%; steel 7.4318%; eye 0.8516%; accent 10.2187%; accent target 10.6%; light gunmetal 16.199%, red 7.993%, steel 0.503%; eyes 44, 8-connected groups [41, 1, 1, 1]; top/bottom 91/160
+new ne: gunmetal 64.2666%; red 21.1988%; steel 6.3003%; eye 0.0383%; accent 8.1961%; accent target 8.2%; light gunmetal 22.118%, red 6.243%, steel 0.574%; eyes 2, 8-connected groups [1, 1]; top/bottom 65/160
+new n: gunmetal 66.8716%; red 20.5164%; steel 7.0437%; eye 0.0703%; accent 5.4980%; accent target 5.5%; light gunmetal 25.962%, red 6.464%, steel 0.913%; eyes 4, 8-connected groups [2, 1, 1]; top/bottom 55/160
+s: p05 18.86; p95 184.72; most common #7e7e8e 19.37%
+se: p05 18.86; p95 184.72; most common #7e7e8e 15.85%
+e: p05 18.86; p95 184.72; most common #34343e 16.32%
+ne: p05 18.86; p95 154.87; most common #7e7e8e 22.12%
+n: p05 18.86; p95 184.72; most common #7e7e8e 25.96%
+top5 0.6764705882352942
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content -LiteralPath 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/shape.txt','D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/view_check.txt','D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/heights.txt'" in D:\dev\_scratch\codex-cwd
+ succeeded in 1190ms:
+approved s: gunmetal 47.3577%; red 35.5401%; steel 8.7398%; eye 2.4681%; accent 5.8943%; accent target 5.9%; light gunmetal 9.001%, red 7.056%, steel 1.016%; eyes 85, 8-connected groups [44, 41]; top/bottom 95/160
+approved se: gunmetal 48.0676%; red 35.2444%; steel 7.1154%; eye 1.7149%; accent 7.8577%; accent target 7.9%; light gunmetal 9.189%, red 7.807%, steel 0.410%; eyes 67, 8-connected groups [43, 24]; top/bottom 98/160
+approved e: gunmetal 53.3913%; red 28.8696%; steel 6.2609%; eye 0.8696%; accent 10.6087%; accent target 10.6%; light gunmetal 9.420%, red 2.957%, steel 0.319%; eyes 30, 8-connected groups [30]; top/bottom 106/160
+approved ne: gunmetal 67.2439%; red 20.3111%; steel 4.2266%; eye 0.0000%; accent 8.2184%; accent target 8.2%; light gunmetal 17.112%, red 2.612%, steel 0.235%; eyes 0, 8-connected groups []; top/bottom 96/160
+approved n: gunmetal 72.3062%; red 17.4976%; steel 4.6639%; eye 0.0000%; accent 5.5323%; accent target 5.5%; light gunmetal 17.691%, red 0.901%, steel 0.322%; eyes 0, 8-connected groups []; top/bottom 95/160
+new s: gunmetal 50.3268%; red 32.0433%; steel 10.3715%; eye 1.3588%; accent 5.8996%; accent target 5.9%; light gunmetal 19.367%, red 10.922%, steel 1.445%; eyes 79, 8-connected groups [38, 37, 2, 2]; top/bottom 56/160
+new se: gunmetal 49.9566%; red 32.6860%; steel 8.0631%; eye 1.3872%; accent 7.9071%; accent target 7.9%; light gunmetal 15.849%, red 9.745%, steel 1.023%; eyes 80, 8-connected groups [59, 17, 2, 1, 1]; top/bottom 66/160
+new e: gunmetal 54.6932%; red 26.8047%; steel 7.4318%; eye 0.8516%; accent 10.2187%; accent target 10.6%; light gunmetal 16.199%, red 7.993%, steel 0.503%; eyes 44, 8-connected groups [41, 1, 1, 1]; top/bottom 91/160
+new ne: gunmetal 64.2666%; red 21.1988%; steel 6.3003%; eye 0.0383%; accent 8.1961%; accent target 8.2%; light gunmetal 22.118%, red 6.243%, steel 0.574%; eyes 2, 8-connected groups [1, 1]; top/bottom 65/160
+new n: gunmetal 66.8716%; red 20.5164%; steel 7.0437%; eye 0.0703%; accent 5.4980%; accent target 5.5%; light gunmetal 25.962%, red 6.464%, steel 0.913%; eyes 4, 8-connected groups [2, 1, 1]; top/bottom 55/160
+Eye misses: south each below 30; se near below 30; east below 21; any eye in ne/n. Expected s 36+34, se 35+20, e 25. Approved s 44+41, se 43+24, e 30.
+cam35/slices                           front/back 0.76 (under 0.8)  area 0.10 (w>sw)  height 0.28 (nw>w)  colour 0.90 (w>sw)  dips none  lone 0.13  colours 14
+
+Exit code: 0
+Heights informational for elevated camera; no height repairs.
+s: 83x105; W/approved W 0.9326; H/approved H 1.5909; H/W 1.2651 vs target 0.8315; top row 56; border False
+se: 100x95; W/approved W 0.8772; H/approved H 1.5079; H/W 0.9500 vs target 0.5478; top row 66; border False
+e: 129x70; W/approved W 1.0403; H/approved H 1.2727; H/W 0.5426 vs target 0.5726; top row 91; border False
+ne: 107x96; W/approved W 0.9554; H/approved H 1.4769; H/W 0.8972 vs target 0.7143; top row 65; border False
+n: 83x106; W/approved W 1.0247; H/approved H 1.6061; H/W 1.2771 vs target 1.0112; top row 55; border False
+H/approved H spread max-min 0.3333; se/ne height 0.9896 (95/96); Rows zero-based; heights informational, no height repair.
+east/south width 1.5542 vs approved 1.3933; se/s height 0.9048; se/e height 1.3571
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/finish.py');s=p.read_text();s=s.replace(\"raw_eye=solid&(g>r+18)&(b>r+18)&(g>120)\",\"\"\"core=solid&(g>r+45)&(b>r+45)&(g>130)
+labels,num=ndimage.label(core,structure=np.ones((3,3)))
+counts=np.bincount(labels.ravel()); counts[0]=0
+core=core&(counts[labels]>=30)
+raw_eye=core | (solid&ndimage.binary_dilation(core,iterations=3)&(g>r+12)&(b>r+12)&(g>200))\"\"\")
+s=s.replace(\"glow=vis&(g>r+18)&(b>r+18)&(g>120)\",\"glow=vis&(np.array(Image.fromarray((raw_eye*255).astype('uint8')).resize((w,h),Image.Resampling.NEAREST))>0)\")
+p.write_text(s)
+p=p.parent/'defringe.py';s=p.read_text();s=s.replace(\"if own.any():\\n            idx=\", \"same_here=solid & np.all(out[...,:3]==colour,axis=2)\\n        own &= ~same_here\\n        if own.any():\\n            idx=\")
+p.write_text(s)
+'@ | python -B -
+"'$env:OPENBLAS_NUM_THREADS='"'1'; python -B 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/finish.py'; python -B 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/despeckle.py'; python -B 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/defringe.py'; python -B 'C:/Users/pmcga/dev/hollowtide/tools/art/slice_grid.py' 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/sheet_finished.png' 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/slices' --canvas 192 --feet 160; Copy-Item -LiteralPath 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/view_check.txt' -Destination 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/view_check-before.txt'; python -B 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/audit.py'" in D:\dev\_scratch\codex-cwd
+codex
+The first audit reports lone pixels at 0.13, so I’m applying the required single despeckle pass. The front and diagonal views are substantially taller than the guide targets; I’ll report that without changing their geometry. I’m also correcting faint cyan colour-classification noise on rear steel while preserving the actual eye regions.
+
+ succeeded in 18527ms:
+BEFORE SHRINK raw widths {'s': 276, 'n': 276, 'e': 433} east/south 1.568840579710145 vs approved 1.3932584269662922
+{"raw_size": [1254, 1254], "raw_widths": {"s": 276, "n": 276, "e": 433}, "raw_e_over_s": 1.568840579710145, "anchor_widths": {"s": 83, "n": 83, "e": 129}, "anchor_ratios": {"s": 0.9325842696629213, "n": 1.0246913580246915, "e": 1.0403225806451613}, "anchor_mean": 0.9991994027775913, "raw_east_width": 433, "target_east_width": 124, "shared_scale": 0.29904306220095694, "finished_sheet_size": [375, 375], "raw_plum_repainted": 12412, "smooth": "3x3 median at raw resolution, interior only", "raw_sha256": "308dacde3fb5954c85cedb025d53b9c0057b422ca9412bd1e3a6ab8509418b48"}
+despeckle pixels changed 3779
+{"plum_or_magenta_pixels_repainted": 0, "remaining_plum_or_magenta_pixels": 0, "lone_pale_edge_pixels_repainted": 2, "remaining_lone_pale_edge_pixels": 2, "dark_ink_rim_pixels_repainted": 0, "remaining_dark_ink_rim_pixels": 0, "alpha_unchanged": true}
+sliced 8 views: e n ne nw s se sw w
+cam35/slices                           front/back 0.76 (under 0.8)  area 0.10 (w>sw)  height 0.28 (nw>w)  colour 0.89 (w>sw)  dips none  lone 0.05  colours 14
+
+sheet judge: D:\dev\new-mech-rpg\docs\art\moba\lobster_l\take-g\cam35\slices
+  e   h  70 feet 160 palette   1.0 colours  14  height: 70 px, the set's median 95
+  ne  h  96 feet 160 palette   1.0 colours  12  ok
+  n   h 106 feet 160 palette   1.0 colours  12  height: 106 px, the set's median 95
+  nw  h  96 feet 160 palette   1.0 colours  12  ok
+  w   h  69 feet 160 palette   1.0 colours  14  height: 69 px, the set's median 95
+  sw  h  95 feet 160 palette   1.0 colours  14  ok
+  s   h 105 feet 160 palette   1.0 colours  14  ok
+  se  h  95 feet 160 palette   1.0 colours  13  ok
+  mirror e/w 0.981  mirror ne/nw 0.965  mirror se/sw 0.987  same n/s 0.085  even n/s [0.986, 0.991]
+  FIX (code, --fix): nothing
+  REDO (generate again): e, n, w
+
+s: 83x105; W/approved W 0.9326; H/approved H 1.5909; H/W 1.2651 vs target 0.8315; top row 56; border False
+se: 100x95; W/approved W 0.8772; H/approved H 1.5079; H/W 0.9500 vs target 0.5478; top row 66; border False
+e: 129x70; W/approved W 1.0403; H/approved H 1.2727; H/W 0.5426 vs target 0.5726; top row 91; border False
+ne: 107x96; W/approved W 0.9554; H/approved H 1.4769; H/W 0.8972 vs target 0.7143; top row 65; border False
+n: 83x106; W/approved W 1.0247; H/approved H 1.6061; H/W 1.2771 vs target 1.0112; top row 55; border False
+H/approved H spread max-min 0.3333; se/ne height 0.9896 (95/96); Rows zero-based; heights informational, no height repair.
+east/south width 1.5542 vs approved 1.3933; se/s height 0.9048; se/e height 1.3571
+approved s: gunmetal 47.3577%; red 35.5401%; steel 8.7398%; eye 2.4681%; accent 5.8943%; accent target 5.9%; light gunmetal 9.001%, red 7.056%, steel 1.016%; eyes 85, 8-connected groups [44, 41]; top/bottom 95/160
+approved se: gunmetal 48.0676%; red 35.2444%; steel 7.1154%; eye 1.7149%; accent 7.8577%; accent target 7.9%; light gunmetal 9.189%, red 7.807%, steel 0.410%; eyes 67, 8-connected groups [43, 24]; top/bottom 98/160
+approved e: gunmetal 53.3913%; red 28.8696%; steel 6.2609%; eye 0.8696%; accent 10.6087%; accent target 10.6%; light gunmetal 9.420%, red 2.957%, steel 0.319%; eyes 30, 8-connected groups [30]; top/bottom 106/160
+approved ne: gunmetal 67.2439%; red 20.3111%; steel 4.2266%; eye 0.0000%; accent 8.2184%; accent target 8.2%; light gunmetal 17.112%, red 2.612%, steel 0.235%; eyes 0, 8-connected groups []; top/bottom 96/160
+approved n: gunmetal 72.3062%; red 17.4976%; steel 4.6639%; eye 0.0000%; accent 5.5323%; accent target 5.5%; light gunmetal 17.691%, red 0.901%, steel 0.322%; eyes 0, 8-connected groups []; top/bottom 95/160
+new s: gunmetal 50.3612%; red 32.0433%; steel 10.4059%; eye 1.2900%; accent 5.8996%; accent target 5.9%; light gunmetal 19.470%, red 11.507%, steel 1.548%; eyes 75, 8-connected groups [38, 37]; top/bottom 56/160
+new se: gunmetal 50.0260%; red 32.6860%; steel 8.0805%; eye 1.3005%; accent 7.9071%; accent target 7.9%; light gunmetal 16.317%, red 10.595%, steel 1.144%; eyes 75, 8-connected groups [59, 16]; top/bottom 66/160
+new e: gunmetal 54.7707%; red 26.8047%; steel 7.4705%; eye 0.7354%; accent 10.2187%; accent target 10.6%; light gunmetal 16.780%, red 8.516%, steel 0.561%; eyes 38, 8-connected groups [38]; top/bottom 91/160
+new ne: gunmetal 64.3049%; red 21.1988%; steel 6.3003%; eye 0.0000%; accent 8.1961%; accent target 8.2%; light gunmetal 22.712%, red 6.971%, steel 0.651%; eyes 0, 8-connected groups []; top/bottom 65/160
+new n: gunmetal 66.9419%; red 20.5164%; steel 7.0437%; eye 0.0000%; accent 5.4980%; accent target 5.5%; light gunmetal 26.295%, red 6.921%, steel 0.931%; eyes 0, 8-connected groups []; top/bottom 55/160
+s: p05 18.86; p95 184.72; most common #7e7e8e 19.47%
+se: p05 18.86; p95 184.72; most common #7e7e8e 16.32%
+e: p05 18.86; p95 184.72; most common #7e7e8e 16.78%
+ne: p05 18.86; p95 184.72; most common #7e7e8e 22.71%
+n: p05 18.86; p95 184.72; most common #7e7e8e 26.30%
+top5 0.6722460723419803
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+import sys
+import numpy as np
+from PIL import Image
+from scipy import ndimage
+P=Path('D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35');sys.path.insert(0,str(P));from defringe import clean
+a=np.array(Image.open(P/'sheet_finished.png'));m=a[...,3]>0;edge=m&~ndimage.binary_erosion(m)
+for c in np.unique(a[m,:3],axis=0):
+ if c@[.2126,.7152,.0722]<145 or tuple(c) in [(95,240,255),(232,255,255)]:continue
+ same=m&np.all(a[...,:3]==c,axis=2);n=ndimage.convolve(same.astype(int),np.ones((3,3),int))-same
+ for y,x in zip(*np.where(same&edge&(n==0))):print('lone',x,y,c.tolist(),'neighbours',a[y-1:y+2,x-1:x+2].tolist())
+'@ | python -B -" in D:\dev\_scratch\codex-cwd
+ succeeded in 4671ms:
+lone 63 164 [184, 184, 194] neighbours [[[126, 126, 142, 255], [0, 0, 0, 0], [126, 126, 142, 255]], [[126, 126, 142, 255], [184, 184, 194, 255], [126, 126, 142, 255]], [[126, 126, 142, 255], [126, 126, 142, 255], [126, 126, 142, 255]]]
+lone 172 257 [184, 184, 194] neighbours [[[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]], [[0, 0, 0, 0], [184, 184, 194, 255], [126, 126, 142, 255]], [[85, 85, 98, 255], [126, 126, 142, 255], [126, 126, 142, 255]]]
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+import numpy as np
+from PIL import Image
+from scipy import ndimage
+P=Path('D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35')
+for tag,folder in [('approved',P.parent/'views'),('new',P/'slices')]:
+ for d in ['s','se','e','ne','n']:
+  a=np.array(Image.open(folder/(d+'.png')));r,g,b=a[...,:3].astype(int).transpose(2,0,1);m=(a[...,3]>0)&(r>g*1.35)&(r>b*1.35);labs,n=ndimage.label(m,structure=np.ones((3,3)));items=[]
+  for i,box in enumerate(ndimage.find_objects(labs),1):
+   y,x=box;area=(labs[box]==i).sum()
+   if area>=5 and y.stop>120:items.append((x.start,y.start,x.stop-1,y.stop-1,int(area)))
+  print(tag,d,items)
+'@ | python -B -" in D:\dev\_scratch\codex-cwd
+ succeeded in 4013ms:
+approved s [(70, 117, 72, 123, 15), (120, 117, 122, 121, 13), (59, 132, 62, 138, 12), (130, 132, 133, 138, 12), (63, 134, 66, 140, 15), (125, 134, 129, 140, 13), (52, 138, 140, 160, 986)]
+approved se [(81, 117, 97, 130, 148), (66, 133, 75, 139, 37), (77, 135, 87, 142, 49), (91, 137, 101, 144, 55), (106, 138, 152, 160, 650), (60, 146, 103, 158, 236)]
+approved e [(96, 120, 116, 121, 41), (127, 120, 136, 123, 16), (94, 125, 113, 136, 153), (132, 141, 157, 160, 350), (76, 142, 86, 148, 48), (94, 142, 105, 148, 52), (112, 142, 125, 148, 60), (71, 155, 87, 160, 79), (92, 155, 108, 160, 79), (111, 155, 128, 160, 81)]
+approved ne [(114, 117, 130, 129, 131), (85, 118, 88, 122, 8), (108, 130, 151, 154, 283), (127, 132, 139, 140, 60), (109, 136, 122, 143, 60)]
+approved n [(71, 117, 74, 127, 21), (116, 118, 119, 127, 15), (61, 132, 74, 140, 57), (116, 132, 129, 140, 58), (55, 142, 74, 152, 119), (117, 143, 135, 152, 109)]
+new s [(57, 107, 66, 125, 81), (121, 117, 133, 129, 72), (66, 123, 69, 129, 17), (56, 131, 59, 134, 10), (97, 131, 136, 160, 590), (54, 132, 93, 160, 581)]
+new se [(52, 111, 76, 127, 115), (134, 117, 137, 122, 14), (94, 126, 145, 160, 914), (58, 129, 75, 141, 101), (77, 130, 91, 137, 50), (73, 142, 91, 153, 96)]
+new e [(90, 118, 110, 131, 185), (133, 127, 160, 158, 510), (72, 138, 86, 143, 37), (112, 139, 125, 144, 31), (92, 140, 105, 144, 33), (70, 150, 77, 158, 45), (79, 150, 86, 158, 45), (123, 150, 129, 158, 39), (91, 152, 98, 160, 43), (101, 152, 108, 160, 41), (113, 152, 121, 158, 42)]
+new ne [(136, 112, 145, 121, 42), (62, 117, 65, 124, 18), (106, 122, 121, 129, 56), (134, 124, 139, 133, 36), (123, 127, 132, 134, 44), (117, 135, 122, 144, 42), (106, 137, 115, 144, 50)]
+new n [(54, 122, 73, 135, 125), (117, 122, 136, 135, 120)]
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/defringe.py');s=p.read_text();s=s.replace('original_lone=lone.copy()', '''# Isolated neutral flecks wholly surrounded by another material are colour
+    # classification noise, not steel parts: restore the surrounding ramp.
+    for y,x in zip(*np.where(lone)):
+        y0,y1=max(0,y-1),min(out.shape[0],y+2); x0,x1=max(0,x-1),min(out.shape[1],x+2)
+        local=out[y0:y1,x0:x1]; neighbours=local[local[...,3]>0]
+        here=roles.get(tuple(out[y,x,:3]))
+        if not any(roles.get(tuple(c[:3]))==here and not np.array_equal(c[:3],out[y,x,:3]) for c in neighbours):
+            other=[tuple(c) for c in neighbours if roles.get(tuple(c[:3])) not in (here,'eye','accent')]
+            if other:
+                from collections import Counter
+                out[y,x]=Counter(other).most_common(1)[0][0]
+    original_lone=lone.copy()''');p.write_text(s)
+'@ | python -B -
+python -B 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/defringe.py'; python -B 'C:/Users/pmcga/dev/hollowtide/tools/art/slice_grid.py' 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/sheet_finished.png' 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/slices' --canvas 192 --feet 160; python -B 'D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/audit.py'" in D:\dev\_scratch\codex-cwd
+ succeeded in 13988ms:
+{"plum_or_magenta_pixels_repainted": 0, "remaining_plum_or_magenta_pixels": 0, "lone_pale_edge_pixels_repainted": 2, "remaining_lone_pale_edge_pixels": 0, "dark_ink_rim_pixels_repainted": 0, "remaining_dark_ink_rim_pixels": 0, "alpha_unchanged": true}
+sliced 8 views: e n ne nw s se sw w
+cam35/slices                           front/back 0.76 (under 0.8)  area 0.10 (w>sw)  height 0.28 (nw>w)  colour 0.89 (w>sw)  dips none  lone 0.05  colours 14
+
+sheet judge: D:\dev\new-mech-rpg\docs\art\moba\lobster_l\take-g\cam35\slices
+  e   h  70 feet 160 palette   1.0 colours  14  height: 70 px, the set's median 95
+  ne  h  96 feet 160 palette   1.0 colours  12  ok
+  n   h 106 feet 160 palette   1.0 colours  12  height: 106 px, the set's median 95
+  nw  h  96 feet 160 palette   1.0 colours  12  ok
+  w   h  69 feet 160 palette   1.0 colours  14  height: 69 px, the set's median 95
+  sw  h  95 feet 160 palette   1.0 colours  14  ok
+  s   h 105 feet 160 palette   1.0 colours  14  ok
+  se  h  95 feet 160 palette   1.0 colours  13  ok
+  mirror e/w 0.981  mirror ne/nw 0.965  mirror se/sw 0.987  same n/s 0.085  even n/s [0.986, 0.991]
+  FIX (code, --fix): nothing
+  REDO (generate again): e, n, w
+
+s: 83x105; W/approved W 0.9326; H/approved H 1.5909; H/W 1.2651 vs target 0.8315; top row 56; border False
+se: 100x95; W/approved W 0.8772; H/approved H 1.5079; H/W 0.9500 vs target 0.5478; top row 66; border False
+e: 129x70; W/approved W 1.0403; H/approved H 1.2727; H/W 0.5426 vs target 0.5726; top row 91; border False
+ne: 107x96; W/approved W 0.9554; H/approved H 1.4769; H/W 0.8972 vs target 0.7143; top row 65; border False
+n: 83x106; W/approved W 1.0247; H/approved H 1.6061; H/W 1.2771 vs target 1.0112; top row 55; border False
+H/approved H spread max-min 0.3333; se/ne height 0.9896 (95/96); Rows zero-based; heights informational, no height repair.
+east/south width 1.5542 vs approved 1.3933; se/s height 0.9048; se/e height 1.3571
+approved s: gunmetal 47.3577%; red 35.5401%; steel 8.7398%; eye 2.4681%; accent 5.8943%; accent target 5.9%; light gunmetal 9.001%, red 7.056%, steel 1.016%; eyes 85, 8-connected groups [44, 41]; top/bottom 95/160
+approved se: gunmetal 48.0676%; red 35.2444%; steel 7.1154%; eye 1.7149%; accent 7.8577%; accent target 7.9%; light gunmetal 9.189%, red 7.807%, steel 0.410%; eyes 67, 8-connected groups [43, 24]; top/bottom 98/160
+approved e: gunmetal 53.3913%; red 28.8696%; steel 6.2609%; eye 0.8696%; accent 10.6087%; accent target 10.6%; light gunmetal 9.420%, red 2.957%, steel 0.319%; eyes 30, 8-connected groups [30]; top/bottom 106/160
+approved ne: gunmetal 67.2439%; red 20.3111%; steel 4.2266%; eye 0.0000%; accent 8.2184%; accent target 8.2%; light gunmetal 17.112%, red 2.612%, steel 0.235%; eyes 0, 8-connected groups []; top/bottom 96/160
+approved n: gunmetal 72.3062%; red 17.4976%; steel 4.6639%; eye 0.0000%; accent 5.5323%; accent target 5.5%; light gunmetal 17.691%, red 0.901%, steel 0.322%; eyes 0, 8-connected groups []; top/bottom 95/160
+new s: gunmetal 50.3784%; red 32.0433%; steel 10.3887%; eye 1.2900%; accent 5.8996%; accent target 5.9%; light gunmetal 19.487%, red 11.507%, steel 1.548%; eyes 75, 8-connected groups [38, 37]; top/bottom 56/160
+new se: gunmetal 50.0260%; red 32.6860%; steel 8.0805%; eye 1.3005%; accent 7.9071%; accent target 7.9%; light gunmetal 16.317%, red 10.595%, steel 1.144%; eyes 75, 8-connected groups [59, 16]; top/bottom 66/160
+new e: gunmetal 54.7900%; red 26.8047%; steel 7.4511%; eye 0.7354%; accent 10.2187%; accent target 10.6%; light gunmetal 16.799%, red 8.516%, steel 0.561%; eyes 38, 8-connected groups [38]; top/bottom 91/160
+new ne: gunmetal 64.3049%; red 21.1988%; steel 6.3003%; eye 0.0000%; accent 8.1961%; accent target 8.2%; light gunmetal 22.712%, red 6.971%, steel 0.651%; eyes 0, 8-connected groups []; top/bottom 65/160
+new n: gunmetal 66.9419%; red 20.5164%; steel 7.0437%; eye 0.0000%; accent 5.4980%; accent target 5.5%; light gunmetal 26.295%, red 6.921%, steel 0.931%; eyes 0, 8-connected groups []; top/bottom 55/160
+s: p05 18.86; p95 184.72; most common #7e7e8e 19.49%
+se: p05 18.86; p95 184.72; most common #7e7e8e 16.32%
+e: p05 18.86; p95 184.72; most common #7e7e8e 16.80%
+ne: p05 18.86; p95 184.72; most common #7e7e8e 22.71%
+n: p05 18.86; p95 184.72; most common #7e7e8e 26.30%
+top5 0.6722917427840701
+
+codex
+The finished sheet has no rear eye pixels, magenta/plum fringe, lone pale edge pixels, or border contacts. One despeckle pass reduced lone pixels from 0.13 to 0.05. The visual review still shows a more overhead front than side, so this does not fully meet the requested consistent 35-degree angle.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+import json
+P=Path('D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35');m=json.loads((P/'metrics.json').read_text());n=m['new'];a=m['approved'];ds=['s','se','e','ne','n']
+feet='Feet rows (zero-based, distinguishable planted feet; overlapping claws/rings can merge): approved e near 160, far feet obscured (rows 148 are joint rings); approved se near 158, far obscured; approved ne near 154, farther 143/140 uncertain; approved n nearest rear feet 152; approved s feet/claws merge at 160. New e near 158/160/158, far feet obscured (143/144 are rings); new se near 153, farther 141; new ne near 144, farther 134/133; new n nearest rear feet 135, farther obscured; new s foot/claw groups merge at 160, far feet obscured. Do not interpret joint rings as far feet.'
+with (P/'shape.txt').open('a') as f:f.write('\\n'+feet+'\\n')
+lines=[]
+lines.append('Widths s/se/e/ne/n: '+', '.join(f\"{d} {n[d]['width']} ({n[d]['width']/a[d]['width']:.3f})\" for d in ds)+'; anchor mean 0.9992.')
+lines.append('East/south: raw 1.569; finished 1.554 vs approved 1.393 (124/89); side length retained, front width misses.')
+lines.append('Heights H (H/approved): '+', '.join(f\"{d} {n[d]['height']} ({n[d]['height']/a[d]['height']:.3f})\" for d in ds)+'.')
+lines.append('H/W vs guide s/se/e/ne/n: 1.265/.831, .950/.548, .543/.573, .897/.714, 1.277/1.011; heights informational.')
+lines.append('Height-ratio spread .333; se/s .905, se/e 1.357; top rows s/se/e/ne/n 56/66/91/65/55; no border contacts in all eight.')
+lines.append('Lightest shares % (gunmetal/red/steel), new vs approved: '+ '; '.join(d+' '+ '/'.join(f\"{n[d]['light_shares'][c]*100:.1f}\" for c in ['7e7e8e','f85a4a','eeeef2'])+' vs '+ '/'.join(f\"{a[d]['light_shares'][c]*100:.1f}\" for c in ['7e7e8e','f85a4a','eeeef2']) for d in ds)+'.')
+lines.append('Eyes totals/groups: '+ '; '.join(f\"{d} {n[d]['eye_pixels']}/{n[d]['eye_groups']}\" for d in ds)+'; main eyes exceed miss limits; se far 16 vs expected ~20; ne/n zero.')
+lines.append('Accent % new/target s/se/e/ne/n: '+', '.join(f\"{n[d]['role_shares']['accent']*100:.2f}/{v}\" for d,v in zip(ds,[5.9,7.9,10.6,8.2,5.5]))+'; thin eligible seams only, broad shadows retain material ramps.')
+lines.append('Palette PASS: fixed 14 colours, none outside; no magenta/plum, pale lone rim or accent rim remains; eye colours preserved.')
+lines.append('view_check: front/back .76 (<.80), area .10 (w>sw), height .28 (nw>w), colour .89, dips none; lone .13 -> .05 after one pass; top-five share .672.')
+lines.append('sheet_judge: mirror e/w .981, ne/nw .965, se/sw .987; FIX nothing; REDO e/n/w solely height (exempt, unchanged).')
+lines.append('Depth p05/p95 18.86/184.72 all five (range 165.86, below 180 target); dominant % s/se/e/ne/n '+ '/'.join(f\"{n[d]['dominant_share']*100:.2f}\" for d in ds)+'; all #7e7e8e.')
+lines.append('By eye: recognizable lobster, two claws/eyes/red-tipped rods, straight banded tail, flat lobed fan, no tail spikes; lit tops and firm seams/bands. Leg feet/fan bulk drift; front too overhead, side top band modest; uniform 35-degree pitch and exact design/proportions FAIL. se is taller, eyes/face/claws clear; rear eyes zero.')
+lines.append('Exactly one built-in generation; raw unchanged; tokens unavailable. Saved sheet_raw.png, sheet_finished.png, slices/, five views_cam35 PNGs, review.png and audits in OUT; feet visibility notes in shape.txt.')
+(P/'REPORT.txt').write_text('\\n'.join(lines)+'\\n');(P/'despeckle-check.txt').write_text('One pass only; view_check lone before 0.13, after 0.05. Before: view_check-before.txt. After: view_check.txt.\\n');print('\\n'.join(lines))
+'@ | python -B -" in D:\dev\_scratch\codex-cwd
+ succeeded in 442ms:
+Widths s/se/e/ne/n: s 83 (0.933), se 100 (0.877), e 129 (1.040), ne 107 (0.955), n 83 (1.025); anchor mean 0.9992.
+East/south: raw 1.569; finished 1.554 vs approved 1.393 (124/89); side length retained, front width misses.
+Heights H (H/approved): s 105 (1.591), se 95 (1.508), e 70 (1.273), ne 96 (1.477), n 106 (1.606).
+H/W vs guide s/se/e/ne/n: 1.265/.831, .950/.548, .543/.573, .897/.714, 1.277/1.011; heights informational.
+Height-ratio spread .333; se/s .905, se/e 1.357; top rows s/se/e/ne/n 56/66/91/65/55; no border contacts in all eight.
+Lightest shares % (gunmetal/red/steel), new vs approved: s 19.5/11.5/1.5 vs 9.0/7.1/1.0; se 16.3/10.6/1.1 vs 9.2/7.8/0.4; e 16.8/8.5/0.6 vs 9.4/3.0/0.3; ne 22.7/7.0/0.7 vs 17.1/2.6/0.2; n 26.3/6.9/0.9 vs 17.7/0.9/0.3.
+Eyes totals/groups: s 75/[38, 37]; se 75/[59, 16]; e 38/[38]; ne 0/[]; n 0/[]; main eyes exceed miss limits; se far 16 vs expected ~20; ne/n zero.
+Accent % new/target s/se/e/ne/n: 5.90/5.9, 7.91/7.9, 10.22/10.6, 8.20/8.2, 5.50/5.5; thin eligible seams only, broad shadows retain material ramps.
+Palette PASS: fixed 14 colours, none outside; no magenta/plum, pale lone rim or accent rim remains; eye colours preserved.
+view_check: front/back .76 (<.80), area .10 (w>sw), height .28 (nw>w), colour .89, dips none; lone .13 -> .05 after one pass; top-five share .672.
+sheet_judge: mirror e/w .981, ne/nw .965, se/sw .987; FIX nothing; REDO e/n/w solely height (exempt, unchanged).
+Depth p05/p95 18.86/184.72 all five (range 165.86, below 180 target); dominant % s/se/e/ne/n 19.49/16.32/16.80/22.71/26.30; all #7e7e8e.
+By eye: recognizable lobster, two claws/eyes/red-tipped rods, straight banded tail, flat lobed fan, no tail spikes; lit tops and firm seams/bands. Leg feet/fan bulk drift; front too overhead, side top band modest; uniform 35-degree pitch and exact design/proportions FAIL. se is taller, eyes/face/claws clear; rear eyes zero.
+Exactly one built-in generation; raw unchanged; tokens unavailable. Saved sheet_raw.png, sheet_finished.png, slices/, five views_cam35 PNGs, review.png and audits in OUT; feet visibility notes in shape.txt.
+
+codex
+Widths s/se/e/ne/n: **83/.933, 100/.877, 129/1.040, 107/.955, 83/1.025** (W/approved); anchor mean .9992.  
+East/south: raw **1.569**, finished **1.554**, versus **1.393**; side length holds, front width misses.  
+Heights (H/approved): **105/1.591, 95/1.508, 70/1.273, 96/1.477, 106/1.606**.  
+H/W versus target: **1.265/.831, .950/.548, .543/.573, .897/.714, 1.277/1.011**.  
+Height-ratio spread **.333**; se/s **.905**, se/e **1.357**; top rows **56/66/91/65/55**; no borders touched.  
+Lightest gunmetal/red/steel %, new→approved: s **19.5/11.5/1.5→9.0/7.1/1.0**; se **16.3/10.6/1.1→9.2/7.8/.4**; e **16.8/8.5/.6→9.4/3.0/.3**; ne **22.7/7.0/.7→17.1/2.6/.2**; n **26.3/6.9/.9→17.7/.9/.3**.  
+Eye totals/groups: s **75/[38,37]**, se **75/[59,16]**, e **38/[38]**, ne/n **0**.  
+Accent % versus target: **5.90/5.9, 7.91/7.9, 10.22/10.6, 8.20/8.2, 5.50/5.5**.  
+Palette **PASS**, fixed 14 colours; no magenta/plum or lone pale rim pixels remain.  
+view_check: front/back **.76**; lone **.13→.05**, one despeckle pass; top-five share **.672**.  
+sheet_judge: mirrors **.981/.965/.987**; height flags e/n/w retained as instructed.  
+Depth p05/p95 **18.86/184.72** throughout; dominant shares **19.49/16.32/16.80/22.71/26.30%**.  
+By eye: recognizable lobster with paired claws, eyes and rods, straight banded tail, flat fan and no spikes; **front too overhead, inconsistent pitch, feet/fan bulk drift—fails exact redraw**.  
+Exactly one generation; tokens unavailable. Saved [REPORT.txt](D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/REPORT.txt), [review.png](D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/review.png), sheets, audits and five VIEWS slices.
+tokens used
+70,525
+Widths s/se/e/ne/n: **83/.933, 100/.877, 129/1.040, 107/.955, 83/1.025** (W/approved); anchor mean .9992.  
+East/south: raw **1.569**, finished **1.554**, versus **1.393**; side length holds, front width misses.  
+Heights (H/approved): **105/1.591, 95/1.508, 70/1.273, 96/1.477, 106/1.606**.  
+H/W versus target: **1.265/.831, .950/.548, .543/.573, .897/.714, 1.277/1.011**.  
+Height-ratio spread **.333**; se/s **.905**, se/e **1.357**; top rows **56/66/91/65/55**; no borders touched.  
+Lightest gunmetal/red/steel %, new→approved: s **19.5/11.5/1.5→9.0/7.1/1.0**; se **16.3/10.6/1.1→9.2/7.8/.4**; e **16.8/8.5/.6→9.4/3.0/.3**; ne **22.7/7.0/.7→17.1/2.6/.2**; n **26.3/6.9/.9→17.7/.9/.3**.  
+Eye totals/groups: s **75/[38,37]**, se **75/[59,16]**, e **38/[38]**, ne/n **0**.  
+Accent % versus target: **5.90/5.9, 7.91/7.9, 10.22/10.6, 8.20/8.2, 5.50/5.5**.  
+Palette **PASS**, fixed 14 colours; no magenta/plum or lone pale rim pixels remain.  
+view_check: front/back **.76**; lone **.13→.05**, one despeckle pass; top-five share **.672**.  
+sheet_judge: mirrors **.981/.965/.987**; height flags e/n/w retained as instructed.  
+Depth p05/p95 **18.86/184.72** throughout; dominant shares **19.49/16.32/16.80/22.71/26.30%**.  
+By eye: recognizable lobster with paired claws, eyes and rods, straight banded tail, flat fan and no spikes; **front too overhead, inconsistent pitch, feet/fan bulk drift—fails exact redraw**.  
+Exactly one generation; tokens unavailable. Saved [REPORT.txt](D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/REPORT.txt), [review.png](D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/cam35/review.png), sheets, audits and five VIEWS slices.

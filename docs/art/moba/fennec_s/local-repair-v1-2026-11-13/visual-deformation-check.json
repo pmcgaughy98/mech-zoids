@@ -1,0 +1,139 @@
+{
+  "tested_sha256": "b9ab24f020ce2a83c78b122969a6f4880d0a0d3353ef6c54fe5206d54660f31f",
+  "joint_count": 44,
+  "poses": [
+    {
+      "label": "body-root",
+      "bone": "Bone_000",
+      "degrees": 6,
+      "max_displacement_m": 0.18230294981463874,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "neck",
+      "bone": "Bone_001",
+      "degrees": 6,
+      "max_displacement_m": 0.1990806706213442,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "head",
+      "bone": "Bone_003",
+      "degrees": 6,
+      "max_displacement_m": 0.08269008858608423,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "muzzle",
+      "bone": "Bone_037",
+      "degrees": 6,
+      "max_displacement_m": 0.02982209861965984,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "ear-right",
+      "bone": "Bone_040",
+      "degrees": 8,
+      "max_displacement_m": 0.10768074407882768,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "ear-right-tip",
+      "bone": "Bone_038",
+      "degrees": 8,
+      "max_displacement_m": 0.042552047779095416,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "ear-left",
+      "bone": "Bone_043",
+      "degrees": -8,
+      "max_displacement_m": 0.10832417000487973,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "ear-left-tip",
+      "bone": "Bone_041",
+      "degrees": -8,
+      "max_displacement_m": 0.04048829692763412,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "front-leg-right",
+      "bone": "Bone_024",
+      "degrees": 8,
+      "max_displacement_m": 0.08546078772940324,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "front-ankle-right",
+      "bone": "Bone_022",
+      "degrees": -8,
+      "max_displacement_m": 0.05241699461170332,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "front-leg-left",
+      "bone": "Bone_019",
+      "degrees": -8,
+      "max_displacement_m": 0.0860497132625294,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "front-ankle-left",
+      "bone": "Bone_017",
+      "degrees": 8,
+      "max_displacement_m": 0.05241817801568546,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "rear-leg-right",
+      "bone": "Bone_009",
+      "degrees": 8,
+      "max_displacement_m": 0.09972618502659297,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "rear-ankle-right",
+      "bone": "Bone_007",
+      "degrees": -8,
+      "max_displacement_m": 0.05040783207617922,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "rear-leg-left",
+      "bone": "Bone_014",
+      "degrees": -8,
+      "max_displacement_m": 0.10008590937778217,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "rear-ankle-left",
+      "bone": "Bone_012",
+      "degrees": 8,
+      "max_displacement_m": 0.05041966765880683,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "tail-root",
+      "bone": "Bone_033",
+      "degrees": 8,
+      "max_displacement_m": 0.17577179697345616,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "tail-mid",
+      "bone": "Bone_030",
+      "degrees": -8,
+      "max_displacement_m": 0.11815273942863197,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "tail-tip",
+      "bone": "Bone_025",
+      "degrees": 8,
+      "max_displacement_m": 0.019984172599511706,
+      "coincident_surface_gap_m": 0.0
+    }
+  ]
+}

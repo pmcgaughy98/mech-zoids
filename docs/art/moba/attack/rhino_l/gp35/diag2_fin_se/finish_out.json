@@ -1,0 +1,120 @@
+{
+  "raw_sha256": "da136bce10ea695e595f093205beac192befa1c62cb866d74798975197d214e3",
+  "raw_size": [
+    1536,
+    1024
+  ],
+  "heads": {},
+  "median_factor": 0.284,
+  "actual_xy_scale": [
+    0.2838541666666667,
+    0.2841796875
+  ],
+  "finished_size": [
+    436,
+    291
+  ],
+  "rows": {
+    "se": {
+      "width": 86,
+      "height": 83,
+      "still_wh": [
+        85,
+        83
+      ]
+    },
+    "ne": {
+      "width": 87,
+      "height": 90,
+      "still_wh": [
+        83,
+        103
+      ]
+    }
+  },
+  "eye_restored": [
+    "se_f0 @(92,95) local cell",
+    "se_f1 @(95,81) local cell",
+    "se_f2 @(83,54) local cell"
+  ],
+  "discarded_tiny_alpha": {
+    "se0": 0,
+    "se1": 0,
+    "se2": 0,
+    "ne0": 0,
+    "ne1": 0,
+    "ne2": 0
+  },
+  "despeckle": {
+    "se0": {
+      "before": 290,
+      "after": 290,
+      "passes": 0
+    },
+    "se1": {
+      "before": 358,
+      "after": 358,
+      "passes": 0
+    },
+    "se2": {
+      "before": 307,
+      "after": 307,
+      "passes": 0
+    },
+    "ne0": {
+      "before": 285,
+      "after": 285,
+      "passes": 0
+    },
+    "ne1": {
+      "before": 272,
+      "after": 272,
+      "passes": 0
+    },
+    "ne2": {
+      "before": 283,
+      "after": 283,
+      "passes": 0
+    }
+  },
+  "ink": {
+    "se0": {
+      "eligible": 12,
+      "added": 0,
+      "share": 0.08940331271203353
+    },
+    "se1": {
+      "eligible": 7,
+      "added": 0,
+      "share": 0.0895492620662146
+    },
+    "se2": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08760597496972143
+    },
+    "ne0": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.07603143418467584
+    },
+    "ne1": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.07635712865380792
+    },
+    "ne2": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.07235996326905418
+    }
+  },
+  "closed_pinholes": {
+    "se0": 0,
+    "se1": 0,
+    "se2": 0,
+    "ne0": 0,
+    "ne1": 0,
+    "ne2": 0
+  }
+}

@@ -1,0 +1,6 @@
+Rhino ground pound at 35, fix1: redraw frames 2 and 3 for e and se without the added thighs (Preston: "F3 rears too high ... they added thighs essentially. fix", 2026-11-05).
+One Codex image (2 rows x 3 columns) plus finishing with run 1's scripts. Estimate 45k-75k tokens. Cap 75,000; a capped run can land about 75k over its cap, so the worst case is about 150k.
+Preston: "Yes, start it" (2026-11-05, for this price).
+Command:
+  sh D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/walk35/codex_cap/run_codex_capped_d.sh D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/fix1 D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/fix1/brief.txt fix1 75000 rhino-gp35-fix1
+Started: 2026-11-05 19:13

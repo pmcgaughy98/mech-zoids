@@ -1,0 +1,22 @@
+Set B complete: exactly one built-in image generation per sheet, exact supplied prompts; tokens used unavailable.
+brace: 1619x971; sha256 203753a4309077179ca698490ae4a9916a85c3b9344d5dbd1cf6c285f1ad76d7
+stampede: 1914x822; sha256 fc75d7f3aaf463421f2495b56ea07c4110172f9ec6d84490e81a97686d4c88ba
+death: 1915x821; sha256 47bd417b45d5ec27b68c2f41bef33891dc6a6a44bbf1f9d7ec1923f692c2edd2
+effects: 1289x1221; sha256 2037238c333c3177cc9df6787dc58f1eec7590799e68a90283413528078fc817
+brace: clean 3x5 grid YES; front/side/back factors 0.2976650457, 0.3539518900, 0.2770629764
+brace f0/ref dimensions, exact-colour share (feet aligned): 71x71 vs 72x70 match=0.6498; 103x70 vs 103x67 match=0.3505; 66x76 vs 66x77 match=0.5189
+brace checks: mirror colour range front 0.699-0.816, back 0.737-0.850; side right YES; eye rim 0; no border contact.
+stampede: clean 3x7 grid YES; front/side/back factors 0.3481553119, 0.4055118110, 0.3273544427
+stampede f0/ref dimensions, exact-colour share (feet aligned): 73x69 vs 72x70 match=0.6172; 103x70 vs 103x67 match=0.4020; 68x74 vs 66x77 match=0.3475
+stampede checks: mirror colour range front 0.257-0.755, back 0.620-0.835; side right YES; eye rim 0; no border contact.
+death: clean 3x7 grid YES; front/side/back factors 0.3314461889, 0.3992248062, 0.3164769605
+death f0/ref dimensions, exact-colour share (feet aligned): 75x67 vs 72x70 match=0.4739; 103x66 vs 103x67 match=0.5731; 68x74 vs 66x77 match=0.4488
+death checks: mirror colour range front 0.414-0.797, back 0.719-0.874; side right YES; eye rim 0; no border contact.
+Brace by eye: recognizably the same rhino in all rows (yellow hex plates/dark frame, discs, grey feet, two-tone horn, tail); cleanup loses most red eyes/glints. Brace reads and columns broadly agree; front/back straight; rear legs look shorter in sink/hold.
+Stampede by eye: same rhino design in all rows, with eye loss after cleanup; gallop reads, but head/horn remain too high, front/side/back leg beats only partly agree. Front/back straight; rear leg length mostly holds.
+Stampede ground FAIL: side_f5 needs +4 px, exceeds 3 px limit; left at bottom y=156. All other rhino frames bottom y=160.
+Death by eye: same rhino design in all rows, with eye loss after cleanup; belly collapse reads across columns, but raw final eyes do not extinguish consistently (side_f5 still red). Front/back straight; rear legs tuck/splay and visually shorten at collapse.
+Effects: clean 6x6 grid YES; row factors 0.2127659574, 0.1759243814, 0.1595092025, 0.1159808186, 0.5583756345, 0.1976781835; widths exactly 40/28/26/16/110/28 px.
+Effects by eye: all six requested moves read, no rhino (identity/front/back checks N/A); stun has three stars; brace ring reads rocky/heavy. Raw size nearly square, not wide landscape; no redo.
+Validation: 57 rhino + 36 effect frames; binary alpha, allowed palettes, eye rim zero and clear borders PASS. Per-frame dimensions/colours/eyes, mirrors, palette edge audit, lone pixels: each sheet/checks.txt.
+Deliverables: unchanged raws + generation.json; adapted refinish.py; frames, grid.json, checks.txt, labelled reviews and timed GIFs; effects/anchor.json. Writes confined to codex-set-b; no install or commit.

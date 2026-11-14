@@ -1,0 +1,47 @@
+DRAFT, 2026-11-06: finish after run 1 (add what run 1 got wrong, as hippo run 2 did). Not launched.
+
+You are making pixel-art walk frames for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\walk\lobster_l\run2.
+Read anything under D:\dev\new-mech-rpg\docs\art\moba. Do not touch any other folder (run1 included), assets, art or
+tools, and do not commit. Run tag: lobster-walk35-run2.
+
+This is run 2 of the L lobster's tripod walk at 35 degrees. Run 1 (D:\dev\new-mech-rpg\docs\art\moba\walk\lobster_l\run1)
+made the e, se and ne views. Read run1\brief.txt (the machine, the gait, the method, the rules and the pass marks all
+still apply), run1\REPORT.txt, and run1's scripts: that is your own method from run 1, so reuse it. Read
+D:\dev\new-mech-rpg\docs\art\moba\walk\WALK_PLAYBOOK.md section 7 for the front and back views, and the hippo's run 2
+(walk\hippo_l\run2: brief.txt, REPORT.txt, scripts), which drew s and n the same way. The stills are in run2\stills;
+the targets (the same plan as run 1) are in run2\targets.json; the guides are run2\guide_s.png and guide_n.png. Draw s
+and n only. Do not redraw e, se or ne.
+
+Keep run2\REPORT.txt up to date after each view, so a report exists even if the run is stopped by its token cap.
+
+What run 1 got wrong: TO FILL from the walk lane's review of run 1.
+
+Part 1, s. Part 2, n. Each is an 8-frame loop, 125 ms a frame, with run 1's tripod: A (L1, R2, L3) on the ground f0-f3,
+B (R1, L2, R3) on the ground f4-f7, lifts 2, 3, 3, 2, the body, claws and tail dipping 1 px on f0 and f4. Per view, the
+path turns into screen px as offset * f * u, with the lift straight up:
+  s: u = (0, 1), f = 0.5736; a planted foot moves (0.00, -1.72) px a frame on the canvas (x, y; y down)
+  n: u = (0, -1), f = 0.5736; a planted foot moves (0.00, +1.72) px a frame
+At 35 degrees a step toward or away from the camera shows at 0.57 of its length, so these views need real foot travel
+up and down the screen, not reordered side frames. Round each frame's position so a planted foot's total travel stays
+within 0.5 px of the target. Labels: D:\dev\new-mech-rpg\docs\art\moba\walk\lobster_l\feet.json. In s the front legs
+are labelled, beside the claws (R1 on screen left, L1 on screen right, feet on row 144), and the middle and rear legs
+stack above and behind them; in n the rear legs are labelled, beside the tail (L3 on screen left, R3 on screen right,
+feet on row 135), and the middle and front legs stack behind them. Move the stacked legs too, with the same tripod
+timing, wherever they show. The claws (s) and tail (n) are the lowest things on the canvas and are not feet; they ride
+with the body.
+Draw order: in s, rear and middle legs, then body, then front legs, then the claws exactly as the still layers them
+over the front legs (check at 8x); in n, front and middle legs, then body, then rear legs, then the tail exactly as the
+still layers it over the rear legs. Each leg moves straight up and down the screen, joints redrawn by hand; the ball
+joints stay pinned to the body and dip with it; the legs stay apart from each other, the claws and the tail.
+
+Pass marks for s and n: all of run 1's (foot lock over the 4 planted frames within 2 px, measured from the frame
+pixels; targets within 1 px; lifts exact; above the legs every frame equals the still after the dip; the stills' 14
+colours only; binary alpha; no holes, stray pixels or edge contact; specks no more than the still's count plus 2;
+underside; whole feet). Run walk_tools.py footlock and seams as in run1\brief.txt, with run2's paths and --views s n.
+
+Output in run2: walk\frames\s_f0.png to s_f7.png and n_f0.png to n_f7.png (raw, no outline), walk\layers and source\
+as in run 1, a preview gif per view (125 ms, loop), footprint pictures, board.png (per view: the still, then the 8
+frames, with sel-out, at 4x), legs_zoom.png (5x, every frame), checks.txt, footlock.json, and REPORT.txt (under 30
+lines): tokens if known, the foot-lock spreads, target errors, the underside and whole-feet results, the seams result,
+upper-body match, specks, lowest rows, and by eye: do s and n read as this lobster walking toward and away from the
+camera three legs at a time, claws and tail whole, nothing hanging below the body?

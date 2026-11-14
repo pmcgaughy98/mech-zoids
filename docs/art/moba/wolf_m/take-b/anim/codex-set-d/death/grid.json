@@ -1,0 +1,688 @@
+{
+  "raw_size": [
+    1914,
+    822
+  ],
+  "raw_sha256": "d0df261c3ac2bd2117e4c4e76e63fa5fc4713d14bf4cdca05f594b3e5e872e7f",
+  "rows": [
+    "se",
+    "ne"
+  ],
+  "columns": 7,
+  "x_edges": {
+    "se": [
+      0,
+      288,
+      550,
+      811,
+      1081,
+      1351,
+      1630,
+      1914
+    ],
+    "ne": [
+      0,
+      286,
+      550,
+      814,
+      1092,
+      1367,
+      1641,
+      1914
+    ]
+  },
+  "nominal_x_edges": [
+    0,
+    282,
+    547,
+    815,
+    1086,
+    1367,
+    1635,
+    1914
+  ],
+  "y_edges": [
+    0,
+    410,
+    822
+  ],
+  "row_scale": {
+    "se": [
+      0.3155893536121673,
+      0.32407407407407407
+    ],
+    "ne": [
+      0.3157894736842105,
+      0.3153153153153153
+    ]
+  },
+  "cells": [
+    {
+      "view": "se",
+      "frame": 0,
+      "source_box": [
+        0,
+        0,
+        288,
+        410
+      ],
+      "source_opaque_box": [
+        18,
+        116,
+        281,
+        332
+      ],
+      "scale": [
+        0.3155893536121673,
+        0.32407407407407407
+      ],
+      "placement": [
+        54,
+        91
+      ],
+      "duration_ms": 300,
+      "touches_cut": false,
+      "exact_still": true,
+      "final_path": "frames\\se_f0.png",
+      "final_bbox": [
+        54,
+        91,
+        137,
+        161
+      ],
+      "final_canvas": [
+        192,
+        192
+      ],
+      "ground_row": 160,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_sha256": "ec32f5daa730bd444ed1834573f5b88567989469009d8be9db92cbd9d1b91bc2"
+    },
+    {
+      "view": "se",
+      "frame": 1,
+      "source_box": [
+        288,
+        0,
+        550,
+        410
+      ],
+      "source_opaque_box": [
+        7,
+        105,
+        254,
+        326
+      ],
+      "scale": [
+        0.3155893536121673,
+        0.32407407407407407
+      ],
+      "placement": [
+        56,
+        89
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "exact_still": false,
+      "final_path": "frames\\se_f1.png",
+      "final_bbox": [
+        50,
+        89,
+        134,
+        161
+      ],
+      "final_canvas": [
+        192,
+        192
+      ],
+      "ground_row": 160,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_sha256": "f00f6678e3508fd9ee0a2304e6353c4df8699328b9a12f6fc5af5ae56eae396b"
+    },
+    {
+      "view": "se",
+      "frame": 2,
+      "source_box": [
+        550,
+        0,
+        811,
+        410
+      ],
+      "source_opaque_box": [
+        9,
+        143,
+        256,
+        327
+      ],
+      "scale": [
+        0.3155893536121673,
+        0.32407407407407407
+      ],
+      "placement": [
+        56,
+        101
+      ],
+      "duration_ms": 130,
+      "touches_cut": false,
+      "exact_still": false,
+      "final_path": "frames\\se_f2.png",
+      "final_bbox": [
+        47,
+        101,
+        134,
+        161
+      ],
+      "final_canvas": [
+        192,
+        192
+      ],
+      "ground_row": 160,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_sha256": "c8a2b3ebd1115cc95780ff27406219815954845f1c4ccfac94e627e24d69f5c1"
+    },
+    {
+      "view": "se",
+      "frame": 3,
+      "source_box": [
+        811,
+        0,
+        1081,
+        410
+      ],
+      "source_opaque_box": [
+        6,
+        200,
+        263,
+        328
+      ],
+      "scale": [
+        0.3155893536121673,
+        0.32407407407407407
+      ],
+      "placement": [
+        55,
+        120
+      ],
+      "duration_ms": 140,
+      "touches_cut": false,
+      "exact_still": false,
+      "final_path": "frames\\se_f3.png",
+      "final_bbox": [
+        42,
+        120,
+        136,
+        161
+      ],
+      "final_canvas": [
+        192,
+        192
+      ],
+      "ground_row": 160,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_sha256": "d939a16ff494408868f36d9369ba647cd9af145cc0e95b20c77862ad2e29bc44"
+    },
+    {
+      "view": "se",
+      "frame": 4,
+      "source_box": [
+        1081,
+        0,
+        1351,
+        410
+      ],
+      "source_opaque_box": [
+        7,
+        207,
+        263,
+        337
+      ],
+      "scale": [
+        0.3155893536121673,
+        0.32407407407407407
+      ],
+      "placement": [
+        55,
+        119
+      ],
+      "duration_ms": 160,
+      "touches_cut": false,
+      "exact_still": false,
+      "final_path": "frames\\se_f4.png",
+      "final_bbox": [
+        45,
+        119,
+        136,
+        161
+      ],
+      "final_canvas": [
+        192,
+        192
+      ],
+      "ground_row": 160,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_sha256": "77df8e881ffe83c4c62f91d6a13bb5bbf4df2801c63df436b84cfdf80ed78bc5"
+    },
+    {
+      "view": "se",
+      "frame": 5,
+      "source_box": [
+        1351,
+        0,
+        1630,
+        410
+      ],
+      "source_opaque_box": [
+        8,
+        243,
+        273,
+        334
+      ],
+      "scale": [
+        0.3155893536121673,
+        0.32407407407407407
+      ],
+      "placement": [
+        54,
+        132
+      ],
+      "duration_ms": 180,
+      "touches_cut": false,
+      "exact_still": false,
+      "final_path": "frames\\se_f5.png",
+      "final_bbox": [
+        39,
+        131,
+        138,
+        161
+      ],
+      "final_canvas": [
+        192,
+        192
+      ],
+      "ground_row": 160,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_sha256": "b4616a778c4005b594e5fbab19524094d040cd0339c629b8ef7d9879f86390c9"
+    },
+    {
+      "view": "se",
+      "frame": 6,
+      "source_box": [
+        1630,
+        0,
+        1914,
+        410
+      ],
+      "source_opaque_box": [
+        7,
+        242,
+        269,
+        333
+      ],
+      "scale": [
+        0.3155893536121673,
+        0.32407407407407407
+      ],
+      "placement": [
+        54,
+        132
+      ],
+      "duration_ms": 1400,
+      "touches_cut": false,
+      "exact_still": false,
+      "final_path": "frames\\se_f6.png",
+      "final_bbox": [
+        39,
+        131,
+        138,
+        161
+      ],
+      "final_canvas": [
+        192,
+        192
+      ],
+      "ground_row": 160,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_sha256": "388f76bb7276031288a225b64fcd9d555a09fb688d0105d922ada08cd657cbe3"
+    },
+    {
+      "view": "ne",
+      "frame": 0,
+      "source_box": [
+        0,
+        410,
+        286,
+        822
+      ],
+      "source_opaque_box": [
+        26,
+        84,
+        273,
+        306
+      ],
+      "scale": [
+        0.3157894736842105,
+        0.3153153153153153
+      ],
+      "placement": [
+        57,
+        91
+      ],
+      "duration_ms": 300,
+      "touches_cut": false,
+      "exact_still": true,
+      "final_path": "frames\\ne_f0.png",
+      "final_bbox": [
+        57,
+        91,
+        135,
+        161
+      ],
+      "final_canvas": [
+        192,
+        192
+      ],
+      "ground_row": 160,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_sha256": "aa5447e13626bcd547a9f0365dc95b697d91797f7a23c20869fe72152f831e15"
+    },
+    {
+      "view": "ne",
+      "frame": 1,
+      "source_box": [
+        286,
+        410,
+        550,
+        822
+      ],
+      "source_opaque_box": [
+        14,
+        74,
+        253,
+        305
+      ],
+      "scale": [
+        0.3157894736842105,
+        0.3153153153153153
+      ],
+      "placement": [
+        58,
+        88
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "exact_still": false,
+      "final_path": "frames\\ne_f1.png",
+      "final_bbox": [
+        58,
+        88,
+        133,
+        161
+      ],
+      "final_canvas": [
+        192,
+        192
+      ],
+      "ground_row": 160,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_sha256": "98b0526c133ad6dcd756d948545e5324ba09d4afd941dce460da8b1a841dd613"
+    },
+    {
+      "view": "ne",
+      "frame": 2,
+      "source_box": [
+        550,
+        410,
+        814,
+        822
+      ],
+      "source_opaque_box": [
+        12,
+        116,
+        256,
+        304
+      ],
+      "scale": [
+        0.3157894736842105,
+        0.3153153153153153
+      ],
+      "placement": [
+        58,
+        102
+      ],
+      "duration_ms": 130,
+      "touches_cut": false,
+      "exact_still": false,
+      "final_path": "frames\\ne_f2.png",
+      "final_bbox": [
+        50,
+        102,
+        135,
+        161
+      ],
+      "final_canvas": [
+        192,
+        192
+      ],
+      "ground_row": 160,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_sha256": "a898a057c21f20124f842f00482ad7bd0ef840d0e89e76057e6ed7b7cc14edbb"
+    },
+    {
+      "view": "ne",
+      "frame": 3,
+      "source_box": [
+        814,
+        410,
+        1092,
+        822
+      ],
+      "source_opaque_box": [
+        9,
+        164,
+        264,
+        304
+      ],
+      "scale": [
+        0.3157894736842105,
+        0.3153153153153153
+      ],
+      "placement": [
+        56,
+        117
+      ],
+      "duration_ms": 140,
+      "touches_cut": false,
+      "exact_still": false,
+      "final_path": "frames\\ne_f3.png",
+      "final_bbox": [
+        45,
+        117,
+        137,
+        161
+      ],
+      "final_canvas": [
+        192,
+        192
+      ],
+      "ground_row": 160,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_sha256": "2e8af5aced786cb185bb3509ab43a39d27ccf7a9136f9893ea878e55d6ebbd18"
+    },
+    {
+      "view": "ne",
+      "frame": 4,
+      "source_box": [
+        1092,
+        410,
+        1367,
+        822
+      ],
+      "source_opaque_box": [
+        14,
+        175,
+        267,
+        306
+      ],
+      "scale": [
+        0.3157894736842105,
+        0.3153153153153153
+      ],
+      "placement": [
+        56,
+        120
+      ],
+      "duration_ms": 160,
+      "touches_cut": false,
+      "exact_still": false,
+      "final_path": "frames\\ne_f4.png",
+      "final_bbox": [
+        45,
+        120,
+        136,
+        161
+      ],
+      "final_canvas": [
+        192,
+        192
+      ],
+      "ground_row": 160,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_sha256": "2d0ee8b991d6fc091143eadfbe0a489830f0434904f6fea83362f1eb40dde7b8"
+    },
+    {
+      "view": "ne",
+      "frame": 5,
+      "source_box": [
+        1367,
+        410,
+        1641,
+        822
+      ],
+      "source_opaque_box": [
+        8,
+        198,
+        267,
+        306
+      ],
+      "scale": [
+        0.3157894736842105,
+        0.3153153153153153
+      ],
+      "placement": [
+        55,
+        127
+      ],
+      "duration_ms": 180,
+      "touches_cut": false,
+      "exact_still": false,
+      "final_path": "frames\\ne_f5.png",
+      "final_bbox": [
+        44,
+        127,
+        147,
+        161
+      ],
+      "final_canvas": [
+        192,
+        192
+      ],
+      "ground_row": 160,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_sha256": "b414f2ffb3216bc6b5d7e7e1b0d40c9f95810ccee9410605f939b52d2eaae958"
+    },
+    {
+      "view": "ne",
+      "frame": 6,
+      "source_box": [
+        1641,
+        410,
+        1914,
+        822
+      ],
+      "source_opaque_box": [
+        8,
+        200,
+        267,
+        306
+      ],
+      "scale": [
+        0.3157894736842105,
+        0.3153153153153153
+      ],
+      "placement": [
+        55,
+        128
+      ],
+      "duration_ms": 1400,
+      "touches_cut": false,
+      "exact_still": false,
+      "final_path": "frames\\ne_f6.png",
+      "final_bbox": [
+        44,
+        127,
+        147,
+        161
+      ],
+      "final_canvas": [
+        192,
+        192
+      ],
+      "ground_row": 160,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_sha256": "b414f2ffb3216bc6b5d7e7e1b0d40c9f95810ccee9410605f939b52d2eaae958"
+    }
+  ],
+  "preview_ms": [
+    300,
+    100,
+    130,
+    140,
+    160,
+    180,
+    1400
+  ],
+  "finishing": "Whole generated drawings and direct native pixel ink. No approved parts pasted; see ../polish.py and ../pixel_edits.json.",
+  "empty_gutter_cuts": true
+}

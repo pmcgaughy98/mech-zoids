@@ -1,0 +1,45 @@
+Clean 3x6 grid: True; binary alpha; transparent RGB zero.
+front: factor=0.3420157744; fixed cell anchor offset=(44,76)
+front_f0: width=87, height=59, colours=11, red=1, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+front_f1: width=86, height=60, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=-1
+front_f2: width=88, height=60, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=-1
+front_f3: width=87, height=59, colours=11, red=2, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+front_f4: width=87, height=60, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=-1
+front_f5: width=87, height=59, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=-1
+front column1 vs ref: 87x59 vs 87x60; exact-colour share=0.6154; mirrored ref=0.5759; orientation=PASS (opaque union; feet aligned; best x overlap each)
+front mirror colour similarities: 0.739, 0.659, 0.579, 0.479, 0.546, 0.705
+side: factor=0.3940520446; fixed cell anchor offset=(37,80)
+side_f0: width=106, height=61, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+side_f1: width=106, height=61, colours=11, red=3, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+side_f2: width=106, height=61, colours=11, red=2, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+side_f3: width=106, height=61, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+side_f4: width=107, height=60, colours=11, red=1, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+side_f5: width=106, height=58, colours=11, red=2, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+side column1 vs ref: 106x61 vs 106x59; exact-colour share=0.7021; mirrored ref=0.2337; orientation=PASS (opaque union; feet aligned; best x overlap each)
+back: factor=0.3231067955; fixed cell anchor offset=(47,78)
+back_f0: width=83, height=64, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+back_f1: width=84, height=64, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+back_f2: width=83, height=64, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+back_f3: width=84, height=63, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+back_f4: width=84, height=63, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+back_f5: width=84, height=61, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=1
+back column1 vs ref: 83x64 vs 81x65; exact-colour share=0.4616; mirrored ref=0.4482; orientation=PASS (opaque union; feet aligned; best x overlap each)
+back mirror colour similarities: 0.804, 0.739, 0.775, 0.752, 0.666, 0.885
+Side faces right: YES (visual audit: head and horn point right in every cell).
+Palette audit hex total rim rim_share:
+#141218 1515 411 0.2713
+#211E27 4325 649 0.1501
+#3D3A44 5128 675 0.1316
+#58555E 5455 1104 0.2024
+#7A4A06 6586 431 0.0654
+#9D9BA2 6650 336 0.0505
+#D18A0A 13258 809 0.0610
+#D6D6DC 1137 304 0.2674
+#FF3A2A 11 0 0.0000
+#FFCF1F 17136 588 0.0343
+#FFE6D8 0 0 0.0000
+#FFF4A8 8895 1397 0.1571
+Top5 share=0.7493; near-black (<48 each) share=0.0833
+front lone-colour-pixel shares: 0.0069, 0.0085, 0.0077, 0.0072, 0.0054, 0.0069
+side lone-colour-pixel shares: 0.0049, 0.0054, 0.0063, 0.0056, 0.0063, 0.0073
+back lone-colour-pixel shares: 0.0036, 0.0045, 0.0045, 0.0066, 0.0042, 0.0042

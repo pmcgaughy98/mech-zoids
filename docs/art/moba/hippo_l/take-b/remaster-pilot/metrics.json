@@ -1,0 +1,39 @@
+{
+ "target": 0.0636,
+ "views": {
+  "s": {
+   "share_before": 0.0658,
+   "gated": false
+  },
+  "se": {
+   "share_before": 0.0649,
+   "gated": false
+  },
+  "e": {
+   "share_before": 0.0636,
+   "gated": false
+  },
+  "ne": {
+   "share_before": 0.0435,
+   "gated": true,
+   "need": 110,
+   "added": 110,
+   "candidates": 353,
+   "lone": 0,
+   "share_capped": 0.0637,
+   "share_full_rule": 0.1083,
+   "full_rule_px": 410
+  },
+  "n": {
+   "share_before": 0.0364,
+   "gated": true,
+   "need": 113,
+   "added": 113,
+   "candidates": 275,
+   "lone": 0,
+   "share_capped": 0.0637,
+   "share_full_rule": 0.1027,
+   "full_rule_px": 303
+  }
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "_note": "Hippo sole labels on the 192 canvas (approved still hippo_l/take-b/views_cam35_touchup_shade1, already on 192, feet row 160, so offset 0,0). From walk_tools.py soles, a per-column lowest-row dump and a 5x gridded look, 2026-11-05. F = front feet, H = hind feet; R/L are the hippo's own right and left (its right side is near in se, e, ne; on screen left in s, on screen right in n). Hidden in the still: s RH, LH (behind the head and front legs); se LH; e LH, LF (behind the near legs and body); ne LF; n RF, LF (behind the rump). Partly hidden: se LF peeks out under the jaw at x 125-137. The diagonal views have a steep front-to-hind spread on screen (se RH 25 rows above RF, ne RF 24 rows above RH).",
+ "canvas": 192,
+ "offset": [0, 0],
+ "views": {
+  "s":  {"RF": [58, 82, 160], "LF": [109, 133, 160]},
+  "se": {"RF": [78, 95, 160], "LF": [125, 137, 157], "RH": [49, 61, 135]},
+  "e":  {"RH": [50, 70, 158], "RF": [95, 111, 160]},
+  "ne": {"LH": [50, 66, 154], "RH": [86, 103, 160], "RF": [118, 132, 136]},
+  "n":  {"LH": [62, 82, 160], "RH": [108, 129, 160]}
+ }
+}

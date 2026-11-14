@@ -1,0 +1,104 @@
+{
+  "impact-puff": {
+    "canvas": [
+      49,
+      32
+    ],
+    "anchor": [
+      22,
+      27
+    ],
+    "source_cell_anchor": [
+      22,
+      40
+    ],
+    "type": "ground-centre",
+    "margin": 4,
+    "factor": 0.2127659574468085
+  },
+  "hit-spark": {
+    "canvas": [
+      36,
+      35
+    ],
+    "anchor": [
+      17,
+      18
+    ],
+    "source_cell_anchor": [
+      19,
+      20
+    ],
+    "type": "burst-centre",
+    "margin": 4,
+    "factor": 0.1759243814289686
+  },
+  "stun-loop": {
+    "canvas": [
+      37,
+      24
+    ],
+    "anchor": [
+      17,
+      12
+    ],
+    "source_cell_anchor": [
+      16,
+      13
+    ],
+    "type": "burst-centre",
+    "margin": 4,
+    "factor": 0.15950920245398773
+  },
+  "dust-trail": {
+    "canvas": [
+      25,
+      22
+    ],
+    "anchor": [
+      12,
+      17
+    ],
+    "source_cell_anchor": [
+      12,
+      18
+    ],
+    "type": "ground-centre",
+    "margin": 4,
+    "factor": 0.11598081855693097
+  },
+  "brace-ring": {
+    "canvas": [
+      118,
+      56
+    ],
+    "anchor": [
+      58,
+      51
+    ],
+    "source_cell_anchor": [
+      62,
+      76
+    ],
+    "type": "ground-centre",
+    "margin": 4,
+    "factor": 0.5583756345177665
+  },
+  "deflect-spark": {
+    "canvas": [
+      36,
+      30
+    ],
+    "anchor": [
+      17,
+      19
+    ],
+    "source_cell_anchor": [
+      21,
+      23
+    ],
+    "type": "burst-centre",
+    "margin": 4,
+    "factor": 0.19767818346184665
+  }
+}

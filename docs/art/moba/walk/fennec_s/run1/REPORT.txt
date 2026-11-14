@@ -1,0 +1,27 @@
+fennec-trot35-run1: 24 raw frames, e/se/ne, 192x192; previews 8 x 100ms, looping.
+Tokens: watcher snapshot 10:33:54 125085; final total unavailable.
+Foot labels retained: RF/RH near right, LF/LH far left. ne LH is hind; its native knee is hidden by the tail.
+Method reused: ape_l/run1 native helpers/stamp audit; run2 complete hidden joints. Native translations only.
+RF+LH swing f5-7; LF+RH f1-3; all planted f0/f4; body dips f0/f4, whole native tail f1/f5.
+Pixel-stamp foot lock, all four feet: e spread x/y 0.500/0.000; se/ne each 0.950/0.840 px. PASS.
+Target errors: e <=0.500; se <=0.500; ne <=0.475 px. Lifts exact 2/3/2. PASS.
+Occluded contacts measured from complete saved leg layers; checks.txt lists every measurement/frame.
+Supplied footlock tool: SOME FEET NEED A LOOK; overlapping silhouettes merge nearby soles (see footlock.json).
+Its passing feet: e RH and ne RH; remaining feet have independent native-stamp/layer passes above.
+Seams tool residual flags f0-7:
+  e [0, 0, 0, 12, 0, 10, 0, 1]
+  se [0, 0, 0, 15, 2, 9, 0, 1]
+  ne [0, 10, 4, 3, 0, 0, 0, 0]
+Residual seam flags are open inter-leg/ankle spaces after one body-band fill; retained per playbook, not iteratively filled.
+No enclosed holes remain; strict zero-flags seams gate is NOT met. Red-dot review PNGs and coordinates supplied.
+Upper original opaque paint difference f0-7: all views [0,0,0,0,0,0,0,0]%.
+Whole upper canvas: e/ne 0%; se f0/f4 add 5 tail-root joining pixels (0.0203%); other se frames 0%.
+Native knee housings 100% intact on layers; shin/foot below top 4 joining rows 100% unchanged; rigid-part length change 0px.
+Whole articulated leg-length tolerance was not independently established; joints are stepped native-colour bands.
+Lowest e f0-7: [160, 159, 159, 159, 160, 160, 160, 160]
+Lowest se f0-7: [163, 161, 160, 159, 159, 157, 157, 159]
+Lowest ne f0-7: [163, 159, 157, 157, 158, 159, 160, 161]
+All: binary alpha, native palette only, 1 component, 0 holes/strays/edge contacts. Stills equal approved +16,+20.
+By eye at 4x selout and every joint at 5x: e/se/ne read as this fennec trotting in diagonal pairs; knees/feet whole.
+Tail stays straight, translated whole behind legs. Far joints dark and occluded; no abrupt cutoffs seen.
+Delivery is reviewable; strict seams/upper-canvas/whole-length gates above remain qualified, not an all-gates pass.

@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "03022032076509649bcee8dbc06682e578bdf8feeccfef11dfad2bdccaf359b2",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.375206611570248,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "gorilla_front.png",
+      "source_box": [
+        33,
+        71,
+        638,
+        545
+      ],
+      "source_dimensions": [
+        605,
+        474
+      ],
+      "output_box": [
+        96,
+        284,
+        928,
+        936
+      ]
+    },
+    "left": {
+      "file": "gorilla_left.png",
+      "source_box": [
+        723,
+        71,
+        1236,
+        545
+      ],
+      "source_dimensions": [
+        513,
+        474
+      ],
+      "output_box": [
+        159,
+        284,
+        864,
+        936
+      ]
+    },
+    "back": {
+      "file": "gorilla_back.png",
+      "source_box": [
+        33,
+        676,
+        636,
+        1148
+      ],
+      "source_dimensions": [
+        603,
+        472
+      ],
+      "output_box": [
+        97,
+        287,
+        926,
+        936
+      ]
+    },
+    "right": {
+      "file": "gorilla_right.png",
+      "source_box": [
+        703,
+        679,
+        1219,
+        1162
+      ],
+      "source_dimensions": [
+        516,
+        483
+      ],
+      "output_box": [
+        157,
+        272,
+        867,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.022774327122153208
+}

@@ -1,0 +1,14 @@
+Sizes W x H/area: s82x72/3202; se73x72/2946; e79x73/2726; ne68x72/2770; n82x75/3274.
+Shape (+/-2px, projected): east wing55/body32=1.719; beak12/head24=0.500; e73/s72=1.014; south span82/body36=2.278; green ne0/nw0 PASS.
+ONE built-in image, prompt-sheet.txt verbatim, only refs/craft_drembit.png attached; raw unchanged (SHA256 generation.json); tokens/cost unknown; no redo.
+view_check: front/back0.82 PASS; area0.15; height0.04; colour0.91; dips none; lone0.11149 ->0.01562 PASS after ONE lens-preserving despeckle pass.
+sheet_judge: eight ok; FIX nothing; REDO nothing; mirrors e/w0.994, ne/nw0.990, se/sw0.910; binary alpha; feet140 (ne/n/nw139); border contact NONE.
+16 shared colours, white retained; white also serves as lens glint (prompt names17); full crimson/yellow/ivory ramps retained; top-five64.18% FAIL65%; edge plum/magenta0, lone pale0, overlap ink0.
+Depth e/se/s/n: p05 24.03 each; p95 230.12 each; range206.09 each PASS180; dominant20.76/19.72/19.89/23.82%; heights73/72/72/75.
+By eye FIRST, MACHINE: YES; hard flat bevelled plates, straight cuts, charcoal neck and joints, round joint discs, green lens eyes, no feathers.
+BOLD/LIVELY: YES; ivory armour, strongly contrasting crimson jet wings, yellow hooked beak, glowing green eyes, raised swept arrow silhouette; holds at40px.
+FALCON: YES; upright alert raptor, sleek tapering body, compact helmet, short hooked beak, half-raised wings, short blade tail fan, strong legs and hooked talons; nothing held.
+Four-step crimson shading present; ivory has three named tones plus shared steel/frame underside shadows, not four dedicated ivory tones; overlap lines present; no continuous dark outside line.
+Profile73 vs front72 NEAR (not exact); n75>s72 FAIL no-taller rule but +4.17% within5%; ne72=se72 PASS, nw73>sw72 FAIL; similar camera; no rear eye/face.
+Rear heels FAIL/weak: north feet retain forward-looking claws, and rear diagonals show near talons; SE/SW true three-quarter, head turned, far eye hidden PASS.
+All outputs in take-a: finished sheet, views, audit text/JSON, review.png at4x and review-game-size.png at40px then4x; no installation, commits or reverts.

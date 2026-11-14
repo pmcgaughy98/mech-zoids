@@ -1,0 +1,26 @@
+approved s: armour green 36.3445%; orange 23.7815%; steel 22.0168%; shield and visor glow 7.6891%; dark accent 10.1681%; visor ONLY 18; slit ROI (72, 82, 87, 87)
+approved se: armour green 36.9854%; orange 26.4342%; steel 21.0124%; shield and visor glow 7.0866%; dark accent 8.4814%; visor ONLY 17; slit ROI (91, 82, 104, 87)
+approved e: armour green 45.0401%; orange 22.1693%; steel 16.6583%; shield and visor glow 7.2645%; dark accent 8.8677%; visor ONLY 9; slit ROI (105, 83, 111, 88)
+approved ne: armour green 44.2550%; orange 23.0500%; steel 17.5385%; shield and visor glow 7.5199%; dark accent 7.6366%; visor ONLY 0; slit ROI none: rear, visual exclusion of generator/shields
+approved n: armour green 44.9426%; orange 27.0981%; steel 13.3834%; shield and visor glow 6.1617%; dark accent 8.4143%; visor ONLY 0; slit ROI none: rear, visual exclusion of generator/shields
+new s: armour green 39.4348%; orange 24.1522%; steel 19.6304%; shield and visor glow 8.0217%; dark accent 8.7609%; visor ONLY 15; slit ROI (72, 86, 88, 93)
+  accent 8.761% vs approved target 10.2%: -1.439 percentage points
+new se: armour green 42.0242%; orange 23.0439%; steel 19.2075%; shield and visor glow 7.7486%; dark accent 7.9758%; visor ONLY 8; slit ROI (94, 84, 105, 90)
+  accent 7.976% vs approved target 8.5%: -0.524 percentage points
+new e: armour green 46.9522%; orange 19.3693%; steel 16.4745%; shield and visor glow 9.2022%; dark accent 8.0019%; visor ONLY 8; slit ROI (106, 78, 114, 84)
+  accent 8.002% vs approved target 8.9%: -0.898 percentage points
+new ne: armour green 45.9738%; orange 21.9426%; steel 16.5325%; shield and visor glow 7.0961%; dark accent 8.4550%; visor ONLY 0; slit ROI none: rear, visual exclusion of generator/shields
+  accent 8.455% vs approved target 7.6%: +0.855 percentage points
+new n: armour green 46.7892%; orange 23.3719%; steel 15.3392%; shield and visor glow 6.1266%; dark accent 8.3730%; visor ONLY 0; slit ROI none: rear, visual exclusion of generator/shields
+  accent 8.373% vs approved target 8.4%: -0.027 percentage points
+Foot rows (zero-based 160px canvas; visually identified contacts, measured within isolated foot regions):
+new s: near fists 130; far hind feet 116.
+new se: near fist 130; far fist 115; visible hind foot 105; other hind foot not separately discernible.
+new e: near fist 130; far fist 108; near hind foot 124; far hind foot occluded/not separately discernible.
+new ne: near hind foot 130; far hind foot 119; near fist 124; far fist not confidently separable.
+new n: near hind feet 130; far fists 114.
+approved s: near fists 130; far hind feet approximately 126 (low camera overlap).
+approved se/e/ne/n: lowest near contacts 130; far contacts overlap body/near limbs at low camera and are not confidently separable; no invented far-foot rows.
+Visor thresholds: approved s18/se17; expected cam35 about s15/se14; new se is a MISS (<12); rear visor zero.
+Accent seams are retained by luminance and local thin-line contrast; broad shadows retain material ramp; no quota-based recolouring.
+All eight canvas borders: {'s': False, 'se': False, 'e': False, 'ne': False, 'n': False, 'nw': False, 'w': False, 'sw': False}

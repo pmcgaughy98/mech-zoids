@@ -1,0 +1,49 @@
+{
+  "id": "dragonfly",
+  "source_sha256": "984ed353af641da84b90dc5e3ee7719cd58668096696ed87651ef2db1a9e2641",
+  "source_triangles": 500000,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8749106170655697,
+  "blender_bounds_min": [
+    -4.6004319190979,
+    -0.49758070707321167,
+    0.12065176665782928
+  ],
+  "blender_bounds_max": [
+    -1.4001048803329468,
+    0.4979695677757263,
+    2.4705843925476074
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

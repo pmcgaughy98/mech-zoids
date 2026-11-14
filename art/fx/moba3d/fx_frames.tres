@@ -1,0 +1,187 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/impact_puff_f0.png" id="1"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/impact_puff_f1.png" id="2"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/impact_puff_f2.png" id="3"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/impact_puff_f3.png" id="4"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/impact_puff_f4.png" id="5"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/impact_puff_f5.png" id="6"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/hit_spark_f0.png" id="7"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/hit_spark_f1.png" id="8"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/hit_spark_f2.png" id="9"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/hit_spark_f3.png" id="10"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/hit_spark_f4.png" id="11"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/hit_spark_f5.png" id="12"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/stun_loop_f0.png" id="13"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/stun_loop_f1.png" id="14"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/stun_loop_f2.png" id="15"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/stun_loop_f3.png" id="16"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/stun_loop_f4.png" id="17"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/stun_loop_f5.png" id="18"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/dust_trail_f0.png" id="19"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/dust_trail_f1.png" id="20"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/dust_trail_f2.png" id="21"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/dust_trail_f3.png" id="22"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/dust_trail_f4.png" id="23"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/dust_trail_f5.png" id="24"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/deflect_spark_f0.png" id="25"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/deflect_spark_f1.png" id="26"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/deflect_spark_f2.png" id="27"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/deflect_spark_f3.png" id="28"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/deflect_spark_f4.png" id="29"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/deflect_spark_f5.png" id="30"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/gp_ring_f0.png" id="31"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/gp_ring_f1.png" id="32"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/gp_ring_f2.png" id="33"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/gp_ring_f3.png" id="34"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/gp_ring_f4.png" id="35"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/gp_ring_f5.png" id="36"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/gp_ring_f6.png" id="37"]
+[ext_resource type="Texture2D" path="res://art/fx/moba3d/gp_ring_f7.png" id="38"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}],
+"loop": false,
+"name": &"impact_puff",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}],
+"loop": false,
+"name": &"hit_spark",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}],
+"loop": true,
+"name": &"stun_loop",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24")
+}],
+"loop": false,
+"name": &"dust_trail",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30")
+}],
+"loop": false,
+"name": &"deflect_spark",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38")
+}],
+"loop": false,
+"name": &"gp_ring",
+"speed": 10.0
+}]

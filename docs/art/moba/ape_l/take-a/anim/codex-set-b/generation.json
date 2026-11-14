@@ -1,0 +1,47 @@
+{
+  "bound": {
+    "tool": "built-in image_gen",
+    "generation_count": 1,
+    "prompt": "prompts/bound.txt",
+    "reference_order": [
+      "refs/front.png",
+      "refs/side.png",
+      "refs/back.png"
+    ],
+    "sha256": "c16f2ea728f45c872715d1eb72081ab553c8435dbe0eb2eb26334170f69c22d8",
+    "size": [
+      2172,
+      724
+    ]
+  },
+  "hex_dome": {
+    "tool": "built-in image_gen",
+    "generation_count": 1,
+    "prompt": "prompts/hex_dome.txt",
+    "reference_order": [
+      "refs/front.png",
+      "refs/side.png",
+      "refs/back.png"
+    ],
+    "sha256": "dea78f1e1686ad4556d86825797f20392941e0b9ae7364e991521123161684d1",
+    "size": [
+      2172,
+      724
+    ]
+  },
+  "death": {
+    "tool": "built-in image_gen",
+    "generation_count": 1,
+    "prompt": "prompts/death.txt",
+    "reference_order": [
+      "refs/front.png",
+      "refs/side.png",
+      "refs/back.png"
+    ],
+    "sha256": "bf3e1c5033f4672723271402e874e849ce2f42ed2c9c44d945f1b6b0aa2bc2ae",
+    "size": [
+      2172,
+      724
+    ]
+  }
+}

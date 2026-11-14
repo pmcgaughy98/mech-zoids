@@ -1,0 +1,817 @@
+{
+  "raw_size": [
+    1915,
+    821
+  ],
+  "raw_sha256": "409df3f0f7645afb1fb0cff03941f6580b77bcc909218868c56a2d6d4c5c8831",
+  "columns": 7,
+  "rows": [
+    "front",
+    "side",
+    "back"
+  ],
+  "x_edges": [
+    0,
+    274,
+    547,
+    821,
+    1093,
+    1366,
+    1641,
+    1915
+  ],
+  "y_edges": [
+    0,
+    271,
+    503,
+    821
+  ],
+  "row_scale": {
+    "front": 0.32909008973205545,
+    "side": 0.42947784519366666,
+    "back": 0.30339978891087427
+  },
+  "cells": [
+    {
+      "view": "front",
+      "frame": 0,
+      "source_box": [
+        0,
+        0,
+        274,
+        271
+      ],
+      "source_opaque_box": [
+        113,
+        43,
+        216,
+        256
+      ],
+      "scale": 0.32909008973205545,
+      "placement": [
+        80,
+        91
+      ],
+      "duration_ms": 120,
+      "touches_cut": false,
+      "final_opaque_box": [
+        80,
+        89,
+        113,
+        161
+      ],
+      "final_path": "frames/front_f0.png",
+      "exact_endpoint": true,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "front",
+      "frame": 1,
+      "source_box": [
+        274,
+        0,
+        547,
+        271
+      ],
+      "source_opaque_box": [
+        86,
+        97,
+        222,
+        256
+      ],
+      "scale": 0.32909008973205545,
+      "placement": [
+        74,
+        109
+      ],
+      "duration_ms": 180,
+      "touches_cut": false,
+      "final_opaque_box": [
+        76,
+        109,
+        117,
+        161
+      ],
+      "final_path": "frames/front_f1.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "front",
+      "frame": 2,
+      "source_box": [
+        547,
+        0,
+        821,
+        271
+      ],
+      "source_opaque_box": [
+        75,
+        53,
+        208,
+        256
+      ],
+      "scale": 0.32909008973205545,
+      "placement": [
+        74,
+        94
+      ],
+      "duration_ms": 80,
+      "touches_cut": false,
+      "final_opaque_box": [
+        76,
+        94,
+        116,
+        161
+      ],
+      "final_path": "frames/front_f2.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "front",
+      "frame": 3,
+      "source_box": [
+        821,
+        0,
+        1093,
+        271
+      ],
+      "source_opaque_box": [
+        79,
+        22,
+        193,
+        209
+      ],
+      "scale": 0.32909008973205545,
+      "placement": [
+        78,
+        79
+      ],
+      "duration_ms": 120,
+      "touches_cut": false,
+      "final_opaque_box": [
+        79,
+        79,
+        114,
+        141
+      ],
+      "final_path": "frames/front_f3.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 140
+    },
+    {
+      "view": "front",
+      "frame": 4,
+      "source_box": [
+        1093,
+        0,
+        1366,
+        271
+      ],
+      "source_opaque_box": [
+        58,
+        93,
+        198,
+        256
+      ],
+      "scale": 0.32909008973205545,
+      "placement": [
+        74,
+        107
+      ],
+      "duration_ms": 90,
+      "touches_cut": false,
+      "final_opaque_box": [
+        76,
+        107,
+        118,
+        161
+      ],
+      "final_path": "frames/front_f4.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "front",
+      "frame": 5,
+      "source_box": [
+        1366,
+        0,
+        1641,
+        271
+      ],
+      "source_opaque_box": [
+        60,
+        65,
+        178,
+        256
+      ],
+      "scale": 0.32909008973205545,
+      "placement": [
+        77,
+        98
+      ],
+      "duration_ms": 160,
+      "touches_cut": false,
+      "final_opaque_box": [
+        79,
+        98,
+        114,
+        161
+      ],
+      "final_path": "frames/front_f5.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "front",
+      "frame": 6,
+      "source_box": [
+        1641,
+        0,
+        1915,
+        271
+      ],
+      "source_opaque_box": [
+        59,
+        43,
+        163,
+        256
+      ],
+      "scale": 0.32909008973205545,
+      "placement": [
+        80,
+        91
+      ],
+      "duration_ms": 200,
+      "touches_cut": false,
+      "final_opaque_box": [
+        80,
+        89,
+        113,
+        161
+      ],
+      "final_path": "frames/front_f6.png",
+      "exact_endpoint": true,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 0,
+      "source_box": [
+        0,
+        271,
+        274,
+        503
+      ],
+      "source_opaque_box": [
+        26,
+        50,
+        272,
+        210
+      ],
+      "scale": 0.42947784519366666,
+      "placement": [
+        43,
+        92
+      ],
+      "duration_ms": 120,
+      "touches_cut": false,
+      "final_opaque_box": [
+        41,
+        95,
+        151,
+        161
+      ],
+      "final_path": "frames/side_f0.png",
+      "exact_endpoint": true,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 1,
+      "source_box": [
+        274,
+        271,
+        547,
+        503
+      ],
+      "source_opaque_box": [
+        20,
+        87,
+        271,
+        207
+      ],
+      "scale": 0.42947784519366666,
+      "placement": [
+        42,
+        109
+      ],
+      "duration_ms": 180,
+      "touches_cut": false,
+      "final_opaque_box": [
+        42,
+        109,
+        150,
+        161
+      ],
+      "final_path": "frames/side_f1.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 2,
+      "source_box": [
+        547,
+        271,
+        821,
+        503
+      ],
+      "source_opaque_box": [
+        21,
+        53,
+        264,
+        206
+      ],
+      "scale": 0.42947784519366666,
+      "placement": [
+        44,
+        95
+      ],
+      "duration_ms": 80,
+      "touches_cut": false,
+      "final_opaque_box": [
+        44,
+        95,
+        148,
+        161
+      ],
+      "final_path": "frames/side_f2.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 3,
+      "source_box": [
+        821,
+        271,
+        1093,
+        503
+      ],
+      "source_opaque_box": [
+        9,
+        16,
+        257,
+        170
+      ],
+      "scale": 0.42947784519366666,
+      "placement": [
+        42,
+        75
+      ],
+      "duration_ms": 120,
+      "touches_cut": false,
+      "final_opaque_box": [
+        42,
+        75,
+        149,
+        141
+      ],
+      "final_path": "frames/side_f3.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 140
+    },
+    {
+      "view": "side",
+      "frame": 4,
+      "source_box": [
+        1093,
+        271,
+        1366,
+        503
+      ],
+      "source_opaque_box": [
+        2,
+        79,
+        254,
+        210
+      ],
+      "scale": 0.42947784519366666,
+      "placement": [
+        42,
+        105
+      ],
+      "duration_ms": 90,
+      "touches_cut": false,
+      "final_opaque_box": [
+        42,
+        105,
+        150,
+        161
+      ],
+      "final_path": "frames/side_f4.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 5,
+      "source_box": [
+        1366,
+        271,
+        1641,
+        503
+      ],
+      "source_opaque_box": [
+        2,
+        63,
+        246,
+        210
+      ],
+      "scale": 0.42947784519366666,
+      "placement": [
+        44,
+        98
+      ],
+      "duration_ms": 160,
+      "touches_cut": false,
+      "final_opaque_box": [
+        44,
+        98,
+        149,
+        161
+      ],
+      "final_path": "frames/side_f5.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 6,
+      "source_box": [
+        1641,
+        271,
+        1915,
+        503
+      ],
+      "source_opaque_box": [
+        7,
+        54,
+        251,
+        210
+      ],
+      "scale": 0.42947784519366666,
+      "placement": [
+        44,
+        94
+      ],
+      "duration_ms": 200,
+      "touches_cut": false,
+      "final_opaque_box": [
+        41,
+        95,
+        151,
+        161
+      ],
+      "final_path": "frames/side_f6.png",
+      "exact_endpoint": true,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 0,
+      "source_box": [
+        0,
+        503,
+        274,
+        821
+      ],
+      "source_opaque_box": [
+        105,
+        40,
+        223,
+        272
+      ],
+      "scale": 0.30339978891087427,
+      "placement": [
+        78,
+        91
+      ],
+      "duration_ms": 120,
+      "touches_cut": false,
+      "final_opaque_box": [
+        78,
+        89,
+        113,
+        161
+      ],
+      "final_path": "frames/back_f0.png",
+      "exact_endpoint": true,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 1,
+      "source_box": [
+        274,
+        503,
+        547,
+        821
+      ],
+      "source_opaque_box": [
+        86,
+        96,
+        224,
+        284
+      ],
+      "scale": 0.30339978891087427,
+      "placement": [
+        74,
+        104
+      ],
+      "duration_ms": 180,
+      "touches_cut": false,
+      "final_opaque_box": [
+        75,
+        104,
+        115,
+        161
+      ],
+      "final_path": "frames/back_f1.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 2,
+      "source_box": [
+        547,
+        503,
+        821,
+        821
+      ],
+      "source_opaque_box": [
+        81,
+        39,
+        208,
+        264
+      ],
+      "scale": 0.30339978891087427,
+      "placement": [
+        76,
+        93
+      ],
+      "duration_ms": 80,
+      "touches_cut": false,
+      "final_opaque_box": [
+        77,
+        93,
+        114,
+        161
+      ],
+      "final_path": "frames/back_f2.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 3,
+      "source_box": [
+        821,
+        503,
+        1093,
+        821
+      ],
+      "source_opaque_box": [
+        76,
+        23,
+        195,
+        222
+      ],
+      "scale": 0.30339978891087427,
+      "placement": [
+        78,
+        81
+      ],
+      "duration_ms": 120,
+      "touches_cut": false,
+      "final_opaque_box": [
+        79,
+        81,
+        113,
+        141
+      ],
+      "final_path": "frames/back_f3.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 140
+    },
+    {
+      "view": "back",
+      "frame": 4,
+      "source_box": [
+        1093,
+        503,
+        1366,
+        821
+      ],
+      "source_opaque_box": [
+        58,
+        86,
+        199,
+        284
+      ],
+      "scale": 0.30339978891087427,
+      "placement": [
+        74,
+        101
+      ],
+      "duration_ms": 90,
+      "touches_cut": false,
+      "final_opaque_box": [
+        75,
+        101,
+        116,
+        161
+      ],
+      "final_path": "frames/back_f4.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 5,
+      "source_box": [
+        1366,
+        503,
+        1641,
+        821
+      ],
+      "source_opaque_box": [
+        63,
+        56,
+        181,
+        267
+      ],
+      "scale": 0.30339978891087427,
+      "placement": [
+        78,
+        97
+      ],
+      "duration_ms": 160,
+      "touches_cut": false,
+      "final_opaque_box": [
+        79,
+        97,
+        113,
+        161
+      ],
+      "final_path": "frames/back_f5.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 6,
+      "source_box": [
+        1641,
+        503,
+        1915,
+        821
+      ],
+      "source_opaque_box": [
+        54,
+        40,
+        171,
+        272
+      ],
+      "scale": 0.30339978891087427,
+      "placement": [
+        78,
+        91
+      ],
+      "duration_ms": 200,
+      "touches_cut": false,
+      "final_opaque_box": [
+        78,
+        89,
+        113,
+        161
+      ],
+      "final_path": "frames/back_f6.png",
+      "exact_endpoint": true,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    }
+  ],
+  "final_canvas": [
+    192,
+    192
+  ],
+  "duration_ms": [
+    120,
+    180,
+    80,
+    120,
+    90,
+    160,
+    200
+  ],
+  "loop": false,
+  "native_finishing": {
+    "method": "Whole generated drawings, nearest-neighbour native pixel corrections, fixed palette and binary alpha. No approved part compositing. Exact endpoints copied byte for byte.",
+    "scripts": [
+      "../polish.py"
+    ],
+    "final_pixel_scale": 1,
+    "approved_canvas_offset": [
+      0,
+      0
+    ]
+  }
+}

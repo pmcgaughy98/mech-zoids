@@ -1,0 +1,24 @@
+approved s: violet 49.6790%; cream-gold 23.7531%; steel 13.7778%; charcoal frame 6.3704%; eye 1.3827%; dark accent 5.0370%; eye pixels 28; height/width 1.3404; lowest opaque row 140; foot rows: see visual notes below
+approved se: violet 55.4073%; cream-gold 19.5582%; steel 12.7013%; charcoal frame 5.3843%; eye 0.8283%; dark accent 6.1206%; eye pixels 18; height/width 1.1724; lowest opaque row 140; foot rows: see visual notes below
+approved e: violet 57.5449%; cream-gold 14.0708%; steel 12.5182%; charcoal frame 9.4614%; eye 0.5822%; dark accent 5.8224%; eye pixels 12; height/width 0.9189; lowest opaque row 140; foot rows: see visual notes below
+approved ne: violet 72.7087%; cream-gold 5.4788%; steel 9.7286%; charcoal frame 5.8372%; eye 0.0000%; dark accent 6.2468%; eye pixels 0; height/width 1.3103; lowest opaque row 140; foot rows: see visual notes below
+approved n: violet 74.5681%; cream-gold 5.2783%; steel 8.5893%; charcoal frame 5.3263%; eye 0.0000%; dark accent 6.2380%; eye pixels 0; height/width 1.9524; lowest opaque row 140; foot rows: see visual notes below
+new s: violet 49.9033%; cream-gold 24.9516%; steel 16.6344%; charcoal frame 1.9342%; eye 1.5474%; dark accent 5.0290%; eye pixels 24; height/width 1.3256; lowest opaque row 140; foot rows: see visual notes below
+new se: violet 56.4117%; cream-gold 16.5107%; steel 17.2262%; charcoal frame 2.9169%; eye 0.8255%; dark accent 6.1090%; eye pixels 15; height/width 1.1296; lowest opaque row 140; foot rows: see visual notes below
+new e: violet 58.9001%; cream-gold 12.0047%; steel 17.7410%; charcoal frame 5.0857%; eye 0.4731%; dark accent 5.7954%; eye pixels 8; height/width 0.8000; lowest opaque row 140; foot rows: see visual notes below
+new ne: violet 64.9059%; cream-gold 4.4930%; steel 18.5792%; charcoal frame 5.8288%; eye 0.0000%; dark accent 6.1931%; eye pixels 0; height/width 1.2545; lowest opaque row 140; foot rows: see visual notes below
+new n: violet 67.8295%; cream-gold 4.0698%; steel 19.0568%; charcoal frame 2.8424%; eye 0.0000%; dark accent 6.2016%; eye pixels 0; height/width 1.8889; lowest opaque row 140; foot rows: see visual notes below
+Rows are zero-based on 160x160 canvases. Feet must be identified visually; opaque bottom alone does not identify a far foot.
+
+Accent comparisons (new/target): s 5.03/5.0%, se 6.11/6.1%, e 5.80/5.8%, ne 6.19/6.2%, n 6.20/6.2%
+Eye floors: s 24>=24 PASS; se 15>=15 PASS; rear ne/n 0/0 PASS. Seated s/se/e 28/18/12.
+Visual identification on the zero-based 160x160 canvases; near/far refers to camera distance, not left/right.
+s: near front soles 140/140; far hind soles about 130/130, partly merged into near-leg silhouette.
+se: near front 140, near hind 133; far front 136, far hind about 129 (partly occluded).
+e: near hind 140, near front 139; far hind 133, far front 132.
+ne: near hind 140, near front 129; far hind 136, far front about 126 (partly occluded).
+n: near hind 140/140; far front about 121/121 (small side stubs, blending into hind-leg silhouette).
+Belly e: central body columns 80-87 end at row 123; near soles 139/140, giving 15/16 intermediate rows (124-138/139). Near foot upper edges 133/134 leave 9/10 rows to the foot tops. Legs excluded from the body measurement.
+Visible parts by eye (s,se,e,ne,n): four foot endpoints each; two full near legs plus partly hidden far legs in s/e/n; three clearer legs plus an occluded far leg in se/ne. No apparent fifth leg, third ear or second tail. Whole independently drawn far legs FAIL.
+Same design family, ears, joint discs, chest and segmented tail retained; no obvious new part. Standing and mostly straight legs, but not every leg is whole or fully distinct; side fore/hind soles differ by 1px.
+Tops visible and far feet higher throughout; common 35-degree pitch uncertain, especially the low-looking east view. Front ear width 43 vs seated 47 FAIL; front eye pixels 24 vs 28 and se 15 vs 18 meet floors but do not preserve full size. Firm plates/seams and clean bands; rear eye count zero.

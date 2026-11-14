@@ -1,0 +1,114 @@
+{
+  "sizes": {
+    "ne": [
+      77,
+      74,
+      4133
+    ],
+    "n": [
+      66,
+      77,
+      3760
+    ],
+    "nw": [
+      77,
+      74,
+      4140
+    ],
+    "e": [
+      103,
+      67,
+      4655
+    ],
+    "w": [
+      103,
+      67,
+      4634
+    ],
+    "se": [
+      89,
+      70,
+      4577
+    ],
+    "s": [
+      72,
+      70,
+      4025
+    ],
+    "sw": [
+      88,
+      70,
+      4553
+    ]
+  },
+  "depth": {
+    "ne": {
+      "p05": 18.8584,
+      "p95": 240.85139999999998,
+      "dominant_colour": "#ffcf1f",
+      "dominant_share": 0.24921364626179532,
+      "height": 74
+    },
+    "n": {
+      "p05": 18.8584,
+      "p95": 240.85139999999998,
+      "dominant_colour": "#ffcf1f",
+      "dominant_share": 0.25079787234042555,
+      "height": 77
+    },
+    "nw": {
+      "p05": 18.8584,
+      "p95": 240.85139999999998,
+      "dominant_colour": "#ffcf1f",
+      "dominant_share": 0.2528985507246377,
+      "height": 74
+    },
+    "e": {
+      "p05": 18.8584,
+      "p95": 214.43319999999997,
+      "dominant_colour": "#ffcf1f",
+      "dominant_share": 0.2713211600429645,
+      "height": 67
+    },
+    "w": {
+      "p05": 18.8584,
+      "p95": 240.85139999999998,
+      "dominant_colour": "#ffcf1f",
+      "dominant_share": 0.26542943461372465,
+      "height": 67
+    },
+    "se": {
+      "p05": 18.8584,
+      "p95": 240.85139999999998,
+      "dominant_colour": "#ffcf1f",
+      "dominant_share": 0.2296263928337339,
+      "height": 70
+    },
+    "s": {
+      "p05": 18.8584,
+      "p95": 240.85139999999998,
+      "dominant_colour": "#ffcf1f",
+      "dominant_share": 0.18633540372670807,
+      "height": 70
+    },
+    "sw": {
+      "p05": 18.8584,
+      "p95": 240.85139999999998,
+      "dominant_colour": "#ffcf1f",
+      "dominant_share": 0.2405007687239183,
+      "height": 70
+    }
+  },
+  "border_contact": {
+    "ne": false,
+    "n": false,
+    "nw": false,
+    "e": false,
+    "w": false,
+    "se": false,
+    "s": false,
+    "sw": false
+  },
+  "colours": 12,
+  "top_five_share": 0.6654871363517707
+}

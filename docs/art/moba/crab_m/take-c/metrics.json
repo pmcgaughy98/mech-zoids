@@ -1,0 +1,114 @@
+{
+  "sizes": {
+    "ne": [
+      127,
+      72,
+      6420
+    ],
+    "n": [
+      130,
+      76,
+      7162
+    ],
+    "nw": [
+      127,
+      72,
+      6425
+    ],
+    "e": [
+      129,
+      76,
+      6864
+    ],
+    "w": [
+      129,
+      76,
+      6842
+    ],
+    "se": [
+      135,
+      79,
+      7901
+    ],
+    "s": [
+      140,
+      80,
+      8235
+    ],
+    "sw": [
+      135,
+      79,
+      7902
+    ]
+  },
+  "depth": {
+    "ne": {
+      "p05": 18.8584,
+      "p95": 190.05180000000001,
+      "dominant_colour": "#ff5a2e",
+      "dominant_share": 0.22071651090342678,
+      "height": 72
+    },
+    "n": {
+      "p05": 18.8584,
+      "p95": 190.05180000000001,
+      "dominant_colour": "#ff5a2e",
+      "dominant_share": 0.22102764590896398,
+      "height": 76
+    },
+    "nw": {
+      "p05": 18.8584,
+      "p95": 190.05180000000001,
+      "dominant_colour": "#ff5a2e",
+      "dominant_share": 0.2221011673151751,
+      "height": 72
+    },
+    "e": {
+      "p05": 18.8584,
+      "p95": 190.05180000000001,
+      "dominant_colour": "#ff5a2e",
+      "dominant_share": 0.25757575757575757,
+      "height": 76
+    },
+    "w": {
+      "p05": 18.8584,
+      "p95": 190.05180000000001,
+      "dominant_colour": "#ff5a2e",
+      "dominant_share": 0.26337328266588717,
+      "height": 76
+    },
+    "se": {
+      "p05": 18.8584,
+      "p95": 190.05180000000001,
+      "dominant_colour": "#ff5a2e",
+      "dominant_share": 0.2721174534869004,
+      "height": 79
+    },
+    "s": {
+      "p05": 18.8584,
+      "p95": 190.05180000000001,
+      "dominant_colour": "#ff5a2e",
+      "dominant_share": 0.32750455373406195,
+      "height": 80
+    },
+    "sw": {
+      "p05": 18.8584,
+      "p95": 190.05180000000001,
+      "dominant_colour": "#ff5a2e",
+      "dominant_share": 0.2809415337889142,
+      "height": 79
+    }
+  },
+  "border_contact": {
+    "ne": false,
+    "n": false,
+    "nw": false,
+    "e": false,
+    "w": false,
+    "se": false,
+    "s": false,
+    "sw": false
+  },
+  "colours": 12,
+  "top_five_share": 0.7107063081158768
+}

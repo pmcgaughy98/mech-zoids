@@ -1,0 +1,98 @@
+{
+  "id": "fennec",
+  "name": "Fennec",
+  "source_model": {
+    "path": "res://art/model_catalog/sources/fennec_front - Hunyuan 3D v3.1 Pro.glb",
+    "source": "D:\\user\\Downloads\\fennec_front - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "ef9263888aae6b09e00da3bc33cbe09b4a89999e1419bd76d3759bb204f0cbf8",
+    "bytes": 55258280
+  },
+  "display_model": "res://docs/art/moba/fennec_s/local-repair-v1-2026-11-13/fennec-rigged-local-repair-v1.glb",
+  "status": "Two small gaps and 52 malformed triangles repaired. Four legs, two ears and one tail retained. Original 44-joint rig, all skin weights and textures unchanged.",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/fennec/front.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\fennec_front.png",
+      "sha256": "b03e22758459e1cf0626e4cbb7d8990b722ed8391cf629d11b1b671ceddf7760",
+      "bytes": 240619,
+      "project_matches": [
+        "docs/art/moba/fennec_s/take-c-power/white_views/fennec_front.png"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/fennec/left.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\fennec_left.png",
+      "sha256": "a57fc30bc4337b85e21ab7cb48d6949229dfae49df3f3cfe1d9f7533bbb906f0",
+      "bytes": 249794,
+      "project_matches": [
+        "docs/art/moba/fennec_s/take-c-power/white_views/fennec_left.png"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/fennec/back.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\fennec_back.png",
+      "sha256": "074941b7c51bfdf565dd20f55b4362b9a8211327098f448a8b6fa096748f36d6",
+      "bytes": 212229,
+      "project_matches": [
+        "docs/art/moba/fennec_s/take-c-power/white_views/fennec_back.png"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/fennec/right.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\fennec_right.png",
+      "sha256": "ea1260235d62805ca2e2ab6b34807bca996bde7bb109e5574df3299f0ab673c6",
+      "bytes": 251781,
+      "project_matches": [
+        "docs/art/moba/fennec_s/take-c-power/white_views/fennec_right.png"
+      ]
+    }
+  },
+  "artist_workspace": "res://docs/art/moba/fennec_s/local-repair-v1-2026-11-13/fennec-rigged-local-repair-v1.blend",
+  "review_models": [
+    {
+      "label": "INTACT QUALITY ARCHIVE\nOriginal generated geometry",
+      "path": "res://art/model_catalog/sources/fennec_front - Hunyuan 3D v3.1 Pro.glb",
+      "display_scale": 2.554990037629816
+    },
+    {
+      "label": "DOWNLOADED RIG\nLocal gaps and folds",
+      "path": "res://art/model_catalog/sources/Meshy_AI_fennec_remeshed_25k_20261108_character.glb",
+      "display_scale": 1.1324741779482872
+    },
+    {
+      "label": "LOCAL REPAIR\nSame 44-joint rig and skin",
+      "path": "res://docs/art/moba/fennec_s/local-repair-v1-2026-11-13/fennec-rigged-local-repair-v1.glb",
+      "display_scale": 1.1324741779482872
+    }
+  ],
+  "review_views": {
+    "front": {
+      "path": "res://docs/art/moba/fennec_s/local-repair-v1-2026-11-13/review-front.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "left": {
+      "path": "res://docs/art/moba/fennec_s/local-repair-v1-2026-11-13/review-left.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "back": {
+      "path": "res://docs/art/moba/fennec_s/local-repair-v1-2026-11-13/review-back.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "right": {
+      "path": "res://docs/art/moba/fennec_s/local-repair-v1-2026-11-13/review-right.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    }
+  },
+  "review_provenance": {
+    "date": "2026-11-13",
+    "report": "res://docs/art/moba/fennec_s/local-repair-v1-2026-11-13/repair-verification.json",
+    "independent_audit": "res://docs/art/moba/fennec_s/local-repair-v1-2026-11-13/independent-export-audit.json",
+    "joint_count": 44,
+    "rigged_input_sha256": "4d24a78a3d63979264e78af1209109e0f6f3c3257d071731f7cdcd229407dde7",
+    "repaired_sha256": "b9ab24f020ce2a83c78b122969a6f4880d0a0d3353ef6c54fe5206d54660f31f",
+    "intact_pre_remesh_available": true,
+    "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+    "scope": "Local topology repair. Four legs, two ears, two eyes, one segmented tail and hip/shoulder mechanisms retained. Original vertex attributes, skin, 44-joint skeleton/rest/binds and textures preserved; no remesh or rerig. All 23,720 healthy main-body source faces retained. No gameplay replacement."
+  }
+}

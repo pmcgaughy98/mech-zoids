@@ -1,0 +1,180 @@
+{
+ "pieces": {
+  "texels_per_metre": 50,
+  "fps": 30,
+  "dart": {
+   "00": {
+    "size": [
+     7,
+     39
+    ],
+    "tip": [
+     3,
+     38
+    ],
+    "angle_from_straight_down": 0.0
+   },
+   "27": {
+    "size": [
+     20,
+     39
+    ],
+    "tip": [
+     19,
+     38
+    ],
+    "angle_from_straight_down": 26.57
+   },
+   "45": {
+    "size": [
+     39,
+     39
+    ],
+    "tip": [
+     38,
+     38
+    ],
+    "angle_from_straight_down": 45.0
+   },
+   "63": {
+    "size": [
+     39,
+     20
+    ],
+    "tip": [
+     38,
+     19
+    ],
+    "angle_from_straight_down": 63.43
+   }
+  },
+  "dart_use": "billboard; pick the drawn angle nearest the on-screen travel direction, mirror for leftward, flip for upward",
+  "impact_spark": {
+   "cell": [
+    32,
+    32
+   ],
+   "ground_point": [
+    16,
+    27
+   ],
+   "frames": 8,
+   "billboard": true
+  },
+  "impact_dust": {
+   "cell": [
+    48,
+    48
+   ],
+   "centre": [
+    24,
+    24
+   ],
+   "frames": 6,
+   "flat_on_ground": true
+  },
+  "ring": {
+   "size": [
+    360,
+    360
+   ],
+   "radius_m": 3.5,
+   "open_frames": 4,
+   "open_frame_time_s": 0.067,
+   "flat_on_ground": true
+  }
+ },
+ "mock": {
+  "ult_57": {
+   "pitch_deg": 57.5,
+   "ground_squash": 0.843,
+   "darts_in_air_avg": 8.0,
+   "impacts_showing_avg": 4.2
+  },
+  "normal_35": {
+   "pitch_deg": 35.0,
+   "ground_squash": 0.574,
+   "darts_in_air_avg": 8.0,
+   "impacts_showing_avg": 4.2
+  }
+ },
+ "floor_rgb": [
+  74,
+  80,
+  72
+ ],
+ "camera_lane_frame": null,
+ "stills_used": [
+  "docs/art/moba/hippo_l\\take-b/views_cam35_touchup/s.png",
+  "docs/art/moba/kangaroo_m\\take-a/views/s.png",
+  "docs/art/moba/ape_l\\take-a/views_cam35_touchup/s.png"
+ ],
+ "score": [
+  {
+   "check": "time between hits",
+   "target": "0.25 s (both references)",
+   "measured": "0.25 s median",
+   "pass": true
+  },
+  {
+   "check": "darts per second",
+   "target": "12 to 16 (clusters of 3 per 0.25 s; camera test 14)",
+   "measured": "14.0",
+   "pass": true
+  },
+  {
+   "check": "area radius in body radii",
+   "target": "5.4 to 8.9 (350/65, 580/65)",
+   "measured": "7.0 (3.5 m / 0.50 m)",
+   "pass": true
+  },
+  {
+   "check": "warning before first hit",
+   "target": "0.25 s or more (cast time 0.25)",
+   "measured": "0.62 s after the ring is full",
+   "pass": true
+  },
+  {
+   "check": "impact life",
+   "target": "0.3 s or less (camera test flash)",
+   "measured": "0.27 s",
+   "pass": true
+  },
+  {
+   "check": "dart length with trail",
+   "target": "0.7 m +/- 25% (camera test box)",
+   "measured": "0.78 m",
+   "pass": true
+  },
+  {
+   "check": "impact width (dust ring)",
+   "target": "0.55 m or more (half the camera test flash, 1.1 m)",
+   "measured": "0.82 m",
+   "pass": true
+  },
+  {
+   "check": "colours outside the falcon",
+   "target": "0",
+   "measured": "0",
+   "pass": true
+  },
+  {
+   "check": "see-through pixels",
+   "target": "0 (binary alpha)",
+   "measured": "0",
+   "pass": true
+  },
+  {
+   "check": "tip vs floor brightness",
+   "target": "0.3 or more",
+   "measured": "0.69",
+   "pass": true
+  },
+  {
+   "check": "trail vs floor brightness",
+   "target": "info",
+   "measured": "0.24",
+   "pass": null
+  }
+ ]
+}

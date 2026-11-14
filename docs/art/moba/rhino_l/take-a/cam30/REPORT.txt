@@ -1,0 +1,14 @@
+s: new 70x87/4982; approved 72x70/4025 (W x H / opaque pixels).
+se: new 78x87/4846; approved 89x70/4577 (W x H / opaque pixels).
+e: new 103x71/4887; approved 103x67/4655 (W x H / opaque pixels).
+ne: new 83x104/5323; approved 77x74/4133 (W x H / opaque pixels).
+n: new 67x107/5033; approved 66x77/3760 (W x H / opaque pixels).
+ONE built-in image, exact prompt-sheet.txt, only refs/approved_views.png attached; sheet_raw.png unchanged; tokens/cost unknown; no redo.
+Palette PASS: fixed 12 colours only; NE/N eye pixels 0/0; edge plum/magenta, lone pale and seam ink 0; binary alpha; no border contact in all eight.
+view_check: front/back0.85; area0.08; height0.32; colour0.90; dips none; lone0.071092 (under0.11, no despeckle); top-five74.93%.
+sheet_judge: FIX nothing; REDO e/ne/n/nw/w solely for height (waived, left intact); mirror e/w0.956,ne/nw0.951,se/sw0.996; feet160 all.
+Depth s/se/e/ne/n: p05=31.29, p95=240.85 all; dominant yellow-base=25.65/25.86/27.81/27.07/28.77%.
+By eye: recognizable same rhino, no obvious new parts; armour, two horns, round joints and stub tail retained, but head/hump proportions drift.
+Camera FAIL uniform34deg: broad back/hump/head/horn tops show, belly largely hidden; east still too low, far feet not separable; front/rear look substantially steeper.
+Shading: clean bands, no obvious mottling; shared sheet scale/east103 verified, but apparent scale/angle agreement falls short. Foot rows/occlusion in shape.txt.
+Review: cam30/review.png (approved above new, 3x nearest); five PNGs in views_cam30; checks saved in cam30; no installation, commit or revert.

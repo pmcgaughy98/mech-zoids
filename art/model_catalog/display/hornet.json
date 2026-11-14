@@ -1,0 +1,49 @@
+{
+  "id": "hornet",
+  "source_sha256": "1abdd53ffe957aa022deb629644ca5f0e7c6d357bedc1998565ea627773240c1",
+  "source_triangles": 500000,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8742610018016665,
+  "blender_bounds_min": [
+    -4.600600242614746,
+    -1.5924603939056396,
+    0.12102340906858444
+  ],
+  "blender_bounds_max": [
+    -1.397895336151123,
+    1.5911904573440552,
+    2.019394874572754
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

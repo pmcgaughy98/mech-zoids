@@ -1,0 +1,43 @@
+Job from Claude (the attack lane of the mech MOBA in D:/dev/new-mech-rpg), approved by Preston on 2026-11-05 ("Yes, start it"): draw the robot rhino's GROUND POUND at the game camera's 35 degree angle in the two DIAGONAL views, southeast (se) and northeast (ne), six frames each, in ONE image, then finish them into game frames. Earlier runs: run 1 drew e, se and ne, but its ne turned toward the side view and its rear grew thighs; fix1 removed the thighs, and Preston approved its side-view rear ("Yes, looks right"), but its se turned side-on. This run redraws both diagonals with the hind legs as in the stills, the hips at standing height, and each row keeping its facing in every frame.
+Run tag: rhino-gp35-diag1. Write only inside OUT:
+- OUT = D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/diag1
+- RUN1 = D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1 (read only: its 6-column finishing scripts)
+- FIX1 = D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/fix1 and FIX1E = .../gp35/fix1_e (read only: the hind-leg checks; the approved e frames 2 and 3 are in FIX1E/frames)
+- TAKE = D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a (read only)
+- STILLS = TAKE/views_cam35_touchup (read only: se.png and ne.png are this run's views; e.png for measuring only)
+Images you may open: OUT/refs/look_35.png, STILLS/se.png, STILLS/ne.png, STILLS/e.png, FIX1E/frames/e_f2.png and e_f3.png (to measure the approved rear height only), and the images you make in OUT. Never attach any image to the image tool except OUT/refs/look_35.png. Open NO other image: nothing under TAKE/anim, no other machine's folder, nothing under D:/dev/new-mech-rpg/art/ or assets/.
+Text you may read: RUN1 and FIX1 .py files, checks.txt and REPORT.txt; OUT/targets.json, OUT/still_metrics.json, TAKE/palette.json, TAKE/anim/selout_rhino.py (code only), D:/dev/new-mech-rpg/docs/art/moba/attack/ATTACK_PLAYBOOK.md section 5.
+Keep OUT/REPORT.txt current: write it after step 1 and update it after each step.
+
+1. Generate exactly ONE image with your built-in image tool from OUT/prompt-sheet.txt word for word, attaching exactly one image: OUT/refs/look_35.png. Save it unchanged as OUT/sheet_raw.png. Never make a second image or a redo; if it fails, report and stop.
+
+2. Finish it with RUN1's scripts (copy into OUT and adapt to 2 rows x 6 columns, rows se and ne):
+   - Magenta to transparent with no fringe; fixed palette from TAKE/palette.json, no new colours; ink share of 141218 within 15% of the still (se 7.8%, ne 8.3%); binary alpha; one 4-connected piece per frame; one despeckle pass only if specks exceed 1.2 times the still's (se 414, ne 346).
+   - SCALE PER ROW: one nearest shrink per row, each row's factor from its own column 1 head against its still (se: horn tip to eye centre; ne: horn tip to the back edge of the head). Report both factors and column 1's size against the still (se 85x83, ne 83x103; within 4%).
+   - Eyes: at least 4 red ff3a2a pixels in a dark socket in every se frame, drawn back by hand where the shrink lost them (list them); ne frames have NONE.
+
+3. Slice into OUT/frames/<view>_f<i>.png (i = 0 to 5 by column) on 192 x 192 transparent canvases. Place each frame so its hind soles sit on the still's hind soles (OUT/targets.json views.<view>.soles, leg "hind"; se row 143; ne rows 160 and 150), moving only WHOLE frames; list each move. Never cut, paste or move parts of a frame. A wrong limb is reported, not patched. Overwrite <view>_f0.png with an exact copy of STILLS/<view>.png. No frame touches its canvas border.
+
+4. Checks in OUT/checks.txt, one line each, PASS or MISS with the number. Trace every landmark in every frame afresh at this run's scale; never carry fixed pixel rows from another run.
+   - f0 equals the still (0 px).
+   - Hind sole drift per frame, 1 px or under.
+   - HIND LEG LENGTH: near hind leg, sole to the centre of its round steel joint disc, against the still; within 2 px, per frame.
+   - NO THIGH: the height of any charcoal or steel run between the top of that disc and the yellow body plate above it, against the still's; within 2 px, per frame.
+   - HIP HEIGHT: the lowest row of the yellow body plate directly above the near hind leg, against the still's; within 3 px, per frame.
+   - FACING (the drift check): head size (step 2's head measure) within 3% of the still in every frame of both rows; se has its eye in every frame and ne has no eye pixel in any frame; frames 1 and 4: bounding box width/height ratio within 10% of the still's.
+   - REAR HEIGHT against the approved side view: measure in FIX1E/frames/e_f2.png and e_f3.png how far the front soles are above row 160 and how far the sprite's top is above the e still's top. Report the same two numbers for se and ne frames 2 and 3; front feet within 6 px of e's.
+   - Frame 4: front feet back on the still's front soles within 2 px.
+   - Frame 4 against frame 5: largest move of any part 3 px or under (the tremor flashes frame 5). Frame 5 against the still: 4 px or under.
+   - Frame 3 silhouette alpha IoU against the still at 1x: 0.85 or under.
+   - Eye pixels, ink share, palette, pieces, specks, seam slits (enclosed transparent pixels the still lacks), fringe, as in RUN1/checks.txt.
+
+5. Review images:
+   - Sel-out copies of every frame into OUT/frames_selout/ with selout from TAKE/anim/selout_rhino.py (never change OUT/frames/).
+   - OUT/review.png: rows se and ne; columns the still with sel-out, then frames 0 to 5 with sel-out; 4x nearest on mid grey, labelled.
+   - OUT/strip_1x.png: the same at 1x on mid grey.
+   - OUT/legs_5x.png: the hind legs and hips of the still and frames 2, 3 and 4, per row, 5x nearest.
+   - OUT/preview_<view>.gif for se and ne at 4x with the holds 100, 100, 100, 200, 300, 300 ms.
+
+6. Do not touch anything outside OUT. Do not commit, do not revert other files.
+
+7. Report in under 25 lines in OUT/REPORT.txt, and the same in your final answer: tokens used if known; both head factors and column 1 sizes; every check line; frames moved; eyes drawn back; and by eye: same rhino, no new parts? Does each row keep its facing in all six frames, or does any frame turn side-on? Hind legs the same length as the still, no thigh? Hips at standing height? Does frame 3 read as rearing at 1x? Is frame 5 close to frame 4? Any cut-off, chopped or broken part, second chin or gap?

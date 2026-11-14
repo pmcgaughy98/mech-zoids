@@ -1,0 +1,13 @@
+Sizes W x H/area: s55x80/2359; se64x79/2272; e69x78/2108; ne65x77/2341; n49x79/2349.
+Shape east (+/-2px): thigh25/chest20=1.250; ear18/head-length21=0.857; visible fist14x15/head21x11, width0.667, height1.364, bbox-area0.909; far fist occluded.
+ONE built-in image, approved prompt-sheet.txt verbatim, only craft_drembit.png attached; raw byte-identical SHA256 in generation.json; tokens/cost unknown; no redo.
+view_check: front/back0.84 PASS; area0.10; height0.03; colour0.89; dips none; lone0.10 PASS; 13 shared colours; top-five76.14% PASS.
+sheet_judge: eight ok; FIX nothing; REDO nothing; mirrors e/w0.916, ne/nw0.911, se/sw0.996; binary alpha; no border contact; all feet140.
+Finish: one whole-sheet nearest shrink0.220994 to277x277, south80px; four orange/four steel tones retained in five measured views; plum/magenta0, lone pale rim0, exterior ink0; repainted14 pale/186 ink rim pixels.
+Depth e/se/s/n: p05=18.86 and p95=158.25 each; range139.40 FAIL (<180); dominant shares26.57/28.52/22.85/31.93% PASS (<40%); heights78/79/80/79px.
+By eye FIRST, MACHINE: YES; hard flat bevelled plates, straight edges, charcoal neck/frame/joints, round joint discs, cyan lens eyes; no fur.
+KANGAROO BOXER: YES; upright bent huge hind legs, broad thighs, long flat feet, pouch plate, slim neck, narrow muzzle and tall ears; planted banded tapering tail, nothing held.
+Fists: two big steel guard fists frontally and edges past both shoulders in north; rear diagonals show near fist, far fist mostly hidden; profiles overlap into one assembly FAIL clear two-fist visibility; fists smaller than head width.
+Four-step orange/steel shading and internal overlap lines present; no darkest accent on outer rim, but dark material edges remain; small specular clusters speckle steel; 40px silhouette survives, joints/eyes weaken.
+Backs n79<=s80 and ne/nw77<=se/sw79 PASS; same camera height; no rear eyes/face, muzzle tips only; north tail toward camera and flat heels visible, heel shapes somewhat toe-like.
+SE/SW true three-quarter, turned muzzle and far eye hidden PASS; orange highlight reads flatter than depth target. Candidate passes consistency checks but misses depth and full eight-view fist visibility; all files in take-a, no installation/commits/reverts/Hollowtide writes.

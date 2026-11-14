@@ -1,0 +1,42 @@
+You are fixing pixel-art animation frames for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\codex-tailfix. Read anything under
+D:\dev\new-mech-rpg\docs\art\moba. Other Codex jobs are writing sibling folders under anim at the same time; do not
+touch them, and do not change anything in anim\codex-set-a. Do not touch assets, art or tools, and do not commit.
+
+The creature is the wolf mech (wolf_m, take B), the game's assassin. Approved stills, 192x192, already placed with
+the feet on row 160, in D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\fixed\: s.png (front), e.png (side facing right), n.png (back); se, ne, sw, w, nw also
+exist. Use fixed\, not views\ (Preston approved the fixed back views; the n still carries a little detail ink added
+today). The approved pose is STANDING on four long legs. Keep the design exactly: an armoured gunmetal wolf with a long
+narrow muzzle, two pale sabre fangs, small cyan eyes under a heavy brow, a hood and tall swept-back ears, two red-edged
+folded blade-fins along the back, red lower legs and paws, and a plated tail with a red tip; the same 12 colours
+(#141418 #22222b #5c0a10 #a8141a #444452 #e8251f #6e6e7e #ff6a55 #6ff0dc #bcbcc8 #c9c2b8 #f0ece4), the dark outline and the chunky pixel size. Sizes: front 33x72, side 110x66, back 35x72 px. Only the pose changes.
+Never redesign: no new parts, no fur, no gloss, no longer or thinner limbs, no bigger head. The tail stays a straight
+line of plates (Preston: "no curved tails as they are hard to rotate"); it can lift, swing and angle, but it keeps the
+still's thickness, plate count and red tip in every frame and every view (in the side view as thick as in e.png, never
+a thin rod; set A's first side walk and sprint got this wrong). It is a robot: no
+realistic animal anatomy beyond what the stills show.
+
+Job: you made the wolf's set A (anim\codex-set-a: read its brief.txt, REPORT.txt, scripts and boards). In the side
+view of the walk (walk\frames\side_f0-7.png) and the sprint (sprint\frames\side_f0-5.png) the tail came out as a thin
+straight rod held level, thinner than the approved side still (D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\..\fixed\e.png, 110x66 px (x 41-150, y 95-160)); the walk
+frames are 118-120 px wide against the still's 110 because of it. Redraw only those tails, 14 frames in all. Every
+other pixel of each frame stays exactly as it is, except the few rump pixels where the new tail joins the body.
+
+The tail is the still's tail: the same thickness, plate count and plate pattern, the red tip, and the same length
+within 2 px; a straight line of plates (Preston: "no curved tails as they are hard to rotate").
+- walk: the still's tail angle. Its root follows the body's rise and fall; its tip sways 1-2 px with the trot, in step
+  with the legs. Frame 0 should read like the still so idle-to-walk does not jump.
+- sprint: the tail streams back between level and the still's angle (steady, a 1-2 px flick at most), at the still's
+  thickness.
+This is a pixel edit, not a new drawing: do not use the image tool. You may start from the still's tail pixels, moved
+to each frame's tail root (and for the sprint turned to the new angle and redrawn clean at native pixels), but the join
+must be redrawn by hand: no seam, no straight cut edge, no gap, and no leftover pixel of the old thin tail. Snap to the
+stills' colours, binary alpha, dark outline like the still, nothing below row 160, nothing touching the canvas edge.
+
+Output in D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\codex-tailfix:
+- walk\frames\side_f<i>.png and sprint\frames\side_f<i>.png, 192x192, same placement as set A's frames.
+- A preview gif per move (walk 100 ms a frame, sprint 70 ms, looping) and board.png: the approved still leftmost, then
+  set A's row, then the new row under it, with the game's sel-out applied (D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\selout_rhino.py, function selout, OUTLINE
+  #141418), at 4x.
+- REPORT.txt (under 25 lines): tokens used if known; per frame the tail's thickness, length and plate count against
+  the still; the number of pixels changed outside the tail; the checks; and by eye: whole tail, clean join, no
+  cutoffs, walk sway in step, sprint streaming. Look at your board before finishing and fix anything still thin or cut.

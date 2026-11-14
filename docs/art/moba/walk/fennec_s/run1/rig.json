@@ -1,0 +1,2120 @@
+{
+  "e": [
+    {
+      "foot": "RF",
+      "frame": 0,
+      "delta": [
+        7,
+        0
+      ],
+      "knee_delta": [
+        4,
+        1
+      ],
+      "source_sole": [
+        112.5,
+        159.0
+      ],
+      "target": [
+        119.5,
+        159.0
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 0,
+      "delta": [
+        -7,
+        0
+      ],
+      "knee_delta": [
+        -3,
+        1
+      ],
+      "source_sole": [
+        86.5,
+        160.0
+      ],
+      "target": [
+        79.5,
+        160.0
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 0,
+      "delta": [
+        7,
+        0
+      ],
+      "knee_delta": [
+        4,
+        1
+      ],
+      "source_sole": [
+        92.5,
+        153.0
+      ],
+      "target": [
+        99.5,
+        153.0
+      ],
+      "lift": 0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LF",
+      "frame": 0,
+      "delta": [
+        -7,
+        0
+      ],
+      "knee_delta": [
+        -3,
+        1
+      ],
+      "source_sole": [
+        120.5,
+        153.0
+      ],
+      "target": [
+        113.5,
+        153.0
+      ],
+      "lift": 0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 1,
+      "delta": [
+        4,
+        0
+      ],
+      "knee_delta": [
+        2,
+        0
+      ],
+      "source_sole": [
+        112.5,
+        159.0
+      ],
+      "target": [
+        116.0,
+        159.0
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 1,
+      "delta": [
+        -3,
+        -2
+      ],
+      "knee_delta": [
+        -1,
+        -1
+      ],
+      "source_sole": [
+        86.5,
+        160.0
+      ],
+      "target": [
+        83.0,
+        158.0
+      ],
+      "lift": 2,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 1,
+      "delta": [
+        4,
+        0
+      ],
+      "knee_delta": [
+        2,
+        0
+      ],
+      "source_sole": [
+        92.5,
+        153.0
+      ],
+      "target": [
+        96.0,
+        153.0
+      ],
+      "lift": 0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LF",
+      "frame": 1,
+      "delta": [
+        -3,
+        -2
+      ],
+      "knee_delta": [
+        -1,
+        -1
+      ],
+      "source_sole": [
+        120.5,
+        153.0
+      ],
+      "target": [
+        117.0,
+        151.0
+      ],
+      "lift": 2,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 2,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        112.5,
+        159.0
+      ],
+      "target": [
+        112.5,
+        159.0
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 2,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        86.5,
+        160.0
+      ],
+      "target": [
+        86.5,
+        157.0
+      ],
+      "lift": 3,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 2,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        92.5,
+        153.0
+      ],
+      "target": [
+        92.5,
+        153.0
+      ],
+      "lift": 0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LF",
+      "frame": 2,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        120.5,
+        153.0
+      ],
+      "target": [
+        120.5,
+        150.0
+      ],
+      "lift": 3,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 3,
+      "delta": [
+        -3,
+        0
+      ],
+      "knee_delta": [
+        -1,
+        0
+      ],
+      "source_sole": [
+        112.5,
+        159.0
+      ],
+      "target": [
+        109.0,
+        159.0
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 3,
+      "delta": [
+        4,
+        -2
+      ],
+      "knee_delta": [
+        2,
+        -1
+      ],
+      "source_sole": [
+        86.5,
+        160.0
+      ],
+      "target": [
+        90.0,
+        158.0
+      ],
+      "lift": 2,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 3,
+      "delta": [
+        -3,
+        0
+      ],
+      "knee_delta": [
+        -1,
+        0
+      ],
+      "source_sole": [
+        92.5,
+        153.0
+      ],
+      "target": [
+        89.0,
+        153.0
+      ],
+      "lift": 0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LF",
+      "frame": 3,
+      "delta": [
+        4,
+        -2
+      ],
+      "knee_delta": [
+        2,
+        -1
+      ],
+      "source_sole": [
+        120.5,
+        153.0
+      ],
+      "target": [
+        124.0,
+        151.0
+      ],
+      "lift": 2,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 4,
+      "delta": [
+        -7,
+        0
+      ],
+      "knee_delta": [
+        -3,
+        1
+      ],
+      "source_sole": [
+        112.5,
+        159.0
+      ],
+      "target": [
+        105.5,
+        159.0
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 4,
+      "delta": [
+        7,
+        0
+      ],
+      "knee_delta": [
+        4,
+        1
+      ],
+      "source_sole": [
+        86.5,
+        160.0
+      ],
+      "target": [
+        93.5,
+        160.0
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 4,
+      "delta": [
+        -7,
+        0
+      ],
+      "knee_delta": [
+        -3,
+        1
+      ],
+      "source_sole": [
+        92.5,
+        153.0
+      ],
+      "target": [
+        85.5,
+        153.0
+      ],
+      "lift": 0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LF",
+      "frame": 4,
+      "delta": [
+        7,
+        0
+      ],
+      "knee_delta": [
+        4,
+        1
+      ],
+      "source_sole": [
+        120.5,
+        153.0
+      ],
+      "target": [
+        127.5,
+        153.0
+      ],
+      "lift": 0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 5,
+      "delta": [
+        -3,
+        -2
+      ],
+      "knee_delta": [
+        -1,
+        -1
+      ],
+      "source_sole": [
+        112.5,
+        159.0
+      ],
+      "target": [
+        109.0,
+        157.0
+      ],
+      "lift": 2,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 5,
+      "delta": [
+        4,
+        0
+      ],
+      "knee_delta": [
+        2,
+        0
+      ],
+      "source_sole": [
+        86.5,
+        160.0
+      ],
+      "target": [
+        90.0,
+        160.0
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 5,
+      "delta": [
+        -3,
+        -2
+      ],
+      "knee_delta": [
+        -1,
+        -1
+      ],
+      "source_sole": [
+        92.5,
+        153.0
+      ],
+      "target": [
+        89.0,
+        151.0
+      ],
+      "lift": 2,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LF",
+      "frame": 5,
+      "delta": [
+        4,
+        0
+      ],
+      "knee_delta": [
+        2,
+        0
+      ],
+      "source_sole": [
+        120.5,
+        153.0
+      ],
+      "target": [
+        124.0,
+        153.0
+      ],
+      "lift": 0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 6,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        112.5,
+        159.0
+      ],
+      "target": [
+        112.5,
+        156.0
+      ],
+      "lift": 3,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 6,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        86.5,
+        160.0
+      ],
+      "target": [
+        86.5,
+        160.0
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 6,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        92.5,
+        153.0
+      ],
+      "target": [
+        92.5,
+        150.0
+      ],
+      "lift": 3,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LF",
+      "frame": 6,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        120.5,
+        153.0
+      ],
+      "target": [
+        120.5,
+        153.0
+      ],
+      "lift": 0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 7,
+      "delta": [
+        4,
+        -2
+      ],
+      "knee_delta": [
+        2,
+        -1
+      ],
+      "source_sole": [
+        112.5,
+        159.0
+      ],
+      "target": [
+        116.0,
+        157.0
+      ],
+      "lift": 2,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 7,
+      "delta": [
+        -3,
+        0
+      ],
+      "knee_delta": [
+        -1,
+        0
+      ],
+      "source_sole": [
+        86.5,
+        160.0
+      ],
+      "target": [
+        83.0,
+        160.0
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 7,
+      "delta": [
+        4,
+        -2
+      ],
+      "knee_delta": [
+        2,
+        -1
+      ],
+      "source_sole": [
+        92.5,
+        153.0
+      ],
+      "target": [
+        96.0,
+        151.0
+      ],
+      "lift": 2,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LF",
+      "frame": 7,
+      "delta": [
+        -3,
+        0
+      ],
+      "knee_delta": [
+        -1,
+        0
+      ],
+      "source_sole": [
+        120.5,
+        153.0
+      ],
+      "target": [
+        117.0,
+        153.0
+      ],
+      "lift": 0,
+      "hidden_in_still": true
+    }
+  ],
+  "se": [
+    {
+      "foot": "RF",
+      "frame": 0,
+      "delta": [
+        5,
+        3
+      ],
+      "knee_delta": [
+        3,
+        2
+      ],
+      "source_sole": [
+        103.0,
+        160.0
+      ],
+      "target": [
+        107.95,
+        162.84
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 0,
+      "delta": [
+        -5,
+        -3
+      ],
+      "knee_delta": [
+        -2,
+        -1
+      ],
+      "source_sole": [
+        84.0,
+        153.0
+      ],
+      "target": [
+        79.05,
+        150.16
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 0,
+      "delta": [
+        -5,
+        -3
+      ],
+      "knee_delta": [
+        -2,
+        -1
+      ],
+      "source_sole": [
+        114.0,
+        156.0
+      ],
+      "target": [
+        108.55,
+        153.16
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 0,
+      "delta": [
+        5,
+        3
+      ],
+      "knee_delta": [
+        3,
+        2
+      ],
+      "source_sole": [
+        94.0,
+        148.0
+      ],
+      "target": [
+        98.95,
+        150.84
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RF",
+      "frame": 1,
+      "delta": [
+        2,
+        1
+      ],
+      "knee_delta": [
+        1,
+        1
+      ],
+      "source_sole": [
+        103.0,
+        160.0
+      ],
+      "target": [
+        105.47,
+        161.42
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 1,
+      "delta": [
+        -2,
+        -3
+      ],
+      "knee_delta": [
+        -1,
+        -1
+      ],
+      "source_sole": [
+        84.0,
+        153.0
+      ],
+      "target": [
+        81.53,
+        149.58
+      ],
+      "lift": 2,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 1,
+      "delta": [
+        -3,
+        -3
+      ],
+      "knee_delta": [
+        -1,
+        -1
+      ],
+      "source_sole": [
+        114.0,
+        156.0
+      ],
+      "target": [
+        111.03,
+        152.58
+      ],
+      "lift": 2,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 1,
+      "delta": [
+        2,
+        1
+      ],
+      "knee_delta": [
+        1,
+        1
+      ],
+      "source_sole": [
+        94.0,
+        148.0
+      ],
+      "target": [
+        96.47,
+        149.42
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RF",
+      "frame": 2,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        103.0,
+        160.0
+      ],
+      "target": [
+        103.0,
+        160.0
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 2,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        84.0,
+        153.0
+      ],
+      "target": [
+        84.0,
+        150.0
+      ],
+      "lift": 3,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 2,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        114.0,
+        156.0
+      ],
+      "target": [
+        113.5,
+        153.0
+      ],
+      "lift": 3,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 2,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        94.0,
+        148.0
+      ],
+      "target": [
+        94.0,
+        148.0
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RF",
+      "frame": 3,
+      "delta": [
+        -2,
+        -1
+      ],
+      "knee_delta": [
+        -1,
+        0
+      ],
+      "source_sole": [
+        103.0,
+        160.0
+      ],
+      "target": [
+        100.53,
+        158.58
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 3,
+      "delta": [
+        2,
+        -1
+      ],
+      "knee_delta": [
+        1,
+        0
+      ],
+      "source_sole": [
+        84.0,
+        153.0
+      ],
+      "target": [
+        86.47,
+        152.42
+      ],
+      "lift": 2,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 3,
+      "delta": [
+        2,
+        -1
+      ],
+      "knee_delta": [
+        1,
+        0
+      ],
+      "source_sole": [
+        114.0,
+        156.0
+      ],
+      "target": [
+        115.97,
+        155.42
+      ],
+      "lift": 2,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 3,
+      "delta": [
+        -2,
+        -1
+      ],
+      "knee_delta": [
+        -1,
+        0
+      ],
+      "source_sole": [
+        94.0,
+        148.0
+      ],
+      "target": [
+        91.53,
+        146.58
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RF",
+      "frame": 4,
+      "delta": [
+        -5,
+        -3
+      ],
+      "knee_delta": [
+        -2,
+        -1
+      ],
+      "source_sole": [
+        103.0,
+        160.0
+      ],
+      "target": [
+        98.05,
+        157.16
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 4,
+      "delta": [
+        5,
+        3
+      ],
+      "knee_delta": [
+        3,
+        2
+      ],
+      "source_sole": [
+        84.0,
+        153.0
+      ],
+      "target": [
+        88.95,
+        155.84
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 4,
+      "delta": [
+        4,
+        3
+      ],
+      "knee_delta": [
+        2,
+        2
+      ],
+      "source_sole": [
+        114.0,
+        156.0
+      ],
+      "target": [
+        118.45,
+        158.84
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 4,
+      "delta": [
+        -5,
+        -3
+      ],
+      "knee_delta": [
+        -2,
+        -1
+      ],
+      "source_sole": [
+        94.0,
+        148.0
+      ],
+      "target": [
+        89.05,
+        145.16
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RF",
+      "frame": 5,
+      "delta": [
+        -2,
+        -3
+      ],
+      "knee_delta": [
+        -1,
+        -1
+      ],
+      "source_sole": [
+        103.0,
+        160.0
+      ],
+      "target": [
+        100.53,
+        156.58
+      ],
+      "lift": 2,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 5,
+      "delta": [
+        2,
+        1
+      ],
+      "knee_delta": [
+        1,
+        1
+      ],
+      "source_sole": [
+        84.0,
+        153.0
+      ],
+      "target": [
+        86.47,
+        154.42
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 5,
+      "delta": [
+        2,
+        1
+      ],
+      "knee_delta": [
+        1,
+        1
+      ],
+      "source_sole": [
+        114.0,
+        156.0
+      ],
+      "target": [
+        115.97,
+        157.42
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 5,
+      "delta": [
+        -2,
+        -3
+      ],
+      "knee_delta": [
+        -1,
+        -1
+      ],
+      "source_sole": [
+        94.0,
+        148.0
+      ],
+      "target": [
+        91.53,
+        144.58
+      ],
+      "lift": 2,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RF",
+      "frame": 6,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        103.0,
+        160.0
+      ],
+      "target": [
+        103.0,
+        157.0
+      ],
+      "lift": 3,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 6,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        84.0,
+        153.0
+      ],
+      "target": [
+        84.0,
+        153.0
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 6,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        114.0,
+        156.0
+      ],
+      "target": [
+        113.5,
+        156.0
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 6,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        94.0,
+        148.0
+      ],
+      "target": [
+        94.0,
+        145.0
+      ],
+      "lift": 3,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RF",
+      "frame": 7,
+      "delta": [
+        2,
+        -1
+      ],
+      "knee_delta": [
+        1,
+        0
+      ],
+      "source_sole": [
+        103.0,
+        160.0
+      ],
+      "target": [
+        105.47,
+        159.42
+      ],
+      "lift": 2,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 7,
+      "delta": [
+        -2,
+        -1
+      ],
+      "knee_delta": [
+        -1,
+        0
+      ],
+      "source_sole": [
+        84.0,
+        153.0
+      ],
+      "target": [
+        81.53,
+        151.58
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 7,
+      "delta": [
+        -3,
+        -1
+      ],
+      "knee_delta": [
+        -1,
+        0
+      ],
+      "source_sole": [
+        114.0,
+        156.0
+      ],
+      "target": [
+        111.03,
+        154.58
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 7,
+      "delta": [
+        2,
+        -1
+      ],
+      "knee_delta": [
+        1,
+        0
+      ],
+      "source_sole": [
+        94.0,
+        148.0
+      ],
+      "target": [
+        96.47,
+        147.42
+      ],
+      "lift": 2,
+      "hidden_in_still": false
+    }
+  ],
+  "ne": [
+    {
+      "foot": "RF",
+      "frame": 0,
+      "delta": [
+        5,
+        -3
+      ],
+      "knee_delta": [
+        3,
+        -1
+      ],
+      "source_sole": [
+        109.5,
+        148.0
+      ],
+      "target": [
+        114.45,
+        145.16
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 0,
+      "delta": [
+        -5,
+        3
+      ],
+      "knee_delta": [
+        -2,
+        2
+      ],
+      "source_sole": [
+        94.5,
+        160.0
+      ],
+      "target": [
+        89.55,
+        162.84
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 0,
+      "delta": [
+        5,
+        -3
+      ],
+      "knee_delta": [
+        3,
+        -1
+      ],
+      "source_sole": [
+        82.0,
+        155.0
+      ],
+      "target": [
+        86.95,
+        152.16
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 0,
+      "delta": [
+        -5,
+        3
+      ],
+      "knee_delta": [
+        -2,
+        2
+      ],
+      "source_sole": [
+        97.5,
+        143.0
+      ],
+      "target": [
+        92.55026864,
+        145.838934
+      ],
+      "lift": 0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 1,
+      "delta": [
+        2,
+        -1
+      ],
+      "knee_delta": [
+        1,
+        0
+      ],
+      "source_sole": [
+        109.5,
+        148.0
+      ],
+      "target": [
+        111.97,
+        146.58
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 1,
+      "delta": [
+        -2,
+        -1
+      ],
+      "knee_delta": [
+        -1,
+        0
+      ],
+      "source_sole": [
+        94.5,
+        160.0
+      ],
+      "target": [
+        92.03,
+        159.42
+      ],
+      "lift": 2,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 1,
+      "delta": [
+        2,
+        -1
+      ],
+      "knee_delta": [
+        1,
+        0
+      ],
+      "source_sole": [
+        82.0,
+        155.0
+      ],
+      "target": [
+        84.47,
+        153.58
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 1,
+      "delta": [
+        -2,
+        -1
+      ],
+      "knee_delta": [
+        -1,
+        0
+      ],
+      "source_sole": [
+        97.5,
+        143.0
+      ],
+      "target": [
+        95.02513432,
+        142.419467
+      ],
+      "lift": 2,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 2,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        109.5,
+        148.0
+      ],
+      "target": [
+        109.5,
+        148.0
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 2,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        94.5,
+        160.0
+      ],
+      "target": [
+        94.5,
+        157.0
+      ],
+      "lift": 3,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 2,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        82.0,
+        155.0
+      ],
+      "target": [
+        82.0,
+        155.0
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 2,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        97.5,
+        143.0
+      ],
+      "target": [
+        97.5,
+        140.0
+      ],
+      "lift": 3,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 3,
+      "delta": [
+        -2,
+        1
+      ],
+      "knee_delta": [
+        -1,
+        1
+      ],
+      "source_sole": [
+        109.5,
+        148.0
+      ],
+      "target": [
+        107.03,
+        149.42
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 3,
+      "delta": [
+        2,
+        -3
+      ],
+      "knee_delta": [
+        1,
+        -1
+      ],
+      "source_sole": [
+        94.5,
+        160.0
+      ],
+      "target": [
+        96.97,
+        156.58
+      ],
+      "lift": 2,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 3,
+      "delta": [
+        -2,
+        1
+      ],
+      "knee_delta": [
+        -1,
+        1
+      ],
+      "source_sole": [
+        82.0,
+        155.0
+      ],
+      "target": [
+        79.53,
+        156.42
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 3,
+      "delta": [
+        2,
+        -3
+      ],
+      "knee_delta": [
+        1,
+        -1
+      ],
+      "source_sole": [
+        97.5,
+        143.0
+      ],
+      "target": [
+        99.97486568,
+        139.580533
+      ],
+      "lift": 2,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 4,
+      "delta": [
+        -5,
+        3
+      ],
+      "knee_delta": [
+        -2,
+        2
+      ],
+      "source_sole": [
+        109.5,
+        148.0
+      ],
+      "target": [
+        104.55,
+        150.84
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 4,
+      "delta": [
+        5,
+        -3
+      ],
+      "knee_delta": [
+        3,
+        -1
+      ],
+      "source_sole": [
+        94.5,
+        160.0
+      ],
+      "target": [
+        99.45,
+        157.16
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 4,
+      "delta": [
+        -5,
+        3
+      ],
+      "knee_delta": [
+        -2,
+        2
+      ],
+      "source_sole": [
+        82.0,
+        155.0
+      ],
+      "target": [
+        77.05,
+        157.84
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 4,
+      "delta": [
+        5,
+        -3
+      ],
+      "knee_delta": [
+        3,
+        -1
+      ],
+      "source_sole": [
+        97.5,
+        143.0
+      ],
+      "target": [
+        102.44973136,
+        140.161066
+      ],
+      "lift": 0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 5,
+      "delta": [
+        -2,
+        -1
+      ],
+      "knee_delta": [
+        -1,
+        0
+      ],
+      "source_sole": [
+        109.5,
+        148.0
+      ],
+      "target": [
+        107.03,
+        147.42
+      ],
+      "lift": 2,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 5,
+      "delta": [
+        2,
+        -1
+      ],
+      "knee_delta": [
+        1,
+        0
+      ],
+      "source_sole": [
+        94.5,
+        160.0
+      ],
+      "target": [
+        96.97,
+        158.58
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 5,
+      "delta": [
+        -2,
+        -1
+      ],
+      "knee_delta": [
+        -1,
+        0
+      ],
+      "source_sole": [
+        82.0,
+        155.0
+      ],
+      "target": [
+        79.53,
+        154.42
+      ],
+      "lift": 2,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 5,
+      "delta": [
+        2,
+        -1
+      ],
+      "knee_delta": [
+        1,
+        0
+      ],
+      "source_sole": [
+        97.5,
+        143.0
+      ],
+      "target": [
+        99.97486568,
+        141.580533
+      ],
+      "lift": 0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 6,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        109.5,
+        148.0
+      ],
+      "target": [
+        109.5,
+        145.0
+      ],
+      "lift": 3,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 6,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        94.5,
+        160.0
+      ],
+      "target": [
+        94.5,
+        160.0
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 6,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        82.0,
+        155.0
+      ],
+      "target": [
+        82.0,
+        152.0
+      ],
+      "lift": 3,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 6,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        97.5,
+        143.0
+      ],
+      "target": [
+        97.5,
+        143.0
+      ],
+      "lift": 0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 7,
+      "delta": [
+        2,
+        -3
+      ],
+      "knee_delta": [
+        1,
+        -1
+      ],
+      "source_sole": [
+        109.5,
+        148.0
+      ],
+      "target": [
+        111.97,
+        144.58
+      ],
+      "lift": 2,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 7,
+      "delta": [
+        -2,
+        1
+      ],
+      "knee_delta": [
+        -1,
+        1
+      ],
+      "source_sole": [
+        94.5,
+        160.0
+      ],
+      "target": [
+        92.03,
+        161.42
+      ],
+      "lift": 0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LH",
+      "frame": 7,
+      "delta": [
+        2,
+        -3
+      ],
+      "knee_delta": [
+        1,
+        -1
+      ],
+      "source_sole": [
+        82.0,
+        155.0
+      ],
+      "target": [
+        84.47,
+        151.58
+      ],
+      "lift": 2,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 7,
+      "delta": [
+        -2,
+        1
+      ],
+      "knee_delta": [
+        -1,
+        1
+      ],
+      "source_sole": [
+        97.5,
+        143.0
+      ],
+      "target": [
+        95.02513432,
+        144.419467
+      ],
+      "lift": 0,
+      "hidden_in_still": true
+    }
+  ]
+}

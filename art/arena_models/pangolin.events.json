@@ -1,0 +1,361 @@
+{
+ "rest_height": 1.665,
+ "source_fps": 120,
+ "times": "seconds",
+ "loops": [
+  "Idle",
+  "Walk",
+  "Stun",
+  "Ball_Roll",
+  "Rail_Streak",
+  "Ball_Roll_Spiked",
+  "Comet_Roll"
+ ],
+ "units": "rest_height and peak_height are in the model's own size (the game multiplies by the profile scale, 0.565). speed, roll_speed and roll_distance_per_loop are game metres at scale 0.565.",
+ "blend_shapes": [
+  "Flare_Front",
+  "Flare_Mid",
+  "Flare_Rear"
+ ],
+ "clips": {
+  "Pangolin_Idle": {
+   "events": []
+  },
+  "Pangolin_Walk": {
+   "events": [
+    {
+     "name": "step",
+     "time": 0.0,
+     "damage": false
+    },
+    {
+     "name": "step",
+     "time": 0.15,
+     "damage": false
+    }
+   ],
+   "peak_height": 1.621,
+   "speed": 3.5
+  },
+  "Pangolin_Basic_Left": {
+   "events": [
+    {
+     "name": "hit",
+     "time": 0.2,
+     "damage": true
+    }
+   ],
+   "peak_height": 1.75
+  },
+  "Pangolin_Basic_Right": {
+   "events": [
+    {
+     "name": "hit",
+     "time": 0.2,
+     "damage": true
+    }
+   ],
+   "peak_height": 1.749
+  },
+  "Pangolin_Claw_Rake": {
+   "events": [
+    {
+     "name": "hit",
+     "time": 0.2,
+     "damage": true
+    },
+    {
+     "name": "hit_shred",
+     "time": 0.36,
+     "damage": true
+    }
+   ],
+   "peak_height": 2.08
+  },
+  "Pangolin_Dig_In": {
+   "events": [
+    {
+     "name": "scoop",
+     "time": 0.08,
+     "damage": false
+    },
+    {
+     "name": "scoop",
+     "time": 0.14,
+     "damage": false
+    },
+    {
+     "name": "scoop",
+     "time": 0.22,
+     "damage": false
+    },
+    {
+     "name": "under",
+     "time": 0.47,
+     "damage": false
+    }
+   ],
+   "peak_height": 1.665
+  },
+  "Pangolin_Dig_Erupt": {
+   "events": [
+    {
+     "name": "break_ground",
+     "time": 0.2,
+     "damage": false
+    },
+    {
+     "name": "erupt",
+     "time": 0.25,
+     "damage": true
+    },
+    {
+     "name": "land",
+     "time": 0.5,
+     "damage": false
+    }
+   ],
+   "peak_height": 2.701
+  },
+  "Pangolin_Salvage": {
+   "events": [
+    {
+     "name": "plant",
+     "time": 0.1,
+     "damage": false
+    },
+    {
+     "name": "field",
+     "time": 0.15,
+     "damage": true
+    },
+    {
+     "name": "plate_snap",
+     "time": 0.36,
+     "damage": false
+    },
+    {
+     "name": "plate_snap",
+     "time": 0.42,
+     "damage": false
+    },
+    {
+     "name": "plate_snap",
+     "time": 0.48,
+     "damage": false
+    }
+   ],
+   "peak_height": 1.683
+  },
+  "Pangolin_Rail_Launch": {
+   "events": [
+    {
+     "name": "launch",
+     "time": 0.12,
+     "damage": false
+    }
+   ],
+   "peak_height": 1.665
+  },
+  "Pangolin_Rail_Streak": {
+   "events": [],
+   "peak_height": 1.63
+  },
+  "Pangolin_Rail_Arrive": {
+   "events": [
+    {
+     "name": "hit",
+     "time": 0.1,
+     "damage": true
+    },
+    {
+     "name": "plant",
+     "time": 0.24,
+     "damage": false
+    }
+   ],
+   "peak_height": 1.683
+  },
+  "Pangolin_Scale_Flare": {
+   "events": [
+    {
+     "name": "tighten",
+     "time": 0.13,
+     "damage": false
+    },
+    {
+     "name": "flare",
+     "time": 0.2,
+     "damage": true
+    },
+    {
+     "name": "closed",
+     "time": 0.62,
+     "damage": false
+    }
+   ],
+   "peak_height": 1.896
+  },
+  "Pangolin_Curl_In": {
+   "events": [
+    {
+     "name": "closed",
+     "time": 0.36,
+     "damage": false
+    }
+   ],
+   "peak_height": 2.823
+  },
+  "Pangolin_Ball_Roll": {
+   "events": [
+    {
+     "name": "turn",
+     "time": 0.0,
+     "damage": false
+    }
+   ],
+   "peak_height": 2.216,
+   "roll_speed": 7.74,
+   "roll_distance_per_loop": 3.871
+  },
+  "Pangolin_Ball_Roll_Spiked": {
+   "events": [
+    {
+     "name": "turn",
+     "time": 0.0,
+     "damage": false
+    }
+   ],
+   "peak_height": 2.45,
+   "roll_speed": 8.42,
+   "roll_distance_per_loop": 4.211
+  },
+  "Pangolin_Curl_Out": {
+   "events": [
+    {
+     "name": "open",
+     "time": 0.1,
+     "damage": false
+    },
+    {
+     "name": "land",
+     "time": 0.3,
+     "damage": false
+    }
+   ],
+   "peak_height": 2.954
+  },
+  "Pangolin_Comet_Gather": {
+   "events": [
+    {
+     "name": "pull",
+     "time": 0.04,
+     "damage": false
+    },
+    {
+     "name": "plates_on",
+     "time": 0.32,
+     "damage": false
+    }
+   ],
+   "peak_height": 2.377
+  },
+  "Pangolin_Comet_Roll": {
+   "events": [
+    {
+     "name": "turn",
+     "time": 0.0,
+     "damage": false
+    }
+   ],
+   "peak_height": 2.377,
+   "roll_speed": 8.44,
+   "roll_distance_per_loop": 4.22
+  },
+  "Pangolin_Comet_Burst": {
+   "events": [
+    {
+     "name": "burst",
+     "time": 0.04,
+     "damage": true
+    },
+    {
+     "name": "clear",
+     "time": 0.3,
+     "damage": false
+    }
+   ],
+   "peak_height": 2.377
+  },
+  "Pangolin_Hit_Front": {
+   "events": [],
+   "peak_height": 1.673
+  },
+  "Pangolin_Hit_Heavy": {
+   "events": [
+    {
+     "name": "replant",
+     "time": 0.32,
+     "damage": false
+    }
+   ],
+   "peak_height": 1.766
+  },
+  "Pangolin_Stun": {
+   "events": [],
+   "peak_height": 1.635
+  },
+  "Pangolin_Death": {
+   "events": [
+    {
+     "name": "buckle",
+     "time": 0.3,
+     "damage": false
+    },
+    {
+     "name": "ground",
+     "time": 0.92,
+     "damage": false
+    }
+   ],
+   "peak_height": 1.952
+  }
+ },
+ "kit_2026_11_12": {
+  "basic": "Claw_Rake",
+  "slot_1": "Salvage",
+  "slot_2": [
+   "Curl_In",
+   "Ball_Roll",
+   "Curl_Out",
+   "Ball_Roll_Spiked"
+  ],
+  "slot_3": "Scale_Flare",
+  "slot_4": [
+   "Comet_Gather",
+   "Comet_Roll",
+   "Comet_Burst"
+  ],
+  "parked": [
+   "Dig_In",
+   "Dig_Erupt",
+   "Basic_Left",
+   "Basic_Right",
+   "Rail_Launch",
+   "Rail_Streak",
+   "Rail_Arrive"
+  ]
+ },
+ "shell_note": "Salvage, Rail_Launch, Rail_Streak, Rail_Arrive and Scale_Flare drive the blend shapes. Rail_Streak holds them at about -0.25 (tight). Clips without a shell track leave the shapes where they are, so set all three to 0 when a shell clip is cut short. From round 10 the ball clips set the shell themselves: Curl_In, Ball_Roll and Curl_Out hold it shut (0), Ball_Roll_Spiked holds it open (1). Ball_Roll and Ball_Roll_Spiked share length and turn, so swap between them at the same clip time.",
+ "comet_note": "Scrap comet: Curl_In, Comet_Gather (starts on the closed ball on the floor, lifts it into the middle of the shell), Comet_Roll (loop, shell centre held at ball_radius), Comet_Burst (drops it back to the floor as the plain closed ball), Curl_Out. roll_distance_per_loop is for shell scale 1 and grows with the scale.",
+ "scrap_shell": {
+  "node": "scrap_shell",
+  "blend_shapes": [
+   "Plates_On",
+   "Plates_Out"
+  ],
+  "ball_radius": 0.6716,
+  "centre_height": 0.6716,
+  "note": "The comet plates: a mesh node of its own (not skinned), carried by the root bone, origin at the ball centre. Set this node's scale for the comet's size and lift the body by (scale - 1) x ball_radius: the normal-size pangolin then floats in the middle and the shell sits on the floor. ball_radius is game metres at shell scale 1. Plates_On 0 hides the plates, 1 shows them; Plates_Out pushes each plate straight out. The comet and ball clips drive both; set both to 0 if a comet is cut short. It replaces the scrap_plates mesh of round 11. From round 14 a closed band of 12 plates runs round the rolling line, so the shell always rolls on a plate (0 to 2 mm off the floor at scale 1)."
+ }
+}

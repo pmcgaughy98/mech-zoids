@@ -1,0 +1,101 @@
+{
+  "tested_sha256": "23fc1f64d22ecab9fc70351cfcfd1b3323b504cbda45c394739579fa58690354",
+  "poses": [
+    {
+      "label": "front-left",
+      "bone": "Bone_035",
+      "local_x_degrees": 10,
+      "max_displacement_m": 0.16461708079671872,
+      "vertices_moved_over_1mm": 4952,
+      "uv_split_seam_gap_m": 0.0
+    },
+    {
+      "label": "front-right",
+      "bone": "Bone_041",
+      "local_x_degrees": -10,
+      "max_displacement_m": 0.1646628895125857,
+      "vertices_moved_over_1mm": 5093,
+      "uv_split_seam_gap_m": 0.0
+    },
+    {
+      "label": "rear-left",
+      "bone": "Bone_014",
+      "local_x_degrees": 10,
+      "max_displacement_m": 0.160390437649471,
+      "vertices_moved_over_1mm": 4072,
+      "uv_split_seam_gap_m": 0.0
+    },
+    {
+      "label": "rear-right",
+      "bone": "Bone_019",
+      "local_x_degrees": -10,
+      "max_displacement_m": 0.16038177960069333,
+      "vertices_moved_over_1mm": 4176,
+      "uv_split_seam_gap_m": 0.0
+    },
+    {
+      "label": "head",
+      "bone": "Bone_026",
+      "local_x_degrees": 8,
+      "max_displacement_m": 0.08692440126122439,
+      "vertices_moved_over_1mm": 5791,
+      "uv_split_seam_gap_m": 0.0
+    },
+    {
+      "label": "tail",
+      "bone": "Bone_004",
+      "local_x_degrees": 12,
+      "max_displacement_m": 0.07540209152392079,
+      "vertices_moved_over_1mm": 818,
+      "uv_split_seam_gap_m": 0.0
+    }
+  ],
+  "joint_count": 47,
+  "intact_alignment": {
+    "matrix_blender": [
+      [
+        2.452310843194088,
+        0.0,
+        0.0,
+        0.00021337036808446468
+      ],
+      [
+        0.0,
+        2.452310843194088,
+        0.0,
+        -0.06654955639029152
+      ],
+      [
+        0.0,
+        0.0,
+        2.452310843194088,
+        -2.370989635624987e-05
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "rotation_basis_godot": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "uniform_scale": 2.452310843194088,
+    "sample_mean_distance_m": 0.014030136385494043
+  }
+}

@@ -1,0 +1,6 @@
+﻿p='repair.py';s=open(p,encoding='utf-8-sig').read()
+s=s.replace("save(out,f'walk/frames/ne_f{f}.png')", "# Restore closed socket paint without filling open spaces between feet.\n  holes=b.fill_holes(out[:,:,3]>0)&(out[:,:,3]==0)\n  st=b.shift(ref,0,int(f in [0,4]))\n  for yy,xx in zip(*np.where(holes)):\n   out[yy,xx]=prev[yy,xx] if prev[yy,xx,3] else (st[yy,xx] if st[yy,xx,3] else old.P['2e1a6e'])\n  save(out,f'walk/frames/ne_f{f}.png')")
+s=s.replace("save(out,f'walk/frames/e_f{f}.png');sizes", "out[:131+dip]=prev[:131+dip]\n  save(out,f'walk/frames/e_f{f}.png');sizes")
+open(p,'w',encoding='utf-8').write(s)
+p='frontback.py';s=open(p,encoding='utf-8-sig').read().replace("k=(84,135),join=(82,139)","k=(84,131),join=(82,139)").replace("k=(107,135),join=(109,139)","k=(107,131),join=(109,139)").replace("-1 if n=='RH' else 1,0","-1 if n=='RH' else 1,-4")
+open(p,'w',encoding='utf-8').write(s)

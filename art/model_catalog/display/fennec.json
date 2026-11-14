@@ -1,0 +1,49 @@
+{
+  "id": "fennec",
+  "source_sha256": "ef9263888aae6b09e00da3bc33cbe09b4a89999e1419bd76d3759bb204f0cbf8",
+  "source_triangles": 499878,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8750342796015899,
+  "blender_bounds_min": [
+    -3.6528375148773193,
+    -1.6005127429962158,
+    0.11979837715625763
+  ],
+  "blender_bounds_max": [
+    -2.346773147583008,
+    1.5993618965148926,
+    2.246802806854248
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

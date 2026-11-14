@@ -1,0 +1,469 @@
+{
+  "frames": {
+    "se_f0": {
+      "cell_box": [
+        0,
+        0,
+        115,
+        115
+      ],
+      "row_offset": [
+        36,
+        62
+      ],
+      "correction": [
+        0,
+        0
+      ],
+      "translation": [
+        36,
+        62
+      ],
+      "hind_cell": [
+        [
+          29.5,
+          81
+        ]
+      ],
+      "front_cell": [
+        [
+          50.5,
+          96
+        ],
+        [
+          83.5,
+          91
+        ]
+      ],
+      "hind": [
+        [
+          65,
+          143
+        ]
+      ],
+      "front": [
+        [
+          88.5,
+          160
+        ],
+        [
+          116.5,
+          155
+        ]
+      ],
+      "foot_boxes": {
+        "hind": [
+          [
+            18,
+            69,
+            42,
+            83
+          ]
+        ],
+        "front": [
+          [
+            41,
+            86,
+            63,
+            98
+          ],
+          [
+            71,
+            85,
+            94,
+            94
+          ]
+        ]
+      },
+      "method": "Exact approved still; foot labels from supplied targets.json."
+    },
+    "se_f1": {
+      "cell_box": [
+        115,
+        0,
+        230,
+        115
+      ],
+      "row_offset": [
+        36,
+        62
+      ],
+      "correction": [
+        0,
+        0
+      ],
+      "translation": [
+        36,
+        62
+      ],
+      "hind_cell": [
+        [
+          28.5,
+          81
+        ]
+      ],
+      "front_cell": [
+        [
+          50.0,
+          96
+        ],
+        [
+          80.5,
+          93
+        ]
+      ],
+      "hind": [
+        [
+          64.5,
+          143
+        ]
+      ],
+      "front": [
+        [
+          86.0,
+          158
+        ],
+        [
+          116.5,
+          155
+        ]
+      ],
+      "foot_boxes": {
+        "hind": [
+          [
+            18,
+            71,
+            40,
+            83
+          ]
+        ],
+        "front": [
+          [
+            40,
+            86,
+            63,
+            98
+          ],
+          [
+            73,
+            87,
+            95,
+            95
+          ]
+        ]
+      },
+      "method": "Visually identified steel foot pads; dark sole outermost row in labelled box; midpoint of occupied sole row. SE far pad partly overlaps jaw: position uncertain."
+    },
+    "se_f2": {
+      "cell_box": [
+        230,
+        0,
+        345,
+        115
+      ],
+      "row_offset": [
+        36,
+        62
+      ],
+      "correction": [
+        0,
+        0
+      ],
+      "translation": [
+        36,
+        62
+      ],
+      "hind_cell": [
+        [
+          29.0,
+          81
+        ]
+      ],
+      "front_cell": [
+        [
+          52.0,
+          93
+        ],
+        [
+          81.5,
+          82
+        ]
+      ],
+      "hind": [
+        [
+          65.0,
+          143
+        ]
+      ],
+      "front": [
+        [
+          88.0,
+          155
+        ],
+        [
+          117.5,
+          144
+        ]
+      ],
+      "foot_boxes": {
+        "hind": [
+          [
+            18,
+            69,
+            43,
+            83
+          ]
+        ],
+        "front": [
+          [
+            46,
+            84,
+            69,
+            95
+          ],
+          [
+            77,
+            77,
+            97,
+            84
+          ]
+        ]
+      },
+      "method": "Visually identified steel foot pads; dark sole outermost row in labelled box; midpoint of occupied sole row. SE far pad partly overlaps jaw: position uncertain."
+    },
+    "se_f3": {
+      "cell_box": [
+        345,
+        0,
+        460,
+        115
+      ],
+      "row_offset": [
+        36,
+        62
+      ],
+      "correction": [
+        -6,
+        -1
+      ],
+      "translation": [
+        30,
+        61
+      ],
+      "hind_cell": [
+        [
+          34.5,
+          82
+        ]
+      ],
+      "front_cell": [
+        [
+          58.0,
+          75
+        ],
+        [
+          81.5,
+          63
+        ]
+      ],
+      "hind": [
+        [
+          64.5,
+          143
+        ]
+      ],
+      "front": [
+        [
+          88.0,
+          136
+        ],
+        [
+          111.5,
+          124
+        ]
+      ],
+      "foot_boxes": {
+        "hind": [
+          [
+            18,
+            70,
+            41,
+            83
+          ]
+        ],
+        "front": [
+          [
+            54,
+            60,
+            76,
+            77
+          ],
+          [
+            77,
+            50,
+            101,
+            65
+          ]
+        ]
+      },
+      "method": "Visually identified steel foot pads; dark sole outermost row in labelled box; midpoint of occupied sole row. SE far pad partly overlaps jaw: position uncertain."
+    },
+    "se_f4": {
+      "cell_box": [
+        460,
+        0,
+        575,
+        115
+      ],
+      "row_offset": [
+        36,
+        62
+      ],
+      "correction": [
+        0,
+        0
+      ],
+      "translation": [
+        36,
+        62
+      ],
+      "hind_cell": [
+        [
+          29.0,
+          82
+        ]
+      ],
+      "front_cell": [
+        [
+          50.5,
+          96
+        ],
+        [
+          81.0,
+          96
+        ]
+      ],
+      "hind": [
+        [
+          65.0,
+          144
+        ]
+      ],
+      "front": [
+        [
+          86.5,
+          158
+        ],
+        [
+          117.0,
+          158
+        ]
+      ],
+      "foot_boxes": {
+        "hind": [
+          [
+            18,
+            72,
+            41,
+            84
+          ]
+        ],
+        "front": [
+          [
+            40,
+            87,
+            63,
+            99
+          ],
+          [
+            73,
+            89,
+            95,
+            98
+          ]
+        ]
+      },
+      "method": "Visually identified steel foot pads; dark sole outermost row in labelled box; midpoint of occupied sole row. SE far pad partly overlaps jaw: position uncertain."
+    },
+    "se_f5": {
+      "cell_box": [
+        575,
+        0,
+        690,
+        115
+      ],
+      "row_offset": [
+        36,
+        62
+      ],
+      "correction": [
+        0,
+        0
+      ],
+      "translation": [
+        36,
+        62
+      ],
+      "hind_cell": [
+        [
+          28.5,
+          81
+        ]
+      ],
+      "front_cell": [
+        [
+          50.5,
+          96
+        ],
+        [
+          84.0,
+          87
+        ]
+      ],
+      "hind": [
+        [
+          64.5,
+          143
+        ]
+      ],
+      "front": [
+        [
+          86.5,
+          158
+        ],
+        [
+          120.0,
+          149
+        ]
+      ],
+      "foot_boxes": {
+        "hind": [
+          [
+            18,
+            70,
+            42,
+            83
+          ]
+        ],
+        "front": [
+          [
+            41,
+            86,
+            64,
+            98
+          ],
+          [
+            76,
+            81,
+            97,
+            90
+          ]
+        ]
+      },
+      "method": "Visually identified steel foot pads; dark sole outermost row in labelled box; midpoint of occupied sole row. SE far pad partly overlaps jaw: position uncertain."
+    }
+  },
+  "moves": [
+    "se_f3 (-6,-1)"
+  ]
+}

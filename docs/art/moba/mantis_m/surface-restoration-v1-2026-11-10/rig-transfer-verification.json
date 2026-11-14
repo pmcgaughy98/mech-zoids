@@ -1,0 +1,35 @@
+{
+  "source_rig": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_mantis_touchup_remeshed_25k_20261111_character.glb",
+  "source_rig_sha256": "4b8460fd7ceb392105b7af5bcaf965f8ec0f2e3090bcca7c4a351f75bd52567e",
+  "output_sha256": "a0a9769c0a66291f83081ee9ad7f88501e65f137a3cf4e9d9b5dc97f1c504476",
+  "skeleton_nodes_bind_transforms_skins_scenes_unchanged": true,
+  "original_rig_buffer_retained": true,
+  "weights": "Transferred from actual downloaded rig using four nearest surface samples, inverse fourth power, strongest four influences normalized. UV-seam duplicates use identical point queries. Residual removed-middle-pair influence reassigned to existing Bone_001 body parent.",
+  "removed_limb_weight_joints": [
+    "Bone_011",
+    "Bone_010",
+    "Bone_009",
+    "Bone_008",
+    "Bone_007",
+    "Bone_016",
+    "Bone_015",
+    "Bone_014",
+    "Bone_013",
+    "Bone_012"
+  ],
+  "surface_materials": "Restored original source materials and embedded textures, plus local cut-root finish; downloaded materials retained in archive buffer/JSON.",
+  "distance_stats": [
+    {
+      "vertices": 237274,
+      "distance_mean": 0.05442582066391574,
+      "distance_99pct": 0.10581550068508233,
+      "distance_max": 0.12462603531011658
+    },
+    {
+      "vertices": 4546,
+      "distance_mean": 0.035112992987147894,
+      "distance_99pct": 0.0925052780021903,
+      "distance_max": 0.10007656830354031
+    }
+  ]
+}

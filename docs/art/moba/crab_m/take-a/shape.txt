@@ -1,0 +1,8 @@
+South projected manual landmarks (+/-2px, cropped sprite coordinates): left pincer x5..32/y2..33 = 28x32px; right pincer x63..90/y2..33 = 28x32px. Each width/height 0.875.
+Visible central shell face x29..66, width 38px (+/-2); shell sides are occluded by pincers, so full shell width is unmeasurable from south.
+Each pincer/visible shell width 28/38 = 0.737; do not interpret this as an unoccluded anatomy ratio.
+South overall width/height 96/58 = 1.655.
+East/south height 54/58 = 0.931 (FAIL equal-height brief); north/south 57/58 = 0.983 (PASS within 5%).
+Cyan eye pixels: ne 0; nw 0. Pale eye-glint pixels: ne 0; nw 0.
+Visible planted tips / visible tips, by eye with perspective ground plane: ne 5/5; n 6/6; nw 5/5; e 4/4; w 4/4; se 5/5; s 6/6; sw 5/5.
+All visible tips rest on flat soles; higher far-side soles are interpreted in perspective, not as lifted. Hidden tips cannot be verified. No claim of six visible legs in profiles/diagonals.

@@ -1,0 +1,49 @@
+{
+  "id": "mantis",
+  "source_sha256": "5d4433ff71394d77ab71cd419d6c776427b653e34ae0e6fc762eccb78d9a90b5",
+  "source_triangles": 499822,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8750119173659752,
+  "blender_bounds_min": [
+    -4.498882293701172,
+    -1.5994693040847778,
+    0.11880292743444443
+  ],
+  "blender_bounds_max": [
+    -1.5006389617919922,
+    1.6004871129989624,
+    2.5057544708251953
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/moba3d/hummingbird_test.gd" id="1_hbird"]
+
+[node name="HummingbirdTest" type="Node3D"]
+script = ExtResource("1_hbird")

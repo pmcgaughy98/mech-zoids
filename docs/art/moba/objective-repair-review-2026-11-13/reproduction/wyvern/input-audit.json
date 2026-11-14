@@ -1,0 +1,50 @@
+{
+  "id": "wyvern",
+  "name": "Wyvern",
+  "category": "objective",
+  "input": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_Cyber_Wyvern_Sentinel_1110211655_texture.glb",
+  "sha256": "de6feb0f20655e289e8cae2de8ad6f9589050c93acb2feecd0e073194cd8d512",
+  "triangles": 25766,
+  "vertices_first_primitive": 40348,
+  "primitives": 1,
+  "joint_count": 46,
+  "clips": 0,
+  "boundary_edges_first_primitive": 31,
+  "over_shared_edges_first_primitive": 29,
+  "collapsed_first_primitive": 0,
+  "bounds_first_primitive": [
+    [
+      -1.0322012901306152,
+      2.6428695676372627e-08,
+      -1.654962182044983
+    ],
+    [
+      1.0322012901306152,
+      1.6999999284744263,
+      1.654962182044983
+    ]
+  ],
+  "intact_pre_remesh_source": null,
+  "references": {
+    "front": {
+      "path": "D:\\user\\Downloads\\wyvern_front.png",
+      "sha256": "a305c11d38ffd43c7704bbd8659930cf4ae32e29aece02da3507d920a137dca9",
+      "project_matches": []
+    },
+    "left": {
+      "path": "D:\\user\\Downloads\\wyvern_left.png",
+      "sha256": "249a2679c86c18104d4f3c275ceb66aae69259f7bc5328b18d70ced00a1ec26e",
+      "project_matches": []
+    },
+    "back": {
+      "path": "D:\\user\\Downloads\\wyvern_back.png",
+      "sha256": "00b03fea257cb7b4bc1c4f42c24c505915f58f9405a9ca8739d57c81ec995385",
+      "project_matches": []
+    },
+    "right": {
+      "path": "D:\\user\\Downloads\\wyvern_right.png",
+      "sha256": "27dbe88d7e9e54354fc17d3f97af10107409443c3a6576a44aae1703974d4244",
+      "project_matches": []
+    }
+  }
+}

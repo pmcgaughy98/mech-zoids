@@ -1,0 +1,103 @@
+{
+  "new": {
+    "width": 82,
+    "height": 41,
+    "area": 2014,
+    "top_row": 120,
+    "bottom_row": 160,
+    "role_shares": {
+      "yellow": 0.6941410129096326,
+      "steel": 0.1663356504468719,
+      "charcoal frame": 0.11717974180734857,
+      "eye": 0.004468718967229395,
+      "dark accent": 0.01787487586891758
+    },
+    "lightest_yellow_share": 0.17130089374379345,
+    "eye_groups": [
+      9
+    ],
+    "eye_pixels": 9,
+    "elsewhere_eye_pixels": 0,
+    "p05": 31.287599999999998,
+    "p95": 236.97979999999998,
+    "dominant_colour": "ffc61a",
+    "dominant_share": 0.28599801390268126,
+    "border_contact": false,
+    "invalid_colours": [],
+    "eye_bounds_xyxy": [
+      127,
+      142,
+      130,
+      144
+    ]
+  },
+  "approved": {
+    "width": 82,
+    "height": 43,
+    "area": 2101,
+    "top_row": 118,
+    "bottom_row": 160,
+    "role_shares": {
+      "yellow": 0.6496906235126131,
+      "steel": 0.08900523560209424,
+      "charcoal frame": 0.23798191337458352,
+      "eye": 0.005235602094240838,
+      "dark accent": 0.018086625416468348
+    },
+    "lightest_yellow_share": 0.08757734412184674,
+    "eye_groups": [
+      11
+    ],
+    "eye_pixels": 11,
+    "elsewhere_eye_pixels": 0,
+    "p05": 31.287599999999998,
+    "p95": 236.97979999999998,
+    "dominant_colour": "ffc61a",
+    "dominant_share": 0.28891004283674443,
+    "border_contact": false,
+    "invalid_colours": [],
+    "eye_bounds_xyxy": [
+      126,
+      141,
+      129,
+      143
+    ]
+  },
+  "first run": {
+    "width": 78,
+    "height": 42,
+    "area": 1965,
+    "top_row": 119,
+    "bottom_row": 160,
+    "role_shares": {
+      "yellow": 0.6824427480916031,
+      "steel": 0.14249363867684478,
+      "charcoal frame": 0.15318066157760815,
+      "eye": 0.004071246819338422,
+      "dark accent": 0.017811704834605598
+    },
+    "lightest_yellow_share": 0.1475826972010178,
+    "eye_groups": [
+      8
+    ],
+    "eye_pixels": 8,
+    "elsewhere_eye_pixels": 0,
+    "p05": 31.287599999999998,
+    "p95": 236.97979999999998,
+    "dominant_colour": "ffc61a",
+    "dominant_share": 0.2768447837150127,
+    "border_contact": false,
+    "invalid_colours": [],
+    "eye_bounds_xyxy": [
+      126,
+      141,
+      128,
+      143
+    ]
+  },
+  "mirror": {
+    "rgba_different_pixels": 366,
+    "silhouette_different_pixels": 33,
+    "silhouette_iou": 0.9836875926841325
+  }
+}

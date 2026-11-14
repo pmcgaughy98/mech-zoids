@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://d34hpkua50tvu"]
+
+[ext_resource type="PackedScene" uid="uid://mfsrh3taqhar" path="res://assets/downloaded-rig.glb" id="1_o4cxo"]
+[ext_resource type="Script" uid="uid://c8yatk27rnyyj" path="res://hornet_review.gd" id="1_pod2a"]
+[ext_resource type="PackedScene" uid="uid://dstqsfek2i66n" path="res://assets/restored-hornet.glb" id="4_h5hey"]
+[ext_resource type="PackedScene" uid="uid://bv8bcjn4wjit1" path="res://assets/original-source.glb" id="9_3iryr"]
+[ext_resource type="PackedScene" uid="uid://7ksddk1qtidj" path="res://assets/six-leg-touchup.glb" id="13_4rncr"]
+
+[sub_resource type="Environment" id="Environment_4l5yg"]
+background_mode = 1
+background_color = Color(0.035, 0.045, 0.065, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.74, 0.82, 1, 1)
+ambient_light_energy = 0.8
+tonemap_mode = 2
+
+[node name="HornetReview" type="Node3D" unique_id=1558147364]
+script = ExtResource("1_pod2a")
+
+[node name="DownloadedRigLabel" type="Label3D" parent="." unique_id=599822241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 2.1, 0)
+pixel_size = 0.0024
+billboard = 1
+no_depth_test = true
+text = "DOWNLOADED RIG
+Damaged surface"
+font_size = 40
+
+[node name="RestoredHornetLabel" type="Label3D" parent="." unique_id=1930900588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, 2.1, 0)
+pixel_size = 0.0024
+billboard = 1
+no_depth_test = true
+text = "RESTORED HORNET
+Six legs / original 51-joint rig"
+font_size = 40
+
+[node name="StudioEnvironment" type="WorldEnvironment" parent="." unique_id=1499555785]
+environment = SubResource("Environment_4l5yg")
+
+[node name="KeyLight" type="DirectionalLight3D" parent="." unique_id=518005164]
+transform = Transform3D(0.81915206, 0.4055798, -0.4055798, 0, 0.70710677, 0.70710677, 0.57357645, -0.579228, 0.579228, 0, 0, 0)
+light_color = Color(1, 0.91, 0.76, 1)
+light_energy = 1.7
+
+[node name="FillLight" type="DirectionalLight3D" parent="." unique_id=1038642335]
+transform = Transform3D(-0.81915206, -0.24240388, 0.5198368, 0, 0.90630776, 0.42261827, -0.57357645, 0.34618863, -0.74240386, 0, 0, 0)
+light_color = Color(0.65, 0.8, 1, 1)
+light_energy = 1.1
+
+[node name="ReviewCamera" type="Camera3D" parent="." unique_id=1114802218]
+transform = Transform3D(1, 0, 0, 0, 0.97127444, 0.23796222, 0, -0.23796222, 0.97127444, 0, 3.4, 10)
+projection = 1
+current = true
+size = 8.2
+
+[node name="OriginalSourceLabel" type="Label3D" parent="." unique_id=605017398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, 2.1, 0)
+pixel_size = 0.0024
+billboard = 1
+no_depth_test = true
+text = "INTACT SOURCE
+Extra limbs unapproved"
+font_size = 40
+
+[node name="SixLegTouchupLabel" type="Label3D" parent="." unique_id=279834475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 2.1, 0)
+pixel_size = 0.0024
+billboard = 1
+no_depth_test = true
+text = "APPROVED SIX-LEG CUT
+Pre-rig / cracked surface"
+font_size = 40
+
+[node name="DownloadedRig" type="Node3D" parent="." unique_id=157722976 instance=ExtResource("1_o4cxo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, 0)
+
+[node name="RestoredHornet" type="Node3D" parent="." unique_id=258290412 instance=ExtResource("4_h5hey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, 0, 0)
+
+[node name="OriginalSource" type="Node3D" parent="." unique_id=1314219814 instance=ExtResource("9_3iryr")]
+transform = Transform3D(3.1692824, 0, 0, 0, 3.1692824, 0, 0, 0, 3.1692824, -5.407443, 0, 0.17435181)
+
+[node name="SixLegTouchup" type="Node3D" parent="." unique_id=839771182 instance=ExtResource("13_4rncr")]
+transform = Transform3D(0.8955044, 0, 0, 0, 0.8955044, 0, 0, 0, 0.8955044, 0.88583964, -0.108376995, -0.0005685091)

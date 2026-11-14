@@ -1,0 +1,17 @@
+{
+  "source": "D:\\dev\\new-mech-rpg\\art\\model_catalog\\workspaces\\gorilla_cell_color_review.blend",
+  "source_sha256": "bda7303560a24910dfa04049371664cad4d915608ddb82601b59361052a41d27",
+  "painted_texels": 82160,
+  "regions": [
+    "upper-left slanted raised rim",
+    "upper-right slanted raised rim",
+    "green raised lip across the top"
+  ],
+  "checks": {
+    "body_texture_outside_rim_mask_unchanged": true
+  },
+  "notes": [
+    "Paint follows rim geometry regardless of its old color.",
+    "Existing cell faces, backing greens, front shields, hands, feet and mesh geometry retained."
+  ]
+}

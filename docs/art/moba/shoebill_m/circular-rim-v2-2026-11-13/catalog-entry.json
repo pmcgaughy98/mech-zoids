@@ -1,0 +1,100 @@
+{
+  "id": "shoebill",
+  "name": "Shoebill",
+  "source_model": {
+    "path": "res://art/model_catalog/sources/shoebill_front - Hunyuan 3D v3.1 Pro.glb",
+    "source": "D:\\user\\Downloads\\shoebill_front - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "0130e8e37491cb50f1aedcbd9a2c3c9e93fc2eeb160925765ed0b8bbeb5e7366",
+    "bytes": 49106876
+  },
+  "display_model": "res://docs/art/moba/shoebill_m/circular-rim-v2-2026-11-13/shoebill-circular-moon-rim-v2.glb",
+  "status": "Circular silver rim and blue casing cover grey backing. Moon face, brass mounts and original 38-joint rig retained.",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/shoebill/front.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\shoebill_front.png",
+      "sha256": "c22386c55e14f859c884a748a2565925ce3a3e6327c71beae1cea520a503d276",
+      "bytes": 277341,
+      "project_matches": [
+        "docs/art/moba/shoebill_m/take-i-sidefix-original/white_views/shoebill_front.png"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/shoebill/left.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\shoebill_left.png",
+      "sha256": "81e511006435619e17430a830e56d1d94947b713bbaecb3b1c01659f3f9366d0",
+      "bytes": 244728,
+      "project_matches": [
+        "docs/art/moba/shoebill_m/take-i-sidefix-original/white_views/shoebill_left.png"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/shoebill/back.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\shoebill_back.png",
+      "sha256": "99c15bb9a1e083cf5e5d935cc29e8581bab28126b548f1f4adf49bf2aae5e465",
+      "bytes": 283094,
+      "project_matches": [
+        "docs/art/moba/shoebill_m/take-i-sidefix-original/white_views/shoebill_back.png"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/shoebill/right.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\shoebill_right.png",
+      "sha256": "1e3f39ca8e3385e7c53717c9c679c4caae1974fdc6a5c6e155b90fd7f5fb34de",
+      "bytes": 248204,
+      "project_matches": [
+        "docs/art/moba/shoebill_m/take-i-sidefix-original/white_views/shoebill_right.png"
+      ]
+    }
+  },
+  "artist_workspace": "res://docs/art/moba/shoebill_m/circular-rim-v2-2026-11-13/shoebill-circular-moon-rim-v2.blend",
+  "review_models": [
+    {
+      "label": "INTACT BODY ARCHIVE\nOriginal backplate",
+      "path": "res://art/model_catalog/sources/shoebill_front - Hunyuan 3D v3.1 Pro.glb",
+      "display_scale": 2.3604047660945735
+    },
+    {
+      "label": "RIGGED DOWNLOAD\nFitted plate / overlap",
+      "path": "res://art/model_catalog/sources/Meshy_AI_shoebill_single_material_25k_20261111_character.glb",
+      "display_scale": 1.5294117647058825
+    },
+    {
+      "label": "CIRCULAR MOON RIM\nSame 38-joint skeleton",
+      "path": "res://docs/art/moba/shoebill_m/circular-rim-v2-2026-11-13/shoebill-circular-moon-rim-v2.glb",
+      "display_scale": 1.5294117647058825
+    }
+  ],
+  "review_views": {
+    "front": {
+      "path": "res://docs/art/moba/shoebill_m/circular-rim-v2-2026-11-13/review-front.png",
+      "kind": "Body archive / downloaded composite / circular rim v2; prior backplate labeled"
+    },
+    "left": {
+      "path": "res://docs/art/moba/shoebill_m/circular-rim-v2-2026-11-13/review-left.png",
+      "kind": "Body archive / downloaded composite / circular rim v2; prior backplate labeled"
+    },
+    "back": {
+      "path": "res://docs/art/moba/shoebill_m/circular-rim-v2-2026-11-13/review-back.png",
+      "kind": "Body archive / downloaded composite / circular rim v2; prior backplate labeled"
+    },
+    "right": {
+      "path": "res://docs/art/moba/shoebill_m/circular-rim-v2-2026-11-13/review-right.png",
+      "kind": "Body archive / downloaded composite / circular rim v2; prior backplate labeled"
+    }
+  },
+  "review_provenance": {
+    "date": "2026-11-13",
+    "report": "res://docs/art/moba/shoebill_m/circular-rim-v2-2026-11-13/repair-verification.json",
+    "independent_audit": "res://docs/art/moba/shoebill_m/circular-rim-v2-2026-11-13/independent-export-audit.json",
+    "joint_count": 38,
+    "rigged_input_sha256": "c0afacfd4294556e98220d6e89996a6e246430ffaf58ec3805941bd8240cb4a0",
+    "repaired_sha256": "d6e52a3b322ef0bd3d5f65823c337eb7dc34f46a41ae30a5caa8f26d3f5de6f4",
+    "intact_pre_remesh_body_available": true,
+    "exact_composite_pre_remesh_source_available": false,
+    "body_archive_scope": "Original generated body archive with its earlier backplate; not verified as the exact historical upload of the fitted composite. Current approved moon plate retained.",
+    "scope": "User confirmed a circular rim with moon design visible. Added a smooth circular silver rim and fitted blue outer casing over exposed gray backing. Original brass mounts remain visible in fitted recesses; original rig and weights unchanged. New frame is rigidly attached to existing Bone_003; no original skin rows changed. No gameplay replacement.",
+    "previous_repair": "res://docs/art/moba/shoebill_m/backplate-repair-v1-2026-11-13/shoebill-backplate-repaired-v1.glb"
+  }
+}

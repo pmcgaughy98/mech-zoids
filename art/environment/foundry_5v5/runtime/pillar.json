@@ -1,0 +1,50 @@
+{
+  "asset": "pillar",
+  "raw_sha256": "5c27659ea9f0e476553178de17ef815a9668607264eafdb806417a0b836b7500",
+  "runtime_sha256": "408d705ada62e06c0f554db54f8c8f565d9c3061e6dfff55f8ef103cf90e282b",
+  "raw_triangles": 4780,
+  "runtime_triangles": 4000,
+  "materials": 1,
+  "images": [
+    {
+      "name": "Image_0",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_1",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_2",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_3",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "dimensions_godot_xyz_m": [
+    2.4,
+    4,
+    2.4
+  ],
+  "pivot": "bottom center",
+  "up": "+Y",
+  "front": "+Z; symmetric environment module",
+  "collision": "separate authored foundation boxes; generated mesh excluded from nav",
+  "sockets": "2.4m square footprint",
+  "provider_metadata": "../source/pillar/refine-status.json",
+  "license": "Provider API output, paid account; no third-party assets intentionally supplied. No per-file license string supplied by API."
+}

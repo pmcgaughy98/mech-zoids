@@ -1,0 +1,49 @@
+from finish import *
+log=[]
+# Straight tail with the exact native segment lengths, grey separation and cream tip.
+native_tail=REFS['side'].crop((43,128,78,141))
+for name,N in COUNTS.items():
+ for n in NAMES:
+  for c in range(1,N):
+   if (name=='dig' and c!=2) or (name=='pop_out' and c!=3):continue
+   if n!='side' and not(name=='death' and c>=5):continue
+   path=ROOT/name/'frames'/f'{n}_f{c}.png';fr=Image.open(path).convert('RGBA');a=np.array(fr);yy,xx=np.indices(a.shape[:2])
+   # Leftmost low gold patch is the tail; inner ears and muzzle are excluded.
+   gold=(a[:,:,0]>160)&(a[:,:,1]>110)&(a[:,:,2]<150)&(a[:,:,3]>0)&(yy>=151)&(xx<85)
+   labs,k=ndi.label(gold);regions=[]
+   for j in range(1,k+1):
+    y,x=np.where(labs==j)
+    if len(x)>=3:regions.append((x.mean(),y.mean(),len(x)))
+   if not regions:continue
+   cx,cy,_=min(regions,key=lambda z:z[0]);pa=np.array(native_tail);pg=(pa[:,:,0]>160)&(pa[:,:,1]>110)&(pa[:,:,2]<150)&(pa[:,:,3]>0);py,px=np.where(pg)
+   tx=round(cx-px.mean());ty=148
+   # Remove the previous tail silhouette, including tip remnants, up to its root.
+   a[(xx<tx+native_tail.width-2)&(yy>=148)]=0;fr=Image.fromarray(a);fr.alpha_composite(native_tail,(tx,ty));fr=clean(clipped(fr));fr.save(path)
+   log.append(f'{name}/{n}_f{c}: native straight segmented side tail at {tx},{ty}')
+
+for n in ['front','side']:
+ path=ROOT/'death'/'frames'/f'{n}_f6.png';a=np.array(Image.open(path));eye_mask=np.zeros(a.shape[:2],bool)
+ for index in [11,12,14]:eye_mask |= np.all(a[:,:,:3]==PAL[index],2)&(a[:,:,3]>0)
+ a[eye_mask,:3]=PAL[2];Image.fromarray(a).save(path);log.append(f'death/{n}_f6: {eye_mask.sum()} remaining teal/mint/white eye texels darkened to #2e1a6e')
+
+for name,N in COUNTS.items():
+ for n in NAMES:
+  for c in range(N):
+   if (name in ['dig','death'] and c==0) or (name=='pop_out' and c in [0,4]):continue
+   path=ROOT/name/'frames'/f'{n}_f{c}.png';a=np.array(Image.open(path));m=a[:,:,3]>0;lab,k=ndi.label(m,structure=np.ones((3,3)))
+   if k>1:
+    sz=np.bincount(lab.ravel());sz[0]=0;drop=m&(lab!=sz.argmax());a[drop]=0;Image.fromarray(a).save(path)
+    log.append(f'{name}/{n}_f{c}: removed {drop.sum()} detached remnant texels from old head silhouette')
+ board(name)
+ # Compact board, 4x nearest-neighbour native detail, still explicitly leftmost.
+ canvas=Image.new('RGB',((N+1)*400,3*404+36),(87,94,103));d=ImageDraw.Draw(canvas)
+ d.text((8,8),f'FENNEC TAKE B / {name} / native pixels 4x / cyan ground 160',fill='white')
+ for r,n in enumerate(NAMES):
+  for c in range(-1,N):
+   fr=approved(n) if c==-1 else Image.open(ROOT/name/'frames'/f'{n}_f{c}.png')
+   crop=fr.crop((46,64,146,164)).resize((400,400),Image.Resampling.NEAREST);x=(c+1)*400;y=36+r*404
+   canvas.paste(crop,(x,y),crop);d.line((x,y+388,x+399,y+388),fill=(68,187,187));d.text((x+8,y+5),f'{n} STILL' if c==-1 else f'{n} F{c}',fill='white')
+ canvas.save(ROOT/name/'detail_board.png')
+ canvas.resize((min(canvas.width,2000),round(canvas.height*min(canvas.width,2000)/canvas.width)),Image.Resampling.NEAREST).save(ROOT/name/'detail_small.png')
+(ROOT/'final_pass_log.txt').write_text('\n'.join(log)+'\n')
+print('Tail and eye final pass:',len(log),'changes')

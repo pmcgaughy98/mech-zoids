@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "6bef5baea2678f077c6440301b2357949fafeb96b0afb703fc87b4045f747b1c",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.2217327459618208,
+  "lowest_body_row_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "dragonfly_front.png",
+      "source_box": [
+        22,
+        45,
+        703,
+        489
+      ],
+      "source_dimensions": [
+        681,
+        444
+      ],
+      "output_box": [
+        96,
+        394,
+        928,
+        936
+      ]
+    },
+    "left": {
+      "file": "dragonfly_left.png",
+      "source_box": [
+        803,
+        35,
+        1414,
+        432
+      ],
+      "source_dimensions": [
+        611,
+        397
+      ],
+      "output_box": [
+        139,
+        451,
+        885,
+        936
+      ]
+    },
+    "back": {
+      "file": "dragonfly_back.png",
+      "source_box": [
+        23,
+        576,
+        704,
+        1035
+      ],
+      "source_dimensions": [
+        681,
+        459
+      ],
+      "output_box": [
+        96,
+        375,
+        928,
+        936
+      ]
+    },
+    "right": {
+      "file": "dragonfly_right.png",
+      "source_box": [
+        768,
+        572,
+        1373,
+        965
+      ],
+      "source_dimensions": [
+        605,
+        393
+      ],
+      "output_box": [
+        142,
+        456,
+        881,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.1437908496732026
+}

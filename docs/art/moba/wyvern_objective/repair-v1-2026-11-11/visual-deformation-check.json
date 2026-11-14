@@ -1,0 +1,87 @@
+{
+  "tested_sha256": "400b4030afb72959a5d265a97cf992c2ecee6e6ab417fb4e237ab0fd98ba09d9",
+  "joint_count": 46,
+  "poses": [
+    {
+      "label": "wing-left",
+      "bone": "Bone_041",
+      "local_x_degrees": 8,
+      "max_displacement_m": 0.16838392864434984,
+      "vertices_moved_over_1mm": 11401,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "wing-right",
+      "bone": "Bone_045",
+      "local_x_degrees": -8,
+      "max_displacement_m": 0.16760581593241267,
+      "vertices_moved_over_1mm": 12354,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "hind-left",
+      "bone": "Bone_013",
+      "local_x_degrees": 10,
+      "max_displacement_m": 0.10070513834099581,
+      "vertices_moved_over_1mm": 2230,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "hind-right",
+      "bone": "Bone_008",
+      "local_x_degrees": -10,
+      "max_displacement_m": 0.10057885280520336,
+      "vertices_moved_over_1mm": 2238,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "neck",
+      "bone": "Bone_002",
+      "local_x_degrees": 6,
+      "max_displacement_m": 0.10678381263590468,
+      "vertices_moved_over_1mm": 28527,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "jaw",
+      "bone": "Bone_022",
+      "local_x_degrees": 8,
+      "max_displacement_m": 0.016430954312519893,
+      "vertices_moved_over_1mm": 480,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "tail-root",
+      "bone": "Bone_021",
+      "local_x_degrees": 8,
+      "max_displacement_m": 0.23593802939050573,
+      "vertices_moved_over_1mm": 3722,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "tail-mid",
+      "bone": "Bone_018",
+      "local_x_degrees": -8,
+      "max_displacement_m": 0.1307799323897897,
+      "vertices_moved_over_1mm": 1421,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "removed-front-left",
+      "bone": "Bone_032",
+      "local_x_degrees": 20,
+      "max_displacement_m": 0.0,
+      "vertices_moved_over_1mm": 0,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "removed-front-right",
+      "bone": "Bone_037",
+      "local_x_degrees": -20,
+      "max_displacement_m": 0.0,
+      "vertices_moved_over_1mm": 0,
+      "coincident_surface_gap_m": 0.0
+    }
+  ],
+  "intact_pre_remesh_source_available": false
+}

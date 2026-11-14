@@ -1,0 +1,43 @@
+Clean 3x6 grid: YES. Palette union 12 colours; binary alpha; eye pixels require 8 opaque neighbours.
+front: factor 0.3162654189; column1 raw 228x221; target 72x70; fixed cell anchor (50,77).
+front_f0: width=72 height=70 colours=11 red=1 glint=0 eye_touch_transparency=0 bottom=160 required_shift=+0 applied=+0 border=False in_ref_palette=True
+front_f1: width=71 height=64 colours=10 red=0 glint=0 eye_touch_transparency=0 bottom=160 required_shift=+0 applied=+0 border=False in_ref_palette=True
+front_f2: width=74 height=61 colours=10 red=0 glint=0 eye_touch_transparency=0 bottom=160 required_shift=+0 applied=+0 border=False in_ref_palette=True
+front_f3: width=72 height=67 colours=11 red=2 glint=0 eye_touch_transparency=0 bottom=160 required_shift=+0 applied=+0 border=False in_ref_palette=True
+front_f4: width=73 height=70 colours=11 red=1 glint=0 eye_touch_transparency=0 bottom=160 required_shift=+0 applied=+0 border=False in_ref_palette=True
+front_f5: width=72 height=70 colours=11 red=4 glint=0 eye_touch_transparency=0 bottom=160 required_shift=+0 applied=+0 border=False in_ref_palette=True
+front column1 vs ref: 72x70 vs 72x70; exact colour share over opaque union, feet aligned=0.6572
+front mirror silhouette IoU: 0.985,0.942,0.921,0.941,0.943,0.979; exact-colour: 0.795,0.411,0.440,0.427,0.441,0.771
+side: factor 0.3931297710; column1 raw 262x180; target 103x67; fixed cell anchor (37,73).
+side_f0: width=103 height=71 colours=11 red=4 glint=0 eye_touch_transparency=0 bottom=160 required_shift=+0 applied=+0 border=False in_ref_palette=True
+side_f1: width=96 height=67 colours=10 red=0 glint=0 eye_touch_transparency=0 bottom=160 required_shift=+1 applied=+1 border=False in_ref_palette=True
+side_f2: width=109 height=65 colours=11 red=3 glint=0 eye_touch_transparency=0 bottom=160 required_shift=+0 applied=+0 border=False in_ref_palette=True
+side_f3: width=101 height=73 colours=11 red=2 glint=0 eye_touch_transparency=0 bottom=160 required_shift=+0 applied=+0 border=False in_ref_palette=True
+side_f4: width=100 height=73 colours=11 red=5 glint=0 eye_touch_transparency=0 bottom=160 required_shift=+0 applied=+0 border=False in_ref_palette=True
+side_f5: width=102 height=70 colours=11 red=2 glint=0 eye_touch_transparency=0 bottom=160 required_shift=+1 applied=+1 border=False in_ref_palette=True
+side column1 vs ref: 103x71 vs 103x67; exact colour share over opaque union, feet aligned=0.4488
+back: factor 0.2993820797; column1 raw 225x252; target 66x77; fixed cell anchor (52,73).
+back_f0: width=67 height=75 colours=10 red=0 glint=0 eye_touch_transparency=0 bottom=160 required_shift=+0 applied=+0 border=False in_ref_palette=True
+back_f1: width=69 height=69 colours=10 red=0 glint=0 eye_touch_transparency=0 bottom=160 required_shift=+0 applied=+0 border=False in_ref_palette=True
+back_f2: width=70 height=69 colours=10 red=0 glint=0 eye_touch_transparency=0 bottom=160 required_shift=+0 applied=+0 border=False in_ref_palette=True
+back_f3: width=69 height=77 colours=10 red=0 glint=0 eye_touch_transparency=0 bottom=160 required_shift=+0 applied=+0 border=False in_ref_palette=True
+back_f4: width=68 height=76 colours=10 red=0 glint=0 eye_touch_transparency=0 bottom=160 required_shift=+0 applied=+0 border=False in_ref_palette=True
+back_f5: width=68 height=75 colours=10 red=0 glint=0 eye_touch_transparency=0 bottom=160 required_shift=+0 applied=+0 border=False in_ref_palette=True
+back column1 vs ref: 67x75 vs 66x77; exact colour share over opaque union, feet aligned=0.4372
+back mirror silhouette IoU: 0.984,0.945,0.906,0.946,0.946,0.985; exact-colour: 0.827,0.709,0.669,0.706,0.721,0.829
+Side row faces right: YES (visual review, horn/head on right in every frame).
+Ground shifts >3px: none; canvas border failures: none
+Palette edge audit hex:total/rim/share (8-neighbour rim):
+#141218: 2631/151/0.0574
+#211E27: 6163/672/0.1090
+#3D3A44: 6700/1438/0.2146
+#58555E: 6136/1033/0.1684
+#7A4A06: 6753/572/0.0847
+#9D9BA2: 5804/322/0.0555
+#D18A0A: 12731/937/0.0736
+#D6D6DC: 1122/262/0.2335
+#FF3A2A: 24/0/0.0000
+#FFCF1F: 16807/601/0.0358
+#FFE6D8: 0/0/0.0000
+#FFF4A8: 6765/952/0.1407
+Top5 share=0.6946; lone same-colour pixels=0.0079; magenta/plum absent from output palette. Dark frame retained from approved palette.

@@ -1,0 +1,130 @@
+{
+ "pass_": 1,
+ "pitch_deg": 12.0,
+ "texel_m": 0.02,
+ "triangles": 8224,
+ "voxels": 178322,
+ "size_m": {
+  "width": 1.44,
+  "height": 1.34,
+  "length": 2.08
+ },
+ "palette": [
+  "211e27",
+  "3d3a44",
+  "d18a0a",
+  "7a4a06",
+  "ffcf1f",
+  "fff4a8",
+  "58555e",
+  "9d9ba2",
+  "d6d6dc",
+  "141218",
+  "ff3a2a",
+  "ffe6d8"
+ ],
+ "shares": {
+  "hump": [
+   0.0,
+   0.061,
+   0.543,
+   0.396
+  ],
+  "rear": [
+   0.068,
+   0.476,
+   0.422,
+   0.035
+  ],
+  "pauldron": [
+   0.103,
+   0.319,
+   0.394,
+   0.184
+  ],
+  "head": [
+   0.188,
+   0.266,
+   0.404,
+   0.141
+  ],
+  "boot": [
+   0.191,
+   0.232,
+   0.575,
+   0.001
+  ],
+  "tail": [
+   0.241,
+   0.364,
+   0.218,
+   0.177
+  ],
+  "sole": [
+   0.479,
+   0.44,
+   0.081
+  ],
+  "disc": [
+   0.231,
+   0.751,
+   0.017
+  ],
+  "horn": [
+   0.304,
+   0.32,
+   0.376
+  ],
+  "jaw": [
+   0.626,
+   0.18,
+   0.194
+  ],
+  "core": [
+   0.51,
+   0.49
+  ]
+ },
+ "scores": {
+  "s": {
+   "silhouette_iou": 0.858,
+   "colour_match": 0.253,
+   "material_match": 0.669,
+   "axis_nudge": 0.0,
+   "height_px_model": 70,
+   "height_px_view": 70
+  },
+  "se": {
+   "silhouette_iou": 0.764,
+   "colour_match": 0.265,
+   "material_match": 0.658,
+   "axis_nudge": 7.0,
+   "height_px_model": 75,
+   "height_px_view": 70
+  },
+  "e": {
+   "silhouette_iou": 0.817,
+   "colour_match": 0.337,
+   "material_match": 0.655,
+   "axis_nudge": 1.0,
+   "height_px_model": 76,
+   "height_px_view": 67
+  },
+  "ne": {
+   "silhouette_iou": 0.64,
+   "colour_match": 0.249,
+   "material_match": 0.577,
+   "axis_nudge": 4.0,
+   "height_px_model": 81,
+   "height_px_view": 74
+  },
+  "n": {
+   "silhouette_iou": 0.743,
+   "colour_match": 0.268,
+   "material_match": 0.536,
+   "axis_nudge": 0.0,
+   "height_px_model": 80,
+   "height_px_view": 77
+  }
+ }
+}

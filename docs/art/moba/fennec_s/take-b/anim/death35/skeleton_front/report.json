@@ -1,0 +1,278 @@
+{
+ "main": {
+  "cleanup": {
+   "f1": {
+    "specks": 14,
+    "notches": 5,
+    "changed_by_cleanup": 19
+   },
+   "f2": {
+    "specks": 10,
+    "notches": 5,
+    "changed_by_cleanup": 15
+   },
+   "f3": {
+    "lifted": 1,
+    "specks": 23,
+    "spurs": 1,
+    "notches": 1,
+    "changed_by_cleanup": 821
+   },
+   "f4": {
+    "lifted": 1,
+    "specks": 12,
+    "notches": 3,
+    "changed_by_cleanup": 768
+   },
+   "f5": {
+    "lifted": 1,
+    "specks": 20,
+    "spurs": 1,
+    "notches": 3,
+    "changed_by_cleanup": 941
+   }
+  },
+  "rules": {
+   "f0": {
+    "binary_alpha": true,
+    "off_palette": 0,
+    "edge": false,
+    "holes": 0,
+    "pieces8": 1,
+    "lowest": 140,
+    "bbox": [
+     56,
+     78,
+     102,
+     140
+    ]
+   },
+   "f1": {
+    "binary_alpha": true,
+    "off_palette": 0,
+    "edge": false,
+    "holes": 0,
+    "pieces8": 1,
+    "lowest": 140,
+    "bbox": [
+     56,
+     74,
+     102,
+     140
+    ]
+   },
+   "f2": {
+    "binary_alpha": true,
+    "off_palette": 0,
+    "edge": false,
+    "holes": 0,
+    "pieces8": 1,
+    "lowest": 140,
+    "bbox": [
+     56,
+     78,
+     102,
+     140
+    ]
+   },
+   "f3": {
+    "binary_alpha": true,
+    "off_palette": 0,
+    "edge": false,
+    "holes": 0,
+    "pieces8": 1,
+    "lowest": 140,
+    "bbox": [
+     52,
+     86,
+     102,
+     140
+    ]
+   },
+   "f4": {
+    "binary_alpha": true,
+    "off_palette": 0,
+    "edge": false,
+    "holes": 0,
+    "pieces8": 1,
+    "lowest": 140,
+    "bbox": [
+     38,
+     91,
+     105,
+     140
+    ]
+   },
+   "f5": {
+    "binary_alpha": true,
+    "off_palette": 0,
+    "edge": false,
+    "holes": 0,
+    "pieces8": 1,
+    "lowest": 140,
+    "bbox": [
+     30,
+     102,
+     111,
+     140
+    ]
+   },
+   "f6": {
+    "binary_alpha": true,
+    "off_palette": 0,
+    "edge": false,
+    "holes": 0,
+    "pieces8": 1,
+    "lowest": 140,
+    "bbox": [
+     30,
+     102,
+     111,
+     140
+    ]
+   }
+  },
+  "all_pass": true,
+  "f0_is_still": true,
+  "f5_f6_alpha_same": true,
+  "f6_differs_only_at_eyes": true
+ },
+ "alt": {
+  "cleanup": {
+   "f1": {
+    "specks": 14,
+    "notches": 5,
+    "changed_by_cleanup": 19
+   },
+   "f2": {
+    "specks": 10,
+    "notches": 5,
+    "changed_by_cleanup": 15
+   },
+   "f3": {
+    "lifted": 1,
+    "specks": 23,
+    "spurs": 1,
+    "notches": 1,
+    "changed_by_cleanup": 821
+   },
+   "f4": {
+    "lifted": 1,
+    "specks": 12,
+    "notches": 3,
+    "changed_by_cleanup": 768
+   },
+   "f5": {
+    "lifted": 1,
+    "specks": 23,
+    "spurs": 1,
+    "notches": 1,
+    "changed_by_cleanup": 909
+   }
+  },
+  "rules": {
+   "f0": {
+    "binary_alpha": true,
+    "off_palette": 0,
+    "edge": false,
+    "holes": 0,
+    "pieces8": 1,
+    "lowest": 140,
+    "bbox": [
+     56,
+     78,
+     102,
+     140
+    ]
+   },
+   "f1": {
+    "binary_alpha": true,
+    "off_palette": 0,
+    "edge": false,
+    "holes": 0,
+    "pieces8": 1,
+    "lowest": 140,
+    "bbox": [
+     56,
+     74,
+     102,
+     140
+    ]
+   },
+   "f2": {
+    "binary_alpha": true,
+    "off_palette": 0,
+    "edge": false,
+    "holes": 0,
+    "pieces8": 1,
+    "lowest": 140,
+    "bbox": [
+     56,
+     78,
+     102,
+     140
+    ]
+   },
+   "f3": {
+    "binary_alpha": true,
+    "off_palette": 0,
+    "edge": false,
+    "holes": 0,
+    "pieces8": 1,
+    "lowest": 140,
+    "bbox": [
+     52,
+     86,
+     102,
+     140
+    ]
+   },
+   "f4": {
+    "binary_alpha": true,
+    "off_palette": 0,
+    "edge": false,
+    "holes": 0,
+    "pieces8": 1,
+    "lowest": 140,
+    "bbox": [
+     38,
+     91,
+     105,
+     140
+    ]
+   },
+   "f5": {
+    "binary_alpha": true,
+    "off_palette": 0,
+    "edge": false,
+    "holes": 0,
+    "pieces8": 1,
+    "lowest": 140,
+    "bbox": [
+     32,
+     95,
+     111,
+     140
+    ]
+   },
+   "f6": {
+    "binary_alpha": true,
+    "off_palette": 0,
+    "edge": false,
+    "holes": 0,
+    "pieces8": 1,
+    "lowest": 140,
+    "bbox": [
+     32,
+     95,
+     111,
+     140
+    ]
+   }
+  },
+  "all_pass": true,
+  "f0_is_still": true,
+  "f5_f6_alpha_same": true,
+  "f6_differs_only_at_eyes": true
+ }
+}

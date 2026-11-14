@@ -1,0 +1,50 @@
+{
+ "folder": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\pangolin_m\\take-a\\cam35\\side2\\slices",
+ "fails": {
+  "e": [],
+  "ne": [
+   "files: missing"
+  ],
+  "n": [
+   "files: missing"
+  ],
+  "nw": [
+   "files: missing"
+  ],
+  "w": [],
+  "sw": [
+   "files: missing"
+  ],
+  "s": [
+   "files: missing"
+  ],
+  "se": [
+   "files: missing"
+  ]
+ },
+ "notes": {
+  "e": {
+   "h": 41,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 13
+  },
+  "w": {
+   "h": 41,
+   "feet": 159,
+   "palette": 1.0,
+   "colours": 13
+  },
+  "mirror e/w": 0.903
+ },
+ "fix": [],
+ "mirror_from": null,
+ "redo": [
+  "ne",
+  "n",
+  "nw",
+  "sw",
+  "s",
+  "se"
+ ]
+}

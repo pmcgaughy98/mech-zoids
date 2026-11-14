@@ -1,0 +1,59 @@
+You are redrawing pixel-art death frames for a game (codex-death-front-2026-11-05). Write only inside D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\death35\codex-death.
+Read anything under D:\dev\new-mech-rpg\docs\art\moba. Do not write anywhere else, do not touch assets, art or tools,
+do not write into anim\death35\frames, do not run build_death.py or check_death.py (they overwrite the live frames),
+and do not commit.
+
+The machine: the violet fennec fox mech with very large ears, seen from the front at a 35 degree camera. The approved
+still is refs\still_s.png (160x160, binary alpha, raw: no outline, the game adds one; lowest foot on row 140). Its 15
+colours: #141218 #211E27 #2E1A6E #3D3A44 #3FE8B0 #6A3CC8 #9D9BA2 #A46BFF #B8923A #C8FFF0 #D6D6DC #E0C8FF #F0D27A #F6FFFB #FFF4D6.
+
+Why: the live front death (anim\death35\frames\front_f0-6.png, copies in refs\pose_f0-5.png) has the motion Preston,
+the game's owner, wants: "Lets keep ours". Its art does not match the still: "It doesnt look like the originals in
+terms of quality, texture etc at all" and "make the art consistent ... to our original models art lighting etc."
+f1-f5 were drawn by a generator along a skeleton, then finished by script. Seen at 7x next to the still:
+- the still has a mottled lilac and grey head dome, stepped shading bands, segmented legs and crisp plates; the live
+  frames have smooth flat fills and rounder forms;
+- the light changes side from frame to frame (violet plate light angle: still 115 deg, live f1 125, f2 176, f3 -174, f4 57, f5 95);
+- ink #141218 is the still's 5.04% of the opaque pixels, the live frames f1 7.53%, f2 7.58%, f3 7.55%, f4 7.53%, f5 7.54%, and the extra sits as specks inside
+  plates and as scribbles inside the ears; f5 is washed in highlight lilac (#E0C8FF 7.2% against the still's
+  2.32%).
+Already tried and rejected, so do not repeat: relighting by rules (shade by distance to plate edges, surface normals
+from the silhouette: they reproduced only 52-63% of the still's own shading), Retro Diffusion (redraws the design,
+flattens the surface), and pasting the still's parts onto the frames (cut edges, seams, gaps).
+
+Job: redraw f1-f5 of the front death so each frame looks as if the still's artist drew it, in the same pose.
+- Pose: keep each live frame's pose, silhouette and placement. Target: the live frame's alpha. Report per frame the
+  IoU against it and the largest distance between the two outlines; aim for IoU 0.90 or more and 2 px or less, except
+  where the cleaner drawing needs a part line moved. The fall stays in place, lowest opaque row 140 in every frame.
+- Art: the still's surface. Light from the upper left as on the still, the same in every frame, turning with each
+  part as it tips; stepped shading bands on the violet plates; the still's highlight caps (#E0C8FF about 2.32%);
+  1 px ink part lines like the still's and ink near 5.04% (4 to 6.5%), never as specks inside a plate; whole gold
+  plates; segmented legs; the mottled dome; the ears keep their shape, inner colour and clean inner edge as they droop
+  and lie flat; the eyes half closed and glowing teal (#3FE8B0 #C8FFF0 #F6FFFB) until f6. Parts the pose shows and the
+  still hides (belly, far legs, underside of the tail) are drawn in the still's colours and shading.
+- f0 = refs\still_s.png byte for byte. f6 = your f5 with every eye pixel (#3FE8B0 #C8FFF0 #F6FFFB) set to #2E1A6E.
+- Timings 300, 100, 130, 140, 160, 180, 1400 ms; it does not loop.
+
+Method:
+- Generate exactly ONE image with the built-in image generation tool, attaching refs\still_s_6x.png then
+  refs\poses_f0-f5_6x.png (6 cells left to right, f0-f5, the union box (28, 72, 114, 143) at 6x on magenta; cell positions in
+  refs\coordinates.json). Ask for the same 6 cells in the same layout, each pose redrawn in the first image's art.
+  Write the prompt to prompts\death_front.txt first. Never make a second image or a redo; if the image is weak, finish
+  by hand from it and the still.
+- Each frame is one whole drawing: the generated cell scaled to the still's pixel scale (fit to the live frame's box),
+  snapped to the 15 colours, then cleaned and repainted pixel by pixel at native size, with the still beside it, until
+  the surface reads like the still's. Fix pose drift by redrawing pixels, never by pasting the still's parts.
+- Measure your frames against the still with the same numbers as refs\measure.json (colour shares, violet and gold
+  light angle, gold cluster size) and report them.
+
+Pass marks (checks.txt): 160x160; binary alpha; only the 15 colours; one 8-connected piece; no enclosed holes; no stray
+pixels; nothing touching the canvas edge; lowest opaque row 140; f0 equals the still; f6 = f5 with the eyes out; per
+frame: IoU and outline distance to the live pose, ink %, cap %, light angles, gold cluster size, eye pixel count.
+
+Output in D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\death35\codex-death: frames\front_f0-6.png; sheet_raw.png (the generated image, untouched); checks.txt;
+preview_front.gif (3x, sel-out on, the timings); board.png (the still leftmost, then the live row f0-f6 and your new
+row under it, sel-out on, 4x, on grey #5A6058). Sel-out: D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\selout_rhino.py,
+function selout (returns a tuple, [0] is the image), OUTLINE #141218. Also close_7x.png: the still, live f3, new f3,
+live f5, new f5, each cropped to itself, 7x, no outline, on grey. REPORT.txt under 40 lines: tokens used if known, the
+image call count, the numbers, and by eye: does each new frame look like the still's artist drew it while holding the
+live pose? Say plainly where it still falls short.

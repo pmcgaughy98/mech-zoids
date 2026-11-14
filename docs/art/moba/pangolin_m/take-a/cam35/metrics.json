@@ -1,0 +1,362 @@
+{
+  "approved": {
+    "s": {
+      "width": 45,
+      "height": 56,
+      "area": 1713,
+      "role_shares": {
+        "yellow": 0.5650904845300642,
+        "steel": 0.14068884997081144,
+        "charcoal frame": 0.2510215995329831,
+        "eye": 0.011675423234092236,
+        "dark accent": 0.03152364273204904
+      },
+      "eye_pixels": 20,
+      "eye_groups": [
+        10,
+        10
+      ],
+      "light_shares": {
+        "fff09a": 0.09982486865148861,
+        "e4e4ea": 0.04553415061295972
+      },
+      "p05": 31.287599999999998,
+      "p95": 236.97979999999998,
+      "dominant_share": 0.31406888499708113,
+      "dominant_colour": "ffc61a",
+      "lowest_row": 160,
+      "top_row": 105
+    },
+    "se": {
+      "width": 70,
+      "height": 54,
+      "area": 2386,
+      "role_shares": {
+        "yellow": 0.5792120704107293,
+        "steel": 0.11777032690695725,
+        "charcoal frame": 0.2820620284995809,
+        "eye": 0.005029337803855826,
+        "dark accent": 0.01592623637887678
+      },
+      "eye_pixels": 12,
+      "eye_groups": [
+        12
+      ],
+      "light_shares": {
+        "fff09a": 0.08968985750209556,
+        "e4e4ea": 0.028918692372170998
+      },
+      "p05": 31.287599999999998,
+      "p95": 236.97979999999998,
+      "dominant_share": 0.26655490360435874,
+      "dominant_colour": "ffc61a",
+      "lowest_row": 160,
+      "top_row": 107
+    },
+    "e": {
+      "width": 82,
+      "height": 43,
+      "area": 2101,
+      "role_shares": {
+        "yellow": 0.6496906235126131,
+        "steel": 0.08900523560209424,
+        "charcoal frame": 0.23798191337458352,
+        "eye": 0.005235602094240838,
+        "dark accent": 0.018086625416468348
+      },
+      "eye_pixels": 11,
+      "eye_groups": [
+        11
+      ],
+      "light_shares": {
+        "fff09a": 0.08757734412184674,
+        "e4e4ea": 0.018086625416468348
+      },
+      "p05": 31.287599999999998,
+      "p95": 236.97979999999998,
+      "dominant_share": 0.28891004283674443,
+      "dominant_colour": "ffc61a",
+      "lowest_row": 160,
+      "top_row": 118
+    },
+    "ne": {
+      "width": 67,
+      "height": 52,
+      "area": 2197,
+      "role_shares": {
+        "yellow": 0.7114246700045517,
+        "steel": 0.06144742831133364,
+        "charcoal frame": 0.20755575785161584,
+        "eye": 0.0004551661356395084,
+        "dark accent": 0.019116977696859355
+      },
+      "eye_pixels": 1,
+      "eye_groups": [
+        1
+      ],
+      "light_shares": {
+        "fff09a": 0.08056440600819299,
+        "e4e4ea": 0.0063723258989531175
+      },
+      "p05": 31.287599999999998,
+      "p95": 236.97979999999998,
+      "dominant_share": 0.2799271734182977,
+      "dominant_colour": "ffc61a",
+      "lowest_row": 160,
+      "top_row": 109
+    },
+    "n": {
+      "width": 45,
+      "height": 59,
+      "area": 1848,
+      "role_shares": {
+        "yellow": 0.7489177489177489,
+        "steel": 0.04383116883116883,
+        "charcoal frame": 0.18398268398268397,
+        "eye": 0.0,
+        "dark accent": 0.023268398268398268
+      },
+      "eye_pixels": 0,
+      "eye_groups": [],
+      "light_shares": {
+        "fff09a": 0.11958874458874459,
+        "e4e4ea": 0.0027056277056277055
+      },
+      "p05": 31.287599999999998,
+      "p95": 236.97979999999998,
+      "dominant_share": 0.24945887445887446,
+      "dominant_colour": "ffc61a",
+      "lowest_row": 160,
+      "top_row": 102
+    }
+  },
+  "new": {
+    "s": {
+      "width": 45,
+      "height": 70,
+      "area": 2110,
+      "role_shares": {
+        "yellow": 0.6042654028436019,
+        "steel": 0.2127962085308057,
+        "charcoal frame": 0.13981042654028436,
+        "eye": 0.010900473933649289,
+        "dark accent": 0.03222748815165877
+      },
+      "eye_pixels": 23,
+      "eye_groups": [
+        10,
+        10,
+        2,
+        1
+      ],
+      "light_shares": {
+        "fff09a": 0.12559241706161137,
+        "e4e4ea": 0.04028436018957346
+      },
+      "p05": 31.287599999999998,
+      "p95": 236.97979999999998,
+      "dominant_share": 0.2938388625592417,
+      "dominant_colour": "ffc61a",
+      "lowest_row": 160,
+      "top_row": 91
+    },
+    "se": {
+      "width": 64,
+      "height": 61,
+      "area": 2360,
+      "role_shares": {
+        "yellow": 0.6114406779661017,
+        "steel": 0.19533898305084746,
+        "charcoal frame": 0.17033898305084746,
+        "eye": 0.006779661016949152,
+        "dark accent": 0.016101694915254237
+      },
+      "eye_pixels": 16,
+      "eye_groups": [
+        12,
+        2,
+        1,
+        1
+      ],
+      "light_shares": {
+        "fff09a": 0.13516949152542374,
+        "e4e4ea": 0.03389830508474576
+      },
+      "p05": 31.287599999999998,
+      "p95": 236.97979999999998,
+      "dominant_share": 0.2830508474576271,
+      "dominant_colour": "ffc61a",
+      "lowest_row": 160,
+      "top_row": 100
+    },
+    "e": {
+      "width": 78,
+      "height": 42,
+      "area": 1965,
+      "role_shares": {
+        "yellow": 0.6824427480916031,
+        "steel": 0.14249363867684478,
+        "charcoal frame": 0.15318066157760815,
+        "eye": 0.004071246819338422,
+        "dark accent": 0.017811704834605598
+      },
+      "eye_pixels": 8,
+      "eye_groups": [
+        8
+      ],
+      "light_shares": {
+        "fff09a": 0.1475826972010178,
+        "e4e4ea": 0.015267175572519083
+      },
+      "p05": 31.287599999999998,
+      "p95": 236.97979999999998,
+      "dominant_share": 0.2768447837150127,
+      "dominant_colour": "ffc61a",
+      "lowest_row": 160,
+      "top_row": 119
+    },
+    "ne": {
+      "width": 69,
+      "height": 60,
+      "area": 2372,
+      "role_shares": {
+        "yellow": 0.7588532883642496,
+        "steel": 0.0893760539629005,
+        "charcoal frame": 0.13195615514333894,
+        "eye": 0.0008431703204047217,
+        "dark accent": 0.01897133220910624
+      },
+      "eye_pixels": 2,
+      "eye_groups": [
+        2
+      ],
+      "light_shares": {
+        "fff09a": 0.1412310286677909,
+        "e4e4ea": 0.003372681281618887
+      },
+      "p05": 31.287599999999998,
+      "p95": 236.97979999999998,
+      "dominant_share": 0.327150084317032,
+      "dominant_colour": "ffc61a",
+      "lowest_row": 160,
+      "top_row": 101
+    },
+    "n": {
+      "width": 47,
+      "height": 69,
+      "area": 2226,
+      "role_shares": {
+        "yellow": 0.7654986522911051,
+        "steel": 0.07861635220125786,
+        "charcoal frame": 0.132973944294699,
+        "eye": 0.0,
+        "dark accent": 0.022911051212938006
+      },
+      "eye_pixels": 0,
+      "eye_groups": [],
+      "light_shares": {
+        "fff09a": 0.15813117699910154,
+        "e4e4ea": 0.004043126684636119
+      },
+      "p05": 31.287599999999998,
+      "p95": 236.97979999999998,
+      "dominant_share": 0.2942497753818509,
+      "dominant_colour": "ffc61a",
+      "lowest_row": 160,
+      "top_row": 92
+    },
+    "nw": {
+      "width": 69,
+      "height": 60,
+      "area": 2359,
+      "role_shares": {
+        "yellow": 0.7545570156846121,
+        "steel": 0.0953793980500212,
+        "charcoal frame": 0.1301398897838067,
+        "eye": 0.000847816871555744,
+        "dark accent": 0.01907587961000424
+      },
+      "eye_pixels": 2,
+      "eye_groups": [
+        2
+      ],
+      "light_shares": {
+        "fff09a": 0.1394658753709199,
+        "e4e4ea": 0.002967359050445104
+      },
+      "p05": 31.287599999999998,
+      "p95": 236.97979999999998,
+      "dominant_share": 0.32428995337007205,
+      "dominant_colour": "ffc61a",
+      "lowest_row": 160,
+      "top_row": 101
+    },
+    "w": {
+      "width": 78,
+      "height": 42,
+      "area": 1964,
+      "role_shares": {
+        "yellow": 0.6868635437881874,
+        "steel": 0.13034623217922606,
+        "charcoal frame": 0.16089613034623218,
+        "eye": 0.004073319755600814,
+        "dark accent": 0.017820773930753563
+      },
+      "eye_pixels": 8,
+      "eye_groups": [
+        8
+      ],
+      "light_shares": {
+        "fff09a": 0.14867617107942974,
+        "e4e4ea": 0.016293279022403257
+      },
+      "p05": 31.287599999999998,
+      "p95": 236.97979999999998,
+      "dominant_share": 0.2739307535641548,
+      "dominant_colour": "ffc61a",
+      "lowest_row": 160,
+      "top_row": 119
+    },
+    "sw": {
+      "width": 64,
+      "height": 61,
+      "area": 2364,
+      "role_shares": {
+        "yellow": 0.6087140439932318,
+        "steel": 0.1865482233502538,
+        "charcoal frame": 0.18274111675126903,
+        "eye": 0.005922165820642978,
+        "dark accent": 0.016074450084602367
+      },
+      "eye_pixels": 14,
+      "eye_groups": [
+        12,
+        2
+      ],
+      "light_shares": {
+        "fff09a": 0.13324873096446702,
+        "e4e4ea": 0.03680203045685279
+      },
+      "p05": 31.287599999999998,
+      "p95": 236.97979999999998,
+      "dominant_share": 0.27284263959390864,
+      "dominant_colour": "ffc61a",
+      "lowest_row": 160,
+      "top_row": 100
+    }
+  },
+  "border_contact": {
+    "s": false,
+    "se": false,
+    "e": false,
+    "ne": false,
+    "n": false,
+    "nw": false,
+    "w": false,
+    "sw": false
+  },
+  "top_five_share": 0.7749435665914222,
+  "colours": 13,
+  "height_spread": 0.2732558139534884,
+  "se_ne": 1.0166666666666666
+}

@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "777fb79ca47e91e6b17151326612aeaa5dd5d2da7f96ee99a5f8751c577a1424",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.1152815013404827,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "hippo_front.png",
+      "source_box": [
+        112,
+        48,
+        531,
+        461
+      ],
+      "source_dimensions": [
+        419,
+        413
+      ],
+      "output_box": [
+        278,
+        475,
+        745,
+        936
+      ]
+    },
+    "left": {
+      "file": "hippo_left.png",
+      "source_box": [
+        682,
+        55,
+        1417,
+        465
+      ],
+      "source_dimensions": [
+        735,
+        410
+      ],
+      "output_box": [
+        102,
+        479,
+        922,
+        936
+      ]
+    },
+    "back": {
+      "file": "hippo_back.png",
+      "source_box": [
+        113,
+        550,
+        526,
+        965
+      ],
+      "source_dimensions": [
+        413,
+        415
+      ],
+      "output_box": [
+        281,
+        473,
+        742,
+        936
+      ]
+    },
+    "right": {
+      "file": "hippo_right.png",
+      "source_box": [
+        669,
+        550,
+        1415,
+        967
+      ],
+      "source_dimensions": [
+        746,
+        417
+      ],
+      "output_box": [
+        96,
+        471,
+        928,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.016786570743405275
+}

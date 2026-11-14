@@ -1,0 +1,20 @@
+{
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_bombardier_beetle_remeshed_25k_20261108_character.glb",
+  "source_sha256": "4ab1d8eac7802448813f95edc29e3be959c075268d4b6a28ca149897d3fcb0a1",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\bombardier_beetle_m\\input-review-2026-11-11\\beetle-rigged-local-cleanup-STAGING.glb",
+  "output_sha256": "d496c7d7dc1d7145026515a49e96883cf905327c78f5e11847e5cec123713bc3",
+  "removed_triangle_ids": [
+    2431,
+    8331,
+    20712,
+    23244
+  ],
+  "before_triangles": 25642,
+  "after_triangles": 25638,
+  "before_boundary_edges": 8,
+  "before_over_shared_edges": 4,
+  "after_boundary_edges": 0,
+  "after_over_shared_edges": 0,
+  "all_original_vertex_attributes_and_rig_bytes_unchanged": true,
+  "anatomy": "Still eight walking legs. Awaiting user selection before six-leg correction. Not promoted to Workshop."
+}

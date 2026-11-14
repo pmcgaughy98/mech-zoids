@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "accfcf0272d5972fad13569faaf25887c87744f3079a7732e20844964ab9a7ef",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.1167785234899328,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "spider_front.png",
+      "source_box": [
+        12,
+        13,
+        757,
+        472
+      ],
+      "source_dimensions": [
+        745,
+        459
+      ],
+      "output_box": [
+        96,
+        423,
+        928,
+        936
+      ]
+    },
+    "left": {
+      "file": "spider_left.png",
+      "source_box": [
+        846,
+        21,
+        1495,
+        472
+      ],
+      "source_dimensions": [
+        649,
+        451
+      ],
+      "output_box": [
+        149,
+        432,
+        874,
+        936
+      ]
+    },
+    "back": {
+      "file": "spider_back.png",
+      "source_box": [
+        15,
+        539,
+        759,
+        1001
+      ],
+      "source_dimensions": [
+        744,
+        462
+      ],
+      "output_box": [
+        96,
+        420,
+        927,
+        936
+      ]
+    },
+    "right": {
+      "file": "spider_right.png",
+      "source_box": [
+        810,
+        546,
+        1476,
+        999
+      ],
+      "source_dimensions": [
+        666,
+        453
+      ],
+      "output_box": [
+        140,
+        430,
+        884,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.023809523809523808
+}

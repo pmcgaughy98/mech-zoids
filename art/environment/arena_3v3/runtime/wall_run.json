@@ -1,0 +1,48 @@
+{
+  "asset": "wall_run",
+  "raw_sha256": "2a870e904f28e2f0b1529942aaa44ef1bedfde1762a80b877a9c60fa9b963462",
+  "runtime_sha256": "0e10f4f1ef7b4f8c566fd600fcf33057131144a589dabd7c80373099a1515888",
+  "raw_triangles": 2768,
+  "runtime_triangles": 900,
+  "materials": 1,
+  "images": [
+    {
+      "name": "Image_0",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_1",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_2",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_3",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "size_godot_xyz_m": [
+    2.0,
+    3.0,
+    1.2
+  ],
+  "turned_deg": 0,
+  "pivot": "bottom centre",
+  "up": "+Y",
+  "collision": "none: the blockout keeps its own bodies and nav mesh",
+  "provider_metadata": "../source/wall_run/refine-status.json"
+}

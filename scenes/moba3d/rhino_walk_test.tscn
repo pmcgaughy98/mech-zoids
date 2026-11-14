@@ -1,0 +1,127 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/moba3d/directional_sprite_3d.gd" id="1_dir"]
+[ext_resource type="Script" path="res://scripts/moba3d/chase_camera_3d.gd" id="2_cam"]
+[ext_resource type="Script" path="res://scripts/moba3d/machine_test_player.gd" id="3_player"]
+[ext_resource type="SpriteFrames" path="res://art/machines/rhino/rhino_frames.tres" id="4_frames"]
+[ext_resource type="Texture2D" path="res://art/field/moba3d/grass_tile.png" id="5_grass"]
+[ext_resource type="Texture2D" path="res://art/field/moba3d/stone_tile.png" id="6_stone"]
+[ext_resource type="Texture2D" path="res://art/field/moba3d/ring.png" id="7_ring"]
+[ext_resource type="Texture2D" path="res://art/field/moba3d/shadow.png" id="8_shadow"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sky"]
+sky_top_color = Color(0.33, 0.52, 0.84, 1)
+sky_horizon_color = Color(0.74, 0.82, 0.9, 1)
+ground_bottom_color = Color(0.28, 0.36, 0.25, 1)
+ground_horizon_color = Color(0.74, 0.82, 0.9, 1)
+
+[sub_resource type="Sky" id="Sky_main"]
+sky_material = SubResource("ProceduralSkyMaterial_sky")
+
+[sub_resource type="Environment" id="Environment_main"]
+background_mode = 2
+sky = SubResource("Sky_main")
+ambient_light_source = 3
+tonemap_mode = 0
+fog_enabled = true
+fog_light_color = Color(0.74, 0.82, 0.9, 1)
+fog_density = 0.0035
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grass"]
+albedo_texture = ExtResource("5_grass")
+uv1_scale = Vector3(1.5625, 1.5625, 1.5625)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ground"]
+material = SubResource("StandardMaterial3D_grass")
+size = Vector2(60, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_stone"]
+albedo_texture = ExtResource("6_stone")
+uv1_scale = Vector3(1.5625, 1.5625, 1.5625)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_pillar"]
+material = SubResource("StandardMaterial3D_stone")
+size = Vector3(1.28, 3.2, 1.28)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ring"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("7_ring")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ring"]
+material = SubResource("StandardMaterial3D_ring")
+size = Vector2(3.2, 3.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shadow"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("8_shadow")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_shadow"]
+material = SubResource("StandardMaterial3D_shadow")
+size = Vector2(2.8, 1.4)
+
+[node name="RhinoWalkTest" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_main")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, 0, -0.5, -0.383, 0.643, -0.663, 0.321, 0.766, 0.557, 0, 10, 0)
+shadow_enabled = true
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_ground")
+
+[node name="Pillars" type="Node3D" parent="."]
+
+[node name="Pillar1" type="MeshInstance3D" parent="Pillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.6, -8)
+mesh = SubResource("BoxMesh_pillar")
+
+[node name="Pillar2" type="MeshInstance3D" parent="Pillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.6, -8)
+mesh = SubResource("BoxMesh_pillar")
+
+[node name="Pillar3" type="MeshInstance3D" parent="Pillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.6, -16)
+mesh = SubResource("BoxMesh_pillar")
+
+[node name="Pillar4" type="MeshInstance3D" parent="Pillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.6, -16)
+mesh = SubResource("BoxMesh_pillar")
+
+[node name="Pillar5" type="MeshInstance3D" parent="Pillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1.6, 2)
+mesh = SubResource("BoxMesh_pillar")
+
+[node name="Player" type="Node3D" parent="."]
+script = ExtResource("3_player")
+camera_path = NodePath("../Camera")
+
+[node name="Shadow" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+mesh = SubResource("PlaneMesh_shadow")
+
+[node name="Ring" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+mesh = SubResource("PlaneMesh_ring")
+
+[node name="Sprite" type="AnimatedSprite3D" parent="Player"]
+sprite_frames = ExtResource("4_frames")
+animation = &"idle_n"
+script = ExtResource("1_dir")
+
+[node name="Camera" type="Camera3D" parent="."]
+current = true
+fov = 60.0
+script = ExtResource("2_cam")
+target_path = NodePath("../Player")

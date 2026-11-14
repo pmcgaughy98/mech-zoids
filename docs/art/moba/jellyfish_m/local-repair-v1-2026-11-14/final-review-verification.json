@@ -1,0 +1,96 @@
+{
+  "passed": true,
+  "engine": "Summer Engine 0.7.0 / Compatibility",
+  "tested_sha256": "7e589f0e4d26f67b1b0226044f6deaad315181b12f0c8b5eee2c0675c254a33f",
+  "triangles": 25912,
+  "joint_count": 49,
+  "native_blender_joint_diagnostics": 49,
+  "maximum_measured_seam_gap_m": 0.0,
+  "all_original_vertex_attribute_and_skin_rows_preserved": true,
+  "all_healthy_source_faces_preserved": 25912,
+  "retained_tentacles": 12,
+  "boundary_edges": 0,
+  "over_shared_edges": 0,
+  "collapsed_triangles": 0,
+  "runtime_scope": "Isolated Summer scene: three native GLB versions, both rigged versions at 49 joints, seven rendered runtime views inspected.",
+  "runtime_method": "Summer MCP batch editor saved the fixture. Its interrupted capture still produced seven frames; a separate installed Summer executable run then completed the same scene and logged the final PASS without errors.",
+  "runtime_log": "summer-runtime.log",
+  "frames": [
+    {
+      "file": "summer-review/comparison-front.png",
+      "sha256": "58ded176b5328137574bc30782f64864f9eb3850a2c33c7ddd4f41e88decb899",
+      "resolution": [
+        1600,
+        900
+      ],
+      "visually_inspected": true
+    },
+    {
+      "file": "summer-review/comparison-back.png",
+      "sha256": "33497dffc4f251ca4046dc8a8055d0e7440454931bdadf91d84c582b70a01506",
+      "resolution": [
+        1600,
+        900
+      ],
+      "visually_inspected": true
+    },
+    {
+      "file": "summer-review/repaired-front.png",
+      "sha256": "4db41e453c7a9d9e77ba8fa052a0f0f23d2c1f75ee1531c8296f23585c220809",
+      "resolution": [
+        1600,
+        900
+      ],
+      "visually_inspected": true
+    },
+    {
+      "file": "summer-review/repaired-back.png",
+      "sha256": "b58383e66327eb6887ceb2b8d20791cfd9c4cc97ef0faf21b0ac3a5391e60030",
+      "resolution": [
+        1600,
+        900
+      ],
+      "visually_inspected": true
+    },
+    {
+      "file": "summer-review/repaired-left.png",
+      "sha256": "77ed2a4746263cbd0fecc0be06fe33463823fe45ce33894c46d66a6ca5672709",
+      "resolution": [
+        1600,
+        900
+      ],
+      "visually_inspected": true
+    },
+    {
+      "file": "summer-review/repaired-right.png",
+      "sha256": "b39995b079d0dbddb4f3ad1c57d6dc371cd29039d1bb8a87be99455470a1e9c9",
+      "resolution": [
+        1600,
+        900
+      ],
+      "visually_inspected": true
+    },
+    {
+      "file": "summer-review/repaired-underside.png",
+      "sha256": "f7a94a93a8fb28b1a6b73c776ec26b572fb8494b4aa2c03e7efc138aa181cfcb",
+      "resolution": [
+        1600,
+        900
+      ],
+      "visually_inspected": true
+    }
+  ],
+  "native_godot_workshop_status": "pending; other Godot task remains active, no native Workshop/ChaseCamera3D pass claimed",
+  "limitations": [
+    "Existing baked dome appearance does not reproduce the clear reference window and internal canisters. Existing grouped rig controls do not establish independent articulation of every tentacle. No authored animation clips.",
+    "Source archive exact historical Meshy-upload identity not independently verified.",
+    "No gameplay/map replacement or authored animation clips."
+  ],
+  "original_reference_sha256": {
+    "front": "0b635823062e5a3cf76d098caf2b2655dd2ff975cf70fa13699754ed95b12a6a",
+    "left": "ed6cfad425ee9a052335a769fe2b3507efa0a85b29740eacb4a049d8170f2972",
+    "back": "dd27a859428e239e2e102e467c340c65ba923291045fcf2c6934bc5d99beaa4e",
+    "right": "f19722ef7d334dbc8780833a16c6423f48a5e32ac8e1687e6f850cb5787c00e7"
+  },
+  "intact_archive_sha256": "ee41e3e07e10ce85e1750ca9324a3de7fa380bb5cb5301a81203d5d2e8473268"
+}

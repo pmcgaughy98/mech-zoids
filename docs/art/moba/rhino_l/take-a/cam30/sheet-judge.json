@@ -1,0 +1,90 @@
+{
+ "folder": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\cam30\\slices",
+ "fails": {
+  "e": [
+   "height: 71 px, the set's median 87"
+  ],
+  "ne": [
+   "height: 104 px, the set's median 87"
+  ],
+  "n": [
+   "height: 107 px, the set's median 87"
+  ],
+  "nw": [
+   "height: 104 px, the set's median 87"
+  ],
+  "w": [
+   "height: 71 px, the set's median 87"
+  ],
+  "sw": [],
+  "s": [],
+  "se": []
+ },
+ "notes": {
+  "e": {
+   "h": 71,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 12
+  },
+  "ne": {
+   "h": 104,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 10
+  },
+  "n": {
+   "h": 107,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 10
+  },
+  "nw": {
+   "h": 104,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 10
+  },
+  "w": {
+   "h": 71,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 12
+  },
+  "sw": {
+   "h": 87,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 11
+  },
+  "s": {
+   "h": 87,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 11
+  },
+  "se": {
+   "h": 87,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 11
+  },
+  "mirror e/w": 0.956,
+  "mirror ne/nw": 0.951,
+  "mirror se/sw": 0.996,
+  "same n/s": 0.221,
+  "even n/s": [
+   0.997,
+   0.96
+  ]
+ },
+ "fix": [],
+ "mirror_from": null,
+ "redo": [
+  "e",
+  "ne",
+  "n",
+  "nw",
+  "w"
+ ]
+}

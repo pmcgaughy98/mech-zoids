@@ -1,0 +1,44 @@
+from pathlib import Path
+from PIL import Image
+import json, hashlib
+import numpy as np
+root=Path(__file__).parent
+out=root/'walk'
+meta=json.loads((root/'generation.json').read_text())['walk']
+assert hashlib.sha256((out/'sheet_raw.png').read_bytes()).hexdigest()==meta['sha256']
+for name in ['front','side','back']:
+    with Image.open(out/f'preview_{name}.gif') as im:
+        assert im.size==(576,576) and im.n_frames==6
+        for k in range(6):
+            im.seek(k)
+            assert im.info['duration']==130 and im.info['loop']==0
+    for k in range(7):
+        im=Image.open(out/'frames'/f'{name}_f{k}.png')
+        assert im.size==(192,192)
+        a=np.array(im); assert set(np.unique(a[:,:,3])).issubset({0,255})
+        m=a[:,:,3]>0
+        assert not (m[0].any() or m[-1].any() or m[:,0].any() or m[:,-1].any())
+report='''Walk B: generated once, finished and checked; FAIL for animation approval. Tokens used: unavailable.
+Raw image: 1914x822; SHA256 4ccd96e61222e43a1942ac8fe13305e96252927b5eb5d8a08d3310a1c47d6f56.
+Grid: clean 3x7 after detecting actual empty gutters near equal-cell divisions; 21 separate rhinos.
+Row factors front/side/back: 0.3295410218 / 0.4023437500 / 0.3082573996.
+Column1 front: 73x69 vs 72x70 reference; exact colour share over aligned opaque union 0.5648.
+Column1 side: 103x69 vs 103x67 reference; exact colour share 0.4723.
+Column1 back: 68x74 vs 66x77 reference; exact colour share 0.3048.
+All 21 frames: binary alpha, reference union palette only, zero eye-colour pixels touching transparency, no canvas border touches.
+Red pixels f0-f6: front 0,2,2,0,0,1,0; side 1,0,2,0,0,0,0; back all 0. Glint pixels: all 0.
+Ground: 18/21 at y160; side_f2 y153 (+7 needed), back_f2 and back_f5 y154 (+6 needed); beyond permitted 3px, left uncorrected.
+Front mirror colour similarity f0-f6: .761,.497,.568,.618,.501,.493,.484; silhouette IoU .985,.867,.850,.963,.894,.897,.932.
+Back mirror colour similarity f0-f6: .742,.588,.656,.849,.567,.733,.818; silhouette IoU .947,.911,.921,.980,.907,.955,.966.
+By eye, identity: recognizably the reference rhino in all rows: yellow polygon plates/dark frame, grey disc joints/feet, two-tone horn and tail stub.
+Identity limitations: generated proportions and plate shapes drift; finishing loses the red eye in many frames and all glints. Not an exact reference match.
+By eye, move: front/back now visibly lift feet and bob; diagonal pairs do NOT consistently match column for column, especially reach f2/f5.
+By eye, cameras: front and back remain straight on; side faces right throughout.
+By eye, leg length: not consistent; back reach frames shorten the visible lower legs rather than clearly bending full-length legs. Side reach also reads airborne.
+By eye, timing: lift/plant beats broadly coincide, but front f5 repeats the f2 lifted side and rear f2/f5 lift both visible feet; fails matching gait.
+Deliverables: walk/frames (21 PNGs), walk/review.png at 3x nearest on #808080, three GIFs looping f1-f6 at verified 130ms each.
+Detailed per-frame dimensions/colours/eyes, palette rim audit and faults: walk/checks.txt; grid.json; generation.json. Approved refinish.py copied and adapted.
+No redo, installation, commits or source asset changes. All task writes are inside codex-walk-b (image tool also retains its default generated original).
+'''
+(root/'REPORT.txt').write_text(report)
+print(report)

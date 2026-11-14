@@ -1,0 +1,48 @@
+{
+  "asset": "rock_cold",
+  "raw_sha256": "20c7184e23d31731a920e2bed53ba570b195f3a96dcf0db3ec03d3daf869d7bb",
+  "runtime_sha256": "468be436bc0b92d484db87d3a1457a2ef4eb47965593cf5050d73b1105b5bbc5",
+  "raw_triangles": 6150,
+  "runtime_triangles": 2499,
+  "materials": 1,
+  "images": [
+    {
+      "name": "Image_0",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_1",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_2",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_3",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "size_godot_xyz_m": [
+    6.0,
+    3.0,
+    6.0
+  ],
+  "turned_deg": 0,
+  "pivot": "bottom centre",
+  "up": "+Y",
+  "collision": "none: the blockout keeps its own bodies and nav mesh",
+  "provider_metadata": "../source/rock_cold/refine-status.json"
+}

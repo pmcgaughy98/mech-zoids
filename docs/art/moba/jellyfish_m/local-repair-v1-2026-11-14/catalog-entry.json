@@ -1,0 +1,100 @@
+{
+  "id": "jellyfish",
+  "name": "Jellyfish",
+  "source_model": {
+    "path": "res://art/model_catalog/sources/jellyfish_front - Hunyuan 3D v3.1 Pro.glb",
+    "source": "D:\\user\\Downloads\\jellyfish_front - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "ee41e3e07e10ce85e1750ca9324a3de7fa380bb5cb5301a81203d5d2e8473268",
+    "bytes": 45161652
+  },
+  "display_model": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/jellyfish-rigged-local-repair-v1.glb",
+  "status": "Seven stray triangles removed; twelve tentacles retained. Original 49-joint rig, all skin weights and textures unchanged. Existing opaque baked dome remains.",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/jellyfish/front.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\jellyfish_front.png",
+      "sha256": "0b635823062e5a3cf76d098caf2b2655dd2ff975cf70fa13699754ed95b12a6a",
+      "bytes": 366257,
+      "project_matches": [
+        "docs/art/moba/jellyfish_m/take-a/white_views/jellyfish_front.png"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/jellyfish/left.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\jellyfish_left.png",
+      "sha256": "ed6cfad425ee9a052335a769fe2b3507efa0a85b29740eacb4a049d8170f2972",
+      "bytes": 348022,
+      "project_matches": [
+        "docs/art/moba/jellyfish_m/take-a/white_views/jellyfish_left.png"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/jellyfish/back.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\jellyfish_back.png",
+      "sha256": "dd27a859428e239e2e102e467c340c65ba923291045fcf2c6934bc5d99beaa4e",
+      "bytes": 367233,
+      "project_matches": [
+        "docs/art/moba/jellyfish_m/take-a/white_views/jellyfish_back.png"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/jellyfish/right.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\jellyfish_right.png",
+      "sha256": "f19722ef7d334dbc8780833a16c6423f48a5e32ac8e1687e6f850cb5787c00e7",
+      "bytes": 359216,
+      "project_matches": [
+        "docs/art/moba/jellyfish_m/take-a/white_views/jellyfish_right.png"
+      ]
+    }
+  },
+  "artist_workspace": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/jellyfish-rigged-local-repair-v1.blend",
+  "review_models": [
+    {
+      "label": "INTACT QUALITY ARCHIVE\nOriginal generated geometry",
+      "path": "res://art/model_catalog/sources/jellyfish_front - Hunyuan 3D v3.1 Pro.glb",
+      "display_scale": 3.2563774549988675
+    },
+    {
+      "label": "DOWNLOADED RIG\nBefore local triangle cleanup",
+      "path": "res://art/model_catalog/sources/Meshy_AI_jellyfish_remeshed_25k_20261108_character.glb",
+      "display_scale": 1.5294117647058825
+    },
+    {
+      "label": "LOCAL REPAIR\nSame 49-joint rig and skin",
+      "path": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/jellyfish-rigged-local-repair-v1.glb",
+      "display_scale": 1.5294117647058825
+    }
+  ],
+  "review_views": {
+    "front": {
+      "path": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/review-front.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "left": {
+      "path": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/review-left.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "back": {
+      "path": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/review-back.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "right": {
+      "path": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/review-right.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    }
+  },
+  "review_provenance": {
+    "date": "2026-11-14",
+    "report": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/repair-verification.json",
+    "independent_audit": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/independent-export-audit.json",
+    "joint_count": 49,
+    "rigged_input_sha256": "f36af9f26735370980e4c5e89e2a0ab3a04358f8193957ed8b52c281b808bf6c",
+    "repaired_sha256": "7e589f0e4d26f67b1b0226044f6deaad315181b12f0c8b5eee2c0675c254a33f",
+    "intact_pre_remesh_available": true,
+    "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+    "scope": "Remove seven verified single-triangle flaps. Retain all twelve tentacles, dome, rim, collars, cap and lights. Original vertex attributes, weights, 49-joint rig, rest/binds and textures remain exact. No remesh or rerig. All 25,912 healthy source faces retained. No gameplay replacement.",
+    "summer_runtime_report": "res://docs/art/moba/jellyfish_m/local-repair-v1-2026-11-14/summer-review-verification.json",
+    "native_workshop_check": "Pending; isolated Summer review passed."
+  }
+}

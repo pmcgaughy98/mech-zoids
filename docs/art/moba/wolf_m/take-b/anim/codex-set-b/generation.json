@@ -1,0 +1,54 @@
+{
+  "tool": "built-in image_gen",
+  "calls": 3,
+  "redos": 0,
+  "variations": 0,
+  "tokens": null,
+  "sheets": [
+    {
+      "move": "hamstring",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "36ea296991f3ea6c63fa174404b6a139517156272f1c4bb1a038f5ca3f398f7e",
+      "prompt": "prompts/hamstring.txt",
+      "references": [
+        "refs/s_6x.png",
+        "refs/e_6x.png",
+        "refs/n_6x.png"
+      ],
+      "image_calls": 1
+    },
+    {
+      "move": "howl",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "7bf30e3b9a32d8d98fcbe0a1b6fe1836df1f86267edf0d30502d24c912ea72ed",
+      "prompt": "prompts/howl.txt",
+      "references": [
+        "refs/s_6x.png",
+        "refs/e_6x.png",
+        "refs/n_6x.png"
+      ],
+      "image_calls": 1
+    },
+    {
+      "move": "death",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "4559854737ae5648f8bf9750e2dc08144805567c0466d13fcf7c5b245ed7f2b9",
+      "prompt": "prompts/death.txt",
+      "references": [
+        "refs/s_6x.png",
+        "refs/e_6x.png",
+        "refs/n_6x.png"
+      ],
+      "image_calls": 1
+    }
+  ]
+}

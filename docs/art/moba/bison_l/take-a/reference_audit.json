@@ -1,0 +1,103 @@
+{
+  "source": "sheet_raw.png",
+  "sha256": "dffe3fbc1e4515883e04609605d1d693e478a1815a0b7dd868b064a9ce8554f8",
+  "image_size": [
+    1254,
+    1254
+  ],
+  "method": "Four largest 8-connected components after magenta-family mask; no pixels changed.",
+  "views": {
+    "back": {
+      "component_box_in_sheet_xyxy": [
+        84,
+        693,
+        457,
+        1168
+      ],
+      "object_box_in_cell_xyxy": [
+        0,
+        0,
+        373,
+        475
+      ],
+      "width": 373,
+      "height": 475,
+      "estimated_body_pixels": 133510,
+      "raw_visible_rgb_count": 47649,
+      "top_16_rgb_share": 0.035053554040895815,
+      "touches_sheet_border": false,
+      "crosses_requested_vertical_cell_split": false
+    },
+    "front": {
+      "component_box_in_sheet_xyxy": [
+        83,
+        94,
+        467,
+        558
+      ],
+      "object_box_in_cell_xyxy": [
+        0,
+        0,
+        384,
+        464
+      ],
+      "width": 384,
+      "height": 464,
+      "estimated_body_pixels": 138742,
+      "raw_visible_rgb_count": 52851,
+      "top_16_rgb_share": 0.027684479105101554,
+      "touches_sheet_border": false,
+      "crosses_requested_vertical_cell_split": false
+    },
+    "left": {
+      "component_box_in_sheet_xyxy": [
+        554,
+        103,
+        1199,
+        556
+      ],
+      "object_box_in_cell_xyxy": [
+        0,
+        0,
+        645,
+        453
+      ],
+      "width": 645,
+      "height": 453,
+      "estimated_body_pixels": 182092,
+      "raw_visible_rgb_count": 60586,
+      "top_16_rgb_share": 0.02621751642027107,
+      "touches_sheet_border": false,
+      "crosses_requested_vertical_cell_split": true
+    },
+    "right": {
+      "component_box_in_sheet_xyxy": [
+        544,
+        701,
+        1192,
+        1165
+      ],
+      "object_box_in_cell_xyxy": [
+        0,
+        0,
+        648,
+        464
+      ],
+      "width": 648,
+      "height": 464,
+      "estimated_body_pixels": 186147,
+      "raw_visible_rgb_count": 61350,
+      "top_16_rgb_share": 0.025490606885955724,
+      "touches_sheet_border": false,
+      "crosses_requested_vertical_cell_split": true
+    }
+  },
+  "height_spread_fraction": 0.04631578947368421,
+  "not_a_finished_sprite": true,
+  "layout_issue": "Profiles cross the requested equal-cell split. Crop components, not equal quadrants.",
+  "limitations": [
+    "Colour-key measurements approximate the silhouette.",
+    "Bounding boxes do not prove matching 3D anatomy or camera projection.",
+    "Actual generation token usage and monetary cost are not exposed."
+  ]
+}

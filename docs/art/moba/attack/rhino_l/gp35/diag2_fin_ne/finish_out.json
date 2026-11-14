@@ -1,0 +1,120 @@
+{
+  "raw_sha256": "da136bce10ea695e595f093205beac192befa1c62cb866d74798975197d214e3",
+  "raw_size": [
+    1536,
+    1024
+  ],
+  "heads": {},
+  "median_factor": 0.325,
+  "actual_xy_scale": [
+    0.3248697916666667,
+    0.3251953125
+  ],
+  "finished_size": [
+    499,
+    333
+  ],
+  "rows": {
+    "se": {
+      "width": 99,
+      "height": 95,
+      "still_wh": [
+        85,
+        83
+      ]
+    },
+    "ne": {
+      "width": 100,
+      "height": 103,
+      "still_wh": [
+        83,
+        103
+      ]
+    }
+  },
+  "eye_restored": [
+    "se_f0 @(105,110) local cell",
+    "se_f1 @(108,93) local cell",
+    "se_f2 @(95,62) local cell"
+  ],
+  "discarded_tiny_alpha": {
+    "se0": 0,
+    "se1": 0,
+    "se2": 0,
+    "ne0": 0,
+    "ne1": 0,
+    "ne2": 0
+  },
+  "despeckle": {
+    "se0": {
+      "before": 334,
+      "after": 334,
+      "passes": 0
+    },
+    "se1": {
+      "before": 426,
+      "after": 426,
+      "passes": 0
+    },
+    "se2": {
+      "before": 331,
+      "after": 331,
+      "passes": 0
+    },
+    "ne0": {
+      "before": 333,
+      "after": 333,
+      "passes": 0
+    },
+    "ne1": {
+      "before": 334,
+      "after": 334,
+      "passes": 0
+    },
+    "ne2": {
+      "before": 302,
+      "after": 302,
+      "passes": 0
+    }
+  },
+  "ink": {
+    "se0": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08618581907090464
+    },
+    "se1": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08346024977155041
+    },
+    "se2": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08435771358328212
+    },
+    "ne0": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.06932175475370564
+    },
+    "ne1": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.06556632344033919
+    },
+    "ne2": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.06915861682766344
+    }
+  },
+  "closed_pinholes": {
+    "se0": 0,
+    "se1": 0,
+    "se2": 0,
+    "ne0": 0,
+    "ne1": 0,
+    "ne2": 0
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_cobra_remeshed_25k_20261111_character.glb",
+  "source_sha256": "a331b088dc4339b67a81071c9c2a621ec7a94708e81bf2fb15d6e1cdda5a3dac",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\cobra_m\\rigged-repair-v1-2026-11-10\\cobra-rigged-local-repair-v1.glb",
+  "output_sha256": "f22aa3eac79edf0d22764f19c067765d1fbb0fbcfcbf484672f36bc34c2641ab",
+  "scope": "Local topology repair only. No surface reconstruction or quality restoration claimed.",
+  "removed_fin_triangle_ids": [
+    791,
+    1329,
+    1410,
+    2369,
+    3032,
+    3340,
+    4430,
+    4443,
+    5341,
+    5927,
+    6350,
+    6791,
+    8216,
+    9027,
+    10014,
+    10135,
+    10900,
+    11015,
+    12809,
+    13495,
+    15347,
+    15426,
+    15634,
+    15722,
+    17094,
+    17372,
+    17474,
+    17573,
+    19009,
+    19682,
+    20886,
+    20929,
+    21123,
+    21501,
+    21787,
+    22138
+  ],
+  "removed_fin_area_total_m2": 0.0011583106825128198,
+  "removed_fin_area_max_m2": 0.00018554214329924434,
+  "holes_closed": [
+    {
+      "boundary_vertices": [
+        20953,
+        20911,
+        20909
+      ],
+      "raw_indices": [
+        21085,
+        20911,
+        20908
+      ],
+      "new_triangles": [
+        [
+          21085,
+          20911,
+          20908
+        ]
+      ],
+      "uv_seam_spread": 0.009341638535261154,
+      "bounds": [
+        [
+          0.19077168405056,
+          0.04884534701704979,
+          -0.06283795833587646
+        ],
+        [
+          0.19736334681510925,
+          0.0934327095746994,
+          -0.058122098445892334
+        ]
+      ],
+      "normal_alignment_score": 0.9545912742614746
+    },
+    {
+      "boundary_vertices": [
+        11175,
+        11116,
+        11173
+      ],
+      "raw_indices": [
+        11123,
+        11174,
+        11171
+      ],
+      "new_triangles": [
+        [
+          11123,
+          11174,
+          11171
+        ]
+      ],
+      "uv_seam_spread": 0.8962553143501282,
+      "bounds": [
+        [
+          -0.14673468470573425,
+          0.9460999965667725,
+          1.063836693763733
+        ],
+        [
+          -0.13102063536643982,
+          0.950128972530365,
+          1.0672831535339355
+        ]
+      ],
+      "normal_alignment_score": 0.9618827700614929
+    },
+    {
+      "boundary_vertices": [
+        19246,
+        19202,
+        19198
+      ],
+      "raw_indices": [
+        19215,
+        19202,
+        19199
+      ],
+      "new_triangles": [
+        [
+          19215,
+          19202,
+          19199
+        ]
+      ],
+      "uv_seam_spread": 0.3687542974948883,
+      "bounds": [
+        [
+          -0.08212313055992126,
+          0.3220093548297882,
+          0.8145089149475098
+        ],
+        [
+          -0.07093611359596252,
+          0.34580135345458984,
+          0.8166740536689758
+        ]
+      ],
+      "normal_alignment_score": 0.732555627822876
+    },
+    {
+      "boundary_vertices": [
+        4394,
+        4374,
+        4373
+      ],
+      "raw_indices": [
+        4394,
+        4502,
+        4503
+      ],
+      "new_triangles": [
+        [
+          4394,
+          4502,
+          4503
+        ]
+      ],
+      "uv_seam_spread": 0.17934583127498627,
+      "bounds": [
+        [
+          0.39949679374694824,
+          1.2699689865112305,
+          1.0551360845565796
+        ],
+        [
+          0.41725945472717285,
+          1.2804771661758423,
+          1.0570361614227295
+        ]
+      ],
+      "normal_alignment_score": 0.9936573505401611
+    }
+  ],
+  "before": {
+    "triangles": 23712,
+    "boundary_edges": 80,
+    "edges_over_two_faces": 32
+  },
+  "after": {
+    "triangles": 23680,
+    "boundary_edges": 0,
+    "edges_over_two_faces": 0
+  },
+  "preservation": {
+    "all_original_binary_bytes_unchanged": true,
+    "existing_positions_normals_uvs_joints_weights_byte_identical": true,
+    "nodes_skins_materials_images_textures_samplers_animations_scene_json_unchanged": true,
+    "new_vertices": 0,
+    "source_untouched": true
+  },
+  "method": "Append replacement triangle index accessor only. Keep original entire binary buffer as immutable prefix, including unused original indices. No Blender re-export or weight transfer."
+}

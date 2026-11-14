@@ -1,0 +1,22 @@
+{
+  "method": "Restore intact high-detail original; transfer accepted cut labels by nearest proxy surface, smooth classification only, cut a continuous level set and close newly created leg-root contours. No remeshing or broad hole fill.",
+  "before": {
+    "faces": 499696,
+    "vertices": 249828,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0
+  },
+  "after": {
+    "faces": 410858,
+    "vertices": 205787,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0
+  },
+  "removed_source_faces": 91840,
+  "cut_boundary_edges": 1506,
+  "cut_caps": 5,
+  "proxy_alignment_scale": 3.3604685742151412,
+  "rig_alignment_scale": 0.8985244286518717,
+  "rig_status": "Surface staging only; actual 52-joint rig to be retained and weights transferred next.",
+  "source_to_proxy_surface_distance_99pct": 0.004300815677270297
+}

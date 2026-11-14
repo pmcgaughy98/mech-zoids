@@ -1,0 +1,14 @@
+Sizes (width x height, opaque area): s 33x72/1556; se 83x70/2715; e 110x66/3091; ne 78x80/2886; n 35x84/1978.
+Shape (approx. +/-2px): e shoulder 57px, chest gap 30px, chest-to-rump 57px (1.00x shoulder, target ~1.5 FAIL); s chest 33px/head 23px (1.43x, too broad).
+ONE built-in image, prompt-sheet.txt verbatim, only refs/craft_drembit.png attached; raw SHA256 verified unchanged; tokens/cost unknown; no redo.
+view_check: front/back 0.63 FAIL; area 0.43; height 0.17; colour 0.89; dips none; lone 0.13 FAIL (>0.11); colours 12; top-five share 77.36% PASS.
+sheet_judge: e/w/se/s/sw ok; ne/n/nw height FAIL (80/84/80px vs median 71); FIX nothing; REDO ne,n,nw not run; mirrors e/w 0.988, ne/nw 0.987, se/sw 0.862.
+Finish: one whole-sheet nearest shrink 0.28326180 to 355x355; magenta transparent; 12 shared colours, all four gunmetal and red tones retained; binary alpha; no canvas-border contact.
+Edge audit: plum/magenta 0; lone pale rim 0 after 37 repaints; dark ink rim 0 after 244 repaints; silhouettes/alpha unchanged; per-colour counts/shares in edge-audit.json.
+Depth e: p05/p95 27.87/188.87, dominant #444452 24.75%, h66; se: 20.29/188.87, #444452 21.80%, h70.
+Depth s: p05/p95 20.29/188.87, dominant #444452 21.92%, h72; n: 27.87/188.87, #6e6e7e 25.38%, h84; all ranges 161.00-168.58 FAIL (<180); dominant shares PASS.
+By eye full/game size: reads as an armoured WOLF, clear space under long legs, tucked waist, roughly level back and forward head; still broad-chested, short-bodied and rounded at shoulders/haunches, so lean-body brief only PARTIAL.
+Long narrow muzzle, two pale sabre fangs, small cyan eyes under heavy brow, hood and tall swept-back ears; gunmetal body/red lower legs, paws somewhat broad; plated red-tip tail tapers but remains thick in profile, narrow behind; nothing held.
+Two red-edged folded blade-fins below ears; near fin overlaps far one in profile, front reads as small red shoulder tips; identical height across angles not achieved. Four-step shading and internal overlap lines retained, exterior ink removed; shading speckle remains.
+Back FAIL: n84 > s72, ne/nw80 > se/sw70; rear camera too high and rear diagonals expose fang tips (face detail); heels read angular but toe-like small marks remain. SE/SW true three-quarter, head turned, far eye hidden PASS.
+All outputs, scripts, metrics and both grey 4x reviews saved in take-b only; no asset installation, commits or reverts. Candidate fails checks; stopped after the authorized single image.

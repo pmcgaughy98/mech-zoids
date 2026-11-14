@@ -1,0 +1,599 @@
+{
+  "edge_definition": "opaque pixel adjacent to transparency in four-neighbourhood",
+  "combined": {
+    "#141218": {
+      "count": 0,
+      "share": 0.0,
+      "body_count": 4317,
+      "share_of_colour_on_edge": 0.0
+    },
+    "#211e27": {
+      "count": 632,
+      "share": 0.17570197386711148,
+      "body_count": 7466,
+      "share_of_colour_on_edge": 0.08465041521564426
+    },
+    "#3d3a44": {
+      "count": 543,
+      "share": 0.15095913261050875,
+      "body_count": 4328,
+      "share_of_colour_on_edge": 0.12546210720887246
+    },
+    "#4af0ff": {
+      "count": 0,
+      "share": 0.0,
+      "body_count": 281,
+      "share_of_colour_on_edge": 0.0
+    },
+    "#58555e": {
+      "count": 646,
+      "share": 0.17959410619961078,
+      "body_count": 3810,
+      "share_of_colour_on_edge": 0.16955380577427823
+    },
+    "#6e1408": {
+      "count": 413,
+      "share": 0.1148179038087295,
+      "body_count": 5622,
+      "share_of_colour_on_edge": 0.07346140163642832
+    },
+    "#9d9ba2": {
+      "count": 133,
+      "share": 0.0369752571587434,
+      "body_count": 3973,
+      "share_of_colour_on_edge": 0.03347596274855273
+    },
+    "#c42e14": {
+      "count": 408,
+      "share": 0.1134278565471226,
+      "body_count": 8564,
+      "share_of_colour_on_edge": 0.04764128911723494
+    },
+    "#d6d6dc": {
+      "count": 1,
+      "share": 0.00027800945232137893,
+      "body_count": 384,
+      "share_of_colour_on_edge": 0.0026041666666666665
+    },
+    "#e8ffff": {
+      "count": 0,
+      "share": 0.0,
+      "body_count": 24,
+      "share_of_colour_on_edge": 0.0
+    },
+    "#ff5a2e": {
+      "count": 294,
+      "share": 0.0817347789824854,
+      "body_count": 15064,
+      "share_of_colour_on_edge": 0.019516728624535316
+    },
+    "#ffb08a": {
+      "count": 527,
+      "share": 0.14651098137336668,
+      "body_count": 3918,
+      "share_of_colour_on_edge": 0.13450740173557937
+    }
+  },
+  "views": {
+    "ne": {
+      "edge_pixels": 453,
+      "colours": {
+        "#211e27": {
+          "count": 91,
+          "share": 0.20088300220750552,
+          "share_of_colour_on_edge": 0.09956236323851203
+        },
+        "#3d3a44": {
+          "count": 86,
+          "share": 0.18984547461368653,
+          "share_of_colour_on_edge": 0.16074766355140188
+        },
+        "#58555e": {
+          "count": 80,
+          "share": 0.17660044150110377,
+          "share_of_colour_on_edge": 0.2094240837696335
+        },
+        "#6e1408": {
+          "count": 42,
+          "share": 0.09271523178807947,
+          "share_of_colour_on_edge": 0.04535637149028078
+        },
+        "#9d9ba2": {
+          "count": 18,
+          "share": 0.039735099337748346,
+          "share_of_colour_on_edge": 0.039647577092511016
+        },
+        "#c42e14": {
+          "count": 38,
+          "share": 0.08388520971302428,
+          "share_of_colour_on_edge": 0.04194260485651214
+        },
+        "#ff5a2e": {
+          "count": 30,
+          "share": 0.06622516556291391,
+          "share_of_colour_on_edge": 0.02117148906139732
+        },
+        "#ffb08a": {
+          "count": 68,
+          "share": 0.15011037527593818,
+          "share_of_colour_on_edge": 0.13385826771653545
+        },
+        "#141218": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#4af0ff": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#d6d6dc": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#e8ffff": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        }
+      }
+    },
+    "n": {
+      "edge_pixels": 453,
+      "colours": {
+        "#211e27": {
+          "count": 82,
+          "share": 0.18101545253863136,
+          "share_of_colour_on_edge": 0.08444902162718847
+        },
+        "#3d3a44": {
+          "count": 72,
+          "share": 0.15894039735099338,
+          "share_of_colour_on_edge": 0.13382899628252787
+        },
+        "#58555e": {
+          "count": 68,
+          "share": 0.15011037527593818,
+          "share_of_colour_on_edge": 0.14977973568281938
+        },
+        "#6e1408": {
+          "count": 46,
+          "share": 0.10154525386313466,
+          "share_of_colour_on_edge": 0.054827175208581644
+        },
+        "#9d9ba2": {
+          "count": 23,
+          "share": 0.05077262693156733,
+          "share_of_colour_on_edge": 0.037037037037037035
+        },
+        "#c42e14": {
+          "count": 56,
+          "share": 0.12362030905077263,
+          "share_of_colour_on_edge": 0.05436893203883495
+        },
+        "#d6d6dc": {
+          "count": 1,
+          "share": 0.002207505518763797,
+          "share_of_colour_on_edge": 0.016129032258064516
+        },
+        "#ff5a2e": {
+          "count": 42,
+          "share": 0.09271523178807947,
+          "share_of_colour_on_edge": 0.026531901452937462
+        },
+        "#ffb08a": {
+          "count": 63,
+          "share": 0.1390728476821192,
+          "share_of_colour_on_edge": 0.11013986013986014
+        },
+        "#141218": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#4af0ff": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#e8ffff": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        }
+      }
+    },
+    "nw": {
+      "edge_pixels": 456,
+      "colours": {
+        "#211e27": {
+          "count": 79,
+          "share": 0.17324561403508773,
+          "share_of_colour_on_edge": 0.09564164648910412
+        },
+        "#3d3a44": {
+          "count": 100,
+          "share": 0.21929824561403508,
+          "share_of_colour_on_edge": 0.19455252918287938
+        },
+        "#58555e": {
+          "count": 81,
+          "share": 0.17763157894736842,
+          "share_of_colour_on_edge": 0.1956521739130435
+        },
+        "#6e1408": {
+          "count": 34,
+          "share": 0.07456140350877193,
+          "share_of_colour_on_edge": 0.0387243735763098
+        },
+        "#9d9ba2": {
+          "count": 19,
+          "share": 0.041666666666666664,
+          "share_of_colour_on_edge": 0.0395010395010395
+        },
+        "#c42e14": {
+          "count": 35,
+          "share": 0.07675438596491228,
+          "share_of_colour_on_edge": 0.036458333333333336
+        },
+        "#ff5a2e": {
+          "count": 35,
+          "share": 0.07675438596491228,
+          "share_of_colour_on_edge": 0.02452697967764541
+        },
+        "#ffb08a": {
+          "count": 73,
+          "share": 0.1600877192982456,
+          "share_of_colour_on_edge": 0.13957934990439771
+        },
+        "#141218": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#4af0ff": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#d6d6dc": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#e8ffff": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        }
+      }
+    },
+    "e": {
+      "edge_pixels": 463,
+      "colours": {
+        "#211e27": {
+          "count": 93,
+          "share": 0.20086393088552915,
+          "share_of_colour_on_edge": 0.09346733668341708
+        },
+        "#3d3a44": {
+          "count": 67,
+          "share": 0.1447084233261339,
+          "share_of_colour_on_edge": 0.12737642585551331
+        },
+        "#58555e": {
+          "count": 130,
+          "share": 0.28077753779697623,
+          "share_of_colour_on_edge": 0.19490254872563717
+        },
+        "#6e1408": {
+          "count": 26,
+          "share": 0.056155507559395246,
+          "share_of_colour_on_edge": 0.05394190871369295
+        },
+        "#9d9ba2": {
+          "count": 7,
+          "share": 0.01511879049676026,
+          "share_of_colour_on_edge": 0.013779527559055118
+        },
+        "#c42e14": {
+          "count": 39,
+          "share": 0.08423326133909287,
+          "share_of_colour_on_edge": 0.037827352085354024
+        },
+        "#ff5a2e": {
+          "count": 40,
+          "share": 0.08639308855291576,
+          "share_of_colour_on_edge": 0.02262443438914027
+        },
+        "#ffb08a": {
+          "count": 61,
+          "share": 0.13174946004319654,
+          "share_of_colour_on_edge": 0.18597560975609756
+        },
+        "#141218": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#4af0ff": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#d6d6dc": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#e8ffff": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        }
+      }
+    },
+    "w": {
+      "edge_pixels": 464,
+      "colours": {
+        "#211e27": {
+          "count": 92,
+          "share": 0.19827586206896552,
+          "share_of_colour_on_edge": 0.09037328094302555
+        },
+        "#3d3a44": {
+          "count": 83,
+          "share": 0.1788793103448276,
+          "share_of_colour_on_edge": 0.14091680814940577
+        },
+        "#58555e": {
+          "count": 118,
+          "share": 0.2543103448275862,
+          "share_of_colour_on_edge": 0.200339558573854
+        },
+        "#6e1408": {
+          "count": 22,
+          "share": 0.04741379310344827,
+          "share_of_colour_on_edge": 0.056265984654731455
+        },
+        "#9d9ba2": {
+          "count": 4,
+          "share": 0.008620689655172414,
+          "share_of_colour_on_edge": 0.007766990291262136
+        },
+        "#c42e14": {
+          "count": 34,
+          "share": 0.07327586206896551,
+          "share_of_colour_on_edge": 0.03300970873786408
+        },
+        "#ff5a2e": {
+          "count": 49,
+          "share": 0.10560344827586207,
+          "share_of_colour_on_edge": 0.02719200887902331
+        },
+        "#ffb08a": {
+          "count": 62,
+          "share": 0.1336206896551724,
+          "share_of_colour_on_edge": 0.18075801749271136
+        },
+        "#141218": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#4af0ff": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#d6d6dc": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#e8ffff": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        }
+      }
+    },
+    "se": {
+      "edge_pixels": 440,
+      "colours": {
+        "#211e27": {
+          "count": 63,
+          "share": 0.1431818181818182,
+          "share_of_colour_on_edge": 0.06435137895812053
+        },
+        "#3d3a44": {
+          "count": 58,
+          "share": 0.1318181818181818,
+          "share_of_colour_on_edge": 0.11394891944990176
+        },
+        "#58555e": {
+          "count": 46,
+          "share": 0.10454545454545454,
+          "share_of_colour_on_edge": 0.09829059829059829
+        },
+        "#6e1408": {
+          "count": 81,
+          "share": 0.18409090909090908,
+          "share_of_colour_on_edge": 0.1115702479338843
+        },
+        "#9d9ba2": {
+          "count": 22,
+          "share": 0.05,
+          "share_of_colour_on_edge": 0.047109207708779445
+        },
+        "#c42e14": {
+          "count": 81,
+          "share": 0.18409090909090908,
+          "share_of_colour_on_edge": 0.06235565819861432
+        },
+        "#ff5a2e": {
+          "count": 28,
+          "share": 0.06363636363636363,
+          "share_of_colour_on_edge": 0.013023255813953489
+        },
+        "#ffb08a": {
+          "count": 61,
+          "share": 0.13863636363636364,
+          "share_of_colour_on_edge": 0.11596958174904944
+        },
+        "#141218": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#4af0ff": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#d6d6dc": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#e8ffff": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        }
+      }
+    },
+    "s": {
+      "edge_pixels": 428,
+      "colours": {
+        "#211e27": {
+          "count": 64,
+          "share": 0.14953271028037382,
+          "share_of_colour_on_edge": 0.07920792079207921
+        },
+        "#3d3a44": {
+          "count": 33,
+          "share": 0.07710280373831775,
+          "share_of_colour_on_edge": 0.061224489795918366
+        },
+        "#58555e": {
+          "count": 73,
+          "share": 0.1705607476635514,
+          "share_of_colour_on_edge": 0.17339667458432304
+        },
+        "#6e1408": {
+          "count": 72,
+          "share": 0.16822429906542055,
+          "share_of_colour_on_edge": 0.11232449297971919
+        },
+        "#9d9ba2": {
+          "count": 19,
+          "share": 0.04439252336448598,
+          "share_of_colour_on_edge": 0.042505592841163314
+        },
+        "#c42e14": {
+          "count": 50,
+          "share": 0.11682242990654206,
+          "share_of_colour_on_edge": 0.046125461254612546
+        },
+        "#ff5a2e": {
+          "count": 42,
+          "share": 0.09813084112149532,
+          "share_of_colour_on_edge": 0.01557285873192436
+        },
+        "#ffb08a": {
+          "count": 75,
+          "share": 0.17523364485981308,
+          "share_of_colour_on_edge": 0.12626262626262627
+        },
+        "#141218": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#4af0ff": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#d6d6dc": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#e8ffff": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        }
+      }
+    },
+    "sw": {
+      "edge_pixels": 440,
+      "colours": {
+        "#211e27": {
+          "count": 68,
+          "share": 0.15454545454545454,
+          "share_of_colour_on_edge": 0.0712041884816754
+        },
+        "#3d3a44": {
+          "count": 44,
+          "share": 0.1,
+          "share_of_colour_on_edge": 0.07612456747404844
+        },
+        "#58555e": {
+          "count": 50,
+          "share": 0.11363636363636363,
+          "share_of_colour_on_edge": 0.12048192771084337
+        },
+        "#6e1408": {
+          "count": 90,
+          "share": 0.20454545454545456,
+          "share_of_colour_on_edge": 0.12178619756427606
+        },
+        "#9d9ba2": {
+          "count": 21,
+          "share": 0.04772727272727273,
+          "share_of_colour_on_edge": 0.04375
+        },
+        "#c42e14": {
+          "count": 75,
+          "share": 0.17045454545454544,
+          "share_of_colour_on_edge": 0.061274509803921566
+        },
+        "#ff5a2e": {
+          "count": 28,
+          "share": 0.06363636363636363,
+          "share_of_colour_on_edge": 0.012612612612612612
+        },
+        "#ffb08a": {
+          "count": 64,
+          "share": 0.14545454545454545,
+          "share_of_colour_on_edge": 0.12213740458015267
+        },
+        "#141218": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#4af0ff": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#d6d6dc": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        },
+        "#e8ffff": {
+          "count": 0,
+          "share": 0,
+          "share_of_colour_on_edge": 0
+        }
+      }
+    }
+  }
+}

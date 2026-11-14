@@ -1,0 +1,41 @@
+{
+  "asset": "rock_boulder",
+  "raw_sha256": "7ba1f4cc0580f7789dc1af34d598963bb1c592929a6045b11d044ebda0036891",
+  "runtime_sha256": "30cfca4ff3ed342f7253582c3aeba720a61cedaa577205fc8dcf6bc16afbe733",
+  "raw_triangles": 59066,
+  "runtime_triangles": 2499,
+  "materials": 1,
+  "images": [
+    {
+      "name": "boulder_04_diff",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "boulder_04_nor_gl",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "boulder_04_rough",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "size_godot_xyz_m": [
+    6.0,
+    3.0,
+    6.0
+  ],
+  "turned_deg": 0,
+  "pivot": "bottom centre",
+  "up": "+Y",
+  "collision": "none: the blockout keeps its own bodies and nav mesh",
+  "provider_metadata": "../source/rock_boulder/CREDITS.md"
+}

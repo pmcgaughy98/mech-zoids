@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "19f30d59e75bdf8dae40f14eb1b1819234c1b7686f96730e3885052902e5caaa",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.5099818511796734,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "falcon_front.png",
+      "source_box": [
+        115,
+        87,
+        521,
+        533
+      ],
+      "source_dimensions": [
+        406,
+        446
+      ],
+      "output_box": [
+        205,
+        263,
+        818,
+        936
+      ]
+    },
+    "left": {
+      "file": "falcon_left.png",
+      "source_box": [
+        641,
+        114,
+        1192,
+        533
+      ],
+      "source_dimensions": [
+        551,
+        419
+      ],
+      "output_box": [
+        96,
+        303,
+        928,
+        936
+      ]
+    },
+    "back": {
+      "file": "falcon_back.png",
+      "source_box": [
+        110,
+        691,
+        522,
+        1158
+      ],
+      "source_dimensions": [
+        412,
+        467
+      ],
+      "output_box": [
+        201,
+        231,
+        823,
+        936
+      ]
+    },
+    "right": {
+      "file": "falcon_right.png",
+      "source_box": [
+        649,
+        711,
+        1196,
+        1159
+      ],
+      "source_dimensions": [
+        547,
+        448
+      ],
+      "output_box": [
+        99,
+        260,
+        925,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.10278372591006424
+}

@@ -1,0 +1,66 @@
+{
+  "colours": [
+    "#141218",
+    "#1fc8b4",
+    "#9ff5e6",
+    "#fff1a0",
+    "#fffbe6"
+  ],
+  "only_chameleon_colours": true,
+  "outer_edge_ink_share": 1.0,
+  "core_offset_from_cell_centre_max_texels": 0.5,
+  "direction_error_max_degrees": 2.8,
+  "cells_touching_border": 0,
+  "shot_length_m": {
+    "pulse": 0.34,
+    "dart": 0.32,
+    "ratio": 1.06
+  },
+  "shot_width_m": {
+    "pulse": 0.16,
+    "dart": 0.16
+  },
+  "hit_sizes_texels": {
+    "pulse": [
+      12,
+      14,
+      20,
+      22,
+      22
+    ],
+    "dart": [
+      19,
+      14,
+      22,
+      26,
+      24
+    ]
+  },
+  "hit_max_m": {
+    "pulse": 0.44,
+    "dart": 0.416,
+    "ratio": 1.06
+  },
+  "muzzle_sizes_texels": [
+    6,
+    11,
+    10,
+    10
+  ],
+  "grass_lum": 0.584,
+  "core_lum_minus_grass": 0.398,
+  "halo_lum_minus_grass": 0.301,
+  "outer_lum_minus_grass": 0.054,
+  "dart_body_lum_minus_grass": -0.075,
+  "checks": {
+    "only_chameleon_colours": true,
+    "edge all ink": true,
+    "no cell touches its border": true,
+    "core within 2 texels of centre": true,
+    "points within 10 degrees": true,
+    "shot length 0.8-1.25x dart": true,
+    "hit size 0.8-1.3x dart hit": true,
+    "halo brighter than grass by 0.3+": true
+  },
+  "pass": true
+}

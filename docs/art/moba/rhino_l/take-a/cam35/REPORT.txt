@@ -1,0 +1,12 @@
+Angle height/guide (new vs first): s 0.778/0.81, se 0.830/0.87, e 0.833/0.79, ne 1.030/1.04, n 0.981/0.99; spread 0.252 vs 0.250: MISS.
+Angle width/guide: s 0.931, se 0.955, e 1.000, ne 0.933, n 0.903; all width ratios PASS.
+SE width 85 px vs approved 89; minimum 84: PASS. East 103 px; one shared nearest shrink.
+Accent new/approved (%): s 6.37/6.3, se 7.41/7.8, e 7.71/9.2, ne 7.54/7.4, n 9.76/9.4.
+Palette PASS: all 12 fixed colours, no extras; no magenta/plum, lone pale rim pixels or rim accent; all eight borders clear.
+view_check: front/back 0.85; area 0.07; height 0.27; colour 0.93; dips none; lone 0.08 (exact 0.07648); 12 colours. No despeckle needed.
+sheet_judge: FIX nothing; REDO e/ne/n/nw/w solely for height; informational here, no height repair or new generation. Mirror 0.950/0.950/0.953.
+Depth p05/p95, dominant share: s 18.86/240.85, 27.11%, se 18.86/240.85, 24.93%, e 18.86/240.85, 28.48%, ne 18.86/240.85, 27.25%, n 18.86/240.85, 30.42%.
+By eye: recognizable same rhino, no obvious new parts; consistent 35-degree camera NO. Side top band inadequate; far feet not separately visible.
+By eye: front face/horn clear and full-size; plates remain rounder than approved; interior seams retained, clean bands. Rear eye pixels ne=0, n=0.
+Built-in image tool: exactly ONE image, verbatim prompt-sheet.txt, approved_views then angle_guide; raw saved unchanged. Tokens used unavailable.
+Files: cam35/sheet_raw.png, sheet_finished.png, review.png and audit .txt/.json; views_cam35 contains only s/se/e/ne/n.png. Overall angle MISS; stopped without redo.

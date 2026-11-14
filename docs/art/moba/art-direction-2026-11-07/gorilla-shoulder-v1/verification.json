@@ -1,0 +1,17 @@
+{
+  "source_sha256": "5c223ba84c7cde87be15d75b9414b13630c6e75760c019eb9bedc2828ff6d915",
+  "original_unchanged": true,
+  "rest_and_reach_mesh_buffers_identical": true,
+  "all_exported_parts_closed_after_accounting_for_uv_splits": true,
+  "components_per_part_after_uv_weld": {
+    "Body_static": 2,
+    "ShoulderArm_R": 2,
+    "ShoulderSocket_R": 1
+  },
+  "static_capture_pairs": 15,
+  "motion_frames": 73,
+  "rest_min_silhouette_iou": 0.9999128970443064,
+  "motion_frame_0_mean_abs_difference_in_body_crop": 0.0,
+  "motion_frame_36_mean_abs_difference_in_body_crop": 0.000452112260973081,
+  "motion_frame_72_mean_abs_difference_in_body_crop": 0.0
+}

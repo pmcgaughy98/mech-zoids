@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "9c46f2447f18bb3bc750c81d2c7126c0592183c3869cd2b28a1b2714a78fe097",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.439446366782007,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "shoebill_front.png",
+      "source_box": [
+        169,
+        8,
+        492,
+        576
+      ],
+      "source_dimensions": [
+        323,
+        568
+      ],
+      "output_box": [
+        279,
+        118,
+        744,
+        936
+      ]
+    },
+    "left": {
+      "file": "shoebill_left.png",
+      "source_box": [
+        686,
+        8,
+        1065,
+        573
+      ],
+      "source_dimensions": [
+        379,
+        565
+      ],
+      "output_box": [
+        239,
+        123,
+        785,
+        936
+      ]
+    },
+    "back": {
+      "file": "shoebill_back.png",
+      "source_box": [
+        154,
+        638,
+        500,
+        1216
+      ],
+      "source_dimensions": [
+        346,
+        578
+      ],
+      "output_box": [
+        263,
+        104,
+        761,
+        936
+      ]
+    },
+    "right": {
+      "file": "shoebill_right.png",
+      "source_box": [
+        756,
+        636,
+        1136,
+        1213
+      ],
+      "source_dimensions": [
+        380,
+        577
+      ],
+      "output_box": [
+        238,
+        105,
+        785,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.02249134948096886
+}

@@ -1,0 +1,15 @@
+sheet judge: D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\cam30\slices
+  e   h  71 feet 160 palette   1.0 colours  12  height: 71 px, the set's median 87
+  ne  h 104 feet 160 palette   1.0 colours  10  height: 104 px, the set's median 87
+  n   h 107 feet 160 palette   1.0 colours  10  height: 107 px, the set's median 87
+  nw  h 104 feet 160 palette   1.0 colours  10  height: 104 px, the set's median 87
+  w   h  71 feet 160 palette   1.0 colours  12  height: 71 px, the set's median 87
+  sw  h  87 feet 160 palette   1.0 colours  11  ok
+  s   h  87 feet 160 palette   1.0 colours  11  ok
+  se  h  87 feet 160 palette   1.0 colours  11  ok
+  mirror e/w 0.956  mirror ne/nw 0.951  mirror se/sw 0.996  same n/s 0.221  even n/s [0.997, 0.96]
+  FIX (code, --fix): nothing
+  REDO (generate again): e, ne, n, nw, w
+
+Exit code: 1
+Height comparison is informational for this elevated camera; no height repairs applied.

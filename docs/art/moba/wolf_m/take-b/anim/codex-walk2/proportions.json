@@ -1,0 +1,617 @@
+{
+  "method": "Native projected axes and rounded joint-center chains inclusive of one endpoint pixel; tail thickness sampled perpendicular at three stations, same convention as codex-tailfix.",
+  "upper_axes": {
+    "far_ear": {
+      "reference_points": [
+        [
+          119,
+          97
+        ],
+        [
+          126,
+          108
+        ]
+      ],
+      "final_points": [
+        [
+          119,
+          96
+        ],
+        [
+          126,
+          108
+        ]
+      ],
+      "reference_length": 14.038,
+      "final_length": 14.892,
+      "difference": 0.854
+    },
+    "near_ear": {
+      "reference_points": [
+        [
+          127,
+          95
+        ],
+        [
+          137,
+          108
+        ]
+      ],
+      "final_points": [
+        [
+          127,
+          95
+        ],
+        [
+          137,
+          108
+        ]
+      ],
+      "reference_length": 17.401,
+      "final_length": 17.401,
+      "difference": 0.0
+    },
+    "head": {
+      "reference_points": [
+        [
+          123,
+          109
+        ],
+        [
+          150,
+          118
+        ]
+      ],
+      "final_points": [
+        [
+          123,
+          109
+        ],
+        [
+          150,
+          118
+        ]
+      ],
+      "reference_length": 29.46,
+      "final_length": 29.46,
+      "difference": 0.0
+    },
+    "muzzle": {
+      "reference_points": [
+        [
+          136,
+          112
+        ],
+        [
+          150,
+          118
+        ]
+      ],
+      "final_points": [
+        [
+          136,
+          112
+        ],
+        [
+          150,
+          118
+        ]
+      ],
+      "reference_length": 16.232,
+      "final_length": 16.232,
+      "difference": 0.0
+    },
+    "torso": {
+      "reference_points": [
+        [
+          69,
+          118
+        ],
+        [
+          117,
+          115
+        ]
+      ],
+      "final_points": [
+        [
+          69,
+          119
+        ],
+        [
+          117,
+          115
+        ]
+      ],
+      "reference_length": 49.094,
+      "final_length": 49.166,
+      "difference": 0.073
+    }
+  },
+  "torso_depth": {
+    "reference": 23,
+    "final": 23
+  },
+  "head_pixel_steady": true,
+  "frames": [
+    {
+      "frame": 0,
+      "tail_widths": [
+        10.95,
+        12.95,
+        10.95
+      ],
+      "reference_tail_widths": [
+        12.15,
+        12.15,
+        10.95
+      ],
+      "tail_axis_length": 36.228,
+      "reference_tail_length": 36.228,
+      "tail_plates": 4,
+      "near_shank_width": 7,
+      "far_shank_width": 6,
+      "legs": [
+        {
+          "paw": "near_fore",
+          "reference_chain": 41.1,
+          "final_chain": 42.289,
+          "difference": 1.189,
+          "upper": 19.647,
+          "lower": 15.811,
+          "reference_upper": 19.235,
+          "reference_lower": 17.263
+        },
+        {
+          "paw": "far_hind",
+          "reference_chain": 42.73,
+          "final_chain": 43.745,
+          "difference": 1.015,
+          "upper": 21.541,
+          "lower": 17.205,
+          "reference_upper": 21.095,
+          "reference_lower": 17.029
+        },
+        {
+          "paw": "far_fore",
+          "reference_chain": 41.1,
+          "final_chain": 41.852,
+          "difference": 0.752,
+          "upper": 19.209,
+          "lower": 15.811,
+          "reference_upper": 19.235,
+          "reference_lower": 17.263
+        },
+        {
+          "paw": "near_hind",
+          "reference_chain": 42.73,
+          "final_chain": 43.243,
+          "difference": 0.513,
+          "upper": 21.213,
+          "lower": 17.029,
+          "reference_upper": 21.095,
+          "reference_lower": 17.029
+        }
+      ]
+    },
+    {
+      "frame": 1,
+      "tail_widths": [
+        10.95,
+        12.95,
+        10.95
+      ],
+      "reference_tail_widths": [
+        12.15,
+        12.15,
+        10.95
+      ],
+      "tail_axis_length": 36.228,
+      "reference_tail_length": 36.228,
+      "tail_plates": 4,
+      "near_shank_width": 7,
+      "far_shank_width": 6,
+      "legs": [
+        {
+          "paw": "near_fore",
+          "reference_chain": 41.1,
+          "final_chain": 42.191,
+          "difference": 1.091,
+          "upper": 19.235,
+          "lower": 16.125,
+          "reference_upper": 19.235,
+          "reference_lower": 17.263
+        },
+        {
+          "paw": "far_hind",
+          "reference_chain": 42.73,
+          "final_chain": 44.126,
+          "difference": 1.396,
+          "upper": 21.633,
+          "lower": 17.493,
+          "reference_upper": 21.095,
+          "reference_lower": 17.029
+        },
+        {
+          "paw": "far_fore",
+          "reference_chain": 41.1,
+          "final_chain": 42.571,
+          "difference": 1.471,
+          "upper": 19.209,
+          "lower": 16.279,
+          "reference_upper": 19.235,
+          "reference_lower": 17.263
+        },
+        {
+          "paw": "near_hind",
+          "reference_chain": 42.73,
+          "final_chain": 44.353,
+          "difference": 1.623,
+          "upper": 21.633,
+          "lower": 17.72,
+          "reference_upper": 21.095,
+          "reference_lower": 17.029
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "tail_widths": [
+        10.95,
+        12.95,
+        10.95
+      ],
+      "reference_tail_widths": [
+        12.15,
+        12.15,
+        10.95
+      ],
+      "tail_axis_length": 36.228,
+      "reference_tail_length": 36.228,
+      "tail_plates": 4,
+      "near_shank_width": 7,
+      "far_shank_width": 6,
+      "legs": [
+        {
+          "paw": "near_fore",
+          "reference_chain": 41.1,
+          "final_chain": 42.191,
+          "difference": 1.091,
+          "upper": 18.868,
+          "lower": 16.492,
+          "reference_upper": 19.235,
+          "reference_lower": 17.263
+        },
+        {
+          "paw": "far_hind",
+          "reference_chain": 42.73,
+          "final_chain": 44.121,
+          "difference": 1.391,
+          "upper": 21.401,
+          "lower": 17.72,
+          "reference_upper": 21.095,
+          "reference_lower": 17.029
+        },
+        {
+          "paw": "far_fore",
+          "reference_chain": 41.1,
+          "final_chain": 41.939,
+          "difference": 0.839,
+          "upper": 19.235,
+          "lower": 15.62,
+          "reference_upper": 19.235,
+          "reference_lower": 17.263
+        },
+        {
+          "paw": "near_hind",
+          "reference_chain": 42.73,
+          "final_chain": 43.348,
+          "difference": 0.618,
+          "upper": 21.26,
+          "lower": 17.088,
+          "reference_upper": 21.095,
+          "reference_lower": 17.029
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "tail_widths": [
+        10.95,
+        12.95,
+        10.95
+      ],
+      "reference_tail_widths": [
+        12.15,
+        12.15,
+        10.95
+      ],
+      "tail_axis_length": 36.228,
+      "reference_tail_length": 36.228,
+      "tail_plates": 4,
+      "near_shank_width": 7,
+      "far_shank_width": 6,
+      "legs": [
+        {
+          "paw": "near_fore",
+          "reference_chain": 41.1,
+          "final_chain": 42.247,
+          "difference": 1.147,
+          "upper": 19.416,
+          "lower": 16.0,
+          "reference_upper": 19.235,
+          "reference_lower": 17.263
+        },
+        {
+          "paw": "far_hind",
+          "reference_chain": 42.73,
+          "final_chain": 43.401,
+          "difference": 0.671,
+          "upper": 21.401,
+          "lower": 17.0,
+          "reference_upper": 21.095,
+          "reference_lower": 17.029
+        },
+        {
+          "paw": "far_fore",
+          "reference_chain": 41.1,
+          "final_chain": 42.149,
+          "difference": 1.049,
+          "upper": 19.698,
+          "lower": 15.62,
+          "reference_upper": 19.235,
+          "reference_lower": 17.263
+        },
+        {
+          "paw": "near_hind",
+          "reference_chain": 42.73,
+          "final_chain": 43.725,
+          "difference": 0.995,
+          "upper": 21.26,
+          "lower": 17.464,
+          "reference_upper": 21.095,
+          "reference_lower": 17.029
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "tail_widths": [
+        10.95,
+        12.95,
+        10.95
+      ],
+      "reference_tail_widths": [
+        12.15,
+        12.15,
+        10.95
+      ],
+      "tail_axis_length": 36.228,
+      "reference_tail_length": 36.228,
+      "tail_plates": 4,
+      "near_shank_width": 7,
+      "far_shank_width": 6,
+      "legs": [
+        {
+          "paw": "near_fore",
+          "reference_chain": 41.1,
+          "final_chain": 41.564,
+          "difference": 0.464,
+          "upper": 19.209,
+          "lower": 15.524,
+          "reference_upper": 19.235,
+          "reference_lower": 17.263
+        },
+        {
+          "paw": "far_hind",
+          "reference_chain": 42.73,
+          "final_chain": 43.933,
+          "difference": 1.203,
+          "upper": 21.213,
+          "lower": 17.72,
+          "reference_upper": 21.095,
+          "reference_lower": 17.029
+        },
+        {
+          "paw": "far_fore",
+          "reference_chain": 41.1,
+          "final_chain": 42.059,
+          "difference": 0.959,
+          "upper": 19.416,
+          "lower": 15.811,
+          "reference_upper": 19.235,
+          "reference_lower": 17.263
+        },
+        {
+          "paw": "near_hind",
+          "reference_chain": 42.73,
+          "final_chain": 43.559,
+          "difference": 0.829,
+          "upper": 21.095,
+          "lower": 17.464,
+          "reference_upper": 21.095,
+          "reference_lower": 17.029
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "tail_widths": [
+        10.95,
+        12.95,
+        10.95
+      ],
+      "reference_tail_widths": [
+        12.15,
+        12.15,
+        10.95
+      ],
+      "tail_axis_length": 36.228,
+      "reference_tail_length": 36.228,
+      "tail_plates": 4,
+      "near_shank_width": 7,
+      "far_shank_width": 6,
+      "legs": [
+        {
+          "paw": "near_fore",
+          "reference_chain": 41.1,
+          "final_chain": 41.848,
+          "difference": 0.748,
+          "upper": 19.209,
+          "lower": 15.556,
+          "reference_upper": 19.235,
+          "reference_lower": 17.263
+        },
+        {
+          "paw": "far_hind",
+          "reference_chain": 42.73,
+          "final_chain": 43.753,
+          "difference": 1.023,
+          "upper": 21.26,
+          "lower": 17.493,
+          "reference_upper": 21.095,
+          "reference_lower": 17.029
+        },
+        {
+          "paw": "far_fore",
+          "reference_chain": 41.1,
+          "final_chain": 41.744,
+          "difference": 0.644,
+          "upper": 18.788,
+          "lower": 16.125,
+          "reference_upper": 19.235,
+          "reference_lower": 17.263
+        },
+        {
+          "paw": "near_hind",
+          "reference_chain": 42.73,
+          "final_chain": 43.98,
+          "difference": 1.25,
+          "upper": 21.26,
+          "lower": 17.72,
+          "reference_upper": 21.095,
+          "reference_lower": 17.029
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "tail_widths": [
+        10.95,
+        12.95,
+        10.95
+      ],
+      "reference_tail_widths": [
+        12.15,
+        12.15,
+        10.95
+      ],
+      "tail_axis_length": 36.228,
+      "reference_tail_length": 36.228,
+      "tail_plates": 4,
+      "near_shank_width": 7,
+      "far_shank_width": 6,
+      "legs": [
+        {
+          "paw": "near_fore",
+          "reference_chain": 41.1,
+          "final_chain": 42.23,
+          "difference": 1.13,
+          "upper": 18.868,
+          "lower": 16.279,
+          "reference_upper": 19.235,
+          "reference_lower": 17.263
+        },
+        {
+          "paw": "far_hind",
+          "reference_chain": 42.73,
+          "final_chain": 43.465,
+          "difference": 0.735,
+          "upper": 21.26,
+          "lower": 17.205,
+          "reference_upper": 21.095,
+          "reference_lower": 17.029
+        },
+        {
+          "paw": "far_fore",
+          "reference_chain": 41.1,
+          "final_chain": 41.591,
+          "difference": 0.491,
+          "upper": 19.235,
+          "lower": 15.524,
+          "reference_upper": 19.235,
+          "reference_lower": 17.263
+        },
+        {
+          "paw": "near_hind",
+          "reference_chain": 42.73,
+          "final_chain": 43.43,
+          "difference": 0.7,
+          "upper": 21.401,
+          "lower": 17.029,
+          "reference_upper": 21.095,
+          "reference_lower": 17.029
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "tail_widths": [
+        10.95,
+        12.95,
+        10.95
+      ],
+      "reference_tail_widths": [
+        12.15,
+        12.15,
+        10.95
+      ],
+      "tail_axis_length": 36.228,
+      "reference_tail_length": 36.228,
+      "tail_plates": 4,
+      "near_shank_width": 7,
+      "far_shank_width": 6,
+      "legs": [
+        {
+          "paw": "near_fore",
+          "reference_chain": 41.1,
+          "final_chain": 42.468,
+          "difference": 1.368,
+          "upper": 19.235,
+          "lower": 16.401,
+          "reference_upper": 19.235,
+          "reference_lower": 17.263
+        },
+        {
+          "paw": "far_hind",
+          "reference_chain": 42.73,
+          "final_chain": 44.438,
+          "difference": 1.708,
+          "upper": 21.633,
+          "lower": 17.804,
+          "reference_upper": 21.095,
+          "reference_lower": 17.029
+        },
+        {
+          "paw": "far_fore",
+          "reference_chain": 41.1,
+          "final_chain": 42.279,
+          "difference": 1.179,
+          "upper": 19.416,
+          "lower": 16.031,
+          "reference_upper": 19.235,
+          "reference_lower": 17.263
+        },
+        {
+          "paw": "near_hind",
+          "reference_chain": 42.73,
+          "final_chain": 43.964,
+          "difference": 1.234,
+          "upper": 21.471,
+          "lower": 17.493,
+          "reference_upper": 21.095,
+          "reference_lower": 17.029
+        }
+      ]
+    }
+  ]
+}

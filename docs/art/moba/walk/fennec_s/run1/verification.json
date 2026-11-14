@@ -1,0 +1,3285 @@
+{
+  "e": {
+    "structure": [
+      {
+        "frame": 0,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 160,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 129
+      },
+      {
+        "frame": 1,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 159,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 132
+      },
+      {
+        "frame": 2,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 159,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 133
+      },
+      {
+        "frame": 3,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 159,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 138
+      },
+      {
+        "frame": 4,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 160,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 146
+      },
+      {
+        "frame": 5,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 160,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 137
+      },
+      {
+        "frame": 6,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 160,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 123
+      },
+      {
+        "frame": 7,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 160,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 128
+      }
+    ],
+    "feet": {
+      "RF": {
+        "planted_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "spread_xy": [
+          0.5,
+          0.0
+        ],
+        "max_target_error": 0.5,
+        "frames": [
+          {
+            "frame": 0,
+            "sole": [
+              119.5,
+              159.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              7,
+              0
+            ],
+            "target": [
+              119.5,
+              159.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.9705882352941176,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 1,
+            "sole": [
+              116.5,
+              159.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              4,
+              0
+            ],
+            "target": [
+              116.0,
+              159.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 2,
+            "sole": [
+              112.5,
+              159.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              0
+            ],
+            "target": [
+              112.5,
+              159.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 3,
+            "sole": [
+              109.5,
+              159.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -3,
+              0
+            ],
+            "target": [
+              109.0,
+              159.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 4,
+            "sole": [
+              105.5,
+              159.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -7,
+              0
+            ],
+            "target": [
+              105.5,
+              159.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.9705882352941176,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 5,
+            "sole": [
+              109.5,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -3,
+              -2
+            ],
+            "target": [
+              109.0,
+              157.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.9705882352941176,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 6,
+            "sole": [
+              112.5,
+              156.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              -3
+            ],
+            "target": [
+              112.5,
+              156.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 3,
+            "lift_measured": 3.0,
+            "lower_native_match": 0.9882352941176471,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 7,
+            "sole": [
+              116.5,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              4,
+              -2
+            ],
+            "target": [
+              116.0,
+              157.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.9764705882352941,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          }
+        ]
+      },
+      "LH": {
+        "planted_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "spread_xy": [
+          0.5,
+          0.0
+        ],
+        "max_target_error": 0.5,
+        "frames": [
+          {
+            "frame": 0,
+            "sole": [
+              99.5,
+              153.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              7,
+              0
+            ],
+            "target": [
+              99.5,
+              153.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.987012987012987,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 1,
+            "sole": [
+              96.5,
+              153.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              4,
+              0
+            ],
+            "target": [
+              96.0,
+              153.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 2,
+            "sole": [
+              92.5,
+              153.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              0
+            ],
+            "target": [
+              92.5,
+              153.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 3,
+            "sole": [
+              89.5,
+              153.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -3,
+              0
+            ],
+            "target": [
+              89.0,
+              153.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 4,
+            "sole": [
+              85.5,
+              153.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -7,
+              0
+            ],
+            "target": [
+              85.5,
+              153.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.987012987012987,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 5,
+            "sole": [
+              89.5,
+              151.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -3,
+              -2
+            ],
+            "target": [
+              89.0,
+              151.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.987012987012987,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 6,
+            "sole": [
+              92.5,
+              150.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              -3
+            ],
+            "target": [
+              92.5,
+              150.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 3,
+            "lift_measured": 3.0,
+            "lower_native_match": 0.961038961038961,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 7,
+            "sole": [
+              96.5,
+              151.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              4,
+              -2
+            ],
+            "target": [
+              96.0,
+              151.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.9805194805194806,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          }
+        ]
+      },
+      "LF": {
+        "planted_order": [
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "spread_xy": [
+          0.5,
+          0.0
+        ],
+        "max_target_error": 0.5,
+        "frames": [
+          {
+            "frame": 0,
+            "sole": [
+              113.5,
+              153.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -7,
+              0
+            ],
+            "target": [
+              113.5,
+              153.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.9823529411764705,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 1,
+            "sole": [
+              117.5,
+              151.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -3,
+              -2
+            ],
+            "target": [
+              117.0,
+              151.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.9823529411764705,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 2,
+            "sole": [
+              120.5,
+              150.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              -3
+            ],
+            "target": [
+              120.5,
+              150.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 3,
+            "lift_measured": 3.0,
+            "lower_native_match": 0.9882352941176471,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 3,
+            "sole": [
+              124.5,
+              151.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              4,
+              -2
+            ],
+            "target": [
+              124.0,
+              151.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.9882352941176471,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 4,
+            "sole": [
+              127.5,
+              153.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              7,
+              0
+            ],
+            "target": [
+              127.5,
+              153.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.9823529411764705,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 5,
+            "sole": [
+              124.5,
+              153.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              4,
+              0
+            ],
+            "target": [
+              124.0,
+              153.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 6,
+            "sole": [
+              120.5,
+              153.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              0
+            ],
+            "target": [
+              120.5,
+              153.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 7,
+            "sole": [
+              117.5,
+              153.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -3,
+              0
+            ],
+            "target": [
+              117.0,
+              153.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          }
+        ]
+      },
+      "RH": {
+        "planted_order": [
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "spread_xy": [
+          0.5,
+          0.0
+        ],
+        "max_target_error": 0.5,
+        "frames": [
+          {
+            "frame": 0,
+            "sole": [
+              79.5,
+              160.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -7,
+              0
+            ],
+            "target": [
+              79.5,
+              160.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.9805194805194806,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 1,
+            "sole": [
+              83.5,
+              158.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -3,
+              -2
+            ],
+            "target": [
+              83.0,
+              158.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.974025974025974,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 2,
+            "sole": [
+              86.5,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              -3
+            ],
+            "target": [
+              86.5,
+              157.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 3,
+            "lift_measured": 3.0,
+            "lower_native_match": 0.9285714285714286,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 3,
+            "sole": [
+              90.5,
+              158.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              4,
+              -2
+            ],
+            "target": [
+              90.0,
+              158.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.9675324675324676,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 4,
+            "sole": [
+              93.5,
+              160.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              7,
+              0
+            ],
+            "target": [
+              93.5,
+              160.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.974025974025974,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 5,
+            "sole": [
+              90.5,
+              160.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              4,
+              0
+            ],
+            "target": [
+              90.0,
+              160.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 6,
+            "sole": [
+              86.5,
+              160.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              0
+            ],
+            "target": [
+              86.5,
+              160.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 7,
+            "sole": [
+              83.5,
+              160.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -3,
+              0
+            ],
+            "target": [
+              83.0,
+              160.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          }
+        ]
+      }
+    }
+  },
+  "se": {
+    "structure": [
+      {
+        "frame": 0,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 163,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 5,
+        "upper_canvas_diff_percent": 0.020345052083333332,
+        "body_mask_diff_including_leg_occlusion": 63
+      },
+      {
+        "frame": 1,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 161,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 61
+      },
+      {
+        "frame": 2,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 160,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 63
+      },
+      {
+        "frame": 3,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 159,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 58
+      },
+      {
+        "frame": 4,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 159,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 5,
+        "upper_canvas_diff_percent": 0.020345052083333332,
+        "body_mask_diff_including_leg_occlusion": 86
+      },
+      {
+        "frame": 5,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 157,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 62
+      },
+      {
+        "frame": 6,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 157,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 55
+      },
+      {
+        "frame": 7,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 159,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 61
+      }
+    ],
+    "feet": {
+      "RF": {
+        "planted_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "spread_xy": [
+          0.9500000000000028,
+          0.8400000000000034
+        ],
+        "max_target_error": 0.46999999999999886,
+        "frames": [
+          {
+            "frame": 0,
+            "sole": [
+              108.0,
+              163.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              5,
+              3
+            ],
+            "target": [
+              107.95,
+              162.84
+            ],
+            "target_error_xy": [
+              0.04999999999999716,
+              0.1599999999999966
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 1,
+            "sole": [
+              105.0,
+              161.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              2,
+              1
+            ],
+            "target": [
+              105.47,
+              161.42
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 2,
+            "sole": [
+              103.0,
+              160.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              0
+            ],
+            "target": [
+              103.0,
+              160.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 3,
+            "sole": [
+              101.0,
+              159.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -2,
+              -1
+            ],
+            "target": [
+              100.53,
+              158.58
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.9764705882352941,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 4,
+            "sole": [
+              98.0,
+              157.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -5,
+              -3
+            ],
+            "target": [
+              98.05,
+              157.16
+            ],
+            "target_error_xy": [
+              0.04999999999999716,
+              0.1599999999999966
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.9352941176470588,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 5,
+            "sole": [
+              101.0,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -2,
+              -3
+            ],
+            "target": [
+              100.53,
+              156.58
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.9588235294117647,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 6,
+            "sole": [
+              103.0,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              -3
+            ],
+            "target": [
+              103.0,
+              157.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 3,
+            "lift_measured": 3.0,
+            "lower_native_match": 0.9705882352941176,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 7,
+            "sole": [
+              105.0,
+              159.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              2,
+              -1
+            ],
+            "target": [
+              105.47,
+              159.42
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.9823529411764705,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          }
+        ]
+      },
+      "LH": {
+        "planted_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "spread_xy": [
+          0.9500000000000028,
+          0.8400000000000034
+        ],
+        "max_target_error": 0.46999999999999886,
+        "frames": [
+          {
+            "frame": 0,
+            "sole": [
+              99.0,
+              151.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              5,
+              3
+            ],
+            "target": [
+              98.95,
+              150.84
+            ],
+            "target_error_xy": [
+              0.04999999999999716,
+              0.1599999999999966
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 1,
+            "sole": [
+              96.0,
+              149.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              2,
+              1
+            ],
+            "target": [
+              96.47,
+              149.42
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 2,
+            "sole": [
+              94.0,
+              148.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              0
+            ],
+            "target": [
+              94.0,
+              148.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 3,
+            "sole": [
+              92.0,
+              147.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -2,
+              -1
+            ],
+            "target": [
+              91.53,
+              146.58
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 4,
+            "sole": [
+              89.0,
+              145.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -5,
+              -3
+            ],
+            "target": [
+              89.05,
+              145.16
+            ],
+            "target_error_xy": [
+              0.04999999999999716,
+              0.1599999999999966
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 5,
+            "sole": [
+              92.0,
+              145.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -2,
+              -3
+            ],
+            "target": [
+              91.53,
+              144.58
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 6,
+            "sole": [
+              94.0,
+              145.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              -3
+            ],
+            "target": [
+              94.0,
+              145.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 3,
+            "lift_measured": 3.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 7,
+            "sole": [
+              96.0,
+              147.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              2,
+              -1
+            ],
+            "target": [
+              96.47,
+              147.42
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          }
+        ]
+      },
+      "LF": {
+        "planted_order": [
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "spread_xy": [
+          0.9500000000000028,
+          0.8400000000000034
+        ],
+        "max_target_error": 0.5,
+        "frames": [
+          {
+            "frame": 0,
+            "sole": [
+              109.0,
+              153.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -5,
+              -3
+            ],
+            "target": [
+              108.55,
+              153.16
+            ],
+            "target_error_xy": [
+              0.45000000000000284,
+              0.1599999999999966
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.92,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 1,
+            "sole": [
+              111.0,
+              153.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -3,
+              -3
+            ],
+            "target": [
+              111.03,
+              152.58
+            ],
+            "target_error_xy": [
+              0.030000000000001137,
+              0.4199999999999875
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.8933333333333333,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 2,
+            "sole": [
+              114.0,
+              153.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              -3
+            ],
+            "target": [
+              113.5,
+              153.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "lift_expected": 3,
+            "lift_measured": 3.0,
+            "lower_native_match": 0.9733333333333334,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 3,
+            "sole": [
+              116.0,
+              155.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              2,
+              -1
+            ],
+            "target": [
+              115.97,
+              155.42
+            ],
+            "target_error_xy": [
+              0.030000000000001137,
+              0.4199999999999875
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.9733333333333334,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 4,
+            "sole": [
+              118.0,
+              159.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              4,
+              3
+            ],
+            "target": [
+              118.45,
+              158.84
+            ],
+            "target_error_xy": [
+              0.45000000000000284,
+              0.1599999999999966
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 5,
+            "sole": [
+              116.0,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              2,
+              1
+            ],
+            "target": [
+              115.97,
+              157.42
+            ],
+            "target_error_xy": [
+              0.030000000000001137,
+              0.4199999999999875
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 6,
+            "sole": [
+              114.0,
+              156.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              0
+            ],
+            "target": [
+              113.5,
+              156.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 7,
+            "sole": [
+              111.0,
+              155.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -3,
+              -1
+            ],
+            "target": [
+              111.03,
+              154.58
+            ],
+            "target_error_xy": [
+              0.030000000000001137,
+              0.4199999999999875
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.9333333333333333,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          }
+        ]
+      },
+      "RH": {
+        "planted_order": [
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "spread_xy": [
+          0.9500000000000028,
+          0.8400000000000034
+        ],
+        "max_target_error": 0.46999999999999886,
+        "frames": [
+          {
+            "frame": 0,
+            "sole": [
+              79.0,
+              150.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -5,
+              -3
+            ],
+            "target": [
+              79.05,
+              150.16
+            ],
+            "target_error_xy": [
+              0.04999999999999716,
+              0.1599999999999966
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.9396551724137931,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 1,
+            "sole": [
+              82.0,
+              150.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -2,
+              -3
+            ],
+            "target": [
+              81.53,
+              149.58
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.9396551724137931,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 2,
+            "sole": [
+              84.0,
+              150.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              -3
+            ],
+            "target": [
+              84.0,
+              150.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 3,
+            "lift_measured": 3.0,
+            "lower_native_match": 0.9396551724137931,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 3,
+            "sole": [
+              86.0,
+              152.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              2,
+              -1
+            ],
+            "target": [
+              86.47,
+              152.42
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.9655172413793104,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 4,
+            "sole": [
+              89.0,
+              156.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              5,
+              3
+            ],
+            "target": [
+              88.95,
+              155.84
+            ],
+            "target_error_xy": [
+              0.04999999999999716,
+              0.1599999999999966
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 5,
+            "sole": [
+              86.0,
+              154.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              2,
+              1
+            ],
+            "target": [
+              86.47,
+              154.42
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 6,
+            "sole": [
+              84.0,
+              153.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              0
+            ],
+            "target": [
+              84.0,
+              153.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 7,
+            "sole": [
+              82.0,
+              152.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -2,
+              -1
+            ],
+            "target": [
+              81.53,
+              151.58
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.9568965517241379,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          }
+        ]
+      }
+    }
+  },
+  "ne": {
+    "structure": [
+      {
+        "frame": 0,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 12,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 163,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 80
+      },
+      {
+        "frame": 1,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 12,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 159,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 99
+      },
+      {
+        "frame": 2,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 12,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 157,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 103
+      },
+      {
+        "frame": 3,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 12,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 157,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 106
+      },
+      {
+        "frame": 4,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 12,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 158,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 107
+      },
+      {
+        "frame": 5,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 12,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 159,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 97
+      },
+      {
+        "frame": 6,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 12,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 160,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 99
+      },
+      {
+        "frame": 7,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "colours": 12,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 161,
+        "upper_paint_diff_pixels": 0,
+        "upper_paint_diff_percent": 0.0,
+        "upper_canvas_diff_pixels": 0,
+        "upper_canvas_diff_percent": 0.0,
+        "body_mask_diff_including_leg_occlusion": 97
+      }
+    ],
+    "feet": {
+      "RF": {
+        "planted_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "spread_xy": [
+          0.9500000000000028,
+          0.8400000000000034
+        ],
+        "max_target_error": 0.46999999999999886,
+        "frames": [
+          {
+            "frame": 0,
+            "sole": [
+              114.5,
+              145.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              5,
+              -3
+            ],
+            "target": [
+              114.45,
+              145.16
+            ],
+            "target_error_xy": [
+              0.04999999999999716,
+              0.1599999999999966
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.9333333333333333,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 1,
+            "sole": [
+              111.5,
+              147.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              2,
+              -1
+            ],
+            "target": [
+              111.97,
+              146.58
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.9703703703703703,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 2,
+            "sole": [
+              109.5,
+              148.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              0
+            ],
+            "target": [
+              109.5,
+              148.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 3,
+            "sole": [
+              107.5,
+              149.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -2,
+              1
+            ],
+            "target": [
+              107.03,
+              149.42
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.9925925925925926,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 4,
+            "sole": [
+              104.5,
+              151.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -5,
+              3
+            ],
+            "target": [
+              104.55,
+              150.84
+            ],
+            "target_error_xy": [
+              0.04999999999999716,
+              0.1599999999999966
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 5,
+            "sole": [
+              107.5,
+              147.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -2,
+              -1
+            ],
+            "target": [
+              107.03,
+              147.42
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.9629629629629629,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 6,
+            "sole": [
+              109.5,
+              145.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              -3
+            ],
+            "target": [
+              109.5,
+              145.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 3,
+            "lift_measured": 3.0,
+            "lower_native_match": 0.9407407407407408,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 7,
+            "sole": [
+              111.5,
+              145.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              2,
+              -3
+            ],
+            "target": [
+              111.97,
+              144.58
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.9259259259259259,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          }
+        ]
+      },
+      "LH": {
+        "planted_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "spread_xy": [
+          0.9500000000000028,
+          0.8400000000000034
+        ],
+        "max_target_error": 0.46999999999999886,
+        "frames": [
+          {
+            "frame": 0,
+            "sole": [
+              87.0,
+              152.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              5,
+              -3
+            ],
+            "target": [
+              86.95,
+              152.16
+            ],
+            "target_error_xy": [
+              0.04999999999999716,
+              0.1599999999999966
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 1,
+            "sole": [
+              84.0,
+              154.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              2,
+              -1
+            ],
+            "target": [
+              84.47,
+              153.58
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 2,
+            "sole": [
+              82.0,
+              155.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              0
+            ],
+            "target": [
+              82.0,
+              155.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 3,
+            "sole": [
+              80.0,
+              156.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -2,
+              1
+            ],
+            "target": [
+              79.53,
+              156.42
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 4,
+            "sole": [
+              77.0,
+              158.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -5,
+              3
+            ],
+            "target": [
+              77.05,
+              157.84
+            ],
+            "target_error_xy": [
+              0.04999999999999716,
+              0.1599999999999966
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 5,
+            "sole": [
+              80.0,
+              154.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -2,
+              -1
+            ],
+            "target": [
+              79.53,
+              154.42
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 6,
+            "sole": [
+              82.0,
+              152.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              -3
+            ],
+            "target": [
+              82.0,
+              152.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 3,
+            "lift_measured": 3.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 7,
+            "sole": [
+              84.0,
+              152.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              2,
+              -3
+            ],
+            "target": [
+              84.47,
+              151.58
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          }
+        ]
+      },
+      "LF": {
+        "planted_order": [
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "spread_xy": [
+          0.9500000000000028,
+          0.8400000000000034
+        ],
+        "max_target_error": 0.4748656799999935,
+        "frames": [
+          {
+            "frame": 0,
+            "sole": [
+              92.5,
+              146.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -5,
+              3
+            ],
+            "target": [
+              92.55026864,
+              145.838934
+            ],
+            "target_error_xy": [
+              0.050268639999998754,
+              0.16106600000000526
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 1,
+            "sole": [
+              95.5,
+              142.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -2,
+              -1
+            ],
+            "target": [
+              95.02513432,
+              142.419467
+            ],
+            "target_error_xy": [
+              0.4748656799999935,
+              0.41946699999999737
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.9777777777777777,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 2,
+            "sole": [
+              97.5,
+              140.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              -3
+            ],
+            "target": [
+              97.5,
+              140.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 3,
+            "lift_measured": 3.0,
+            "lower_native_match": 0.9555555555555556,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 3,
+            "sole": [
+              99.5,
+              140.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              2,
+              -3
+            ],
+            "target": [
+              99.97486568,
+              139.580533
+            ],
+            "target_error_xy": [
+              0.4748656799999935,
+              0.41946699999999737
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.9481481481481482,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 4,
+            "sole": [
+              102.5,
+              140.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              5,
+              -3
+            ],
+            "target": [
+              102.44973136,
+              140.161066
+            ],
+            "target_error_xy": [
+              0.050268639999998754,
+              0.16106600000000526
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.9555555555555556,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 5,
+            "sole": [
+              99.5,
+              142.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              2,
+              -1
+            ],
+            "target": [
+              99.97486568,
+              141.580533
+            ],
+            "target_error_xy": [
+              0.4748656799999935,
+              0.41946699999999737
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.9703703703703703,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 6,
+            "sole": [
+              97.5,
+              143.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              0
+            ],
+            "target": [
+              97.5,
+              143.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 7,
+            "sole": [
+              95.5,
+              144.0
+            ],
+            "measured_from": "leg layer (occluded)",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -2,
+              1
+            ],
+            "target": [
+              95.02513432,
+              144.419467
+            ],
+            "target_error_xy": [
+              0.4748656799999935,
+              0.41946699999999737
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          }
+        ]
+      },
+      "RH": {
+        "planted_order": [
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "spread_xy": [
+          0.9500000000000028,
+          0.8400000000000034
+        ],
+        "max_target_error": 0.46999999999999886,
+        "frames": [
+          {
+            "frame": 0,
+            "sole": [
+              89.5,
+              163.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -5,
+              3
+            ],
+            "target": [
+              89.55,
+              162.84
+            ],
+            "target_error_xy": [
+              0.04999999999999716,
+              0.1599999999999966
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 1,
+            "sole": [
+              92.5,
+              159.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -2,
+              -1
+            ],
+            "target": [
+              92.03,
+              159.42
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.9669421487603306,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 2,
+            "sole": [
+              94.5,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              -3
+            ],
+            "target": [
+              94.5,
+              157.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 3,
+            "lift_measured": 3.0,
+            "lower_native_match": 0.9504132231404959,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 3,
+            "sole": [
+              96.5,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              2,
+              -3
+            ],
+            "target": [
+              96.97,
+              156.58
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 2,
+            "lift_measured": 2.0,
+            "lower_native_match": 0.9256198347107438,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 4,
+            "sole": [
+              99.5,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              5,
+              -3
+            ],
+            "target": [
+              99.45,
+              157.16
+            ],
+            "target_error_xy": [
+              0.04999999999999716,
+              0.1599999999999966
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.9256198347107438,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 5,
+            "sole": [
+              96.5,
+              159.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              2,
+              -1
+            ],
+            "target": [
+              96.97,
+              158.58
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.9669421487603306,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 6,
+            "sole": [
+              94.5,
+              160.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              0,
+              0
+            ],
+            "target": [
+              94.5,
+              160.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 1.0,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          },
+          {
+            "frame": 7,
+            "sole": [
+              92.5,
+              161.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "ends": true,
+            "delta": [
+              -2,
+              1
+            ],
+            "target": [
+              92.03,
+              161.42
+            ],
+            "target_error_xy": [
+              0.46999999999999886,
+              0.4199999999999875
+            ],
+            "lift_expected": 0,
+            "lift_measured": 0.0,
+            "lower_native_match": 0.9917355371900827,
+            "lower_below_joint_match": 1.0,
+            "knee_native_match": 1.0
+          }
+        ]
+      }
+    }
+  },
+  "failures": []
+}

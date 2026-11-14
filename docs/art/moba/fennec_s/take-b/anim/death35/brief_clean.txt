@@ -1,0 +1,28 @@
+You are cleaning pixel-art death frames for a game (job tag: death35-clean). Write only inside D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\death35.
+Read anything under D:\dev\new-mech-rpg\docs\art\moba. Do not touch any other folder, assets, art or tools, and do not commit.
+
+Read first: anim\death35\brief.txt (the job), REPORT_run1.txt and board_run1.png (what run 1 made), and the stills in
+D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\views_cam35_touchup. Run 1's frames are in anim\death35\frames (a backup is in frames_run1; leave it).
+Run 1 passed f0, palette, alpha, ground rows and timing, and the bodies read well, the side view best. Two faults in
+the ears, worst on f2-f3 and in every view; fix them in place in frames\ and change nothing else:
+1. Slivers. Beside the ears there are 1 px lines of dark violet and of gold, running parallel to the ear edges and
+   joined to the rest only at a corner (front f2 both ears, front f3 right ear, se f2-f3, side f2, back f2-f3). They
+   are leftovers from moving the ears, the same specks and slivers Preston rejected on another machine. Remove them,
+   and redraw any edge they were standing in for by hand.
+2. Ear shape. The still's ears are broad triangles with the gold inner panel. Run 1 turns them into long thin blades
+   (f2) and flat wings (front, se and back f3). Keep the still's ear: the same length within 2 px, the same width at
+   the base and the same gold panel, while it droops. f2: the ears tilt out and down a little. f3-f4: they fold back
+   and down, toward the neck. f5-f6: they lie against the head and the ground. Move them by translating the still's
+   ear pixels and stepping them 1 px per row where an ear leans; never rotate or resample; redraw joins by hand.
+Do not change f0, the bodies, legs, tail, timings, palette, or the ground rows (everything on or above row 140).
+
+Pass marks (report each, measured from the pixels):
+- Every frame's opaque mask is one 4-connected piece: no part joined only at a corner, no 1 px wide runs longer than
+  2 px. Report the count per frame (run 1 had up to 11 pieces in f2).
+- Ear length and base width per frame against the still's, per view.
+- f0 equals the still exactly; only the stills' colours; binary alpha; nothing touching the canvas edge; lowest row
+  per frame 140 or above.
+Then rebuild board.png (the still, then the 7 frames, game sel-out from D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\selout_rhino.py with
+OUTLINE #141218, 4x), the preview gifs and checks.txt, and add a "Cleanup" section of under 15 lines to REPORT.txt:
+tokens if known, what you changed per view, the pass marks, and by eye: do the ears read as the still's ears all the
+way down, with no slivers?

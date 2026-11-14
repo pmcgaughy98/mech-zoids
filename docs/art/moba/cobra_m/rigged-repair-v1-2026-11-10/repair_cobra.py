@@ -1,0 +1,68 @@
+from diagnose import *
+import copy,hashlib,itertools
+OUT=Path('D:/dev/new-mech-rpg/docs/art/moba/cobra_m/rigged-repair-v1-2026-11-10')
+OUT.mkdir(parents=True,exist_ok=True)
+doc,blob=read_glb(SOURCE);original=copy.deepcopy(doc)
+prim=doc['meshes'][0]['primitives'][0];pos=accessor(doc,blob,prim['attributes']['POSITION']);uv=accessor(doc,blob,prim['attributes']['TEXCOORD_0']);norm=accessor(doc,blob,prim['attributes']['NORMAL']);tri=accessor(doc,blob,prim['indices']).reshape(-1,3)
+mapping,edges,groups,deg=topology(pos,tri)
+remove=[];patches=[]
+for g in groups:
+ ids=set(g['vertices'])
+ if len(ids)==3 and g['edge_count']==2:
+  common=[(k,v) for k,v in edges.items() if set(k)<=ids and len(v)==3]
+  assert len(common)==1
+  fins=[i for i in common[0][1] if set(mapping[tri[i]])==ids]
+  assert len(fins)==1
+  remove.extend(fins)
+ elif len(ids)==4 and g['edge_count']==4 and g['degrees']=={2:4}:
+  # A thin doubled-back flap forms two sides of each four-edge opening.
+  # Remove that flap first, then close the resulting triangular opening.
+  boundary_faces=collections.Counter(f for e,fs in edges.items() if set(e)<=ids and len(fs)==1 for f in fs)
+  fins=[f for f,c in boundary_faces.items() if c==2 and set(mapping[tri[f]])<=ids]
+  assert len(fins)==1,('Ambiguous opening',fins)
+  remove.append(fins[0])
+  hole_edges={e:[f for f in fs if f!=fins[0]] for e,fs in edges.items() if set(e)<=ids}
+  directed=[];raws=collections.defaultdict(list)
+  for edge,fs in hole_edges.items():
+   if len(fs)==1:
+    face=tri[fs[0]]
+    for a,b in zip(face,np.roll(face,-1)):
+     if tuple(sorted((int(mapping[a]),int(mapping[b]))))==edge:
+      directed.append((int(mapping[a]),int(mapping[b])));raws[int(mapping[a])].append(int(a));raws[int(mapping[b])].append(int(b))
+  cycle=[directed[0][0]]
+  for _ in range(2):cycle.append(next(b for a,b in directed if a==cycle[-1]))
+  assert next(b for a,b in directed if a==cycle[-1])==cycle[0]
+  # Reverse the bordering surface winding to close the opening outward.
+  cycle=list(reversed(cycle))
+  # Retain existing attributes; choose a compact existing UV island for the patch.
+  options=itertools.product(*(sorted(set(raws[v])) for v in cycle))
+  raw=list(min(options,key=lambda ids:sum(float(np.linalg.norm(uv[ids[i]]-uv[ids[(i+1)%3]])) for i in range(3))))
+  seam_spread=max(float(np.linalg.norm(uv[a]-uv[b])) for v in cycle for a in raws[v] for b in raws[v])
+  print('Hole',cycle,'UV corner split spread',seam_spread,flush=True)
+  candidates=[[raw]]
+  def score(ts):
+   pts=pos[np.array(ts)];cross=np.cross(pts[:,1]-pts[:,0],pts[:,2]-pts[:,0]);length=np.linalg.norm(cross,axis=1);ns=cross/length[:,None];expected=norm[np.array(ts)].mean(1);expected/=np.linalg.norm(expected,axis=1)[:,None]
+   return float((ns*expected).sum()) if min(length)>1e-10 else -100
+  chosen=max(candidates,key=score);assert score(chosen)>.25,('Bad patch normals',score(chosen))
+  patches.append({'boundary_vertices':cycle,'raw_indices':raw,'new_triangles':chosen,'uv_seam_spread':seam_spread,'bounds':[g['min'],g['max']],'normal_alignment_score':score(chosen)})
+ else:raise RuntimeError(('Unhandled boundary',g))
+assert len(remove)==36 and len(patches)==4
+keep=np.ones(len(tri),dtype=bool);keep[remove]=False
+newtri=np.concatenate([tri[keep],np.array([t for p in patches for t in p['new_triangles']],dtype=tri.dtype)])
+_,after_edges,after_groups,after_deg=topology(pos,newtri)
+assert not after_groups and not after_deg and all(len(v)==2 for v in after_edges.values())
+newblob=blob+b'\0'*((-len(blob))%4);offset=len(newblob);idxbytes=newtri.astype('<u2').tobytes();newblob+=idxbytes
+view=len(doc['bufferViews']);doc['bufferViews'].append({'buffer':0,'byteOffset':offset,'byteLength':len(idxbytes),'target':34963})
+acc=len(doc['accessors']);doc['accessors'].append({'bufferView':view,'componentType':5123,'count':int(newtri.size),'type':'SCALAR'})
+prim['indices']=acc;doc['buffers'][0]['byteLength']=len(newblob)
+encoded=json.dumps(doc,separators=(',',':')).encode();encoded+=b' '*((-len(encoded))%4);newblob+=b'\0'*((-len(newblob))%4)
+target=OUT/'cobra-rigged-local-repair-v1.glb'
+target.write_bytes(struct.pack('<III',0x46546c67,2,12+8+len(encoded)+8+len(newblob))+struct.pack('<II',len(encoded),0x4e4f534a)+encoded+struct.pack('<II',len(newblob),0x004e4942)+newblob)
+check,checkblob=read_glb(target)
+assert checkblob[:len(blob)]==blob
+for key in ['nodes','skins','materials','images','textures','samplers','animations','scenes','scene']:
+ assert check.get(key)==original.get(key),key
+for key,a in prim['attributes'].items():assert np.array_equal(accessor(check,checkblob,a),accessor(original,blob,a)),key
+areas=np.linalg.norm(np.cross(pos[tri[remove,1]]-pos[tri[remove,0]],pos[tri[remove,2]]-pos[tri[remove,0]]),axis=1)/2
+report={'source':str(SOURCE),'source_sha256':hashlib.sha256(SOURCE.read_bytes()).hexdigest(),'output':str(target),'output_sha256':hashlib.sha256(target.read_bytes()).hexdigest(),'scope':'Local topology repair only. No surface reconstruction or quality restoration claimed.','removed_fin_triangle_ids':remove,'removed_fin_area_total_m2':float(areas.sum()),'removed_fin_area_max_m2':float(areas.max()),'holes_closed':patches,'before':{'triangles':len(tri),'boundary_edges':sum(len(v)==1 for v in edges.values()),'edges_over_two_faces':sum(len(v)>2 for v in edges.values())},'after':{'triangles':len(newtri),'boundary_edges':0,'edges_over_two_faces':0},'preservation':{'all_original_binary_bytes_unchanged':True,'existing_positions_normals_uvs_joints_weights_byte_identical':True,'nodes_skins_materials_images_textures_samplers_animations_scene_json_unchanged':True,'new_vertices':0,'source_untouched':True},'method':'Append replacement triangle index accessor only. Keep original entire binary buffer as immutable prefix, including unused original indices. No Blender re-export or weight transfer.'}
+(OUT/'repair-verification.json').write_text(json.dumps(report,indent=2));print(json.dumps({k:v for k,v in report.items() if k not in ['holes_closed','removed_fin_triangle_ids']},indent=2))

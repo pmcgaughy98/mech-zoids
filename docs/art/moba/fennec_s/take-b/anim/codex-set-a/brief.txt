@@ -1,0 +1,63 @@
+You are making pixel-art animation frames for a game. Write only inside
+D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\codex-set-a\. Read anything under D:\dev\new-mech-rpg\docs\art\moba.
+
+The creature is the fennec fox mech (fennec_s, take B). Approved stills, 160x160, feet on row 140, in
+D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\views\: s.png (front), e.png (side facing right), n.png (back); se, ne,
+sw, w, nw also exist. The approved pose is SEATED on its haunches, front legs straight, the straight segmented tail lying
+on the ground behind it. Keep the design exactly: the violet armoured body and head, the huge pointed ears with cream
+insides, the half-closed glowing teal eyes (calm, sleepy, uncanny), the cream muzzle, chest and tail tip, the grey joint
+discs and grey foot pads, the straight segmented tail with the gold-cream tip, the same 15 colours (#141218 #211e27
+#2e1a6e #3d3a44 #6a3cc8 #9d9ba2 #a46bff #b8923a #d6d6dc #e0c8ff #f0d27a #3fe8b0 #c8fff0 #fff4d6 #f6fffb), the dark outline
+and the chunky pixel size. Only the pose changes. Never redesign: no new parts, no gloss, no fur, no longer or thinner
+limbs, no bigger head. The tail NEVER curls (Preston: "no curved tails as they are hard to rotate"); it can lift, swing
+and angle but stays a straight line of segments. The eyes stay half-closed and glowing except where a move says
+otherwise. It is a robot: no realistic animal anatomy beyond what the stills show.
+
+Kit context (D:\dev\new-mech-rpg\docs\plan\moba-kits.md, Fennec section): a control mage. Passive big ears; 1 sand kick;
+2 ear burst; 3 tunnel; 4 sonic boom. Effects (sand spray, sound rings, the tunnel holes, pings) are made separately and
+are NOT part of these frames: draw the body only.
+
+Method: you made the gorilla's sets the same way. Read
+D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\anim\codex-set-a and codex-set-b (prompts\, refs\, REPORT.txt, finish.py,
+polish.py, gems.py, seam_fill.py, verify.py) and follow the method that worked there: refs from the approved stills (and
+6x copies on a flat key colour), ONE sheet per animation from your built-in image tool with the stills attached, slice,
+finish every frame against the stills, check, board. Cost rule: exactly ONE image-tool call per animation, no redo and
+no extra variations; if a sheet is weak, fix it in finishing. Report the tokens used.
+
+Rows: each animation sheet has three rows: front (like s.png), side facing right (like e.png), back (like n.png). Each
+column is one moment seen from the three sides, so the rows match frame for frame.
+
+Output for each animation, in <set>\<name>\ :
+- frames\front_f<i>.png, side_f<i>.png, back_f<i>.png on 192x192 transparent canvases. Keep the fox at the stills'
+  pixel scale (never resize the design), placed like the still shifted by +16 x and +20 y, so the feet stand on row 160.
+- Frame 0 of every animation except walk must equal its approved still exactly at (+16,+20) (silhouette and colour
+  IoU 1.0); so must the last frame where the move says it ends on the still. Report both IoUs.
+- Feet on row 160 in every frame unless the move says otherwise; nothing below row 160 ever (the ground hides it).
+- Snap every pixel to the 15 colours. Binary alpha. Keep a one-texel dark outline like the stills. No anti-aliasing, no
+  stray pixels, no enclosed holes, nothing touching the canvas edge.
+- Restore native parts from the stills where the pose allows (the face: eyes and muzzle; the ear insides; joint discs),
+  the way gems.py restored the gorilla's gems and face. The eyes, ears and tail segments are where drift shows.
+- Give each frame a preview duration in ms (a game reads them) and keep grid.json, checks.txt (per frame: bottom row,
+  colour count, any pixel below row 160, IoU vs still where required), a preview gif per view and a review.png board
+  with the approved still leftmost in each row.
+Look at your own boards before finishing and fix anything that drifts from the stills. Write only inside the set folder
+named below. Do not install anything into the game and do not commit.
+
+Set A is five animations (<set> = codex-set-a):
+1. idle: 5 frames, looping, 220 ms each. NO generated sheet: build it from the stills only, like the gorilla's set C
+   idle (D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\anim\codex-set-c\idle): the body above the haunches rises 0, 1,
+   1, 1, 0 px (a calm breath), the seated haunches, feet and the tail on the ground never move, gaps closed natively.
+2. walk: 8 frames, looping. The fox gets up off its haunches and TROTS in place on all four legs: diagonal pairs move
+   together, body level with a light 1-2 px bob, head steady and ears up, the straight tail held out behind, angled a
+   little up, swaying slightly. Feet touch the ground line on the planted frames; nothing slides. Frame 0 does not have
+   to equal the seated still, but the head, ears and colours must be the still's.
+3. sand_kick (ability 1): 6 frames, ends on the still. f1 rises onto all fours and crouches, f2 both front paws dig in,
+   f3 flings them up and forward (the release; the sand is an effect, not drawn), f4 follow-through, f5 = the still.
+4. ear_burst (ability 2): 6 frames, ends on the still. f1 the ears draw back and the head dips, f2 the ears snap fully
+   upright and flare, f3 the head thrusts forward, mouth open in a sharp yip, eyes fully open and bright (the burst),
+   f4 recoil, f5 = the still.
+5. sonic_boom (ability 4, the ultimate): 8 frames, ends on the still. f1-f3 the charge: rises to all fours, crouches
+   low, ears swept flat back, body tense (f2 and f3 nearly the same, a held charge), f4 the blast: head and chest
+   thrust forward, mouth wide open, ears flared forward, eyes wide and blazing, f5 recoil back on the haunches, f6
+   settle, f7 = the still.
+Write anim\codex-set-a\REPORT.txt for the whole set.

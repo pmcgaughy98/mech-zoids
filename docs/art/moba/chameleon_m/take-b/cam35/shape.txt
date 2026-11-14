@@ -1,0 +1,22 @@
+approved s: roles turquoise 39.64%, gold 15.16%, steel 17.38%, charcoal 16.59%, eye 3.94%, accent 7.29%; lightest top shades 12.56%; lens total 80, groups [40, 39, 1]
+approved se: roles turquoise 47.67%, gold 9.85%, steel 17.63%, charcoal 17.00%, eye 1.86%, accent 5.99%; lightest top shades 13.70%; lens total 53, groups [53]
+approved e: roles turquoise 49.22%, gold 9.34%, steel 15.67%, charcoal 16.16%, eye 1.40%, accent 8.21%; lightest top shades 10.45%; lens total 43, groups [43]
+approved ne: roles turquoise 59.34%, gold 2.20%, steel 15.81%, charcoal 16.63%, eye 0.00%, accent 6.03%; lightest top shades 12.27%; lens total 0, groups []
+approved n: roles turquoise 53.88%, gold 4.78%, steel 16.04%, charcoal 18.23%, eye 0.00%, accent 7.07%; lightest top shades 11.40%; lens total 0, groups []
+new s: roles turquoise 51.93%, gold 5.52%, steel 21.23%, charcoal 11.89%, eye 2.29%, accent 7.13%; lightest top shades 22.29%; lens total 54, groups [28, 26]
+new se: roles turquoise 60.19%, gold 4.20%, steel 16.95%, charcoal 11.22%, eye 1.35%, accent 6.09%; lightest top shades 20.76%; lens total 38, groups [38]
+new e: roles turquoise 63.95%, gold 3.29%, steel 14.78%, charcoal 8.82%, eye 1.05%, accent 8.13%; lightest top shades 20.63%; lens total 29, groups [29]
+new ne: roles turquoise 66.94%, gold 0.59%, steel 14.00%, charcoal 12.23%, eye 0.00%, accent 6.24%; lightest top shades 19.85%; lens total 0, groups []
+new n: roles turquoise 59.10%, gold 0.28%, steel 22.66%, charcoal 10.97%, eye 0.00%, accent 7.00%; lightest top shades 22.06%; lens total 0, groups []
+s: accent 7.13% vs approved target 7.3%; lightest new/approved 22.29%/12.56%
+se: accent 6.09% vs approved target 6.0%; lightest new/approved 20.76%/13.70%
+e: accent 8.13% vs approved target 8.2%; lightest new/approved 20.63%/10.45%
+ne: accent 6.24% vs approved target 6.0%; lightest new/approved 19.85%/12.27%
+n: accent 7.00% vs approved target 7.1%; lightest new/approved 22.06%/11.40%
+Lens reference groups: s 40+39, se 53, e 43; expected 35deg s about 32 each, se42,e34; minima s28,se37,e30.
+s lens minimum: MISS; groups [28, 26]; minimum 28
+se lens minimum: PASS; groups [38]; minimum 37
+e lens minimum: MISS; groups [29]; minimum 30
+Rear lenses: PASS zero
+Approved feet: s/n far pair occluded, not reliably separable; se near row 140 / identifiable far 138; e near 140 / identifiable far 138; ne near 139 / identifiable far 137. Low-camera rises only 2 rows.
+Foot bottoms (canvas rows; visual landmarks): {"s": {"near": 140, "far": 107}, "se": {"near": 140, "far": 123}, "e": {"near": 140, "far": null}, "ne": {"near": 140, "far": 118}, "n": {"near": 140, "far": 108}}. East has only two distinguishable clamp feet; far pair cannot be established.

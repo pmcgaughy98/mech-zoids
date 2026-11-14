@@ -1,0 +1,20 @@
+Tokens used: unavailable. Built-in image tool: exactly one image per sheet, unchanged exact prompt files, front/side/back refs attached in order; no redos.
+idle: image 1619x971; sha256 b477d5d4dc6cad9198886c0a78163d9ee328d519af4f6bc5cc55cdd8e19d4bb0
+idle: grid clean YES; factors F/S/B 0.276839/0.358885/0.262344; f0 sizes 73x70/103x70/68x75; ref exact shares 0.625/0.434/0.441; mirror min F/B 0.964/0.953; side right YES.
+idle: 15 frames, palette/alpha/borders PASS, eye rim=0; red/glint total 10/0, 4 front/side frames lack red; bottom y 160; >3px: none. Full frame checks: idle/checks.txt.
+idle by eye: Same main plate/frame/joint/foot/horn/tail design in all rows, but eye often lost; breath beats match, modest foot/shape drift; front/back straight-on; rear leg length broadly stable.
+walk: image 1914x822; sha256 2472cb15045d0a73f23555c21d427ed504702e5b502abdd5821260b6f2522277
+walk: grid clean YES; factors F/S/B 0.343061/0.422131/0.327354; f0 sizes 73x69/103x72/68x75; ref exact shares 0.625/0.301/0.628; mirror min F/B 0.955/0.930; side right YES.
+walk: 21 frames, palette/alpha/borders PASS, eye rim=0; red/glint total 13/0, 5 front/side frames lack red; bottom y 160; >3px: none. Full frame checks: walk/checks.txt.
+walk by eye: Same main design, eye mostly lost; stepping visible but diagonal pairing and column timing do NOT reliably match (front repeats while rear alternates); front/back straight-on; rear legs shorten with lifted feet.
+horn-jab: image 1774x887; sha256 5d650f731f04c23a35ad6e1243bfb4eb1a1a49f3d93d05ecf6a41b81f0a43146
+horn-jab: grid clean YES; factors F/S/B 0.316265/0.393130/0.299382; f0 sizes 72x70/103x71/67x75; ref exact shares 0.657/0.449/0.437; mirror min F/B 0.921/0.906; side right YES.
+horn-jab: 18 frames, palette/alpha/borders PASS, eye rim=0; red/glint total 24/0, 3 front/side frames lack red; bottom y 160; >3px: none. Full frame checks: horn-jab/checks.txt.
+horn-jab by eye: Same main design, eye mostly lost; low-to-high jab beats broadly match, forward lunge weak; front head turns slightly at hit/follow-through, back straight-on; rear leg length broadly stable.
+horn-toss: image 1914x822; sha256 cc140678a40d1c11c8f8944f8cdba40a9b6f6cc3dfa0393cef9a15d9e23191b0
+horn-toss: grid clean YES; factors F/S/B 0.345695/0.420408/0.320689; f0 sizes 74x69/104x66/69x74; ref exact shares 0.644/0.525/0.286; mirror min F/B 0.720/0.901; side right YES.
+horn-toss: 21 frames, palette/alpha/borders PASS, eye rim=0; red/glint total 10/0, 10 front/side frames lack red; bottom y 156,160; >3px: front_f4 needs +4px; back_f4 needs +4px. Full frame checks: horn-toss/checks.txt.
+horn-toss by eye: Same main design, eye mostly lost; scoop/lift beats broadly match but horn does NOT clearly sweep backward; front becomes three-quarter at peak, back straight-on; rear legs shorten during crouch/peak instead of keeping length.
+Horn-jab: nominal column-3 cut grazed the horn; moved cut +2 source px into its empty gutter, preserving all 18 separate rhinos.
+Previews: each sheet/review.png and preview_front/side/back.gif (3x nearest, #808080, requested timing); 75 frames total. All output writes inside codex-set-a; no asset install or commit.
+Review candidates with the failures above, not approved animation. Approved refinish.py was copied then adapted; finish_all.py runs it; generation.json records unchanged raw hashes.

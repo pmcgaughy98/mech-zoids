@@ -1,0 +1,26 @@
+Fennec walk at 35 degrees: plan and price (walk lane, 2026-11-05). Request: Preston, "Send to walk lane", via the
+touch-up lane. Nothing paid runs before his yes in his own words.
+
+Why it needs redrawing: the stills and idle are 35-degree (views_cam35_touchup, approved), but the walk was drawn at the
+low camera (codex-set-a front/side/back, codex-set-c ne/se), so the fennec stands at 35 and walks at the old angle.
+Live glitches to avoid (touch-up lane): back view, gold tail pixels on the inner back leg (rows 156-159); ne and nw, the
+tail lies flat over the near hind leg (about x 85-98, rows 152-160). Stopgap patches: D:/dev/_scratch/touchup-lane/fennec-walk/.
+
+Why not the gorilla method straight away: the 35-degree stills are SEATED (e: body on the ground along x 43-104; the
+packer already marks the walk NOT_FROM_STILL). There is no standing pose at 35 to slide legs from, and no 3D rig (the
+35-degree stills came from one Codex image sheet, cam35/, 70,848 tokens).
+
+Proposed route:
+  A. One standing 35-degree still per view (mid-stance of the trot), made the way the seated 35 sheet was: Codex image
+     tool, refs = the approved seated 35 stills (look, palette, plates) + the old trot f0 frames (pose). Finished,
+     mapped to the 15-colour palette, sliced to 160 canvas, feet row 140. About 60k-100k tokens (the fleet's sheets were
+     54k-78k). Preston looks before B.
+  B. The trot from that standing still with the gorilla method (legs and tail translated, joints by hand, body pinned):
+     run 1 e, se, ne; run 2 s, n. Gorilla: 143k + 100k for a big L machine; fennec legs are thin, so about 90k-140k
+     each. Then walk_tools footlock + seams (free) and the touch-up lane's cleanup.
+  Total: about 240k-380k tokens, with a stop after A if the standing pose is off.
+Gait: trot in diagonal pairs (the old approved walk), 8 frames at 10 fps, body dip on f0 and f4. Stride stays the kit's
+STRIDE 0.56 m/s: 3.5 px a frame at texel 0.016, planted steps alternating 3 and 4 px, so fennec_kit.gd needs no change.
+Tail: straight, trails by one frame, never over a leg.
+Alternative (not recommended): draw the trot at 35 directly from the old trot + seated stills, 2 runs, about 260k-360k,
+no checkpoint, higher off-model risk.

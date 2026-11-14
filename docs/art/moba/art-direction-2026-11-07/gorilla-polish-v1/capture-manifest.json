@@ -1,0 +1,375 @@
+{
+  "arena": "scenes/moba3d/arena_blockout.tscn",
+  "body_materials": 1,
+  "captures": [
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "A-original-1280x720-y0-d0.png",
+      "fov": 60.0,
+      "model_yaw": 0.0,
+      "resolution": [
+        1280,
+        720
+      ],
+      "variant": "A-original"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "C-graphic-1280x720-y0-d0.png",
+      "fov": 60.0,
+      "model_yaw": 0.0,
+      "resolution": [
+        1280,
+        720
+      ],
+      "variant": "C-graphic"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "D-refined-1280x720-y0-d0.png",
+      "fov": 60.0,
+      "model_yaw": 0.0,
+      "resolution": [
+        1280,
+        720
+      ],
+      "variant": "D-refined"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "A-original-1280x720-y45-d0.png",
+      "fov": 60.0,
+      "model_yaw": 45.0,
+      "resolution": [
+        1280,
+        720
+      ],
+      "variant": "A-original"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "C-graphic-1280x720-y45-d0.png",
+      "fov": 60.0,
+      "model_yaw": 45.0,
+      "resolution": [
+        1280,
+        720
+      ],
+      "variant": "C-graphic"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "D-refined-1280x720-y45-d0.png",
+      "fov": 60.0,
+      "model_yaw": 45.0,
+      "resolution": [
+        1280,
+        720
+      ],
+      "variant": "D-refined"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "A-original-1280x720-y135-d0.png",
+      "fov": 60.0,
+      "model_yaw": 135.0,
+      "resolution": [
+        1280,
+        720
+      ],
+      "variant": "A-original"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "C-graphic-1280x720-y135-d0.png",
+      "fov": 60.0,
+      "model_yaw": 135.0,
+      "resolution": [
+        1280,
+        720
+      ],
+      "variant": "C-graphic"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "D-refined-1280x720-y135-d0.png",
+      "fov": 60.0,
+      "model_yaw": 135.0,
+      "resolution": [
+        1280,
+        720
+      ],
+      "variant": "D-refined"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "A-original-1280x720-y180-d0.png",
+      "fov": 60.0,
+      "model_yaw": 180.0,
+      "resolution": [
+        1280,
+        720
+      ],
+      "variant": "A-original"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "C-graphic-1280x720-y180-d0.png",
+      "fov": 60.0,
+      "model_yaw": 180.0,
+      "resolution": [
+        1280,
+        720
+      ],
+      "variant": "C-graphic"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "D-refined-1280x720-y180-d0.png",
+      "fov": 60.0,
+      "model_yaw": 180.0,
+      "resolution": [
+        1280,
+        720
+      ],
+      "variant": "D-refined"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 8.0,
+      "file": "A-original-1280x720-y135-d8.png",
+      "fov": 60.0,
+      "model_yaw": 135.0,
+      "resolution": [
+        1280,
+        720
+      ],
+      "variant": "A-original"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 8.0,
+      "file": "C-graphic-1280x720-y135-d8.png",
+      "fov": 60.0,
+      "model_yaw": 135.0,
+      "resolution": [
+        1280,
+        720
+      ],
+      "variant": "C-graphic"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 8.0,
+      "file": "D-refined-1280x720-y135-d8.png",
+      "fov": 60.0,
+      "model_yaw": 135.0,
+      "resolution": [
+        1280,
+        720
+      ],
+      "variant": "D-refined"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "A-original-320x180-y0-d0.png",
+      "fov": 60.0,
+      "model_yaw": 0.0,
+      "resolution": [
+        320,
+        180
+      ],
+      "variant": "A-original"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "C-graphic-320x180-y0-d0.png",
+      "fov": 60.0,
+      "model_yaw": 0.0,
+      "resolution": [
+        320,
+        180
+      ],
+      "variant": "C-graphic"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "D-refined-320x180-y0-d0.png",
+      "fov": 60.0,
+      "model_yaw": 0.0,
+      "resolution": [
+        320,
+        180
+      ],
+      "variant": "D-refined"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "A-original-320x180-y45-d0.png",
+      "fov": 60.0,
+      "model_yaw": 45.0,
+      "resolution": [
+        320,
+        180
+      ],
+      "variant": "A-original"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "C-graphic-320x180-y45-d0.png",
+      "fov": 60.0,
+      "model_yaw": 45.0,
+      "resolution": [
+        320,
+        180
+      ],
+      "variant": "C-graphic"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "D-refined-320x180-y45-d0.png",
+      "fov": 60.0,
+      "model_yaw": 45.0,
+      "resolution": [
+        320,
+        180
+      ],
+      "variant": "D-refined"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "A-original-320x180-y135-d0.png",
+      "fov": 60.0,
+      "model_yaw": 135.0,
+      "resolution": [
+        320,
+        180
+      ],
+      "variant": "A-original"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "C-graphic-320x180-y135-d0.png",
+      "fov": 60.0,
+      "model_yaw": 135.0,
+      "resolution": [
+        320,
+        180
+      ],
+      "variant": "C-graphic"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "D-refined-320x180-y135-d0.png",
+      "fov": 60.0,
+      "model_yaw": 135.0,
+      "resolution": [
+        320,
+        180
+      ],
+      "variant": "D-refined"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "A-original-320x180-y180-d0.png",
+      "fov": 60.0,
+      "model_yaw": 180.0,
+      "resolution": [
+        320,
+        180
+      ],
+      "variant": "A-original"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "C-graphic-320x180-y180-d0.png",
+      "fov": 60.0,
+      "model_yaw": 180.0,
+      "resolution": [
+        320,
+        180
+      ],
+      "variant": "C-graphic"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 0.0,
+      "file": "D-refined-320x180-y180-d0.png",
+      "fov": 60.0,
+      "model_yaw": 180.0,
+      "resolution": [
+        320,
+        180
+      ],
+      "variant": "D-refined"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 8.0,
+      "file": "A-original-320x180-y135-d8.png",
+      "fov": 60.0,
+      "model_yaw": 135.0,
+      "resolution": [
+        320,
+        180
+      ],
+      "variant": "A-original"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 8.0,
+      "file": "C-graphic-320x180-y135-d8.png",
+      "fov": 60.0,
+      "model_yaw": 135.0,
+      "resolution": [
+        320,
+        180
+      ],
+      "variant": "C-graphic"
+    },
+    {
+      "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.866025, -0.5), Z: (0.0, 0.5, 0.866025), O: (0.0, 4.45, 13.62917)]",
+      "extra_distance": 8.0,
+      "file": "D-refined-320x180-y135-d8.png",
+      "fov": 60.0,
+      "model_yaw": 135.0,
+      "resolution": [
+        320,
+        180
+      ],
+      "variant": "D-refined"
+    }
+  ],
+  "fog_of_war": false,
+  "geometry_changed": false,
+  "minimap": false,
+  "normal_map_available": true,
+  "pose": "source static mesh",
+  "position": "(0.0, 0.0, 8.0)",
+  "scale_approved": false,
+  "test_height_m": 2.0,
+  "theme": "foundry"
+}

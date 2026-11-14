@@ -1,0 +1,11 @@
+Hippo cam35 touch-up (take-b): kept by Preston, 2026-11-05 ("Keep it").
+Run: touchup/touchup_machine.py hippo_l/take-b --rim 2 --seam-cap --title Hippo (cap 0.80, reference views/).
+Recolour only: alpha identical to views_cam35/, so canvas, feet row 160 and silhouette are unchanged. Raw, no outline:
+the packer adds sel-out. Highlight-filled lilac plates now keep a 2 px bevel on top and left edges; seam ink in s, se,
+e and ne, skipped in n (already as dark as approved). 0 px off the 14-colour palette.
+Known short: deepest shade 6-11% per view against 14.5-17.5% approved (undersides and right faces too light; this pass
+does not touch them); n highlight now below approved (7.5 against 14.2); specks above approved in all five; checkers
+rose in s and n.
+Installing (packing into the game) is not this lane's step.
+Details: docs/art/moba/touchup/LOG.md section 8.
+Superseded 2026-11-05 by views_cam35_touchup_shade1/ (Preston: "Keep 1 px version", LOG.md section 9). Pack that set, not this one.

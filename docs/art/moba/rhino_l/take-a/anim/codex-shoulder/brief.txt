@@ -1,0 +1,29 @@
+You are finishing pixel art for a game. Work only inside D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim.
+
+Goal (the art owner's words): "put a black outline around top of shoulders so you can tell they are separate on front view".
+The rhino mech's shoulder is the yellow armour block sitting directly over each front knee disc (the grey round joint).
+In the se and side views (codex-set-a/walk/frames/se_f0.png, side_f0.png) that plate is a dome with a black line over its top.
+In the front view the block has a dark channel on its inner side and an outline under it, but no top edge, so it runs up into the pale flank.
+
+The spec is already done on the walk. Compare:
+  before: codex-set-a/walk/frames/pre_shoulder/front_f0.png
+  after:  codex-set-a/walk/frames/front_f0.png
+  code:   front_shoulder_ink.py (the LEFT arc coordinates; the right arc is mirrored with x' = 194 - x)
+On each side a domed one-texel line of #141218 runs from the outer outline to the inner dark channel, peaking about 3 rows
+above its ends, and the texel directly under the line is lit one step (#D18A0A or #7A4A06 becomes #FFCF1F).
+
+Task: apply the same treatment to every front_f*.png (ignore files with other suffixes such as front_f4_codex.png) in:
+  codex-set-a/idle/frames, codex-set-a/horn-jab/frames, codex-set-a/horn-toss/frames,
+  codex-set-b/brace/frames, codex-set-b/stampede/frames, codex-set-b/death/frames, codex-ground-pound/clean/frames
+These are drawn a little differently from the walk and the pose changes, so find the shoulder block in each frame yourself:
+the yellow block over each knee disc, below the pale flank. Place the line at its top, from the outer outline to the inner
+dark channel. Keep it consistent frame to frame within an animation so it does not jitter. If a shoulder is not visible or
+is too foreshortened in a frame (rearing, falling), skip that side and say so.
+
+Rules:
+- Before editing a frame, copy the original to pre_shoulder/ in the same folder (do not overwrite an existing copy there).
+- Use only these colours: 141218 211E27 3D3A44 7A4A06 58555E FF3A2A D18A0A 9D9BA2 FFCF1F D6D6DC FFE6D8 FFF4A8.
+- Do not change the alpha mask, do not move or redraw anything else, do not touch frames_selout or any other folder or file.
+- Write codex-shoulder/board.png: for each animation, the front frames before (top row) and after (bottom row) at 4x on a dark
+  background. Write codex-shoulder/REPORT.txt: per frame, which sides were lined and how many pixels changed, plus anything skipped.
+- Check your own board against the walk spec before finishing. Do not run selout_rhino.py; that is done afterwards.

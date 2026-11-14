@@ -1,0 +1,29 @@
+lobster-walk35-run1: 24 raw review frames e/se/ne; tokens watcher snapshot 09:01:11 163144; final total unknown.
+Native hippo/fennec part, pinned-shell, integer-band, stamp-audit method; no image tool/rotation/filtering.
+Names retained: R1 front/R2 middle/R3 rear = near right; L1/L2/L3 far left, behind shell/tail.
+Guide differences: se R3 painted support (59,123), guide (56,122); se R2 support (67,141), guide (64.5,141).
+Actual bottom-two-row sole stamps are translated to supplied targets; targets.json/stills unchanged.
+Tripod A L1/R2/L3 planted f0-3; B R1/L2/R3 planted f4-7; lifts2/3/3/2 exact; body/claws/tail dip f0/f4.
+Deciding pixel stamp lock x/y spread: e all0/0; se/ne max0.879/0.783px; PASS. Hidden feet measured on layers.
+Max pixel-measured target error e0.500, se0.490, ne0.490px; all foot layer stamps100% in all8 frames.
+Upper canvas above moving joins: e/se/ne f0-7 all[0,0,0,0,0,0,0,0]% differing after dip.
+e underside true native leg spans: [([70, 87], -0.632, True), ([91, 108], 0.632, True), ([112, 130], 0.9, True)]
+se underside true native leg spans: [([52, 68], -1.556, True), ([58, 76], 5.2, False), ([73, 91], 0.85, True)]
+ne underside true native leg spans: [([105, 123], 1.0, True), ([122, 139], 0.895, True), ([135, 145], -3.583, True)]
+Body excludes separately pinned sockets/tail/claws; absent exterior column uses conservative trunk bound (checks.txt).
+e specks still174 -> f0-7 [175, 168, 164, 171, 174, 176, 175, 176].
+se specks still209 -> f0-7 [206, 208, 211, 209, 205, 210, 211, 211].
+ne specks still141 -> f0-7 [142, 143, 142, 142, 143, 142, 142, 142].
+e lowest f0-7 [160, 160, 160, 160, 159, 158, 158, 158].
+se lowest f0-7 [161, 160, 160, 160, 161, 160, 160, 160].
+ne lowest f0-7 [161, 160, 160, 160, 161, 160, 160, 160].
+All192x192; binary alpha; native palette only; one component;0 holes/strays/edge pixels. Only dipped claws reach161.
+Footlock tool SOME FEET NEED A LOOK: se R3, ne R2/R1 merge soles; e R1 can merge claw; stamps decide.
+Seams tool open-gap flags e/se/ne: [[4, 22, 22, 6, 1, 13, 30, 6], [28, 32, 48, 21, 10, 12, 32, 33], [0, 2, 0, 0, 0, 2, 0, 9]].
+No flags inside pinned trunk and0 enclosed holes; red-dot seam boards retain open spaces between legs/ankles.
+Whole feet100% on every leg layer; composite occlusion counts per foot/frame in strict_checks.json; touching soles FAIL separation gate.
+Projected articulated length change max1.714px: 1px length gate NOT MET; native-width bands retained.
+Own-still-row gate NOT MET in diagonal planted poses (up to2px lower, prescribed targets); global foot row<=160.
+By eye at4x selout/5x joints: heavy near-front+rear versus middle rhythm; claws intact, no stepping; tail plates intact, shell underside clear.
+Review delivery, NOT an all-gates pass: overlaps/length exceptions above remain. GIF120/130ms alternates (10ms format limit); APNG exact125ms.
+e: eight native frames and source/layers drawn; pixel audit/visual review pending.

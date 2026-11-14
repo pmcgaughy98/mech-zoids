@@ -1,0 +1,3418 @@
+{
+  "ne": {
+    "structure": [
+      {
+        "frame": 0,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 162,
+        "body_diff_before_foreground_occlusion_mask": 102,
+        "protected_body_pixels": 2400,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 1,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 159,
+        "body_diff_before_foreground_occlusion_mask": 42,
+        "protected_body_pixels": 2422,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 2,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 158,
+        "body_diff_before_foreground_occlusion_mask": 23,
+        "protected_body_pixels": 2422,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 3,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 159,
+        "body_diff_before_foreground_occlusion_mask": 14,
+        "protected_body_pixels": 2422,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 4,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 160,
+        "body_diff_before_foreground_occlusion_mask": 11,
+        "protected_body_pixels": 2400,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 5,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 159,
+        "body_diff_before_foreground_occlusion_mask": 11,
+        "protected_body_pixels": 2422,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 6,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 160,
+        "body_diff_before_foreground_occlusion_mask": 31,
+        "protected_body_pixels": 2422,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 7,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 161,
+        "body_diff_before_foreground_occlusion_mask": 62,
+        "protected_body_pixels": 2422,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      }
+    ],
+    "feet": {
+      "RF": {
+        "planted_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "spread_xy": [
+          0.48399999999999466,
+          0.867999999999995
+        ],
+        "frames": [
+          {
+            "frame": 0,
+            "measured_sole": [
+              127.5,
+              156.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              4,
+              -2
+            ],
+            "target": [
+              127.74,
+              155.57
+            ],
+            "target_error_xy": [
+              0.23999999999999488,
+              0.4300000000000068
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 1,
+            "measured_sole": [
+              125.5,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              2,
+              -1
+            ],
+            "target": [
+              125.62,
+              156.78
+            ],
+            "target_error_xy": [
+              0.12000000000000455,
+              0.21999999999999886
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 2,
+            "measured_sole": [
+              123.5,
+              158.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              0
+            ],
+            "target": [
+              123.5,
+              158.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 3,
+            "measured_sole": [
+              121.5,
+              159.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              -2,
+              1
+            ],
+            "target": [
+              121.38,
+              159.22
+            ],
+            "target_error_xy": [
+              0.12000000000000455,
+              0.21999999999999886
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 4,
+            "measured_sole": [
+              119.5,
+              160.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              -4,
+              2
+            ],
+            "target": [
+              119.26,
+              160.43
+            ],
+            "target_error_xy": [
+              0.23999999999999488,
+              0.4300000000000068
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 5,
+            "measured_sole": [
+              121.5,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              -2,
+              -1
+            ],
+            "target": [
+              121.38,
+              157.22
+            ],
+            "target_error_xy": [
+              0.12000000000000455,
+              0.21999999999999886
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 6,
+            "measured_sole": [
+              123.5,
+              155.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -3
+            ],
+            "target": [
+              123.5,
+              155.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 3,
+            "measured_lift": 3.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 7,
+            "measured_sole": [
+              125.5,
+              155.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              2,
+              -3
+            ],
+            "target": [
+              125.62,
+              154.78
+            ],
+            "target_error_xy": [
+              0.12000000000000455,
+              0.21999999999999886
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          }
+        ],
+        "max_target_error_xy": [
+          0.23999999999999488,
+          0.4300000000000068
+        ],
+        "native_part_length_change_px": 0
+      },
+      "LH": {
+        "planted_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "spread_xy": [
+          0.48399999999999466,
+          0.867999999999995
+        ],
+        "frames": [
+          {
+            "frame": 0,
+            "measured_sole": [
+              68.0,
+              146.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              4,
+              -2
+            ],
+            "target": [
+              68.24,
+              145.57
+            ],
+            "target_error_xy": [
+              0.23999999999999488,
+              0.4300000000000068
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 1,
+            "measured_sole": [
+              66.0,
+              147.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              2,
+              -1
+            ],
+            "target": [
+              66.12,
+              146.78
+            ],
+            "target_error_xy": [
+              0.12000000000000455,
+              0.21999999999999886
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 2,
+            "measured_sole": [
+              64.0,
+              148.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              0
+            ],
+            "target": [
+              64.0,
+              148.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 3,
+            "measured_sole": [
+              62.0,
+              149.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              -2,
+              1
+            ],
+            "target": [
+              61.88,
+              149.22
+            ],
+            "target_error_xy": [
+              0.11999999999999744,
+              0.21999999999999886
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 4,
+            "measured_sole": [
+              60.0,
+              150.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              -4,
+              2
+            ],
+            "target": [
+              59.76,
+              150.43
+            ],
+            "target_error_xy": [
+              0.240000000000002,
+              0.4300000000000068
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 5,
+            "measured_sole": [
+              62.0,
+              147.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              -2,
+              -1
+            ],
+            "target": [
+              61.88,
+              147.22
+            ],
+            "target_error_xy": [
+              0.11999999999999744,
+              0.21999999999999886
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 6,
+            "measured_sole": [
+              64.0,
+              145.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -3
+            ],
+            "target": [
+              64.0,
+              145.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 3,
+            "measured_lift": 3.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 7,
+            "measured_sole": [
+              66.0,
+              145.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              2,
+              -3
+            ],
+            "target": [
+              66.12,
+              144.78
+            ],
+            "target_error_xy": [
+              0.12000000000000455,
+              0.21999999999999886
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          }
+        ],
+        "max_target_error_xy": [
+          0.240000000000002,
+          0.4300000000000068
+        ],
+        "native_part_length_change_px": 0
+      },
+      "LF": {
+        "planted_order": [
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "spread_xy": [
+          0.48399999999999466,
+          0.867999999999995
+        ],
+        "frames": [
+          {
+            "frame": 0,
+            "measured_sole": [
+              60.5,
+              140.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              -4,
+              2
+            ],
+            "target": [
+              60.25737312,
+              140.433372
+            ],
+            "target_error_xy": [
+              0.2426268800000031,
+              0.43337199999999143
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 1,
+            "measured_sole": [
+              62.5,
+              137.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              -2,
+              -1
+            ],
+            "target": [
+              62.37868656,
+              137.216686
+            ],
+            "target_error_xy": [
+              0.12131344000000155,
+              0.21668600000000993
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 2,
+            "measured_sole": [
+              64.5,
+              135.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -3
+            ],
+            "target": [
+              64.5,
+              135.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 3,
+            "measured_lift": 3.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 3,
+            "measured_sole": [
+              66.5,
+              135.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              2,
+              -3
+            ],
+            "target": [
+              66.62131344,
+              134.783314
+            ],
+            "target_error_xy": [
+              0.12131343999999444,
+              0.21668600000000993
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 4,
+            "measured_sole": [
+              68.5,
+              136.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              4,
+              -2
+            ],
+            "target": [
+              68.74262688,
+              135.566628
+            ],
+            "target_error_xy": [
+              0.2426268800000031,
+              0.43337199999999143
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 5,
+            "measured_sole": [
+              66.5,
+              137.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              2,
+              -1
+            ],
+            "target": [
+              66.62131344,
+              136.783314
+            ],
+            "target_error_xy": [
+              0.12131343999999444,
+              0.21668600000000993
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 6,
+            "measured_sole": [
+              64.5,
+              138.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              0
+            ],
+            "target": [
+              64.5,
+              138.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 7,
+            "measured_sole": [
+              62.5,
+              139.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              -2,
+              1
+            ],
+            "target": [
+              62.37868656,
+              139.216686
+            ],
+            "target_error_xy": [
+              0.12131344000000155,
+              0.21668600000000993
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          }
+        ],
+        "max_target_error_xy": [
+          0.2426268800000031,
+          0.43337199999999143
+        ],
+        "native_part_length_change_px": 0
+      },
+      "RH": {
+        "planted_order": [
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "spread_xy": [
+          0.48399999999999466,
+          0.867999999999995
+        ],
+        "frames": [
+          {
+            "frame": 0,
+            "measured_sole": [
+              84.5,
+              162.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              -4,
+              2
+            ],
+            "target": [
+              84.26,
+              162.43
+            ],
+            "target_error_xy": [
+              0.23999999999999488,
+              0.4300000000000068
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 1,
+            "measured_sole": [
+              86.5,
+              159.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              -2,
+              -1
+            ],
+            "target": [
+              86.38,
+              159.22
+            ],
+            "target_error_xy": [
+              0.12000000000000455,
+              0.21999999999999886
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 2,
+            "measured_sole": [
+              88.5,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -3
+            ],
+            "target": [
+              88.5,
+              157.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 3,
+            "measured_lift": 3.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 3,
+            "measured_sole": [
+              90.5,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              2,
+              -3
+            ],
+            "target": [
+              90.62,
+              156.78
+            ],
+            "target_error_xy": [
+              0.12000000000000455,
+              0.21999999999999886
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 4,
+            "measured_sole": [
+              92.5,
+              158.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              4,
+              -2
+            ],
+            "target": [
+              92.74,
+              157.57
+            ],
+            "target_error_xy": [
+              0.23999999999999488,
+              0.4300000000000068
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 5,
+            "measured_sole": [
+              90.5,
+              159.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              2,
+              -1
+            ],
+            "target": [
+              90.62,
+              158.78
+            ],
+            "target_error_xy": [
+              0.12000000000000455,
+              0.21999999999999886
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 6,
+            "measured_sole": [
+              88.5,
+              160.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              0
+            ],
+            "target": [
+              88.5,
+              160.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 7,
+            "measured_sole": [
+              86.5,
+              161.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              -2,
+              1
+            ],
+            "target": [
+              86.38,
+              161.22
+            ],
+            "target_error_xy": [
+              0.12000000000000455,
+              0.21999999999999886
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          }
+        ],
+        "max_target_error_xy": [
+          0.23999999999999488,
+          0.4300000000000068
+        ],
+        "native_part_length_change_px": 0
+      }
+    }
+  },
+  "s": {
+    "structure": [
+      {
+        "frame": 0,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 163,
+        "body_diff_before_foreground_occlusion_mask": 54,
+        "protected_body_pixels": 2609,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 1,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 162,
+        "body_diff_before_foreground_occlusion_mask": 54,
+        "protected_body_pixels": 2609,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 2,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 160,
+        "body_diff_before_foreground_occlusion_mask": 35,
+        "protected_body_pixels": 2627,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 3,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 160,
+        "body_diff_before_foreground_occlusion_mask": 12,
+        "protected_body_pixels": 2646,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 4,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 163,
+        "body_diff_before_foreground_occlusion_mask": 50,
+        "protected_body_pixels": 2609,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 5,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 162,
+        "body_diff_before_foreground_occlusion_mask": 50,
+        "protected_body_pixels": 2609,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 6,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 160,
+        "body_diff_before_foreground_occlusion_mask": 31,
+        "protected_body_pixels": 2627,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 7,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 160,
+        "body_diff_before_foreground_occlusion_mask": 16,
+        "protected_body_pixels": 2646,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      }
+    ],
+    "feet": {
+      "RF": {
+        "planted_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "spread_xy": [
+          0.0,
+          0.8840000000000146
+        ],
+        "frames": [
+          {
+            "frame": 0,
+            "measured_sole": [
+              65.0,
+              163.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              3
+            ],
+            "target": [
+              65.0,
+              163.44
+            ],
+            "target_error_xy": [
+              0.0,
+              0.4399999999999977
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 1,
+            "measured_sole": [
+              65.0,
+              162.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              2
+            ],
+            "target": [
+              65.0,
+              161.72
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 2,
+            "measured_sole": [
+              65.0,
+              160.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              0
+            ],
+            "target": [
+              65.0,
+              160.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 3,
+            "measured_sole": [
+              65.0,
+              158.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -2
+            ],
+            "target": [
+              65.0,
+              158.28
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 4,
+            "measured_sole": [
+              65.0,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -3
+            ],
+            "target": [
+              65.0,
+              156.56
+            ],
+            "target_error_xy": [
+              0.0,
+              0.4399999999999977
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 5,
+            "measured_sole": [
+              65.0,
+              156.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -4
+            ],
+            "target": [
+              65.0,
+              156.28
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 6,
+            "measured_sole": [
+              65.0,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -3
+            ],
+            "target": [
+              65.0,
+              157.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 3,
+            "measured_lift": 3.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 7,
+            "measured_sole": [
+              65.0,
+              160.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              0
+            ],
+            "target": [
+              65.0,
+              159.72
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          }
+        ],
+        "max_target_error_xy": [
+          0.0,
+          0.4399999999999977
+        ],
+        "native_part_length_change_px": 0
+      },
+      "LH": {
+        "planted_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "spread_xy": [
+          0.0,
+          0.8840000000000146
+        ],
+        "frames": [
+          {
+            "frame": 0,
+            "measured_sole": [
+              105.5,
+              146.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              1,
+              3
+            ],
+            "target": [
+              105.0,
+              146.44
+            ],
+            "target_error_xy": [
+              0.5,
+              0.4399999999999977
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 1,
+            "measured_sole": [
+              105.5,
+              145.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              1,
+              2
+            ],
+            "target": [
+              105.0,
+              144.72
+            ],
+            "target_error_xy": [
+              0.5,
+              0.28000000000000114
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 2,
+            "measured_sole": [
+              105.5,
+              143.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              1,
+              0
+            ],
+            "target": [
+              105.0,
+              143.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 3,
+            "measured_sole": [
+              105.5,
+              141.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              1,
+              -2
+            ],
+            "target": [
+              105.0,
+              141.28
+            ],
+            "target_error_xy": [
+              0.5,
+              0.28000000000000114
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 4,
+            "measured_sole": [
+              105.5,
+              140.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              1,
+              -3
+            ],
+            "target": [
+              105.0,
+              139.56
+            ],
+            "target_error_xy": [
+              0.5,
+              0.4399999999999977
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 5,
+            "measured_sole": [
+              105.5,
+              139.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              1,
+              -4
+            ],
+            "target": [
+              105.0,
+              139.28
+            ],
+            "target_error_xy": [
+              0.5,
+              0.28000000000000114
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 6,
+            "measured_sole": [
+              105.5,
+              140.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              1,
+              -3
+            ],
+            "target": [
+              105.0,
+              140.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "expected_lift": 3,
+            "measured_lift": 3.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 7,
+            "measured_sole": [
+              105.5,
+              143.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              1,
+              0
+            ],
+            "target": [
+              105.0,
+              142.72
+            ],
+            "target_error_xy": [
+              0.5,
+              0.28000000000000114
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          }
+        ],
+        "max_target_error_xy": [
+          0.5,
+          0.4399999999999977
+        ],
+        "native_part_length_change_px": 0
+      },
+      "LF": {
+        "planted_order": [
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "spread_xy": [
+          0.0,
+          0.8840000000000146
+        ],
+        "frames": [
+          {
+            "frame": 0,
+            "measured_sole": [
+              125.0,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -3
+            ],
+            "target": [
+              125.0,
+              156.56
+            ],
+            "target_error_xy": [
+              0.0,
+              0.4399999999999977
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 1,
+            "measured_sole": [
+              125.0,
+              156.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -4
+            ],
+            "target": [
+              125.0,
+              156.28
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 2,
+            "measured_sole": [
+              125.0,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -3
+            ],
+            "target": [
+              125.0,
+              157.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 3,
+            "measured_lift": 3.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 3,
+            "measured_sole": [
+              125.0,
+              160.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              0
+            ],
+            "target": [
+              125.0,
+              159.72
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 4,
+            "measured_sole": [
+              125.0,
+              163.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              3
+            ],
+            "target": [
+              125.0,
+              163.44
+            ],
+            "target_error_xy": [
+              0.0,
+              0.4399999999999977
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 5,
+            "measured_sole": [
+              125.0,
+              162.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              2
+            ],
+            "target": [
+              125.0,
+              161.72
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 6,
+            "measured_sole": [
+              125.0,
+              160.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              0
+            ],
+            "target": [
+              125.0,
+              160.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 7,
+            "measured_sole": [
+              125.0,
+              158.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -2
+            ],
+            "target": [
+              125.0,
+              158.28
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          }
+        ],
+        "max_target_error_xy": [
+          0.0,
+          0.4399999999999977
+        ],
+        "native_part_length_change_px": 0
+      },
+      "RH": {
+        "planted_order": [
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "spread_xy": [
+          0.0,
+          0.8840000000000146
+        ],
+        "frames": [
+          {
+            "frame": 0,
+            "measured_sole": [
+              85.5,
+              140.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -3
+            ],
+            "target": [
+              85.0,
+              139.56
+            ],
+            "target_error_xy": [
+              0.5,
+              0.4399999999999977
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 1,
+            "measured_sole": [
+              85.5,
+              139.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -4
+            ],
+            "target": [
+              85.0,
+              139.28
+            ],
+            "target_error_xy": [
+              0.5,
+              0.28000000000000114
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 2,
+            "measured_sole": [
+              85.5,
+              140.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -3
+            ],
+            "target": [
+              85.0,
+              140.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "expected_lift": 3,
+            "measured_lift": 3.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 3,
+            "measured_sole": [
+              85.5,
+              143.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              0
+            ],
+            "target": [
+              85.0,
+              142.72
+            ],
+            "target_error_xy": [
+              0.5,
+              0.28000000000000114
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 4,
+            "measured_sole": [
+              85.5,
+              146.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              3
+            ],
+            "target": [
+              85.0,
+              146.44
+            ],
+            "target_error_xy": [
+              0.5,
+              0.4399999999999977
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 5,
+            "measured_sole": [
+              85.5,
+              145.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              2
+            ],
+            "target": [
+              85.0,
+              144.72
+            ],
+            "target_error_xy": [
+              0.5,
+              0.28000000000000114
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 6,
+            "measured_sole": [
+              85.5,
+              143.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              0
+            ],
+            "target": [
+              85.0,
+              143.0
+            ],
+            "target_error_xy": [
+              0.5,
+              0.0
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 7,
+            "measured_sole": [
+              85.5,
+              141.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -2
+            ],
+            "target": [
+              85.0,
+              141.28
+            ],
+            "target_error_xy": [
+              0.5,
+              0.28000000000000114
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          }
+        ],
+        "max_target_error_xy": [
+          0.5,
+          0.4399999999999977
+        ],
+        "native_part_length_change_px": 0
+      }
+    }
+  },
+  "n": {
+    "structure": [
+      {
+        "frame": 0,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 163,
+        "body_diff_before_foreground_occlusion_mask": 36,
+        "protected_body_pixels": 2798,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 1,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 160,
+        "body_diff_before_foreground_occlusion_mask": 14,
+        "protected_body_pixels": 2821,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 2,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 160,
+        "body_diff_before_foreground_occlusion_mask": 25,
+        "protected_body_pixels": 2810,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 3,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 162,
+        "body_diff_before_foreground_occlusion_mask": 35,
+        "protected_body_pixels": 2798,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 4,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 163,
+        "body_diff_before_foreground_occlusion_mask": 35,
+        "protected_body_pixels": 2798,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 5,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 160,
+        "body_diff_before_foreground_occlusion_mask": 15,
+        "protected_body_pixels": 2821,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 6,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 160,
+        "body_diff_before_foreground_occlusion_mask": 24,
+        "protected_body_pixels": 2810,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      },
+      {
+        "frame": 7,
+        "canvas": [
+          192,
+          192
+        ],
+        "binary_alpha": true,
+        "off_palette_pixels": 0,
+        "opaque_colours": 15,
+        "components": 1,
+        "stray_pixels": 0,
+        "holes": 0,
+        "edge": false,
+        "lowest_row": 162,
+        "body_diff_before_foreground_occlusion_mask": 36,
+        "protected_body_pixels": 2798,
+        "upper_body_diff_pixels": 0,
+        "upper_body_diff_percent": 0.0,
+        "whole_upper_canvas_diff_pixels": 0
+      }
+    ],
+    "feet": {
+      "RF": {
+        "planted_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "spread_xy": [
+          0.0,
+          0.8840000000000146
+        ],
+        "frames": [
+          {
+            "frame": 0,
+            "measured_sole": [
+              129.0,
+              141.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -3
+            ],
+            "target": [
+              129.0,
+              140.56
+            ],
+            "target_error_xy": [
+              0.0,
+              0.4399999999999977
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 1,
+            "measured_sole": [
+              129.0,
+              142.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -2
+            ],
+            "target": [
+              129.0,
+              142.28
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 2,
+            "measured_sole": [
+              129.0,
+              144.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              0
+            ],
+            "target": [
+              129.0,
+              144.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 3,
+            "measured_sole": [
+              129.0,
+              146.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              2
+            ],
+            "target": [
+              129.0,
+              145.72
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 4,
+            "measured_sole": [
+              129.0,
+              147.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              3
+            ],
+            "target": [
+              129.0,
+              147.44
+            ],
+            "target_error_xy": [
+              0.0,
+              0.4399999999999977
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 5,
+            "measured_sole": [
+              129.0,
+              144.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              0
+            ],
+            "target": [
+              129.0,
+              143.72
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 6,
+            "measured_sole": [
+              129.0,
+              141.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -3
+            ],
+            "target": [
+              129.0,
+              141.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 3,
+            "measured_lift": 3.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 7,
+            "measured_sole": [
+              129.0,
+              140.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -4
+            ],
+            "target": [
+              129.0,
+              140.28
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          }
+        ],
+        "max_target_error_xy": [
+          0.0,
+          0.4399999999999977
+        ],
+        "native_part_length_change_px": 0
+      },
+      "LH": {
+        "planted_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "spread_xy": [
+          0.0,
+          0.8840000000000146
+        ],
+        "frames": [
+          {
+            "frame": 0,
+            "measured_sole": [
+              77.0,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -3
+            ],
+            "target": [
+              77.0,
+              156.56
+            ],
+            "target_error_xy": [
+              0.0,
+              0.4399999999999977
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 1,
+            "measured_sole": [
+              77.0,
+              158.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -2
+            ],
+            "target": [
+              77.0,
+              158.28
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 2,
+            "measured_sole": [
+              77.0,
+              160.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              0
+            ],
+            "target": [
+              77.0,
+              160.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 3,
+            "measured_sole": [
+              77.0,
+              162.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              2
+            ],
+            "target": [
+              77.0,
+              161.72
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 4,
+            "measured_sole": [
+              77.0,
+              163.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              3
+            ],
+            "target": [
+              77.0,
+              163.44
+            ],
+            "target_error_xy": [
+              0.0,
+              0.4399999999999977
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 5,
+            "measured_sole": [
+              77.0,
+              160.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              0
+            ],
+            "target": [
+              77.0,
+              159.72
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 6,
+            "measured_sole": [
+              77.0,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -3
+            ],
+            "target": [
+              77.0,
+              157.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 3,
+            "measured_lift": 3.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 7,
+            "measured_sole": [
+              77.0,
+              156.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -4
+            ],
+            "target": [
+              77.0,
+              156.28
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          }
+        ],
+        "max_target_error_xy": [
+          0.0,
+          0.4399999999999977
+        ],
+        "native_part_length_change_px": 0
+      },
+      "LF": {
+        "planted_order": [
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "spread_xy": [
+          0.0,
+          0.8840000000000146
+        ],
+        "frames": [
+          {
+            "frame": 0,
+            "measured_sole": [
+              61.0,
+              147.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              3
+            ],
+            "target": [
+              61.0,
+              147.44
+            ],
+            "target_error_xy": [
+              0.0,
+              0.4399999999999977
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 1,
+            "measured_sole": [
+              61.0,
+              144.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              0
+            ],
+            "target": [
+              61.0,
+              143.72
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 2,
+            "measured_sole": [
+              61.0,
+              141.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -3
+            ],
+            "target": [
+              61.0,
+              141.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 3,
+            "measured_lift": 3.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 3,
+            "measured_sole": [
+              61.0,
+              140.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -4
+            ],
+            "target": [
+              61.0,
+              140.28
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 4,
+            "measured_sole": [
+              61.0,
+              141.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -3
+            ],
+            "target": [
+              61.0,
+              140.56
+            ],
+            "target_error_xy": [
+              0.0,
+              0.4399999999999977
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 5,
+            "measured_sole": [
+              61.0,
+              142.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -2
+            ],
+            "target": [
+              61.0,
+              142.28
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 6,
+            "measured_sole": [
+              61.0,
+              144.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              0
+            ],
+            "target": [
+              61.0,
+              144.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          },
+          {
+            "frame": 7,
+            "measured_sole": [
+              61.0,
+              146.0
+            ],
+            "measured_from": "limb layer (occluded in composite)",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              2
+            ],
+            "target": [
+              61.0,
+              145.72
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": 1.0
+          }
+        ],
+        "max_target_error_xy": [
+          0.0,
+          0.4399999999999977
+        ],
+        "native_part_length_change_px": 0
+      },
+      "RH": {
+        "planted_order": [
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "spread_xy": [
+          0.0,
+          0.8840000000000146
+        ],
+        "frames": [
+          {
+            "frame": 0,
+            "measured_sole": [
+              113.0,
+              163.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              3
+            ],
+            "target": [
+              113.0,
+              163.44
+            ],
+            "target_error_xy": [
+              0.0,
+              0.4399999999999977
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 1,
+            "measured_sole": [
+              113.0,
+              160.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              0
+            ],
+            "target": [
+              113.0,
+              159.72
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 2,
+            "measured_sole": [
+              113.0,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -3
+            ],
+            "target": [
+              113.0,
+              157.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 3,
+            "measured_lift": 3.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 3,
+            "measured_sole": [
+              113.0,
+              156.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -4
+            ],
+            "target": [
+              113.0,
+              156.28
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 2,
+            "measured_lift": 2.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 4,
+            "measured_sole": [
+              113.0,
+              157.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -3
+            ],
+            "target": [
+              113.0,
+              156.56
+            ],
+            "target_error_xy": [
+              0.0,
+              0.4399999999999977
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 5,
+            "measured_sole": [
+              113.0,
+              158.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              -2
+            ],
+            "target": [
+              113.0,
+              158.28
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 6,
+            "measured_sole": [
+              113.0,
+              160.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              0
+            ],
+            "target": [
+              113.0,
+              160.0
+            ],
+            "target_error_xy": [
+              0.0,
+              0.0
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          },
+          {
+            "frame": 7,
+            "measured_sole": [
+              113.0,
+              162.0
+            ],
+            "measured_from": "composite",
+            "stamp_match": 1.0,
+            "endpoint_visible": true,
+            "recovered_translation": [
+              0,
+              2
+            ],
+            "target": [
+              113.0,
+              161.72
+            ],
+            "target_error_xy": [
+              0.0,
+              0.28000000000000114
+            ],
+            "expected_lift": 0,
+            "measured_lift": 0.0,
+            "native_part_match": 1.0,
+            "gem_bezel_match": null
+          }
+        ],
+        "max_target_error_xy": [
+          0.0,
+          0.4399999999999977
+        ],
+        "native_part_length_change_px": 0
+      }
+    }
+  },
+  "summary": {
+    "ne": {
+      "lowest_rows": [
+        162,
+        159,
+        158,
+        159,
+        160,
+        159,
+        160,
+        161
+      ],
+      "upper_diff": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "foot_lock": {
+        "RF": [
+          0.48399999999999466,
+          0.867999999999995
+        ],
+        "LH": [
+          0.48399999999999466,
+          0.867999999999995
+        ],
+        "LF": [
+          0.48399999999999466,
+          0.867999999999995
+        ],
+        "RH": [
+          0.48399999999999466,
+          0.867999999999995
+        ]
+      },
+      "max_target_error": [
+        0.2426268800000031,
+        0.43337199999999143
+      ],
+      "occluded_measurements": {
+        "RF": [],
+        "LH": [
+          0,
+          1,
+          6,
+          7
+        ],
+        "LF": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "RH": []
+      }
+    },
+    "s": {
+      "lowest_rows": [
+        163,
+        162,
+        160,
+        160,
+        163,
+        162,
+        160,
+        160
+      ],
+      "upper_diff": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "foot_lock": {
+        "RF": [
+          0.0,
+          0.8840000000000146
+        ],
+        "LH": [
+          0.0,
+          0.8840000000000146
+        ],
+        "LF": [
+          0.0,
+          0.8840000000000146
+        ],
+        "RH": [
+          0.0,
+          0.8840000000000146
+        ]
+      },
+      "max_target_error": [
+        0.5,
+        0.4399999999999977
+      ],
+      "occluded_measurements": {
+        "RF": [],
+        "LH": [
+          2,
+          3,
+          6,
+          7
+        ],
+        "LF": [],
+        "RH": []
+      }
+    },
+    "n": {
+      "lowest_rows": [
+        163,
+        160,
+        160,
+        162,
+        163,
+        160,
+        160,
+        162
+      ],
+      "upper_diff": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "foot_lock": {
+        "RF": [
+          0.0,
+          0.8840000000000146
+        ],
+        "LH": [
+          0.0,
+          0.8840000000000146
+        ],
+        "LF": [
+          0.0,
+          0.8840000000000146
+        ],
+        "RH": [
+          0.0,
+          0.8840000000000146
+        ]
+      },
+      "max_target_error": [
+        0.0,
+        0.4399999999999977
+      ],
+      "occluded_measurements": {
+        "RF": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "LH": [],
+        "LF": [
+          0,
+          1,
+          6,
+          7
+        ],
+        "RH": []
+      }
+    }
+  },
+  "failures": []
+}

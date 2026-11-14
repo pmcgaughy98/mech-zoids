@@ -1,0 +1,8 @@
+se: column 1 matched to the still by whole-pixel move (22, np.int64(37)), alpha IoU 0.973
+  se column 1 hind soles 60-70: still 143, frame 143
+  se_f2: hind soles 60-70: still 143, frame 145; size 88x85; top row 75 (still 78); extra colours 0; pieces 1; specks 364 (limit 497); ink 8.95% (still 7.79%); eye px 5; border False
+ne: column 1 matched to the still by whole-pixel move (16, np.int64(18)), alpha IoU 0.708
+  ne column 1 hind soles 83-95: still 160, frame 160; 60-70: still 150, frame 150
+  ne_f2: hind soles 83-95: still 160, frame 161; 60-70: still 150, frame 150; size 96x116; top row 46 (still 58); extra colours 0; pieces 1; specks 328 (limit 415); ink 6.56% (still 8.25%); eye px 0; border False
+  ne_f3: hind soles 83-95: still 160, frame 160; 60-70: still 150, frame 150; size 92x130; top row 32 (still 58); extra colours 0; pieces 1; specks 301 (limit 415); ink 6.92% (still 8.25%); eye px 0; border False
+se_f2 moved whole frame (0,-2) after the check: near hind sole now on row 143 like the still.

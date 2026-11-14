@@ -1,0 +1,688 @@
+{
+  "raw_size": [
+    2172,
+    724
+  ],
+  "columns": 7,
+  "rows": [
+    "se",
+    "ne"
+  ],
+  "x_edges": {
+    "se": [
+      0,
+      310,
+      621,
+      917,
+      1241,
+      1551,
+      1847,
+      2172
+    ],
+    "ne": [
+      0,
+      310,
+      619,
+      921,
+      1241,
+      1551,
+      1847,
+      2172
+    ]
+  },
+  "y_edges": [
+    0,
+    356,
+    724
+  ],
+  "row_scale": {
+    "se": 0.23409926241043372,
+    "ne": 0.23777473986806882
+  },
+  "cells": [
+    {
+      "view": "se",
+      "frame": 0,
+      "source_box": [
+        0,
+        0,
+        310,
+        356
+      ],
+      "source_opaque_box": [
+        23,
+        24,
+        290,
+        334
+      ],
+      "scale": 0.23409926241043372,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 300,
+      "touches_cut": false,
+      "generated_placement": [
+        64,
+        88
+      ],
+      "final_opaque_box": [
+        64,
+        89,
+        127,
+        161
+      ],
+      "source_override": "exact approved 160x160 still"
+    },
+    {
+      "view": "se",
+      "frame": 1,
+      "source_box": [
+        310,
+        0,
+        621,
+        356
+      ],
+      "source_opaque_box": [
+        24,
+        21,
+        263,
+        327
+      ],
+      "scale": 0.23409926241043372,
+      "placement": [
+        68,
+        89
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "generated_placement": [
+        68,
+        89
+      ],
+      "final_opaque_box": [
+        68,
+        88,
+        124,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "se",
+      "frame": 2,
+      "source_box": [
+        621,
+        0,
+        917,
+        356
+      ],
+      "source_opaque_box": [
+        5,
+        85,
+        292,
+        330
+      ],
+      "scale": 0.23409926241043372,
+      "placement": [
+        62,
+        104
+      ],
+      "duration_ms": 130,
+      "touches_cut": false,
+      "generated_placement": [
+        62,
+        104
+      ],
+      "final_opaque_box": [
+        62,
+        104,
+        129,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "se",
+      "frame": 3,
+      "source_box": [
+        917,
+        0,
+        1241,
+        356
+      ],
+      "source_opaque_box": [
+        2,
+        126,
+        309,
+        330
+      ],
+      "scale": 0.23409926241043372,
+      "placement": [
+        60,
+        113
+      ],
+      "duration_ms": 140,
+      "touches_cut": false,
+      "generated_placement": [
+        60,
+        113
+      ],
+      "final_opaque_box": [
+        61,
+        113,
+        132,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "se",
+      "frame": 4,
+      "source_box": [
+        1241,
+        0,
+        1551,
+        356
+      ],
+      "source_opaque_box": [
+        0,
+        168,
+        299,
+        332
+      ],
+      "scale": 0.23409926241043372,
+      "placement": [
+        60,
+        123
+      ],
+      "duration_ms": 160,
+      "touches_cut": true,
+      "generated_placement": [
+        60,
+        123
+      ],
+      "final_opaque_box": [
+        58,
+        123,
+        130,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "se",
+      "frame": 5,
+      "source_box": [
+        1551,
+        0,
+        1847,
+        356
+      ],
+      "source_opaque_box": [
+        0,
+        186,
+        292,
+        332
+      ],
+      "scale": 0.23409926241043372,
+      "placement": [
+        62,
+        127
+      ],
+      "duration_ms": 180,
+      "touches_cut": true,
+      "generated_placement": [
+        62,
+        127
+      ],
+      "final_opaque_box": [
+        60,
+        127,
+        130,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "se",
+      "frame": 6,
+      "source_box": [
+        1847,
+        0,
+        2172,
+        356
+      ],
+      "source_opaque_box": [
+        2,
+        186,
+        312,
+        332
+      ],
+      "scale": 0.23409926241043372,
+      "placement": [
+        59,
+        127
+      ],
+      "duration_ms": 1400,
+      "touches_cut": false,
+      "generated_placement": [
+        59,
+        127
+      ],
+      "final_opaque_box": [
+        57,
+        127,
+        132,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "ne",
+      "frame": 0,
+      "source_box": [
+        0,
+        356,
+        310,
+        724
+      ],
+      "source_opaque_box": [
+        31,
+        24,
+        280,
+        333
+      ],
+      "scale": 0.23777473986806882,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 300,
+      "touches_cut": false,
+      "generated_placement": [
+        66,
+        88
+      ],
+      "final_opaque_box": [
+        67,
+        86,
+        125,
+        161
+      ],
+      "source_override": "exact approved 160x160 still"
+    },
+    {
+      "view": "ne",
+      "frame": 1,
+      "source_box": [
+        310,
+        356,
+        619,
+        724
+      ],
+      "source_opaque_box": [
+        24,
+        23,
+        248,
+        332
+      ],
+      "scale": 0.23777473986806882,
+      "placement": [
+        70,
+        88
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "generated_placement": [
+        70,
+        88
+      ],
+      "final_opaque_box": [
+        70,
+        88,
+        125,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "ne",
+      "frame": 2,
+      "source_box": [
+        619,
+        356,
+        921,
+        724
+      ],
+      "source_opaque_box": [
+        2,
+        84,
+        280,
+        332
+      ],
+      "scale": 0.23777473986806882,
+      "placement": [
+        63,
+        102
+      ],
+      "duration_ms": 130,
+      "touches_cut": false,
+      "generated_placement": [
+        63,
+        102
+      ],
+      "final_opaque_box": [
+        63,
+        102,
+        129,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "ne",
+      "frame": 3,
+      "source_box": [
+        921,
+        356,
+        1241,
+        724
+      ],
+      "source_opaque_box": [
+        2,
+        123,
+        305,
+        332
+      ],
+      "scale": 0.23777473986806882,
+      "placement": [
+        60,
+        111
+      ],
+      "duration_ms": 140,
+      "touches_cut": false,
+      "generated_placement": [
+        60,
+        111
+      ],
+      "final_opaque_box": [
+        60,
+        111,
+        132,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "ne",
+      "frame": 4,
+      "source_box": [
+        1241,
+        356,
+        1551,
+        724
+      ],
+      "source_opaque_box": [
+        0,
+        166,
+        299,
+        332
+      ],
+      "scale": 0.23777473986806882,
+      "placement": [
+        60,
+        122
+      ],
+      "duration_ms": 160,
+      "touches_cut": true,
+      "generated_placement": [
+        60,
+        122
+      ],
+      "final_opaque_box": [
+        58,
+        122,
+        131,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "ne",
+      "frame": 5,
+      "source_box": [
+        1551,
+        356,
+        1847,
+        724
+      ],
+      "source_opaque_box": [
+        0,
+        183,
+        285,
+        332
+      ],
+      "scale": 0.23777473986806882,
+      "placement": [
+        62,
+        126
+      ],
+      "duration_ms": 180,
+      "touches_cut": true,
+      "generated_placement": [
+        62,
+        126
+      ],
+      "final_opaque_box": [
+        60,
+        126,
+        130,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    },
+    {
+      "view": "ne",
+      "frame": 6,
+      "source_box": [
+        1847,
+        356,
+        2172,
+        724
+      ],
+      "source_opaque_box": [
+        2,
+        183,
+        306,
+        332
+      ],
+      "scale": 0.23777473986806882,
+      "placement": [
+        60,
+        126
+      ],
+      "duration_ms": 1400,
+      "touches_cut": false,
+      "generated_placement": [
+        60,
+        126
+      ],
+      "final_opaque_box": [
+        58,
+        126,
+        132,
+        161
+      ],
+      "native_part_placement_logs": [
+        "../native_finish_log.txt",
+        "../detail_finish_log.txt",
+        "../tail_finish_log.txt"
+      ]
+    }
+  ],
+  "final_canvas": [
+    192,
+    192
+  ],
+  "approved_offset": [
+    16,
+    20
+  ],
+  "ground_row": 160,
+  "durations_ms": [
+    300,
+    100,
+    130,
+    140,
+    160,
+    180,
+    1400
+  ],
+  "loop": false,
+  "hold_last_frame": true,
+  "frames": [
+    {
+      "view": "se",
+      "index": 0,
+      "path": "frames/se_f0.png",
+      "duration_ms": 300
+    },
+    {
+      "view": "se",
+      "index": 1,
+      "path": "frames/se_f1.png",
+      "duration_ms": 100
+    },
+    {
+      "view": "se",
+      "index": 2,
+      "path": "frames/se_f2.png",
+      "duration_ms": 130
+    },
+    {
+      "view": "se",
+      "index": 3,
+      "path": "frames/se_f3.png",
+      "duration_ms": 140
+    },
+    {
+      "view": "se",
+      "index": 4,
+      "path": "frames/se_f4.png",
+      "duration_ms": 160
+    },
+    {
+      "view": "se",
+      "index": 5,
+      "path": "frames/se_f5.png",
+      "duration_ms": 180
+    },
+    {
+      "view": "se",
+      "index": 6,
+      "path": "frames/se_f6.png",
+      "duration_ms": 1400
+    },
+    {
+      "view": "ne",
+      "index": 0,
+      "path": "frames/ne_f0.png",
+      "duration_ms": 300
+    },
+    {
+      "view": "ne",
+      "index": 1,
+      "path": "frames/ne_f1.png",
+      "duration_ms": 100
+    },
+    {
+      "view": "ne",
+      "index": 2,
+      "path": "frames/ne_f2.png",
+      "duration_ms": 130
+    },
+    {
+      "view": "ne",
+      "index": 3,
+      "path": "frames/ne_f3.png",
+      "duration_ms": 140
+    },
+    {
+      "view": "ne",
+      "index": 4,
+      "path": "frames/ne_f4.png",
+      "duration_ms": 160
+    },
+    {
+      "view": "ne",
+      "index": 5,
+      "path": "frames/ne_f5.png",
+      "duration_ms": 180
+    },
+    {
+      "view": "ne",
+      "index": 6,
+      "path": "frames/ne_f6.png",
+      "duration_ms": 1400
+    }
+  ],
+  "finishing": [
+    "finish.py",
+    "polish.py",
+    "details.py",
+    "seam_fill.py",
+    "final_pass.py",
+    "verify.py",
+    "finalize.py"
+  ],
+  "verified": true,
+  "raw_sha256": "e94c0cfb2b67ba37f551aba99f2e5eedeb278e69e4985401877013c100257db1",
+  "grid_clean": false,
+  "source_grid_note": "Four cell-edge contacts: late death tail tips overlap preceding columns. Native straight tails replace truncated source tails in f4-f6. No redo.",
+  "scale_note": "One conversion factor per row, calibrated from seated source endpoint. No per-frame fitting. Restored native parts never resized."
+}

@@ -1,0 +1,343 @@
+[
+  {
+    "resource": "art\\machines\\ape\\ape_frames.tres",
+    "animation_count": 35,
+    "actions": {
+      "walk": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ],
+      "idle": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "chest_beat": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "hex_shield": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "bound": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "hex_dome": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "death": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ]
+    },
+    "tilt_metadata": "[\"idle\", \"walk\", \"chest_beat\", \"hex_shield\", \"bound\", \"hex_dome\", \"death\"]"
+  },
+  {
+    "resource": "art\\machines\\fennec\\fennec_frames.tres",
+    "animation_count": 45,
+    "actions": {
+      "walk": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ],
+      "idle": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "sand_kick": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "ear_burst": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "sonic_boom": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "dig": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "pop_out": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "death": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "cast": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ]
+    },
+    "tilt_metadata": "[\"idle\", \"cast\", \"walk\", \"death\"]"
+  },
+  {
+    "resource": "art\\machines\\hippo\\hippo_frames.tres",
+    "animation_count": 10,
+    "actions": {
+      "idle": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ],
+      "walk": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ]
+    },
+    "tilt_metadata": "[\"idle\", \"walk\"]"
+  },
+  {
+    "resource": "art\\machines\\kangaroo\\kangaroo_frames.tres",
+    "animation_count": 10,
+    "actions": {
+      "idle": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ],
+      "walk": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ]
+    },
+    "tilt_metadata": "[\"idle\", \"walk\"]"
+  },
+  {
+    "resource": "art\\machines\\lobster\\lobster_frames.tres",
+    "animation_count": 10,
+    "actions": {
+      "idle": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ],
+      "walk": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ]
+    },
+    "tilt_metadata": "[\"idle\", \"walk\"]"
+  },
+  {
+    "resource": "art\\machines\\minion\\minion_blue_frames.tres",
+    "animation_count": 25,
+    "actions": {
+      "idle": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ],
+      "walk": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ],
+      "attack": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ],
+      "hit": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ],
+      "death": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ]
+    },
+    "tilt_metadata": "[\"idle\", \"walk\", \"attack\", \"hit\", \"death\"]"
+  },
+  {
+    "resource": "art\\machines\\minion\\minion_red_frames.tres",
+    "animation_count": 25,
+    "actions": {
+      "idle": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ],
+      "walk": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ],
+      "attack": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ],
+      "hit": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ],
+      "death": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ]
+    },
+    "tilt_metadata": "[\"idle\", \"walk\", \"attack\", \"hit\", \"death\"]"
+  },
+  {
+    "resource": "art\\machines\\rhino\\rhino_frames.tres",
+    "animation_count": 43,
+    "actions": {
+      "walk": [
+        "s",
+        "se",
+        "e",
+        "ne",
+        "n"
+      ],
+      "idle": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "horn_jab": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "horn_toss": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "brace": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "stampede": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "death": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "ground_pound": [
+        "s",
+        "e",
+        "n",
+        "se",
+        "ne"
+      ],
+      "brace_shuffle": [
+        "s",
+        "e",
+        "n"
+      ]
+    },
+    "tilt_metadata": "[\"idle\", \"walk\", \"horn_jab\"]"
+  }
+]

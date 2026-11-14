@@ -1,0 +1,3198 @@
+Reading prompt from stdin...
+OpenAI Codex v0.166.0
+--------
+workdir: D:\dev\_scratch\codex-cwd
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR, D:\dev\new-mech-rpg\docs\art\moba]
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a1ae1d-5962-7312-8c35-3ab44a19d8ce
+--------
+user
+Job from Claude (the attack lane of the mech MOBA in D:/dev/new-mech-rpg): draw the APPROVED robot rhino (working id rhino_l, take A) doing its GROUND POUND at the game camera's angle, 35 degrees down, in three views (east, southeast, northeast), six frames each, in ONE image, then finish it into game frames. Preston approved this run on 2026-11-05 ("Yes, start it"). It is the SAME rhino as the approved 35 degree stills: no new design, no new parts; only the pose changes.
+Run tag: rhino-gp35-run1. Write only inside OUT:
+- OUT = D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1
+- TAKE = D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a (read only)
+- STILLS = TAKE/views_cam35_touchup (read only: the approved stills; e.png, se.png and ne.png are this run's views)
+- EX = TAKE/cam35 (read only: the run that drew those 35 degree stills; its finishing scripts)
+Images you may open: the two attachments (OUT/refs/look_35.png, OUT/refs/pose_guide.png), STILLS/e.png, STILLS/se.png, STILLS/ne.png to measure them, and the images you make in OUT. Open NO other image anywhere: nothing under TAKE/anim (the old ground pound frames are at an old angle and must not be seen or copied), no other machine's folder, nothing under D:/dev/new-mech-rpg/art/ or assets/.
+Text you may read: OUT/targets.json, OUT/still_metrics.json, TAKE/palette.json, EX/brief.txt, EX/REPORT.txt, EX/finish.py, EX/defringe.py, EX/despeckle.py, EX/audit.py, TAKE/anim/selout_rhino.py (code only, for the sel-out), D:/dev/new-mech-rpg/docs/art/moba/attack/ATTACK_PLAYBOOK.md and D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/PLAN.md.
+Keep OUT/REPORT.txt current: write it after step 1 and update it after each step, so a report exists even if the run is stopped by its token cap.
+
+1. Generate exactly ONE image with your built-in image tool from OUT/prompt-sheet.txt word for word, attaching exactly two images: OUT/refs/look_35.png first and OUT/refs/pose_guide.png second. Save it unchanged as OUT/sheet_raw.png. Never make a second image or a redo; if it fails, report and stop.
+
+2. Finish it the way EX was finished (copy EX/finish.py, defringe.py, despeckle.py and audit.py into OUT and adapt them):
+   - Magenta to transparent, no magenta or plum fringe, no lone pale pixels on the outer edge.
+   - ONE whole-sheet nearest shrink. Choose the factor by the HEAD, not the body length: for each row, measure column 1's head (rows 1 and 2: horn tip to the eye centre; row 3: horn tip to the back edge of the head) against the same view's still, and use the median of the three rows' factors. Report each row's column 1 width x height against the still's bounding box (e 103x75, se 85x83, ne 83x103); within 4% passes.
+   - The palette is FIXED: map every pixel to the colours in TAKE/palette.json and add none. Smooth lightly before mapping so shading becomes clean bands.
+   - Ink: the dark accent 141218 share of opaque pixels in each frame within 15% of its view's still (OUT/still_metrics.json: e 8.1%, se 7.8%, ne 8.3%). If the shrink or mapping thins the seam lines, map thin dark seam pixels (lines one or two pixels wide between lighter shades) to 141218, and leave broad shadow areas on their own ramp's shadow and deep shades.
+   - Eye: every e and se frame has at least 4 red ff3a2a eye pixels in a dark socket (the stills have 5); ne frames have none. Where the shrink lost the eye, draw it back by hand in the socket where the generated eye was, the same size as the still's; list the frames.
+   - If more than 1.2 times the still's specks remain (1 or 2 px single-colour 4-connected pieces; still_metrics.json specks_1_2px: e 322, se 414, ne 346), run one despeckle pass and report before and after.
+   - Binary alpha; each frame one 4-connected piece.
+
+3. Slice into OUT/frames/<view>_f<i>.png (view = e, se, ne by row; i = 0 to 5 by column) on a 192 x 192 transparent canvas:
+   - Place each row so column 1's hind feet sit on the still's hind soles (targets.json views.<view>.soles with leg "hind"; the lowest row of every still is 160).
+   - Then check each frame's hind soles. The hind feet are planted for the whole move: if a frame's hind sole is more than 1 px off its target, move that WHOLE frame (never a part of it) to put it back, and list each move.
+   - Never cut, paste or move parts of a frame. A wrong limb is reported, not patched.
+   - Finally overwrite <view>_f0.png with an exact copy of STILLS/<view>.png (frame 0 is the still).
+   - No frame touches its canvas border.
+
+4. Checks, all in OUT/checks.txt, one line each, PASS or MISS with the number:
+   - f0 equals the still (0 px differ).
+   - Hind sole drift per frame (planted), 1 px or under.
+   - Front feet against targets.json views.<view>.frames: front_feet_shift_px at frames 2 and 3 (the rise and the rear), within 2 px for this run; back on the still's front soles at frame 4 within 1 px; the near front foot 1-4 px up at frame 5. Say how you found each foot.
+   - Lowest row per frame: 160, or the toes toward the camera up to 163; list each.
+   - Frame 4 against frame 5: the largest move of any part, 3 px or under (the game flicks between them during the tremor).
+   - Frame 5 against the still: the largest move of any part, 4 px or under (the hand-back to the idle).
+   - Frame 1 against the still: alpha IoU and the share of pixels with the same colour.
+   - Frame 3 silhouette alpha IoU against the still, at 1x: 0.85 or under (the rear reads).
+   - Eye pixels per frame (e and se at least 4; ne 0).
+   - Ink share per frame against the still's (within 15%).
+   - Palette: every opaque colour in TAKE/palette.json; list any that are not.
+   - 4-connected pieces per frame (1), specks per frame against 1.2 times the still's.
+   - Head size per row against the still (within 3%).
+   - Seams: any transparent pixel enclosed inside a frame's body that the still does not have there (a slit), with its count.
+
+5. Review images:
+   - Sel-out: import selout from TAKE/anim/selout_rhino.py (OUTLINE 141218) and write sel-out copies of every frame to OUT/frames_selout/ (never change OUT/frames/).
+   - OUT/review.png: three rows (e, se, ne), seven columns (the still with sel-out, then frames 0 to 5 with sel-out), 4x nearest on mid grey, labelled.
+   - OUT/strip_1x.png: the same frames at 1x (the size the game shows them), on mid grey.
+   - OUT/joints_5x.png: frames 2, 3 and 4 of each row, cropped to the legs and the hips, 5x nearest.
+   - OUT/preview_<view>.gif for e, se and ne from frames_selout at 4x with the holds 100, 100, 100, 200, 300, 300 ms.
+
+6. Do not touch anything outside OUT: not TAKE, STILLS, EX, art/, assets/, scenes/, scripts/ or tools/. Do not commit, do not revert other files.
+
+7. Report in under 25 lines in OUT/REPORT.txt, and the same in your final answer: tokens used if known; the head scale and each row's sizes against the stills; every check line; the frames moved in step 3; the eyes drawn back; and by eye: is it the same rhino as the stills in every frame, with no new or extra parts? Do the hind feet stay put? Does frame 3 read as rearing on the hind legs at 1x? Is frame 4 heavy, with the front feet back where they stood? Is frame 5 close to frame 4? Any cut-off, chopped or broken part (a straight cut edge, a second chin, a gap in the body)? Any plate, horn or foot broken into specks?
+
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\pmcga\.codex\config.toml): `computer_use.windows.always_allowed_app_ids` is ignored.
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\pmcga\.codex\config.toml): `computer_use.windows.always_allowed_app_ids` is ignored.
+codex
+I’ll use the imagegen skill to generate the single sheet, then finish and check the frames inside OUT. I’ll keep REPORT.txt updated after each step and only open the images you authorized.
+
+2026-11-05T23:49:14.083954Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest("HTTP request timed out")))
+2026-11-05T23:49:14.083926Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest("HTTP request timed out")))
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath 'C:/Users/pmcga/.codex/skills/.system/imagegen/SKILL.md'" in D:\dev\_scratch\codex-cwd
+ succeeded in 3081ms:
+. : File C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be loaded because 
+running scripts is disabled on this system. For more information, see about_Execution_Policies at 
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:3
++ . 'C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.Powe ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+---
+name: "imagegen"
+description: "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas."
+---
+
+# Image Generation Skill
+
+Generates or edits images for the current project (for example website assets, game assets, UI mockups, product mockups, wireframes, logo design, photorealistic images, or infographics).
+
+## Top-level modes and rules
+
+This skill has exactly two top-level modes:
+
+- **Default built-in tool mode (preferred):** built-in `image_gen` tool for image generation, editing, and transparent-image requests. Does not require `OPENAI_API_KEY`.
+- **Fallback CLI mode:** `scripts/image_gen.py` CLI. Use when the user explicitly asks for or confirms the CLI/API/model path. Requires `OPENAI_API_KEY`.
+
+Within CLI fallback, the CLI exposes three subcommands:
+
+- `generate`
+- `edit`
+- `generate-batch`
+
+Rules:
+- Use the built-in `image_gen` tool by default for normal image generation and editing requests.
+- Do not switch to CLI fallback for ordinary quality, size, or file-path control.
+- For transparent images, ask built-in `image_gen` for a transparent background and preserve the generated alpha.
+- Never silently switch from built-in `image_gen` or CLI `gpt-image-2` to CLI `gpt-image-1.5`; ask the user first unless they explicitly requested `gpt-image-1.5`.
+- The word `batch` by itself does not mean CLI fallback. If the user asks for many assets or says to batch-generate assets without explicitly asking for CLI/API/model controls, stay on the built-in path and issue one built-in call per requested asset or variant.
+- If the built-in tool fails or is unavailable, tell the user the CLI fallback exists and that it requires `OPENAI_API_KEY`. Proceed only if the user explicitly asks for that fallback.
+- If the user explicitly asks for CLI mode, use the bundled `scripts/image_gen.py` workflow. Do not create one-off SDK runners.
+- Never modify `scripts/image_gen.py`. If something is missing, ask the user before doing anything else.
+
+Built-in save-path policy:
+- In built-in tool mode, Codex saves generated images under `$CODEX_HOME/*` by default.
+- Do not describe or rely on OS temp as the default built-in destination.
+- Do not describe or rely on a destination-path argument (if any) on the built-in `image_gen` tool. If a specific location is needed, generate first and then move or copy the selected output from `$CODEX_HOME/generated_images/...`.
+- Save-path precedence in built-in mode:
+  1. If the user names a destination, move or copy the selected output there.
+  2. If the image is meant for the current project, move or copy the final selected image into the workspace before finishing.
+  3. If the image is only for preview or brainstorming, render it inline; the underlying file can remain at the default `$CODEX_HOME/*` path.
+- Never leave a project-referenced asset only at the default `$CODEX_HOME/*` path.
+- Do not overwrite an existing asset unless the user explicitly asked for replacement; otherwise create a sibling versioned filename such as `hero-v2.png` or `item-icon-edited.png`.
+
+Shared prompt guidance for both modes lives in `references/prompting.md` and `references/sample-prompts.md`.
+
+Fallback-only docs/resources for CLI mode:
+- `references/cli.md`
+- `references/image-api.md`
+- `references/codex-network.md`
+- `scripts/image_gen.py`
+
+## When to use
+- Generate a new image (concept art, product shot, cover, website hero)
+- Generate a new image using one or more reference images for style, composition, or mood
+- Edit an existing image (inpainting, lighting or weather transformations, background replacement, object removal, compositing, transparent background)
+- Produce many assets or variants for one task
+
+## When not to use
+- Extending or matching an existing SVG/vector icon set, logo system, or illustration library inside the repo
+- Creating simple shapes, diagrams, wireframes, or icons that are better produced directly in SVG, HTML/CSS, or canvas
+- Making a small project-local asset edit when the source file already exists in an editable native format
+- Any task where the user clearly wants deterministic code-native output instead of a generated bitmap
+
+## Decision tree
+
+Think about two separate questions:
+
+1. **Intent:** is this a new image or an edit of an existing image?
+2. **Execution strategy:** is this one asset or many assets/variants?
+
+Intent:
+- If the user wants to modify an existing image while preserving parts of it, treat the request as **edit**.
+- If the user provides images only as references for style, composition, mood, or subject guidance, treat the request as **generate**.
+- If the user provides no images, treat the request as **generate**.
+
+Built-in edit semantics:
+- Built-in edit mode is for images already visible in the conversation context, such as attached images or images generated earlier in the thread.
+- If the user wants to edit a local image file with the built-in tool, first load it with built-in `view_image` tool so the image is visible in the conversation context, then proceed with the built-in edit flow.
+- Do not promise arbitrary filesystem-path editing through the built-in tool.
+- If a local file still needs direct file-path control, masks, or other explicit CLI-only parameters, use the explicit CLI fallback only when the user asks for it.
+- For edits, preserve invariants aggressively and save non-destructively by default.
+
+Execution strategy:
+- In the built-in default path, produce many assets or variants by issuing one `image_gen` call per requested asset or variant.
+- In the CLI fallback path, use the CLI `generate-batch` subcommand only when the user explicitly chose CLI mode and needs many prompts/assets.
+- For many distinct assets, do not use `n` as a substitute for separate prompts. `n` is for variants of one prompt; distinct assets need distinct built-in calls or distinct CLI `generate-batch` jobs.
+
+Assume the user wants a new image unless they clearly ask to change an existing one.
+
+## Workflow
+1. Decide the top-level mode: built-in by default, including transparent-output requests; fallback CLI only if explicitly requested or confirmed.
+2. Decide the intent: `generate` or `edit`.
+3. Decide whether the output is preview-only or meant to be consumed by the current project.
+4. Decide the execution strategy: single asset vs repeated built-in calls vs CLI `generate-batch`.
+5. Collect inputs up front: prompt(s), exact text (verbatim), constraints/avoid list, and any input images.
+6. For every input image, label its role explicitly:
+   - reference image
+   - edit target
+   - supporting insert/style/compositing input
+7. If the edit target is only on the local filesystem and you are staying on the built-in path, inspect it with `view_image` first so the image is available in conversation context.
+8. If the user asked for a photo, illustration, sprite, product image, banner, or other explicitly raster-style asset, use `image_gen` rather than substituting SVG/HTML/CSS placeholders. If the request is for an icon, logo, or UI graphic that should match existing repo-native SVG/vector/code assets, prefer editing those directly instead.
+9. Augment the prompt based on specificity:
+   - If the user's prompt is already specific and detailed, normalize it into a clear spec without adding creative requirements.
+   - If the user's prompt is generic, add tasteful augmentation only when it materially improves output quality.
+10. Use the built-in `image_gen` tool by default.
+11. For transparent-output requests, ask built-in `image_gen` for a transparent background and preserve the generated alpha channel.
+12. Inspect outputs and validate: subject, style, composition, text accuracy, and invariants/avoid items.
+13. Iterate with a single targeted change, then re-check.
+14. For preview-only work, render the image inline; the underlying file may remain at the default `$CODEX_HOME/generated_images/...` path.
+15. For project-bound work, move or copy the selected artifact into the workspace and update any consuming code or references. Never leave a project-referenced asset only at the default `$CODEX_HOME/generated_images/...` path.
+16. For batches or multi-asset requests, persist every requested deliverable final in the workspace unless the user explicitly asked to keep outputs preview-only. Discarded variants do not need to be kept unless requested.
+17. If the user explicitly chooses or confirms the CLI fallback, then use the fallback-only docs for model, quality, size, `input_fidelity`, masks, output format, output paths, and network setup.
+18. Always report the final saved path(s) for any workspace-bound asset(s), plus the final prompt or prompt set and whether the built-in tool or fallback CLI mode was used.
+
+## Transparent image requests
+
+Ask built-in `image_gen` for a genuinely transparent background and preserve its alpha.
+
+## Prompt augmentation
+
+Reformat user prompts into a structured, production-oriented spec. Make the user's goal clearer and more actionable, but do not blindly add detail.
+
+Treat this as prompt-shaping guidance, not a closed schema. Use only the lines that help, and add a short extra labeled line when it materially improves clarity.
+
+### Specificity policy
+
+Use the user's prompt specificity to decide how much augmentation is appropriate:
+
+- If the prompt is already specific and detailed, preserve that specificity and only normalize/structure it.
+- If the prompt is generic, you may add tasteful augmentation when it will materially improve the result.
+
+Allowed augmentations:
+- composition or framing hints
+- polish level or intended-use hints
+- practical layout guidance
+- reasonable scene concreteness that supports the stated request
+
+Not allowed augmentations:
+- extra characters or objects that are not implied by the request
+- brand names, slogans, palettes, or narrative beats that are not implied
+- arbitrary side-specific placement unless the surrounding layout supports it
+
+## Use-case taxonomy (exact slugs)
+
+Classify each request into one of these buckets and keep the slug consistent across prompts and references.
+
+Generate:
+- photorealistic-natural â€” candid/editorial lifestyle scenes with real texture and natural lighting.
+- product-mockup â€” product/packaging shots, catalog imagery, merch concepts.
+- ui-mockup â€” app/web interface mockups and wireframes; specify the desired fidelity.
+- infographic-diagram â€” diagrams/infographics with structured layout and text.
+- scientific-educational â€” classroom explainers, scientific diagrams, and learning visuals with required labels and accuracy constraints.
+- ads-marketing â€” campaign concepts and ad creatives with audience, brand position, scene, and exact tagline/copy.
+- productivity-visual â€” slide, chart, workflow, and data-heavy business visuals.
+- logo-brand â€” logo/mark exploration, vector-friendly.
+- illustration-story â€” comics, childrenâ€™s book art, narrative scenes.
+- stylized-concept â€” style-driven concept art, 3D/stylized renders.
+- historical-scene â€” period-accurate/world-knowledge scenes.
+
+Edit:
+- text-localization â€” translate/replace in-image text, preserve layout.
+- identity-preserve â€” try-on, person-in-scene; lock face/body/pose.
+- precise-object-edit â€” remove/replace a specific element (including interior swaps).
+- lighting-weather â€” time-of-day/season/atmosphere changes only.
+- background-extraction â€” transparent background / clean cutout. Ask built-in `image_gen` for actual transparency.
+- style-transfer â€” apply reference style while changing subject/scene.
+- compositing â€” multi-image insert/merge with matched lighting/perspective.
+- sketch-to-render â€” drawing/line art to photoreal render.
+
+## Shared prompt schema
+
+Use the following labeled spec as shared prompt scaffolding for both top-level modes:
+
+```text
+Use case: <taxonomy slug>
+Asset type: <where the asset will be used>
+Primary request: <user's main prompt>
+Input images: <Image 1: role; Image 2: role> (optional)
+Scene/backdrop: <environment>
+Subject: <main subject>
+Style/medium: <photo/illustration/3D/etc>
+Composition/framing: <wide/close/top-down; placement>
+Lighting/mood: <lighting + mood>
+Color palette: <palette notes>
+Materials/textures: <surface details>
+Text (verbatim): "<exact text>"
+Constraints: <must keep/must avoid>
+Avoid: <negative constraints>
+```
+
+Notes:
+- `Asset type` and `Input images` are prompt scaffolding, not dedicated CLI flags.
+- `Scene/backdrop` refers to the visual setting. It is not the same as the fallback CLI `background` parameter, which controls output transparency behavior.
+- Fallback-only execution notes such as `Quality:`, `Input fidelity:`, masks, output format, and output paths belong in the CLI path only. Do not treat them as built-in `image_gen` tool arguments.
+
+Augmentation rules:
+- Keep it short.
+- Add only the details needed to improve the prompt materially.
+- For edits, explicitly list invariants (`change only X; keep Y unchanged`).
+- If any critical detail is missing and blocks success, ask a question; otherwise proceed.
+
+## Examples
+
+### Generation example (hero image)
+```text
+Use case: product-mockup
+Asset type: landing page hero
+Primary request: a minimal hero image of a ceramic coffee mug
+Style/medium: clean product photography
+Composition/framing: wide composition with usable negative space for page copy if needed
+Lighting/mood: soft studio lighting
+Constraints: no logos, no text, no watermark
+```
+
+### Edit example (invariants)
+```text
+Use case: precise-object-edit
+Asset type: product photo background replacement
+Primary request: replace only the background with a warm sunset gradient
+Constraints: change only the background; keep the product and its edges unchanged; no text; no watermark
+```
+
+## Prompting best practices
+- Structure prompt as scene/backdrop -> subject -> details -> constraints.
+- Include intended use (ad, UI mock, infographic) to set the mode and polish level.
+- Use camera/composition language for photorealism.
+- Only use SVG/vector stand-ins when the user explicitly asked for vector output or a non-image placeholder.
+- Quote exact text and specify typography + placement.
+- For tricky words, spell them letter-by-letter and require verbatim rendering.
+- For multi-image inputs, reference images by index and describe how they should be used.
+- For edits, repeat invariants every iteration to reduce drift.
+- Iterate with single-change follow-ups.
+- If the prompt is generic, add only the extra detail that will materially help.
+- If the prompt is already detailed, normalize it instead of expanding it.
+- For CLI fallback only, see `references/cli.md` and `references/image-api.md` for model, `quality`, `input_fidelity`, masks, output format, and output-path guidance.
+- For transparent images, ask built-in `image_gen` for actual transparency and preserve its alpha.
+
+More principles shared by both modes: `references/prompting.md`.
+Copy/paste specs shared by both modes: `references/sample-prompts.md`.
+
+## Guidance by asset type
+Asset-type templates (website assets, game assets, wireframes, logo) are consolidated in `references/sample-prompts.md`.
+
+## gpt-image-2 guidance for CLI fallback
+
+The fallback CLI defaults to `gpt-image-2`.
+
+- Use `gpt-image-2` for new CLI/API workflows unless the user confirms a different model.
+- CLI `gpt-image-2` does not support `background=transparent`; ask before using `gpt-image-1.5` unless the user explicitly requested that model.
+- `gpt-image-2` always uses high fidelity for image inputs; do not set `input_fidelity` with this model.
+- `gpt-image-2` supports `quality` values `low`, `medium`, `high`, and `auto`.
+- Use `quality low` for fast drafts, thumbnails, and quick iterations. Use `medium`, `high`, or `auto` for final assets, dense text, diagrams, identity-sensitive edits, or high-resolution outputs.
+- Square images are typically fastest to generate. Use `1024x1024` for fast square drafts.
+- If the user asks for 4K-style output, use `3840x2160` for landscape or `2160x3840` for portrait.
+- `gpt-image-2` size may be `auto` or `WIDTHxHEIGHT` if all constraints hold: max edge `<= 3840px`, both edges multiples of `16px`, long-to-short ratio `<= 3:1`, total pixels between `655,360` and `8,294,400`.
+
+Popular `gpt-image-2` sizes:
+- `1024x1024` square
+- `1536x1024` landscape
+- `1024x1536` portrait
+- `2048x2048` 2K square
+- `2048x1152` 2K landscape
+- `3840x2160` 4K landscape
+- `2160x3840` 4K portrait
+- `auto`
+
+## Fallback CLI mode only
+
+### Temp and output conventions
+These conventions apply only to the CLI fallback. They do not describe built-in `image_gen` output behavior.
+- Use `tmp/imagegen/` for intermediate files (for example JSONL batches); delete them when done.
+- Write final artifacts under `output/imagegen/`.
+- Use `--out` or `--out-dir` to control output paths; keep filenames stable and descriptive.
+
+### Dependencies
+Prefer `uv` for dependency management in this repo.
+
+Required Python package:
+```bash
+uv pip install openai
+```
+
+Optional for image inspection and downscaling:
+```bash
+uv pip install pillow
+```
+
+Portability note:
+- If you are using the installed skill outside this repo, install dependencies into that environment with its package manager.
+- In uv-managed environments, `uv pip install ...` remains the preferred path.
+
+### Environment
+- `OPENAI_API_KEY` must be set for live API calls.
+- Do not ask the user for `OPENAI_API_KEY` when using the built-in `image_gen` tool.
+- Never ask the user to paste the full key in chat. Ask them to set it locally and confirm when ready.
+
+If the key is missing, give the user these steps:
+1. Create an API key in the OpenAI platform UI: https://platform.openai.com/api-keys
+2. Set `OPENAI_API_KEY` as an environment variable in their system.
+3. Offer to guide them through setting the environment variable for their OS/shell if needed.
+
+If installation is not possible in this environment, tell the user which dependency is missing and how to install it into their active environment.
+
+### Script-mode notes
+- CLI commands + examples: `references/cli.md`
+- API parameter quick reference: `references/image-api.md`
+- Network approvals / sandbox settings for CLI mode: `references/codex-network.md`
+
+## Reference map
+- `references/prompting.md`: shared prompting principles for both modes.
+- `references/sample-prompts.md`: shared copy/paste prompt recipes for both modes.
+- `references/cli.md`: fallback-only CLI usage via `scripts/image_gen.py`.
+- `references/image-api.md`: fallback-only API/CLI parameter reference.
+- `references/codex-network.md`: fallback-only network/sandbox troubleshooting for CLI mode.
+- `scripts/image_gen.py`: fallback-only CLI implementation. Use only when the user explicitly chooses or confirms CLI mode.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content -Raw -LiteralPath 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/prompt-sheet.txt'" in D:\dev\_scratch\codex-cwd
+ succeeded in 4001ms:
+Use case: stylized-concept. Create exactly ONE wide pixel sprite sheet of 3 rows by 6 columns showing the SAME robot rhino as the first attached image performing ONE heavy GROUND POUND, from the SAME camera (looking DOWN at it from 35 degrees above level, the way a third-person arena game camera sees it) in EVERY cell.
+TWO ATTACHED IMAGES:
+1. look_35.png: the approved robot rhino in three views on magenta, left to right: right side (east), front three-quarter facing lower right (southeast), rear three-quarter facing upper right (northeast), already drawn from the 35 degree camera, standing. Keep EVERYTHING about this robot rhino and this camera: its parts, proportions, colours, shading style, pixel clusters, how each material runs through its shades, the thin dark seam lines, the big steel horn and the short second horn, the high yellow shoulder hump, the charcoal steel frame and the round steel joint discs, the steel foot pads, the small red lens eye, the tops of the head, the hump and the back showing from above. ONLY THE POSE CHANGES. Invent NO new parts: no spikes, vents, lights, hatches, markings, stripes, panels, weapons or details the first image does not show. Never copy any existing game's rhino, robot or mech.
+2. pose_guide.png: a POSE GUIDE ONLY, not a design. Rough flat grey silhouettes of the same rhino in the same rows and columns as the sheet you make. Take from it ONLY how far the body tips up on the hind legs in each column and how high the front feet are off the ground. Never copy its flat grey, its jagged edges or its shape errors.
+THE MOVE, column by column, the same in every row:
+column 1: standing still, exactly as in the first image.
+column 2: WIND-UP: the weight shifts back onto the hind legs, the body a little lower and a little further back, the head dipped, all four feet still planted.
+column 3: RISING: the front of the body tips up about 15 degrees on the planted hind legs, the head and horn rising, both front feet just off the ground, the front knees starting to bend.
+column 4: REARING at full height: the body tipped up about 30 degrees on the planted hind legs, the chest high, the head and horn high, both front legs bent with the front feet tucked up under the raised chest, clearly off the ground. A clear, strong silhouette.
+column 5: SLAM: both front feet slammed down flat on the ground exactly where they stood in column 1, the body dropped a little lower than standing with the knees slightly bent under the weight, the head low and forward, all four feet planted. The heaviest pose.
+column 6: SETTLING: nearly the column 5 pose, the chest a little higher, the near front foot lifted just slightly off the ground.
+The hind feet NEVER move in any column: same place, flat on the ground. No effects anywhere: no dust, no cracks, no shock ring, no rocks, no motion lines, no impact flash, no shadow; effects are added later.
+WHAT THE 35 DEGREE CAMERA SHOWS, as in the first image: the top of the head, the top of the shoulder hump and the broad back as yellow surfaces seen from above; the FAR feet sit HIGHER on the page than the near feet, because the ground is seen from above. When the body rears, its underside stays mostly hidden: the camera looks down on it.
+EYES: one small red lens eye with its dark socket in the side row and the front three-quarter row, in EVERY column, never hidden, never bigger than in the first image. The rear three-quarter row shows NO eye, NOT EVEN ONE EYE PIXEL.
+COUNT THE PARTS in every cell: four legs, each its own leg with its own steel foot pad; one big steel horn and one short second horn; two small flat ear plates; one short stubby straight tail. Never an extra or missing leg, horn or tail.
+PLATES AND SEAMS, as in the first image: big hard flat yellow armour plates with straight cut edges and bevelled corners, each with a lit top edge and a firm shaded edge, never smeared, soft, melted or blobby. Thin dark seam lines where plates overlap, where the head meets the neck, around the horn base and at the leg joints, as many as in the first image. Where a lifted leg uncovers part of the body, draw that part whole with its plates and bands.
+Exact layout, 3 rows by 6 equal columns, every cell from 35 degrees above:
+row 1: right SIDE view facing RIGHT (east): the head and horn on the right, the hump, the barrel body, the stubby tail on the left, the near legs in front of the far legs.
+row 2: FRONT three-quarter facing lower RIGHT (southeast): the body turned, the head and horn pointing out to the lower right and forward, the near eye showing, the far eye hidden behind the head, the near flank and both near legs showing.
+row 3: REAR three-quarter facing upper RIGHT (northeast): the back, the hump, the near flank, the near hind leg nearest and lowest, the stubby tail toward the lower left, the back of the head, the horn tip showing past the head, NO eye, NO face.
+VOLUME AND CRAFT, exactly as in the first image: light from the upper left on every cell. Yellow armour: bright highlight on the top of the hump, the top of the head and the top edge of each plate, base across the middle, shadow on the lower body and the side away from the light, deep shadow under the belly and under each plate edge. Steel horns, jaw edge, joint discs and foot pads: light, base, shadow. Charcoal frame: base and shadow. Eye: a red glow. Big flat colour clusters, every cluster at least 3 pixels across. No texture, no rivets, no dithering, no speckle, no stray single pixels. NO dark line around the outside of the silhouette: the outermost pixels use the yellow, steel and charcoal colours.
+PALETTE, the same colours as the first image and no others: yellow highlight fff4a8, base ffcf1f, shadow d18a0a, deep 7a4a06; steel light d6d6dc, base 9d9ba2, shadow 58555e; charcoal frame base 3d3a44 and shadow 211e27; eye red ff3a2a; dark accent 141218 for the seams, overlap lines and the eye socket.
+Eighteen copies of the exact same robot rhino, the same anatomy and proportions, the same SCALE in every cell. Within each row the hind feet stand at exactly the same place in every column and the ground line is at the same height. Each rhino entirely inside its cell with ample margins; in column 1 it fills about half of the cell height, leaving room above for the rear. Flat uniform solid #FF00FF magenta background everywhere, no labels, text, letters, numbers, glyphs, grid lines, frames, shadows on the ground, floor, scenery, effects or extra objects. One image only.
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content -Raw -LiteralPath 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/prompt-sheet.txt'" in D:\dev\_scratch\codex-cwd
+ succeeded in 366ms:
+Use case: stylized-concept. Create exactly ONE wide pixel sprite sheet of 3 rows by 6 columns showing the SAME robot rhino as the first attached image performing ONE heavy GROUND POUND, from the SAME camera (looking DOWN at it from 35 degrees above level, the way a third-person arena game camera sees it) in EVERY cell.
+TWO ATTACHED IMAGES:
+1. look_35.png: the approved robot rhino in three views on magenta, left to right: right side (east), front three-quarter facing lower right (southeast), rear three-quarter facing upper right (northeast), already drawn from the 35 degree camera, standing. Keep EVERYTHING about this robot rhino and this camera: its parts, proportions, colours, shading style, pixel clusters, how each material runs through its shades, the thin dark seam lines, the big steel horn and the short second horn, the high yellow shoulder hump, the charcoal steel frame and the round steel joint discs, the steel foot pads, the small red lens eye, the tops of the head, the hump and the back showing from above. ONLY THE POSE CHANGES. Invent NO new parts: no spikes, vents, lights, hatches, markings, stripes, panels, weapons or details the first image does not show. Never copy any existing game's rhino, robot or mech.
+2. pose_guide.png: a POSE GUIDE ONLY, not a design. Rough flat grey silhouettes of the same rhino in the same rows and columns as the sheet you make. Take from it ONLY how far the body tips up on the hind legs in each column and how high the front feet are off the ground. Never copy its flat grey, its jagged edges or its shape errors.
+THE MOVE, column by column, the same in every row:
+column 1: standing still, exactly as in the first image.
+column 2: WIND-UP: the weight shifts back onto the hind legs, the body a little lower and a little further back, the head dipped, all four feet still planted.
+column 3: RISING: the front of the body tips up about 15 degrees on the planted hind legs, the head and horn rising, both front feet just off the ground, the front knees starting to bend.
+column 4: REARING at full height: the body tipped up about 30 degrees on the planted hind legs, the chest high, the head and horn high, both front legs bent with the front feet tucked up under the raised chest, clearly off the ground. A clear, strong silhouette.
+column 5: SLAM: both front feet slammed down flat on the ground exactly where they stood in column 1, the body dropped a little lower than standing with the knees slightly bent under the weight, the head low and forward, all four feet planted. The heaviest pose.
+column 6: SETTLING: nearly the column 5 pose, the chest a little higher, the near front foot lifted just slightly off the ground.
+The hind feet NEVER move in any column: same place, flat on the ground. No effects anywhere: no dust, no cracks, no shock ring, no rocks, no motion lines, no impact flash, no shadow; effects are added later.
+WHAT THE 35 DEGREE CAMERA SHOWS, as in the first image: the top of the head, the top of the shoulder hump and the broad back as yellow surfaces seen from above; the FAR feet sit HIGHER on the page than the near feet, because the ground is seen from above. When the body rears, its underside stays mostly hidden: the camera looks down on it.
+EYES: one small red lens eye with its dark socket in the side row and the front three-quarter row, in EVERY column, never hidden, never bigger than in the first image. The rear three-quarter row shows NO eye, NOT EVEN ONE EYE PIXEL.
+COUNT THE PARTS in every cell: four legs, each its own leg with its own steel foot pad; one big steel horn and one short second horn; two small flat ear plates; one short stubby straight tail. Never an extra or missing leg, horn or tail.
+PLATES AND SEAMS, as in the first image: big hard flat yellow armour plates with straight cut edges and bevelled corners, each with a lit top edge and a firm shaded edge, never smeared, soft, melted or blobby. Thin dark seam lines where plates overlap, where the head meets the neck, around the horn base and at the leg joints, as many as in the first image. Where a lifted leg uncovers part of the body, draw that part whole with its plates and bands.
+Exact layout, 3 rows by 6 equal columns, every cell from 35 degrees above:
+row 1: right SIDE view facing RIGHT (east): the head and horn on the right, the hump, the barrel body, the stubby tail on the left, the near legs in front of the far legs.
+row 2: FRONT three-quarter facing lower RIGHT (southeast): the body turned, the head and horn pointing out to the lower right and forward, the near eye showing, the far eye hidden behind the head, the near flank and both near legs showing.
+row 3: REAR three-quarter facing upper RIGHT (northeast): the back, the hump, the near flank, the near hind leg nearest and lowest, the stubby tail toward the lower left, the back of the head, the horn tip showing past the head, NO eye, NO face.
+VOLUME AND CRAFT, exactly as in the first image: light from the upper left on every cell. Yellow armour: bright highlight on the top of the hump, the top of the head and the top edge of each plate, base across the middle, shadow on the lower body and the side away from the light, deep shadow under the belly and under each plate edge. Steel horns, jaw edge, joint discs and foot pads: light, base, shadow. Charcoal frame: base and shadow. Eye: a red glow. Big flat colour clusters, every cluster at least 3 pixels across. No texture, no rivets, no dithering, no speckle, no stray single pixels. NO dark line around the outside of the silhouette: the outermost pixels use the yellow, steel and charcoal colours.
+PALETTE, the same colours as the first image and no others: yellow highlight fff4a8, base ffcf1f, shadow d18a0a, deep 7a4a06; steel light d6d6dc, base 9d9ba2, shadow 58555e; charcoal frame base 3d3a44 and shadow 211e27; eye red ff3a2a; dark accent 141218 for the seams, overlap lines and the eye socket.
+Eighteen copies of the exact same robot rhino, the same anatomy and proportions, the same SCALE in every cell. Within each row the hind feet stand at exactly the same place in every column and the ground line is at the same height. Each rhino entirely inside its cell with ample margins; in column 1 it fills about half of the cell height, leaving room above for the rear. Flat uniform solid #FF00FF magenta background everywhere, no labels, text, letters, numbers, glyphs, grid lines, frames, shadows on the ground, floor, scenery, effects or extra objects. One image only.
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Copy-Item -LiteralPath 'C:/Users/pmcga/.codex/generated_images/01a1ae1d-5962-7312-8c35-3ab44a19d8ce/exec-efa6980c-b6ae-449d-9b9d-46ade001023f.png' -Destination 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/sheet_raw.png'; Set-Content -LiteralPath 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/REPORT.txt' -Value 'rhino-gp35-run1: Step 1 complete. Exactly one built-in generation with verbatim prompt-sheet.txt and look_35 then pose_guide. Raw PNG copied unchanged. Finishing/checks pending; tokens unknown.'; Get-Content -LiteralPath 'D:/dev/new-mech-rpg/docs/art/moba/attack/ATTACK_PLAYBOOK.md','D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/PLAN.md','D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/targets.json','D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/still_metrics.json','D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/palette.json'" in D:\dev\_scratch\codex-cwd
+ succeeded in 330ms:
+# Attack playbook (attack lane)
+
+How to make a machine's attack animation at 35 degrees, check it, price it and pack it. Started 2026-11-05 by the
+attack lane (Preston: "make a session for attack animation"). The run log is `LOG.md` in this folder. Update this
+file whenever a lesson changes.
+
+**Sources.** Read this session: `../ANIMATION_PLAYBOOK.md` (all), `../walk/WALK_PLAYBOOK.md` (all),
+`docs/plan/moba-kits.md` (all), the rhino ground pound history (`rhino_l/take-a/anim/codex-ground-pound/clean/REPORT.txt`,
+the first sections of `rhino_l/take-a/anim/forge/RUNS.md`), `rhino_l/take-a/views_cam35_touchup/APPROVED.txt`,
+`rhino_l/take-a/cam35/APPROVED.txt`, the walk lane's token lines in `../walk/LOG.md`, `pack_rhino_3d.py` (KIT lines) and
+`scripts/moba3d/rhino_kit.gd` (slam frame). General knowledge, not read this session: the animation principles
+(Thomas and Johnston, *The Illusion of Life*), Richard Williams, *The Animator's Survival Kit* (anticipation, contact,
+holds, follow-through), the rush, hit and return frame markers in Explorers of Sky's sprite animation data (structure
+only), fighting-game frame data (startup, active, recovery), and MOBA telegraph practice. Those parts are marked as
+proposals. Nothing here is canon until Preston says so.
+
+## 1. Rules that bind every attack
+- **Build on the newest approved 35-degree stills**, and match them exactly above the moving parts. The idle uses those
+  stills, so any difference pops on the switch. Look for `<take>/views_cam35_touchup/APPROVED.txt` and ask the touch-up
+  lane ("Touch up mech sprites in Aseprite") which set is current. Rhino: `views_cam35_touchup`, confirmed by the
+  touch-up lane 2026-11-05 (raw, no outline; the packer adds sel-out).
+- **Old-angle frames are history, never a base.** `codex-ground-pound/`, `codex-set-a` to `-d` and the forge sheets
+  say what a move does and what Preston said about it. Their frames and their pixel numbers are at the old angle and
+  are not used for frames or targets. (Preston, 2026-11-05: "You are using old map old animations not at 35 degree
+  look".) Check with the lanes which map and which animations are current before planning.
+- **The current map is `scenes/moba3d/arena_play.tscn`** (it instances `arena_blockout.tscn`; layout
+  `docs/plan/moba-arena-layout-2026-11-04.md`, owned by the map lane). Videos and in-game looks for Preston are taken
+  there, never in `ape_field_test`, `rhino_walk_test` or the `*_reveal` scenes (hub, 2026-11-05). The headless
+  `rhino3d_check.gd` and `rhino_feel_check.gd` load `field_test.tscn`, the simple place game feel uses to test one kit.
+- **What is at 35 in the game** is the `metadata/tilt_anims` list in `art/machines/<m>/<m>_frames.tres`; everything not
+  in it is still at the old low angle. On 2026-11-05: rhino idle, walk (old: ground_pound, horn_jab, horn_toss,
+  stampede, brace, brace_shuffle, death); gorilla idle, walk (old: bound, chest_beat, hex_dome, hex_shield, death);
+  fennec idle, cast, walk, death (old moves held until Preston takes the kit redraft: do not redraw them); hippo idle
+  only; minions all at 35. Deaths and hits are not this lane's (no owner yet).
+- **Same angle as the stills.** Every move is drawn at 35, in s, se, e, ne and n; the engine mirrors sw, w and nw.
+  Mixed angles pop.
+- **Frame 0 is the still, and the move ends on the still** (or on a frame the idle's 1 px breath covers), in every view.
+- **The same frame count, the same key frame index and the same holds in all five views.**
+- **Joints are redrawn, not pasted.** Pasting parts by script caused the cutoffs Preston rejected ("Too many cutoff
+  etc.").
+- **A new pose is redrawn, not rebuilt from cut parts.** Rearing, slamming, twisting: the body changes pose, so those
+  key frames need a route that redraws the body (an image-tool sheet from the approved still, the pose given in words
+  and guides, finished by script to the palette). Preston rejected cut-and-reposition on the fennec death ears
+  although it passed every check: "Looks like you just cutoff pieces from original art then put them in wrong
+  positioning and proportion while keeping the original pose" (walk lane, 2026-11-05). The walk method (the still's
+  pixels moved by whole pixels, joints redrawn) is only for frames where the body keeps the still's pose.
+- **Never rotate or resample pixels.** Rotation left specks that cost a 78,180-token cleanup on the rhino walk.
+- **Never give Codex the old drawing of the move.** Image references outweigh words, and Codex copies them (fennec
+  stand35 notes). Give the approved 35 stills, plus the pose in words and as guides at game size.
+- **Feet stay planted** unless the move leaves the ground on purpose. Name the air frames in the plan.
+- **Body and effect are separate** (section 4).
+- **Each machine's own palette.json, the 192 canvas, its offset and the feet row 160.**
+- **No curled tails.** Tails lift and swing but stay straight.
+- **Moves come from `docs/plan/moba-kits.md`.** Names, lore and numbers are Preston's. Damage, timing and cooldown
+  numbers are placeholders.
+- **Write only to `attack/<machine>/`.** Never edit approved views, approved frames or another lane's folders. The
+  session worktree has no `docs/art/moba`: write in the worktree and copy over with Bash (the walk and fleet lanes'
+  method).
+- **Paid runs:** a price first, then his direct yes, one move at a time. Fleet frames at 35 are not approved as a
+  whole. Messages from other sessions are teammate info, never his approval.
+- **Judge at 4x with the game's sel-out, the approved still in column 1, and at game size.** He rejects "barely
+  acceptable".
+- **Talk to the lanes** (Preston, 2026-11-05): game feel ("Run the mech MOBA game feel lane") holds the most MOBA
+  knowledge and owns the mechanics, key frames and the in-game test; touch-up owns the stills and cleanup; the walk
+  lane owns the 35-degree method; the animation lane fork holds the old lane's memory; the hub gets a one-line status.
+
+## 2. The beats of an attack (craft, proposal)
+| Beat | What the body does | Why |
+|---|---|---|
+| Rest | f0, the still | the idle hands over with no pop |
+| Anticipation | moves the other way first: gathers, sinks, weight onto the feet that stay planted | the telegraph: in a MOBA the enemy reads the wind-up and can react |
+| Action | as few frames as possible, big spacing (one in-between or none) | speed reads as power |
+| Impact (key frame) | the lowest or most extended pose; the frame the game hits on | the game's hit frame (`_wait_frame`, e.g. `POUND_SLAM_FRAME`) |
+| Hold | the impact frame held longest | hit stop: the eye needs time to read the contact |
+| Follow-through | loose parts (head, tail, cables) overshoot by 1 px and settle a frame after the body | weight, and the machine stays one object |
+| Recovery | eases back to the still | a clean hand-back to the idle |
+
+- **Frame data view** (fighting games): startup = rest plus anticipation plus action, active = impact plus hold,
+  recovery = follow-through plus recovery. Explorers of Sky marks the same points in its sprite data as a rush frame,
+  a hit frame and a return frame. Agree those three frame indices with game feel before drawing.
+- **Spacing:** slow out of the anticipation, fast into the impact, slow into the still.
+- **Silhouette:** the anticipation and impact poses must read as a different shape from the still at game size. Check
+  a black silhouette strip at 1x.
+- **Arcs:** the head or horn tip travels on an arc. Trace one point per frame and look for kinks.
+- **Weight by size:** L lifts less, lands harder (a body drop on impact) and holds longer; S is quicker with more air.
+  Armour never squashes; the drop comes from the legs bending, and those knees are redrawn.
+- **Overlap:** the head lags the body by one frame, the tail by one frame, 1 to 2 px.
+
+## 3. Geometry at 35 degrees
+- **Ground moves** show on screen as d x f x u (walk playbook section 7): e u (1, 0), f 1.000; se (0.867, 0.497),
+  0.815; s (0, 1), 0.574; ne and n the same with y negated.
+- **Vertical moves show the same in every view:** a lift of h texels shows as h x cos 35 = 0.819 h px straight up in
+  s, se, e, ne and n. So a front-foot lift or a body rise must measure the same on screen in all five views (gate in
+  section 5).
+- **A rear-up about the hind hips** (pitch t): a point L texels ahead of the hips rises L sin t (0.819 of that on
+  screen) and pulls back L (1 - cos t) along the body (x f x u on screen).
+- **In s and n the pull-back shows as vertical motion.** In s the front end pulls back away from the camera, which is
+  up on screen, so it adds to the rise (0.574 x the pull-back); in n it pulls toward the camera, down on screen, so it
+  takes away from it. Put the per-view numbers in targets.json; the redraw follows them.
+- **Toes toward the camera** may draw 2 to 3 px under the feet row (rhino s and n 163, se and ne 162); list them.
+- **The game camera is 30 degrees and the art is 35** (game feel, 2026-11-05). Check the move in the game view.
+
+## 4. Body and effect
+- Body frames hold no effect pixels. The body moves its approved pixels; the effect is its own sprite or a Godot
+  particle.
+- **Ground effects** (rings, cracks, dust patches) are laid flat by the engine (`Fx3D.spawn_flat`), so they do not
+  depend on the art angle. **Upright effects** stand on `tilted_fx_3d.gdshader` and are drawn at the machine's texel,
+  in its palette, with its darkest colour as the outside ink (animation playbook section 11).
+- Spawn on the key frame through `_at_frame` (it lands one game frame late at 30 fps).
+- A flash of the machine itself uses its own frame in light (the BlinkFlash method), not a drawn shape.
+- Effect tools: Aseprite, PixelLab vfx_workbench (check its own free note), Godot particles with game feel, the Opal
+  Effect forge (shuts down 2026-11-17). Grok is not for these.
+
+## 5. Gates for every attack
+| Check | How | Pass |
+|---|---|---|
+| Start and end | diff against the still | f0 0 px differ; the last frame 0 px, or a whole-body shift of 1 px the idle covers |
+| Above the moving parts | undo the planned move (translation or the named band steps) and diff | 0 px differ |
+| Planted feet | `walk_tools.py footlock` with a targets.json of the planted soles | drift 1 px or under across the whole move |
+| Lifted feet | sole centre per frame | lift within 1 px of the plan; lands back on its still sole within 1 px on the impact frame |
+| Lowest row | per frame | 160 (161 with sel-out); toes toward the camera listed |
+| Air frames | named in the plan and the packer | only those leave the row |
+| Cross-view | frame count, key frame index, holds; screen lift / 0.819 | identical; the same world lift within 1 px in all five views |
+| Parts (eye, horn, plates, gems) | match against the still part | 0.9 or better wherever the part shows; the eye in every frame the still shows it |
+| Palette and pieces | colour set, alpha, connected pieces, canvas edge | the machine's palette.json only, binary alpha, one piece, no edge contact |
+| Seams | `walk_tools.py seams` | no slit inside the body; look before any `--fix`, one pass only |
+| Readability (proposal) | silhouette IoU against the still at 1x | anticipation and peak 0.90 or under; impact body drop 2 px or more on L |
+| Hand-back | onion skin of the last frame over the still, and over idle f0 | no jump |
+| Eye | board at 4x with sel-out, still in column 1; a 1x strip; a 5x zoom of every joint; a phone video | Preston picks |
+| Game | packer `check()`, `--import`, `rhino3d_check.gd --headless --fixed-fps 60`, then game feel's in-game test | `check: OK`, 0 failures |
+
+Run `--check-only` on any new GDScript before a headless run, and give every long headless run a timeout: a parse
+error hung match_check for 33 minutes on 2026-11-05 and blocked every lane's Godot. In-game tests run in
+`arena_play.tscn`.
+
+### Lessons from the other lanes (2026-11-05)
+- **The kit fixes the frame indexes.** The code holds named frames (`POUND_SLAM_FRAME`, `POUND_RISE_FRAME`,
+  `hold_frame`), so the frame count and the key indexes are game feel's contract, the same in every view. Example: the
+  rhino tremor toggles F5 (0.12 s) and F4 for each stomp, so F5 must sit close to F4.
+- **Scale a re-posed sheet by the head, not the body length.** The fennec scaled by length came out with its head 8%
+  small.
+- **Put a draw order per view in the brief** (far limbs, tail, body, near limbs). Without one the fennec's ne far hind
+  leg was drawn over its tail.
+- **Plates and discs belong to the body.** Where a limb uncovers one, draw it whole with its bands.
+- **Number gates work; "make it clean" does not.** Give Codex counts (pieces per plate, light pixels in a box, specks
+  no more than the still plus 2).
+- **Count pieces 4-connected.** 8-connected hid corner-only joins in the fennec death that Preston called "a mess".
+- **Codex updates REPORT.txt after each part**, so a run stopped by its cap still leaves a report. Run it through the
+  capped runner from `D:/dev/_scratch/codex-cwd`; an app restart kills the token watcher.
+- **Generated frames come back light on ink**, with no highlight caps and grey eyes: finish to the still's ink shares.
+- **A feet-planted attack must not move the machine**, or the feet slide in the game (slide = speed /
+  (stride_speed x speed_scale), `machine_test_player.gd`).
+- **Match the 35 idle's size and feet.** Game feel measured an idle-to-action pop of 13-22 on the fennec, strongest
+  from n (`docs/art/moba/match/cam_angle_test/fennec35_action_idle_switch_2026-11-05.png`).
+- **Scratch goes on D:** (`D:\dev\_scratch\attack\`); C: is nearly full.
+
+## 6. Tools (stock-take 2026-11-05)
+| Tool | Free or paid | Use here |
+|---|---|---|
+| This lane's scripts (`attack/tools/`, Python with PIL and numpy) | free | plan, targets, guides, blocking previz, gates, boards, videos |
+| `walk/tools/walk_tools.py` | free | `soles` to label feet, `footlock` for planted feet, `seams`, `mirror` |
+| Animation lane scripts in `rhino_l/take-a/anim/` (`selout_rhino.py`, `make_walk35_review.py`, `build_cam35_idle.py`, `walk35_touchup.py`) | free | sel-out, review video, idle cut rows, recolour by source; run on copies, never write into those folders |
+| Codex token cap (`rhino_l/take-a/anim/walk35/codex_cap/run_codex_capped_d.sh`, `codex_tokens.py`) | free | kills a Codex run at its cap (checks every 20 s, so a run can end about 3k over) |
+| Aseprite MCP | free (local) | onion skins, frame diffs, `audit_animation`, hand-drawn joints and eyes |
+| PixelLab `pixelart_workbench` | free for subscribers (its own note) | lint orphan pixels and outline gaps, inspect, repair |
+| PixelLab `vfx_workbench` | check its own free note before each use | effect sprites |
+| Godot 4.7.2 headless, Movie Maker, ffmpeg | free | engine check, recordings, phone video (crf 27, `-preset slow`, `+faststart`); one Godot at a time |
+| Blender MCP (live link) | free (local) | possible: a blocking rig of a pose rendered from the five 35-degree cameras as guides; not tried here yet |
+| Opal Effect forge (Chrome) | free | made the ground pound ring v1; shuts down 2026-11-17 |
+| watch skill | free | study attacks in gameplay videos (synthesis) |
+| Game feel lane | free | mechanics, key frames, particles, the in-game test |
+| Codex | paid: tokens on Preston's plan | redraws the moving parts and joints at 35 (section 8) |
+| PixelLab generation (`animate_with_skeleton_v3`, `animate_image`) | paid beyond the 20 free daily generations | not planned; it lost the fennec's design |
+| Retro Diffusion advanced animation (attack, custom_action) | paid per run; `estimate_inference_cost` is free | not planned; custom_action stood the fennec on its hind legs with claws ($0.25 a view) |
+| SpriteCook `animate_game_art` | paid credits | untried on a machine |
+| Autosprite `generate_attack_moves` | price unknown | untried; price it before any use |
+| Gemini API | paid | its MCP failed to connect on 2026-11-05 |
+| Grok | | not for these (Preston's rule) |
+
+## 7. An attack, step by step
+1. Read the move's row in `moba-kits.md`: what it does, nothing invented.
+2. Confirm the newest approved 35-degree stills with the touch-up lane.
+3. Ask game feel for the key frames (rush, hit, return), the holds, the telegraph length and the effect plan. Keep
+   the kit's key frame index unless game feel changes it. Ask the hub and game feel which map is current.
+4. Plan, free: a frame table with numbers per view (`targets.json`), guide strips, a blocking previz built from the
+   still (labelled "blocking, not the art"), and the draw order (e, se, ne first; s, n second). Show Preston.
+5. Price the Codex run (section 8) and wait for his direct yes.
+6. Codex run 1 (e, se, ne) and run 2 (s, n), each under a token cap, from the brief rules: translate, never rotate;
+   joints by hand; body pinned; no effect pixels; "where a limb slides back, draw the body behind it".
+7. The gates in section 5, then the board, the 1x strip, the joint zooms and a phone video.
+8. Preston picks. Then pack (backup first), import, engine check; send to game feel for the in-game test and to the
+   touch-up lane for cleanup; one line to the hub.
+9. Log in `LOG.md`; update this playbook if a lesson changed.
+
+## 8. Pricing a move
+Known Codex numbers:
+| Run | Tokens |
+|---|---|
+| Ground pound, old angle, one 3-row sheet (6 frames a row) | 58,520 |
+| se/ne 2-row sets at the old angle | 71,728 to 104,506 |
+| 35-degree walks, 5 views x 8 frames, two runs | rhino 274,960 (with a 78,180 leg cleanup), gorilla 240,928, fennec about 241k |
+| Repair pass for cutoffs (fennec, two sets) | 147,657 and 189,814 |
+
+**The cap can overshoot by about one full context, roughly 75k tokens** (hub and walk lane, 2026-11-05: the hippo
+run 1, capped at 160k, ended at 224,713; the watcher saw 149,939, then one Codex step counted about 75k, likely its
+whole context re-read uncached). So quote Preston the worst case as the cap plus 75k, and set the cap about 75k under
+the most he has agreed to.
+
+One image job plus its finishing measured 54,066 (fennec stand35) and 58,520 (the old ground pound sheet); the
+fennec notes put a fresh `codex exec` at 60k to 110k a sheet. Estimate for one move at 35, 5 views x 6 frames with f0
+the still (proposal until the pilot measures it): run 1 (e, se, ne) 60k to 100k, cap 110k; run 2 (s, n) 55k to 90k,
+cap 100k; a finish pass 60k to 110k, cap 120k, if the gates miss (every generated set so far needed one). So 115k to
+190k without the finish pass and 175k to 300k with it.
+
+## 9. Packing
+- This lane packs its own moves once Preston approves them. The rhino packer is `tools/art/pack_rhino_3d.py`: its KIT
+  row for `ground_pound` reads the old-angle `codex-ground-pound/clean` (front, side, back) and `DIAG` points se and
+  ne at `codex-set-c/ground-pound`.
+- A move drawn at 35 is packed tilted: add its name to `metadata/tilt_anims` in `art/machines/<m>/<m>_frames.tres`
+  (as the walk was). A move left out of that list plays upright, at the old angle's setup.
+- Before a swap: copy every file the packer will overwrite into `attack/<machine>/backup_pre_<move>35/`, and check the
+  stills' timestamps against the packed sheet. Run only `pack()`; its main block also writes other lanes' folders.
+  Then `--import`, the engine check, and prove a restore would be pixel-identical.
+- The wolf's packing stays on hold.
+
+## 10. The pilot: rhino ground pound
+Kit: "Rears on its hind legs and slams down." Changed by Preston on 2026-11-05 to a tremor (`rhino_kit.gd`: "a bigger
+circle like cabrakan"): the first slam on F4, then 4 stomps 0.4 s apart, each F5 for 0.12 s then F4. In the game
+today: 6 frames drawn at the old angle, held 1, 2, 1, 3, 3, 3 ticks of 100 ms. Preston's notes on the old version
+that still apply to the move: the back view must rear up on the hind legs, not lift the whole body, and the shoulders
+rise with the top part. Plan and price: `rhino_l/PLAN.md`.
+# Rhino ground pound at 35 degrees: plan (proposal, nothing here is canon)
+
+Attack lane, 2026-11-05. Method: `../ATTACK_PLAYBOOK.md`. Numbers are placeholders for Preston to set.
+
+## What the move is
+- Kit (`docs/plan/moba-kits.md`, slot 2): "Rears on its hind legs and slams down. The ring deals damage and slows."
+- The code since Preston's change on 2026-11-05 (`scripts/moba3d/rhino_kit.gd`): a tremor over a 4 m circle. The
+  first slam is on F4 (`POUND_SLAM_FRAME`), then 4 stomps 0.4 s apart, each showing F5 (`POUND_RISE_FRAME`) for
+  0.12 s and then F4 again. The stampede finale plays one slam with the F4 and F5 holds.
+- Game feel's asks (2026-11-05): keep 6 frames with the slam on F4; F5 a small lift close to F4; the wind-up about
+  0.5 s (F0 x1, F1 x1, F2 x1, F3 x2); a new rock pop effect.
+
+## The base
+- Stills: `rhino_l/take-a/views_cam35_touchup/` (touch-up lane: current). The installed idle's f0 equals them.
+- The walk in the game (`walk35/walk/frames_selout`) was drawn from `views_cam35`: same alpha, 671-760 px of colour
+  differ. `walk35_touchup/frames` recolours it but is not packed. That is the touch-up lane's or Preston's call; the
+  ground pound starts and ends on the touch-up still, like the idle.
+- No old-angle ground pound frame goes into the brief or the targets.
+
+## Frames (indexes fixed by the kit, the same in all five views)
+| F | Beat | Body | Feet | Hold (100 ms ticks) |
+|---|---|---|---|---|
+| 0 | rest | the still | all planted | 1 |
+| 1 | anticipation | weight back onto the hind legs: the body 2 px back along its axis and 1 px down; the head 1 px lower (lag) | all four planted | 1 |
+| 2 | rise | pitched up 15 degrees about the hind hips; head up; front knees start to fold | hind planted; front up 10 texels (8 px on screen) | 1 |
+| 3 | peak, the telegraph | pitched up 30 degrees, horn high, front legs tucked | hind planted; front up 20 texels (16 px on screen) | 2 |
+| 4 | slam, the hit frame | front feet back on their still soles; body 2 px under the still (knees bent), head 3 px under (lag) | all four planted | 3 |
+| 5 | small lift | chest 1 px under the still; the near front foot up 3 texels (2-3 px) | three planted | 3 |
+
+The slam lands at 0.5 s (today 0.7 s). The packer row becomes (0, 1), (1, 1), (2, 1), (3, 2), (4, 3), (5, 3).
+F5 hands back to the idle through `stop_action`, so F5 stays within 3 px of the still in every part.
+
+## Screen targets per view (35-degree geometry, playbook section 3)
+- Lifts are vertical, so they show the same in every view: F2 8 px, F3 16 px, F5 2-3 px.
+- The pull-back at the peak: hind and front soles sit 40 texels apart in e (measured), so the front end pulls back
+  40 x (1 - cos 30) = 5.4 texels. On screen: e 5 px toward the tail; se (-3.5, -2.0); ne (-3.5, +2.0); s 3 px up
+  (adds to the rise: about 19 px); n 3 px down (takes from it: about 13 px).
+- Per-foot targets go in `targets.json` after the feet are labelled at 6x (free step 1).
+
+## Route
+- F2 to F5 are new poses, so they are redrawn (walk lane lesson, Preston on the fennec death). F1 keeps the still's
+  pose and moves it by whole pixels, with the knees redrawn.
+- Codex, one image-tool call per run, from the touch-up stills only. The pose is given in words and as guide strips
+  at game size (markers on the still: planted-foot boxes, front-foot targets, the horn tip's path). Finished by
+  script: snap to the palette, scale by the head (horn base to eye), hind legs below the hips pinned to the still's
+  pixels, eyes, ink shares to the still's. Then the gates.
+- Run 1: e, se, ne. Run 2: s, n, after Preston has looked at run 1. A finish pass only if the gates miss.
+- Draw order in the brief: e and se: far legs, tail, body, near legs. ne: far front leg, head and horn, body, near
+  legs. s: hind legs and rump, body, head and horn, front legs. n: head and horn, front legs, body, rump plates and
+  tail, hind legs.
+
+## Gates (the playbook's section 5, plus these numbers)
+| Check | Pass |
+|---|---|
+| F0 | 0 px differ from the touch-up still |
+| Hind feet | sole drift 1 px or under over F0 to F5 |
+| Front feet | F1 drift 1 px or under; F2 lift 8 +-1 px, F3 16 +-1; F4 on the still soles +-1; F5 near front 2-3 px |
+| F4 against F5 | every part within 3 px (the 0.12 s toggle) |
+| F5 against the still | every part within 3 px (the hand-back) |
+| Eye | in every frame where the still shows one |
+| Head and horn | head size within 3% of the still's; horn part match 0.9 or better |
+| Plates | pieces per plate colour equal to the still's, 4-connected; specks (1-2 px single-colour pieces) no more than the still plus 2 |
+| Ink | interior ink share within 15% of the still's, per view |
+| Palette and pieces | the still's colours only, binary alpha, one 4-connected piece, no edge contact |
+| Telegraph | F3 silhouette IoU against the still 0.85 or under at 1x |
+| Lowest row | 160; toes toward the camera up to 163, listed |
+
+## Effects (separate, free)
+- `gp_ring` stays as the burst at the feet on the first slam; `KitFeel.ground_wave` draws the 4 m edge in code (game
+  feel).
+- New, asked by game feel: a rock pop, 4 to 6 frames, about 1 m, anchored at the bottom centre (50 texels at the
+  rhino's 0.020 m). The rhino's palette, its darkest colour as the ink. Free: Aseprite or PixelLab vfx_workbench.
+- Optional: `cracks.png` drawn for an 8 m circle (stretched to 6.8 m now).
+
+## Free steps before run 1
+1. Label the feet at 6x (`walk_tools.py soles` plus a look).
+2. `targets.json`, guide strips per view, and a blocking previz GIF labelled "blocking, not the art".
+3. The brief: the stills, the frame table, the draw orders, the gates above, REPORT.txt after each part.
+
+## Price (Codex tokens on Preston's plan)
+The math: one image job plus finishing measured 54,066 (fennec stand35) and 58,520 (the old 3-row ground pound); the
+fennec notes put a fresh `codex exec` at 60k to 110k a sheet; the 35 walks' runs were 94k to 143k with hand-drawn
+joints; repair passes 45k to 190k.
+| Run | Views | Estimate | Cap |
+|---|---|---|---|
+| 1 | e, se, ne | 60k-100k | 110k |
+| 2 | s, n | 55k-90k | 100k |
+| Finish pass, only if the gates miss | all five | 60k-110k | 120k |
+Total 115k to 190k without the finish pass, 175k to 300k with it. Every generated set so far needed one, so expect it.
+Worst case per run (learned after run 1 started, hub 2026-11-05): a run that reaches its cap can overshoot by about
+75k, so run 1's worst case is about 185k. Later caps will be set 75k under what Preston agrees to.
+
+## Open for Preston
+- The go for run 1.
+- `docs/art/moba/kit-anims-35-plan.md` says rhino kit moves wait for a rhino kit redo. He reworked the ground pound
+  himself on 2026-11-05, so this plan reads it as staying.
+{
+ "holds_100ms": [
+  1,
+  1,
+  1,
+  2,
+  3,
+  3
+ ],
+ "slam_frame": 4,
+ "rise_frame": 5,
+ "pitch_deg": [
+  0,
+  0,
+  15,
+  30,
+  0,
+  0
+ ],
+ "hip_height_texels": 34,
+ "sole_span_texels": 40,
+ "palette": [
+  "fff4a8",
+  "ffcf1f",
+  "d18a0a",
+  "7a4a06",
+  "d6d6dc",
+  "9d9ba2",
+  "58555e",
+  "3d3a44",
+  "211e27",
+  "ff3a2a",
+  "ffe6d8",
+  "141218"
+ ],
+ "views": {
+  "e": {
+   "soles": [
+    {
+     "x": 62.5,
+     "y": 160,
+     "leg": "hind"
+    },
+    {
+     "x": 102.5,
+     "y": 160,
+     "leg": "front_near"
+    }
+   ],
+   "axis_on_screen": [
+    1.0,
+    0.0
+   ],
+   "hind_ground_mid": [
+    62.5,
+    148.5
+   ],
+   "hip_pivot": [
+    62.5,
+    120.6
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 0,
+     "body_shift_px": [
+      0,
+      0
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 1,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 0,
+     "body_shift_px": [
+      -2.0,
+      1.0
+     ],
+     "head_extra_drop_px": 1,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 2,
+     "front_feet_shift_px": [
+      -1.4,
+      -8.5
+     ],
+     "near_front_lift_px": 8.5,
+     "body_shift_px": [
+      0,
+      0
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 3,
+     "front_feet_shift_px": [
+      -5.4,
+      -16.4
+     ],
+     "near_front_lift_px": 16.4,
+     "body_shift_px": [
+      0,
+      0
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 4,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 0,
+     "body_shift_px": [
+      0,
+      2
+     ],
+     "head_extra_drop_px": 1,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 5,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 2,
+     "body_shift_px": [
+      0,
+      1
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    }
+   ]
+  },
+  "se": {
+   "soles": [
+    {
+     "x": 65,
+     "y": 143,
+     "leg": "hind"
+    },
+    {
+     "x": 88.5,
+     "y": 160,
+     "leg": "front_near"
+    },
+    {
+     "x": 116.5,
+     "y": 155,
+     "leg": "front"
+    }
+   ],
+   "axis_on_screen": [
+    0.707,
+    0.405
+   ],
+   "hind_ground_mid": [
+    74.2,
+    135.8
+   ],
+   "hip_pivot": [
+    74.2,
+    107.9
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 0,
+     "body_shift_px": [
+      0,
+      0
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 1,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 0,
+     "body_shift_px": [
+      -1.4,
+      0.2
+     ],
+     "head_extra_drop_px": 1,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 2,
+     "front_feet_shift_px": [
+      -1.0,
+      -9.0
+     ],
+     "near_front_lift_px": 9.0,
+     "body_shift_px": [
+      0,
+      0
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 3,
+     "front_feet_shift_px": [
+      -3.8,
+      -18.6
+     ],
+     "near_front_lift_px": 18.6,
+     "body_shift_px": [
+      0,
+      0
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 4,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 0,
+     "body_shift_px": [
+      0,
+      2
+     ],
+     "head_extra_drop_px": 1,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 5,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 2,
+     "body_shift_px": [
+      0,
+      1
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    }
+   ]
+  },
+  "ne": {
+   "soles": [
+    {
+     "x": 89,
+     "y": 160,
+     "leg": "hind"
+    },
+    {
+     "x": 65,
+     "y": 150,
+     "leg": "hind"
+    },
+    {
+     "x": 116,
+     "y": 141,
+     "leg": "front_near"
+    }
+   ],
+   "axis_on_screen": [
+    0.707,
+    -0.405
+   ],
+   "hind_ground_mid": [
+    75.0,
+    152.0
+   ],
+   "hip_pivot": [
+    75.0,
+    124.1
+   ],
+   "frames": [
+    {
+     "frame": 0,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 0,
+     "body_shift_px": [
+      0,
+      0
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 1,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 0,
+     "body_shift_px": [
+      -1.4,
+      1.8
+     ],
+     "head_extra_drop_px": 1,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 2,
+     "front_feet_shift_px": [
+      -1.0,
+      -7.9
+     ],
+     "near_front_lift_px": 7.9,
+     "body_shift_px": [
+      0,
+      0
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 3,
+     "front_feet_shift_px": [
+      -3.8,
+      -14.2
+     ],
+     "near_front_lift_px": 14.2,
+     "body_shift_px": [
+      0,
+      0
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 4,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 0,
+     "body_shift_px": [
+      0,
+      2
+     ],
+     "head_extra_drop_px": 1,
+     "hind_feet": "planted, 1 px or under"
+    },
+    {
+     "frame": 5,
+     "front_feet_shift_px": [
+      0.0,
+      0.0
+     ],
+     "near_front_lift_px": 2,
+     "body_shift_px": [
+      0,
+      1
+     ],
+     "head_extra_drop_px": 0,
+     "hind_feet": "planted, 1 px or under"
+    }
+   ]
+  }
+ }
+}
+{
+ "e": {
+  "bbox": [
+   44,
+   86,
+   146,
+   160
+  ],
+  "opaque": 4929,
+  "colours": [
+   "ffcf1f",
+   "d18a0a",
+   "58555e",
+   "141218",
+   "fff4a8",
+   "7a4a06",
+   "9d9ba2",
+   "3d3a44",
+   "d6d6dc",
+   "211e27",
+   "ff3a2a"
+  ],
+  "ink_share": 0.0814,
+  "eye_px": 5,
+  "pieces4": 1,
+  "specks_1_2px": 322
+ },
+ "se": {
+  "bbox": [
+   54,
+   78,
+   138,
+   160
+  ],
+  "opaque": 4982,
+  "colours": [
+   "ffcf1f",
+   "d18a0a",
+   "58555e",
+   "fff4a8",
+   "141218",
+   "3d3a44",
+   "9d9ba2",
+   "7a4a06",
+   "d6d6dc",
+   "211e27",
+   "ff3a2a"
+  ],
+  "ink_share": 0.0779,
+  "eye_px": 5,
+  "pieces4": 1,
+  "specks_1_2px": 414
+ },
+ "ne": {
+  "bbox": [
+   54,
+   58,
+   136,
+   160
+  ],
+  "opaque": 5090,
+  "colours": [
+   "ffcf1f",
+   "d18a0a",
+   "141218",
+   "fff4a8",
+   "58555e",
+   "3d3a44",
+   "7a4a06",
+   "9d9ba2",
+   "211e27",
+   "d6d6dc"
+  ],
+  "ink_share": 0.0825,
+  "eye_px": 0,
+  "pieces4": 1,
+  "specks_1_2px": 346
+ }
+}
+[
+  {"hex": "fff4a8", "role": "yellow", "shade": "highlight"},
+  {"hex": "ffcf1f", "role": "yellow", "shade": "base"},
+  {"hex": "d18a0a", "role": "yellow", "shade": "shadow"},
+  {"hex": "7a4a06", "role": "yellow", "shade": "deep"},
+  {"hex": "d6d6dc", "role": "steel", "shade": "light"},
+  {"hex": "9d9ba2", "role": "steel", "shade": "base"},
+  {"hex": "58555e", "role": "steel", "shade": "shadow"},
+  {"hex": "3d3a44", "role": "charcoal", "shade": "base"},
+  {"hex": "211e27", "role": "charcoal", "shade": "shadow"},
+  {"hex": "ff3a2a", "role": "eye", "shade": "glow"},
+  {"hex": "ffe6d8", "role": "eye", "shade": "glint"},
+  {"hex": "141218", "role": "accent", "shade": "seams"}
+]
+
+codex
+The single sheet is saved unchanged as sheet_raw.png, and REPORT.txt is in place. The rear poses read clearly, but the generated northeast row shows red eyes that the approved rear view does not have. I’ll flag the design differences and measure the pose errors without moving any parts.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content -LiteralPath 'D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/cam35/brief.txt','D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/cam35/REPORT.txt','D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/cam35/finish.py','D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/cam35/defringe.py','D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/cam35/despeckle.py','D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/cam35/audit.py','D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/selout_rhino.py'" in D:\dev\_scratch\codex-cwd
+ succeeded in 848ms:
+Job from Claude (the rhino camera-angle lane of the mech MOBA in D:/dev/new-mech-rpg, on the sprite factory lane's plan): redraw the APPROVED robot rhino (working id rhino_l, take A) in all eight views from the game camera's angle, 35 degrees down, in ONE image. Preston approved this job at one image. It is the SAME rhino: no new design, no new parts. A first try (TAKE/views_cam30) came out with the side view still low, the front view too steep, rounded plates, too few seam lines and a narrow front three-quarter view; this one adds an angle guide and fixes those.
+You run from C:\Users\pmcga\dev\hollowtide only because that folder is trusted and holds the tools. This is NOT Hollowtide work: write nothing in the Hollowtide repo. Write only inside OUT and VIEWS:
+- OUT = D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/cam35
+- VIEWS = D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/views_cam35 (create it; it gets s.png, se.png, e.png, ne.png and n.png only)
+- TAKE = D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a (read only)
+Do NOT open anything in D:/dev/new-mech-rpg/docs/art/moba/rhino_l/3d_test (images or text), TAKE/anim, any image under D:/dev/new-mech-rpg/art/, or any other image under D:/dev/new-mech-rpg/docs/art except the two attachments and the files named here. You may open TAKE/views/*.png to measure them, and read TAKE/palette.json, TAKE/cam30/finish.py (and its defringe.py, despeckle.py, audit.py) and OUT/guide_sizes.txt. Never open TAKE/views_cam30 or any image in TAKE/cam30 (sheets, reviews, boards, slices): the first try must not be copied, and the numbers you need from it are given below.
+Read first: docs/art/sprite-canon-2026-11-02.md and .codex/skills/hollowtide-sprites/SKILL.md (their craft, view and check rules apply; the lore and evolution sections, and the rule that every view is drawn from a low camera, do not).
+1. Generate exactly ONE image with your built-in image tool from OUT/prompt-sheet.txt word for word, attaching exactly two images: OUT/refs/approved_views.png first and OUT/refs/angle_guide.png second. Save it unchanged as OUT/sheet_raw.png. Never make a second image or a redo; if it fails, report and stop.
+2. Finish it the way TAKE/cam30 was finished (copy its finish.py, defringe.py, despeckle.py and audit.py into OUT and adapt): one whole-sheet nearest shrink, magenta to transparent, no magenta or plum fringe, no lone pale pixels on the outer edge. Scale once so the east view is 103 px long (the approved e length; length does not change with pitch, so this keeps 0.020 m per texel). The palette is FIXED: map every pixel to the 12 colours in TAKE/palette.json and add none, each material on its own ramp. Keep the dark accent seam lines: if the shrink or the mapping thins them, map dark seam pixels to accent 141218 rather than charcoal. The target is the approved accent share in each view (about 6 to 9% of opaque pixels; the first try fell to 2 to 4%). Smooth lightly before the mapping so shading becomes clean bands. If view_check's lone value is over 0.11, run one despeckle pass and report the before and after.
+3. Slice: python tools/art/slice_grid.py OUT/sheet_finished.png OUT/slices --canvas 192 --feet 160 ; then copy the s, se, e, ne and n slices to VIEWS. Check that no view touches its canvas border.
+4. Checks, each saved as a .txt in OUT:
+   - python tools/art/view_check.py OUT/slices and python tools/art/sheet_judge.py OUT/slices (all eight). The canon's same-height rule does not apply: the views are now from above. Note heights, do not fix them.
+   - heights.txt, THE ANGLE CHECK: OUT/guide_sizes.txt gives the guide solid's width and height in texels for each view at 35 degrees (s 72x108, se 89x100, e 103x90, ne 89x100, n 72x108). For each of the five new views: height / guide height and width / guide width. Preston's rule: a ratio under 0.85 or over 1.08 is a MISS, and the five height ratios more than 0.08 apart is a MISS. Also list the first try's ratios next to them (first try, given here so you need not open it: s 0.81, se 0.87, e 0.79, ne 1.04, n 0.99).
+   - widths: the new se should be about 89 px wide (the approved se); under 84 is a MISS.
+   - palette-check.txt: every opaque colour in VIEWS is in TAKE/palette.json; list any that are not.
+   - shape.txt: for the new and the approved five views, the share of opaque pixels in each role (yellow, steel, charcoal, eye, accent); the eye pixel count (must be 0 in ne and n); the accent share against the approved (s 6.3%, se 7.8%, e 9.2%, ne 7.4%, n 9.4%); the rows of the lowest pixel of the near and the far feet where you can tell them apart.
+   - depth.txt: for the new five views, the 5th and 95th percentile of luminance (0.2126 R + 0.7152 G + 0.0722 B) over opaque pixels and the share of the most common colour.
+5. Save OUT/review.png: the approved and the new s, se, e, ne and n at 3x, nearest, on mid grey, approved row above new row, each labelled.
+6. Do not touch anything outside OUT and VIEWS: not TAKE/views, TAKE/views_cam30, TAKE/anim, rhino_l/3d_test, assets/ or art/ in either repo. Do not commit, do not revert other files.
+7. Report in under 15 lines, also saved as OUT/REPORT.txt: tokens used if known; the angle check (each ratio, the spread, PASS or MISS, against the first try) first; the se width; the accent share against the approved; the palette check; the check lines; the depth numbers; and by eye: is it the same rhino with no new parts, every view seen from above at one angle, the side view showing the top of the back as a wide band with the far feet higher, the front view's face full-size and not seen from overhead, hard plate edges and seams, clean bands, no eye pixel in the rear views?
+Angle height/guide (new vs first): s 0.778/0.81, se 0.830/0.87, e 0.833/0.79, ne 1.030/1.04, n 0.981/0.99; spread 0.252 vs 0.250: MISS.
+Angle width/guide: s 0.931, se 0.955, e 1.000, ne 0.933, n 0.903; all width ratios PASS.
+SE width 85 px vs approved 89; minimum 84: PASS. East 103 px; one shared nearest shrink.
+Accent new/approved (%): s 6.37/6.3, se 7.41/7.8, e 7.71/9.2, ne 7.54/7.4, n 9.76/9.4.
+Palette PASS: all 12 fixed colours, no extras; no magenta/plum, lone pale rim pixels or rim accent; all eight borders clear.
+view_check: front/back 0.85; area 0.07; height 0.27; colour 0.93; dips none; lone 0.08 (exact 0.07648); 12 colours. No despeckle needed.
+sheet_judge: FIX nothing; REDO e/ne/n/nw/w solely for height; informational here, no height repair or new generation. Mirror 0.950/0.950/0.953.
+Depth p05/p95, dominant share: s 18.86/240.85, 27.11%, se 18.86/240.85, 24.93%, e 18.86/240.85, 28.48%, ne 18.86/240.85, 27.25%, n 18.86/240.85, 30.42%.
+By eye: recognizable same rhino, no obvious new parts; consistent 35-degree camera NO. Side top band inadequate; far feet not separately visible.
+By eye: front face/horn clear and full-size; plates remain rounder than approved; interior seams retained, clean bands. Rear eye pixels ne=0, n=0.
+Built-in image tool: exactly ONE image, verbatim prompt-sheet.txt, approved_views then angle_guide; raw saved unchanged. Tokens used unavailable.
+Files: cam35/sheet_raw.png, sheet_finished.png, review.png and audit .txt/.json; views_cam35 contains only s/se/e/ne/n.png. Overall angle MISS; stopped without redo.
+"""Approved take finishing adapted for fixed ramps and east width 103; no drawing."""
+from pathlib import Path
+import json, hashlib
+import numpy as np
+from PIL import Image
+from scipy import ndimage
+ROOT=Path(__file__).resolve().parent
+im=Image.open(ROOT/'sheet_raw.png').convert('RGBA'); a=np.array(im)
+r,g,b=a[...,:3].astype(int).transpose(2,0,1)
+bg=(r>190)&(g<85)&(b>185)
+a[bg]=0
+# Remove blended magenta/plum before palette mapping, preserving the silhouette.
+solid=a[...,3]>127
+bad=solid&(r-g>25)&(b-g>25)&(b>r*.65)
+good=solid&~bad
+idx=ndimage.distance_transform_edt(~good,return_distances=False,return_indices=True)
+a[bad,:3]=a[idx[0][bad],idx[1][bad],:3]
+# Light raw-resolution median smoothing, before the one nearest sheet shrink.
+smooth=ndimage.median_filter(a[...,:3],size=(3,3,1),mode='nearest')
+interior=ndimage.binary_erosion(solid,iterations=2)
+seam=(np.dot(a[...,:3],[.2126,.7152,.0722])<40)&solid
+interior &= ~seam
+a[interior,:3]=smooth[interior]
+east=solid[im.height//3:2*im.height//3,:im.width//3]
+y,x=np.where(east); raw_width=int(np.ptp(x)+1); scale=103/raw_width
+# Predict nearest sample locations, choosing a whole-sheet size with exact east width.
+w0=round(im.width*scale); candidates=[]
+for w in range(w0-8,w0+9):
+ h=round(im.height*w/im.width)
+ ys=np.minimum(((np.arange(h)+.5)*im.height/h).astype(int),im.height-1)
+ xs=np.minimum(((np.arange(w)+.5)*im.width/w).astype(int),im.width-1)
+ m=solid[np.ix_(ys,xs)][h//3:2*h//3,:w//3]
+ yy,xx=np.where(m)
+ if len(xx) and np.ptp(xx)+1==103: candidates.append((abs(w-w0),w,h))
+if not candidates: raise RuntimeError('No single nearest shrink size yields east width 103')
+_,w,h=min(candidates)
+small=Image.fromarray(a).resize((w,h),Image.Resampling.NEAREST)
+src=np.array(small); vis=src[...,3]>127; rgb=src[...,:3].astype(float)
+palette=json.loads((ROOT.parent/'palette.json').read_text())
+triples=np.array([list(bytes.fromhex(c['hex'])) for c in palette],np.uint8)
+r,g,b=rgb.transpose(2,0,1); lum=rgb@[.2126,.7152,.0722]
+# Lens material must be inside the body; warm magenta/yellow blends on the rim are fringe.
+lens_zone=np.indices(vis.shape)[0]>=h//3  # As in approved finish: eyes only in front/profile cells.
+red=lens_zone&ndimage.binary_erosion(vis,iterations=2)&(r>180)&(g<110)&(b<135)&(r>g*2)
+glint=vis&ndimage.binary_dilation(red,iterations=2)&(r>220)&(g>170)&(b>150)
+lens=red|glint
+yellow=vis&~lens&(r>g*1.02)&(g>b*1.18)&(g>35)
+# Material labels constrain smoothing and mapping; charcoal stays on its own ramp.
+role=np.full(vis.shape,2); role[yellow]=0; role[lens]=3
+role[vis&~yellow&~lens&(lum>=68)]=1
+role[vis&~yellow&~lens&(lum<40)]=4  # Preserve dark generated seams rather than mapping to charcoal.
+source_lab=np.array(small.convert('RGB').convert('LAB')).astype(float)
+choices_lab=np.array(Image.fromarray(triples[None]).convert('LAB')).astype(float)[0]
+source_lab[...,1:]=(source_lab[...,1:]+128)%256-128
+choices_lab[...,1:]=(choices_lab[...,1:]+128)%256-128
+cost=((source_lab[:,:,None]-choices_lab[None,None])**2*[1,3,3]).sum(3)
+for k,c in enumerate(palette):
+ ri=['yellow','steel','charcoal','eye','accent'].index(c['role'])
+ cost[...,k]=np.where(role==ri,cost[...,k],1e12)
+nearest=cost.argmin(2)
+nearest[yellow]=np.select([lum[yellow]>215,lum[yellow]>163,lum[yellow]>105],[0,1,2],default=3)
+out=np.zeros_like(src); out[...,:3]=triples[nearest]; out[...,3]=np.where(vis,255,0); out[~vis]=0
+Image.fromarray(out).save(ROOT/'sheet_finished.png')
+meta={'raw_size':im.size,'raw_east_width':raw_width,'target_east_width':103,'shared_scale':w/im.width,'finished_sheet_size':[w,h],'raw_plum_repainted':int(bad.sum()),'smooth':'3x3 median at raw resolution, interior only','raw_sha256':hashlib.sha256((ROOT/'sheet_raw.png').read_bytes()).hexdigest()}
+(ROOT/'preparation.json').write_text(json.dumps(meta,indent=2)); print(json.dumps(meta))
+"""Squirrel cleanup, adapted from wolf take B: whole-sheet nearest-solid-colour cleanup.
+Checks every colour, dark plum and internal leg gaps, not one historical RGB.
+Alpha and silhouettes stay fixed.
+"""
+from pathlib import Path
+import json
+import numpy as np
+from PIL import Image
+from scipy import ndimage
+HERE = Path(__file__).resolve().parent
+
+def clean(px):
+    solid = px[..., 3] > 0
+    rgb = px[..., :3].astype(float)
+    r, g, b = rgb[..., 0], rgb[..., 1], rgb[..., 2]
+    bad = solid & (r - g > 25) & (b - g > 25) & (b > r * .65)
+    # The mech's near-black is deliberate internal ink, never magenta fringe.
+    bad &= ~np.all(px[..., :3] == (20, 18, 24), axis=2)
+    good = solid & ~bad
+    if bad.any() and not good.any():
+        raise ValueError("No clean palette pixels remain")
+    out = px.copy()
+    if bad.any():
+        idx = ndimage.distance_transform_edt(~good, return_distances=False, return_indices=True)
+        out[bad] = px[idx[0][bad], idx[1][bad]]
+    assert np.array_equal(out[..., 3], px[..., 3])
+    # A lone pale rim pixel has no same-colour neighbour in its 8-neighbourhood.
+    edge = solid & ~ndimage.binary_erosion(solid)
+    # The prompt reserves ink for overlaps inside the body, never the silhouette.
+    ink = solid & np.all(out[..., :3] == (20, 18, 24), axis=2)
+    rim_ink = edge & ink
+    if rim_ink.any():
+        donor = solid & ~ink
+        idx = ndimage.distance_transform_edt(~donor, return_distances=False, return_indices=True)
+        out[rim_ink] = out[idx[0][rim_ink], idx[1][rim_ink]]
+    pale = solid & (np.dot(out[..., :3], [0.2126, 0.7152, 0.0722]) >= 145)
+    lone = np.zeros(solid.shape, bool)
+    for colour in np.unique(out[pale, :3], axis=0):
+        same = solid & np.all(out[..., :3] == colour, axis=2)
+        neighbours = ndimage.convolve(same.astype(int), np.ones((3,3),int), mode='constant') - same
+        lone |= same & edge & (neighbours == 0)
+    donor = solid & ~pale & ~np.all(out[..., :3] == (20, 18, 24), axis=2)
+    if lone.any():
+        idx = ndimage.distance_transform_edt(~donor, return_distances=False, return_indices=True)
+        out[lone] = out[idx[0][lone], idx[1][lone]]
+    return out, int(bad.sum()), int(lone.sum()), int(rim_ink.sum())
+
+if __name__ == "__main__":
+    path = HERE / "sheet_finished.png"
+    px, count, pale_count, ink_count = clean(np.array(Image.open(path).convert("RGBA")))
+    Image.fromarray(px).save(path)
+    result = {"plum_or_magenta_pixels_repainted": count,
+              "remaining_plum_or_magenta_pixels": clean(px)[1], "lone_pale_edge_pixels_repainted": pale_count,
+              "remaining_lone_pale_edge_pixels": clean(px)[2],
+              "dark_ink_rim_pixels_repainted": ink_count,
+              "remaining_dark_ink_rim_pixels": clean(px)[3], "alpha_unchanged": True}
+    (HERE / "defringe.json").write_text(json.dumps(result, indent=2))
+    print(json.dumps(result))
+"""One simultaneous four-neighbour despeckle pass, from shoebill take C; green and white lens colours kept."""
+from pathlib import Path
+from collections import Counter
+import numpy as np
+from PIL import Image
+import json
+P=Path(__file__).resolve().parent
+LENS={(255,58,42),(255,230,216)}
+def despeckle(a):
+    h, w = a.shape[:2]
+    out = a.copy()
+    fixed = 0
+    for y in range(h):
+        for x in range(w):
+            if a[y, x, 3] == 0 or tuple(a[y, x, :3]) in LENS:
+                continue
+            nbrs = [tuple(a[yy, xx]) for yy, xx in ((y - 1, x), (y + 1, x), (y, x - 1), (y, x + 1))
+                    if 0 <= yy < h and 0 <= xx < w and a[yy, xx, 3] > 0]
+            if not nbrs:
+                continue
+            here = a[y, x, :3].astype(int)
+            if any(np.abs(here - np.array(n[:3], int)).sum() < 30 for n in nbrs):
+                continue
+            out[y, x] = Counter(nbrs).most_common(1)[0][0]
+            fixed += 1
+    return out, fixed
+
+
+a,n=despeckle(np.array(Image.open(P/'sheet_finished.png').convert('RGBA')))
+Image.fromarray(a).save(P/'sheet_finished.png')
+(P/'despeckle.json').write_text(json.dumps({'passes':1,'pixels_changed':n,'lens_colours_preserved':['ff3a2a','ffe6d8']},indent=2))
+print('despeckle pixels changed',n)
+"""Approved audit adapted for camera comparison, fixed palette, roles and five-view review."""
+from pathlib import Path
+import json, subprocess, os, shutil
+import numpy as np
+from PIL import Image, ImageDraw
+from scipy import ndimage
+P=Path(__file__).resolve().parent; TAKE=P.parent; V=TAKE/'views_cam35'; V.mkdir(exist_ok=True)
+NAMES=['s','se','e','ne','n']; ALL=['s','se','e','ne','n','nw','w','sw']
+pal=json.loads((TAKE/'palette.json').read_text()); roles={tuple(bytes.fromhex(c['hex'])):c['role'] for c in pal}; valid=set(roles)
+for d in NAMES: shutil.copyfile(P/'slices'/f'{d}.png',V/f'{d}.png')
+metrics={}; edges={}; sizes=[]; shape=[]; depth=[]; invalid={}; border={}; allpix=[]
+for tag,folder in [('approved',TAKE/'views'),('new',P/'slices')]:
+ metrics[tag]={}
+ for d in (NAMES if tag=='approved' else ALL):
+  im=Image.open(folder/f'{d}.png').convert('RGBA'); a=np.array(im); m=a[...,3]>0; yy,xx=np.where(m); pix=a[m,:3]
+  cs,counts=np.unique(pix,axis=0,return_counts=True); lum=pix@[.2126,.7152,.0722]; k=counts.argmax()
+  shares={r:sum(int(n) for c,n in zip(cs,counts) if roles.get(tuple(c))==r)/len(pix) for r in ['yellow','steel','charcoal','eye','accent']}
+  eye=sum(int(n) for c,n in zip(cs,counts) if roles.get(tuple(c))=='eye')
+  rec={'width':int(np.ptp(xx)+1),'height':int(np.ptp(yy)+1),'area':int(m.sum()),'role_shares':shares,'eye_pixels':eye,'p05':float(np.percentile(lum,5)),'p95':float(np.percentile(lum,95)),'dominant_share':float(counts[k]/len(pix)),'dominant_colour':bytes(cs[k]).hex(),'lowest_row':int(yy.max())}
+  metrics[tag][d]=rec
+  if d in NAMES:
+   shape.append(f"{tag} {d}: "+'; '.join(f'{r} {v:.4%}' for r,v in shares.items())+f"; eye pixels {eye}; height/width {rec['height']/rec['width']:.4f}; lowest opaque row {yy.max()}; foot rows: see visual notes below")
+  if tag=='new':
+   border[d]=bool(m[0].any() or m[-1].any() or m[:,0].any() or m[:,-1].any())
+   invalid[d]=[bytes(c).hex() for c in cs if tuple(c) not in valid]
+   edge=m&~ndimage.binary_erosion(m); ec,ct=np.unique(a[edge,:3],axis=0,return_counts=True)
+   edges[d]={'edge_pixels':int(edge.sum()),'colours':{c['hex']:{'count':int(sum(n for rgb,n in zip(ec,ct) if bytes(rgb).hex()==c['hex'])),'body_count':int(sum(n for rgb,n in zip(cs,counts) if bytes(rgb).hex()==c['hex']))} for c in pal}}
+   allpix.append(pix)
+   if d in NAMES: depth.append(f"{d}: p05 {rec['p05']:.2f}; p95 {rec['p95']:.2f}; dominant #{rec['dominant_colour']} {rec['dominant_share']:.2%}")
+for d in NAMES:
+ a=metrics['approved'][d]; b=metrics['new'][d]
+ sizes.append(f"{d}: new {b['width']}x{b['height']}/{b['area']}; approved {a['width']}x{a['height']}/{a['area']} (width x height / opaque area)")
+(P/'sizes.txt').write_text('\n'.join(sizes)+'\nAll eight canvas borders: '+str(border)+'\nEast width 103: '+str(metrics['new']['e']['width']==103))
+(P/'shape.txt').write_text('\n'.join(shape)+'\nRows are zero-based on 192x192 canvases. Feet must be identified visually; opaque bottom alone does not identify a far foot.\n')
+(P/'depth.txt').write_text('\n'.join(depth)+'\nLuminance = 0.2126 R + 0.7152 G + 0.0722 B; opaque pixels only.\n')
+(P/'palette-check.txt').write_text('Allowed palette: '+', '.join(c['hex'] for c in pal)+'\n'+ '\n'.join(f'{d}: '+('PASS, no colours outside palette' if not invalid[d] else 'FAIL '+str(invalid[d])) for d in NAMES)+'\nEvery opaque colour in VIEWS is allowed: '+str(all(not invalid[d] for d in NAMES)))
+cs,ct=np.unique(np.concatenate(allpix),axis=0,return_counts=True)
+metrics['border_contact']=border; metrics['top_five_share']=float(np.sort(ct)[-5:].sum()/ct.sum()); metrics['colours']=len(cs)
+(P/'metrics.json').write_text(json.dumps(metrics,indent=2)); (P/'edge-audit.json').write_text(json.dumps(edges,indent=2))
+# Both rows use identical scale and baseline. No per-view resizing.
+board=Image.new('RGB',(5*384,2*384),(128,128,128)); draw=ImageDraw.Draw(board)
+for row,(tag,folder) in enumerate([('approved',TAKE/'views'),('new',V)]):
+ for col,d in enumerate(NAMES):
+  im=Image.open(folder/f'{d}.png').convert('RGBA'); im=im.crop(im.getbbox()); im=im.resize((im.width*3,im.height*3),Image.Resampling.NEAREST)
+  board.paste(im,(col*384+(384-im.width)//2,row*384+365-im.height),im); draw.text((col*384+12,row*384+10),f'{tag} {d} - 3x',fill='white')
+board.save(P/'review.png')
+env=os.environ.copy(); env['PYTHONDONTWRITEBYTECODE']='1'
+for name in ['view_check','sheet_judge']:
+ args=['python','-B',f'tools/art/{name}.py',str(P/'slices')]
+ if name=='sheet_judge': args+=['--json',str(P/'sheet-judge.json')]
+ result=subprocess.run(args,capture_output=True,text=True,env=env)
+ text=result.stdout+result.stderr
+ (P/f'{name}.txt').write_text(text+f'\nExit code: {result.returncode}\nHeight comparison is informational for this elevated camera; no height repairs applied.\n')
+ print(text)
+# Exact lone value, using same implementation as view_check.
+import sys
+sys.dont_write_bytecode=True; sys.path.insert(0,'tools/art'); import sprite_director as sd
+lone=max(sd.lone_share(sd.load(P/'slices'/f'{d}.png')) for d in ALL)
+metrics['lone_exact']=lone; (P/'metrics.json').write_text(json.dumps(metrics,indent=2))
+print('\n'.join(sizes)); print('\n'.join(depth)); print('lone exact',lone,'top five',metrics['top_five_share']); print('borders',border)
+"""Sel-out for the MOBA style, baked into the rhino's frames (Claude, 2026-11-04). Preston: "ok now sel out for
+our moba style using what we've collected".
+
+The MOBA creatures follow the Hollowtide sprite canon, where the outline comes from the sel-out shader
+(hollowtide docs/art/crew-dungeon-selout-2026-10-10/candidate/scripts/arena/sel_out.gdshaderinc) instead of being
+painted. This game has no such shader, so its creature rules are applied here per pixel, exactly:
+  1. a transparent pixel whose up, down, left or right neighbour is a light or material colour (luma 0.23 or more)
+     becomes the outline colour: one texel of outline outside the silhouette;
+  2. a silhouette edge pixel (a transparent pixel up, down, left or right of it) darker than luma 0.23 is darkened
+     to the outline colour (per channel minimum), so existing dark edges get no extra thickness;
+  3. the shader's speck cleanup only merges colours closer than 0.12 with luma over 0.16; no two rhino colours
+     are that close, so it changes nothing here and is left out; its detail-ink mode is off for creatures.
+Outline colour: the rhino palette's darkest, #141218 (the shader's #0B0E11 would add a 13th colour; they differ by
+under 10 per channel). The feet still stand on y=160; under a light foot edge the outline sits on y=161.
+Reads every sheet's frames/ and writes frames_selout/ beside it, so rerun after any fix to the frames.
+"""
+from pathlib import Path
+
+import numpy as np
+from PIL import Image, ImageDraw
+
+ANIM = Path(__file__).parent
+OUTLINE = np.array([0x14, 0x12, 0x18], np.uint8)
+SHEETS = [ANIM / "codex-set-a" / s for s in ("idle", "walk", "horn-jab", "horn-toss")] + \
+         [ANIM / "codex-set-b" / s for s in ("brace", "stampede", "death")] + [ANIM / "codex-ground-pound/clean"] + \
+         [ANIM / "codex-set-c" / s for s in ("stampede", "horn-toss", "ground-pound", "horn-jab")] + \
+         [ANIM / "codex-set-d" / s for s in ("brace", "death", "idle", "brace-shuffle")]  # se/ne rows, shuffle
+
+
+def selout(a):
+    op = a[..., 3] > 127
+    luma = (a[..., :3].astype(float) / 255) @ np.array([0.2126, 0.7152, 0.0722])
+    light = op & (luma >= 0.23)
+
+    def nb(m, fill):
+        p = np.pad(m, 1, constant_values=fill)
+        return p[:-2, 1:-1], p[2:, 1:-1], p[1:-1, :-2], p[1:-1, 2:]
+
+    repair = ~op & np.logical_or.reduce(nb(light, False))
+    edge = op & np.logical_or.reduce([~x for x in nb(op, False)])
+    dark_edge = edge & (luma < 0.23)
+    out = a.copy()
+    out[dark_edge, :3] = np.minimum(a[dark_edge, :3], OUTLINE)
+    out[repair, :3] = OUTLINE
+    out[repair, 3] = 255
+    return out, int(repair.sum()), int(dark_edge.sum())
+
+
+def main():
+    total, pairs = [], []
+    for d in SHEETS:
+        src, dst = d / "frames", d / "frames_selout"
+        dst.mkdir(exist_ok=True)
+        for p in sorted(src.glob("*_f[0-9].png")):
+            a = np.asarray(Image.open(p).convert("RGBA"))
+            b, added, darkened = selout(a)
+            Image.fromarray(b).save(dst / p.name)
+            total.append((d.name, p.stem, added, darkened))
+            if p.stem in ("front_f0", "side_f0", "back_f0") and d.name == "idle" or \
+               (d.name, p.stem) in {("horn-jab", "side_f3"), ("stampede", "front_f3"), ("death", "side_f4")}:
+                pairs.append((f"{d.name} {p.stem}", a, b))
+    added = [t[2] for t in total]
+    print(f"{len(total)} frames; outline pixels added per frame {min(added)}-{max(added)}; "
+          f"dark edge pixels darkened {sum(t[3] for t in total)} in all")
+    # before | after at 4x on the MOBA map grey
+    k, box = 4, (24, 72, 168, 166)
+    w, h = (box[2] - box[0]) * k, (box[3] - box[1]) * k
+    board = Image.new("RGBA", (2 * w + 8, len(pairs) * (h + 16)), (0x5A, 0x60, 0x58, 255))
+    dr = ImageDraw.Draw(board)
+    for j, (lab, a, b) in enumerate(pairs):
+        y = j * (h + 16)
+        dr.text((4, y + 2), f"{lab}   left: before   right: sel-out", fill=(240, 240, 240, 255))
+        for i, im in enumerate((a, b)):
+            board.alpha_composite(Image.fromarray(im).crop(box).resize((w, h), Image.NEAREST), (i * (w + 8), y + 16))
+    board.save(ANIM / "selout-board.png")
+    print("board", board.size)
+
+
+if __name__ == "__main__":
+    main()
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "python -c \"import PIL,numpy,scipy; print('ready')\"; Get-Item -LiteralPath 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/sheet_raw.png' | Select-Object Length; Copy-Item -LiteralPath 'D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/cam35/finish.py','D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/cam35/defringe.py','D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/cam35/despeckle.py','D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/cam35/audit.py' -Destination 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/'" in D:\dev\_scratch\codex-cwd
+ succeeded in 956ms:
+ready
+
+ Length
+ ------
+1737645
+
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from PIL import Image,ImageDraw
+from pathlib import Path
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1')
+b=Image.new('RGB',(1152,800),(100,100,100)); d=ImageDraw.Draw(b)
+for j,v in enumerate(['e','se','ne']):
+ im=Image.open('D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/views_cam35_touchup/'+v+'.png').convert('RGBA'); b.paste(im.resize((576,576),Image.Resampling.NEAREST),(j*384-96,0),im.resize((576,576),Image.Resampling.NEAREST)); d.text((j*384+10,10),v,fill='white')
+ # separate crop with pixel coordinate grid
+ im=im.crop((100,55,150,140)).resize((200,340),Image.Resampling.NEAREST); b.paste(im,(j*384+20,450),im)
+b.save(p/'measure_stills.png')
+'@ | python -" in D:\dev\_scratch\codex-cwd
+ succeeded in 479ms:
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from PIL import Image,ImageDraw
+from pathlib import Path
+import numpy as np
+from scipy import ndimage as nd
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1'); a=Image.open(p/'sheet_raw.png'); print('size',a.size)
+b=Image.new('RGB',(1200,1000),(100,100,100)); d=ImageDraw.Draw(b)
+for j,v in enumerate(['e','se','ne']):
+ im=a.crop((0,round(j*a.height/3),round(a.width/6),round((j+1)*a.height/3))); b.paste(im.resize((400,400)),(j*400,0))
+ for x in range(0,im.width,20): d.text((j*400+round(x*400/im.width),380),str(x),fill='white')
+ for y in range(0,im.height,20): d.text((j*400,round(y*400/im.height)),str(y),fill='white')
+ st=Image.open('D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/views_cam35_touchup/'+v+'.png').convert('RGBA'); b.paste(st.resize((768,768),Image.Resampling.NEAREST),(j*400-190,380),st.resize((768,768),Image.Resampling.NEAREST))
+ z=np.array(st); red=(z[:,:,0]==255)&(z[:,:,1]==58)&(z[:,:,2]==42)&(z[:,:,3]>0); print(v,'eye',np.argwhere(red).tolist())
+b.save(p/'landmarks.png')
+'@ | python -" in D:\dev\_scratch\codex-cwd
+ succeeded in 2079ms:
+size (1774, 887)
+e eye [[123, 126], [123, 127], [123, 128], [124, 127], [124, 128]]
+se eye [[132, 113], [132, 114], [133, 113], [134, 114], [139, 133]]
+ne eye []
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from PIL import Image
+import numpy as np
+from scipy import ndimage as n
+from pathlib import Path
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1')
+a=np.array(Image.open(p/'sheet_raw.png').convert('RGBA'))
+for j,v in enumerate(['e','se','ne']):
+ b=a[round(j*887/3):round((j+1)*887/3),:round(1774/6)]; r,g,bl=b[:,:,:3].astype(int).transpose(2,0,1); red=(r>180)&(g<115)&(bl<100)&(r>g*2); l,k=n.label(red)
+ for z in n.find_objects(l):
+  if z: print(v,'red',[(s.start,s.stop) for s in z])
+ steel=(abs(r-g)<22)&(abs(g-bl)<30)&(r>65); l,k=n.label(steel)
+ for i,z in enumerate(n.find_objects(l)):
+  if z and (l[z]==i+1).sum()>20: print(v,'steel',[(s.start,s.stop) for s in z],int((l[z]==i+1).sum()))
+for v in ['e','se','ne']:
+ b=np.array(Image.open('D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/views_cam35_touchup/'+v+'.png').convert('RGBA')); r,g,bl=b[:,:,:3].astype(int).transpose(2,0,1); steel=(abs(r-g)<22)&(abs(g-bl)<30)&(r>65)&(b[:,:,3]>0); l,k=n.label(steel)
+ for i,z in enumerate(n.find_objects(l)):
+  if z and (l[z]==i+1).sum()>10: print('still',v,'steel',[(s.start,s.stop) for s in z],int((l[z]==i+1).sum()))
+'@ | python -" in D:\dev\_scratch\codex-cwd
+ succeeded in 1234ms:
+e red [(90, 91), (140, 141)]
+e red [(102, 103), (87, 88)]
+e red [(107, 109), (203, 204)]
+e red [(111, 112), (210, 211)]
+e red [(115, 116), (218, 219)]
+e red [(116, 117), (219, 220)]
+e red [(117, 118), (67, 68)]
+e red [(118, 119), (221, 222)]
+e red [(125, 126), (228, 230)]
+e red [(126, 127), (227, 228)]
+e red [(136, 139), (56, 57)]
+e red [(141, 142), (53, 54)]
+e red [(152, 174), (32, 33)]
+e red [(166, 171), (227, 233)]
+e red [(172, 176), (267, 268)]
+e red [(176, 177), (33, 34)]
+e red [(180, 181), (55, 56)]
+e red [(216, 217), (57, 58)]
+e red [(217, 224), (150, 153)]
+e red [(217, 218), (153, 154)]
+e steel [(100, 101), (93, 115)] 22
+e steel [(109, 168), (245, 276)] 952
+e steel [(116, 144), (225, 242)] 257
+e steel [(154, 192), (188, 215)] 288
+e steel [(157, 171), (156, 164)] 60
+e steel [(179, 200), (217, 260)] 512
+e steel [(198, 221), (71, 98)] 359
+e steel [(203, 214), (98, 102)] 23
+e steel [(203, 222), (161, 184)] 352
+e steel [(228, 254), (54, 102)] 624
+e steel [(228, 254), (148, 199)] 670
+se red [(54, 55), (152, 153)]
+se red [(56, 57), (155, 157)]
+se red [(58, 59), (175, 176)]
+se red [(59, 60), (79, 80)]
+se red [(59, 60), (159, 160)]
+se red [(60, 61), (178, 179)]
+se red [(61, 62), (77, 78)]
+se red [(61, 62), (179, 180)]
+se red [(62, 63), (181, 182)]
+se red [(63, 64), (75, 76)]
+se red [(63, 64), (182, 183)]
+se red [(70, 71), (69, 70)]
+se red [(75, 76), (198, 199)]
+se red [(77, 78), (200, 201)]
+se red [(82, 83), (204, 205)]
+se red [(92, 95), (51, 53)]
+se red [(95, 97), (50, 51)]
+se red [(97, 98), (49, 50)]
+se red [(97, 98), (212, 213)]
+se red [(99, 101), (213, 214)]
+se red [(100, 101), (47, 48)]
+se red [(101, 102), (214, 215)]
+se red [(102, 103), (215, 216)]
+se red [(104, 105), (216, 217)]
+se red [(106, 107), (217, 218)]
+se red [(108, 110), (218, 219)]
+se red [(114, 115), (222, 223)]
+se red [(118, 119), (226, 227)]
+se red [(119, 120), (227, 228)]
+se red [(122, 123), (229, 230)]
+se red [(123, 124), (230, 231)]
+se red [(126, 129), (232, 233)]
+se red [(130, 131), (51, 52)]
+se red [(134, 135), (56, 57)]
+se red [(138, 139), (233, 234)]
+se red [(143, 144), (232, 233)]
+se red [(144, 146), (233, 234)]
+se red [(169, 170), (54, 55)]
+se red [(173, 174), (194, 195)]
+se red [(178, 185), (195, 201)]
+se red [(180, 185), (111, 113)]
+se red [(192, 193), (250, 251)]
+se red [(206, 207), (114, 115)]
+se red [(209, 210), (112, 113)]
+se red [(214, 218), (111, 112)]
+se red [(220, 221), (112, 113)]
+se steel [(127, 159), (206, 228)] 430
+se steel [(130, 194), (219, 253)] 1026
+se steel [(144, 150), (124, 134)] 34
+se steel [(148, 174), (54, 79)] 432
+se steel [(156, 196), (159, 181)] 344
+se steel [(171, 180), (159, 162)] 24
+se steel [(188, 216), (46, 84)] 543
+se steel [(189, 211), (115, 139)] 321
+se steel [(191, 224), (181, 236)] 709
+se steel [(198, 214), (236, 247)] 65
+se steel [(220, 245), (107, 157)] 692
+ne red [(55, 56), (158, 159)]
+ne red [(56, 57), (160, 162)]
+ne red [(57, 58), (165, 166)]
+ne red [(58, 59), (168, 169)]
+ne red [(64, 65), (183, 184)]
+ne red [(66, 67), (124, 125)]
+ne red [(71, 72), (201, 202)]
+ne red [(79, 80), (111, 112)]
+ne red [(84, 85), (101, 102)]
+ne red [(86, 87), (96, 97)]
+ne red [(102, 103), (76, 77)]
+ne red [(109, 114), (223, 227)]
+ne red [(141, 142), (52, 53)]
+ne red [(143, 144), (51, 52)]
+ne red [(195, 196), (219, 220)]
+ne red [(196, 197), (58, 59)]
+ne red [(197, 199), (57, 58)]
+ne red [(200, 202), (56, 57)]
+ne red [(202, 203), (55, 56)]
+ne steel [(46, 98), (223, 253)] 740
+ne steel [(58, 82), (205, 219)] 191
+ne steel [(119, 137), (218, 246)] 183
+ne steel [(168, 187), (204, 221)] 199
+ne steel [(183, 196), (57, 69)] 39
+ne steel [(197, 215), (104, 121)] 190
+ne steel [(197, 223), (120, 145)] 460
+ne steel [(201, 226), (180, 226)] 510
+ne steel [(205, 229), (52, 94)] 455
+ne steel [(233, 253), (103, 142)] 506
+still e steel [(94, 95), (68, 80)] 12
+still e steel [(98, 124), (134, 147)] 201
+still e steel [(101, 113), (126, 133)] 53
+still e steel [(119, 126), (95, 99)] 11
+still e steel [(120, 133), (110, 118)] 48
+still e steel [(128, 138), (122, 140)] 114
+still e steel [(135, 141), (56, 62)] 21
+still e steel [(137, 146), (60, 70)] 76
+still e steel [(138, 147), (98, 108)] 67
+still e steel [(148, 161), (52, 73)] 129
+still e steel [(151, 161), (92, 115)] 137
+still se steel [(111, 125), (118, 127)] 77
+still se steel [(112, 139), (123, 139)] 226
+still se steel [(119, 129), (58, 67)] 66
+still se steel [(123, 156), (99, 135)] 320
+still se steel [(132, 144), (54, 70)] 91
+still se steel [(137, 146), (80, 90)] 60
+still se steel [(151, 161), (78, 98)] 125
+still ne steel [(58, 80), (124, 137)] 165
+still ne steel [(65, 75), (117, 123)] 34
+still ne steel [(99, 105), (112, 117)] 18
+still ne steel [(119, 128), (119, 125)] 33
+still ne steel [(126, 137), (57, 66)] 57
+still ne steel [(128, 140), (112, 128)] 85
+still ne steel [(133, 145), (90, 102)] 98
+still ne steel [(135, 143), (80, 90)] 55
+still ne steel [(139, 151), (54, 70)] 86
+still ne steel [(149, 161), (77, 102)] 128
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1')
+# Keep copied originals for provenance, before adapting the requested scripts.
+for n in ['finish','defringe','despeckle','audit']:
+ (p/(n+'_ex_source.txt')).write_bytes((p/(n+'.py')).read_bytes())
+'@ | python -" in D:\dev\_scratch\codex-cwd
+ succeeded in 2260ms:
+2026-11-05T23:53:01.814542Z ERROR codex_core::tools::router: error=apply_patch verification failed: invalid patch: multiple operations target D:\dev\new-mech-rpg\docs\art\moba\attack\rhino_l\gp35\run1\finish.py
+codex
+The head measurements imply different scale factors across the three rows. I’ll use their median for the required single shrink and report the remaining size mismatch. Foot alignment will use whole-frame translations; limb positions that still miss their targets will stay visible as failures.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+\"\"\"EX finish adapted: fixed ramps, one head-scaled whole-sheet nearest shrink.\"\"\"
+from pathlib import Path
+import json,hashlib
+import numpy as np
+from PIL import Image
+from scipy import ndimage as nd
+from defringe import clean
+P=Path(__file__).resolve().parent
+TAKE=Path('D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a')
+NAMES=['e','se','ne']; CROSS=nd.generate_binary_structure(2,1)
+def specks(a):
+ m=a[:,:,3]>0; total=0
+ for c in np.unique(a[m,:3],axis=0):
+  lab,n=nd.label(m&np.all(a[:,:,:3]==c,axis=2),CROSS)
+  sz=np.bincount(lab.ravel())[1:]; total+=int(((sz>=1)&(sz<=2)).sum())
+ return total
+def regions(w,h):
+ return [(round(c*w/6),round(r*h/3),round((c+1)*w/6),round((r+1)*h/3)) for r in range(3) for c in range(6)]
+def note(s):
+ with (P/'REPORT.txt').open('a') as f: f.write(s+'\\n')
+if __name__=='__main__':
+ from despeckle import despeckle
+ im=Image.open(P/'sheet_raw.png').convert('RGBA'); a=np.array(im); rgb=a[:,:,:3].astype(float)
+ r,g,b=rgb.transpose(2,0,1); bg=(r>180)&(g<110)&(b>150); a[bg]=0; solid=~bg
+ bad=solid&(r-g>25)&(b-g>25)&(b>r*.65); good=solid&~bad
+ ix=nd.distance_transform_edt(~good,return_distances=False,return_indices=True); a[bad,:3]=a[ix[0][bad],ix[1][bad],:3]
+ smooth=nd.median_filter(a[:,:,:3],size=(3,3,1),mode='nearest'); interior=nd.binary_erosion(solid,iterations=2)&((a[:,:,:3]@[.2126,.7152,.0722])>=40); a[interior,:3]=smooth[interior]
+ # Visually identified first-column landmarks: E/SE horn tip -> primary eye; NE horn tip -> back/lower head edge.
+ heads={'e':{'raw':[[261,109],[229.5,168]],'still':[[139,98],[127.2,123.4]]},'se':{'raw':[[236,130],[197.5,181]],'still':[[128,112],[113.5,132.75]]},'ne':{'raw':[[233,46],[215,138]],'still':[[127,58],[116,99]]}}
+ for v,z in heads.items():
+  z['raw_length']=float(np.linalg.norm(np.subtract(*z['raw']))); z['still_length']=float(np.linalg.norm(np.subtract(*z['still']))); z['factor']=z['still_length']/z['raw_length']
+ factor=float(np.median([z['factor'] for z in heads.values()])); w=round(im.width*factor); h=round(im.height*factor)
+ small=Image.fromarray(a).resize((w,h),Image.Resampling.NEAREST); src=np.array(small); vis=src[:,:,3]>127
+ rgb=src[:,:,:3].astype(float); r,g,b=rgb.transpose(2,0,1); lum=rgb@[.2126,.7152,.0722]
+ pal=json.loads((TAKE/'palette.json').read_text()); colours=np.array([list(bytes.fromhex(c['hex'])) for c in pal],np.uint8)
+ yellow=vis&(r>g*1.02)&(g>b*1.18)&(g>35); role=np.full(vis.shape,2); role[yellow]=0; role[vis&~yellow&(lum>=68)]=1
+ dark=vis&~yellow&(lum<70); thin=dark&(nd.distance_transform_edt(dark)<=1.5)&nd.binary_erosion(vis)&nd.binary_dilation(vis&(lum>85),iterations=2); role[thin]=4
+ cost=((rgb[:,:,None]-colours[None,None].astype(float))**2).sum(3)
+ for k,c in enumerate(pal): cost[:,:,k]=np.where(role==['yellow','steel','charcoal','eye','accent'].index(c['role']),cost[:,:,k],1e12)
+ nearest=cost.argmin(2); nearest[yellow]=np.select([lum[yellow]>215,lum[yellow]>163,lum[yellow]>105],[0,1,2],default=3)
+ out=np.zeros_like(src); out[:,:,:3]=colours[nearest]; out[:,:,3]=np.where(vis,255,0); out[~vis]=0
+ meta={'raw_sha256':hashlib.sha256((P/'sheet_raw.png').read_bytes()).hexdigest(),'raw_size':list(im.size),'heads':heads,'median_factor':factor,'actual_xy_scale':[w/im.width,h/im.height],'finished_size':[w,h],'rows':{},'eye_restored':[],'discarded_tiny_alpha':{},'despeckle':{},'ink':{}}
+ metrics=json.loads((P/'still_metrics.json').read_text())
+ for k,box in enumerate(regions(w,h)):
+  v=NAMES[k//6]; col=k%6; x0,y0,x1,y1=box; cell=out[y0:y1,x0:x1].copy(); m=cell[:,:,3]>0
+  lab,n=nd.label(m,CROSS); counts=np.bincount(lab.ravel()); counts[0]=0; tiny=(counts<=2)&(counts>0); tiny[0]=False; remove=tiny[lab]; meta['discarded_tiny_alpha'][f'{v}{col}']=int(remove.sum()); cell[remove]=0
+  rr,gg,bb=rgb[y0:y1,x0:x1].transpose(2,0,1); red=(rr>180)&(gg<115)&(bb<100)&(rr>gg*2)&nd.binary_erosion(cell[:,:,3]>0)
+  lab,n=nd.label(red); counts=np.bincount(lab.ravel()); counts[0]=0
+  if v"'!='"'ne' and counts.max()>0:
+   yy,xx=np.where(lab==counts.argmax()); cx=int(round(xx.mean())); cy=int(round(yy.mean()))
+   for dx,dy in [(-1,0),(0,0),(1,0),(0,1),(1,1)]:
+    if cell[cy+dy,cx+dx,3]: cell[cy+dy,cx+dx,:3]=[255,58,42]
+   meta['eye_restored'].append(f'{v}_f{col} @({cx},{cy}) local cell')
+  before=specks(cell); applied=before>1.2*metrics[v]['specks_1_2px']
+  if applied: cell,_=despeckle(cell)
+  after=specks(cell); meta['despeckle'][f'{v}{col}']={'before':before,'after':after,'passes':int(applied)}
+  cell,plum,pale,rim=clean(cell); m=cell[:,:,3]>0; ink=np.all(cell[:,:,:3]==[20,18,24],axis=2)&m
+  goal=round(metrics[v]['ink_share']*m.sum()); current=int(ink.sum()); cand=thin[y0:y1,x0:x1]&nd.binary_erosion(m)&~ink&~np.all(cell[:,:,:3]==[255,58,42],axis=2)
+  yy,xx=np.where(cand); order=np.argsort(lum[y0:y1,x0:x1][yy,xx]); take=order[:max(0,goal-current)]; cell[yy[take],xx[take],:3]=[20,18,24]
+  meta['ink'][f'{v}{col}']={'eligible':int(cand.sum()),'added':len(take),'share':float((np.all(cell[:,:,:3]==[20,18,24],axis=2)&m).sum()/m.sum())}; out[y0:y1,x0:x1]=cell
+  if col==0:
+   yy,xx=np.where(m); meta['rows'][v]={'width':int(np.ptp(xx)+1),'height':int(np.ptp(yy)+1),'still_wh':[{'e':103,'se':85,'ne':83}[v],{'e':75,'se':83,'ne':103}[v]],'head_length_scaled':heads[v]['raw_length']*factor,'head_error':factor/heads[v]['factor']-1}
+ Image.fromarray(out).save(P/'sheet_finished.png'); (P/'preparation.json').write_text(json.dumps(meta,indent=2)); note('Step 2 complete: one nearest shrink; fixed palette, seam mapping, eyes, conditional despeckle. preparation.json has measurements.'); print(json.dumps(meta,indent=2))
+'@ | Set-Content -LiteralPath 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/finish.py'
+@'
+from pathlib import Path
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/despeckle.py')
+s=p.read_text(); i=s.index(\"a,n=despeckle(\"); s=s[:i]+\"if __name__ == '__main__':\\n\"+'\\n'.join('    '+l for l in s[i:].splitlines())+'\\n'; p.write_text(s)
+'@ | python -
+python -B 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/finish.py'" in D:\dev\_scratch\codex-cwd
+ succeeded in 3676ms:
+{
+  "raw_sha256": "bc955c2ef620f87adfe0d5aeb9cbfa52f44c6100e3719eaefbfe802cb262f7e0",
+  "raw_size": [
+    1774,
+    887
+  ],
+  "heads": {
+    "e": {
+      "raw": [
+        [
+          261,
+          109
+        ],
+        [
+          229.5,
+          168
+        ]
+      ],
+      "still": [
+        [
+          139,
+          98
+        ],
+        [
+          127.2,
+          123.4
+        ]
+      ],
+      "raw_length": 66.88235940814289,
+      "still_length": 28.00714194629649,
+      "factor": 0.4187523017151012
+    },
+    "se": {
+      "raw": [
+        [
+          236,
+          130
+        ],
+        [
+          197.5,
+          181
+        ]
+      ],
+      "still": [
+        [
+          128,
+          112
+        ],
+        [
+          113.5,
+          132.75
+        ]
+      ],
+      "raw_length": 63.90031298827886,
+      "still_length": 25.31427462914946,
+      "factor": 0.3961525921444676
+    },
+    "ne": {
+      "raw": [
+        [
+          233,
+          46
+        ],
+        [
+          215,
+          138
+        ]
+      ],
+      "still": [
+        [
+          127,
+          58
+        ],
+        [
+          116,
+          99
+        ]
+      ],
+      "raw_length": 93.74433316206373,
+      "still_length": 42.44997055358225,
+      "factor": 0.4528270576120629
+    }
+  },
+  "median_factor": 0.4187523017151012,
+  "actual_xy_scale": [
+    0.41882750845546785,
+    0.4182638105975197
+  ],
+  "finished_size": [
+    743,
+    371
+  ],
+  "rows": {
+    "e": {
+      "width": 103,
+      "height": 74,
+      "still_wh": [
+        103,
+        75
+      ],
+      "head_length_scaled": 28.00714194629649,
+      "head_error": 0.0
+    },
+    "se": {
+      "width": 90,
+      "height": 84,
+      "still_wh": [
+        85,
+        83
+      ],
+      "head_length_scaled": 26.75840314415715,
+      "head_error": 0.05704799114981429
+    },
+    "ne": {
+      "width": 87,
+      "height": 87,
+      "still_wh": [
+        83,
+        103
+      ],
+      "head_length_scaled": 39.255655284361474,
+      "head_error": -0.07524893957673695
+    }
+  },
+  "eye_restored": [
+    "e_f0 @(96,70) local cell",
+    "e_f1 @(95,79) local cell",
+    "e_f2 @(92,55) local cell",
+    "e_f3 @(90,37) local cell",
+    "e_f4 @(94,81) local cell",
+    "e_f5 @(93,75) local cell",
+    "se_f0 @(82,74) local cell",
+    "se_f1 @(81,77) local cell",
+    "se_f2 @(81,51) local cell",
+    "se_f3 @(75,32) local cell",
+    "se_f4 @(83,78) local cell",
+    "se_f5 @(82,72) local cell"
+  ],
+  "discarded_tiny_alpha": {
+    "e0": 0,
+    "e1": 0,
+    "e2": 1,
+    "e3": 0,
+    "e4": 0,
+    "e5": 0,
+    "se0": 0,
+    "se1": 0,
+    "se2": 0,
+    "se3": 0,
+    "se4": 0,
+    "se5": 0,
+    "ne0": 0,
+    "ne1": 0,
+    "ne2": 0,
+    "ne3": 0,
+    "ne4": 0,
+    "ne5": 0
+  },
+  "despeckle": {
+    "e0": {
+      "before": 220,
+      "after": 220,
+      "passes": 0
+    },
+    "e1": {
+      "before": 271,
+      "after": 271,
+      "passes": 0
+    },
+    "e2": {
+      "before": 293,
+      "after": 293,
+      "passes": 0
+    },
+    "e3": {
+      "before": 279,
+      "after": 279,
+      "passes": 0
+    },
+    "e4": {
+      "before": 275,
+      "after": 275,
+      "passes": 0
+    },
+    "e5": {
+      "before": 246,
+      "after": 246,
+      "passes": 0
+    },
+    "se0": {
+      "before": 332,
+      "after": 332,
+      "passes": 0
+    },
+    "se1": {
+      "before": 356,
+      "after": 356,
+      "passes": 0
+    },
+    "se2": {
+      "before": 306,
+      "after": 306,
+      "passes": 0
+    },
+    "se3": {
+      "before": 291,
+      "after": 291,
+      "passes": 0
+    },
+    "se4": {
+      "before": 334,
+      "after": 334,
+      "passes": 0
+    },
+    "se5": {
+      "before": 335,
+      "after": 335,
+      "passes": 0
+    },
+    "ne0": {
+      "before": 308,
+      "after": 308,
+      "passes": 0
+    },
+    "ne1": {
+      "before": 265,
+      "after": 265,
+      "passes": 0
+    },
+    "ne2": {
+      "before": 299,
+      "after": 299,
+      "passes": 0
+    },
+    "ne3": {
+      "before": 315,
+      "after": 315,
+      "passes": 0
+    },
+    "ne4": {
+      "before": 286,
+      "after": 286,
+      "passes": 0
+    },
+    "ne5": {
+      "before": 298,
+      "after": 298,
+      "passes": 0
+    }
+  },
+  "ink": {
+    "e0": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.0917048770320967
+    },
+    "e1": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08686257562662057
+    },
+    "e2": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.09242957746478873
+    },
+    "e3": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08461066830165542
+    },
+    "e4": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.0893709327548807
+    },
+    "e5": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08769633507853403
+    },
+    "se0": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.07774699907663897
+    },
+    "se1": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.09045226130653267
+    },
+    "se2": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.09111952861952861
+    },
+    "se3": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08592132505175984
+    },
+    "se4": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08155457108336689
+    },
+    "se5": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08738664468260511
+    },
+    "ne0": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08013589128697042
+    },
+    "ne1": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08171806167400882
+    },
+    "ne2": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08155737704918033
+    },
+    "ne3": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.07309644670050762
+    },
+    "ne4": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08037508372404555
+    },
+    "ne5": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08135810377962845
+    }
+  }
+}
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+from PIL import Image,ImageDraw
+import sys
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1');sys.path.insert(0,str(p));from finish import regions
+im=Image.open(p/'sheet_finished.png');b=Image.new('RGB',(6*384,3*400),(105,105,105));d=ImageDraw.Draw(b)
+for k,box in enumerate(regions(*im.size)):
+ c=im.crop(box); x=k%6*384;y=k//6*400;z=c.resize((c.width*3,c.height*3),Image.Resampling.NEAREST);b.paste(z,(x,y+24),z);d.text((x+5,y+5),str(k//6)+' f'+str(k%6),fill='white')
+ for t in range(0,124,10):
+  d.text((x+t*3,y+380),str(t),fill='white');d.text((x,y+24+t*3),str(t),fill='white')
+b.save(p/'measure_sheet.png')
+'@ | python -" in D:\dev\_scratch\codex-cwd
+ succeeded in 1346ms:
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+from PIL import Image
+import numpy as np,sys
+from scipy import ndimage as nd
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1');sys.path.insert(0,str(p));from finish import regions
+im=Image.open(p/'sheet_finished.png')
+for k,box in enumerate(regions(*im.size)):
+ a=np.array(im.crop(box));r,g,b=a[:,:,:3].astype(int).transpose(2,0,1);steel=(abs(r-g)<22)&(abs(g-b)<30)&(r>65)&(a[:,:,3]>0);lab,n=nd.label(steel);print(['e','se','ne'][k//6],k%6,[(z[1].start,z[0].start,z[1].stop-1,z[0].stop-1) for i,z in enumerate(nd.find_objects(lab)) if z and (lab[z]==i+1).sum()>15])
+'@ | python -" in D:\dev\_scratch\codex-cwd
+ succeeded in 1150ms:
+e 0 [(103, 45, 115, 68), (95, 48, 101, 59), (91, 75, 108, 83), (30, 83, 39, 91), (67, 84, 76, 92), (22, 94, 42, 105), (62, 96, 83, 105)]
+e 1 [(101, 54, 114, 79), (93, 57, 99, 68), (27, 83, 39, 91), (90, 83, 108, 91), (66, 86, 74, 93), (22, 95, 42, 106), (61, 96, 81, 106)]
+e 2 [(97, 29, 110, 52), (88, 35, 93, 44), (76, 57, 86, 67), (89, 60, 107, 66), (69, 70, 76, 78), (71, 77, 88, 91), (27, 80, 39, 89), (23, 96, 42, 106)]
+e 3 [(95, 10, 106, 34), (86, 15, 91, 26), (74, 39, 84, 50), (86, 42, 104, 47), (69, 51, 79, 59), (72, 56, 89, 70), (28, 67, 43, 76), (28, 79, 40, 89), (24, 95, 44, 106)]
+e 4 [(101, 58, 114, 82), (93, 59, 100, 70), (30, 83, 39, 91), (66, 86, 74, 93), (88, 86, 108, 94), (23, 94, 43, 106), (61, 96, 80, 106)]
+e 5 [(99, 51, 112, 73), (91, 54, 97, 64), (85, 79, 105, 88), (27, 82, 38, 91), (63, 83, 74, 91), (60, 95, 79, 104), (22, 96, 42, 105)]
+se 0 [(87, 53, 95, 65), (92, 54, 107, 80), (22, 62, 31, 71), (67, 66, 72, 81), (19, 78, 34, 89), (48, 79, 56, 87), (76, 80, 103, 92), (45, 93, 64, 102)]
+se 1 [(85, 55, 93, 67), (91, 55, 106, 79), (23, 64, 31, 72), (67, 69, 74, 83), (20, 78, 35, 89), (49, 81, 56, 88), (75, 82, 96, 93), (45, 92, 64, 102)]
+se 2 [(87, 24, 101, 50), (80, 29, 88, 41), (67, 50, 102, 64), (57, 65, 69, 72), (24, 67, 33, 75), (60, 72, 78, 85), (21, 82, 36, 92)]
+se 3 [(82, 5, 94, 30), (74, 11, 80, 21), (61, 35, 96, 47), (87, 42, 98, 50), (53, 47, 65, 56), (56, 53, 74, 68), (25, 54, 37, 64), (24, 66, 34, 75), (45, 81, 52, 85), (21, 82, 37, 92)]
+se 4 [(86, 56, 95, 68), (92, 57, 106, 80), (24, 64, 31, 72), (67, 69, 73, 83), (20, 76, 35, 89), (49, 81, 57, 88), (78, 83, 103, 94), (46, 93, 65, 102)]
+se 5 [(85, 49, 92, 61), (90, 49, 105, 73), (22, 64, 31, 73), (67, 66, 75, 80), (77, 77, 103, 87), (19, 78, 35, 90), (49, 79, 57, 86), (47, 90, 66, 100)]
+ne 0 [(93, 19, 105, 39), (84, 24, 91, 33), (91, 50, 102, 55), (86, 70, 92, 77), (50, 83, 60, 92), (78, 84, 94, 95), (21, 86, 38, 95), (41, 97, 59, 105)]
+ne 1 [(93, 32, 105, 53), (85, 36, 92, 45), (92, 63, 102, 67), (84, 77, 89, 84), (49, 84, 60, 94), (77, 85, 92, 95), (21, 86, 40, 95), (39, 96, 58, 105)]
+ne 2 [(90, 8, 102, 30), (81, 14, 88, 24), (89, 40, 99, 46), (82, 59, 87, 64), (77, 68, 90, 77), (25, 71, 29, 77), (49, 76, 58, 86), (21, 86, 35, 96), (39, 94, 56, 103)]
+ne 3 [(88, 0, 99, 18), (79, 2, 86, 13), (86, 38, 94, 52), (81, 41, 85, 48), (43, 70, 48, 75), (24, 71, 32, 79), (47, 78, 56, 86), (21, 87, 35, 95), (37, 94, 55, 104)]
+ne 4 [(94, 32, 105, 54), (86, 37, 92, 46), (92, 64, 103, 68), (83, 77, 89, 84), (49, 85, 59, 94), (22, 86, 39, 96), (76, 86, 92, 95), (39, 96, 59, 105)]
+ne 5 [(91, 19, 102, 40), (82, 24, 89, 33), (90, 50, 99, 54), (82, 67, 87, 73), (77, 74, 90, 83), (48, 79, 58, 88), (21, 86, 35, 96), (38, 94, 56, 104)]
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+\"\"\"Whole-frame placement only, based on visually labelled foot-pad boxes.\"\"\"
+from pathlib import Path
+import json,shutil
+import numpy as np
+from PIL import Image,ImageDraw
+from scipy import ndimage as nd
+from finish import regions,NAMES,P,TAKE,note
+# Boxes include the complete steel pad and dark sole, excluding jaw and joints.
+H={
+'e': [[(20,94,46,110)],[(20,94,46,110)],[(20,94,46,110)],[(21,94,47,110)],[(20,94,47,110)],[(20,94,46,110)]],
+'se':[[(17,78,39,93)],[(18,78,40,93)],[(19,81,41,96)],[(19,81,42,96)],[(18,78,40,93)],[(17,79,40,94)]],
+'ne':[[(38,97,63,109),(18,86,42,99)],[(36,96,62,109),(18,86,44,99)],[(36,94,60,107),(18,86,39,100)],[(34,94,59,108),(18,86,39,99)],[(36,96,62,109),(19,86,43,100)],[(35,94,60,108),(18,86,39,100)]]}
+F={
+'e':[[(59,95,87,110)],[(58,95,86,110)],[(69,79,93,94)],[(70,59,94,74)],[(59,95,84,110)],[(58,94,83,108)]],
+'se':[[(42,93,68,106),(75,87,104,96)],[(42,93,68,106),(74,88,100,97)],[(57,74,82,89),(80,56,103,68)],[(54,56,78,72),(85,45,102,54)],[(43,93,69,106),(76,89,105,98)],[(44,90,70,104),(77,82,104,91)]],
+'ne':[[(75,85,98,99)],[(75,86,96,99)],[(74,69,94,81)],[(82,38,98,56)],[(74,86,96,99)],[(74,75,94,87)]]}
+def sole(a,box):
+ x0,y0,x1,y1=box; m=a[y0:y1,x0:x1,3]>0; yy,xx=np.where(m)
+ y=int(yy.max()); xs=np.where(m[y])[0]
+ # Outermost row midpoint, explicitly including the dark pad sole.
+ return [float((xs.min()+xs.max())/2+x0),int(y+y0)]
+def shifted(p,t):return [p[0]+t[0],p[1]+t[1]]
+if __name__=='__main__':
+ im=Image.open(P/'sheet_finished.png'); targets=json.loads((P/'targets.json').read_text()); dest=P/'frames';dest.mkdir(exist_ok=True)
+ rec={}; moves=[]; dbg=Image.new('RGB',(6*384,3*400),(100,100,100));draw=ImageDraw.Draw(dbg)
+ for k,box in enumerate(regions(*im.size)):
+  v=NAMES[k//6];i=k%6;a=np.array(im.crop(box)); hs=[sole(a,b) for b in H[v][i]]; fs=[sole(a,b) for b in F[v][i]]; ts=[[s['x'],s['y']] for s in targets['views'][v]['soles'] if s['leg']=='hind']
+  # Row offset from column 1; subsequent correction uses only whole-frame translation.
+  if i==0:
+   rowoff=np.rint(np.median(np.subtract(ts,hs),axis=0)).astype(int);base=rowoff.copy()
+  err=np.subtract(ts,np.add(hs,base)); correction=np.rint(np.median(err,axis=0)).astype(int)
+  if np.max(np.abs(err))<=1:correction[:]=0
+  trans=base+correction
+  if np.any(correction):moves.append(f'{v}_f{i} ({correction[0]:+d},{correction[1]:+d})')
+  canvas=Image.new('RGBA',(192,192));canvas.paste(Image.fromarray(a),tuple(trans));canvas.save(dest/f'{v}_f{i}.png')
+  rec[f'{v}_f{i}']={'cell_box':box,'row_offset':base.tolist(),'correction':correction.tolist(),'translation':trans.tolist(),'hind_cell':hs,'front_cell':fs,'hind':[shifted(s,trans) for s in hs],'front':[shifted(s,trans) for s in fs],'foot_boxes':{'hind':H[v][i],'front':F[v][i]},'method':'Visually identified steel foot pads; dark sole outermost row in labelled box; midpoint of occupied sole row. SE far pad partly overlaps jaw: position uncertain.'}
+  z=canvas.resize((384,384),Image.Resampling.NEAREST);dbg.paste(z,(i*384,(k//6)*400+16),z);draw.text((i*384+4,(k//6)*400),f'{v} f{i}',fill='white')
+  for tag,ps in [('H',rec[f'{v}_f{i}']['hind']),('F',rec[f'{v}_f{i}']['front'])]:
+   for x,y in ps:
+    x=i*384+x*2;y=(k//6)*400+16+y*2;draw.line((x-5,y,x+5,y),fill='cyan' if tag=='H' else 'red',width=1);draw.text((x,y+2),tag,fill='white')
+ for v in NAMES:
+  shutil.copyfile(TAKE/'views_cam35_touchup'/f'{v}.png',dest/f'{v}_f0.png')
+  rec[f'{v}_f0']['hind']=[[s['x'],s['y']] for s in targets['views'][v]['soles'] if s['leg']=='hind'];rec[f'{v}_f0']['front']=[[s['x'],s['y']] for s in targets['views'][v]['soles'] if s['leg'].startswith('front')];rec[f'{v}_f0']['method']='Exact approved still; foot labels from supplied targets.json.'
+ (P/'placement.json').write_text(json.dumps({'frames':rec,'moves':moves},indent=2));dbg.save(P/'feet_measured.png');note('Step 3 complete: 18 frames on 192 canvases, exact still f0; whole-frame corrections '+', '.join(moves));print('moves',moves)
+ for key,r in rec.items():print(key,'hind',r['hind'],'front',r['front'],'offset',r['translation'])
+'@ | Set-Content -LiteralPath 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/place.py'
+python -B 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/place.py'" in D:\dev\_scratch\codex-cwd
+ exited 1 in 3372ms:
+Traceback (most recent call last):
+  File "D:\dev\new-mech-rpg\docs\art\moba\attack\rhino_l\gp35\run1\place.py", line 44, in <module>
+    (P/'placement.json').write_text(json.dumps({'frames':rec,'moves':moves},indent=2));dbg.save(P/'feet_measured.png');note('Step 3 complete: 18 frames on 192 canvases, exact still f0; whole-frame corrections '+', '.join(moves));print('moves',moves)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pmcga\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Users\pmcga\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "C:\Users\pmcga\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Users\pmcga\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\pmcga\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\pmcga\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\pmcga\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "C:\Users\pmcga\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "C:\Users\pmcga\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "C:\Users\pmcga\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int64 is not JSON serializable
+
+2026-11-05T23:55:11.316619Z ERROR codex_core::tools::router: error=unable to locate image at `D:\dev\new-mech-rpg\docs\art\moba\attack\rhino_l\gp35\run1\feet_measured.png`: The system cannot find the file specified. (os error 2)
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/place.py');s=p.read_text().replace(\"return [p[0]+t[0],p[1]+t[1]]\",\"return [float(p[0]+t[0]),int(p[1]+t[1])]\");p.write_text(s)
+'@ | python -
+python -B 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/place.py'" in D:\dev\_scratch\codex-cwd
+ succeeded in 1365ms:
+moves ['e_f1 (-2,+0)', 'e_f2 (-2,+0)', 'e_f3 (-2,+0)', 'e_f4 (-2,+0)', 'se_f1 (-2,+0)', 'se_f2 (-3,-3)', 'se_f3 (-3,-3)', 'se_f4 (-2,+0)', 'ne_f2 (+2,+0)', 'ne_f3 (+3,+0)', 'ne_f4 (+0,-2)', 'ne_f5 (+2,-1)']
+e_f0 hind [[62.5, 160]] front [[102.5, 160]] offset [30, 54]
+e_f1 hind [[62.0, 160]] front [[99.5, 160]] offset [28, 54]
+e_f2 hind [[62.5, 160]] front [[100.5, 145]] offset [28, 54]
+e_f3 hind [[62.5, 160]] front [[103.0, 126]] offset [28, 54]
+e_f4 hind [[62.5, 160]] front [[99.0, 160]] offset [28, 54]
+e_f5 hind [[63.5, 160]] front [[97.5, 158]] offset [30, 54]
+se_f0 hind [[65, 143]] front [[88.5, 160], [116.5, 155]] offset [34, 53]
+se_f1 hind [[64.5, 143]] front [[88.5, 155], [114.5, 149]] offset [32, 53]
+se_f2 hind [[65.0, 143]] front [[94.5, 136], [119.5, 117]] offset [31, 50]
+se_f3 hind [[65.0, 143]] front [[90.5, 119], [120.5, 103]] offset [31, 50]
+se_f4 hind [[64.5, 143]] front [[88.5, 155], [114.5, 149]] offset [32, 53]
+se_f5 hind [[66.0, 143]] front [[91.5, 153], [118.0, 143]] offset [34, 53]
+ne_f0 hind [[89, 160], [65, 150]] front [[116, 141]] offset [32, 54]
+ne_f1 hind [[80.5, 159], [73.0, 152]] front [[113.5, 149]] offset [32, 54]
+ne_f2 hind [[83.0, 158], [72.0, 153]] front [[114.0, 132]] offset [34, 54]
+ne_f3 hind [[82.0, 158], [72.5, 152]] front [[120.0, 109]] offset [35, 54]
+ne_f4 hind [[81.0, 158], [72.5, 151]] front [[113.5, 147]] offset [32, 52]
+ne_f5 hind [[81.5, 158], [72.0, 152]] front [[113.5, 137]] offset [34, 53]
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+from PIL import Image
+from scipy import ndimage as nd
+import numpy as np,sys
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1');sys.path.insert(0,str(p));from finish import regions
+im=Image.open(p/'sheet_finished.png')
+for k,box in enumerate(regions(*im.size)):
+ a=np.array(im.crop(box)); lab,n=nd.label(a[:,:,3]>0); cs=np.bincount(lab.ravel());cs[0]=0
+ print(['e','se','ne'][k//6],k%6,'pieces',sorted(cs[cs>0].tolist(),reverse=True))
+ if k>=12:
+  for y in range(93,109):
+   xs=np.where(a[y,:70,3]>0)[0]; runs=np.split(xs,np.where(np.diff(xs)>1)[0]+1); print(y,[(int(x.min()),int(x.max())) for x in runs if len(x)])
+'@ | python -" in D:\dev\_scratch\codex-cwd
+ succeeded in 1840ms:
+e 0 pieces [4798]
+e 1 pieces [4628]
+e 2 pieces [4544]
+e 3 pieces [4893]
+e 4 pieces [4610]
+e 5 pieces [4584]
+se 0 pieces [5415]
+se 1 pieces [4975]
+se 2 pieces [4752]
+se 3 pieces [4820, 10]
+se 4 pieces [4966]
+se 5 pieces [4852]
+ne 0 pieces [5004]
+93 [(22, 58)]
+94 [(23, 39), (42, 59)]
+95 [(25, 38), (41, 60)]
+96 [(28, 36), (40, 61)]
+97 [(40, 61)]
+98 [(39, 61)]
+99 [(39, 61)]
+100 [(40, 61)]
+101 [(40, 61)]
+102 [(39, 60)]
+103 [(40, 58)]
+104 [(42, 57)]
+105 [(45, 54)]
+106 []
+107 []
+108 []
+ne 1 pieces [4540]
+93 [(22, 57)]
+94 [(23, 38), (41, 57)]
+95 [(25, 37), (41, 58)]
+96 [(28, 35), (39, 59)]
+97 [(39, 60)]
+98 [(39, 60)]
+99 [(39, 60)]
+100 [(39, 60)]
+101 [(39, 60)]
+102 [(39, 59)]
+103 [(40, 58)]
+104 [(42, 56)]
+105 [(44, 53)]
+106 []
+107 []
+108 []
+ne 2 pieces [4880]
+93 [(22, 59)]
+94 [(22, 59)]
+95 [(24, 59)]
+96 [(28, 36), (38, 59)]
+97 [(38, 59)]
+98 [(38, 59)]
+99 [(38, 59)]
+100 [(38, 58)]
+101 [(39, 57)]
+102 [(41, 55)]
+103 [(43, 54)]
+104 [(46, 52)]
+105 []
+106 []
+107 []
+108 []
+ne 3 pieces [4925]
+93 [(21, 58)]
+94 [(22, 58)]
+95 [(23, 58)]
+96 [(27, 58)]
+97 [(37, 58)]
+98 [(37, 58)]
+99 [(37, 58)]
+100 [(37, 58)]
+101 [(38, 57)]
+102 [(39, 55)]
+103 [(41, 54)]
+104 [(43, 51)]
+105 []
+106 []
+107 []
+108 []
+ne 4 pieces [4479]
+93 [(22, 58)]
+94 [(23, 38), (41, 57)]
+95 [(24, 37), (41, 58)]
+96 [(29, 35), (39, 59)]
+97 [(39, 59)]
+98 [(39, 59)]
+99 [(39, 59)]
+100 [(39, 59)]
+101 [(39, 59)]
+102 [(39, 59)]
+103 [(40, 59)]
+104 [(42, 54)]
+105 [(44, 54)]
+106 [(46, 46), (52, 52)]
+107 []
+108 []
+ne 5 pieces [4683]
+93 [(21, 58)]
+94 [(22, 59)]
+95 [(23, 59)]
+96 [(27, 35), (38, 59)]
+97 [(38, 59)]
+98 [(38, 59)]
+99 [(38, 59)]
+100 [(38, 59)]
+101 [(38, 58)]
+102 [(39, 56)]
+103 [(41, 55)]
+104 [(43, 53)]
+105 [(44, 44), (50, 51)]
+106 []
+107 []
+108 []
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+from PIL import Image
+import numpy as np,sys
+from scipy import ndimage as nd
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1');sys.path.insert(0,str(p));from finish import regions
+im=Image.open(p/'sheet_finished.png');a=np.array(im.crop(regions(*im.size)[9]));l,n=nd.label(a[:,:,3]>0)
+for k in range(1,n+1):
+ if (l==k).sum()<20: print(np.argwhere(l==k).tolist(),np.unique(a[l==k,:3],axis=0).tolist())
+'@ | python -" in D:\dev\_scratch\codex-cwd
+ succeeded in 1499ms:
+[[119, 93], [120, 93], [120, 94], [121, 93], [121, 94], [121, 95], [122, 93], [122, 94], [122, 95], [122, 96]] [[214, 214, 220]]
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/finish.py');s=p.read_text();s=s.replace(\"tiny=(counts<=2)&(counts>0); tiny[0]=False; remove=tiny[lab];\", \"tiny=(counts<=2)&(counts>0); tiny[0]=False\\n  # One isolated 10-pixel pale fleck well below SE f3 is background debris, not anatomy.\\n  if v=='se' and col==3:\\n   for label in range(1,n+1):\\n    yy0,xx0=np.where(lab==label)\\n    if counts[label]<=10 and yy0.min()>110 and (cell[lab==label,:3]@[.2126,.7152,.0722]).mean()>145: tiny[label]=True\\n  remove=tiny[lab];\")
+p.write_text(s)
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/place.py');s=p.read_text();s=s.replace(\"hs=[sole(a,b) for b in H[v][i]];\", \"\\n  if v=='ne': H[v][i][1]=(18,84,37,98)\\n  hs=[sole(a,b) for b in H[v][i]];\")
+p.write_text(s)
+'@ | python -
+python -B 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/finish.py'
+python -B 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/place.py'" in D:\dev\_scratch\codex-cwd
+ succeeded in 5006ms:
+{
+  "raw_sha256": "bc955c2ef620f87adfe0d5aeb9cbfa52f44c6100e3719eaefbfe802cb262f7e0",
+  "raw_size": [
+    1774,
+    887
+  ],
+  "heads": {
+    "e": {
+      "raw": [
+        [
+          261,
+          109
+        ],
+        [
+          229.5,
+          168
+        ]
+      ],
+      "still": [
+        [
+          139,
+          98
+        ],
+        [
+          127.2,
+          123.4
+        ]
+      ],
+      "raw_length": 66.88235940814289,
+      "still_length": 28.00714194629649,
+      "factor": 0.4187523017151012
+    },
+    "se": {
+      "raw": [
+        [
+          236,
+          130
+        ],
+        [
+          197.5,
+          181
+        ]
+      ],
+      "still": [
+        [
+          128,
+          112
+        ],
+        [
+          113.5,
+          132.75
+        ]
+      ],
+      "raw_length": 63.90031298827886,
+      "still_length": 25.31427462914946,
+      "factor": 0.3961525921444676
+    },
+    "ne": {
+      "raw": [
+        [
+          233,
+          46
+        ],
+        [
+          215,
+          138
+        ]
+      ],
+      "still": [
+        [
+          127,
+          58
+        ],
+        [
+          116,
+          99
+        ]
+      ],
+      "raw_length": 93.74433316206373,
+      "still_length": 42.44997055358225,
+      "factor": 0.4528270576120629
+    }
+  },
+  "median_factor": 0.4187523017151012,
+  "actual_xy_scale": [
+    0.41882750845546785,
+    0.4182638105975197
+  ],
+  "finished_size": [
+    743,
+    371
+  ],
+  "rows": {
+    "e": {
+      "width": 103,
+      "height": 74,
+      "still_wh": [
+        103,
+        75
+      ],
+      "head_length_scaled": 28.00714194629649,
+      "head_error": 0.0
+    },
+    "se": {
+      "width": 90,
+      "height": 84,
+      "still_wh": [
+        85,
+        83
+      ],
+      "head_length_scaled": 26.75840314415715,
+      "head_error": 0.05704799114981429
+    },
+    "ne": {
+      "width": 87,
+      "height": 87,
+      "still_wh": [
+        83,
+        103
+      ],
+      "head_length_scaled": 39.255655284361474,
+      "head_error": -0.07524893957673695
+    }
+  },
+  "eye_restored": [
+    "e_f0 @(96,70) local cell",
+    "e_f1 @(95,79) local cell",
+    "e_f2 @(92,55) local cell",
+    "e_f3 @(90,37) local cell",
+    "e_f4 @(94,81) local cell",
+    "e_f5 @(93,75) local cell",
+    "se_f0 @(82,74) local cell",
+    "se_f1 @(81,77) local cell",
+    "se_f2 @(81,51) local cell",
+    "se_f3 @(75,32) local cell",
+    "se_f4 @(83,78) local cell",
+    "se_f5 @(82,72) local cell"
+  ],
+  "discarded_tiny_alpha": {
+    "e0": 0,
+    "e1": 0,
+    "e2": 1,
+    "e3": 0,
+    "e4": 0,
+    "e5": 0,
+    "se0": 0,
+    "se1": 0,
+    "se2": 0,
+    "se3": 10,
+    "se4": 0,
+    "se5": 0,
+    "ne0": 0,
+    "ne1": 0,
+    "ne2": 0,
+    "ne3": 0,
+    "ne4": 0,
+    "ne5": 0
+  },
+  "despeckle": {
+    "e0": {
+      "before": 220,
+      "after": 220,
+      "passes": 0
+    },
+    "e1": {
+      "before": 271,
+      "after": 271,
+      "passes": 0
+    },
+    "e2": {
+      "before": 293,
+      "after": 293,
+      "passes": 0
+    },
+    "e3": {
+      "before": 279,
+      "after": 279,
+      "passes": 0
+    },
+    "e4": {
+      "before": 275,
+      "after": 275,
+      "passes": 0
+    },
+    "e5": {
+      "before": 246,
+      "after": 246,
+      "passes": 0
+    },
+    "se0": {
+      "before": 332,
+      "after": 332,
+      "passes": 0
+    },
+    "se1": {
+      "before": 356,
+      "after": 356,
+      "passes": 0
+    },
+    "se2": {
+      "before": 306,
+      "after": 306,
+      "passes": 0
+    },
+    "se3": {
+      "before": 291,
+      "after": 291,
+      "passes": 0
+    },
+    "se4": {
+      "before": 334,
+      "after": 334,
+      "passes": 0
+    },
+    "se5": {
+      "before": 335,
+      "after": 335,
+      "passes": 0
+    },
+    "ne0": {
+      "before": 308,
+      "after": 308,
+      "passes": 0
+    },
+    "ne1": {
+      "before": 265,
+      "after": 265,
+      "passes": 0
+    },
+    "ne2": {
+      "before": 299,
+      "after": 299,
+      "passes": 0
+    },
+    "ne3": {
+      "before": 315,
+      "after": 315,
+      "passes": 0
+    },
+    "ne4": {
+      "before": 286,
+      "after": 286,
+      "passes": 0
+    },
+    "ne5": {
+      "before": 298,
+      "after": 298,
+      "passes": 0
+    }
+  },
+  "ink": {
+    "e0": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.0917048770320967
+    },
+    "e1": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08686257562662057
+    },
+    "e2": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.09242957746478873
+    },
+    "e3": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08461066830165542
+    },
+    "e4": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.0893709327548807
+    },
+    "e5": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08769633507853403
+    },
+    "se0": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.07774699907663897
+    },
+    "se1": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.09045226130653267
+    },
+    "se2": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.09111952861952861
+    },
+    "se3": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08609958506224066
+    },
+    "se4": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08155457108336689
+    },
+    "se5": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08738664468260511
+    },
+    "ne0": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08013589128697042
+    },
+    "ne1": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08171806167400882
+    },
+    "ne2": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08155737704918033
+    },
+    "ne3": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.07309644670050762
+    },
+    "ne4": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08037508372404555
+    },
+    "ne5": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08135810377962845
+    }
+  }
+}
+moves ['e_f1 (-2,+0)', 'e_f2 (-2,+0)', 'e_f3 (-2,+0)', 'e_f4 (-2,+0)', 'se_f1 (-2,+0)', 'se_f2 (-3,-3)', 'se_f3 (-3,-3)', 'se_f4 (-2,+0)', 'ne_f1 (+1,+0)', 'ne_f2 (+0,+1)', 'ne_f3 (+2,+1)', 'ne_f5 (+2,+0)']
+e_f0 hind [[62.5, 160]] front [[102.5, 160]] offset [30, 54]
+e_f1 hind [[62.0, 160]] front [[99.5, 160]] offset [28, 54]
+e_f2 hind [[62.5, 160]] front [[100.5, 145]] offset [28, 54]
+e_f3 hind [[62.5, 160]] front [[103.0, 126]] offset [28, 54]
+e_f4 hind [[62.5, 160]] front [[99.0, 160]] offset [28, 54]
+e_f5 hind [[63.5, 160]] front [[97.5, 158]] offset [30, 54]
+se_f0 hind [[65, 143]] front [[88.5, 160], [116.5, 155]] offset [34, 53]
+se_f1 hind [[64.5, 143]] front [[88.5, 155], [114.5, 149]] offset [32, 53]
+se_f2 hind [[65.0, 143]] front [[94.5, 136], [119.5, 117]] offset [31, 50]
+se_f3 hind [[65.0, 143]] front [[90.5, 119], [120.5, 103]] offset [31, 50]
+se_f4 hind [[64.5, 143]] front [[88.5, 155], [114.5, 149]] offset [32, 53]
+se_f5 hind [[66.0, 143]] front [[91.5, 153], [118.0, 143]] offset [34, 53]
+ne_f0 hind [[89, 160], [65, 150]] front [[116, 141]] offset [36, 54]
+ne_f1 hind [[85.5, 159], [68.5, 150]] front [[118.5, 149]] offset [37, 54]
+ne_f2 hind [[85.0, 159], [68.0, 151]] front [[116.0, 133]] offset [36, 55]
+ne_f3 hind [[85.0, 159], [69.5, 151]] front [[123.0, 110]] offset [38, 55]
+ne_f4 hind [[85.0, 160], [68.0, 150]] front [[117.5, 149]] offset [36, 54]
+ne_f5 hind [[85.5, 159], [69.0, 150]] front [[117.5, 138]] offset [38, 54]
+
+codex
+Whole-frame alignment keeps the east and southeast hind feet within 1 px. In northeast, the generated hind feet are too close together, so no whole-frame move can plant both on the still’s targets. The rise also lifts the front feet too far, and frames 4–5 differ too much for the tremor. I’ll record those misses and finish the review images.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/finish.py');s=p.read_text();old=\"goal=round(metrics[v]['ink_share']*m.sum()); current=int(ink.sum()); cand=\";new=\"\"\"goal=round(metrics[v]['ink_share']*m.sum()); current=int(ink.sum())
+  # Keep two-pixel-wide dark shadow junctions on the charcoal shadow ramp when ink exceeds the allowed band.
+  cap=int(np.floor(metrics[v]['ink_share']*1.15*m.sum()))
+  if current>cap:
+   broadish=ink&(nd.distance_transform_edt(dark[y0:y1,x0:x1])>1.0)
+   by,bx=np.where(broadish); order=np.argsort(-lum[y0:y1,x0:x1][by,bx]); remove=order[:current-cap]
+   cell[by[remove],bx[remove],:3]=[33,30,39]; ink=np.all(cell[:,:,:3]==[20,18,24],axis=2)&m; current=int(ink.sum())
+  cand=\"\"\";assert old in s;s=s.replace(old,new);p.write_text(s)
+'@ | python -
+python -B 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/finish.py' > 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/finish_log.txt'
+python -B 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/place.py' > 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/placement_log.txt'" in D:\dev\_scratch\codex-cwd
+ succeeded in 8296ms:
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+\"\"\"EX audit adapted to this run; read only approved stills, write only beside this script.\"\"\"
+from pathlib import Path
+import json,importlib.util,sys
+sys.dont_write_bytecode=True
+import numpy as np
+from PIL import Image,ImageDraw
+from scipy import ndimage as nd
+from finish import P,TAKE,NAMES,CROSS,specks,note
+
+def arr(path):return np.array(Image.open(path).convert('RGBA'))
+def iou(a,b):return float((a&b).sum()/(a|b).sum())
+def haus(a,b):return float(max(nd.distance_transform_edt(~a)[b].max(),nd.distance_transform_edt(~b)[a].max()))
+def rowstr(rows,fmt):return '; '.join(v+' '+','.join(fmt(x) for x in rows[v]) for v in NAMES)
+def fmt(x):return f'{x:.2f}'
+
+def main():
+ meta=json.loads((P/'preparation.json').read_text()); place=json.loads((P/'placement.json').read_text()); targets=json.loads((P/'targets.json').read_text()); sm=json.loads((P/'still_metrics.json').read_text()); pal={tuple(bytes.fromhex(c['hex'])) for c in json.loads((TAKE/'palette.json').read_text())}
+ frames={v:[arr(P/'frames'/f'{v}_f{i}.png') for i in range(6)] for v in NAMES}; still={v:arr(TAKE/'views_cam35_touchup'/f'{v}.png') for v in NAMES}
+ data={};invalid=set(); allbinary=True; allborder=True
+ for v in NAMES:
+  data[v]=[]; st=still[v]; sh=nd.binary_fill_holes(st[:,:,3]>0)&~(st[:,:,3]>0)
+  for i,a in enumerate(frames[v]):
+   m=a[:,:,3]>0; pixels=a[m,:3]; yy,xx=np.where(m); lab,n=nd.label(m,CROSS); hole=nd.binary_fill_holes(m)&~m
+   p=place['frames'][f'{v}_f{i}']; ht=np.array([[s['x'],s['y']] for s in targets['views'][v]['soles'] if s['leg']=='hind']); drift=np.linalg.norm(np.array(p['hind'])-ht,axis=1)
+   fr=np.array([s for s in targets['views'][v]['soles'] if s['leg'].startswith('front')]); base=np.array([[s['x'],s['y']] for s in fr]); shift=targets['views'][v]['frames'][i]['front_feet_shift_px']; expect=base+shift
+   if i==5:expect[0,1]-=2
+   actual=np.array(p['front']); err=np.linalg.norm(actual-expect,axis=1)
+   invalid.update(tuple(c) for c in pixels if tuple(c) not in pal); binary=bool(set(np.unique(a[:,:,3])).issubset({0,255}));border=bool(m[0].any() or m[-1].any() or m[:,0].any() or m[:,-1].any());allbinary &= binary;allborder &= not border
+   ink=float(np.all(pixels==[20,18,24],axis=1).sum()/len(pixels));eye=int(np.all(pixels==[255,58,42],axis=1).sum())
+   data[v].append({'hind_drift':drift.tolist(),'front_measured':actual.tolist(),'front_target':expect.tolist(),'front_error':err.tolist(),'near_front_lift':float(base[0,1]-actual[0,1]),'lowest':int(yy.max()),'pieces':n,'specks':specks(a),'ink':ink,'eye':eye,'slits':int((hole&~sh).sum()),'holes':int(hole.sum()),'border':border,'binary_alpha':binary})
+ lines=[]
+ def check(ok,name,detail):lines.append(('PASS' if ok else 'MISS')+' '+name+': '+detail)
+ diff={v:int(np.any(frames[v][0]"'!=still[v],axis=2).sum()) for v in NAMES};check(all(x==0 for x in diff.values()),'"'f0',str(diff)+' pixels differ')
+ hr={v:[max(z['hind_drift']) for z in data[v]] for v in NAMES};check(all(x<=1 for z in hr.values() for x in z),'hind soles',rowstr(hr,fmt)+' px; 1 px limit; steel-pad/dark-sole boxes in placement.json')
+ front={v:[data[v][i]['front_error'] for i in [2,3,4]] for v in NAMES}; check(all(max(data[v][i]['front_error'])<=tol for v in NAMES for i,tol in [(2,2),(3,2),(4,1)]),'front F2/F3/F4', '; '.join(v+' '+ '/'.join(','.join(fmt(z) for z in es) for es in front[v]) for v in NAMES)+' px error per visible foot; traced steel pads, outermost dark sole midpoint; SE far pad overlaps jaw, uncertain')
+ lifts={v:data[v][5]['near_front_lift'] for v in NAMES};check(all(1<=x<=4 for x in lifts.values()),'front F5',str(lifts)+' px up, 1-4 required; same pad labels')
+ lows={v:[z['lowest'] for z in data[v]] for v in NAMES};check(all(160<=x<=163 for z in lows.values() for x in z),'lowest row',rowstr(lows,str)+'; 160-163 allowed only camera-facing toes')
+ movement={};
+ for name,ia,ib,limit in [('F4-F5',4,5,3),('F5-still',5,0,4)]:
+  vals={v:haus(frames[v][ia][:,:,3]>0,frames[v][ib][:,:,3]>0) for v in NAMES};feet={v:float(max(np.linalg.norm(np.array(place['frames'][f'{v}_f{ia}'][part])-np.array(place['frames'][f'{v}_f{ib}'][part]),axis=1).max() for part in ['hind','front'])) for v in NAMES};lower={v:max(vals[v],feet[v]) for v in NAMES};movement[name]={'silhouette_hausdorff':vals,'foot_landmark_max':feet,'motion_lower_bound':lower};check(False if any(x>limit for x in lower.values()) else False,name,'largest part move >= '+', '.join(v+' '+fmt(lower[v]) for v in NAMES)+f' px; limit {limit}; max(symmetric silhouette Hausdorff, foot landmarks), lower bounds, no claim of full part correspondence')
+ f1={v:{'alpha_iou':iou(frames[v][1][:,:,3]>0,still[v][:,:,3]>0),'same_colour_union':float((np.all(frames[v][1]==still[v],axis=2)&(still[v][:,:,3]>0)).sum()/((frames[v][1][:,:,3]>0)|(still[v][:,:,3]>0)).sum())} for v in NAMES};check(True,'F1-still', '; '.join(v+' IoU '+fmt(z['alpha_iou'])+' same-colour/opaque-union '+fmt(z['same_colour_union']) for v,z in f1.items())+'; measured, no threshold supplied')
+ f3={v:iou(frames[v][3][:,:,3]>0,still[v][:,:,3]>0) for v in NAMES};check(all(x<=.85 for x in f3.values()),'F3 rear IoU',', '.join(v+' '+fmt(x) for v,x in f3.items())+' <=0.85')
+ eyes={v:[z['eye'] for z in data[v]] for v in NAMES};check(all(x>=4 for v in ['e','se'] for x in eyes[v]) and all(x==0 for x in eyes['ne']),'eye pixels',rowstr(eyes,str)+'; E/SE dark generated sockets, >=4; NE 0')
+ inks={v:[z['ink']*100 for z in data[v]] for v in NAMES};check(all(abs(z['ink']/sm[v]['ink_share']-1)<=.15 for v in NAMES for z in data[v]),'ink %',rowstr(inks,fmt)+' vs E 8.14 SE 7.79 NE 8.25, +/-15%')
+ check(not invalid and allbinary and allborder,'palette/alpha/border',f'extra colours {[bytes(c).hex() for c in invalid]}; binary alpha {allbinary}; border contacts {sum(z[\"border\"] for v in NAMES for z in data[v])}')
+ pieces={v:[z['pieces'] for z in data[v]] for v in NAMES}; sp={v:[z['specks'] for z in data[v]] for v in NAMES};check(all(z['pieces']==1 and z['specks']<=1.2*sm[v]['specks_1_2px'] for v in NAMES for z in data[v]),'pieces/specks','pieces '+rowstr(pieces,str)+'; specks '+rowstr(sp,str)+'; limits E386.4 SE496.8 NE415.2; no despeckle threshold exceeded')
+ he={v:meta['rows'][v]['head_error']*100 for v in NAMES};check(all(abs(x)<=3 for x in he.values()),'head size',', '.join(v+' '+fmt(x)+'%' for v,x in he.items())+' vs still, +/-3%; manual horn-to-eye E/SE, horn-to-back-head NE; landmarks in preparation.json')
+ slits={v:[z['slits'] for z in data[v]] for v in NAMES};check(all(x==0 for z in slits.values() for x in z),'seam slits',rowstr(slits,str)+' enclosed transparent pixels absent from still hole mask at same canvas coordinates')
+ # Final fringe audit, read only; approved still f0 is never cleaned or remapped.
+ from defringe import clean
+ fringe={v:[list(clean(a)[1:]) for a in frames[v]] for v in NAMES};check(all(z[0]==0 and z[1]==0 for v in NAMES for z in fringe[v]),'fringe','plum/pale-rim '+str({v:[z[:2] for z in fringe[v]] for v in NAMES}))
+ (P/'checks.txt').write_text('\\n'.join(lines)+'\\n'); (P/'audit_metrics.json').write_text(json.dumps({'frames':data,'f1':f1,'f3_iou':f3,'movement':movement,'fringe':fringe},indent=2));note('Step 4 complete: checks.txt and audit_metrics.json written; pose/scale misses retained.');print('\\n'.join(lines))
+ # Exact import without executing source main or touching its directory.
+ spec=importlib.util.spec_from_file_location('rhino_selout',TAKE/'anim/selout_rhino.py'); module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+ assert module.OUTLINE.tolist()==[20,18,24]
+ sd=P/'frames_selout';sd.mkdir(exist_ok=True);sel={};stsel={}
+ for v in NAMES:
+  sel[v]=[]; stsel[v]=Image.fromarray(module.selout(still[v])[0])
+  for i,a in enumerate(frames[v]):
+   z=Image.fromarray(module.selout(a)[0]);z.save(sd/f'{v}_f{i}.png');sel[v].append(z)
+ def board(scale,path):
+  cw=192*scale;ch=192*scale+20;b=Image.new('RGB',(7*cw,3*ch),(128,128,128));d=ImageDraw.Draw(b)
+  for r,v in enumerate(NAMES):
+   for c,z in enumerate([stsel[v]]+sel[v]):
+    z=z.resize((cw,cw),Image.Resampling.NEAREST);b.paste(z,(c*cw,r*ch+20),z);d.text((c*cw+4,r*ch+4),v+' '+('still' if c==0 else 'f'+str(c-1)),fill='white')
+  b.save(P/path)
+ board(4,'review.png');board(1,'strip_1x.png')
+ b=Image.new('RGB',(3*550,3*420),(128,128,128));d=ImageDraw.Draw(b)
+ for r,v in enumerate(NAMES):
+  for c,i in enumerate([2,3,4]):
+   z=sel[v][i].crop((40,85,150,165)).resize((550,400),Image.Resampling.NEAREST);b.paste(z,(c*550,r*420+20),z);d.text((c*550+5,r*420+4),v+' f'+str(i)+' hips and legs 5x',fill='white')
+ b.save(P/'joints_5x.png')
+ for v in NAMES:
+  gifs=[]
+  for z in sel[v]:
+   bg=Image.new('RGB',(768,768),(128,128,128));z=z.resize((768,768),Image.Resampling.NEAREST);bg.paste(z,(0,0),z);gifs.append(bg)
+  gifs[0].save(P/f'preview_{v}.gif',save_all=True,append_images=gifs[1:],duration=[100,100,100,200,300,300],loop=0,disposal=2,optimize=False)
+ note('Step 5 complete: sel-out copies, labelled review 4x / strip 1x / joints 5x and three timed GIFs saved.');print('review assets complete')
+if __name__=='__main__':main()
+'@ | Set-Content -LiteralPath 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/audit.py'
+python -B 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/audit.py'" in D:\dev\_scratch\codex-cwd
+ succeeded in 3048ms:
+PASS f0: {'e': 0, 'se': 0, 'ne': 0} pixels differ
+MISS hind soles: e 0.00,0.50,0.00,0.00,0.00,1.00; se 0.00,0.50,0.00,0.00,0.50,1.00; ne 0.00,3.64,4.12,4.61,4.00,4.00 px; 1 px limit; steel-pad/dark-sole boxes in placement.json
+MISS front F2/F3/F4: e 6.53/18.56/3.50; se 16.55,29.27/23.14,34.30/5.00,6.32; ne 1.00/19.97/8.14 px error per visible foot; traced steel pads, outermost dark sole midpoint; SE far pad overlaps jaw, uncertain
+MISS front F5: {'e': 2.0, 'se': 7.0, 'ne': 3.0} px up, 1-4 required; same pad labels
+MISS lowest row: e 160,160,160,160,160,160; se 160,155,143,143,155,153; ne 160,159,159,159,160,159; 160-163 allowed only camera-facing toes
+MISS F4-F5: largest part move >= e 7.07, se 7.81, ne 13.04 px; limit 3; max(symmetric silhouette Hausdorff, foot landmarks), lower bounds, no claim of full part correspondence
+MISS F5-still: largest part move >= e 7.81, se 15.03, ne 15.81 px; limit 4; max(symmetric silhouette Hausdorff, foot landmarks), lower bounds, no claim of full part correspondence
+PASS F1-still: e IoU 0.77 same-colour/opaque-union 0.34; se IoU 0.85 same-colour/opaque-union 0.40; ne IoU 0.64 same-colour/opaque-union 0.25; measured, no threshold supplied
+PASS F3 rear IoU: e 0.40, se 0.36, ne 0.66 <=0.85
+PASS eye pixels: e 5,5,5,5,5,5; se 5,5,5,5,5,5; ne 0,0,0,0,0,0; E/SE dark generated sockets, >=4; NE 0
+PASS ink %: e 8.14,8.69,9.24,8.46,8.94,8.77; se 7.79,8.94,8.94,8.61,8.16,8.74; ne 8.25,8.17,8.16,7.31,8.04,8.14 vs E 8.14 SE 7.79 NE 8.25, +/-15%
+PASS palette/alpha/border: extra colours []; binary alpha True; border contacts 0
+PASS pieces/specks: pieces e 1,1,1,1,1,1; se 1,1,1,1,1,1; ne 1,1,1,1,1,1; specks e 322,267,285,272,268,238; se 414,358,310,287,333,326; ne 346,259,296,307,283,295; limits E386.4 SE496.8 NE415.2; no despeckle threshold exceeded
+MISS head size: e 0.00%, se 5.70%, ne -7.52% vs still, +/-3%; manual horn-to-eye E/SE, horn-to-back-head NE; landmarks in preparation.json
+MISS seam slits: e 0,0,0,2,0,0; se 0,0,1,0,0,0; ne 0,1,1,0,0,0 enclosed transparent pixels absent from still hole mask at same canvas coordinates
+MISS fringe: plum/pale-rim {'e': [[0, 1], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]], 'se': [[0, 2], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]], 'ne': [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]}
+review assets complete
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/finish.py');s=p.read_text();s=s.replace(\"'ink':{}}\",\"'ink':{},'closed_pinholes':{}}\")
+old=\"cell,plum,pale,rim=clean(cell); m=cell[:,:,3]>0; ink=\"
+new=\"\"\"# Close only enclosed 1-2-pixel pinholes, using their existing neighbouring palette colour.
+  holes=nd.binary_fill_holes(cell[:,:,3]>0)&~(cell[:,:,3]>0); labh,nh=nd.label(holes); fixed=0
+  for hi in range(1,nh+1):
+   hm=labh==hi
+   if hm.sum()<=2:
+    ring=nd.binary_dilation(hm)&(cell[:,:,3]>0); cs,ct=np.unique(cell[ring,:3],axis=0,return_counts=True)
+    cell[hm,:3]=cs[ct.argmax()];cell[hm,3]=255;fixed+=int(hm.sum())
+  meta['closed_pinholes'][f'{v}{col}']=fixed
+  cell,plum,pale,rim=clean(cell); m=cell[:,:,3]>0; ink=\"\"\"
+assert old in s;s=s.replace(old,new);p.write_text(s)
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/audit.py');s=p.read_text();old=\"he={v:meta['rows'][v]['head_error']*100 for v in NAMES};\";new=\"\"\"check(all(abs(meta['rows'][v][key]/meta['rows'][v]['still_wh'][j]-1)<=.04 for v in NAMES for j,key in enumerate(['width','height'])),'column1 bbox', '; '.join(v+' '+str(meta['rows'][v]['width'])+'x'+str(meta['rows'][v]['height'])+' vs '+str(meta['rows'][v]['still_wh'][0])+'x'+str(meta['rows'][v]['still_wh'][1]) for v in NAMES)+'; +/-4%')
+ he={v:meta['rows'][v]['head_error']*100 for v in NAMES};\"\"\";assert old in s;s=s.replace(old,new);s=s.replace(\"check(False if any(x>limit for x in lower.values()) else False,name\", \"check(all(x<=limit for x in lower.values()),name\")
+p.write_text(s)
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/defringe.py');s=p.read_text().replace('Squirrel cleanup, adapted from wolf take B:', 'GP35 run1 cleanup, copied from approved EX:');p.write_text(s)
+'@ | python -
+python -B 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/finish.py' > 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/finish_log.txt'
+python -B 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/place.py' > 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/placement_log.txt'
+python -B 'D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/audit.py'" in D:\dev\_scratch\codex-cwd
+ succeeded in 6686ms:
+PASS f0: {'e': 0, 'se': 0, 'ne': 0} pixels differ
+MISS hind soles: e 0.00,0.50,0.00,0.00,0.00,1.00; se 0.00,0.50,0.00,0.00,0.50,1.00; ne 0.00,3.64,4.12,4.61,4.00,4.00 px; 1 px limit; steel-pad/dark-sole boxes in placement.json
+MISS front F2/F3/F4: e 6.53/18.56/3.50; se 16.55,29.27/23.14,34.30/5.00,6.32; ne 1.00/19.97/8.14 px error per visible foot; traced steel pads, outermost dark sole midpoint; SE far pad overlaps jaw, uncertain
+MISS front F5: {'e': 2.0, 'se': 7.0, 'ne': 3.0} px up, 1-4 required; same pad labels
+MISS lowest row: e 160,160,160,160,160,160; se 160,155,143,143,155,153; ne 160,159,159,159,160,159; 160-163 allowed only camera-facing toes
+MISS F4-F5: largest part move >= e 7.07, se 7.81, ne 13.04 px; limit 3; max(symmetric silhouette Hausdorff, foot landmarks), lower bounds, no claim of full part correspondence
+MISS F5-still: largest part move >= e 7.81, se 15.03, ne 15.81 px; limit 4; max(symmetric silhouette Hausdorff, foot landmarks), lower bounds, no claim of full part correspondence
+PASS F1-still: e IoU 0.77 same-colour/opaque-union 0.34; se IoU 0.85 same-colour/opaque-union 0.40; ne IoU 0.64 same-colour/opaque-union 0.25; measured, no threshold supplied
+PASS F3 rear IoU: e 0.40, se 0.36, ne 0.66 <=0.85
+PASS eye pixels: e 5,5,5,5,5,5; se 5,5,5,5,5,5; ne 0,0,0,0,0,0; E/SE dark generated sockets, >=4; NE 0
+PASS ink %: e 8.14,8.69,9.24,8.46,8.94,8.77; se 7.79,8.94,8.94,8.61,8.16,8.74; ne 8.25,8.17,8.15,7.31,8.04,8.14 vs E 8.14 SE 7.79 NE 8.25, +/-15%
+PASS palette/alpha/border: extra colours []; binary alpha True; border contacts 0
+PASS pieces/specks: pieces e 1,1,1,1,1,1; se 1,1,1,1,1,1; ne 1,1,1,1,1,1; specks e 322,267,285,270,268,238; se 414,358,310,287,333,326; ne 346,259,296,307,283,295; limits E386.4 SE496.8 NE415.2; no despeckle threshold exceeded
+MISS column1 bbox: e 103x74 vs 103x75; se 90x84 vs 85x83; ne 87x87 vs 83x103; +/-4%
+MISS head size: e 0.00%, se 5.70%, ne -7.52% vs still, +/-3%; manual horn-to-eye E/SE, horn-to-back-head NE; landmarks in preparation.json
+PASS seam slits: e 0,0,0,0,0,0; se 0,0,0,0,0,0; ne 0,0,0,0,0,0 enclosed transparent pixels absent from still hole mask at same canvas coordinates
+MISS fringe: plum/pale-rim {'e': [[0, 1], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]], 'se': [[0, 2], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]], 'ne': [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]}
+review assets complete
+
+codex
+The 18 frames and all review images are finished. Palette, eyes, ink, connectivity and body slits pass. The run still misses the northeast foot lock, front-foot targets, scale and transition limits. The exact f0 copies also retain one pale edge pixel in east and two in southeast; I left those untouched to preserve the required pixel match.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+from PIL import Image
+import json
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1')
+m=json.loads((p/'preparation.json').read_text()); placement=json.loads((p/'placement.json').read_text())
+print('pinholes',m['closed_pinholes'])
+for v in ['e','se','ne']:
+ im=Image.open(p/f'preview_{v}.gif');times=[]
+ for i in range(im.n_frames): im.seek(i);times.append(im.info['duration'])
+ print(v,'gif frames',im.n_frames,'holds',times,'size',im.size)
+ assert times==[100,100,100,200,300,300]
+for sub in ['frames','frames_selout']:
+ for v in ['e','se','ne']:
+  for i in range(6):
+   im=Image.open(p/sub/f'{v}_f{i}.png'); assert im.size==(192,192)
+print('36 frame PNGs validated, all requested review artifacts exist')
+head='rhino-gp35-run1: FINISHED, overall MISS; tokens unknown. Exactly ONE built-in generation, verbatim prompt, look_35 then pose_guide; raw unchanged; no redo.'
+scale='Head median shrink 0.418752 (E 0.418752, SE 0.396153, NE 0.452827); 1774x887 -> 743x371 once, nearest. Head lengths E28.01/28.01, SE26.76/25.31, NE39.26/42.45 px (new/still).'
+checks=(p/'checks.txt').read_text().splitlines()
+moves='Whole-frame corrections from row placement: '+', '.join(placement['moves'])+'. Row offsets E(30,54), SE(34,53), NE(36,54); f0 then replaced by exact stills.'
+eyes='Eyes restored: E/SE f1,f2,f3,f4,f5 (sheet f0 also restored, then replaced). No NE red. Despeckle: zero passes (all below threshold); before/after in preparation.json. Removed isolated debris E f2 1px, SE f3 10px; closed 5 enclosed pinhole pixels.'
+visual='By eye: recognizable rhino, exact same design/camera in every frame NO: NE too squat and face exposed. No obvious extra parts or chopped limbs, canvas clipping, open body gaps or fragmented plate/horn/foot; SE F2/F3 far-foot/jaw join risks a second chin.'
+moveeye='By eye: hind feet stay put E/SE, not NE; F3 reads as rearing at 1x in all rows. F4 reads lowered/heavy, but front soles miss their original positions; F5 is too different from F4 and idle.'
+files='Saved: [review 4x](D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/review.png), strip_1x.png, joints_5x.png, preview_e/se/ne.gif; frames/ and frames_selout/ each 18 PNGs. Checks/metrics/scripts in OUT; no commits or changes to source folders.'
+lines=[head,scale]+checks+[moves,eyes,visual,moveeye,files]
+assert len(lines)<25,len(lines)
+# Markdown hard breaks preserve the same under-25-line report in chat and on disk.
+(p/'REPORT.txt').write_text('  \\n'.join(lines)+'\\n')
+print('REPORT lines',len(lines));print((p/'REPORT.txt').read_text())
+'@ | python -" in D:\dev\_scratch\codex-cwd
+ succeeded in 1078ms:
+pinholes {'e0': 0, 'e1': 0, 'e2': 0, 'e3': 2, 'e4': 0, 'e5': 0, 'se0': 0, 'se1': 0, 'se2': 1, 'se3': 0, 'se4': 0, 'se5': 0, 'ne0': 0, 'ne1': 1, 'ne2': 1, 'ne3': 0, 'ne4': 0, 'ne5': 0}
+e gif frames 6 holds [100, 100, 100, 200, 300, 300] size (768, 768)
+se gif frames 6 holds [100, 100, 100, 200, 300, 300] size (768, 768)
+ne gif frames 6 holds [100, 100, 100, 200, 300, 300] size (768, 768)
+36 frame PNGs validated, all requested review artifacts exist
+REPORT lines 24
+rhino-gp35-run1: FINISHED, overall MISS; tokens unknown. Exactly ONE built-in generation, verbatim prompt, look_35 then pose_guide; raw unchanged; no redo.  
+Head median shrink 0.418752 (E 0.418752, SE 0.396153, NE 0.452827); 1774x887 -> 743x371 once, nearest. Head lengths E28.01/28.01, SE26.76/25.31, NE39.26/42.45 px (new/still).  
+PASS f0: {'e': 0, 'se': 0, 'ne': 0} pixels differ  
+MISS hind soles: e 0.00,0.50,0.00,0.00,0.00,1.00; se 0.00,0.50,0.00,0.00,0.50,1.00; ne 0.00,3.64,4.12,4.61,4.00,4.00 px; 1 px limit; steel-pad/dark-sole boxes in placement.json  
+MISS front F2/F3/F4: e 6.53/18.56/3.50; se 16.55,29.27/23.14,34.30/5.00,6.32; ne 1.00/19.97/8.14 px error per visible foot; traced steel pads, outermost dark sole midpoint; SE far pad overlaps jaw, uncertain  
+MISS front F5: {'e': 2.0, 'se': 7.0, 'ne': 3.0} px up, 1-4 required; same pad labels  
+MISS lowest row: e 160,160,160,160,160,160; se 160,155,143,143,155,153; ne 160,159,159,159,160,159; 160-163 allowed only camera-facing toes  
+MISS F4-F5: largest part move >= e 7.07, se 7.81, ne 13.04 px; limit 3; max(symmetric silhouette Hausdorff, foot landmarks), lower bounds, no claim of full part correspondence  
+MISS F5-still: largest part move >= e 7.81, se 15.03, ne 15.81 px; limit 4; max(symmetric silhouette Hausdorff, foot landmarks), lower bounds, no claim of full part correspondence  
+PASS F1-still: e IoU 0.77 same-colour/opaque-union 0.34; se IoU 0.85 same-colour/opaque-union 0.40; ne IoU 0.64 same-colour/opaque-union 0.25; measured, no threshold supplied  
+PASS F3 rear IoU: e 0.40, se 0.36, ne 0.66 <=0.85  
+PASS eye pixels: e 5,5,5,5,5,5; se 5,5,5,5,5,5; ne 0,0,0,0,0,0; E/SE dark generated sockets, >=4; NE 0  
+PASS ink %: e 8.14,8.69,9.24,8.46,8.94,8.77; se 7.79,8.94,8.94,8.61,8.16,8.74; ne 8.25,8.17,8.15,7.31,8.04,8.14 vs E 8.14 SE 7.79 NE 8.25, +/-15%  
+PASS palette/alpha/border: extra colours []; binary alpha True; border contacts 0  
+PASS pieces/specks: pieces e 1,1,1,1,1,1; se 1,1,1,1,1,1; ne 1,1,1,1,1,1; specks e 322,267,285,270,268,238; se 414,358,310,287,333,326; ne 346,259,296,307,283,295; limits E386.4 SE496.8 NE415.2; no despeckle threshold exceeded  
+MISS column1 bbox: e 103x74 vs 103x75; se 90x84 vs 85x83; ne 87x87 vs 83x103; +/-4%  
+MISS head size: e 0.00%, se 5.70%, ne -7.52% vs still, +/-3%; manual horn-to-eye E/SE, horn-to-back-head NE; landmarks in preparation.json  
+PASS seam slits: e 0,0,0,0,0,0; se 0,0,0,0,0,0; ne 0,0,0,0,0,0 enclosed transparent pixels absent from still hole mask at same canvas coordinates  
+MISS fringe: plum/pale-rim {'e': [[0, 1], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]], 'se': [[0, 2], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]], 'ne': [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]}  
+Whole-frame corrections from row placement: e_f1 (-2,+0), e_f2 (-2,+0), e_f3 (-2,+0), e_f4 (-2,+0), se_f1 (-2,+0), se_f2 (-3,-3), se_f3 (-3,-3), se_f4 (-2,+0), ne_f1 (+1,+0), ne_f2 (+0,+1), ne_f3 (+2,+1), ne_f5 (+2,+0). Row offsets E(30,54), SE(34,53), NE(36,54); f0 then replaced by exact stills.  
+Eyes restored: E/SE f1,f2,f3,f4,f5 (sheet f0 also restored, then replaced). No NE red. Despeckle: zero passes (all below threshold); before/after in preparation.json. Removed isolated debris E f2 1px, SE f3 10px; closed 5 enclosed pinhole pixels.  
+By eye: recognizable rhino, exact same design/camera in every frame NO: NE too squat and face exposed. No obvious extra parts or chopped limbs, canvas clipping, open body gaps or fragmented plate/horn/foot; SE F2/F3 far-foot/jaw join risks a second chin.  
+By eye: hind feet stay put E/SE, not NE; F3 reads as rearing at 1x in all rows. F4 reads lowered/heavy, but front soles miss their original positions; F5 is too different from F4 and idle.  
+Saved: [review 4x](D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/review.png), strip_1x.png, joints_5x.png, preview_e/se/ne.gif; frames/ and frames_selout/ each 18 PNGs. Checks/metrics/scripts in OUT; no commits or changes to source folders.
+
+
+codex
+rhino-gp35-run1: FINISHED, overall MISS; tokens unknown. Exactly ONE built-in generation, verbatim prompt, look_35 then pose_guide; raw unchanged; no redo.  
+Head median shrink 0.418752 (E 0.418752, SE 0.396153, NE 0.452827); 1774x887 → 743x371 once, nearest. Head lengths E28.01/28.01, SE26.76/25.31, NE39.26/42.45 px (new/still).  
+PASS f0: E/SE/NE 0 pixels differ.  
+MISS hind soles: E 0,0.50,0,0,0,1; SE 0,0.50,0,0,0.50,1; NE 0,3.64,4.12,4.61,4,4 px; limit 1. Feet identified from steel pads and dark sole edges.  
+MISS front F2/F3/F4: E 6.53/18.56/3.50; SE 16.55,29.27/23.14,34.30/5,6.32; NE 1/19.97/8.14 px error per visible foot. Traced steel pads; SE far pad overlaps jaw and is uncertain.  
+MISS front F5: E2, SE7, NE3 px up; required 1–4.  
+MISS lowest row: E 160,160,160,160,160,160; SE 160,155,143,143,155,153; NE 160,159,159,159,160,159; required 160–163.  
+MISS F4–F5: largest movement at least E7.07, SE7.81, NE13.04 px; limit 3. Silhouette/foot-landmark lower bounds.  
+MISS F5–still: largest movement at least E7.81, SE15.03, NE15.81 px; limit 4. Silhouette/foot-landmark lower bounds.  
+PASS F1–still measurements: alpha IoU E0.77, SE0.85, NE0.64; same-colour/opaque-union E0.34, SE0.40, NE0.25. No threshold supplied.  
+PASS F3 rear IoU: E0.40, SE0.36, NE0.66; all ≤0.85.  
+PASS eyes: every E/SE frame 5 red pixels in dark sockets; every NE frame 0.  
+PASS ink %: E 8.14,8.69,9.24,8.46,8.94,8.77; SE 7.79,8.94,8.94,8.61,8.16,8.74; NE 8.25,8.17,8.15,7.31,8.04,8.14; within 15% of stills.  
+PASS palette/alpha/border: 0 extra colours; binary alpha; 0 border contacts.  
+PASS pieces/specks: every frame 1 piece; specks E 322,267,285,270,268,238; SE 414,358,310,287,333,326; NE 346,259,296,307,283,295. Limits E386.4, SE496.8, NE415.2.  
+MISS column1 bbox: E103x74 versus103x75; SE90x84 versus85x83; NE87x87 versus83x103; tolerance 4%.  
+MISS head size: E0%, SE+5.70%, NE−7.52%; tolerance 3%. Horn-to-eye E/SE; horn-to-back-head NE.  
+PASS seam slits: 0 in every frame.  
+MISS fringe: no plum; generated frames have no lone pale rim pixels. Exact source f0 retains E1 and SE2 pale rim pixels; NE0.  
+Whole-frame corrections: E f1–f4 (−2,0); SE f1/f4 (−2,0), f2/f3 (−3,−3); NE f1(+1,0), f2(0,+1), f3(+2,+1), f5(+2,0). Row offsets E(30,54), SE(34,53), NE(36,54); f0 replaced with exact stills.  
+Eyes restored: E/SE f1–f5; sheet f0 also restored before replacement. Despeckle: 0 passes; all below threshold. Removed isolated debris E f2 1px, SE f3 10px; closed 5 pinhole pixels.  
+By eye: recognizable rhino, exact design/camera match NO—NE is squat and exposes the face. No obvious extra parts, chopped limbs, clipping, open body gaps or fragmented plates/horns/feet; SE F2/F3 far-foot/jaw join risks a second chin.  
+By eye: hind feet stay put E/SE, not NE. F3 reads as rearing at 1x. F4 reads lowered/heavy but misses front-sole positions; F5 differs too much from F4 and idle.  
+Saved [review](D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/review.png), strip_1x.png, joints_5x.png, three timed GIFs, 18 frames and 18 sel-out copies, [checks](D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/checks.txt) and [report](D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/REPORT.txt). No commits or source-folder changes.
+tokens used
+106,953
+rhino-gp35-run1: FINISHED, overall MISS; tokens unknown. Exactly ONE built-in generation, verbatim prompt, look_35 then pose_guide; raw unchanged; no redo.  
+Head median shrink 0.418752 (E 0.418752, SE 0.396153, NE 0.452827); 1774x887 → 743x371 once, nearest. Head lengths E28.01/28.01, SE26.76/25.31, NE39.26/42.45 px (new/still).  
+PASS f0: E/SE/NE 0 pixels differ.  
+MISS hind soles: E 0,0.50,0,0,0,1; SE 0,0.50,0,0,0.50,1; NE 0,3.64,4.12,4.61,4,4 px; limit 1. Feet identified from steel pads and dark sole edges.  
+MISS front F2/F3/F4: E 6.53/18.56/3.50; SE 16.55,29.27/23.14,34.30/5,6.32; NE 1/19.97/8.14 px error per visible foot. Traced steel pads; SE far pad overlaps jaw and is uncertain.  
+MISS front F5: E2, SE7, NE3 px up; required 1–4.  
+MISS lowest row: E 160,160,160,160,160,160; SE 160,155,143,143,155,153; NE 160,159,159,159,160,159; required 160–163.  
+MISS F4–F5: largest movement at least E7.07, SE7.81, NE13.04 px; limit 3. Silhouette/foot-landmark lower bounds.  
+MISS F5–still: largest movement at least E7.81, SE15.03, NE15.81 px; limit 4. Silhouette/foot-landmark lower bounds.  
+PASS F1–still measurements: alpha IoU E0.77, SE0.85, NE0.64; same-colour/opaque-union E0.34, SE0.40, NE0.25. No threshold supplied.  
+PASS F3 rear IoU: E0.40, SE0.36, NE0.66; all ≤0.85.  
+PASS eyes: every E/SE frame 5 red pixels in dark sockets; every NE frame 0.  
+PASS ink %: E 8.14,8.69,9.24,8.46,8.94,8.77; SE 7.79,8.94,8.94,8.61,8.16,8.74; NE 8.25,8.17,8.15,7.31,8.04,8.14; within 15% of stills.  
+PASS palette/alpha/border: 0 extra colours; binary alpha; 0 border contacts.  
+PASS pieces/specks: every frame 1 piece; specks E 322,267,285,270,268,238; SE 414,358,310,287,333,326; NE 346,259,296,307,283,295. Limits E386.4, SE496.8, NE415.2.  
+MISS column1 bbox: E103x74 versus103x75; SE90x84 versus85x83; NE87x87 versus83x103; tolerance 4%.  
+MISS head size: E0%, SE+5.70%, NE−7.52%; tolerance 3%. Horn-to-eye E/SE; horn-to-back-head NE.  
+PASS seam slits: 0 in every frame.  
+MISS fringe: no plum; generated frames have no lone pale rim pixels. Exact source f0 retains E1 and SE2 pale rim pixels; NE0.  
+Whole-frame corrections: E f1–f4 (−2,0); SE f1/f4 (−2,0), f2/f3 (−3,−3); NE f1(+1,0), f2(0,+1), f3(+2,+1), f5(+2,0). Row offsets E(30,54), SE(34,53), NE(36,54); f0 replaced with exact stills.  
+Eyes restored: E/SE f1–f5; sheet f0 also restored before replacement. Despeckle: 0 passes; all below threshold. Removed isolated debris E f2 1px, SE f3 10px; closed 5 pinhole pixels.  
+By eye: recognizable rhino, exact design/camera match NO—NE is squat and exposes the face. No obvious extra parts, chopped limbs, clipping, open body gaps or fragmented plates/horns/feet; SE F2/F3 far-foot/jaw join risks a second chin.  
+By eye: hind feet stay put E/SE, not NE. F3 reads as rearing at 1x. F4 reads lowered/heavy but misses front-sole positions; F5 differs too much from F4 and idle.  
+Saved [review](D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/review.png), strip_1x.png, joints_5x.png, three timed GIFs, 18 frames and 18 sel-out copies, [checks](D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/checks.txt) and [report](D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1/REPORT.txt). No commits or source-folder changes.

@@ -1,0 +1,104 @@
+{
+  "id": "dragonfly",
+  "name": "Dragonfly",
+  "source_model": {
+    "path": "res://art/model_catalog/sources/dragonfly_front - Hunyuan 3D v3.1 Pro.glb",
+    "source": "D:\\user\\Downloads\\dragonfly_front - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "984ed353af641da84b90dc5e3ee7719cd58668096696ed87651ef2db1a9e2641",
+    "bytes": 58884904
+  },
+  "display_model": "res://docs/art/moba/dragonfly_m/local-repair-v1-2026-11-13/dragonfly-rigged-local-repair-v1.glb",
+  "status": "Pair 2 removed: six legs and four wings. Local flaps/sockets repaired; original 46-joint skeleton retained.",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/dragonfly/front.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\dragonfly_front.png",
+      "sha256": "7b801ef0588b65377ce5eb7d47541d791b8b409567b0ea5b297b8a2330c57065",
+      "bytes": 272183,
+      "project_matches": [
+        "docs/art/moba/dragonfly_m/take-b-angles/white_views/dragonfly_front.png"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/dragonfly/left.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\dragonfly_left.png",
+      "sha256": "ca4961d0a52f2f6b551d72cd01272ab149a8adaa1d48fd13c7f3dd912bbdfd0a",
+      "bytes": 128145,
+      "project_matches": [
+        "docs/art/moba/dragonfly_m/take-b-angles/white_views/dragonfly_left.png"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/dragonfly/back.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\dragonfly_back.png",
+      "sha256": "346597e3b1ded722a6988b189303c93a02a13d706f46d65b2b43e3978488e559",
+      "bytes": 269255,
+      "project_matches": [
+        "docs/art/moba/dragonfly_m/take-b-angles/white_views/dragonfly_back.png"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/dragonfly/right.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\dragonfly_right.png",
+      "sha256": "1cdb81ecf604f114edec071ef5265eea574f44eb55e3c70a67c481af45ac35d1",
+      "bytes": 131969,
+      "project_matches": [
+        "docs/art/moba/dragonfly_m/take-b-angles/white_views/dragonfly_right.png"
+      ]
+    }
+  },
+  "artist_workspace": "res://docs/art/moba/dragonfly_m/local-repair-v1-2026-11-13/dragonfly-rigged-local-repair-v1.blend",
+  "review_models": [
+    {
+      "label": "QUALITY ARCHIVE\nAnatomy not approved",
+      "path": "res://art/model_catalog/sources/dragonfly_front - Hunyuan 3D v3.1 Pro.glb",
+      "display_scale": 2.740664383210881
+    },
+    {
+      "label": "DOWNLOADED RIG\nFour leg pairs",
+      "path": "res://art/model_catalog/sources/Meshy_AI_dragonfly_remeshed_25k_20261111_character.glb",
+      "display_scale": 1.2522823391065454
+    },
+    {
+      "label": "SIX-LEG REPAIR\nSame 46-joint skeleton",
+      "path": "res://docs/art/moba/dragonfly_m/local-repair-v1-2026-11-13/dragonfly-rigged-local-repair-v1.glb",
+      "display_scale": 1.2522823391065454
+    }
+  ],
+  "review_views": {
+    "front": {
+      "path": "res://docs/art/moba/dragonfly_m/local-repair-v1-2026-11-13/review-front.png",
+      "kind": "Original quality archive / downloaded four-pair rig / six-leg repair; archive anatomy not approved"
+    },
+    "left": {
+      "path": "res://docs/art/moba/dragonfly_m/local-repair-v1-2026-11-13/review-left.png",
+      "kind": "Original quality archive / downloaded four-pair rig / six-leg repair; archive anatomy not approved"
+    },
+    "back": {
+      "path": "res://docs/art/moba/dragonfly_m/local-repair-v1-2026-11-13/review-back.png",
+      "kind": "Original quality archive / downloaded four-pair rig / six-leg repair; archive anatomy not approved"
+    },
+    "right": {
+      "path": "res://docs/art/moba/dragonfly_m/local-repair-v1-2026-11-13/review-right.png",
+      "kind": "Original quality archive / downloaded four-pair rig / six-leg repair; archive anatomy not approved"
+    }
+  },
+  "review_provenance": {
+    "date": "2026-11-13",
+    "report": "res://docs/art/moba/dragonfly_m/local-repair-v1-2026-11-13/repair-verification.json",
+    "independent_audit": "res://docs/art/moba/dragonfly_m/local-repair-v1-2026-11-13/independent-export-audit.json",
+    "joint_count": 46,
+    "rigged_input_sha256": "4aa5552ba0601f5006e7e4a06eb93c67f7721a1cf50e811ef67349cf6c47eeaf",
+    "repaired_sha256": "d21585337fb2f4d48ef8a333afc05c89823e3a2ecd18bf807ea0493d5744ec67",
+    "selected_removed_pair": 2,
+    "remaining_pairs": [
+      1,
+      3,
+      4
+    ],
+    "intact_pre_remesh_available": true,
+    "source_archive_scope": "Original generated quality archive; exact historical remesh upload not verified. Original archive anatomy is not approved.",
+    "scope": "User selected pair 2. Removed outer-front pair, retained front/middle/rear pairs and four wings. Local sockets and 15 malformed flaps repaired. Original nodes/rest/binds and source texture/UV/position rows retained. Local removed-chain skin reassigned to existing body parent; small new socket finish. No gameplay replacement."
+  }
+}

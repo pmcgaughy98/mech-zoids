@@ -1,0 +1,551 @@
+{
+  "raw_size": [
+    2172,
+    724
+  ],
+  "columns": 8,
+  "rows": [
+    "se",
+    "ne"
+  ],
+  "x_edges": [
+    0,
+    275,
+    544,
+    814,
+    1086,
+    1358,
+    1629,
+    1900,
+    2172
+  ],
+  "y_edges": [
+    0,
+    362,
+    724
+  ],
+  "row_scale": {
+    "se": 0.32430436217807973,
+    "ne": 0.3203818758436205
+  },
+  "cells": [
+    {
+      "view": "se",
+      "frame": 0,
+      "source_box": [
+        0,
+        0,
+        275,
+        362
+      ],
+      "source_opaque_box": [
+        2,
+        92,
+        274,
+        315
+      ],
+      "scale": 0.32430436217807973,
+      "placement": [
+        52,
+        89
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        52,
+        89,
+        141,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false
+    },
+    {
+      "view": "se",
+      "frame": 1,
+      "source_box": [
+        275,
+        0,
+        544,
+        362
+      ],
+      "source_opaque_box": [
+        24,
+        87,
+        268,
+        309
+      ],
+      "scale": 0.32430436217807973,
+      "placement": [
+        57,
+        89
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        57,
+        89,
+        136,
+        161
+      ],
+      "final_source": "generated silhouette + native detail patches",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false
+    },
+    {
+      "view": "se",
+      "frame": 2,
+      "source_box": [
+        544,
+        0,
+        814,
+        362
+      ],
+      "source_opaque_box": [
+        20,
+        58,
+        266,
+        307
+      ],
+      "scale": 0.32430436217807973,
+      "placement": [
+        56,
+        80
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        56,
+        80,
+        136,
+        161
+      ],
+      "final_source": "generated silhouette + native detail patches",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false
+    },
+    {
+      "view": "se",
+      "frame": 3,
+      "source_box": [
+        814,
+        0,
+        1086,
+        362
+      ],
+      "source_opaque_box": [
+        20,
+        58,
+        261,
+        307
+      ],
+      "scale": 0.32430436217807973,
+      "placement": [
+        58,
+        80
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        58,
+        80,
+        136,
+        161
+      ],
+      "final_source": "generated silhouette + native detail patches",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false
+    },
+    {
+      "view": "se",
+      "frame": 4,
+      "source_box": [
+        1086,
+        0,
+        1358,
+        362
+      ],
+      "source_opaque_box": [
+        20,
+        58,
+        267,
+        307
+      ],
+      "scale": 0.32430436217807973,
+      "placement": [
+        56,
+        80
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        56,
+        80,
+        136,
+        161
+      ],
+      "final_source": "generated silhouette + native detail patches",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false
+    },
+    {
+      "view": "se",
+      "frame": 5,
+      "source_box": [
+        1358,
+        0,
+        1629,
+        362
+      ],
+      "source_opaque_box": [
+        21,
+        75,
+        265,
+        307
+      ],
+      "scale": 0.32430436217807973,
+      "placement": [
+        57,
+        86
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        57,
+        86,
+        136,
+        161
+      ],
+      "final_source": "generated silhouette + native detail patches",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false
+    },
+    {
+      "view": "se",
+      "frame": 6,
+      "source_box": [
+        1629,
+        0,
+        1900,
+        362
+      ],
+      "source_opaque_box": [
+        20,
+        93,
+        264,
+        310
+      ],
+      "scale": 0.32430436217807973,
+      "placement": [
+        57,
+        91
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        52,
+        88,
+        141,
+        161
+      ],
+      "final_source": "generated silhouette + native detail patches",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false
+    },
+    {
+      "view": "se",
+      "frame": 7,
+      "source_box": [
+        1900,
+        0,
+        2172,
+        362
+      ],
+      "source_opaque_box": [
+        11,
+        93,
+        270,
+        315
+      ],
+      "scale": 0.32430436217807973,
+      "placement": [
+        54,
+        89
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        52,
+        89,
+        141,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false
+    },
+    {
+      "view": "ne",
+      "frame": 0,
+      "source_box": [
+        0,
+        362,
+        275,
+        724
+      ],
+      "source_opaque_box": [
+        11,
+        74,
+        274,
+        297
+      ],
+      "scale": 0.3203818758436205,
+      "placement": [
+        54,
+        90
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        53,
+        91,
+        139,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false
+    },
+    {
+      "view": "ne",
+      "frame": 1,
+      "source_box": [
+        275,
+        362,
+        544,
+        724
+      ],
+      "source_opaque_box": [
+        21,
+        58,
+        266,
+        297
+      ],
+      "scale": 0.3203818758436205,
+      "placement": [
+        57,
+        84
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        57,
+        85,
+        135,
+        161
+      ],
+      "final_source": "generated silhouette + native detail patches",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false
+    },
+    {
+      "view": "ne",
+      "frame": 2,
+      "source_box": [
+        544,
+        362,
+        814,
+        724
+      ],
+      "source_opaque_box": [
+        31,
+        39,
+        264,
+        297
+      ],
+      "scale": 0.3203818758436205,
+      "placement": [
+        58,
+        78
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        58,
+        78,
+        133,
+        161
+      ],
+      "final_source": "generated silhouette + native detail patches",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false
+    },
+    {
+      "view": "ne",
+      "frame": 3,
+      "source_box": [
+        814,
+        362,
+        1086,
+        724
+      ],
+      "source_opaque_box": [
+        22,
+        39,
+        265,
+        297
+      ],
+      "scale": 0.3203818758436205,
+      "placement": [
+        57,
+        78
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        57,
+        78,
+        135,
+        161
+      ],
+      "final_source": "generated silhouette + native detail patches",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false
+    },
+    {
+      "view": "ne",
+      "frame": 4,
+      "source_box": [
+        1086,
+        362,
+        1358,
+        724
+      ],
+      "source_opaque_box": [
+        32,
+        39,
+        265,
+        297
+      ],
+      "scale": 0.3203818758436205,
+      "placement": [
+        58,
+        78
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        58,
+        78,
+        133,
+        161
+      ],
+      "final_source": "generated silhouette + native detail patches",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false
+    },
+    {
+      "view": "ne",
+      "frame": 5,
+      "source_box": [
+        1358,
+        362,
+        1629,
+        724
+      ],
+      "source_opaque_box": [
+        20,
+        57,
+        264,
+        297
+      ],
+      "scale": 0.3203818758436205,
+      "placement": [
+        57,
+        84
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        57,
+        84,
+        135,
+        161
+      ],
+      "final_source": "generated silhouette + native detail patches",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false
+    },
+    {
+      "view": "ne",
+      "frame": 6,
+      "source_box": [
+        1629,
+        362,
+        1900,
+        724
+      ],
+      "source_opaque_box": [
+        16,
+        76,
+        266,
+        297
+      ],
+      "scale": 0.3203818758436205,
+      "placement": [
+        56,
+        90
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        53,
+        90,
+        139,
+        161
+      ],
+      "final_source": "generated silhouette + native detail patches",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false
+    },
+    {
+      "view": "ne",
+      "frame": 7,
+      "source_box": [
+        1900,
+        362,
+        2172,
+        724
+      ],
+      "source_opaque_box": [
+        14,
+        75,
+        271,
+        297
+      ],
+      "scale": 0.3203818758436205,
+      "placement": [
+        55,
+        90
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        53,
+        91,
+        139,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false
+    }
+  ],
+  "clean": false,
+  "final_canvas": [
+    192,
+    192
+  ],
+  "approved_offset": [
+    16,
+    30
+  ],
+  "ground_row": 160,
+  "finishing": [
+    "finish.py",
+    "polish.py",
+    "gems.py",
+    "final_pose.py",
+    "seam_fill.py",
+    "gem_cleanup.py",
+    "verify.py"
+  ],
+  "clean_after_isolation": true,
+  "raw_grid_note": "Two rows and requested column count; raw saturated fringe debris, tight gutters. Largest-component isolation, fringe rejection and one-native-texel outline used. No redo.",
+  "walk_support_note": null
+}

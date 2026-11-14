@@ -1,0 +1,15 @@
+sheet judge: D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\cam35\slices
+  e   h  58 feet 160 palette   1.0 colours  12  height: 58 px, the set's median 78
+  ne  h  91 feet 159 palette   1.0 colours  10  height: 91 px, the set's median 78
+  n   h  96 feet 159 palette   1.0 colours   9  height: 96 px, the set's median 78
+  nw  h  91 feet 159 palette   1.0 colours   9  height: 91 px, the set's median 78
+  w   h  58 feet 160 palette   1.0 colours  12  height: 58 px, the set's median 78
+  sw  h  72 feet 160 palette   1.0 colours  12  ok
+  s   h  85 feet 160 palette   1.0 colours  12  ok
+  se  h  72 feet 159 palette   1.0 colours  12  ok
+  mirror e/w 0.977  mirror ne/nw 0.874  mirror se/sw 0.863  same n/s 0.237  even n/s [0.907, 0.992]
+  FIX (code, --fix): nothing
+  REDO (generate again): e, ne, n, nw, w
+
+Exit code: 1
+Height comparison is informational for this elevated camera; no height repairs applied.

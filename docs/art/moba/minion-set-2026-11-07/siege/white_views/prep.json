@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "f607c706e5308326b40745d5e0d4ae65bc82c78ddab6f2f7de0d1088cb538a51",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.368421052631579,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "minion_siege_front.png",
+      "source_box": [
+        56,
+        105,
+        599,
+        544
+      ],
+      "source_dimensions": [
+        543,
+        439
+      ],
+      "output_box": [
+        140,
+        335,
+        883,
+        936
+      ]
+    },
+    "left": {
+      "file": "minion_siege_left.png",
+      "source_box": [
+        686,
+        108,
+        1293,
+        544
+      ],
+      "source_dimensions": [
+        607,
+        436
+      ],
+      "output_box": [
+        96,
+        339,
+        927,
+        936
+      ]
+    },
+    "back": {
+      "file": "minion_siege_back.png",
+      "source_box": [
+        55,
+        645,
+        601,
+        1088
+      ],
+      "source_dimensions": [
+        546,
+        443
+      ],
+      "output_box": [
+        138,
+        330,
+        885,
+        936
+      ]
+    },
+    "right": {
+      "file": "minion_siege_right.png",
+      "source_box": [
+        686,
+        647,
+        1294,
+        1088
+      ],
+      "source_dimensions": [
+        608,
+        441
+      ],
+      "output_box": [
+        96,
+        333,
+        928,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.01580135440180587
+}

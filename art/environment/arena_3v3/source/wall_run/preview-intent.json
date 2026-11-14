@@ -1,0 +1,15 @@
+{
+  "request": {
+    "mode": "preview",
+    "ai_model": "meshy-6",
+    "target_formats": [
+      "glb"
+    ],
+    "prompt": "Stylized industrial science fiction MOBA Foundry environment piece. Broad clean beveled armor forms, dark blue charcoal steel, warm worn iron inset plates, small amber light strips, sparse yellow hazard trim. Strong readable silhouette, no text, no logos, no characters, no ground, isolated single object, flat bottom. One section of a long continuous fortress wall: every line runs straight through both flat end faces so copies join seamlessly. Solid dark plate face, one horizontal plinth band, one thin horizontal light line across the full width. No vertical gaps, no separate slabs.",
+    "should_remesh": true,
+    "topology": "triangle",
+    "target_polycount": 3000
+  },
+  "reserved_credits": 20,
+  "at": "2026-11-14T14:36:45.032077+00:00"
+}

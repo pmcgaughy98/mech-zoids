@@ -133,6 +133,12 @@ const THEMES := {
 		"rock": Color(0.88, 0.92, 1.0), "lip": Color(0, 0, 0, 0), "hazard": true, "gem_glow": 1.4,
 		"light_scale": 1.2, "flowers": false, "structure": "machine", "camp": Color(0.95, 0.76, 0.15),
 		"pit_light": Color(1.0, 0.55, 0.18),
+		# The look lane's grade (docs/reference/moba-look-study-2026-11-09.md). Preston approved v1 on 2026-11-09; this is
+		# v3: exposure 1.25 -> 1.45 once the mech rim moved into the material, and no SSAO (under 1% of pixels changed).
+		# Filmic, not ACES: ACES pushed the faction green toward cyan. Glow only catches emissives. Replaces the detail
+		# entry's bloom, contrast and saturation while look_grade is on.
+		"grade": {"exposure": 1.45, "white": 6.0, "ambient_energy": 0.7,
+			"bloom": 0.55, "threshold": 1.05, "contrast": 1.06, "saturation": 1.1},
 		"detail": {"post": Color(0.62, 0.64, 0.72), "ao": 0.5, "grime": Color(0.78, 0.6, 0.48, 0.5),
 			"pool": Color(1.0, 0.66, 0.3), "pool_energy": 0.8, "macro": 0.06, "bloom": 0.5, "contrast": 1.08,
 			"saturation": 1.1}},
@@ -145,6 +151,8 @@ const GROUND_SHADER := preload("res://shaders/world/ground.gdshader")
 const RING_SHADER := preload("res://shaders/world/range_ring.gdshader")
 const SPRITE_SHADER := preload("res://shaders/world/sprite_fade.gdshader")
 const DECAL_SHADER := preload("res://shaders/world/floor_decal.gdshader") ## the detail pass's floor marks
+const KIT_SHADER := preload("res://shaders/world/kit_fade.gdshader") ## the Meshy kit: its own textures, the same fade and fog
+const KIT_DIR := "res://art/environment/arena_3v3/runtime/" ## tools/map/meshy_arena_batch.py, then prepare_arena_kit.py
 const DECALS := { ## floor marks in the theme's decals.png: atlas rects in pixels, drawn at the shared 50 a metre
 	"arrow": Rect2(0, 0, 52, 32), "hazard": Rect2(64, 0, 64, 16), "hazard2": Rect2(64, 16, 64, 16),
 	"oil": Rect2(128, 0, 32, 32), "drain": Rect2(160, 0, 32, 32), "patch": Rect2(192, 0, 32, 32),
@@ -168,6 +176,9 @@ const HEAD_TURN := 0.8
 @export var fog_of_war := true ## dim what the player's team can't see; the vision grid (can_see) runs either way
 @export var border_kit := true ## foundry's border pass (2026-11-06): plinths, wall tops, panels, the backdrop past the edge
 @export var floor_zones := true ## foundry's floor zones (2026-11-06): the plaza stage and the spawn emblems (the slag jungle is its tile)
+@export var look_grade := true ## the look lane's MOBA grade (v3, Preston kept it 2026-11-10): the theme's "grade" entry
+@export var meshy_kit := true ## foundry's Meshy-made kit (2026-11-14): walls, rocks, towers, cores and a refinery backdrop skin the blockout; its bodies and nav mesh stay
+var _kit := {} # the kit's meshes, one per model, team colour and glow
 
 ## Filled by build(); the check reads these.
 var vision: Node = null ## Built/Vision while the game runs (scenes/moba3d/arena_vision.gd): can_see(team, pos)
@@ -241,6 +252,8 @@ func build() -> void:
 			_wall_kit() # 2026-11-06 border pass: plinths, wall tops, panels, the backdrop past the edge
 		_decals()
 		_floor_map()
+	if _kit_on():
+		_meshy_kit()
 	vision = null
 	if not Engine.is_editor_hint():
 		vision = VISION_SCRIPT.new()
@@ -275,6 +288,9 @@ func set_structure_down(structure: String, down: bool) -> void:
 		s.trim.visible = not down
 	if s.ring:
 		s.ring.visible = not down
+	if s.get("skin"): # the Meshy kit's body stands in for the blockout's; the blockout's wreck shows when it falls
+		s.skin.visible = not down
+		s.base.visible = down
 	if s.base.has_meta("down"): # foundry: the wrecked body and its own hull
 		var pair: Array = s.base.get_meta("down" if down else "up")
 		s.base.mesh = pair[0]
@@ -301,7 +317,7 @@ func fog_materials() -> Array:
 			m = n.material_override if n.material_override else (n.mesh.surface_get_material(0) if n.mesh else null)
 		elif n is MultiMeshInstance3D and n.multimesh and n.multimesh.mesh:
 			m = n.multimesh.mesh.surface_get_material(0)
-		if m is ShaderMaterial and m.shader in [FADE_SHADER, GROUND_SHADER, SPRITE_SHADER, DECAL_SHADER] and not out.has(m):
+		if m is ShaderMaterial and m.shader in [FADE_SHADER, GROUND_SHADER, SPRITE_SHADER, DECAL_SHADER, KIT_SHADER] and not out.has(m):
 			out.append(m)
 	return out
 
@@ -380,6 +396,22 @@ func _mood() -> void:
 	if post.has("contrast"):
 		e.adjustment_contrast = post.contrast
 		e.adjustment_saturation = post.saturation
+	e.tonemap_mode = Environment.TONE_MAPPER_LINEAR
+	e.ssao_enabled = false
+	if look_grade and th.has("grade"): # last, so it wins over the detail entry's post values
+		var g: Dictionary = th.grade
+		e.tonemap_mode = Environment.TONE_MAPPER_FILMIC
+		e.tonemap_exposure = g.exposure
+		e.tonemap_white = g.white
+		e.ambient_light_energy = g.ambient_energy
+		e.glow_enabled = true
+		e.glow_intensity = g.bloom
+		e.glow_bloom = 0.0
+		e.glow_hdr_threshold = g.threshold
+		e.glow_blend_mode = Environment.GLOW_BLEND_MODE_SOFTLIGHT
+		e.adjustment_enabled = true
+		e.adjustment_contrast = g.contrast
+		e.adjustment_saturation = g.saturation
 
 
 func _ground() -> void:
@@ -392,6 +424,9 @@ func _ground() -> void:
 	m.set_shader_parameter("glow_energy", th.glow)
 	m.set_shader_parameter("ragged", th.ragged)
 	m.set_shader_parameter("line_color", th.line)
+	if _kit_on(): # kit design's floor tweak (2026-11-14): the plaza's yellow rings competed with ground fields; cool steel lines, softer sectors
+		m.set_shader_parameter("plaza_line", Color(0.55, 0.6, 0.7, 0.15))
+		m.set_shader_parameter("plaza_sector_shade", 0.9)
 	if th.team_lines:
 		m.set_shader_parameter("blue_line", Color(BLUE.lerp(Color.WHITE, 0.2), 0.35))
 		m.set_shader_parameter("red_line", Color(RED.lerp(Color.WHITE, 0.2), 0.35))
@@ -948,7 +983,8 @@ func _dress_world() -> void:
 	var pines: Array = []
 	var out_x := HALF_X + WALL_THICK
 	var out_z := HALF_Z + WALL_THICK
-	for row in ([3.9, 6.3] if th.has("detail") and border_kit else [1.7, 3.9, 6.3]): # foundry's backdrop (_wall_kit) takes the nearest row
+	var rows := [3.9, 6.3] if th.has("detail") and border_kit else [1.7, 3.9, 6.3] # foundry's backdrop (_wall_kit) takes the nearest row
+	for row in ([] if _kit_on() else rows): # the Meshy kit's refinery blocks stand in for the flat skyline cut-outs
 		for side in 4:
 			var along_x := side < 2
 			var reach: float = (out_x if along_x else out_z) + 7.0
@@ -979,7 +1015,8 @@ func _dress_world() -> void:
 			var mid := sgn * ((HALF_Z if along_x else HALF_X) + WALL_THICK * 0.5)
 			bushes.append(Transform3D(Basis(), Vector3(s, EDGE_HEIGHT, mid) if along_x else Vector3(mid, EDGE_HEIGHT, s)))
 			s += rng.randf_range(2.2, 3.6)
-	_sprites(_art("cap") if tech else FIELD_ART + "bush.png", bushes)
+	if not _kit_on(): # the kit's rocks and wall tops aren't flat, so the caps would float
+		_sprites(_art("cap") if tech else FIELD_ART + "bush.png", bushes)
 	# Tufts and flowers on the open ground, laid on blue's half and turned onto red's, kept off the path, the paving,
 	# the pads, the stream and the solids.
 	var tufts: Array = []
@@ -1107,14 +1144,16 @@ func _wall_kit() -> void:
 		var hl: float = w.half_len
 		var ht: float = w.half_thick
 		var b := Basis(Vector3.UP, atan2(-u.y, u.x)) # x along the wall, z across it
-		add.call("box", steel_dark, Transform3D(b * Basis.from_scale(Vector3(hl * 2.0 + 0.02, 0.42, ht * 2.0 + 0.3)), Vector3(c.x, 0.21, c.y)))
+		var skinned := _kit_on() # the Meshy kit's wall brings its own plinth and panels
+		if not skinned:
+			add.call("box", steel_dark, Transform3D(b * Basis.from_scale(Vector3(hl * 2.0 + 0.02, 0.42, ht * 2.0 + 0.3)), Vector3(c.x, 0.21, c.y)))
 		if hl > 3.0:
 			continue # the long edge walls: the plinth only; the backdrop stands past them
 		var on_base := false
 		for t in [1.0, -1.0]:
 			if absf(c.distance_to(BASE_CENTRE * t) - BASE_R) < 0.8:
 				on_base = true
-		if not on_base and _kit_hash(c, 1.0) < 0.4:
+		if not on_base and not skinned and _kit_hash(c, 1.0) < 0.4:
 			add.call("box", steel, Transform3D(b * Basis.from_scale(Vector3(hl * 2.0 - 0.5, 1.5, ht * 2.0 + 0.12)), Vector3(c.x, 1.3, c.y)))
 		var k := _kit_hash(c, 2.0)
 		if k < 0.3: # a pipe pair along the top, flanged at the piece's ends so the joints read as joints
@@ -1201,6 +1240,252 @@ func _multi(mesh: Mesh, xforms: Array, shadow: bool) -> MultiMeshInstance3D:
 		mmi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	_dress.add_child(mmi)
 	return mmi
+
+
+func _kit_on() -> bool:
+	return meshy_kit and th.has("detail") and ResourceLoader.exists(KIT_DIR + "wall_piece.glb")
+
+
+## A kit model's mesh with its textures moved onto kit_fade.gdshader. Its amber strips are painted paint (mix 1) or
+## left amber (mix 0) and lit by glow; tint multiplies the whole model (a pale model darkened into the kit's steel, the
+## backdrop pushed back). calm greys out warm colour (kit_fade's warm_calm). One copy per model and look.
+## Free pass after the lanes' review (2026-11-14): neutral strips go cool and dim, rocks go dark, so nothing on the
+## map is warmer or brighter than an ability.
+func _kit_mesh(kind: String, paint := Color(1.0, 0.62, 0.22), mix := 0.0, glow := 1.0, tint := Color.WHITE, calm := 0.0) -> Mesh:
+	var key := "%s%s%.2f%.2f%s%.2f" % [kind, paint.to_html(), mix, glow, tint.to_html(), calm]
+	if _kit.has(key):
+		return _kit[key]
+	var path := KIT_DIR + kind + ".glb"
+	if not ResourceLoader.exists(path):
+		_kit[key] = null
+		return null
+	var inst := (load(path) as PackedScene).instantiate()
+	var src: MeshInstance3D = inst.find_children("*", "MeshInstance3D", true, false)[0]
+	var mesh: ArrayMesh = src.mesh.duplicate()
+	for i in mesh.get_surface_count():
+		var from := mesh.surface_get_material(i) as BaseMaterial3D
+		var m := ShaderMaterial.new()
+		m.shader = KIT_SHADER
+		if from:
+			m.set_shader_parameter("albedo_texture", from.albedo_texture)
+			m.set_shader_parameter("albedo", from.albedo_color * tint)
+			m.set_shader_parameter("roughness", from.roughness)
+			m.set_shader_parameter("metallic", from.metallic)
+			if from.roughness_texture: # glTF's metallic-roughness map: roughness in g, metallic in b
+				m.set_shader_parameter("orm_texture", from.roughness_texture)
+				m.set_shader_parameter("use_orm", true)
+			if from.normal_enabled and from.normal_texture:
+				m.set_shader_parameter("normal_texture", from.normal_texture)
+				m.set_shader_parameter("use_normal", true)
+			if from.emission_enabled and from.emission_texture:
+				m.set_shader_parameter("emission_texture", from.emission_texture)
+				m.set_shader_parameter("use_emission", true)
+		m.set_shader_parameter("team_color", paint)
+		m.set_shader_parameter("team_mix", mix)
+		m.set_shader_parameter("strip_glow", glow)
+		m.set_shader_parameter("warm_calm", calm)
+		mesh.surface_set_material(i, m)
+	inst.free()
+	_kit[key] = mesh
+	return mesh
+
+
+## A kit model's real bounds (game feel's review: measure, don't assume the envelope).
+func _kit_box(kind: String) -> AABB:
+	var mesh := _kit_mesh(kind)
+	return mesh.get_aabb() if mesh else AABB(Vector3.ZERO, Vector3.ONE)
+
+
+## A transform that sets a kit model's bounds to size, its bottom centre at at, turned by rot.
+func _kit_xf(kind: String, rot: Basis, size: Vector3, at: Vector3) -> Transform3D:
+	var box := _kit_box(kind)
+	var b := rot * Basis.from_scale(size / box.size)
+	var pivot := Vector3(box.position.x + box.size.x * 0.5, box.position.y, box.position.z + box.size.z * 0.5)
+	return Transform3D(b, at - b * pivot)
+
+
+## How far a kit model reaches out from its middle at a share of its height (0 the bottom, 1 the top), in its own
+## units: the widest vertex in a thin slice there. Fits rocks to their bodies and team bands to their towers.
+func _kit_reach(kind: String, frac: float) -> float:
+	var key := "reach%s%.2f" % [kind, frac]
+	if _kit.has(key):
+		return _kit[key]
+	var mesh := _kit_mesh(kind)
+	var box := mesh.get_aabb()
+	var mid := Vector2(box.position.x + box.size.x * 0.5, box.position.z + box.size.z * 0.5)
+	var y := box.position.y + box.size.y * frac
+	var band := box.size.y * 0.06
+	var best := 0.0
+	for v in mesh.get_faces():
+		if absf(v.y - y) < band:
+			best = maxf(best, Vector2(v.x, v.z).distance_to(mid))
+	_kit[key] = best
+	return best
+
+
+## A glowing team band: an open ring, radius rx across and rz front to back, height tall, its middle y up.
+func _team_band(parent: Node3D, rx: float, rz: float, y: float, tall: float, col: Color) -> void:
+	var ring := CylinderMesh.new()
+	ring.top_radius = 1.0
+	ring.bottom_radius = 1.0
+	ring.height = tall
+	ring.radial_segments = 24
+	ring.rings = 0
+	ring.cap_top = false
+	ring.cap_bottom = false
+	ring.material = _team_glow(col, true)
+	var mi := MeshInstance3D.new()
+	mi.name = "TeamBand"
+	mi.mesh = ring
+	mi.transform = Transform3D(Basis.from_scale(Vector3(rx, 1.0, rz)), Vector3(0, y, 0))
+	mi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	parent.add_child(mi)
+
+
+## Foundry's Meshy kit (Preston, 2026-11-14: "a legit looking foundation for our map"). Models from
+## tools/map/meshy_arena_batch.py in the same style words as Codex's 5v5 modules. They are skins only: every wall, rock
+## and structure keeps the blockout's body, so play, the nav mesh, sight and the fog of war are as before; the
+## blockout's own meshes hide under them. Pit rims (1.5 m) stay bare blockout. A fallen structure shows the blockout's
+## wreck (set_structure_down). Review notes: docs/plan/meshy-arena-kit-review-2026-11-14.md.
+func _meshy_kit() -> void:
+	var groups := {} # mesh -> transforms
+	var put := func(mesh: Mesh, xf: Transform3D) -> void:
+		if mesh == null:
+			return
+		if not groups.has(mesh):
+			groups[mesh] = []
+		groups[mesh].append(xf)
+	var cool := Color(0.74, 0.8, 0.9) # neutral strips: cool grey-white and dim, so warm reads as an ability
+	# wall_run is the regenerated wall (one run whose lines meet end to end); wall_piece the first, kept as a fallback
+	var wall := "wall_run" if ResourceLoader.exists(KIT_DIR + "wall_run.glb") else "wall_piece"
+	# wall_run came back pale grey, so it is tinted into the kit's dark blue steel; wall_piece only a touch darker (its
+	# pale highlights were the lane edge's brightest pixels)
+	var wall_tint := Color(0.4, 0.44, 0.55) if wall == "wall_run" else Color(0.85, 0.85, 0.85)
+	var wall_n := _kit_mesh(wall, cool, 1.0, 0.35, wall_tint)
+	var wall_team := {1.0: _kit_mesh(wall, BLUE, 1.0, 1.1, wall_tint), -1.0: _kit_mesh(wall, RED, 1.0, 1.1, wall_tint)}
+	var team_caps := {1.0: [], -1.0: []} # base walls: a team-lit cap, the mark of a wall the cobra can't cross (Preston, 2026-11-14)
+	var cap_mat := ShaderMaterial.new() # one steel top line along every wall, so a run of pieces reads as one wall
+	cap_mat.shader = KIT_SHADER
+	cap_mat.set_shader_parameter("albedo", Color(0.3, 0.33, 0.4))
+	cap_mat.set_shader_parameter("roughness", 0.5)
+	cap_mat.set_shader_parameter("metallic", 0.6)
+	var cap := BoxMesh.new()
+	cap.material = cap_mat
+	var caps: Array = []
+	var edge_caps: Array = [] # the map edge (3.5 m): a neutral lit cap, so every lit cap means a wall the cobra can't cross
+	for w in walls:
+		if w.h < 2.0:
+			continue # the pit rims stay low and bare
+		var c: Vector2 = w.c
+		var u: Vector2 = w.u
+		var mesh: Mesh = wall_n
+		var team_side := 0.0
+		for t in [1.0, -1.0]: # base walls carry the team colour in their strips and their cap
+			if absf(c.distance_to(BASE_CENTRE * t) - BASE_R) < 0.8:
+				mesh = wall_team[t]
+				team_side = t
+		var length: float = w.half_len * 2.0
+		var thick: float = w.half_thick * 2.0
+		var count := maxi(1, roundi(length / PIECE))
+		var step := length / count
+		var b := Basis(Vector3.UP, atan2(-u.y, u.x))
+		for k in count:
+			var at: Vector2 = c + u * (-w.half_len + step * (k + 0.5))
+			put.call(mesh, _kit_xf(wall, b, Vector3(step + 0.04, w.h, thick), Vector3(at.x, 0.0, at.y)))
+		# the cap's top is the wall's top (3 m stays 3 m for the cobra's Wall_Over); it overhangs both faces a little
+		var cap_xf := Transform3D(b * Basis.from_scale(Vector3(length + 0.08, 0.16, thick + 0.14)), Vector3(c.x, w.h - 0.08, c.y))
+		var edge: bool = w.h > WALL_HEIGHT + 0.25
+		(team_caps[team_side] if team_side != 0.0 else (edge_caps if edge else caps)).append(cap_xf)
+		w.mi.visible = false
+	_multi(cap, caps, true).name = "KitCaps"
+	var edge_lit := BoxMesh.new()
+	edge_lit.material = _team_glow(Color(0.82, 0.86, 0.94), true)
+	_multi(edge_lit, edge_caps, true).name = "KitEdgeCaps"
+	for t in team_caps:
+		var lit := BoxMesh.new()
+		lit.material = _team_glow(BLUE if t > 0.0 else RED, true)
+		_multi(lit, team_caps[t], true).name = "KitTeamCaps%s" % ("Blue" if t > 0.0 else "Red")
+	var rock_b := "rock_scrap"
+	for k: String in ["rock_cold", "rock_boulder"]: # rock_cold replaced the scrap heap; Poly Haven's CC0 boulder (via Patch) replaced rock_cold, Preston's pick 2026-11-14
+		if ResourceLoader.exists(KIT_DIR + k + ".glb"):
+			rock_b = k
+	for r in rocks:
+		var c: Vector2 = r.c
+		# One rock type once rock_cold exists (both lanes' fallback, 2026-11-14): the slag model's orange read as the
+		# bison's hurting field even dark and unlit. Before it existed: slag and scrap, the small bend stones slag.
+		var slag: bool = rock_b == "rock_scrap" and (r.r < 2.0 or _kit_hash(c, 4.0) < 0.55)
+		var kind := "rock_slag" if slag else rock_b
+		var box := _kit_box(kind)
+		var sy: float = r.h / box.size.y # its top on the body's top
+		var frac := clampf((1.0 / sy - box.position.y) / box.size.y, 0.05, 0.95) # chest height, 1 m up
+		var body_r: float = r.r * (1.0 - 0.25 * 1.0 / r.h) # the body tapers to 75% at the top
+		var sxz := body_r / maxf(_kit_reach(kind, frac), 0.01) # rock meets body at chest height (game feel's review)
+		var turn := _kit_hash(c, 5.0) * TAU + (PI if c.y < 0.0 or (c.y == 0.0 and c.x < 0.0) else 0.0) # twins mirror
+		var rock_tint: Color = {"rock_cold": Color(0.45, 0.47, 0.53), "rock_boulder": Color(0.6, 0.63, 0.7)}.get(kind, Color.WHITE) # rock_cold came back pale too
+		var mesh := _kit_mesh(kind, Color(0.3, 0.25, 0.23), 0.9, 0.0, rock_tint, 0.85) # dormant: dark seams, warm goes grey, nothing glows
+		put.call(mesh, _kit_xf(kind, Basis(Vector3.UP, turn), box.size * Vector3(sxz, sy, sxz), Vector3(c.x, 0.0, c.y)))
+		r.mi.visible = false
+	var rng := RandomNumberGenerator.new() # the refinery blocks, set well back past the edges and darkened
+	rng.seed = DRESS_SEED + 23
+	var far := _kit_mesh("refinery", Color(0.42, 0.47, 0.56), 1.0, 0.1, Color(0.62, 0.62, 0.62))
+	for side in 4:
+		var along_x := side < 2
+		var sgn := 1.0 if side % 2 == 0 else -1.0
+		var reach := (HALF_X if along_x else HALF_Z) + 10.0
+		var edge: float = (HALF_Z if along_x else HALF_X) + WALL_THICK
+		var s := -reach + rng.randf_range(0.0, 8.0)
+		while s < reach:
+			var sc := rng.randf_range(0.7, 1.15)
+			var size := Vector3(10.0 * sc * rng.randf_range(0.8, 1.3), 12.0 * sc * rng.randf_range(0.5, 0.8), 10.0 * sc * rng.randf_range(0.8, 1.3))
+			var p := _edge_spot(along_x, sgn, s, edge + 16.0 + rng.randf_range(0.0, 12.0))
+			put.call(far, _kit_xf("refinery", Basis(Vector3.UP, rng.randf() * TAU), size, Vector3(p.x, 0.0, p.y)))
+			s += size.x + rng.randf_range(4.0, 12.0)
+	var i := 0
+	for mesh in groups:
+		var spots := PackedVector3Array() # kept as meta, as _sprites does: arena_check reads them
+		for xf: Transform3D in groups[mesh]:
+			spots.append(xf.origin)
+		var mmi := _multi(mesh, groups[mesh], true)
+		mmi.name = "Kit%d" % i
+		mmi.set_meta("spots", spots)
+		i += 1
+	for structure in _structures:
+		var st: Dictionary = _structures[structure]
+		var tower: bool = structure.ends_with("Tower")
+		var col := BLUE if structure.begins_with("Blue") else RED
+		var kind := "tower_base" if tower else "core"
+		var body := _kit_mesh(kind, col, 1.0, 1.8)
+		if body == null:
+			continue
+		var r: float = TOWER_R if tower else CORE_R
+		var h: float = TOWER_HEIGHT if tower else 4.35 # the core model is the whole machine, head and all
+		var box := _kit_box(kind)
+		var skin := Node3D.new() # holds the model and its team bands; hides as one when the structure falls
+		skin.name = structure + "Skin"
+		skin.position = Vector3(st.p.x, 0.0, st.p.y)
+		_dress.add_child(skin)
+		var model := MeshInstance3D.new()
+		model.mesh = body
+		model.transform = _kit_xf(kind, Basis(), Vector3(r * 2.0, h, r * 2.0), Vector3.ZERO)
+		skin.add_child(model)
+		var sx := r * 2.0 / box.size.x
+		_team_band(skin, r + 0.04, r + 0.04, 0.32, 0.22, col) # round the foot: the team at floor level from any side
+		_team_band(skin, _kit_reach(kind, 0.62) * sx + 0.04, _kit_reach(kind, 0.62) * sx + 0.04, h * 0.62, 0.26, col)
+		st["skin"] = skin
+		st.base.visible = false
+		if st.get("trim"):
+			st.trim.queue_free() # the blockout shaft's team strips; the kit's bands carry the colour
+			st["trim"] = null
+		var holder: Node3D = st.gem # kept, and its name: the sound lane hums under ...TowerGem / ...CoreGem
+		for child in holder.get_children():
+			child.queue_free()
+		if tower:
+			var head := MeshInstance3D.new()
+			head.name = "KitHead"
+			head.mesh = _kit_mesh("tower_head", col, 1.0, 1.8)
+			head.transform = _kit_xf("tower_head", Basis(), Vector3(2.4, 0.9, 4.0), Vector3.ZERO)
+			holder.add_child(head) # the holder turns, so the head aims as the blockout's did (barrels down -z)
+			_team_band(holder, 1.3, 2.1, 0.45, 0.24, col) # round the head: the brightest team read, up where it aims from
 
 
 ## Marks on the floor (shaders/world/floor_decal.gdshader), laid on blue's half and turned onto red's: arrows down the
@@ -1398,8 +1683,9 @@ func _floor_map() -> void:
 	m.set_shader_parameter("use_detail", true)
 	m.set_shader_parameter("ao_strength", d.ao)
 	m.set_shader_parameter("grime_color", d.grime)
-	m.set_shader_parameter("pool_color", d.pool)
-	m.set_shader_parameter("pool_energy", d.pool_energy)
+	var kit := _kit_on() # the kit pass cools and dims the lamp pools, so a warm circle reads as an ability (kit design's review)
+	m.set_shader_parameter("pool_color", Color(0.78, 0.86, 1.0) if kit else d.pool)
+	m.set_shader_parameter("pool_energy", d.pool_energy * (0.25 if kit else 1.0))
 	m.set_shader_parameter("macro", d.macro)
 
 
@@ -1491,12 +1777,12 @@ func _wall(c: Vector2, u: Vector2, length: float, thick: float, h: float, mat: M
 	var shape := BoxShape3D.new()
 	shape.size = box.size
 	_collide(mi, shape)
-	walls.append({"c": c, "u": u, "half_len": length * 0.5, "half_thick": thick * 0.5, "h": h})
+	walls.append({"c": c, "u": u, "half_len": length * 0.5, "half_thick": thick * 0.5, "h": h, "mi": mi})
 
 
 func _rock(c: Vector2, r: float, h: float) -> void:
-	_pillar(c, r, h, _fade("cliff", th.rock, true), 0.75)
-	rocks.append({"c": c, "r": r, "h": h})
+	var mi := _pillar(c, r, h, _fade("cliff", th.rock, true), 0.75)
+	rocks.append({"c": c, "r": r, "h": h, "mi": mi})
 
 
 func _pillar(c: Vector2, r: float, h: float, mat: Material, taper := 0.7) -> MeshInstance3D:

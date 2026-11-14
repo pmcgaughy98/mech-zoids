@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "6c213e35916ac0a170eea120b50cd2bceadde4b65c194a3a8fd36dd6d2386b71",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 0.9443813847900113,
+  "lowest_body_row_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "shark_front.png",
+      "source_box": [
+        36,
+        55,
+        625,
+        452
+      ],
+      "source_dimensions": [
+        589,
+        397
+      ],
+      "output_box": [
+        234,
+        561,
+        790,
+        936
+      ]
+    },
+    "left": {
+      "file": "shark_left.png",
+      "source_box": [
+        631,
+        55,
+        1507,
+        463
+      ],
+      "source_dimensions": [
+        876,
+        408
+      ],
+      "output_box": [
+        98,
+        551,
+        925,
+        936
+      ]
+    },
+    "back": {
+      "file": "shark_back.png",
+      "source_box": [
+        50,
+        541,
+        608,
+        965
+      ],
+      "source_dimensions": [
+        558,
+        424
+      ],
+      "output_box": [
+        248,
+        536,
+        775,
+        936
+      ]
+    },
+    "right": {
+      "file": "shark_right.png",
+      "source_box": [
+        612,
+        541,
+        1493,
+        961
+      ],
+      "source_dimensions": [
+        881,
+        420
+      ],
+      "output_box": [
+        96,
+        539,
+        928,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.06367924528301887
+}

@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "c8061247098b0c206152f6b777848a7df53bff129dd7bf0305b876f485328efa",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.1768033946251768,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "boss_power_elephant_front.png",
+      "source_box": [
+        63,
+        25,
+        560,
+        503
+      ],
+      "source_dimensions": [
+        497,
+        478
+      ],
+      "output_box": [
+        219,
+        373,
+        804,
+        936
+      ]
+    },
+    "left": {
+      "file": "boss_power_elephant_left.png",
+      "source_box": [
+        605,
+        39,
+        1287,
+        503
+      ],
+      "source_dimensions": [
+        682,
+        464
+      ],
+      "output_box": [
+        110,
+        390,
+        913,
+        936
+      ]
+    },
+    "back": {
+      "file": "boss_power_elephant_back.png",
+      "source_box": [
+        51,
+        621,
+        534,
+        1107
+      ],
+      "source_dimensions": [
+        483,
+        486
+      ],
+      "output_box": [
+        228,
+        364,
+        796,
+        936
+      ]
+    },
+    "right": {
+      "file": "boss_power_elephant_right.png",
+      "source_box": [
+        572,
+        620,
+        1279,
+        1106
+      ],
+      "source_dimensions": [
+        707,
+        486
+      ],
+      "output_box": [
+        96,
+        364,
+        928,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.04526748971193416
+}

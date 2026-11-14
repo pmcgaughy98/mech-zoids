@@ -1,0 +1,80 @@
+{
+  "status": "STAGED UNBOUND COPY. No verified rig found; no binding/deformation success claimed.",
+  "donor": "D:\\user\\Downloads\\shoebill_front - Hunyuan 3D v3.1 Pro (1)(correct moon plate on back only use for that other model is best).glb",
+  "recipient": "D:\\user\\Downloads\\shoebill_front - Hunyuan 3D v3.1 Pro.glb",
+  "source_hashes": {
+    "donor": "edf0be0c7dad74f1c828b25a9db6c847d836355d1af8dc7cffd326fe9207ab78",
+    "recipient": "28ff3519f6f78be3267f889ec39b0eb23884a35d43fce61c24c1e1706b82fe0e"
+  },
+  "welds": {
+    "donor": {
+      "before_vertices": 316607,
+      "after_vertices": 249988
+    },
+    "recipient": {
+      "before_vertices": 29890,
+      "after_vertices": 12144
+    }
+  },
+  "protected_anatomy_check": {
+    "source_vertex_samples": 25507,
+    "regions": "legs below z .50, front/body y below .10, outer wings |x|>.225, head top z>.99",
+    "max_position_error_source_units": 0.0,
+    "samples_over_0_00001": 0
+  },
+  "attachment": {
+    "donor_extract_radius": 0.175,
+    "donor_center_blender_z_up": [
+      0.0,
+      0.12999999523162842,
+      0.6769999861717224
+    ],
+    "donor_normal_blender_z_up": [
+      0.0,
+      0.8872167468070984,
+      0.46135270595550537
+    ],
+    "donor_extract_depth_behind_front_plane": 0.012,
+    "rotation_x_degrees": -27.474431626277134,
+    "uniform_scale": 1.04,
+    "target_center_blender_z_up": [
+      0,
+      0.215,
+      0.756
+    ],
+    "recipient_cut_radius": 0.181,
+    "recipient_cut_center_z": 0.756,
+    "recipient_cut_min_y": 0.178,
+    "rationale": "Extract only optical disc/rim in donor plate plane, exclude adjacent donor wing roots, rotate upright and align to recipient plate center. Preserve recipient mounting location; no donor torso/wing transfer."
+  },
+  "outputs": {
+    "Shoebill_Recipient_BODY_UNBOUND": {
+      "triangles": 23512,
+      "materials": 2,
+      "bounds_min_world": [
+        -0.32955899834632874,
+        -0.44735193252563477,
+        0.0001830053806770593
+      ],
+      "bounds_max_world": [
+        0.3297789692878723,
+        0.2895500361919403,
+        1.1013879776000977
+      ]
+    },
+    "Moon_Backplate_DONOR_UNBOUND": {
+      "triangles": 27006,
+      "materials": 2,
+      "bounds_min_world": [
+        -0.18199999630451202,
+        0.2025199681520462,
+        0.5739999413490295
+      ],
+      "bounds_max_world": [
+        0.18199999630451202,
+        0.25697270035743713,
+        0.937999963760376
+      ]
+    }
+  }
+}

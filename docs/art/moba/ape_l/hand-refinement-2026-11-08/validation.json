@@ -1,0 +1,24 @@
+{
+  "source_sha256": "39c327297a6842ec7c4af84be6294d956e8384d3db036ac867d0abfa98979071",
+  "bone_count": 34,
+  "unchanged_body_faces_outside_cuffs": 23322,
+  "parts": 14,
+  "hand_triangles": 4112,
+  "checks": {
+    "skeleton_unchanged": true,
+    "body_uvs_weights_normals_outside_cuff_unchanged": true,
+    "four_grounded_digits_per_hand": true,
+    "thumbs_clear_floor": true,
+    "palms_clear_floor": true,
+    "closed_hand_shells": true,
+    "single_bone_rigid_bind": true,
+    "wrist_pose_tests_degrees": [
+      -25,
+      0,
+      25
+    ],
+    "glb_skin_reimport": true
+  },
+  "max_rigid_pose_error_m": 2.533265881629601e-07,
+  "max_body_corner_normal_vector_error": 0.0005753465348548285
+}

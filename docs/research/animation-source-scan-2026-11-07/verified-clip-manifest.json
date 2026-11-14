@@ -1,0 +1,116 @@
+[
+  {
+    "name": "Fox",
+    "source": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Fox/glTF-Binary/Fox.glb",
+    "license_note": "CC0 model; CC BY 4.0 rig, animation and glTF conversion",
+    "license_evidence": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/Fox/README.md",
+    "local_path": "D:\\dev\\_scratch\\animation-scan\\samples\\Fox.glb",
+    "sha256": "d97044e701822bac5a62696459b27d7b375aada5de8574ed4362edbba94771f7",
+    "bytes": 162852,
+    "skin_joint_counts": [
+      24
+    ],
+    "clips": [
+      {
+        "name": "Survey",
+        "duration_seconds": 3.4167,
+        "channels": 21
+      },
+      {
+        "name": "Walk",
+        "duration_seconds": 0.7083,
+        "channels": 21
+      },
+      {
+        "name": "Run",
+        "duration_seconds": 1.1583,
+        "channels": 21
+      }
+    ]
+  },
+  {
+    "name": "RobotExpressive",
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/master/examples/models/gltf/RobotExpressive/RobotExpressive.glb",
+    "license_note": "CC0 per upstream example credit",
+    "license_evidence": "https://github.com/mrdoob/three.js/blob/master/examples/webgl_animation_skinning_morph.html",
+    "local_path": "D:\\dev\\_scratch\\animation-scan\\samples\\RobotExpressive.glb",
+    "sha256": "047f5e5fb3bb6d378bd1df16ca6137f2a596c99b3a1b5690b4020c05aaf6f319",
+    "bytes": 463988,
+    "skin_joint_counts": [
+      43,
+      43
+    ],
+    "clips": [
+      {
+        "name": "Dance",
+        "duration_seconds": 3.3333,
+        "channels": 12
+      },
+      {
+        "name": "Death",
+        "duration_seconds": 0.9583,
+        "channels": 18
+      },
+      {
+        "name": "Idle",
+        "duration_seconds": 3.3333,
+        "channels": 7
+      },
+      {
+        "name": "Jump",
+        "duration_seconds": 0.7083,
+        "channels": 18
+      },
+      {
+        "name": "No",
+        "duration_seconds": 1.6667,
+        "channels": 7
+      },
+      {
+        "name": "Punch",
+        "duration_seconds": 0.8333,
+        "channels": 15
+      },
+      {
+        "name": "Running",
+        "duration_seconds": 0.9583,
+        "channels": 18
+      },
+      {
+        "name": "Sitting",
+        "duration_seconds": 0.4167,
+        "channels": 10
+      },
+      {
+        "name": "Standing",
+        "duration_seconds": 0.4167,
+        "channels": 10
+      },
+      {
+        "name": "ThumbsUp",
+        "duration_seconds": 1.5833,
+        "channels": 15
+      },
+      {
+        "name": "Walking",
+        "duration_seconds": 0.9583,
+        "channels": 20
+      },
+      {
+        "name": "WalkJump",
+        "duration_seconds": 0.8333,
+        "channels": 18
+      },
+      {
+        "name": "Wave",
+        "duration_seconds": 1.8333,
+        "channels": 18
+      },
+      {
+        "name": "Yes",
+        "duration_seconds": 1.6667,
+        "channels": 7
+      }
+    ]
+  }
+]

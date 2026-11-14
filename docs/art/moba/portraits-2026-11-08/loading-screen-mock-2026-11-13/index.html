@@ -1,0 +1,67 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mech loading screen mockup</title><style>html,body{margin:0;background:#080f19}#mech-loading-preview{min-height:100vh}</style></head><body><div id="mech-loading-preview" aria-label="Mech arena loading screen concept">
+<style>
+#mech-loading-preview{--cyan:#6af5e5;--ember:#ffb478;--load:76%;font-family:Bahnschrift,'Segoe UI',sans-serif;color:#eef6f8;background:#080f19;position:relative;isolation:isolate;overflow:hidden;padding:30px 36px 24px;box-sizing:border-box;background-image:radial-gradient(ellipse at 15% 20%,#17434466,transparent 48%),radial-gradient(ellipse at 90% 70%,#6b38233b,transparent 48%),linear-gradient(120deg,#0e1724,#080e18);}
+#mech-loading-preview *{box-sizing:border-box}
+#mech-loading-preview:before{content:'';position:absolute;inset:0;z-index:-1;opacity:.14;background-image:linear-gradient(#94c7ce22 1px,transparent 1px),linear-gradient(90deg,#94c7ce22 1px,transparent 1px);background-size:48px 48px;transform:skewY(-9deg) scale(1.3)}
+#mech-loading-preview .mast{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:21px;border-bottom:1px solid #c4dfeb22}
+#mech-loading-preview .brand{letter-spacing:.24em;font-size:12px;font-weight:600;color:#a2b6c7}
+#mech-loading-preview h1{font-size:27px;font-weight:600;letter-spacing:.09em;margin:5px 0 0;line-height:1.2}
+#mech-loading-preview .match{font-size:11px;text-align:right;letter-spacing:.14em;color:#b4c7d2;padding-right:55px}
+#mech-loading-preview .match strong{font-size:17px;display:block;color:#f2f5f7;letter-spacing:.08em;margin-bottom:5px}
+#mech-loading-preview .squad{padding-top:18px;--team:var(--cyan)}
+#mech-loading-preview .squad.enemy{--team:var(--ember)}
+#mech-loading-preview .squad-head{display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.18em;margin-bottom:9px;color:var(--team)}
+#mech-loading-preview .squad-head span:last-child{color:#8396a6;font-size:11px;letter-spacing:.08em}
+#mech-loading-preview .roster{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;max-width:1150px;margin:auto}
+#mech-loading-preview .pilot{position:relative;min-width:0;background:#101b28;border:1px solid #71889c44;border-top:2px solid var(--team);box-shadow:0 6px 18px #0005;transition:transform .18s}
+#mech-loading-preview .pilot:hover{transform:translateY(-3px)}
+#mech-loading-preview .pilot.you{outline:1px solid var(--cyan);box-shadow:0 0 22px #6af5e526}
+#mech-loading-preview .portrait{position:relative;aspect-ratio:1/1.38;overflow:hidden;background:#111d2b}
+#mech-loading-preview .portrait img{width:100%;height:100%;object-fit:cover;object-position:center 37%;display:block}
+#mech-loading-preview .portrait:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#08101a 0%,#08101a00 40%)}
+#mech-loading-preview .serial{position:absolute;top:8px;left:9px;font-size:10px;letter-spacing:.1em;color:#fff;background:#07111cb8;padding:3px 5px;z-index:1}
+#mech-loading-preview .identity{position:absolute;bottom:9px;left:10px;right:7px;z-index:1}
+#mech-loading-preview .identity small{font-size:10px;letter-spacing:.14em;color:var(--team);display:block;margin-bottom:4px}
+#mech-loading-preview .identity b{font-size:17px;letter-spacing:.07em;font-weight:600}
+#mech-loading-preview .pilot-footer{padding:8px 10px 9px}
+#mech-loading-preview .pilot-status{display:flex;justify-content:space-between;color:#a4b8c6;font-size:11px;gap:4px}
+#mech-loading-preview .pilot-status strong{font-size:11px;font-weight:500;color:var(--team)}
+#mech-loading-preview .track{height:2px;background:#cce0ed19;margin-top:7px}
+#mech-loading-preview .fill{height:100%;background:var(--team);width:var(--pct);box-shadow:0 0 6px color-mix(in srgb,var(--team) 35%,transparent)}
+#mech-loading-preview .versus{display:flex;align-items:center;gap:13px;justify-content:center;margin:14px 0 -3px;color:#8da5b5;letter-spacing:.23em;font-size:11px}
+#mech-loading-preview .versus:before,#mech-loading-preview .versus:after{content:'';height:1px;width:25%;background:linear-gradient(90deg,transparent,#8da5b555,transparent)}
+#mech-loading-preview .deploy{display:flex;align-items:center;gap:22px;margin-top:25px;padding-top:20px;border-top:1px solid #c4dfeb22}
+#mech-loading-preview .progress-label{font-size:11px;letter-spacing:.12em;color:#a9bfcd;display:flex;justify-content:space-between;gap:10px}
+#mech-loading-preview .progress-label b{font-size:17px;color:#eef8ff;font-weight:500}
+#mech-loading-preview .global{flex:1}
+#mech-loading-preview .global .track{height:4px;margin-top:10px}
+#mech-loading-preview .global .fill{width:var(--load);background:linear-gradient(90deg,#368f9d,var(--cyan))}
+#mech-loading-preview .tip{flex:0 0 32%;font-size:12px;line-height:1.5;color:#b5c5d0;border-left:1px solid #647c8c55;padding-left:22px}
+#mech-loading-preview .tip small{display:block;font-size:10px;letter-spacing:.16em;color:#6af5e5;margin-bottom:4px}
+#mech-loading-preview .baseline{display:flex;justify-content:space-between;gap:12px;margin-top:19px;font-size:10px;letter-spacing:.13em;color:#627d91}
+@media(min-width:1250px){#mech-loading-preview{padding:35px 7% 28px}#mech-loading-preview .roster{gap:20px}#mech-loading-preview .portrait{aspect-ratio:1/1.48}}
+@media(max-width:650px){#mech-loading-preview{padding:20px 15px}#mech-loading-preview h1{font-size:21px}#mech-loading-preview .match{padding-right:0}#mech-loading-preview .match strong{font-size:13px}#mech-loading-preview .roster{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}#mech-loading-preview .identity b{font-size:13px}#mech-loading-preview .identity small{font-size:10px}#mech-loading-preview .pilot-status{font-size:10px}#mech-loading-preview .deploy{flex-direction:column;align-items:stretch;gap:15px}#mech-loading-preview .tip{border-left:0;padding-left:0}#mech-loading-preview .brand{font-size:10px}}
+@media(max-width:380px){#mech-loading-preview .roster{grid-template-columns:repeat(2,minmax(0,1fr))}#mech-loading-preview .match{display:none}}
+@media(prefers-reduced-motion:reduce){#mech-loading-preview .pilot{transition:none}}
+</style>
+<div class="mast"><div><div class="brand">MECH ARENA / DEPLOYMENT</div><h1>ENTER THE ARENA</h1></div><div class="match"><strong>5 V 5</strong>STANDARD MATCH</div></div>
+<section class="squad" aria-label="Your team"><div class="squad-head"><span>YOUR TEAM</span><span>05 PILOTS CONNECTED</span></div><div class="roster" data-team="allied"></div></section>
+<div class="versus">VERSUS</div>
+<section class="squad enemy" aria-label="Enemy team"><div class="squad-head"><span>ENEMY TEAM</span><span>05 PILOTS CONNECTED</span></div><div class="roster" data-team="enemy"></div></section>
+<div class="deploy"><div class="global"><div class="progress-label"><span id="mech-loading-status">SYNCHRONIZING SQUADS</span><b id="mech-loading-percent">76%</b></div><div class="track" role="progressbar" aria-label="Match loading" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100"><div class="fill"></div></div></div><div class="tip"><small>FIELD NOTES</small>Watch the map. Move with your team.</div></div>
+<div class="baseline"><span>ESTABLISHING ARENA LINK</span><span>LOADING SCREEN CONCEPT</span></div>
+</div>
+<script>
+(()=>{
+const root=document.getElementById('mech-loading-preview');
+const artwork={"gorilla": "../gorilla/hold-the-line-2026-11-13/spillway-v2/gorilla-spillway-master.png", "rhino": "../rhino/seismic-2026-11-13/salt-flat-v2/rhino-salt-flat-master.png", "hippo": "../hippo/pressure-2026-11-13/hippo-toxic-flood-master.png", "kangaroo": "../kangaroo/title-bout-2026-11-13/kangaroo-title-bout-master.png", "pangolin": "../pangolin/salvage-2026-11-13/junkyard-v2/pangolin-junkyard-master.png", "bison": "../bison/eruption-2026-11-13/bison-eruption-master.png", "cobra": "../cobra/breach-2026-11-13/cobra-breach-master.png", "fennec": "../fennec/threshold-2026-11-13/fennec-threshold-master.png"};
+const squads={allied:[['gorilla','YOU',100],['rhino','IRONCLAD',100],['fennec','WAYFINDER',87],['kangaroo','UPPERCUT',100],['hippo','DEEPWATER',76]],enemy:[['bison','FURNACE',100],['cobra','AFTERIMAGE',91],['pangolin','POLARITY',100],['rhino','BEDROCK',83],['gorilla','WARDEN',100]]};
+for(const [team,rows] of Object.entries(squads)){
+const roster=root.querySelector('[data-team="'+team+'"]');
+rows.forEach(([mech,pilot,pct],i)=>{const el=document.createElement('article');el.className='pilot'+(pilot==='YOU'?' you':'');el.style.setProperty('--pct',pct+'%');el.innerHTML='<div class="portrait"><img alt="'+mech+' mech card" src="'+artwork[mech]+'"><span class="serial">'+(pilot==='YOU'?'YOU':'0'+(i+1))+'</span><div class="identity"><small>'+pilot+'</small><b>'+mech.toUpperCase()+'</b></div></div><div class="pilot-footer"><div class="pilot-status"><span>'+ (pct===100?'Ready':'Connecting')+'</span><strong>'+pct+'%</strong></div><div class="track"><div class="fill"></div></div></div>';roster.appendChild(el);});
+}
+const state={progress:76};function render(){root.style.setProperty('--load',state.progress+'%');root.querySelector('#mech-loading-percent').textContent=state.progress+'%';root.querySelector('[role="progressbar"]').setAttribute('aria-valuenow',state.progress);root.querySelector('#mech-loading-status').textContent=state.progress===100?'SQUADS READY · DEPLOYING':'SYNCHRONIZING SQUADS';}
+render();if(globalThis.Tweak){const tweak=new Tweak({container:root,onChange:render});tweak.addSlider(state,'progress',{label:'Loading progress',min:0,max:100,unit:'%'});}
+})();
+</script>
+</body></html>

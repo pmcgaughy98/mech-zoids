@@ -1,0 +1,78 @@
+{
+  "source": "art/machines/ape_l/ape_l.glb",
+  "copy": "D:\\dev\\_scratch\\mech-art-direction\\ape_l-original.glb",
+  "sha256": "74a5c710ef626e7e856445cdf322b6abcc0d8e75d12263e769004141204a13ff",
+  "triangles": 80068,
+  "meshes": 1,
+  "surfaces": 2,
+  "images": [
+    {
+      "name": "atlas_normal",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "atlas",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "atlas_orm",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "ape_body",
+      "normalTexture": {
+        "index": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 1
+        },
+        "metallicRoughnessTexture": {
+          "index": 2
+        }
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0.016442500708202523,
+        0.5751842250499806,
+        0.6624137426381793
+      ],
+      "name": "ape_eye",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.013702083379030228,
+          0.4793201684951782,
+          0.5520114302635193,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.5
+      }
+    }
+  ],
+  "animations": [
+    "walk",
+    "gait",
+    "idle",
+    "punch",
+    "slam",
+    "throw",
+    "hit",
+    "death"
+  ],
+  "skins": 1
+}

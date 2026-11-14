@@ -1,0 +1,1443 @@
+{
+ "P_side_px": 3,
+ "fps": 8,
+ "size": "L",
+ "planted_pace_m_s": 0.48,
+ "gait_name": "lateral4",
+ "gait": {
+  "LF": 1,
+  "LH": 3,
+  "RF": 5,
+  "RH": 7
+ },
+ "lifts": [
+  2,
+  3,
+  2
+ ],
+ "pitch": 35,
+ "dip_frames": [
+  0,
+  4
+ ],
+ "paths": {
+  "LF": [
+   [
+    -6,
+    0
+   ],
+   [
+    -3,
+    2
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    3,
+    2
+   ],
+   [
+    6,
+    0
+   ],
+   [
+    3,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    -3,
+    0
+   ]
+  ],
+  "LH": [
+   [
+    0,
+    0
+   ],
+   [
+    -3,
+    0
+   ],
+   [
+    -6,
+    0
+   ],
+   [
+    -3,
+    2
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    3,
+    2
+   ],
+   [
+    6,
+    0
+   ],
+   [
+    3,
+    0
+   ]
+  ],
+  "RF": [
+   [
+    6,
+    0
+   ],
+   [
+    3,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    -3,
+    0
+   ],
+   [
+    -6,
+    0
+   ],
+   [
+    -3,
+    2
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    3,
+    2
+   ]
+  ],
+  "RH": [
+   [
+    0,
+    3
+   ],
+   [
+    3,
+    2
+   ],
+   [
+    6,
+    0
+   ],
+   [
+    3,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    -3,
+    0
+   ],
+   [
+    -6,
+    0
+   ],
+   [
+    -3,
+    2
+   ]
+  ]
+ },
+ "views": {
+  "s": {
+   "u": [
+    0.0,
+    1.0
+   ],
+   "f": 0.5736,
+   "planted_step_px": [
+    -0.0,
+    -1.721
+   ],
+   "visible_feet": {
+    "RF": {
+     "still_sole": [
+      55,
+      75,
+      160
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        65.0,
+        163.44
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        65.0,
+        161.72
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        65.0,
+        160.0
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        65.0,
+        158.28
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        65.0,
+        156.56
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        65.0,
+        156.28
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        65.0,
+        157.0
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        65.0,
+        159.72
+       ]
+      }
+     ]
+    },
+    "LF": {
+     "still_sole": [
+      115,
+      135,
+      160
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        125.0,
+        156.56
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        125.0,
+        156.28
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        125.0,
+        157.0
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        125.0,
+        159.72
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        125.0,
+        163.44
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        125.0,
+        161.72
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        125.0,
+        160.0
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        125.0,
+        158.28
+       ]
+      }
+     ]
+    },
+    "RH": {
+     "still_sole": [
+      80,
+      90,
+      143
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        85.0,
+        140.0
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        85.0,
+        142.72
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        85.0,
+        146.44
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        85.0,
+        144.72
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        85.0,
+        143.0
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        85.0,
+        141.28
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        85.0,
+        139.56
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        85.0,
+        139.28
+       ]
+      }
+     ]
+    },
+    "LH": {
+     "still_sole": [
+      100,
+      110,
+      143
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        105.0,
+        143.0
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        105.0,
+        141.28
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        105.0,
+        139.56
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        105.0,
+        139.28
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        105.0,
+        140.0
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        105.0,
+        142.72
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        105.0,
+        146.44
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        105.0,
+        144.72
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "se": {
+   "u": [
+    0.8674,
+    0.4975
+   ],
+   "f": 0.8152,
+   "planted_step_px": [
+    -2.121,
+    -1.217
+   ],
+   "visible_feet": {
+    "RF": {
+     "still_sole": [
+      74,
+      96,
+      160
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        89.24,
+        162.43
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        87.12,
+        161.22
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        85.0,
+        160.0
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        82.88,
+        158.78
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        80.76,
+        157.57
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        82.88,
+        156.78
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        85.0,
+        157.0
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        87.12,
+        159.22
+       ]
+      }
+     ]
+    },
+    "LF": {
+     "still_sole": [
+      122,
+      131,
+      148
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        122.26,
+        145.57
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        124.38,
+        144.78
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        126.5,
+        145.0
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        128.62,
+        147.22
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        130.74,
+        150.43
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        128.62,
+        149.22
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        126.5,
+        148.0
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        124.38,
+        146.78
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "e": {
+   "u": [
+    1.0,
+    0.0
+   ],
+   "f": 1.0,
+   "planted_step_px": [
+    -3.0,
+    -0.0
+   ],
+   "visible_feet": {
+    "RH": {
+     "still_sole": [
+      62,
+      80,
+      150
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        71.0,
+        147.0
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        74.0,
+        148.0
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        77.0,
+        150.0
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        74.0,
+        150.0
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        71.0,
+        150.0
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        68.0,
+        150.0
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        65.0,
+        150.0
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        68.0,
+        148.0
+       ]
+      }
+     ]
+    },
+    "RF": {
+     "still_sole": [
+      101,
+      125,
+      160
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        119.0,
+        160.0
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        116.0,
+        160.0
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        113.0,
+        160.0
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        110.0,
+        160.0
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        107.0,
+        160.0
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        110.0,
+        158.0
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        113.0,
+        157.0
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        116.0,
+        158.0
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "ne": {
+   "u": [
+    0.8674,
+    -0.4975
+   ],
+   "f": 0.8152,
+   "planted_step_px": [
+    -2.121,
+    1.217
+   ],
+   "visible_feet": {
+    "LH": {
+     "still_sole": [
+      59,
+      69,
+      148
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        64.0,
+        148.0
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        61.88,
+        149.22
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        59.76,
+        150.43
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        61.88,
+        147.22
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        64.0,
+        145.0
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        66.12,
+        144.78
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        68.24,
+        145.57
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        66.12,
+        146.78
+       ]
+      }
+     ]
+    },
+    "RH": {
+     "still_sole": [
+      81,
+      96,
+      160
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        88.5,
+        157.0
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        90.62,
+        156.78
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        92.74,
+        157.57
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        90.62,
+        158.78
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        88.5,
+        160.0
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        86.38,
+        161.22
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        84.26,
+        162.43
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        86.38,
+        159.22
+       ]
+      }
+     ]
+    },
+    "RF": {
+     "still_sole": [
+      120,
+      127,
+      158
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        127.74,
+        155.57
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        125.62,
+        156.78
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        123.5,
+        158.0
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        121.38,
+        159.22
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        119.26,
+        160.43
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        121.38,
+        157.22
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        123.5,
+        155.0
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        125.62,
+        154.78
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "n": {
+   "u": [
+    0.0,
+    -1.0
+   ],
+   "f": 0.5736,
+   "planted_step_px": [
+    -0.0,
+    1.721
+   ],
+   "visible_feet": {
+    "LF": {
+     "still_sole": [
+      57,
+      65,
+      144
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        61.0,
+        147.44
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        61.0,
+        143.72
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        61.0,
+        141.0
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        61.0,
+        140.28
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        61.0,
+        140.56
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        61.0,
+        142.28
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        61.0,
+        144.0
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        61.0,
+        145.72
+       ]
+      }
+     ]
+    },
+    "LH": {
+     "still_sole": [
+      68,
+      86,
+      160
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        77.0,
+        160.0
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        77.0,
+        161.72
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        77.0,
+        163.44
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        77.0,
+        159.72
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        77.0,
+        157.0
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        77.0,
+        156.28
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        77.0,
+        156.56
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        77.0,
+        158.28
+       ]
+      }
+     ]
+    },
+    "RH": {
+     "still_sole": [
+      104,
+      122,
+      160
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        113.0,
+        157.0
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        113.0,
+        156.28
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        113.0,
+        156.56
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        113.0,
+        158.28
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        113.0,
+        160.0
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        113.0,
+        161.72
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        113.0,
+        163.44
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        113.0,
+        159.72
+       ]
+      }
+     ]
+    },
+    "RF": {
+     "still_sole": [
+      125,
+      133,
+      144
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        129.0,
+        140.56
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        129.0,
+        142.28
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        129.0,
+        144.0
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        129.0,
+        145.72
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        129.0,
+        147.44
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        129.0,
+        143.72
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        129.0,
+        141.0
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        129.0,
+        140.28
+       ]
+      }
+     ]
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "e2c9444e66099de26bde80ccb238f875ec13ddffdecfbfb6986528fd44ce60f1",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.2344213649851632,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "tortoise_front.png",
+      "source_box": [
+        70,
+        49,
+        637,
+        471
+      ],
+      "source_dimensions": [
+        567,
+        422
+      ],
+      "output_box": [
+        162,
+        415,
+        862,
+        936
+      ]
+    },
+    "left": {
+      "file": "tortoise_left.png",
+      "source_box": [
+        711,
+        54,
+        1384,
+        471
+      ],
+      "source_dimensions": [
+        673,
+        417
+      ],
+      "output_box": [
+        96,
+        421,
+        927,
+        936
+      ]
+    },
+    "back": {
+      "file": "tortoise_back.png",
+      "source_box": [
+        67,
+        588,
+        641,
+        1013
+      ],
+      "source_dimensions": [
+        574,
+        425
+      ],
+      "output_box": [
+        157,
+        411,
+        866,
+        936
+      ]
+    },
+    "right": {
+      "file": "tortoise_right.png",
+      "source_box": [
+        745,
+        591,
+        1419,
+        1010
+      ],
+      "source_dimensions": [
+        674,
+        419
+      ],
+      "output_box": [
+        96,
+        419,
+        928,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.018823529411764704
+}

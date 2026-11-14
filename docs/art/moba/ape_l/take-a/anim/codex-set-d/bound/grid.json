@@ -1,0 +1,624 @@
+{
+  "raw_size": [
+    2172,
+    724
+  ],
+  "columns": 9,
+  "rows": [
+    "se",
+    "ne"
+  ],
+  "x_edges_by_row": {
+    "se": [
+      0,
+      256,
+      493,
+      731,
+      979,
+      1224,
+      1448,
+      1685,
+      1919,
+      2172
+    ],
+    "ne": [
+      0,
+      256,
+      495,
+      732,
+      979,
+      1218,
+      1445,
+      1683,
+      1918,
+      2172
+    ]
+  },
+  "y_edges": [
+    0,
+    356,
+    724
+  ],
+  "row_scale": {
+    "se": 0.36860442145381006,
+    "ne": 0.3572708098447427
+  },
+  "cells": [
+    {
+      "view": "se",
+      "frame": 0,
+      "source_box": [
+        0,
+        0,
+        256,
+        356
+      ],
+      "source_opaque_box": [
+        18,
+        120,
+        255,
+        319
+      ],
+      "scale": 0.36860442145381006,
+      "placement": [
+        16,
+        30
+      ],
+      "touches_cut": false,
+      "final_opaque_box": [
+        52,
+        89,
+        141,
+        161
+      ],
+      "lift": 0,
+      "exact_approved_still": true,
+      "finishing_coordinates": "Native face/gem patches and local pose changes recorded in finishing scripts and logs."
+    },
+    {
+      "view": "se",
+      "frame": 1,
+      "source_box": [
+        256,
+        0,
+        493,
+        356
+      ],
+      "source_opaque_box": [
+        12,
+        148,
+        236,
+        322
+      ],
+      "scale": 0.36860442145381006,
+      "placement": [
+        55,
+        97
+      ],
+      "touches_cut": false,
+      "final_opaque_box": [
+        52,
+        93,
+        141,
+        161
+      ],
+      "lift": 0,
+      "exact_approved_still": false,
+      "finishing_coordinates": "Native face/gem patches and local pose changes recorded in finishing scripts and logs."
+    },
+    {
+      "view": "se",
+      "frame": 2,
+      "source_box": [
+        493,
+        0,
+        731,
+        356
+      ],
+      "source_opaque_box": [
+        15,
+        119,
+        237,
+        319
+      ],
+      "scale": 0.36860442145381006,
+      "placement": [
+        56,
+        87
+      ],
+      "touches_cut": false,
+      "final_opaque_box": [
+        56,
+        87,
+        138,
+        161
+      ],
+      "lift": 0,
+      "exact_approved_still": false,
+      "finishing_coordinates": "Native face/gem patches and local pose changes recorded in finishing scripts and logs."
+    },
+    {
+      "view": "se",
+      "frame": 3,
+      "source_box": [
+        731,
+        0,
+        979,
+        356
+      ],
+      "source_opaque_box": [
+        21,
+        82,
+        247,
+        279
+      ],
+      "scale": 0.36860442145381006,
+      "placement": [
+        55,
+        72
+      ],
+      "touches_cut": false,
+      "final_opaque_box": [
+        55,
+        72,
+        138,
+        145
+      ],
+      "lift": 16,
+      "exact_approved_still": false,
+      "finishing_coordinates": "Native face/gem patches and local pose changes recorded in finishing scripts and logs."
+    },
+    {
+      "view": "se",
+      "frame": 4,
+      "source_box": [
+        979,
+        0,
+        1224,
+        356
+      ],
+      "source_opaque_box": [
+        10,
+        54,
+        244,
+        239
+      ],
+      "scale": 0.36860442145381006,
+      "placement": [
+        54,
+        65
+      ],
+      "touches_cut": false,
+      "final_opaque_box": [
+        54,
+        65,
+        140,
+        133
+      ],
+      "lift": 28,
+      "exact_approved_still": false,
+      "finishing_coordinates": "Native face/gem patches and local pose changes recorded in finishing scripts and logs."
+    },
+    {
+      "view": "se",
+      "frame": 5,
+      "source_box": [
+        1224,
+        0,
+        1448,
+        356
+      ],
+      "source_opaque_box": [
+        7,
+        92,
+        218,
+        290
+      ],
+      "scale": 0.36860442145381006,
+      "placement": [
+        58,
+        76
+      ],
+      "touches_cut": false,
+      "final_opaque_box": [
+        58,
+        76,
+        136,
+        149
+      ],
+      "lift": 12,
+      "exact_approved_still": false,
+      "finishing_coordinates": "Native face/gem patches and local pose changes recorded in finishing scripts and logs."
+    },
+    {
+      "view": "se",
+      "frame": 6,
+      "source_box": [
+        1448,
+        0,
+        1685,
+        356
+      ],
+      "source_opaque_box": [
+        2,
+        164,
+        228,
+        322
+      ],
+      "scale": 0.36860442145381006,
+      "placement": [
+        55,
+        103
+      ],
+      "touches_cut": false,
+      "final_opaque_box": [
+        55,
+        103,
+        138,
+        161
+      ],
+      "lift": 0,
+      "exact_approved_still": false,
+      "finishing_coordinates": "Native face/gem patches and local pose changes recorded in finishing scripts and logs."
+    },
+    {
+      "view": "se",
+      "frame": 7,
+      "source_box": [
+        1685,
+        0,
+        1919,
+        356
+      ],
+      "source_opaque_box": [
+        2,
+        128,
+        220,
+        319
+      ],
+      "scale": 0.36860442145381006,
+      "placement": [
+        56,
+        91
+      ],
+      "touches_cut": false,
+      "final_opaque_box": [
+        56,
+        91,
+        136,
+        161
+      ],
+      "lift": 0,
+      "exact_approved_still": false,
+      "finishing_coordinates": "Native face/gem patches and local pose changes recorded in finishing scripts and logs."
+    },
+    {
+      "view": "se",
+      "frame": 8,
+      "source_box": [
+        1919,
+        0,
+        2172,
+        356
+      ],
+      "source_opaque_box": [
+        2,
+        120,
+        236,
+        319
+      ],
+      "scale": 0.36860442145381006,
+      "placement": [
+        16,
+        30
+      ],
+      "touches_cut": false,
+      "final_opaque_box": [
+        52,
+        89,
+        141,
+        161
+      ],
+      "lift": 0,
+      "exact_approved_still": true,
+      "finishing_coordinates": "Native face/gem patches and local pose changes recorded in finishing scripts and logs."
+    },
+    {
+      "view": "ne",
+      "frame": 0,
+      "source_box": [
+        0,
+        356,
+        256,
+        724
+      ],
+      "source_opaque_box": [
+        18,
+        111,
+        255,
+        310
+      ],
+      "scale": 0.3572708098447427,
+      "placement": [
+        16,
+        30
+      ],
+      "touches_cut": false,
+      "final_opaque_box": [
+        53,
+        91,
+        139,
+        161
+      ],
+      "lift": 0,
+      "exact_approved_still": true,
+      "finishing_coordinates": "Native face/gem patches and local pose changes recorded in finishing scripts and logs."
+    },
+    {
+      "view": "ne",
+      "frame": 1,
+      "source_box": [
+        256,
+        356,
+        495,
+        724
+      ],
+      "source_opaque_box": [
+        16,
+        139,
+        238,
+        313
+      ],
+      "scale": 0.3572708098447427,
+      "placement": [
+        56,
+        99
+      ],
+      "touches_cut": false,
+      "final_opaque_box": [
+        53,
+        95,
+        139,
+        161
+      ],
+      "lift": 0,
+      "exact_approved_still": false,
+      "finishing_coordinates": "Native face/gem patches and local pose changes recorded in finishing scripts and logs."
+    },
+    {
+      "view": "ne",
+      "frame": 2,
+      "source_box": [
+        495,
+        356,
+        732,
+        724
+      ],
+      "source_opaque_box": [
+        13,
+        105,
+        236,
+        306
+      ],
+      "scale": 0.3572708098447427,
+      "placement": [
+        56,
+        89
+      ],
+      "touches_cut": false,
+      "final_opaque_box": [
+        56,
+        89,
+        136,
+        161
+      ],
+      "lift": 0,
+      "exact_approved_still": false,
+      "finishing_coordinates": "Native face/gem patches and local pose changes recorded in finishing scripts and logs."
+    },
+    {
+      "view": "ne",
+      "frame": 3,
+      "source_box": [
+        732,
+        356,
+        979,
+        724
+      ],
+      "source_opaque_box": [
+        11,
+        62,
+        246,
+        261
+      ],
+      "scale": 0.3572708098447427,
+      "placement": [
+        54,
+        74
+      ],
+      "touches_cut": false,
+      "final_opaque_box": [
+        54,
+        74,
+        138,
+        145
+      ],
+      "lift": 16,
+      "exact_approved_still": false,
+      "finishing_coordinates": "Native face/gem patches and local pose changes recorded in finishing scripts and logs."
+    },
+    {
+      "view": "ne",
+      "frame": 4,
+      "source_box": [
+        979,
+        356,
+        1218,
+        724
+      ],
+      "source_opaque_box": [
+        8,
+        34,
+        238,
+        212
+      ],
+      "scale": 0.3572708098447427,
+      "placement": [
+        55,
+        69
+      ],
+      "touches_cut": false,
+      "final_opaque_box": [
+        55,
+        69,
+        137,
+        133
+      ],
+      "lift": 28,
+      "exact_approved_still": false,
+      "finishing_coordinates": "Native face/gem patches and local pose changes recorded in finishing scripts and logs."
+    },
+    {
+      "view": "ne",
+      "frame": 5,
+      "source_box": [
+        1218,
+        356,
+        1445,
+        724
+      ],
+      "source_opaque_box": [
+        6,
+        75,
+        224,
+        272
+      ],
+      "scale": 0.3572708098447427,
+      "placement": [
+        57,
+        79
+      ],
+      "touches_cut": false,
+      "final_opaque_box": [
+        57,
+        79,
+        135,
+        149
+      ],
+      "lift": 12,
+      "exact_approved_still": false,
+      "finishing_coordinates": "Native face/gem patches and local pose changes recorded in finishing scripts and logs."
+    },
+    {
+      "view": "ne",
+      "frame": 6,
+      "source_box": [
+        1445,
+        356,
+        1683,
+        724
+      ],
+      "source_opaque_box": [
+        2,
+        151,
+        231,
+        318
+      ],
+      "scale": 0.3572708098447427,
+      "placement": [
+        55,
+        101
+      ],
+      "touches_cut": false,
+      "final_opaque_box": [
+        55,
+        101,
+        137,
+        161
+      ],
+      "lift": 0,
+      "exact_approved_still": false,
+      "finishing_coordinates": "Native face/gem patches and local pose changes recorded in finishing scripts and logs."
+    },
+    {
+      "view": "ne",
+      "frame": 7,
+      "source_box": [
+        1683,
+        356,
+        1918,
+        724
+      ],
+      "source_opaque_box": [
+        2,
+        120,
+        224,
+        312
+      ],
+      "scale": 0.3572708098447427,
+      "placement": [
+        56,
+        92
+      ],
+      "touches_cut": false,
+      "final_opaque_box": [
+        56,
+        92,
+        135,
+        161
+      ],
+      "lift": 0,
+      "exact_approved_still": false,
+      "finishing_coordinates": "Native face/gem patches and local pose changes recorded in finishing scripts and logs."
+    },
+    {
+      "view": "ne",
+      "frame": 8,
+      "source_box": [
+        1918,
+        356,
+        2172,
+        724
+      ],
+      "source_opaque_box": [
+        2,
+        111,
+        237,
+        309
+      ],
+      "scale": 0.3572708098447427,
+      "placement": [
+        16,
+        30
+      ],
+      "touches_cut": false,
+      "final_opaque_box": [
+        53,
+        91,
+        139,
+        161
+      ],
+      "lift": 0,
+      "exact_approved_still": true,
+      "finishing_coordinates": "Native face/gem patches and local pose changes recorded in finishing scripts and logs."
+    }
+  ],
+  "clean": true,
+  "final_canvas": [
+    192,
+    192
+  ],
+  "approved_offset": [
+    16,
+    30
+  ],
+  "ground_row": 160,
+  "finishing": [
+    "finish.py",
+    "polish.py",
+    "gems.py",
+    "final_pose.py",
+    "seam_fill.py",
+    "verify.py"
+  ]
+}

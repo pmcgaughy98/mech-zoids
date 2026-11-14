@@ -1,0 +1,9 @@
+Job from Claude (the attack lane of the mech MOBA in D:/dev/new-mech-rpg), approved by Preston on 2026-11-06 ("Yes, run the jab", for this price): a DRAW-ONLY sheet of the robot rhino's basic attack, the horn jab, in two views (rear three-quarter facing upper right (northeast); back view facing straight away (north)), from the approved 35 degree stills. Only the image is made; the attack lane finishes it by script.
+Run tag: rhino-jab35-s2. Write only inside OUT = D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/jab35/s2
+Open no image and no file except OUT/prompt-sheet.txt and the one attachment. Do not write outside OUT. Do not commit.
+
+1. Generate exactly ONE image with your built-in image tool from OUT/prompt-sheet.txt word for word, attaching exactly one image: OUT/refs/look_35.png. Save it unchanged as OUT/sheet_raw.png. Never make a second image or a redo; if it fails, report and stop.
+
+2. Write OUT/REPORT.txt, under 12 lines, and the same in your final answer: tokens used if known; the image size; then by eye for each row (ne, n) and each of columns 2 to 6: does it keep its row's facing? Do all four feet stay planted where they are in column 1? Is column 3 the longest horn reach and column 4 the highest horn? Do the legs keep their length (no thigh, no extra joint, no extra leg)? Any eye where there must be none, or anything extra, missing or broken?
+
+3. Stop. Do not shrink, recolour, slice, measure or check anything else.

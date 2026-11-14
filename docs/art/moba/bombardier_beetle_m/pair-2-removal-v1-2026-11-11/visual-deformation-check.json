@@ -1,0 +1,133 @@
+{
+  "tested_sha256": "131af5a83628e25b2656453c605c43eed7e9441a102392e8189973b6ebc16978",
+  "poses": [
+    {
+      "label": "front-left",
+      "bone": "Bone_052",
+      "local_x_degrees": 10,
+      "max_displacement_m": 0.15105964057985782,
+      "vertices_moved_over_1mm": 1219,
+      "uv_split_seam_gap_m": 0.0
+    },
+    {
+      "label": "front-right",
+      "bone": "Bone_058",
+      "local_x_degrees": -10,
+      "max_displacement_m": 0.15056216843161735,
+      "vertices_moved_over_1mm": 1290,
+      "uv_split_seam_gap_m": 0.0
+    },
+    {
+      "label": "middle-left",
+      "bone": "Bone_028",
+      "local_x_degrees": 10,
+      "max_displacement_m": 0.1467579288131269,
+      "vertices_moved_over_1mm": 5824,
+      "uv_split_seam_gap_m": 0.0
+    },
+    {
+      "label": "middle-right",
+      "bone": "Bone_033",
+      "local_x_degrees": -10,
+      "max_displacement_m": 0.14567740229284049,
+      "vertices_moved_over_1mm": 5812,
+      "uv_split_seam_gap_m": 0.0
+    },
+    {
+      "label": "rear-left",
+      "bone": "Bone_018",
+      "local_x_degrees": 10,
+      "max_displacement_m": 0.14555336222029824,
+      "vertices_moved_over_1mm": 6025,
+      "uv_split_seam_gap_m": 0.0
+    },
+    {
+      "label": "rear-right",
+      "bone": "Bone_023",
+      "local_x_degrees": -10,
+      "max_displacement_m": 0.14471574766441483,
+      "vertices_moved_over_1mm": 5974,
+      "uv_split_seam_gap_m": 0.0
+    },
+    {
+      "label": "head",
+      "bone": "Bone_047",
+      "local_x_degrees": 8,
+      "max_displacement_m": 0.1239705169087639,
+      "vertices_moved_over_1mm": 2899,
+      "uv_split_seam_gap_m": 0.0
+    },
+    {
+      "label": "body",
+      "bone": "Bone_007",
+      "local_x_degrees": 6,
+      "max_displacement_m": 0.055870448468250095,
+      "vertices_moved_over_1mm": 6511,
+      "uv_split_seam_gap_m": 0.0
+    },
+    {
+      "label": "removed-left-control",
+      "bone": "Bone_038",
+      "local_x_degrees": 20,
+      "max_displacement_m": 0.0,
+      "vertices_moved_over_1mm": 0,
+      "uv_split_seam_gap_m": 0.0
+    },
+    {
+      "label": "removed-right-control",
+      "bone": "Bone_043",
+      "local_x_degrees": -20,
+      "max_displacement_m": 0.0,
+      "vertices_moved_over_1mm": 0,
+      "uv_split_seam_gap_m": 0.0
+    }
+  ],
+  "joint_count": 64,
+  "intact_alignment": {
+    "matrix_blender": [
+      [
+        2.739814293099479,
+        0.0,
+        0.0,
+        -0.0012753763601501974
+      ],
+      [
+        0.0,
+        2.739814293099479,
+        0.0,
+        0.028003695007221215
+      ],
+      [
+        0.0,
+        0.0,
+        2.739814293099479,
+        -0.00011377306178472768
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "rotation_basis_godot": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "uniform_scale": 2.739814293099479,
+    "sample_mean_distance_m": 0.016911570354347625
+  }
+}

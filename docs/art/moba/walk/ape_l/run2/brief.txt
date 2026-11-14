@@ -1,0 +1,47 @@
+You are making pixel-art walk frames for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\walk\ape_l\run2.
+Read anything under D:\dev\new-mech-rpg\docs\art\moba. Do not touch any other folder (run1 included), assets, art or
+tools, and do not commit. Run tag: ape-walk35-run2.
+
+This is run 2 of the green L gorilla's walk at 35 degrees. Run 1 (D:\dev\new-mech-rpg\docs\art\moba\walk\ape_l\run1)
+made the e, se and ne views. Read run1\brief.txt (the machine, the gait, the rules and the pass marks all still apply),
+run1\REPORT.txt (the walk lane's review), and run1\build.py, verify.py, rig.json and checks.txt: that is your own
+method from run 1, so reuse it rather than starting again. Read D:\dev\new-mech-rpg\docs\art\moba\walk\WALK_PLAYBOOK.md
+section 7 for the front and back views. The stills on the 192 canvas are in run2\stills; the targets (the same plan as
+run 1, with s and n included) are in run2\targets.json, and the guides are run2\guide_s.png, guide_n.png and guide_ne.png.
+
+Work in this order, and keep run2\REPORT.txt up to date after each part, so a report exists even if the run is stopped:
+
+Part 1, repair ne. Preston saw run 1's ne frames: the far-left limb breaks up. In most frames its orange parts are cut
+off or detached, the grey knee disc is broken in f0-f3, and loose dark specks sit under that foot in f4-f7. A 5x zoom of
+the region (x 38-96, y 112-166 on the 192 canvas; still, then f0-f7) is run2\ne_defects_run1.png. Check first which limb
+this is (the brief called it LH, the least certain label; the shield edge just above it suggests the far forearm may be
+involved) and fix the label if it is wrong. Then redraw that limb in all 8 ne frames from the still's own parts:
+translated, never rotated, every joint and the join with the body drawn by hand, nothing cut off, no floating pieces, no
+specks. Keep everything else in run 1's ne frames exactly as it is, and keep every foot's lock. Write the repaired frames
+to run2\walk\frames\ne_f0.png to ne_f7.png. (The loose pixel in se f0 is already fixed: run2\walk\frames\se_f0.png.)
+
+Part 2, s. Part 3, n. Each is an 8-frame loop, 125 ms a frame, with the same diagonal-pair gait as run 1: the right fist
+and left hind foot swing f5-f7, the left fist and right hind foot swing f1-f3, both pairs are planted on f0 and f4, and
+the body dips 1 px on f0 and f4. Per view, the path turns into screen px as offset * f * u, with the lift straight up:
+  s: u = (0, 1), f = 0.5736; a planted foot moves (0.00, -1.72) px a frame on the canvas (x, y; y down)
+  n: u = (0, -1), f = 0.5736; a planted foot moves (0.00, +1.72) px a frame on the canvas
+At 35 degrees a step toward or away from the camera shows at 0.57 of its length, so these views need real foot travel
+up and down the screen, not reordered side frames. In s the fists are the near feet (row 160) and the hind feet sit
+between them (row 143); in n the hind feet are near (row 160) and the fists far (row 144). A foot nearer the camera than
+in the still may sit up to 3 px below row 160. The forearm blocks with their hex shields and gems move whole, by
+translation; in s and n the shields face the sides, so check that each one stays whole in every frame.
+
+Pass marks, for ne, s and n: as in run1\brief.txt. Run this and report its result:
+  python D:\dev\new-mech-rpg\docs\art\moba\walk\tools\walk_tools.py footlock
+    --targets D:\dev\new-mech-rpg\docs\art\moba\walk\ape_l\run2\targets.json
+    --frames D:\dev\new-mech-rpg\docs\art\moba\walk\ape_l\run2\walk\frames --views ne s n
+    --still-dir D:\dev\new-mech-rpg\docs\art\moba\walk\ape_l\run2\stills
+    --out D:\dev\new-mech-rpg\docs\art\moba\walk\ape_l\run2\footlock.json
+For ne, also make a 5x zoom of the repaired region laid out like ne_defects_run1.png: ne_repaired.png.
+
+Output in run2: walk\frames\ne_f0-7.png, s_f0-7.png and n_f0-7.png (raw, no outline, like the stills), a preview gif
+per view (125 ms, loop), footprint pictures for s and n, board.png (per view: the still, then the 8 frames, with the
+game's sel-out from D:\dev\new-mech-rpg\docs\art\moba\touchup\touchup_machine.py, at 4x), ne_repaired.png, checks.txt,
+footlock.json, and REPORT.txt (under 30 lines): tokens if known, which limb the ne repair was and the label you used,
+the foot-lock spreads, target errors, upper-body match, lowest rows, and by eye: is ne whole and clean now, and do s
+and n read as this gorilla knuckle-walking toward and away from the camera in diagonal pairs, limbs like the still?

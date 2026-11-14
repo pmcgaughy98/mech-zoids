@@ -1,0 +1,25 @@
+Gorilla walk at 35, run 1 (e, se, ne), knuckle walk in diagonal pairs. Written by the walk lane (Claude), 2026-11-05:
+Codex was stopped by the token cap while finalizing, before it wrote its own report.
+
+Tokens: 143,043 (cap 140,000; the watcher checks every 20 s). Estimate was 95k-115k.
+Output: walk/frames/<view>_f0-7.png (24 frames), board.png, <view>_board.png, previews, footprints, checks.txt,
+verification.json, footlock.json, build.py, verify.py, rig.json. Not written: delivery.json and Codex's REPORT.txt.
+
+Foot lock (walk_tools.py footlock, measured by the walk lane from the frame pixels): every visible foot locked.
+  e RH 0.00/0.00, RF 0.00/0.00 px; se RF, LF 0.48/0.87; ne LH, RH, RF 0.48/0.87. Gate 2 px.
+  Codex's own stamp measure puts e RF within 0.5 px of target; walk_tools reads 3.0 px on one lifted frame (the
+  knuckle slope; a tool limit, not a frame fault). Codex also tracked hidden feet from its limb layers (e LH).
+Structure (walk lane): one piece per frame, except se f0 with 1 loose px at (135, 111), #8a8a93. Binary alpha, 15
+  colours, no canvas edge. Lowest rows 157-162 (se and ne f0 reach 162, allowed for feet toward the camera).
+Upper body: Codex reports 0 px differing outside its traced limbs on every frame. The walk lane's cruder check
+  (top 45% of the still, limbs included) reads e 0.5-1.4%, se 3.7-11.2%, ne 3.0-8.9%; most of that is the moving
+  forearms and shields, which reach that high on this machine.
+
+By eye (2x board with sel-out, then 5x zoom):
+  e and se read as the gorilla knuckle-walking forward in diagonal pairs. Shields and gems are whole in every frame.
+  ne: the far-left limb (labelled LH) breaks up. In most frames its orange parts are cut off or detached, the grey
+  knee disc is broken in f0-f3, and loose dark specks sit under that foot in f4-f7. Not acceptable as is. Zoom:
+  D:\dev\_scratch\walk\ape_run1_ne_lowerleft.png. The ne LH label was the least certain one in the brief.
+
+Next (Preston's call): fold an ne far-limb repair and the se f0 loose pixel into run 2 (s, n), so Codex reads the
+playbooks once; or a separate ne repair pass (estimate 30k-60k). Not yet packed or tested in game.

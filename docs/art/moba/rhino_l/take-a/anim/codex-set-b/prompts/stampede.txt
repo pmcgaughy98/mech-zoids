@@ -1,0 +1,15 @@
+Pixel-art animation sheet of ONE mech rhino charging in a heavy gallop in place with its head held low and the horn pointing straight forward, on a plain magenta background (#FF00FF). The three attached sprites are the exact design: the first is the front view, the second the side view facing right, the third the back view. Keep everything from them: big flat hexagonal yellow armour plates with the dark frame showing between them, short stubby legs with big round grey disc wheel joints, flat grey feet, two-tone grey nose horn and a small second horn, red eye, grey jaw, short tail stub, the same colours, outline and chunky pixel size. Only the pose changes. Never redesign: no gloss, no rounded armour, no long or realistic legs, no new parts.
+
+Layout: a grid of 3 rows and 7 columns of equal cells, one whole rhino per cell, nothing crossing a cell edge, no labels, no text, no grid lines. Row 1 is the front view: camera directly in front, centred and left-right symmetric, like the first sprite. Row 2 is the side view facing right, like the second sprite. Row 3 is the back view: camera directly behind, centred and symmetric, tail stub toward the viewer, no face, like the third sprite. Each column is one moment seen from three sides, so the three rows match frame for frame. The rhino is the same size in every cell and the ground line is at the same height in every cell. Its legs keep their length in every view: in the back view, when the front end rises, the shoulders and head rise above the hips while the hind legs stay as they are.
+
+Columns, left to right:
+1. Reference: exactly the attached sprites, standing still with all four feet flat on the ground.
+2. Gathered: all four legs under the body, front feet just landing.
+3. Push: back legs push off, front legs reach far forward.
+4. Extended: front legs reaching forward, back legs stretched behind, only one front foot touching the ground.
+5. Front landing: both front feet land, body tipping forward.
+6. Front push: front legs push off while the back legs swing forward under the body.
+7. Back landing: back legs land under the body, leading back into column 2.
+Columns 2 to 7 loop. It gallops in place and does not move across the cell. The head stays low and the horn forward in every column. At least one foot touches the ground in every column.
+
+No motion lines, no dust, no impact effect, no shadow, no other creature.

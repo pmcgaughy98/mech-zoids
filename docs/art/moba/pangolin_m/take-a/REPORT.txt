@@ -1,0 +1,14 @@
+Sizes W x H/opaque: s45x56/1713; se70x54/2386; e82x43/2101; ne67x52/2197; n45x59/1848.
+Shape estimates +/-2px: east snout-to-hip48; curved tail45 (horizontal27); arch30/leg18=1.67; neck-to-hip rows about5 (+/-1); e/s43/56=0.768 FAIL.
+ONE built-in image; prompt-sheet.txt verbatim, only refs/craft_drembit.png; unchanged raw SHA256 in generation.json; tokens/cost unknown.
+view_check: front/back0.82 PASS; area0.28; height0.20; colour0.87; dips none; lone0.13 to0.02 after ONE final despeckle pass (1930 pixels, eyes kept).
+sheet_judge: REDO e,n,w for height; FIX nothing; binary alpha, feet160, no border contact; 13 shared colours, top-five74.61%.
+Depth e/se/s/n: p05-p95 all31.29-236.98 (range205.69 PASS); dominant28.89/26.66/31.41/24.95% PASS; heights43/54/56/59.
+By eye FIRST MACHINE YES: hard flat bevelled plates, straight cuts, charcoal frame/joints, joint discs, cyan lens eyes, no fur; nothing held, no kappa features.
+BOLD/LIVELY YES: saturated yellow scales against dark frame, glowing cyan lenses, energetic toothed arch; strong colour/silhouette remain at40px.
+PANGOLIN YES: arched overlapping big simple scales, small pointed long-snouted head, short legs, big steel foreclaws, thick upturned scaled tail; tail shorter than body horizontally.
+Four yellow shading tones retained in every measured view, steel3/frame3; internal overlap lines; no exterior ink after cleanup, dark frame edges remain; some small clusters survive.
+Back FAIL: n59/s56=1.054 (over5%); rear camera looks higher; north no eyes/face, tail toward camera; rear diagonals show cyan eye slivers (ne1/nw3 pixels); hind heels retain toe-like claws.
+SE/SW true three-quarter, one visible near eye each, far eye hidden; rear diagonals52 are shorter than front diagonals54; north head not clearly distinct above back.
+Finish: one whole-sheet nearest shrink0.206642 to259x259; copied Lab conversion bug corrected before final rebuild; final despeckle once; edge audit remaining magenta/plum, lone pale, exterior ink all0.
+Candidate FAIL on view heights/back rules; all checks, shape, depth, edge audit and both reviews saved here; no redo, installation, commits, reverts or Hollowtide writes.

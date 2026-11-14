@@ -1,0 +1,114 @@
+{
+  "sizes": {
+    "ne": [
+      112,
+      75,
+      4151
+    ],
+    "n": [
+      83,
+      77,
+      3859
+    ],
+    "nw": [
+      112,
+      75,
+      4160
+    ],
+    "e": [
+      124,
+      55,
+      3499
+    ],
+    "w": [
+      124,
+      55,
+      3492
+    ],
+    "se": [
+      114,
+      63,
+      3943
+    ],
+    "s": [
+      89,
+      66,
+      3444
+    ],
+    "sw": [
+      114,
+      63,
+      3955
+    ]
+  },
+  "depth": {
+    "ne": {
+      "p05": 18.8584,
+      "p95": 184.722,
+      "dominant_colour": "#7e7e8e",
+      "dominant_share": 0.17947482534329076,
+      "height": 75
+    },
+    "n": {
+      "p05": 18.8584,
+      "p95": 127.15519999999998,
+      "dominant_colour": "#7e7e8e",
+      "dominant_share": 0.24021767297227262,
+      "height": 77
+    },
+    "nw": {
+      "p05": 18.8584,
+      "p95": 184.722,
+      "dominant_colour": "#7e7e8e",
+      "dominant_share": 0.19038461538461537,
+      "height": 75
+    },
+    "e": {
+      "p05": 18.8584,
+      "p95": 184.722,
+      "dominant_colour": "#34343e",
+      "dominant_share": 0.20748785367247785,
+      "height": 55
+    },
+    "w": {
+      "p05": 18.8584,
+      "p95": 184.722,
+      "dominant_colour": "#34343e",
+      "dominant_share": 0.20389461626575028,
+      "height": 55
+    },
+    "se": {
+      "p05": 18.8584,
+      "p95": 184.722,
+      "dominant_colour": "#6a0a10",
+      "dominant_share": 0.18589906162820188,
+      "height": 63
+    },
+    "s": {
+      "p05": 18.8584,
+      "p95": 184.722,
+      "dominant_colour": "#6a0a10",
+      "dominant_share": 0.18466898954703834,
+      "height": 66
+    },
+    "sw": {
+      "p05": 18.8584,
+      "p95": 184.722,
+      "dominant_colour": "#6a0a10",
+      "dominant_share": 0.18356510745891277,
+      "height": 63
+    }
+  },
+  "border_contact": {
+    "ne": false,
+    "n": false,
+    "nw": false,
+    "e": false,
+    "w": false,
+    "se": false,
+    "s": false,
+    "sw": false
+  },
+  "colours": 14,
+  "top_five_share": 0.7201914565780415
+}

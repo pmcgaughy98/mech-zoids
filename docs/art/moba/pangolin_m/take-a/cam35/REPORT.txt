@@ -1,0 +1,14 @@
+s 45x70: W/A 1.000; H/A 1.250; H/W 1.556 vs 1.511; top 91.
+se 64x61: W/A .914; H/A 1.130; H/W .953 vs .971; top 100.
+e 78x42: W/A .951; H/A .977; H/W .538 vs .659; top 119.
+ne 69x60: W/A 1.030; H/A 1.154; H/W .870 vs 1.015; top 101.
+n 47x69: W/A 1.044; H/A 1.169; H/W 1.468 vs 1.667; top 92.
+Anchor s/n/e 1.000/1.044/.951, mean .9986; height growth spread .2733; se/ne 61/60=1.017; e/s 1.733 vs 1.82 (above 1.70).
+Lightest yellow/steel % new (approved): s 12.56/4.03 (9.98/4.55), se 13.52/3.39 (8.97/2.89), e 14.76/1.53 (8.76/1.81), ne 14.12/.34 (8.06/.64), n 15.81/.40 (11.96/.27).
+Eye pixels/groups: s 23 [10,10,2,1]; se 16 [12,2,1,1]; e 8 [8]; ne 2 [2] MISS; n 0. Detached glints present; main groups meet minimums.
+Accent % new/target: s 3.22/3.2; se 1.61/1.6; e 1.78/1.8; ne 1.90/1.9; n 2.29/2.3.
+Palette PASS: 13 fixed colours, no outsiders; all eight border-clear; no magenta/plum, lone pale rim pixels or dark accent rim pixels remain.
+view_check: front/back .76 MISS, area .17, height .31, colour .91, dips none, lone .09; no despeckle needed; top-five share .775. Judge: FIX none, REDO e/n/w/s for height only (informational, left unchanged).
+Depth p05/p95 all 31.29/236.98; dominant #ffc61a % s/se/e/ne/n 29.38/28.31/27.68/32.72/29.42.
+By eye: same recognizable pangolin, one tail, clear eyes/snout and three claws per visible front foot, no obvious new parts; four legs cannot all be verified. Firm seams and brighter tops, front not overhead, se/ne heights agree; side too low/shallow, inconsistent 35-degree pitch, ne eye remains. Feet rows in shape.txt.
+Tokens unknown. Exactly one built-in image generation using prompt-sheet.txt verbatim and two references; no redo. Raw, finished sheet, checks, review.png and five views_cam35 PNGs saved. Overall partial miss; not approved.

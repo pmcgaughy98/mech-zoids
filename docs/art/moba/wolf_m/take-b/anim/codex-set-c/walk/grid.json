@@ -1,0 +1,811 @@
+{
+  "raw_size": [
+    1774,
+    887
+  ],
+  "raw_sha256": "a63fec8a58655f304548e7a853548ba65bfb3437c323420ad3b31fecf0b9672d",
+  "columns": 8,
+  "rows": [
+    "se",
+    "ne"
+  ],
+  "x_edges": [
+    0,
+    222,
+    444,
+    665,
+    887,
+    1109,
+    1330,
+    1552,
+    1774
+  ],
+  "y_edges": [
+    0,
+    443,
+    887
+  ],
+  "row_scale": {
+    "se": 0.3997056608305736,
+    "ne": 0.38422832818066494
+  },
+  "cells": [
+    {
+      "view": "se",
+      "frame": 0,
+      "source_box": [
+        0,
+        0,
+        222,
+        443
+      ],
+      "source_opaque_box": [
+        12,
+        154,
+        221,
+        328
+      ],
+      "scale": 0.3997056608305736,
+      "placement": [
+        54,
+        91
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        54,
+        91,
+        138,
+        161
+      ],
+      "final_path": "frames/se_f0.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        54,
+        91
+      ],
+      "final_placement": [
+        54,
+        91
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "gait_finish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.3997056608305736,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "se",
+      "frame": 1,
+      "source_box": [
+        222,
+        0,
+        444,
+        443
+      ],
+      "source_opaque_box": [
+        12,
+        154,
+        220,
+        327
+      ],
+      "scale": 0.3997056608305736,
+      "placement": [
+        54,
+        92
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        54,
+        92,
+        137,
+        161
+      ],
+      "final_path": "frames/se_f1.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        54,
+        92
+      ],
+      "final_placement": [
+        54,
+        92
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "gait_finish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.3997056608305736,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "se",
+      "frame": 2,
+      "source_box": [
+        444,
+        0,
+        665,
+        443
+      ],
+      "source_opaque_box": [
+        11,
+        154,
+        220,
+        324
+      ],
+      "scale": 0.3997056608305736,
+      "placement": [
+        54,
+        93
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        54,
+        93,
+        138,
+        161
+      ],
+      "final_path": "frames/se_f2.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        54,
+        93
+      ],
+      "final_placement": [
+        54,
+        93
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "gait_finish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.3997056608305736,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "se",
+      "frame": 3,
+      "source_box": [
+        665,
+        0,
+        887,
+        443
+      ],
+      "source_opaque_box": [
+        12,
+        154,
+        220,
+        328
+      ],
+      "scale": 0.3997056608305736,
+      "placement": [
+        54,
+        91
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        54,
+        91,
+        137,
+        161
+      ],
+      "final_path": "frames/se_f3.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        54,
+        91
+      ],
+      "final_placement": [
+        54,
+        91
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "gait_finish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.3997056608305736,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "se",
+      "frame": 4,
+      "source_box": [
+        887,
+        0,
+        1109,
+        443
+      ],
+      "source_opaque_box": [
+        12,
+        155,
+        220,
+        328
+      ],
+      "scale": 0.3997056608305736,
+      "placement": [
+        54,
+        92
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        54,
+        92,
+        137,
+        161
+      ],
+      "final_path": "frames/se_f4.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        54,
+        92
+      ],
+      "final_placement": [
+        54,
+        92
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "gait_finish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.3997056608305736,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "se",
+      "frame": 5,
+      "source_box": [
+        1109,
+        0,
+        1330,
+        443
+      ],
+      "source_opaque_box": [
+        10,
+        154,
+        219,
+        325
+      ],
+      "scale": 0.3997056608305736,
+      "placement": [
+        54,
+        93
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        54,
+        93,
+        138,
+        161
+      ],
+      "final_path": "frames/se_f5.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        54,
+        93
+      ],
+      "final_placement": [
+        54,
+        93
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "gait_finish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.3997056608305736,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "se",
+      "frame": 6,
+      "source_box": [
+        1330,
+        0,
+        1552,
+        443
+      ],
+      "source_opaque_box": [
+        12,
+        154,
+        221,
+        328
+      ],
+      "scale": 0.3997056608305736,
+      "placement": [
+        54,
+        91
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        54,
+        91,
+        138,
+        161
+      ],
+      "final_path": "frames/se_f6.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        54,
+        91
+      ],
+      "final_placement": [
+        54,
+        91
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "gait_finish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.3997056608305736,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "se",
+      "frame": 7,
+      "source_box": [
+        1552,
+        0,
+        1774,
+        443
+      ],
+      "source_opaque_box": [
+        12,
+        154,
+        222,
+        328
+      ],
+      "scale": 0.3997056608305736,
+      "placement": [
+        54,
+        91
+      ],
+      "duration_ms": 100,
+      "touches_cut": true,
+      "final_opaque_box": [
+        54,
+        91,
+        138,
+        161
+      ],
+      "final_path": "frames/se_f7.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        54,
+        91
+      ],
+      "final_placement": [
+        54,
+        91
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "gait_finish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.3997056608305736,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "ne",
+      "frame": 0,
+      "source_box": [
+        0,
+        443,
+        222,
+        887
+      ],
+      "source_opaque_box": [
+        13,
+        116,
+        214,
+        300
+      ],
+      "scale": 0.38422832818066494,
+      "placement": [
+        58,
+        90
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        58,
+        90,
+        135,
+        161
+      ],
+      "final_path": "frames/ne_f0.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        58,
+        90
+      ],
+      "final_placement": [
+        58,
+        90
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "gait_finish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.38422832818066494,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "ne",
+      "frame": 1,
+      "source_box": [
+        222,
+        443,
+        444,
+        887
+      ],
+      "source_opaque_box": [
+        12,
+        116,
+        213,
+        300
+      ],
+      "scale": 0.38422832818066494,
+      "placement": [
+        58,
+        90
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        58,
+        90,
+        135,
+        161
+      ],
+      "final_path": "frames/ne_f1.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        58,
+        90
+      ],
+      "final_placement": [
+        58,
+        90
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "gait_finish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.38422832818066494,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "ne",
+      "frame": 2,
+      "source_box": [
+        444,
+        443,
+        665,
+        887
+      ],
+      "source_opaque_box": [
+        12,
+        116,
+        213,
+        297
+      ],
+      "scale": 0.38422832818066494,
+      "placement": [
+        58,
+        91
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        58,
+        91,
+        135,
+        161
+      ],
+      "final_path": "frames/ne_f2.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        58,
+        91
+      ],
+      "final_placement": [
+        58,
+        91
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "gait_finish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.38422832818066494,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "ne",
+      "frame": 3,
+      "source_box": [
+        665,
+        443,
+        887,
+        887
+      ],
+      "source_opaque_box": [
+        12,
+        116,
+        214,
+        303
+      ],
+      "scale": 0.38422832818066494,
+      "placement": [
+        57,
+        89
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        57,
+        89,
+        135,
+        161
+      ],
+      "final_path": "frames/ne_f3.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        57,
+        89
+      ],
+      "final_placement": [
+        57,
+        89
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "gait_finish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.38422832818066494,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "ne",
+      "frame": 4,
+      "source_box": [
+        887,
+        443,
+        1109,
+        887
+      ],
+      "source_opaque_box": [
+        13,
+        116,
+        213,
+        300
+      ],
+      "scale": 0.38422832818066494,
+      "placement": [
+        58,
+        90
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        58,
+        90,
+        135,
+        161
+      ],
+      "final_path": "frames/ne_f4.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        58,
+        90
+      ],
+      "final_placement": [
+        58,
+        90
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "gait_finish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.38422832818066494,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "ne",
+      "frame": 5,
+      "source_box": [
+        1109,
+        443,
+        1330,
+        887
+      ],
+      "source_opaque_box": [
+        11,
+        116,
+        213,
+        297
+      ],
+      "scale": 0.38422832818066494,
+      "placement": [
+        57,
+        91
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        57,
+        91,
+        135,
+        161
+      ],
+      "final_path": "frames/ne_f5.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        57,
+        91
+      ],
+      "final_placement": [
+        57,
+        91
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "gait_finish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.38422832818066494,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "ne",
+      "frame": 6,
+      "source_box": [
+        1330,
+        443,
+        1552,
+        887
+      ],
+      "source_opaque_box": [
+        12,
+        116,
+        214,
+        300
+      ],
+      "scale": 0.38422832818066494,
+      "placement": [
+        57,
+        90
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        57,
+        90,
+        135,
+        161
+      ],
+      "final_path": "frames/ne_f6.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        57,
+        90
+      ],
+      "final_placement": [
+        57,
+        90
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "gait_finish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.38422832818066494,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "ne",
+      "frame": 7,
+      "source_box": [
+        1552,
+        443,
+        1774,
+        887
+      ],
+      "source_opaque_box": [
+        12,
+        116,
+        215,
+        300
+      ],
+      "scale": 0.38422832818066494,
+      "placement": [
+        57,
+        90
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        57,
+        90,
+        135,
+        161
+      ],
+      "final_path": "frames/ne_f7.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        57,
+        90
+      ],
+      "final_placement": [
+        57,
+        90
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "gait_finish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.38422832818066494,
+      "whole_x_correction": 1
+    }
+  ],
+  "final_canvas": [
+    192,
+    192
+  ],
+  "duration_ms": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+  ],
+  "loop": true,
+  "finishing_notes": {
+    "palette": "shared exact 12 colours",
+    "alpha": "binary",
+    "no_reference_part_compositing": true,
+    "exact_endpoints": "copied byte for byte from fixed",
+    "pose_corrections": "whole-cell nearest sampling and native material cleanup",
+    "walk_support_gate": "FAILED: diagonal phases, fixed contacts and 3-5px lift not fully solved",
+    "strict_per_part_2px_gate": "NOT CERTIFIED",
+    "raw_edge_contact": "walk se f7 touches raw right edge; final muzzle inspected at4x"
+  }
+}

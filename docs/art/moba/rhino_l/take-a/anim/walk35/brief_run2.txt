@@ -1,0 +1,55 @@
+You are making pixel-art walk frames for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\walk35. Read anything under
+D:\dev\new-mech-rpg\docs\art\moba. Do not touch any other folder, assets, art or tools, and do not commit.
+
+The machine: the yellow L rhino (mech), approved stills at 35 degrees in D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\views_cam35 (s, se, e, ne, n), 192x192,
+lowest foot on row 160, 12 colours. Preston, the game's owner, approved these stills; they are the idle in the game,
+so the walk must match them exactly above the legs or the switch from idle to walk pops. Read
+D:\dev\new-mech-rpg\docs\art\moba\ANIMATION_PLAYBOOK.md sections 1, 4, 5 and 9 first, and
+D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\codex-walk4 (REPORT.txt, build.py, verify.py): the method that
+worked last, a wolf trot re-posed from its stills to a foot path with a 2D foot-lock check.
+
+Job, run 2: an 8-frame walk, 125 ms a frame (8 fps), looping, in these views: s, n. The gait is the
+one Preston approved for this rhino: a four-beat walk; each foot swings 3 frames and a new foot starts every 2,
+so one foot is up on even frames and two on odd frames. Left fore swings f1-f3, left
+hind f3-f5, right fore f5-f7, right hind f7-f1. Each foot's path (offset along the body in side-view px, + = forward,
+and lift) is in D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\walk35\targets.json "paths"; per view the path turns into screen px as offset * f * u, lift straight up:
+  s: u = (0, 1), f = 0.5736; a planted foot moves (+0.00, -1.72) px a frame on the canvas (x, y; y down)
+  n: u = (0, -1), f = 0.5736; a planted foot moves (+0.00, +1.72) px a frame on the canvas (x, y; y down)
+So a planted foot keeps one spot on the ground while the body moves forward. targets.json "views" gives the sole
+centre of every foot visible in each still for every frame; guide_<view>.png shows them (the still faded, a box per
+foot per frame, thick = planted, thin = lifted). The se/ne foot names are my reading of the stills; check them and
+say if one is wrong. A foot hidden in the still: draw it only where the new pose shows it.
+Front and back are the hard views: on this rhino, five earlier straight front/back walks from prompted tools
+(Codex twice, Retro twice, PixelLab once) stacked the legs, moved both together, stretched them or grew parts. Do not
+describe the walk to a tool; pose the still's own legs to the foot path below by hand. At 35 degrees the legs no
+longer stack: a foot's travel shows as up-down movement on screen (0.57 of its length), so a planted fore foot in s
+slides UP the screen as it goes back under the body, and a swinging foot comes down the screen as it reaches forward.
+The far legs are hidden by the body in these stills: draw them only where the new pose shows them.
+Run 1 (e, se, ne) is done and approved: its frames in walk\frames are final, so do not change or delete them; its
+report and boards are kept in walk35\run1. Match its leg drawing (cuffs, discs, soles) in s and n.
+
+Method: no image tool, native pixels, the way codex-walk4 did it. The body, head, horn, plates and tail are the
+approved still, pixel for pixel, dipping 1 px on f0 and f4 (a fore foot lands). The legs are the still's own legs
+re-posed: thigh or shoulder plate, knee disc, cuff, foot block, each the still's own pixels TRANSLATED, never
+rotated or resampled (run 1 rotated its shanks and the rotation left dark specks and slivers that a 78k-token cleanup
+had to remove; see anim\walk35\clean\REPORT.txt and cleanup.py, and work the way the cleanup did). Where a leg leans,
+step the parts 1 px per row or redraw the shank by hand in the still's colours and bands. Every joint and every join with the body is redrawn by
+hand: no seams, no straight cut edges, no gaps, no part ending abruptly (pasted parts that did not join are what
+Preston rejected before). The legs are short: keep each leg's length within 1 px of the still's.
+
+Pass marks (report each):
+- Foot lock: for each foot, its sole centre on its k-th planted frame (k = 0 to 4 in order, wrapping past f7) minus
+  k times the planted step above stays within 2 px in x and y. Measure from the frame pixels, not from your targets.
+  Write a footprint picture per view.
+- Each visible foot meets its target in targets.json within 1 px; lifts exact.
+- Above the legs every frame equals the still (after the 1 px dip): report the % of differing pixels per frame.
+- 192x192 transparent frames, the stills' 12 colours, binary alpha, dark outline, no holes, no stray pixels, nothing
+  touching the canvas edge. A planted foot nearer the camera than in the still may sit below row 160 (perspective);
+  report each frame's lowest row.
+- Judge boards with the game's sel-out (D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\selout_rhino.py, function selout) at 4x, the still beside them.
+
+Output in D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\walk35: walk\frames\<view>_f0-7.png for s, n, a preview gif per view (125 ms, loop),
+footprint pictures, board.png (per view: the still, then your 8 frames, sel-out, 4x), checks.txt, and REPORT.txt
+(under 30 lines): tokens if known, the foot names you used, the foot-lock spreads, target errors, upper-body match,
+lowest rows, and by eye: does each view read as this rhino walking forward in the four-beat walk, legs like the still,
+whole and clean?

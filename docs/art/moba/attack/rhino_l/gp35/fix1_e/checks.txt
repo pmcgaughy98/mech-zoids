@@ -1,0 +1,15 @@
+PASS hind soles: e2 0.0; e3 0.0; se2 0.0; se3 0.0 px <=1
+MISS HIND LEG LENGTH: {'e': {'still': 19.0, 2: 17.0, 3: 17.0}, 'se': {'still': 19.5, 2: 17.0, 3: 17.0}} px sole-to-disc-centre; <=2 delta; round steel face top/bottom {'e': {'still': [137, 145], 2: [139, 147], 3: [139, 147]}, 'se': {'still': [119, 128], 2: [122, 130], 3: [122, 130]}} traced excluding bracket
+MISS above-disc run: {'e': {'still': 2, 2: 4, 3: 5}, 'se': {'still': 1, 2: 4, 3: 5}} rows between disc top and plate, <=2 delta
+PASS HIP HEIGHT: {'e': {'still': 134, 2: 134, 3: 133}, 'se': {'still': 117, 2: 117, 3: 116}} lowest yellow row in x62:66 immediately above disc; <=3 delta
+MISS front feet: e2 [8.450443775329202]; e3 [21.310091506138587]; se2 [19.72308292331602, 20.5]; se3 [27.324897072084283, 28.986203614823385] px <=3; manually traced steel pads/dark sole row midpoint; boxes in placement.json
+PASS F3 alpha IoU: {'e': 0.4837572785779957, 'se': 0.3769748390871855} <=0.85
+PASS eye pixels: e2 5; e3 5; se2 5; se3 5 >=4, red lenses in dark sockets
+PASS ink %: e2 8.939890710382514; e3 8.203618005889778; se2 8.239022181982799; se3 8.66621530128639 vs e8.1/se7.8 +/-15%
+PASS palette/alpha/border: extra colours e2 0; e3 0; se2 0; se3 0; binary all True; border contacts 0
+PASS pieces/specks: e2 1; e3 1; se2 1; se3 1 pieces; specks e2 305; e3 277; se2 274; se3 266 <=e386.4/se496.8; 0 despeckle passes
+MISS column1 size: e 101x72 vs [103, 75]; se 92x84 vs [85, 83] +/-4%
+MISS head size: {'e2': np.float64(-2.12), 'e3': np.float64(2.71), 'se2': np.float64(10.47), 'se3': np.float64(11.11), 'ecol1': 0.0, 'secol1': 21.62} % error <=3; manual raw horn-tip/eye-centre
+PASS seam slits: e2 0; e3 0; se2 0; se3 0 enclosed transparent pixels absent from still mask
+PASS fringe: {'e2': [0, 0, 0], 'e3': [0, 0, 0], 'se2': [0, 0, 0], 'se3': [0, 0, 0]} plum/pale/ink-rim
+MISS continuity: {'e': {'head_y': [133.4, 105.4, 88.4], 'front_sole_y': [160, 145.0, 125.0], 'hip_max_delta': 3, 'run1_hip_rows': {1: 136, 4: 136}}, 'se': {'head_y': [130.4, 96.4, 77.4], 'front_sole_y': [155, 134.0, 117.0], 'hip_max_delta': 1, 'run1_hip_rows': {1: 117, 4: 117}}}; F1>=F2>=F3 rows, hips <=2 px from run1 F1/F4

@@ -1,0 +1,14 @@
+Sizes W x H/area: s49x72/2112; se63x72/2211; e74x74/1986; ne58x75/2131; n44x77/2024.
+Shape +/-2px: e ear35/head19=1.842; visible tail38/body31=1.226; e/s=1.028; s ear-tip span38/head28=1.357; s tail hidden; NE/NW eye pixels0/0.
+Planted/visible feet by eye: ne2/2,n2/2,nw2/2,e2/2,w2/2,se3/3,s4/4,sw3/3; no visible lifted foot; hidden feet unverified.
+view_check: front/back0.73 FAIL0.80; area0.10,height0.03,colour0.79,dips none; lone0.12 ->0.03 after ONE despeckle pass (1652 pixels). sheet_judge: FIX nothing, REDO nothing; border contact NONE, binary alpha, baseline140.
+15 shared colours, top-five73.81%; violet4/cream3/steel2/charcoal2/lens3/ink1 retained; magenta/plum fringe0, lone pale rim0, seam-ink rim0; charcoal shadow remains on8.21% of rim, deep violet25.73%.
+Depth e/se/s/n: p05=18.86/18.86/31.29/31.29; p95=210.02/214.43/214.43/209.07; dominant18.63/20.40/23.06/29.99%; heights74/72/72/77; north range177.79 misses180.
+Interior 1-3px shade islands remaining, ne/n/nw/e/w/se/s/sw=4/5/2/1/3/3/1/4 (mottling.json defines scan); no obvious mottled big plates by eye, but zero-island standard NOT met.
+By eye FIRST, MACHINE: YES, hard bevelled plates, cut edges, charcoal frame, discs and lens eyes, no fur/tufts/whiskers. BOLD/LIVELY: YES, saturated violet, cream-gold, huge ears and mint eyes.
+Still/uncanny: mostly YES, composed seated pose and sleepy lids; rich volume is present, but final facets look simplified and mechanically regular rather than fully rich hand-made pixel art. Bands broadly clean, residual islands above.
+FENNEC: YES, upright haunches, small rounded helmet, short pointed muzzle, huge tall ears, straight front legs and long straight segmented ground tail; never curled. Feet visibly rest on ground; front tail correctly hidden.
+Profiles e74/w73 vs s72 close; n77/s72=1.069 FAIL5% and no-taller; NE/NW75 exceed front diagonals72 FAIL. Same low camera approximately; rear feet read as heels; rear eyes/face absent.
+SE/SW true three-quarter but far-eye mint flecks remain FAIL. Nothing held; no second face, doors, keys, staff, crest, hair, stripes or markings. Four violet shading tones and internal overlap lines; no continuous painted outer ink, dark underside rim remains.
+ONE built-in image from prompt-sheet.txt verbatim, only refs/craft_drembit.png attached; raw unchanged (SHA256 generation.json); tokens/cost unknown; no redo. Whole-sheet nearest shrink once, light raw median before palette, then one despeckle.
+Finished sheet, eight views, both reviews and audits saved only in take-b; built-in original retained at tool default path. Strict canon/design NOT fully passed; stopped at one generation; no assets installed, commits or reverts.

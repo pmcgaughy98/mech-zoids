@@ -1,0 +1,421 @@
+{
+  "source": "D:\\dev\\new-mech-rpg\\art\\model_catalog\\workspaces\\gorilla_hands_down_review.blend",
+  "source_sha256": "3c81bee5d5088cee297d67f7a418d5f0b493040000bf8b9865eff08ab9e9b806",
+  "parts": [
+    {
+      "name": "Foot_R_HeelInstep",
+      "bone": "Bone_006",
+      "role": "tapered plantigrade heel and metatarsal housing",
+      "vertices": 96,
+      "triangles": 180,
+      "min": [
+        -0.5358079671859741,
+        0.5924156904220581,
+        0.0
+      ],
+      "max": [
+        -0.14532068371772766,
+        0.9484032392501831,
+        0.22999998927116394
+      ]
+    },
+    {
+      "name": "Foot_R_AnkleBearing",
+      "bone": "Bone_006",
+      "role": "recessed ankle bearing",
+      "vertices": 24,
+      "triangles": 44,
+      "min": [
+        -0.4480898380279541,
+        0.7329903841018677,
+        0.1368103325366974
+      ],
+      "max": [
+        -0.2217203676700592,
+        0.828055202960968,
+        0.23000000417232513
+      ]
+    },
+    {
+      "name": "Foot_R_Toe_2_Proximal",
+      "bone": "Bone_021",
+      "role": "forward toe proximal armor and overlapping hinge",
+      "vertices": 48,
+      "triangles": 88,
+      "min": [
+        -0.3297174870967865,
+        0.5509513020515442,
+        0.013879304751753807
+      ],
+      "max": [
+        -0.2415088266134262,
+        0.6723106503486633,
+        0.11797413975000381
+      ]
+    },
+    {
+      "name": "Foot_R_Toe_2_Tip",
+      "bone": "Bone_020",
+      "role": "rounded toe tip with sole contact pad",
+      "vertices": 80,
+      "triangles": 152,
+      "min": [
+        -0.32914209365844727,
+        0.3972293734550476,
+        0.0
+      ],
+      "max": [
+        -0.25094088912010193,
+        0.5792684555053711,
+        0.09913793206214905
+      ]
+    },
+    {
+      "name": "Foot_R_Toe_3_Proximal",
+      "bone": "Bone_021",
+      "role": "forward toe proximal armor and overlapping hinge",
+      "vertices": 48,
+      "triangles": 88,
+      "min": [
+        -0.41696402430534363,
+        0.5509513020515442,
+        0.013879304751753807
+      ],
+      "max": [
+        -0.3296608626842499,
+        0.6723106503486633,
+        0.11797413975000381
+      ]
+    },
+    {
+      "name": "Foot_R_Toe_3_Tip",
+      "bone": "Bone_020",
+      "role": "rounded toe tip with sole contact pad",
+      "vertices": 80,
+      "triangles": 152,
+      "min": [
+        -0.4164169728755951,
+        0.3901500403881073,
+        0.0
+      ],
+      "max": [
+        -0.3390929400920868,
+        0.5792684555053711,
+        0.09913793206214905
+      ]
+    },
+    {
+      "name": "Foot_R_Toe_4_Proximal",
+      "bone": "Bone_021",
+      "role": "forward toe proximal armor and overlapping hinge",
+      "vertices": 48,
+      "triangles": 88,
+      "min": [
+        -0.4947785437107086,
+        0.5509513020515442,
+        0.013879304751753807
+      ],
+      "max": [
+        -0.4156246781349182,
+        0.6723106503486633,
+        0.11797413975000381
+      ]
+    },
+    {
+      "name": "Foot_R_Toe_4_Tip",
+      "bone": "Bone_020",
+      "role": "rounded toe tip with sole contact pad",
+      "vertices": 80,
+      "triangles": 152,
+      "min": [
+        -0.49448615312576294,
+        0.41745591163635254,
+        0.0
+      ],
+      "max": [
+        -0.42505672574043274,
+        0.5792684555053711,
+        0.09913793206214905
+      ]
+    },
+    {
+      "name": "Foot_R_Toe_5_Proximal",
+      "bone": "Bone_021",
+      "role": "forward toe proximal armor and overlapping hinge",
+      "vertices": 48,
+      "triangles": 88,
+      "min": [
+        -0.561274528503418,
+        0.5509513020515442,
+        0.013879304751753807
+      ],
+      "max": [
+        -0.4938919246196747,
+        0.6723106503486633,
+        0.11797413975000381
+      ]
+    },
+    {
+      "name": "Foot_R_Toe_5_Tip",
+      "bone": "Bone_020",
+      "role": "rounded toe tip with sole contact pad",
+      "vertices": 80,
+      "triangles": 152,
+      "min": [
+        -0.5613499879837036,
+        0.45993170142173767,
+        0.0
+      ],
+      "max": [
+        -0.5033239722251892,
+        0.5792684555053711,
+        0.09913793206214905
+      ]
+    },
+    {
+      "name": "Foot_R_Toe_1_Proximal",
+      "bone": "Bone_021",
+      "role": "medial hallux root and proximal segment",
+      "vertices": 48,
+      "triangles": 88,
+      "min": [
+        -0.2783127427101135,
+        0.5479172468185425,
+        0.010905168019235134
+      ],
+      "max": [
+        -0.10240480303764343,
+        0.6753446459770203,
+        0.124913789331913
+      ]
+    },
+    {
+      "name": "Foot_R_Toe_1_Tip",
+      "bone": "Bone_020",
+      "role": "broad divergent big toe tip",
+      "vertices": 80,
+      "triangles": 152,
+      "min": [
+        -0.20898708701133728,
+        0.4710563123226166,
+        0.0
+      ],
+      "max": [
+        -0.07222221046686172,
+        0.586347758769989,
+        0.10409482568502426
+      ]
+    },
+    {
+      "name": "Foot_L_HeelInstep",
+      "bone": "Bone_002",
+      "role": "tapered plantigrade heel and metatarsal housing",
+      "vertices": 96,
+      "triangles": 180,
+      "min": [
+        0.14532066881656647,
+        0.5924156904220581,
+        0.0
+      ],
+      "max": [
+        0.5358079671859741,
+        0.9484032392501831,
+        0.22999998927116394
+      ]
+    },
+    {
+      "name": "Foot_L_AnkleBearing",
+      "bone": "Bone_002",
+      "role": "recessed ankle bearing",
+      "vertices": 24,
+      "triangles": 44,
+      "min": [
+        0.2217203676700592,
+        0.7329903841018677,
+        0.1368103325366974
+      ],
+      "max": [
+        0.4480898380279541,
+        0.828055202960968,
+        0.23000000417232513
+      ]
+    },
+    {
+      "name": "Foot_L_Toe_2_Proximal",
+      "bone": "Bone_017",
+      "role": "forward toe proximal armor and overlapping hinge",
+      "vertices": 48,
+      "triangles": 88,
+      "min": [
+        0.2415088266134262,
+        0.5509513020515442,
+        0.013879304751753807
+      ],
+      "max": [
+        0.3297174870967865,
+        0.6723106503486633,
+        0.11797413975000381
+      ]
+    },
+    {
+      "name": "Foot_L_Toe_2_Tip",
+      "bone": "Bone_016",
+      "role": "rounded toe tip with sole contact pad",
+      "vertices": 80,
+      "triangles": 152,
+      "min": [
+        0.25094088912010193,
+        0.3972293734550476,
+        0.0
+      ],
+      "max": [
+        0.32914209365844727,
+        0.5792684555053711,
+        0.09913793206214905
+      ]
+    },
+    {
+      "name": "Foot_L_Toe_3_Proximal",
+      "bone": "Bone_017",
+      "role": "forward toe proximal armor and overlapping hinge",
+      "vertices": 48,
+      "triangles": 88,
+      "min": [
+        0.3296608626842499,
+        0.5509513020515442,
+        0.013879304751753807
+      ],
+      "max": [
+        0.41696402430534363,
+        0.6723106503486633,
+        0.11797413975000381
+      ]
+    },
+    {
+      "name": "Foot_L_Toe_3_Tip",
+      "bone": "Bone_016",
+      "role": "rounded toe tip with sole contact pad",
+      "vertices": 80,
+      "triangles": 152,
+      "min": [
+        0.3390929400920868,
+        0.3901500403881073,
+        0.0
+      ],
+      "max": [
+        0.4164169728755951,
+        0.5792684555053711,
+        0.09913793206214905
+      ]
+    },
+    {
+      "name": "Foot_L_Toe_4_Proximal",
+      "bone": "Bone_017",
+      "role": "forward toe proximal armor and overlapping hinge",
+      "vertices": 48,
+      "triangles": 88,
+      "min": [
+        0.4156246781349182,
+        0.5509513020515442,
+        0.013879304751753807
+      ],
+      "max": [
+        0.4947785437107086,
+        0.6723106503486633,
+        0.11797413975000381
+      ]
+    },
+    {
+      "name": "Foot_L_Toe_4_Tip",
+      "bone": "Bone_016",
+      "role": "rounded toe tip with sole contact pad",
+      "vertices": 80,
+      "triangles": 152,
+      "min": [
+        0.42505672574043274,
+        0.41745591163635254,
+        0.0
+      ],
+      "max": [
+        0.49448615312576294,
+        0.5792684555053711,
+        0.09913793206214905
+      ]
+    },
+    {
+      "name": "Foot_L_Toe_5_Proximal",
+      "bone": "Bone_017",
+      "role": "forward toe proximal armor and overlapping hinge",
+      "vertices": 48,
+      "triangles": 88,
+      "min": [
+        0.4938919246196747,
+        0.5509513020515442,
+        0.013879304751753807
+      ],
+      "max": [
+        0.561274528503418,
+        0.6723106503486633,
+        0.11797413975000381
+      ]
+    },
+    {
+      "name": "Foot_L_Toe_5_Tip",
+      "bone": "Bone_016",
+      "role": "rounded toe tip with sole contact pad",
+      "vertices": 80,
+      "triangles": 152,
+      "min": [
+        0.5033239722251892,
+        0.45993170142173767,
+        0.0
+      ],
+      "max": [
+        0.5613499879837036,
+        0.5792684555053711,
+        0.09913793206214905
+      ]
+    },
+    {
+      "name": "Foot_L_Toe_1_Proximal",
+      "bone": "Bone_017",
+      "role": "medial hallux root and proximal segment",
+      "vertices": 48,
+      "triangles": 88,
+      "min": [
+        0.10240479558706284,
+        0.5479172468185425,
+        0.010905168019235134
+      ],
+      "max": [
+        0.2783127427101135,
+        0.6753446459770203,
+        0.124913789331913
+      ]
+    },
+    {
+      "name": "Foot_L_Toe_1_Tip",
+      "bone": "Bone_016",
+      "role": "broad divergent big toe tip",
+      "vertices": 80,
+      "triangles": 152,
+      "min": [
+        0.07222220301628113,
+        0.4710563123226166,
+        0.0
+      ],
+      "max": [
+        0.2089870721101761,
+        0.586347758769989,
+        0.10409482568502426
+      ]
+    }
+  ],
+  "notes": [
+    "Only previous foot-material geometry replaced.",
+    "Resized downward hands retained unchanged.",
+    "Foot bounding dimensions match the previous feet.",
+    "Five toes per foot, with medial hallux; existing ankle and two toe bones retained.",
+    "Mech dimensions are design choices, not measured biological ratios."
+  ]
+}

@@ -1,0 +1,26 @@
+FENNEC S / TAKE B / CODEX SET C / 2026-11-04
+66 transparent 192x192 PNG frames: idle 10, walk 16, sand_kick 12, ear_burst 12, sonic_boom 16; views se/ne.
+Built-in image tool: exactly FOUR images, one per generated move; no retries, redos or variations. Idle: ZERO images.
+Tokens used: unavailable; neither the image tool nor session interface exposes a usage total.
+Method: copied/adapted set A finish/polish/seam/details/gait/finalize/verify and set B native-part and component cleanup; native parts never resized.
+References attached to every call: refs/se_6x.png FIRST, refs/ne_6x.png SECOND; approved se/ne pixels retained in refs/.
+walk: sheet 1774x887; SHA256 01a47e589085f6e1c0981c9b7c6cf17eeee2aa35f3f3a5ac1f91d4be2cefaec0.
+sand_kick: sheet 2172x724; SHA256 ab347c3fb2a2682f328f94c61d3349372328e5ea0a5ca5c3bc2397346e24cf1b.
+ear_burst: sheet 2172x724; SHA256 341a55a25f54a4ad14cbf9be751504d2211b737ce82008c78b329475ebeb2eff.
+sonic_boom: sheet 1774x887; SHA256 5c13e935aac0d1a3348ce78731522370f94881bdc7f332837d2a1d8d495d2aee.
+Grids: walk, sand_kick and ear_burst clean. Sonic f4 muzzle crosses the nominal f4/f5 cut in both rows; whole connected bodies isolated into overlapping boxes. All final extractions have zero cut contacts.
+All 66: binary alpha, approved palette only, lowest opaque row160, no pixels below160, no canvas-edge contacts, one connected body, zero enclosed holes or detached specks. Long one-texel joins checked and closed.
+All 16 required still endpoints: silhouette IoU=1.0 AND exact-colour IoU=1.0; byte-identical RGBA to approved still at (+16,+20). Every endpoint individually reported in checks.txt.
+Exact endpoints in BOTH se/ne: idle f0/f4, sand_kick f0/f5, ear_burst f0/f5, sonic_boom f0/f7. Walk intentionally starts standing.
+Actual planted walk contacts stay fixed over each support interval; measured x coordinates in support_checks.json. Short native leg pieces use rigid translation, scale1.
+idle by eye: same fennec and native camera angles; native upper body lifts 0,1,1,1,0 px; lower parts, haunches, feet and tail fixed; 220ms each, loop.
+walk by eye: same fennec both rows; steady native head/ears/sleepy face, straight lifted segmented tail, alternating short-leg diagonal phases; phases match set A; 100ms each, loop.
+sand_kick by eye: same fennec both rows; rise, dig, both-paw forward fling, follow-through, seated return; column timing matches set A; native heads/faces and grey discs restored.
+ear_burst by eye: same fennec both rows; back-swept anticipation, upright snap, forward open-eye/open-mouth yip, recoil; fixed seated base and straight tail; column beats match set A.
+sonic_boom by eye: same fennec both rows; low flat-ear charge f2/f3, forward wide-eye/open-mouth f4 blast, recoil and settle; native full-size rear release head/ears restored; beats match set A.
+Viewed all five final two-row boards against their leftmost approved stills and the drawn front/side/back boards. Every row keeps its approved three-quarter projection; no straight-view turn or mirroring. Native limb lengths retained.
+Changed poses remain generated drawing candidates: minor armour-contour variation persists, especially extreme crouch/release; exact endpoints and restored native identity parts are enforced.
+All 10 GIFs reopened: exact logical frame counts and requested millisecond durations. Idle/walk loop; attacks play once. Duplicate held idle frames retained explicitly.
+Delivery: per move frames/, grid.json, checks.txt, two preview GIFs, review.png and review_small.png; generated moves also sheet_raw.png and slices/. Root review.png combines both angles for every move.
+Rebuild: python finish.py; python polish.py; python details.py; python gait_finish.py; python final_pass.py; python seam_fill.py; python finalize.py; python audit.py.
+Only task-owned set C files written; built-in image tool automatically used its managed image cache and originals were copied here. No sibling folder, game assets or commit touched.

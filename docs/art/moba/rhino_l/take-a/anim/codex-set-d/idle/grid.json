@@ -1,0 +1,415 @@
+{
+  "clean": true,
+  "x": [
+    [
+      0,
+      405,
+      794,
+      1185,
+      1575,
+      1983
+    ],
+    [
+      0,
+      398,
+      788,
+      1178,
+      1570,
+      1983
+    ]
+  ],
+  "y": [
+    0,
+    377,
+    793
+  ],
+  "cells": [
+    {
+      "row": 0,
+      "column": 0,
+      "box": [
+        36,
+        68,
+        383,
+        330
+      ],
+      "raw_cell": [
+        0,
+        0,
+        405,
+        377
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": 0,
+      "column": 1,
+      "box": [
+        23,
+        62,
+        365,
+        328
+      ],
+      "raw_cell": [
+        405,
+        0,
+        794,
+        377
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": 0,
+      "column": 2,
+      "box": [
+        25,
+        51,
+        367,
+        328
+      ],
+      "raw_cell": [
+        794,
+        0,
+        1185,
+        377
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": 0,
+      "column": 3,
+      "box": [
+        24,
+        66,
+        366,
+        328
+      ],
+      "raw_cell": [
+        1185,
+        0,
+        1575,
+        377
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": 0,
+      "column": 4,
+      "box": [
+        24,
+        75,
+        367,
+        328
+      ],
+      "raw_cell": [
+        1575,
+        0,
+        1983,
+        377
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": 1,
+      "column": 0,
+      "box": [
+        37,
+        64,
+        368,
+        358
+      ],
+      "raw_cell": [
+        0,
+        377,
+        398,
+        793
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "box": [
+        30,
+        52,
+        360,
+        357
+      ],
+      "raw_cell": [
+        398,
+        377,
+        788,
+        793
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "box": [
+        31,
+        48,
+        360,
+        357
+      ],
+      "raw_cell": [
+        788,
+        377,
+        1178,
+        793
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": 1,
+      "column": 3,
+      "box": [
+        31,
+        63,
+        363,
+        357
+      ],
+      "raw_cell": [
+        1178,
+        377,
+        1570,
+        793
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": 1,
+      "column": 4,
+      "box": [
+        29,
+        76,
+        361,
+        358
+      ],
+      "raw_cell": [
+        1570,
+        377,
+        1983,
+        793
+      ],
+      "major": 1,
+      "clean": true
+    }
+  ],
+  "rows": [
+    {
+      "name": "se",
+      "factor": 0.26177528450910464,
+      "effective_scale_xy": [
+        0.2617246596066566,
+        0.26229508196721313
+      ],
+      "fixed_cell_offset": [
+        42,
+        74
+      ],
+      "target": [
+        89,
+        70
+      ]
+    },
+    {
+      "name": "ne",
+      "factor": 0.24197670595832615,
+      "effective_scale_xy": [
+        0.24205748865355523,
+        0.2421185372005044
+      ],
+      "fixed_cell_offset": [
+        48,
+        74
+      ],
+      "target": [
+        77,
+        74
+      ]
+    }
+  ],
+  "placements": [
+    {
+      "row": "se",
+      "column": 0,
+      "scaled_cell": [
+        0,
+        0,
+        106,
+        99
+      ],
+      "placement_offset": [
+        42,
+        74
+      ],
+      "ground_requested": 0,
+      "ground_applied": 0,
+      "clipped": false
+    },
+    {
+      "row": "se",
+      "column": 1,
+      "scaled_cell": [
+        106,
+        0,
+        208,
+        99
+      ],
+      "placement_offset": [
+        42,
+        75
+      ],
+      "ground_requested": 1,
+      "ground_applied": 1,
+      "clipped": false
+    },
+    {
+      "row": "se",
+      "column": 2,
+      "scaled_cell": [
+        208,
+        0,
+        310,
+        99
+      ],
+      "placement_offset": [
+        42,
+        75
+      ],
+      "ground_requested": 1,
+      "ground_applied": 1,
+      "clipped": false
+    },
+    {
+      "row": "se",
+      "column": 3,
+      "scaled_cell": [
+        310,
+        0,
+        412,
+        99
+      ],
+      "placement_offset": [
+        42,
+        75
+      ],
+      "ground_requested": 1,
+      "ground_applied": 1,
+      "clipped": false
+    },
+    {
+      "row": "se",
+      "column": 4,
+      "scaled_cell": [
+        412,
+        0,
+        519,
+        99
+      ],
+      "placement_offset": [
+        42,
+        75
+      ],
+      "ground_requested": 1,
+      "ground_applied": 1,
+      "clipped": false
+    },
+    {
+      "row": "ne",
+      "column": 0,
+      "scaled_cell": [
+        0,
+        91,
+        96,
+        192
+      ],
+      "placement_offset": [
+        48,
+        74
+      ],
+      "ground_requested": 0,
+      "ground_applied": 0,
+      "clipped": false
+    },
+    {
+      "row": "ne",
+      "column": 1,
+      "scaled_cell": [
+        96,
+        91,
+        191,
+        192
+      ],
+      "placement_offset": [
+        48,
+        74
+      ],
+      "ground_requested": 0,
+      "ground_applied": 0,
+      "clipped": false
+    },
+    {
+      "row": "ne",
+      "column": 2,
+      "scaled_cell": [
+        191,
+        91,
+        285,
+        192
+      ],
+      "placement_offset": [
+        48,
+        74
+      ],
+      "ground_requested": 0,
+      "ground_applied": 0,
+      "clipped": false
+    },
+    {
+      "row": "ne",
+      "column": 3,
+      "scaled_cell": [
+        285,
+        91,
+        380,
+        192
+      ],
+      "placement_offset": [
+        48,
+        74
+      ],
+      "ground_requested": 0,
+      "ground_applied": 0,
+      "clipped": false
+    },
+    {
+      "row": "ne",
+      "column": 4,
+      "scaled_cell": [
+        380,
+        91,
+        480,
+        192
+      ],
+      "placement_offset": [
+        48,
+        74
+      ],
+      "ground_requested": 0,
+      "ground_applied": 0,
+      "clipped": false
+    }
+  ],
+  "mapping": "raw coordinates * effective_scale_xy, rounded cell origin subtracted, then placement_offset added; colour finishing uses nearest fill, median, Lanczos and palette mapping"
+}

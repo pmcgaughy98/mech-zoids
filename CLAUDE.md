@@ -1,5 +1,14 @@
 # How to work on this project
 
+## Current shared model workspace (Preston, 2026-11-07)
+
+For downloaded MeshForge models, read `docs/art/moba/MODEL_WORKBENCH.md`.
+`art/model_catalog/catalog.json` locks each download to its four exact generation sheets.
+Editable Blender workspaces with those sheets visible are in `art/model_catalog/workspaces/`.
+Use these full-detail sources for geometry corrections such as extra limbs and incorrect eyes or sockets.
+The in-game Mech Workshop uses reduced viewing copies; it is not the geometry editing environment.
+Preserve the source archive and other lanes' refinements. Workspace setup does not mean the meshes are repaired.
+
 A new 2D game in Godot, started 2026-10-11. Preston's favourite game Zoids Legacy (GBA) is the structural
 reference, the way Explorers of Sky is for Hollowtide. **Read `START_HERE.md` first**, then
 `docs/team/how-preston-works.md` (what Hollowtide's sessions learned from his corrections).
@@ -43,6 +52,14 @@ connectors, all that" and then: "This is now what I mean when I refer to synthes
   - **bpy recipes:** the `dom-blender-*` skills.
   - **Gotchas:** `claude-3d-harness`, whose modelling guide and lessons file are in its `library/` folder.
   Read the ones that fit before building, and name them in the report.
+- **Sprite tools in the stock-take (Preston, 2026-11-04):**
+  - **Free:** the Aseprite MCP (local; palettes, outlines, frame edits, Lua).
+  - **Free daily generations, then paid:** the PixelLab MCP (pose-guided animation, normal maps, and
+    `pixelart_workbench`, which is free).
+  - **Paid:** the Retro Diffusion MCP (animation styles, `fix_pixel_art`, palette tools; per run) and
+    SpriteCook (credits).
+  - **Codex:** sel-out and finish passes. It never sees old or other art.
+  - Name each tool with its cost. List: `docs/plan/moba-perspective-remaster-synthesis-2026-11-04.md`.
 - **Measure the references, don't eyeball them:** for example triangle counts, texture sizes, colour saturation
   and light-to-dark spread across the 13 Zoids models, turned into numeric targets.
 - **Build, look, score, repeat:** change the thing, look at it live from several angles, score it against
@@ -72,6 +89,27 @@ Director's Lookbook (palette and look cards; `show_card` gives hex swatches).
 **The look:** he wants machines close to Zoids in animals and palette (2026-10-11). Animal war machines and
 faction colour schemes are a genre and fine; a specific Zoid's silhouette or plating is not.
 
+## MOBA roster: what "ode to" a SMITE god means (Preston, 2026-11-03)
+Each machine honours a SMITE god. The roster, with each one's ode type, is in `docs/art/moba/ROSTER.md`.
+- **"Ode to X" always means the god's KIT**: abilities and role. Never the god's look, model or design.
+- **The kit is inspiration, not a copy** (Preston, 2026-11-03): take only what makes sense for the animal and
+  drop the rest; the machine need not play like the god or share his role. Lobster/Khepri keeps the pull, not
+  the revive. Rhino/Cabrakan keeps the tremble slow, stun and heavy burst, not the hand-shield walls or the long
+  rhythmic tremble. Chameleon/Loki goes invisible but need not be an assassin. Kits: `docs/plan/moba-kits.md`.
+  The body is a plain mech animal with no god theme: no god colours, regalia or symbols.
+  ("its mainly for kit, not really design. Its a mech moba game." / "it should be ode to his kit not model
+  or design.")
+- **The one exception is a visual he names himself**, which goes in as he said it
+  (Geb: "a hexagonal tech shield thats green for sure"). Nothing else from the god.
+- **Always:** nothing held, no melee weapons in hand, and every machine reads as a robot first.
+  No crest, headdress or banded "hair" shapes (he cut one from the shoebill).
+- **No god theme is not the same as plain.** Every machine is bold and lively like the gorilla, wolf and
+  kangaroo: one saturated colour on big parts, a glowing accent, and a silhouette with energy (swept fins,
+  a leaning guard). A grey-on-grey shoebill was "to plain".
+- Lesson: I misread "redo shoebill ode to thoth because it was ode to his design not kit" as a request for
+  Thoth's look. It meant the shoebill *had been* built on his design and should be redone on his kit only.
+  When a line could mean either, ask before launching a Codex take.
+
 ## Technical
 - Godot 4.7.2, GDScript, 2D pixel art: `C:/Users/pmcga/Games/Tools/Godot_v4.7.2/Godot_v4.7.2-stable_win64.exe`
 - Checks run headless: `--headless --path . --script res://tools/debug/<name>.gd`. Measure the thing
@@ -90,3 +128,8 @@ faction colour schemes are a genre and fine; a specific Zoid's silhouette or pla
 ## Handoff from the Hollowtide session (2026-10-12)
 Read `docs/team/CLAUDE_MECH_SKILLUP_HANDOFF_2026-10-12.md` first: the synthesis method, the build toolkit, the
 measured targets, the lessons and pitfalls, and the open work, all learned in passes 4 to 24.
+
+## Animations
+Arena fleet onboarding now uses `docs/art/moba/ARENA_MODEL_PIPELINE.md` (2026-11-10). It documents the 25 base bodies, current gorilla/rhino copies, F8 test selector, builder/registration command and explicit base-versus-authored limits. Read it before replacing arena model hookups; completed local trials now run in Arena Play.
+
+Before making or fixing any machine animation, read `docs/art/moba/ANIMATION_PLAYBOOK.md` (what worked and failed on the rhino walk, the checks, the finishing order). Add new lessons to it.

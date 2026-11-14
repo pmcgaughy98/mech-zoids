@@ -1,0 +1,599 @@
+{
+  "raw_size": [
+    2172,
+    724
+  ],
+  "columns": 8,
+  "rows": [
+    "se",
+    "ne"
+  ],
+  "x_edges": [
+    0,
+    272,
+    543,
+    816,
+    1086,
+    1358,
+    1629,
+    1903,
+    2172
+  ],
+  "y_edges": [
+    0,
+    362,
+    724
+  ],
+  "row_scale": {
+    "se": 0.33244679163027563,
+    "ne": 0.3199049566457977
+  },
+  "cells": [
+    {
+      "view": "se",
+      "frame": 0,
+      "source_box": [
+        0,
+        0,
+        272,
+        362
+      ],
+      "source_opaque_box": [
+        10,
+        52,
+        270,
+        275
+      ],
+      "scale": 0.33244679163027563,
+      "placement": [
+        54,
+        87
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        52,
+        89,
+        141,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false,
+      "native_torso_bob": 0,
+      "diagonal_A_lift": 0,
+      "diagonal_B_lift": 0
+    },
+    {
+      "view": "se",
+      "frame": 1,
+      "source_box": [
+        272,
+        0,
+        543,
+        362
+      ],
+      "source_opaque_box": [
+        17,
+        48,
+        266,
+        271
+      ],
+      "scale": 0.33244679163027563,
+      "placement": [
+        55,
+        87
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        50,
+        88,
+        139,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false,
+      "native_torso_bob": -1,
+      "diagonal_A_lift": 0,
+      "diagonal_B_lift": 2
+    },
+    {
+      "view": "se",
+      "frame": 2,
+      "source_box": [
+        543,
+        0,
+        816,
+        362
+      ],
+      "source_opaque_box": [
+        13,
+        65,
+        264,
+        283
+      ],
+      "scale": 0.33244679163027563,
+      "placement": [
+        55,
+        89
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        52,
+        89,
+        141,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false,
+      "native_torso_bob": 0,
+      "diagonal_A_lift": 0,
+      "diagonal_B_lift": 3
+    },
+    {
+      "view": "se",
+      "frame": 3,
+      "source_box": [
+        816,
+        0,
+        1086,
+        362
+      ],
+      "source_opaque_box": [
+        15,
+        65,
+        266,
+        283
+      ],
+      "scale": 0.33244679163027563,
+      "placement": [
+        55,
+        89
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        54,
+        89,
+        143,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false,
+      "native_torso_bob": 1,
+      "diagonal_A_lift": 0,
+      "diagonal_B_lift": 1
+    },
+    {
+      "view": "se",
+      "frame": 4,
+      "source_box": [
+        1086,
+        0,
+        1358,
+        362
+      ],
+      "source_opaque_box": [
+        15,
+        67,
+        267,
+        287
+      ],
+      "scale": 0.33244679163027563,
+      "placement": [
+        54,
+        88
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        52,
+        89,
+        141,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false,
+      "native_torso_bob": 0,
+      "diagonal_A_lift": 0,
+      "diagonal_B_lift": 0
+    },
+    {
+      "view": "se",
+      "frame": 5,
+      "source_box": [
+        1358,
+        0,
+        1629,
+        362
+      ],
+      "source_opaque_box": [
+        12,
+        48,
+        265,
+        269
+      ],
+      "scale": 0.33244679163027563,
+      "placement": [
+        54,
+        88
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        52,
+        88,
+        141,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false,
+      "native_torso_bob": -1,
+      "diagonal_A_lift": 2,
+      "diagonal_B_lift": 0
+    },
+    {
+      "view": "se",
+      "frame": 6,
+      "source_box": [
+        1629,
+        0,
+        1903,
+        362
+      ],
+      "source_opaque_box": [
+        12,
+        75,
+        267,
+        287
+      ],
+      "scale": 0.33244679163027563,
+      "placement": [
+        54,
+        91
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        52,
+        89,
+        141,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false,
+      "native_torso_bob": 0,
+      "diagonal_A_lift": 3,
+      "diagonal_B_lift": 0
+    },
+    {
+      "view": "se",
+      "frame": 7,
+      "source_box": [
+        1903,
+        0,
+        2172,
+        362
+      ],
+      "source_opaque_box": [
+        14,
+        62,
+        265,
+        275
+      ],
+      "scale": 0.33244679163027563,
+      "placement": [
+        55,
+        90
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        52,
+        89,
+        141,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false,
+      "native_torso_bob": 1,
+      "diagonal_A_lift": 1,
+      "diagonal_B_lift": 0
+    },
+    {
+      "view": "ne",
+      "frame": 0,
+      "source_box": [
+        0,
+        362,
+        272,
+        724
+      ],
+      "source_opaque_box": [
+        13,
+        45,
+        271,
+        273
+      ],
+      "scale": 0.3199049566457977,
+      "placement": [
+        54,
+        88
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        53,
+        91,
+        139,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false,
+      "native_torso_bob": 0,
+      "diagonal_A_lift": 0,
+      "diagonal_B_lift": 0
+    },
+    {
+      "view": "ne",
+      "frame": 1,
+      "source_box": [
+        272,
+        362,
+        543,
+        724
+      ],
+      "source_opaque_box": [
+        12,
+        40,
+        268,
+        271
+      ],
+      "scale": 0.3199049566457977,
+      "placement": [
+        55,
+        87
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        51,
+        90,
+        139,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false,
+      "native_torso_bob": -1,
+      "diagonal_A_lift": 0,
+      "diagonal_B_lift": 2
+    },
+    {
+      "view": "ne",
+      "frame": 2,
+      "source_box": [
+        543,
+        362,
+        816,
+        724
+      ],
+      "source_opaque_box": [
+        12,
+        61,
+        272,
+        274
+      ],
+      "scale": 0.3199049566457977,
+      "placement": [
+        54,
+        93
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        53,
+        91,
+        139,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false,
+      "native_torso_bob": 0,
+      "diagonal_A_lift": 0,
+      "diagonal_B_lift": 3
+    },
+    {
+      "view": "ne",
+      "frame": 3,
+      "source_box": [
+        816,
+        362,
+        1086,
+        724
+      ],
+      "source_opaque_box": [
+        14,
+        66,
+        269,
+        275
+      ],
+      "scale": 0.3199049566457977,
+      "placement": [
+        55,
+        94
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        55,
+        91,
+        139,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false,
+      "native_torso_bob": 1,
+      "diagonal_A_lift": 0,
+      "diagonal_B_lift": 1
+    },
+    {
+      "view": "ne",
+      "frame": 4,
+      "source_box": [
+        1086,
+        362,
+        1358,
+        724
+      ],
+      "source_opaque_box": [
+        15,
+        67,
+        270,
+        278
+      ],
+      "scale": 0.3199049566457977,
+      "placement": [
+        55,
+        94
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        53,
+        91,
+        139,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false,
+      "native_torso_bob": 0,
+      "diagonal_A_lift": 0,
+      "diagonal_B_lift": 0
+    },
+    {
+      "view": "ne",
+      "frame": 5,
+      "source_box": [
+        1358,
+        362,
+        1629,
+        724
+      ],
+      "source_opaque_box": [
+        13,
+        42,
+        268,
+        271
+      ],
+      "scale": 0.3199049566457977,
+      "placement": [
+        55,
+        88
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        53,
+        90,
+        137,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false,
+      "native_torso_bob": -1,
+      "diagonal_A_lift": 2,
+      "diagonal_B_lift": 0
+    },
+    {
+      "view": "ne",
+      "frame": 6,
+      "source_box": [
+        1629,
+        362,
+        1903,
+        724
+      ],
+      "source_opaque_box": [
+        12,
+        70,
+        273,
+        277
+      ],
+      "scale": 0.3199049566457977,
+      "placement": [
+        54,
+        95
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        53,
+        91,
+        139,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false,
+      "native_torso_bob": 0,
+      "diagonal_A_lift": 3,
+      "diagonal_B_lift": 0
+    },
+    {
+      "view": "ne",
+      "frame": 7,
+      "source_box": [
+        1903,
+        362,
+        2172,
+        724
+      ],
+      "source_opaque_box": [
+        12,
+        56,
+        264,
+        273
+      ],
+      "scale": 0.3199049566457977,
+      "placement": [
+        56,
+        92
+      ],
+      "touches_cut": false,
+      "final_bbox": [
+        53,
+        91,
+        141,
+        161
+      ],
+      "final_source": "native approved pixel parts",
+      "raw_cut_border_pixels": 0,
+      "touches_raw_cut": false,
+      "native_torso_bob": 1,
+      "diagonal_A_lift": 1,
+      "diagonal_B_lift": 0
+    }
+  ],
+  "clean": false,
+  "final_canvas": [
+    192,
+    192
+  ],
+  "approved_offset": [
+    16,
+    30
+  ],
+  "ground_row": 160,
+  "finishing": [
+    "finish.py",
+    "polish.py",
+    "gems.py",
+    "final_pose.py",
+    "seam_fill.py",
+    "gem_cleanup.py",
+    "verify.py"
+  ],
+  "clean_after_isolation": true,
+  "raw_grid_note": "Two rows and requested column count; raw saturated fringe debris, tight gutters. Largest-component isolation, fringe rejection and one-native-texel outline used. No redo.",
+  "walk_support_note": "SE far support gauntlet extends two pixels down in f4-f7; support endpoint fixed throughout that phase, near support fixed f0-f3. No whole-frame translations."
+}

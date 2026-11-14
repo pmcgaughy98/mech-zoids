@@ -1,0 +1,123 @@
+{
+  "sizes": {
+    "ne": [
+      42,
+      77,
+      1924
+    ],
+    "n": [
+      41,
+      78,
+      1788
+    ],
+    "nw": [
+      41,
+      77,
+      1919
+    ],
+    "e": [
+      62,
+      80,
+      2235
+    ],
+    "w": [
+      62,
+      79,
+      2239
+    ],
+    "se": [
+      50,
+      79,
+      2197
+    ],
+    "s": [
+      45,
+      80,
+      2049
+    ],
+    "sw": [
+      50,
+      79,
+      2188
+    ]
+  },
+  "depth": {
+    "ne": {
+      "p05": 46.5586,
+      "p95": 202.4928,
+      "dominant_colour": "#3f5b92",
+      "dominant_share": 0.3373180873180873,
+      "height": 77
+    },
+    "n": {
+      "p05": 46.5586,
+      "p95": 207.14879999999997,
+      "dominant_colour": "#3f5b92",
+      "dominant_share": 0.3579418344519016,
+      "height": 78
+    },
+    "nw": {
+      "p05": 46.5586,
+      "p95": 202.4928,
+      "dominant_colour": "#3f5b92",
+      "dominant_share": 0.32985930171964567,
+      "height": 77
+    },
+    "e": {
+      "p05": 46.5586,
+      "p95": 207.14879999999997,
+      "dominant_colour": "#3f5b92",
+      "dominant_share": 0.2465324384787472,
+      "height": 80
+    },
+    "w": {
+      "p05": 46.5586,
+      "p95": 207.14879999999997,
+      "dominant_colour": "#3f5b92",
+      "dominant_share": 0.2523447967842787,
+      "height": 79
+    },
+    "se": {
+      "p05": 24.1604,
+      "p95": 207.14879999999997,
+      "dominant_colour": "#3f5b92",
+      "dominant_share": 0.267637687756031,
+      "height": 79
+    },
+    "s": {
+      "p05": 24.1604,
+      "p95": 207.14879999999997,
+      "dominant_colour": "#3f5b92",
+      "dominant_share": 0.27574426549536357,
+      "height": 80
+    },
+    "sw": {
+      "p05": 24.1604,
+      "p95": 207.14879999999997,
+      "dominant_colour": "#3f5b92",
+      "dominant_share": 0.276508226691042,
+      "height": 79
+    }
+  },
+  "border_contact": {
+    "ne": false,
+    "n": false,
+    "nw": false,
+    "e": false,
+    "w": false,
+    "se": false,
+    "s": false,
+    "sw": false
+  },
+  "colours": 14,
+  "top_five_share": 0.7507709051333212,
+  "shape": {
+    "east_bill_length": 25,
+    "east_head_height": 20,
+    "bill_to_head": 1.25,
+    "east_leg_length": 30,
+    "east_body_height": 27,
+    "leg_to_body": 1.1111111111111112,
+    "uncertainty_px": 2
+  }
+}

@@ -1,0 +1,512 @@
+{
+  "raw_size": [
+    1619,
+    971
+  ],
+  "columns": 5,
+  "rows": [
+    "front",
+    "side",
+    "back"
+  ],
+  "x_edges": {
+    "front": [
+      0,
+      324,
+      648,
+      971,
+      1295,
+      1619
+    ],
+    "side": [
+      0,
+      324,
+      648,
+      971,
+      1295,
+      1619
+    ],
+    "back": [
+      0,
+      324,
+      648,
+      971,
+      1295,
+      1619
+    ]
+  },
+  "y_edges": [
+    0,
+    316,
+    617,
+    971
+  ],
+  "row_scale": {
+    "front": 0.3195233166790946,
+    "side": 0.34260727943342817,
+    "back": 0.31449208146430535
+  },
+  "cells": [
+    {
+      "view": "front",
+      "frame": 0,
+      "source_box": [
+        0,
+        0,
+        324,
+        316
+      ],
+      "source_opaque_box": [
+        99,
+        253,
+        235,
+        288
+      ],
+      "scale": 0.3195233166790946,
+      "placement": [
+        75,
+        150
+      ],
+      "duration_ms": 120,
+      "touches_cut": false
+    },
+    {
+      "view": "front",
+      "frame": 1,
+      "source_box": [
+        324,
+        0,
+        648,
+        316
+      ],
+      "source_opaque_box": [
+        83,
+        124,
+        245,
+        289
+      ],
+      "scale": 0.3195233166790946,
+      "placement": [
+        70,
+        108
+      ],
+      "duration_ms": 90,
+      "touches_cut": false
+    },
+    {
+      "view": "front",
+      "frame": 2,
+      "source_box": [
+        648,
+        0,
+        971,
+        316
+      ],
+      "source_opaque_box": [
+        79,
+        13,
+        242,
+        282
+      ],
+      "scale": 0.3195233166790946,
+      "placement": [
+        70,
+        60
+      ],
+      "duration_ms": 130,
+      "touches_cut": false
+    },
+    {
+      "view": "front",
+      "frame": 3,
+      "source_box": [
+        971,
+        0,
+        1295,
+        316
+      ],
+      "source_opaque_box": [
+        79,
+        91,
+        242,
+        292
+      ],
+      "scale": 0.3195233166790946,
+      "placement": [
+        70,
+        97
+      ],
+      "duration_ms": 110,
+      "touches_cut": false
+    },
+    {
+      "view": "front",
+      "frame": 4,
+      "source_box": [
+        1295,
+        0,
+        1619,
+        316
+      ],
+      "source_opaque_box": [
+        78,
+        80,
+        241,
+        292
+      ],
+      "scale": 0.3195233166790946,
+      "placement": [
+        70,
+        93
+      ],
+      "duration_ms": 350,
+      "touches_cut": false
+    },
+    {
+      "view": "side",
+      "frame": 0,
+      "source_box": [
+        0,
+        316,
+        324,
+        617
+      ],
+      "source_opaque_box": [
+        140,
+        230,
+        201,
+        273
+      ],
+      "scale": 0.34260727943342817,
+      "placement": [
+        86,
+        146
+      ],
+      "duration_ms": 120,
+      "touches_cut": false
+    },
+    {
+      "view": "side",
+      "frame": 1,
+      "source_box": [
+        324,
+        316,
+        648,
+        617
+      ],
+      "source_opaque_box": [
+        125,
+        101,
+        245,
+        271
+      ],
+      "scale": 0.34260727943342817,
+      "placement": [
+        76,
+        103
+      ],
+      "duration_ms": 90,
+      "touches_cut": false
+    },
+    {
+      "view": "side",
+      "frame": 2,
+      "source_box": [
+        648,
+        316,
+        971,
+        617
+      ],
+      "source_opaque_box": [
+        51,
+        24,
+        243,
+        229
+      ],
+      "scale": 0.34260727943342817,
+      "placement": [
+        63,
+        76
+      ],
+      "duration_ms": 130,
+      "touches_cut": false
+    },
+    {
+      "view": "side",
+      "frame": 3,
+      "source_box": [
+        971,
+        316,
+        1295,
+        617
+      ],
+      "source_opaque_box": [
+        46,
+        75,
+        264,
+        274
+      ],
+      "scale": 0.34260727943342817,
+      "placement": [
+        58,
+        93
+      ],
+      "duration_ms": 110,
+      "touches_cut": false
+    },
+    {
+      "view": "side",
+      "frame": 4,
+      "source_box": [
+        1295,
+        316,
+        1619,
+        617
+      ],
+      "source_opaque_box": [
+        50,
+        63,
+        268,
+        277
+      ],
+      "scale": 0.34260727943342817,
+      "placement": [
+        58,
+        88
+      ],
+      "duration_ms": 350,
+      "touches_cut": false
+    },
+    {
+      "view": "back",
+      "frame": 0,
+      "source_box": [
+        0,
+        617,
+        324,
+        971
+      ],
+      "source_opaque_box": [
+        99,
+        243,
+        235,
+        278
+      ],
+      "scale": 0.31449208146430535,
+      "placement": [
+        74,
+        150
+      ],
+      "duration_ms": 120,
+      "touches_cut": false
+    },
+    {
+      "view": "back",
+      "frame": 1,
+      "source_box": [
+        324,
+        617,
+        648,
+        971
+      ],
+      "source_opaque_box": [
+        94,
+        123,
+        248,
+        278
+      ],
+      "scale": 0.31449208146430535,
+      "placement": [
+        72,
+        112
+      ],
+      "duration_ms": 90,
+      "touches_cut": false
+    },
+    {
+      "view": "back",
+      "frame": 2,
+      "source_box": [
+        648,
+        617,
+        971,
+        971
+      ],
+      "source_opaque_box": [
+        89,
+        22,
+        234,
+        270
+      ],
+      "scale": 0.31449208146430535,
+      "placement": [
+        73,
+        68
+      ],
+      "duration_ms": 130,
+      "touches_cut": false
+    },
+    {
+      "view": "back",
+      "frame": 3,
+      "source_box": [
+        971,
+        617,
+        1295,
+        971
+      ],
+      "source_opaque_box": [
+        80,
+        79,
+        236,
+        290
+      ],
+      "scale": 0.31449208146430535,
+      "placement": [
+        72,
+        95
+      ],
+      "duration_ms": 110,
+      "touches_cut": false
+    },
+    {
+      "view": "back",
+      "frame": 4,
+      "source_box": [
+        1295,
+        617,
+        1619,
+        971
+      ],
+      "source_opaque_box": [
+        83,
+        69,
+        238,
+        290
+      ],
+      "scale": 0.31449208146430535,
+      "placement": [
+        72,
+        91
+      ],
+      "duration_ms": 350,
+      "touches_cut": false
+    }
+  ],
+  "final_canvas": [
+    192,
+    192
+  ],
+  "approved_offset": [
+    16,
+    20
+  ],
+  "ground_row": 160,
+  "durations_ms": [
+    120,
+    90,
+    130,
+    110,
+    350
+  ],
+  "loop": false,
+  "hold_last_frame": false,
+  "frames": [
+    {
+      "view": "front",
+      "index": 0,
+      "path": "frames/front_f0.png",
+      "duration_ms": 120
+    },
+    {
+      "view": "front",
+      "index": 1,
+      "path": "frames/front_f1.png",
+      "duration_ms": 90
+    },
+    {
+      "view": "front",
+      "index": 2,
+      "path": "frames/front_f2.png",
+      "duration_ms": 130
+    },
+    {
+      "view": "front",
+      "index": 3,
+      "path": "frames/front_f3.png",
+      "duration_ms": 110
+    },
+    {
+      "view": "front",
+      "index": 4,
+      "path": "frames/front_f4.png",
+      "duration_ms": 350
+    },
+    {
+      "view": "side",
+      "index": 0,
+      "path": "frames/side_f0.png",
+      "duration_ms": 120
+    },
+    {
+      "view": "side",
+      "index": 1,
+      "path": "frames/side_f1.png",
+      "duration_ms": 90
+    },
+    {
+      "view": "side",
+      "index": 2,
+      "path": "frames/side_f2.png",
+      "duration_ms": 130
+    },
+    {
+      "view": "side",
+      "index": 3,
+      "path": "frames/side_f3.png",
+      "duration_ms": 110
+    },
+    {
+      "view": "side",
+      "index": 4,
+      "path": "frames/side_f4.png",
+      "duration_ms": 350
+    },
+    {
+      "view": "back",
+      "index": 0,
+      "path": "frames/back_f0.png",
+      "duration_ms": 120
+    },
+    {
+      "view": "back",
+      "index": 1,
+      "path": "frames/back_f1.png",
+      "duration_ms": 90
+    },
+    {
+      "view": "back",
+      "index": 2,
+      "path": "frames/back_f2.png",
+      "duration_ms": 130
+    },
+    {
+      "view": "back",
+      "index": 3,
+      "path": "frames/back_f3.png",
+      "duration_ms": 110
+    },
+    {
+      "view": "back",
+      "index": 4,
+      "path": "frames/back_f4.png",
+      "duration_ms": 350
+    }
+  ],
+  "finishing": [
+    "finish.py",
+    "polish.py",
+    "final_pass.py"
+  ],
+  "verified": true
+}

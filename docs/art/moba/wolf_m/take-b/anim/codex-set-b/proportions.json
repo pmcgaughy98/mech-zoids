@@ -1,0 +1,3610 @@
+{
+  "method": "Manually tagged visible side-view axes/cross-sections and joint chains, Euclidean polyline distance +1 native pixel. These are projected extents, not recovered hidden anatomy. 2px annotation uncertainty. Flags are retained, not converted to automatic passes.",
+  "reference_side": {
+    "ear": 14.15,
+    "head": 27.25,
+    "muzzle": 12.7,
+    "body_length": 36.13,
+    "body_depth": 18.0,
+    "foreleg": 35.76,
+    "hindleg": 37.55,
+    "tail_length": 43.45,
+    "tail_thickness": 9.49
+  },
+  "frames": [
+    {
+      "move": "hamstring",
+      "view": "front",
+      "frame": 0,
+      "whole_bbox": [
+        80,
+        89,
+        113,
+        161
+      ],
+      "whole_wh": [
+        33,
+        72
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "hamstring",
+      "view": "front",
+      "frame": 1,
+      "whole_bbox": [
+        79,
+        100,
+        116,
+        161
+      ],
+      "whole_wh": [
+        37,
+        61
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "hamstring",
+      "view": "front",
+      "frame": 2,
+      "whole_bbox": [
+        75,
+        110,
+        114,
+        161
+      ],
+      "whole_wh": [
+        39,
+        51
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "hamstring",
+      "view": "front",
+      "frame": 3,
+      "whole_bbox": [
+        77,
+        110,
+        116,
+        161
+      ],
+      "whole_wh": [
+        39,
+        51
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "hamstring",
+      "view": "front",
+      "frame": 4,
+      "whole_bbox": [
+        80,
+        97,
+        117,
+        161
+      ],
+      "whole_wh": [
+        37,
+        64
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "hamstring",
+      "view": "front",
+      "frame": 5,
+      "whole_bbox": [
+        80,
+        89,
+        113,
+        161
+      ],
+      "whole_wh": [
+        33,
+        72
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "hamstring",
+      "view": "side",
+      "frame": 0,
+      "whole_bbox": [
+        41,
+        95,
+        151,
+        161
+      ],
+      "whole_wh": [
+        110,
+        66
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            108
+          ],
+          [
+            128,
+            95
+          ]
+        ],
+        "head": [
+          [
+            124,
+            110
+          ],
+          [
+            149,
+            118
+          ]
+        ],
+        "muzzle": [
+          [
+            138,
+            114
+          ],
+          [
+            149,
+            118
+          ]
+        ],
+        "body_length": [
+          [
+            77,
+            120
+          ],
+          [
+            112,
+            117
+          ]
+        ],
+        "body_depth": [
+          [
+            95,
+            109
+          ],
+          [
+            95,
+            126
+          ]
+        ],
+        "foreleg": [
+          [
+            112,
+            123
+          ],
+          [
+            108,
+            138
+          ],
+          [
+            111,
+            157
+          ]
+        ],
+        "hindleg": [
+          [
+            81,
+            125
+          ],
+          [
+            69,
+            139
+          ],
+          [
+            67,
+            157
+          ]
+        ],
+        "tail_length": [
+          [
+            74,
+            124
+          ],
+          [
+            43,
+            153
+          ]
+        ],
+        "tail_thickness": [
+          [
+            57,
+            136
+          ],
+          [
+            63,
+            142
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.0,
+        "muzzle": 0.0,
+        "body_length": 0.0,
+        "body_depth": 0.0,
+        "foreleg": 0.0,
+        "hindleg": 0.0,
+        "tail_length": 0.0,
+        "tail_thickness": 0.0
+      },
+      "flagged_over_2px": [],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": true
+    },
+    {
+      "move": "hamstring",
+      "view": "side",
+      "frame": 1,
+      "whole_bbox": [
+        39,
+        106,
+        151,
+        161
+      ],
+      "whole_wh": [
+        112,
+        55
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            120
+          ],
+          [
+            127,
+            106
+          ]
+        ],
+        "head": [
+          [
+            125,
+            123
+          ],
+          [
+            149,
+            130
+          ]
+        ],
+        "muzzle": [
+          [
+            138,
+            126
+          ],
+          [
+            149,
+            130
+          ]
+        ],
+        "body_length": [
+          [
+            77,
+            126
+          ],
+          [
+            111,
+            126
+          ]
+        ],
+        "body_depth": [
+          [
+            95,
+            119
+          ],
+          [
+            95,
+            135
+          ]
+        ],
+        "foreleg": [
+          [
+            111,
+            127
+          ],
+          [
+            113,
+            146
+          ],
+          [
+            126,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            82,
+            129
+          ],
+          [
+            67,
+            140
+          ],
+          [
+            67,
+            157
+          ]
+        ],
+        "tail_length": [
+          [
+            73.0,
+            129.0
+          ],
+          [
+            38.6306822878312,
+            154.0
+          ]
+        ],
+        "tail_thickness": [
+          [
+            55,
+            139
+          ],
+          [
+            61,
+            145
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 15.32,
+        "head": 26.0,
+        "muzzle": 12.7,
+        "body_length": 35.0,
+        "body_depth": 17.0,
+        "foreleg": 37.8,
+        "hindleg": 36.6,
+        "tail_length": 43.5,
+        "tail_thickness": 9.49
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": 1.17,
+        "head": -1.25,
+        "muzzle": 0.0,
+        "body_length": -1.13,
+        "body_depth": -1.0,
+        "foreleg": 2.04,
+        "hindleg": -0.95,
+        "tail_length": 0.05,
+        "tail_thickness": 0.0
+      },
+      "flagged_over_2px": [
+        "foreleg"
+      ],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": false
+    },
+    {
+      "move": "hamstring",
+      "view": "side",
+      "frame": 2,
+      "whole_bbox": [
+        39,
+        113,
+        151,
+        161
+      ],
+      "whole_wh": [
+        112,
+        48
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            130
+          ],
+          [
+            120,
+            119
+          ]
+        ],
+        "head": [
+          [
+            123,
+            130
+          ],
+          [
+            149,
+            136
+          ]
+        ],
+        "muzzle": [
+          [
+            138,
+            133
+          ],
+          [
+            149,
+            136
+          ]
+        ],
+        "body_length": [
+          [
+            77,
+            129
+          ],
+          [
+            110,
+            132
+          ]
+        ],
+        "body_depth": [
+          [
+            94,
+            123
+          ],
+          [
+            94,
+            138
+          ]
+        ],
+        "foreleg": [
+          [
+            108,
+            131
+          ],
+          [
+            108,
+            147
+          ],
+          [
+            126,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            82,
+            131
+          ],
+          [
+            67,
+            141
+          ],
+          [
+            67,
+            157
+          ]
+        ],
+        "tail_length": [
+          [
+            73.0,
+            131.0
+          ],
+          [
+            38.6306822878312,
+            156.0
+          ]
+        ],
+        "tail_thickness": [
+          [
+            55,
+            140
+          ],
+          [
+            61,
+            146
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 15.87,
+        "head": 27.68,
+        "muzzle": 12.4,
+        "body_length": 34.14,
+        "body_depth": 16.0,
+        "foreleg": 38.1,
+        "hindleg": 35.03,
+        "tail_length": 43.5,
+        "tail_thickness": 9.49
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": 1.72,
+        "head": 0.43,
+        "muzzle": -0.3,
+        "body_length": -1.99,
+        "body_depth": -2.0,
+        "foreleg": 2.34,
+        "hindleg": -2.52,
+        "tail_length": 0.05,
+        "tail_thickness": 0.0
+      },
+      "flagged_over_2px": [
+        "foreleg",
+        "hindleg"
+      ],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": false
+    },
+    {
+      "move": "hamstring",
+      "view": "side",
+      "frame": 3,
+      "whole_bbox": [
+        40,
+        113,
+        150,
+        161
+      ],
+      "whole_wh": [
+        110,
+        48
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": [
+          [
+            132,
+            137
+          ],
+          [
+            121,
+            123
+          ]
+        ],
+        "head": [
+          [
+            124,
+            139
+          ],
+          [
+            148,
+            147
+          ]
+        ],
+        "muzzle": [
+          [
+            137,
+            143
+          ],
+          [
+            148,
+            147
+          ]
+        ],
+        "body_length": [
+          [
+            77,
+            130
+          ],
+          [
+            109,
+            134
+          ]
+        ],
+        "body_depth": [
+          [
+            93,
+            123
+          ],
+          [
+            93,
+            140
+          ]
+        ],
+        "foreleg": [
+          [
+            108,
+            134
+          ],
+          [
+            109,
+            149
+          ],
+          [
+            126,
+            157
+          ]
+        ],
+        "hindleg": [
+          [
+            82,
+            132
+          ],
+          [
+            67,
+            141
+          ],
+          [
+            67,
+            157
+          ]
+        ],
+        "tail_length": [
+          [
+            74.0,
+            131.0
+          ],
+          [
+            39.6306822878312,
+            156.0
+          ]
+        ],
+        "tail_thickness": [
+          [
+            56,
+            140
+          ],
+          [
+            62,
+            146
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 18.8,
+        "head": 26.3,
+        "muzzle": 12.7,
+        "body_length": 33.25,
+        "body_depth": 18.0,
+        "foreleg": 34.82,
+        "hindleg": 34.49,
+        "tail_length": 43.5,
+        "tail_thickness": 9.49
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": 4.65,
+        "head": -0.95,
+        "muzzle": 0.0,
+        "body_length": -2.88,
+        "body_depth": 0.0,
+        "foreleg": -0.94,
+        "hindleg": -3.06,
+        "tail_length": 0.05,
+        "tail_thickness": 0.0
+      },
+      "flagged_over_2px": [
+        "ear",
+        "body_length",
+        "hindleg"
+      ],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": false
+    },
+    {
+      "move": "hamstring",
+      "view": "side",
+      "frame": 4,
+      "whole_bbox": [
+        40,
+        100,
+        149,
+        161
+      ],
+      "whole_wh": [
+        109,
+        61
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            116
+          ],
+          [
+            123,
+            101
+          ]
+        ],
+        "head": [
+          [
+            123,
+            116
+          ],
+          [
+            147,
+            122
+          ]
+        ],
+        "muzzle": [
+          [
+            136,
+            119
+          ],
+          [
+            147,
+            122
+          ]
+        ],
+        "body_length": [
+          [
+            77,
+            125
+          ],
+          [
+            110,
+            125
+          ]
+        ],
+        "body_depth": [
+          [
+            94,
+            116
+          ],
+          [
+            94,
+            134
+          ]
+        ],
+        "foreleg": [
+          [
+            112,
+            126
+          ],
+          [
+            112,
+            143
+          ],
+          [
+            125,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            82,
+            128
+          ],
+          [
+            68,
+            140
+          ],
+          [
+            68,
+            157
+          ]
+        ],
+        "tail_length": [
+          [
+            74.0,
+            128.0
+          ],
+          [
+            39.6306822878312,
+            153.0
+          ]
+        ],
+        "tail_thickness": [
+          [
+            57,
+            139
+          ],
+          [
+            63,
+            145
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 17.55,
+        "head": 25.74,
+        "muzzle": 12.4,
+        "body_length": 34.0,
+        "body_depth": 19.0,
+        "foreleg": 37.85,
+        "hindleg": 36.44,
+        "tail_length": 43.5,
+        "tail_thickness": 9.49
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": 3.4,
+        "head": -1.51,
+        "muzzle": -0.3,
+        "body_length": -2.13,
+        "body_depth": 1.0,
+        "foreleg": 2.09,
+        "hindleg": -1.11,
+        "tail_length": 0.05,
+        "tail_thickness": 0.0
+      },
+      "flagged_over_2px": [
+        "ear",
+        "body_length",
+        "foreleg"
+      ],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": false
+    },
+    {
+      "move": "hamstring",
+      "view": "side",
+      "frame": 5,
+      "whole_bbox": [
+        41,
+        95,
+        151,
+        161
+      ],
+      "whole_wh": [
+        110,
+        66
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            108
+          ],
+          [
+            128,
+            95
+          ]
+        ],
+        "head": [
+          [
+            124,
+            110
+          ],
+          [
+            149,
+            118
+          ]
+        ],
+        "muzzle": [
+          [
+            138,
+            114
+          ],
+          [
+            149,
+            118
+          ]
+        ],
+        "body_length": [
+          [
+            77,
+            120
+          ],
+          [
+            112,
+            117
+          ]
+        ],
+        "body_depth": [
+          [
+            95,
+            109
+          ],
+          [
+            95,
+            126
+          ]
+        ],
+        "foreleg": [
+          [
+            112,
+            123
+          ],
+          [
+            108,
+            138
+          ],
+          [
+            111,
+            157
+          ]
+        ],
+        "hindleg": [
+          [
+            81,
+            125
+          ],
+          [
+            69,
+            139
+          ],
+          [
+            67,
+            157
+          ]
+        ],
+        "tail_length": [
+          [
+            74,
+            124
+          ],
+          [
+            43,
+            153
+          ]
+        ],
+        "tail_thickness": [
+          [
+            57,
+            136
+          ],
+          [
+            63,
+            142
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.0,
+        "muzzle": 0.0,
+        "body_length": 0.0,
+        "body_depth": 0.0,
+        "foreleg": 0.0,
+        "hindleg": 0.0,
+        "tail_length": 0.0,
+        "tail_thickness": 0.0
+      },
+      "flagged_over_2px": [],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": true
+    },
+    {
+      "move": "hamstring",
+      "view": "back",
+      "frame": 0,
+      "whole_bbox": [
+        78,
+        89,
+        113,
+        161
+      ],
+      "whole_wh": [
+        35,
+        72
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "hamstring",
+      "view": "back",
+      "frame": 1,
+      "whole_bbox": [
+        77,
+        99,
+        115,
+        161
+      ],
+      "whole_wh": [
+        38,
+        62
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "hamstring",
+      "view": "back",
+      "frame": 2,
+      "whole_bbox": [
+        74,
+        110,
+        115,
+        161
+      ],
+      "whole_wh": [
+        41,
+        51
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "hamstring",
+      "view": "back",
+      "frame": 3,
+      "whole_bbox": [
+        75,
+        111,
+        115,
+        161
+      ],
+      "whole_wh": [
+        40,
+        50
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "hamstring",
+      "view": "back",
+      "frame": 4,
+      "whole_bbox": [
+        75,
+        97,
+        113,
+        161
+      ],
+      "whole_wh": [
+        38,
+        64
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "hamstring",
+      "view": "back",
+      "frame": 5,
+      "whole_bbox": [
+        78,
+        89,
+        113,
+        161
+      ],
+      "whole_wh": [
+        35,
+        72
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "howl",
+      "view": "front",
+      "frame": 0,
+      "whole_bbox": [
+        80,
+        89,
+        113,
+        161
+      ],
+      "whole_wh": [
+        33,
+        72
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "howl",
+      "view": "front",
+      "frame": 1,
+      "whole_bbox": [
+        78,
+        94,
+        116,
+        161
+      ],
+      "whole_wh": [
+        38,
+        67
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "howl",
+      "view": "front",
+      "frame": 2,
+      "whole_bbox": [
+        78,
+        91,
+        115,
+        161
+      ],
+      "whole_wh": [
+        37,
+        70
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "howl",
+      "view": "front",
+      "frame": 3,
+      "whole_bbox": [
+        78,
+        86,
+        115,
+        161
+      ],
+      "whole_wh": [
+        37,
+        75
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "howl",
+      "view": "front",
+      "frame": 4,
+      "whole_bbox": [
+        78,
+        90,
+        115,
+        161
+      ],
+      "whole_wh": [
+        37,
+        71
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "howl",
+      "view": "front",
+      "frame": 5,
+      "whole_bbox": [
+        80,
+        89,
+        113,
+        161
+      ],
+      "whole_wh": [
+        33,
+        72
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "howl",
+      "view": "side",
+      "frame": 0,
+      "whole_bbox": [
+        41,
+        95,
+        151,
+        161
+      ],
+      "whole_wh": [
+        110,
+        66
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            108
+          ],
+          [
+            128,
+            95
+          ]
+        ],
+        "head": [
+          [
+            124,
+            110
+          ],
+          [
+            149,
+            118
+          ]
+        ],
+        "muzzle": [
+          [
+            138,
+            114
+          ],
+          [
+            149,
+            118
+          ]
+        ],
+        "body_length": [
+          [
+            77,
+            120
+          ],
+          [
+            112,
+            117
+          ]
+        ],
+        "body_depth": [
+          [
+            95,
+            109
+          ],
+          [
+            95,
+            126
+          ]
+        ],
+        "foreleg": [
+          [
+            112,
+            123
+          ],
+          [
+            108,
+            138
+          ],
+          [
+            111,
+            157
+          ]
+        ],
+        "hindleg": [
+          [
+            81,
+            125
+          ],
+          [
+            69,
+            139
+          ],
+          [
+            67,
+            157
+          ]
+        ],
+        "tail_length": [
+          [
+            74,
+            124
+          ],
+          [
+            43,
+            153
+          ]
+        ],
+        "tail_thickness": [
+          [
+            57,
+            136
+          ],
+          [
+            63,
+            142
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.0,
+        "muzzle": 0.0,
+        "body_length": 0.0,
+        "body_depth": 0.0,
+        "foreleg": 0.0,
+        "hindleg": 0.0,
+        "tail_length": 0.0,
+        "tail_thickness": 0.0
+      },
+      "flagged_over_2px": [],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": true
+    },
+    {
+      "move": "howl",
+      "view": "side",
+      "frame": 1,
+      "whole_bbox": [
+        40,
+        98,
+        149,
+        161
+      ],
+      "whole_wh": [
+        109,
+        63
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            115
+          ],
+          [
+            120,
+            103
+          ]
+        ],
+        "head": [
+          [
+            124,
+            117
+          ],
+          [
+            148,
+            125
+          ]
+        ],
+        "muzzle": [
+          [
+            137,
+            121
+          ],
+          [
+            148,
+            125
+          ]
+        ],
+        "body_length": [
+          [
+            77,
+            127
+          ],
+          [
+            111,
+            124
+          ]
+        ],
+        "body_depth": [
+          [
+            94,
+            120
+          ],
+          [
+            94,
+            136
+          ]
+        ],
+        "foreleg": [
+          [
+            112,
+            125
+          ],
+          [
+            111,
+            142
+          ],
+          [
+            113,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            80,
+            130
+          ],
+          [
+            88,
+            146
+          ],
+          [
+            71,
+            155
+          ]
+        ],
+        "tail_length": [
+          [
+            74.0,
+            131.0
+          ],
+          [
+            39.6306822878312,
+            156.0
+          ]
+        ],
+        "tail_thickness": [
+          [
+            57,
+            141
+          ],
+          [
+            63,
+            147
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 16.62,
+        "head": 26.3,
+        "muzzle": 12.7,
+        "body_length": 35.13,
+        "body_depth": 17.0,
+        "foreleg": 34.15,
+        "hindleg": 38.12,
+        "tail_length": 43.5,
+        "tail_thickness": 9.49
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": 2.47,
+        "head": -0.95,
+        "muzzle": 0.0,
+        "body_length": -1.0,
+        "body_depth": -1.0,
+        "foreleg": -1.61,
+        "hindleg": 0.57,
+        "tail_length": 0.05,
+        "tail_thickness": 0.0
+      },
+      "flagged_over_2px": [
+        "ear"
+      ],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": false
+    },
+    {
+      "move": "howl",
+      "view": "side",
+      "frame": 2,
+      "whole_bbox": [
+        41,
+        93,
+        148,
+        161
+      ],
+      "whole_wh": [
+        107,
+        68
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": [
+          [
+            128,
+            107
+          ],
+          [
+            116,
+            98
+          ]
+        ],
+        "head": [
+          [
+            123,
+            108
+          ],
+          [
+            147,
+            115
+          ]
+        ],
+        "muzzle": [
+          [
+            136,
+            112
+          ],
+          [
+            147,
+            115
+          ]
+        ],
+        "body_length": [
+          [
+            78,
+            126
+          ],
+          [
+            112,
+            119
+          ]
+        ],
+        "body_depth": [
+          [
+            95,
+            119
+          ],
+          [
+            98,
+            136
+          ]
+        ],
+        "foreleg": [
+          [
+            113,
+            122
+          ],
+          [
+            111,
+            140
+          ],
+          [
+            114,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            82,
+            131
+          ],
+          [
+            88,
+            146
+          ],
+          [
+            72,
+            155
+          ]
+        ],
+        "tail_length": [
+          [
+            75.0,
+            131.0
+          ],
+          [
+            40.6306822878312,
+            156.0
+          ]
+        ],
+        "tail_thickness": [
+          [
+            58,
+            142
+          ],
+          [
+            64,
+            148
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 16.0,
+        "head": 26.0,
+        "muzzle": 12.4,
+        "body_length": 35.71,
+        "body_depth": 18.26,
+        "foreleg": 37.36,
+        "hindleg": 35.51,
+        "tail_length": 43.5,
+        "tail_thickness": 9.49
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": 1.85,
+        "head": -1.25,
+        "muzzle": -0.3,
+        "body_length": -0.42,
+        "body_depth": 0.26,
+        "foreleg": 1.6,
+        "hindleg": -2.04,
+        "tail_length": 0.05,
+        "tail_thickness": 0.0
+      },
+      "flagged_over_2px": [
+        "hindleg"
+      ],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": false
+    },
+    {
+      "move": "howl",
+      "view": "side",
+      "frame": 3,
+      "whole_bbox": [
+        41,
+        84,
+        147,
+        161
+      ],
+      "whole_wh": [
+        106,
+        77
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": [
+          [
+            122,
+            108
+          ],
+          [
+            111,
+            106
+          ]
+        ],
+        "head": [
+          [
+            119,
+            109
+          ],
+          [
+            134,
+            88
+          ]
+        ],
+        "muzzle": [
+          [
+            128,
+            98
+          ],
+          [
+            134,
+            88
+          ]
+        ],
+        "body_length": [
+          [
+            78,
+            126
+          ],
+          [
+            111,
+            116
+          ]
+        ],
+        "body_depth": [
+          [
+            95,
+            120
+          ],
+          [
+            100,
+            137
+          ]
+        ],
+        "foreleg": [
+          [
+            113,
+            122
+          ],
+          [
+            112,
+            140
+          ],
+          [
+            115,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            82,
+            131
+          ],
+          [
+            89,
+            146
+          ],
+          [
+            72,
+            155
+          ]
+        ],
+        "tail_length": [
+          [
+            75.0,
+            131.0
+          ],
+          [
+            40.6306822878312,
+            156.0
+          ]
+        ],
+        "tail_thickness": [
+          [
+            58,
+            142
+          ],
+          [
+            64,
+            148
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 12.18,
+        "head": 26.81,
+        "muzzle": 12.66,
+        "body_length": 35.48,
+        "body_depth": 18.72,
+        "foreleg": 37.28,
+        "hindleg": 36.79,
+        "tail_length": 43.5,
+        "tail_thickness": 9.49
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": -1.97,
+        "head": -0.44,
+        "muzzle": -0.04,
+        "body_length": -0.65,
+        "body_depth": 0.72,
+        "foreleg": 1.52,
+        "hindleg": -0.76,
+        "tail_length": 0.05,
+        "tail_thickness": 0.0
+      },
+      "flagged_over_2px": [],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": false
+    },
+    {
+      "move": "howl",
+      "view": "side",
+      "frame": 4,
+      "whole_bbox": [
+        41,
+        97,
+        149,
+        161
+      ],
+      "whole_wh": [
+        108,
+        64
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            108
+          ],
+          [
+            119,
+            97
+          ]
+        ],
+        "head": [
+          [
+            124,
+            110
+          ],
+          [
+            148,
+            118
+          ]
+        ],
+        "muzzle": [
+          [
+            137,
+            114
+          ],
+          [
+            148,
+            118
+          ]
+        ],
+        "body_length": [
+          [
+            78,
+            125
+          ],
+          [
+            111,
+            120
+          ]
+        ],
+        "body_depth": [
+          [
+            95,
+            117
+          ],
+          [
+            97,
+            135
+          ]
+        ],
+        "foreleg": [
+          [
+            112,
+            124
+          ],
+          [
+            112,
+            141
+          ],
+          [
+            114,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            82,
+            131
+          ],
+          [
+            79,
+            144
+          ],
+          [
+            74,
+            157
+          ]
+        ],
+        "tail_length": [
+          [
+            75.0,
+            130.0
+          ],
+          [
+            40.6306822878312,
+            155.0
+          ]
+        ],
+        "tail_thickness": [
+          [
+            58,
+            141
+          ],
+          [
+            64,
+            147
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 16.56,
+        "head": 26.3,
+        "muzzle": 12.7,
+        "body_length": 34.38,
+        "body_depth": 19.11,
+        "foreleg": 35.12,
+        "hindleg": 28.27,
+        "tail_length": 43.5,
+        "tail_thickness": 9.49
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": 2.41,
+        "head": -0.95,
+        "muzzle": 0.0,
+        "body_length": -1.75,
+        "body_depth": 1.11,
+        "foreleg": -0.64,
+        "hindleg": -9.28,
+        "tail_length": 0.05,
+        "tail_thickness": 0.0
+      },
+      "flagged_over_2px": [
+        "ear",
+        "hindleg"
+      ],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": false
+    },
+    {
+      "move": "howl",
+      "view": "side",
+      "frame": 5,
+      "whole_bbox": [
+        41,
+        95,
+        151,
+        161
+      ],
+      "whole_wh": [
+        110,
+        66
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            108
+          ],
+          [
+            128,
+            95
+          ]
+        ],
+        "head": [
+          [
+            124,
+            110
+          ],
+          [
+            149,
+            118
+          ]
+        ],
+        "muzzle": [
+          [
+            138,
+            114
+          ],
+          [
+            149,
+            118
+          ]
+        ],
+        "body_length": [
+          [
+            77,
+            120
+          ],
+          [
+            112,
+            117
+          ]
+        ],
+        "body_depth": [
+          [
+            95,
+            109
+          ],
+          [
+            95,
+            126
+          ]
+        ],
+        "foreleg": [
+          [
+            112,
+            123
+          ],
+          [
+            108,
+            138
+          ],
+          [
+            111,
+            157
+          ]
+        ],
+        "hindleg": [
+          [
+            81,
+            125
+          ],
+          [
+            69,
+            139
+          ],
+          [
+            67,
+            157
+          ]
+        ],
+        "tail_length": [
+          [
+            74,
+            124
+          ],
+          [
+            43,
+            153
+          ]
+        ],
+        "tail_thickness": [
+          [
+            57,
+            136
+          ],
+          [
+            63,
+            142
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.0,
+        "muzzle": 0.0,
+        "body_length": 0.0,
+        "body_depth": 0.0,
+        "foreleg": 0.0,
+        "hindleg": 0.0,
+        "tail_length": 0.0,
+        "tail_thickness": 0.0
+      },
+      "flagged_over_2px": [],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": true
+    },
+    {
+      "move": "howl",
+      "view": "back",
+      "frame": 0,
+      "whole_bbox": [
+        78,
+        89,
+        113,
+        161
+      ],
+      "whole_wh": [
+        35,
+        72
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "howl",
+      "view": "back",
+      "frame": 1,
+      "whole_bbox": [
+        76,
+        94,
+        114,
+        161
+      ],
+      "whole_wh": [
+        38,
+        67
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "howl",
+      "view": "back",
+      "frame": 2,
+      "whole_bbox": [
+        77,
+        91,
+        114,
+        161
+      ],
+      "whole_wh": [
+        37,
+        70
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "howl",
+      "view": "back",
+      "frame": 3,
+      "whole_bbox": [
+        77,
+        94,
+        114,
+        161
+      ],
+      "whole_wh": [
+        37,
+        67
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "howl",
+      "view": "back",
+      "frame": 4,
+      "whole_bbox": [
+        77,
+        92,
+        114,
+        161
+      ],
+      "whole_wh": [
+        37,
+        69
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "howl",
+      "view": "back",
+      "frame": 5,
+      "whole_bbox": [
+        78,
+        89,
+        113,
+        161
+      ],
+      "whole_wh": [
+        35,
+        72
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "death",
+      "view": "front",
+      "frame": 0,
+      "whole_bbox": [
+        80,
+        89,
+        113,
+        161
+      ],
+      "whole_wh": [
+        33,
+        72
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "death",
+      "view": "front",
+      "frame": 1,
+      "whole_bbox": [
+        80,
+        87,
+        113,
+        161
+      ],
+      "whole_wh": [
+        33,
+        74
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "death",
+      "view": "front",
+      "frame": 2,
+      "whole_bbox": [
+        78,
+        100,
+        115,
+        161
+      ],
+      "whole_wh": [
+        37,
+        61
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "death",
+      "view": "front",
+      "frame": 3,
+      "whole_bbox": [
+        74,
+        117,
+        118,
+        161
+      ],
+      "whole_wh": [
+        44,
+        44
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "death",
+      "view": "front",
+      "frame": 4,
+      "whole_bbox": [
+        72,
+        125,
+        121,
+        161
+      ],
+      "whole_wh": [
+        49,
+        36
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "death",
+      "view": "front",
+      "frame": 5,
+      "whole_bbox": [
+        69,
+        123,
+        124,
+        161
+      ],
+      "whole_wh": [
+        55,
+        38
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "death",
+      "view": "front",
+      "frame": 6,
+      "whole_bbox": [
+        69,
+        123,
+        124,
+        161
+      ],
+      "whole_wh": [
+        55,
+        38
+      ],
+      "still_wh": [
+        33,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "death",
+      "view": "side",
+      "frame": 0,
+      "whole_bbox": [
+        41,
+        95,
+        151,
+        161
+      ],
+      "whole_wh": [
+        110,
+        66
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            108
+          ],
+          [
+            128,
+            95
+          ]
+        ],
+        "head": [
+          [
+            124,
+            110
+          ],
+          [
+            149,
+            118
+          ]
+        ],
+        "muzzle": [
+          [
+            138,
+            114
+          ],
+          [
+            149,
+            118
+          ]
+        ],
+        "body_length": [
+          [
+            77,
+            120
+          ],
+          [
+            112,
+            117
+          ]
+        ],
+        "body_depth": [
+          [
+            95,
+            109
+          ],
+          [
+            95,
+            126
+          ]
+        ],
+        "foreleg": [
+          [
+            112,
+            123
+          ],
+          [
+            108,
+            138
+          ],
+          [
+            111,
+            157
+          ]
+        ],
+        "hindleg": [
+          [
+            81,
+            125
+          ],
+          [
+            69,
+            139
+          ],
+          [
+            67,
+            157
+          ]
+        ],
+        "tail_length": [
+          [
+            74,
+            124
+          ],
+          [
+            43,
+            153
+          ]
+        ],
+        "tail_thickness": [
+          [
+            57,
+            136
+          ],
+          [
+            63,
+            142
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.0,
+        "muzzle": 0.0,
+        "body_length": 0.0,
+        "body_depth": 0.0,
+        "foreleg": 0.0,
+        "hindleg": 0.0,
+        "tail_length": 0.0,
+        "tail_thickness": 0.0
+      },
+      "flagged_over_2px": [],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": true
+    },
+    {
+      "move": "death",
+      "view": "side",
+      "frame": 1,
+      "whole_bbox": [
+        41,
+        94,
+        147,
+        161
+      ],
+      "whole_wh": [
+        106,
+        67
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": [
+          [
+            129,
+            106
+          ],
+          [
+            118,
+            100
+          ]
+        ],
+        "head": [
+          [
+            124,
+            106
+          ],
+          [
+            147,
+            109
+          ]
+        ],
+        "muzzle": [
+          [
+            136,
+            108
+          ],
+          [
+            147,
+            109
+          ]
+        ],
+        "body_length": [
+          [
+            78,
+            123
+          ],
+          [
+            113,
+            119
+          ]
+        ],
+        "body_depth": [
+          [
+            96,
+            114
+          ],
+          [
+            97,
+            132
+          ]
+        ],
+        "foreleg": [
+          [
+            112,
+            123
+          ],
+          [
+            109,
+            141
+          ],
+          [
+            112,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            82,
+            128
+          ],
+          [
+            73,
+            142
+          ],
+          [
+            73,
+            158
+          ]
+        ],
+        "tail_length": [
+          [
+            75.0,
+            129.0
+          ],
+          [
+            40.6306822878312,
+            154.0
+          ]
+        ],
+        "tail_thickness": [
+          [
+            57,
+            140
+          ],
+          [
+            63,
+            146
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 13.53,
+        "head": 24.19,
+        "muzzle": 12.05,
+        "body_length": 36.23,
+        "body_depth": 19.03,
+        "foreleg": 36.51,
+        "hindleg": 33.64,
+        "tail_length": 43.5,
+        "tail_thickness": 9.49
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": -0.62,
+        "head": -3.06,
+        "muzzle": -0.65,
+        "body_length": 0.1,
+        "body_depth": 1.03,
+        "foreleg": 0.75,
+        "hindleg": -3.91,
+        "tail_length": 0.05,
+        "tail_thickness": 0.0
+      },
+      "flagged_over_2px": [
+        "head",
+        "hindleg"
+      ],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": false
+    },
+    {
+      "move": "death",
+      "view": "side",
+      "frame": 2,
+      "whole_bbox": [
+        38,
+        106,
+        151,
+        161
+      ],
+      "whole_wh": [
+        113,
+        55
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": [
+          [
+            129,
+            120
+          ],
+          [
+            127,
+            107
+          ]
+        ],
+        "head": [
+          [
+            124,
+            120
+          ],
+          [
+            150,
+            131
+          ]
+        ],
+        "muzzle": [
+          [
+            138,
+            126
+          ],
+          [
+            150,
+            131
+          ]
+        ],
+        "body_length": [
+          [
+            77,
+            130
+          ],
+          [
+            113,
+            127
+          ]
+        ],
+        "body_depth": [
+          [
+            96,
+            117
+          ],
+          [
+            96,
+            136
+          ]
+        ],
+        "foreleg": [
+          [
+            112,
+            131
+          ],
+          [
+            110,
+            146
+          ],
+          [
+            125,
+            157
+          ]
+        ],
+        "hindleg": [
+          [
+            82,
+            133
+          ],
+          [
+            71,
+            144
+          ],
+          [
+            75,
+            158
+          ]
+        ],
+        "tail_length": [
+          [
+            74.0,
+            133.0
+          ],
+          [
+            38.261365442983134,
+            156.0
+          ]
+        ],
+        "tail_thickness": [
+          [
+            54,
+            143
+          ],
+          [
+            60,
+            149
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.15,
+        "head": 29.23,
+        "muzzle": 14.0,
+        "body_length": 37.12,
+        "body_depth": 20.0,
+        "foreleg": 34.73,
+        "hindleg": 31.12,
+        "tail_length": 43.5,
+        "tail_thickness": 9.49
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 1.98,
+        "muzzle": 1.3,
+        "body_length": 0.99,
+        "body_depth": 2.0,
+        "foreleg": -1.03,
+        "hindleg": -6.43,
+        "tail_length": 0.05,
+        "tail_thickness": 0.0
+      },
+      "flagged_over_2px": [
+        "hindleg"
+      ],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": false
+    },
+    {
+      "move": "death",
+      "view": "side",
+      "frame": 3,
+      "whole_bbox": [
+        35,
+        125,
+        150,
+        161
+      ],
+      "whole_wh": [
+        115,
+        36
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": [
+          [
+            132,
+            142
+          ],
+          [
+            132,
+            126
+          ]
+        ],
+        "head": [
+          [
+            126,
+            142
+          ],
+          [
+            149,
+            151
+          ]
+        ],
+        "muzzle": [
+          [
+            139,
+            146
+          ],
+          [
+            149,
+            151
+          ]
+        ],
+        "body_length": [
+          [
+            77,
+            143
+          ],
+          [
+            114,
+            143
+          ]
+        ],
+        "body_depth": [
+          [
+            96,
+            131
+          ],
+          [
+            96,
+            151
+          ]
+        ],
+        "foreleg": [
+          [
+            114,
+            142
+          ],
+          [
+            110,
+            153
+          ],
+          [
+            133,
+            156
+          ]
+        ],
+        "hindleg": [
+          [
+            82,
+            144
+          ],
+          [
+            68,
+            149
+          ],
+          [
+            75,
+            158
+          ]
+        ],
+        "tail_length": [
+          [
+            75.0,
+            142.0
+          ],
+          [
+            34.87207954553339,
+            156.0
+          ]
+        ],
+        "tail_thickness": [
+          [
+            54,
+            146
+          ],
+          [
+            58,
+            153
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 17.0,
+        "head": 25.7,
+        "muzzle": 12.18,
+        "body_length": 38.0,
+        "body_depth": 21.0,
+        "foreleg": 35.9,
+        "hindleg": 27.27,
+        "tail_length": 43.5,
+        "tail_thickness": 9.06
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": 2.85,
+        "head": -1.55,
+        "muzzle": -0.52,
+        "body_length": 1.87,
+        "body_depth": 3.0,
+        "foreleg": 0.14,
+        "hindleg": -10.28,
+        "tail_length": 0.05,
+        "tail_thickness": -0.43
+      },
+      "flagged_over_2px": [
+        "ear",
+        "body_depth",
+        "hindleg"
+      ],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": false
+    },
+    {
+      "move": "death",
+      "view": "side",
+      "frame": 4,
+      "whole_bbox": [
+        34,
+        130,
+        145,
+        161
+      ],
+      "whole_wh": [
+        111,
+        31
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": [
+          [
+            133,
+            149
+          ],
+          [
+            132,
+            132
+          ]
+        ],
+        "head": [
+          [
+            126,
+            146
+          ],
+          [
+            143,
+            156
+          ]
+        ],
+        "muzzle": [
+          [
+            137,
+            151
+          ],
+          [
+            143,
+            156
+          ]
+        ],
+        "body_length": [
+          [
+            78,
+            142
+          ],
+          [
+            116,
+            144
+          ]
+        ],
+        "body_depth": [
+          [
+            96,
+            135
+          ],
+          [
+            96,
+            150
+          ]
+        ],
+        "foreleg": null,
+        "hindleg": null,
+        "tail_length": [
+          [
+            75.0,
+            146.0
+          ],
+          [
+            33.69322089535424,
+            156.0
+          ]
+        ],
+        "tail_thickness": [
+          [
+            55,
+            147
+          ],
+          [
+            57,
+            154
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 18.03,
+        "head": 20.72,
+        "muzzle": 8.81,
+        "body_length": 39.05,
+        "body_depth": 16.0,
+        "foreleg": null,
+        "hindleg": null,
+        "tail_length": 43.5,
+        "tail_thickness": 8.28
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": 3.88,
+        "head": -6.53,
+        "muzzle": -3.89,
+        "body_length": 2.92,
+        "body_depth": -2.0,
+        "foreleg": null,
+        "hindleg": null,
+        "tail_length": 0.05,
+        "tail_thickness": -1.21
+      },
+      "flagged_over_2px": [
+        "ear",
+        "head",
+        "muzzle",
+        "body_length"
+      ],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": false
+    },
+    {
+      "move": "death",
+      "view": "side",
+      "frame": 5,
+      "whole_bbox": [
+        40,
+        124,
+        151,
+        161
+      ],
+      "whole_wh": [
+        111,
+        37
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": null,
+        "head": null,
+        "muzzle": null,
+        "body_length": null,
+        "body_depth": null,
+        "foreleg": null,
+        "hindleg": null,
+        "tail_length": null,
+        "tail_thickness": null
+      },
+      "visible_axis_px": {
+        "ear": null,
+        "head": null,
+        "muzzle": null,
+        "body_length": null,
+        "body_depth": null,
+        "foreleg": null,
+        "hindleg": null,
+        "tail_length": null,
+        "tail_thickness": null
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": null,
+        "head": null,
+        "muzzle": null,
+        "body_length": null,
+        "body_depth": null,
+        "foreleg": null,
+        "hindleg": null,
+        "tail_length": null,
+        "tail_thickness": null
+      },
+      "flagged_over_2px": [],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": false,
+      "measurement_note": "same generated f4 drawing rigidly rotated: lengths inherited, visibility and pixel rasterization change; limb roots occluded"
+    },
+    {
+      "move": "death",
+      "view": "side",
+      "frame": 6,
+      "whole_bbox": [
+        40,
+        124,
+        151,
+        161
+      ],
+      "whole_wh": [
+        111,
+        37
+      ],
+      "still_wh": [
+        110,
+        66
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "landmarks": {
+        "ear": null,
+        "head": null,
+        "muzzle": null,
+        "body_length": null,
+        "body_depth": null,
+        "foreleg": null,
+        "hindleg": null,
+        "tail_length": null,
+        "tail_thickness": null
+      },
+      "visible_axis_px": {
+        "ear": null,
+        "head": null,
+        "muzzle": null,
+        "body_length": null,
+        "body_depth": null,
+        "foreleg": null,
+        "hindleg": null,
+        "tail_length": null,
+        "tail_thickness": null
+      },
+      "reference_axis_px": {
+        "ear": 14.15,
+        "head": 27.25,
+        "muzzle": 12.7,
+        "body_length": 36.13,
+        "body_depth": 18.0,
+        "foreleg": 35.76,
+        "hindleg": 37.55,
+        "tail_length": 43.45,
+        "tail_thickness": 9.49
+      },
+      "delta_px": {
+        "ear": null,
+        "head": null,
+        "muzzle": null,
+        "body_length": null,
+        "body_depth": null,
+        "foreleg": null,
+        "hindleg": null,
+        "tail_length": null,
+        "tail_thickness": null
+      },
+      "flagged_over_2px": [],
+      "annotation_uncertainty_px": 2,
+      "certified_proportion_pass": false,
+      "measurement_note": "same generated f4 drawing rigidly rotated: lengths inherited, visibility and pixel rasterization change; limb roots occluded"
+    },
+    {
+      "move": "death",
+      "view": "back",
+      "frame": 0,
+      "whole_bbox": [
+        78,
+        89,
+        113,
+        161
+      ],
+      "whole_wh": [
+        35,
+        72
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "death",
+      "view": "back",
+      "frame": 1,
+      "whole_bbox": [
+        78,
+        87,
+        112,
+        161
+      ],
+      "whole_wh": [
+        34,
+        74
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "death",
+      "view": "back",
+      "frame": 2,
+      "whole_bbox": [
+        76,
+        100,
+        114,
+        161
+      ],
+      "whole_wh": [
+        38,
+        61
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "death",
+      "view": "back",
+      "frame": 3,
+      "whole_bbox": [
+        72,
+        114,
+        119,
+        161
+      ],
+      "whole_wh": [
+        47,
+        47
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "death",
+      "view": "back",
+      "frame": 4,
+      "whole_bbox": [
+        72,
+        124,
+        120,
+        161
+      ],
+      "whole_wh": [
+        48,
+        37
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "death",
+      "view": "back",
+      "frame": 5,
+      "whole_bbox": [
+        68,
+        124,
+        123,
+        161
+      ],
+      "whole_wh": [
+        55,
+        37
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    },
+    {
+      "move": "death",
+      "view": "back",
+      "frame": 6,
+      "whole_bbox": [
+        68,
+        124,
+        123,
+        161
+      ],
+      "whole_wh": [
+        55,
+        37
+      ],
+      "still_wh": [
+        35,
+        72
+      ],
+      "interpretation": "bbox varies with pose; not a part-size test",
+      "part_measurement_status": "front/back overlap and foreshortening: no full axial-length certification; whole extents recorded, visually compared on 4x boards"
+    }
+  ]
+}

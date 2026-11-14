@@ -1,0 +1,49 @@
+{
+  "id": "electric_eel",
+  "source_sha256": "23d480d94c3c50c987c9ed59cba69162961b589cbfe300ae12d857c37c6ee127",
+  "source_triangles": 500000,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      299,
+      203
+    ],
+    [
+      300,
+      214
+    ],
+    [
+      1024,
+      173
+    ],
+    [
+      1024,
+      170
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8751965867481923,
+  "blender_bounds_min": [
+    -3.4524474143981934,
+    -1.600234031677246,
+    0.12010105699300766
+  ],
+  "blender_bounds_max": [
+    -2.5478358268737793,
+    1.5990471839904785,
+    0.5493993759155273
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

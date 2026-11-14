@@ -1,0 +1,49 @@
+{
+  "id": "wolf",
+  "source_sha256": "b40438b083509e7c43bf8429ff2e430f214b809bc6455be72b2608b6b29e2324",
+  "source_triangles": 500000,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8750355183594228,
+  "blender_bounds_min": [
+    -3.458984613418579,
+    -1.600759744644165,
+    0.11953534930944443
+  ],
+  "blender_bounds_max": [
+    -2.5408318042755127,
+    1.5991103649139404,
+    1.2651723623275757
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

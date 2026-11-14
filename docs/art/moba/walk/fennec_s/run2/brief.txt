@@ -1,0 +1,71 @@
+You are making pixel-art walk frames for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run2.
+Read anything under D:\dev\new-mech-rpg\docs\art\moba. Do not touch any other folder (run1 included), assets, art or
+tools, and do not commit. Run tag: fennec-trot35-run2.
+
+This is run 2 of the violet S fennec's trot at 35 degrees. Run 1 (D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run1)
+made the e, se and ne views. Read run1\brief.txt (the machine, the gait, the method, the rules and the pass marks all
+still apply), run1\REPORT.txt, run1\LANE_REVIEW.txt (the walk lane's review), and run1\build.py, rig.json, checks.txt and
+ape_native.py: that is your own method from run 1, so reuse it rather than starting again. Read
+D:\dev\new-mech-rpg\docs\art\moba\walk\WALK_PLAYBOOK.md section 7 for the front and back views, and the gorilla's run 2
+(D:\dev\new-mech-rpg\docs\art\moba\walk\ape_l\run2: brief.txt, REPORT.txt, walk\build_frontback.py), which did the same.
+The stills on the 192 canvas are in run2\stills; the targets (the same plan as run 1, with s and n included) are in
+run2\targets.json, and the guides are run2\guide_<view>.png. Preston approved folding two repairs of run 1 into this run.
+
+Work in this order, and keep run2\REPORT.txt up to date after each part, so a report exists even if the run is stopped:
+
+Part 1, repair ne (all 8 frames). Preston saw run 1's ne: the far hind leg's dark upper band is drawn over the tail, so
+the tail's light top band breaks into dark blocks, with dark specks around the tail root and between the hind legs. A 5x
+zoom is run1\lane_defects_zoom.png (top two rows: the still, then f0-f7). In ne the tail is nearer the camera than the far
+hind leg and above it, so draw in this order: far legs (LH, LF), then the tail, then the body, then the near legs (RH,
+RF). The tail is the still's own tail moved whole (1 px dip on f1 and f5), its light top band and cream tip complete in
+every frame; nothing of the far hind leg may cover it; the far hind leg shows only below the tail, as in the still.
+Remove every loose dark speck. Keep everything else in run 1's ne frames as it is, and keep every foot's lock.
+Pass mark: in the box x 58-91, y 128-149 the tail's light violet pixels (e0c8ff and a46bff) number at least 63 in every
+frame (the still has 70; run 1 had 11-34), counted after the tail's dip. Write run2\walk\frames\ne_f0.png to ne_f7.png.
+
+Part 2, repair e (check all 8 frames, fix f3-f6 and any other). In run 1's e the gold chest plate at the near front
+shoulder breaks into loose gold fragments as the front leg moves (bottom row of run1\lane_defects_zoom.png: the still,
+then f3-f6). The chest plate is part of the pinned body: one solid gold shape with its highlight, base and shadow bands
+and its dark seam, behind the near front leg's top. Where the leg uncovers it, draw the plate whole, continuing its bands
+and seam; where the leg covers it, draw the leg's edge cleanly over it. No gold pixel may sit loose or in specks.
+Pass mark: every e frame has the still's number of separate gold pieces (cream-gold fff4d6, f0d27a, b8923a, 8-connected:
+the still has 4) and no gold piece of 4 px or fewer. Write all 8 frames, unchanged ones copied from run 1, to
+run2\walk\frames\e_f0.png to e_f7.png. se needs no repair.
+
+Part 3, s. Part 4, n. Each is an 8-frame trot loop, 100 ms a frame, with run 1's gait: RF and LH swing f5-f7, LF and RH
+swing f1-f3, both pairs planted on f0 and f4, the body dips 1 px on f0 and f4, the tail one frame later (f1 and f5). Per
+view, the path turns into screen px as offset * f * u, with the lift straight up:
+  s: u = (0, 1), f = 0.5736; a planted foot moves (0.00, -2.01) px a frame on the canvas (x, y; y down)
+  n: u = (0, -1), f = 0.5736; a planted foot moves (0.00, +2.01) px a frame on the canvas
+At 35 degrees a step toward or away from the camera shows at 0.57 of its length, so these views need real foot travel up
+and down the screen, not reordered side frames. In s the front feet are the near feet (row 160) and the hind feet are far
+(row 149), mostly hidden beside the front legs; in n the hind feet are near (row 160) and the front feet far (row 140),
+peeking out at the sides. A foot nearer the camera than in the still may sit up to 4 px below row 160. Draw order: in s,
+hind legs, then body, then front legs; in n, front legs, then body, then hind legs, then the tail, which points at the
+camera from the top of the rump and is drawn over the inner edges of the hind legs only where the still shows it so. As
+the hind legs move, no tail colour may be left on a leg and no leg colour on the tail (the old walk left gold tail pixels
+on the inner hind leg). In both views each leg moves straight up and down the screen with its knee disc, joints redrawn
+by hand; the legs stay apart from each other.
+
+Pass marks, for ne, e, s and n: as in run1\brief.txt, including seams with no slits inside the body. Run these and report
+their results:
+  python D:\dev\new-mech-rpg\docs\art\moba\walk\tools\walk_tools.py footlock
+    --targets D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run2\targets.json
+    --frames D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run2\walk\frames --views e ne s n
+    --still-dir D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run2\stills
+    --out D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run2\footlock.json
+  python D:\dev\new-mech-rpg\docs\art\moba\walk\tools\walk_tools.py seams
+    --targets D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run2\targets.json
+    --frames D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run2\walk\frames --views e ne s n
+    --still-dir D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run2\stills --body e0c8ff a46bff 6a3cc8 2e1a6e
+The fennec's feet stand close together, so walk_tools' silhouette footlock can merge neighbouring soles: report it, and
+report your own stamp measure (run 1's) as the deciding one. Seams flags between two legs are real gaps and stay open.
+
+Output in run2: walk\frames\ne_f0-7.png, e_f0-7.png, s_f0-7.png and n_f0-7.png (raw, no outline, like the stills), a
+preview gif per view (100 ms, loop), footprint pictures for s and n, board.png (per view: the still, then the 8 frames,
+with the game's sel-out from D:\dev\new-mech-rpg\docs\art\moba\touchup\touchup_machine.py, at 4x), repairs.png (5x: ne
+tail region and e chest, still then f0-f7, run 1 above run 2), legs_zoom.png for s and n, checks.txt, footlock.json, and
+REPORT.txt (under 30 lines): tokens if known, the two repair pass marks, the foot-lock spreads, target errors, the seams
+result, upper-body match, lowest rows, and by eye: is ne's tail whole and clean now, is e's chest plate whole, and do s and
+n read as this fennec trotting toward and away from the camera in diagonal pairs, legs like the still, the tail straight
+and clean of the legs?

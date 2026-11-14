@@ -1,0 +1,49 @@
+{
+  "id": "hummingbird",
+  "source_sha256": "4d8b4161267de42bca0197b1ed72e360d04f4ccc182a06b25fa88c8144ff13bb",
+  "source_triangles": 500000,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8750123085322864,
+  "blender_bounds_min": [
+    -4.600215911865234,
+    -1.103163480758667,
+    0.12072867900133133
+  ],
+  "blender_bounds_max": [
+    -1.4002610445022583,
+    1.1034555435180664,
+    1.5031527280807495
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

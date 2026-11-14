@@ -1,0 +1,79 @@
+You are making pixel-art walk frames for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run1.
+Read anything under D:\dev\new-mech-rpg\docs\art\moba. Do not touch any other folder, assets, art or tools, and do not
+commit. Run tag: fennec-trot35-run1.
+
+The machine: the violet S robot fennec fox. Its standing stills at 35 degrees are in
+D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\views_stand35 (s, se, e, ne, n; 160x160, feet row 140, 15 colours, raw
+with no outline; README.txt there says how they were made). The same stills placed on the game's 192x192 canvas (at +16,
++20, so the lowest foot is on row 160) are in run1\stills; work on those. Preston, the game's owner, approved this
+standing pose; above the legs the walk must match it exactly.
+Read first: D:\dev\new-mech-rpg\docs\art\moba\walk\WALK_PLAYBOOK.md (sections 1, 5, 7, 9 and 11) and the green gorilla's
+35-degree walk, the method that worked last: D:\dev\new-mech-rpg\docs\art\moba\walk\ape_l\run1 (brief.txt, REPORT.txt,
+build.py, verify.py, rig.json), ape_l\run2 (brief.txt, REPORT.txt, walk\build_frontback.py) and ape_l\final\README.txt.
+Reuse that method and its scripts rather than starting again. What went wrong there: run 1's ne far limb came out cut
+off and broken, and in e, se and ne a limb sliding back left a transparent slit inside the body that had to be filled
+afterwards. The fennec's old trot at the low camera shows how its legs and tail moved:
+D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\codex-set-a\walk (motion only; its camera and outline are wrong).
+
+Keep run1\REPORT.txt current: write it once the first view is drawn and update it after each view, so a report exists even
+if the run is stopped by its token cap.
+
+Job, run 1: an 8-frame trot, 100 ms a frame (10 fps), looping, in these views: e, se, ne. The gait is a trot in
+diagonal pairs: the right front foot (RF) and left hind foot (LH) swing f5-f7; the left front foot (LF) and right hind
+foot (RH) swing f1-f3; both pairs are planted on f0 and f4. Each foot swings for 3 frames with lifts of 2, 3 and 2 px.
+Each foot's path (offset along the body in side-view px, + = forward, and lift) is in run1\targets.json "paths"; per view
+the path turns into screen px as offset * f * u, with the lift straight up:
+  e: u = (1, 0), f = 1.0; a planted foot moves (-3.50, +0.00) px a frame on the canvas (x, y; y down)
+  se: u = (0.8674, 0.4975), f = 0.8152; a planted foot moves (-2.47, -1.42) px a frame on the canvas
+  ne: u = (0.8674, -0.4975), f = 0.8152; a planted foot moves (-2.47, +1.42) px a frame on the canvas
+The step is 3.5 px in e (the game's speed), so targets fall on half pixels: round each frame's position so a planted
+foot's moves alternate (3 and 4 px in e) and its total stays within 0.5 px of the target. targets.json "views" gives the
+sole centre of every labelled foot in each still for every frame; run1\guide_<view>.png shows them (the still faded, then
+a bar per foot per frame, filled when planted and outlined when lifted, with a tick for the lift). R and L are the
+fennec's own right and left; its right side is the near side in e, se and ne. The labels are in
+D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\feet.json: check them and say if one is wrong. Feet partly or wholly
+hidden in the still: e LH and LF (they peek out at x 90-94 and 119-121, row 153), se LH, ne LF. Draw a hidden foot only
+where the new pose shows it.
+
+Method: no image tool, native pixels, as the gorilla walk did it. The body, head, ears, eyes, chest plate and tail are the
+still, pixel for pixel, dipping 1 px on f0 and f4 (the frames where a pair lands). The tail is the still's tail moved
+whole: it dips 1 px one frame later than the body (f1 and f5), never redrawn, never curled, and never drawn over a leg.
+The legs are the still's own legs re-posed. Each leg is hip, upper leg, round steel knee disc, lower leg and steel foot.
+The foot and lower leg move together to the target, the knee disc moves about half as far, and the upper leg between hip
+and knee is redrawn as a leaning band in the still's own colours and shading bands, stepped 1 px per row or two, with its
+lit edge and its dark seam kept. On a lifted foot the lower leg rises with it. Every part is the still's own pixels
+TRANSLATED, never rotated or resampled (rotation left dark specks and slivers on the rhino). Every joint and every join
+with the body (shoulder, hip, knee) is redrawn by hand: no seams, no straight cut edges, no gaps, no part ending abruptly.
+Where a leg slides back, draw the body behind it: no slit may show the background inside the body. Keep each leg's length
+within 1 px of the still's. The far legs (darker in the still) are built the same way, one shade darker on their own
+ramp, behind the near legs and the body.
+
+Pass marks (report each):
+- Foot lock: for each foot, its sole centre on its k-th planted frame (k = 0 to 4 in order, wrapping past f7) minus k
+  times the planted step above stays within 2 px in x and y. Measure from the frame pixels, not from your targets. Write
+  a footprint picture per view. Also run these and report their results:
+  python D:\dev\new-mech-rpg\docs\art\moba\walk\tools\walk_tools.py footlock
+    --targets D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run1\targets.json
+    --frames D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run1\walk\frames --views e se ne
+    --still-dir D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run1\stills
+    --out D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run1\footlock.json
+  python D:\dev\new-mech-rpg\docs\art\moba\walk\tools\walk_tools.py seams
+    --targets D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run1\targets.json
+    --frames D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run1\walk\frames --views e se ne
+    --still-dir D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run1\stills --body e0c8ff a46bff 6a3cc8 2e1a6e
+  For a foot hidden behind the body in a frame, measure it from your leg layer and say so. Seams must report no slits.
+- Each visible foot meets its target within 1 px; lifts exact.
+- Above the legs every frame equals the still (after the 1 px dip; the tail one frame later): report the % of differing
+  pixels per frame.
+- 192x192 transparent frames, the stills' 15 colours only, binary alpha, no holes, no stray pixels, nothing touching the
+  canvas edge. A planted foot nearer the camera than in the still may sit up to 3 px below row 160 (perspective); report
+  each frame's lowest row.
+- Judge boards at 4x with the game's 1 px dark sel-out added (the packer adds it; use the selout function in
+  D:\dev\new-mech-rpg\docs\art\moba\touchup\touchup_machine.py), with the still beside them, then a 5x zoom of the legs
+  of every frame: look at every knee, hip and foot.
+
+Output in run1: walk\frames\<view>_f0.png to <view>_f7.png for e, se and ne (raw, no outline, like the stills), a preview
+gif per view (100 ms, loop), footprint pictures, board.png (per view: the still, then your 8 frames, with sel-out, at
+4x), legs_zoom.png, checks.txt, footlock.json, and REPORT.txt (under 30 lines): tokens if known, the foot names you used,
+the foot-lock spreads, target errors, the seams result, upper-body match, lowest rows, and by eye: does each view read as
+this fennec trotting forward in diagonal pairs, legs like the still, whole and clean, tail straight and clear of the legs?

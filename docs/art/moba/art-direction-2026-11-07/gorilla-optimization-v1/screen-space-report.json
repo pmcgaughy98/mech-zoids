@@ -1,0 +1,321 @@
+{
+  "camera": "1280x720, 60 degree FOV, 6.5 m, 30 degree pitch, 2 m test height; 4 near angles + 8 m farther case",
+  "metrics_caveat": "Screen-space masks measure static projection overlap, not topology, deformation or perceived quality. Color differences include normal/shading/UV changes. No frame-time or GPU-memory benchmark.",
+  "source_textures_exactly_retained_in_4k_reductions": true,
+  "summaries": [
+    {
+      "variant": "source-4k",
+      "triangles": 499148,
+      "file_mb_decimal": 50.001268,
+      "min_silhouette_iou": 1.0,
+      "mean_silhouette_iou": 1.0
+    },
+    {
+      "variant": "source-2k",
+      "triangles": 499148,
+      "file_mb_decimal": 24.921428,
+      "min_silhouette_iou": 1.0,
+      "mean_silhouette_iou": 1.0
+    },
+    {
+      "variant": "100k-4k",
+      "triangles": 99999,
+      "file_mb_decimal": 38.479428,
+      "min_silhouette_iou": 0.9994485080691977,
+      "mean_silhouette_iou": 0.999561043066598
+    },
+    {
+      "variant": "40k-4k",
+      "triangles": 40000,
+      "file_mb_decimal": 35.782636,
+      "min_silhouette_iou": 0.9986571773868672,
+      "mean_silhouette_iou": 0.9988200283006317
+    },
+    {
+      "variant": "100k-2k",
+      "triangles": 99999,
+      "file_mb_decimal": 13.399588,
+      "min_silhouette_iou": 0.9994485080691977,
+      "mean_silhouette_iou": 0.999561043066598
+    },
+    {
+      "variant": "40k-2k",
+      "triangles": 40000,
+      "file_mb_decimal": 10.702792,
+      "min_silhouette_iou": 0.9986571773868672,
+      "mean_silhouette_iou": 0.9988200283006317
+    }
+  ],
+  "per_shot": [
+    {
+      "variant": "source-4k",
+      "shot": "y0-d0",
+      "silhouette_iou": 1.0,
+      "source_pixels": 34438,
+      "variant_pixels": 34438,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 0.0,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.0
+    },
+    {
+      "variant": "source-4k",
+      "shot": "y45-d0",
+      "silhouette_iou": 1.0,
+      "source_pixels": 32447,
+      "variant_pixels": 32447,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 0.0,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.0
+    },
+    {
+      "variant": "source-4k",
+      "shot": "y135-d0",
+      "silhouette_iou": 1.0,
+      "source_pixels": 31587,
+      "variant_pixels": 31587,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 0.0,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.0
+    },
+    {
+      "variant": "source-4k",
+      "shot": "y180-d0",
+      "silhouette_iou": 1.0,
+      "source_pixels": 35777,
+      "variant_pixels": 35777,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 0.0,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.0
+    },
+    {
+      "variant": "source-4k",
+      "shot": "y135-d8",
+      "silhouette_iou": 1.0,
+      "source_pixels": 7446,
+      "variant_pixels": 7446,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 0.0,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.0
+    },
+    {
+      "variant": "source-2k",
+      "shot": "y0-d0",
+      "silhouette_iou": 1.0,
+      "source_pixels": 34438,
+      "variant_pixels": 34438,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 0.6617399454116821,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.004094314420117312
+    },
+    {
+      "variant": "source-2k",
+      "shot": "y45-d0",
+      "silhouette_iou": 1.0,
+      "source_pixels": 32447,
+      "variant_pixels": 32447,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 0.6209716200828552,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.0032976854562825533
+    },
+    {
+      "variant": "source-2k",
+      "shot": "y135-d0",
+      "silhouette_iou": 1.0,
+      "source_pixels": 31587,
+      "variant_pixels": 31587,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 0.5791306495666504,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.002975907810175072
+    },
+    {
+      "variant": "source-2k",
+      "shot": "y180-d0",
+      "silhouette_iou": 1.0,
+      "source_pixels": 35777,
+      "variant_pixels": 35777,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 0.5280207991600037,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.0023199262095759845
+    },
+    {
+      "variant": "source-2k",
+      "shot": "y135-d8",
+      "silhouette_iou": 1.0,
+      "source_pixels": 7446,
+      "variant_pixels": 7446,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 0.5777151584625244,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.0032232070910556
+    },
+    {
+      "variant": "100k-4k",
+      "shot": "y0-d0",
+      "silhouette_iou": 0.9994485080691977,
+      "source_pixels": 34438,
+      "variant_pixels": 34447,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 4.871828079223633,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.10382481921412598
+    },
+    {
+      "variant": "100k-4k",
+      "shot": "y45-d0",
+      "silhouette_iou": 0.9995378785544842,
+      "source_pixels": 32447,
+      "variant_pixels": 32456,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 4.281181812286377,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.08590186166933794
+    },
+    {
+      "variant": "100k-4k",
+      "shot": "y135-d0",
+      "silhouette_iou": 0.9995569199607558,
+      "source_pixels": 31587,
+      "variant_pixels": 31593,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 3.870858907699585,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.06997435329132762
+    },
+    {
+      "variant": "100k-4k",
+      "shot": "y180-d0",
+      "silhouette_iou": 0.999664701444578,
+      "source_pixels": 35777,
+      "variant_pixels": 35789,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 3.6157867908477783,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.0702965592419711
+    },
+    {
+      "variant": "100k-4k",
+      "shot": "y135-d8",
+      "silhouette_iou": 0.9995972073039742,
+      "source_pixels": 7446,
+      "variant_pixels": 7447,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 3.6229684352874756,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.055070517125587644
+    },
+    {
+      "variant": "40k-4k",
+      "shot": "y0-d0",
+      "silhouette_iou": 0.9987521040106797,
+      "source_pixels": 34438,
+      "variant_pixels": 34435,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 6.997162342071533,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.16603225337788755
+    },
+    {
+      "variant": "40k-4k",
+      "shot": "y45-d0",
+      "silhouette_iou": 0.9990141712877387,
+      "source_pixels": 32447,
+      "variant_pixels": 32441,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 6.144576549530029,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.1415443443937338
+    },
+    {
+      "variant": "40k-4k",
+      "shot": "y135-d0",
+      "silhouette_iou": 0.9987661351556568,
+      "source_pixels": 31587,
+      "variant_pixels": 31590,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 5.436715602874756,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.11273717887801324
+    },
+    {
+      "variant": "40k-4k",
+      "shot": "y180-d0",
+      "silhouette_iou": 0.9989105536622158,
+      "source_pixels": 35777,
+      "variant_pixels": 35780,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 4.941944599151611,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.10366620990519869
+    },
+    {
+      "variant": "40k-4k",
+      "shot": "y135-d8",
+      "silhouette_iou": 0.9986571773868672,
+      "source_pixels": 7446,
+      "variant_pixels": 7438,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 4.965397834777832,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.09519967728922953
+    },
+    {
+      "variant": "100k-2k",
+      "shot": "y0-d0",
+      "silhouette_iou": 0.9994485080691977,
+      "source_pixels": 34438,
+      "variant_pixels": 34447,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 5.016224384307861,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.10704847094357157
+    },
+    {
+      "variant": "100k-2k",
+      "shot": "y45-d0",
+      "silhouette_iou": 0.9995378785544842,
+      "source_pixels": 32447,
+      "variant_pixels": 32456,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 4.4276909828186035,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.08892245099247935
+    },
+    {
+      "variant": "100k-2k",
+      "shot": "y135-d0",
+      "silhouette_iou": 0.9995569199607558,
+      "source_pixels": 31587,
+      "variant_pixels": 31593,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 3.992084264755249,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.07174745907608523
+    },
+    {
+      "variant": "100k-2k",
+      "shot": "y180-d0",
+      "silhouette_iou": 0.999664701444578,
+      "source_pixels": 35777,
+      "variant_pixels": 35789,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 3.7297146320343018,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.07216927076054448
+    },
+    {
+      "variant": "100k-2k",
+      "shot": "y135-d8",
+      "silhouette_iou": 0.9995972073039742,
+      "source_pixels": 7446,
+      "variant_pixels": 7447,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 3.735527276992798,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.05574210879785091
+    },
+    {
+      "variant": "40k-2k",
+      "shot": "y0-d0",
+      "silhouette_iou": 0.9987521040106797,
+      "source_pixels": 34438,
+      "variant_pixels": 34435,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 7.078396320343018,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.1682987069591748
+    },
+    {
+      "variant": "40k-2k",
+      "shot": "y45-d0",
+      "silhouette_iou": 0.9990141712877387,
+      "source_pixels": 32447,
+      "variant_pixels": 32441,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 6.249002456665039,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.14327124707043296
+    },
+    {
+      "variant": "40k-2k",
+      "shot": "y135-d0",
+      "silhouette_iou": 0.9987661351556568,
+      "source_pixels": 31587,
+      "variant_pixels": 31590,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 5.510701656341553,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.11498622065950774
+    },
+    {
+      "variant": "40k-2k",
+      "shot": "y180-d0",
+      "silhouette_iou": 0.9989105536622158,
+      "source_pixels": 35777,
+      "variant_pixels": 35780,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 5.011232376098633,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.10400178975922146
+    },
+    {
+      "variant": "40k-2k",
+      "shot": "y135-d8",
+      "silhouette_iou": 0.9986571773868672,
+      "source_pixels": 7446,
+      "variant_pixels": 7438,
+      "mean_abs_rgb_difference_inside_common_silhouette_255": 5.032001972198486,
+      "fraction_common_pixels_with_mean_rgb_difference_above_12": 0.09506521446819954
+    }
+  ]
+}

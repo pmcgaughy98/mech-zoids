@@ -1,0 +1,16 @@
+{
+  "request": {
+    "mode": "refine",
+    "ai_model": "meshy-6",
+    "target_formats": [
+      "glb"
+    ],
+    "preview_task_id": "01a1da49-a94b-74ab-977e-47dd35c69639",
+    "texture_resolution": "2k",
+    "enable_pbr": true,
+    "remove_lighting": true,
+    "texture_prompt": "Cohesive stylized Foundry steel: blue charcoal armor, warm iron inset plates, small amber luminous strips, sparse yellow hazard trim. Broad clean color blocks and gentle edge wear. No text or logos. Neutral material illumination, not baked shadows."
+  },
+  "reserved_credits": 10,
+  "at": "2026-11-14T13:42:44.014258+00:00"
+}

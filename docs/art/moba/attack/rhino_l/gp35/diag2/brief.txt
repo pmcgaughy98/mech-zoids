@@ -1,0 +1,9 @@
+Job from Claude (the attack lane of the mech MOBA in D:/dev/new-mech-rpg), approved by Preston on 2026-11-05 ("Try with pose ref", for this price): a DRAW-ONLY try at the robot rhino's ground pound rear in the two diagonal views (southeast, northeast). Three earlier runs drew the diagonal rear wrong (turned side-on, an extra planted leg, stacked joints, thighs). This try adds Preston's approved side-view rise and rear as a pose reference. Only the image is made; finishing waits until Preston has looked.
+Run tag: rhino-gp35-diag2. Write only inside OUT = D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/diag2
+Open no image and no file except OUT/prompt-sheet.txt and the two attachments. Do not write outside OUT. Do not commit.
+
+1. Generate exactly ONE image with your built-in image tool from OUT/prompt-sheet.txt word for word, attaching exactly two images: OUT/refs/look_35.png first and OUT/refs/pose_side.png second. Save it unchanged as OUT/sheet_raw.png. Never make a second image or a redo; if it fails, report and stop.
+
+2. Write OUT/REPORT.txt, under 12 lines, and the same in your final answer: tokens used if known; the image size; then by eye for each of the six cells (row se or ne, column 1 to 3): does it keep its row's facing (se faces the lower right, toward the viewer; ne shows its back and faces the upper right)? How many feet touch the ground (columns 2 and 3 should be exactly the two hind feet)? Are the hind legs as short as in the first image, with no thigh, no extra joint disc and no extra leg? Anything extra, missing or broken?
+
+3. Stop. Do not shrink, recolour, slice, measure or check anything else.

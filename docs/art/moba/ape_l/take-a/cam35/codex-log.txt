@@ -1,0 +1,1500 @@
+Reading prompt from stdin...
+OpenAI Codex v0.166.0
+--------
+workdir: C:\Users\pmcga\dev\hollowtide
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR, D:\dev\new-mech-rpg\docs\art\moba]
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a1a9a3-e907-7311-8de9-a108a343c50e
+--------
+user
+Job from Claude (the fleet redraw lane of the mech MOBA in D:/dev/new-mech-rpg, on the sprite factory lane's plan): redraw the APPROVED gorilla machine (working id ape_l, take A) in all eight views from the game camera's angle, 35 degrees down, in ONE image. Preston approved this job ("go redraw the rest of the machines at 35 thats perfect") at one image per machine. It is the SAME gorilla: no new design, no new parts. This is the pilot for ten more machines, so measure honestly.
+You run from C:\Users\pmcga\dev\hollowtide only because that folder is trusted and holds the tools. This is NOT Hollowtide work: write nothing in the Hollowtide repo. Write only inside OUT and VIEWS:
+- OUT = D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35
+- VIEWS = D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/views_cam35 (create it; it gets s.png, se.png, e.png, ne.png and n.png only)
+- TAKE = D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a (read only)
+- EX = D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/cam35 (read only: the last machine's finishing scripts)
+Images you may open: the two attachments, and TAKE/views/*.png to measure them. Open NO other image anywhere: not TAKE/anim, TAKE/remaster-pilot, TAKE/sheet_*.png, any image in EX or in any other machine's folder, nor anything under D:/dev/new-mech-rpg/art/. Text you may read: OUT/palette.json, OUT/guide_sizes.txt, OUT/prompt-sheet.txt, TAKE/finish.py, TAKE/defringe.py, TAKE/audit.py, and EX/finish.py, EX/defringe.py, EX/despeckle.py, EX/audit.py, EX/verify.py.
+Read first: docs/art/sprite-canon-2026-11-02.md and .codex/skills/hollowtide-sprites/SKILL.md (their craft, view and check rules apply; the lore and evolution sections, and the rule that every view is drawn from a low camera, do not).
+1. Generate exactly ONE image with your built-in image tool from OUT/prompt-sheet.txt word for word, attaching exactly two images: OUT/refs/approved_views.png first and OUT/refs/angle_guide.png second. Save it unchanged as OUT/sheet_raw.png. Never make a second image or a redo; if it fails, report and stop.
+2. Finish it the way EX was finished (copy EX/finish.py, defringe.py, despeckle.py and audit.py into OUT and adapt them; TAKE/finish.py shows how this gorilla was first finished): one whole-sheet nearest shrink, magenta to transparent, no magenta or plum fringe, no lone pale pixels on the outer edge. Scale once so the east view is 79 px long (the approved e length; length does not change with pitch, so the texel size stays the same). The palette is FIXED: map every pixel to the 15 colours in OUT/palette.json and add none, each material on its own ramp. Keep the dark accent seam lines: if the shrink or the mapping thins them, map thin dark seam pixels (lines one or two pixels wide between lighter shades) to accent 141a16, but leave broad deep-shadow areas on their own ramp's deep shade (green deep 22301d, orange deep 55331a, steel shadow 4a4950). The target is the approved accent share in each view: s 10.2%, se 8.5%, e 8.9%, ne 7.6%, n 8.4% of opaque pixels. Smooth lightly before the mapping so shading becomes clean bands. If view_check's lone value is over 0.11, run one despeckle pass and report the before and after.
+3. Slice: python tools/art/slice_grid.py OUT/sheet_finished.png OUT/slices --canvas 160 --feet 130 ; then copy the s, se, e, ne and n slices to VIEWS. Check that no view touches its canvas border.
+4. Checks, each saved as a .txt in OUT:
+   - python tools/art/view_check.py OUT/slices and python tools/art/sheet_judge.py OUT/slices (all eight). The canon's same-height rule does not apply: the views are now from above. Note heights, do not fix them.
+   - heights.txt, information only (not a pass or fail): for each of the five new views, W x H, H / approved H (approved s 72, se 72, e 71, ne 70, n 70), and H / guide H for two guides: the shape guide in OUT/guide_sizes.txt at 35 degrees (s 91x83, se 89x89, e 79x89, ne 86x90, n 91x85) and the old elliptic guide (s 91x98, se 85x101, e 79x105, ne 85x101, n 91x98). Also the spread of H / approved H across the five.
+   - palette-check.txt: every opaque colour in VIEWS is in OUT/palette.json; list any that are not.
+   - shape.txt: for the new and the approved five views, the share of opaque pixels in each role (green, orange, steel, glow, accent); the accent share against the approved shares above; the VISOR pixel count, counting only the glow pixels in the visor slit under the brow, not the shields or the generator (approved: s 18, se 17; expected at 35 degrees about s 15, se 14; under 12 is a miss), and visor pixels in ne and n (must be 0); the rows of the lowest pixel of the near and the far feet where you can tell them apart.
+   - depth.txt: for the new five views, the 5th and 95th percentile of luminance (0.2126 R + 0.7152 G + 0.0722 B) over opaque pixels and the share of the most common colour.
+5. Save OUT/review.png: the approved and the new s, se, e, ne and n at 3x, nearest, on mid grey, approved row above new row, each labelled.
+6. Do not touch anything outside OUT and VIEWS: not TAKE/views, TAKE/anim, TAKE/remaster-pilot, art/ or assets/ in either repo. Do not commit, do not revert other files.
+7. Report in under 15 lines, also saved as OUT/REPORT.txt: tokens used if known; the heights (each H / approved H and the spread) first; the visor counts; the accent share against the approved; the palette check; the check lines; the depth numbers; and by eye: is it the same gorilla with no new parts, every view seen from above at one angle, the side view showing the top of the hump and back as a wide band with the far feet higher, the front view's visor full width and not seen from overhead, the plates firm with seams, clean bands, no visor pixel in the rear views?
+
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\pmcga\.codex\config.toml): `computer_use.windows.always_allowed_app_ids` is ignored.
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\pmcga\.codex\config.toml): `computer_use.windows.always_allowed_app_ids` is ignored.
+codex
+I’ll read the specified rules, prompt, and finishing scripts, then make the single sheet and measure it against the approved views. I’ll write only inside OUT and VIEWS.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'Get-Content .codex/skills/hollowtide-sprites/SKILL.md; Get-Content D:/dev/new-mech-rpg/docs/art/sprite-canon-2026-11-02.md' in C:\Users\pmcga\dev\hollowtide
+ exited 1 in 5119ms:
+. : File C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be loaded because 
+running scripts is disabled on this system. For more information, see about_Execution_Policies at 
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:3
++ . 'C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.Powe ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+---
+name: hollowtide-sprites
+description: Make or repair a Hollowtide creature's eight-angle views (and then its walk) in the house style, with image generation drawing and tools/art/sheet_judge.py deciding which views pass, which code can fix, and which to generate again. Use for any new creature, new stage, or broken angle set.
+---
+
+# Hollowtide creature sprites
+
+Written by Claude on 2026-10-28 for Codex, from what the project has measured since 2026-10-12. Preston approves
+every creature; nothing here replaces his eye. Read `CLAUDE.md` and `docs/AI_COLLABORATION.md` first.
+
+## The split of work
+
+- **Image generation draws.** Code never redraws a creature. A code renderer reads as 3D ("roblox"), and Preston
+  judged Nano Banana 2.1's raw output better than our heavy finishing (2026-10-13).
+- **Code judges and corrects.** `tools/art/sheet_judge.py` measures the eight views, fixes what moving or flipping
+  can fix, and names the views to generate again. Nothing is copied from other games or repos; references are
+  structure only.
+- **Ask before paying.** Every generation costs credits. Give Preston the tool, the count and the estimate first.
+
+## House style
+
+- **References:** the creature's own approved views, then Tallowroot (`assets/sprites/arena/tallowroot/`). Never
+  Preostmar; Preston called it one of the worst. Ask him before adding other style references.
+- **Colours:** fantasy colours, not Earth-animal browns and greys. Keep the line's colour family across stages.
+- **A new stage evolves, it does not grow.** Keep only two or three anchors (the face and eye motif, the signature
+  part, the colour family). Change the silhouette, head shape, proportions, posture and palette shade, and turn the
+  signature part into something new. Keep a line's named parts, for example the Flintram line's horn.
+- **Canvas:** transparent, alpha 0 or 255 only, the creature bottom-centred. Use the size of the creature's own
+  existing views: Rimefin is 128 px, Sparkwick 144, and Riftfin and Scourmaw 160. Do not assume a size from the
+  creature's stage. For a new line, match the line's other stages.
+- **Finishing Codex image output:** shrink the whole sheet once so that its median view height matches the target,
+  give all eight views one shared palette (16 or fewer, see `docs/art/sprite-canon-2026-11-02.md`), then slice. Shrinking views one at a time, or giving
+  each view its own palette, makes the views drift apart.
+- **One Codex image job at a time.** Concurrent jobs share `~/.codex/generated_images`, and both logs of the
+  2026-10-28 pair named the same file. Neither picked the wrong image that time, but Retro Diffusion misfiled a walk
+  the same way.
+- **Outline:** the game draws the black outline with a shader (`scripts/arena/creature_finish.gd`). Do not paint a
+  heavy outline around the silhouette. Do paint a dark line inside the body where one part overlaps another, and give
+  each main material 4 tones (highlight, base, shadow, deep shadow): sheets with 2 or 3 tones read flat (2026-11-02).
+- **Lighting:** from the upper left, the same in every view.
+
+## Read the canon first
+
+Before every sheet, read `docs/art/sprite-canon-2026-11-02.md` and copy its numbers into the brief: colours, top-5 share, lone pixels, drawing for game size, the evolution step and the back-view rules. Preston, 2026-11-02: "dont forget to use what we need everytime we make new sprites with codex".
+
+## Why Drembit's views agreed
+
+Preston, 2026-10-31: "drembit was almost perfect ... future creatures should account for that so we dont keep
+creating creatures we have to scrap eventually." Front and back are one body seen from opposite sides, so their
+outlines should nearly cover each other. `python tools/art/view_check.py <folder>` prints that as front/back, where
+1.0 is the same shape.
+
+| Set | front/back |
+| --- | --- |
+| Drembit, raw sheet | 0.88 |
+| Kithflare, raw sheet | 0.83 |
+| Kithflare after its front was replaced by a separate redraw | 0.67 |
+| The same set after three repair passes | 0.77 |
+| Game Sparkwick | 0.33 |
+| Kithflare, one fresh sheet under the rules below, first try | 0.88 |
+
+The sheet agreed with itself, the separate redraw broke it, and repairs never won it back. Body length is not the
+cause: Drembit is a long body, and across 51 creatures length has no link to this score.
+
+Every new creature takes these from it:
+
+- **One image.** All eight views come from one sheet. A view drawn later is drawn by a different hand.
+- **Start from Drembit's brief,** `docs/creatures/codex-new-creature-2026-10-31/prompt-sheet.txt`. Keep its cell
+  layout and its "eight copies of the exact same creature" paragraph word for word, and change only the design.
+- **Neutral standing pose.** Legs under the body, no lean, no crouch, no action. Kithflare's brief asked for a body
+  leaning forward ready to spring.
+- **The signature shows from all eight views and clears the head.** Drembit's tail stands taller than its head, on
+  both sides of the centre line. Kithflare's sat at head height on the centre line, so from behind it covered the
+  head and the raw north view had no head at all.
+- **A tail grows from a root as wide as the hips.** Preston on a thin stem rising from a round rump: "look like a
+  monkeys". Give a bird a feathered tail that flows out of the back, and cover the rear in rows of feathers or scales
+  with no round cheeks and no crease.
+- **The signature keeps its height as it turns.** Kithflare's tail tip stood 78 to 79 px tall on e, w, ne and nw against
+  81 to 86 on the other four, and Preston saw that as wrong perspective. The tip stands tallest from the front and
+  lowest from behind, and east and west show the most reach, about 1.4 times the diagonals.
+- **To change one part of a sheet, redraw the whole sheet with the old sheet attached,** naming what stays and what
+  changes. Kithflare's tail and rear were replaced this way and front/back held at 0.88. The parts you meant to keep
+  can still drift: both peacock tail takes came back with rounder heads and bigger eyes despite "keep exactly", so
+  compare the result to the old sheet and report any drift. Say so plainly, Claude can move the new part onto the
+  approved body by code.
+- **A tail needs volume, not only the right height.** A stripe down one long shape reads as a flat feather from the
+  side and back. Draw layered feathers instead, and remember a bigger tail draws the whole creature smaller in the
+  game, because game size comes from solid area.
+- **Keep the identity in what shows from behind:** shape, colour and the signature. Huge eyes and cheek patches exist
+  only from the front, so they can't hold eight views together, and hard numbers on eye size pull the front away from
+  the rest. Drembit's face is a small eye and a bill.
+- **One head.** The front and side views must be the same head. Kithflare's front is a round chick and its side a
+  hooked hawk. No number sees this, so look.
+
+## The loop
+
+1. **Eight angles first, in one image** (Preston, 2026-10-14). Generate one 3x3 sheet before any single front view,
+   with the previous stage's sheet as the pose guide. Cell layout, the creature facing the middle:
+
+   ```
+   ne  n  nw
+   e   .  w
+   se  s  sw
+   ```
+
+   For a creature that is the same on both sides, the west column can be left to code (step 3). The pipelines that
+   hold eight views together generate five directions and mirror three.
+2. **Slice:** `python tools/art/slice_grid.py <sheet.png> <out_dir> [--canvas 128] [--feet 104]`. It cuts and
+   places, and never changes pixels.
+3. **Score the raw sheet first:** `python tools/art/view_check.py <out_dir>`, before any repair. Under 0.80 front/back
+   means generate the whole sheet again with a changed prompt. Stop after two tries and report what is failing.
+4. **Judge:** `python tools/art/sheet_judge.py <out_dir>`. It prints two verdicts:
+   - **FIX:** code corrects these. Run `python tools/art/sheet_judge.py <out_dir> --fix <fixed_dir>
+     [--mirror-from east|west]` and judge `<fixed_dir>` again. Mirror only a creature that is the same on both
+     sides. For one-sided parts (a horn or blade on one side, a lopsided body), pass `--asymmetric`; mirror faults
+     then become REDO.
+   - **REDO:** do not redraw one view of a new creature. If the drawing only needs moving, trimming or recolouring,
+     do that in Aseprite. Otherwise generate the whole sheet again with the correction in the prompt. An installed
+     creature whose other views are approved may get one view redrawn as a last resort: keep it only if front/back
+     stays at or above where it was. Stop after two tries and report what is still failing. Do not loop on credits.
+     Claude wrote the earlier rule here, "generate only those views again", and following it is what broke Kithflare.
+5. **Look.** Things the judge cannot measure:
+   - The back diagonals (ne, nw) must not show the face. A colour test for this failed in both directions on
+     2026-10-28.
+   - The north view must point north. The judge's `turned` check caught Sparkwick, but lopsided creatures trip it.
+   - Before paying to redraw a view the judge flags, check that another file doesn't already hold it. Sparkwick's
+     (2026-10-28) north file held its northeast view, its northwest file held its north view, and its northeast
+     file showed the face. Putting the files back in the right slots and flipping the northeast for the northwest
+     fixed the back views for free (`docs/creatures/sheet-judge-2026-10-28/sparkwick/`).
+   - Before paying to redraw a view flagged `turned`, check whether it only leans. `tools/art/aseprite/fix_view.lua`
+     slides pixel rows and repaints named pixels with no new colours, and it passed Gruntle's north on 2026-10-30
+     (`docs/art/reference-measurements-2026-10-30.md`). A view truly drawn turned, like Sparkwick's, stays a redo.
+     `tools/art/north_straighten.py` does this and gives every north frame the same lean, so the walk still matches.
+6. **Show Preston** the sheet before anything goes into `assets/`. When he approves, install it into
+   `assets/sprites/arena/<name>/`, then rebuild with `tools/arena/build_small.py` and
+   `tools/arena/build_dungeon_set.py`, then run `tools/art/walk_lock.py <name>` for the walk.
+   Then run `python tools/art/pose_fix.py plan <name>`: west walks are flips of east walks, so a west still drawn on
+   its own sits a turn off them (45 creatures on 2026-10-31). `apply` flips the still that disagrees.
+
+## What the judge checks
+
+- **files:** all eight views, on one canvas size.
+- **alpha:** no partial alpha.
+- **ground:** every view on the same foot row.
+- **centre:** every view on the middle column.
+- **height:** no view more than 10% off the set's median height.
+- **palette:** at least 85% of each view's pixels near the south view's colours.
+- **specks:** few lone pixels.
+- **mirror:** each pair's silhouettes overlap at 0.85 or more when flipped.
+- **face:** the north view is not the south view again.
+- **turned:** the north view is about as even left to right as the south view, and is not shaped like a diagonal.
+
+The thresholds are in `LIMITS` at the top of the script. On 2026-10-28 it ran over all 50 in-game sets: 22 need
+views generated again, and 29 need no new generation. Run `python tools/art/sheet_judge.py --all` for the current
+list.
+
+## Before showing Preston anything
+
+`sheet_judge.py` checks one set of views. `python tools/art/sprite_director.py <creature> --look` then reviews the whole
+creature: whether the body carries its walk, whether it stands on its shadow, whether the eight views agree in size and
+colour, the attack beats, hurt and sleep. Read its worklist and look at the strips in `docs/creatures/sprite-director/look`.
+Standards are in `docs/art/pro-sprite-standards-2026-10-31.md`. Every line of its regression list must print `found`.
+
+## Don'ts
+
+- Do not invent creature names, lore or stats. Label new ideas as proposals.
+- Do not edit Route 1.
+- Do not restore the Cinderpelt evolution link.
+- Do not overwrite game sprites without Preston's yes. Originals for walk work live in
+  `docs/creatures/walk-lock-2026-10-28/before/`.
+- Do not run two Retro Diffusion creature jobs at once.
+
+After finishing, list the palette and count how much of each colour sits on the sprite's edge. A plum colour mostly on the rim is the magenta background bled into edge pixels, and it can also show through gaps between legs. `defringe.py` can repaint 0 pixels and still leave it. Clear it, and report near-black outlines, which the brief rules out. Red creatures hide this; green ones show it (Tallowroot, 2026-10-31).
+
+## Making the next stage of a line
+
+Design it from the measured numbers before drawing. Real evolution lines match the last stage's outline only 0.28 to 0.55 at equal height, and area grows 1.3 to 2.7 times a stage. Run `python tools/art/stage_step.py <last stage folder> <new folder>` and report the line; over 0.55 is the old body made bigger. Game size comes from solid area, so a big tail or fan shrinks the body: Stormwick's closed train gave it 17 percent more scale than the open burst. Change the tail's shape, not only its size. When two takes share a body brief, the bodies still drift, so compare them.
+A fan or big tail on a rear diagonal is not the side view's. From behind at an angle it sits on the rump, nearer than the body, so it crosses the back: centre it halfway between the side and back spreads, and shorten the blades toward the edges. If every blade leans one way, Preston reads that side as having more feathers (Stormwick, 2026-10-31). Generators miscount repeated parts, so count them by eye in every view; code can then copy one clean blade to fix the count without a new image.
+
+Feet and tails change from behind too. On the straight back view the feet are never the front's toes pointing at the camera, and nothing from the chest or face sits on the rump. A trunk leg stands on its roots, with one or two short claws or roots toward the camera, in the same bark as the leg; no smooth rounded heel. On the rear diagonals a tail slopes down toward the camera at about the front diagonal's length. Say this in the prompt, and check it by eye: Huskward's sheet passed every number with front feet on its back (Preston, 2026-10-31), and hand-drawn rounded heels were rejected as looking edited (2026-11-01).
+
+Get-Content : Cannot find path 'D:\dev\new-mech-rpg\docs\art\sprite-canon-2026-11-02.md' because it does not exist.
+At line:2 char:56
++ ... s/SKILL.md; Get-Content D:/dev/new-mech-rpg/docs/art/sprite-canon-202 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (D:\dev\new-mech...n-2026-11-02.md:String) [Get-Content], ItemNotFoundEx 
+   ception
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand
+ 
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'Get-Content docs/art/sprite-canon-2026-11-02.md; Get-Content C:/Users/pmcga/.codex/skills/.system/imagegen/SKILL.md; Get-Content D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/prompt-sheet.txt; Get-Content D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/palette.json; Get-Content D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/guide_sizes.txt' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 898ms:
+# Sprite canon: what every new creature sheet carries
+
+Preston, 2026-11-02, after Huskward take E drifted from Drembit's style and read "a bit too detailed": "reevaluate all we've collected and learned ... then lets make it". Every Codex sprite job reads this first and puts its numbers in the brief. References are measured for structure only: no pixels from PokeAPI, PMD, Emerald or any ROM go into the repo, a prompt or a reference image.
+
+## 1. Draw for the size it is seen at
+
+- Handheld monster sprites of the 16-colour era use one palette of 15 visible colours. Our PokeAPI sample measured 14 to 15 a sprite.
+- Sky's creatures stand 20 to 26 px on a 24 px tile. Ours are drawn at 128 to 176 px and shrunk 3.3 to 5 times for the dungeon (stage masses 15.5, 21, 30).
+- So a part or shading cluster narrower than about 4 drawn px vanishes or turns to speckle at game size. No grain, crease lines or texture strokes, but keep the volume: give each main material 4 tones (highlight, base, shadow, deep shadow) in big masses, small parts 2 or 3. (Changed 2026-11-02: the old "2 or 3 tones" rule made the Rimefin and Cinderhide sheets read flat next to Drembit. Preston: "the creatures are starting to look flatter".)
+- Judge the sheet shrunk to game size as well as full size.
+
+## 2. Numbers to hit
+
+Measured 2026-11-02 on s, se, e, ne and n (`view_check.py` for lone pixels).
+
+| | Reference sample | Tallowroot A | Drembit | Huskward E | Target |
+|---|---|---|---|---|---|
+| Colours across all views | 14 to 15 a sprite | 12 | 19 | 15 | 16 or fewer, shared |
+| Share of the top 5 colours | 0.73 mean | 0.70 | 0.40 | 0.50 | 0.65 or more |
+| Lone pixels | 0.11 mean | 0.04 | 0.14 | 0.17 | 0.11 or less |
+| Front/back outline | | 0.79 | 0.86 | 0.87 | 0.80 or more, raw |
+| Back height over front | 0.99 mean | | | | 0.95 to 1.05 |
+
+Drembit is the model for shapes and for eight views agreeing, not for colour: two near-blacks cover 15% of it. Take E spread its colour over six bark browns and dark crease lines (13% on one crease colour), which is what reads as too detailed.
+
+Depth, measured on e, se and s 2026-11-02 (luminance 0 to 255, 5th to 95th percentile): Drembit 1 to 225 with about 5 tones on its main material; Tallowroot A 33 to 197; Cinderhide take B 41 to 192 with one tone on 60% of the body; Cinderhide A 56 to 167. Aim for a range of 180 or more and no single tone on more than about 40% of the body.
+
+## 3. Style
+
+- Tallowroot is the house style reference, never Preostmar. Drembit is the reference for views agreeing and for clear shapes.
+- Chunky clean clusters, angular volumes, light from the upper left on every view, a clear shadow side and underside away from it. No painted outline around the silhouette (the shader draws it), but a dark line inside the body wherever one part overlaps another (leg over belly, head over neck, crest base on the back), as Drembit has. The shader (`sel_out.gdshaderinc`) adds a dark texel round the silhouette and has an internal "detail ink" mode, but that mode is off for creatures by default, so the inside lines have to be painted.
+- Fantasy colours in the line's family, given as hex values. Later stages go darker in shade.
+- Eyes: an almond tucked under the brow, with a dark rim, an iris in a mid colour and a dark pupil. Flat pale blocks read as googly (Preston, 2026-11-02). Huskward take F's eyes are restamped this way in Aseprite.
+
+## 4. Eight views, one image
+
+- One 3x3 sheet with Drembit's layout and its "eight copies" paragraph word for word. Neutral standing pose. The signature shows from all eight views and clears the head.
+- Raw front/back at least 0.80, heights within 10%, no face on ne or nw, north points north.
+- Back views (`.claude/skills/sprite-back-view`): feet keep the front's claw family seen from behind (outer toes whole, the heel hides the middle toe); armour and bark lines sit at one height on a leg in every view; on the rear diagonals the farther feet stand 5 to 9 px higher; the tail slopes toward the camera; no chest V on the rump.
+
+## 5. Evolution
+
+- `stage_step.py` against the stage before: 0.28 to 0.55, as in real lines. Area grows 1.3 to 2.7 times a stage. Every Huskward take so far missed (A 0.72, B 0.70, C 0.77, E 0.60). Rampartroot take A, measured against Huskward F with F given only as a rendering reference, came in at 0.49: the first take on the line inside the range.
+- Keep two or three anchors (face and eye motif, the signature, the colour family). Change the silhouette, head, proportions, posture and palette shade, and turn the signature into something new.
+- Later stages read older: smaller head against the body, small deep-set eyes, thick neck, angular planes, and real weight: thick legs and a heavy body, never skinny or lanky (Preston 2026-11-02 on Caller take A, which this line used to push toward long jointed legs: "its too skinny"). Image references outweigh words, so attach Stage I art only for lineage, never as the craft reference, and never attach the old drawing of the creature being remade: Codex copies it ("You went back to remaking the original sprites again").
+
+## 6. Process
+
+- Codex draws, code judges, Aseprite fixes (a layered `.aseprite`, one frame per view), Preston approves. Nothing goes into `assets/` without his yes.
+- A fresh `codex.cmd exec` with a written brief costs about 60k to 110k tokens a sheet. Resuming the Claude-jobs chat cost 786,677 tokens for Huskward take F on 2026-11-02, because it carries the chat's whole history: use a fresh exec.
+- Image references outweigh words. Take F was given take E as its design picture and came back as take E made squatter, crease lines and oval patches included, against a brief that said otherwise. Give the design in words, or as a picture already at game size. Say the cost first; one image job at a time; two tries at most.
+- After the sheet: `slice_grid.py`, `view_check.py`, `sheet_judge.py`, `stage_step.py`, the palette edge audit (fringe), the numbers in section 2, then look at full size and game size.
+- Walks stay Retro's. Sky's timing (a 24-frame step, about 3 drawings held 4 to 10 frames, lift set per creature) is a game setting, not sprite art.
+
+## Sources
+
+`docs/art/reference-measurements-2026-10-30.md` (PokeAPI sample), `docs/research/sky-walk-measure-2026-10-30.md`, `docs/research/sky-fight-measure-2026-11-02.md`, `docs/research/emerald-arena-study-2026-10-30.md` (its creature sprites are PMDCollab sheets: never usable), `docs/art/pro-sprite-standards-2026-10-31.md`, `docs/art/back-view-feet-study-2026-11-02.md`, `docs/creatures/codex-new-creature-2026-10-31/DESIGN.md` (Drembit), `docs/creatures/codex-remake-2026-10-31/tallowroot/huskward/REPORT.md`, `docs/research/japanese-tools-2026-10-31.md`. Memory notes: evolve-not-grow, stage-two-reads-older, eight-views-one-image, creature-palettes, sprite-reference-choices.
+
+Not used for stills, and why: the Opal Forge (it stops on 2026-11-17, and Codex beat it on Drembit), SpriteCook and Retro Diffusion (paid; Retro stays the walk source and is on hold), Hugging Face Spaces (sending art to one needs Preston's yes), Pixel Refiner (tried, not adopted).
+---
+name: "imagegen"
+description: "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas."
+---
+
+# Image Generation Skill
+
+Generates or edits images for the current project (for example website assets, game assets, UI mockups, product mockups, wireframes, logo design, photorealistic images, or infographics).
+
+## Top-level modes and rules
+
+This skill has exactly two top-level modes:
+
+- **Default built-in tool mode (preferred):** built-in `image_gen` tool for image generation, editing, and transparent-image requests. Does not require `OPENAI_API_KEY`.
+- **Fallback CLI mode:** `scripts/image_gen.py` CLI. Use when the user explicitly asks for or confirms the CLI/API/model path. Requires `OPENAI_API_KEY`.
+
+Within CLI fallback, the CLI exposes three subcommands:
+
+- `generate`
+- `edit`
+- `generate-batch`
+
+Rules:
+- Use the built-in `image_gen` tool by default for normal image generation and editing requests.
+- Do not switch to CLI fallback for ordinary quality, size, or file-path control.
+- For transparent images, ask built-in `image_gen` for a transparent background and preserve the generated alpha.
+- Never silently switch from built-in `image_gen` or CLI `gpt-image-2` to CLI `gpt-image-1.5`; ask the user first unless they explicitly requested `gpt-image-1.5`.
+- The word `batch` by itself does not mean CLI fallback. If the user asks for many assets or says to batch-generate assets without explicitly asking for CLI/API/model controls, stay on the built-in path and issue one built-in call per requested asset or variant.
+- If the built-in tool fails or is unavailable, tell the user the CLI fallback exists and that it requires `OPENAI_API_KEY`. Proceed only if the user explicitly asks for that fallback.
+- If the user explicitly asks for CLI mode, use the bundled `scripts/image_gen.py` workflow. Do not create one-off SDK runners.
+- Never modify `scripts/image_gen.py`. If something is missing, ask the user before doing anything else.
+
+Built-in save-path policy:
+- In built-in tool mode, Codex saves generated images under `$CODEX_HOME/*` by default.
+- Do not describe or rely on OS temp as the default built-in destination.
+- Do not describe or rely on a destination-path argument (if any) on the built-in `image_gen` tool. If a specific location is needed, generate first and then move or copy the selected output from `$CODEX_HOME/generated_images/...`.
+- Save-path precedence in built-in mode:
+  1. If the user names a destination, move or copy the selected output there.
+  2. If the image is meant for the current project, move or copy the final selected image into the workspace before finishing.
+  3. If the image is only for preview or brainstorming, render it inline; the underlying file can remain at the default `$CODEX_HOME/*` path.
+- Never leave a project-referenced asset only at the default `$CODEX_HOME/*` path.
+- Do not overwrite an existing asset unless the user explicitly asked for replacement; otherwise create a sibling versioned filename such as `hero-v2.png` or `item-icon-edited.png`.
+
+Shared prompt guidance for both modes lives in `references/prompting.md` and `references/sample-prompts.md`.
+
+Fallback-only docs/resources for CLI mode:
+- `references/cli.md`
+- `references/image-api.md`
+- `references/codex-network.md`
+- `scripts/image_gen.py`
+
+## When to use
+- Generate a new image (concept art, product shot, cover, website hero)
+- Generate a new image using one or more reference images for style, composition, or mood
+- Edit an existing image (inpainting, lighting or weather transformations, background replacement, object removal, compositing, transparent background)
+- Produce many assets or variants for one task
+
+## When not to use
+- Extending or matching an existing SVG/vector icon set, logo system, or illustration library inside the repo
+- Creating simple shapes, diagrams, wireframes, or icons that are better produced directly in SVG, HTML/CSS, or canvas
+- Making a small project-local asset edit when the source file already exists in an editable native format
+- Any task where the user clearly wants deterministic code-native output instead of a generated bitmap
+
+## Decision tree
+
+Think about two separate questions:
+
+1. **Intent:** is this a new image or an edit of an existing image?
+2. **Execution strategy:** is this one asset or many assets/variants?
+
+Intent:
+- If the user wants to modify an existing image while preserving parts of it, treat the request as **edit**.
+- If the user provides images only as references for style, composition, mood, or subject guidance, treat the request as **generate**.
+- If the user provides no images, treat the request as **generate**.
+
+Built-in edit semantics:
+- Built-in edit mode is for images already visible in the conversation context, such as attached images or images generated earlier in the thread.
+- If the user wants to edit a local image file with the built-in tool, first load it with built-in `view_image` tool so the image is visible in the conversation context, then proceed with the built-in edit flow.
+- Do not promise arbitrary filesystem-path editing through the built-in tool.
+- If a local file still needs direct file-path control, masks, or other explicit CLI-only parameters, use the explicit CLI fallback only when the user asks for it.
+- For edits, preserve invariants aggressively and save non-destructively by default.
+
+Execution strategy:
+- In the built-in default path, produce many assets or variants by issuing one `image_gen` call per requested asset or variant.
+- In the CLI fallback path, use the CLI `generate-batch` subcommand only when the user explicitly chose CLI mode and needs many prompts/assets.
+- For many distinct assets, do not use `n` as a substitute for separate prompts. `n` is for variants of one prompt; distinct assets need distinct built-in calls or distinct CLI `generate-batch` jobs.
+
+Assume the user wants a new image unless they clearly ask to change an existing one.
+
+## Workflow
+1. Decide the top-level mode: built-in by default, including transparent-output requests; fallback CLI only if explicitly requested or confirmed.
+2. Decide the intent: `generate` or `edit`.
+3. Decide whether the output is preview-only or meant to be consumed by the current project.
+4. Decide the execution strategy: single asset vs repeated built-in calls vs CLI `generate-batch`.
+5. Collect inputs up front: prompt(s), exact text (verbatim), constraints/avoid list, and any input images.
+6. For every input image, label its role explicitly:
+   - reference image
+   - edit target
+   - supporting insert/style/compositing input
+7. If the edit target is only on the local filesystem and you are staying on the built-in path, inspect it with `view_image` first so the image is available in conversation context.
+8. If the user asked for a photo, illustration, sprite, product image, banner, or other explicitly raster-style asset, use `image_gen` rather than substituting SVG/HTML/CSS placeholders. If the request is for an icon, logo, or UI graphic that should match existing repo-native SVG/vector/code assets, prefer editing those directly instead.
+9. Augment the prompt based on specificity:
+   - If the user's prompt is already specific and detailed, normalize it into a clear spec without adding creative requirements.
+   - If the user's prompt is generic, add tasteful augmentation only when it materially improves output quality.
+10. Use the built-in `image_gen` tool by default.
+11. For transparent-output requests, ask built-in `image_gen` for a transparent background and preserve the generated alpha channel.
+12. Inspect outputs and validate: subject, style, composition, text accuracy, and invariants/avoid items.
+13. Iterate with a single targeted change, then re-check.
+14. For preview-only work, render the image inline; the underlying file may remain at the default `$CODEX_HOME/generated_images/...` path.
+15. For project-bound work, move or copy the selected artifact into the workspace and update any consuming code or references. Never leave a project-referenced asset only at the default `$CODEX_HOME/generated_images/...` path.
+16. For batches or multi-asset requests, persist every requested deliverable final in the workspace unless the user explicitly asked to keep outputs preview-only. Discarded variants do not need to be kept unless requested.
+17. If the user explicitly chooses or confirms the CLI fallback, then use the fallback-only docs for model, quality, size, `input_fidelity`, masks, output format, output paths, and network setup.
+18. Always report the final saved path(s) for any workspace-bound asset(s), plus the final prompt or prompt set and whether the built-in tool or fallback CLI mode was used.
+
+## Transparent image requests
+
+Ask built-in `image_gen` for a genuinely transparent background and preserve its alpha.
+
+## Prompt augmentation
+
+Reformat user prompts into a structured, production-oriented spec. Make the user's goal clearer and more actionable, but do not blindly add detail.
+
+Treat this as prompt-shaping guidance, not a closed schema. Use only the lines that help, and add a short extra labeled line when it materially improves clarity.
+
+### Specificity policy
+
+Use the user's prompt specificity to decide how much augmentation is appropriate:
+
+- If the prompt is already specific and detailed, preserve that specificity and only normalize/structure it.
+- If the prompt is generic, you may add tasteful augmentation when it will materially improve the result.
+
+Allowed augmentations:
+- composition or framing hints
+- polish level or intended-use hints
+- practical layout guidance
+- reasonable scene concreteness that supports the stated request
+
+Not allowed augmentations:
+- extra characters or objects that are not implied by the request
+- brand names, slogans, palettes, or narrative beats that are not implied
+- arbitrary side-specific placement unless the surrounding layout supports it
+
+## Use-case taxonomy (exact slugs)
+
+Classify each request into one of these buckets and keep the slug consistent across prompts and references.
+
+Generate:
+- photorealistic-natural â€” candid/editorial lifestyle scenes with real texture and natural lighting.
+- product-mockup â€” product/packaging shots, catalog imagery, merch concepts.
+- ui-mockup â€” app/web interface mockups and wireframes; specify the desired fidelity.
+- infographic-diagram â€” diagrams/infographics with structured layout and text.
+- scientific-educational â€” classroom explainers, scientific diagrams, and learning visuals with required labels and accuracy constraints.
+- ads-marketing â€” campaign concepts and ad creatives with audience, brand position, scene, and exact tagline/copy.
+- productivity-visual â€” slide, chart, workflow, and data-heavy business visuals.
+- logo-brand â€” logo/mark exploration, vector-friendly.
+- illustration-story â€” comics, childrenâ€™s book art, narrative scenes.
+- stylized-concept â€” style-driven concept art, 3D/stylized renders.
+- historical-scene â€” period-accurate/world-knowledge scenes.
+
+Edit:
+- text-localization â€” translate/replace in-image text, preserve layout.
+- identity-preserve â€” try-on, person-in-scene; lock face/body/pose.
+- precise-object-edit â€” remove/replace a specific element (including interior swaps).
+- lighting-weather â€” time-of-day/season/atmosphere changes only.
+- background-extraction â€” transparent background / clean cutout. Ask built-in `image_gen` for actual transparency.
+- style-transfer â€” apply reference style while changing subject/scene.
+- compositing â€” multi-image insert/merge with matched lighting/perspective.
+- sketch-to-render â€” drawing/line art to photoreal render.
+
+## Shared prompt schema
+
+Use the following labeled spec as shared prompt scaffolding for both top-level modes:
+
+```text
+Use case: <taxonomy slug>
+Asset type: <where the asset will be used>
+Primary request: <user's main prompt>
+Input images: <Image 1: role; Image 2: role> (optional)
+Scene/backdrop: <environment>
+Subject: <main subject>
+Style/medium: <photo/illustration/3D/etc>
+Composition/framing: <wide/close/top-down; placement>
+Lighting/mood: <lighting + mood>
+Color palette: <palette notes>
+Materials/textures: <surface details>
+Text (verbatim): "<exact text>"
+Constraints: <must keep/must avoid>
+Avoid: <negative constraints>
+```
+
+Notes:
+- `Asset type` and `Input images` are prompt scaffolding, not dedicated CLI flags.
+- `Scene/backdrop` refers to the visual setting. It is not the same as the fallback CLI `background` parameter, which controls output transparency behavior.
+- Fallback-only execution notes such as `Quality:`, `Input fidelity:`, masks, output format, and output paths belong in the CLI path only. Do not treat them as built-in `image_gen` tool arguments.
+
+Augmentation rules:
+- Keep it short.
+- Add only the details needed to improve the prompt materially.
+- For edits, explicitly list invariants (`change only X; keep Y unchanged`).
+- If any critical detail is missing and blocks success, ask a question; otherwise proceed.
+
+## Examples
+
+### Generation example (hero image)
+```text
+Use case: product-mockup
+Asset type: landing page hero
+Primary request: a minimal hero image of a ceramic coffee mug
+Style/medium: clean product photography
+Composition/framing: wide composition with usable negative space for page copy if needed
+Lighting/mood: soft studio lighting
+Constraints: no logos, no text, no watermark
+```
+
+### Edit example (invariants)
+```text
+Use case: precise-object-edit
+Asset type: product photo background replacement
+Primary request: replace only the background with a warm sunset gradient
+Constraints: change only the background; keep the product and its edges unchanged; no text; no watermark
+```
+
+## Prompting best practices
+- Structure prompt as scene/backdrop -> subject -> details -> constraints.
+- Include intended use (ad, UI mock, infographic) to set the mode and polish level.
+- Use camera/composition language for photorealism.
+- Only use SVG/vector stand-ins when the user explicitly asked for vector output or a non-image placeholder.
+- Quote exact text and specify typography + placement.
+- For tricky words, spell them letter-by-letter and require verbatim rendering.
+- For multi-image inputs, reference images by index and describe how they should be used.
+- For edits, repeat invariants every iteration to reduce drift.
+- Iterate with single-change follow-ups.
+- If the prompt is generic, add only the extra detail that will materially help.
+- If the prompt is already detailed, normalize it instead of expanding it.
+- For CLI fallback only, see `references/cli.md` and `references/image-api.md` for model, `quality`, `input_fidelity`, masks, output format, and output-path guidance.
+- For transparent images, ask built-in `image_gen` for actual transparency and preserve its alpha.
+
+More principles shared by both modes: `references/prompting.md`.
+Copy/paste specs shared by both modes: `references/sample-prompts.md`.
+
+## Guidance by asset type
+Asset-type templates (website assets, game assets, wireframes, logo) are consolidated in `references/sample-prompts.md`.
+
+## gpt-image-2 guidance for CLI fallback
+
+The fallback CLI defaults to `gpt-image-2`.
+
+- Use `gpt-image-2` for new CLI/API workflows unless the user confirms a different model.
+- CLI `gpt-image-2` does not support `background=transparent`; ask before using `gpt-image-1.5` unless the user explicitly requested that model.
+- `gpt-image-2` always uses high fidelity for image inputs; do not set `input_fidelity` with this model.
+- `gpt-image-2` supports `quality` values `low`, `medium`, `high`, and `auto`.
+- Use `quality low` for fast drafts, thumbnails, and quick iterations. Use `medium`, `high`, or `auto` for final assets, dense text, diagrams, identity-sensitive edits, or high-resolution outputs.
+- Square images are typically fastest to generate. Use `1024x1024` for fast square drafts.
+- If the user asks for 4K-style output, use `3840x2160` for landscape or `2160x3840` for portrait.
+- `gpt-image-2` size may be `auto` or `WIDTHxHEIGHT` if all constraints hold: max edge `<= 3840px`, both edges multiples of `16px`, long-to-short ratio `<= 3:1`, total pixels between `655,360` and `8,294,400`.
+
+Popular `gpt-image-2` sizes:
+- `1024x1024` square
+- `1536x1024` landscape
+- `1024x1536` portrait
+- `2048x2048` 2K square
+- `2048x1152` 2K landscape
+- `3840x2160` 4K landscape
+- `2160x3840` 4K portrait
+- `auto`
+
+## Fallback CLI mode only
+
+### Temp and output conventions
+These conventions apply only to the CLI fallback. They do not describe built-in `image_gen` output behavior.
+- Use `tmp/imagegen/` for intermediate files (for example JSONL batches); delete them when done.
+- Write final artifacts under `output/imagegen/`.
+- Use `--out` or `--out-dir` to control output paths; keep filenames stable and descriptive.
+
+### Dependencies
+Prefer `uv` for dependency management in this repo.
+
+Required Python package:
+```bash
+uv pip install openai
+```
+
+Optional for image inspection and downscaling:
+```bash
+uv pip install pillow
+```
+
+Portability note:
+- If you are using the installed skill outside this repo, install dependencies into that environment with its package manager.
+- In uv-managed environments, `uv pip install ...` remains the preferred path.
+
+### Environment
+- `OPENAI_API_KEY` must be set for live API calls.
+- Do not ask the user for `OPENAI_API_KEY` when using the built-in `image_gen` tool.
+- Never ask the user to paste the full key in chat. Ask them to set it locally and confirm when ready.
+
+If the key is missing, give the user these steps:
+1. Create an API key in the OpenAI platform UI: https://platform.openai.com/api-keys
+2. Set `OPENAI_API_KEY` as an environment variable in their system.
+3. Offer to guide them through setting the environment variable for their OS/shell if needed.
+
+If installation is not possible in this environment, tell the user which dependency is missing and how to install it into their active environment.
+
+### Script-mode notes
+- CLI commands + examples: `references/cli.md`
+- API parameter quick reference: `references/image-api.md`
+- Network approvals / sandbox settings for CLI mode: `references/codex-network.md`
+
+## Reference map
+- `references/prompting.md`: shared prompting principles for both modes.
+- `references/sample-prompts.md`: shared copy/paste prompt recipes for both modes.
+- `references/cli.md`: fallback-only CLI usage via `scripts/image_gen.py`.
+- `references/image-api.md`: fallback-only API/CLI parameter reference.
+- `references/codex-network.md`: fallback-only network/sandbox troubleshooting for CLI mode.
+- `scripts/image_gen.py`: fallback-only CLI implementation. Use only when the user explicitly chooses or confirms CLI mode.
+Use case: stylized-concept. Create exactly ONE square 3x3 eight-direction still pixel sprite sheet showing the SAME heavy green gorilla machine as the first attached image, drawn from a HIGHER CAMERA: looking DOWN at it from 35 degrees above level, the way a third-person arena game camera sees it, in EVERY view.
+TWO ATTACHED IMAGES:
+1. approved_views.png: the approved gorilla machine in five views on magenta, left to right: front (south), front three-quarter (southeast), right side (east), rear three-quarter (northeast), back (north). They are drawn from a LOW camera, almost level. Keep EVERYTHING about this gorilla machine: its parts, proportions, colours, shading style, pixel clusters, how each material runs through its shades, the thin dark seam lines, the planted knuckle-walking stance with both fists and both hind feet on the ground. ONLY THE CAMERA MOVES UP. Invent NO new parts: no hatches, vents, lights, markings, stripes, panels, spikes, ears, horns, guns or details the reference does not show. Never copy any existing game's gorilla, ape, robot or mech.
+2. angle_guide.png: an ANGLE GUIDE ONLY, not a design. A rough grey solid cut from this gorilla's own outlines, in the same five views and order, in TWO ROWS. TOP ROW: the solid at the reference's low camera; it lines up with the first image. BOTTOM ROW: the same solid at the 35 degree camera. Its green surfaces are the FRONT (fists, chest and head), its pale surfaces are the TOP. Compare the two rows: that change, and only that change, is what the higher camera does to each view. Draw each gorilla view at the BOTTOM ROW's angle: the same amount of pale top showing, the same height on the page relative to its width. Never copy the solid's lumpy shape, colours or outline: the gorilla's hump, head, arms, shields and legs sit inside it.
+WHAT THE HIGHER CAMERA CHANGES: the TOP of the gorilla shows in every view. The top of the big shoulder hump is a big visible green area seen from above with its bright highlight, and the hexagonal back generator sits on it, its glowing top face seen from above. The back slopes down from the hump to the hips and shows as a green surface seen from above. The top of the small head and the brow ridge show, the head set low and forward between the shoulders. The tops of the orange forearm gauntlets and of the fists show. The FAR feet sit HIGHER on the page than the near feet, because the ground is seen from above: in the front view the hind feet show above and between the fists; in the back view the fists show above and outside the hind feet. The belly and the undersides are HIDDEN.
+HOW MUCH: every view, the side view included, grows by about the SAME amount: about one fifth to one quarter taller on the page than in the reference, at the same width, because its top shows, never by stretching it. The front views must NOT turn into a view from straight overhead, and the side view must NOT stay low: the five views agree on how much top shows.
+THE VISOR KEEPS ITS SIZE: in the front and front three-quarter views the narrow glowing green visor slit under the brow is as WIDE as in the reference and only a little shorter (tilted back), never hidden by the brow and never smaller. The rear views show NO visor, NOT EVEN ONE VISOR PIXEL.
+THE SHIELDS KEEP THEIR SIZE: the big hexagonal shield plates on the outer face of each forearm keep their size and glow in every view where the reference shows them, now seen a little from above.
+PLATES AND SEAMS, as in the reference: the same armour plates the reference shows, each with its lit top edge and a firm shaded edge, never smeared, soft, melted together or blobby. Thin dark accent seam lines where each plate overlaps the next, where the head sits into the shoulders, where the arms cross the body, around each shield frame and around the generator, as many as in the reference. Round steel joint discs at the elbows and knees. Continue the plates and seams over the newly visible top the way the reference implies them, and add nothing new up there.
+Exact 3x3 layout, every view from 35 degrees above:
+top left northeast: rear three-quarter facing upper RIGHT, the hump and the generator seen from above, the back sloping down to the hips, the near forearm and its hexagonal shield, the near hind leg, the far fist higher on the page than the near hind foot, NO visor, NO face.
+top middle north: straight BACK, left-right symmetric, the hump and the hexagonal generator seen from above in the middle, the back sloping down toward the viewer to the hips, both hind legs and feet seen from behind as heels, both big orange forearms and their shields showing past the sides of the body with the fists higher on the page than the hind feet, NO visor, NO face.
+top right northwest: rear three-quarter facing upper LEFT, the hump and the generator seen from above, the back sloping down to the hips, the near forearm and its hexagonal shield, the near hind leg, the far fist higher on the page than the near hind foot, NO visor, NO face.
+middle left east: SIDE VIEW facing RIGHT seen from 35 degrees above: the top of the hump and the back showing as a WIDE BAND above the near flank, the generator's top on the hump, the head low on the right under the hump, both fists planted in front on the right, the near forearm's hexagonal shield seen nearly flat, the hips on the left, the far fist and the far hind foot clearly HIGHER on the page than the near ones.
+middle center EMPTY solid magenta.
+middle right west: SIDE VIEW facing LEFT seen from 35 degrees above: the top of the hump and the back showing as a WIDE BAND above the near flank, the generator's top on the hump, the head low on the left under the hump, both fists planted in front on the left, the near forearm's hexagonal shield seen nearly flat, the hips on the right, the far fist and the far hind foot clearly HIGHER on the page than the near ones.
+bottom left southeast: FRONT three-quarter facing lower RIGHT seen from above, as WIDE as the reference's front three-quarter view: the body turned, the head pointing out to the right and forward with the visor showing, the far arm and its shield past the chest, the top of the hump and the generator seen from above behind the head, the far end of the visor hidden.
+bottom middle south: straight FRONT seen from above: the head low between the shoulders still looking at the viewer with the visor full width under the brow, the top of the hump and the generator's top seen from above behind and over the head, both fists planted wide with their shields on the outer sides, the hind feet higher on the page between the fists. Not seen from straight overhead: the visor and chest stay clear.
+bottom right southwest: FRONT three-quarter facing lower LEFT seen from above, as WIDE as the reference's front three-quarter view: the body turned, the head pointing out to the left and forward with the visor showing, the far arm and its shield past the chest, the top of the hump and the generator seen from above behind the head, the far end of the visor hidden.
+VOLUME AND CRAFT, exactly as in the reference: light from the upper left on every view. Green armour: bright highlight on the top of the hump, the top of the back, the brow and the top edge of each plate, base across the middle, shadow on the lower body and the side away from the light, deep shadow under the chest, between the legs and under each plate edge. Orange gauntlets, shins and feet: the same four steps, the highlight on their tops. Steel: light top edge, base, shadow. Shield and visor glow: deep green at the inner edge of each frame, bright green across the face, a pale glint at the upper-left corner. Big flat colour clusters, every cluster at least 3 pixels across. No texture, no rivets, no small hexagon grids, no dithering, no speckle, no stray single pixels. NO dark line around the outside of the silhouette: the outermost pixels use the armour, orange, steel and shield colours.
+PALETTE, the same fifteen colours as the reference and no others: armour green highlight 9ccb62, base 6c9b4a, shadow 47693a, deep 22301d; orange highlight f2ac5c, base d4853b, shadow 9c5e28, deep 55331a; steel light dfe2e9, base 8a8a93, shadow 4a4950; shield and visor glow deep 1b9a52, bright 3fe07f, glint d6ffe6; dark accent 141a16 for the seam lines and the visor rim. Glow only in the visor, the shield faces and the generator core.
+Eight copies of the exact same gorilla machine in the same planted knuckle-walking stance, same anatomy and proportions, same SCALE, the same 35 degree camera in every view, each entirely inside its cell with ample margins. Nearest feet at exactly the same baseline within each row. Each view about 60% of cell height and no wider than 80% of its cell. Flat uniform solid #FF00FF magenta background everywhere, no labels, text, letters, glyphs, grid lines, shadows on the ground, floor, scenery, effects, projected energy barriers or extra objects. One image only.
+[
+{"hex": "9ccb62", "role": "armour green", "shade": "highlight"},
+{"hex": "6c9b4a", "role": "armour green", "shade": "base"},
+{"hex": "47693a", "role": "armour green", "shade": "shadow"},
+{"hex": "22301d", "role": "armour green", "shade": "deep"},
+{"hex": "f2ac5c", "role": "orange", "shade": "highlight"},
+{"hex": "d4853b", "role": "orange", "shade": "base"},
+{"hex": "9c5e28", "role": "orange", "shade": "shadow"},
+{"hex": "55331a", "role": "orange", "shade": "deep"},
+{"hex": "dfe2e9", "role": "steel", "shade": "light"},
+{"hex": "8a8a93", "role": "steel", "shade": "base"},
+{"hex": "4a4950", "role": "steel", "shade": "shadow"},
+{"hex": "1b9a52", "role": "shield and visor glow", "shade": "deep"},
+{"hex": "3fe07f", "role": "shield and visor glow", "shade": "bright"},
+{"hex": "d6ffe6", "role": "shield and visor glow", "shade": "glint"},
+{"hex": "141a16", "role": "dark accent", "shade": "seam lines and visor rim"}
+]
+hull (79, 91, 72) (long, wide, high texels)
+hull guide at 6 deg (W x H texels): s 91x74, se 89x76, e 79x76, ne 86x74, n 91x74
+hull guide at 35 deg (W x H texels): s 91x83, se 89x89, e 79x89, ne 86x90, n 91x85
+
+codex
+I’m applying the sprite skill’s craft and checking rules with your camera and one-image exceptions, and using the imagegen skill for generation. The prompt fixes the fifteen-colour palette and both references; I’ll submit it unchanged.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'Get-Content D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/cam35/finish.py; Get-Content D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/cam35/defringe.py; Get-Content D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/cam35/despeckle.py; Get-Content D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/cam35/audit.py; Get-Content D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/cam35/verify.py; Get-Content D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/finish.py' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 516ms:
+"""Approved take finishing adapted for fixed ramps and east width 103; no drawing."""
+from pathlib import Path
+import json, hashlib
+import numpy as np
+from PIL import Image
+from scipy import ndimage
+ROOT=Path(__file__).resolve().parent
+im=Image.open(ROOT/'sheet_raw.png').convert('RGBA'); a=np.array(im)
+r,g,b=a[...,:3].astype(int).transpose(2,0,1)
+bg=(r>190)&(g<85)&(b>185)
+a[bg]=0
+# Remove blended magenta/plum before palette mapping, preserving the silhouette.
+solid=a[...,3]>127
+bad=solid&(r-g>25)&(b-g>25)&(b>r*.65)
+good=solid&~bad
+idx=ndimage.distance_transform_edt(~good,return_distances=False,return_indices=True)
+a[bad,:3]=a[idx[0][bad],idx[1][bad],:3]
+# Light raw-resolution median smoothing, before the one nearest sheet shrink.
+smooth=ndimage.median_filter(a[...,:3],size=(3,3,1),mode='nearest')
+interior=ndimage.binary_erosion(solid,iterations=2)
+seam=(np.dot(a[...,:3],[.2126,.7152,.0722])<40)&solid
+interior &= ~seam
+a[interior,:3]=smooth[interior]
+east=solid[im.height//3:2*im.height//3,:im.width//3]
+y,x=np.where(east); raw_width=int(np.ptp(x)+1); scale=103/raw_width
+# Predict nearest sample locations, choosing a whole-sheet size with exact east width.
+w0=round(im.width*scale); candidates=[]
+for w in range(w0-8,w0+9):
+ h=round(im.height*w/im.width)
+ ys=np.minimum(((np.arange(h)+.5)*im.height/h).astype(int),im.height-1)
+ xs=np.minimum(((np.arange(w)+.5)*im.width/w).astype(int),im.width-1)
+ m=solid[np.ix_(ys,xs)][h//3:2*h//3,:w//3]
+ yy,xx=np.where(m)
+ if len(xx) and np.ptp(xx)+1==103: candidates.append((abs(w-w0),w,h))
+if not candidates: raise RuntimeError('No single nearest shrink size yields east width 103')
+_,w,h=min(candidates)
+small=Image.fromarray(a).resize((w,h),Image.Resampling.NEAREST)
+src=np.array(small); vis=src[...,3]>127; rgb=src[...,:3].astype(float)
+palette=json.loads((ROOT.parent/'palette.json').read_text())
+triples=np.array([list(bytes.fromhex(c['hex'])) for c in palette],np.uint8)
+r,g,b=rgb.transpose(2,0,1); lum=rgb@[.2126,.7152,.0722]
+# Lens material must be inside the body; warm magenta/yellow blends on the rim are fringe.
+lens_zone=np.indices(vis.shape)[0]>=h//3  # As in approved finish: eyes only in front/profile cells.
+red=lens_zone&ndimage.binary_erosion(vis,iterations=2)&(r>180)&(g<110)&(b<135)&(r>g*2)
+glint=vis&ndimage.binary_dilation(red,iterations=2)&(r>220)&(g>170)&(b>150)
+lens=red|glint
+yellow=vis&~lens&(r>g*1.02)&(g>b*1.18)&(g>35)
+# Material labels constrain smoothing and mapping; charcoal stays on its own ramp.
+role=np.full(vis.shape,2); role[yellow]=0; role[lens]=3
+role[vis&~yellow&~lens&(lum>=68)]=1
+role[vis&~yellow&~lens&(lum<40)]=4  # Preserve dark generated seams rather than mapping to charcoal.
+source_lab=np.array(small.convert('RGB').convert('LAB')).astype(float)
+choices_lab=np.array(Image.fromarray(triples[None]).convert('LAB')).astype(float)[0]
+source_lab[...,1:]=(source_lab[...,1:]+128)%256-128
+choices_lab[...,1:]=(choices_lab[...,1:]+128)%256-128
+cost=((source_lab[:,:,None]-choices_lab[None,None])**2*[1,3,3]).sum(3)
+for k,c in enumerate(palette):
+ ri=['yellow','steel','charcoal','eye','accent'].index(c['role'])
+ cost[...,k]=np.where(role==ri,cost[...,k],1e12)
+nearest=cost.argmin(2)
+nearest[yellow]=np.select([lum[yellow]>215,lum[yellow]>163,lum[yellow]>105],[0,1,2],default=3)
+out=np.zeros_like(src); out[...,:3]=triples[nearest]; out[...,3]=np.where(vis,255,0); out[~vis]=0
+Image.fromarray(out).save(ROOT/'sheet_finished.png')
+meta={'raw_size':im.size,'raw_east_width':raw_width,'target_east_width':103,'shared_scale':w/im.width,'finished_sheet_size':[w,h],'raw_plum_repainted':int(bad.sum()),'smooth':'3x3 median at raw resolution, interior only','raw_sha256':hashlib.sha256((ROOT/'sheet_raw.png').read_bytes()).hexdigest()}
+(ROOT/'preparation.json').write_text(json.dumps(meta,indent=2)); print(json.dumps(meta))
+"""Squirrel cleanup, adapted from wolf take B: whole-sheet nearest-solid-colour cleanup.
+Checks every colour, dark plum and internal leg gaps, not one historical RGB.
+Alpha and silhouettes stay fixed.
+"""
+from pathlib import Path
+import json
+import numpy as np
+from PIL import Image
+from scipy import ndimage
+HERE = Path(__file__).resolve().parent
+
+def clean(px):
+    solid = px[..., 3] > 0
+    rgb = px[..., :3].astype(float)
+    r, g, b = rgb[..., 0], rgb[..., 1], rgb[..., 2]
+    bad = solid & (r - g > 25) & (b - g > 25) & (b > r * .65)
+    # The mech's near-black is deliberate internal ink, never magenta fringe.
+    bad &= ~np.all(px[..., :3] == (20, 18, 24), axis=2)
+    good = solid & ~bad
+    if bad.any() and not good.any():
+        raise ValueError("No clean palette pixels remain")
+    out = px.copy()
+    if bad.any():
+        idx = ndimage.distance_transform_edt(~good, return_distances=False, return_indices=True)
+        out[bad] = px[idx[0][bad], idx[1][bad]]
+    assert np.array_equal(out[..., 3], px[..., 3])
+    # A lone pale rim pixel has no same-colour neighbour in its 8-neighbourhood.
+    edge = solid & ~ndimage.binary_erosion(solid)
+    # The prompt reserves ink for overlaps inside the body, never the silhouette.
+    ink = solid & np.all(out[..., :3] == (20, 18, 24), axis=2)
+    rim_ink = edge & ink
+    if rim_ink.any():
+        donor = solid & ~ink
+        idx = ndimage.distance_transform_edt(~donor, return_distances=False, return_indices=True)
+        out[rim_ink] = out[idx[0][rim_ink], idx[1][rim_ink]]
+    pale = solid & (np.dot(out[..., :3], [0.2126, 0.7152, 0.0722]) >= 145)
+    lone = np.zeros(solid.shape, bool)
+    for colour in np.unique(out[pale, :3], axis=0):
+        same = solid & np.all(out[..., :3] == colour, axis=2)
+        neighbours = ndimage.convolve(same.astype(int), np.ones((3,3),int), mode='constant') - same
+        lone |= same & edge & (neighbours == 0)
+    donor = solid & ~pale & ~np.all(out[..., :3] == (20, 18, 24), axis=2)
+    if lone.any():
+        idx = ndimage.distance_transform_edt(~donor, return_distances=False, return_indices=True)
+        out[lone] = out[idx[0][lone], idx[1][lone]]
+    return out, int(bad.sum()), int(lone.sum()), int(rim_ink.sum())
+
+if __name__ == "__main__":
+    path = HERE / "sheet_finished.png"
+    px, count, pale_count, ink_count = clean(np.array(Image.open(path).convert("RGBA")))
+    Image.fromarray(px).save(path)
+    result = {"plum_or_magenta_pixels_repainted": count,
+              "remaining_plum_or_magenta_pixels": clean(px)[1], "lone_pale_edge_pixels_repainted": pale_count,
+              "remaining_lone_pale_edge_pixels": clean(px)[2],
+              "dark_ink_rim_pixels_repainted": ink_count,
+              "remaining_dark_ink_rim_pixels": clean(px)[3], "alpha_unchanged": True}
+    (HERE / "defringe.json").write_text(json.dumps(result, indent=2))
+    print(json.dumps(result))
+"""One simultaneous four-neighbour despeckle pass, from shoebill take C; green and white lens colours kept."""
+from pathlib import Path
+from collections import Counter
+import numpy as np
+from PIL import Image
+import json
+P=Path(__file__).resolve().parent
+LENS={(255,58,42),(255,230,216)}
+def despeckle(a):
+    h, w = a.shape[:2]
+    out = a.copy()
+    fixed = 0
+    for y in range(h):
+        for x in range(w):
+            if a[y, x, 3] == 0 or tuple(a[y, x, :3]) in LENS:
+                continue
+            nbrs = [tuple(a[yy, xx]) for yy, xx in ((y - 1, x), (y + 1, x), (y, x - 1), (y, x + 1))
+                    if 0 <= yy < h and 0 <= xx < w and a[yy, xx, 3] > 0]
+            if not nbrs:
+                continue
+            here = a[y, x, :3].astype(int)
+            if any(np.abs(here - np.array(n[:3], int)).sum() < 30 for n in nbrs):
+                continue
+            out[y, x] = Counter(nbrs).most_common(1)[0][0]
+            fixed += 1
+    return out, fixed
+
+
+a,n=despeckle(np.array(Image.open(P/'sheet_finished.png').convert('RGBA')))
+Image.fromarray(a).save(P/'sheet_finished.png')
+(P/'despeckle.json').write_text(json.dumps({'passes':1,'pixels_changed':n,'lens_colours_preserved':['ff3a2a','ffe6d8']},indent=2))
+print('despeckle pixels changed',n)
+"""Approved audit adapted for camera comparison, fixed palette, roles and five-view review."""
+from pathlib import Path
+import json, subprocess, os, shutil
+import numpy as np
+from PIL import Image, ImageDraw
+from scipy import ndimage
+P=Path(__file__).resolve().parent; TAKE=P.parent; V=TAKE/'views_cam35'; V.mkdir(exist_ok=True)
+NAMES=['s','se','e','ne','n']; ALL=['s','se','e','ne','n','nw','w','sw']
+pal=json.loads((TAKE/'palette.json').read_text()); roles={tuple(bytes.fromhex(c['hex'])):c['role'] for c in pal}; valid=set(roles)
+for d in NAMES: shutil.copyfile(P/'slices'/f'{d}.png',V/f'{d}.png')
+metrics={}; edges={}; sizes=[]; shape=[]; depth=[]; invalid={}; border={}; allpix=[]
+for tag,folder in [('approved',TAKE/'views'),('new',P/'slices')]:
+ metrics[tag]={}
+ for d in (NAMES if tag=='approved' else ALL):
+  im=Image.open(folder/f'{d}.png').convert('RGBA'); a=np.array(im); m=a[...,3]>0; yy,xx=np.where(m); pix=a[m,:3]
+  cs,counts=np.unique(pix,axis=0,return_counts=True); lum=pix@[.2126,.7152,.0722]; k=counts.argmax()
+  shares={r:sum(int(n) for c,n in zip(cs,counts) if roles.get(tuple(c))==r)/len(pix) for r in ['yellow','steel','charcoal','eye','accent']}
+  eye=sum(int(n) for c,n in zip(cs,counts) if roles.get(tuple(c))=='eye')
+  rec={'width':int(np.ptp(xx)+1),'height':int(np.ptp(yy)+1),'area':int(m.sum()),'role_shares':shares,'eye_pixels':eye,'p05':float(np.percentile(lum,5)),'p95':float(np.percentile(lum,95)),'dominant_share':float(counts[k]/len(pix)),'dominant_colour':bytes(cs[k]).hex(),'lowest_row':int(yy.max())}
+  metrics[tag][d]=rec
+  if d in NAMES:
+   shape.append(f"{tag} {d}: "+'; '.join(f'{r} {v:.4%}' for r,v in shares.items())+f"; eye pixels {eye}; height/width {rec['height']/rec['width']:.4f}; lowest opaque row {yy.max()}; foot rows: see visual notes below")
+  if tag=='new':
+   border[d]=bool(m[0].any() or m[-1].any() or m[:,0].any() or m[:,-1].any())
+   invalid[d]=[bytes(c).hex() for c in cs if tuple(c) not in valid]
+   edge=m&~ndimage.binary_erosion(m); ec,ct=np.unique(a[edge,:3],axis=0,return_counts=True)
+   edges[d]={'edge_pixels':int(edge.sum()),'colours':{c['hex']:{'count':int(sum(n for rgb,n in zip(ec,ct) if bytes(rgb).hex()==c['hex'])),'body_count':int(sum(n for rgb,n in zip(cs,counts) if bytes(rgb).hex()==c['hex']))} for c in pal}}
+   allpix.append(pix)
+   if d in NAMES: depth.append(f"{d}: p05 {rec['p05']:.2f}; p95 {rec['p95']:.2f}; dominant #{rec['dominant_colour']} {rec['dominant_share']:.2%}")
+for d in NAMES:
+ a=metrics['approved'][d]; b=metrics['new'][d]
+ sizes.append(f"{d}: new {b['width']}x{b['height']}/{b['area']}; approved {a['width']}x{a['height']}/{a['area']} (width x height / opaque area)")
+(P/'sizes.txt').write_text('\n'.join(sizes)+'\nAll eight canvas borders: '+str(border)+'\nEast width 103: '+str(metrics['new']['e']['width']==103))
+(P/'shape.txt').write_text('\n'.join(shape)+'\nRows are zero-based on 192x192 canvases. Feet must be identified visually; opaque bottom alone does not identify a far foot.\n')
+(P/'depth.txt').write_text('\n'.join(depth)+'\nLuminance = 0.2126 R + 0.7152 G + 0.0722 B; opaque pixels only.\n')
+(P/'palette-check.txt').write_text('Allowed palette: '+', '.join(c['hex'] for c in pal)+'\n'+ '\n'.join(f'{d}: '+('PASS, no colours outside palette' if not invalid[d] else 'FAIL '+str(invalid[d])) for d in NAMES)+'\nEvery opaque colour in VIEWS is allowed: '+str(all(not invalid[d] for d in NAMES)))
+cs,ct=np.unique(np.concatenate(allpix),axis=0,return_counts=True)
+metrics['border_contact']=border; metrics['top_five_share']=float(np.sort(ct)[-5:].sum()/ct.sum()); metrics['colours']=len(cs)
+(P/'metrics.json').write_text(json.dumps(metrics,indent=2)); (P/'edge-audit.json').write_text(json.dumps(edges,indent=2))
+# Both rows use identical scale and baseline. No per-view resizing.
+board=Image.new('RGB',(5*384,2*384),(128,128,128)); draw=ImageDraw.Draw(board)
+for row,(tag,folder) in enumerate([('approved',TAKE/'views'),('new',V)]):
+ for col,d in enumerate(NAMES):
+  im=Image.open(folder/f'{d}.png').convert('RGBA'); im=im.crop(im.getbbox()); im=im.resize((im.width*3,im.height*3),Image.Resampling.NEAREST)
+  board.paste(im,(col*384+(384-im.width)//2,row*384+365-im.height),im); draw.text((col*384+12,row*384+10),f'{tag} {d} - 3x',fill='white')
+board.save(P/'review.png')
+env=os.environ.copy(); env['PYTHONDONTWRITEBYTECODE']='1'
+for name in ['view_check','sheet_judge']:
+ args=['python','-B',f'tools/art/{name}.py',str(P/'slices')]
+ if name=='sheet_judge': args+=['--json',str(P/'sheet-judge.json')]
+ result=subprocess.run(args,capture_output=True,text=True,env=env)
+ text=result.stdout+result.stderr
+ (P/f'{name}.txt').write_text(text+f'\nExit code: {result.returncode}\nHeight comparison is informational for this elevated camera; no height repairs applied.\n')
+ print(text)
+# Exact lone value, using same implementation as view_check.
+import sys
+sys.dont_write_bytecode=True; sys.path.insert(0,'tools/art'); import sprite_director as sd
+lone=max(sd.lone_share(sd.load(P/'slices'/f'{d}.png')) for d in ALL)
+metrics['lone_exact']=lone; (P/'metrics.json').write_text(json.dumps(metrics,indent=2))
+print('\n'.join(sizes)); print('\n'.join(depth)); print('lone exact',lone,'top five',metrics['top_five_share']); print('borders',border)
+"""Independent re-measure of the cam35 views (rhino camera-angle lane, Claude, 2026-11-04).
+
+Recomputes from the PNGs, not from Codex's reports: size, height over the 35 degree guide, width over the guide,
+role shares (accent = the seam colour), eye pixels, palette, border contact and the lowest row. Writes verify.txt.
+Usage: python verify.py [views_dir]   (default ../views_cam35; also prints ../views and ../views_cam30 for reference)
+"""
+import json
+import sys
+from pathlib import Path
+
+import numpy as np
+from PIL import Image
+
+HERE = Path(__file__).resolve().parent
+TAKE = HERE.parent
+VIEWS = ["s", "se", "e", "ne", "n"]
+GUIDE = {"s": (72, 108), "se": (89, 100), "e": (103, 90), "ne": (89, 100), "n": (72, 108)}
+pal = json.loads((TAKE / "palette.json").read_text())
+role = {tuple(int(p["hex"].lstrip("#")[i:i + 2], 16) for i in (0, 2, 4)): p["role"] for p in pal}
+ROLES = ["yellow", "steel", "charcoal", "eye", "accent"]
+
+
+def measure(d):
+    out = {}
+    for v in VIEWS:
+        a = np.asarray(Image.open(d / f"{v}.png").convert("RGBA"))
+        op = a[..., 3] > 0
+        ys, xs = np.nonzero(op)
+        w, h = xs.max() - xs.min() + 1, ys.max() - ys.min() + 1
+        cols = [tuple(c) for c in a[op][:, :3]]
+        bad = sorted({c for c in cols if c not in role})
+        n = len(cols)
+        share = {r: sum(1 for c in cols if role.get(c) == r) / n for r in ROLES}
+        border = bool(op[0].any() or op[-1].any() or op[:, 0].any() or op[:, -1].any())
+        alpha = sorted(set(np.unique(a[..., 3]).tolist()))
+        out[v] = dict(w=int(w), h=int(h), hr=h / GUIDE[v][1], wr=w / GUIDE[v][0], share=share,
+                      eye=sum(1 for c in cols if role.get(c) == "eye"), bad=bad, border=border,
+                      low=int(ys.max()), alpha=alpha, canvas=a.shape[:2])
+    return out
+
+
+lines = []
+for tag, d in (("approved", TAKE / "views"), ("cam30", TAKE / "views_cam30"),
+               ("cam35", Path(sys.argv[1]) if len(sys.argv) > 1 else TAKE / "views_cam35")):
+    m = measure(d)
+    lines.append(f"== {tag} ({d})")
+    for v in VIEWS:
+        r = m[v]
+        ok = "PASS" if 0.85 <= r["hr"] <= 1.08 else "MISS"
+        lines.append(f"{v}: {r['w']}x{r['h']}  H/guide {r['hr']:.3f} {ok}  W/guide {r['wr']:.3f}  "
+                     + " ".join(f"{k} {100 * r['share'][k]:.1f}%" for k in ROLES)
+                     + f"  eye px {r['eye']}  lowest row {r['low']}  border {r['border']}  canvas {r['canvas']}"
+                     + f"  alpha {r['alpha']}" + (f"  OFF-PALETTE {r['bad']}" if r["bad"] else ""))
+    hr = [m[v]["hr"] for v in VIEWS]
+    sp = max(hr) - min(hr)
+    lines.append(f"height-ratio spread {sp:.3f} {'PASS' if sp <= 0.08 else 'MISS'}; se width {m['se']['w']} "
+                 f"{'PASS' if m['se']['w'] >= 84 else 'MISS'} (target 89)")
+txt = "\n".join(lines)
+print(txt)
+(HERE / "verify.txt").write_text(txt + "\n")
+"""Non-drawing sheet preparation: key, one shared shrink, one shared palette."""
+from pathlib import Path
+import json
+import numpy as np
+from PIL import Image
+
+ROOT = Path(__file__).resolve().parent
+im = Image.open(ROOT / 'sheet_raw.png').convert('RGBA')
+a = np.array(im)
+bg = (a[:,:,0] > 190) & (a[:,:,1] < 85) & (a[:,:,2] > 185)
+a[bg] = (0,0,0,0)
+heights=[]
+extents=[]
+for row,col in [(0,0),(0,1),(0,2),(1,0),(1,2),(2,0),(2,1),(2,2)]:
+    cell=a[row*im.height//3:(row+1)*im.height//3,col*im.width//3:(col+1)*im.width//3]
+    yy,xx=np.where(cell[:,:,3]>0)
+    heights.append(int(yy.max()-yy.min()+1))
+    extents.append(int(max(yy.max()-yy.min()+1,xx.max()-xx.min()+1)))
+south = a[2*im.height//3:im.height, im.width//3:2*im.width//3]
+raw_south_area = int((south[:,:,3] > 0).sum())
+sy, sx = np.where(south[:,:,3] > 0)
+raw_south_height = int(sy.max()-sy.min()+1)
+scale = 72/raw_south_height
+small=Image.fromarray(a).resize((round(im.width*scale),round(im.height*scale)),Image.Resampling.NEAREST)
+b=np.array(small); vis=b[:,:,3]>127
+# Prompt's shared fifteen-colour palette, retaining all four armour and orange tones.
+colours = ['9ccb62','6c9b4a','47693a','22301d','f2ac5c','d4853b','9c5e28','55331a','dfe2e9','8a8a93','4a4950','1b9a52','3fe07f','d6ffe6','141a16']
+triples = [tuple(bytes.fromhex(c)) for c in colours]
+pal = Image.new('P',(1,1))
+pal.putpalette([v for c in triples for v in c] + list(triples[-1]) * (256-len(triples)))
+# Match in Lab, weighting chroma to keep neutral crest highlights neutral and
+# warm skin highlights in the skin family rather than the vent/belly yellows.
+source_lab = np.array(small.convert('RGB').convert('LAB')).astype(float)
+palette_rgb = Image.fromarray(np.array([triples], dtype=np.uint8))
+choices_lab = np.array(palette_rgb.convert('LAB')).astype(float)[0]
+source_lab[...,1:] = (source_lab[...,1:] + 128) % 256 - 128
+choices_lab[...,1:] = (choices_lab[...,1:] + 128) % 256 - 128
+distance = (source_lab[:,:,None,:] - choices_lab[None,None,:,:]) ** 2
+nearest = (distance * [1, 3, 3]).sum(axis=3).argmin(axis=2)
+rgb = Image.fromarray(np.array(triples, dtype=np.uint8)[nearest])
+out=np.array(rgb.convert('RGBA')); out[:,:,3]=np.where(vis,255,0); out[~vis]=0
+Image.fromarray(out).save(ROOT/'sheet_finished.png')
+(ROOT/'preparation.json').write_text(json.dumps({'raw_heights':heights,'raw_extents':extents,'raw_south_area':raw_south_area,'raw_south_height':raw_south_height,'target_south_height':72,'shared_scale':scale,'finished_sheet_size':small.size,'visible_colours':len(np.unique(out[vis,:3],axis=0))},indent=2))
+print((ROOT/'preparation.json').read_text())
+
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'Get-Content -Raw D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/prompt-sheet.txt' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 1917ms:
+Use case: stylized-concept. Create exactly ONE square 3x3 eight-direction still pixel sprite sheet showing the SAME heavy green gorilla machine as the first attached image, drawn from a HIGHER CAMERA: looking DOWN at it from 35 degrees above level, the way a third-person arena game camera sees it, in EVERY view.
+TWO ATTACHED IMAGES:
+1. approved_views.png: the approved gorilla machine in five views on magenta, left to right: front (south), front three-quarter (southeast), right side (east), rear three-quarter (northeast), back (north). They are drawn from a LOW camera, almost level. Keep EVERYTHING about this gorilla machine: its parts, proportions, colours, shading style, pixel clusters, how each material runs through its shades, the thin dark seam lines, the planted knuckle-walking stance with both fists and both hind feet on the ground. ONLY THE CAMERA MOVES UP. Invent NO new parts: no hatches, vents, lights, markings, stripes, panels, spikes, ears, horns, guns or details the reference does not show. Never copy any existing game's gorilla, ape, robot or mech.
+2. angle_guide.png: an ANGLE GUIDE ONLY, not a design. A rough grey solid cut from this gorilla's own outlines, in the same five views and order, in TWO ROWS. TOP ROW: the solid at the reference's low camera; it lines up with the first image. BOTTOM ROW: the same solid at the 35 degree camera. Its green surfaces are the FRONT (fists, chest and head), its pale surfaces are the TOP. Compare the two rows: that change, and only that change, is what the higher camera does to each view. Draw each gorilla view at the BOTTOM ROW's angle: the same amount of pale top showing, the same height on the page relative to its width. Never copy the solid's lumpy shape, colours or outline: the gorilla's hump, head, arms, shields and legs sit inside it.
+WHAT THE HIGHER CAMERA CHANGES: the TOP of the gorilla shows in every view. The top of the big shoulder hump is a big visible green area seen from above with its bright highlight, and the hexagonal back generator sits on it, its glowing top face seen from above. The back slopes down from the hump to the hips and shows as a green surface seen from above. The top of the small head and the brow ridge show, the head set low and forward between the shoulders. The tops of the orange forearm gauntlets and of the fists show. The FAR feet sit HIGHER on the page than the near feet, because the ground is seen from above: in the front view the hind feet show above and between the fists; in the back view the fists show above and outside the hind feet. The belly and the undersides are HIDDEN.
+HOW MUCH: every view, the side view included, grows by about the SAME amount: about one fifth to one quarter taller on the page than in the reference, at the same width, because its top shows, never by stretching it. The front views must NOT turn into a view from straight overhead, and the side view must NOT stay low: the five views agree on how much top shows.
+THE VISOR KEEPS ITS SIZE: in the front and front three-quarter views the narrow glowing green visor slit under the brow is as WIDE as in the reference and only a little shorter (tilted back), never hidden by the brow and never smaller. The rear views show NO visor, NOT EVEN ONE VISOR PIXEL.
+THE SHIELDS KEEP THEIR SIZE: the big hexagonal shield plates on the outer face of each forearm keep their size and glow in every view where the reference shows them, now seen a little from above.
+PLATES AND SEAMS, as in the reference: the same armour plates the reference shows, each with its lit top edge and a firm shaded edge, never smeared, soft, melted together or blobby. Thin dark accent seam lines where each plate overlaps the next, where the head sits into the shoulders, where the arms cross the body, around each shield frame and around the generator, as many as in the reference. Round steel joint discs at the elbows and knees. Continue the plates and seams over the newly visible top the way the reference implies them, and add nothing new up there.
+Exact 3x3 layout, every view from 35 degrees above:
+top left northeast: rear three-quarter facing upper RIGHT, the hump and the generator seen from above, the back sloping down to the hips, the near forearm and its hexagonal shield, the near hind leg, the far fist higher on the page than the near hind foot, NO visor, NO face.
+top middle north: straight BACK, left-right symmetric, the hump and the hexagonal generator seen from above in the middle, the back sloping down toward the viewer to the hips, both hind legs and feet seen from behind as heels, both big orange forearms and their shields showing past the sides of the body with the fists higher on the page than the hind feet, NO visor, NO face.
+top right northwest: rear three-quarter facing upper LEFT, the hump and the generator seen from above, the back sloping down to the hips, the near forearm and its hexagonal shield, the near hind leg, the far fist higher on the page than the near hind foot, NO visor, NO face.
+middle left east: SIDE VIEW facing RIGHT seen from 35 degrees above: the top of the hump and the back showing as a WIDE BAND above the near flank, the generator's top on the hump, the head low on the right under the hump, both fists planted in front on the right, the near forearm's hexagonal shield seen nearly flat, the hips on the left, the far fist and the far hind foot clearly HIGHER on the page than the near ones.
+middle center EMPTY solid magenta.
+middle right west: SIDE VIEW facing LEFT seen from 35 degrees above: the top of the hump and the back showing as a WIDE BAND above the near flank, the generator's top on the hump, the head low on the left under the hump, both fists planted in front on the left, the near forearm's hexagonal shield seen nearly flat, the hips on the right, the far fist and the far hind foot clearly HIGHER on the page than the near ones.
+bottom left southeast: FRONT three-quarter facing lower RIGHT seen from above, as WIDE as the reference's front three-quarter view: the body turned, the head pointing out to the right and forward with the visor showing, the far arm and its shield past the chest, the top of the hump and the generator seen from above behind the head, the far end of the visor hidden.
+bottom middle south: straight FRONT seen from above: the head low between the shoulders still looking at the viewer with the visor full width under the brow, the top of the hump and the generator's top seen from above behind and over the head, both fists planted wide with their shields on the outer sides, the hind feet higher on the page between the fists. Not seen from straight overhead: the visor and chest stay clear.
+bottom right southwest: FRONT three-quarter facing lower LEFT seen from above, as WIDE as the reference's front three-quarter view: the body turned, the head pointing out to the left and forward with the visor showing, the far arm and its shield past the chest, the top of the hump and the generator seen from above behind the head, the far end of the visor hidden.
+VOLUME AND CRAFT, exactly as in the reference: light from the upper left on every view. Green armour: bright highlight on the top of the hump, the top of the back, the brow and the top edge of each plate, base across the middle, shadow on the lower body and the side away from the light, deep shadow under the chest, between the legs and under each plate edge. Orange gauntlets, shins and feet: the same four steps, the highlight on their tops. Steel: light top edge, base, shadow. Shield and visor glow: deep green at the inner edge of each frame, bright green across the face, a pale glint at the upper-left corner. Big flat colour clusters, every cluster at least 3 pixels across. No texture, no rivets, no small hexagon grids, no dithering, no speckle, no stray single pixels. NO dark line around the outside of the silhouette: the outermost pixels use the armour, orange, steel and shield colours.
+PALETTE, the same fifteen colours as the reference and no others: armour green highlight 9ccb62, base 6c9b4a, shadow 47693a, deep 22301d; orange highlight f2ac5c, base d4853b, shadow 9c5e28, deep 55331a; steel light dfe2e9, base 8a8a93, shadow 4a4950; shield and visor glow deep 1b9a52, bright 3fe07f, glint d6ffe6; dark accent 141a16 for the seam lines and the visor rim. Glow only in the visor, the shield faces and the generator core.
+Eight copies of the exact same gorilla machine in the same planted knuckle-walking stance, same anatomy and proportions, same SCALE, the same 35 degree camera in every view, each entirely inside its cell with ample margins. Nearest feet at exactly the same baseline within each row. Each view about 60% of cell height and no wider than 80% of its cell. Flat uniform solid #FF00FF magenta background everywhere, no labels, text, letters, glyphs, grid lines, shadows on the ground, floor, scenery, effects, projected energy barriers or extra objects. One image only.
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command '$out='"'D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35'; "'$ex='"'D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/cam35'; foreach("'$name in @('"'finish.py','defringe.py','despeckle.py','audit.py')) { Copy-Item -LiteralPath \""'$ex/$name" -Destination "$out/$name" }; New-Item -ItemType Directory -Force -Path D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/views_cam35 | Out-Null' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 109ms:
+codex
+The single generation is running. I’ve copied the example scripts into OUT; I’ll adapt them to use one shared shrink to an exact 79-pixel east width and preserve thin accent seams separately from broad material shadows.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35')
+s=(p/'finish.py').read_text().replace('103','79').replace(\"ROOT.parent/'palette.json'\",\"ROOT/'palette.json'\")
+start=s.index('# Lens material')
+end=s.index('source_lab=',start)
+s=s[:start]+'''# Classify material before shade mapping: each material keeps its own ramp.
+glow=vis&(g>r*1.2)&(b>r*1.12)&(g>b*1.12)
+orange=vis&(r>g*1.16)&(g>b*1.15)
+green=vis&~glow&~orange&(g>r*1.08)&(g>b*1.12)
+role=np.full(vis.shape,2); role[green]=0; role[orange]=1; role[glow]=3
+# Preserve near-black ink and thin dark seams between lighter surfaces.
+# Opposed neighbours identify 1-2px seams; broad deep shadows stay on material ramps.
+bright=ndimage.maximum_filter(lum,size=3)>75
+thin=np.zeros(vis.shape,bool)
+for dy,dx in [(0,1),(1,0),(1,1),(1,-1)]:
+ for dist in [1,2]:
+  plus=ndimage.shift(lum,(dy*dist,dx*dist),order=0,mode='constant',cval=0)
+  minus=ndimage.shift(lum,(-dy*dist,-dx*dist),order=0,mode='constant',cval=0)
+  thin|=(plus>lum+22)&(minus>lum+22)
+ink=vis&((lum<30)|((lum<57)&thin&bright))
+role[ink]=4
+''' +s[end:]
+s=s.replace(\"['yellow','steel','charcoal','eye','accent']\",\"['armour green','orange','steel','shield and visor glow','dark accent']\")
+s=s.replace(\"nearest[yellow]=np.select([lum[yellow]>215,lum[yellow]>163,lum[yellow]>105],[0,1,2],default=3)\",\"\")
+(p/'finish.py').write_text(s)
+s=(p/'defringe.py').read_text().replace('(20, 18, 24)','(20, 26, 22)')
+(p/'defringe.py').write_text(s)
+s=(p/'despeckle.py').read_text().replace('LENS={(255,58,42),(255,230,216)}','LENS={(27,154,82),(63,224,127),(214,255,230),(20,26,22)}').replace(\"['ff3a2a','ffe6d8']\",\"['1b9a52','3fe07f','d6ffe6','141a16']\")
+(p/'despeckle.py').write_text(s)
+'@ | python -B -" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 924ms:
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'Copy-Item -LiteralPath C:/Users/pmcga/.codex/generated_images/01a1a9a3-e907-7311-8de9-a108a343c50e/exec-bb61bd73-0d70-4920-b542-2ad07da6ae8e.png -Destination D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/sheet_raw.png; python -B D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/finish.py; python -B D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/defringe.py; python -B tools/art/slice_grid.py D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/sheet_finished.png D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/slices --canvas 160 --feet 130; python -B tools/art/view_check.py D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/slices' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 5147ms:
+{"raw_size": [1254, 1254], "raw_east_width": 322, "target_east_width": 79, "shared_scale": 0.24561403508771928, "finished_sheet_size": [308, 308], "raw_plum_repainted": 8767, "smooth": "3x3 median at raw resolution, interior only", "raw_sha256": "0ee7579da1ac29ec71dfb21a362bdaef50b32bab3a0c136800af3745f63b863e"}
+{"plum_or_magenta_pixels_repainted": 0, "remaining_plum_or_magenta_pixels": 0, "lone_pale_edge_pixels_repainted": 12, "remaining_lone_pale_edge_pixels": 0, "dark_ink_rim_pixels_repainted": 225, "remaining_dark_ink_rim_pixels": 0, "alpha_unchanged": true}
+sliced 8 views: e n ne nw s se sw w
+cam35/slices                           front/back 0.76 (under 0.8)  area 0.14 (sw>s)  height 0.01 (nw>w)  colour 0.89 (w>sw)  dips none  lone 0.08  colours 15
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35')
+s=(p/'audit.py').read_text().replace(\"(TAKE/'palette.json')\",\"(P/'palette.json')\").replace(\"['yellow','steel','charcoal','eye','accent']\",\"['armour green','orange','steel','shield and visor glow','dark accent']\").replace(\"=='eye'\",\"=='shield and visor glow'\").replace('width 103','width 79').replace(\"['width']==103\",\"['width']==79\").replace('192x192','160x160')
+(p/'audit.py').write_text(s)
+'@ | python -B -; python -B D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/audit.py" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 3366ms:
+cam35/slices                           front/back 0.76 (under 0.8)  area 0.14 (sw>s)  height 0.01 (nw>w)  colour 0.89 (w>sw)  dips none  lone 0.08  colours 15
+
+sheet judge: D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\cam35\slices
+  e   h  78 feet 130 palette   1.0 colours  15  ok
+  ne  h  77 feet 130 palette   1.0 colours  15  ok
+  n   h  77 feet 130 palette   1.0 colours  15  ok
+  nw  h  77 feet 130 palette   1.0 colours  15  ok
+  w   h  78 feet 130 palette   1.0 colours  15  ok
+  sw  h  79 feet 130 palette   1.0 colours  15  ok
+  s   h  78 feet 130 palette   1.0 colours  15  ok
+  se  h  79 feet 130 palette   1.0 colours  15  ok
+  mirror e/w 0.992  mirror ne/nw 0.949  mirror se/sw 0.949  same n/s 0.152  even n/s [0.993, 0.992]
+  FIX (code, --fix): nothing
+  REDO (generate again): nothing
+
+s: new 86x78/4600; approved 91x72/4760 (width x height / opaque area)
+se: new 81x79/3962; approved 89x72/4445 (width x height / opaque area)
+e: new 79x78/4249; approved 79x71/3992 (width x height / opaque area)
+ne: new 79x77/3974; approved 86x70/4282 (width x height / opaque area)
+n: new 82x77/4407; approved 87x70/4528 (width x height / opaque area)
+s: p05 24.44; p95 185.43; dominant #6c9b4a 14.20%
+se: p05 24.44; p95 185.43; dominant #6c9b4a 15.37%
+e: p05 24.44; p95 185.43; dominant #6c9b4a 18.55%
+ne: p05 24.44; p95 185.43; dominant #6c9b4a 19.28%
+n: p05 24.44; p95 185.43; dominant #6c9b4a 21.53%
+lone exact 0.0805234021137393 top five 0.5543937441951045
+borders {'s': False, 'se': False, 'e': False, 'ne': False, 'n': False, 'nw': False, 'w': False, 'sw': False}
+
+codex
+The first checks pass the palette and border requirements, but the camera lift falls short: the new heights are 77–79 pixels, versus 83–90 in the shape guide, and front/back overlap is 0.76. Lone pixels measure 0.081, so no despeckle pass is required. I’ll finish the visor, seam, and foot measurements without another generation.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+from PIL import Image
+import numpy as np
+from scipy import ndimage
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35')
+for tag,folder in [('approved',p.parent/'views'),('new',p/'slices')]:
+ for d in ['s','se','e','ne','n']:
+  a=np.array(Image.open(folder/(d+'.png')).convert('RGBA')); m=a[...,3]>0
+  glow=m&np.isin((a[...,:3].astype(int)*[65536,256,1]).sum(2),[int(c,16) for c in ['1b9a52','3fe07f','d6ffe6']])
+  lab,n=ndimage.label(glow,np.ones((3,3)))
+  print(tag,d,'bbox',Image.fromarray(a).getbbox(),'accent',np.sum(m&np.all(a[...,:3]==[20,26,22],2))/m.sum())
+  for i in range(1,n+1):
+   y,x=np.where(lab==i)
+   print(' glow',len(x),(x.min(),y.min(),x.max(),y.max()))
+'@ | python -B -" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 1012ms:
+approved s bbox (34, 59, 125, 131) accent 0.10168067226890756
+ glow 10 (np.int64(73), np.int64(83), np.int64(77), np.int64(85))
+ glow 8 (np.int64(82), np.int64(83), np.int64(85), np.int64(85))
+ glow 173 (np.int64(35), np.int64(98), np.int64(46), np.int64(115))
+ glow 175 (np.int64(112), np.int64(98), np.int64(123), np.int64(115))
+approved se bbox (36, 59, 125, 131) accent 0.08481439820022497
+ glow 11 (np.int64(92), np.int64(83), np.int64(96), np.int64(85))
+ glow 6 (np.int64(100), np.int64(83), np.int64(102), np.int64(85))
+ glow 245 (np.int64(54), np.int64(98), np.int64(70), np.int64(115))
+ glow 53 (np.int64(118), np.int64(99), np.int64(122), np.int64(113))
+approved e bbox (40, 60, 119, 131) accent 0.08867735470941884
+ glow 24 (np.int64(62), np.int64(63), np.int64(71), np.int64(70))
+ glow 9 (np.int64(106), np.int64(84), np.int64(109), np.int64(86))
+ glow 257 (np.int64(81), np.int64(100), np.int64(98), np.int64(116))
+approved ne bbox (37, 61, 123, 131) accent 0.076366184026156
+ glow 168 (np.int64(63), np.int64(66), np.int64(77), np.int64(80))
+ glow 154 (np.int64(108), np.int64(99), np.int64(118), np.int64(115))
+approved n bbox (36, 61, 123, 131) accent 0.08414310954063604
+ glow 193 (np.int64(70), np.int64(67), np.int64(88), np.int64(80))
+ glow 43 (np.int64(36), np.int64(100), np.int64(38), np.int64(116))
+ glow 43 (np.int64(120), np.int64(100), np.int64(122), np.int64(116))
+new s bbox (37, 53, 123, 131) accent 0.08760869565217391
+ glow 50 (np.int64(70), np.int64(53), np.int64(89), np.int64(56))
+ glow 1 (np.int64(111), np.int64(74), np.int64(111), np.int64(74))
+ glow 6 (np.int64(74), np.int64(88), np.int64(77), np.int64(90))
+ glow 8 (np.int64(81), np.int64(88), np.int64(85), np.int64(90))
+ glow 151 (np.int64(38), np.int64(98), np.int64(49), np.int64(115))
+ glow 158 (np.int64(111), np.int64(98), np.int64(122), np.int64(116))
+ glow 1 (np.int64(74), np.int64(103), np.int64(74), np.int64(103))
+ glow 1 (np.int64(85), np.int64(103), np.int64(85), np.int64(103))
+new se bbox (40, 52, 121, 131) accent 0.07975769813225643
+ glow 57 (np.int64(63), np.int64(52), np.int64(80), np.int64(60))
+ glow 7 (np.int64(96), np.int64(86), np.int64(99), np.int64(88))
+ glow 1 (np.int64(103), np.int64(86), np.int64(103), np.int64(86))
+ glow 38 (np.int64(115), np.int64(88), np.int64(118), np.int64(99))
+ glow 1 (np.int64(81), np.int64(93), np.int64(81), np.int64(93))
+ glow 1 (np.int64(90), np.int64(100), np.int64(90), np.int64(100))
+ glow 204 (np.int64(60), np.int64(103), np.int64(75), np.int64(118))
+new e bbox (40, 53, 119, 131) accent 0.08001882795951988
+ glow 141 (np.int64(60), np.int64(55), np.int64(78), np.int64(67))
+ glow 7 (np.int64(108), np.int64(80), np.int64(112), np.int64(81))
+ glow 3 (np.int64(67), np.int64(101), np.int64(69), np.int64(102))
+ glow 234 (np.int64(87), np.int64(103), np.int64(105), np.int64(118))
+ glow 1 (np.int64(65), np.int64(105), np.int64(65), np.int64(105))
+new ne bbox (40, 54, 119, 131) accent 0.08454957221942627
+ glow 141 (np.int64(62), np.int64(60), np.int64(77), np.int64(73))
+ glow 1 (np.int64(112), np.int64(84), np.int64(112), np.int64(84))
+ glow 140 (np.int64(105), np.int64(94), np.int64(116), np.int64(109))
+ glow 2 (np.int64(86), np.int64(97), np.int64(87), np.int64(98))
+ glow 3 (np.int64(80), np.int64(113), np.int64(81), np.int64(114))
+new n bbox (39, 54, 121, 131) accent 0.08373042886317222
+ glow 211 (np.int64(70), np.int64(62), np.int64(88), np.int64(76))
+ glow 4 (np.int64(119), np.int64(89), np.int64(120), np.int64(91))
+ glow 29 (np.int64(39), np.int64(90), np.int64(41), np.int64(102))
+ glow 22 (np.int64(118), np.int64(93), np.int64(120), np.int64(102))
+ glow 1 (np.int64(119), np.int64(104), np.int64(119), np.int64(104))
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35')
+s=(p/'finish.py').read_text().replace('glow=vis&(g>r*1.2)&(b>r*1.12)&(g>b*1.12)','glow=vis&(g>70)&(g-r>35)&(g>r*1.2)&(b>r*1.12)&(g>b*1.12)\\nglow|=vis&ndimage.binary_dilation(glow,iterations=2)&(r>150)&(g>180)&(b>150)&(g>r*1.04)&(g>b*1.02)')
+(p/'finish.py').write_text(s)
+'@ | python -B -; python -B D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/finish.py; python -B D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/defringe.py; python -B tools/art/slice_grid.py D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/sheet_finished.png D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/slices --canvas 160 --feet 130; python -B D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/audit.py" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 5700ms:
+{"raw_size": [1254, 1254], "raw_east_width": 322, "target_east_width": 79, "shared_scale": 0.24561403508771928, "finished_sheet_size": [308, 308], "raw_plum_repainted": 8767, "smooth": "3x3 median at raw resolution, interior only", "raw_sha256": "0ee7579da1ac29ec71dfb21a362bdaef50b32bab3a0c136800af3745f63b863e"}
+{"plum_or_magenta_pixels_repainted": 0, "remaining_plum_or_magenta_pixels": 0, "lone_pale_edge_pixels_repainted": 12, "remaining_lone_pale_edge_pixels": 0, "dark_ink_rim_pixels_repainted": 225, "remaining_dark_ink_rim_pixels": 0, "alpha_unchanged": true}
+sliced 8 views: e n ne nw s se sw w
+cam35/slices                           front/back 0.76 (under 0.8)  area 0.14 (sw>s)  height 0.01 (nw>w)  colour 0.89 (w>sw)  dips none  lone 0.08  colours 15
+
+sheet judge: D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\cam35\slices
+  e   h  78 feet 130 palette   1.0 colours  15  ok
+  ne  h  77 feet 130 palette   1.0 colours  15  ok
+  n   h  77 feet 130 palette   1.0 colours  15  ok
+  nw  h  77 feet 130 palette   1.0 colours  15  ok
+  w   h  78 feet 130 palette   1.0 colours  15  ok
+  sw  h  79 feet 130 palette   1.0 colours  15  ok
+  s   h  78 feet 130 palette   1.0 colours  15  ok
+  se  h  79 feet 130 palette   1.0 colours  15  ok
+  mirror e/w 0.992  mirror ne/nw 0.949  mirror se/sw 0.949  same n/s 0.152  even n/s [0.993, 0.992]
+  FIX (code, --fix): nothing
+  REDO (generate again): nothing
+
+s: new 86x78/4600; approved 91x72/4760 (width x height / opaque area)
+se: new 81x79/3962; approved 89x72/4445 (width x height / opaque area)
+e: new 79x78/4249; approved 79x71/3992 (width x height / opaque area)
+ne: new 79x77/3974; approved 86x70/4282 (width x height / opaque area)
+n: new 82x77/4407; approved 87x70/4528 (width x height / opaque area)
+s: p05 24.44; p95 185.43; dominant #6c9b4a 14.20%
+se: p05 24.44; p95 185.43; dominant #6c9b4a 15.37%
+e: p05 24.44; p95 185.43; dominant #6c9b4a 18.55%
+ne: p05 24.44; p95 185.43; dominant #6c9b4a 19.28%
+n: p05 24.44; p95 185.43; dominant #6c9b4a 21.53%
+lone exact 0.0825364871665828 top five 0.5548431554663391
+borders {'s': False, 'se': False, 'e': False, 'ne': False, 'n': False, 'nw': False, 'w': False, 'sw': False}
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from PIL import Image,ImageDraw
+from pathlib import Path
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35')
+b=Image.new('RGB',(5*410,900),'#808080'); dr=ImageDraw.Draw(b)
+for i,d in enumerate(['s','se','e','ne','n']):
+ im=Image.open(p/'slices'/(d+'.png')); box=im.getbbox(); crop=im.crop(box).resize(((box[2]-box[0])*5,(box[3]-box[1])*5),Image.Resampling.NEAREST)
+ b.paste(crop,(i*410,20),crop);dr.text((i*410,0),f'{d} bbox {box}',fill='white')
+ for y in range(90,131,5):
+  yy=20+(y-box[1])*5
+  dr.line([(i*410,yy),(i*410+400,yy)],fill='#666666'); dr.text((i*410+380,yy),str(y),fill='white')
+b.save(p/'measure.png')
+'@ | python -B -" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 381ms:
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+from PIL import Image
+import numpy as np
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35')
+regions={'s':{'hind feet':(65,104,97,119)},'se':{'near hind':(40,95,60,109),'far fist':(103,105,121,119)},'e':{'near hind':(40,109,70,127),'far fist':(111,92,119,110)},'ne':{'far hind':(40,106,61,121),'near fist':(99,111,119,126)},'n':{'left fist':(39,104,58,119),'right fist':(104,104,121,119)}}
+for d,rs in regions.items():
+ a=np.array(Image.open(p/'slices'/(d+'.png')))
+ for label,(x0,y0,x1,y1) in rs.items():
+  m=a[y0:y1,x0:x1,3]>0;y,x=np.where(m);print(d,label,int(y.max()+y0))
+'@ | python -B -" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 453ms:
+s hind feet 118
+se near hind 108
+se far fist 115
+e near hind 124
+e far fist 108
+ne far hind 119
+ne near fist 124
+n left fist 118
+n right fist 114
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+from PIL import Image
+import numpy as np
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35')
+for d,roi in {'s':(64,103,97,120),'e':(110,92,119,110),'n':(39,103,57,120),'se':(40,98,61,112),'ne':(40,110,61,123)}.items():
+ a=np.array(Image.open(p/'slices'/(d+'.png')));x0,y0,x1,y1=roi
+ print(d,roi)
+ for y in range(y0,y1):
+  print(y,''.join('.' if a[y,x,3]==0 else 'O' if int(a[y,x,0])>int(a[y,x,1])*1.15 else '#' for x in range(x0,x1)))
+'@ | python -B -" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 468ms:
+s (64, 103, 97, 120)
+103 #################################
+104 #########..............O########O
+105 #######OO#.............OO#######O
+106 #####OOOOO.............OOOO#####O
+107 ####OOOOO#.............OOOOO####O
+108 OOOOOOOO##............O#OOOOO###O
+109 OOOOO#OOOO...........#OOOO#OOOOOO
+110 OOOOOOOOOO...........OOOOOOOOOOOO
+111 OOOOOOOOOO...........#OOOOOOOOOOO
+112 OOOOOOOOOO...........#OOOOOOOOOOO
+113 OOOOOOOOOO...........OOOOOOOOOOOO
+114 OOOOOOOOOO...........#OOOOOOOOOOO
+115 OOOOOO#OOO............#OO#OOOOOOO
+116 ######O..................########
+117 ................................#
+118 O..............................OO
+119 O..............................OO
+e (110, 92, 119, 110)
+92 OOOO.....
+93 OOOO.....
+94 OOOOO....
+95 OOOOO#...
+96 OOO#OOO..
+97 ###OOOOO.
+98 #OOOOOO#.
+99 OOOOOOOOO
+100 OOOOOOOO#
+101 OOOOOOOO#
+102 OOOOOOOO#
+103 OOOOOOOO#
+104 O###OOOO#
+105 OOOOOOOO#
+106 OOOOOOOO.
+107 OOOOOOO..
+108 #OOO.....
+109 .........
+n (39, 103, 57, 120)
+103 .#####OOOOOOOOOOOO
+104 .#####OOOOOOOOOOOO
+105 .#####OOOOOOOOOOOO
+106 ..####O##OOOOOOOO#
+107 ....#OOO###O######
+108 ....OOOOOOO#######
+109 ....OOOOOOOOO#OOOO
+110 ....OOOOOOOOOOOOOO
+111 ....OOOO#OOOOOOOOO
+112 .....OOOO#####OOOO
+113 .....#OOOOOOO#OOOO
+114 ........######OO##
+115 ..................
+116 ..................
+117 ..................
+118 ..................
+119 ..................
+se (40, 98, 61, 112)
+98 OOOOOOOOOOOOOOOOOOOOO
+99 OOOOOOOOOOOOOOOOOOOOO
+100 OO#OOOOOOOOOOOOOOOOOO
+101 OOOOOOOOOOOOOOOOO#OOO
+102 .##OOOOOOOO#OOOO##OOO
+103 ..OOOOOOOOO#OOOOOOOOO
+104 ....OOOOOOO#OOOOOOOO#
+105 ......##OOOOOOO.OOO##
+106 ................OO###
+107 ................OO###
+108 ................OO###
+109 ................OO###
+110 ................OO###
+111 ................#O###
+ne (40, 110, 61, 123)
+110 .OOOOOOOOOOOOO##OOO##
+111 #OOOOOOOOOOOOO##O#O#.
+112 #OOOOOOOOOOOOO#OOOOO.
+113 #OOOOOOOOOOOO#OOOOO#.
+114 #OOOOOOOOOOOO#OOOOO#.
+115 #OOOOOOOOOOOO#OOOO#..
+116 .OOOOOOOOOOOO#OOOO...
+117 ..OOOOOOOOOOO##......
+118 ...#OOOOOOO##O.......
+119 ......OOOO##.........
+120 .....................
+121 .....................
+122 .....................
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35')
+supp=r'''
+# Gorilla-specific camera measurements; no pixels are redrawn here.
+AH={'s':72,'se':72,'e':71,'ne':70,'n':70}
+GH={'s':83,'se':89,'e':89,'ne':90,'n':85}
+EH={'s':98,'se':101,'e':105,'ne':101,'n':98}
+TARGET={'s':10.2,'se':8.5,'e':8.9,'ne':7.6,'n':8.4}
+height=[]; shape=[]; visor={}
+# Boxes are exclusive upper bounds, zero-based on 160px canvases. Visually
+# identified slit only, excluding the generator, shields and all other glow.
+BOX={'approved':{'s':(72,82,87,87),'se':(91,82,104,87),'e':(105,83,111,88)},
+     'new':{'s':(72,86,88,93),'se':(94,84,105,90),'e':(106,78,114,84)}}
+for tag,folder in [('approved',TAKE/'views'),('new',P/'slices')]:
+ visor[tag]={}
+ for d in NAMES:
+  rec=metrics[tag][d]
+  a=np.array(Image.open(folder/f'{d}.png').convert('RGBA'))
+  glow=(a[...,3]>0)&np.isin((a[...,:3].astype(int)*[65536,256,1]).sum(2),[int(c,16) for c in ['1b9a52','3fe07f','d6ffe6']])
+  if d in BOX[tag]:
+   x0,y0,x1,y1=BOX[tag][d]; vc=int(glow[y0:y1,x0:x1].sum())
+  else: vc=0 # Rear views inspected: glow belongs to generator/shields, no visor/face.
+  visor[tag][d]=vc
+  rec['visor_pixels']=vc
+  shape.append(f\"{tag} {d}: \"+'; '.join(f'{r} {v:.4%}' for r,v in rec['role_shares'].items())+f\"; visor ONLY {vc}; slit ROI {BOX[tag].get(d,'none: rear, visual exclusion of generator/shields')}\")
+  if tag=='new':
+   share=100*rec['role_shares']['dark accent']; shape.append(f\"  accent {share:.3f}% vs approved target {TARGET[d]:.1f}%: {share-TARGET[d]:+.3f} percentage points\")
+   height.append(f\"{d}: {rec['width']} x {rec['height']}; H/approved H {rec['height']/AH[d]:.6f}; H/shape-guide H {rec['height']/GH[d]:.6f}; H/elliptic-guide H {rec['height']/EH[d]:.6f}\")
+ratios=[metrics['new'][d]['height']/AH[d] for d in NAMES]; spread=max(ratios)-min(ratios)
+height+= [f'H/approved spread max-min: {spread:.6f}; min {min(ratios):.6f}; max {max(ratios):.6f}', 'Informational only: no height normalization, stretching or repairs applied.']
+(P/'heights.txt').write_text('\\n'.join(height)+'\\n')
+shape+=['Foot rows (zero-based 160px canvas; visually identified contacts, measured within isolated foot regions):',
+'new s: near fists 130; far hind feet 116.',
+'new se: near fist 130; far fist 115; visible hind foot 105; other hind foot not separately discernible.',
+'new e: near fist 130; far fist 108; near hind foot 124; far hind foot occluded/not separately discernible.',
+'new ne: near hind foot 130; far hind foot 119; near fist 124; far fist not confidently separable.',
+'new n: near hind feet 130; far fists 114.',
+'approved s: near fists 130; far hind feet approximately 126 (low camera overlap).',
+'approved se/e/ne/n: lowest near contacts 130; far contacts overlap body/near limbs at low camera and are not confidently separable; no invented far-foot rows.',
+'Visor thresholds: approved s18/se17; expected cam35 about s15/se14; new se is a MISS (<12); rear visor zero.',
+'Accent seams are retained by luminance and local thin-line contrast; broad shadows retain material ramp; no quota-based recolouring.',
+'All eight canvas borders: '+str(border)]
+(P/'shape.txt').write_text('\\n'.join(shape)+'\\n')
+metrics['visor']=visor;metrics['height_ratio_spread']=spread
+(P/'metrics.json').write_text(json.dumps(metrics,indent=2))
+# Edge audit is per palette colour per view: body count and silhouette-edge count.
+(P/'edge-audit.txt').write_text('\\n'.join(f\"{d} #{c}: body {r['body_count']}; edge {r['count']}; share of colour on edge {r['count']/max(1,r['body_count']):.4%}\" for d,cs in edges.items() for c,r in cs['colours'].items())+'\\n')
+lines=[
+'Heights H/approved (s,se,e,ne,n): '+', '.join(f\"{metrics['new'][d]['height']}/{AH[d]}={metrics['new'][d]['height']/AH[d]:.3f}\" for d in NAMES)+f'; spread {spread:.4f}.',
+'Tokens used: unavailable. Built-in tool: exactly one image, exact prompt-sheet.txt, two refs in specified order; raw saved unchanged.',
+'Visor s/se/e/ne/n: '+ '/'.join(str(visor['new'][d]) for d in NAMES)+'; approved s18/se17; expected s15/se14; se MISS (<12); rear zero.',
+'Accent new/approved % (s,se,e,ne,n): '+', '.join(f\"{100*metrics['new'][d]['role_shares']['dark accent']:.2f}/{TARGET[d]:.1f}\" for d in NAMES)+'.',
+'Palette: PASS, all 15 fixed colours, no outsiders; alpha binary; all eight borders clear; no magenta/plum, lone pale rim or accent rim pixels remain.',
+'view_check: front/back 0.76 MISS (<0.80), area 0.14, height 0.01, colour 0.89, dips none, lone 0.083 (no despeckle required), colours 15.',
+'sheet_judge: all eight OK; FIX nothing; REDO nothing. Height comparisons informational, unchanged. Top-five colour share 55.5% misses 65% canon.',
+'Depth p05/p95: all five 24.44/185.43 (range 160.99, below canon 180); dominant shares s14.20%, se15.37%, e18.55%, ne19.28%, n21.53%.',
+'By eye: recognizably the same gorilla and parts; plates/segmentation and proportions drift, especially narrower se; no clear new hardware.',
+'Camera: all show more top, but 35 degrees is not convincingly met consistently; e shows a top/back band and raised far fist, far hind foot remains hidden.',
+'Front visor is visible but narrower/weaker than approved; front is not overhead. Firm plates/seams and mostly clean bands, some small clusters; no rear visor.',
+'Pilot is a MISS for fleet rollout: heights only +8-10%, below shape guide; se visor too small. Review: review.png; details in heights/shape/depth/check files.'
+]
+(P/'REPORT.txt').write_text('\\n'.join(lines)+'\\n');print('\\n'.join(lines))
+'''
+with (p/'audit.py').open('a') as f:f.write(supp)
+'@ | python -B -; python -B D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/audit.py" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 3409ms:
+cam35/slices                           front/back 0.76 (under 0.8)  area 0.14 (sw>s)  height 0.01 (nw>w)  colour 0.89 (w>sw)  dips none  lone 0.08  colours 15
+
+sheet judge: D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\cam35\slices
+  e   h  78 feet 130 palette   1.0 colours  15  ok
+  ne  h  77 feet 130 palette   1.0 colours  15  ok
+  n   h  77 feet 130 palette   1.0 colours  15  ok
+  nw  h  77 feet 130 palette   1.0 colours  15  ok
+  w   h  78 feet 130 palette   1.0 colours  15  ok
+  sw  h  79 feet 130 palette   1.0 colours  15  ok
+  s   h  78 feet 130 palette   1.0 colours  15  ok
+  se  h  79 feet 130 palette   1.0 colours  15  ok
+  mirror e/w 0.992  mirror ne/nw 0.949  mirror se/sw 0.949  same n/s 0.152  even n/s [0.993, 0.992]
+  FIX (code, --fix): nothing
+  REDO (generate again): nothing
+
+s: new 86x78/4600; approved 91x72/4760 (width x height / opaque area)
+se: new 81x79/3962; approved 89x72/4445 (width x height / opaque area)
+e: new 79x78/4249; approved 79x71/3992 (width x height / opaque area)
+ne: new 79x77/3974; approved 86x70/4282 (width x height / opaque area)
+n: new 82x77/4407; approved 87x70/4528 (width x height / opaque area)
+s: p05 24.44; p95 185.43; dominant #6c9b4a 14.20%
+se: p05 24.44; p95 185.43; dominant #6c9b4a 15.37%
+e: p05 24.44; p95 185.43; dominant #6c9b4a 18.55%
+ne: p05 24.44; p95 185.43; dominant #6c9b4a 19.28%
+n: p05 24.44; p95 185.43; dominant #6c9b4a 21.53%
+lone exact 0.0825364871665828 top five 0.5548431554663391
+borders {'s': False, 'se': False, 'e': False, 'ne': False, 'n': False, 'nw': False, 'w': False, 'sw': False}
+Heights H/approved (s,se,e,ne,n): 78/72=1.083, 79/72=1.097, 78/71=1.099, 77/70=1.100, 77/70=1.100; spread 0.0167.
+Tokens used: unavailable. Built-in tool: exactly one image, exact prompt-sheet.txt, two refs in specified order; raw saved unchanged.
+Visor s/se/e/ne/n: 15/8/8/0/0; approved s18/se17; expected s15/se14; se MISS (<12); rear zero.
+Accent new/approved % (s,se,e,ne,n): 8.76/10.2, 7.98/8.5, 8.00/8.9, 8.45/7.6, 8.37/8.4.
+Palette: PASS, all 15 fixed colours, no outsiders; alpha binary; all eight borders clear; no magenta/plum, lone pale rim or accent rim pixels remain.
+view_check: front/back 0.76 MISS (<0.80), area 0.14, height 0.01, colour 0.89, dips none, lone 0.083 (no despeckle required), colours 15.
+sheet_judge: all eight OK; FIX nothing; REDO nothing. Height comparisons informational, unchanged. Top-five colour share 55.5% misses 65% canon.
+Depth p05/p95: all five 24.44/185.43 (range 160.99, below canon 180); dominant shares s14.20%, se15.37%, e18.55%, ne19.28%, n21.53%.
+By eye: recognizably the same gorilla and parts; plates/segmentation and proportions drift, especially narrower se; no clear new hardware.
+Camera: all show more top, but 35 degrees is not convincingly met consistently; e shows a top/back band and raised far fist, far hind foot remains hidden.
+Front visor is visible but narrower/weaker than approved; front is not overhead. Firm plates/seams and mostly clean bands, some small clusters; no rear visor.
+Pilot is a MISS for fleet rollout: heights only +8-10%, below shape guide; se visor too small. Review: review.png; details in heights/shape/depth/check files.
+
+codex
+The southeast visor measures 8 pixels, below the 12-pixel minimum; south measures 15, and both rear views have zero visor pixels. I’m marking the pilot as a miss for fleet rollout: it’s recognizably the same machine, but the camera lift and southeast width fall short. The five views, review image, and measurement reports are saved.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+from PIL import Image
+import hashlib,json,numpy as np
+p=Path('D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35');v=p.parent/'views_cam35'
+assert {x.name for x in v.iterdir()}=={'s.png','se.png','e.png','ne.png','n.png'}
+for d in ['s','se','e','ne','n']:
+ assert (v/(d+'.png')).read_bytes()==(p/'slices'/(d+'.png')).read_bytes()
+a=np.array(Image.open(v/'e.png')); y,x=np.where(a[...,3]>0);assert np.ptp(x)+1==79
+assert hashlib.sha256((p/'sheet_raw.png').read_bytes()).hexdigest()=='0ee7579da1ac29ec71dfb21a362bdaef50b32bab3a0c136800af3745f63b863e'
+for n in ['sheet_raw.png','sheet_finished.png','review.png','heights.txt','palette-check.txt','shape.txt','depth.txt','view_check.txt','sheet_judge.txt','REPORT.txt']:
+ assert (p/n).is_file()
+print('Verified unchanged raw hash, exact east width 79, five delivered slices, and all required reports.')
+'@ | python -B -" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 464ms:
+Verified unchanged raw hash, exact east width 79, five delivered slices, and all required reports.
+
+codex
+Heights H/approved, s/se/e/ne/n: **1.083 / 1.097 / 1.099 / 1.100 / 1.100**; spread **0.0167**.  
+Exactly one image generated; raw preserved unchanged. Token usage unavailable.  
+Visor counts: **15 / 8 / 8 / 0 / 0**; southeast misses the 12-pixel minimum.  
+Accent new/approved %: **8.76/10.2, 7.98/8.5, 8.00/8.9, 8.45/7.6, 8.37/8.4**.  
+Palette passes: fifteen fixed colours; east width 79; borders clear; fringe cleanup passes.  
+view_check: front/back **0.76, miss**; lone **0.083**, no despeckle required. sheet_judge: all eight OK.  
+Depth p05–p95: **24.44–185.43** throughout; dominant shares **14.20/15.37/18.55/19.28/21.53%**.  
+By eye: same gorilla, no clear new hardware, but proportions drift. More top shows; consistent 35° elevation is unconvincing.  
+Side shows a top/back band and raised far fist; far hind foot remains hidden. Front visor is narrower; plates remain firm, bands mostly clean, rear visor absent.  
+**Pilot misses fleet-rollout requirements.** Five views and all reports saved. [Review](D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/review.png) · [REPORT.txt](D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/REPORT.txt)
+tokens used
+57,314
+Heights H/approved, s/se/e/ne/n: **1.083 / 1.097 / 1.099 / 1.100 / 1.100**; spread **0.0167**.  
+Exactly one image generated; raw preserved unchanged. Token usage unavailable.  
+Visor counts: **15 / 8 / 8 / 0 / 0**; southeast misses the 12-pixel minimum.  
+Accent new/approved %: **8.76/10.2, 7.98/8.5, 8.00/8.9, 8.45/7.6, 8.37/8.4**.  
+Palette passes: fifteen fixed colours; east width 79; borders clear; fringe cleanup passes.  
+view_check: front/back **0.76, miss**; lone **0.083**, no despeckle required. sheet_judge: all eight OK.  
+Depth p05–p95: **24.44–185.43** throughout; dominant shares **14.20/15.37/18.55/19.28/21.53%**.  
+By eye: same gorilla, no clear new hardware, but proportions drift. More top shows; consistent 35° elevation is unconvincing.  
+Side shows a top/back band and raised far fist; far hind foot remains hidden. Front visor is narrower; plates remain firm, bands mostly clean, rear visor absent.  
+**Pilot misses fleet-rollout requirements.** Five views and all reports saved. [Review](D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/review.png) · [REPORT.txt](D:/dev/new-mech-rpg/docs/art/moba/ape_l/take-a/cam35/REPORT.txt)

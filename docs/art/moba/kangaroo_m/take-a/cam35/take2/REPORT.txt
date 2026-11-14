@@ -1,0 +1,13 @@
+Completed ONE built-in generation from prompt-sheet.txt verbatim and two ordered refs; raw unchanged; tokens/cost unavailable. Outcome: partial miss; no redo.
+Order s,se,e,ne,n. Width W/approved: s 54/55=0.982, se 62/64=0.969, e 70/69=1.014, ne 66/65=1.015, n 50/49=1.020.
+Anchor s/n/e .982/1.020/1.014, mean 1.005573 (nearest whole-sheet candidate, not exactly 1.00); E/S 70/54=1.296 vs approved 69/55=1.255.
+Height H/approved: s 73/80=0.912, se 77/79=0.975, e 77/78=0.987, ne 82/77=1.065, n 84/79=1.063.
+H/target: 73/73,77/80,77/83,82/89,84/90; H/approved spread .1524; SE/NE 77/82=.939; top rows 68,64,64,59,57; no border contacts.
+Lightest orange/steel shares %, new vs approved: s 14.49/4.96 vs 7.38/1.74; se 13.38/4.75 vs 5.99/1.06; e 14.99/2.36 vs 8.11/1.42; ne 13.69/1.91 vs 3.67/0.34; n 14.99/1.99 vs 7.43/0.18.
+Eyes totals/groups: S 2 [1,1] FAIL; SE 7 [6,1]; E 4 [4]; NE/N 0 []; NE head from behind, muzzle tip only, no face/eye.
+Accent % new/target: s 7.81/7.8, se 7.70/7.7, e 7.51/7.5, ne 5.99/6.0, n 5.80/5.8.
+Palette PASS 13 fixed colours, none outside; magenta/plum and lone pale edge remaining 0; eyes kept on eye ramp; broad shadows on material ramps.
+view_check: front/back .64 FAIL, area .10, height .06, colour .92, dips none, lone .10, colours 13; no despeckle needed. sheet_judge: all 8 ok, FIX/REDO nothing; heights informational.
+Depth p05/p95/dominant%: s 18.86/211.13/24.97; se 18.86/211.13/23.39; e 18.86/158.25/26.72; ne 18.86/158.25/28.14; n 18.86/158.25/27.07.
+By eye: recognizable same kangaroo with two ears/arms/fists/legs and one tail, no extra parts; some proportion/plate drift. Lit top shelves and SE far foot 140/132 improve depth; E still near-level; consistent 35-degree camera NOT certified.
+Front near-reference width, face/fists clear, eyes too small; rear heads away with no eye pixels; firm seams, mostly clean bands. Review: review.png; roles/limbs/feet: shape.txt. All finishing outputs inside OUT.

@@ -1,0 +1,26 @@
+ s: 54x73 (approved 55x80, middle row 54x73), W/approved 0.98, H/approved 0.91, H/guide 73/73; top row 68, lowest row 140; border clear; alpha [0, 255]; off-palette 0; accent 7.7% (approved 7.8%); eye px 4
+     eye groups (px, y0, y1, x0, x1): (2, 86, 88, 84, 85), (2, 86, 88, 75, 76)
+se: 62x77 (approved 64x79, middle row 62x77), W/approved 0.97, H/approved 0.97, H/guide 77/80; top row 64, lowest row 140; border clear; alpha [0, 255]; off-palette 0; accent 7.7% (approved 7.7%); eye px 7
+     eye groups (px, y0, y1, x0, x1): (6, 83, 86, 87, 90), (1, 90, 91, 98, 99)
+ e: 70x77 (approved 69x78, middle row 70x77), W/approved 1.01, H/approved 0.99, H/guide 77/83; top row 64, lowest row 140; border clear; alpha [0, 255]; off-palette 0; accent 7.5% (approved 7.5%); eye px 4
+     eye groups (px, y0, y1, x0, x1): (4, 84, 86, 99, 102)
+ne: 66x82 (approved 65x77, middle row 66x82), W/approved 1.02, H/approved 1.06, H/guide 82/89; top row 59, lowest row 140; border clear; alpha [0, 255]; off-palette 0; accent 6.0% (approved 6.0%); eye px 0
+     eye groups (px, y0, y1, x0, x1): 
+ n: 50x84 (approved 49x79, middle row 50x84), W/approved 1.02, H/approved 1.06, H/guide 84/90; top row 57, lowest row 140; border clear; alpha [0, 255]; off-palette 0; accent 5.8% (approved 5.8%); eye px 0
+     eye groups (px, y0, y1, x0, x1): 
+H/approved spread 0.15
+side over front: 1.30 (approved 1.25, middle row 1.30)
+shape-aware angle measure (pitch at which the solid cut from the approved outlines best matches each view):
+hull from D:\dev\new-mech-rpg\docs\art\moba\kangaroo_m\take-a\fixed: (69, 55, 80) (long, wide, high texels)
+  D:\dev\new-mech-rpg\docs\art\moba\kangaroo_m\take-a\cam35\take2\views:
+     s  54x73  fit  1 deg (IoU 0.82)  height-match 0
+    se  62x77  fit 33 deg (IoU 0.71)  height-match 0
+     e  70x77  fit 11 deg (IoU 0.78)  height-match 0
+    ne  66x82  fit 11 deg (IoU 0.79)  height-match 7
+     n  50x84  fit 12 deg (IoU 0.82)  height-match 10
+  D:\dev\new-mech-rpg\docs\art\moba\kangaroo_m\take-a\cam35\take2\fixed:
+     s  54x73  fit  1 deg (IoU 0.82)  height-match 0
+    se  62x77  fit 33 deg (IoU 0.71)  height-match 0
+     e  70x77  fit 11 deg (IoU 0.78)  height-match 0
+    ne  66x82  fit 11 deg (IoU 0.79)  height-match 7
+     n  50x84  fit 12 deg (IoU 0.82)  height-match 10

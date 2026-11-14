@@ -1,0 +1,49 @@
+{
+  "id": "pistol_shrimp",
+  "source_sha256": "147f24029faa293ae1d19281ee582f2f15281ba3c0190aa8135acfa78e189d73",
+  "source_triangles": 500000,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8748661670674217,
+  "blender_bounds_min": [
+    -3.9038121700286865,
+    -1.6003854274749756,
+    0.11991650611162186
+  ],
+  "blender_bounds_max": [
+    -2.095532178878784,
+    1.6001039743423462,
+    1.5135605335235596
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

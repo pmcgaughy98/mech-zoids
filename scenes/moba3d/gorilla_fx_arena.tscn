@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="PackedScene" path="res://scenes/moba3d/arena_play.tscn" id="1"]
+[node name="ArenaPlay" instance=ExtResource("1")]
+[node name="GorillaFxInstaller" parent="." index="1"]
+start_on_gorilla = true
+slam_hits = true
+fault_line = true
+aura_disc = true
+step_dust = true
+drive_dust = true
+team_tint = true
+windup_glow = true
+cage_wall = true

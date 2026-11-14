@@ -1,0 +1,15 @@
+{
+  "request": {
+    "mode": "preview",
+    "ai_model": "meshy-6",
+    "target_formats": [
+      "glb"
+    ],
+    "prompt": "Stylized industrial science fiction MOBA Foundry environment piece. Strong readable silhouette, broad simple forms, no text, no logos, no characters, no ground plane, isolated single object, flat bottom. One heap of industrial scrap on dark slag rock: stacked crushed armor plates, a tipped cargo container and thick bent pipes. A low broad mound about twice as wide as tall.",
+    "should_remesh": true,
+    "topology": "triangle",
+    "target_polycount": 6000
+  },
+  "reserved_credits": 20,
+  "at": "2026-11-14T13:40:29.246326+00:00"
+}

@@ -1,0 +1,29 @@
+WOLF M TAKE B / CODEX WALK4 / SE + NE TROT
+Tokens: unavailable. Native pixels; no image tool/commit. Only codex-walk4 written; fixed stills and approved side timing read.
+se: u=(0.994665758,0.103150523); f=0.775514982; side paw spacing43.752857px.
+ne: u=(0.986143703,-0.165893333); f=0.619979262; side paw spacing43.752857px.
+64/64 contacts within1px of ideal2D target; exact2/4/4/2px raster lifts; pairA f0-3 / pairB f4-7.
+Native row160 cap: se near_fore f0 -0.640px; ne near_hind f7 -0.720px vs ideal; within1px.
+se near_fore footlock spread x/y 0.857/0.800px.
+se far_fore footlock spread x/y 0.857/0.800px.
+se near_hind footlock spread x/y 0.857/0.800px.
+se far_hind footlock spread x/y 0.857/0.800px.
+ne near_fore footlock spread x/y 0.171/0.514px.
+ne far_fore footlock spread x/y 0.171/0.514px.
+ne near_hind footlock spread x/y 0.171/1.029px.
+ne far_hind footlock spread x/y 0.171/0.514px.
+se near_fore: upper[16, 8, 7], shank[6, 5, 5], paw12; width delta<=1; length delta0.461px.
+se far_fore: upper[8, 8, 7], shank[5, 4, 4], paw12; width delta<=1; length delta1.097px.
+se near_hind: upper[13, 9, 6], shank[6, 5, 4], paw11; width delta<=1; length delta0.682px.
+se far_hind: upper[7, 5, 7], shank[6, 5, 4], paw11; width delta<=1; length delta0.658px.
+ne near_fore: upper[12, 5, 6], shank[6, 5, 5], paw12; width delta<=1; length delta0.631px.
+ne far_fore: upper[8, 7, 5], shank[6, 4, 4], paw11; width delta<=1; length delta1.251px.
+ne near_hind: upper[13, 10, 7], shank[7, 6, 5], paw13; width delta<=1; length delta0.525px.
+ne far_hind: upper[6, 6, 8], shank[6, 5, 5], paw11; width delta<=1; length delta1.303px.
+16/16:192x192 RGBA, binary alpha, approved palette, no below160 pixels, no canvas-edge contact, one connected creature.
+No pinholes/strays; enclosed negative space between crossing legs retained rather than painted solid.
+Body/head/fins from still, dip1px f1/f5; straight original tail plate pixels translate1px with dip, never thinned.
+EYE at4x sel-out: forward three-quarter robot-wolf trot; paired steps follow side indices; plated legs and claws retained.
+EYE: joined limbs, no abrupt cut ends seen; overlapping paws/legs naturally hide each other at crossing phases.
+board.png: side timing on top, then each view approved still / setC / WALK4; footprint boards show2D world contacts.
+GIFs:8 frames,100ms each, infinite loop. checks.txt and verification.json contain every saved contact and width.

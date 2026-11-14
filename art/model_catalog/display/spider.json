@@ -1,0 +1,49 @@
+{
+  "id": "spider",
+  "source_sha256": "fa85fcecba929d7f3b6527ab5c3db77e7042ae2866d309e8255c0231f77d2bae",
+  "source_triangles": 499696,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8746326506749998,
+  "blender_bounds_min": [
+    -4.598658561706543,
+    -1.6021220684051514,
+    0.11803114414215088
+  ],
+  "blender_bounds_max": [
+    -1.39992356300354,
+    1.5992218255996704,
+    2.010089874267578
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

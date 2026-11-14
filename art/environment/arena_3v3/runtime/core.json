@@ -1,0 +1,48 @@
+{
+  "asset": "core",
+  "raw_sha256": "bc8c52fb803f085c49babfcf17c008708ed522a056bdee28be9dfea55977322c",
+  "runtime_sha256": "82408a241abe1d261c4e70a5e83e3ead839d89152dacefeb33e089c35c878d74",
+  "raw_triangles": 8023,
+  "runtime_triangles": 5000,
+  "materials": 1,
+  "images": [
+    {
+      "name": "Image_0",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_1",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_2",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_3",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "size_godot_xyz_m": [
+    5.0,
+    4.35,
+    5.0
+  ],
+  "turned_deg": 0,
+  "pivot": "bottom centre",
+  "up": "+Y",
+  "collision": "none: the blockout keeps its own bodies and nav mesh",
+  "provider_metadata": "../source/core/refine-status.json"
+}

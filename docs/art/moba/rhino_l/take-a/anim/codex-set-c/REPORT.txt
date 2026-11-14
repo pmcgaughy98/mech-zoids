@@ -1,0 +1,21 @@
+Set C: four built-in generations, one per supplied prompt with se_6x then ne_6x; no redos. Tokens used unavailable.
+stampede: 2172x724; sha256 7574668c52d383d05f1d67b98a7b24f3468ecc8e06f54594d0a9219022aef647
+stampede: clean 2x7 grid YES; se/ne factors 0.3383986387, 0.3085370885.
+stampede f0/ref, feet-aligned exact-colour union share: se 91x69 vs 89x70, share 0.3357 > mirrored 0.1876; ne 80x72 vs 77x74, share 0.3306 > mirrored 0.1458; facing PASS.
+stampede by eye: Same rhino in both rows: yellow hex plates/dark frame, grey disc joints/flat feet, two-tone horn and tail stub retained; red eye intermittent, glints lost. Gallop partial: head too high, f0/f1/f6 almost idle; leg beats broadly pair across rows but folded feet shorten the legs. Bodies stay se/ne, no mirror; se head drifts sideward in f2-f3, so exact angle in every cell FAIL.
+horn-toss: 2172x724; sha256 5e7ebe830b7b45aa2f5099cbe2190d99254a5e23e5746c4fc5738ad1850b9946
+horn-toss: clean 2x7 grid YES; se/ne factors 0.3155951833, 0.3067587620.
+horn-toss f0/ref, feet-aligned exact-colour union share: se 88x71 vs 89x70, share 0.6148 > mirrored 0.1918; ne 80x71 vs 77x74, share 0.5704 > mirrored 0.2018; facing PASS.
+horn-toss by eye: Same rhino features in both rows, with intermittent red eye and lost glints. Scoop/rise/recover and columns broadly agree; peak horn points upward rather than clearly back over body. Bodies keep diagonals, no mirror, but se head becomes sideward at f4 and ne head exposes too much face while scooping; exact-angle lock FAIL. Legs compress in crouch and extend at peak.
+ground-pound: 2172x724; sha256 2aeadf5e6b78e73d294daeb8760cf2a53f7558ec526a3ebb7f358552d7333aa0
+ground-pound: clean 2x6 grid YES; se/ne factors 0.2918107177, 0.2676069940.
+ground-pound f0/ref, feet-aligned exact-colour union share: se 91x68 vs 89x70, share 0.4185 > mirrored 0.1847; ne 80x72 vs 77x74, share 0.4502 > mirrored 0.1819; facing PASS.
+ground-pound by eye: Same rhino features in both rows, with intermittent red eye and lost glints. Rear-up/peak/slam/recover read and columns agree; front feet lift, rear feet remain grounded. Bodies retain diagonals, no mirror, but se head shifts sideward at f2-f3; exact-angle lock FAIL. Rear supports appear longer at peak and legs compress strongly at slam.
+horn-jab: 2172x724; sha256 3c67a7db72f42e66992b19a845fbf3f59f1c47eab5fefb8841467663d698e06a
+horn-jab: clean 2x6 grid YES; se/ne factors 0.3008360664, 0.2822982602.
+horn-jab f0/ref, feet-aligned exact-colour union share: se 90x69 vs 89x70, share 0.6591 > mirrored 0.1899; ne 81x71 vs 77x74, share 0.5148 > mirrored 0.2098; facing PASS.
+horn-jab by eye: Same rhino features in both rows, with intermittent red eye and lost glints. Wind-up/lunge/upward hit/recover read, columns agree and feet remain planted. Bodies retain se/ne, no mirror, but raised se head approaches side view at f3-f4; exact-angle lock FAIL. Leg lengths mostly hold, with slight apparent extension at hit.
+All 52 frames: bottom y=160 (adjustments -1 to +2 px, none over 3), eye rim=0, borders clear, binary alpha, transparent RGB zero, union palette of 12 colours; no magenta/plum fringe. Glint count=0 throughout.
+Per-frame dimensions/colour/eye counts, palette rim shares, near-black/top-five shares and lone pixels: each checks.txt. Front/back symmetry and side-facing tests N/A. All frame transforms reconstructed from grid.json; all eight GIF timings/loop flags verified.
+Copied and adapted set B refinish.py; raws, generation.json, row finishes, 52 frames, traceable grids, 3x reviews with refs and timed GIFs saved here. Review images include raw-generation defects; no drawing repairs.
+Brace-shuffle N/A: set D job, not generated or touched. All task writes confined to codex-set-c (built-in tool also saves its own outputs); no assets, installs, commits, reverts or sibling edits.

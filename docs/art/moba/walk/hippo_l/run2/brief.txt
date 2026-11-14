@@ -1,0 +1,68 @@
+You are making pixel-art walk frames for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run2.
+Read anything under D:\dev\new-mech-rpg\docs\art\moba. Do not touch any other folder (run1 included), assets, art or
+tools, and do not commit. Run tag: hippo-walk35-run2.
+
+This is run 2 of the violet L hippo's four-beat walk at 35 degrees. Run 1 (D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run1)
+made the e, se and ne views. Read run1\brief.txt (the machine, the gait, the method, the rules and the pass marks all
+still apply), run1\REPORT.txt, and run1\build.py, native.py, rig.json, verify.py and checks.txt: that is your own method
+from run 1, so reuse it rather than starting again. Read D:\dev\new-mech-rpg\docs\art\moba\walk\WALK_PLAYBOOK.md section 7
+for the front and back views, and the fennec's run 2 (D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\run2: brief.txt,
+REPORT.txt, frontback.py), which drew s and n the same way. The stills on the 192 canvas are in run2\stills; the targets
+(the same plan as run 1, with s and n included) are in run2\targets.json, and the guides are run2\guide_s.png and
+guide_n.png. Draw s and n only. Do not redraw e, se or ne; the walk lane cleans those itself.
+
+Keep run2\REPORT.txt up to date after each view, so a report exists even if the run is stopped by its token cap.
+
+What the walk lane found in run 1, so do not repeat it: in se and ne the body layer (run1\source\<view>_body.png) was
+filled where a leg had been in the still, including below the belly, so dark body colour hangs below the belly with
+straight edges where a leg moved away, and in ne that fill was drawn over the far hind foot as a dark vertical line
+splitting the foot. The body stops at the belly: where a leg in the still came out below the belly, the body layer there
+is transparent, not filled. Fill only inside the body's own outline, continuing its bands and seams.
+
+Part 1, s. Part 2, n. Each is an 8-frame loop, 125 ms a frame, with run 1's gait: LF swings f1-f3, LH f3-f5, RF f5-f7,
+RH f7, f0, f1 (wrapping), lifts 2, 3 and 2 px; the body dips 1 px on f0 and f4. Per view, the path turns into screen px as
+offset * f * u, with the lift straight up:
+  s: u = (0, 1), f = 0.5736; a planted foot moves (0.00, -1.72) px a frame on the canvas (x, y; y down)
+  n: u = (0, -1), f = 0.5736; a planted foot moves (0.00, +1.72) px a frame on the canvas
+At 35 degrees a step toward or away from the camera shows at 0.57 of its length, so these views need real foot travel up
+and down the screen, not reordered side frames. Round each frame's position so a planted foot's total travel stays within
+0.5 px of the target. The labels are in D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\feet.json. In s the front feet are
+the near feet on row 160 (RF on screen left, LF on screen right), and the hind feet are hidden behind the head and front
+legs; in n the hind feet are near on row 160 (LH on screen left, RH on screen right), and the front feet are hidden behind
+the rump. Draw a hidden foot only where the new pose shows it. A foot nearer the camera than in the still may sit up to
+4 px below row 160.
+Draw order: in s, hind legs, then body, then front legs, then the head and jaw exactly as the still layers them over the
+front legs (look at the still at 8x where the jaw meets each front leg, and keep that); in n, front legs, then body, then
+hind legs, then any tail or rump part the still shows over the hind legs. In both views each leg moves straight up and
+down the screen with its knee joint, joints redrawn by hand; the big hip and shoulder discs stay pinned to the body and
+dip with it; the legs stay apart from each other and from the jaw. Every part is the still's own pixels translated, never
+rotated or resampled.
+
+Pass marks, for s and n: as in run1\brief.txt (foot lock within 2 px measured from the frame pixels; each visible foot on
+its target within 1 px; lifts exact; above the legs every frame equals the still after the dip; the stills' 14 colours
+only; binary alpha; no holes, stray pixels or edge contact; specks per frame no more than the still's count plus 2), and
+these two new ones:
+- Belly: per view, for each leg's column span in the still, the body layer's lowest opaque row in that span may not sit
+  more than 1 px below the straight line between the body's lowest rows in the columns just outside the span. Report it.
+- Whole feet: every foot pad in every frame is the still's pad translated whole, with no line or other part drawn across
+  it except where the still itself shows something in front of it (report the pad match per foot per frame).
+Run these and report their results:
+  python D:\dev\new-mech-rpg\docs\art\moba\walk\tools\walk_tools.py footlock
+    --targets D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run2\targets.json
+    --frames D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run2\walk\frames --views s n
+    --still-dir D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run2\stills
+    --out D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run2\footlock.json
+  python D:\dev\new-mech-rpg\docs\art\moba\walk\tools\walk_tools.py seams
+    --targets D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run2\targets.json
+    --frames D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run2\walk\frames --views s n
+    --still-dir D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run2\stills --body a990e0 7258b4 4a347e 26183f
+Seams flags between two legs or between a leg and the jaw are real gaps and stay open. If the silhouette footlock merges a
+sole with the jaw or body, say so and give your own stamp measure as the deciding one.
+
+Output in run2: walk\frames\s_f0.png to s_f7.png and n_f0.png to n_f7.png (raw, no outline, like the stills), walk\layers
+and source\ as in run 1, a preview gif per view (125 ms, loop), footprint pictures, board.png (per view: the still, then
+the 8 frames, with the game's sel-out from D:\dev\new-mech-rpg\docs\art\moba\touchup\touchup_machine.py, at 4x),
+legs_zoom.png (5x, every frame), checks.txt, footlock.json, and REPORT.txt (under 30 lines): tokens if known, the
+foot-lock spreads, target errors, the belly and whole-feet results, the seams result, upper-body match, specks, lowest rows,
+and by eye: do s and n read as this heavy hippo walking toward and away from the camera one foot at a time, legs like the
+still, discs and jaw whole, nothing hanging below the belly?

@@ -1,0 +1,1 @@
+Backup before packing the rhino walk rebuild (walk lane, 2026-11-05 19:15). Preston via the Rhino session: "Pack as is". Restore: copy art_machines_rhino/* back to art/machines/rhino/ and pack_rhino_3d.py back to tools/art/.

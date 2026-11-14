@@ -1,0 +1,99 @@
+{
+  "id": "shark",
+  "name": "Shark",
+  "source_model": {
+    "path": "res://art/model_catalog/sources/shark_front - Hunyuan 3D v3.1 Pro.glb",
+    "source": "D:\\user\\Downloads\\shark_front - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "a350f3d282e4b719eec3224b23031452e655588b3cdbd8f77021bb05a83e57e4",
+    "bytes": 53827604
+  },
+  "display_model": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/shark-rigged-local-repair-v1.glb",
+  "status": "Seven small gaps and 56 malformed triangles repaired. Mouth, fins and tail retained. Original 19-joint rig, all skin weights and textures unchanged.",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/shark/front.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\shark_front.png",
+      "sha256": "ba3fbb7d31e47b6351a8ce3949bec796460dd2eec333e5eb7e4bae2a28b24d4a",
+      "bytes": 152969,
+      "project_matches": [
+        "docs/art/moba/shark_l/take-a/white_views/shark_front.png"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/shark/left.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\shark_left.png",
+      "sha256": "b9cca6284753fbc4cd020a6bb13137abf655a9292264279080179c40fae232bc",
+      "bytes": 249883,
+      "project_matches": [
+        "docs/art/moba/shark_l/take-a/white_views/shark_left.png"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/shark/back.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\shark_back.png",
+      "sha256": "cb2cdb030f3637d74f06f9c166ddd609895ec8db575391c2a4fe0f9d91ace792",
+      "bytes": 139461,
+      "project_matches": [
+        "docs/art/moba/shark_l/take-a/white_views/shark_back.png"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/shark/right.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\shark_right.png",
+      "sha256": "a5b5db5f26d2d031338ba16772f408a8722cd1b9279c121966f718078bb7e1e9",
+      "bytes": 253990,
+      "project_matches": [
+        "docs/art/moba/shark_l/take-a/white_views/shark_right.png"
+      ]
+    }
+  },
+  "artist_workspace": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/shark-rigged-local-repair-v1.blend",
+  "review_models": [
+    {
+      "label": "INTACT QUALITY ARCHIVE\nOriginal generated geometry",
+      "path": "res://art/model_catalog/sources/shark_front - Hunyuan 3D v3.1 Pro.glb",
+      "display_scale": 2.6314644006752124
+    },
+    {
+      "label": "DOWNLOADED RIG\nBefore local triangle cleanup",
+      "path": "res://art/model_catalog/sources/Meshy_AI_shark_remeshed_25k_20261108_character.glb",
+      "display_scale": 0.7677223498745818
+    },
+    {
+      "label": "LOCAL REPAIR\nSame 19-joint rig and skin",
+      "path": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/shark-rigged-local-repair-v1.glb",
+      "display_scale": 0.7677223498745818
+    }
+  ],
+  "review_views": {
+    "front": {
+      "path": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/review-front.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "left": {
+      "path": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/review-left.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "back": {
+      "path": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/review-back.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "right": {
+      "path": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/review-right.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    }
+  },
+  "review_provenance": {
+    "date": "2026-11-14",
+    "report": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/repair-verification.json",
+    "independent_audit": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/independent-export-audit.json",
+    "joint_count": 19,
+    "rigged_input_sha256": "67cb0c7d6bb00a15bf0bf9f7ddf9a163023aedce2e241fd9117debdefc237e7e",
+    "repaired_sha256": "9f66099793171fefa584f4cc1d91fac5f193c0e72a7a5eaadb2d214d77717b22",
+    "intact_pre_remesh_available": true,
+    "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+    "scope": "Local topology repair. Mouth and teeth, two eyes, dorsal and paired fins, tail and armor retained. Original vertex attributes, skin, 19-joint skeleton/rest/binds and textures preserved; no remesh or rerig. Three duplicate corner rows on closure 4 use one healthy neighboring UV island. All original attribute/skin rows remain exact; duplicate skin rows copy the same corners. All 23,245 healthy source faces retained. No gameplay replacement.",
+    "runtime_report": "res://docs/art/moba/shark_l/local-repair-v1-2026-11-14/final-review-verification.json"
+  }
+}

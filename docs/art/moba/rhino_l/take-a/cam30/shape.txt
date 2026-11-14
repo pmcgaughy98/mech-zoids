@@ -1,0 +1,22 @@
+approved s: yellow 56.2236%; steel 23.3043%; charcoal 14.0373%; eye 0.1242%; accent 6.3106%; eye pixels 5; height/width 0.9722; lowest opaque row 160; foot rows: see visual notes below
+approved se: yellow 53.2226%; steel 21.7610%; charcoal 17.1073%; eye 0.1529%; accent 7.7562%; eye pixels 7; height/width 0.7865; lowest opaque row 160; foot rows: see visual notes below
+approved e: yellow 55.4672%; steel 18.5822%; charcoal 16.5843%; eye 0.1289%; accent 9.2374%; eye pixels 6; height/width 0.6505; lowest opaque row 160; foot rows: see visual notes below
+approved ne: yellow 59.9564%; steel 15.4125%; charcoal 17.2272%; eye 0.0000%; accent 7.4038%; eye pixels 0; height/width 0.9610; lowest opaque row 160; foot rows: see visual notes below
+approved n: yellow 59.8936%; steel 11.9681%; charcoal 18.7766%; eye 0.0000%; accent 9.3617%; eye pixels 0; height/width 1.1667; lowest opaque row 160; foot rows: see visual notes below
+new s: yellow 69.7110%; steel 18.3862%; charcoal 10.0361%; eye 0.1204%; accent 1.7463%; eye pixels 6; height/width 1.2429; lowest opaque row 160; foot rows: see visual notes below
+new se: yellow 67.3132%; steel 18.1593%; charcoal 12.7322%; eye 0.1238%; accent 1.6715%; eye pixels 6; height/width 1.1154; lowest opaque row 160; foot rows: see visual notes below
+new e: yellow 64.7023%; steel 16.2676%; charcoal 15.0808%; eye 0.0818%; accent 3.8674%; eye pixels 4; height/width 0.6893; lowest opaque row 160; foot rows: see visual notes below
+new ne: yellow 68.7019%; steel 14.9540%; charcoal 12.6057%; eye 0.0000%; accent 3.7385%; eye pixels 0; height/width 1.2530; lowest opaque row 160; foot rows: see visual notes below
+new n: yellow 71.9650%; steel 12.9744%; charcoal 11.6034%; eye 0.0000%; accent 3.4572%; eye pixels 0; height/width 1.5970; lowest opaque row 160; foot rows: see visual notes below
+Rows are zero-based on 192x192 canvases. Feet must be identified visually; opaque bottom alone does not identify a far foot.
+Visual foot notes (lowest opaque rows, zero-based; identities uncertain where occluded):
+approved s: near/front 159 left,160 right; far/hind not separable.
+approved se: nearest/front 160; other visible pads 158 and159; near/far depth nearly level, exact side identity uncertain.
+approved e: near pads160; small far pads159.
+approved ne: nearest hind pad160; other hind158; farther front157.
+approved n: near/hind160; far/front not separable.
+new s: near/front160 both; far/hind not separable.
+new se: nearest/front160; rear pad136; far-side feet not independently distinguishable. Rear136 is a depth comparison, not a verified far-side foot.
+new e: near pads160 both; far feet not separable; expected far-foot stagger unverified.
+new ne: nearest hind160, other hind151; farther front139; far-side identity partly occluded.
+new n: near/hind160 both; far/front not separable.

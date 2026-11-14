@@ -1,0 +1,38 @@
+You are making pixel-art animation frames for a game. Write only inside
+D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\anim\codex-set-a\. Read anything under D:\dev\new-mech-rpg\docs\art\moba.
+
+Method: you made the rhino's set A the same way before. Read D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-a
+(prompts\, refs\, REPORT.txt, grid.json, checks.txt) and follow the method that worked there: generate a sheet with your
+image tool from the approved stills as references, slice it, finish every frame against the stills, check, and board it.
+
+The creature is the gorilla mech (ape_l). Approved stills, 160x160, feet on row 130, in
+D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\views\: s.png (front), e.png (side facing right), n.png (back); se, ne,
+sw, w, nw also exist. Keep the design exactly: the mossy green armoured body and head, the grey face plate with green
+eyes, the big orange forearm gauntlets each carrying a large green octagonal hex gem, the grey knuckle fists, the green
+hex gem on the back, the same 15 colours, the dark outline and the chunky pixel size. Only the pose changes. Never
+redesign: no new parts, no gloss, no realistic fur, no longer or thinner limbs.
+
+Kit context, from the designer's kit doc (D:\dev\new-mech-rpg\docs\plan\moba-kits.md, Gorilla section): a protector tank
+with hex shield, chest beat, bound and hex dome. Effects (the shield, the dome) are separate and are NOT part of this set.
+
+Set A is four animations. Each is drawn in three rows: front (like s.png), side facing right (like e.png), back (like
+n.png). Each column is one moment seen from the three sides, so the rows match frame for frame.
+1. idle: 5 frames, looping. A slow breath: chest and shoulders rise and settle 1-2 px; fists and feet stay planted.
+2. walk: 8 frames, looping. A knuckle walk in place: weight on the knuckles of the big forearms, the hind legs stepping,
+   the gorilla's diagonal-pair gait, the body bobbing. Planted knuckles and feet touch the ground line; nothing sinks
+   below it and nothing slides.
+3. chest_beat (ability 2): 8 frames. Rears up onto the hind legs, beats the chest with alternating fists (two or three
+   beats), drops back onto the knuckles. Frame 0 and the last frame match the idle pose.
+4. hex_shield (ability 1): 6 frames. Winds one forearm back and flings it forward, the throw that sends a hex shield,
+   then recovers. Draw the arm motion only. Frame 0 and the last frame match the idle pose.
+
+Output for each animation, in anim\codex-set-a\<name>\ :
+- frames\front_f<i>.png, side_f<i>.png, back_f<i>.png on 192x192 transparent canvases. Keep the gorilla at the stills'
+  pixel scale (never resize the design), placed like the still shifted by +16 x and +30 y, so the feet stand on row 160.
+- Idle frame 0 in each view must match its approved still; report the IoU.
+- Snap every pixel to the stills' colours. Keep a one-texel dark outline like the stills. No anti-aliasing, no stray
+  pixels, nothing touching the canvas edge.
+- Keep sheet_raw.png, grid.json, checks.txt (per frame: bottom row, colour count, any pixel below row 160, frame-0 IoU),
+  a preview gif per view, and a review.png board.
+Also write anim\codex-set-a\REPORT.txt for the whole set. Look at your own boards before finishing and fix anything that
+drifts from the stills; the eyes, the hex gems and the gauntlet shapes are where drift usually shows.

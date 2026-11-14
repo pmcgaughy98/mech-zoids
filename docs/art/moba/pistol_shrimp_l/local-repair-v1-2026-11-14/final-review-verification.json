@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "tested_sha256": "823c26de99e963c6486cc8d92b31b41a6649018e4c7cfcac1e0c6b87a2b9349c",
+  "triangles": 25626,
+  "joint_count": 53,
+  "native_joint_tests_with_surface_motion": 53,
+  "native_joint_tests_without_surface_motion": [],
+  "maximum_seam_gap_m": 0.0,
+  "godot_check": "Three native GLB versions, original/revised sheets, original 53-joint rig and current ChaseCamera3D",
+  "screenshots": "res://reports/model_catalog/pistol-shrimp-local-v1",
+  "intact_archive_sha256": "147f24029faa293ae1d19281ee582f2f15281ba3c0190aa8135acfa78e189d73",
+  "original_reference_sha256": {
+    "front": "0fb4c87bc06a5cdc72f334c4055fab1c5f5a450b089bb33b46d0f77f14b46f5a",
+    "left": "a3fda308806d554825e55c6527e6bb7302ac37d59f2e0412854a52f9c7c91c99",
+    "back": "be1f0d79b855b3cbb83ad712ce79cc1caa38e34c0557bf01f52657c6e2962167",
+    "right": "5ffdd8a8a1ed38142aa4cffe2a4334abccd600fc9563503316e59745090b6558"
+  },
+  "boundary_edges": 0,
+  "over_shared_edges": 2,
+  "protected_contacts": "Two balanced original closed-surface assembly contacts on large claw; not open gaps.",
+  "collapsed_triangles": 0,
+  "healthy_source_triangles_retained": 25625,
+  "all_original_vertex_and_skin_rows_preserved": true
+}

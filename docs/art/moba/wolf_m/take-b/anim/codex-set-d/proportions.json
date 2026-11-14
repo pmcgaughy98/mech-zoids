@@ -1,0 +1,4779 @@
+{
+  "status": "NOT CERTIFIED for the strict 2px intrinsic-part gate. Projected ear/head/body/limb differences are retained below; rear muzzle and hidden joint roots cannot be independently certified. All body frames are review candidates.",
+  "method": "Manually tagged visible axes and joint chains, Euclidean distance +1 pixel; tail cross-section sampled through final alpha along the normal at 60 percent of the tagged axis. Projected measurements can shorten under pose/occlusion and are not intrinsic 3D dimensions.",
+  "reference_landmarks": {
+    "se": [
+      [
+        [
+          114,
+          91
+        ],
+        [
+          115,
+          105
+        ]
+      ],
+      [
+        [
+          115,
+          109
+        ],
+        [
+          135,
+          118
+        ]
+      ],
+      [
+        [
+          126,
+          113
+        ],
+        [
+          135,
+          118
+        ]
+      ],
+      [
+        [
+          80,
+          120
+        ],
+        [
+          108,
+          121
+        ]
+      ],
+      [
+        [
+          95,
+          111
+        ],
+        [
+          95,
+          132
+        ]
+      ],
+      [
+        [
+          106,
+          126
+        ],
+        [
+          107,
+          141
+        ],
+        [
+          112,
+          158
+        ]
+      ],
+      [
+        [
+          83,
+          127
+        ],
+        [
+          73,
+          139
+        ],
+        [
+          72,
+          154
+        ]
+      ]
+    ],
+    "ne": [
+      [
+        [
+          130,
+          92
+        ],
+        [
+          130,
+          105
+        ]
+      ],
+      [
+        [
+          124,
+          108
+        ],
+        [
+          132,
+          113
+        ]
+      ],
+      null,
+      [
+        [
+          88,
+          130
+        ],
+        [
+          115,
+          119
+        ]
+      ],
+      [
+        [
+          102,
+          119
+        ],
+        [
+          102,
+          139
+        ]
+      ],
+      [
+        [
+          124,
+          127
+        ],
+        [
+          123,
+          142
+        ],
+        [
+          128,
+          154
+        ]
+      ],
+      [
+        [
+          100,
+          131
+        ],
+        [
+          94,
+          146
+        ],
+        [
+          94,
+          158
+        ]
+      ]
+    ]
+  },
+  "reference_visible_axis_px": {
+    "se": {
+      "ear": 15.04,
+      "head": 22.93,
+      "muzzle": 11.3,
+      "body_length": 29.02,
+      "body_depth": 22.0,
+      "foreleg": 33.75,
+      "hindleg": 31.65,
+      "tail_visible_axis": 39.6,
+      "tail_cross_section": 10.75
+    },
+    "ne": {
+      "ear": 14.0,
+      "head": 10.43,
+      "muzzle": null,
+      "body_length": 30.15,
+      "body_depth": 21.0,
+      "foreleg": 29.03,
+      "hindleg": 29.16,
+      "tail_visible_axis": 42.23,
+      "tail_cross_section": 12.25
+    }
+  },
+  "frames": [
+    {
+      "move": "hamstring",
+      "view": "se",
+      "frame": 0,
+      "exact_still": true,
+      "whole_bbox": [
+        54,
+        91,
+        137,
+        161
+      ],
+      "whole_wh": [
+        83,
+        70
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            114,
+            91
+          ],
+          [
+            115,
+            105
+          ]
+        ],
+        "head": [
+          [
+            115,
+            109
+          ],
+          [
+            135,
+            118
+          ]
+        ],
+        "muzzle": [
+          [
+            126,
+            113
+          ],
+          [
+            135,
+            118
+          ]
+        ],
+        "body_length": [
+          [
+            80,
+            120
+          ],
+          [
+            108,
+            121
+          ]
+        ],
+        "body_depth": [
+          [
+            95,
+            111
+          ],
+          [
+            95,
+            132
+          ]
+        ],
+        "foreleg": [
+          [
+            106,
+            126
+          ],
+          [
+            107,
+            141
+          ],
+          [
+            112,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            83,
+            127
+          ],
+          [
+            73,
+            139
+          ],
+          [
+            72,
+            154
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 15.04,
+        "head": 22.93,
+        "muzzle": 11.3,
+        "body_length": 29.02,
+        "body_depth": 22.0,
+        "foreleg": 33.75,
+        "hindleg": 31.65,
+        "tail_visible_axis": 39.6,
+        "tail_cross_section": 10.75
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.0,
+        "muzzle": 0.0,
+        "body_length": 0.0,
+        "body_depth": 0.0,
+        "foreleg": 0.0,
+        "hindleg": 0.0,
+        "tail_visible_axis": 0.0,
+        "tail_cross_section": 0.0
+      },
+      "flagged_over_2px": [],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": true
+    },
+    {
+      "move": "hamstring",
+      "view": "se",
+      "frame": 1,
+      "exact_still": false,
+      "whole_bbox": [
+        54,
+        107,
+        136,
+        161
+      ],
+      "whole_wh": [
+        82,
+        54
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            113,
+            108
+          ],
+          [
+            115,
+            122
+          ]
+        ],
+        "head": [
+          [
+            115,
+            122
+          ],
+          [
+            134,
+            133
+          ]
+        ],
+        "muzzle": [
+          [
+            125,
+            129
+          ],
+          [
+            134,
+            133
+          ]
+        ],
+        "body_length": [
+          [
+            80,
+            124
+          ],
+          [
+            108,
+            128
+          ]
+        ],
+        "body_depth": [
+          [
+            94,
+            119
+          ],
+          [
+            94,
+            136
+          ]
+        ],
+        "foreleg": [
+          [
+            103,
+            128
+          ],
+          [
+            108,
+            145
+          ],
+          [
+            112,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            82,
+            130
+          ],
+          [
+            74,
+            142
+          ],
+          [
+            72,
+            155
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 15.14,
+        "head": 22.95,
+        "muzzle": 10.85,
+        "body_length": 29.28,
+        "body_depth": 18.0,
+        "foreleg": 32.32,
+        "hindleg": 28.58,
+        "tail_visible_axis": 39.29,
+        "tail_cross_section": 11.25
+      },
+      "delta_px": {
+        "ear": 0.1,
+        "head": 0.02,
+        "muzzle": -0.45,
+        "body_length": 0.26,
+        "body_depth": -4.0,
+        "foreleg": -1.43,
+        "hindleg": -3.07,
+        "tail_visible_axis": -0.31,
+        "tail_cross_section": 0.5
+      },
+      "flagged_over_2px": [
+        "body_depth",
+        "hindleg"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "hamstring",
+      "view": "se",
+      "frame": 2,
+      "exact_still": false,
+      "whole_bbox": [
+        52,
+        112,
+        136,
+        161
+      ],
+      "whole_wh": [
+        84,
+        49
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            113,
+            123
+          ],
+          [
+            118,
+            136
+          ]
+        ],
+        "head": [
+          [
+            121,
+            136
+          ],
+          [
+            134,
+            147
+          ]
+        ],
+        "muzzle": [
+          [
+            126,
+            142
+          ],
+          [
+            134,
+            147
+          ]
+        ],
+        "body_length": [
+          [
+            80,
+            126
+          ],
+          [
+            108,
+            135
+          ]
+        ],
+        "body_depth": [
+          [
+            94,
+            121
+          ],
+          [
+            94,
+            141
+          ]
+        ],
+        "foreleg": [
+          [
+            105,
+            132
+          ],
+          [
+            108,
+            149
+          ],
+          [
+            114,
+            159
+          ]
+        ],
+        "hindleg": [
+          [
+            82,
+            131
+          ],
+          [
+            74,
+            143
+          ],
+          [
+            72,
+            155
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.93,
+        "head": 18.03,
+        "muzzle": 10.43,
+        "body_length": 30.41,
+        "body_depth": 21.0,
+        "foreleg": 29.92,
+        "hindleg": 27.59,
+        "tail_visible_axis": 38.54,
+        "tail_cross_section": 10.75
+      },
+      "delta_px": {
+        "ear": -0.11,
+        "head": -4.9,
+        "muzzle": -0.87,
+        "body_length": 1.39,
+        "body_depth": -1.0,
+        "foreleg": -3.83,
+        "hindleg": -4.06,
+        "tail_visible_axis": -1.06,
+        "tail_cross_section": 0.0
+      },
+      "flagged_over_2px": [
+        "head",
+        "foreleg",
+        "hindleg"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "hamstring",
+      "view": "se",
+      "frame": 3,
+      "exact_still": false,
+      "whole_bbox": [
+        53,
+        112,
+        136,
+        161
+      ],
+      "whole_wh": [
+        83,
+        49
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            114,
+            123
+          ],
+          [
+            118,
+            135
+          ]
+        ],
+        "head": [
+          [
+            121,
+            135
+          ],
+          [
+            133,
+            147
+          ]
+        ],
+        "muzzle": [
+          [
+            125,
+            143
+          ],
+          [
+            133,
+            147
+          ]
+        ],
+        "body_length": [
+          [
+            80,
+            126
+          ],
+          [
+            108,
+            135
+          ]
+        ],
+        "body_depth": [
+          [
+            94,
+            122
+          ],
+          [
+            94,
+            141
+          ]
+        ],
+        "foreleg": [
+          [
+            105,
+            132
+          ],
+          [
+            109,
+            149
+          ],
+          [
+            114,
+            159
+          ]
+        ],
+        "hindleg": [
+          [
+            82,
+            132
+          ],
+          [
+            74,
+            143
+          ],
+          [
+            72,
+            155
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 13.65,
+        "head": 17.97,
+        "muzzle": 9.94,
+        "body_length": 30.41,
+        "body_depth": 20.0,
+        "foreleg": 29.64,
+        "hindleg": 26.77,
+        "tail_visible_axis": 38.54,
+        "tail_cross_section": 10.5
+      },
+      "delta_px": {
+        "ear": -1.39,
+        "head": -4.96,
+        "muzzle": -1.36,
+        "body_length": 1.39,
+        "body_depth": -2.0,
+        "foreleg": -4.11,
+        "hindleg": -4.88,
+        "tail_visible_axis": -1.06,
+        "tail_cross_section": -0.25
+      },
+      "flagged_over_2px": [
+        "head",
+        "foreleg",
+        "hindleg"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "hamstring",
+      "view": "se",
+      "frame": 4,
+      "exact_still": false,
+      "whole_bbox": [
+        56,
+        95,
+        136,
+        161
+      ],
+      "whole_wh": [
+        80,
+        66
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            114,
+            96
+          ],
+          [
+            116,
+            111
+          ]
+        ],
+        "head": [
+          [
+            116,
+            113
+          ],
+          [
+            134,
+            121
+          ]
+        ],
+        "muzzle": [
+          [
+            125,
+            117
+          ],
+          [
+            134,
+            121
+          ]
+        ],
+        "body_length": [
+          [
+            80,
+            122
+          ],
+          [
+            108,
+            123
+          ]
+        ],
+        "body_depth": [
+          [
+            94,
+            115
+          ],
+          [
+            94,
+            133
+          ]
+        ],
+        "foreleg": [
+          [
+            105,
+            126
+          ],
+          [
+            108,
+            143
+          ],
+          [
+            112,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            82,
+            127
+          ],
+          [
+            74,
+            141
+          ],
+          [
+            72,
+            155
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 16.13,
+        "head": 20.7,
+        "muzzle": 10.85,
+        "body_length": 29.02,
+        "body_depth": 19.0,
+        "foreleg": 33.79,
+        "hindleg": 31.27,
+        "tail_visible_axis": 40.05,
+        "tail_cross_section": 10.5
+      },
+      "delta_px": {
+        "ear": 1.09,
+        "head": -2.23,
+        "muzzle": -0.45,
+        "body_length": 0.0,
+        "body_depth": -3.0,
+        "foreleg": 0.04,
+        "hindleg": -0.38,
+        "tail_visible_axis": 0.45,
+        "tail_cross_section": -0.25
+      },
+      "flagged_over_2px": [
+        "head",
+        "body_depth"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "hamstring",
+      "view": "se",
+      "frame": 5,
+      "exact_still": true,
+      "whole_bbox": [
+        54,
+        91,
+        137,
+        161
+      ],
+      "whole_wh": [
+        83,
+        70
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            114,
+            91
+          ],
+          [
+            115,
+            105
+          ]
+        ],
+        "head": [
+          [
+            115,
+            109
+          ],
+          [
+            135,
+            118
+          ]
+        ],
+        "muzzle": [
+          [
+            126,
+            113
+          ],
+          [
+            135,
+            118
+          ]
+        ],
+        "body_length": [
+          [
+            80,
+            120
+          ],
+          [
+            108,
+            121
+          ]
+        ],
+        "body_depth": [
+          [
+            95,
+            111
+          ],
+          [
+            95,
+            132
+          ]
+        ],
+        "foreleg": [
+          [
+            106,
+            126
+          ],
+          [
+            107,
+            141
+          ],
+          [
+            112,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            83,
+            127
+          ],
+          [
+            73,
+            139
+          ],
+          [
+            72,
+            154
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 15.04,
+        "head": 22.93,
+        "muzzle": 11.3,
+        "body_length": 29.02,
+        "body_depth": 22.0,
+        "foreleg": 33.75,
+        "hindleg": 31.65,
+        "tail_visible_axis": 39.6,
+        "tail_cross_section": 10.75
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.0,
+        "muzzle": 0.0,
+        "body_length": 0.0,
+        "body_depth": 0.0,
+        "foreleg": 0.0,
+        "hindleg": 0.0,
+        "tail_visible_axis": 0.0,
+        "tail_cross_section": 0.0
+      },
+      "flagged_over_2px": [],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": true
+    },
+    {
+      "move": "hamstring",
+      "view": "ne",
+      "frame": 0,
+      "exact_still": true,
+      "whole_bbox": [
+        57,
+        91,
+        135,
+        161
+      ],
+      "whole_wh": [
+        78,
+        70
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            92
+          ],
+          [
+            130,
+            105
+          ]
+        ],
+        "head": [
+          [
+            124,
+            108
+          ],
+          [
+            132,
+            113
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            130
+          ],
+          [
+            115,
+            119
+          ]
+        ],
+        "body_depth": [
+          [
+            102,
+            119
+          ],
+          [
+            102,
+            139
+          ]
+        ],
+        "foreleg": [
+          [
+            124,
+            127
+          ],
+          [
+            123,
+            142
+          ],
+          [
+            128,
+            154
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            131
+          ],
+          [
+            94,
+            146
+          ],
+          [
+            94,
+            158
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.0,
+        "head": 10.43,
+        "muzzle": null,
+        "body_length": 30.15,
+        "body_depth": 21.0,
+        "foreleg": 29.03,
+        "hindleg": 29.16,
+        "tail_visible_axis": 42.23,
+        "tail_cross_section": 12.25
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.0,
+        "muzzle": null,
+        "body_length": 0.0,
+        "body_depth": 0.0,
+        "foreleg": 0.0,
+        "hindleg": 0.0,
+        "tail_visible_axis": 0.0,
+        "tail_cross_section": 0.0
+      },
+      "flagged_over_2px": [],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": true
+    },
+    {
+      "move": "hamstring",
+      "view": "ne",
+      "frame": 1,
+      "exact_still": false,
+      "whole_bbox": [
+        58,
+        97,
+        135,
+        161
+      ],
+      "whole_wh": [
+        77,
+        64
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            98
+          ],
+          [
+            130,
+            111
+          ]
+        ],
+        "head": [
+          [
+            125,
+            115
+          ],
+          [
+            132,
+            120
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            130
+          ],
+          [
+            116,
+            124
+          ]
+        ],
+        "body_depth": [
+          [
+            101,
+            122
+          ],
+          [
+            101,
+            139
+          ]
+        ],
+        "foreleg": [
+          [
+            123,
+            130
+          ],
+          [
+            123,
+            144
+          ],
+          [
+            128,
+            156
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            135
+          ],
+          [
+            94,
+            146
+          ],
+          [
+            94,
+            159
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.0,
+        "head": 9.6,
+        "muzzle": null,
+        "body_length": 29.64,
+        "body_depth": 18.0,
+        "foreleg": 28.0,
+        "hindleg": 26.53,
+        "tail_visible_axis": 39.95,
+        "tail_cross_section": 12.75
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": -0.83,
+        "muzzle": null,
+        "body_length": -0.51,
+        "body_depth": -3.0,
+        "foreleg": -1.03,
+        "hindleg": -2.63,
+        "tail_visible_axis": -2.28,
+        "tail_cross_section": 0.5
+      },
+      "flagged_over_2px": [
+        "body_depth",
+        "hindleg",
+        "tail_visible_axis"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "hamstring",
+      "view": "ne",
+      "frame": 2,
+      "exact_still": false,
+      "whole_bbox": [
+        55,
+        111,
+        137,
+        161
+      ],
+      "whole_wh": [
+        82,
+        50
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            113
+          ],
+          [
+            130,
+            126
+          ]
+        ],
+        "head": [
+          [
+            126,
+            131
+          ],
+          [
+            135,
+            136
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            132
+          ],
+          [
+            116,
+            130
+          ]
+        ],
+        "body_depth": [
+          [
+            101,
+            126
+          ],
+          [
+            101,
+            143
+          ]
+        ],
+        "foreleg": [
+          [
+            123,
+            136
+          ],
+          [
+            125,
+            146
+          ],
+          [
+            132,
+            156
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            138
+          ],
+          [
+            94,
+            148
+          ],
+          [
+            94,
+            159
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.0,
+        "head": 11.3,
+        "muzzle": null,
+        "body_length": 29.07,
+        "body_depth": 18.0,
+        "foreleg": 23.4,
+        "hindleg": 23.66,
+        "tail_visible_axis": 40.62,
+        "tail_cross_section": 12.5
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.87,
+        "muzzle": null,
+        "body_length": -1.08,
+        "body_depth": -3.0,
+        "foreleg": -5.63,
+        "hindleg": -5.5,
+        "tail_visible_axis": -1.61,
+        "tail_cross_section": 0.25
+      },
+      "flagged_over_2px": [
+        "body_depth",
+        "foreleg",
+        "hindleg"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "hamstring",
+      "view": "ne",
+      "frame": 3,
+      "exact_still": false,
+      "whole_bbox": [
+        55,
+        113,
+        137,
+        161
+      ],
+      "whole_wh": [
+        82,
+        48
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            114
+          ],
+          [
+            130,
+            127
+          ]
+        ],
+        "head": [
+          [
+            126,
+            132
+          ],
+          [
+            135,
+            137
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            132
+          ],
+          [
+            116,
+            131
+          ]
+        ],
+        "body_depth": [
+          [
+            101,
+            127
+          ],
+          [
+            101,
+            144
+          ]
+        ],
+        "foreleg": [
+          [
+            123,
+            137
+          ],
+          [
+            125,
+            148
+          ],
+          [
+            132,
+            156
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            139
+          ],
+          [
+            94,
+            148
+          ],
+          [
+            94,
+            159
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.0,
+        "head": 11.3,
+        "muzzle": null,
+        "body_length": 29.02,
+        "body_depth": 18.0,
+        "foreleg": 22.81,
+        "hindleg": 22.82,
+        "tail_visible_axis": 39.95,
+        "tail_cross_section": 12.5
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.87,
+        "muzzle": null,
+        "body_length": -1.13,
+        "body_depth": -3.0,
+        "foreleg": -6.22,
+        "hindleg": -6.34,
+        "tail_visible_axis": -2.28,
+        "tail_cross_section": 0.25
+      },
+      "flagged_over_2px": [
+        "body_depth",
+        "foreleg",
+        "hindleg",
+        "tail_visible_axis"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "hamstring",
+      "view": "ne",
+      "frame": 4,
+      "exact_still": false,
+      "whole_bbox": [
+        57,
+        92,
+        135,
+        161
+      ],
+      "whole_wh": [
+        78,
+        69
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            95
+          ],
+          [
+            130,
+            108
+          ]
+        ],
+        "head": [
+          [
+            125,
+            112
+          ],
+          [
+            132,
+            117
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            130
+          ],
+          [
+            116,
+            122
+          ]
+        ],
+        "body_depth": [
+          [
+            101,
+            119
+          ],
+          [
+            101,
+            138
+          ]
+        ],
+        "foreleg": [
+          [
+            123,
+            128
+          ],
+          [
+            123,
+            143
+          ],
+          [
+            128,
+            156
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            133
+          ],
+          [
+            94,
+            146
+          ],
+          [
+            94,
+            159
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.0,
+        "head": 9.6,
+        "muzzle": null,
+        "body_length": 30.12,
+        "body_depth": 20.0,
+        "foreleg": 29.93,
+        "hindleg": 28.32,
+        "tail_visible_axis": 41.36,
+        "tail_cross_section": 11.25
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": -0.83,
+        "muzzle": null,
+        "body_length": -0.03,
+        "body_depth": -1.0,
+        "foreleg": 0.9,
+        "hindleg": -0.84,
+        "tail_visible_axis": -0.87,
+        "tail_cross_section": -1.0
+      },
+      "flagged_over_2px": [],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "hamstring",
+      "view": "ne",
+      "frame": 5,
+      "exact_still": true,
+      "whole_bbox": [
+        57,
+        91,
+        135,
+        161
+      ],
+      "whole_wh": [
+        78,
+        70
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            92
+          ],
+          [
+            130,
+            105
+          ]
+        ],
+        "head": [
+          [
+            124,
+            108
+          ],
+          [
+            132,
+            113
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            130
+          ],
+          [
+            115,
+            119
+          ]
+        ],
+        "body_depth": [
+          [
+            102,
+            119
+          ],
+          [
+            102,
+            139
+          ]
+        ],
+        "foreleg": [
+          [
+            124,
+            127
+          ],
+          [
+            123,
+            142
+          ],
+          [
+            128,
+            154
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            131
+          ],
+          [
+            94,
+            146
+          ],
+          [
+            94,
+            158
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.0,
+        "head": 10.43,
+        "muzzle": null,
+        "body_length": 30.15,
+        "body_depth": 21.0,
+        "foreleg": 29.03,
+        "hindleg": 29.16,
+        "tail_visible_axis": 42.23,
+        "tail_cross_section": 12.25
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.0,
+        "muzzle": null,
+        "body_length": 0.0,
+        "body_depth": 0.0,
+        "foreleg": 0.0,
+        "hindleg": 0.0,
+        "tail_visible_axis": 0.0,
+        "tail_cross_section": 0.0
+      },
+      "flagged_over_2px": [],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": true
+    },
+    {
+      "move": "howl",
+      "view": "se",
+      "frame": 0,
+      "exact_still": true,
+      "whole_bbox": [
+        54,
+        91,
+        137,
+        161
+      ],
+      "whole_wh": [
+        83,
+        70
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            114,
+            91
+          ],
+          [
+            115,
+            105
+          ]
+        ],
+        "head": [
+          [
+            115,
+            109
+          ],
+          [
+            135,
+            118
+          ]
+        ],
+        "muzzle": [
+          [
+            126,
+            113
+          ],
+          [
+            135,
+            118
+          ]
+        ],
+        "body_length": [
+          [
+            80,
+            120
+          ],
+          [
+            108,
+            121
+          ]
+        ],
+        "body_depth": [
+          [
+            95,
+            111
+          ],
+          [
+            95,
+            132
+          ]
+        ],
+        "foreleg": [
+          [
+            106,
+            126
+          ],
+          [
+            107,
+            141
+          ],
+          [
+            112,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            83,
+            127
+          ],
+          [
+            73,
+            139
+          ],
+          [
+            72,
+            154
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 15.04,
+        "head": 22.93,
+        "muzzle": 11.3,
+        "body_length": 29.02,
+        "body_depth": 22.0,
+        "foreleg": 33.75,
+        "hindleg": 31.65,
+        "tail_visible_axis": 39.6,
+        "tail_cross_section": 10.75
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.0,
+        "muzzle": 0.0,
+        "body_length": 0.0,
+        "body_depth": 0.0,
+        "foreleg": 0.0,
+        "hindleg": 0.0,
+        "tail_visible_axis": 0.0,
+        "tail_cross_section": 0.0
+      },
+      "flagged_over_2px": [],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": true
+    },
+    {
+      "move": "howl",
+      "view": "se",
+      "frame": 1,
+      "exact_still": false,
+      "whole_bbox": [
+        54,
+        92,
+        137,
+        161
+      ],
+      "whole_wh": [
+        83,
+        69
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            115,
+            93
+          ],
+          [
+            117,
+            107
+          ]
+        ],
+        "head": [
+          [
+            116,
+            109
+          ],
+          [
+            134,
+            120
+          ]
+        ],
+        "muzzle": [
+          [
+            125,
+            116
+          ],
+          [
+            134,
+            120
+          ]
+        ],
+        "body_length": [
+          [
+            81,
+            126
+          ],
+          [
+            108,
+            120
+          ]
+        ],
+        "body_depth": [
+          [
+            94,
+            119
+          ],
+          [
+            94,
+            137
+          ]
+        ],
+        "foreleg": [
+          [
+            105,
+            126
+          ],
+          [
+            107,
+            144
+          ],
+          [
+            112,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            83,
+            132
+          ],
+          [
+            73,
+            143
+          ],
+          [
+            81,
+            156
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 15.14,
+        "head": 22.1,
+        "muzzle": 10.85,
+        "body_length": 28.66,
+        "body_depth": 19.0,
+        "foreleg": 33.98,
+        "hindleg": 31.13,
+        "tail_visible_axis": 39.29,
+        "tail_cross_section": 10.0
+      },
+      "delta_px": {
+        "ear": 0.1,
+        "head": -0.83,
+        "muzzle": -0.45,
+        "body_length": -0.36,
+        "body_depth": -3.0,
+        "foreleg": 0.23,
+        "hindleg": -0.52,
+        "tail_visible_axis": -0.31,
+        "tail_cross_section": -0.75
+      },
+      "flagged_over_2px": [
+        "body_depth"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "howl",
+      "view": "se",
+      "frame": 2,
+      "exact_still": false,
+      "whole_bbox": [
+        54,
+        91,
+        136,
+        161
+      ],
+      "whole_wh": [
+        82,
+        70
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            105,
+            95
+          ],
+          [
+            118,
+            101
+          ]
+        ],
+        "head": [
+          [
+            118,
+            102
+          ],
+          [
+            135,
+            108
+          ]
+        ],
+        "muzzle": [
+          [
+            125,
+            103
+          ],
+          [
+            135,
+            108
+          ]
+        ],
+        "body_length": [
+          [
+            80,
+            125
+          ],
+          [
+            108,
+            118
+          ]
+        ],
+        "body_depth": [
+          [
+            94,
+            116
+          ],
+          [
+            96,
+            136
+          ]
+        ],
+        "foreleg": [
+          [
+            105,
+            126
+          ],
+          [
+            107,
+            144
+          ],
+          [
+            112,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            83,
+            131
+          ],
+          [
+            84,
+            146
+          ],
+          [
+            76,
+            157
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 15.32,
+        "head": 19.03,
+        "muzzle": 12.18,
+        "body_length": 29.86,
+        "body_depth": 21.1,
+        "foreleg": 33.98,
+        "hindleg": 29.63,
+        "tail_visible_axis": 40.05,
+        "tail_cross_section": 10.0
+      },
+      "delta_px": {
+        "ear": 0.28,
+        "head": -3.9,
+        "muzzle": 0.88,
+        "body_length": 0.84,
+        "body_depth": -0.9,
+        "foreleg": 0.23,
+        "hindleg": -2.02,
+        "tail_visible_axis": 0.45,
+        "tail_cross_section": -0.75
+      },
+      "flagged_over_2px": [
+        "head",
+        "hindleg"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "howl",
+      "view": "se",
+      "frame": 3,
+      "exact_still": false,
+      "whole_bbox": [
+        54,
+        85,
+        137,
+        161
+      ],
+      "whole_wh": [
+        83,
+        76
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            100,
+            104
+          ],
+          [
+            114,
+            101
+          ]
+        ],
+        "head": [
+          [
+            118,
+            103
+          ],
+          [
+            131,
+            86
+          ]
+        ],
+        "muzzle": [
+          [
+            125,
+            94
+          ],
+          [
+            131,
+            86
+          ]
+        ],
+        "body_length": [
+          [
+            80,
+            124
+          ],
+          [
+            108,
+            116
+          ]
+        ],
+        "body_depth": [
+          [
+            94,
+            114
+          ],
+          [
+            98,
+            134
+          ]
+        ],
+        "foreleg": [
+          [
+            105,
+            126
+          ],
+          [
+            107,
+            144
+          ],
+          [
+            112,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            83,
+            131
+          ],
+          [
+            84,
+            146
+          ],
+          [
+            76,
+            157
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 15.32,
+        "head": 22.4,
+        "muzzle": 11.0,
+        "body_length": 30.12,
+        "body_depth": 21.4,
+        "foreleg": 33.98,
+        "hindleg": 29.63,
+        "tail_visible_axis": 40.05,
+        "tail_cross_section": 10.75
+      },
+      "delta_px": {
+        "ear": 0.28,
+        "head": -0.53,
+        "muzzle": -0.3,
+        "body_length": 1.1,
+        "body_depth": -0.6,
+        "foreleg": 0.23,
+        "hindleg": -2.02,
+        "tail_visible_axis": 0.45,
+        "tail_cross_section": 0.0
+      },
+      "flagged_over_2px": [
+        "hindleg"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "howl",
+      "view": "se",
+      "frame": 4,
+      "exact_still": false,
+      "whole_bbox": [
+        54,
+        91,
+        137,
+        161
+      ],
+      "whole_wh": [
+        83,
+        70
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            105,
+            95
+          ],
+          [
+            118,
+            101
+          ]
+        ],
+        "head": [
+          [
+            118,
+            102
+          ],
+          [
+            135,
+            108
+          ]
+        ],
+        "muzzle": [
+          [
+            125,
+            103
+          ],
+          [
+            135,
+            108
+          ]
+        ],
+        "body_length": [
+          [
+            80,
+            125
+          ],
+          [
+            108,
+            118
+          ]
+        ],
+        "body_depth": [
+          [
+            94,
+            116
+          ],
+          [
+            96,
+            136
+          ]
+        ],
+        "foreleg": [
+          [
+            105,
+            126
+          ],
+          [
+            107,
+            144
+          ],
+          [
+            112,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            83,
+            131
+          ],
+          [
+            84,
+            146
+          ],
+          [
+            76,
+            157
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 15.32,
+        "head": 19.03,
+        "muzzle": 12.18,
+        "body_length": 29.86,
+        "body_depth": 21.1,
+        "foreleg": 33.98,
+        "hindleg": 29.63,
+        "tail_visible_axis": 40.05,
+        "tail_cross_section": 10.25
+      },
+      "delta_px": {
+        "ear": 0.28,
+        "head": -3.9,
+        "muzzle": 0.88,
+        "body_length": 0.84,
+        "body_depth": -0.9,
+        "foreleg": 0.23,
+        "hindleg": -2.02,
+        "tail_visible_axis": 0.45,
+        "tail_cross_section": -0.5
+      },
+      "flagged_over_2px": [
+        "head",
+        "hindleg"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "howl",
+      "view": "se",
+      "frame": 5,
+      "exact_still": true,
+      "whole_bbox": [
+        54,
+        91,
+        137,
+        161
+      ],
+      "whole_wh": [
+        83,
+        70
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            114,
+            91
+          ],
+          [
+            115,
+            105
+          ]
+        ],
+        "head": [
+          [
+            115,
+            109
+          ],
+          [
+            135,
+            118
+          ]
+        ],
+        "muzzle": [
+          [
+            126,
+            113
+          ],
+          [
+            135,
+            118
+          ]
+        ],
+        "body_length": [
+          [
+            80,
+            120
+          ],
+          [
+            108,
+            121
+          ]
+        ],
+        "body_depth": [
+          [
+            95,
+            111
+          ],
+          [
+            95,
+            132
+          ]
+        ],
+        "foreleg": [
+          [
+            106,
+            126
+          ],
+          [
+            107,
+            141
+          ],
+          [
+            112,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            83,
+            127
+          ],
+          [
+            73,
+            139
+          ],
+          [
+            72,
+            154
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 15.04,
+        "head": 22.93,
+        "muzzle": 11.3,
+        "body_length": 29.02,
+        "body_depth": 22.0,
+        "foreleg": 33.75,
+        "hindleg": 31.65,
+        "tail_visible_axis": 39.6,
+        "tail_cross_section": 10.75
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.0,
+        "muzzle": 0.0,
+        "body_length": 0.0,
+        "body_depth": 0.0,
+        "foreleg": 0.0,
+        "hindleg": 0.0,
+        "tail_visible_axis": 0.0,
+        "tail_cross_section": 0.0
+      },
+      "flagged_over_2px": [],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": true
+    },
+    {
+      "move": "howl",
+      "view": "ne",
+      "frame": 0,
+      "exact_still": true,
+      "whole_bbox": [
+        57,
+        91,
+        135,
+        161
+      ],
+      "whole_wh": [
+        78,
+        70
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            92
+          ],
+          [
+            130,
+            105
+          ]
+        ],
+        "head": [
+          [
+            124,
+            108
+          ],
+          [
+            132,
+            113
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            130
+          ],
+          [
+            115,
+            119
+          ]
+        ],
+        "body_depth": [
+          [
+            102,
+            119
+          ],
+          [
+            102,
+            139
+          ]
+        ],
+        "foreleg": [
+          [
+            124,
+            127
+          ],
+          [
+            123,
+            142
+          ],
+          [
+            128,
+            154
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            131
+          ],
+          [
+            94,
+            146
+          ],
+          [
+            94,
+            158
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.0,
+        "head": 10.43,
+        "muzzle": null,
+        "body_length": 30.15,
+        "body_depth": 21.0,
+        "foreleg": 29.03,
+        "hindleg": 29.16,
+        "tail_visible_axis": 42.23,
+        "tail_cross_section": 12.25
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.0,
+        "muzzle": null,
+        "body_length": 0.0,
+        "body_depth": 0.0,
+        "foreleg": 0.0,
+        "hindleg": 0.0,
+        "tail_visible_axis": 0.0,
+        "tail_cross_section": 0.0
+      },
+      "flagged_over_2px": [],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": true
+    },
+    {
+      "move": "howl",
+      "view": "ne",
+      "frame": 1,
+      "exact_still": false,
+      "whole_bbox": [
+        58,
+        93,
+        134,
+        161
+      ],
+      "whole_wh": [
+        76,
+        68
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            95
+          ],
+          [
+            130,
+            108
+          ]
+        ],
+        "head": [
+          [
+            124,
+            110
+          ],
+          [
+            132,
+            115
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            132
+          ],
+          [
+            115,
+            122
+          ]
+        ],
+        "body_depth": [
+          [
+            102,
+            121
+          ],
+          [
+            102,
+            141
+          ]
+        ],
+        "foreleg": [
+          [
+            124,
+            130
+          ],
+          [
+            123,
+            144
+          ],
+          [
+            128,
+            156
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            137
+          ],
+          [
+            94,
+            148
+          ],
+          [
+            102,
+            159
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.0,
+        "head": 10.43,
+        "muzzle": null,
+        "body_length": 29.79,
+        "body_depth": 21.0,
+        "foreleg": 28.04,
+        "hindleg": 27.13,
+        "tail_visible_axis": 39.95,
+        "tail_cross_section": 22.5
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.0,
+        "muzzle": null,
+        "body_length": -0.36,
+        "body_depth": 0.0,
+        "foreleg": -0.99,
+        "hindleg": -2.03,
+        "tail_visible_axis": -2.28,
+        "tail_cross_section": 10.25
+      },
+      "flagged_over_2px": [
+        "hindleg",
+        "tail_visible_axis",
+        "tail_cross_section"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "howl",
+      "view": "ne",
+      "frame": 2,
+      "exact_still": false,
+      "whole_bbox": [
+        58,
+        90,
+        135,
+        161
+      ],
+      "whole_wh": [
+        77,
+        71
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            115,
+            97
+          ],
+          [
+            127,
+            101
+          ]
+        ],
+        "head": [
+          [
+            125,
+            101
+          ],
+          [
+            133,
+            91
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            131
+          ],
+          [
+            116,
+            119
+          ]
+        ],
+        "body_depth": [
+          [
+            102,
+            119
+          ],
+          [
+            103,
+            140
+          ]
+        ],
+        "foreleg": [
+          [
+            124,
+            128
+          ],
+          [
+            123,
+            143
+          ],
+          [
+            128,
+            156
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            134
+          ],
+          [
+            102,
+            148
+          ],
+          [
+            94,
+            159
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 13.65,
+        "head": 13.81,
+        "muzzle": null,
+        "body_length": 31.46,
+        "body_depth": 22.02,
+        "foreleg": 29.96,
+        "hindleg": 28.74,
+        "tail_visible_axis": 40.7,
+        "tail_cross_section": 12.5
+      },
+      "delta_px": {
+        "ear": -0.35,
+        "head": 3.38,
+        "muzzle": null,
+        "body_length": 1.31,
+        "body_depth": 1.02,
+        "foreleg": 0.93,
+        "hindleg": -0.42,
+        "tail_visible_axis": -1.53,
+        "tail_cross_section": 0.25
+      },
+      "flagged_over_2px": [
+        "head"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "howl",
+      "view": "ne",
+      "frame": 3,
+      "exact_still": false,
+      "whole_bbox": [
+        56,
+        82,
+        136,
+        161
+      ],
+      "whole_wh": [
+        80,
+        79
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            114,
+            98
+          ],
+          [
+            127,
+            100
+          ]
+        ],
+        "head": [
+          [
+            125,
+            98
+          ],
+          [
+            133,
+            83
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            131
+          ],
+          [
+            116,
+            117
+          ]
+        ],
+        "body_depth": [
+          [
+            102,
+            117
+          ],
+          [
+            105,
+            139
+          ]
+        ],
+        "foreleg": [
+          [
+            124,
+            126
+          ],
+          [
+            123,
+            143
+          ],
+          [
+            128,
+            156
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            134
+          ],
+          [
+            102,
+            148
+          ],
+          [
+            94,
+            159
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.15,
+        "head": 18.0,
+        "muzzle": null,
+        "body_length": 32.3,
+        "body_depth": 23.2,
+        "foreleg": 31.96,
+        "hindleg": 28.74,
+        "tail_visible_axis": 42.11,
+        "tail_cross_section": 12.75
+      },
+      "delta_px": {
+        "ear": 0.15,
+        "head": 7.57,
+        "muzzle": null,
+        "body_length": 2.15,
+        "body_depth": 2.2,
+        "foreleg": 2.93,
+        "hindleg": -0.42,
+        "tail_visible_axis": -0.12,
+        "tail_cross_section": 0.5
+      },
+      "flagged_over_2px": [
+        "head",
+        "body_length",
+        "body_depth",
+        "foreleg"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "howl",
+      "view": "ne",
+      "frame": 4,
+      "exact_still": false,
+      "whole_bbox": [
+        58,
+        90,
+        135,
+        161
+      ],
+      "whole_wh": [
+        77,
+        71
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            115,
+            97
+          ],
+          [
+            127,
+            101
+          ]
+        ],
+        "head": [
+          [
+            125,
+            101
+          ],
+          [
+            133,
+            91
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            131
+          ],
+          [
+            116,
+            119
+          ]
+        ],
+        "body_depth": [
+          [
+            102,
+            119
+          ],
+          [
+            103,
+            140
+          ]
+        ],
+        "foreleg": [
+          [
+            124,
+            128
+          ],
+          [
+            123,
+            143
+          ],
+          [
+            128,
+            156
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            134
+          ],
+          [
+            102,
+            148
+          ],
+          [
+            94,
+            159
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 13.65,
+        "head": 13.81,
+        "muzzle": null,
+        "body_length": 31.46,
+        "body_depth": 22.02,
+        "foreleg": 29.96,
+        "hindleg": 28.74,
+        "tail_visible_axis": 40.7,
+        "tail_cross_section": 11.75
+      },
+      "delta_px": {
+        "ear": -0.35,
+        "head": 3.38,
+        "muzzle": null,
+        "body_length": 1.31,
+        "body_depth": 1.02,
+        "foreleg": 0.93,
+        "hindleg": -0.42,
+        "tail_visible_axis": -1.53,
+        "tail_cross_section": -0.5
+      },
+      "flagged_over_2px": [
+        "head"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "howl",
+      "view": "ne",
+      "frame": 5,
+      "exact_still": true,
+      "whole_bbox": [
+        57,
+        91,
+        135,
+        161
+      ],
+      "whole_wh": [
+        78,
+        70
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            92
+          ],
+          [
+            130,
+            105
+          ]
+        ],
+        "head": [
+          [
+            124,
+            108
+          ],
+          [
+            132,
+            113
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            130
+          ],
+          [
+            115,
+            119
+          ]
+        ],
+        "body_depth": [
+          [
+            102,
+            119
+          ],
+          [
+            102,
+            139
+          ]
+        ],
+        "foreleg": [
+          [
+            124,
+            127
+          ],
+          [
+            123,
+            142
+          ],
+          [
+            128,
+            154
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            131
+          ],
+          [
+            94,
+            146
+          ],
+          [
+            94,
+            158
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.0,
+        "head": 10.43,
+        "muzzle": null,
+        "body_length": 30.15,
+        "body_depth": 21.0,
+        "foreleg": 29.03,
+        "hindleg": 29.16,
+        "tail_visible_axis": 42.23,
+        "tail_cross_section": 12.25
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.0,
+        "muzzle": null,
+        "body_length": 0.0,
+        "body_depth": 0.0,
+        "foreleg": 0.0,
+        "hindleg": 0.0,
+        "tail_visible_axis": 0.0,
+        "tail_cross_section": 0.0
+      },
+      "flagged_over_2px": [],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": true
+    },
+    {
+      "move": "death",
+      "view": "se",
+      "frame": 0,
+      "exact_still": true,
+      "whole_bbox": [
+        54,
+        91,
+        137,
+        161
+      ],
+      "whole_wh": [
+        83,
+        70
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            114,
+            91
+          ],
+          [
+            115,
+            105
+          ]
+        ],
+        "head": [
+          [
+            115,
+            109
+          ],
+          [
+            135,
+            118
+          ]
+        ],
+        "muzzle": [
+          [
+            126,
+            113
+          ],
+          [
+            135,
+            118
+          ]
+        ],
+        "body_length": [
+          [
+            80,
+            120
+          ],
+          [
+            108,
+            121
+          ]
+        ],
+        "body_depth": [
+          [
+            95,
+            111
+          ],
+          [
+            95,
+            132
+          ]
+        ],
+        "foreleg": [
+          [
+            106,
+            126
+          ],
+          [
+            107,
+            141
+          ],
+          [
+            112,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            83,
+            127
+          ],
+          [
+            73,
+            139
+          ],
+          [
+            72,
+            154
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 15.04,
+        "head": 22.93,
+        "muzzle": 11.3,
+        "body_length": 29.02,
+        "body_depth": 22.0,
+        "foreleg": 33.75,
+        "hindleg": 31.65,
+        "tail_visible_axis": 39.6,
+        "tail_cross_section": 10.75
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.0,
+        "muzzle": 0.0,
+        "body_length": 0.0,
+        "body_depth": 0.0,
+        "foreleg": 0.0,
+        "hindleg": 0.0,
+        "tail_visible_axis": 0.0,
+        "tail_cross_section": 0.0
+      },
+      "flagged_over_2px": [],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": true
+    },
+    {
+      "move": "death",
+      "view": "se",
+      "frame": 1,
+      "exact_still": false,
+      "whole_bbox": [
+        50,
+        89,
+        134,
+        161
+      ],
+      "whole_wh": [
+        84,
+        72
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            124,
+            89
+          ],
+          [
+            124,
+            102
+          ]
+        ],
+        "head": [
+          [
+            119,
+            108
+          ],
+          [
+            130,
+            105
+          ]
+        ],
+        "muzzle": [
+          [
+            124,
+            107
+          ],
+          [
+            132,
+            106
+          ]
+        ],
+        "body_length": [
+          [
+            81,
+            121
+          ],
+          [
+            108,
+            120
+          ]
+        ],
+        "body_depth": [
+          [
+            94,
+            112
+          ],
+          [
+            94,
+            133
+          ]
+        ],
+        "foreleg": [
+          [
+            105,
+            125
+          ],
+          [
+            107,
+            143
+          ],
+          [
+            112,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            83,
+            127
+          ],
+          [
+            75,
+            141
+          ],
+          [
+            74,
+            155
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.0,
+        "head": 12.4,
+        "muzzle": 9.06,
+        "body_length": 28.02,
+        "body_depth": 22.0,
+        "foreleg": 34.92,
+        "hindleg": 31.16,
+        "tail_visible_axis": 39.61,
+        "tail_cross_section": 12.25
+      },
+      "delta_px": {
+        "ear": -1.04,
+        "head": -10.53,
+        "muzzle": -2.24,
+        "body_length": -1.0,
+        "body_depth": 0.0,
+        "foreleg": 1.17,
+        "hindleg": -0.49,
+        "tail_visible_axis": 0.01,
+        "tail_cross_section": 1.5
+      },
+      "flagged_over_2px": [
+        "head",
+        "muzzle"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "death",
+      "view": "se",
+      "frame": 2,
+      "exact_still": false,
+      "whole_bbox": [
+        47,
+        101,
+        134,
+        161
+      ],
+      "whole_wh": [
+        87,
+        60
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            121,
+            102
+          ],
+          [
+            123,
+            116
+          ]
+        ],
+        "head": [
+          [
+            119,
+            119
+          ],
+          [
+            133,
+            132
+          ]
+        ],
+        "muzzle": [
+          [
+            125,
+            127
+          ],
+          [
+            133,
+            132
+          ]
+        ],
+        "body_length": [
+          [
+            81,
+            127
+          ],
+          [
+            108,
+            129
+          ]
+        ],
+        "body_depth": [
+          [
+            94,
+            119
+          ],
+          [
+            94,
+            139
+          ]
+        ],
+        "foreleg": [
+          [
+            105,
+            133
+          ],
+          [
+            112,
+            147
+          ],
+          [
+            119,
+            157
+          ]
+        ],
+        "hindleg": [
+          [
+            83,
+            133
+          ],
+          [
+            75,
+            145
+          ],
+          [
+            77,
+            156
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 15.14,
+        "head": 20.1,
+        "muzzle": 10.43,
+        "body_length": 28.07,
+        "body_depth": 21.0,
+        "foreleg": 28.86,
+        "hindleg": 26.6,
+        "tail_visible_axis": 39.6,
+        "tail_cross_section": 12.25
+      },
+      "delta_px": {
+        "ear": 0.1,
+        "head": -2.83,
+        "muzzle": -0.87,
+        "body_length": -0.95,
+        "body_depth": -1.0,
+        "foreleg": -4.89,
+        "hindleg": -5.05,
+        "tail_visible_axis": 0.0,
+        "tail_cross_section": 1.5
+      },
+      "flagged_over_2px": [
+        "head",
+        "foreleg",
+        "hindleg"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "death",
+      "view": "se",
+      "frame": 3,
+      "exact_still": false,
+      "whole_bbox": [
+        42,
+        120,
+        136,
+        161
+      ],
+      "whole_wh": [
+        94,
+        41
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            120,
+            121
+          ],
+          [
+            121,
+            134
+          ]
+        ],
+        "head": [
+          [
+            119,
+            137
+          ],
+          [
+            134,
+            146
+          ]
+        ],
+        "muzzle": [
+          [
+            126,
+            142
+          ],
+          [
+            134,
+            146
+          ]
+        ],
+        "body_length": [
+          [
+            81,
+            140
+          ],
+          [
+            108,
+            142
+          ]
+        ],
+        "body_depth": [
+          [
+            94,
+            132
+          ],
+          [
+            94,
+            151
+          ]
+        ],
+        "foreleg": [
+          [
+            105,
+            145
+          ],
+          [
+            111,
+            154
+          ],
+          [
+            122,
+            157
+          ]
+        ],
+        "hindleg": [
+          [
+            83,
+            143
+          ],
+          [
+            73,
+            151
+          ],
+          [
+            80,
+            156
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.04,
+        "head": 18.49,
+        "muzzle": 9.94,
+        "body_length": 28.07,
+        "body_depth": 20.0,
+        "foreleg": 23.22,
+        "hindleg": 22.41,
+        "tail_visible_axis": 39.63,
+        "tail_cross_section": 11.5
+      },
+      "delta_px": {
+        "ear": -1.0,
+        "head": -4.44,
+        "muzzle": -1.36,
+        "body_length": -0.95,
+        "body_depth": -2.0,
+        "foreleg": -10.53,
+        "hindleg": -9.24,
+        "tail_visible_axis": 0.03,
+        "tail_cross_section": 0.75
+      },
+      "flagged_over_2px": [
+        "head",
+        "foreleg",
+        "hindleg"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "death",
+      "view": "se",
+      "frame": 4,
+      "exact_still": false,
+      "whole_bbox": [
+        45,
+        119,
+        136,
+        161
+      ],
+      "whole_wh": [
+        91,
+        42
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            120,
+            121
+          ],
+          [
+            121,
+            134
+          ]
+        ],
+        "head": [
+          [
+            119,
+            137
+          ],
+          [
+            131,
+            149
+          ]
+        ],
+        "muzzle": [
+          [
+            124,
+            144
+          ],
+          [
+            131,
+            149
+          ]
+        ],
+        "body_length": [
+          [
+            81,
+            140
+          ],
+          [
+            107,
+            142
+          ]
+        ],
+        "body_depth": [
+          [
+            94,
+            133
+          ],
+          [
+            94,
+            151
+          ]
+        ],
+        "foreleg": [
+          [
+            105,
+            145
+          ],
+          [
+            108,
+            153
+          ],
+          [
+            118,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            83,
+            144
+          ],
+          [
+            75,
+            151
+          ],
+          [
+            80,
+            158
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.04,
+        "head": 17.97,
+        "muzzle": 9.6,
+        "body_length": 27.08,
+        "body_depth": 19.0,
+        "foreleg": 20.72,
+        "hindleg": 20.23,
+        "tail_visible_axis": 39.6,
+        "tail_cross_section": 9.75
+      },
+      "delta_px": {
+        "ear": -1.0,
+        "head": -4.96,
+        "muzzle": -1.7,
+        "body_length": -1.94,
+        "body_depth": -3.0,
+        "foreleg": -13.03,
+        "hindleg": -11.42,
+        "tail_visible_axis": 0.0,
+        "tail_cross_section": -1.0
+      },
+      "flagged_over_2px": [
+        "head",
+        "body_depth",
+        "foreleg",
+        "hindleg"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "death",
+      "view": "se",
+      "frame": 5,
+      "exact_still": false,
+      "whole_bbox": [
+        39,
+        131,
+        138,
+        161
+      ],
+      "whole_wh": [
+        99,
+        30
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            114,
+            131
+          ],
+          [
+            120,
+            143
+          ]
+        ],
+        "head": [
+          [
+            115,
+            143
+          ],
+          [
+            135,
+            155
+          ]
+        ],
+        "muzzle": [
+          [
+            125,
+            149
+          ],
+          [
+            135,
+            155
+          ]
+        ],
+        "body_length": [
+          [
+            81,
+            146
+          ],
+          [
+            108,
+            147
+          ]
+        ],
+        "body_depth": [
+          [
+            94,
+            136
+          ],
+          [
+            94,
+            154
+          ]
+        ],
+        "foreleg": [
+          [
+            105,
+            144
+          ],
+          [
+            97,
+            153
+          ],
+          [
+            116,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            83,
+            147
+          ],
+          [
+            78,
+            153
+          ],
+          [
+            89,
+            158
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.42,
+        "head": 24.32,
+        "muzzle": 12.66,
+        "body_length": 28.02,
+        "body_depth": 19.0,
+        "foreleg": 32.69,
+        "hindleg": 20.89,
+        "tail_visible_axis": 39.64,
+        "tail_cross_section": 10.0
+      },
+      "delta_px": {
+        "ear": -0.62,
+        "head": 1.39,
+        "muzzle": 1.36,
+        "body_length": -1.0,
+        "body_depth": -3.0,
+        "foreleg": -1.06,
+        "hindleg": -10.76,
+        "tail_visible_axis": 0.04,
+        "tail_cross_section": -0.75
+      },
+      "flagged_over_2px": [
+        "body_depth",
+        "hindleg"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "death",
+      "view": "se",
+      "frame": 6,
+      "exact_still": false,
+      "whole_bbox": [
+        39,
+        131,
+        138,
+        161
+      ],
+      "whole_wh": [
+        99,
+        30
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            114,
+            131
+          ],
+          [
+            120,
+            143
+          ]
+        ],
+        "head": [
+          [
+            115,
+            143
+          ],
+          [
+            135,
+            155
+          ]
+        ],
+        "muzzle": [
+          [
+            125,
+            149
+          ],
+          [
+            135,
+            155
+          ]
+        ],
+        "body_length": [
+          [
+            81,
+            146
+          ],
+          [
+            108,
+            147
+          ]
+        ],
+        "body_depth": [
+          [
+            94,
+            136
+          ],
+          [
+            94,
+            154
+          ]
+        ],
+        "foreleg": [
+          [
+            105,
+            144
+          ],
+          [
+            97,
+            153
+          ],
+          [
+            116,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            83,
+            147
+          ],
+          [
+            78,
+            153
+          ],
+          [
+            89,
+            158
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.42,
+        "head": 24.32,
+        "muzzle": 12.66,
+        "body_length": 28.02,
+        "body_depth": 19.0,
+        "foreleg": 32.69,
+        "hindleg": 20.89,
+        "tail_visible_axis": 39.64,
+        "tail_cross_section": 10.0
+      },
+      "delta_px": {
+        "ear": -0.62,
+        "head": 1.39,
+        "muzzle": 1.36,
+        "body_length": -1.0,
+        "body_depth": -3.0,
+        "foreleg": -1.06,
+        "hindleg": -10.76,
+        "tail_visible_axis": 0.04,
+        "tail_cross_section": -0.75
+      },
+      "flagged_over_2px": [
+        "body_depth",
+        "hindleg"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "death",
+      "view": "ne",
+      "frame": 0,
+      "exact_still": true,
+      "whole_bbox": [
+        57,
+        91,
+        135,
+        161
+      ],
+      "whole_wh": [
+        78,
+        70
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            92
+          ],
+          [
+            130,
+            105
+          ]
+        ],
+        "head": [
+          [
+            124,
+            108
+          ],
+          [
+            132,
+            113
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            130
+          ],
+          [
+            115,
+            119
+          ]
+        ],
+        "body_depth": [
+          [
+            102,
+            119
+          ],
+          [
+            102,
+            139
+          ]
+        ],
+        "foreleg": [
+          [
+            124,
+            127
+          ],
+          [
+            123,
+            142
+          ],
+          [
+            128,
+            154
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            131
+          ],
+          [
+            94,
+            146
+          ],
+          [
+            94,
+            158
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.0,
+        "head": 10.43,
+        "muzzle": null,
+        "body_length": 30.15,
+        "body_depth": 21.0,
+        "foreleg": 29.03,
+        "hindleg": 29.16,
+        "tail_visible_axis": 42.23,
+        "tail_cross_section": 12.25
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.0,
+        "muzzle": null,
+        "body_length": 0.0,
+        "body_depth": 0.0,
+        "foreleg": 0.0,
+        "hindleg": 0.0,
+        "tail_visible_axis": 0.0,
+        "tail_cross_section": 0.0
+      },
+      "flagged_over_2px": [],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": true
+    },
+    {
+      "move": "death",
+      "view": "ne",
+      "frame": 1,
+      "exact_still": false,
+      "whole_bbox": [
+        58,
+        88,
+        133,
+        161
+      ],
+      "whole_wh": [
+        75,
+        73
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            89
+          ],
+          [
+            130,
+            103
+          ]
+        ],
+        "head": [
+          [
+            124,
+            108
+          ],
+          [
+            131,
+            113
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            129
+          ],
+          [
+            115,
+            118
+          ]
+        ],
+        "body_depth": [
+          [
+            102,
+            117
+          ],
+          [
+            102,
+            138
+          ]
+        ],
+        "foreleg": [
+          [
+            124,
+            127
+          ],
+          [
+            123,
+            142
+          ],
+          [
+            128,
+            156
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            132
+          ],
+          [
+            94,
+            146
+          ],
+          [
+            94,
+            159
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 15.0,
+        "head": 9.6,
+        "muzzle": null,
+        "body_length": 30.15,
+        "body_depth": 22.0,
+        "foreleg": 30.9,
+        "hindleg": 29.23,
+        "tail_visible_axis": 39.95,
+        "tail_cross_section": 13.0
+      },
+      "delta_px": {
+        "ear": 1.0,
+        "head": -0.83,
+        "muzzle": null,
+        "body_length": 0.0,
+        "body_depth": 1.0,
+        "foreleg": 1.87,
+        "hindleg": 0.07,
+        "tail_visible_axis": -2.28,
+        "tail_cross_section": 0.75
+      },
+      "flagged_over_2px": [
+        "tail_visible_axis"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "death",
+      "view": "ne",
+      "frame": 2,
+      "exact_still": false,
+      "whole_bbox": [
+        50,
+        102,
+        135,
+        161
+      ],
+      "whole_wh": [
+        85,
+        59
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            130,
+            104
+          ],
+          [
+            130,
+            117
+          ]
+        ],
+        "head": [
+          [
+            125,
+            121
+          ],
+          [
+            133,
+            127
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            135
+          ],
+          [
+            116,
+            128
+          ]
+        ],
+        "body_depth": [
+          [
+            102,
+            125
+          ],
+          [
+            102,
+            144
+          ]
+        ],
+        "foreleg": [
+          [
+            124,
+            136
+          ],
+          [
+            128,
+            147
+          ],
+          [
+            132,
+            156
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            138
+          ],
+          [
+            93,
+            150
+          ],
+          [
+            98,
+            158
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.0,
+        "head": 11.0,
+        "muzzle": null,
+        "body_length": 29.86,
+        "body_depth": 20.0,
+        "foreleg": 22.55,
+        "hindleg": 24.33,
+        "tail_visible_axis": 42.21,
+        "tail_cross_section": 12.75
+      },
+      "delta_px": {
+        "ear": 0.0,
+        "head": 0.57,
+        "muzzle": null,
+        "body_length": -0.29,
+        "body_depth": -1.0,
+        "foreleg": -6.48,
+        "hindleg": -4.83,
+        "tail_visible_axis": -0.02,
+        "tail_cross_section": 0.5
+      },
+      "flagged_over_2px": [
+        "foreleg",
+        "hindleg"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "death",
+      "view": "ne",
+      "frame": 3,
+      "exact_still": false,
+      "whole_bbox": [
+        45,
+        117,
+        137,
+        161
+      ],
+      "whole_wh": [
+        92,
+        44
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            129,
+            118
+          ],
+          [
+            130,
+            131
+          ]
+        ],
+        "head": [
+          [
+            125,
+            135
+          ],
+          [
+            134,
+            140
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            144
+          ],
+          [
+            116,
+            140
+          ]
+        ],
+        "body_depth": [
+          [
+            102,
+            135
+          ],
+          [
+            102,
+            153
+          ]
+        ],
+        "foreleg": [
+          [
+            124,
+            145
+          ],
+          [
+            126,
+            154
+          ],
+          [
+            134,
+            157
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            148
+          ],
+          [
+            92,
+            154
+          ],
+          [
+            100,
+            158
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.04,
+        "head": 11.3,
+        "muzzle": null,
+        "body_length": 29.28,
+        "body_depth": 19.0,
+        "foreleg": 18.76,
+        "hindleg": 19.94,
+        "tail_visible_axis": 42.23,
+        "tail_cross_section": 12.75
+      },
+      "delta_px": {
+        "ear": 0.04,
+        "head": 0.87,
+        "muzzle": null,
+        "body_length": -0.87,
+        "body_depth": -2.0,
+        "foreleg": -10.27,
+        "hindleg": -9.22,
+        "tail_visible_axis": 0.0,
+        "tail_cross_section": 0.5
+      },
+      "flagged_over_2px": [
+        "foreleg",
+        "hindleg"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "death",
+      "view": "ne",
+      "frame": 4,
+      "exact_still": false,
+      "whole_bbox": [
+        45,
+        120,
+        136,
+        161
+      ],
+      "whole_wh": [
+        91,
+        41
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            129,
+            121
+          ],
+          [
+            130,
+            134
+          ]
+        ],
+        "head": [
+          [
+            125,
+            138
+          ],
+          [
+            133,
+            143
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            145
+          ],
+          [
+            116,
+            141
+          ]
+        ],
+        "body_depth": [
+          [
+            102,
+            136
+          ],
+          [
+            102,
+            154
+          ]
+        ],
+        "foreleg": [
+          [
+            124,
+            146
+          ],
+          [
+            130,
+            150
+          ],
+          [
+            134,
+            159
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            149
+          ],
+          [
+            93,
+            155
+          ],
+          [
+            101,
+            157
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.04,
+        "head": 10.43,
+        "muzzle": null,
+        "body_length": 29.28,
+        "body_depth": 19.0,
+        "foreleg": 18.06,
+        "hindleg": 18.47,
+        "tail_visible_axis": 42.2,
+        "tail_cross_section": 10.25
+      },
+      "delta_px": {
+        "ear": 0.04,
+        "head": 0.0,
+        "muzzle": null,
+        "body_length": -0.87,
+        "body_depth": -2.0,
+        "foreleg": -10.97,
+        "hindleg": -10.69,
+        "tail_visible_axis": -0.03,
+        "tail_cross_section": -2.0
+      },
+      "flagged_over_2px": [
+        "foreleg",
+        "hindleg"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "death",
+      "view": "ne",
+      "frame": 5,
+      "exact_still": false,
+      "whole_bbox": [
+        44,
+        127,
+        147,
+        161
+      ],
+      "whole_wh": [
+        103,
+        34
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            129,
+            128
+          ],
+          [
+            130,
+            141
+          ]
+        ],
+        "head": [
+          [
+            125,
+            143
+          ],
+          [
+            133,
+            148
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            148
+          ],
+          [
+            116,
+            145
+          ]
+        ],
+        "body_depth": [
+          [
+            102,
+            139
+          ],
+          [
+            102,
+            155
+          ]
+        ],
+        "foreleg": [
+          [
+            123,
+            145
+          ],
+          [
+            128,
+            151
+          ],
+          [
+            143,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            151
+          ],
+          [
+            94,
+            155
+          ],
+          [
+            101,
+            158
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.04,
+        "head": 10.43,
+        "muzzle": null,
+        "body_length": 29.16,
+        "body_depth": 17.0,
+        "foreleg": 25.36,
+        "hindleg": 15.83,
+        "tail_visible_axis": 42.2,
+        "tail_cross_section": 10.0
+      },
+      "delta_px": {
+        "ear": 0.04,
+        "head": 0.0,
+        "muzzle": null,
+        "body_length": -0.99,
+        "body_depth": -4.0,
+        "foreleg": -3.67,
+        "hindleg": -13.33,
+        "tail_visible_axis": -0.03,
+        "tail_cross_section": -2.25
+      },
+      "flagged_over_2px": [
+        "body_depth",
+        "foreleg",
+        "hindleg",
+        "tail_cross_section"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    },
+    {
+      "move": "death",
+      "view": "ne",
+      "frame": 6,
+      "exact_still": false,
+      "whole_bbox": [
+        44,
+        127,
+        147,
+        161
+      ],
+      "whole_wh": [
+        103,
+        34
+      ],
+      "landmarks": {
+        "ear": [
+          [
+            129,
+            128
+          ],
+          [
+            130,
+            141
+          ]
+        ],
+        "head": [
+          [
+            125,
+            143
+          ],
+          [
+            133,
+            148
+          ]
+        ],
+        "muzzle": null,
+        "body_length": [
+          [
+            88,
+            148
+          ],
+          [
+            116,
+            145
+          ]
+        ],
+        "body_depth": [
+          [
+            102,
+            139
+          ],
+          [
+            102,
+            155
+          ]
+        ],
+        "foreleg": [
+          [
+            123,
+            145
+          ],
+          [
+            128,
+            151
+          ],
+          [
+            143,
+            158
+          ]
+        ],
+        "hindleg": [
+          [
+            100,
+            151
+          ],
+          [
+            94,
+            155
+          ],
+          [
+            101,
+            158
+          ]
+        ]
+      },
+      "visible_axis_px": {
+        "ear": 14.04,
+        "head": 10.43,
+        "muzzle": null,
+        "body_length": 29.16,
+        "body_depth": 17.0,
+        "foreleg": 25.36,
+        "hindleg": 15.83,
+        "tail_visible_axis": 42.2,
+        "tail_cross_section": 10.0
+      },
+      "delta_px": {
+        "ear": 0.04,
+        "head": 0.0,
+        "muzzle": null,
+        "body_length": -0.99,
+        "body_depth": -4.0,
+        "foreleg": -3.67,
+        "hindleg": -13.33,
+        "tail_visible_axis": -0.03,
+        "tail_cross_section": -2.25
+      },
+      "flagged_over_2px": [
+        "body_depth",
+        "foreleg",
+        "hindleg",
+        "tail_cross_section"
+      ],
+      "grey_tail_plates_visually_counted": 3,
+      "red_tail_tips": 1,
+      "annotation_uncertainty_px": 2,
+      "certified_all_part_pass": false
+    }
+  ]
+}

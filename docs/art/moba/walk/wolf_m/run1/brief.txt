@@ -1,0 +1,97 @@
+You are making pixel-art walk frames for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\walk\wolf_m\run1.
+Read anything under D:\dev\new-mech-rpg\docs\art\moba. Do not touch any other folder, assets, art or tools, and do not
+commit. Run tag: wolf-walk35-run1.
+
+The machine: the M robot wolf, an armoured gunmetal wolf with folded red blade-fins along the back, red lower legs and
+clawed paws, and a plated tail with a red tip. Its approved standing stills at 35 degrees are in run1\stills (s, se, e,
+ne, n; 192x192, feet row 160, 12 colours, raw with no outline; copied from
+D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\views_cam35_touchup, whose APPROVED.txt says how they were made).
+Preston, the game's owner, approved these stills; above the legs the walk must match them exactly. Never redesign: no
+new parts, no fur, no gloss, no longer or thinner limbs. The tail stays a straight line of plates (Preston: "no curved
+tails as they are hard to rotate"); it moves whole with the body, never bent or rotated.
+Read first: D:\dev\new-mech-rpg\docs\art\moba\walk\WALK_PLAYBOOK.md (sections 1, 4, 5, 7, 9, 11 and 13; 13 is what the
+last three walks taught). Then the walks that worked, and reuse their method and scripts rather than starting again:
+the violet hippo, walk\hippo_l\run1 and run2 (brief.txt, REPORT.txt, build.py, native.py, verify.py, rig.json) and
+hippo_l\final\README.txt; and the fennec's trot, walk\fennec_s\run1 and run2 (brief.txt, REPORT.txt, build.py). This
+wolf's own trot was approved at the old side camera: wolf_m\take-b\anim\codex-walk2\brief.txt (the gait table and how
+the legs bend) and codex-walk3 and codex-walk4 (REPORT.txt, scripts). Take the motion from those; their pixels are the
+old camera, so do not reuse them. common.txt there says to use fixed\: that was for the old camera. Here use run1\stills.
+
+What went wrong before, so do not repeat it: the hippo's body layer was filled where a leg had been in the still,
+including below the belly, so dark body colour hung below the belly with straight edges, and in ne it was drawn across a
+foot as a dark line splitting it; the fennec's far hind leg was drawn over its tail; the fennec's chest plate broke into
+loose specks as a leg moved; a limb sliding back left a transparent slit inside the body.
+
+Keep run1\REPORT.txt current: write it once the first view is drawn and update it after each view, so a report exists
+even if the run is stopped by its token cap.
+
+Job, run 1: an 8-frame trot, 100 ms a frame (10 fps), looping, in these views: e, se, ne. Diagonal pairs: pair A, the
+right fore (RF) and left hind (LH), is on the ground f0-f3 and swings f4-f7; pair B, LF and RH, swings f0-f3 and is on
+the ground f4-f7. Lifts 2, 4, 4 and 2 px over the four swing frames. The body, head, fins and tail dip 1 px on f1 and
+f5. Each foot's offset along the body (side-view px, + = forward): on the ground +8, +3, -2, -7; in the air -4, -1, +2,
++5 (pair A: f0-f3 on the ground, f4-f7 in the air; pair B the other way round). These are run1\targets.json "paths".
+Per view the path turns into screen px as offset * f * u, with the lift straight up:
+  e: u = (1, 0), f = 1.0; a planted foot moves (-5.00, +0.00) px a frame on the canvas (x, y; y down)
+  se: u = (0.8674, 0.4975), f = 0.8152; a planted foot moves (-3.54, -2.03) px a frame
+  ne: u = (0.8674, -0.4975), f = 0.8152; a planted foot moves (-3.54, +2.03) px a frame
+In se and ne the targets fall between pixels: round each frame's position so a planted foot's total travel stays within
+0.5 px of the target. targets.json "views" gives the sole centre of every labelled foot in each still for every frame;
+run1\guide_<view>.png shows them (the still faded, then a bar per foot per frame, filled when planted and outlined when
+lifted, with a tick for the lift). R and L are the wolf's own right and left; its right side is the near side in e, se
+and ne. The labels are in D:\dev\new-mech-rpg\docs\art\moba\walk\wolf_m\feet.json: check them and say if one is wrong.
+Partly hidden in the stills: e LF (behind RF's leg), ne LF (behind RF and the chest). In ne the tail tip is the lowest
+thing on the canvas (x 60-68, rows 147-160): it is the tail, not a foot.
+
+How the legs move (the approved side trot, codex-walk2): the legs swing from the hip and shoulder and bend at the knee,
+hock and wrist. A planted leg slants forward when it lands (f0 for pair A, f4 for pair B) and slants back before it
+lifts; a lifting fore paw folds back at the wrist, then reaches forward before landing; a hind paw lifts flat and swings
+through. Each leg is the gunmetal upper leg pinned to the body at the hip or shoulder, the red lower leg, and the red
+clawed paw. The paw is the still's paw translated whole (never rotated or resampled); the lower and upper leg are
+redrawn as leaning bands in the still's own colours and shading bands, stepped 1 px per row or two, lit edge and dark
+seam kept, each leg within 1 px of its still length. Every joint and every join with the body is redrawn by hand: no
+seams, no straight cut edges, no gaps. Where a leg slides back, draw the body behind it: no slit may show the background
+inside the body. The far legs (darker in the still) are built the same way, on their own darker ramp.
+The body stops at the belly: where a leg in the still came out below the belly, the body layer there is transparent,
+not filled. Fill only inside the body's own outline, continuing its bands and seams.
+Draw order, every frame: far legs (LH, LF), then the body, head, fins and tail, then the near legs (RH, RF); in ne also
+check at 8x how the still layers the tail over the hind legs, and keep that. Nothing of a far leg may sit on top of the
+body, tail or a near leg. Plates stay whole: where a moving leg uncovers part of a plate, draw that part whole with its
+bands and seams; where a leg covers it, draw the leg's edge cleanly over it. No loose specks.
+
+Pass marks (report each):
+- Foot lock: for each foot, its sole centre on its k-th planted frame (k = 0 to 3 in order, wrapping past f7) minus k
+  times the planted step above stays within 2 px in x and y. Measure from the frame pixels, not from your targets.
+  Write a footprint picture per view. Also run these and report their results:
+  python D:\dev\new-mech-rpg\docs\art\moba\walk\tools\walk_tools.py footlock
+    --targets D:\dev\new-mech-rpg\docs\art\moba\walk\wolf_m\run1\targets.json
+    --frames D:\dev\new-mech-rpg\docs\art\moba\walk\wolf_m\run1\walk\frames --views e se ne
+    --still-dir D:\dev\new-mech-rpg\docs\art\moba\walk\wolf_m\run1\stills
+    --out D:\dev\new-mech-rpg\docs\art\moba\walk\wolf_m\run1\footlock.json
+  python D:\dev\new-mech-rpg\docs\art\moba\walk\tools\walk_tools.py seams
+    --targets D:\dev\new-mech-rpg\docs\art\moba\walk\wolf_m\run1\targets.json
+    --frames D:\dev\new-mech-rpg\docs\art\moba\walk\wolf_m\run1\walk\frames --views e se ne
+    --still-dir D:\dev\new-mech-rpg\docs\art\moba\walk\wolf_m\run1\stills --body <the stills' gunmetal body hexes>
+  For a foot hidden in a frame, measure it from your leg layer and say so. Seams must report no slits inside the body
+  (a flag between two legs is a real gap and stays open). If the silhouette footlock merges a sole with the tail or
+  another paw, say so and give your own stamp measure as the deciding one.
+- Each visible foot meets its target within 1 px; lifts exact.
+- Above the legs every frame equals the still after the 1 px dip: report the % of differing pixels per frame.
+- Belly: per view, for each leg's column span in the still, the body layer's lowest opaque row in that span may not sit
+  more than 1 px below the straight line between the body's lowest rows in the columns just outside the span.
+- Whole feet: every paw in every frame is the still's paw translated whole, with nothing drawn across it except where
+  the still itself shows something in front of it (report the paw match per foot per frame).
+- Specks: per frame, count the 8-connected single-colour pieces of 1 or 2 px in rows 110-164; no frame may have more
+  than the still has in that view plus 2. Report the still's count and each frame's.
+- 192x192 transparent frames, the stills' 12 colours only, binary alpha, no holes, no stray pixels, nothing touching
+  the canvas edge. A planted foot nearer the camera than in the still may sit up to 4 px below its still row (se RF's
+  target reaches row 163.2); report each frame's lowest row.
+- Judge boards at 4x with the game's 1 px dark sel-out added (the packer adds it; use the selout function in
+  D:\dev\new-mech-rpg\docs\art\moba\touchup\touchup_machine.py), with the still beside them, then a 5x zoom of the legs
+  of every frame: look at every joint, paw and the tail.
+
+Output in run1: walk\frames\<view>_f0.png to <view>_f7.png for e, se and ne (raw, no outline, like the stills),
+walk\layers, source\ (the body layer per view), a preview gif per view (100 ms, loop), footprint pictures, board.png
+(per view: the still, then your 8 frames, with sel-out, at 4x), legs_zoom.png, checks.txt, footlock.json, and
+REPORT.txt (under 30 lines): tokens if known, the foot names you used, the foot-lock spreads, target errors, the seams,
+belly and whole-feet results, upper-body match, speck counts, lowest rows, and by eye: does each view read as this wolf
+trotting forward in diagonal pairs, legs like the still, fins, plates and tail whole, nothing hanging below the belly?

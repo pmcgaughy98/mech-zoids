@@ -1,0 +1,14 @@
+Sizes (width x height/opaque area): s 45x80/2049; se 50x79/2197; e 62x80/2235; ne 42x77/1924; n 41x78/1788.
+Shape east (+/-2px): bill 25/head 20 = 1.250; legs 30/body 27 = 1.111; landmarks in shape.txt and measure-e.png.
+ONE built-in image; prompt-sheet.txt verbatim; only craft_drembit.png attached; raw SHA256 unchanged; tokens/cost unknown; no redo.
+view_check: front/back 0.83 PASS; area 0.14; height 0.04; colour 0.84; dips none; lone 0.13 FAIL (>0.11); 14 shared colours; top-five 75.08% PASS.
+sheet_judge: all eight ok; FIX nothing; REDO nothing; mirrors e/w 0.989, ne/nw 0.986, se/sw 0.995; binary alpha; no canvas-border contact.
+Finish: one whole-sheet nearest shrink 0.23391813 to 293x293; south 80px; all four blue/gold shades retained; fringe 0; lone pale rim 0; exterior ink 0 (41 pale/172 ink rim pixels repainted).
+Depth e: p05/p95 46.56/207.15, dominant #3f5b92 24.65%, h80; se: 24.16/207.15, 26.76%, h79.
+Depth s: p05/p95 24.16/207.15, dominant #3f5b92 27.57%, h80; n: 46.56/207.15, 35.79%, h78; e/n range160.59 FAIL, se/s182.99 PASS; dominant shares PASS.
+By eye full/game size: shoebill-like broad gold shoe bill and hooked tip, calm/dignified rather than cute; head remains somewhat small and bill somewhat duck-like, so species/proportion brief PARTIAL; upright stout body, straight steel legs and large spread feet.
+Slate-blue armour, small turquoise eyes behind bill base, gold ankle bands/claws PASS; folded layered wings PASS, crossed primaries not clearly crossed; exact four-toe count unclear in some views.
+Banded blue/gold crest shows in all eight and dominates the back; nothing held, no symbols/text PASS; four-step shading and internal overlap lines retained, no painted dark exterior line; shading speckle remains.
+Back heights n78 <= s80 and ne/nw77 <= se/sw79 PASS; consistent low camera, no rear eye/face, no bill straight behind PASS; rear feet still show toe-like marks toward viewer, heels PARTIAL.
+SE/SW true three-quarter, turned bill and far eye hidden PASS; at 40px tall the crest/bill survive but eyes and toe structure weaken. Overall candidate passes judge but misses lone-pixel/depth and some anatomy targets.
+All scripts, raw/finished sheet, eight views, metrics, edge-audit.json, review.png and review-game-size.png saved in take-a only; no assets/art installation, commits or reverts.

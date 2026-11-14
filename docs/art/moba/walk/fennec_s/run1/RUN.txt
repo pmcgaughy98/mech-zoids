@@ -1,0 +1,6 @@
+Fennec trot at 35, run 1 (e, se, ne). Preston: "Start step B" (2026-11-05).
+Estimate 90k-140k tokens (gorilla run 1 was 143k for a big L machine). Cap 140,000; the watcher checks every 20 s.
+Run 2 (s, n) follows after run 1 is checked, cap 140,000: step B stays within the 180k-280k told to Preston.
+Command:
+  sh D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/walk35/codex_cap/run_codex_capped_d.sh D:/dev/new-mech-rpg/docs/art/moba/walk/fennec_s/run1 D:/dev/new-mech-rpg/docs/art/moba/walk/fennec_s/run1/brief.txt run1 140000 fennec-trot35-run1
+Started: 2026-11-05 10:17

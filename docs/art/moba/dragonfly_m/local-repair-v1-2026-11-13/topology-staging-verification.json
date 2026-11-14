@@ -1,0 +1,31 @@
+{
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_dragonfly_remeshed_25k_20261111_character.glb",
+  "source_sha256": "4aa5552ba0601f5006e7e4a06eb93c67f7721a1cf50e811ef67349cf6c47eeaf",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\dragonfly_m\\local-repair-v1-2026-11-13\\dragonfly-rigged-local-repair-v1.glb",
+  "output_sha256": "2138415a9e2d90d4c411fadf44494fd8f5d3afa7bdbe08cf46cb4d5e7555dcf8",
+  "before_triangles": 25263,
+  "final_triangles": 25248,
+  "removed_flap_face_ids": [
+    101,
+    245,
+    1465,
+    2087,
+    3483,
+    5047,
+    7091,
+    16128,
+    18316,
+    20374,
+    20705,
+    20928,
+    21152,
+    21326,
+    22555
+  ],
+  "boundary_edges": 0,
+  "over_shared_edges": 0,
+  "collapsed_triangles": 0,
+  "joint_count": 46,
+  "all_original_attributes_skin_materials_skeleton_rest_binds_preserved": true,
+  "status": "STAGED TOPOLOGY ONLY: four leg pairs still present; waiting for the extra-pair selection. No catalog promotion."
+}

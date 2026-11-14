@@ -1,0 +1,54 @@
+Job from Claude (the attack lane of the mech MOBA in D:/dev/new-mech-rpg): draw the APPROVED robot rhino (working id rhino_l, take A) doing its GROUND POUND at the game camera's angle, 35 degrees down, in three views (east, southeast, northeast), six frames each, in ONE image, then finish it into game frames. Preston approved this run on 2026-11-05 ("Yes, start it"). It is the SAME rhino as the approved 35 degree stills: no new design, no new parts; only the pose changes.
+Run tag: rhino-gp35-run1. Write only inside OUT:
+- OUT = D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1
+- TAKE = D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a (read only)
+- STILLS = TAKE/views_cam35_touchup (read only: the approved stills; e.png, se.png and ne.png are this run's views)
+- EX = TAKE/cam35 (read only: the run that drew those 35 degree stills; its finishing scripts)
+Images you may open: the two attachments (OUT/refs/look_35.png, OUT/refs/pose_guide.png), STILLS/e.png, STILLS/se.png, STILLS/ne.png to measure them, and the images you make in OUT. Open NO other image anywhere: nothing under TAKE/anim (the old ground pound frames are at an old angle and must not be seen or copied), no other machine's folder, nothing under D:/dev/new-mech-rpg/art/ or assets/.
+Text you may read: OUT/targets.json, OUT/still_metrics.json, TAKE/palette.json, EX/brief.txt, EX/REPORT.txt, EX/finish.py, EX/defringe.py, EX/despeckle.py, EX/audit.py, TAKE/anim/selout_rhino.py (code only, for the sel-out), D:/dev/new-mech-rpg/docs/art/moba/attack/ATTACK_PLAYBOOK.md and D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/PLAN.md.
+Keep OUT/REPORT.txt current: write it after step 1 and update it after each step, so a report exists even if the run is stopped by its token cap.
+
+1. Generate exactly ONE image with your built-in image tool from OUT/prompt-sheet.txt word for word, attaching exactly two images: OUT/refs/look_35.png first and OUT/refs/pose_guide.png second. Save it unchanged as OUT/sheet_raw.png. Never make a second image or a redo; if it fails, report and stop.
+
+2. Finish it the way EX was finished (copy EX/finish.py, defringe.py, despeckle.py and audit.py into OUT and adapt them):
+   - Magenta to transparent, no magenta or plum fringe, no lone pale pixels on the outer edge.
+   - ONE whole-sheet nearest shrink. Choose the factor by the HEAD, not the body length: for each row, measure column 1's head (rows 1 and 2: horn tip to the eye centre; row 3: horn tip to the back edge of the head) against the same view's still, and use the median of the three rows' factors. Report each row's column 1 width x height against the still's bounding box (e 103x75, se 85x83, ne 83x103); within 4% passes.
+   - The palette is FIXED: map every pixel to the colours in TAKE/palette.json and add none. Smooth lightly before mapping so shading becomes clean bands.
+   - Ink: the dark accent 141218 share of opaque pixels in each frame within 15% of its view's still (OUT/still_metrics.json: e 8.1%, se 7.8%, ne 8.3%). If the shrink or mapping thins the seam lines, map thin dark seam pixels (lines one or two pixels wide between lighter shades) to 141218, and leave broad shadow areas on their own ramp's shadow and deep shades.
+   - Eye: every e and se frame has at least 4 red ff3a2a eye pixels in a dark socket (the stills have 5); ne frames have none. Where the shrink lost the eye, draw it back by hand in the socket where the generated eye was, the same size as the still's; list the frames.
+   - If more than 1.2 times the still's specks remain (1 or 2 px single-colour 4-connected pieces; still_metrics.json specks_1_2px: e 322, se 414, ne 346), run one despeckle pass and report before and after.
+   - Binary alpha; each frame one 4-connected piece.
+
+3. Slice into OUT/frames/<view>_f<i>.png (view = e, se, ne by row; i = 0 to 5 by column) on a 192 x 192 transparent canvas:
+   - Place each row so column 1's hind feet sit on the still's hind soles (targets.json views.<view>.soles with leg "hind"; the lowest row of every still is 160).
+   - Then check each frame's hind soles. The hind feet are planted for the whole move: if a frame's hind sole is more than 1 px off its target, move that WHOLE frame (never a part of it) to put it back, and list each move.
+   - Never cut, paste or move parts of a frame. A wrong limb is reported, not patched.
+   - Finally overwrite <view>_f0.png with an exact copy of STILLS/<view>.png (frame 0 is the still).
+   - No frame touches its canvas border.
+
+4. Checks, all in OUT/checks.txt, one line each, PASS or MISS with the number:
+   - f0 equals the still (0 px differ).
+   - Hind sole drift per frame (planted), 1 px or under.
+   - Front feet against targets.json views.<view>.frames: front_feet_shift_px at frames 2 and 3 (the rise and the rear), within 2 px for this run; back on the still's front soles at frame 4 within 1 px; the near front foot 1-4 px up at frame 5. Say how you found each foot.
+   - Lowest row per frame: 160, or the toes toward the camera up to 163; list each.
+   - Frame 4 against frame 5: the largest move of any part, 3 px or under (the game flicks between them during the tremor).
+   - Frame 5 against the still: the largest move of any part, 4 px or under (the hand-back to the idle).
+   - Frame 1 against the still: alpha IoU and the share of pixels with the same colour.
+   - Frame 3 silhouette alpha IoU against the still, at 1x: 0.85 or under (the rear reads).
+   - Eye pixels per frame (e and se at least 4; ne 0).
+   - Ink share per frame against the still's (within 15%).
+   - Palette: every opaque colour in TAKE/palette.json; list any that are not.
+   - 4-connected pieces per frame (1), specks per frame against 1.2 times the still's.
+   - Head size per row against the still (within 3%).
+   - Seams: any transparent pixel enclosed inside a frame's body that the still does not have there (a slit), with its count.
+
+5. Review images:
+   - Sel-out: import selout from TAKE/anim/selout_rhino.py (OUTLINE 141218) and write sel-out copies of every frame to OUT/frames_selout/ (never change OUT/frames/).
+   - OUT/review.png: three rows (e, se, ne), seven columns (the still with sel-out, then frames 0 to 5 with sel-out), 4x nearest on mid grey, labelled.
+   - OUT/strip_1x.png: the same frames at 1x (the size the game shows them), on mid grey.
+   - OUT/joints_5x.png: frames 2, 3 and 4 of each row, cropped to the legs and the hips, 5x nearest.
+   - OUT/preview_<view>.gif for e, se and ne from frames_selout at 4x with the holds 100, 100, 100, 200, 300, 300 ms.
+
+6. Do not touch anything outside OUT: not TAKE, STILLS, EX, art/, assets/, scenes/, scripts/ or tools/. Do not commit, do not revert other files.
+
+7. Report in under 25 lines in OUT/REPORT.txt, and the same in your final answer: tokens used if known; the head scale and each row's sizes against the stills; every check line; the frames moved in step 3; the eyes drawn back; and by eye: is it the same rhino as the stills in every frame, with no new or extra parts? Do the hind feet stay put? Does frame 3 read as rearing on the hind legs at 1x? Is frame 4 heavy, with the front feet back where they stood? Is frame 5 close to frame 4? Any cut-off, chopped or broken part (a straight cut edge, a second chin, a gap in the body)? Any plate, horn or foot broken into specks?

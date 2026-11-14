@@ -1,0 +1,9 @@
+Every view W x H: ne 103x73, n 99x76, nw 102x73, e 99x66, w 99x66, se 107x72, s 107x72, sw 107x72
+South width comparison: s/ne=1.0388, s/n=1.0808, s/nw=1.0490, s/e=1.0808, s/w=1.0808, s/se=1.0000, s/sw=1.0000
+East/south height: 66/72=0.9167; exact matching FAIL.
+North/south height: 76/72=1.0556; no-taller FAIL; heights drift.
+NE/NW cyan eye pixels: 0/0 (including pale eye-glint colour).
+Claw pixels above the eye-socket bottom: 0 apparent by eye in all views; claws in front of eyes: 0 apparent by eye. No semantic pixel segmentation, so these are visual counts.
+Leg-tip contacts planted/clearly visible by eye: ne 4/4, n 4/4, nw 4/4, e 3/3, w 3/3, se 2/2, s 2/2, sw 2/2. Far feet may sit higher in projection; no clearly visible foot is lifted. Six distinct legs are not verifiable when hidden.
+Both claws appear resting in all views; SE/SW both eyes visible, far lens partially occluded. Rear views show no face or lens; camera broadly consistent, though north is too tall.
+Remaining enclosed 1-3px shade islands by view: ne 6 (crimson 4,steel 2), n 1 (crimson 1,steel 0), nw 4 (crimson 3,steel 1), e 5 (crimson 4,steel 1), w 5 (crimson 4,steel 1), se 20 (crimson 20,steel 0), s 10 (crimson 10,steel 0), sw 17 (crimson 14,steel 3). Claw interiors retain mottling; not clean throughout.

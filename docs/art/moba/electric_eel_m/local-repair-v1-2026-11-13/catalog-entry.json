@@ -1,0 +1,98 @@
+{
+  "id": "electric_eel",
+  "name": "Electric Eel",
+  "source_model": {
+    "path": "res://art/model_catalog/sources/electric_eel_front_hunyuan - Hunyuan 3D v3.1 Pro.glb",
+    "source": "D:\\user\\Downloads\\electric_eel_front_hunyuan - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "23d480d94c3c50c987c9ed59cba69162961b589cbfe300ae12d857c37c6ee127",
+    "bytes": 56561152
+  },
+  "display_model": "res://docs/art/moba/electric_eel_m/local-repair-v1-2026-11-13/electric-eel-rigged-local-repair-v1.glb",
+  "status": "Upper tail prong 1 removed; two lower prongs retained. Six gaps and malformed strips repaired. Original 56-joint rig and textures preserved, deleted-chain weights cleaned locally.",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/electric_eel/front.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\electric_eel_front_hunyuan.png",
+      "sha256": "ff0b71424fe7319d411ae48d8c8b1f1f4b0d60230ae07cf75d93e555f024b56a",
+      "bytes": 75218,
+      "project_matches": [
+        "docs/art/moba/electric_eel_m/take-b-level/hunyuan_uploads_v1/electric_eel_front_hunyuan.png"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/electric_eel/left.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\electric_eel_left_hunyuan.png",
+      "sha256": "6f7628a82efb8bd0f154d00bc45551d4fc6dd27d7807d67462d186269f2edb33",
+      "bytes": 271116,
+      "project_matches": [
+        "docs/art/moba/electric_eel_m/take-b-level/hunyuan_uploads_v1/electric_eel_left_hunyuan.png"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/electric_eel/back.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\electric_eel_back_hunyuan.png",
+      "sha256": "3b3e5e7f26c1af7547b415a246f2c822a66aff3c517b92b564e8b8cd7610fa92",
+      "bytes": 70239,
+      "project_matches": [
+        "docs/art/moba/electric_eel_m/take-b-level/hunyuan_uploads_v1/electric_eel_back_hunyuan.png"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/electric_eel/right.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\electric_eel_right_hunyuan.png",
+      "sha256": "f2e534c60d462cbeabdc34480df28c1b45c2017db84f877bf7125dbf533e0097",
+      "bytes": 269030,
+      "project_matches": [
+        "docs/art/moba/electric_eel_m/take-b-level/hunyuan_uploads_v1/electric_eel_right_hunyuan.png"
+      ]
+    }
+  },
+  "artist_workspace": "res://docs/art/moba/electric_eel_m/local-repair-v1-2026-11-13/electric-eel-rigged-local-repair-v1.blend",
+  "review_models": [
+    {
+      "label": "INTACT QUALITY ARCHIVE\nExtra upper prong unapproved",
+      "path": "res://art/model_catalog/sources/electric_eel_front_hunyuan - Hunyuan 3D v3.1 Pro.glb",
+      "display_scale": 2.4281751374035054
+    },
+    {
+      "label": "DOWNLOADED RIG\nUnrepaired / three prongs",
+      "path": "res://art/model_catalog/sources/Meshy_AI_electric_eel_remeshed_25k_20261108_character.glb",
+      "display_scale": 0.22868006348266678
+    },
+    {
+      "label": "LOCAL REPAIR\nTwo prongs / original 56-joint rig",
+      "path": "res://docs/art/moba/electric_eel_m/local-repair-v1-2026-11-13/electric-eel-rigged-local-repair-v1.glb",
+      "display_scale": 0.22868006348266678
+    }
+  ],
+  "review_views": {
+    "front": {
+      "path": "res://docs/art/moba/electric_eel_m/local-repair-v1-2026-11-13/review-front.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "left": {
+      "path": "res://docs/art/moba/electric_eel_m/local-repair-v1-2026-11-13/review-left.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "back": {
+      "path": "res://docs/art/moba/electric_eel_m/local-repair-v1-2026-11-13/review-back.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "right": {
+      "path": "res://docs/art/moba/electric_eel_m/local-repair-v1-2026-11-13/review-right.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    }
+  },
+  "review_provenance": {
+    "date": "2026-11-13",
+    "report": "res://docs/art/moba/electric_eel_m/local-repair-v1-2026-11-13/repair-verification.json",
+    "independent_audit": "res://docs/art/moba/electric_eel_m/local-repair-v1-2026-11-13/independent-export-audit.json",
+    "joint_count": 56,
+    "rigged_input_sha256": "a6a9a6fd5ec89724436a60d05352ac42c1d5a55dc721f3b57425897d109ebfb9",
+    "repaired_sha256": "4d73849a9bfd3c02c8ce70f8ecf1844b1d57f6084f0e9f1cbb5582e7d187431c",
+    "intact_pre_remesh_available": true,
+    "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+    "scope": "User selected upper prong 1. Retained the two lower prongs and closed the upper mounting opening. Six pre-existing surface gaps and malformed strips repaired. Original 56-joint hierarchy, rest/binds, healthy shapes and textures preserved; residual deleted-chain weights reassigned locally to existing Bone_033. One original balanced four-face contact between closed assembly surfaces is protected; no new contact edges. No gameplay replacement."
+  }
+}

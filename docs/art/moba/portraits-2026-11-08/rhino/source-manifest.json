@@ -1,0 +1,54 @@
+{
+  "machine": "rhino",
+  "model": {
+    "path": "res://art/model_catalog/sources/rhino_s - Hunyuan 3D v3.1 Pro.glb",
+    "source": "D:\\user\\Downloads\\rhino_s - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "180de3054e84adf9c45ce1d51b413b6530eef3d9af4b8b19729c69a8948936ad",
+    "bytes": 55104504
+  },
+  "sources": [
+    {
+      "view": "front",
+      "source": "D:\\dev\\new-mech-rpg\\art\\model_catalog\\references\\rhino\\front.png",
+      "sha256": "20d5cdfcde2ff333d29c95877178a23b02602992b541403596e4c2834d8c30a8",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "view": "left",
+      "source": "D:\\dev\\new-mech-rpg\\art\\model_catalog\\references\\rhino\\left.png",
+      "sha256": "d7c81678d4de785a125e61b49c688a3471f25cbc5dbefe6ce9325b63f1c091f7",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "view": "back",
+      "source": "D:\\dev\\new-mech-rpg\\art\\model_catalog\\references\\rhino\\back.png",
+      "sha256": "52339e9af47fb17743ce9b6e4ebdb416efd50353f78274d21154c263053e2a53",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "view": "right",
+      "source": "D:\\dev\\new-mech-rpg\\art\\model_catalog\\references\\rhino\\right.png",
+      "sha256": "4e2ec7b9730de4eea85b1cb0bbe2a7465f07ffaeef3ebb133e5df4a49fe12731",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "upload": {
+    "dimensions": [
+      1152,
+      2048
+    ],
+    "primary": "right.png at 1:1; front/back/left thumbnails beneath; nearest-neighbour; white canvas; no design edits"
+  }
+}

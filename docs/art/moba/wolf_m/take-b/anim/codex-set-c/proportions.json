@@ -1,0 +1,867 @@
+{
+  "status": "NOT PASSED: per-frame intrinsic ears/head/muzzle/torso/limb/tail measurements within2px and tail plate counts are not certified. Silhouette bounds do not establish this gate.",
+  "reference_axes_approximate_native_pixels": {
+    "se": {
+      "near_ear": [
+        [
+          115,
+          91
+        ],
+        [
+          119,
+          105
+        ]
+      ],
+      "far_ear": [
+        [
+          124,
+          91
+        ],
+        [
+          127,
+          103
+        ]
+      ],
+      "head": [
+        [
+          117,
+          103
+        ],
+        [
+          136,
+          116
+        ]
+      ],
+      "muzzle": [
+        [
+          126,
+          109
+        ],
+        [
+          136,
+          116
+        ]
+      ],
+      "torso_length": [
+        [
+          79,
+          117
+        ],
+        [
+          108,
+          118
+        ]
+      ],
+      "torso_depth": [
+        [
+          96,
+          110
+        ],
+        [
+          96,
+          130
+        ]
+      ],
+      "near_fore_shank": [
+        [
+          100,
+          138
+        ],
+        [
+          103,
+          156
+        ]
+      ],
+      "near_fore_shank_cross_section": [
+        [
+          100,
+          148
+        ],
+        [
+          105,
+          148
+        ]
+      ],
+      "tail_visible_axis": [
+        [
+          77,
+          124
+        ],
+        [
+          56,
+          150
+        ]
+      ],
+      "tail_cross_section": [
+        [
+          60,
+          135
+        ],
+        [
+          67,
+          141
+        ]
+      ]
+    },
+    "ne": {
+      "near_ear": [
+        [
+          130,
+          92
+        ],
+        [
+          126,
+          105
+        ]
+      ],
+      "far_ear": [
+        [
+          121,
+          91
+        ],
+        [
+          116,
+          104
+        ]
+      ],
+      "head": [
+        [
+          122,
+          104
+        ],
+        [
+          132,
+          114
+        ]
+      ],
+      "muzzle": "mostly occluded",
+      "torso_length": [
+        [
+          90,
+          122
+        ],
+        [
+          116,
+          111
+        ]
+      ],
+      "torso_depth": [
+        [
+          103,
+          118
+        ],
+        [
+          103,
+          137
+        ]
+      ],
+      "near_hind_shank": [
+        [
+          90,
+          141
+        ],
+        [
+          91,
+          156
+        ]
+      ],
+      "near_hind_shank_cross_section": [
+        [
+          88,
+          150
+        ],
+        [
+          93,
+          150
+        ]
+      ],
+      "tail_visible_axis": [
+        [
+          88,
+          128
+        ],
+        [
+          59,
+          156
+        ]
+      ],
+      "tail_cross_section": [
+        [
+          67,
+          141
+        ],
+        [
+          75,
+          149
+        ]
+      ]
+    }
+  },
+  "reference_inclusive_axis_lengths_approximate": {
+    "se": {
+      "near_ear": 15.56,
+      "far_ear": 13.37,
+      "head": 24.02,
+      "muzzle": 13.21,
+      "torso_length": 30.02,
+      "torso_depth": 21.0,
+      "near_fore_shank": 19.25,
+      "near_fore_shank_cross_section": 6.0,
+      "tail_visible_axis": 34.42,
+      "tail_cross_section": 10.22
+    },
+    "ne": {
+      "near_ear": 14.6,
+      "far_ear": 14.93,
+      "head": 15.14,
+      "muzzle": "mostly occluded",
+      "torso_length": 29.23,
+      "torso_depth": 20.0,
+      "near_hind_shank": 16.03,
+      "near_hind_shank_cross_section": 6.0,
+      "tail_visible_axis": 41.31,
+      "tail_cross_section": 12.31
+    }
+  },
+  "actual_whole_frame_measurements": {
+    "walk/se": {
+      "per_frame_wh": [
+        [
+          84,
+          70
+        ],
+        [
+          83,
+          69
+        ],
+        [
+          84,
+          68
+        ],
+        [
+          83,
+          70
+        ],
+        [
+          83,
+          69
+        ],
+        [
+          84,
+          68
+        ],
+        [
+          84,
+          70
+        ],
+        [
+          84,
+          70
+        ]
+      ],
+      "per_frame_bounds": [
+        [
+          54,
+          91,
+          138,
+          161
+        ],
+        [
+          54,
+          92,
+          137,
+          161
+        ],
+        [
+          54,
+          93,
+          138,
+          161
+        ],
+        [
+          54,
+          91,
+          137,
+          161
+        ],
+        [
+          54,
+          92,
+          137,
+          161
+        ],
+        [
+          54,
+          93,
+          138,
+          161
+        ],
+        [
+          54,
+          91,
+          138,
+          161
+        ],
+        [
+          54,
+          91,
+          138,
+          161
+        ]
+      ],
+      "width_range": [
+        83,
+        84
+      ],
+      "height_range": [
+        68,
+        70
+      ]
+    },
+    "walk/ne": {
+      "per_frame_wh": [
+        [
+          77,
+          71
+        ],
+        [
+          77,
+          71
+        ],
+        [
+          77,
+          70
+        ],
+        [
+          78,
+          72
+        ],
+        [
+          77,
+          71
+        ],
+        [
+          78,
+          70
+        ],
+        [
+          78,
+          71
+        ],
+        [
+          78,
+          71
+        ]
+      ],
+      "per_frame_bounds": [
+        [
+          58,
+          90,
+          135,
+          161
+        ],
+        [
+          58,
+          90,
+          135,
+          161
+        ],
+        [
+          58,
+          91,
+          135,
+          161
+        ],
+        [
+          57,
+          89,
+          135,
+          161
+        ],
+        [
+          58,
+          90,
+          135,
+          161
+        ],
+        [
+          57,
+          91,
+          135,
+          161
+        ],
+        [
+          57,
+          90,
+          135,
+          161
+        ],
+        [
+          57,
+          90,
+          135,
+          161
+        ]
+      ],
+      "width_range": [
+        77,
+        78
+      ],
+      "height_range": [
+        70,
+        72
+      ]
+    },
+    "sprint/se": {
+      "per_frame_wh": [
+        [
+          91,
+          50
+        ],
+        [
+          90,
+          54
+        ],
+        [
+          95,
+          47
+        ],
+        [
+          92,
+          55
+        ],
+        [
+          91,
+          50
+        ],
+        [
+          91,
+          48
+        ]
+      ],
+      "per_frame_bounds": [
+        [
+          50,
+          111,
+          141,
+          161
+        ],
+        [
+          50,
+          107,
+          140,
+          161
+        ],
+        [
+          48,
+          106,
+          143,
+          153
+        ],
+        [
+          50,
+          106,
+          142,
+          161
+        ],
+        [
+          50,
+          111,
+          141,
+          161
+        ],
+        [
+          50,
+          113,
+          141,
+          161
+        ]
+      ],
+      "width_range": [
+        90,
+        95
+      ],
+      "height_range": [
+        47,
+        55
+      ]
+    },
+    "sprint/ne": {
+      "per_frame_wh": [
+        [
+          87,
+          55
+        ],
+        [
+          87,
+          60
+        ],
+        [
+          98,
+          56
+        ],
+        [
+          91,
+          60
+        ],
+        [
+          88,
+          57
+        ],
+        [
+          87,
+          55
+        ]
+      ],
+      "per_frame_bounds": [
+        [
+          53,
+          106,
+          140,
+          161
+        ],
+        [
+          53,
+          101,
+          140,
+          161
+        ],
+        [
+          47,
+          97,
+          145,
+          153
+        ],
+        [
+          51,
+          101,
+          142,
+          161
+        ],
+        [
+          52,
+          104,
+          140,
+          161
+        ],
+        [
+          53,
+          106,
+          140,
+          161
+        ]
+      ],
+      "width_range": [
+        87,
+        98
+      ],
+      "height_range": [
+        55,
+        60
+      ]
+    },
+    "lunge/se": {
+      "per_frame_wh": [
+        [
+          83,
+          70
+        ],
+        [
+          87,
+          53
+        ],
+        [
+          84,
+          69
+        ],
+        [
+          91,
+          71
+        ],
+        [
+          87,
+          57
+        ],
+        [
+          83,
+          69
+        ],
+        [
+          83,
+          70
+        ]
+      ],
+      "per_frame_bounds": [
+        [
+          54,
+          91,
+          137,
+          161
+        ],
+        [
+          52,
+          108,
+          139,
+          161
+        ],
+        [
+          54,
+          92,
+          138,
+          161
+        ],
+        [
+          50,
+          70,
+          141,
+          141
+        ],
+        [
+          52,
+          104,
+          139,
+          161
+        ],
+        [
+          54,
+          92,
+          137,
+          161
+        ],
+        [
+          54,
+          91,
+          137,
+          161
+        ]
+      ],
+      "width_range": [
+        83,
+        91
+      ],
+      "height_range": [
+        53,
+        71
+      ]
+    },
+    "lunge/ne": {
+      "per_frame_wh": [
+        [
+          78,
+          70
+        ],
+        [
+          80,
+          55
+        ],
+        [
+          78,
+          74
+        ],
+        [
+          86,
+          70
+        ],
+        [
+          83,
+          59
+        ],
+        [
+          75,
+          71
+        ],
+        [
+          78,
+          70
+        ]
+      ],
+      "per_frame_bounds": [
+        [
+          57,
+          91,
+          135,
+          161
+        ],
+        [
+          56,
+          106,
+          136,
+          161
+        ],
+        [
+          57,
+          87,
+          135,
+          161
+        ],
+        [
+          53,
+          71,
+          139,
+          141
+        ],
+        [
+          54,
+          102,
+          137,
+          161
+        ],
+        [
+          58,
+          90,
+          133,
+          161
+        ],
+        [
+          57,
+          91,
+          135,
+          161
+        ]
+      ],
+      "width_range": [
+        75,
+        86
+      ],
+      "height_range": [
+        55,
+        74
+      ]
+    },
+    "bite/se": {
+      "per_frame_wh": [
+        [
+          83,
+          70
+        ],
+        [
+          82,
+          78
+        ],
+        [
+          84,
+          66
+        ],
+        [
+          82,
+          75
+        ],
+        [
+          83,
+          70
+        ]
+      ],
+      "per_frame_bounds": [
+        [
+          54,
+          91,
+          137,
+          161
+        ],
+        [
+          54,
+          83,
+          136,
+          161
+        ],
+        [
+          54,
+          95,
+          138,
+          161
+        ],
+        [
+          54,
+          86,
+          136,
+          161
+        ],
+        [
+          54,
+          91,
+          137,
+          161
+        ]
+      ],
+      "width_range": [
+        82,
+        84
+      ],
+      "height_range": [
+        66,
+        78
+      ]
+    },
+    "bite/ne": {
+      "per_frame_wh": [
+        [
+          78,
+          70
+        ],
+        [
+          76,
+          76
+        ],
+        [
+          78,
+          70
+        ],
+        [
+          75,
+          75
+        ],
+        [
+          78,
+          70
+        ]
+      ],
+      "per_frame_bounds": [
+        [
+          57,
+          91,
+          135,
+          161
+        ],
+        [
+          57,
+          85,
+          133,
+          161
+        ],
+        [
+          57,
+          91,
+          135,
+          161
+        ],
+        [
+          57,
+          86,
+          132,
+          161
+        ],
+        [
+          57,
+          91,
+          135,
+          161
+        ]
+      ],
+      "width_range": [
+        75,
+        78
+      ],
+      "height_range": [
+        70,
+        76
+      ]
+    }
+  },
+  "tail_plate_count_status": "Not certified; no thin rods observed at4x, but plate divisions and apparent length vary.",
+  "risks": [
+    "Walk support phases repeat; fixed contacts and3-5px lifts not met.",
+    "Sprint ears are not fully flattened in every cell; tail plate count and individual limb lengths vary.",
+    "Lunge crouch/air silhouette has generated head/torso proportion variation.",
+    "Bite lower paw spans reanchored; torso and tail interior drawing varies."
+  ]
+}

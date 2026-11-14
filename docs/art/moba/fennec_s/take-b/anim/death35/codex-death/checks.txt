@@ -1,0 +1,43 @@
+Candidate raw frames: independent checks; no live build/check scripts executed.
+Coordinates zero-based. Outline distance is symmetric Euclidean Hausdorff on 4-neighbour boundaries.
+IoU is binary alpha intersection/union against LIVE front frame, before sel-out.
+Colour shares: exact RGB counts / opaque pixels; gold clusters: 4-connected union of all three gold colours.
+Light proxy: least-squares plane fit to 0..N-1 palette brightness rank, all pixels of each family;
+angle atan2(-dy,dx). This does NOT reproduce the undefined light_deg method in refs/measure.json.
+Proxy baseline violet/gold/steel: {'violet': 102.9, 'gold': 133.9, 'steel': 82.4}
+Supplied baseline light_deg violet=115 gold=117 steel=-46; comparison is NOT interchangeable.
+
+f0: 160x160 / binary alpha / palette / one 8-component / no holes / no stray component / clear edges / bottom 140: PASS
+  px 2025; IoU 1.00000; outline 0.000px; ink 5.04%; cap 2.32%; eyes 28
+  light PROXY {'violet': 102.9, 'gold': 133.9, 'steel': 82.4}; gold mean cluster 160.3 px; clusters [143, 146, 192]
+  shares% {"141218": 5.04, "211e27": 2.81, "2e1a6e": 13.43, "3d3a44": 3.56, "3fe8b0": 0.4, "6a3cc8": 14.02, "9d9ba2": 6.67, "a46bff": 19.9, "b8923a": 4.74, "c8fff0": 0.54, "d6d6dc": 7.11, "e0c8ff": 2.32, "f0d27a": 18.17, "f6fffb": 0.44, "fff4d6": 0.84}
+f1: 160x160 / binary alpha / palette / one 8-component / no holes / no stray component / clear edges / bottom 140: PASS
+  px 2137; IoU 1.00000; outline 0.000px; ink 5.85%; cap 2.34%; eyes 25
+  light PROXY {'violet': 123.0, 'gold': -50.2, 'steel': 92.4}; gold mean cluster 172.7 px; clusters [141, 139, 238]
+  shares% {"141218": 5.85, "211e27": 4.21, "2e1a6e": 13.62, "3d3a44": 4.77, "3fe8b0": 0.33, "6a3cc8": 13.43, "9d9ba2": 6.13, "a46bff": 16.52, "b8923a": 5.1, "c8fff0": 0.33, "d6d6dc": 7.72, "e0c8ff": 2.34, "f0d27a": 18.34, "f6fffb": 0.51, "fff4d6": 0.8}
+f2: 160x160 / binary alpha / palette / one 8-component / no holes / no stray component / clear edges / bottom 140: PASS
+  px 2045; IoU 1.00000; outline 0.000px; ink 5.87%; cap 2.30%; eyes 25
+  light PROXY {'violet': 107.3, 'gold': -34.9, 'steel': 83.2}; gold mean cluster 157.3 px; clusters [139, 143, 190]
+  shares% {"141218": 5.87, "211e27": 2.64, "2e1a6e": 13.2, "3d3a44": 5.43, "3fe8b0": 0.34, "6a3cc8": 14.38, "9d9ba2": 5.67, "a46bff": 17.31, "b8923a": 5.04, "c8fff0": 0.24, "d6d6dc": 8.9, "e0c8ff": 2.3, "f0d27a": 17.11, "f6fffb": 0.64, "fff4d6": 0.93}
+f3: 160x160 / binary alpha / palette / one 8-component / no holes / no stray component / clear edges / bottom 140: PASS
+  px 1920; IoU 1.00000; outline 0.000px; ink 5.57%; cap 2.24%; eyes 12
+  light PROXY {'violet': 88.6, 'gold': 119.1, 'steel': 98.3}; gold mean cluster 142.0 px; clusters [136, 131, 159]
+  shares% {"141218": 5.57, "211e27": 3.23, "2e1a6e": 15.0, "3d3a44": 6.93, "3fe8b0": 0.31, "6a3cc8": 12.66, "9d9ba2": 6.46, "a46bff": 16.82, "b8923a": 4.9, "c8fff0": 0.21, "d6d6dc": 8.28, "e0c8ff": 2.24, "f0d27a": 16.46, "f6fffb": 0.1, "fff4d6": 0.83}
+f4: 160x160 / binary alpha / palette / one 8-component / no holes / no stray component / clear edges / bottom 140: PASS
+  px 1832; IoU 1.00000; outline 0.000px; ink 5.84%; cap 2.29%; eyes 17
+  light PROXY {'violet': 99.1, 'gold': 129.2, 'steel': 87.9}; gold mean cluster 117.7 px; clusters [125, 126, 102]
+  shares% {"141218": 5.84, "211e27": 3.38, "2e1a6e": 12.01, "3d3a44": 6.11, "3fe8b0": 0.33, "6a3cc8": 13.16, "9d9ba2": 5.51, "a46bff": 19.43, "b8923a": 4.75, "c8fff0": 0.22, "d6d6dc": 12.06, "e0c8ff": 2.29, "f0d27a": 13.37, "f6fffb": 0.38, "fff4d6": 1.15}
+f5: 160x160 / binary alpha / palette / one 8-component / no holes / no stray component / clear edges / bottom 140: PASS
+  px 2082; IoU 1.00000; outline 0.000px; ink 5.81%; cap 2.35%; eyes 16
+  light PROXY {'violet': 82.8, 'gold': 114.4, 'steel': 97.4}; gold mean cluster 123.0 px; clusters [133, 95, 141]
+  shares% {"141218": 5.81, "211e27": 3.07, "2e1a6e": 10.9, "3d3a44": 7.25, "3fe8b0": 0.24, "6a3cc8": 14.41, "9d9ba2": 7.11, "a46bff": 17.39, "b8923a": 5.04, "c8fff0": 0.29, "d6d6dc": 13.21, "e0c8ff": 2.35, "f0d27a": 10.81, "f6fffb": 0.24, "fff4d6": 1.87}
+f6: 160x160 / binary alpha / palette / one 8-component / no holes / no stray component / clear edges / bottom 140: PASS
+  px 2082; IoU 1.00000; outline 0.000px; ink 5.81%; cap 2.35%; eyes 0
+  light PROXY {'violet': 82.4, 'gold': 114.4, 'steel': 97.4}; gold mean cluster 123.0 px; clusters [133, 95, 141]
+  shares% {"141218": 5.81, "211e27": 3.07, "2e1a6e": 11.67, "3d3a44": 7.25, "3fe8b0": 0.0, "6a3cc8": 14.41, "9d9ba2": 7.11, "a46bff": 17.39, "b8923a": 5.04, "c8fff0": 0.0, "d6d6dc": 13.21, "e0c8ff": 2.35, "f0d27a": 10.81, "f6fffb": 0.0, "fff4d6": 1.87}
+
+f0 byte-for-byte approved PNG: PASS; f6 exact f5 with ALL three eye colours -> #2E1A6E: PASS.
+GIF 3x, exact selout function with #141218; durations [300, 100, 130, 140, 160, 180, 1400]; no loop extension: PASS.
+Board 4x with exact selout; close-ups 7x without outline; both #5A6058.
+Cap target is approximately 2.32%; see measured deviations above. No colour quotas enforced.
+Structural assertions pass. Visual artist-match and supplied light_deg equivalence are NOT certified.

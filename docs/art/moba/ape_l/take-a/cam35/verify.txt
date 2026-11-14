@@ -1,0 +1,25 @@
+ s: 91x83 (approved 91x72), H/approved 1.15, H/shape guide 1.00; lowest row 130; border clear; alpha [0, 255]; off-palette 0; accent 10.2% (approved 10.2%)
+     glow groups (px, y0, y1, x0, x1): (193, 95, 115, 34, 47), (190, 96, 115, 112, 125), (48, 48, 51, 71, 88), (11, 83, 87, 82, 87), (10, 83, 87, 73, 77)
+se: 90x88 (approved 89x72), H/approved 1.22, H/shape guide 0.99; lowest row 130; border clear; alpha [0, 255]; off-palette 0; accent 10.3% (approved 8.5%)
+     glow groups (px, y0, y1, x0, x1): (265, 98, 116, 53, 71), (85, 84, 101, 117, 123), (78, 43, 50, 61, 80), (14, 78, 82, 92, 98), (3, 78, 80, 102, 104), (1, 83, 84, 96, 97)
+ e: 79x89 (approved 79x71), H/approved 1.25, H/shape guide 1.00; lowest row 130; border clear; alpha [0, 255]; off-palette 0; accent 8.8% (approved 8.9%)
+     glow groups (px, y0, y1, x0, x1): (295, 97, 116, 83, 102), (115, 44, 57, 60, 78), (8, 72, 75, 108, 112), (2, 76, 77, 109, 111), (1, 56, 57, 102, 103)
+ne: 85x85 (approved 86x70), H/approved 1.21, H/shape guide 0.94; lowest row 130; border clear; alpha [0, 255]; off-palette 0; accent 9.1% (approved 7.6%)
+     glow groups (px, y0, y1, x0, x1): (220, 53, 71, 60, 78), (195, 94, 113, 105, 119), (3, 80, 83, 39, 40), (2, 86, 88, 38, 39), (1, 91, 92, 38, 39)
+ n: 87x84 (approved 87x70), H/approved 1.20, H/shape guide 0.99; lowest row 130; border clear; alpha [0, 255]; off-palette 0; accent 8.4% (approved 8.4%)
+     glow groups (px, y0, y1, x0, x1): (266, 56, 73, 69, 89), (30, 84, 99, 121, 123), (28, 84, 99, 36, 38)
+H/approved spread 0.10
+shape-aware angle measure (pitch at which the solid cut from the approved outlines best matches each view):
+hull from D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\views: (79, 91, 72) (long, wide, high texels)
+  D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\views:
+     s  91x72  fit  0 deg (IoU 0.98)  height-match 1
+    se  89x72  fit  0 deg (IoU 0.90)  height-match 1
+     e  79x71  fit  0 deg (IoU 0.98)  height-match 0
+    ne  86x70  fit  0 deg (IoU 0.90)  height-match 0
+     n  87x70  fit  1 deg (IoU 0.88)  height-match 0
+  D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\views_cam35:
+     s  91x83  fit 15 deg (IoU 0.87)  height-match 30
+    se  90x88  fit 23 deg (IoU 0.83)  height-match 29
+     e  79x89  fit 25 deg (IoU 0.84)  height-match 33
+    ne  85x85  fit 20 deg (IoU 0.83)  height-match 25
+     n  87x84  fit 24 deg (IoU 0.86)  height-match 30

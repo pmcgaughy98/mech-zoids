@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "3036c1312680e0303e791c503541295a1a94de74dbc9779758eab070af069a89",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.5435992578849722,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "minion_melee_front.png",
+      "source_box": [
+        60,
+        139,
+        577,
+        540
+      ],
+      "source_dimensions": [
+        517,
+        401
+      ],
+      "output_box": [
+        113,
+        317,
+        911,
+        936
+      ]
+    },
+    "left": {
+      "file": "minion_melee_left.png",
+      "source_box": [
+        669,
+        141,
+        1208,
+        540
+      ],
+      "source_dimensions": [
+        539,
+        399
+      ],
+      "output_box": [
+        96,
+        320,
+        928,
+        936
+      ]
+    },
+    "back": {
+      "file": "minion_melee_back.png",
+      "source_box": [
+        59,
+        764,
+        577,
+        1172
+      ],
+      "source_dimensions": [
+        518,
+        408
+      ],
+      "output_box": [
+        112,
+        306,
+        912,
+        936
+      ]
+    },
+    "right": {
+      "file": "minion_melee_right.png",
+      "source_box": [
+        689,
+        766,
+        1227,
+        1172
+      ],
+      "source_dimensions": [
+        538,
+        406
+      ],
+      "output_box": [
+        97,
+        309,
+        927,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.022058823529411766
+}

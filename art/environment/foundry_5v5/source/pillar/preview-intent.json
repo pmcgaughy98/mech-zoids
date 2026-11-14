@@ -1,0 +1,21 @@
+{
+  "request": {
+    "mode": "preview",
+    "ai_model": "meshy-6",
+    "target_formats": [
+      "glb"
+    ],
+    "prompt": "Original stylized industrial science fiction MOBA Foundry environment module. Broad clean beveled armor forms, dark blue charcoal steel, warm worn iron inset plates, small amber luminous strips, restrained diagonal yellow hazard trim. Strong readable silhouette, manufactured mechanical details, no text, no logos, no characters, no terrain, no background, isolated single object. One square modular armored wall end pillar, stout upright four-sided tower post. Broad foot, chamfered square shaft with four inset steel panels, compact capped top, amber vertical locator strips on all four sides. Flat bottom. No thin wires.",
+    "should_remesh": true,
+    "topology": "triangle",
+    "target_polycount": 5000
+  },
+  "reserved_credits": 20,
+  "balance_before": {
+    "balance": 980,
+    "monthly_credits": 930,
+    "permanent_credits": 50,
+    "monthly_resets_at": 1796678459000
+  },
+  "submitted_at": "2026-11-10T21:06:07.086410+00:00"
+}

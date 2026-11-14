@@ -1,0 +1,45 @@
+{
+  "source": "docs\\art\\moba\\art-direction-2026-11-07\\gorilla-cleanup-v1\\gorilla-connected-100k-4k.glb",
+  "output": "docs\\art\\moba\\art-direction-2026-11-07\\gorilla-cleanup-v1\\gorilla-connected-100k-2k.glb",
+  "geometry_buffers_identical": true,
+  "images": [
+    {
+      "name": "texture_pbr_20250901_normal",
+      "old_size": [
+        4096,
+        4096
+      ],
+      "size": [
+        2048,
+        2048
+      ],
+      "normal_renormalized": true
+    },
+    {
+      "name": "texture_pbr_20250901",
+      "old_size": [
+        4096,
+        4096
+      ],
+      "size": [
+        2048,
+        2048
+      ],
+      "normal_renormalized": false
+    },
+    {
+      "name": "texture_pbr_20250901_metallic-texture_pbr_20250901_roughness",
+      "old_size": [
+        4096,
+        4096
+      ],
+      "size": [
+        2048,
+        2048
+      ],
+      "normal_renormalized": false
+    }
+  ],
+  "bytes_before": 37891980,
+  "bytes_after": 12812136
+}

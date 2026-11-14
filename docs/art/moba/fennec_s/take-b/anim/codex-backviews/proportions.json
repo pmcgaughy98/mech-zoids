@@ -1,0 +1,2339 @@
+{
+  "coordinates": "native 160px still space, add [16,20] on output; dimensions include dark boundary, before sel-out",
+  "method": "Manually tagged visible part extents measured from opaque pixels within landmark polygons/boxes. Shank boundaries and straight tail axes manually tagged because legs/tail occlude one another. Hidden limb roots are not claimed as independent image measurements.",
+  "ear_polygons": {
+    "back": [
+      [
+        [
+          58,
+          64
+        ],
+        [
+          75,
+          64
+        ],
+        [
+          75,
+          87
+        ],
+        [
+          74,
+          91
+        ],
+        [
+          71,
+          97
+        ],
+        [
+          70,
+          101
+        ],
+        [
+          66,
+          98
+        ],
+        [
+          62,
+          94
+        ],
+        [
+          58,
+          89
+        ]
+      ],
+      [
+        [
+          83,
+          64
+        ],
+        [
+          101,
+          64
+        ],
+        [
+          101,
+          89
+        ],
+        [
+          98,
+          95
+        ],
+        [
+          93,
+          101
+        ],
+        [
+          90,
+          101
+        ],
+        [
+          86,
+          94
+        ],
+        [
+          83,
+          89
+        ]
+      ]
+    ],
+    "ne": [
+      [
+        [
+          73,
+          67
+        ],
+        [
+          90,
+          67
+        ],
+        [
+          91,
+          91
+        ],
+        [
+          88,
+          98
+        ],
+        [
+          84,
+          98
+        ],
+        [
+          78,
+          95
+        ],
+        [
+          73,
+          88
+        ]
+      ],
+      [
+        [
+          90,
+          66
+        ],
+        [
+          108,
+          66
+        ],
+        [
+          108,
+          93
+        ],
+        [
+          103,
+          102
+        ],
+        [
+          98,
+          102
+        ],
+        [
+          92,
+          96
+        ],
+        [
+          90,
+          91
+        ]
+      ]
+    ]
+  },
+  "posed_ear_polygons": {
+    "back": [
+      [
+        [
+          58,
+          64
+        ],
+        [
+          76,
+          64
+        ],
+        [
+          76,
+          89
+        ],
+        [
+          74,
+          94
+        ],
+        [
+          70,
+          101
+        ],
+        [
+          66,
+          99
+        ],
+        [
+          62,
+          95
+        ],
+        [
+          58,
+          89
+        ]
+      ],
+      [
+        [
+          83,
+          64
+        ],
+        [
+          101,
+          64
+        ],
+        [
+          101,
+          89
+        ],
+        [
+          98,
+          95
+        ],
+        [
+          93,
+          101
+        ],
+        [
+          90,
+          101
+        ],
+        [
+          86,
+          94
+        ],
+        [
+          83,
+          89
+        ]
+      ]
+    ],
+    "ne": [
+      [
+        [
+          73,
+          67
+        ],
+        [
+          90,
+          67
+        ],
+        [
+          90,
+          90
+        ],
+        [
+          87,
+          97
+        ],
+        [
+          84,
+          98
+        ],
+        [
+          78,
+          95
+        ],
+        [
+          73,
+          88
+        ]
+      ],
+      [
+        [
+          90,
+          66
+        ],
+        [
+          108,
+          66
+        ],
+        [
+          108,
+          93
+        ],
+        [
+          103,
+          102
+        ],
+        [
+          98,
+          102
+        ],
+        [
+          92,
+          96
+        ],
+        [
+          90,
+          91
+        ]
+      ]
+    ]
+  },
+  "reference_measurements": {
+    "back": {
+      "ears_wh": [
+        [
+          18,
+          38
+        ],
+        [
+          19,
+          38
+        ]
+      ],
+      "head_width": 24,
+      "body_width": 24,
+      "hind_leg_wh": [
+        11,
+        19
+      ],
+      "shank_thickness": 6,
+      "tail_axis_pixels": 20,
+      "visible_violet_tail_plates": 2,
+      "cream_tip_count": 1,
+      "foreleg_length": null,
+      "foreleg_thickness": null
+    },
+    "ne": {
+      "ears_wh": [
+        [
+          19,
+          32
+        ],
+        [
+          19,
+          37
+        ]
+      ],
+      "head_width": 29,
+      "body_width": 32,
+      "hind_leg_wh": [
+        13,
+        16
+      ],
+      "shank_thickness": 5,
+      "tail_axis_pixels": 34,
+      "visible_violet_tail_plates": 3,
+      "cream_tip_count": 1,
+      "foreleg_length": 22,
+      "foreleg_thickness": 4
+    }
+  },
+  "shank_endpoints": {
+    "back": {
+      "still": [
+        [
+          65,
+          129
+        ],
+        [
+          70,
+          129
+        ]
+      ],
+      "posed": [
+        [
+          64,
+          135
+        ],
+        [
+          69,
+          135
+        ]
+      ]
+    },
+    "ne": {
+      "still": [
+        [
+          91,
+          132
+        ],
+        [
+          95,
+          132
+        ]
+      ],
+      "posed": [
+        [
+          90,
+          137
+        ],
+        [
+          94,
+          137
+        ]
+      ]
+    }
+  },
+  "foreleg_landmarks": {
+    "ne": {
+      "still": [
+        [
+          99,
+          115
+        ],
+        [
+          99,
+          136
+        ]
+      ],
+      "posed_straight": [
+        [
+          100,
+          119
+        ],
+        [
+          100,
+          140
+        ]
+      ],
+      "kick_release_joint_chain": [
+        [
+          99,
+          114
+        ],
+        [
+          107,
+          108
+        ],
+        [
+          114,
+          101
+        ]
+      ],
+      "release_chain_note": "two joint distances plus 2px pad extension = 22px rounded; 4px thickness; rear N forelegs occluded"
+    }
+  },
+  "tail_axes": {
+    "back": {
+      "still": [
+        [
+          79,
+          121
+        ],
+        [
+          79,
+          140
+        ]
+      ],
+      "walk": [
+        [
+          79,
+          117
+        ],
+        [
+          79,
+          136
+        ]
+      ],
+      "kick": [
+        [
+          79,
+          121
+        ],
+        [
+          79,
+          140
+        ]
+      ]
+    },
+    "ne": {
+      "still": [
+        [
+          83,
+          128
+        ],
+        [
+          52,
+          138
+        ]
+      ],
+      "walk": [
+        [
+          83,
+          125
+        ],
+        [
+          52,
+          135
+        ]
+      ],
+      "kick": [
+        [
+          83,
+          128
+        ],
+        [
+          52,
+          138
+        ]
+      ]
+    }
+  },
+  "frames": [
+    {
+      "move": "walk",
+      "view": "back",
+      "frame": 0,
+      "measurements": {
+        "ears_wh": [
+          [
+            19,
+            38
+          ],
+          [
+            19,
+            38
+          ]
+        ],
+        "head_width": 24,
+        "body_width": 24,
+        "hind_leg_wh": [
+          11,
+          19
+        ],
+        "shank_thickness": 6,
+        "tail_axis_pixels": 20,
+        "visible_violet_tail_plates": 2,
+        "cream_tip_count": 1,
+        "foreleg_length": null,
+        "foreleg_thickness": null
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "walk",
+        "view": "back",
+        "frame": 0,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          0,
+          2
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "walk",
+      "view": "back",
+      "frame": 1,
+      "measurements": {
+        "ears_wh": [
+          [
+            19,
+            38
+          ],
+          [
+            19,
+            38
+          ]
+        ],
+        "head_width": 24,
+        "body_width": 24,
+        "hind_leg_wh": [
+          11,
+          19
+        ],
+        "shank_thickness": 6,
+        "tail_axis_pixels": 20,
+        "visible_violet_tail_plates": 2,
+        "cream_tip_count": 1,
+        "foreleg_length": null,
+        "foreleg_thickness": null
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "walk",
+        "view": "back",
+        "frame": 1,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          0,
+          3
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "walk",
+      "view": "back",
+      "frame": 2,
+      "measurements": {
+        "ears_wh": [
+          [
+            19,
+            38
+          ],
+          [
+            19,
+            38
+          ]
+        ],
+        "head_width": 24,
+        "body_width": 24,
+        "hind_leg_wh": [
+          11,
+          19
+        ],
+        "shank_thickness": 6,
+        "tail_axis_pixels": 20,
+        "visible_violet_tail_plates": 2,
+        "cream_tip_count": 1,
+        "foreleg_length": null,
+        "foreleg_thickness": null
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "walk",
+        "view": "back",
+        "frame": 2,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 1,
+        "hind_lifts": [
+          0,
+          4
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "walk",
+      "view": "back",
+      "frame": 3,
+      "measurements": {
+        "ears_wh": [
+          [
+            19,
+            38
+          ],
+          [
+            19,
+            38
+          ]
+        ],
+        "head_width": 24,
+        "body_width": 24,
+        "hind_leg_wh": [
+          11,
+          19
+        ],
+        "shank_thickness": 6,
+        "tail_axis_pixels": 20,
+        "visible_violet_tail_plates": 2,
+        "cream_tip_count": 1,
+        "foreleg_length": null,
+        "foreleg_thickness": null
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "walk",
+        "view": "back",
+        "frame": 3,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "walk",
+      "view": "back",
+      "frame": 4,
+      "measurements": {
+        "ears_wh": [
+          [
+            19,
+            38
+          ],
+          [
+            19,
+            38
+          ]
+        ],
+        "head_width": 24,
+        "body_width": 24,
+        "hind_leg_wh": [
+          11,
+          19
+        ],
+        "shank_thickness": 6,
+        "tail_axis_pixels": 20,
+        "visible_violet_tail_plates": 2,
+        "cream_tip_count": 1,
+        "foreleg_length": null,
+        "foreleg_thickness": null
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "walk",
+        "view": "back",
+        "frame": 4,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          2,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "walk",
+      "view": "back",
+      "frame": 5,
+      "measurements": {
+        "ears_wh": [
+          [
+            19,
+            38
+          ],
+          [
+            19,
+            38
+          ]
+        ],
+        "head_width": 24,
+        "body_width": 24,
+        "hind_leg_wh": [
+          11,
+          19
+        ],
+        "shank_thickness": 6,
+        "tail_axis_pixels": 20,
+        "visible_violet_tail_plates": 2,
+        "cream_tip_count": 1,
+        "foreleg_length": null,
+        "foreleg_thickness": null
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "walk",
+        "view": "back",
+        "frame": 5,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          3,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "walk",
+      "view": "back",
+      "frame": 6,
+      "measurements": {
+        "ears_wh": [
+          [
+            19,
+            38
+          ],
+          [
+            19,
+            38
+          ]
+        ],
+        "head_width": 24,
+        "body_width": 24,
+        "hind_leg_wh": [
+          11,
+          19
+        ],
+        "shank_thickness": 6,
+        "tail_axis_pixels": 20,
+        "visible_violet_tail_plates": 2,
+        "cream_tip_count": 1,
+        "foreleg_length": null,
+        "foreleg_thickness": null
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "walk",
+        "view": "back",
+        "frame": 6,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 1,
+        "hind_lifts": [
+          4,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "walk",
+      "view": "back",
+      "frame": 7,
+      "measurements": {
+        "ears_wh": [
+          [
+            19,
+            38
+          ],
+          [
+            19,
+            38
+          ]
+        ],
+        "head_width": 24,
+        "body_width": 24,
+        "hind_leg_wh": [
+          11,
+          19
+        ],
+        "shank_thickness": 6,
+        "tail_axis_pixels": 20,
+        "visible_violet_tail_plates": 2,
+        "cream_tip_count": 1,
+        "foreleg_length": null,
+        "foreleg_thickness": null
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "walk",
+        "view": "back",
+        "frame": 7,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "walk",
+      "view": "ne",
+      "frame": 0,
+      "measurements": {
+        "ears_wh": [
+          [
+            18,
+            32
+          ],
+          [
+            19,
+            37
+          ]
+        ],
+        "head_width": 29,
+        "body_width": 32,
+        "hind_leg_wh": [
+          13,
+          16
+        ],
+        "shank_thickness": 5,
+        "tail_axis_pixels": 34,
+        "visible_violet_tail_plates": 3,
+        "cream_tip_count": 1,
+        "foreleg_length": 22,
+        "foreleg_thickness": 4
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "walk",
+        "view": "ne",
+        "frame": 0,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          0,
+          2
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "walk",
+      "view": "ne",
+      "frame": 1,
+      "measurements": {
+        "ears_wh": [
+          [
+            18,
+            32
+          ],
+          [
+            19,
+            37
+          ]
+        ],
+        "head_width": 29,
+        "body_width": 32,
+        "hind_leg_wh": [
+          13,
+          16
+        ],
+        "shank_thickness": 5,
+        "tail_axis_pixels": 34,
+        "visible_violet_tail_plates": 3,
+        "cream_tip_count": 1,
+        "foreleg_length": 22,
+        "foreleg_thickness": 4
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "walk",
+        "view": "ne",
+        "frame": 1,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          0,
+          3
+        ],
+        "hind_x_shift": [
+          0,
+          1
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "walk",
+      "view": "ne",
+      "frame": 2,
+      "measurements": {
+        "ears_wh": [
+          [
+            18,
+            32
+          ],
+          [
+            19,
+            37
+          ]
+        ],
+        "head_width": 29,
+        "body_width": 32,
+        "hind_leg_wh": [
+          13,
+          16
+        ],
+        "shank_thickness": 5,
+        "tail_axis_pixels": 34,
+        "visible_violet_tail_plates": 3,
+        "cream_tip_count": 1,
+        "foreleg_length": 22,
+        "foreleg_thickness": 4
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "walk",
+        "view": "ne",
+        "frame": 2,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 1,
+        "hind_lifts": [
+          0,
+          4
+        ],
+        "hind_x_shift": [
+          0,
+          2
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "walk",
+      "view": "ne",
+      "frame": 3,
+      "measurements": {
+        "ears_wh": [
+          [
+            18,
+            32
+          ],
+          [
+            19,
+            37
+          ]
+        ],
+        "head_width": 29,
+        "body_width": 32,
+        "hind_leg_wh": [
+          13,
+          16
+        ],
+        "shank_thickness": 5,
+        "tail_axis_pixels": 34,
+        "visible_violet_tail_plates": 3,
+        "cream_tip_count": 1,
+        "foreleg_length": 22,
+        "foreleg_thickness": 4
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "walk",
+        "view": "ne",
+        "frame": 3,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "walk",
+      "view": "ne",
+      "frame": 4,
+      "measurements": {
+        "ears_wh": [
+          [
+            18,
+            32
+          ],
+          [
+            19,
+            37
+          ]
+        ],
+        "head_width": 29,
+        "body_width": 32,
+        "hind_leg_wh": [
+          13,
+          16
+        ],
+        "shank_thickness": 5,
+        "tail_axis_pixels": 34,
+        "visible_violet_tail_plates": 3,
+        "cream_tip_count": 1,
+        "foreleg_length": 22,
+        "foreleg_thickness": 4
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "walk",
+        "view": "ne",
+        "frame": 4,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          2,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "walk",
+      "view": "ne",
+      "frame": 5,
+      "measurements": {
+        "ears_wh": [
+          [
+            18,
+            32
+          ],
+          [
+            19,
+            37
+          ]
+        ],
+        "head_width": 29,
+        "body_width": 32,
+        "hind_leg_wh": [
+          13,
+          16
+        ],
+        "shank_thickness": 5,
+        "tail_axis_pixels": 34,
+        "visible_violet_tail_plates": 3,
+        "cream_tip_count": 1,
+        "foreleg_length": 22,
+        "foreleg_thickness": 4
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "walk",
+        "view": "ne",
+        "frame": 5,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          3,
+          0
+        ],
+        "hind_x_shift": [
+          1,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "walk",
+      "view": "ne",
+      "frame": 6,
+      "measurements": {
+        "ears_wh": [
+          [
+            18,
+            32
+          ],
+          [
+            19,
+            37
+          ]
+        ],
+        "head_width": 29,
+        "body_width": 32,
+        "hind_leg_wh": [
+          13,
+          16
+        ],
+        "shank_thickness": 5,
+        "tail_axis_pixels": 34,
+        "visible_violet_tail_plates": 3,
+        "cream_tip_count": 1,
+        "foreleg_length": 22,
+        "foreleg_thickness": 4
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "walk",
+        "view": "ne",
+        "frame": 6,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 1,
+        "hind_lifts": [
+          4,
+          0
+        ],
+        "hind_x_shift": [
+          2,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "walk",
+      "view": "ne",
+      "frame": 7,
+      "measurements": {
+        "ears_wh": [
+          [
+            18,
+            32
+          ],
+          [
+            19,
+            37
+          ]
+        ],
+        "head_width": 29,
+        "body_width": 32,
+        "hind_leg_wh": [
+          13,
+          16
+        ],
+        "shank_thickness": 5,
+        "tail_axis_pixels": 34,
+        "visible_violet_tail_plates": 3,
+        "cream_tip_count": 1,
+        "foreleg_length": 22,
+        "foreleg_thickness": 4
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "walk",
+        "view": "ne",
+        "frame": 7,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "sand_kick",
+      "view": "back",
+      "frame": 0,
+      "measurements": {
+        "ears_wh": [
+          [
+            18,
+            38
+          ],
+          [
+            19,
+            38
+          ]
+        ],
+        "head_width": 24,
+        "body_width": 24,
+        "hind_leg_wh": [
+          11,
+          19
+        ],
+        "shank_thickness": 6,
+        "tail_axis_pixels": 20,
+        "visible_violet_tail_plates": 2,
+        "cream_tip_count": 1,
+        "foreleg_length": null,
+        "foreleg_thickness": null
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {}
+    },
+    {
+      "move": "sand_kick",
+      "view": "back",
+      "frame": 1,
+      "measurements": {
+        "ears_wh": [
+          [
+            19,
+            38
+          ],
+          [
+            19,
+            38
+          ]
+        ],
+        "head_width": 24,
+        "body_width": 24,
+        "hind_leg_wh": [
+          11,
+          19
+        ],
+        "shank_thickness": 6,
+        "tail_axis_pixels": 20,
+        "visible_violet_tail_plates": 2,
+        "cream_tip_count": 1,
+        "foreleg_length": null,
+        "foreleg_thickness": null
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "sand_kick",
+        "view": "back",
+        "frame": 1,
+        "head_translation": [
+          0,
+          1
+        ],
+        "body_bob": 1,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "sand_kick",
+      "view": "back",
+      "frame": 2,
+      "measurements": {
+        "ears_wh": [
+          [
+            19,
+            38
+          ],
+          [
+            19,
+            38
+          ]
+        ],
+        "head_width": 24,
+        "body_width": 24,
+        "hind_leg_wh": [
+          11,
+          19
+        ],
+        "shank_thickness": 6,
+        "tail_axis_pixels": 20,
+        "visible_violet_tail_plates": 2,
+        "cream_tip_count": 1,
+        "foreleg_length": null,
+        "foreleg_thickness": null
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "sand_kick",
+        "view": "back",
+        "frame": 2,
+        "head_translation": [
+          0,
+          7
+        ],
+        "body_bob": 6,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "sand_kick",
+      "view": "back",
+      "frame": 3,
+      "measurements": {
+        "ears_wh": [
+          [
+            19,
+            38
+          ],
+          [
+            19,
+            38
+          ]
+        ],
+        "head_width": 24,
+        "body_width": 24,
+        "hind_leg_wh": [
+          11,
+          19
+        ],
+        "shank_thickness": 6,
+        "tail_axis_pixels": 20,
+        "visible_violet_tail_plates": 2,
+        "cream_tip_count": 1,
+        "foreleg_length": null,
+        "foreleg_thickness": null
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "sand_kick",
+        "view": "back",
+        "frame": 3,
+        "head_translation": [
+          0,
+          -2
+        ],
+        "body_bob": -1,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "sand_kick",
+      "view": "back",
+      "frame": 4,
+      "measurements": {
+        "ears_wh": [
+          [
+            19,
+            38
+          ],
+          [
+            19,
+            38
+          ]
+        ],
+        "head_width": 24,
+        "body_width": 24,
+        "hind_leg_wh": [
+          11,
+          19
+        ],
+        "shank_thickness": 6,
+        "tail_axis_pixels": 20,
+        "visible_violet_tail_plates": 2,
+        "cream_tip_count": 1,
+        "foreleg_length": null,
+        "foreleg_thickness": null
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "sand_kick",
+        "view": "back",
+        "frame": 4,
+        "head_translation": [
+          0,
+          3
+        ],
+        "body_bob": 3,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "sand_kick",
+      "view": "back",
+      "frame": 5,
+      "measurements": {
+        "ears_wh": [
+          [
+            18,
+            38
+          ],
+          [
+            19,
+            38
+          ]
+        ],
+        "head_width": 24,
+        "body_width": 24,
+        "hind_leg_wh": [
+          11,
+          19
+        ],
+        "shank_thickness": 6,
+        "tail_axis_pixels": 20,
+        "visible_violet_tail_plates": 2,
+        "cream_tip_count": 1,
+        "foreleg_length": null,
+        "foreleg_thickness": null
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {}
+    },
+    {
+      "move": "sand_kick",
+      "view": "ne",
+      "frame": 0,
+      "measurements": {
+        "ears_wh": [
+          [
+            19,
+            32
+          ],
+          [
+            19,
+            37
+          ]
+        ],
+        "head_width": 29,
+        "body_width": 32,
+        "hind_leg_wh": [
+          13,
+          16
+        ],
+        "shank_thickness": 5,
+        "tail_axis_pixels": 34,
+        "visible_violet_tail_plates": 3,
+        "cream_tip_count": 1,
+        "foreleg_length": 22,
+        "foreleg_thickness": 4
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {}
+    },
+    {
+      "move": "sand_kick",
+      "view": "ne",
+      "frame": 1,
+      "measurements": {
+        "ears_wh": [
+          [
+            18,
+            32
+          ],
+          [
+            19,
+            37
+          ]
+        ],
+        "head_width": 29,
+        "body_width": 32,
+        "hind_leg_wh": [
+          13,
+          16
+        ],
+        "shank_thickness": 5,
+        "tail_axis_pixels": 34,
+        "visible_violet_tail_plates": 3,
+        "cream_tip_count": 1,
+        "foreleg_length": 22,
+        "foreleg_thickness": 4
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "sand_kick",
+        "view": "ne",
+        "frame": 1,
+        "head_translation": [
+          0,
+          1
+        ],
+        "body_bob": 1,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "sand_kick",
+      "view": "ne",
+      "frame": 2,
+      "measurements": {
+        "ears_wh": [
+          [
+            18,
+            32
+          ],
+          [
+            19,
+            37
+          ]
+        ],
+        "head_width": 29,
+        "body_width": 32,
+        "hind_leg_wh": [
+          13,
+          16
+        ],
+        "shank_thickness": 5,
+        "tail_axis_pixels": 34,
+        "visible_violet_tail_plates": 3,
+        "cream_tip_count": 1,
+        "foreleg_length": 22,
+        "foreleg_thickness": 4
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "sand_kick",
+        "view": "ne",
+        "frame": 2,
+        "head_translation": [
+          0,
+          7
+        ],
+        "body_bob": 6,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "sand_kick",
+      "view": "ne",
+      "frame": 3,
+      "measurements": {
+        "ears_wh": [
+          [
+            18,
+            32
+          ],
+          [
+            19,
+            37
+          ]
+        ],
+        "head_width": 29,
+        "body_width": 32,
+        "hind_leg_wh": [
+          13,
+          16
+        ],
+        "shank_thickness": 5,
+        "tail_axis_pixels": 34,
+        "visible_violet_tail_plates": 3,
+        "cream_tip_count": 1,
+        "foreleg_length": 22,
+        "foreleg_thickness": 4
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "sand_kick",
+        "view": "ne",
+        "frame": 3,
+        "head_translation": [
+          0,
+          -2
+        ],
+        "body_bob": -1,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "sand_kick",
+      "view": "ne",
+      "frame": 4,
+      "measurements": {
+        "ears_wh": [
+          [
+            18,
+            32
+          ],
+          [
+            19,
+            37
+          ]
+        ],
+        "head_width": 29,
+        "body_width": 32,
+        "hind_leg_wh": [
+          13,
+          16
+        ],
+        "shank_thickness": 5,
+        "tail_axis_pixels": 34,
+        "visible_violet_tail_plates": 3,
+        "cream_tip_count": 1,
+        "foreleg_length": 22,
+        "foreleg_thickness": 4
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {
+        "move": "sand_kick",
+        "view": "ne",
+        "frame": 4,
+        "head_translation": [
+          0,
+          3
+        ],
+        "body_bob": 3,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      }
+    },
+    {
+      "move": "sand_kick",
+      "view": "ne",
+      "frame": 5,
+      "measurements": {
+        "ears_wh": [
+          [
+            19,
+            32
+          ],
+          [
+            19,
+            37
+          ]
+        ],
+        "head_width": 29,
+        "body_width": 32,
+        "hind_leg_wh": [
+          13,
+          16
+        ],
+        "shank_thickness": 5,
+        "tail_axis_pixels": 34,
+        "visible_violet_tail_plates": 3,
+        "cream_tip_count": 1,
+        "foreleg_length": 22,
+        "foreleg_thickness": 4
+      },
+      "delta_vs_still": {
+        "head_width": 0,
+        "body_width": 0,
+        "shank_thickness": 0,
+        "tail_axis_pixels": 0,
+        "ears_wh": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hind_leg_wh": [
+          0,
+          0
+        ]
+      },
+      "within_two_px": true,
+      "annotation": {}
+    }
+  ]
+}

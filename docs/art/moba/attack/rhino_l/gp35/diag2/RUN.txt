@@ -1,0 +1,6 @@
+Rhino ground pound at 35, diag2: draw-only try at the diagonal rear (se, ne; standing, rising, rearing) with Preston's approved side-view rise and rear as the pose reference.
+Preston: "Try with pose ref" (2026-11-05), for: estimate 25k-40k tokens, cap 40,000, worst case about 115k (a capped run can land about 75k over).
+Finishing waits until Preston has looked; the preview is made free by the attack lane.
+Command:
+  sh D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/walk35/codex_cap/run_codex_capped_d.sh D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/diag2 D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/diag2/brief.txt diag2 40000 rhino-gp35-diag2
+Started: 2026-11-05 20:17

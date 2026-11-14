@@ -1,0 +1,62 @@
+{
+  "idle": {
+    "tool": "built-in image_gen",
+    "generation_count": 1,
+    "prompt": "prompts/idle.txt",
+    "reference_order": [
+      "refs/front.png",
+      "refs/side.png",
+      "refs/back.png"
+    ],
+    "sha256": "f38839097611b6b555e4c8fd4d71ba37cf9668b08d0cf3ccab90692859250107",
+    "size": [
+      1619,
+      971
+    ]
+  },
+  "walk": {
+    "tool": "built-in image_gen",
+    "generation_count": 1,
+    "prompt": "prompts/walk.txt",
+    "reference_order": [
+      "refs/front.png",
+      "refs/side.png",
+      "refs/back.png"
+    ],
+    "sha256": "1876928736ec1e8537488a6912f9a382e13bddf132847e1c3f15eac24b37078a",
+    "size": [
+      2172,
+      724
+    ]
+  },
+  "chest_beat": {
+    "tool": "built-in image_gen",
+    "generation_count": 1,
+    "prompt": "prompts/chest_beat.txt",
+    "reference_order": [
+      "refs/front.png",
+      "refs/side.png",
+      "refs/back.png"
+    ],
+    "sha256": "ce5d5f40f9de03ba6c50864120d5d7659d7fd2386af6d374ff651324b1125c19",
+    "size": [
+      2172,
+      724
+    ]
+  },
+  "hex_shield": {
+    "tool": "built-in image_gen",
+    "generation_count": 1,
+    "prompt": "prompts/hex_shield.txt",
+    "reference_order": [
+      "refs/front.png",
+      "refs/side.png",
+      "refs/back.png"
+    ],
+    "sha256": "42b20044effd8b3fe293fc82eb5b92a56951f6dd2b7aef063d42e67ee277fee6",
+    "size": [
+      1774,
+      887
+    ]
+  }
+}

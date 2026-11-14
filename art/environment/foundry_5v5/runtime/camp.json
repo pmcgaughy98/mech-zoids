@@ -1,0 +1,50 @@
+{
+  "asset": "camp",
+  "raw_sha256": "f5d7f5aad4af6b67d4295ab39f2b119eb8c7106b47e2ba631e6f85ecf983c0e1",
+  "runtime_sha256": "a4d8a4a88d27a35a08d3e93cbe036ee68e11f3fa151deab3253ed555f530c877",
+  "raw_triangles": 7180,
+  "runtime_triangles": 6000,
+  "materials": 1,
+  "images": [
+    {
+      "name": "Image_0",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_1",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_2",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_3",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "dimensions_godot_xyz_m": [
+    3.6,
+    3.2,
+    3.6
+  ],
+  "pivot": "bottom center",
+  "up": "+Y",
+  "front": "+Z; symmetric environment module",
+  "collision": "separate authored foundation boxes; generated mesh excluded from nav",
+  "sockets": "3.6m square footprint",
+  "provider_metadata": "../source/camp/refine-status.json",
+  "license": "Provider API output, paid account; no third-party assets intentionally supplied. No per-file license string supplied by API."
+}

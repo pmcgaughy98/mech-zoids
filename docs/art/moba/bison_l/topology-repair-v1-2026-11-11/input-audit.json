@@ -1,0 +1,52 @@
+[
+  {
+    "version": "rig",
+    "path": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_bison_remeshed_25k_20261108_character.glb",
+    "sha256": "0a688dc0dc7b69f509ed427f0f9c78ab4f8503ec508e91aded136eac07eb80f0",
+    "triangles": 22181,
+    "vertices": 30343,
+    "boundary_edges": 115,
+    "over_shared_edges": 53,
+    "collapsed": 0,
+    "bounds": [
+      [
+        -0.6724505424499512,
+        5.7558555255354804e-08,
+        -1.4318933486938477
+      ],
+      [
+        0.6724505424499512,
+        1.7000000476837158,
+        1.4318933486938477
+      ]
+    ],
+    "joint_count": 47,
+    "clips": 0,
+    "primitive_count": 1
+  },
+  {
+    "version": "intact",
+    "path": "D:\\dev\\new-mech-rpg\\art\\model_catalog\\sources\\bison_front - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "45586e24104722d455498fc882e945d1d5b23a091035d98f7df425b14c1c11ee",
+    "triangles": 499802,
+    "vertices": 315565,
+    "boundary_edges": 0,
+    "over_shared_edges": 0,
+    "collapsed": 0,
+    "bounds": [
+      [
+        -0.27431100606918335,
+        -0.611033022403717,
+        -0.6932430267333984
+      ],
+      [
+        0.2741369903087616,
+        0.5567579865455627,
+        0.0
+      ]
+    ],
+    "joint_count": 0,
+    "clips": 0,
+    "primitive_count": 1
+  }
+]

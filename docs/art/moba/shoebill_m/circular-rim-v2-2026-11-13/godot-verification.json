@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "check": "MODEL REPAIR CHECK PASS: shoebill, 3 comparison versions, original/review sheets, 38-bone rig, current ChaseCamera3D",
+  "tested_sha256": "d6e52a3b322ef0bd3d5f65823c337eb7dc34f46a41ae30a5caa8f26d3f5de6f4",
+  "verified_at_utc": "2026-11-14T00:50:44.073565+00:00",
+  "screenshots": "res://reports/model_catalog/shoebill-circular-rim-v2/",
+  "inspected": [
+    "native back comparison",
+    "actual chase-camera fixture",
+    "plate closeups",
+    "full-model back view",
+    "backplate-body pose"
+  ],
+  "pose_count": 14,
+  "maximum_measured_pose_seam_gap_m": 0.0
+}

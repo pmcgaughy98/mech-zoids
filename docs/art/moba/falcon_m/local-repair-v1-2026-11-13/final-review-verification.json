@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "tested_sha256": "4d189d5083c141b424a282e1e68a87701c65338870bf2ee36b38e89d03f49807",
+  "godot_check": "Three native versions, original/revised sheets, 45-joint skeleton and current ChaseCamera3D",
+  "screenshots": "res://reports/model_catalog/falcon-local-v1",
+  "intact_archive_sha256": "34d77973b951d096ff136061a7c820378e09fdc4c8b97c402b2989c0ed509947",
+  "original_reference_sha256": {
+    "front": "8c715a55e39e95ed74953cc3a3e9f901eb64ec0c1f766385f2d18a523ce1d392",
+    "left": "c1a034f90d8603d32df8ccb261065835da27de72fcaafab75d6ef20be42dc1a7",
+    "back": "f903cc31adc6c3592f9282693ce5f367a40f2e9f99cbd14905ed8883bd0c737b",
+    "right": "842719c556e88179aebc3cfd63cb48059a58ff6d203647d76e9f578875d8b745"
+  },
+  "joint_tests": 24,
+  "maximum_seam_gap_m": 1.228781230931777e-07,
+  "removed_controls_max_surface_movement_m": 0.0,
+  "toes_per_foot": 4,
+  "guarded_source_faces_retained": 2294
+}

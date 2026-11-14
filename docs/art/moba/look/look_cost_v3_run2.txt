@@ -1,0 +1,13 @@
+renderer: gl_compatibility
+gpu: NVIDIA GeForce GTX 1660 SUPER, window (1280, 720)
+base             rep1: frame mean 16.105 ms, median 15.934, p95 18.835 | gpu 15.138 ms, cpu 13.984 ms | draws 1684, prims 408390 | look surfaces 0
+grade            rep1: frame mean 15.997 ms, median 15.841, p95 18.346 | gpu 14.944 ms, cpu 13.906 ms | draws 1684, prims 408390 | look surfaces 0
+  ssao toggle inside one frame pair: 0.01% of pixels changed, mean abs diff 0.0000
+grade+look_v3    rep1: frame mean 16.573 ms, median 16.546, p95 19.232 | gpu 15.338 ms, cpu 14.406 ms | draws 1684, prims 408390 | look surfaces 714
+grade+look_v3+target rep1: frame mean 17.856 ms, median 17.587, p95 21.686 | gpu 16.629 ms, cpu 15.664 ms | draws 1922, prims 461120 | look surfaces 714
+base             rep2: frame mean 15.259 ms, median 15.197, p95 18.122 | gpu 14.650 ms, cpu 13.473 ms | draws 1684, prims 408390 | look surfaces 0
+grade            rep2: frame mean 15.050 ms, median 14.966, p95 17.881 | gpu 14.311 ms, cpu 13.257 ms | draws 1684, prims 408390 | look surfaces 0
+grade+look_v3    rep2: frame mean 17.345 ms, median 16.938, p95 22.031 | gpu 16.018 ms, cpu 15.183 ms | draws 1684, prims 408390 | look surfaces 714
+grade+look_v3+target rep2: frame mean 18.032 ms, median 17.709, p95 22.665 | gpu 16.646 ms, cpu 15.788 ms | draws 1922, prims 461120 | look surfaces 714
+base vs grade (frozen pose, same view): 96.29% of pixels changed, mean abs diff 0.0266
+grade vs grade+look_v3: 1.69% of pixels changed, mean abs diff 0.0011

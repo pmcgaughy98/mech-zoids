@@ -1,0 +1,36 @@
+{
+  "source": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\art-direction-2026-11-07\\gorilla-polish-v1\\gorilla-source.glb",
+  "weld_distance_source_units": 1e-06,
+  "changes": [
+    {
+      "object": "node_0",
+      "imported": {
+        "vertices": 306875,
+        "faces": 499148,
+        "boundary_edges": 110776,
+        "nonmanifold_edges": 110776,
+        "wire_edges": 0,
+        "zero_area_faces": 0,
+        "custom_normals": true
+      },
+      "after_weld": {
+        "vertices": 249568,
+        "faces": 499148,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "zero_area_faces": 0,
+        "custom_normals": true
+      },
+      "after_reduction": {
+        "vertices": 49994,
+        "faces": 100000,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "zero_area_faces": 0,
+        "custom_normals": true
+      }
+    }
+  ]
+}

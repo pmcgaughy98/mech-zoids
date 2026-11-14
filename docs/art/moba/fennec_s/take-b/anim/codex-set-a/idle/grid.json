@@ -1,0 +1,270 @@
+{
+  "source": "approved still parts only; no generated sheet",
+  "columns": 5,
+  "rows": [
+    "front",
+    "side",
+    "back"
+  ],
+  "cells": [
+    {
+      "view": "front",
+      "frame": 0,
+      "upper_lift": 0,
+      "scale": 1,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 220
+    },
+    {
+      "view": "front",
+      "frame": 1,
+      "upper_lift": 1,
+      "scale": 1,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 220
+    },
+    {
+      "view": "front",
+      "frame": 2,
+      "upper_lift": 1,
+      "scale": 1,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 220
+    },
+    {
+      "view": "front",
+      "frame": 3,
+      "upper_lift": 1,
+      "scale": 1,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 220
+    },
+    {
+      "view": "front",
+      "frame": 4,
+      "upper_lift": 0,
+      "scale": 1,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 220
+    },
+    {
+      "view": "side",
+      "frame": 0,
+      "upper_lift": 0,
+      "scale": 1,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 220
+    },
+    {
+      "view": "side",
+      "frame": 1,
+      "upper_lift": 1,
+      "scale": 1,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 220
+    },
+    {
+      "view": "side",
+      "frame": 2,
+      "upper_lift": 1,
+      "scale": 1,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 220
+    },
+    {
+      "view": "side",
+      "frame": 3,
+      "upper_lift": 1,
+      "scale": 1,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 220
+    },
+    {
+      "view": "side",
+      "frame": 4,
+      "upper_lift": 0,
+      "scale": 1,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 220
+    },
+    {
+      "view": "back",
+      "frame": 0,
+      "upper_lift": 0,
+      "scale": 1,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 220
+    },
+    {
+      "view": "back",
+      "frame": 1,
+      "upper_lift": 1,
+      "scale": 1,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 220
+    },
+    {
+      "view": "back",
+      "frame": 2,
+      "upper_lift": 1,
+      "scale": 1,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 220
+    },
+    {
+      "view": "back",
+      "frame": 3,
+      "upper_lift": 1,
+      "scale": 1,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 220
+    },
+    {
+      "view": "back",
+      "frame": 4,
+      "upper_lift": 0,
+      "scale": 1,
+      "placement": [
+        16,
+        20
+      ],
+      "duration_ms": 220
+    }
+  ],
+  "final_canvas": [
+    192,
+    192
+  ],
+  "approved_offset": [
+    16,
+    20
+  ],
+  "durations_ms": [
+    220,
+    220,
+    220,
+    220,
+    220
+  ],
+  "loop": true,
+  "frames": {
+    "front": [
+      {
+        "file": "frames/front_f0.png",
+        "duration_ms": 220
+      },
+      {
+        "file": "frames/front_f1.png",
+        "duration_ms": 220
+      },
+      {
+        "file": "frames/front_f2.png",
+        "duration_ms": 220
+      },
+      {
+        "file": "frames/front_f3.png",
+        "duration_ms": 220
+      },
+      {
+        "file": "frames/front_f4.png",
+        "duration_ms": 220
+      }
+    ],
+    "side": [
+      {
+        "file": "frames/side_f0.png",
+        "duration_ms": 220
+      },
+      {
+        "file": "frames/side_f1.png",
+        "duration_ms": 220
+      },
+      {
+        "file": "frames/side_f2.png",
+        "duration_ms": 220
+      },
+      {
+        "file": "frames/side_f3.png",
+        "duration_ms": 220
+      },
+      {
+        "file": "frames/side_f4.png",
+        "duration_ms": 220
+      }
+    ],
+    "back": [
+      {
+        "file": "frames/back_f0.png",
+        "duration_ms": 220
+      },
+      {
+        "file": "frames/back_f1.png",
+        "duration_ms": 220
+      },
+      {
+        "file": "frames/back_f2.png",
+        "duration_ms": 220
+      },
+      {
+        "file": "frames/back_f3.png",
+        "duration_ms": 220
+      },
+      {
+        "file": "frames/back_f4.png",
+        "duration_ms": 220
+      }
+    ]
+  },
+  "finishing": [
+    "finish.py",
+    "polish.py",
+    "seam_fill.py",
+    "details.py",
+    "gait_finish.py",
+    "finalize.py"
+  ],
+  "native_detail_log": "../native_finish_log.txt",
+  "ground_row": 160
+}

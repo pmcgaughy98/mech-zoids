@@ -16,13 +16,21 @@ extends CanvasLayer
 
 const SLOT_NAMES := {
 	"rhino": ["horn toss", "ground pound", "brace", "stampede"],
-	"gorilla": ["hex shield", "none", "bound", "chest beat"], # 2026-11-09: the chest beat is the ult on 4; 2 waits on Preston
+	"gorilla": ["hex shield", "fault line", "drive slam", "chest beat"],
 	"fennec": ["sand kick", "blink gate", "tunnel", "sonic boom"],
+	"kangaroo": ["hop and jab", "tail kick", "guard", "title bout"], # game feel lane, Preston 2026-11-12: "You add them"
+	"wolf":["lunge","none","none","none"],
+	"hummingbird":["needle","none","none","none"],
+	"shoebill":["moonbeam","none","none","none"],
 }
 const ICON_OF := {
 	"horn toss": "horn", "ground pound": "pound", "brace": "shield", "stampede": "dash",
 	"hex shield": "shield", "chest beat": "dome", "bound": "dash", # the ult ends in the hex dome, so it keeps the dome's icon
+	"grab slam":"pound","shield drive":"dash",
+	"fault line":"pound","drive slam":"dash",
+	"lunge":"dash","needle":"horn","moonbeam":"ring",
 	"sand kick": "horn", "blink gate": "ring", "tunnel": "pound", "sonic boom": "ring",
+	"hop and jab": "dash", "tail kick": "horn", "guard": "shield", "title bout": "ring",
 }
 const GREEN := Color(0.42, 1.0, 0.45)
 const ALLY := Color(0.35, 0.62, 1.0)
@@ -347,6 +355,15 @@ func _port(kind: String, size: int, grey: bool) -> Texture2D:
 							var v := bg.get_pixel(x, y).get_luminance() * 0.5 + 0.12
 							bg.set_pixel(x, y, Color(v, v, v + 0.02))
 				tex = ImageTexture.create_from_image(bg)
+	if tex==null:
+		var profile: Dictionary=load("res://scripts/moba3d/arena_roster.gd").profile(kind)
+		if not profile.is_empty():
+			var reference: Texture2D=load(profile.references.front)
+			if reference!=null:
+				var img:=reference.get_image()
+				if img.is_compressed():img.decompress()
+				img.resize(size,size,Image.INTERPOLATE_LANCZOS)
+				tex=ImageTexture.create_from_image(img)
 	_ports[key] = tex
 	return tex
 
@@ -636,7 +653,7 @@ func _player_bar(vs: Vector2) -> void:
 		col = GREEN.lerp(ENEMY, 0.5 + 0.5 * sin(director.elapsed * TAU * 1.5))
 	_pbar(Rect2(hx, r.position.y + 4, hw - _tw(s) - 3, 7), share, col)
 	_text(_canvas, Vector2(hx + hw - _tw(s), r.position.y + 5), s, WHITE)
-	var names: Array = SLOT_NAMES.get(kind, ["", "", "", ""])
+	var names: Array = SLOT_NAMES.get(kind, ["", "", "", ""]) # a kit with no names draws normal slots and sweeps; only "none" reads empty (Preston, 2026-11-10)
 	var sy := r.position.y + 14.0
 	for i in 4:
 		var slot := str(i + 1)
@@ -684,10 +701,23 @@ func _middle_back(vs: Vector2) -> void:
 			_canvas.draw_rect(Rect2(vs.x - 1 - i, 0, 1, vs.y), c)
 
 
+## The death dim waits DEATH_DIM_DELAY seconds, then fades in over DEATH_DIM_FADE, so the Death clip plays in the
+## clear (game feel lane, 2026-11-14; Preston: "Yes, delay 1.5 s"). DESTROYED and the respawn count show at once.
+const DEATH_DIM_DELAY := 1.5
+const DEATH_DIM_FADE := 0.3
+var _down_at := -1.0 # director.elapsed when the player went down, -1 while alive
+
+
 func _middle_front(vs: Vector2) -> void:
 	var p: Node3D = director.player
+	if p.alive:
+		_down_at = -1.0
+	elif _down_at < 0.0:
+		_down_at = director.elapsed
 	if not p.alive and director.winner == "":
-		_canvas.draw_rect(Rect2(Vector2.ZERO, vs), Color(0, 0, 0, 0.35))
+		var dim := clampf((director.elapsed - _down_at - DEATH_DIM_DELAY) / DEATH_DIM_FADE, 0.0, 1.0)
+		if dim > 0.0:
+			_canvas.draw_rect(Rect2(Vector2.ZERO, vs), Color(0, 0, 0, 0.35 * dim))
 		_centred(vs, 62, "DESTROYED", ENEMY, 1, 2)
 		_centred(vs, 80, "BACK AT BASE IN %d" % _respawn_secs(p), WHITE, 1)
 	if director.recalls.has(p):

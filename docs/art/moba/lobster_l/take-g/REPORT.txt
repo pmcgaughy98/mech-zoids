@@ -1,0 +1,9 @@
+Lobster take G: take F hand-touched in Aseprite (Claude, 2026-11-03, his ask: "touch up where you removed spikes with aseprite and cutoffs").
+86 pixels set by hand through an Aseprite Lua script; each edit first checked the colour it expected in take F (0 mismatches).
+nw 41: black spike-shadow blob on the upper plate replaced with flat plate shading; dark band continued under the old spike; stray dark pixels removed; the thick dark streak where the big fin was thinned to a one-pixel seam.
+ne 21: leftover spike shadows softened to seam colour; the notch cut into the tail ridge filled; the doubled dark seam beside the first spike cleaned to one line.
+e 7, w 5: cut segment tops given the same light corner and highlight row as the untouched segments; seams between the last segments made continuous.
+sw 5, se 7: one-pixel spurs left on the cut ridge removed; dark tops left by the refill lightened to the rim colour.
+n, s: unchanged from F.
+Checks: view_check front/back 0.87 ok, 14 colours, feet 160; sheet_judge FIX nothing, REDO e, w (the profiles kept from C, same as F).
+Boards: review-touchup-closeup.png (F left, G right, 7x), review.png (all eight views, 4x).

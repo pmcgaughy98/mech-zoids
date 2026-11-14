@@ -1,0 +1,76 @@
+{
+  "source": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\gold_beetle_objective\\repair-v1-2026-11-11\\gold_beetle-objective-repaired-v1.glb",
+  "source_sha256": "50833a9affe40bbb55d541987babef09d9233bfca9dd7bb47bb874d24d45ca19",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\gold_beetle_objective\\front-leg-restoration-v2-2026-11-13\\gold_beetle-front-legs-restored-v2.glb",
+  "output_sha256": "e0c071ba0b6af6f9b9f38e4d974fd99ec3c12a0ec41e3cb659422709020017a5",
+  "triangles": 25430,
+  "joint_count": 23,
+  "boundary_edges": 0,
+  "collapsed_triangles": 0,
+  "minimum_triangle_area_m2": 6.151934428544337e-08,
+  "over_shared_edges": 2,
+  "legs": [
+    {
+      "side": "right",
+      "source_healthy_middle_bones": [
+        "Bone_005",
+        "Bone_006",
+        "Bone_007"
+      ],
+      "recipient_native_front_bones": [
+        "Bone_011",
+        "Bone_012",
+        "Bone_013"
+      ],
+      "healthy_leg_translation_m": [
+        -0.26577049493789673,
+        2.9802322387695312e-08,
+        0.7640899419784546
+      ],
+      "gray_root_blend_offset_m": [
+        0.015993101596832315,
+        0.08274313807487488,
+        -0.06217378377914429
+      ],
+      "retained_body_contour_vertices": 86,
+      "donor_contour_vertices": 60,
+      "healthy_leg_triangles": 708,
+      "bridge_triangles": 146
+    },
+    {
+      "side": "left",
+      "source_healthy_middle_bones": [
+        "Bone_008",
+        "Bone_009",
+        "Bone_010"
+      ],
+      "recipient_native_front_bones": [
+        "Bone_014",
+        "Bone_015",
+        "Bone_016"
+      ],
+      "healthy_leg_translation_m": [
+        0.25469666719436646,
+        5.960464477539063e-08,
+        0.764089822769165
+      ],
+      "gray_root_blend_offset_m": [
+        -0.011981351375579874,
+        0.05756634473800659,
+        -0.039459288120269775
+      ],
+      "retained_body_contour_vertices": 77,
+      "donor_contour_vertices": 52,
+      "healthy_leg_triangles": 760,
+      "bridge_triangles": 129
+    }
+  ],
+  "original_vertex_rows": 36020,
+  "new_vertex_rows": 2347,
+  "unchanged_original_attribute_rows": true,
+  "original_skeleton_hierarchy_rest_binds_preserved": true,
+  "original_materials_and_textures_preserved": true,
+  "added_material": "Local gray shoulder collar",
+  "intact_pre_remesh_available": false,
+  "scope": "Both fused front legs replaced from the same model healthy middle legs. Six walking legs retained. Original front chains preserved; donor weights remapped locally."
+}

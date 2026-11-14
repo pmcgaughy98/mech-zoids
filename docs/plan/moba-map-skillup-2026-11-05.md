@@ -1,6 +1,8 @@
 # Map skill-up from other MOBAs (map design lane, 2026-11-05)
 
-Status: research and recommendations only. Nothing is built, and every pick is Preston's. The map this is for is
+Status (2026-11-06): choices 4 and 5 are built and committed: the side pits (a0bc7e5) and the plaza beacon
+(fbcd915), both written up below. Choices 2, 3 and 6 are "no change" recommendations still waiting on Preston's
+pick. Every pick is Preston's. The map this is for is
 the 3 v 3 side mode: one lane, 84 x 156 m, one tower and one core per team, 2 camps and 1 side pit per team, a
 26 m plaza in the middle, waves every 30 s (`moba-arena-layout-2026-11-04.md`). The 5 v 5 main-mode map is not
 started.
@@ -203,10 +205,40 @@ These are the open choices from the layout doc, numbered as they are there.
 - **Not done:** sounds for beacon_up and beacon_taken (the sound lane's). Numbers not tuned in play. Whether a
   bot match even reaches 4:00 hasn't been measured.
 
+## Measured 2026-11-06: an all-bot match doesn't end
+`tools/map/match_length_sim.gd` (headless) plays arena_play with all six machines on MatchBot. The player's
+machine plays itself, as in the push demo. Six runs, 15 minutes each, about 3 minutes of real time per run:
+
+| | Runs 1 to 3 | Runs 4 to 6 (tower health logged) |
+|---|---|---|
+| Winner by 15:00 | none | none |
+| A tower down | never | never |
+| Lowest tower health | not logged | blue 98% once; 100% in every other case |
+| Beacon up at 4:00 | every run | every run |
+| Beacon takes | 2 per run | 2 per run |
+| Pit takes | 0 | 0 |
+| Deaths per match | 20 to 27 | 22 to 25 |
+
+The same seeds gave different matches, so a run isn't repeatable.
+
+- **What it means:**
+  - Waves and bots cancel out at the plaza. Nothing pushes far enough to touch a tower, so the beacon's
+    30 s switch-off has nothing to act on.
+  - The beacon does get taken without anyone aiming for it, because the lane runs through the plaza and
+    bots walk over it. It comes up 41 s to 2.5 min after 4:00.
+  - Bots never step into a pit, so the stronger-wave reward, the one piece built to break a stalemate,
+    never fires in a bot match.
+- **For the open choices:**
+  - Choice 2: bots don't even scratch the one tower, so a second defence would only make it longer. Keep one.
+    The real length still needs a human playtest; a human pushes and bots don't.
+  - **Bots going for the pits and the beacon (Preston's call)** is what decides whether a bot match ever ends.
+    The bot is `scripts/moba3d/match_bot.gd`, game feel's file.
+- **Not measured:** a match with Preston playing, and what bots do once they do go for objectives.
+
 ## 5. Not checked
 - SMITE 2's Joust may differ from the SMITE 1 wiki page.
 - None of the pages gives map sizes in metres, so the comparison uses times instead.
 - The bush claims above are from memory.
-- Our own match length.
+- Our own match length with a human playing. Bots alone don't finish one (measured above).
 - For the 5 v 5 map, when Preston says go: read SMITE Conquest and Predecessor first, then give him the lane
   count, a cost and a first slice.

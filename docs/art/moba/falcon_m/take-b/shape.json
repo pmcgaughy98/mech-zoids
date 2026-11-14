@@ -1,0 +1,55 @@
+{
+  "measurement": "horizontal projected lengths, inclusive pixels; manually selected anatomical regions, uncertainty about 2px",
+  "east_wing": {
+    "length": 50,
+    "bbox": [
+      0,
+      49,
+      17,
+      62
+    ]
+  },
+  "east_body": {
+    "length": 27,
+    "bbox": [
+      36,
+      62,
+      18,
+      53
+    ]
+  },
+  "east_wing_body_ratio": 1.8518518518518519,
+  "east_head": {
+    "length": 26,
+    "bbox": [
+      41,
+      66,
+      0,
+      15
+    ]
+  },
+  "east_beak": {
+    "length": 7,
+    "bbox": [
+      63,
+      69,
+      8,
+      14
+    ]
+  },
+  "east_beak_head_ratio": 0.2692307692307692,
+  "east_south_height_ratio": 0.9583333333333334,
+  "south_wingspan": 50,
+  "south_body_width": 28,
+  "south_body_bbox": [
+    11,
+    38,
+    26,
+    44
+  ],
+  "south_wingspan_body_ratio": 1.7857142857142858,
+  "green_eye_pixels": {
+    "ne": 0,
+    "nw": 0
+  }
+}

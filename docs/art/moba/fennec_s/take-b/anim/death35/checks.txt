@@ -1,0 +1,73 @@
+death35-clean: zero-based native-pixel checks.
+Connectivity: four neighbours, not diagonals.
+Thin run: connected edge pixels that belong to no solid 2x2 opaque patch; runs >2 forbidden.
+Ear length/base breadth: principal-axis extent and perpendicular widest triangle span, pixel centres +1.
+Both measured directly from traced native ear masks; widths include the violet shell.
+Full trace measured before head/other-ear occlusion; visible extents also listed (occlusion shortens these).
+Ear 0/1: screen-left/right for front/back/ne; near/far for side; lower/upper for se.
+Side far ear reference is its visible upper triangle; the lower stripe assigned by run1 was near-ear/head material.
+All source ear material uses integer row/column translations of at most 1px per step; no rotation/resampling.
+f0/f1 remain byte-for-byte original files. f2-f6 edited from run1 only in ear footprints and their joins.
+Dimensions are geometric pixel spans, so decimals are expected.
+
+front: still ear0 L/W=(29.05, 24.34), ear1 L/W=(27.23, 23.14)
+  f0: pieces4=1; long_thin_runs=0; longest_thin=0; bottom=140; changed_pixels=0; e0 L/W=29.05/24.34 delta=+0.00/+0.00, visible=(29.05, 24.34); e1 L/W=27.23/23.14 delta=+0.00/+0.00, visible=(27.23, 23.14)
+  f1: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=138; changed_pixels=0; e0 L/W=29.53/24.29 delta=+0.48/-0.05, visible=(29.53, 24.29); e1 L/W=27.90/23.99 delta=+0.67/+0.85, visible=(27.9, 23.99)
+  f2: pieces4=1; long_thin_runs=0; longest_thin=2; bottom=140; changed_pixels=768; e0 L/W=30.30/25.14 delta=+1.25/+0.80, visible=(26.79, 25.38); e1 L/W=27.41/22.95 delta=+0.18/-0.19, visible=(27.88, 19.17)
+  f3: pieces4=1; long_thin_runs=0; longest_thin=2; bottom=140; changed_pixels=851; e0 L/W=30.13/24.94 delta=+1.08/+0.60, visible=(30.13, 22.33); e1 L/W=28.23/23.35 delta=+1.00/+0.21, visible=(28.28, 23.56)
+  f4: pieces4=1; long_thin_runs=0; longest_thin=2; bottom=140; changed_pixels=1035; e0 L/W=30.13/24.94 delta=+1.08/+0.60, visible=(30.18, 21.91); e1 L/W=28.23/23.35 delta=+1.00/+0.21, visible=(28.31, 23.28)
+  f5: pieces4=1; long_thin_runs=0; longest_thin=2; bottom=140; changed_pixels=692; e0 L/W=30.13/24.94 delta=+1.08/+0.60, visible=(30.02, 25.03); e1 L/W=28.23/23.35 delta=+1.00/+0.21, visible=(28.25, 21.16)
+  f6: pieces4=1; long_thin_runs=0; longest_thin=2; bottom=140; changed_pixels=692; e0 L/W=30.13/24.94 delta=+1.08/+0.60, visible=(30.02, 25.03); e1 L/W=28.23/23.35 delta=+1.00/+0.21, visible=(28.25, 21.16)
+  f0 exact PASS; palette/binary alpha/holes/edges/ground preservation PASS.
+  GIF: [300, 100, 130, 140, 160, 180, 1400] ms, 7 frames, no loop; f5/f6 identical silhouette.
+
+se: still ear0 L/W=(28.13, 24.06), ear1 L/W=(28.94, 23.06)
+  f0: pieces4=1; long_thin_runs=0; longest_thin=0; bottom=140; changed_pixels=0; e0 L/W=28.13/24.06 delta=+0.00/+0.00, visible=(28.13, 24.06); e1 L/W=28.94/23.06 delta=+0.00/+0.00, visible=(28.94, 23.06)
+  f1: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=139; changed_pixels=0; e0 L/W=28.27/23.98 delta=+0.14/-0.08, visible=(28.27, 23.98); e1 L/W=29.47/23.68 delta=+0.53/+0.62, visible=(29.47, 23.68)
+  f2: pieces4=1; long_thin_runs=0; longest_thin=2; bottom=140; changed_pixels=837; e0 L/W=28.20/24.55 delta=+0.07/+0.49, visible=(27.32, 24.74); e1 L/W=29.25/23.42 delta=+0.31/+0.36, visible=(24.69, 18.55)
+  f3: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=875; e0 L/W=28.13/23.89 delta=+0.00/-0.17, visible=(28.45, 24.14); e1 L/W=30.11/22.52 delta=+1.17/-0.54, visible=(28.98, 18.26)
+  f4: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=895; e0 L/W=28.92/23.37 delta=+0.79/-0.69, visible=(29.2, 23.46); e1 L/W=30.11/22.52 delta=+1.17/-0.54, visible=(28.59, 17.33)
+  f5: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=615; e0 L/W=28.92/23.37 delta=+0.79/-0.69, visible=(29.62, 23.55); e1 L/W=30.11/22.52 delta=+1.17/-0.54, visible=(28.15, 15.62)
+  f6: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=615; e0 L/W=28.92/23.37 delta=+0.79/-0.69, visible=(29.62, 23.55); e1 L/W=30.11/22.52 delta=+1.17/-0.54, visible=(28.15, 15.62)
+  f0 exact PASS; palette/binary alpha/holes/edges/ground preservation PASS.
+  GIF: [300, 100, 130, 140, 160, 180, 1400] ms, 7 frames, no loop; f5/f6 identical silhouette.
+
+side: still ear0 L/W=(32.56, 17.76), ear1 L/W=(23.16, 10.22)
+  f0: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=0; e0 L/W=32.56/17.76 delta=+0.00/+0.00, visible=(32.56, 17.76); e1 L/W=23.16/10.22 delta=+0.00/+0.00, visible=(23.16, 10.22)
+  f1: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=0; e0 L/W=32.61/18.08 delta=+0.05/+0.32, visible=(32.61, 18.08); e1 L/W=22.56/10.22 delta=-0.60/+0.00, visible=(22.56, 10.22)
+  f2: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=564; e0 L/W=33.34/18.42 delta=+0.78/+0.66, visible=(33.67, 17.09); e1 L/W=23.45/10.40 delta=+0.29/+0.18, visible=(22.18, 9.92)
+  f3: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=517; e0 L/W=33.34/18.42 delta=+0.78/+0.66, visible=(33.67, 17.05); e1 L/W=23.45/10.40 delta=+0.29/+0.18, visible=(22.19, 10.0)
+  f4: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=471; e0 L/W=33.34/18.42 delta=+0.78/+0.66, visible=(33.66, 17.05); e1 L/W=23.45/10.40 delta=+0.29/+0.18, visible=(17.98, 7.11)
+  f5: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=448; e0 L/W=33.34/18.42 delta=+0.78/+0.66, visible=(32.47, 16.12); e1 L/W=23.45/10.40 delta=+0.29/+0.18, visible=(19.15, 9.47)
+  f6: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=448; e0 L/W=33.34/18.42 delta=+0.78/+0.66, visible=(32.47, 16.12); e1 L/W=23.45/10.40 delta=+0.29/+0.18, visible=(19.15, 9.47)
+  f0 exact PASS; palette/binary alpha/holes/edges/ground preservation PASS.
+  GIF: [300, 100, 130, 140, 160, 180, 1400] ms, 7 frames, no loop; f5/f6 identical silhouette.
+
+ne: still ear0 L/W=(26.32, 19.0), ear1 L/W=(21.25, 17.42)
+  f0: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=0; e0 L/W=26.32/19.00 delta=+0.00/+0.00, visible=(26.32, 19.0); e1 L/W=21.25/17.42 delta=+0.00/+0.00, visible=(21.25, 17.42)
+  f1: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=0; e0 L/W=25.96/18.80 delta=-0.36/-0.20, visible=(25.96, 18.8); e1 L/W=20.67/17.55 delta=-0.58/+0.13, visible=(20.67, 17.55)
+  f2: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=710; e0 L/W=25.44/18.40 delta=-0.88/-0.60, visible=(24.6, 14.83); e1 L/W=21.52/17.36 delta=+0.27/-0.06, visible=(21.43, 17.58)
+  f3: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=660; e0 L/W=26.49/18.77 delta=+0.17/-0.23, visible=(24.62, 15.46); e1 L/W=21.46/16.69 delta=+0.21/-0.73, visible=(20.42, 15.12)
+  f4: pieces4=1; long_thin_runs=0; longest_thin=2; bottom=137; changed_pixels=571; e0 L/W=27.35/18.26 delta=+1.03/-0.74, visible=(27.26, 13.6); e1 L/W=20.81/16.58 delta=-0.44/-0.84, visible=(20.41, 16.52)
+  f5: pieces4=1; long_thin_runs=0; longest_thin=2; bottom=138; changed_pixels=569; e0 L/W=27.35/18.26 delta=+1.03/-0.74, visible=(27.29, 16.47); e1 L/W=20.81/16.58 delta=-0.44/-0.84, visible=(20.51, 16.52)
+  f6: pieces4=1; long_thin_runs=0; longest_thin=2; bottom=138; changed_pixels=569; e0 L/W=27.35/18.26 delta=+1.03/-0.74, visible=(27.29, 16.47); e1 L/W=20.81/16.58 delta=-0.44/-0.84, visible=(20.51, 16.52)
+  f0 exact PASS; palette/binary alpha/holes/edges/ground preservation PASS.
+  GIF: [300, 100, 130, 140, 160, 180, 1400] ms, 7 frames, no loop; f5/f6 identical silhouette.
+
+back: still ear0 L/W=(32.38, 20.8), ear1 L/W=(32.37, 20.6)
+  f0: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=0; e0 L/W=32.38/20.80 delta=+0.00/+0.00, visible=(32.38, 20.8); e1 L/W=32.37/20.60 delta=+0.00/+0.00, visible=(32.37, 20.6)
+  f1: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=0; e0 L/W=32.45/20.92 delta=+0.07/+0.12, visible=(32.45, 20.92); e1 L/W=32.41/20.22 delta=+0.04/-0.38, visible=(32.41, 20.22)
+  f2: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=974; e0 L/W=32.43/20.94 delta=+0.05/+0.14, visible=(32.03, 20.98); e1 L/W=32.07/20.42 delta=-0.30/-0.18, visible=(29.38, 20.31)
+  f3: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=967; e0 L/W=32.18/20.48 delta=-0.20/-0.32, visible=(31.37, 20.33); e1 L/W=31.05/19.76 delta=-1.32/-0.84, visible=(30.02, 19.63)
+  f4: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=906; e0 L/W=31.00/20.92 delta=-1.38/+0.12, visible=(31.01, 20.57); e1 L/W=32.31/19.81 delta=-0.06/-0.79, visible=(32.35, 20.12)
+  f5: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=764; e0 L/W=31.00/20.92 delta=-1.38/+0.12, visible=(29.99, 21.02); e1 L/W=32.31/19.81 delta=-0.06/-0.79, visible=(29.21, 19.37)
+  f6: pieces4=1; long_thin_runs=0; longest_thin=1; bottom=140; changed_pixels=764; e0 L/W=31.00/20.92 delta=-1.38/+0.12, visible=(29.99, 21.02); e1 L/W=32.31/19.81 delta=-0.06/-0.79, visible=(29.21, 19.37)
+  f0 exact PASS; palette/binary alpha/holes/edges/ground preservation PASS.
+  GIF: [300, 100, 130, 140, 160, 180, 1400] ms, 7 frames, no loop; f5/f6 identical silhouette.
+
+Max full-ear length deviation: 1.38px; max base breadth deviation: 0.85px (integer-grid rounding).
+All 35 opaque masks: one four-connected component; zero thin runs longer than 2 pixels.
+board.png: approved still + f0..f6, five rows, exact game selout #141218, 4x nearest.
+Ground and canvas tests use raw frames; review-only selout may add a border outside them.
+By eye: broad triangles and native gold panels persist through the fold; no parallel detached slivers.
+Body/legs/tail pose and colour layers are unchanged; new ear pixels occlude some torso pixels as ears fold.

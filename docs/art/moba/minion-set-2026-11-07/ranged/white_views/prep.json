@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "45e8ca80ef8420d64cae3150a907d015f09356c534d21d88a1125fc57ac8bc5e",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.546468401486989,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "minion_ranged_front.png",
+      "source_box": [
+        61,
+        158,
+        574,
+        544
+      ],
+      "source_dimensions": [
+        513,
+        386
+      ],
+      "output_box": [
+        115,
+        339,
+        908,
+        936
+      ]
+    },
+    "left": {
+      "file": "minion_ranged_left.png",
+      "source_box": [
+        669,
+        158,
+        1206,
+        545
+      ],
+      "source_dimensions": [
+        537,
+        387
+      ],
+      "output_box": [
+        97,
+        338,
+        927,
+        936
+      ]
+    },
+    "back": {
+      "file": "minion_ranged_back.png",
+      "source_box": [
+        61,
+        755,
+        575,
+        1143
+      ],
+      "source_dimensions": [
+        514,
+        388
+      ],
+      "output_box": [
+        114,
+        336,
+        909,
+        936
+      ]
+    },
+    "right": {
+      "file": "minion_ranged_right.png",
+      "source_box": [
+        663,
+        757,
+        1201,
+        1143
+      ],
+      "source_dimensions": [
+        538,
+        386
+      ],
+      "output_box": [
+        96,
+        339,
+        928,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.005154639175257732
+}

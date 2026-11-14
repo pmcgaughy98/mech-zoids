@@ -1,0 +1,49 @@
+{
+  "id": "squirrel",
+  "source_sha256": "302d0a4989abd318c2fdeddff365847a971cddaa313d88ab0e043a295aae7407",
+  "source_triangles": 499776,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.847857243640824,
+  "blender_bounds_min": [
+    -3.6530673503875732,
+    -1.6002154350280762,
+    0.12002931535243988
+  ],
+  "blender_bounds_max": [
+    -2.3453547954559326,
+    1.599833607673645,
+    3.068638801574707
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

@@ -1,0 +1,28 @@
+{
+  "generator": "built-in image_gen",
+  "date": "2026-11-10",
+  "raw_output_preserved": true,
+  "image": {
+    "file": "seismic-atlas-v1.png",
+    "mode": "RGBA",
+    "width": 1774,
+    "height": 887,
+    "sha256": "34d73904014d2941478f360f70575e54b3e88600d65519d1ba10ee788a42d618"
+  },
+  "prompt_file": "seismic-atlas-v1-prompt.txt",
+  "source_output": "C:/Users/pmcga/.codex/generated_images/01a1bbae-6a78-7c83-97f6-070e8039ba5f/exec-8af0431e-ebfb-4ebd-ac26-e035593cadab.png",
+  "cells": [
+    "horn_sweep",
+    "seismic_epicenter",
+    "charge_wake",
+    "tremor_perimeter",
+    "brace_plate",
+    "piston_compression",
+    "horn_catch",
+    "stampede_finale"
+  ],
+  "columns": 4,
+  "rows": 2,
+  "runtime_shader": "res://shaders/rhino_painted_fx.gdshader",
+  "model_source_read_only": "D:/dev/_scratch/rhino-donor-2026-11-08/game-export-v47/rhino_game_v47.glb"
+}

@@ -1,0 +1,372 @@
+{
+  "verified_utc": "2026-11-11T22:15:04.652046+00:00",
+  "generation_batch_credits": 120,
+  "authorized_ceiling": 200,
+  "unique_paid_stages": 8,
+  "new_generation_assets": [
+    {
+      "asset": "wall",
+      "tasks": [
+        {
+          "stage": "preview",
+          "id": "01a1c743-5320-705b-965e-76b605696764",
+          "actual_credits": 20,
+          "metadata": "art\\environment\\foundry_5v5\\source\\wall\\preview-status.json"
+        },
+        {
+          "stage": "refine",
+          "id": "01a1c745-f643-7263-8315-c4fb7498a15c",
+          "actual_credits": 10,
+          "metadata": "art\\environment\\foundry_5v5\\source\\wall\\refine-status.json"
+        }
+      ],
+      "runtime": "art\\environment\\foundry_5v5\\runtime\\wall.glb",
+      "runtime_details": {
+        "asset": "wall",
+        "raw_sha256": "d5b43782810d30d6a14b9aae9e34cb145f09543705b514dfd208954fbf46abd9",
+        "runtime_sha256": "8ff251217ea4f94817481fca12eb20d15850ae0803ec2c305306753f27e3fe2a",
+        "raw_triangles": 5532,
+        "runtime_triangles": 5000,
+        "materials": 1,
+        "images": [
+          {
+            "name": "Image_0",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "Image_1",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "Image_2",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "Image_3",
+            "size": [
+              1024,
+              1024
+            ]
+          }
+        ],
+        "dimensions_godot_xyz_m": [
+          6,
+          2.6,
+          1.6
+        ],
+        "pivot": "bottom center",
+        "up": "+Y",
+        "front": "+Z; symmetric environment module",
+        "collision": "separate authored foundation boxes; generated mesh excluded from nav",
+        "sockets": "X ends at -3/+3m; visual skin only",
+        "provider_metadata": "../source/wall/refine-status.json",
+        "license": "Provider API output, paid account; no third-party assets intentionally supplied. No per-file license string supplied by API."
+      }
+    },
+    {
+      "asset": "pillar",
+      "tasks": [
+        {
+          "stage": "preview",
+          "id": "01a1c748-4a36-7241-9db7-26dfcf7d8722",
+          "actual_credits": 20,
+          "metadata": "art\\environment\\foundry_5v5\\source\\pillar\\preview-status.json"
+        },
+        {
+          "stage": "refine",
+          "id": "01a1c749-fad5-75d9-af3c-d81bde6013e3",
+          "actual_credits": 10,
+          "metadata": "art\\environment\\foundry_5v5\\source\\pillar\\refine-status.json"
+        }
+      ],
+      "runtime": "art\\environment\\foundry_5v5\\runtime\\pillar.glb",
+      "runtime_details": {
+        "asset": "pillar",
+        "raw_sha256": "5c27659ea9f0e476553178de17ef815a9668607264eafdb806417a0b836b7500",
+        "runtime_sha256": "408d705ada62e06c0f554db54f8c8f565d9c3061e6dfff55f8ef103cf90e282b",
+        "raw_triangles": 4780,
+        "runtime_triangles": 4000,
+        "materials": 1,
+        "images": [
+          {
+            "name": "Image_0",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "Image_1",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "Image_2",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "Image_3",
+            "size": [
+              1024,
+              1024
+            ]
+          }
+        ],
+        "dimensions_godot_xyz_m": [
+          2.4,
+          4,
+          2.4
+        ],
+        "pivot": "bottom center",
+        "up": "+Y",
+        "front": "+Z; symmetric environment module",
+        "collision": "separate authored foundation boxes; generated mesh excluded from nav",
+        "sockets": "2.4m square footprint",
+        "provider_metadata": "../source/pillar/refine-status.json",
+        "license": "Provider API output, paid account; no third-party assets intentionally supplied. No per-file license string supplied by API."
+      }
+    },
+    {
+      "asset": "camp",
+      "tasks": [
+        {
+          "stage": "preview",
+          "id": "01a1c74d-ac6b-718e-bfed-d01cca35ec55",
+          "actual_credits": 20,
+          "metadata": "art\\environment\\foundry_5v5\\source\\camp\\preview-status.json"
+        },
+        {
+          "stage": "refine",
+          "id": "01a1c74f-c872-7233-8615-03172161722c",
+          "actual_credits": 10,
+          "metadata": "art\\environment\\foundry_5v5\\source\\camp\\refine-status.json"
+        }
+      ],
+      "runtime": "art\\environment\\foundry_5v5\\runtime\\camp.glb",
+      "runtime_details": {
+        "asset": "camp",
+        "raw_sha256": "f5d7f5aad4af6b67d4295ab39f2b119eb8c7106b47e2ba631e6f85ecf983c0e1",
+        "runtime_sha256": "a4d8a4a88d27a35a08d3e93cbe036ee68e11f3fa151deab3253ed555f530c877",
+        "raw_triangles": 7180,
+        "runtime_triangles": 6000,
+        "materials": 1,
+        "images": [
+          {
+            "name": "Image_0",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "Image_1",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "Image_2",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "Image_3",
+            "size": [
+              1024,
+              1024
+            ]
+          }
+        ],
+        "dimensions_godot_xyz_m": [
+          3.6,
+          3.2,
+          3.6
+        ],
+        "pivot": "bottom center",
+        "up": "+Y",
+        "front": "+Z; symmetric environment module",
+        "collision": "separate authored foundation boxes; generated mesh excluded from nav",
+        "sockets": "3.6m square footprint",
+        "provider_metadata": "../source/camp/refine-status.json",
+        "license": "Provider API output, paid account; no third-party assets intentionally supplied. No per-file license string supplied by API."
+      }
+    },
+    {
+      "asset": "landmark",
+      "tasks": [
+        {
+          "stage": "preview",
+          "id": "01a1c752-98bf-7780-9ba0-074869161a77",
+          "actual_credits": 20,
+          "metadata": "art\\environment\\foundry_5v5\\source\\landmark\\preview-status.json"
+        },
+        {
+          "stage": "refine",
+          "id": "01a1cc72-8844-765c-a080-eca50de4c528",
+          "actual_credits": 10,
+          "metadata": "art\\environment\\foundry_5v5\\source\\landmark\\refine-status.json"
+        }
+      ],
+      "runtime": "art\\environment\\foundry_5v5\\runtime\\landmark.glb",
+      "runtime_details": {
+        "asset": "landmark",
+        "raw_sha256": "701b8855cf6e4016e58cdae1b4a835b10625678253bcae8cfe2f40142f7d896e",
+        "runtime_sha256": "b7ddea0e631764eedb8e1d2a41abc4cfbc3bbaf59bbf674166ec61263b4bde65",
+        "raw_triangles": 9016,
+        "runtime_triangles": 8000,
+        "materials": 1,
+        "images": [
+          {
+            "name": "Image_0",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "Image_1",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "Image_2",
+            "size": [
+              1024,
+              1024
+            ]
+          },
+          {
+            "name": "Image_3",
+            "size": [
+              1024,
+              1024
+            ]
+          }
+        ],
+        "dimensions_godot_xyz_m": [
+          5.2,
+          5,
+          5.2
+        ],
+        "pivot": "bottom center",
+        "up": "+Y",
+        "front": "+Z; symmetric environment module",
+        "collision": "separate authored foundation boxes; generated mesh excluded from nav",
+        "sockets": "5.2m square footprint",
+        "provider_metadata": "../source/landmark/refine-status.json",
+        "license": "Provider API output, paid account; no third-party assets intentionally supplied. No per-file license string supplied by API."
+      }
+    }
+  ],
+  "existing_boss_previews": [
+    {
+      "asset": "gold_beetle",
+      "existing_source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_coinclaw_mech_remeshed_25k_20261111_character.glb",
+      "raw_sha256": "100b37f26e5f279080350e7111df45f2bd7539f1937a9123165d5ea5d14b7946",
+      "runtime_sha256": "354d5221f78cb4967ca8f22de05220c1a34513883b74b5cda4043b130a105dfa",
+      "triangles": 25975,
+      "preserved_bones": 23,
+      "images": [
+        {
+          "name": "texture_0",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "texture_0_metallic_roughness",
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      ],
+      "draft_dimensions_godot_m": [
+        3.629718383486598,
+        3.8,
+        3.989837257232472
+      ],
+      "uniform_scale": 1.4074075068302512,
+      "pivot": "ground centered, +Y up",
+      "stage": "existing rigged model, no authored clips; static objective placement preview, no combat or rewards",
+      "generation_spend_this_lane": 0,
+      "source_modified": false
+    },
+    {
+      "asset": "wyvern",
+      "existing_source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_Cyber_Wyvern_Sentinel_1110211655_texture.glb",
+      "raw_sha256": "de6feb0f20655e289e8cae2de8ad6f9589050c93acb2feecd0e073194cd8d512",
+      "runtime_sha256": "efd668c99f0d5798194efa8bf91f795ee7725ae917fb598a623fd78dbd1b1781",
+      "triangles": 25926,
+      "preserved_bones": 46,
+      "images": [
+        {
+          "name": "texture_0",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "texture_0.001",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "texture_0_metallic_roughness",
+          "size": [
+            1024,
+            1024
+          ]
+        },
+        {
+          "name": "texture_0_metallic_roughness.001",
+          "size": [
+            1024,
+            1024
+          ]
+        }
+      ],
+      "draft_dimensions_godot_m": [
+        4.561384479754188,
+        6.5,
+        5.639723936023476
+      ],
+      "uniform_scale": 1.7038833926002535,
+      "pivot": "ground centered, +Y up",
+      "stage": "existing rigged model, no authored clips; static objective placement preview, no combat or rewards",
+      "generation_spend_this_lane": 0,
+      "source_modified": false
+    }
+  ],
+  "latest_balance": {
+    "balance": 860,
+    "monthly_credits": 710,
+    "permanent_credits": 150,
+    "monthly_resets_at": 1796678459000
+  },
+  "account_reconciliation": "Initial balance was 1010; final observed balance 860. This batch is exactly 120 credits per its eight task records. The remaining net 30-credit difference belongs to account activity outside these task records; it is not attributed to this batch.",
+  "source_and_license": "Raw Meshy model exports and provider metadata retained. No per-file license string supplied in task metadata. Boss originals remain unmodified in their supplied download folder."
+}

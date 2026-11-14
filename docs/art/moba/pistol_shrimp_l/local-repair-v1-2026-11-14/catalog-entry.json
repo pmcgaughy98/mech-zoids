@@ -1,0 +1,99 @@
+{
+  "id": "pistol_shrimp",
+  "name": "Pistol Shrimp",
+  "source_model": {
+    "path": "res://art/model_catalog/sources/pistol_shrimp_front - Hunyuan 3D v3.1 Pro.glb",
+    "source": "D:\\user\\Downloads\\pistol_shrimp_front - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "147f24029faa293ae1d19281ee582f2f15281ba3c0190aa8135acfa78e189d73",
+    "bytes": 55975880
+  },
+  "display_model": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/pistol-shrimp-rigged-local-repair-v1.glb",
+  "status": "Ten stray triangles removed and one large-claw gap closed. Claws, eight walking legs and tail retained. Original 53-joint rig, all skin weights and textures unchanged.",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/pistol_shrimp/front.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\pistol_shrimp_front.png",
+      "sha256": "0fb4c87bc06a5cdc72f334c4055fab1c5f5a450b089bb33b46d0f77f14b46f5a",
+      "bytes": 270640,
+      "project_matches": [
+        "docs/art/moba/pistol_shrimp_l/take-a/white_views/pistol_shrimp_front.png"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/pistol_shrimp/left.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\pistol_shrimp_left.png",
+      "sha256": "a3fda308806d554825e55c6527e6bb7302ac37d59f2e0412854a52f9c7c91c99",
+      "bytes": 318452,
+      "project_matches": [
+        "docs/art/moba/pistol_shrimp_l/take-a/white_views/pistol_shrimp_left.png"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/pistol_shrimp/back.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\pistol_shrimp_back.png",
+      "sha256": "be1f0d79b855b3cbb83ad712ce79cc1caa38e34c0557bf01f52657c6e2962167",
+      "bytes": 271515,
+      "project_matches": [
+        "docs/art/moba/pistol_shrimp_l/take-a/white_views/pistol_shrimp_back.png"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/pistol_shrimp/right.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\pistol_shrimp_right.png",
+      "sha256": "5ffdd8a8a1ed38142aa4cffe2a4334abccd600fc9563503316e59745090b6558",
+      "bytes": 360577,
+      "project_matches": [
+        "docs/art/moba/pistol_shrimp_l/take-a/white_views/pistol_shrimp_right.png"
+      ]
+    }
+  },
+  "artist_workspace": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/pistol-shrimp-rigged-local-repair-v1.blend",
+  "review_models": [
+    {
+      "label": "INTACT QUALITY ARCHIVE\nOriginal generated geometry",
+      "path": "res://art/model_catalog/sources/pistol_shrimp_front - Hunyuan 3D v3.1 Pro.glb",
+      "display_scale": 2.7125310992801985
+    },
+    {
+      "label": "DOWNLOADED RIG\nBefore local repair",
+      "path": "res://art/model_catalog/sources/Meshy_AI_pistol_shrimp_remeshed_25k_20261111_character.glb",
+      "display_scale": 0.7426546529443506
+    },
+    {
+      "label": "LOCAL REPAIR\nSame 53-joint rig and skin",
+      "path": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/pistol-shrimp-rigged-local-repair-v1.glb",
+      "display_scale": 0.7426546529443506
+    }
+  ],
+  "review_views": {
+    "front": {
+      "path": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/review-front.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "left": {
+      "path": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/review-left.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "back": {
+      "path": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/review-back.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "right": {
+      "path": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/review-right.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    }
+  },
+  "review_provenance": {
+    "date": "2026-11-14",
+    "report": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/repair-verification.json",
+    "independent_audit": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/independent-export-audit.json",
+    "joint_count": 53,
+    "rigged_input_sha256": "999b901e08ad73df77f908dab8aa4159609e624fb961a45ce03d516501618d43",
+    "repaired_sha256": "823c26de99e963c6486cc8d92b31b41a6649018e4c7cfcac1e0c6b87a2b9349c",
+    "intact_pre_remesh_available": true,
+    "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+    "scope": "Remove ten verified single-triangle flaps and close one tiny large-claw opening using original vertex corners. Retain snapping claw, smaller claw, eight walking legs, two antennae, two dorsal vessels and tail fan. Preserve original vertex/skin rows, 53-joint hierarchy/rest/binds and materials/textures. No remesh or rerig. All 25,625 healthy source faces retained. No gameplay replacement.",
+    "runtime_report": "res://docs/art/moba/pistol_shrimp_l/local-repair-v1-2026-11-14/final-review-verification.json"
+  }
+}

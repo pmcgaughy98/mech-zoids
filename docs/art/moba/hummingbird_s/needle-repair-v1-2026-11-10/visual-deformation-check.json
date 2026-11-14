@@ -1,0 +1,59 @@
+{
+  "tested_sha256": "a85b4f4df6c1936b67aed5b0be2549f751e41ec9520f9e3c6fd2e50988af2429",
+  "poses": [
+    {
+      "bone": "Bone_005",
+      "axis": 0,
+      "degrees": 10,
+      "max_displacement": 0.21856081894693594,
+      "vertices_moved_over_1mm": 9634,
+      "finite": true
+    },
+    {
+      "bone": "Bone_005",
+      "axis": 2,
+      "degrees": -10,
+      "max_displacement": 0.08950076504481735,
+      "vertices_moved_over_1mm": 9787,
+      "finite": true
+    },
+    {
+      "bone": "Bone_004",
+      "axis": 0,
+      "degrees": -8,
+      "max_displacement": 0.0128344857940153,
+      "vertices_moved_over_1mm": 2376,
+      "finite": true
+    }
+  ],
+  "intact_alignment": {
+    "matrix": [
+      [
+        4.038159875248047,
+        0.0,
+        0.0,
+        -0.0023845463922072888
+      ],
+      [
+        0.0,
+        4.038159875248047,
+        0.0,
+        0.7317229240444778
+      ],
+      [
+        0.0,
+        0.0,
+        4.038159875248047,
+        -0.00011151638138007236
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "uniform_scale": 4.038159875248047,
+    "sample_mean_distance": 0.010802622631748183
+  }
+}

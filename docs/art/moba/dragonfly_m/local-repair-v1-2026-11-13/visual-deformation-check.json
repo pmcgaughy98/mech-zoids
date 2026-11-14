@@ -1,0 +1,125 @@
+{
+  "tested_sha256": "d21585337fb2f4d48ef8a333afc05c89823e3a2ecd18bf807ea0493d5744ec67",
+  "joint_count": 46,
+  "poses": [
+    {
+      "label": "front-left",
+      "bone": "Bone_006",
+      "degrees": 10,
+      "max_displacement_m": 0.052723625501312,
+      "coincident_surface_gap_m": 1.228781230931777e-07
+    },
+    {
+      "label": "front-right",
+      "bone": "Bone_009",
+      "degrees": -10,
+      "max_displacement_m": 0.05150164846371855,
+      "coincident_surface_gap_m": 1.228781230931777e-07
+    },
+    {
+      "label": "middle-left",
+      "bone": "Bone_015",
+      "degrees": 10,
+      "max_displacement_m": 0.05266409897287906,
+      "coincident_surface_gap_m": 6.664001874625056e-08
+    },
+    {
+      "label": "middle-right",
+      "bone": "Bone_012",
+      "degrees": -10,
+      "max_displacement_m": 0.05053927199193543,
+      "coincident_surface_gap_m": 1.228781230931777e-07
+    },
+    {
+      "label": "rear-left",
+      "bone": "Bone_018",
+      "degrees": 10,
+      "max_displacement_m": 0.05902419408385617,
+      "coincident_surface_gap_m": 1.228781230931777e-07
+    },
+    {
+      "label": "rear-right",
+      "bone": "Bone_021",
+      "degrees": -10,
+      "max_displacement_m": 0.05762159803370748,
+      "coincident_surface_gap_m": 1.228781230931777e-07
+    },
+    {
+      "label": "lower-wing-left",
+      "bone": "Bone_033",
+      "degrees": 8,
+      "max_displacement_m": 0.11702368264610212,
+      "coincident_surface_gap_m": 1.228781230931777e-07
+    },
+    {
+      "label": "lower-wing-right",
+      "bone": "Bone_035",
+      "degrees": -8,
+      "max_displacement_m": 0.11581781834773,
+      "coincident_surface_gap_m": 1.228781230931777e-07
+    },
+    {
+      "label": "upper-wing-left",
+      "bone": "Bone_037",
+      "degrees": 8,
+      "max_displacement_m": 0.12364032577112692,
+      "coincident_surface_gap_m": 1.228781230931777e-07
+    },
+    {
+      "label": "upper-wing-right",
+      "bone": "Bone_039",
+      "degrees": -8,
+      "max_displacement_m": 0.12239406440281382,
+      "coincident_surface_gap_m": 1.228781230931777e-07
+    },
+    {
+      "label": "head",
+      "bone": "Bone_003",
+      "degrees": 6,
+      "max_displacement_m": 0.06630745942973149,
+      "coincident_surface_gap_m": 1.228781230931777e-07
+    },
+    {
+      "label": "antenna-left",
+      "bone": "Bone_045",
+      "degrees": 6,
+      "max_displacement_m": 0.045569310710380194,
+      "coincident_surface_gap_m": 1.228781230931777e-07
+    },
+    {
+      "label": "antenna-right",
+      "bone": "Bone_042",
+      "degrees": -6,
+      "max_displacement_m": 0.04547242949760016,
+      "coincident_surface_gap_m": 1.228781230931777e-07
+    },
+    {
+      "label": "tail-root",
+      "bone": "Bone_031",
+      "degrees": 8,
+      "max_displacement_m": 0.11044205031697381,
+      "coincident_surface_gap_m": 1.228781230931777e-07
+    },
+    {
+      "label": "tail-middle",
+      "bone": "Bone_030",
+      "degrees": -8,
+      "max_displacement_m": 0.07634593366944059,
+      "coincident_surface_gap_m": 1.228781230931777e-07
+    },
+    {
+      "label": "removed-pair2-left",
+      "bone": "Bone_027",
+      "degrees": 20,
+      "max_displacement_m": 0.0,
+      "coincident_surface_gap_m": 1.228781230931777e-07
+    },
+    {
+      "label": "removed-pair2-right",
+      "bone": "Bone_024",
+      "degrees": -20,
+      "max_displacement_m": 0.0,
+      "coincident_surface_gap_m": 1.228781230931777e-07
+    }
+  ]
+}

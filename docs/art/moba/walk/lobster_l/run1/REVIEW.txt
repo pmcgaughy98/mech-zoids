@@ -1,0 +1,16 @@
+Walk lane review of lobster run 1 (2026-11-06)
+Tokens: 170,761 (stopped by the watcher at the 170k cap, 09:02). All 24 frames (e, se, ne) delivered; REPORT.txt says
+"review delivery, NOT an all-gates pass".
+Passes: foot lock by Codex's stamps (spreads at most 0.88 px); upper body 0% different after the dip; specks within
+the still's count plus 2; 0 off-palette pixels; binary alpha; one piece; nothing past row 161 (dipped claws only).
+The walk tool's silhouette footlock flags se R3 and ne R1/R2 because touching soles merge; the stamps decide.
+By eye (lobster_run1_review.png, lobster_run1_zoom.png):
+- e: reads as the tripod walk; legs whole. Keep.
+- se R3 (rear near leg, upper left): shredded in most frames: grey shards, loose red bits, and in f7 a thin stick
+  poking left. Not the still's leg. Needs a fix.
+- ne R1 (front near leg, under the claw at upper right): broken into grey shards and dark horizontal bands in f1-f3
+  and f5-f7. Needs a fix.
+- Gates Codex reported as not met: the 1 px leg-length gate (max 1.7 px), and se R2's underside span (5.2 px below
+  the line). The "own still row" gate was my brief's error: the targets themselves put planted diagonal feet up to
+  2 px lower than the still, as in every walk so far.
+Next: fix se R3 and ne R1 (touch-up by hand, or a paid Codex fix), then run 2 (s, n) on Preston's yes.

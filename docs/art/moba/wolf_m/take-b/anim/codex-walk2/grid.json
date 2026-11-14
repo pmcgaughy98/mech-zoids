@@ -1,0 +1,272 @@
+{
+  "columns": 8,
+  "rows": 1,
+  "raw_size": [
+    2172,
+    724
+  ],
+  "cells": [
+    {
+      "frame": 0,
+      "source_box": [
+        0,
+        0,
+        284,
+        724
+      ],
+      "source_opaque_box": [
+        27,
+        285,
+        273,
+        440
+      ],
+      "scale": 0.447,
+      "placement": [
+        41,
+        92
+      ],
+      "final_upper_generated_source_cell": 4,
+      "final_path": "walk/frames/side_f0.png",
+      "final_bbox": [
+        41,
+        95,
+        151,
+        161
+      ],
+      "duration_ms": 100,
+      "body_dip": 0,
+      "head_steady": true
+    },
+    {
+      "frame": 1,
+      "source_box": [
+        284,
+        0,
+        550,
+        724
+      ],
+      "source_opaque_box": [
+        12,
+        290,
+        256,
+        440
+      ],
+      "scale": 0.447,
+      "placement": [
+        42,
+        94
+      ],
+      "final_upper_generated_source_cell": 4,
+      "final_path": "walk/frames/side_f1.png",
+      "final_bbox": [
+        42,
+        95,
+        151,
+        161
+      ],
+      "duration_ms": 100,
+      "body_dip": 1,
+      "head_steady": true
+    },
+    {
+      "frame": 2,
+      "source_box": [
+        550,
+        0,
+        818,
+        724
+      ],
+      "source_opaque_box": [
+        10,
+        291,
+        256,
+        440
+      ],
+      "scale": 0.447,
+      "placement": [
+        41,
+        94
+      ],
+      "final_upper_generated_source_cell": 4,
+      "final_path": "walk/frames/side_f2.png",
+      "final_bbox": [
+        42,
+        95,
+        151,
+        161
+      ],
+      "duration_ms": 100,
+      "body_dip": 0,
+      "head_steady": true
+    },
+    {
+      "frame": 3,
+      "source_box": [
+        818,
+        0,
+        1086,
+        724
+      ],
+      "source_opaque_box": [
+        13,
+        290,
+        256,
+        440
+      ],
+      "scale": 0.447,
+      "placement": [
+        42,
+        94
+      ],
+      "final_upper_generated_source_cell": 4,
+      "final_path": "walk/frames/side_f3.png",
+      "final_bbox": [
+        41,
+        95,
+        151,
+        161
+      ],
+      "duration_ms": 100,
+      "body_dip": 0,
+      "head_steady": true
+    },
+    {
+      "frame": 4,
+      "source_box": [
+        1086,
+        0,
+        1354,
+        724
+      ],
+      "source_opaque_box": [
+        12,
+        290,
+        257,
+        440
+      ],
+      "scale": 0.447,
+      "placement": [
+        41,
+        94
+      ],
+      "final_upper_generated_source_cell": 4,
+      "final_path": "walk/frames/side_f4.png",
+      "final_bbox": [
+        41,
+        95,
+        151,
+        161
+      ],
+      "duration_ms": 100,
+      "body_dip": 0,
+      "head_steady": true
+    },
+    {
+      "frame": 5,
+      "source_box": [
+        1354,
+        0,
+        1626,
+        724
+      ],
+      "source_opaque_box": [
+        13,
+        291,
+        258,
+        440
+      ],
+      "scale": 0.447,
+      "placement": [
+        41,
+        94
+      ],
+      "final_upper_generated_source_cell": 4,
+      "final_path": "walk/frames/side_f5.png",
+      "final_bbox": [
+        40,
+        95,
+        151,
+        161
+      ],
+      "duration_ms": 100,
+      "body_dip": 1,
+      "head_steady": true
+    },
+    {
+      "frame": 6,
+      "source_box": [
+        1626,
+        0,
+        1894,
+        724
+      ],
+      "source_opaque_box": [
+        12,
+        291,
+        255,
+        440
+      ],
+      "scale": 0.447,
+      "placement": [
+        42,
+        94
+      ],
+      "final_upper_generated_source_cell": 4,
+      "final_path": "walk/frames/side_f6.png",
+      "final_bbox": [
+        40,
+        95,
+        151,
+        161
+      ],
+      "duration_ms": 100,
+      "body_dip": 0,
+      "head_steady": true
+    },
+    {
+      "frame": 7,
+      "source_box": [
+        1894,
+        0,
+        2172,
+        724
+      ],
+      "source_opaque_box": [
+        10,
+        290,
+        256,
+        440
+      ],
+      "scale": 0.447,
+      "placement": [
+        41,
+        94
+      ],
+      "final_upper_generated_source_cell": 4,
+      "final_path": "walk/frames/side_f7.png",
+      "final_bbox": [
+        41,
+        95,
+        151,
+        161
+      ],
+      "duration_ms": 100,
+      "body_dip": 0,
+      "head_steady": true
+    }
+  ],
+  "canvas": [
+    192,
+    192
+  ],
+  "frame_ms": 100,
+  "loop": true,
+  "raw_sha256": "38aaa88c5563422d1555583b3acad2a9d6cba028095a93a91ffb9d60cd9ce749",
+  "generation_calls": 1,
+  "approved_reference": "../../fixed/e.png",
+  "reference_order": [
+    "refs/e_6x.png",
+    "pose_guide.png"
+  ],
+  "finishing": "Each complete generated cell extracted at common0.447 scale; generated cell4 upper drawing held steady throughout, no approved still pixels pasted. Whole legs and four-plate tail redrawn with native contours and integer articulated joint corrections."
+}

@@ -1,0 +1,48 @@
+{
+  "asset": "tower_base",
+  "raw_sha256": "9f94aae4d756bd88757c1f8251e8be2a13f1bff6e586ade059decec439be8735",
+  "runtime_sha256": "9541cb1b12b57d6ce0672dc5840c285de665c33cdc95c3ce4adabe3d50cbe0c4",
+  "raw_triangles": 4793,
+  "runtime_triangles": 3000,
+  "materials": 1,
+  "images": [
+    {
+      "name": "Image_0",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_1",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_2",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_3",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "size_godot_xyz_m": [
+    2.8,
+    2.95,
+    2.8
+  ],
+  "turned_deg": 0,
+  "pivot": "bottom centre",
+  "up": "+Y",
+  "collision": "none: the blockout keeps its own bodies and nav mesh",
+  "provider_metadata": "../source/tower_base/refine-status.json"
+}

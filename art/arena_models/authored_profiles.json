@@ -1,0 +1,2436 @@
+{
+  "gorilla": {
+    "source_file": "D:\\dev\\_scratch\\gorilla\\meshforge-2026-11-08\\round28\\gorilla-kit-v40.glb",
+    "body": {
+      "scale": 1.0,
+      "turn_rate": 16.0,
+      "idle": "Idle",
+      "walk": "Walk",
+      "walk_speed": 3.5,
+      "rest_height": 1.7,
+      "aliases": {
+        "Ult": "ChestBeat_Ult"
+      },
+      "clips": {
+        "Idle": "Gorilla_Idle",
+        "Walk": "Gorilla_Walk",
+        "Swat_Left": "Gorilla_Swat_Left",
+        "Swat_Right": "Gorilla_Swat_Right",
+        "Slam": "Gorilla_Slam",
+        "Shield_Ally": "Gorilla_Shield_Ally",
+        "Shield_Self": "Gorilla_Shield_Self",
+        "Ult": "Gorilla_Ult",
+        "GrabSlam": "Gorilla_GrabSlam",
+        "Fling_Whiff": "Gorilla_Fling_Whiff",
+        "DriveBrace": "Gorilla_DriveBrace",
+        "Drive": "Gorilla_Drive",
+        "DriveHit": "Gorilla_DriveHit",
+        "DriveBrake": "Gorilla_DriveBrake",
+        "Fling": "Gorilla_Fling",
+        "Hit_Front": "Gorilla_Hit_Front",
+        "Hit_Heavy": "Gorilla_Hit_Heavy",
+        "Idle_Fidget": "Gorilla_Idle_Fidget",
+        "Walk_Start": "Gorilla_Walk_Start",
+        "Walk_Stop": "Gorilla_Walk_Stop",
+        "GrabSlam_Double": "Gorilla_GrabSlam_Double",
+        "ChestBeat_Ult": "Gorilla_Ult",
+        "Strafe_Left": "Gorilla_Strafe_Left",
+        "Strafe_Right": "Gorilla_Strafe_Right",
+        "Walk_Back": "Gorilla_Walk_Back",
+        "Swat_Left_Walk": "Gorilla_Swat_Left_Walk",
+        "Swat_Right_Walk": "Gorilla_Swat_Right_Walk",
+        "Death": "Gorilla_Death",
+        "Dead": "Gorilla_Dead",
+        "Stun_Loop": "Gorilla_Stun_Loop",
+        "Recall": "Gorilla_Recall",
+        "Respawn": "Gorilla_Respawn",
+        "FaultLine": "Gorilla_FaultLine",
+        "Swat_Left_StrafeL": "Gorilla_Swat_Left_StrafeL",
+        "Swat_Left_StrafeR": "Gorilla_Swat_Left_StrafeR",
+        "Swat_Left_Back": "Gorilla_Swat_Left_Back",
+        "Swat_Right_StrafeL": "Gorilla_Swat_Right_StrafeL",
+        "Swat_Right_StrafeR": "Gorilla_Swat_Right_StrafeR",
+        "Swat_Right_Back": "Gorilla_Swat_Right_Back",
+        "Hit_Left": "Gorilla_Hit_Left",
+        "Hit_Right": "Gorilla_Hit_Right",
+        "Hit_Back": "Gorilla_Hit_Back"
+      },
+      "events": {
+        "Swat_Left": [
+          [
+            "hit",
+            0.3,
+            true
+          ]
+        ],
+        "Swat_Right": [
+          [
+            "hit",
+            0.3,
+            true
+          ]
+        ],
+        "Slam": [
+          [
+            "hit",
+            0.417,
+            true
+          ]
+        ],
+        "Fling": [
+          [
+            "grab",
+            0.18,
+            false
+          ],
+          [
+            "release",
+            0.38,
+            false
+          ]
+        ],
+        "Fling_Whiff": [
+          [
+            "clap",
+            0.18,
+            false
+          ]
+        ],
+        "ChestBeat_Ult": [
+          [
+            "beat",
+            0.42,
+            true
+          ],
+          [
+            "beat",
+            0.75,
+            true
+          ],
+          [
+            "beat",
+            1.27,
+            true
+          ]
+        ],
+        "Hit_Heavy": [
+          [
+            "replant",
+            0.2,
+            false
+          ]
+        ],
+        "Shield_Ally": [
+          [
+            "release",
+            0.25,
+            false
+          ]
+        ],
+        "Shield_Self": [
+          [
+            "release",
+            0.25,
+            false
+          ]
+        ],
+        "Ult": [
+          [
+            "drum",
+            0.4166666666666667,
+            false
+          ],
+          [
+            "beat",
+            0.42,
+            false
+          ],
+          [
+            "drum",
+            0.5333333333333333,
+            false
+          ],
+          [
+            "drum",
+            0.6416666666666667,
+            false
+          ],
+          [
+            "drum",
+            0.75,
+            false
+          ],
+          [
+            "beat",
+            0.75,
+            false
+          ],
+          [
+            "beat",
+            1.27,
+            false
+          ]
+        ],
+        "Swat_Left_Walk": [
+          [
+            "hit",
+            0.3,
+            true
+          ]
+        ],
+        "Swat_Right_Walk": [
+          [
+            "hit",
+            0.3,
+            true
+          ]
+        ],
+        "Death": [
+          [
+            "jolt",
+            0.11,
+            false
+          ],
+          [
+            "fall",
+            0.5,
+            false
+          ],
+          [
+            "settled",
+            0.9,
+            false
+          ]
+        ],
+        "Respawn": [
+          [
+            "up",
+            0.5,
+            false
+          ],
+          [
+            "ready",
+            0.9,
+            false
+          ]
+        ],
+        "FaultLine": [
+          [
+            "charge",
+            0.1,
+            false
+          ],
+          [
+            "fire",
+            0.4,
+            true
+          ],
+          [
+            "recover",
+            0.6,
+            false
+          ]
+        ],
+        "Swat_Left_StrafeL": [
+          [
+            "hit",
+            0.3,
+            true
+          ]
+        ],
+        "Swat_Left_StrafeR": [
+          [
+            "hit",
+            0.3,
+            true
+          ]
+        ],
+        "Swat_Left_Back": [
+          [
+            "hit",
+            0.3,
+            true
+          ]
+        ],
+        "Swat_Right_StrafeL": [
+          [
+            "hit",
+            0.3,
+            true
+          ]
+        ],
+        "Swat_Right_StrafeR": [
+          [
+            "hit",
+            0.3,
+            true
+          ]
+        ],
+        "Swat_Right_Back": [
+          [
+            "hit",
+            0.3,
+            true
+          ]
+        ]
+      },
+      "peaks": {
+        "Slam": 2.51,
+        "Fling": 2.94,
+        "ChestBeat_Ult": 3.06
+      },
+      "hands": [
+        "LeftHand",
+        "RightHand"
+      ],
+      "kit": "v40 (gorilla lane, 2026-11-14): v39 with the slot 2 Fault Line wind-up arching the back (reactor up toward the camera)",
+      "strafe_left": "Strafe_Left",
+      "strafe_right": "Strafe_Right",
+      "back": "Walk_Back",
+      "strafe_speed": 2.8,
+      "back_speed": 2.1,
+      "death": "Death",
+      "dead": "Dead",
+      "stun": "Stun_Loop",
+      "recall": "Recall",
+      "respawn": "Respawn",
+      "walk_start": "Walk_Start",
+      "walk_stop": "Walk_Stop",
+      "walk_start_exit_s": 0.05,
+      "steps": {
+        "Walk": [
+          [
+            "hand_r",
+            0.0192
+          ],
+          [
+            "foot_l",
+            0.2232
+          ],
+          [
+            "foot_r",
+            0.3132
+          ],
+          [
+            "hand_l",
+            0.5292
+          ]
+        ],
+        "Strafe_Left": [
+          [
+            "hand_l",
+            0.0
+          ],
+          [
+            "foot_r",
+            0.026
+          ],
+          [
+            "hand_r",
+            0.2167
+          ],
+          [
+            "foot_l",
+            0.2427
+          ]
+        ],
+        "Strafe_Right": [
+          [
+            "hand_r",
+            0.0
+          ],
+          [
+            "foot_l",
+            0.026
+          ],
+          [
+            "hand_l",
+            0.2167
+          ],
+          [
+            "foot_r",
+            0.2427
+          ]
+        ],
+        "Walk_Back": [
+          [
+            "hand_l",
+            0.0
+          ],
+          [
+            "foot_r",
+            0.035
+          ],
+          [
+            "hand_r",
+            0.25
+          ],
+          [
+            "foot_l",
+            0.285
+          ]
+        ]
+      },
+      "springs": [
+        [
+          "Jaw",
+          "JawTip",
+          70.0,
+          0.45,
+          0.0
+        ],
+        [
+          "Pauldron_L",
+          "",
+          40.0,
+          0.45,
+          0.42
+        ],
+        [
+          "Pauldron_R",
+          "",
+          40.0,
+          0.45,
+          0.42
+        ],
+        [
+          "Shield_L",
+          "",
+          300.0,
+          0.55,
+          0.5
+        ],
+        [
+          "Shield_R",
+          "",
+          300.0,
+          0.55,
+          0.5
+        ]
+      ]
+    }
+  },
+  "rhino": {
+    "source_file": "D:\\dev\\_scratch\\rhino-donor-2026-11-08\\game-export-v60\\rhino_game_v60.glb",
+    "body": {
+      "scale": 1.0,
+      "turn_rate": 12.0,
+      "idle": "idle",
+      "walk": "run",
+      "walk_speed": 3.983,
+      "run": "charge",
+      "run_speed": 6.091,
+      "run_above": 7.0,
+      "rest_height": 1.7,
+      "clips": {
+        "idle": "idle",
+        "walk": "run",
+        "slow_walk": "walk",
+        "charge": "charge",
+        "horn_hook": "horn_hook",
+        "horn_rip": "horn_rip",
+        "horn_gore": "horn_gore",
+        "horn_toss": "horn_toss",
+        "ground_pound": "ground_pound",
+        "ground_pound_finale": "ground_pound_finale",
+        "brace_enter": "MF_brace_enter",
+        "brace_hold": "MF_brace_hold",
+        "brace_exit": "MF_brace_exit",
+        "Hit_Front": "hit_light",
+        "Hit_Heavy": "hit_heavy",
+        "horn_attack": "horn_attack",
+        "brace_walk": "brace_walk",
+        "Stun": "stun",
+        "Death": "death",
+        "brace_release": "brace_release",
+        "piston_charge": "piston_charge",
+        "stampede_windup": "stampede_windup"
+      },
+      "events": {
+        "horn_hook": [
+          [
+            "hit",
+            0.2,
+            true
+          ]
+        ],
+        "horn_rip": [
+          [
+            "stamp",
+            0.2667,
+            false
+          ],
+          [
+            "hit",
+            0.3333,
+            true
+          ]
+        ],
+        "horn_gore": [
+          [
+            "hit",
+            0.5333,
+            true
+          ],
+          [
+            "land",
+            0.8,
+            false
+          ]
+        ],
+        "horn_toss": [
+          [
+            "dash_start",
+            0.1333,
+            false
+          ],
+          [
+            "catch",
+            0.4,
+            true
+          ],
+          [
+            "release",
+            0.5333,
+            false
+          ]
+        ],
+        "ground_pound": [
+          [
+            "slam",
+            0.4,
+            true
+          ],
+          [
+            "stomp_1",
+            0.8,
+            false
+          ],
+          [
+            "stomp_2",
+            1.2,
+            false
+          ],
+          [
+            "stomp_3",
+            1.6,
+            false
+          ],
+          [
+            "stomp_4",
+            2.0,
+            false
+          ]
+        ],
+        "ground_pound_finale": [
+          [
+            "drop",
+            0.1667,
+            false
+          ],
+          [
+            "slam",
+            0.4,
+            true
+          ]
+        ],
+        "horn_attack": [
+          [
+            "hit",
+            0.4667,
+            true
+          ],
+          [
+            "toss",
+            0.5667,
+            false
+          ]
+        ],
+        "death": [
+          [
+            "body_down",
+            1.0,
+            false
+          ]
+        ],
+        "brace_release": [
+          [
+            "release",
+            0.2,
+            true
+          ]
+        ],
+        "stampede_windup": [
+          [
+            "paw_1",
+            0.1333,
+            false
+          ],
+          [
+            "paw_2",
+            0.3333,
+            false
+          ],
+          [
+            "go",
+            0.5,
+            false
+          ]
+        ],
+        "charge": [
+          [
+            "stride",
+            0.2,
+            false
+          ]
+        ]
+      }
+    }
+  },
+  "kangaroo": {
+    "source_file": "D:\\dev\\_scratch\\kangaroo-3d\\game-export-r12\\kangaroo-kit-r12.glb",
+    "body": {
+      "scale": 1.0,
+      "turn_rate": 16.0,
+      "idle": "Idle",
+      "walk": "Walk",
+      "walk_speed": 3.5,
+      "rest_height": 1.7,
+      "strafe_left": "Strafe_Left",
+      "strafe_right": "Strafe_Right",
+      "back": "Walk_Back",
+      "strafe_speed": 3.5,
+      "back_speed": 3.5,
+      "kit": "r12 (kangaroo-3d, 2026-11-13): r11 with the Death clip fixed (the arms swing out as the legs fold, so the gloves no longer pass through the thighs). r11 (kangaroo-3d, 2026-11-12): r10 plus three clips for the title bout's bob and weave: Slip_Left and Slip_Right (0.25 s duck and bob, in place), Reel (the bout target's reaction when the target is a kangaroo; starts and ends on Stun's first frame). The 22 older clips are rebuilt from the same script and rig.",
+      "basic_chain_proposal": [
+        "Jab_Left",
+        "Jab_Right_Quick",
+        "Hook_Right"
+      ],
+      "clips": {
+        "Idle": "Kangaroo_Idle",
+        "Idle_Fidget": "Kangaroo_Idle_Fidget",
+        "Walk": "Kangaroo_Walk",
+        "Walk_Back": "Kangaroo_Walk_Back",
+        "Strafe_Left": "Kangaroo_Strafe_Left",
+        "Strafe_Right": "Kangaroo_Strafe_Right",
+        "Jab_Left": "Kangaroo_Jab_Left",
+        "Jab_Right": "Kangaroo_Jab_Right",
+        "HopJab": "Kangaroo_HopJab",
+        "Jab_Right_Quick": "Kangaroo_Jab_Right_Quick",
+        "Hook_Right": "Kangaroo_Hook_Right",
+        "TailKick": "Kangaroo_TailKick",
+        "Guard": "Kangaroo_Guard",
+        "Guard_Counter": "Kangaroo_Guard_Counter",
+        "Hit_Front": "Kangaroo_Hit_Front",
+        "Hit_Heavy": "Kangaroo_Hit_Heavy",
+        "Stun": "Kangaroo_Stun",
+        "Death": "Kangaroo_Death",
+        "Ring_Cast": "Kangaroo_Ring_Cast",
+        "Leap": "Kangaroo_Leap",
+        "Flurry": "Kangaroo_Flurry",
+        "Guard_Sweep": "Kangaroo_Guard_Sweep",
+        "Slip_Left": "Kangaroo_Slip_Left",
+        "Slip_Right": "Kangaroo_Slip_Right",
+        "Reel": "Kangaroo_Reel"
+      },
+      "events": {
+        "Idle_Fidget": [
+          [
+            "tail_thump",
+            1.24,
+            false
+          ],
+          [
+            "glove_tap",
+            1.92,
+            false
+          ],
+          [
+            "glove_tap",
+            2.12,
+            false
+          ]
+        ],
+        "Walk": [
+          [
+            "land",
+            0.0,
+            false
+          ],
+          [
+            "push_off",
+            0.18,
+            false
+          ]
+        ],
+        "Walk_Back": [
+          [
+            "land",
+            0.0,
+            false
+          ],
+          [
+            "push_off",
+            0.128,
+            false
+          ]
+        ],
+        "Strafe_Left": [
+          [
+            "land",
+            0.0,
+            false
+          ],
+          [
+            "push_off",
+            0.086,
+            false
+          ]
+        ],
+        "Strafe_Right": [
+          [
+            "land",
+            0.0,
+            false
+          ],
+          [
+            "push_off",
+            0.086,
+            false
+          ]
+        ],
+        "Jab_Left": [
+          [
+            "hit",
+            0.2,
+            true
+          ]
+        ],
+        "Jab_Right": [
+          [
+            "hit",
+            0.2,
+            true
+          ]
+        ],
+        "HopJab": [
+          [
+            "hop",
+            0.12,
+            false
+          ],
+          [
+            "land",
+            0.4,
+            false
+          ],
+          [
+            "hit",
+            0.52,
+            true
+          ],
+          [
+            "hit",
+            0.64,
+            true
+          ],
+          [
+            "hit",
+            0.76,
+            true
+          ],
+          [
+            "hit",
+            0.88,
+            true
+          ]
+        ],
+        "Jab_Right_Quick": [
+          [
+            "hit",
+            0.11,
+            true
+          ]
+        ],
+        "Hook_Right": [
+          [
+            "hit",
+            0.24,
+            true
+          ]
+        ],
+        "TailKick": [
+          [
+            "brace",
+            0.14,
+            false
+          ],
+          [
+            "hit",
+            0.5,
+            true
+          ],
+          [
+            "land",
+            0.74,
+            false
+          ]
+        ],
+        "Guard_Counter": [
+          [
+            "block",
+            0.0,
+            false
+          ],
+          [
+            "hit",
+            0.22,
+            true
+          ]
+        ],
+        "Hit_Heavy": [
+          [
+            "replant",
+            0.2,
+            false
+          ]
+        ],
+        "Death": [
+          [
+            "collapse",
+            0.55,
+            false
+          ],
+          [
+            "settle",
+            1.2,
+            false
+          ]
+        ],
+        "Ring_Cast": [
+          [
+            "glove_tap",
+            0.18,
+            false
+          ],
+          [
+            "ring",
+            0.42,
+            false
+          ]
+        ],
+        "Leap": [
+          [
+            "hop",
+            0.14,
+            false
+          ],
+          [
+            "apex",
+            0.34,
+            false
+          ],
+          [
+            "land",
+            0.54,
+            false
+          ]
+        ],
+        "Flurry": [
+          [
+            "hit",
+            0.1,
+            true
+          ],
+          [
+            "hit",
+            0.22,
+            true
+          ],
+          [
+            "hit",
+            0.34,
+            true
+          ],
+          [
+            "hit",
+            0.46,
+            true
+          ]
+        ],
+        "Guard_Sweep": [
+          [
+            "block",
+            0.0,
+            false
+          ],
+          [
+            "hit",
+            0.26,
+            true
+          ],
+          [
+            "land",
+            0.46,
+            false
+          ]
+        ],
+        "Slip_Left": [
+          [
+            "push",
+            0.04,
+            false
+          ],
+          [
+            "land",
+            0.21,
+            false
+          ]
+        ],
+        "Slip_Right": [
+          [
+            "push",
+            0.04,
+            false
+          ],
+          [
+            "land",
+            0.21,
+            false
+          ]
+        ],
+        "Reel": [
+          [
+            "replant",
+            0.2,
+            false
+          ]
+        ]
+      },
+      "peaks": {
+        "Walk": 1.847,
+        "Walk_Back": 1.793,
+        "Strafe_Left": 1.762,
+        "Strafe_Right": 1.762,
+        "HopJab": 1.827
+      },
+      "loops": [
+        "Idle",
+        "Walk",
+        "Walk_Back",
+        "Strafe_Left",
+        "Strafe_Right",
+        "Guard",
+        "Stun"
+      ]
+    }
+  },
+  "hippo": {
+    "source_file": "D:\\dev\\_scratch\\hippo-3d\\game-export-r16-s125\\hippo-kit-r16.glb",
+    "body": {
+      "scale": 1.25,
+      "turn_rate": 9.0,
+      "idle": "Idle",
+      "walk": "Walk",
+      "walk_speed": 4.375,
+      "rest_height": 1.47,
+      "strafe_left": "Strafe_Left",
+      "strafe_right": "Strafe_Right",
+      "back": "Walk_Back",
+      "strafe_speed": 4.375,
+      "back_speed": 4.375,
+      "kit": "r11 (hippo-3d, 2026-11-11): locomotion, fidget, basic chain (bite, Jaw_Swing, Stomp), the pressure kit's clips (Yawn for Vent, Belly_Flop for Piston Drop, Lockjaw_Clamp/Carry/Slam, Toxic_Flood), Hit_Front, Hit_Heavy, Stun, Death. Chomp and Wallow are kept without a slot. Clips and events only; the kit code is not ported. scale, turn_rate and every length are placeholders for Preston. r12 touch-up (2026-11-12, started by the hippo touch-up lane, finished by hippo-3d): same mesh, rig, weights, UVs and clips as r11; paint faults fixed (window glass blotches, red smears, conduit fringes) and the tank conduits and window rings on the glow material. r13 (hippo-3d, 2026-11-13, Preston: the rear glow pipe was not painted all the way down): the rear glow pipe on both flanks now runs down onto the tank ring; paint and glow only. r14 (hippo-3d, 2026-11-13, Preston: add the small front tank window and run the front pipe down): the front glow pipe on both flanks runs down the seam in front of the front leg to a small painted tank window on each side of the chin tank's housing; the chin tank shows lit liquid; paint and glow only. r15 (hippo-3d, 2026-11-14, Preston: the left glow should be more to the left and redrawn, it looked uneven): the painted lower part of the rear glow pipe on both flanks now sweeps back round the tank housing's rear end into the ring's rear tip, mirroring the front pipe; paint and glow only. r16 (2026-11-14, for the effects lane's live liquid, Preston's yes via that lane): the chin tank glass is plain dark glass again, no painted liquid or surface line; the small side windows keep their paint.",
+      "clips": {
+        "Idle": "Hippo_Idle",
+        "Idle_Fidget": "Hippo_Idle_Fidget",
+        "Walk": "Hippo_Walk",
+        "Walk_Back": "Hippo_Walk_Back",
+        "Strafe_Left": "Hippo_Strafe_Left",
+        "Strafe_Right": "Hippo_Strafe_Right",
+        "bite": "Hippo_Bite",
+        "Hit_Front": "Hippo_Hit_Front",
+        "Hit_Heavy": "Hippo_Hit_Heavy",
+        "Stun": "Hippo_Stun",
+        "Death": "Hippo_Death",
+        "Jaw_Swing": "Hippo_Jaw_Swing",
+        "Stomp": "Hippo_Stomp",
+        "Yawn": "Hippo_Yawn",
+        "Belly_Flop": "Hippo_Belly_Flop",
+        "Wallow": "Hippo_Wallow",
+        "Chomp": "Hippo_Chomp",
+        "Lockjaw_Clamp": "Hippo_Lockjaw_Clamp",
+        "Lockjaw_Carry": "Hippo_Lockjaw_Carry",
+        "Lockjaw_Slam": "Hippo_Lockjaw_Slam",
+        "Toxic_Flood": "Hippo_Toxic_Flood"
+      },
+      "events": {
+        "Idle_Fidget": [
+          [
+            "stamp",
+            0.92,
+            false
+          ],
+          [
+            "head_shake",
+            1.45,
+            false
+          ]
+        ],
+        "Walk": [
+          [
+            "step",
+            0.0,
+            false
+          ],
+          [
+            "step",
+            0.17,
+            false
+          ]
+        ],
+        "Walk_Back": [
+          [
+            "step",
+            0.0,
+            false
+          ],
+          [
+            "step",
+            0.17,
+            false
+          ]
+        ],
+        "Strafe_Left": [
+          [
+            "step",
+            0.0,
+            false
+          ],
+          [
+            "step",
+            0.137,
+            false
+          ]
+        ],
+        "Strafe_Right": [
+          [
+            "step",
+            0.0,
+            false
+          ],
+          [
+            "step",
+            0.137,
+            false
+          ]
+        ],
+        "bite": [
+          [
+            "jaw_open",
+            0.05,
+            false
+          ],
+          [
+            "hit",
+            0.26,
+            true
+          ],
+          [
+            "recover",
+            0.45,
+            false
+          ]
+        ],
+        "Hit_Heavy": [
+          [
+            "replant",
+            0.3,
+            false
+          ]
+        ],
+        "Death": [
+          [
+            "body_down",
+            0.88,
+            false
+          ],
+          [
+            "head_down",
+            1.18,
+            false
+          ]
+        ],
+        "Jaw_Swing": [
+          [
+            "hit",
+            0.24,
+            true
+          ],
+          [
+            "recover",
+            0.42,
+            false
+          ]
+        ],
+        "Stomp": [
+          [
+            "rear_up",
+            0.1,
+            false
+          ],
+          [
+            "hit",
+            0.42,
+            true
+          ],
+          [
+            "recover",
+            0.65,
+            false
+          ]
+        ],
+        "Yawn": [
+          [
+            "jaw_open",
+            0.1,
+            false
+          ],
+          [
+            "cone_start",
+            0.35,
+            false
+          ],
+          [
+            "hit",
+            0.45,
+            true
+          ],
+          [
+            "cone_end",
+            0.95,
+            false
+          ]
+        ],
+        "Belly_Flop": [
+          [
+            "push_off",
+            0.22,
+            false
+          ],
+          [
+            "hit",
+            0.72,
+            true
+          ],
+          [
+            "get_up",
+            0.98,
+            false
+          ]
+        ],
+        "Wallow": [
+          [
+            "mud",
+            0.22,
+            false
+          ],
+          [
+            "rise",
+            1.0,
+            false
+          ]
+        ],
+        "Chomp": [
+          [
+            "capture",
+            0.24,
+            true
+          ],
+          [
+            "release",
+            1.12,
+            false
+          ]
+        ],
+        "Lockjaw_Clamp": [
+          [
+            "capture",
+            0.24,
+            true
+          ]
+        ],
+        "Lockjaw_Carry": [
+          [
+            "step",
+            0.0,
+            false
+          ],
+          [
+            "step",
+            0.25,
+            false
+          ]
+        ],
+        "Lockjaw_Slam": [
+          [
+            "slam",
+            0.28,
+            true
+          ],
+          [
+            "release",
+            0.31,
+            false
+          ]
+        ],
+        "Toxic_Flood": [
+          [
+            "charge",
+            0.05,
+            false
+          ],
+          [
+            "rear_up",
+            0.35,
+            false
+          ],
+          [
+            "burst",
+            0.75,
+            true
+          ],
+          [
+            "drain_end",
+            1.3,
+            false
+          ]
+        ]
+      },
+      "basic_chain_proposal": [
+        "bite",
+        "Jaw_Swing",
+        "Stomp"
+      ],
+      "ability_slots_proposal": {
+        "1": "Yawn",
+        "2": "Belly_Flop",
+        "3": [
+          "Lockjaw_Clamp",
+          "Lockjaw_Carry",
+          "Lockjaw_Slam"
+        ],
+        "4": "Toxic_Flood"
+      },
+      "chomp_mouth_godot_xyz_m": {
+        "capture": [
+          0.012,
+          0.367,
+          1.643
+        ],
+        "release": [
+          0.489,
+          1.157,
+          1.504
+        ]
+      },
+      "carry_speed": 2.1875,
+      "kit_plan": "docs/plan/hippo-kit-pressure-2026-11-11.md (Vent, Piston Drop, Lockjaw, Toxic Flood). Chomp and Wallow clips are kept but no longer have a slot.",
+      "peaks": {
+        "Walk": 1.435,
+        "Walk_Back": 1.443,
+        "Strafe_Left": 1.4,
+        "Strafe_Right": 1.397,
+        "Belly_Flop": 2.09
+      },
+      "loops": [
+        "Idle",
+        "Walk",
+        "Walk_Back",
+        "Strafe_Left",
+        "Strafe_Right",
+        "Stun",
+        "Lockjaw_Carry"
+      ],
+      "size_proposal": "scale 1.25 (hippo-3d, 2026-11-12, Preston: make the hippo bigger). About 4.00 m long and 1.84 m tall in the world; was 3.2 and 1.47. The number is a proposal. The GLB is r11, unchanged."
+    }
+  },
+  "pangolin": {
+    "source_file": "D:\\dev\\_scratch\\pangolin-3d\\game-export-r12\\pangolin-kit-r12.glb",
+    "body": {
+      "scale": 0.565,
+      "turn_rate": 14.0,
+      "idle": "Idle",
+      "walk": "Walk",
+      "walk_speed": 3.5,
+      "rest_height": 1.665,
+      "kit": "Round 13: scrap comet as a separately scaled shell (scrap_shell) round the normal-size pangolin. Fun pass kit, 2026-11-12, comet change 2026-11-13. Numbers are placeholders.",
+      "basic_chain_proposal": [
+        "Claw_Rake"
+      ],
+      "clips": {
+        "Idle": "Pangolin_Idle",
+        "Walk": "Pangolin_Walk",
+        "Basic_Left": "Pangolin_Basic_Left",
+        "Basic_Right": "Pangolin_Basic_Right",
+        "Claw_Rake": "Pangolin_Claw_Rake",
+        "Dig_In": "Pangolin_Dig_In",
+        "Dig_Erupt": "Pangolin_Dig_Erupt",
+        "Salvage": "Pangolin_Salvage",
+        "Rail_Launch": "Pangolin_Rail_Launch",
+        "Rail_Streak": "Pangolin_Rail_Streak",
+        "Rail_Arrive": "Pangolin_Rail_Arrive",
+        "Scale_Flare": "Pangolin_Scale_Flare",
+        "Curl_In": "Pangolin_Curl_In",
+        "Ball_Roll": "Pangolin_Ball_Roll",
+        "Ball_Roll_Spiked": "Pangolin_Ball_Roll_Spiked",
+        "Curl_Out": "Pangolin_Curl_Out",
+        "Comet_Gather": "Pangolin_Comet_Gather",
+        "Comet_Roll": "Pangolin_Comet_Roll",
+        "Comet_Burst": "Pangolin_Comet_Burst",
+        "Hit_Front": "Pangolin_Hit_Front",
+        "Hit_Heavy": "Pangolin_Hit_Heavy",
+        "Stun": "Pangolin_Stun",
+        "Death": "Pangolin_Death"
+      },
+      "events": {
+        "Walk": [
+          [
+            "step",
+            0.0,
+            false
+          ],
+          [
+            "step",
+            0.15,
+            false
+          ]
+        ],
+        "Basic_Left": [
+          [
+            "hit",
+            0.2,
+            true
+          ]
+        ],
+        "Basic_Right": [
+          [
+            "hit",
+            0.2,
+            true
+          ]
+        ],
+        "Claw_Rake": [
+          [
+            "hit",
+            0.2,
+            true
+          ],
+          [
+            "hit_shred",
+            0.36,
+            true
+          ]
+        ],
+        "Dig_In": [
+          [
+            "scoop",
+            0.08,
+            false
+          ],
+          [
+            "scoop",
+            0.14,
+            false
+          ],
+          [
+            "scoop",
+            0.22,
+            false
+          ],
+          [
+            "under",
+            0.47,
+            false
+          ]
+        ],
+        "Dig_Erupt": [
+          [
+            "break_ground",
+            0.2,
+            false
+          ],
+          [
+            "erupt",
+            0.25,
+            true
+          ],
+          [
+            "land",
+            0.5,
+            false
+          ]
+        ],
+        "Salvage": [
+          [
+            "plant",
+            0.1,
+            false
+          ],
+          [
+            "field",
+            0.15,
+            true
+          ],
+          [
+            "plate_snap",
+            0.36,
+            false
+          ],
+          [
+            "plate_snap",
+            0.42,
+            false
+          ],
+          [
+            "plate_snap",
+            0.48,
+            false
+          ]
+        ],
+        "Rail_Launch": [
+          [
+            "launch",
+            0.12,
+            false
+          ]
+        ],
+        "Rail_Arrive": [
+          [
+            "hit",
+            0.1,
+            true
+          ],
+          [
+            "plant",
+            0.24,
+            false
+          ]
+        ],
+        "Scale_Flare": [
+          [
+            "tighten",
+            0.13,
+            false
+          ],
+          [
+            "flare",
+            0.2,
+            true
+          ],
+          [
+            "closed",
+            0.62,
+            false
+          ]
+        ],
+        "Curl_In": [
+          [
+            "closed",
+            0.36,
+            false
+          ]
+        ],
+        "Ball_Roll": [
+          [
+            "turn",
+            0.0,
+            false
+          ]
+        ],
+        "Ball_Roll_Spiked": [
+          [
+            "turn",
+            0.0,
+            false
+          ]
+        ],
+        "Curl_Out": [
+          [
+            "open",
+            0.1,
+            false
+          ],
+          [
+            "land",
+            0.3,
+            false
+          ]
+        ],
+        "Comet_Gather": [
+          [
+            "pull",
+            0.04,
+            false
+          ],
+          [
+            "plates_on",
+            0.32,
+            false
+          ]
+        ],
+        "Comet_Roll": [
+          [
+            "turn",
+            0.0,
+            false
+          ]
+        ],
+        "Comet_Burst": [
+          [
+            "burst",
+            0.04,
+            true
+          ],
+          [
+            "clear",
+            0.3,
+            false
+          ]
+        ],
+        "Hit_Heavy": [
+          [
+            "replant",
+            0.32,
+            false
+          ]
+        ],
+        "Death": [
+          [
+            "buckle",
+            0.3,
+            false
+          ],
+          [
+            "ground",
+            0.92,
+            false
+          ]
+        ]
+      },
+      "peaks": {
+        "Walk": 1.621,
+        "Basic_Left": 1.75,
+        "Basic_Right": 1.749,
+        "Claw_Rake": 2.08,
+        "Dig_In": 1.665,
+        "Dig_Erupt": 2.701,
+        "Salvage": 1.683,
+        "Rail_Launch": 1.665,
+        "Rail_Streak": 1.63,
+        "Rail_Arrive": 1.683,
+        "Scale_Flare": 1.896,
+        "Curl_In": 2.823,
+        "Ball_Roll": 2.216,
+        "Ball_Roll_Spiked": 2.45,
+        "Curl_Out": 2.954,
+        "Comet_Gather": 2.377,
+        "Comet_Roll": 2.377,
+        "Comet_Burst": 2.377,
+        "Hit_Front": 1.673,
+        "Hit_Heavy": 1.766,
+        "Stun": 1.635,
+        "Death": 1.952
+      }
+    }
+  },
+  "bison": {
+    "source_file": "D:\\dev\\_scratch\\bison-3d\\game-export-r5\\bison-kit-r5.glb",
+    "body": {
+      "scale": 1.0,
+      "turn_rate": 8.0,
+      "idle": "Idle",
+      "walk": "Walk",
+      "walk_speed": 1.174,
+      "run": "Trot",
+      "run_speed": 3.407,
+      "run_above": 2.0,
+      "rest_height": 1.65,
+      "kit": "r5 (bison-3d, 2026-11-12): Idle, Walk (four-beat walk), Trot (proposed for the run slot), the alternating horn-hook basic (Hook_Left, Hook_Right), Hit_Front, Death, and the draft kit's clips (Chain_Throw for Coupling Chain, Whistle for War Whistle, Plow, Freight_Brace and Freight_Haul for Freight). Clips and events only; the kit is a draft and its code is not written. scale, turn_rate and every length are placeholders for Preston. Ares + Vulcan draft (2026-11-12): Eruption replaces War Whistle in slot 2 (the four stacks fire in turn, events erupt_fl/rr/fr/rl); Whistle stays in the GLB, unused. Plow has a stack flare event, Freight_Haul has slag drop events. Round 5 (2026-11-13): Hit_Heavy (replant event) and a Stun loop for stuns and holds; Walk_Back, Strafe_Left and Strafe_Right for the side band (mech_model_3d _side_clip).",
+      "clips": {
+        "Idle": "Bison_Idle",
+        "Walk": "Bison_Walk",
+        "Trot": "Bison_Trot",
+        "Hook_Left": "Bison_Hook_Left",
+        "Hook_Right": "Bison_Hook_Right",
+        "Hit_Front": "Bison_Hit_Front",
+        "Death": "Bison_Death",
+        "Chain_Throw": "Bison_Chain_Throw",
+        "Plow": "Bison_Plow",
+        "Whistle": "Bison_Whistle",
+        "Eruption": "Bison_Eruption",
+        "Freight_Brace": "Bison_Freight_Brace",
+        "Freight_Haul": "Bison_Freight_Haul",
+        "Hit_Heavy": "Bison_Hit_Heavy",
+        "Stun": "Bison_Stun",
+        "Walk_Back": "Bison_Walk_Back",
+        "Strafe_Left": "Bison_Strafe_Left",
+        "Strafe_Right": "Bison_Strafe_Right"
+      },
+      "events": {
+        "Idle": [
+          [
+            "vent",
+            0.9,
+            false
+          ],
+          [
+            "vent",
+            2.7,
+            false
+          ]
+        ],
+        "Walk": [
+          [
+            "step",
+            0.0,
+            false
+          ],
+          [
+            "step",
+            0.176,
+            false
+          ],
+          [
+            "step",
+            0.4,
+            false
+          ],
+          [
+            "step",
+            0.576,
+            false
+          ]
+        ],
+        "Trot": [
+          [
+            "step",
+            0.0,
+            false
+          ],
+          [
+            "step",
+            0.22,
+            false
+          ]
+        ],
+        "Hook_Left": [
+          [
+            "windup",
+            0.06,
+            false
+          ],
+          [
+            "hit",
+            0.267,
+            true
+          ],
+          [
+            "recover",
+            0.46,
+            false
+          ]
+        ],
+        "Hook_Right": [
+          [
+            "windup",
+            0.06,
+            false
+          ],
+          [
+            "hit",
+            0.267,
+            true
+          ],
+          [
+            "recover",
+            0.46,
+            false
+          ]
+        ],
+        "Hit_Front": [
+          [
+            "impact",
+            0.0,
+            false
+          ]
+        ],
+        "Death": [
+          [
+            "knees",
+            0.68,
+            false
+          ],
+          [
+            "body_down",
+            1.15,
+            false
+          ],
+          [
+            "head_down",
+            1.45,
+            false
+          ]
+        ],
+        "Chain_Throw": [
+          [
+            "windup",
+            0.04,
+            false
+          ],
+          [
+            "fire",
+            0.283,
+            false
+          ],
+          [
+            "recover",
+            0.55,
+            false
+          ]
+        ],
+        "Plow": [
+          [
+            "windup",
+            0.05,
+            false
+          ],
+          [
+            "step",
+            0.18,
+            false
+          ],
+          [
+            "step",
+            0.26,
+            false
+          ],
+          [
+            "flare",
+            0.4,
+            false
+          ],
+          [
+            "hit",
+            0.467,
+            true
+          ],
+          [
+            "step",
+            0.52,
+            false
+          ],
+          [
+            "step",
+            0.6,
+            false
+          ],
+          [
+            "throw",
+            0.62,
+            false
+          ],
+          [
+            "recover",
+            0.85,
+            false
+          ],
+          [
+            "step",
+            0.96,
+            false
+          ],
+          [
+            "step",
+            1.08,
+            false
+          ]
+        ],
+        "Whistle": [
+          [
+            "inhale",
+            0.05,
+            false
+          ],
+          [
+            "blast",
+            0.32,
+            false
+          ],
+          [
+            "plume_end",
+            0.95,
+            false
+          ],
+          [
+            "recover",
+            1.05,
+            false
+          ]
+        ],
+        "Eruption": [
+          [
+            "gather",
+            0.04,
+            false
+          ],
+          [
+            "roar",
+            0.32,
+            false
+          ],
+          [
+            "erupt_fl",
+            0.38,
+            false
+          ],
+          [
+            "erupt_rr",
+            0.48,
+            false
+          ],
+          [
+            "erupt_fr",
+            0.58,
+            false
+          ],
+          [
+            "erupt_rl",
+            0.68,
+            false
+          ],
+          [
+            "recover",
+            1.05,
+            false
+          ]
+        ],
+        "Freight_Brace": [
+          [
+            "gather",
+            0.04,
+            false
+          ],
+          [
+            "chains_out",
+            0.26,
+            true
+          ],
+          [
+            "stamp_l",
+            0.46,
+            false
+          ],
+          [
+            "stamp_r",
+            0.56,
+            false
+          ],
+          [
+            "braced",
+            0.75,
+            false
+          ]
+        ],
+        "Freight_Haul": [
+          [
+            "step",
+            0.0,
+            false
+          ],
+          [
+            "slag",
+            0.15,
+            false
+          ],
+          [
+            "step",
+            0.288,
+            false
+          ],
+          [
+            "step",
+            0.6,
+            false
+          ],
+          [
+            "slag",
+            0.75,
+            false
+          ],
+          [
+            "step",
+            0.888,
+            false
+          ]
+        ],
+        "Hit_Heavy": [
+          [
+            "impact",
+            0.0,
+            false
+          ],
+          [
+            "replant",
+            0.34,
+            false
+          ]
+        ],
+        "Walk_Back": [
+          [
+            "step",
+            0.0,
+            false
+          ],
+          [
+            "step",
+            0.23,
+            false
+          ]
+        ],
+        "Strafe_Left": [
+          [
+            "step",
+            0.0,
+            false
+          ],
+          [
+            "step",
+            0.22,
+            false
+          ]
+        ],
+        "Strafe_Right": [
+          [
+            "step",
+            0.0,
+            false
+          ],
+          [
+            "step",
+            0.22,
+            false
+          ]
+        ]
+      },
+      "basic_chain_proposal": [
+        "Hook_Left",
+        "Hook_Right"
+      ],
+      "peaks": {
+        "Walk": 1.659,
+        "Trot": 1.657,
+        "Plow": 1.65,
+        "Whistle": 1.655,
+        "Eruption": 1.65
+      },
+      "loops": [
+        "Idle",
+        "Walk",
+        "Trot",
+        "Freight_Haul",
+        "Walk_Back",
+        "Strafe_Left",
+        "Strafe_Right",
+        "Stun"
+      ],
+      "ability_slots_proposal": {
+        "1": "Chain_Throw",
+        "2": "Eruption",
+        "3": "Plow",
+        "4": [
+          "Freight_Brace",
+          "Freight_Haul"
+        ]
+      },
+      "haul_speed": 0.518,
+      "sockets_proposal": {
+        "muzzle_purge": {
+          "blender_xyz": [
+            0.0,
+            -1.413,
+            0.509
+          ],
+          "godot_xyz": [
+            0.0,
+            0.509,
+            1.413
+          ],
+          "bone": "Bone_026"
+        },
+        "stack_fl": {
+          "blender_xyz": [
+            0.171,
+            -0.237,
+            1.687
+          ],
+          "godot_xyz": [
+            0.171,
+            1.687,
+            0.237
+          ],
+          "bone": "Bone_042"
+        },
+        "stack_rl": {
+          "blender_xyz": [
+            0.168,
+            0.038,
+            1.7
+          ],
+          "godot_xyz": [
+            0.168,
+            1.7,
+            -0.038
+          ],
+          "bone": "Bone_042"
+        },
+        "stack_fr": {
+          "blender_xyz": [
+            -0.169,
+            -0.238,
+            1.687
+          ],
+          "godot_xyz": [
+            -0.169,
+            1.687,
+            0.238
+          ],
+          "bone": "Bone_036"
+        },
+        "stack_rr": {
+          "blender_xyz": [
+            -0.167,
+            0.036,
+            1.7
+          ],
+          "godot_xyz": [
+            -0.167,
+            1.7,
+            -0.036
+          ],
+          "bone": "Bone_036"
+        },
+        "steam_l": {
+          "blender_xyz": [
+            0.17,
+            -0.1,
+            1.693
+          ],
+          "godot_xyz": [
+            0.17,
+            1.693,
+            0.1
+          ],
+          "bone": "Bone_042"
+        },
+        "steam_r": {
+          "blender_xyz": [
+            -0.168,
+            -0.101,
+            1.694
+          ],
+          "godot_xyz": [
+            -0.168,
+            1.694,
+            0.101
+          ],
+          "bone": "Bone_036"
+        }
+      },
+      "back": "Walk_Back",
+      "back_speed": 2.232,
+      "strafe_left": "Strafe_Left",
+      "strafe_right": "Strafe_Right",
+      "strafe_speed": 2.208
+    }
+  },
+  "cobra": {
+    "source_file": "D:\\dev\\_scratch\\cobra-3d\\game-export-r3\\cobra-base-r3.glb",
+    "body": {
+      "scale": 1.0,
+      "turn_rate": 9.0,
+      "idle": "Idle",
+      "walk": "Walk",
+      "walk_speed": 3.5,
+      "rest_height": 1.7,
+      "kit": "r3 (cobra-3d, 2026-11-13): base-reshape v2 with the new hood weights (Preston: \"New hood weights\"), the tail tapered from the base to a thin tip (Preston: \"fic cobra body and proportions. base is little wider than tail\") and the confirmed kit's clips (docs/plan/moba-kits.md, Cobra, ode to Medusa; Preston: \"yes, build the ability clips\"). Base set: Idle, Slither (Walk), basic chain (Strike_1 bite, Strike_2 hood swipe, Strike_3 head slam), Hit_Front, Death. Kit: Wall_Over and Wall_Over_3m (passive, Wall Line), Ghost_Run (1), Hood_Gaze (2), Seam_In and Seam_Out (3), Breach (4). No strafe or backpedal clips. scale, turn_rate and every length, speed and wall number are placeholders for Preston.",
+      "clips": {
+        "Idle": "Cobra_Idle",
+        "Walk": "Cobra_Slither",
+        "Strike_1": "Cobra_Strike_1",
+        "Strike_2": "Cobra_Strike_2",
+        "Strike_3": "Cobra_Strike_3",
+        "Hit_Front": "Cobra_Hit_Front",
+        "Death": "Cobra_Death",
+        "Wall_Over": "Cobra_Wall_Over",
+        "Wall_Over_3m": "Cobra_Wall_Over_3m",
+        "Ghost_Run": "Cobra_Ghost_Run",
+        "Hood_Gaze": "Cobra_Hood_Gaze",
+        "Seam_In": "Cobra_Seam_In",
+        "Seam_Out": "Cobra_Seam_Out",
+        "Breach": "Cobra_Breach"
+      },
+      "events": {
+        "Strike_1": [
+          [
+            "coil",
+            0.1,
+            false
+          ],
+          [
+            "hit",
+            0.22,
+            true
+          ],
+          [
+            "recover",
+            0.4,
+            false
+          ]
+        ],
+        "Strike_2": [
+          [
+            "wind",
+            0.12,
+            false
+          ],
+          [
+            "hit",
+            0.21,
+            true
+          ],
+          [
+            "recover",
+            0.44,
+            false
+          ]
+        ],
+        "Strike_3": [
+          [
+            "rear_up",
+            0.3,
+            false
+          ],
+          [
+            "hit",
+            0.46,
+            true
+          ],
+          [
+            "recover",
+            0.66,
+            false
+          ]
+        ],
+        "Death": [
+          [
+            "body_down",
+            0.8,
+            false
+          ],
+          [
+            "head_down",
+            1.05,
+            false
+          ]
+        ],
+        "Wall_Over": [
+          [
+            "reach",
+            0.2667,
+            false
+          ],
+          [
+            "crest",
+            0.65,
+            false
+          ],
+          [
+            "land",
+            1.8167,
+            false
+          ],
+          [
+            "clear",
+            2.65,
+            false
+          ]
+        ],
+        "Wall_Over_3m": [
+          [
+            "reach",
+            0.2667,
+            false
+          ],
+          [
+            "crest",
+            0.65,
+            false
+          ],
+          [
+            "land",
+            1.6833,
+            false
+          ],
+          [
+            "clear",
+            2.5167,
+            false
+          ]
+        ],
+        "Hood_Gaze": [
+          [
+            "gather",
+            0.12,
+            false
+          ],
+          [
+            "gaze",
+            0.3,
+            false
+          ],
+          [
+            "release",
+            0.62,
+            false
+          ]
+        ],
+        "Seam_In": [
+          [
+            "lunge",
+            0.12,
+            false
+          ],
+          [
+            "contact",
+            0.2167,
+            false
+          ],
+          [
+            "hidden",
+            0.9,
+            false
+          ]
+        ],
+        "Seam_Out": [
+          [
+            "emerge",
+            0.0167,
+            false
+          ],
+          [
+            "base_out",
+            0.2487,
+            false
+          ],
+          [
+            "clear",
+            0.9167,
+            false
+          ]
+        ],
+        "Breach": [
+          [
+            "wind",
+            0.3,
+            false
+          ],
+          [
+            "go",
+            0.36,
+            false
+          ],
+          [
+            "contact",
+            0.4167,
+            false
+          ],
+          [
+            "burst",
+            0.55,
+            true
+          ],
+          [
+            "clear",
+            1.0167,
+            false
+          ],
+          [
+            "stop",
+            1.046,
+            false
+          ]
+        ]
+      },
+      "basic_chain_proposal": [
+        "Strike_1",
+        "Strike_2",
+        "Strike_3"
+      ],
+      "strike_reach_at_hit": {
+        "Strike_1": {
+          "front_m": 2.061,
+          "snout_godot_xyz_m": [
+            0.091,
+            2.12,
+            1.26
+          ]
+        },
+        "Strike_2": {
+          "front_m": 1.951,
+          "snout_godot_xyz_m": [
+            0.005,
+            2.003,
+            1.376
+          ]
+        },
+        "Strike_3": {
+          "front_m": 2.302,
+          "snout_godot_xyz_m": [
+            0.091,
+            2.323,
+            0.529
+          ]
+        }
+      },
+      "abilities": {
+        "Wall_Over": {
+          "clip": "Cobra_Wall_Over",
+          "slot": "passive, Wall Line: the 5v5 wall module (2.6 m tall, 1.6 m thick)",
+          "note": "In place horizontally. The game moves the cobra forward at travel.speed for the whole clip, starting with the near face wall.near_face_ahead_m_at_start ahead of the model origin. Lifts the body to the wall height + 0.08 m.",
+          "wall": {
+            "height": 2.6,
+            "thickness": 1.6,
+            "near_face_ahead_m_at_start": 3.49
+          },
+          "travel": {
+            "speed": 3.0,
+            "from": 0.0,
+            "to": 2.7833
+          }
+        },
+        "Wall_Over_3m": {
+          "clip": "Cobra_Wall_Over_3m",
+          "slot": "passive, Wall Line: the old arena walls (3 m tall, 1.2 m thick)",
+          "note": "In place horizontally. The game moves the cobra forward at travel.speed for the whole clip, starting with the near face wall.near_face_ahead_m_at_start ahead of the model origin. Lifts the body to the wall height + 0.08 m.",
+          "wall": {
+            "height": 3.0,
+            "thickness": 1.2,
+            "near_face_ahead_m_at_start": 3.49
+          },
+          "travel": {
+            "speed": 3.0,
+            "from": 0.0,
+            "to": 2.65
+          }
+        },
+        "Ghost_Run": {
+          "clip": "Cobra_Ghost_Run",
+          "slot": "1, Ghost Run",
+          "note": "Loop. A lower, quicker slither with the hood folded flat; planted at 6.0 m/s. The soft look is an effect, not in the clip.",
+          "speed": 6.0
+        },
+        "Hood_Gaze": {
+          "clip": "Cobra_Hood_Gaze",
+          "slot": "2, Hood Gaze",
+          "note": "One-shot, in place. The hood flares wide with both plates swung forward. The cone fires at 'gaze'; 'release' is the end of the hold."
+        },
+        "Seam_In": {
+          "clip": "Cobra_Seam_In",
+          "slot": "3, Seam, into the wall",
+          "note": "In place horizontally. The game moves the cobra forward at travel.speed for the whole clip, near face wall.near_face_ahead_m_at_start ahead at the start. It dives head-first into the foot of the wall at 40 degrees. At 'hidden' no part is outside the wall above the floor: hide the model and start the inside travel. It stays inside the wall for inside_s (2.0 s; Preston, 2026-11-13: \"Seam stays inside the wall 2 seconds\"), then Seam_Out plays.",
+          "wall": {
+            "height": 2.6,
+            "thickness": 1.6,
+            "near_face_ahead_m_at_start": 2.463
+          },
+          "travel": {
+            "speed": 4.0,
+            "from": 0.0,
+            "to": 1.1
+          },
+          "inside_s": 2.0
+        },
+        "Seam_Out": {
+          "clip": "Cobra_Seam_Out",
+          "slot": "3, Seam, out of the wall",
+          "note": "In place horizontally. Place the cobra so the exit face is wall.exit_face_ahead_m_at_start ahead of the origin, with the wall behind that face, and move it forward at travel.speed for the whole clip. 'emerge' is the snout clearing the face; 'clear' is the tail tip out. Blend to Idle or Walk after 'clear'.",
+          "wall": {
+            "height": 2.6,
+            "thickness": 1.6,
+            "exit_face_ahead_m_at_start": 2.059
+          },
+          "travel": {
+            "speed": 4.0,
+            "from": 0.0,
+            "to": 1.2333
+          }
+        },
+        "Breach": {
+          "clip": "Cobra_Breach",
+          "slot": "4, Breach",
+          "note": "In place horizontally. The game moves the cobra forward at travel.speed only between 'go' and 'stop'. Near face wall.near_face_ahead_m_at_start ahead at the start. 'burst' is the snout coming out of the far face: damage and knockback there. The wall section is soft, so nothing is checked against it (the game dissolves or hides it).",
+          "wall": {
+            "height": 2.6,
+            "thickness": 1.6,
+            "near_face_ahead_m_at_start": 2.163
+          },
+          "travel": {
+            "speed": 8.0,
+            "from": 0.36,
+            "to": 1.046
+          }
+        }
+      },
+      "peaks": {
+        "Walk": 1.728,
+        "Ghost_Run": 1.695
+      },
+      "loops": [
+        "Idle",
+        "Walk",
+        "Ghost_Run"
+      ]
+    }
+  },
+  "fennec": {
+    "source_file": "D:\\dev\\_scratch\\fennec-3d\\r1\\game-export-r1\\fennec-r1.glb",
+    "body": {
+      "scale": 0.647,
+      "turn_rate": 16.0,
+      "idle": "Idle",
+      "walk": "Walk",
+      "walk_speed": 1.2,
+      "rest_height": 1.7,
+      "kit": "r1 (fennec 3D lane, Claude, 2026-11-14): idle and trot only, on Codex's repaired rigged fennec. The kit still times itself on the hidden sprite. Numbers are placeholders.",
+      "clips": {
+        "Idle": "Fennec_Idle",
+        "Walk": "Fennec_Walk"
+      },
+      "events": {
+        "Walk": [
+          [
+            "step",
+            0.0,
+            false
+          ],
+          [
+            "step",
+            0.1833,
+            false
+          ]
+        ]
+      }
+    }
+  }
+}

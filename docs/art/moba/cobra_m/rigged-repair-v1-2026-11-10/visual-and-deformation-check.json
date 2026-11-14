@@ -1,0 +1,123 @@
+{
+  "sources": {
+    "intact": "D:/dev/new-mech-rpg/docs/art/moba/cobra_m/tail-correction-2026-11-10/cobra_front - single tail corrected.glb",
+    "remeshed": "D:/user/Downloads/Mecha Beast GLB Meshy Rigged/Meshy_AI_cobra_remeshed_25k_20261111_character.glb",
+    "repaired": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\cobra_m\\rigged-repair-v1-2026-11-10\\cobra-rigged-local-repair-v1.glb"
+  },
+  "comparison_note": "Intact comparator is our accepted single-tail full-detail correction, not claimed as independently verified exact Meshy upload. Display alignment only; no source changed.",
+  "views": [
+    [
+      "front",
+      [
+        0,
+        -3,
+        0.05
+      ]
+    ],
+    [
+      "side",
+      [
+        3,
+        0,
+        0.05
+      ]
+    ],
+    [
+      "back",
+      [
+        0,
+        3,
+        0.05
+      ]
+    ],
+    [
+      "underside",
+      [
+        0,
+        -0.3,
+        -3
+      ]
+    ],
+    [
+      "top",
+      [
+        0,
+        0,
+        3
+      ]
+    ],
+    [
+      "three-quarter",
+      [
+        2,
+        -3,
+        2
+      ]
+    ]
+  ],
+  "poses": [
+    {
+      "label": "tail-left",
+      "bones": [
+        "Bone_010",
+        "Bone_008"
+      ],
+      "local_x_degrees": 12,
+      "vertices_moved_over_1mm": 5168,
+      "maximum_displacement_m": 0.5007290629806451,
+      "finite": true
+    },
+    {
+      "label": "tail-right",
+      "bones": [
+        "Bone_010",
+        "Bone_008"
+      ],
+      "local_x_degrees": -12,
+      "vertices_moved_over_1mm": 5168,
+      "maximum_displacement_m": 0.5011436071945071,
+      "finite": true
+    },
+    {
+      "label": "neck",
+      "bones": [
+        "Bone_016"
+      ],
+      "local_x_degrees": 8,
+      "vertices_moved_over_1mm": 4973,
+      "maximum_displacement_m": 0.051295158895869206,
+      "finite": true
+    }
+  ],
+  "intact_display_alignment": {
+    "mean_nearest_sample_distance_m": 0.01025754354079254,
+    "yaw_degrees": 0.0,
+    "uniform_scale": 4.016615003347716,
+    "matrix": [
+      [
+        4.01661491394043,
+        0.0,
+        0.0,
+        0.3559125065803528
+      ],
+      [
+        0.0,
+        4.01661491394043,
+        0.0,
+        -0.5879557728767395
+      ],
+      [
+        0.0,
+        0.0,
+        4.01661491394043,
+        -0.0006150007247924805
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  }
+}

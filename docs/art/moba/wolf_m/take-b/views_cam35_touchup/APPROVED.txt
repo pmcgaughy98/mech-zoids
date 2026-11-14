@@ -1,0 +1,8 @@
+Wolf cam35 touch-up (take-b): kept by Preston, 2026-11-05 ("Keep it").
+Run: touchup/touchup_machine.py wolf_m/take-b --rim 2 --seam-cap --title Wolf (cap 0.80, reference fixed/).
+Recolour only: alpha identical to views_cam35/, so canvas, feet row 160 and silhouette are unchanged. Raw, no outline:
+the packer adds sel-out. Pale gunmetal plates now keep a 2 px bevel on top and left edges; seam ink skipped because
+every view was already as dark as approved. The wolf lane's ne ear-tip pixel (119, 71) stays 6e6e7e.
+Known short: 2x2 checkers rose in the s view (15 to 24, approved 10); highlight still above approved in se, e, ne.
+Installing (packing into the game) is not this lane's step; the fleet lane is asking Preston about packing.
+Details: docs/art/moba/touchup/LOG.md section 7.

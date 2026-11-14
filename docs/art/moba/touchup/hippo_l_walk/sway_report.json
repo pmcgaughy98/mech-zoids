@@ -1,0 +1,1348 @@
+{
+ "R": [
+  -1,
+  0,
+  1,
+  1,
+  1,
+  0,
+  -1,
+  -1
+ ],
+ "DY": [
+  0,
+  1,
+  1,
+  0,
+  0,
+  1,
+  1,
+  0
+ ],
+ "lock": 6,
+ "feather": 4,
+ "views": {
+  "s": {
+   "hip": 155,
+   "frames": [
+    {
+     "dx": 1,
+     "dy": 0,
+     "pins": [
+      [
+       "RF",
+       70.0,
+       163.4,
+       13.0
+      ],
+      [
+       "LF",
+       121.0,
+       156.6,
+       13.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 163,
+     "bottom_before": 163,
+     "px": 5750,
+     "px_before": 5756,
+     "pass": true
+    },
+    {
+     "dx": 0,
+     "dy": 1,
+     "pins": [
+      [
+       "RF",
+       70.0,
+       161.7,
+       13.0
+      ],
+      [
+       "LF",
+       121.0,
+       156.3,
+       13.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 162,
+     "bottom_before": 162,
+     "px": 5704,
+     "px_before": 5756,
+     "pass": true
+    },
+    {
+     "dx": -1,
+     "dy": 1,
+     "pins": [
+      [
+       "RF",
+       70.0,
+       160.0,
+       13.0
+      ],
+      [
+       "LF",
+       121.0,
+       157.0,
+       13.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 160,
+     "bottom_before": 160,
+     "px": 5705,
+     "px_before": 5754,
+     "pass": true
+    },
+    {
+     "dx": -1,
+     "dy": 0,
+     "pins": [
+      [
+       "RF",
+       70.0,
+       158.3,
+       13.0
+      ],
+      [
+       "LF",
+       121.0,
+       159.7,
+       13.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 160,
+     "bottom_before": 160,
+     "px": 5778,
+     "px_before": 5779,
+     "pass": true
+    },
+    {
+     "dx": -1,
+     "dy": 0,
+     "pins": [
+      [
+       "RF",
+       70.0,
+       156.6,
+       13.0
+      ],
+      [
+       "LF",
+       121.0,
+       163.4,
+       13.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 163,
+     "bottom_before": 163,
+     "px": 5751,
+     "px_before": 5758,
+     "pass": true
+    },
+    {
+     "dx": 0,
+     "dy": 1,
+     "pins": [
+      [
+       "RF",
+       70.0,
+       156.3,
+       13.0
+      ],
+      [
+       "LF",
+       121.0,
+       161.7,
+       13.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 162,
+     "bottom_before": 162,
+     "px": 5706,
+     "px_before": 5758,
+     "pass": true
+    },
+    {
+     "dx": 1,
+     "dy": 1,
+     "pins": [
+      [
+       "RF",
+       70.0,
+       157.0,
+       13.0
+      ],
+      [
+       "LF",
+       121.0,
+       160.0,
+       13.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 160,
+     "bottom_before": 160,
+     "px": 5706,
+     "px_before": 5756,
+     "pass": true
+    },
+    {
+     "dx": 1,
+     "dy": 0,
+     "pins": [
+      [
+       "RF",
+       70.0,
+       159.7,
+       13.0
+      ],
+      [
+       "LF",
+       121.0,
+       158.3,
+       13.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 160,
+     "bottom_before": 160,
+     "px": 5776,
+     "px_before": 5777,
+     "pass": true
+    }
+   ]
+  },
+  "se": {
+   "hip": 148,
+   "frames": [
+    {
+     "dx": 1,
+     "dy": 0,
+     "pins": [
+      [
+       "RF",
+       90.7,
+       162.4,
+       9.5
+      ],
+      [
+       "LF",
+       126.8,
+       154.6,
+       7.0
+      ],
+      [
+       "RH",
+       55.0,
+       132.0,
+       7.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 162,
+     "bottom_before": 162,
+     "px": 6053,
+     "px_before": 6040,
+     "pass": true
+    },
+    {
+     "dx": 0,
+     "dy": 1,
+     "pins": [
+      [
+       "RF",
+       88.6,
+       161.2,
+       9.5
+      ],
+      [
+       "LF",
+       128.9,
+       153.8,
+       7.0
+      ],
+      [
+       "RH",
+       57.1,
+       134.2,
+       7.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 161,
+     "bottom_before": 161,
+     "px": 6015,
+     "px_before": 6078,
+     "pass": true
+    },
+    {
+     "dx": -1,
+     "dy": 1,
+     "pins": [
+      [
+       "RF",
+       86.5,
+       160.0,
+       9.5
+      ],
+      [
+       "LF",
+       131.0,
+       154.0,
+       7.0
+      ],
+      [
+       "RH",
+       59.2,
+       137.4,
+       7.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 160,
+     "bottom_before": 160,
+     "px": 6029,
+     "px_before": 6102,
+     "pass": true
+    },
+    {
+     "dx": -1,
+     "dy": 0,
+     "pins": [
+      [
+       "RF",
+       84.4,
+       158.8,
+       9.5
+      ],
+      [
+       "LF",
+       133.1,
+       156.2,
+       7.0
+      ],
+      [
+       "RH",
+       57.1,
+       136.2,
+       7.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 159,
+     "bottom_before": 159,
+     "px": 6122,
+     "px_before": 6128,
+     "pass": true
+    },
+    {
+     "dx": -1,
+     "dy": 0,
+     "pins": [
+      [
+       "RF",
+       82.3,
+       157.6,
+       9.5
+      ],
+      [
+       "LF",
+       135.2,
+       159.4,
+       7.0
+      ],
+      [
+       "RH",
+       55.0,
+       135.0,
+       7.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 159,
+     "bottom_before": 159,
+     "px": 6124,
+     "px_before": 6132,
+     "pass": true
+    },
+    {
+     "dx": 0,
+     "dy": 1,
+     "pins": [
+      [
+       "RF",
+       84.4,
+       156.8,
+       9.5
+      ],
+      [
+       "LF",
+       133.1,
+       158.2,
+       7.0
+      ],
+      [
+       "RH",
+       52.9,
+       133.8,
+       7.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 158,
+     "bottom_before": 158,
+     "px": 6069,
+     "px_before": 6132,
+     "pass": true
+    },
+    {
+     "dx": 1,
+     "dy": 1,
+     "pins": [
+      [
+       "RF",
+       86.5,
+       157.0,
+       9.5
+      ],
+      [
+       "LF",
+       131.0,
+       157.0,
+       7.0
+      ],
+      [
+       "RH",
+       50.8,
+       132.6,
+       7.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 157,
+     "bottom_before": 157,
+     "px": 6033,
+     "px_before": 6084,
+     "pass": true
+    },
+    {
+     "dx": 1,
+     "dy": 0,
+     "pins": [
+      [
+       "RF",
+       88.6,
+       159.2,
+       9.5
+      ],
+      [
+       "LF",
+       128.9,
+       155.8,
+       7.0
+      ],
+      [
+       "RH",
+       52.9,
+       131.8,
+       7.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 159,
+     "bottom_before": 159,
+     "px": 6089,
+     "px_before": 6077,
+     "pass": true
+    }
+   ]
+  },
+  "e": {
+   "hip": 146,
+   "frames": [
+    {
+     "dx": 0,
+     "dy": 0,
+     "pins": [
+      [
+       "RH",
+       60.0,
+       155.0,
+       11.0
+      ],
+      [
+       "RF",
+       109.0,
+       160.0,
+       9.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 160,
+     "bottom_before": 160,
+     "px": 5391,
+     "px_before": 5391,
+     "pass": true
+    },
+    {
+     "dx": 0,
+     "dy": 1,
+     "pins": [
+      [
+       "RH",
+       63.0,
+       156.0,
+       11.0
+      ],
+      [
+       "RF",
+       106.0,
+       160.0,
+       9.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 160,
+     "bottom_before": 160,
+     "px": 5377,
+     "px_before": 5429,
+     "pass": true
+    },
+    {
+     "dx": 0,
+     "dy": 1,
+     "pins": [
+      [
+       "RH",
+       66.0,
+       158.0,
+       11.0
+      ],
+      [
+       "RF",
+       103.0,
+       160.0,
+       9.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 160,
+     "bottom_before": 160,
+     "px": 5458,
+     "px_before": 5514,
+     "pass": true
+    },
+    {
+     "dx": 0,
+     "dy": 0,
+     "pins": [
+      [
+       "RH",
+       63.0,
+       158.0,
+       11.0
+      ],
+      [
+       "RF",
+       100.0,
+       160.0,
+       9.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 160,
+     "bottom_before": 160,
+     "px": 5507,
+     "px_before": 5507,
+     "pass": true
+    },
+    {
+     "dx": 0,
+     "dy": 0,
+     "pins": [
+      [
+       "RH",
+       60.0,
+       158.0,
+       11.0
+      ],
+      [
+       "RF",
+       97.0,
+       160.0,
+       9.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 160,
+     "bottom_before": 160,
+     "px": 5508,
+     "px_before": 5508,
+     "pass": true
+    },
+    {
+     "dx": 0,
+     "dy": 1,
+     "pins": [
+      [
+       "RH",
+       57.0,
+       158.0,
+       11.0
+      ],
+      [
+       "RF",
+       100.0,
+       158.0,
+       9.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 158,
+     "bottom_before": 158,
+     "px": 5471,
+     "px_before": 5526,
+     "pass": true
+    },
+    {
+     "dx": 0,
+     "dy": 1,
+     "pins": [
+      [
+       "RH",
+       54.0,
+       158.0,
+       11.0
+      ],
+      [
+       "RF",
+       103.0,
+       157.0,
+       9.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 158,
+     "bottom_before": 158,
+     "px": 5472,
+     "px_before": 5527,
+     "pass": true
+    },
+    {
+     "dx": 0,
+     "dy": 0,
+     "pins": [
+      [
+       "RH",
+       57.0,
+       156.0,
+       11.0
+      ],
+      [
+       "RF",
+       106.0,
+       158.0,
+       9.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 158,
+     "bottom_before": 158,
+     "px": 5457,
+     "px_before": 5457,
+     "pass": true
+    }
+   ]
+  },
+  "ne": {
+   "hip": 144,
+   "frames": [
+    {
+     "dx": -1,
+     "dy": 0,
+     "pins": [
+      [
+       "LH",
+       58.0,
+       154.0,
+       9.0
+      ],
+      [
+       "RH",
+       94.5,
+       157.0,
+       9.5
+      ],
+      [
+       "RF",
+       129.2,
+       133.6,
+       8.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 157,
+     "bottom_before": 157,
+     "px": 5932,
+     "px_before": 5923,
+     "pass": true
+    },
+    {
+     "dx": 0,
+     "dy": 1,
+     "pins": [
+      [
+       "LH",
+       55.9,
+       155.2,
+       9.0
+      ],
+      [
+       "RH",
+       96.6,
+       156.8,
+       9.5
+      ],
+      [
+       "RF",
+       127.1,
+       134.8,
+       8.0
+      ]
+     ],
+     "pinholes_filled": 1,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 157,
+     "bottom_before": 157,
+     "px": 5957,
+     "px_before": 6017,
+     "pass": true
+    },
+    {
+     "dx": 1,
+     "dy": 1,
+     "pins": [
+      [
+       "LH",
+       53.8,
+       156.4,
+       9.0
+      ],
+      [
+       "RH",
+       98.7,
+       157.6,
+       9.5
+      ],
+      [
+       "RF",
+       125.0,
+       136.0,
+       8.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 158,
+     "bottom_before": 158,
+     "px": 5998,
+     "px_before": 6078,
+     "pass": true
+    },
+    {
+     "dx": 1,
+     "dy": 0,
+     "pins": [
+      [
+       "LH",
+       55.9,
+       153.2,
+       9.0
+      ],
+      [
+       "RH",
+       96.6,
+       158.8,
+       9.5
+      ],
+      [
+       "RF",
+       122.9,
+       137.2,
+       8.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 159,
+     "bottom_before": 159,
+     "px": 6023,
+     "px_before": 6031,
+     "pass": true
+    },
+    {
+     "dx": 1,
+     "dy": 0,
+     "pins": [
+      [
+       "LH",
+       58.0,
+       151.0,
+       9.0
+      ],
+      [
+       "RH",
+       94.5,
+       160.0,
+       9.5
+      ],
+      [
+       "RF",
+       120.8,
+       138.4,
+       8.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 160,
+     "bottom_before": 160,
+     "px": 5921,
+     "px_before": 5923,
+     "pass": true
+    },
+    {
+     "dx": 0,
+     "dy": 1,
+     "pins": [
+      [
+       "LH",
+       60.1,
+       150.8,
+       9.0
+      ],
+      [
+       "RH",
+       92.4,
+       161.2,
+       9.5
+      ],
+      [
+       "RF",
+       122.9,
+       135.2,
+       8.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 161,
+     "bottom_before": 161,
+     "px": 5878,
+     "px_before": 5944,
+     "pass": true
+    },
+    {
+     "dx": -1,
+     "dy": 1,
+     "pins": [
+      [
+       "LH",
+       62.2,
+       151.6,
+       9.0
+      ],
+      [
+       "RH",
+       90.3,
+       162.4,
+       9.5
+      ],
+      [
+       "RF",
+       125.0,
+       133.0,
+       8.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 162,
+     "bottom_before": 162,
+     "px": 5898,
+     "px_before": 5957,
+     "pass": true
+    },
+    {
+     "dx": -1,
+     "dy": 0,
+     "pins": [
+      [
+       "LH",
+       60.1,
+       152.8,
+       9.0
+      ],
+      [
+       "RH",
+       92.4,
+       159.2,
+       9.5
+      ],
+      [
+       "RF",
+       127.1,
+       132.8,
+       8.0
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 159,
+     "bottom_before": 159,
+     "px": 5972,
+     "px_before": 5963,
+     "pass": true
+    }
+   ]
+  },
+  "n": {
+   "hip": 154,
+   "frames": [
+    {
+     "dx": -1,
+     "dy": 0,
+     "pins": [
+      [
+       "LH",
+       72.0,
+       160.0,
+       11.0
+      ],
+      [
+       "RH",
+       118.5,
+       157.0,
+       11.5
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 160,
+     "bottom_before": 160,
+     "px": 5513,
+     "px_before": 5510,
+     "pass": true
+    },
+    {
+     "dx": 0,
+     "dy": 1,
+     "pins": [
+      [
+       "LH",
+       72.0,
+       161.7,
+       11.0
+      ],
+      [
+       "RH",
+       118.5,
+       156.3,
+       11.5
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 162,
+     "bottom_before": 162,
+     "px": 5531,
+     "px_before": 5582,
+     "pass": true
+    },
+    {
+     "dx": 1,
+     "dy": 1,
+     "pins": [
+      [
+       "LH",
+       72.0,
+       163.4,
+       11.0
+      ],
+      [
+       "RH",
+       118.5,
+       156.6,
+       11.5
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 163,
+     "bottom_before": 163,
+     "px": 5571,
+     "px_before": 5625,
+     "pass": true
+    },
+    {
+     "dx": 1,
+     "dy": 0,
+     "pins": [
+      [
+       "LH",
+       72.0,
+       159.7,
+       11.0
+      ],
+      [
+       "RH",
+       118.5,
+       158.3,
+       11.5
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 160,
+     "bottom_before": 160,
+     "px": 5584,
+     "px_before": 5585,
+     "pass": true
+    },
+    {
+     "dx": 1,
+     "dy": 0,
+     "pins": [
+      [
+       "LH",
+       72.0,
+       157.0,
+       11.0
+      ],
+      [
+       "RH",
+       118.5,
+       160.0,
+       11.5
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 160,
+     "bottom_before": 160,
+     "px": 5512,
+     "px_before": 5509,
+     "pass": true
+    },
+    {
+     "dx": 0,
+     "dy": 1,
+     "pins": [
+      [
+       "LH",
+       72.0,
+       156.3,
+       11.0
+      ],
+      [
+       "RH",
+       118.5,
+       161.7,
+       11.5
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 162,
+     "bottom_before": 162,
+     "px": 5531,
+     "px_before": 5582,
+     "pass": true
+    },
+    {
+     "dx": -1,
+     "dy": 1,
+     "pins": [
+      [
+       "LH",
+       72.0,
+       156.6,
+       11.0
+      ],
+      [
+       "RH",
+       118.5,
+       163.4,
+       11.5
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 163,
+     "bottom_before": 163,
+     "px": 5573,
+     "px_before": 5627,
+     "pass": true
+    },
+    {
+     "dx": -1,
+     "dy": 0,
+     "pins": [
+      [
+       "LH",
+       72.0,
+       158.3,
+       11.0
+      ],
+      [
+       "RH",
+       118.5,
+       159.7,
+       11.5
+      ]
+     ],
+     "pinholes_filled": 0,
+     "pieces": 1,
+     "hole_px": 0,
+     "hole_px_before": 0,
+     "alpha_binary": true,
+     "colours_ok": true,
+     "pinned_px_same": true,
+     "bottom": 160,
+     "bottom_before": 160,
+     "px": 5584,
+     "px_before": 5585,
+     "pass": true
+    }
+   ]
+  }
+ },
+ "all_pass": true
+}

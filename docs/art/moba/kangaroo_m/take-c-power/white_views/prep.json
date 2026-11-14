@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "459ce60ea5a3049e2f65448c866405f4701a96c98a4f291504e4b7638c723e46",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.5210237659963437,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "kangaroo_front.png",
+      "source_box": [
+        180,
+        9,
+        550,
+        504
+      ],
+      "source_dimensions": [
+        370,
+        495
+      ],
+      "output_box": [
+        230,
+        183,
+        793,
+        936
+      ]
+    },
+    "left": {
+      "file": "kangaroo_left.png",
+      "source_box": [
+        793,
+        9,
+        1340,
+        504
+      ],
+      "source_dimensions": [
+        547,
+        495
+      ],
+      "output_box": [
+        96,
+        183,
+        928,
+        936
+      ]
+    },
+    "back": {
+      "file": "kangaroo_back.png",
+      "source_box": [
+        177,
+        554,
+        552,
+        1075
+      ],
+      "source_dimensions": [
+        375,
+        521
+      ],
+      "output_box": [
+        227,
+        144,
+        797,
+        936
+      ]
+    },
+    "right": {
+      "file": "kangaroo_right.png",
+      "source_box": [
+        741,
+        552,
+        1288,
+        1049
+      ],
+      "source_dimensions": [
+        547,
+        497
+      ],
+      "output_box": [
+        96,
+        180,
+        928,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.04990403071017274
+}

@@ -1,0 +1,73 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "dffe3fbc1e4515883e04609605d1d693e478a1815a0b7dd868b064a9ce8554f8",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.2839506172839505,
+  "feet_baseline_exclusive": 936,
+  "method": "Existing art separated by connected components; magenta to white; common nearest-neighbour scale. No generation.",
+  "views": {
+    "front": {
+      "file": "bison_front.png",
+      "source_box": [
+        84,
+        94,
+        466,
+        558
+      ],
+      "output_box": [
+        267,
+        340,
+        757,
+        936
+      ]
+    },
+    "left": {
+      "file": "bison_left.png",
+      "source_box": [
+        554,
+        103,
+        1199,
+        555
+      ],
+      "output_box": [
+        98,
+        356,
+        926,
+        936
+      ]
+    },
+    "back": {
+      "file": "bison_back.png",
+      "source_box": [
+        84,
+        693,
+        457,
+        1167
+      ],
+      "output_box": [
+        272,
+        327,
+        751,
+        936
+      ]
+    },
+    "right": {
+      "file": "bison_right.png",
+      "source_box": [
+        544,
+        701,
+        1192,
+        1165
+      ],
+      "output_box": [
+        96,
+        340,
+        928,
+        936
+      ]
+    }
+  }
+}

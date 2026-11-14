@@ -1,0 +1,43 @@
+# Grab/Fling → ground slam — isolated trial, 2026-11-09
+
+Preston requested keeping the existing lunge but slamming the enemy back down, “like a monkey ragdolling its prey.” He clarified this means the **grab/Fling**, not Shield Drive. The new motion preserves the existing opening and replaces the backwards throw with an attached lift, downward drive, ground impact and a crumpled prone victim. Shield Drive is unchanged.
+
+## Watch / play
+
+`grab-slam-review.mp4`: 16.43 s, 1280x720, native Godot Movie Maker recording encoded with FFmpeg. Front quarter, normal chase/game camera, side, original whiff and half-speed front quarter. Actor and victim use the same diagnostic time multiplier. The normal/slow playback and representative lift/impact/settle frames were inspected. The target is an articulated mechanical training mannequin so its limbs and attachment can be seen; it is not a finished enemy asset.
+
+Run `launch-review.cmd`: WASD move, **2** grab-slam, **R** reset the standing victim, right-drag camera, Escape closes. Reset between successful slams: the training victim deliberately remains prone for review and does not implement a production get-up state. Already-prone targets whiff rather than being re-attached with a second body transform.
+
+Source: `grab-slam-trial.blend` / `.glb`; action `Gorilla_GrabSlam_CodexTrial`, 1.0 s. Added to the Shield Drive trial's preserved source. This is an isolated review, not a replacement of production kit files.
+
+## Motion and provenance
+
+The current shared MechModel3D row points to `gorilla_kit_v26.glb` and its Fling_v25 clip. Round-5 work files were also found and read, but they are separate ongoing revisions, not silently promoted here. The base used is `../codex-shield-drive-trial-2026-11-09/shield-drive-trial.blend`, which retains the v26-corrected original Fling and all accepted Codex shield/chest-beat work.
+
+The original Fling action is copied, and its actual keys through frame 39 at 120 fps (0.325 s) are retained. The opening pose matrices compare with **zero error**. The forward reach, grab, lift and loaded pose therefore remain the existing motion. Only the subsequent arm/body path is newly authored. The downstroke ends in front of the gorilla at 0.60 s; no backwards release at the former 0.38 s. The body leads down, the hands stay on the victim through contact, and recovery opens the arms outside the prone target before returning to the accepted stance. A time-based Hermite path and fixed-length IK are used, not limb scaling.
+
+Grab at 0.18 s establishes a measured relative transform between the mannequin's torso grip and the midpoint of the two hands. There is no snap to a new arbitrary target position. During lift/downstroke the victim follows that attachment while rotating toward a back-down landing; arms and legs react with controlled secondary motion. The original opening has a short weight-taking dip, so the mannequin bends its knees and holds its feet on the floor before the lift. Ankle counter-rotation keeps its soles flat. Following impact, its torso back contacts the floor and articulated limbs rebound and settle; joint rotations are limited against floor penetration without changing segment lengths.
+
+This is authored, attached victim motion with procedural articulation, not a general-purpose rigid-body ragdoll system for every character or body size. The two closed mechanical fists clamp the mannequin; no new fingers, hand geometry or grasp rig were invented. The midpoint attachment measurement does not certify exact palm-to-surface contact on all enemy shapes.
+
+## Event / gameplay preview contract
+
+The controller samples the 3D clip exactly at grab and ground impact while consuming arbitrary playback deltas. There is a one-shot impact latch; no damage on the lift, airborne release or repeated floor contacts. Draft preview damage is **28 once at 0.60 s**. A 0.065 s local hold, existing slam sound and directional camera kick accompany contact. No random shake or global Engine.time_scale modification.
+
+The target's normal controls are held while captured, released at impact, and also released on stun/death/target loss. A miss, ally, dead target, escaped grip, solid wall or closed hex barrier produces the original whiff and no damage. Capture additionally checks the visible grip is within 0.25 m, avoiding a remote grab. These are calibrated preview rules, not final roster-wide targeting/balance. No stun/knockdown duration or cooldown was silently added. The prone display is presentation rather than a permanent gameplay root. Interruption has a safe no-damage ground-placement fallback; a polished falling/get-up transition remains integration work.
+
+**Current integration status:** the shared game now has MechModel3D and ApeKit body/event hooks. Those files were read, not edited. Its existing `fling()` still calls `target.toss_to(...)` at the grab, and its old release event is 0.38 s. Integrating this new motion must replace that airborne throw with the held-victim lifecycle and ground-impact/release event at 0.60 s; merely changing the GLB would be wrong. This trial does not claim that production integration is done. All older clips remain in the export, including the old Fling; a deliberate clip mapping change is required later.
+
+## Evidence and limits
+
+- `manifest.json`: exact original opening through frame 39, 1.0 s new clip, zero authored IK reach clamps. No model reshaping.
+- `export-validation.json`: source positions/topology/UV/weights/material assignments, rest bones, packed image bytes and every pre-existing action curve match the Shield Drive base. Export contains 19 actions and 34 bones. Source has 69 mesh objects; Blender's clean importer adds its scratch Icosphere to the object count. Accepted eyes, bulk, shields, palette, chest-beat exit and Shield Drive clips are preserved.
+- Exported foot-tip patches through the entire stationary caster action move at most 0.000000572 m; bone-length deviation stays below 0.000000537 m. End pose differs from the start by less than 0.00000009 in its matrix elements. These are stationary clip measurements, not terrain/turning certification.
+- Maximum wrist bend 39.97 degrees (the unchanged opening remains within the prior 40-degree limit; the new portion is explicitly capped at 38). Maximum actual hand orientation change is 10.71 degrees per 120 fps frame. The metric uses quaternion sign-invariant angular difference; a 355-degree raw quaternion difference was a double-cover reporting artifact, not a physical turn, and was corrected.
+- No left/right shield surface intersections. Full body audit has nonempty mesh groups and 121 poses. The preserved opening retains existing shield/frame/thumb/attachment intersections. In the new downstroke/recovery, only forearm casing/body crossings remain (up to 367 left / 315 right triangle pairs). These are unresolved armor seams, not proof of a clean whole-model collision pass. The opening was not silently remodeled to fix those unrelated issues.
+- `native-review-results.json`: successful grabs each damage once, 100 → 72 HP; whiff does zero. Hand-midpoint attachment error is below 0.0000002 m. Initial torso socket/hand mismatch is about 7 mm, preserved as the capture offset rather than snapped. `native-attachment.csv` reports no negative visible mannequin mesh height in the recorded route; its back/limb floor contacts settle at zero. These results cover this mannequin, not every enemy rig.
+- `contract-validation.json`: 25 cases pass. Actual exported clip plus articulated mannequin at 15/30/60/120 fps deltas and 0.5/1/1.75 time multipliers; one damage event, released controls, attachment accuracy and floor limits. Additional cases cover no target, ally, dead, escaped, already-prone, stun/death/target death before and after capture, solid wall and closed hex barrier. No permanent held victim or repeat damage.
+
+Native traces are preserved as `native-attachment.csv`, `native-events.csv`, `native-review-results.json`; contract tests have their own outputs. Source/render/build scripts and front/side poses are adjacent. Technical passes and observed motion do not constitute Preston's artistic approval. Remaining integration issues include real enemy grip sockets/size adaptation, actual ragdoll/get-up behavior, collision-shape ownership while captured and armor seams.
+
+No production kit, source archive, another lane's work, paid tool, download or external upload was changed or used. No commits. Headless logs contain the existing root-certificate and exit-resource warnings; current tested scripts have no remaining parse/runtime failures.

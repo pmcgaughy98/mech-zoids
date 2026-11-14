@@ -1,0 +1,35 @@
+Job from Claude (the attack lane of the mech MOBA in D:/dev/new-mech-rpg), approved by Preston on 2026-11-05 ("Yes, start it"): redraw frames 2 and 3 (RISING and REARING) of the robot rhino's GROUND POUND at the game camera's 35 degree angle, in two views (east, southeast), in ONE image, then finish them into game frames. Run 1 drew these frames with an extra thigh segment on the hind legs, which lifted the hips and made the rear far too high (Preston: "they added thighs essentially"). This run draws them again with the hind legs exactly as in the approved stills and the hips at their standing height.
+Run tag: rhino-gp35-fix1. Write only inside OUT:
+- OUT = D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/fix1
+- RUN1 = D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/run1 (read only: run 1's finished frames and its finishing scripts)
+- TAKE = D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a (read only)
+- STILLS = TAKE/views_cam35_touchup (read only: e.png and se.png are this run's views)
+Images you may open: OUT/refs/look_35.png, STILLS/e.png, STILLS/se.png, RUN1/frames/ and RUN1/frames_selout/ (to measure and to build the review), and the images you make in OUT. Never attach any RUN1 frame to the image tool. Open NO other image: nothing under TAKE/anim, no other machine's folder, nothing under D:/dev/new-mech-rpg/art/ or assets/.
+Text you may read: RUN1/finish.py, RUN1/place.py, RUN1/audit.py, RUN1/defringe.py, RUN1/despeckle.py, RUN1/preparation.json, RUN1/placement.json, RUN1/checks.txt, RUN1/REPORT.txt, RUN1/targets.json, RUN1/still_metrics.json, TAKE/palette.json, TAKE/anim/selout_rhino.py (code only).
+Keep OUT/REPORT.txt current: write it after step 1 and update it after each step.
+
+1. Generate exactly ONE image with your built-in image tool from OUT/prompt-sheet.txt word for word, attaching exactly one image: OUT/refs/look_35.png. Save it unchanged as OUT/sheet_raw.png. Never make a second image or a redo; if it fails, report and stop.
+
+2. Finish it with RUN1's scripts (copy into OUT and adapt to 2 rows x 3 columns, rows e and se): magenta to transparent with no fringe; ONE whole-sheet nearest shrink chosen by the HEAD (horn tip to eye centre, column 1 of each row against its still, median of the two); the fixed palette from TAKE/palette.json, no new colours; ink share of 141218 within 15% of the still (e 8.1%, se 7.8%); eyes: at least 4 red ff3a2a pixels in a dark socket in every frame, drawn back by hand where the shrink lost them (list them); one despeckle pass only if specks exceed 1.2 times the still's (e 322, se 414); binary alpha; one 4-connected piece per frame.
+
+3. Slice columns 2 and 3 into OUT/frames/<view>_f2.png and <view>_f3.png on 192 x 192 transparent canvases. Column 1 is only for the scale and placement check: report its size against the still (e 103x75, se 85x83; within 4%) and do not save it as a frame. Place each frame so its hind soles sit on the still's hind soles (RUN1/targets.json views.<view>.soles, leg "hind"; e row 160, se row 143), moving only WHOLE frames, never parts; list each move. Never cut, paste or move parts of a frame. A wrong limb is reported, not patched. No frame touches its canvas border.
+
+4. Checks in OUT/checks.txt, one line each, PASS or MISS with the number:
+   - Hind sole drift against the still, 1 px or under.
+   - HIND LEG LENGTH (the fix): for the near hind leg, the rows from the sole up to the centre of its round steel joint disc, against the same measure on the still; within 2 px. Also the height of any charcoal or steel run between the top of that disc and the yellow body plate above it, against the still's; within 2 px. Say how you found the disc.
+   - HIP HEIGHT: the lowest row of the yellow body plate directly above the near hind leg, against the still's; within 3 px.
+   - Front feet against RUN1/targets.json views.<view>.frames front_feet_shift_px at frames 2 and 3, within 3 px; say how you found each foot.
+   - Frame 3 silhouette alpha IoU against the still at 1x: 0.85 or under (the rear still reads).
+   - Eye pixels, ink share, palette, pieces, specks against 1.2 times the still's, head size within 3%, seam slits (enclosed transparent pixels the still does not have), as in RUN1/checks.txt.
+   - Continuity: frame 2 sits between RUN1 frame 1 and the new frame 3 (front feet height and head height), and the hips of frames 2 and 3 are within 2 px of RUN1 frames 1 and 4.
+
+5. Review images (use RUN1/frames for frames 0, 1, 4 and 5; this run's frames for 2 and 3):
+   - Sel-out copies of this run's frames into OUT/frames_selout/ with selout from TAKE/anim/selout_rhino.py (never change OUT/frames/).
+   - OUT/review.png: two rows (e, se), columns: the still, run 1 frame 1, this run's frames 2 and 3, run 1 frame 4, then run 1's old frame 3 labelled "run 1 f3 (old)" for comparison; 4x nearest on mid grey, labelled.
+   - OUT/strip_1x.png: frames 0 to 5 of each row at 1x (the size the game shows), with this run's 2 and 3, on mid grey.
+   - OUT/legs_5x.png: the hind legs and hips of the still, this run's frame 3 and run 1's old frame 3, side by side per row, 5x nearest.
+   - OUT/preview_<view>.gif for e and se, frames 0 to 5 at 4x with the holds 100, 100, 100, 200, 300, 300 ms.
+
+6. Do not touch anything outside OUT: not RUN1, TAKE, STILLS, art/, assets/, scenes/, scripts/ or tools/. Do not commit, do not revert other files.
+
+7. Report in under 20 lines in OUT/REPORT.txt, and the same in your final answer: tokens used if known; the head scale and column 1 sizes; every check line; frames moved; eyes drawn back; and by eye: same rhino, no new parts? Hind legs the same length as the still, with no thigh? Hips at the standing height? Does frame 3 still read as a rear at 1x? Any cut-off, chopped or broken part, second chin, or gap?

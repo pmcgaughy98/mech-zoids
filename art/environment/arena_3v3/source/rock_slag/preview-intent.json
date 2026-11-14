@@ -1,0 +1,15 @@
+{
+  "request": {
+    "mode": "preview",
+    "ai_model": "meshy-6",
+    "target_formats": [
+      "glb"
+    ],
+    "prompt": "Stylized industrial science fiction MOBA Foundry environment piece. Strong readable silhouette, broad simple forms, no text, no logos, no characters, no ground plane, isolated single object, flat bottom. One large slag rock outcrop: rough dark basalt boulders fused with a few broken steel girders and a cracked glowing amber seam. A low broad mound about twice as wide as tall.",
+    "should_remesh": true,
+    "topology": "triangle",
+    "target_polycount": 6000
+  },
+  "reserved_credits": 20,
+  "at": "2026-11-14T13:40:25.637027+00:00"
+}

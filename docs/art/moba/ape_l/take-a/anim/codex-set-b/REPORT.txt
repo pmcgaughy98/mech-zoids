@@ -1,0 +1,22 @@
+APE L / CODEX SET B / 2026-11-04
+75 native-scale transparent 192x192 frames: bound 27, hex_dome 24, death 24.
+Tokens used: unavailable. Built-in image tool: exactly 3 calls, ONE sheet per animation; no redo.
+Copied and adapted set A finish.py, polish.py, gems.py, seam_fill.py and verify.py.
+Prompts in prompts/; attached approved stills copied in refs/; unmodified generated sheets retained.
+bound: sheet 2172x724, clean 3x9 grid, no source cut contacts; SHA256 c16f2ea728f45c872715d1eb72081ab553c8435dbe0eb2eb26334170f69c22d8
+hex_dome: sheet 2172x724, clean 3x8 grid, no source cut contacts; SHA256 dea78f1e1686ad4556d86825797f20392941e0b9ae7364e991521123161684d1
+death: sheet 2172x724, clean 3x8 grid, no source cut contacts; SHA256 bf3e1c5033f4672723271402e874e849ce2f42ed2c9c44d945f1b6b0aa2bc2ae
+All 75: approved 15-colour palette only, binary alpha, no pixels below row160, no canvas-edge contacts, no tiny stray components.
+Exact stills at (+16,+30): all frame0s and bound/hex_dome final frames have silhouette AND exact-colour IoU 1.000000 in all views.
+Bound airborne f3/f4/f5 lowest rows 144/132/148; lifts 16/28/12 native pixels in every view. Peak frame4 is the highest.
+Death f6/f7 lowest row160; f7 body settles one pixel down while ground contact texels remain planted. Eyes take approved darkest faceplate grey (74,73,80); gems stay green.
+Seam check from set A plus enclosed-hole flood fill run on every frame; checks.txt records found/filled counts per frame.
+Exception: exact approved endpoints retain original front 3 and back 6 enclosed transparent pixels. No newly drawn frame retains enclosed holes.
+Viewed all final three-view boards, including eyes, gems, gauntlets and contact lines. Patched native faces/gems, gem-face pinholes, crouch and overhead lead-in.
+Bound by eye: same gorilla in every row; crouch, push, airborne arc, two-fist low impact, recovery read in matched columns. Front/back straight on; no obvious limb elongation.
+Hex dome by eye: same gorilla; both fists overhead together in f2/f3, down together into f5; differs from chest beat. Rows match; front/back straight; short heavy limbs retained.
+Death by eye: same gorilla; recoil/stagger/buckle/forward sink/prone progression matches across rows; arms spread, final eyes dark. Front/back straight; no obvious stretched limbs.
+Generated drawings vary slightly in armour contour during extreme poses; palette, native face/gem details and fixed row scale were enforced. No effects present.
+All nine GIFs verified against requested timings. Frames, raw sheets, slices, grids, checks, GIFs and review boards are local to this set.
+Rebuild: python finish.py; python polish.py; python gems.py; python final_pose.py; python seam_fill.py; python gem_cleanup.py; python verify.py; python report.py.
+No installation, assets changes, commit, or writes to the other jobs.

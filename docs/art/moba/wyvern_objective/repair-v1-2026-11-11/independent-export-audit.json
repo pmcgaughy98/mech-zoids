@@ -1,0 +1,18 @@
+{
+  "id": "wyvern",
+  "passed": true,
+  "tested_sha256": "400b4030afb72959a5d265a97cf992c2ecee6e6ab417fb4e237ab0fd98ba09d9",
+  "triangles": 22976,
+  "joint_count": 46,
+  "boundary_edges": 0,
+  "collapsed_triangles": 0,
+  "protected_original_four_face_contacts": 8,
+  "healthy_source_body_faces_retained": 22970,
+  "source_rig_rest_binds_materials_preserved": true,
+  "source_binary_prefix_preserved": true,
+  "unchanged_vertex_attributes": "positions, normals, UVs; documented local skin reassignment",
+  "pose_count": 10,
+  "maximum_pose_seam_gap_m": 0.0,
+  "anatomy": "Extra inner walking forelegs removed; two hind legs and two wing forelimbs retained. Closed jaw detail preserved.",
+  "intact_pre_remesh_available": false
+}

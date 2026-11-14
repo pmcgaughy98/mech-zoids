@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "tested_sha256": "823c26de99e963c6486cc8d92b31b41a6649018e4c7cfcac1e0c6b87a2b9349c",
+  "triangles": 25626,
+  "joint_count": 53,
+  "boundary_edges": 0,
+  "over_shared_edges": 2,
+  "collapsed_triangles": 0,
+  "healthy_main_body_faces_retained": 25625,
+  "all_original_vertex_attribute_and_weight_rows_unchanged": true,
+  "skeleton_rest_binds_materials_textures_unchanged": true,
+  "source_binary_prefix_preserved": true,
+  "intact_archive_sha256": "147f24029faa293ae1d19281ee582f2f15281ba3c0190aa8135acfa78e189d73",
+  "original_reference_sha256": {
+    "front": "0fb4c87bc06a5cdc72f334c4055fab1c5f5a450b089bb33b46d0f77f14b46f5a",
+    "left": "a3fda308806d554825e55c6527e6bb7302ac37d59f2e0412854a52f9c7c91c99",
+    "back": "be1f0d79b855b3cbb83ad712ce79cc1caa38e34c0557bf01f52657c6e2962167",
+    "right": "5ffdd8a8a1ed38142aa4cffe2a4334abccd600fc9563503316e59745090b6558"
+  },
+  "geometry_budget": "25,626 triangles; one original primitive/material, no new vertex rows or textures; no remesh/decimation."
+}

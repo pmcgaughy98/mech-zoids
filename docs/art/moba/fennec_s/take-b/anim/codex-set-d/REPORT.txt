@@ -1,0 +1,22 @@
+FENNEC S / TAKE B / CODEX SET D / 2026-11-04
+36 transparent 192x192 native-scale frames: dig 12, pop_out 10, death 14; se then ne.
+Built-in image tool: exactly 3 sheets, one per move, se_6x.png then ne_6x.png attached; no redo. Tokens used: unavailable.
+Adapted set B finish/polish/final_pass/verify and set A seam/details/finalize methods; prompts retain all set B column descriptions verbatim.
+dig: sheet [2172, 724]; SHA256 83f759e73fb0bbc8f91d42b496ad55bb4e26c1a3762e4074a9bb3a6eb17847e5; grid clean=True; cut contacts=0.
+pop_out: sheet [1774, 887]; SHA256 f80522231a843b47cc65ba595c9ba8b2b2969548a0478edab1b5e439efc46f4e; grid clean=True; cut contacts=0.
+death: sheet [2172, 724]; SHA256 e94c0cfb2b67ba37f551aba99f2e5eedeb278e69e4985401877013c100257db1; grid clean=False; cut contacts=4.
+Death source grid defect: late f4/f5 tails overlap preceding columns in both rows. Native straight tail pieces repair final f4-f6; original sheet retained.
+Per row one fixed generated-to-native conversion; no individual pose fitting. Native heads, eyes/muzzles, ear tips, discs and repaired tails are unscaled copies.
+Exact stills at (+16,+20): dig se_f0/ne_f0, death se_f0/ne_f0, pop_out se_f4/ne_f4: silhouette IoU=1.0 AND exact-colour IoU=1.0 for EACH.
+36/36: approved palette only, binary alpha, no below-y160 pixels, no canvas-edge contacts, no tiny debris, no enclosed holes, no long one-texel seams.
+Lowest row: pop_out se_f2/ne_f2=145; every other frame=160. Ear-tip-only pop_out f0 and dig f3-f5 clipped at y160.
+6/6 GIFs reopened: exact logical frame counts and requested durations; one-shot; death final hold=1400ms. grid.json records every duration and placement.
+dig by eye: same fennec both rows; rise/dig/dive/rump/tip phases match each other and B front/side/back columns; se face/near eye and ne ear backs retained, no mirroring; limbs remain short.
+pop_out by eye: same fennec both rows; native ear tips, emerge, airborne, four-foot landing, seated recovery match B beats; both retain their still angles without mirroring; no limb elongation.
+death by eye: same fennec both rows; recoil, outward rigid-ear droop, buckle, side slump, dark-eye hold match B beats; se face and ne rear head remain angled, no mirroring; limbs fold without elongation.
+Looked at all final boards beside approved stills and B boards. Repaired head/ear drift, native eye/muzzle plates and discs, underground clipping, truncated tails, seams and final eye highlights.
+Changed-pose armour contours and drooped ears retain minor generated drawing variation; changed poses are not pixel-identical to stills. Tails stay straight.
+Palette edge counts in palette.txt and verification.json include the requested near-black #141218 outline; zero magenta/background colours remain.
+Deliverables per move: sheet_raw.png, slices/, frames/, grid.json, checks.txt, preview_se.gif, preview_ne.gif, review.png, review_small.png, detail_board.png, detail_small.png.
+Rebuild: python finish.py; python polish.py; python details.py; python seam_fill.py; python final_pass.py; python verify.py; python finalize.py.
+Only codex-set-d written by these scripts. Built-in generator used its managed cache; retained outputs copied here. Sibling codex-set-c untouched. No install or commit.

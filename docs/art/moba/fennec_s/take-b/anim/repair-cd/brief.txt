@@ -1,0 +1,50 @@
+You are repairing pixel-art animation frames you made for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\codex-set-c\ and D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\codex-set-d\ and
+D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\repair-cd\. Read anything under D:\dev\new-mech-rpg\docs\art\moba.
+Another Codex job (repair-ab (codex-set-a and codex-set-b)) is repairing the other fennec sets at the same time; do not touch them.
+
+Why: Preston, the game's owner, looked at the fennec fox mech's frames (fennec_s, take B) and said "Too many cutoff
+etc." The cutoffs come from the finishing method: native parts from the approved stills (face, eyes, muzzle, ears,
+joint discs, tail pieces) were pasted onto the generated bodies, and where a pasted part and the generated body do not
+line up the frame shows:
+  - hard straight cut edges or steps across a part (a neck, ear, leg, haunch or tail chopped by a straight line);
+  - leftover generated pieces next to a pasted part (one example, already removed: walk ne had a second chin, a dark
+    bar and a gold sliver, sticking out under the pasted head);
+  - limbs, feet, ears or tail segments cut short, cut in two, or ending abruptly instead of in a finished shape;
+  - see-through gaps or dark seam lines between parts that should join (for example between a haunch and the tail);
+  - one-pixel spurs, stubs and broken outline runs.
+The job: find every one of these in your sets and redraw it by hand, pixel by pixel, so every part reads whole and
+joins its neighbours the way it does in the approved stills.
+
+Sets and moves (se and ne views): codex-set-c: idle, walk, sand_kick, ear_burst, sonic_boom; codex-set-d: dig, pop_out, death.
+Frames: <set>\<move>\frames\se_f<i>, ne_f<i>.png, 192x192. Approved stills: se.png and ne.png in
+D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\views\, 160x160, placed at +16 x and +20 y in the 192 canvas.
+Design lock, unchanged: D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\common.txt (15 colours, ears,
+half-closed teal eyes, straight segmented tail that never curls, chunky pixel size, no redesign).
+
+How the game shows them: at pack time every frame gets a one-texel sel-out outline in #141218
+(D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\selout_rhino.py, function selout, with OUTLINE set to
+#141218). Judge every board with that outline applied, at 4x or more, next to the approved still and the neighbouring
+frames, and play the preview gifs.
+
+Rules:
+- NO new images: zero image-tool calls. Repair the existing frames by editing pixels (Python and PIL), using only the
+  15 colours, binary alpha, the same pixel size and the same shading style as the current frames.
+- Start from the frames as they are now. Do NOT rerun finish.py, polish.py or any other script that rebuilds frames
+  from the raw sheets: the current frames include later fixes (in codex-set-c, walk ne and sonic_boom were touched up
+  by diag-touchup\touchup.py; their originals are in frames_pre_touchup\). Keep each frame's original once in
+  <move>\frames_pre_repair\ before you change it.
+- Do not change poses, timing, frame counts or placement. Fix the cut areas only.
+- These frames must stay byte-identical to the approved still at (+16,+20): frame 0 of every move except walk and
+  pop_out, and the last frame of idle, sand_kick, ear_burst, sonic_boom and pop_out. Leave them alone.
+- Ground: feet on row 160, nothing below row 160. pop_out frame 2 is in the air (lowest row 140-150); dig frames 3-5
+  and pop_out frame 0 are partly underground, cut at row 160 on purpose. Those ground cuts are not cutoffs.
+- Nothing touching the canvas edge, no enclosed holes, no stray pixels.
+
+Deliver in D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\repair-cd\:
+- REPAIR.txt (under 40 lines): tokens used if known; per move and view, which frames had which cutoffs and what you
+  redrew; frames you judged clean; the checks you reran (palette, alpha, ground rows, still-equal frames, holes, stray
+  pixels, canvas edge) and their results.
+- repair-board-<move>.png per move: for each view a before row (frames_pre_repair, or the current frame if unchanged)
+  and an after row, sel-out applied, approved still leftmost, at 3x or more.
+Look at every after board before finishing and fix anything still cut off. Do not touch assets\, art\ or tools\,
+and do not commit.

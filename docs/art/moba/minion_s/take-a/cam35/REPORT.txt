@@ -1,0 +1,12 @@
+Angle H/guide: s .875 PASS; se .806 MISS; e .757 MISS; ne .731 MISS; n .750 MISS; spread .144 MISS. Overall angle MISS.
+Width/guide: s 1.000, se .922, e 1.034, ne .969, n .971; heights 56,54,53,49,48 px, unchanged.
+Lens PASS: s 132/126.99 expected (approved153); se 111/113.71 (approved137); rear ne/n glow0 PASS.
+Accent new/approved: s10.53/9.29%, se8.90/6.99%, e9.83/7.29%, ne8.88/5.96%, n9.56/4.01%.
+Palette PASS: fixed14, no outside colours, material ramps separated; top-five67.17%; binary alpha; all8 border-clear.
+view_check: front/back0.72 MISS; area0.05(nw>w), height0.08(nw>w), colour0.82(nw>w), dips none, lone0.08, colours14.
+sheet_judge: FIX nothing; REDO nothing; all8 present; height rule waived; mirrors e/w.953, ne/nw.988, se/sw.951.
+Lone before/after0.08/0.08; no despeckle needed; remaining magenta/plum0, lone pale rim0, accent rim0.
+Depth p05/p95 all five18.86/199.91 (range181.05); dominant s15.36%, se17.67%, e15.39%, ne21.55%, n21.22%.
+By eye: same drone, no new parts apparent; every view above; e shell top a wide band; full lens; hard plate edges/seams; clean bands; rear lens absent. Camera elevation varies and fails guide.
+ONE built-in image, prompt-sheet.txt verbatim, approved_views then angle_guide references; raw unchanged. Tokens/cost unknown; no redo.
+Saved sheet_raw.png, sheet_finished.png, all8 slices, five views_cam35 PNGs, labelled4x review.png and audits; only OUT/VIEWS written; no commits/reverts.

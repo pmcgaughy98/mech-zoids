@@ -1,0 +1,13 @@
+{
+  "target": "D:\\dev\\new-mech-rpg\\docs\\art\\3d\\ape_l_v2.blend",
+  "sha256": "99c578faae26e5e2cc90c15bc58990b9149b5ac782831d7b75fb03afec92124d",
+  "rig_bones": 14,
+  "design": "legacy October gorilla, not take-b-power",
+  "donor_clip": "Attack",
+  "transfer": "world rotation changes relative to source first pose; right upper arm, forearm and hand only; 70% rotation; minimal floor-safe shoulder pitch; other bones at rest",
+  "source_duration_seconds": 1.0333333,
+  "fps": 30,
+  "frames": 32,
+  "output_blend": "legacy-gorilla-attack-test.blend",
+  "output_video": "free-attack-test.mp4"
+}

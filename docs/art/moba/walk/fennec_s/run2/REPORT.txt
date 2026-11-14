@@ -1,0 +1,27 @@
+fennec-trot35-run2: completed Part 1 ne, Part 2 e, Part 3 s, Part 4 n; 32 raw 192x192 frames.
+Tokens: watcher snapshot 13:44:29 92790; final total unavailable.
+Reused run1 native-part rig/stamp method and gorilla run2 front/back layering; no image generation or resampling.
+ne repair: far LH/LF -> whole native tail -> body -> near RH/RF; original foot layers/deltas retained.
+ne light pixels x58-91/y128-149 f0-7: [77, 70, 68, 68, 71, 68, 68, 71]; >=63 PASS.
+e repair: pinned plate bands, highlight and seam behind RF; removed chest-shadow gold from moving RF/LF knees.
+e gold pieces: [4,4,4,4,4,4,4,4], minimum size 11px (>4); PASS. Still has 4.
+s/n: front feet near in s, hind feet near in n; real vertical depth travel; RF+LH swing f5-7, LF+RH f1-3.
+All planted f0/f4; body dips f0/f4; whole native tail dips f1/f5; lifts exact 2/3/2.
+Deciding native-stamp lock spreads x/y: ne all 0.950/0.840; e all 0.500/0.000; s/n all 0.000/0.032px; PASS.
+Max target errors: ne 0.475px; e 0.500px; s/n 0.020px. Occluded contacts measured on saved leg layers (checks.txt).
+Silhouette footlock: SOME FEET NEED A LOOK (e RF, ne LH/RF merge neighbouring soles); s/n all pass.
+Seams tool remaining flags f0-7 (open inter-leg/ankle or tail-to-leg gaps, retained after visual review):
+  e [0, 0, 0, 12, 0, 10, 0, 1]
+  ne [6, 10, 14, 4, 0, 8, 9, 0]
+  s [3, 4, 4, 5, 3, 3, 5, 5]
+  n [10, 0, 0, 6, 6, 0, 0, 6]
+No enclosed holes or interior pinned-body slits remain; residual tool flags are not filled between legs.
+Upper paint/canvas difference above attachments: every frame 0% in all four views, after body/tail dip.
+Native knee steel and lower blocks preserved on layers; rigid-part length change 0px. Full articulated length not independently established.
+Lowest f0-7: e [160, 159, 159, 159, 160, 160, 160, 160]; ne [163, 159, 157, 157, 158, 159, 160, 161]
+Lowest f0-7: s [164, 162, 160, 160, 164, 162, 160, 160]; n [164, 160, 160, 162, 164, 160, 160, 162]
+All frames: binary alpha, native palette only, one component, no holes/strays/edge contacts; s/n within allowed row164.
+By eye: ne tail whole/clean, cream tip intact, far LH below it; e chest whole with clean leg overlap, no loose gold.
+By eye: s/n read as this fennec trotting toward/away in diagonal pairs; native knees/feet, legs separate; tail straight/clean.
+n tail matches its complete translated native source 100% in every frame; no gold in hind-leg sources.
+4x selout board, 100ms looping GIFs, 5x repairs/legs, s/n footprints and full checks supplied. Writes only run2; no commit.

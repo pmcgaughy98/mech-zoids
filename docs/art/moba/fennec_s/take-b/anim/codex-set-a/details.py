@@ -1,0 +1,57 @@
+from finish import *
+log=[]
+def paste_patch(im,n,box,dx=0,dy=0):
+ patch=REFS[n].crop(box);im.alpha_composite(patch,(box[0]+16+dx,box[1]+20+dy));return im
+
+# Restore the missing profile eye at the kick release using the native head.
+p=ROOT/'sand_kick/frames/side_f3.png';im=Image.open(p).convert('RGBA');a=np.array(im);a[:130]=0;im=Image.fromarray(a)
+im=paste_patch(im,'side',(0,0,160,110),5,-1);im=paste_patch(im,'side',(96,105,105,120),5,-1);clean(im).save(p)
+log.append('sand_kick/side_f3: native head, sleepy eye and collar restored, forward offset +5,-1')
+
+# Ear burst remains seated on the exact native haunches and grounded straight tail.
+for n in NAMES:
+ for c in range(1,5):
+  p=ROOT/'ear_burst/frames'/f'{n}_f{c}.png';a=np.array(Image.open(p));ref=np.array(approved(n));cut=140 if n!='back' else 139
+  a[cut:]=ref[cut:];im=Image.fromarray(a)
+  # Upright ear anticipation can use the complete approved head and ear insides.
+  if c==2:
+   a=np.array(im);a[:131]=0;im=Image.fromarray(a);im=paste_patch(im,n,(0,0,160,111),0,-1)
+   im=paste_patch(im,n,{'front':(76,107,85,120),'side':(96,105,105,120),'back':(73,105,87,120)}[n],0,-1)
+  clean(im).save(p);log.append(f'ear_burst/{n}_f{c}: native seated lower parts'+('; full native ears/head' if c==2 else ''))
+
+# Native segmented tail, lifted as one straight piece; no bends are introduced.
+for c in range(8):
+ p=ROOT/'walk/frames'/f'side_f{c}.png';im=Image.open(p).convert('RGBA');a=np.array(im)
+ # Tail occupies the area behind the native hip. Remove generated tail only.
+ a[137:161,:88]=0;im=Image.fromarray(a)
+ tail=REFS['side'].crop((43,128,81,141))
+ # A rigid nearest-neighbour rotation gives a slight upward angle behind the root.
+ tail=tail.rotate(-5,resample=Image.Resampling.NEAREST,expand=True)
+ im.alpha_composite(tail,(57,142+[0,0,-1,0,0,0,-1,0][c]));clean(im).save(p)
+ log.append(f'walk/side_f{c}: native tail segments rigid -5deg, lifted')
+
+# Restore original joint discs where a generated pose exposes the same joint.
+boxes={'front':[(69,112,74,120),(87,111,93,120)],'side':[(91,111,100,120),(84,125,91,132)],'back':[]}
+for name in ['walk','sand_kick','ear_burst','sonic_boom']:
+ for n in ['front','side']:
+  for c in range(COUNTS[name]):
+   if name!='walk' and c in [0,COUNTS[name]-1]:continue
+   p=ROOT/name/'frames'/f'{n}_f{c}.png';im=Image.open(p).convert('RGBA');a=np.array(im);mask=a[:,:,3]>0
+   grey=np.isin(a[:,:,0],[157,214])&mask
+   lab,k=ndi.label(grey);targets=[]
+   for j in range(1,k+1):
+    yy,xx=np.where(lab==j)
+    if len(xx)>=5 and yy.mean()>128 and yy.max()<154:targets.append((xx.mean(),yy.mean(),len(xx)))
+   used=[]
+   for box in boxes[n]:
+    pa=np.array(REFS[n].crop(box));g=np.isin(pa[:,:,0],[157,214])&(pa[:,:,3]>0);yy,xx=np.where(g)
+    expected=np.array([(box[0]+box[2]-1)/2+16,(box[1]+box[3]-1)/2+20])
+    candidates=[t for t in targets if t not in used and np.linalg.norm(np.array(t[:2])-expected)<16]
+    if not candidates:continue
+    target=min(candidates,key=lambda t:np.linalg.norm(np.array(t[:2])-expected));used.append(target)
+    # Keep the original generated silhouette while stamping native bezel/disc texels.
+    keep=ndi.binary_dilation(g)&(pa[:,:,3]>0);pa[~keep]=0;x,y=round(target[0]-xx.mean()),round(target[1]-yy.mean());im.alpha_composite(Image.fromarray(pa),(x,y))
+    log.append(f'{name}/{n}_f{c}: native joint {box} at {x},{y}')
+   a=np.array(im);a[~mask]=0;clean(Image.fromarray(a)).save(p)
+(ROOT/'detail_finish_log.txt').write_text('\n'.join(log)+'\n')
+

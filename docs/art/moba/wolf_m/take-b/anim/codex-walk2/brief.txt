@@ -1,0 +1,67 @@
+You are redrawing a pixel-art walk cycle for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\codex-walk2. Read anything under
+D:\dev\new-mech-rpg\docs\art\moba. Another Codex job may be writing anim\codex-set-d; do not touch it or any other
+folder. Do not touch assets, art or tools, and do not commit.
+
+The creature is the wolf mech (wolf_m, take B), the game's assassin. Approved stills, 192x192, already placed with
+the feet on row 160, in D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\fixed\: s.png (front), e.png (side facing right), n.png (back); se, ne, sw, w, nw also
+exist. Use fixed\, not views\ (Preston approved the fixed back views; the n still carries a little detail ink added
+today). The approved pose is STANDING on four long legs. Keep the design exactly: an armoured gunmetal wolf with a long
+narrow muzzle, two pale sabre fangs, small cyan eyes under a heavy brow, a hood and tall swept-back ears, two red-edged
+folded blade-fins along the back, red lower legs and paws, and a plated tail with a red tip; the same 12 colours
+(#141418 #22222b #5c0a10 #a8141a #444452 #e8251f #6e6e7e #ff6a55 #6ff0dc #bcbcc8 #c9c2b8 #f0ece4), the dark outline and the chunky pixel size. Sizes: front 33x72, side 110x66, back 35x72 px. Only the pose changes.
+Never redesign: no new parts, no fur, no gloss, no longer or thinner limbs, no bigger head. The tail stays a straight
+line of plates (Preston: "no curved tails as they are hard to rotate"); it can lift, swing and angle, but it keeps the
+still's thickness, plate count and red tip in every frame and every view (in the side view as thick as in e.png, never
+a thin rod; set A's first side walk and sprint got this wrong). It is a robot: no
+realistic animal anatomy beyond what the stills show.
+
+Why: you drew the wolf's walk in set A (anim\codex-set-a\walk; read its prompt, REPORT.txt and gait_finish.py).
+Preston, the game's owner, says it is "not how a wolf gait would look". The cause is measured: the paws never travel
+back under the body. In every frame the hind paws stay at about x 67-90 and the fore paws at x 103-121; each paw only
+lifts and lands in the same spot, so the wolf marches in place with high prancing lifts, and in the game, where the
+sprite moves across the ground, every paw slides. Run anim\foot_lock_test.py on set A to see it:
+  python D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\foot_lock_test.py codex-set-a/walk/frames side 1.0 check_old D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\codex-walk2
+(the last argument is the output folder; it writes check_old.png and .mp4 there).
+A paw that is really planted leaves its yellow footprints on one spot; set A's leave one long streak.
+
+Job: redraw the SIDE VIEW walk only (8 frames, 100 ms each, looping), as a real trot. Facing right, like
+D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\..\fixed\e.png. In the still the hind paws stand at about x 63-80 and the fore paws at about x 107-125 on the
+ground row 160 (measure each paw yourself). Diagonal pairs move together: pair A = the near foreleg and the far hind
+leg, pair B = the far foreleg and the near hind leg. Each paw follows this path, as an x offset from where that paw
+stands in the still (+ = forward) and a lift above the ground:
+frame | pair A (near fore + far hind) | pair B (far fore + near hind)
+f0    | +8 px, ON THE GROUND         | -4 px, lifted 2 px
+f1    | +3 px, ON THE GROUND         | -1 px, lifted 4 px
+f2    | -2 px, ON THE GROUND         | +2 px, lifted 4 px
+f3    | -7 px, ON THE GROUND         | +5 px, lifted 2 px
+f4    | -4 px, lifted 2 px           | +8 px, ON THE GROUND
+f5    | -1 px, lifted 4 px           | +3 px, ON THE GROUND
+f6    | +2 px, lifted 4 px           | -2 px, ON THE GROUND
+f7    | +5 px, lifted 2 px           | -7 px, ON THE GROUND
+So a planted paw slides back exactly 5 px a frame under the body (it stays still on the ground while the body moves
+forward over it), and a lifted paw swings forward to land ahead. The legs swing from the hip and shoulder and bend at
+the knee, hock and wrist: a planted leg slants forward when it lands (f0 for pair A) and slants back before it lifts
+(f3); a lifting fore paw folds back at the wrist, then reaches forward before landing. Leg lengths and thickness stay
+the still's. The body stays level, dipping 1 px at f1 and f5; the head stays steady; the tail keeps the still's angle
+and thickness with a 1-2 px sway (see anim\codex-tailfix).
+
+Method: one sheet from your image tool, 8 columns, the side view only, the approved still attached
+(refs\e_6x.png). First build a pose guide with Python (not the image tool): 8 columns showing the still faded with a
+coloured mark at each paw's target position for that frame; attach it second and describe the trot beat by beat in
+the prompt. Generate exactly ONE image; no redo. Then finish every frame at the still's native pixel scale, snapped to
+the colours, and correct the legs by hand until every paw meets its target in the table within 1 px. Do NOT paste
+still parts onto generated frames (that caused cutoffs Preston rejected); redraw legs pixel by pixel, whole and joined.
+
+Pass marks (report each):
+- foot_lock_test.py on your frames at the planted pace: python D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\foot_lock_test.py
+  codex-walk2/walk/frames side 0.90 check_new D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\codex-walk2. Every planted paw's footprints stay within 2 px over its 4 ground
+  frames (measure the world x of each paw's contact on each of its ground frames and report the spread).
+- Every paw's x and lift per frame against the table, within 1 px.
+- 192x192 transparent frames, feet on row 160, nothing below it, the stills' 12 colours, binary alpha, dark outline,
+  no holes, no stray pixels, nothing touching the canvas edge; proportions within 2 px of the still.
+- Judge the boards with the game's sel-out (D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\selout_rhino.py, function selout, OUTLINE #141418) at 4x.
+
+Output in D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\codex-walk2: walk\frames\side_f0-7.png, sheet_raw.png, the pose guide, grid.json, checks.txt, a preview gif (100
+ms, loop), the foot-lock pngs and mp4s, board.png (the still, set A's row, then your row, sel-out, 4x), and REPORT.txt
+(under 30 lines): tokens if known, the table check, the foot-lock spreads, and by eye: does it read as a wolf trotting
+forward, diagonal pairs together, no prancing, whole legs, no cutoffs?

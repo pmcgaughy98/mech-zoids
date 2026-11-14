@@ -1,0 +1,96 @@
+{
+  "status": "Missing verified rigged recipient. No transfer performed. Both source files read-only.",
+  "sources": [
+    {
+      "role": "marked_backplate_donor",
+      "path": "D:\\user\\Downloads\\shoebill_front - Hunyuan 3D v3.1 Pro (1)(correct moon plate on back only use for that other model is best).glb",
+      "bytes": 51756772,
+      "mtime_utc": "2026-11-07T20:58:31.349125+00:00",
+      "sha256": "edf0be0c7dad74f1c828b25a9db6c847d836355d1af8dc7cffd326fe9207ab78",
+      "triangles": 500000,
+      "node_count": 1,
+      "node_names": [
+        "node_0"
+      ],
+      "skin_count": 0,
+      "joint_count": 0,
+      "nodes_referencing_a_skin": 0,
+      "primitive_attributes": [
+        [
+          "POSITION",
+          "NORMAL",
+          "TEXCOORD_0"
+        ]
+      ],
+      "animation_names": [],
+      "images": [
+        {
+          "name": "texture_pbr_20250901_normal",
+          "dimensions": [
+            4096,
+            4096
+          ]
+        },
+        {
+          "name": "texture_pbr_20250901",
+          "dimensions": [
+            4096,
+            4096
+          ]
+        },
+        {
+          "name": "texture_pbr_20250901_metallic-texture_pbr_20250901_roughness",
+          "dimensions": [
+            4096,
+            4096
+          ]
+        }
+      ]
+    },
+    {
+      "role": "designated_recipient",
+      "path": "D:\\user\\Downloads\\shoebill_front - Hunyuan 3D v3.1 Pro.glb",
+      "bytes": 22187868,
+      "mtime_utc": "2026-11-10T21:02:50.051951+00:00",
+      "sha256": "28ff3519f6f78be3267f889ec39b0eb23884a35d43fce61c24c1e1706b82fe0e",
+      "triangles": 24269,
+      "node_count": 1,
+      "node_names": [
+        "output_unwrapped"
+      ],
+      "skin_count": 0,
+      "joint_count": 0,
+      "nodes_referencing_a_skin": 0,
+      "primitive_attributes": [
+        [
+          "POSITION",
+          "NORMAL",
+          "TEXCOORD_0"
+        ]
+      ],
+      "animation_names": [],
+      "images": [
+        {
+          "name": "texture_0",
+          "dimensions": [
+            4096,
+            4096
+          ]
+        },
+        {
+          "name": "texture_0_metallic_roughness",
+          "dimensions": [
+            4096,
+            4096
+          ]
+        }
+      ]
+    }
+  ],
+  "source_search": "D:/user/Downloads and C:/Users/pmcga/Downloads including nested files; shoebill-named scratch paths. No newer shoebill model or designated rigged variant found.",
+  "reference_review": [
+    "docs/art/moba/shoebill_m/take-i-sidefix-original/white_views/review.png",
+    "docs/art/moba/shoebill_m/take-g-power/white_views/review.png"
+  ],
+  "missing_requirement": "Current shoebill export with actual skeleton/skin weights. Designated November 10 file is one static mesh node with no skin or joint attributes."
+}

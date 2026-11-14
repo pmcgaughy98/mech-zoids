@@ -1,0 +1,624 @@
+{
+  "raw_size": [
+    2172,
+    724
+  ],
+  "raw_sha256": "c5920556c6d54512a9a83b53c933ff5aa254503780782709e8d4144d97b5cc67",
+  "columns": 6,
+  "rows": [
+    "back",
+    "ne"
+  ],
+  "x_edges": [
+    0,
+    362,
+    724,
+    1086,
+    1448,
+    1810,
+    2172
+  ],
+  "y_edges": [
+    0,
+    354,
+    724
+  ],
+  "row_scale": {
+    "back": 0.285,
+    "ne": 0.285
+  },
+  "cells": [
+    {
+      "view": "back",
+      "frame": 0,
+      "source_box": [
+        0,
+        0,
+        362,
+        354
+      ],
+      "source_opaque_box": [
+        108,
+        28,
+        264,
+        330
+      ],
+      "scale": 0.285,
+      "placement": [
+        74,
+        75
+      ],
+      "duration_ms": 260,
+      "touches_cut": false,
+      "final_opaque_box": [
+        74,
+        84,
+        118,
+        161
+      ],
+      "final_path": "frames/back_f0.png",
+      "pixel_repaint": {},
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": true
+    },
+    {
+      "view": "back",
+      "frame": 1,
+      "source_box": [
+        362,
+        0,
+        724,
+        354
+      ],
+      "source_opaque_box": [
+        111,
+        28,
+        269,
+        330
+      ],
+      "scale": 0.285,
+      "placement": [
+        74,
+        75
+      ],
+      "duration_ms": 130,
+      "touches_cut": false,
+      "final_opaque_box": [
+        74,
+        85,
+        118,
+        161
+      ],
+      "final_path": "frames/back_f1.png",
+      "pixel_repaint": {
+        "move": "sand_kick",
+        "view": "back",
+        "frame": 1,
+        "head_translation": [
+          0,
+          1
+        ],
+        "body_bob": 1,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "back",
+      "frame": 2,
+      "source_box": [
+        724,
+        0,
+        1086,
+        354
+      ],
+      "source_opaque_box": [
+        105,
+        63,
+        279,
+        330
+      ],
+      "scale": 0.285,
+      "placement": [
+        71,
+        85
+      ],
+      "duration_ms": 130,
+      "touches_cut": false,
+      "final_opaque_box": [
+        74,
+        91,
+        118,
+        161
+      ],
+      "final_path": "frames/back_f2.png",
+      "pixel_repaint": {
+        "move": "sand_kick",
+        "view": "back",
+        "frame": 2,
+        "head_translation": [
+          0,
+          7
+        ],
+        "body_bob": 6,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "back",
+      "frame": 3,
+      "source_box": [
+        1086,
+        0,
+        1448,
+        354
+      ],
+      "source_opaque_box": [
+        104,
+        24,
+        274,
+        330
+      ],
+      "scale": 0.285,
+      "placement": [
+        72,
+        74
+      ],
+      "duration_ms": 90,
+      "touches_cut": false,
+      "final_opaque_box": [
+        74,
+        82,
+        118,
+        161
+      ],
+      "final_path": "frames/back_f3.png",
+      "pixel_repaint": {
+        "move": "sand_kick",
+        "view": "back",
+        "frame": 3,
+        "head_translation": [
+          0,
+          -2
+        ],
+        "body_bob": -1,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "back",
+      "frame": 4,
+      "source_box": [
+        1448,
+        0,
+        1810,
+        354
+      ],
+      "source_opaque_box": [
+        100,
+        37,
+        274,
+        330
+      ],
+      "scale": 0.285,
+      "placement": [
+        71,
+        77
+      ],
+      "duration_ms": 160,
+      "touches_cut": false,
+      "final_opaque_box": [
+        74,
+        87,
+        118,
+        161
+      ],
+      "final_path": "frames/back_f4.png",
+      "pixel_repaint": {
+        "move": "sand_kick",
+        "view": "back",
+        "frame": 4,
+        "head_translation": [
+          0,
+          3
+        ],
+        "body_bob": 3,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "back",
+      "frame": 5,
+      "source_box": [
+        1810,
+        0,
+        2172,
+        354
+      ],
+      "source_opaque_box": [
+        108,
+        28,
+        265,
+        330
+      ],
+      "scale": 0.285,
+      "placement": [
+        74,
+        75
+      ],
+      "duration_ms": 280,
+      "touches_cut": false,
+      "final_opaque_box": [
+        74,
+        84,
+        118,
+        161
+      ],
+      "final_path": "frames/back_f5.png",
+      "pixel_repaint": {},
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": true
+    },
+    {
+      "view": "ne",
+      "frame": 0,
+      "source_box": [
+        0,
+        354,
+        362,
+        724
+      ],
+      "source_opaque_box": [
+        55,
+        32,
+        287,
+        333
+      ],
+      "scale": 0.285,
+      "placement": [
+        63,
+        75
+      ],
+      "duration_ms": 260,
+      "touches_cut": false,
+      "final_opaque_box": [
+        67,
+        86,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f0.png",
+      "pixel_repaint": {},
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": true
+    },
+    {
+      "view": "ne",
+      "frame": 1,
+      "source_box": [
+        362,
+        354,
+        724,
+        724
+      ],
+      "source_opaque_box": [
+        49,
+        33,
+        290,
+        333
+      ],
+      "scale": 0.285,
+      "placement": [
+        62,
+        76
+      ],
+      "duration_ms": 130,
+      "touches_cut": false,
+      "final_opaque_box": [
+        67,
+        87,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f1.png",
+      "pixel_repaint": {
+        "move": "sand_kick",
+        "view": "ne",
+        "frame": 1,
+        "head_translation": [
+          0,
+          1
+        ],
+        "body_bob": 1,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "ne",
+      "frame": 2,
+      "source_box": [
+        724,
+        354,
+        1086,
+        724
+      ],
+      "source_opaque_box": [
+        49,
+        66,
+        293,
+        333
+      ],
+      "scale": 0.285,
+      "placement": [
+        61,
+        85
+      ],
+      "duration_ms": 130,
+      "touches_cut": false,
+      "final_opaque_box": [
+        67,
+        93,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f2.png",
+      "pixel_repaint": {
+        "move": "sand_kick",
+        "view": "ne",
+        "frame": 2,
+        "head_translation": [
+          0,
+          7
+        ],
+        "body_bob": 6,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "ne",
+      "frame": 3,
+      "source_box": [
+        1086,
+        354,
+        1448,
+        724
+      ],
+      "source_opaque_box": [
+        48,
+        24,
+        289,
+        333
+      ],
+      "scale": 0.285,
+      "placement": [
+        62,
+        73
+      ],
+      "duration_ms": 90,
+      "touches_cut": false,
+      "final_opaque_box": [
+        67,
+        84,
+        134,
+        161
+      ],
+      "final_path": "frames/ne_f3.png",
+      "pixel_repaint": {
+        "move": "sand_kick",
+        "view": "ne",
+        "frame": 3,
+        "head_translation": [
+          0,
+          -2
+        ],
+        "body_bob": -1,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "ne",
+      "frame": 4,
+      "source_box": [
+        1448,
+        354,
+        1810,
+        724
+      ],
+      "source_opaque_box": [
+        45,
+        48,
+        293,
+        333
+      ],
+      "scale": 0.285,
+      "placement": [
+        60,
+        80
+      ],
+      "duration_ms": 160,
+      "touches_cut": false,
+      "final_opaque_box": [
+        67,
+        89,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f4.png",
+      "pixel_repaint": {
+        "move": "sand_kick",
+        "view": "ne",
+        "frame": 4,
+        "head_translation": [
+          0,
+          3
+        ],
+        "body_bob": 3,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "ne",
+      "frame": 5,
+      "source_box": [
+        1810,
+        354,
+        2172,
+        724
+      ],
+      "source_opaque_box": [
+        53,
+        33,
+        286,
+        333
+      ],
+      "scale": 0.285,
+      "placement": [
+        63,
+        76
+      ],
+      "duration_ms": 280,
+      "touches_cut": false,
+      "final_opaque_box": [
+        67,
+        86,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f5.png",
+      "pixel_repaint": {},
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": true
+    }
+  ],
+  "approved_offset": [
+    16,
+    20
+  ],
+  "ground_row": 160,
+  "duration_ms": [
+    260,
+    130,
+    130,
+    90,
+    160,
+    280
+  ],
+  "loop": false,
+  "finishing": "../redraw.py then ../finalize.py; direct native pixel repaint, no still parts",
+  "source_grid_clean": true
+}

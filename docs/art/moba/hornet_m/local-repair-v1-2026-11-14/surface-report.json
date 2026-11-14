@@ -1,0 +1,24 @@
+{
+  "method": "Restore intact high-detail original with the exact prior FL1/FL2/FR1/FR2/L2/L4/R2/R4 cut mask. Preserve approved six-leg layout; close only newly cut roots. No broad hole fill, remesh or rig replacement.",
+  "before": {
+    "faces": 500000,
+    "vertices": 249996,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0
+  },
+  "after": {
+    "faces": 444888,
+    "vertices": 222674,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0
+  },
+  "removed_source_faces": 56113,
+  "cut_boundary_edges": 1168,
+  "cut_caps": 9,
+  "cut_scrap_components_removed": 2,
+  "cut_scrap_vertices_removed": 718,
+  "proxy_alignment_scale": 3.54299147851833,
+  "rig_alignment_scale": 0.8945213208789009,
+  "source_to_proxy_centroid_distance_99pct": 0.0036696710507385416,
+  "rig_status": "Surface staging only; actual 51-joint rig retained in following weight transfer."
+}

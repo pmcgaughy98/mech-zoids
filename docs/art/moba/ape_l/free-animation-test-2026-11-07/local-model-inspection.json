@@ -1,0 +1,174 @@
+[
+  {
+    "path": "D:\\dev\\new-mech-rpg\\docs\\art\\3d\\ape_l.blend",
+    "objects": [
+      {
+        "name": "ape_l",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          2.640000104904175,
+          2.059086799621582,
+          2.5516717433929443
+        ],
+        "parent": null
+      },
+      {
+        "name": "Camera",
+        "type": "CAMERA",
+        "location": [
+          0.0,
+          -6.928203105926514,
+          5.150000095367432
+        ],
+        "dimensions": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parent": null
+      },
+      {
+        "name": "Sun",
+        "type": "LIGHT",
+        "location": [
+          0.0,
+          0.0,
+          10.0
+        ],
+        "dimensions": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parent": null
+      },
+      {
+        "name": "Sun.001",
+        "type": "LIGHT",
+        "location": [
+          0.0,
+          0.0,
+          10.0
+        ],
+        "dimensions": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parent": null
+      }
+    ],
+    "actions": []
+  },
+  {
+    "path": "D:\\dev\\new-mech-rpg\\docs\\art\\3d\\ape_l_v2.blend",
+    "objects": [
+      {
+        "name": "ape_l",
+        "type": "MESH",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          3.9619998931884766,
+          3.5082314014434814,
+          2.5224270820617676
+        ],
+        "parent": "ape_l_rig"
+      },
+      {
+        "name": "ape_l_rig",
+        "type": "ARMATURE",
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions": [
+          2.5999999046325684,
+          3.0900001525878906,
+          2.007272720336914
+        ],
+        "parent": null,
+        "bones": [
+          "body",
+          "head",
+          "upper_arm.L",
+          "forearm.L",
+          "hand.L",
+          "thigh.L",
+          "shin.L",
+          "foot.L",
+          "upper_arm.R",
+          "forearm.R",
+          "hand.R",
+          "thigh.R",
+          "shin.R",
+          "foot.R"
+        ]
+      },
+      {
+        "name": "Camera",
+        "type": "CAMERA",
+        "location": [
+          -7.2703962326049805,
+          8.2430419921875,
+          5.806049346923828
+        ],
+        "dimensions": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parent": null
+      },
+      {
+        "name": "Sun",
+        "type": "LIGHT",
+        "location": [
+          0.0,
+          0.0,
+          10.0
+        ],
+        "dimensions": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parent": null
+      },
+      {
+        "name": "Sun.001",
+        "type": "LIGHT",
+        "location": [
+          0.0,
+          0.0,
+          10.0
+        ],
+        "dimensions": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "parent": null
+      }
+    ],
+    "actions": [
+      "death",
+      "gait",
+      "hit",
+      "idle",
+      "punch",
+      "slam",
+      "throw",
+      "walk"
+    ]
+  }
+]

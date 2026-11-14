@@ -1,0 +1,9 @@
+Job from Claude (the attack lane of the mech MOBA in D:/dev/new-mech-rpg), approved by Preston on 2026-11-05 ("Yes, try the edit", for this price): a DRAW-ONLY EDIT of one frame. The robot rhino's southeast ground pound rear has been drawn five times and only one try kept the southeast facing (OUT/refs/edit_se_rear.png, 6x); its faults are the near front leg left standing on the ground and a low rear. This run edits that frame instead of drawing it again.
+Run tag: rhino-gp35-diag4. Write only inside OUT = D:/dev/new-mech-rpg/docs/art/moba/attack/rhino_l/gp35/diag4
+Open no image and no file except OUT/prompt-sheet.txt and the two attachments. Do not write outside OUT. Do not commit.
+
+1. Generate exactly ONE image with your built-in image tool from OUT/prompt-sheet.txt word for word, attaching exactly two images: OUT/refs/edit_se_rear.png first (the picture to edit) and OUT/refs/look_se.png second. Save it unchanged as OUT/sheet_raw.png. Never make a second image or a redo; if it fails, report and stop.
+
+2. Write OUT/REPORT.txt, under 6 lines, and the same in your final answer: tokens used if known; the image size; and by eye: does it still face the lower right toward the viewer (not side-on)? How many feet touch the ground (should be the two hind feet)? Is the near front leg folded up under the chest? Did anything else change (size, position, head, hind legs)? Anything extra, missing or broken?
+
+3. Stop. Do not shrink, recolour, slice, measure or check anything else.

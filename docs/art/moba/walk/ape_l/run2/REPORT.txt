@@ -1,0 +1,26 @@
+ape-walk35-run2: completed ne repair, then s, then n.
+Tokens: watcher snapshot 09:43:28 95941; final total unavailable.
+Part 1: LH label retained: left hind knee/foot; shield above it belongs to separate far forearm.
+Native grey knee and complete orange foot translated intact; hip join drawn in native green bands.
+Changed pixels confined to x45-81/y123-154. Other visible native limb pixels unchanged; all original foot deltas retained.
+By eye: ne knee, ankle and orange foot are whole and joined; no loose specks or detached orange pieces.
+Part 2: s reads as this gorilla knuckle-walking toward camera; fists near, hind feet between; diagonal pairs.
+Part 3: n reads as the same gorilla walking away; hind feet near, fists far; diagonal pairs.
+Both: RF+LH swing f5-7; LF+RH swing f1-3; all planted f0/f4, body dips 1px. Real vertical travel, no rotation.
+walk_tools.py footlock result: ALL FEET LOCKED (ne s n). Spreads x/y in px:
+  ne LH/RH/RF each 0.484/0.868. Hidden LF native-layer measure also 0.484/0.868.
+  s RF/LF/RH 0.000/0.884; LH 0.500/0.884 (silhouette tool). Native stamp all 0.000/0.884.
+  n LF/RF 2.000/0.884; LH/RH 0.000/0.884 (silhouette tool). Native stamp all 0.000/0.884.
+Target max errors from native contact-band stamps: ne 0.434px; s 0.500px; n 0.440px; lifts exact.
+Silhouette-tool target errors: ne 0.43px, s 0.50px, n 2.00px (far fists: wider sidewalls/occlusion).
+n fist contact bands use supplied still_sole nine-pixel marks; whole forearms translate vertically, without recentering.
+Occluded stamps measured on saved layers: ne LH f0/1/6/7, LF all; s LH f2/3/6/7; n LF f0/1/6/7, RF f2/3/4/5.
+Upper-body protected paint difference for f0-7: ne/s/n each [0,0,0,0,0,0,0,0]%. Whole upper canvas also exact.
+Body audit excludes foreground native-limb occlusion and local ne repair; before-mask counts retained in checks.txt.
+Lowest rows f0-7: ne [162,159,158,159,160,159,160,161]; s [163,162,160,160,163,162,160,160];
+  n [163,160,160,162,163,160,160,162]. All within allowed row163.
+24 raw 192x192 frames: binary alpha, native 15-colour palette, one component, zero holes/strays/edge contact.
+Native-part layer paint/length unchanged; s/n composite shield gems and rims match their source translations 100%.
+Previews loop: GIF alternates 120/130ms (GIF cannot store 125ms); APNG exact 125ms/frame; both cycle in 1000ms.
+board.png: still then f0-7 per view, exact 4x nearest-neighbour with game selout. Footprints, ne_repaired.png saved.
+checks.txt / verification.json: FINAL_FAILURES []. Supplied targets/stills preserved. All writes inside run2; no commit.

@@ -1,0 +1,50 @@
+Clean 3x7 grid: True; union palette: 12 colours. Alpha binary.
+front: factor=0.3295410218; raw column1=221x210; target=72x70; anchor=(47,83)
+front_f0: 73x69, colours=10, red=0, glint=0, eye_touch_transparency=0, bottom=160, ground_correction=+0, border=False
+front_f1: 74x70, colours=11, red=2, glint=0, eye_touch_transparency=0, bottom=160, ground_correction=+0, border=False
+front_f2: 73x72, colours=11, red=2, glint=0, eye_touch_transparency=0, bottom=160, ground_correction=+0, border=False
+front_f3: 74x66, colours=10, red=0, glint=0, eye_touch_transparency=0, bottom=160, ground_correction=+0, border=False
+front_f4: 74x70, colours=10, red=0, glint=0, eye_touch_transparency=0, bottom=160, ground_correction=+0, border=False
+front_f5: 74x70, colours=11, red=1, glint=0, eye_touch_transparency=0, bottom=160, ground_correction=+2, border=False
+front_f6: 76x66, colours=10, red=0, glint=0, eye_touch_transparency=0, bottom=160, ground_correction=+0, border=False
+front column1 vs ref: 73x69 vs 72x70; same-colour share over opaque union, feet aligned=0.5648
+front mirror colour F0-F6: 0.761, 0.497, 0.568, 0.618, 0.501, 0.493, 0.484
+front mirror silhouette IoU F0-F6: 0.985, 0.867, 0.850, 0.963, 0.894, 0.897, 0.932
+side: factor=0.4023437500; raw column1=256x171; target=103x67; anchor=(38,76)
+side_f0: 103x69, colours=11, red=1, glint=0, eye_touch_transparency=0, bottom=160, ground_correction=+0, border=False
+side_f1: 98x72, colours=10, red=0, glint=0, eye_touch_transparency=0, bottom=160, ground_correction=+1, border=False
+side_f2: 97x65, colours=11, red=2, glint=0, eye_touch_transparency=0, bottom=153, ground_correction=+7, border=False
+side_f3: 99x67, colours=10, red=0, glint=0, eye_touch_transparency=0, bottom=160, ground_correction=+0, border=False
+side_f4: 97x70, colours=10, red=0, glint=0, eye_touch_transparency=0, bottom=160, ground_correction=+1, border=False
+side_f5: 97x69, colours=10, red=0, glint=0, eye_touch_transparency=0, bottom=160, ground_correction=+3, border=False
+side_f6: 100x67, colours=10, red=0, glint=0, eye_touch_transparency=0, bottom=160, ground_correction=+0, border=False
+side column1 vs ref: 103x69 vs 103x67; same-colour share over opaque union, feet aligned=0.4723
+back: factor=0.3082573996; raw column1=221x242; target=66x77; anchor=(50,76)
+back_f0: 68x74, colours=10, red=0, glint=0, eye_touch_transparency=0, bottom=160, ground_correction=+0, border=False
+back_f1: 68x74, colours=10, red=0, glint=0, eye_touch_transparency=0, bottom=160, ground_correction=+1, border=False
+back_f2: 67x70, colours=10, red=0, glint=0, eye_touch_transparency=0, bottom=154, ground_correction=+6, border=False
+back_f3: 69x72, colours=10, red=0, glint=0, eye_touch_transparency=0, bottom=160, ground_correction=-1, border=False
+back_f4: 68x74, colours=10, red=0, glint=0, eye_touch_transparency=0, bottom=160, ground_correction=+1, border=False
+back_f5: 68x70, colours=10, red=0, glint=0, eye_touch_transparency=0, bottom=154, ground_correction=+6, border=False
+back_f6: 69x72, colours=10, red=0, glint=0, eye_touch_transparency=0, bottom=160, ground_correction=-1, border=False
+back column1 vs ref: 68x74 vs 66x77; same-colour share over opaque union, feet aligned=0.3048
+back mirror colour F0-F6: 0.742, 0.588, 0.656, 0.849, 0.567, 0.733, 0.818
+back mirror silhouette IoU F0-F6: 0.947, 0.911, 0.921, 0.980, 0.907, 0.955, 0.966
+Side faces right: YES (visual: horns and muzzle on right, tail on left, every frame).
+Palette audit (hex total rim rim_share):
+#141218 2402 588 0.2448
+#211E27 10074 1481 0.1470
+#3D3A44 7399 1408 0.1903
+#58555E 4410 482 0.1093
+#7A4A06 7489 604 0.0807
+#9D9BA2 6982 281 0.0402
+#D18A0A 13964 1165 0.0834
+#D6D6DC 1399 346 0.2473
+#FF3A2A 8 0 0.0000
+#FFCF1F 19650 762 0.0388
+#FFE6D8 0 0 0.0000
+#FFF4A8 8035 1119 0.1393
+Top5 share=0.7238; lone same-colour pixels=0.0082; exact union palette prevents magenta/plum fringe.
+side_f2: ground offset +7 exceeds 3 px; left at y=153
+back_f2: ground offset +6 exceeds 3 px; left at y=154
+back_f5: ground offset +6 exceeds 3 px; left at y=154

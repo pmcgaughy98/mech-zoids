@@ -1,0 +1,117 @@
+{
+ "still": {
+  "ink_141218": 5.0,
+  "frame_plus_seam": 11.4,
+  "highlight": 10.3
+ },
+ "gap_target_pct": 9.1,
+ "f1": {
+  "before": {
+   "ink_141218": 2.5,
+   "frame_plus_seam": 15.9,
+   "highlight": 8.3
+  },
+  "after": {
+   "ink_141218": 5.1,
+   "frame_plus_seam": 17.1,
+   "highlight": 8.3
+  },
+  "specks": 11,
+  "seam_ink_px": 0,
+  "valleys": 1,
+  "rim_px": 0,
+  "gap_px": 0,
+  "gap_candidates": 61,
+  "ink_line_px": 55,
+  "ink_candidates": 78,
+  "changed_px": 66
+ },
+ "f2": {
+  "before": {
+   "ink_141218": 3.1,
+   "frame_plus_seam": 15.4,
+   "highlight": 10.2
+  },
+  "after": {
+   "ink_141218": 5.0,
+   "frame_plus_seam": 16.9,
+   "highlight": 9.8
+  },
+  "specks": 20,
+  "seam_ink_px": 3,
+  "valleys": 8,
+  "rim_px": 0,
+  "gap_px": 0,
+  "gap_candidates": 51,
+  "ink_line_px": 37,
+  "ink_candidates": 85,
+  "changed_px": 60
+ },
+ "f3": {
+  "before": {
+   "ink_141218": 0.2,
+   "frame_plus_seam": 13.9,
+   "highlight": 8.9
+  },
+  "after": {
+   "ink_141218": 3.8,
+   "frame_plus_seam": 14.7,
+   "highlight": 8.5
+  },
+  "specks": 34,
+  "seam_ink_px": 0,
+  "valleys": 11,
+  "rim_px": 0,
+  "gap_px": 0,
+  "gap_candidates": 40,
+  "ink_line_px": 69,
+  "ink_candidates": 69,
+  "changed_px": 103
+ },
+ "f4": {
+  "before": {
+   "ink_141218": 0.3,
+   "frame_plus_seam": 11.5,
+   "highlight": 10.3
+  },
+  "after": {
+   "ink_141218": 3.9,
+   "frame_plus_seam": 13.3,
+   "highlight": 10.3
+  },
+  "specks": 15,
+  "seam_ink_px": 0,
+  "valleys": 7,
+  "rim_px": 0,
+  "gap_px": 0,
+  "gap_candidates": 30,
+  "ink_line_px": 66,
+  "ink_candidates": 66,
+  "changed_px": 84
+ },
+ "f5": {
+  "before": {
+   "ink_141218": 0.1,
+   "frame_plus_seam": 15.3,
+   "highlight": 7.2
+  },
+  "after": {
+   "ink_141218": 4.9,
+   "frame_plus_seam": 17.0,
+   "highlight": 7.1
+  },
+  "specks": 21,
+  "seam_ink_px": 0,
+  "valleys": 11,
+  "rim_px": 0,
+  "gap_px": 0,
+  "gap_candidates": 75,
+  "ink_line_px": 99,
+  "ink_candidates": 99,
+  "changed_px": 120
+ },
+ "rules_all_pass": true,
+ "f0_is_still": true,
+ "f5_f6_alpha_same": true,
+ "f6_differs_only_at_eyes": true
+}

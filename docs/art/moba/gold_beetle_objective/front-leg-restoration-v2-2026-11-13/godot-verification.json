@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "check": "MODEL REPAIR CHECK PASS: gold_beetle, 2 comparison versions, original/review sheets, 23-bone rig, current ChaseCamera3D",
+  "tested_sha256": "e0c071ba0b6af6f9b9f38e4d974fd99ec3c12a0ec41e3cb659422709020017a5",
+  "verified_at_utc": "2026-11-13T20:05:53.685166+00:00",
+  "screenshots": "res://reports/model_catalog/gold-beetle-front-v2/",
+  "inspected": [
+    "native input/v2 comparison",
+    "chase-camera fixture",
+    "matched front-leg closeups",
+    "all joint-pose proof"
+  ],
+  "intact_pre_remesh_available": false
+}

@@ -1,0 +1,573 @@
+{
+  "raw_size": [
+    2172,
+    724
+  ],
+  "columns": 6,
+  "rows": [
+    "se",
+    "ne"
+  ],
+  "x_edges": [
+    0,
+    362,
+    724,
+    1086,
+    1448,
+    1810,
+    2172
+  ],
+  "y_edges": [
+    0,
+    349,
+    724
+  ],
+  "row_scale": {
+    "se": 0.23487380411905462,
+    "ne": 0.2305031839333254
+  },
+  "cells": [
+    {
+      "view": "se",
+      "frame": 0,
+      "source_box": [
+        0,
+        0,
+        362,
+        349
+      ],
+      "nominal_cell_box": [
+        0,
+        0,
+        362,
+        349
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": false,
+      "source_opaque_box": [
+        52,
+        23,
+        327,
+        322
+      ],
+      "scale": 0.23487380411905462,
+      "placement": [
+        63,
+        91
+      ],
+      "touches_cut": false,
+      "duration_ms": 260,
+      "final_opaque_box": [
+        64,
+        89,
+        127,
+        161
+      ],
+      "final_path": "frames/se_f0.png"
+    },
+    {
+      "view": "se",
+      "frame": 1,
+      "source_box": [
+        362,
+        0,
+        724,
+        349
+      ],
+      "nominal_cell_box": [
+        362,
+        0,
+        724,
+        349
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": false,
+      "source_opaque_box": [
+        52,
+        95,
+        326,
+        322
+      ],
+      "scale": 0.23487380411905462,
+      "placement": [
+        64,
+        108
+      ],
+      "touches_cut": false,
+      "duration_ms": 130,
+      "final_opaque_box": [
+        64,
+        108,
+        128,
+        161
+      ],
+      "final_path": "frames/se_f1.png"
+    },
+    {
+      "view": "se",
+      "frame": 2,
+      "source_box": [
+        724,
+        0,
+        1086,
+        349
+      ],
+      "nominal_cell_box": [
+        724,
+        0,
+        1086,
+        349
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": false,
+      "source_opaque_box": [
+        53,
+        17,
+        326,
+        322
+      ],
+      "scale": 0.23487380411905462,
+      "placement": [
+        64,
+        89
+      ],
+      "touches_cut": false,
+      "duration_ms": 100,
+      "final_opaque_box": [
+        64,
+        93,
+        123,
+        161
+      ],
+      "final_path": "frames/se_f2.png"
+    },
+    {
+      "view": "se",
+      "frame": 3,
+      "source_box": [
+        1086,
+        0,
+        1448,
+        349
+      ],
+      "nominal_cell_box": [
+        1086,
+        0,
+        1448,
+        349
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": false,
+      "source_opaque_box": [
+        52,
+        17,
+        335,
+        322
+      ],
+      "scale": 0.23487380411905462,
+      "placement": [
+        62,
+        89
+      ],
+      "touches_cut": false,
+      "duration_ms": 100,
+      "final_opaque_box": [
+        64,
+        89,
+        128,
+        161
+      ],
+      "final_path": "frames/se_f3.png"
+    },
+    {
+      "view": "se",
+      "frame": 4,
+      "source_box": [
+        1448,
+        0,
+        1810,
+        349
+      ],
+      "nominal_cell_box": [
+        1448,
+        0,
+        1810,
+        349
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": false,
+      "source_opaque_box": [
+        52,
+        34,
+        322,
+        322
+      ],
+      "scale": 0.23487380411905462,
+      "placement": [
+        64,
+        93
+      ],
+      "touches_cut": false,
+      "duration_ms": 160,
+      "final_opaque_box": [
+        64,
+        93,
+        127,
+        161
+      ],
+      "final_path": "frames/se_f4.png"
+    },
+    {
+      "view": "se",
+      "frame": 5,
+      "source_box": [
+        1810,
+        0,
+        2172,
+        349
+      ],
+      "nominal_cell_box": [
+        1810,
+        0,
+        2172,
+        349
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": false,
+      "source_opaque_box": [
+        52,
+        23,
+        326,
+        322
+      ],
+      "scale": 0.23487380411905462,
+      "placement": [
+        64,
+        91
+      ],
+      "touches_cut": false,
+      "duration_ms": 280,
+      "final_opaque_box": [
+        64,
+        89,
+        127,
+        161
+      ],
+      "final_path": "frames/se_f5.png"
+    },
+    {
+      "view": "ne",
+      "frame": 0,
+      "source_box": [
+        0,
+        349,
+        362,
+        724
+      ],
+      "nominal_cell_box": [
+        0,
+        349,
+        362,
+        724
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": false,
+      "source_opaque_box": [
+        55,
+        40,
+        327,
+        341
+      ],
+      "scale": 0.2305031839333254,
+      "placement": [
+        64,
+        92
+      ],
+      "touches_cut": false,
+      "duration_ms": 260,
+      "final_opaque_box": [
+        67,
+        86,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f0.png"
+    },
+    {
+      "view": "ne",
+      "frame": 1,
+      "source_box": [
+        362,
+        349,
+        724,
+        724
+      ],
+      "nominal_cell_box": [
+        362,
+        349,
+        724,
+        724
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": false,
+      "source_opaque_box": [
+        54,
+        110,
+        326,
+        341
+      ],
+      "scale": 0.2305031839333254,
+      "placement": [
+        64,
+        108
+      ],
+      "touches_cut": false,
+      "duration_ms": 130,
+      "final_opaque_box": [
+        67,
+        108,
+        127,
+        161
+      ],
+      "final_path": "frames/ne_f1.png"
+    },
+    {
+      "view": "ne",
+      "frame": 2,
+      "source_box": [
+        724,
+        349,
+        1086,
+        724
+      ],
+      "nominal_cell_box": [
+        724,
+        349,
+        1086,
+        724
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": false,
+      "source_opaque_box": [
+        55,
+        29,
+        322,
+        341
+      ],
+      "scale": 0.2305031839333254,
+      "placement": [
+        65,
+        89
+      ],
+      "touches_cut": false,
+      "duration_ms": 100,
+      "final_opaque_box": [
+        67,
+        89,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f2.png"
+    },
+    {
+      "view": "ne",
+      "frame": 3,
+      "source_box": [
+        1086,
+        349,
+        1448,
+        724
+      ],
+      "nominal_cell_box": [
+        1086,
+        349,
+        1448,
+        724
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": false,
+      "source_opaque_box": [
+        53,
+        27,
+        332,
+        341
+      ],
+      "scale": 0.2305031839333254,
+      "placement": [
+        64,
+        89
+      ],
+      "touches_cut": false,
+      "duration_ms": 100,
+      "final_opaque_box": [
+        67,
+        84,
+        131,
+        161
+      ],
+      "final_path": "frames/ne_f3.png"
+    },
+    {
+      "view": "ne",
+      "frame": 4,
+      "source_box": [
+        1448,
+        349,
+        1810,
+        724
+      ],
+      "nominal_cell_box": [
+        1448,
+        349,
+        1810,
+        724
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": false,
+      "source_opaque_box": [
+        54,
+        50,
+        322,
+        341
+      ],
+      "scale": 0.2305031839333254,
+      "placement": [
+        65,
+        94
+      ],
+      "touches_cut": false,
+      "duration_ms": 160,
+      "final_opaque_box": [
+        67,
+        94,
+        127,
+        161
+      ],
+      "final_path": "frames/ne_f4.png"
+    },
+    {
+      "view": "ne",
+      "frame": 5,
+      "source_box": [
+        1810,
+        349,
+        2172,
+        724
+      ],
+      "nominal_cell_box": [
+        1810,
+        349,
+        2172,
+        724
+      ],
+      "raw_nominal_overlap": false,
+      "component_isolated": false,
+      "source_opaque_box": [
+        55,
+        40,
+        329,
+        341
+      ],
+      "scale": 0.2305031839333254,
+      "placement": [
+        64,
+        92
+      ],
+      "touches_cut": false,
+      "duration_ms": 280,
+      "final_opaque_box": [
+        67,
+        86,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f5.png"
+    }
+  ],
+  "final_canvas": [
+    192,
+    192
+  ],
+  "approved_offset": [
+    16,
+    20
+  ],
+  "ground_row": 160,
+  "durations_ms": [
+    260,
+    130,
+    100,
+    100,
+    160,
+    280
+  ],
+  "loop": false,
+  "frames": {
+    "se": [
+      {
+        "file": "frames/se_f0.png",
+        "duration_ms": 260
+      },
+      {
+        "file": "frames/se_f1.png",
+        "duration_ms": 130
+      },
+      {
+        "file": "frames/se_f2.png",
+        "duration_ms": 100
+      },
+      {
+        "file": "frames/se_f3.png",
+        "duration_ms": 100
+      },
+      {
+        "file": "frames/se_f4.png",
+        "duration_ms": 160
+      },
+      {
+        "file": "frames/se_f5.png",
+        "duration_ms": 280
+      }
+    ],
+    "ne": [
+      {
+        "file": "frames/ne_f0.png",
+        "duration_ms": 260
+      },
+      {
+        "file": "frames/ne_f1.png",
+        "duration_ms": 130
+      },
+      {
+        "file": "frames/ne_f2.png",
+        "duration_ms": 100
+      },
+      {
+        "file": "frames/ne_f3.png",
+        "duration_ms": 100
+      },
+      {
+        "file": "frames/ne_f4.png",
+        "duration_ms": 160
+      },
+      {
+        "file": "frames/ne_f5.png",
+        "duration_ms": 280
+      }
+    ]
+  },
+  "finishing": [
+    "finish.py",
+    "polish.py",
+    "details.py",
+    "gait_finish.py",
+    "final_pass.py",
+    "seam_fill.py",
+    "finalize.py"
+  ],
+  "native_detail_log": "../native_finish_log.txt",
+  "raw_sha256": "341a55a25f54a4ad14cbf9be751504d2211b737ce82008c78b329475ebeb2eff",
+  "native_placements": "../native_finish_log.txt and ../detail_finish_log.txt; tails in ../final_pass_log.txt",
+  "source_grid_clean": true,
+  "extraction_clean": true
+}

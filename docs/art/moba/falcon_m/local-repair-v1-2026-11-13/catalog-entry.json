@@ -1,0 +1,98 @@
+{
+  "id": "falcon",
+  "name": "Falcon",
+  "source_model": {
+    "path": "res://art/model_catalog/sources/falcon_front - Hunyuan 3D v3.1 Pro.glb",
+    "source": "D:\\user\\Downloads\\falcon_front - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "34d77973b951d096ff136061a7c820378e09fdc4c8b97c402b2989c0ed509947",
+    "bytes": 47610196
+  },
+  "display_model": "res://docs/art/moba/falcon_m/local-repair-v1-2026-11-13/falcon-rigged-local-repair-v1.glb",
+  "status": "Four toes per foot: three forward and one rear. Extra outer rear toes removed, chest gap and malformed triangles repaired. Original 45-joint rig retained; deleted-chain skin cleaned locally.",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/falcon/front.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\falcon_front.png",
+      "sha256": "8c715a55e39e95ed74953cc3a3e9f901eb64ec0c1f766385f2d18a523ce1d392",
+      "bytes": 257744,
+      "project_matches": [
+        "docs/art/moba/falcon_m/take-c-power/white_views/falcon_front.png"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/falcon/left.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\falcon_left.png",
+      "sha256": "c1a034f90d8603d32df8ccb261065835da27de72fcaafab75d6ef20be42dc1a7",
+      "bytes": 293370,
+      "project_matches": [
+        "docs/art/moba/falcon_m/take-c-power/white_views/falcon_left.png"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/falcon/back.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\falcon_back.png",
+      "sha256": "f903cc31adc6c3592f9282693ce5f367a40f2e9f99cbd14905ed8883bd0c737b",
+      "bytes": 266410,
+      "project_matches": [
+        "docs/art/moba/falcon_m/take-c-power/white_views/falcon_back.png"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/falcon/right.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\falcon_right.png",
+      "sha256": "842719c556e88179aebc3cfd63cb48059a58ff6d203647d76e9f578875d8b745",
+      "bytes": 301628,
+      "project_matches": [
+        "docs/art/moba/falcon_m/take-c-power/white_views/falcon_right.png"
+      ]
+    }
+  },
+  "artist_workspace": "res://docs/art/moba/falcon_m/local-repair-v1-2026-11-13/falcon-rigged-local-repair-v1.blend",
+  "review_models": [
+    {
+      "label": "INTACT QUALITY ARCHIVE\nExtra rear toes unapproved",
+      "path": "res://art/model_catalog/sources/falcon_front - Hunyuan 3D v3.1 Pro.glb",
+      "display_scale": 2.5521338852852917
+    },
+    {
+      "label": "DOWNLOADED RIG\nUnrepaired / five toes per foot",
+      "path": "res://art/model_catalog/sources/Meshy_AI_falcon_remeshed_25k_20261108_character.glb",
+      "display_scale": 1.173333405359499
+    },
+    {
+      "label": "LOCAL REPAIR\nFour toes / original 45-joint rig",
+      "path": "res://docs/art/moba/falcon_m/local-repair-v1-2026-11-13/falcon-rigged-local-repair-v1.glb",
+      "display_scale": 1.173333405359499
+    }
+  ],
+  "review_views": {
+    "front": {
+      "path": "res://docs/art/moba/falcon_m/local-repair-v1-2026-11-13/review-front.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "left": {
+      "path": "res://docs/art/moba/falcon_m/local-repair-v1-2026-11-13/review-left.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "back": {
+      "path": "res://docs/art/moba/falcon_m/local-repair-v1-2026-11-13/review-back.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "right": {
+      "path": "res://docs/art/moba/falcon_m/local-repair-v1-2026-11-13/review-right.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    }
+  },
+  "review_provenance": {
+    "date": "2026-11-13",
+    "report": "res://docs/art/moba/falcon_m/local-repair-v1-2026-11-13/repair-verification.json",
+    "independent_audit": "res://docs/art/moba/falcon_m/local-repair-v1-2026-11-13/independent-export-audit.json",
+    "joint_count": 45,
+    "rigged_input_sha256": "245e6242746f7e4daf179299621fac0f372bfe6b0b9bef0edbfdf394b5f3db37",
+    "repaired_sha256": "4d189d5083c141b424a282e1e68a87701c65338870bf2ee36b38e89d03f49807",
+    "intact_pre_remesh_available": true,
+    "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+    "scope": "User approved removing marked outer rear toe 1 on both feet. Retained three forward toes and one rear toe per foot; closed gunmetal mounting sockets. Chest opening and 26 malformed surface triangles repaired. Original 45-joint hierarchy/rest/binds and textures preserved; only removed-chain residual skin reassigned locally to the existing foot parents Bone_009 and Bone_013. Protected one original balanced four-face contact between closed assembly surfaces. No gameplay replacement."
+  }
+}

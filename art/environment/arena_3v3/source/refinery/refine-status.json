@@ -1,0 +1,32 @@
+{
+  "id": "01a1da4b-ee01-77ad-9803-149465804acd",
+  "type": "text-to-3d-refine",
+  "mode": "refine",
+  "name": "",
+  "model_type": "standard",
+  "seed": 793117373,
+  "prompt": "Stylized industrial science fiction MOBA Foundry environment piece. Broad clean beveled armor forms, dark blue charcoal steel, warm worn iron inset plates, small amber light strips, sparse yellow hazard trim. Strong readable silhouette, no text, no logos, no characters, no ground, isolated single object, flat bottom. One distant refinery block for a far background: tall boxy factory hall with two smokestacks, pipe racks, catwalks and small amber windows. Big simple shapes.",
+  "texture_prompt": "Cohesive stylized Foundry steel: blue charcoal armor, warm iron inset plates, small amber luminous strips, sparse yellow hazard trim. Broad clean color blocks and gentle edge wear. No text or logos. Neutral material illumination, not baked shadows.",
+  "texture_image_url": "",
+  "status": "SUCCEEDED",
+  "created_at": 1794663772389,
+  "progress": 100,
+  "started_at": 1794663772398,
+  "finished_at": 1794663912072,
+  "task_error": null,
+  "model_urls": {
+    "glb": "https://assets.meshy.ai/e39f0de3-ea51-4d94-9114-0553c9fe4a82/tasks/01a1da4b-ee01-77ad-9803-149465804acd/output/model.glb?Expires=4948214400&Signature=U-pFwcEpXCM6TVhJCfC3Du91KexoWmfRvnystF8WFKEENEe9hFQzzdCJ21PFb3-7XRackpW7v3rm4PktNeZPdiMSgy06wr4TumH32DRWoSw9csi77iBzeVo4G3Q94zJFPhybX0AuO8s6bNre3ClDoIS1em6RrZyEKJN4JeqveqzpZ-Tl-ib4oIf1YztHpa2J0KrYBDQi4uazUUm25akq3vYakpybJPaxVaBjYhpvCCj8mTD-~AUXk3cOrMxmENXqNflRtSS2s-OCUp6kElEr2xdZ4kYhy~z3PWXkU1VmCBupM-2luyhLh7v~QdjJvcHbp~WBdzo9oY~A1f~Lp19uRQ__&Key-Pair-Id=K1VGYTHIYLM9UM"
+  },
+  "thumbnail_url": "https://assets.meshy.ai/e39f0de3-ea51-4d94-9114-0553c9fe4a82/tasks/01a1da4b-ee01-77ad-9803-149465804acd/output/preview.png?Expires=4948214400&Signature=DmGQVQW5sGGtGfMI5S5f7d6xDlD8vXv6ZBIpqlOYsMTF0989BbjyqLf445I1IzVslmW~Spi9YeimTdRSCtdLW606jcffwWQzwqUthvRiVx7UO~wcs2YqAOAQcL~8S-PIUerbvcgqyM2nBVL4MXge0B690i13vlHfBUda-dTrKd-LDVXJ2iQBiisQE4cvMtG2GnGPUXMhKU9ZF6pDzlYacW-PS91u4SR8pruALEdaP6AoV8Z5yW698TyYpKLmrDyO0TM6ADnVJjjgFaSGkgdwLXF~3~DHyHB8wDysVh8~u8usoemzq~upDr6lgV1FHaP9TFc01sz4y2WY~klgEzinWA__&Key-Pair-Id=K1VGYTHIYLM9UM",
+  "texture_urls": [
+    {
+      "base_color": "https://assets.meshy.ai/e39f0de3-ea51-4d94-9114-0553c9fe4a82/tasks/01a1da4b-ee01-77ad-9803-149465804acd/output/texture_0.png?Expires=4948214400&Signature=CadA5P7e7xgTthWYyiUOKKqV2l-qjVc0wjTr-1wqI~CoZQYvjnCLd8WOv9ZF3PkBKDEsRqNlrmRlVZYdhayNRkT4PVK9S49jceeicW4tbsP0LRqIMKN9DAV63nN-~8~sBcfYczDhhvKI16Xrq3-YXgwgtCCOzBQi1wFOSC3rwU81Oa9Ko0ojdl5okj6kOtP3ZhVppPqpwFwPJMMqG0wT6m5cEPrTe9seTn7S02~5DyW~Ceg2liQM2D0o0W1U~NUmujs-D8qOrMxH~pMMK4nEOB8Ldx0lyJnt82LUgFUAz56Ey5H4TnvSsnkMfY7TnbtH7yColve28ALga6ve3SHH2Q__&Key-Pair-Id=K1VGYTHIYLM9UM",
+      "metallic": "https://assets.meshy.ai/e39f0de3-ea51-4d94-9114-0553c9fe4a82/tasks/01a1da4b-ee01-77ad-9803-149465804acd/output/texture_0_metallic.png?Expires=4948214400&Signature=NA-iSEmHxQO4v0dl3RhRXo7koiO6ZxtLAQWmNJS3BWUUf9qR~mxmycNZ16006NFjyiPyqwtrDs7KDg2PkhgmM798iVMXO64XTSEzLRmWv8jJH-1--7pcMf0Q41vPPPM-1-UNM6zdLcjlas3fGF2s-sTWjXRY-FG8eNEOyqwybgzMW2ySsja6qHMzZN5j632qvYuez0gMjfRWY2qUXOMKr1BfStPOOY95d2ZxXH6xAAWbzJdrMqkURt4xV~tDHDTa7JqGtacLGo-GFvtN4tGKgg79n2J8uYPHjfbAdPcp-NIePZjzstmyDiWNArUp0IrYjCSag-m~0EUd7G4sy3~9kQ__&Key-Pair-Id=K1VGYTHIYLM9UM",
+      "roughness": "https://assets.meshy.ai/e39f0de3-ea51-4d94-9114-0553c9fe4a82/tasks/01a1da4b-ee01-77ad-9803-149465804acd/output/texture_0_roughness.png?Expires=4948214400&Signature=H6nG6dtqf5lrmW4XpiR30m4FAst9vWbotzG9A-vQusZHeBrxCvqHql7rSWAu7U3PeB~1WsYysOoXKu65iEnNukvsmhL1rUuah5rIUe-hTDRE7OyDwSZApbAkeXtARof-657TfBo30ZJNJbLSBzdIUktArVQ8cQ2b7zx4suyL0SN4mIaxY0P0SiNcygRcXxpSfLpfyqUZC3yUFelgb5S6R4XbPcNCcVfsSMWPk8DCrNhlP0AEVcwUx~8oK03~XlcgW44UnK7xHdGfloWqCpPGPwqcVPal~85mbz4Pf5R6OydZ6xyTZTph~CKda-pcpfoEM2maZBs-Dfg0PRO1j1vrAg__&Key-Pair-Id=K1VGYTHIYLM9UM",
+      "normal": "https://assets.meshy.ai/e39f0de3-ea51-4d94-9114-0553c9fe4a82/tasks/01a1da4b-ee01-77ad-9803-149465804acd/output/texture_0_normal.png?Expires=4948214400&Signature=YiX0Vs8fPyJMkdkh59HwZQoRtMsLiirmyVks-q-ozeIEoROHYvlVy4~FEn8~kxmEqWRp7WDSQyh3UowDYE6b8DBDWUI22FYSpEN54qUcVxjMcHvmaIu4eDt0e1DgqPs0JCwTwOt9LLF9oB7zesEjRzv-64R4tEinZTzbByvjAM~OcU-~GUZKEHiLtzuVqM~rHlqT7~6osaITTQTUjg6TZhWCH8RW~4IDhixXO5fpshGBwSBZUC3E52NfH48GLoVMdg9hU1yeeMXjiynjqOb4Z5lfOHPUyMMPe9n2QJHfpjNLmoE~5YfxQTla0CyaoEiAGvVs0XZq8h2iw--Na~IQxw__&Key-Pair-Id=K1VGYTHIYLM9UM",
+      "emission": "https://assets.meshy.ai/e39f0de3-ea51-4d94-9114-0553c9fe4a82/tasks/01a1da4b-ee01-77ad-9803-149465804acd/output/texture_0_emission.png?Expires=4948214400&Signature=XHP-nrUcwcBpWgOBYG6BLUGKlJUoDgt8v0RMElw3nlg73xOjziHQ~58p45bieUEfRoyxOSvVx5kvCmzTLN4oKB6bcIpPSfTQjHR0v~3Pz~51Tx2eWx5GU~HnsBPIrtWEQkObGnBo1nHh1l4rQ~7ta5o6lx3C~KZXZiXWjghY6~q9ViJsYjL01pp7FxcN5NT6jmQ0QJ~Yn1xj3gv2f4aVmhWcx~cHqgkrHwkPu3xX4RGDFOs1HYtJhmO9sCvWUq4TdfyHw~B7eOoDcwnacx2rYLmY8qx9IC9ag9O5BvjDj199ozaGRFRCaHo~hvS7FK89E2aVuGXMftiz2TJGnip~uQ__&Key-Pair-Id=K1VGYTHIYLM9UM"
+    }
+  ],
+  "remove_lighting": true,
+  "consumed_credits": 10
+}

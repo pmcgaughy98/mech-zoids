@@ -1,0 +1,78 @@
+{
+  "animations": {
+    "idle": {
+      "frames": 10,
+      "bottom_rows": [
+        160
+      ],
+      "below_ground_pixels": 0,
+      "edge_contacts": 0,
+      "stray_components": 0,
+      "frame0_iou": {
+        "se_f0": 1.0,
+        "ne_f0": 1.0
+      },
+      "raw_sha256": "f5bfc66ff4b6b30fe6051d3ee50e0d0bb76e884d51bdf8d648f678e9b3a1efab",
+      "raw_size": [
+        960,
+        384
+      ]
+    },
+    "walk": {
+      "frames": 16,
+      "bottom_rows": [
+        160
+      ],
+      "below_ground_pixels": 0,
+      "edge_contacts": 0,
+      "stray_components": 0,
+      "frame0_iou": {
+        "se_f0": 1.0,
+        "ne_f0": 1.0
+      },
+      "raw_sha256": "7ec722e6641c3361be73b05e5dcd7010bf2b5c7fb53f0c830b94290233175c80",
+      "raw_size": [
+        2172,
+        724
+      ]
+    },
+    "chest_beat": {
+      "frames": 16,
+      "bottom_rows": [
+        160
+      ],
+      "below_ground_pixels": 0,
+      "edge_contacts": 0,
+      "stray_components": 0,
+      "frame0_iou": {
+        "se_f0": 1.0,
+        "ne_f0": 1.0
+      },
+      "raw_sha256": "045db44dcf40310144085a3774806e8d21322147fdc8472d3f0fc3b31b86f60a",
+      "raw_size": [
+        2172,
+        724
+      ]
+    },
+    "hex_shield": {
+      "frames": 12,
+      "bottom_rows": [
+        160
+      ],
+      "below_ground_pixels": 0,
+      "edge_contacts": 0,
+      "stray_components": 0,
+      "frame0_iou": {
+        "se_f0": 1.0,
+        "ne_f0": 1.0
+      },
+      "raw_sha256": "13f7dc4bb261f83b5fc5384fb4ea92863af56e3db27a2fbac5aba436a6c53c15",
+      "raw_size": [
+        2172,
+        724
+      ]
+    }
+  },
+  "palette_opaque_colours": 15,
+  "total_frames": 54
+}

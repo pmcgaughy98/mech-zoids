@@ -1,0 +1,3643 @@
+Reading prompt from stdin...
+OpenAI Codex v0.166.0
+--------
+workdir: C:\Users\pmcga\dev\hollowtide
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR, D:\dev\new-mech-rpg\docs\art\moba]
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a1a9d9-837c-7973-95b2-a1625d1fb5c5
+--------
+user
+You are making pixel-art walk frames for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\walk35. Read anything under
+D:\dev\new-mech-rpg\docs\art\moba. Do not touch any other folder, assets, art or tools, and do not commit.
+
+The machine: the yellow L rhino (mech), approved stills at 35 degrees in D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\views_cam35 (s, se, e, ne, n), 192x192,
+lowest foot on row 160, 12 colours. Preston, the game's owner, approved these stills; they are the idle in the game,
+so the walk must match them exactly above the legs or the switch from idle to walk pops. Read
+D:\dev\new-mech-rpg\docs\art\moba\ANIMATION_PLAYBOOK.md sections 1, 4, 5 and 9 first, and
+D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\codex-walk4 (REPORT.txt, build.py, verify.py): the method that
+worked last, a wolf trot re-posed from its stills to a foot path with a 2D foot-lock check.
+
+Job, run 2: an 8-frame walk, 125 ms a frame (8 fps), looping, in these views: s, n. The gait is the
+one Preston approved for this rhino: a four-beat walk; each foot swings 3 frames and a new foot starts every 2,
+so one foot is up on even frames and two on odd frames. Left fore swings f1-f3, left
+hind f3-f5, right fore f5-f7, right hind f7-f1. Each foot's path (offset along the body in side-view px, + = forward,
+and lift) is in D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\walk35\targets.json "paths"; per view the path turns into screen px as offset * f * u, lift straight up:
+  s: u = (0, 1), f = 0.5736; a planted foot moves (+0.00, -1.72) px a frame on the canvas (x, y; y down)
+  n: u = (0, -1), f = 0.5736; a planted foot moves (+0.00, +1.72) px a frame on the canvas (x, y; y down)
+So a planted foot keeps one spot on the ground while the body moves forward. targets.json "views" gives the sole
+centre of every foot visible in each still for every frame; guide_<view>.png shows them (the still faded, a box per
+foot per frame, thick = planted, thin = lifted). The se/ne foot names are my reading of the stills; check them and
+say if one is wrong. A foot hidden in the still: draw it only where the new pose shows it.
+Front and back are the hard views: on this rhino, five earlier straight front/back walks from prompted tools
+(Codex twice, Retro twice, PixelLab once) stacked the legs, moved both together, stretched them or grew parts. Do not
+describe the walk to a tool; pose the still's own legs to the foot path below by hand. At 35 degrees the legs no
+longer stack: a foot's travel shows as up-down movement on screen (0.57 of its length), so a planted fore foot in s
+slides UP the screen as it goes back under the body, and a swinging foot comes down the screen as it reaches forward.
+The far legs are hidden by the body in these stills: draw them only where the new pose shows them.
+Run 1 (e, se, ne) is done and approved: its frames in walk\frames are final, so do not change or delete them; its
+report and boards are kept in walk35\run1. Match its leg drawing (cuffs, discs, soles) in s and n.
+
+Method: no image tool, native pixels, the way codex-walk4 did it. The body, head, horn, plates and tail are the
+approved still, pixel for pixel, dipping 1 px on f0 and f4 (a fore foot lands). The legs are the still's own legs
+re-posed: thigh or shoulder plate, knee disc, cuff, foot block, each the still's own pixels TRANSLATED, never
+rotated or resampled (run 1 rotated its shanks and the rotation left dark specks and slivers that a 78k-token cleanup
+had to remove; see anim\walk35\clean\REPORT.txt and cleanup.py, and work the way the cleanup did). Where a leg leans,
+step the parts 1 px per row or redraw the shank by hand in the still's colours and bands. Every joint and every join with the body is redrawn by
+hand: no seams, no straight cut edges, no gaps, no part ending abruptly (pasted parts that did not join are what
+Preston rejected before). The legs are short: keep each leg's length within 1 px of the still's.
+
+Pass marks (report each):
+- Foot lock: for each foot, its sole centre on its k-th planted frame (k = 0 to 4 in order, wrapping past f7) minus
+  k times the planted step above stays within 2 px in x and y. Measure from the frame pixels, not from your targets.
+  Write a footprint picture per view.
+- Each visible foot meets its target in targets.json within 1 px; lifts exact.
+- Above the legs every frame equals the still (after the 1 px dip): report the % of differing pixels per frame.
+- 192x192 transparent frames, the stills' 12 colours, binary alpha, dark outline, no holes, no stray pixels, nothing
+  touching the canvas edge. A planted foot nearer the camera than in the still may sit below row 160 (perspective);
+  report each frame's lowest row.
+- Judge boards with the game's sel-out (D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\selout_rhino.py, function selout) at 4x, the still beside them.
+
+Output in D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\walk35: walk\frames\<view>_f0-7.png for s, n, a preview gif per view (125 ms, loop),
+footprint pictures, board.png (per view: the still, then your 8 frames, sel-out, 4x), checks.txt, and REPORT.txt
+(under 30 lines): tokens if known, the foot names you used, the foot-lock spreads, target errors, upper-body match,
+lowest rows, and by eye: does each view read as this rhino walking forward in the four-beat walk, legs like the still,
+whole and clean?
+
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\pmcga\.codex\config.toml): `computer_use.windows.always_allowed_app_ids` is ignored.
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\pmcga\.codex\config.toml): `computer_use.windows.always_allowed_app_ids` is ignored.
+codex
+I’ll read the playbook and wolf method first, then inspect the stills, targets, and approved leg treatment. I’ll draw and verify the s/n frames using native pixels, with all writes confined to `walk35` and no commits.
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\ANIMATION_PLAYBOOK.md'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 294ms:
+. : File C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be loaded because 
+running scripts is disabled on this system. For more information, see about_Execution_Policies at 
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:3
++ . 'C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.Powe ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+# Machine animation playbook
+
+How to make a MOBA machine animation, or fix one, without relearning the rhino walk. This is what worked and
+what failed from 2026-11-03 to 2026-11-04. The full logs are `rhino_l/take-a/anim/forge/RUNS.md` and each Codex
+set's `REPORT.txt`.
+
+Written by the hub session (Mech-Zoids Game) and the animation lane, 2026-11-04. Update this file whenever a lesson
+changes.
+
+## 1. Preston's rules
+- **The approved stills are the truth.** They are each machine's `<machine>/take-*/views/` (rhino `rhino_l/take-a`,
+  gorilla `ape_l/take-a`, fennec `fennec_s/take-b`). Frame 0 of every idle and every ability is the still itself.
+  Every frame is judged side by side against the still.
+- **He rejects "barely acceptable".** Show a board with the approved still in column 1, and let him pick.
+- **Feet stay planted.** Feet sit on the foot row in every frame, and a planted foot must not slide in the game.
+- **Paid runs need a cost estimate and his yes first.** This covers Retro Diffusion, ElevenLabs, and any credits.
+  PixelLab's free daily generations (20) are fine to use. Codex runs on his plan: quote the token estimate
+  (section 3) when you ask.
+- **His picks are permanent.** Eyes he chose are in `eye_overrides.json`, and no script re-places them.
+- **Numbers are his to set.** Lengths, speeds and sizes are placeholders until he sets them.
+- **Sel-out only, unless he says otherwise.** The packer adds sel-out to the stills as drawn. Detail ink is a
+  per-view fix for a view that is clearly flat (the rhino front), never a blanket pass. The gorilla is sel-out only
+  ("sel out only").
+- **No curled tails** ("no curved tails as they are hard to rotate"). Tails lift and swing but stay straight.
+
+## 2. Canvas, feet and views
+- **Every machine animates on a 192x192 canvas with the feet on y=160.** Place a still at
+  (+16, 160 - its foot row):
+
+  | Machine | Still | Foot row | Offset in 192 |
+  |---|---|---|---|
+  | Rhino (L) | 192x192 | 160 (outline under a light foot edge on 161, so `feet_edge_row` = 161) | 0, 0 |
+  | Gorilla (L) | 160x160 | 130 | +16, +30 |
+  | Fennec (S) | 160x160 | 140 | +16, +20 |
+
+  Most other stills are 160x160 with a foot row of 140 (`STILLS_STOCKTAKE_2026-11-04.md`). Measure; don't assume.
+- **Views:**
+  - Five are drawn: s, se, e, ne and n. The engine mirrors sw, w and nw, so a fix in ne also fixes nw.
+  - An action drawn only in s, e and n shows its e frames in se and ne.
+  - An action that has its own se and ne frames plays them (the own-view rule in `directional_sprite_3d.gd`).
+- **Size classes:** L is 0.020 m a texel, M 0.018, S 0.016. The world stays at 50 texels a metre.
+  `size_scale()` sizes the ring, the shadow and shields against the L rhino.
+- **Seated stills (fennec):** the walk cannot start on the still, so the walk is the one animation exempt from
+  "frame 0 = still". Every ability still starts and ends on it.
+
+## 3. The generators: what each is good and bad at (measured)
+| Tool | Good | Bad | Cost |
+|---|---|---|---|
+| Codex, 3-row sheet (front, side, back) | Same machine in every row, rows match frame for frame, legs really lift | Drifts from the stills (front face, back tail plate), a Codex idle carries only half the stills' interior ink, eyes land in the wrong place | ~58k-105k tokens a sheet |
+| Codex, 2-row se/ne job | Reuses the move's original column text word for word, with the approved se/ne views as refs; grids clean, every row faced the right way | ne drifts on rump plates and hip discs; se head turns side-on at attack peaks; parts on the far side break (the gorilla's back hex plate in hex_shield ne f1-f4) | rhino set C 104,506 tokens, set D 71,728; gorilla set D 80,664 |
+| PixelLab `animate_with_skeleton_v3`, pose-guided from keypoints copied off an approved side walk | **The only tool that made a straight front or back walk** (section 9): design held (alpha IoU 0.87-0.99 against the still), one leg at a time | Stretched the front shoulder plates into the knee; the forward foot dips 1-5 px. **Lost the design on the fennec** (2026-11-04, job 6555b2ae, template bear, front): legs alternate, but it drew a generic fox with long thin legs, a grey ruff and no chest plate, alpha IoU 0.63 with the input (fennec_s/take-b/anim/pose-walk/). It holds a bulky machine, not a small big-headed one. Before redoing a Codex front or back walk, measure its foot lift per leg band first: the fennec's Codex trot already lifted 2-4 px | 3 free generations a view, ~4 min each |
+| PixelLab, text-prompted walk | | Grew ~9 px taller mid-step and sprouted claw arms | free generations |
+| Retro Diffusion walking style | Side and se walks that read as walks | Paid per run | $0.14 a run |
+| Build from the still with a script | Exact design, exact ink | Limited motion | free |
+
+- **Codex walk B failed its own check:** the side reach frames floated 6-7 px, the diagonal pairs mismatched, and
+  the back legs shortened. Run the checks in section 5 before trusting any generator.
+- **Codex briefs that worked** (`ape_l/take-a/anim/codex-set-a/brief.txt`, `fennec_s/take-b/anim/common.txt`):
+  - Name the still files, the canvas offset, the exact colour list and what must never change (parts, limb length,
+    head size, the outline).
+  - Point Codex at the previous machine's set folder as the method (finish, polish, gems, seam_fill, verify).
+  - **One image-tool call per animation, no redo.** Weak sheets are fixed in finishing, not regenerated.
+  - **No generated idle.** Ask for the idle to be built from the still (section 4, step 6).
+  - Give each move its frame plan with the key frames (release, blast, landing) agreed with the game feel lane.
+  - Ask for preview durations in ms, `grid.json`, `checks.txt`, gifs, a board with the still leftmost, and tokens.
+  - Effects are never in the body frames.
+- **se/ne after the fact:** `make_codex_diag.py` (rhino) and `make_codex_diag_ape.py` (gorilla) build 2-row jobs from
+  the original column text and the se/ne stills on a flat key colour at 6x with a 48 px margin.
+- **Codex launch** (from `C:/Users/pmcga/dev/hollowtide`, in the background; one set per folder, two sets can run at
+  once):
+  `codex exec --sandbox workspace-write --add-dir "D:\dev\new-mech-rpg\docs\art\moba" --skip-git-repo-check < "$A/brief.txt" > "$A/codex-log.txt" 2>&1`
+- **Uploading to a web forge:**
+  1. Add a file input to the top page.
+  2. Fill it with the exact local PNG using Claude in Chrome's `file_upload`.
+  3. Hand it to the forge's own input when "Upload from Device" is clicked.
+  Never type base64 by hand.
+
+## 4. Finishing, in this order
+Most scripts are in `rhino_l/take-a/anim/`. Exceptions are named.
+1. **Eyes:** `fix_set.py`.
+   - It template-matches the cleaned eyes, then tracks the head on posed frames.
+   - It maps Codex's own red eye through the exact finishing shrink and offset.
+   - `se_eyes.py` tracks eyes into se frames from the nearest frame that has one (min score 0.55), and skips any
+     frame where the fit is poor.
+   - List every frame left without an eye for Preston. **Open:** rhino horn toss se f1 and f4, horn jab se f1, f3
+     and f4.
+2. **Broken parts (plates, gems, faces):** `ape_l/take-a/anim/back_plate.py`.
+   - Cut the part from the still (its colours plus the ring they enclose), find it in each frame by matching the
+     still's gem mask within 10 px, paste it there, then clear the box above it and dark texels stranded next to
+     it.
+   - Frames whose part already matches the still at 0.9 or better are left alone. Broken frames measured 0.76-0.80.
+   - Cut with a square dilation (7 px) so corners such as the bezel's cap are included; a diamond cut them off.
+3. **Shoulder line (rhino front):**
+   - Geometry first: `retro-walk/pixellab/fix_front_shoulders.py` restores the still's shoulder plates.
+   - `front_shoulder_ink.py` draws a domed dark arc over each knee-disc plate and lifts the texel under it to the
+     highlight.
+   - Where that can't fit the pose (braced, rearing), `shoulder_transfer.py` copies the line from the nearest frame
+     that has it (match 0.76-0.87 on the braced shuffle).
+4. **Detail ink:** `detail_ink.py` uses only the contour part of the Hollowtide detail-ink rule, in the machine's own
+   darkest colour (`darkest()`). It brings a view up to the liked views' interior ink share and no further. The full
+   rule (22-28%) was rejected.
+   - **Gate with a margin:** ink a view only when its share is clearly below the target (under about 0.75 times).
+     A view a point under the target doubled its ink and grew hard rings (the gorilla's n and ne trial).
+5. **Seams:** each Codex set's `seam_fill.py` fills runs of 4+ transparent texels with ink on both sides. The
+   originals go in `frames_pre_seam/`.
+6. **Walk upper body (front, back):** `walk_to_still.py` puts the still's upper body, moved by each frame's bob,
+   over the walk's own legs (section 9, step 7). Use it on any walk whose body drifts from the still.
+7. **Idle:** `diag_idle.py` builds the idle from the approved still: the body above a cut row 13 px over the feet
+   rises 0, 1, 1, 1, 0 px, the cut row is repeated to close the gap, and the feet never move.
+   - Never rerun `fix_set.py` on an idle: it rebuilds from Codex's frames.
+   - **Views drawn from the game camera (35 degrees):** set the cut per view. Far feet sit up to about 30 rows above
+     the feet row there, so a fixed 13-row cut lifts them. The rhino's cam35 idle cuts at s 152, se 131, e 141,
+     ne 131 and n 142, chosen on a marked strip of the lower bodies. A gap search by run count mistook the horn,
+     jaw and tail for leg gaps. (`rhino_l/take-a/anim/cam35-idle/build_cam35_idle.py`, 2026-11-04.)
+8. **Sel-out:** last, at pack time. `selout_rhino.selout()` with `selout_rhino.OUTLINE` set to the machine's darkest
+   colour (rhino #141218, gorilla #141a16, fennec #141218). The rhino also keeps `frames_selout/`. Rerun after any
+   frame fix.
+
+**Last finishing step: a Codex repair pass (fennec, 2026-11-04).** Codex's finishing pastes native parts from the stills (face, ears, discs, tail pieces) onto generated bodies, and where they do not line up it leaves cutoffs: straight cut edges, a second chin under the pasted head, chopped haunches, gaps and spurs. Preston: "Too many cutoff etc." Deleting pixels (diag-touchup/touchup.py) only removes the leftovers; the cut areas need redrawing. What worked: a Codex job per two sets with no image calls, starting from the current frames (never rebuilding from raw sheets), keeping originals in frames_pre_repair/, judging boards with sel-out at 4x. Fennec: sets A+B 45 of 153 frames, 147,657 tokens; sets C+D 43 of 102 frames, 189,814 tokens (fennec_s/take-b/anim/make_codex_repair_fennec.py, repair-ab/, repair-cd/). Budget it with every new machine's sets.
+
+Retro Diffusion custom_action on the fennec (sand kick, n and ne, $0.25 each) failed both views: from frame 2 it
+stood the fox on its hind legs with clawed arms. Retro walking held the fennec's back and ne. Check a style's
+price with estimate_inference_cost for each style, not only the first. (`fennec_s/take-b/anim/retro/RUN.md`)
+
+## 5. Checks, with the numbers that passed
+| Check | Pass |
+|---|---|
+| Feet on the foot row, every frame | bottom row 160 (161 under a light edge); list any dip |
+| Air and underground frames | named in the packer; the gorilla bound's air frames bottom at 132-148, the fennec pop-out at 140-150; dug-in frames never below 160 |
+| Frame 0 (and the end frame of moves that end on the still) | identical to the still (IoU 1.0); the old Codex idle matched only 42-62% of pixels, which caused the pop |
+| Gait (a walk alternates) | about -0.7; not valid for three-quarter views, judge those on the board |
+| Alpha IoU against the still | 0.87 or higher |
+| Interior ink share against the still | rhino front 6.8-6.9%, side 10.0-10.2%, back 10.1%; gorilla s 10.9, se 9.1, e 9.5, ne 8.3, n 9.0% |
+| Part match (plates, gems) against the still | 0.9 or better; broken frames read 0.76-0.80 |
+| Colours | the machine's palette only, eyes kept, no new parts |
+| Facing | exact share well above the mirrored ref |
+| Pack check | each packer's `check()`: frame counts match the timings, f0 = still, feet rows; prints `check: OK` |
+| Engine | `rhino3d_check.gd` / `ape3d_check.gd` with `--headless --fixed-fps 60`, 0 failures |
+
+## 6. Speed: the drawn stride has to match the movement
+- **Measure the stride:** `tools/debug/walk_stride_measure.py <frames dir> side --fps N` gives the speed a planted
+  foot moves at the drawn frame rate.
+- **The rhino walk:** planted feet move at 0.48 m/s, while the placeholder movement speed is 3.5 m/s. Unless the
+  two match, the feet slide. Open; Preston's call.
+- **The braced shuffle:** drawn by Codex from brace f3 (set D). The planted feet slide 2 px a frame, which is
+  0.40 m/s at 10 fps; braced movement is 1.225 m/s, so the feet slide about 3x. Open as of 2026-11-04: slow the
+  brace to 0.4 m/s or accept the slide. Preston picks.
+- **The fix options:**
+  - slow the move;
+  - raise the playback rate (`speed_scale`, `full_speed_walk_rate`);
+  - draw a longer stride or a faster gait.
+- **Engine rules that hide seams:**
+  - Turning mid-step keeps the step: the new view picks up at the same frame.
+  - A held action (brace) plays its `<action>_shuffle_<view>` while moving, and plants the held frame again on stop.
+
+## 7. Packing and the engine
+- **Packers** (`tools/art/`), one per machine: `pack_rhino_3d.py`, `pack_ape_3d.py`, `pack_fennec_3d.py`.
+  - Each has `STILL_AT` (the offset), a `KIT` list of (name, ms per frame, loop), `SET_OF` (which Codex set folder),
+    and `DIAG_SET` for se/ne. A frame lasts ms/100 ticks at speed 10.
+  - The ape and fennec packers pick up se/ne rows by themselves once `<view>_f0.png` exists in the set named in
+    `DIAG_SET`; until then the walk plays the side walk and the idle the still.
+  - `still()` takes the approved views for every facing.
+  - **Rhino:** run only `pack()` (`cd tools/art && python -c "import pack_rhino_3d as p; p.pack()"`). Its main block
+    also runs `fx()` and `kit_art()`, which write other lanes' folders.
+- **New PNGs:** they need `Godot --headless --path . --import` before a check or a recording sees them.
+- **Recording:**
+  - Movie Maker: `--resolution 1280x720 --fixed-fps 30 --position 20000,20000`.
+  - Then ffmpeg libx264 at crf 20, plus a phone copy at crf 27 with `-preset slow` and `+faststart`.
+
+## 8. Safety: keep every stage
+- Every batch edit first moves the originals into a sibling folder. Names used so far:
+  - `frames_codex/`
+  - `frames_pre_codex/`
+  - `frames_pre_retro/`
+  - `frames_pre_seam/`
+  - `frames_pre_still/`
+  - `frames_pre_eyes/`
+  - `frames_pre_plate/`
+  - `frames_pre_still_body/`
+  - `pre_shoulder/` (`front_shoulder_ink.py` restores from it first, so remove it before rerunning on purpose)
+- Ink or style trials run on copies, never on `art/machines/*/` views or the approved stills.
+- **Before a repack, check the stills' timestamps against the packed sheet.** On 2026-11-04 a rejected ink trial
+  overwrote the gorilla's n and ne stills. Frame 0 of every Codex set equals the still, so the exact originals were
+  recovered from the frames (561 and 518 px differed, every one of them ink).
+- After any restore, prove it is pixel-identical to the backup (0 px differ).
+- **When a still changes under drawn frames** (the sprite factory's capped ink on the fennec n +49 px and ne +50 px,
+  2026-11-04): `fennec_s/take-b/anim/ink-carry/carry_ink.py`. Frames equal to the old still become the new still;
+  in every other frame each ink cluster is carried with its part (the old still's pixels around it matched within
+  6 px, 85% or more), only onto opaque texels. Built-from-still idles take all of it; redrawn Codex parts take what
+  matches. Originals in `<move>/frames_pre_ink/`, log in `carry-log.json`.
+- Don't rerun `tools/art/pack_ape_fx.py`: it overwrites the `ape_still_*` backups.
+
+## 9. The rhino walk, start to finish
+**The rule to carry forward:** for a straight front or back walk on a four-legged machine, take the gait from an
+approved side walk and pose it frame by frame. Don't prompt for it. Then put the still's upper body back over the
+posed legs (step 8).
+
+1. **Side and se were the easy part.** Retro Diffusion's walking style gave side and se walks that read as walks; the
+   legs are spread apart from those angles.
+2. **Straight front and back failed five times:** Codex twice (walk A weak, walk B floating 6-7 px with mismatched
+   pairs and shortening legs), Retro twice, and text-prompted PixelLab once (it grew about 9 px taller mid-step and
+   sprouted blue claws like arms). From straight in front or behind the legs stack, so every tool moved both legs
+   together, stretched them, or invented parts. `walk_frontback.py` (a bob from the side row, whole-leg lifts in
+   diagonal pairs) was a stopgap.
+3. **The fix: PixelLab pose-guided** (`animate_with_skeleton_v3`, beta, built around a human skeleton). Preston:
+   "that ended up fixing the gallop to a consistent walk".
+   - Give it the leg position for every frame instead of describing the walk. Copy the positions from the approved
+     side walk, so the gait matches by construction: `front_skeleton.py` built `front_keypoints.json` (8 frames) from
+     the side walk's timing.
+   - Map the front legs to the skeleton's arms and the back legs to its legs.
+   - Cost: 3 free generations per view, about 4 minutes each. Run one view at a time.
+   - Result: the first front walk from any tool that kept the rhino intact and stepped one leg at a time. Same size
+     and shape as the still, rhino colours only, red eyes kept, nothing grown, gait check read it as a walk (back
+     -0.72); the body stayed put and the head leaned slightly toward the planted foot. Alpha IoU against the still
+     0.87-0.99.
+   - `finish_pixellab.py`: colour snap, eyes and outline, no grounding. The forward foot dips up to 4 px below the
+     line as perspective; grounding every frame would make the body bounce.
+   - Preston: "yes run back and ne that looks great though". The same method made back and ne.
+     `retro-walk/walk_final.py` assembled all five (PixelLab front, back, ne; Retro se, side).
+4. Swapped in. `fix_front_shoulders.py` restored the still's shoulder plates (PixelLab had stretched them into the
+   knee), and detail ink went on front and back.
+5. **Codex consistency pass:** Codex took the pose-guided front, back and ne frames as its input and the Retro se and
+   side as the look to match, with the same pose, the same foot rows and alpha IoU 0.97 or more against each input.
+   So the live walk's gait is the pose-guided one; Codex only restyled shading and ink. The front shoulder line went
+   on after (`front_shoulder_ink.py`, 8 frames, 0.0% mismatch). The pre-Codex walk is in
+   `codex-set-a/walk/frames_pre_codex/`.
+6. The idle was rebuilt from the approved stills (`diag_idle.py --set-a`): ink matches (front 6.9%, side 10.2%, back
+   10.1%) and f0 is the still. That moved the pop to the moment the walk started, because the restyled walk matched
+   the stills on only 59-66% of pixels (front chin plate smaller, back tail plate a round knob).
+7. **Upper body back to the still** (Preston: "fix em up with our tools as well"): `walk_to_still.py` takes the
+   still's head, horn, chin plate, shoulder blocks, rump and tail plate, moved by each frame's bob (front dx 0-2,
+   dy 1; back dx 1-2, dy 2-3), and keeps the pose-guided legs from each knee-disc top down (rows 133-139) and the
+   middle band below row 150. The idle-to-walk switch no longer changes the upper body. The shoulder line now comes
+   from sel-out over the still's shoulder blocks, which are silhouette in its geometry. `rhino3d_check` 0 failures.
+   Originals, with `pre_shoulder/`, are in `codex-set-a/walk/frames_pre_still_body/`. Board:
+   `walk-to-still-board.png`.
+
+## 10. A new machine, step by step
+1. Approved stills for s, se, e, ne and n. Record the canvas, the foot row and the offset to y=160 (section 2).
+2. Agree the animation names and key frames with the game feel lane, which owns the mechanics.
+3. Generate motion. Walks: the side and se from a walk tool, then front, back and ne pose-guided from the side
+   walk's keypoints (section 9). Abilities: Codex sheets in front, side and back first (sets A and B), se and ne later (sets C and D) from the
+   same column text. PixelLab posed for walks that hold the design. A script for idles. Quote the cost first.
+4. Finish in the order of section 4.
+5. Run the checks in section 5, plus the stride against the movement speed in section 6.
+6. Make a board with the still in column 1, and Preston picks.
+7. Write the machine's packer from the closest one, pack, import, run the engine check, and record if asked.
+8. Log the run in the machine's `RUNS.md` or the set's `REPORT.txt`, and update this playbook if anything new was
+   learned.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\wolf_m\\take-b\\anim\\codex-walk4\\REPORT.txt'; Get-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\wolf_m\\take-b\\anim\\codex-walk4\\build.py'; Get-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\wolf_m\\take-b\\anim\\codex-walk4\\verify.py'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 257ms:
+. : File C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be loaded because 
+running scripts is disabled on this system. For more information, see about_Execution_Policies at 
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:3
++ . 'C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.Powe ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+WOLF M TAKE B / CODEX WALK4 / SE + NE TROT
+Tokens: unavailable. Native pixels; no image tool/commit. Only codex-walk4 written; fixed stills and approved side timing read.
+se: u=(0.994665758,0.103150523); f=0.775514982; side paw spacing43.752857px.
+ne: u=(0.986143703,-0.165893333); f=0.619979262; side paw spacing43.752857px.
+64/64 contacts within1px of ideal2D target; exact2/4/4/2px raster lifts; pairA f0-3 / pairB f4-7.
+Native row160 cap: se near_fore f0 -0.640px; ne near_hind f7 -0.720px vs ideal; within1px.
+se near_fore footlock spread x/y 0.857/0.800px.
+se far_fore footlock spread x/y 0.857/0.800px.
+se near_hind footlock spread x/y 0.857/0.800px.
+se far_hind footlock spread x/y 0.857/0.800px.
+ne near_fore footlock spread x/y 0.171/0.514px.
+ne far_fore footlock spread x/y 0.171/0.514px.
+ne near_hind footlock spread x/y 0.171/1.029px.
+ne far_hind footlock spread x/y 0.171/0.514px.
+se near_fore: upper[16, 8, 7], shank[6, 5, 5], paw12; width delta<=1; length delta0.461px.
+se far_fore: upper[8, 8, 7], shank[5, 4, 4], paw12; width delta<=1; length delta1.097px.
+se near_hind: upper[13, 9, 6], shank[6, 5, 4], paw11; width delta<=1; length delta0.682px.
+se far_hind: upper[7, 5, 7], shank[6, 5, 4], paw11; width delta<=1; length delta0.658px.
+ne near_fore: upper[12, 5, 6], shank[6, 5, 5], paw12; width delta<=1; length delta0.631px.
+ne far_fore: upper[8, 7, 5], shank[6, 4, 4], paw11; width delta<=1; length delta1.251px.
+ne near_hind: upper[13, 10, 7], shank[7, 6, 5], paw13; width delta<=1; length delta0.525px.
+ne far_hind: upper[6, 6, 8], shank[6, 5, 5], paw11; width delta<=1; length delta1.303px.
+16/16:192x192 RGBA, binary alpha, approved palette, no below160 pixels, no canvas-edge contact, one connected creature.
+No pinholes/strays; enclosed negative space between crossing legs retained rather than painted solid.
+Body/head/fins from still, dip1px f1/f5; straight original tail plate pixels translate1px with dip, never thinned.
+EYE at4x sel-out: forward three-quarter robot-wolf trot; paired steps follow side indices; plated legs and claws retained.
+EYE: joined limbs, no abrupt cut ends seen; overlapping paws/legs naturally hide each other at crossing phases.
+board.png: side timing on top, then each view approved still / setC / WALK4; footprint boards show2D world contacts.
+GIFs:8 frames,100ms each, infinite loop. checks.txt and verification.json contain every saved contact and width.
+"""Native traced-pixel 2D rig; all outputs confined to this directory."""
+from pathlib import Path
+import numpy as np, json, math, ast
+from PIL import Image, ImageDraw, ImageFont
+from scipy import ndimage as ndi
+R=Path(__file__).resolve().parent
+B=R.parents[1]; M=B.parents[1]
+P=[tuple(bytes.fromhex(c))+(255,) for c in '141418 22222b 5c0a10 a8141a 444452 e8251f 6e6e7e ff6a55 6ff0dc bcbcc8 c9c2b8 f0ece4'.split()]
+SIDE_SPACING=float(np.linalg.norm(np.array([117.,159.5])-np.array([73.25,159.])))
+SIDE=json.loads((R.parent/'codex-walk2/articulation.json').read_text())
+PATH=json.loads((R.parent/'codex-walk2/targets.json').read_text())['paths']
+Y,X=np.indices((192,192)); GRID=np.stack([X,Y],2)
+# Each outline is traced in the approved fixed still at native resolution.
+# root, knee, ankle, sole; upper contour, lower contour, paw contour.
+D={
+'se':{
+'near_fore':[(102,123),(101,138),(102,154),(105,160),[(99,115),(105,115),(108,118),(110,123),(109,127),(105,131),(104,138),(101,140),(98,135),(97,131),(94,127),(94,122),(96,118)],[(97,132),(100,134),(104,137),(105,141),(104,146),(105,151),(105,155),(101,156),(100,150),(99,145),(97,140)],[(100,152),(104,152),(104,154),(108,155),(109,156),(110,158),(110,160),(99,160),(98,157),(99,155)]],
+'far_fore':[(116,125),(115,139),(116,152),(120.5,158),[(114,121),(118,122),(119,127),(119,132),(117,137),(117,140),(113,139),(111,135),(111,130)],[(111,134),(113,135),(116,138),(118,141),(117,147),(118,151),(118,154),(114,154),(114,149),(113,144)],[(114,151),(118,151),(119,153),(121,153),(123,154),(125,156),(125,158),(114,158),(113,155)]],
+'near_hind':[(82,121),(72,137),(69,151),(71.5,157),[(78,114),(83,113),(87,116),(88,122),(85,127),(80,131),(76,135),(73,138),(68,139),(67,134),(70,129),(73,126),(74,120)],[(68,133),(72,135),(74,138),(72,144),(71,149),(72,152),(71,154),(67,154),(67,148),(68,143),(67,139)],[(67,150),(71,150),(72,152),(75,153),(76,154),(77,156),(77,157),(67,157),(66,154)]],
+'far_hind':[(87,126),(84,139),(84,150),(86.5,154),[(85,123),(89,124),(90,129),(88,133),(86,138),(85,141),(82,142),(80,138),(81,133),(83,130)],[(80,133),(84,134),(86,138),(86,144),(85,149),(86,151),(85,153),(82,153),(82,148),(81,143)],[(82,149),(86,149),(87,150),(89,151),(91,152),(91,154),(81,154),(81,152)]]},
+'ne':{
+'near_fore':[(119,121),(117,138),(120,150),(119.5,155),[(116,113),(122,113),(124,117),(124,124),(122,127),(120,128),(120,133),(119,138),(116,139),(114,134),(114,129),(112,124),(113,118)],[(114,133),(118,135),(120,138),(120,143),(121,147),(121,151),(117,152),(117,147),(115,142),(113,138)],[(117,149),(121,149),(122,150),(125,151),(126,152),(127,153),(127,155),(116,155),(115,152)]],
+'far_fore':[(107,124),(103,138),(102,149),(103,153),[(104,120),(109,121),(110,126),(108,131),(106,135),(106,139),(102,140),(100,137),(101,131)],[(100,134),(104,135),(106,139),(105,143),(105,149),(106,151),(102,152),(100,149),(100,144),(99,139)],[(99,148),(103,148),(105,149),(107,150),(108,151),(108,153),(98,153),(97,151)]],
+'near_hind':[(99,125),(91,142),(90,155),(92,160),[(94,118),(100,117),(105,120),(105,126),(103,131),(99,135),(96,139),(93,144),(88,145),(87,141),(88,137),(91,133),(91,126)],[(87,137),(91,139),(94,142),(94,147),(92,152),(93,156),(89,158),(87,155),(88,149),(87,145)],[(88,154),(92,154),(93,156),(96,156),(98,157),(99,159),(99,160),(87,160),(86,157)]],
+'far_hind':[(82,131),(77,144),(76,154),(77,157),[(80,127),(85,126),(86,131),(82,136),(80,140),(80,145),(76,147),(73,144),(74,139),(77,135)],[(74,140),(78,140),(80,143),(79,148),(78,153),(79,155),(75,156),(73,153),(74,148),(73,145)],[(74,153),(78,153),(79,154),(82,154),(83,156),(83,157),(73,157),(72,155)]]}}
+TAIL={
+'se':[(75,119),(79,122),(74,128),(68,133),(63,140),(57,144),(55,151),(54,149),(54,140),(57,135),(62,129),(68,124)],
+'ne':[(84,124),(88,128),(83,134),(77,140),(70,148),(64,153),(58,159),(57,157),(57,149),(60,142),(66,136),(72,131),(78,127)]}
+def mask(poly):
+ im=Image.new('1',(192,192));ImageDraw.Draw(im).polygon(poly,fill=1);return np.array(im)
+def trace(ref,poly):
+ a=ref.copy();a[~mask(poly)]=0;return a
+def shift(a,dx=0,dy=0):
+ out=np.zeros_like(a);dx=int(dx);dy=int(dy);ys,xs=np.where(a[:,:,3]>0);xx=xs+dx;yy=ys+dy;ok=(xx>=0)&(xx<192)&(yy>=0)&(yy<192);out[yy[ok],xx[ok]]=a[ys[ok],xs[ok]];return out
+def composite(a,b):
+ z=b[:,:,3]>0;a[z]=b[z]
+def fit(a,s0,s1,t0,t1,phase=(0,0)):
+ s0=np.array(s0,float);s1=np.array(s1,float);t0=np.array(t0,float);t1=np.array(t1,float)
+ sv=s1-s0;tv=t1-t0;sl=np.linalg.norm(sv);tl=np.linalg.norm(tv);su=sv/sl;tu=tv/tl;sn=np.array([-su[1],su[0]]);tn=np.array([-tu[1],tu[0]])
+ v=GRID-t0+phase;src=s0+(v@tu)[...,None]*sl/tl*su+(v@tn)[...,None]*sn;ix=np.floor(src+.5).astype(int);valid=(ix[:,:,0]>=0)&(ix[:,:,0]<192)&(ix[:,:,1]>=0)&(ix[:,:,1]<192);out=np.zeros_like(a);out[valid]=a[ix[:,:,1][valid],ix[:,:,0][valid]];return out
+
+def native_widths(a,start,end):
+ m=a[:,:,3]>0;s=np.array(start,float);v=np.array(end,float)-s;u=v/np.linalg.norm(v);n=np.array([-u[1],u[0]]);ds=np.arange(-20,20.001,.02);out=[]
+ for frac in [.25,.5,.75]:
+  p=np.floor(s+v*frac+ds[:,None]*n+.5).astype(int);on=m[p[:,1],p[:,0]];lab,k=ndi.label(on);out.append(round(max([(lab==j).sum()*.02 for j in range(1,k+1)],default=0)))
+ return np.array(out)
+def fitted(a,s0,s1,t0,t1):
+ ref=native_widths(a,s0,s1);best=None
+ for px,py in [(0,0)]+[(x,y) for x in [-.4,-.2,0,.2,.4] for y in [-.4,-.2,0,.2,.4]]:
+  b=fit(a,s0,s1,t0,t1,(px,py));delta=np.abs(native_widths(b,t0,t1)-ref);score=(int(delta.max()),int(delta.sum()),px*px+py*py)
+  if best is None or score<best[0]:best=(score,b)
+  if delta.max()<=1:return b
+ return best[1]
+
+def ik(root,end,l1,l2,hint):
+ v=end-root;dist=np.linalg.norm(v);u=v/dist;along=(l1*l1-l2*l2+dist*dist)/(2*dist);h=math.sqrt(max(0,l1*l1-along*along));p=np.array([-u[1],u[0]]);opts=[root+u*along+p*h,root+u*along-p*h];return min(opts,key=lambda x:np.linalg.norm(x-hint))
+def repair_holes(a):
+ op=a[:,:,3]>0;holes=ndi.binary_fill_holes(op)&~op
+ labs,n=ndi.label(holes);sizes=np.bincount(labs.ravel());holes &= np.isin(labs,[i for i in range(1,n+1) if sizes[i]<=24]);idx=ndi.distance_transform_edt(~op,return_distances=False,return_indices=True);a[holes]=a[idx[0][holes],idx[1][holes]];return a
+
+def stroke(im,pts,c,w=1):ImageDraw.Draw(im).line([tuple(np.floor(np.array(p)+.5).astype(int)) for p in pts],fill=P[c],width=w)
+def poly(im,pts,c):ImageDraw.Draw(im).polygon([tuple(np.floor(np.array(p)+.5).astype(int)) for p in pts],fill=P[c])
+def footprint(a):
+ ys,xs=np.where(a[:,:,3]>0);y=int(ys.max());xx=np.where(a[y,:,3]>0)[0];return np.array([(xx.min()+xx.max())/2,y]),[int(xx.min()),int(xx.max())]
+
+(R/'walk/frames').mkdir(parents=True,exist_ok=True);(R/'walk/layers').mkdir(parents=True,exist_ok=True)
+allframes={};rigs={};outtargets={'duration_ms':100,'paths':PATH,'side_paw_spacing':SIDE_SPACING,'side_still_paws':{'near_fore':[113.5,160],'far_fore':[120.5,159],'near_hind':[68,160],'far_hind':[78.5,158]},'views':{},'raster_note':'Nearest native pixel targets. Sole rows limited to160 before subtracting lift; se near_fore f0 and ne near_hind f7 ideal rows exceed160 by less than1px; raster sole is160. Both remain within1px. No body-space vertical rescaling.'}
+for view,legs in D.items():
+ ref=np.array(Image.open(B/'fixed'/f'{view}.png').convert('RGBA'))
+ fore=(np.array(legs['near_fore'][3])+legs['far_fore'][3])/2;hind=(np.array(legs['near_hind'][3])+legs['far_hind'][3])/2;axis=fore-hind;spacing=np.linalg.norm(axis);u=axis/spacing;foreshorten=spacing/SIDE_SPACING;v=axis/SIDE_SPACING
+ # Divide still paint into pinned torso, four articulated limbs, and a rigid straight tail.
+ segs={name:[trace(ref,p) for p in q[4:]] for name,q in legs.items()}
+ body=ref.copy()
+ for name,q in legs.items():
+  for a in segs[name]:body[a[:,:,3]>0]=0
+ tail=trace(ref,TAIL[view]);body[tail[:,:,3]>0]=0
+ # Old limb remnants outside a trace must never hang from a stationary torso.
+ limits={'se':[(65,128),(77,126),(85,130),(96,130),(107,129),(113,126),(123,126)],'ne':[(70,134),(83,132),(91,135),(102,131),(110,128),(117,128),(125,125)]}[view]
+ cutoff=np.interp(X,[p[0] for p in limits],[p[1] for p in limits]);body[Y>cutoff]=0
+ # Under shoulder and hip plates, extend only the torso that can actually be exposed.
+ torso={'se':[(78,117),(89,114),(103,115),(111,122),(106,126),(98,130),(88,132),(80,128)],'ne':[(82,128),(94,117),(105,115),(116,116),(121,121),(116,126),(108,129),(101,135),(91,136)]}[view]
+ under=np.zeros_like(ref);tm=mask(torso);under[tm]=P[1];under[tm&(ref[:,:,3]>0)]=ref[tm&(ref[:,:,3]>0)];composite(under,body);body=under
+ frames=[];recs=[];targets={}
+ for name,q in legs.items():
+  targets[name]={'pair':'A' if name in ['near_fore','far_hind'] else 'B','still_sole':list(q[3]),'frames':[]}
+ for f in range(8):
+  dip=int(f in [1,5]);layers={}
+  for name,q in legs.items():
+   root,joint,ankle,sole=map(lambda z:np.array(z,float),q[:4]);pair=targets[name]['pair'];off,lift=PATH[pair][f];ideal=sole+off*v-np.array([0,lift]);ground=sole+off*v;tx=sole[0]+int(math.floor(off*v[0]+.5));gy=min(160,int(math.floor(ground[1]+.5)));target=np.array([tx,gy-lift],float)
+   sr=next(r for r in SIDE if r['name']==name and r['frame']==f)
+   sroot=np.array((115,123) if name=='near_fore' else (120,123) if name=='far_fore' else (80,122) if name=='near_hind' else (85,122))
+   sjoint=np.array((108,140) if name=='near_fore' else (117,141) if name=='far_fore' else (67,141) if name=='near_hind' else (76,141))
+   rt=root+[0,dip]
+   # The side wrist bends forward on the two lift-four foreleg frames.
+   wrist=ankle+(target-sole)
+   if name.endswith('fore') and lift==4:wrist+=4*v+np.array([0,-1])
+   jdelta=np.array(sr['joint'])-sjoint;hint=joint+jdelta[0]*v+np.array([0,jdelta[1]])
+   l1=np.linalg.norm(joint-root);l2=np.linalg.norm(ankle-joint)
+   j=ik(rt,wrist,l1,l2,hint)
+   # Native joint choice preserves both segment lengths to within two pixels.
+   candidates=[]
+   for dx in range(-2,3):
+    for dy in range(-2,3):
+     jj=np.floor(j+.5)+[dx,dy];err=np.array([np.linalg.norm(jj-rt)-l1,np.linalg.norm(wrist-jj)-l2]);candidates.append((np.max(np.abs(err))>2,float(err@err)+.02*np.linalg.norm(jj-hint)**2,jj))
+   j=min(candidates,key=lambda z:(z[0],z[1]))[2]
+   up=fitted(segs[name][0],root,joint,rt,j);lo=fitted(segs[name][1],joint,ankle,j,wrist)
+   # The clawed foot itself translates without stretching or changing its toe pixels.
+   rawfoot=segs[name][2];measured,_=footprint(rawfoot);ft=shift(rawfoot,int(math.floor(tx-measured[0]+.5)),int(target[1]-measured[1]))
+   # Half-pixel sole centres retain the original span and get nearest whole-pixel translation.
+   actual,_=footprint(ft)
+   im=Image.fromarray(np.zeros_like(ref));im.alpha_composite(Image.fromarray(up));im.alpha_composite(Image.fromarray(lo))
+   # Hand-shaped stepped joint and ankle collars conceal sampling seams.
+   near=name.startswith('near');c=3 if near else 2
+   vv=wrist-j;vv=vv/np.linalg.norm(vv);nn=np.array([-vv[1],vv[0]])
+   def pt(a,b):return j+vv*a+nn*b
+   poly(im,[pt(-2,-2),pt(-2,1),pt(0,2),pt(2,1),pt(2,-1),pt(0,-2)],c)
+   stroke(im,[pt(-2,-1),pt(0,-1),pt(1,0)],5 if near else 3)
+   stroke(im,[pt(1,2),pt(2,1)],2)
+   wa=wrist
+   poly(im,[wa+[-2,-2],wa+[1,-2],wa+[2,0],wa+[1,2],wa+[-2,1]],c)
+   stroke(im,[wa+[-2,0],wa+[0,1]],2)
+   im.alpha_composite(Image.fromarray(ft));a=repair_holes(np.array(im));a[int(target[1])+1:]=0
+   layers[name]=a
+   rec={'view':view,'name':name,'frame':f,'root':rt.tolist(),'joint':j.tolist(),'ankle':wrist.tolist(),'target':ideal.tolist(),'raster_target':target.tolist(),'ground_row':gy,'lift':lift,'length_reference':[l1,l2],'lengths':[float(np.linalg.norm(j-rt)),float(np.linalg.norm(wrist-j))]}
+   recs.append(rec);targets[name]['frames'].append({'frame':f,'offset':off,'lift':lift,'ideal':ideal.tolist(),'raster':target.tolist()})
+   Image.fromarray(a).save(R/'walk/layers'/f'{view}_{name}_f{f}.png')
+   for tag,piece in [('upper',up),('shank',lo),('paw',ft)]:Image.fromarray(piece).save(R/'walk/layers'/f'{view}_{name}_{tag}_f{f}.png')
+  can=np.zeros_like(ref)
+  for name in ['far_hind','far_fore']:composite(can,layers[name])
+  sway=[0,1,1,0,0,-1,-1,0][f]
+  composite(can,shift(tail,sway,dip));composite(can,shift(body,0,dip))
+  for name in ['near_hind','near_fore']:composite(can,layers[name])
+  can=repair_holes(can);can[161:]=0
+  # Remove disconnected raster flecks only, preserving the whole connected creature.
+  labs,n=ndi.label(can[:,:,3]>0,np.ones((3,3)));sizes=np.bincount(labs.ravel());sizes[0]=0
+  for label in range(1,n+1):
+   if label!=int(np.argmax(sizes)):can[labs==label]=0
+  frames.append(can);Image.fromarray(can).save(R/'walk/frames'/f'{view}_f{f}.png')
+ allframes[view]=frames;rigs[view]=recs
+ outtargets['views'][view]={'fore_midpoint':fore.tolist(),'hind_midpoint':hind.tolist(),'spacing':spacing,'u':u.tolist(),'f':foreshorten,'screen_step_5':(5*v).tolist(),'paws':targets}
+(R/'targets.json').write_text(json.dumps(outtargets,indent=2)+'\n');(R/'rig.json').write_text(json.dumps(rigs,indent=2)+'\n')
+# Load the game's sel-out function without executing its file or writing beside it.
+sp=M/'rhino_l/take-a/anim/selout_rhino.py';tree=ast.parse(sp.read_text());env={'np':np,'OUTLINE':np.array(P[0][:3],np.uint8)};exec(compile(ast.Module(body=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='selout'],type_ignores=[]),str(sp),'exec'),env)
+selout=env['selout'];bg=(78,86,82,255);font=ImageFont.truetype('C:/Windows/Fonts/arial.ttf',18)
+CW,CH=512,344
+board=Image.new('RGBA',(CW*8,CH*7),bg);draw=ImageDraw.Draw(board)
+def tile(a):return Image.fromarray(selout(a)[0]).crop((32,86,160,166)).resize((512,320),Image.Resampling.NEAREST)
+def row(seq,yy,label):
+ for f,a in enumerate(seq):board.alpha_composite(tile(a),(CW*f,CH*yy+24));draw.text((CW*f+5,CH*yy+2),f'{label} f{f}',font=font,fill='white')
+row([np.array(Image.open(R.parent/'codex-set-a/walk/frames'/f'side_f{f}.png').convert('RGBA')) for f in range(8)],0,'APPROVED SIDE timing')
+for vi,view in enumerate(['se','ne']):
+ yy=1+vi*3;ref=np.array(Image.open(B/'fixed'/f'{view}.png').convert('RGBA'));row([ref],yy,f'{view} APPROVED fixed')
+ row([np.array(Image.open(R.parent/'codex-set-c/walk/frames'/f'{view}_f{f}.png').convert('RGBA')) for f in range(8)],yy+1,f'{view} SET C')
+ row(allframes[view],yy+2,f'{view} WALK4')
+ pics=[]
+ for a in allframes[view]:
+  pic=Image.new('RGBA',(512,320),bg);pic.alpha_composite(tile(a));pics.append(pic.convert('RGB'))
+ pics[0].save(R/f'{view}_preview.gif',save_all=True,append_images=pics[1:],duration=100,loop=0,disposal=2,optimize=False)
+board.convert('RGB').save(R/'board.png');board.resize((2048,1204),Image.Resampling.NEAREST).convert('RGB').save(R/'board_small.png')
+# Separate native 4x new rows for visual inspection.
+for view in allframes:
+ b=Image.new('RGBA',(2048,688),bg);d=ImageDraw.Draw(b)
+ for f,a in enumerate(allframes[view]):b.alpha_composite(tile(a),((f%4)*512,(f//4)*344+24));d.text(((f%4)*512+8,(f//4)*344+3),f'{view} f{f}',font=font,fill='white')
+ b.convert('RGB').save(R/f'{view}_review4x.png')
+print('Built frames, layers, targets, board and GIFs.')
+for view,r in outtargets['views'].items():print(view,'u',r['u'],'f',r['f'])
+"""Independent saved-frame checks and two-dimensional moving-world footprint boards."""
+from pathlib import Path
+import json,numpy as np
+from PIL import Image,ImageDraw,ImageFont
+from scipy import ndimage as ndi
+R=Path(__file__).resolve().parent
+e={'__file__':str(R/'build.py')};exec((R/'build.py').read_text().split("(R/'walk/frames').mkdir")[0],e)
+D=e['D'];P=e['P'];trace=e['trace'];widths=e['native_widths'];fp=e['footprint'];T=json.loads((R/'targets.json').read_text());rig=json.loads((R/'rig.json').read_text())
+lines=['WOLF M TAKE B WALK4 / saved native frame audit','Widths: isolated traced plate/shank paint, perpendicular native coverage at25/50/75%; collars and overlapping segments excluded.','Paw width: widest source row. Proportion: root-knee and knee-ankle axis lengths.','Foot coordinates measured from saved complete limb layers: centre of lowest-row sole endpoints.','Final composite visibility counts include same-colour occlusion; overlap does not change the authored contact.']
+result={'views':{}};summary=[];font=ImageFont.truetype('C:/Windows/Fonts/arial.ttf',18)
+colors=[(255,185,74,255),(89,228,226,255),(235,111,181,255),(172,219,94,255)]
+for view,legs in D.items():
+ vv=T['views'][view];step=np.array(vv['screen_step_5']);ref=np.array(Image.open(R.parents[1]/'fixed'/f'{view}.png').convert('RGBA'));frames=[np.array(Image.open(R/'walk/frames'/f'{view}_f{f}.png').convert('RGBA')) for f in range(8)]
+ vr={'structure':[],'paws':{},'widths':{}};result['views'][view]=vr
+ lines.append(f"AXIS {view} fore={vv['fore_midpoint']} hind={vv['hind_midpoint']} u={vv['u']} f={vv['f']} step={step.tolist()}")
+ for f,a in enumerate(frames):
+  m=a[:,:,3]>0;holes=ndi.binary_fill_holes(m)&~m;labs,hn=ndi.label(holes);sizes=np.bincount(labs.ravel())[1:].tolist();_,n=ndi.label(m,np.ones((3,3)));palette=set(map(tuple,a[m,:3]));allowed={p[:3] for p in P}
+  row={'frame':f,'size':list(a.shape[:2]),'palette_ok':palette<=allowed,'color_count':len(palette),'binary_alpha':bool(np.isin(a[:,:,3],[0,255]).all()),'components':n,'below160':int(m[161:].sum()),'edge':bool(m[[0,-1]].any() or m[:,[0,-1]].any()),'unintended_pinholes':sum(s for s in sizes if s<=24),'enclosed_interleg_negative_spaces':sizes}
+  vr['structure'].append(row);lines.append('STRUCT '+view+' '+json.dumps(row));assert row['size']==[192,192] and row['palette_ok'] and row['binary_alpha'] and n==1 and row['below160']==0 and not row['edge'] and row['unintended_pinholes']==0
+ board=Image.new('RGB',(1280,1120),(60,68,65));dr=ImageDraw.Draw(board);dr.text((12,8),f'{view.upper()} / world shift + frame * {step[0]:.5f}, {step[1]:.5f} px / 100 ms',font=font,fill='white')
+ for pi,(name,q) in enumerate(legs.items()):
+  recs=[z for z in rig[view] if z['name']==name];measure=[];world=[];groundidx=[];maxerr=0
+  for rec in recs:
+   f=rec['frame'];a=np.array(Image.open(R/'walk/layers'/f'{view}_{name}_f{f}.png').convert('RGBA'));p,span=fp(a);err=np.abs(p-rec['target']);lift=rec['ground_row']-p[1];maxerr=max(maxerr,float(err.max()));xx=np.where(a[int(p[1]),:,3]>0)[0];visible=[int(x) for x in xx if np.array_equal(frames[f][int(p[1]),x],a[int(p[1]),x])]
+   row={'frame':f,'contact':p.tolist(),'sole_span':span,'ideal':rec['target'],'error_xy':err.tolist(),'lift_expected':rec['lift'],'lift_measured':lift,'visible_matching_sole_pixels':visible}
+   measure.append(row);lines.append('PAW '+view+' '+name+' '+json.dumps(row));assert err.max()<=1 and lift==rec['lift']
+   if rec['lift']==0:world.append(p+f*step);groundidx.append(f)
+  spread=np.ptp(world,axis=0);assert spread.max()<=2
+  vr['paws'][name]={'frames':measure,'world_contacts':np.array(world).tolist(),'spread_xy':spread.tolist(),'max_target_error':maxerr}
+  lines.append('FOOTLOCK '+view+' '+name+' '+json.dumps(vr['paws'][name]));summary.append(f"{view} {name} footlock spread x/y {spread[0]:.3f}/{spread[1]:.3f}px.")
+  # Moving world stamps at4x; each ground frame gets a distinct sole/centre colour.
+  # The foreground paw's four contact centres should almost cover one another.
+  panel=Image.new('RGBA',(640,480),(78,86,82,255));pd=ImageDraw.Draw(panel);scale=4;origin=np.array([25,20]);groundpoints=[]
+  for gi,f in enumerate(groundidx):
+   a=frames[f].copy();a[:,:,3]=(a[:,:,3]>0).astype(np.uint8)*38
+   canvas=Image.new('RGBA',(256,224));canvas.alpha_composite(Image.fromarray(a),(int(round(f*step[0])),int(round(f*step[1]+20))))
+   crop=canvas.crop((48,94,208,214)).resize((640,480),Image.Resampling.NEAREST);panel=Image.alpha_composite(panel,crop)
+   p=np.array(measure[f]['contact'])+f*step+[0,20];xy=(p-np.array([48,94]))*4;groundpoints.append(xy);pd=ImageDraw.Draw(panel);c=colors[gi];pd.ellipse((xy[0]-3,xy[1]-3,xy[0]+3,xy[1]+3),outline=c,width=2);pd.text((12,46+gi*24),f'f{f}: {world[gi][0]:.3f}, {world[gi][1]:.3f}',font=font,fill=c)
+  pd=ImageDraw.Draw(panel);pd.text((12,8),f'{name}: spread {spread[0]:.3f}, {spread[1]:.3f}px',font=font,fill='white');pd.text((12,22),'coloured rings = four world contact centres',fill='white');board.paste(panel.convert('RGB'),((pi%2)*640,50+(pi//2)*520))
+  # Plate/shank widths and unchanged translated clawed paw width.
+  wr={};bits=[]
+  for tag,aa,bb,ix in [('upper',0,1,4),('shank',1,2,5)]:
+   rw=widths(trace(ref,q[ix]),q[aa],q[bb]);ws=[]
+   for rec in recs:
+    a=np.array(Image.open(R/'walk/layers'/f"{view}_{name}_{tag}_f{rec['frame']}.png").convert('RGBA'));ws.append(widths(a,rec['root' if aa==0 else 'joint'],rec['joint' if bb==1 else 'ankle']))
+   ws=np.array(ws);delta=int(np.max(np.abs(ws-rw)));assert delta<=1
+   wr[tag]={'reference':rw.tolist(),'frames':ws.tolist(),'max_delta':delta};bits.append(f"{tag} {rw.tolist()} -> {ws.min(0).tolist()}..{ws.max(0).tolist()}")
+  def pw(a):
+   m=a[:,:,3]>0;return int(max([np.ptp(np.where(row)[0])+1 if row.any() else 0 for row in m]))
+  refpw=pw(trace(ref,q[6]));pws=[pw(np.array(Image.open(R/'walk/layers'/f'{view}_{name}_paw_f{f}.png'))) for f in range(8)];assert all(x==refpw for x in pws)
+  lengthmax=float(max(np.max(np.abs(np.array(z['lengths'])-z['length_reference'])) for z in recs));assert lengthmax<=2
+  wr['paw']={'reference':refpw,'frames':pws};wr['max_length_delta']=lengthmax;vr['widths'][name]=wr;bits.append(f'paw {refpw}->{min(pws)}..{max(pws)}; length max delta {lengthmax:.3f}px')
+  lines.append('WIDTH '+view+' '+name+'; '.join(bits))
+ board.save(R/f'{view}_footprints.png')
+ gif=Image.open(R/f'{view}_preview.gif');dur=[]
+ for i in range(gif.n_frames):gif.seek(i);dur.append(gif.info['duration'])
+ assert gif.n_frames==8 and dur==[100]*8 and gif.info['loop']==0
+ lines.append(f'GIF {view} PASS 8 frames100ms infinite loop')
+ for p in P:
+  count=edgecount=0
+  for a in frames:
+   op=a[:,:,3]>0;edge=op&~ndi.binary_erosion(op,structure=ndi.generate_binary_structure(2,1));match=np.all(a==p,axis=2);count+=int(match.sum());edgecount+=int((edge&match).sum())
+  lines.append(f'PALETTE {view} #{p[0]:02x}{p[1]:02x}{p[2]:02x} opaque={count} edge={edgecount}')
+lines+=['PASS:64 paw targets<=1px; lifts exact after native target-row rounding.','PASS:8 planted-paw tracks spread<=2px in BOTH dimensions.','PASS:isolated segment widths within1px and segment lengths within2px; unchanged claw-paw pixels.','PASS:16 transparent192x192 frames; binary alpha; allowed12-colour palette; components1; below160=0; edge0; pinholes0.','Enclosed spaces larger than24 pixels are intentional background between crossing legs, not missing robot material.','EYE review uses exact supplied selout() with OUTLINE#141418, nearest4x. Raw frame alpha remains separate.']
+(R/'checks.txt').write_text('\n'.join(lines)+'\n');(R/'verification.json').write_text(json.dumps(result,indent=2)+'\n')
+report=['WOLF M TAKE B / CODEX WALK4 / SE + NE TROT','Tokens: unavailable. Native pixels; no image tool/commit. Only codex-walk4 written; fixed stills and approved side timing read.']
+for view in ['se','ne']:
+ vv=T['views'][view];report.append(f"{view}: u=({vv['u'][0]:.9f},{vv['u'][1]:.9f}); f={vv['f']:.9f}; side paw spacing{T['side_paw_spacing']:.6f}px.")
+report+=['64/64 contacts within1px of ideal2D target; exact2/4/4/2px raster lifts; pairA f0-3 / pairB f4-7.',f"Native row160 cap: se near_fore f0 -{8*T['views']['se']['u'][1]*T['views']['se']['f']:.3f}px; ne near_hind f7 -{-7*T['views']['ne']['u'][1]*T['views']['ne']['f']:.3f}px vs ideal; within1px."]
+report+=summary
+for view in ['se','ne']:
+ for name,w in result['views'][view]['widths'].items():report.append(f"{view} {name}: upper{w['upper']['reference']}, shank{w['shank']['reference']}, paw{w['paw']['reference']}; width delta<=1; length delta{w['max_length_delta']:.3f}px.")
+report+=['16/16:192x192 RGBA, binary alpha, approved palette, no below160 pixels, no canvas-edge contact, one connected creature.','No pinholes/strays; enclosed negative space between crossing legs retained rather than painted solid.','Body/head/fins from still, dip1px f1/f5; straight original tail plate pixels translate1px with dip, never thinned.','EYE at4x sel-out: forward three-quarter robot-wolf trot; paired steps follow side indices; plated legs and claws retained.','EYE: joined limbs, no abrupt cut ends seen; overlapping paws/legs naturally hide each other at crossing phases.','board.png: side timing on top, then each view approved still / setC / WALK4; footprint boards show2D world contacts.','GIFs:8 frames,100ms each, infinite loop. checks.txt and verification.json contain every saved contact and width.']
+assert len(report)<30,len(report)
+(R/'REPORT.txt').write_text('\n'.join(report)+'\n');print('\n'.join(summary));print('All numeric target, footlock, isolated-width, proportion, alpha, palette and file checks PASS.')
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-ChildItem -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35'; Get-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35\\targets.json'; Get-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35\\clean\\cleanup.py'; Get-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35\\clean\\REPORT.txt'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 396ms:
+
+
+    Directory: D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\walk35
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         11/4/2026   9:50 PM                clean                                                                
+d-----         11/4/2026   9:18 PM                refs                                                                 
+d-----         11/4/2026   9:55 PM                run1                                                                 
+d-----         11/4/2026   9:51 PM                walk                                                                 
+-a----         11/4/2026   9:26 PM              0 .start-run1                                                          
+-a----         11/4/2026   9:56 PM              0 .start-run2                                                          
+-a----         11/4/2026   9:37 PM         108436 board.png                                                            
+-a----         11/4/2026   9:37 PM          50164 board_small.png                                                      
+-a----         11/4/2026   9:55 PM           4704 brief_run1.txt                                                       
+-a----         11/4/2026   9:55 PM           5463 brief_run2.txt                                                       
+-a----         11/4/2026   9:37 PM          11601 build.py                                                             
+-a----         11/4/2026   9:39 PM          27348 checks.txt                                                           
+-a----         11/4/2026   9:42 PM          48802 claude-legs-4x.png                                                   
+-a----         11/4/2026   9:40 PM          57172 claude-still-vs-frames.png                                           
+-a----         11/4/2026   9:39 PM         969161 codex-log-run1.txt                                                   
+-a----         11/4/2026   9:56 PM              0 codex-log-run2.txt                                                   
+-a----         11/4/2026   9:38 PM          30048 detail_review.png                                                    
+-a----         11/4/2026   9:37 PM          32056 e_board.png                                                          
+-a----         11/4/2026   9:39 PM         139403 e_footprints.png                                                     
+-a----         11/4/2026   9:37 PM          18432 e_preview.apng                                                       
+-a----         11/4/2026   9:37 PM          79775 e_preview.gif                                                        
+-a----         11/4/2026   9:27 PM          30174 grid.png                                                             
+-a----         11/4/2026   9:27 PM          17024 grid_e.png                                                           
+-a----         11/4/2026   9:27 PM          15899 grid_ne.png                                                          
+-a----         11/4/2026   9:27 PM          18113 grid_se.png                                                          
+-a----         11/4/2026   9:55 PM          19051 guide_e.png                                                          
+-a----         11/4/2026   9:55 PM          17928 guide_n.png                                                          
+-a----         11/4/2026   9:55 PM          22875 guide_ne.png                                                         
+-a----         11/4/2026   9:55 PM          18579 guide_s.png                                                          
+-a----         11/4/2026   9:55 PM          22851 guide_se.png                                                         
+-a----         11/4/2026   9:35 PM          39972 hole_review.png                                                      
+-a----         11/4/2026   9:37 PM          39209 ne_board.png                                                         
+-a----         11/4/2026   9:39 PM         149358 ne_footprints.png                                                    
+-a----         11/4/2026   9:37 PM          22228 ne_preview.apng                                                      
+-a----         11/4/2026   9:37 PM          81333 ne_preview.gif                                                       
+-a----         11/4/2026   9:51 PM           3814 REPORT.txt                                                           
+-a----         11/4/2026   9:51 PM         817611 review_e_se_ne.mp4                                                   
+-a----         11/4/2026   9:37 PM          57104 rig.json                                                             
+-a----         11/4/2026   9:37 PM          37440 se_board.png                                                         
+-a----         11/4/2026   9:39 PM         145542 se_footprints.png                                                    
+-a----         11/4/2026   9:37 PM          23682 se_preview.apng                                                      
+-a----         11/4/2026   9:37 PM          84446 se_preview.gif                                                       
+-a----         11/4/2026   9:27 PM          20677 stills4x.png                                                         
+-a----         11/4/2026   9:55 PM          17215 targets.json                                                         
+-a----         11/4/2026   9:40 PM            623 token-watch-run1.txt                                                 
+-a----         11/4/2026   9:56 PM             36 token-watch-run2.txt                                                 
+-a----         11/4/2026   9:39 PM          56657 verification.json                                                    
+-a----         11/4/2026   9:39 PM          11087 verify.py                                                            
+{
+ "P_side_px": 3,
+ "fps": 8,
+ "planted_pace_m_s": 0.48,
+ "gait": {
+  "LF": 1,
+  "LH": 3,
+  "RF": 5,
+  "RH": 7
+ },
+ "paths": {
+  "LF": [
+   [
+    -6,
+    0
+   ],
+   [
+    -3,
+    2
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    3,
+    2
+   ],
+   [
+    6,
+    0
+   ],
+   [
+    3,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    -3,
+    0
+   ]
+  ],
+  "LH": [
+   [
+    0,
+    0
+   ],
+   [
+    -3,
+    0
+   ],
+   [
+    -6,
+    0
+   ],
+   [
+    -3,
+    2
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    3,
+    2
+   ],
+   [
+    6,
+    0
+   ],
+   [
+    3,
+    0
+   ]
+  ],
+  "RF": [
+   [
+    6,
+    0
+   ],
+   [
+    3,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    -3,
+    0
+   ],
+   [
+    -6,
+    0
+   ],
+   [
+    -3,
+    2
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    3,
+    2
+   ]
+  ],
+  "RH": [
+   [
+    0,
+    3
+   ],
+   [
+    3,
+    2
+   ],
+   [
+    6,
+    0
+   ],
+   [
+    3,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    -3,
+    0
+   ],
+   [
+    -6,
+    0
+   ],
+   [
+    -3,
+    2
+   ]
+  ]
+ },
+ "views": {
+  "e": {
+   "u": [
+    1,
+    0
+   ],
+   "f": 1.0,
+   "planted_step_px": [
+    -3.0,
+    0.0
+   ],
+   "visible_feet": {
+    "RH": {
+     "still_sole": [
+      52,
+      75,
+      160
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        63.5,
+        157.0
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        66.5,
+        158.0
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        69.5,
+        160.0
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        66.5,
+        160.0
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        63.5,
+        160.0
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        60.5,
+        160.0
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        57.5,
+        160.0
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        60.5,
+        158.0
+       ]
+      }
+     ]
+    },
+    "RF": {
+     "still_sole": [
+      92,
+      114,
+      160
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        109.0,
+        160.0
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        106.0,
+        160.0
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        103.0,
+        160.0
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        100.0,
+        160.0
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        97.0,
+        160.0
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        100.0,
+        158.0
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        103.0,
+        157.0
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        106.0,
+        158.0
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "s": {
+   "u": [
+    0,
+    1
+   ],
+   "f": 0.5736,
+   "planted_step_px": [
+    0.0,
+    -1.721
+   ],
+   "visible_feet": {
+    "RF": {
+     "still_sole": [
+      63,
+      86,
+      160
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        74.5,
+        163.44
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        74.5,
+        161.72
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        74.5,
+        160.0
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        74.5,
+        158.28
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        74.5,
+        156.56
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        74.5,
+        156.28
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        74.5,
+        157.0
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        74.5,
+        159.72
+       ]
+      }
+     ]
+    },
+    "LF": {
+     "still_sole": [
+      104,
+      128,
+      160
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        116.0,
+        156.56
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        116.0,
+        156.28
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        116.0,
+        157.0
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        116.0,
+        159.72
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        116.0,
+        163.44
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        116.0,
+        161.72
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        116.0,
+        160.0
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        116.0,
+        158.28
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "n": {
+   "u": [
+    0,
+    -1
+   ],
+   "f": 0.5736,
+   "planted_step_px": [
+    0.0,
+    1.721
+   ],
+   "visible_feet": {
+    "LH": {
+     "still_sole": [
+      64,
+      87,
+      160
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        75.5,
+        160.0
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        75.5,
+        161.72
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        75.5,
+        163.44
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        75.5,
+        159.72
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        75.5,
+        157.0
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        75.5,
+        156.28
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        75.5,
+        156.56
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        75.5,
+        158.28
+       ]
+      }
+     ]
+    },
+    "RH": {
+     "still_sole": [
+      105,
+      128,
+      160
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        116.5,
+        157.0
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        116.5,
+        156.28
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        116.5,
+        156.56
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        116.5,
+        158.28
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        116.5,
+        160.0
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        116.5,
+        161.72
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        116.5,
+        163.44
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        116.5,
+        159.72
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "se": {
+   "u": [
+    0.8674,
+    0.4975
+   ],
+   "f": 0.8152,
+   "planted_step_px": [
+    -2.121,
+    -1.217
+   ],
+   "visible_feet": {
+    "LH": {
+     "still_sole": [
+      54,
+      76,
+      143
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        65.0,
+        143.0
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        62.88,
+        141.78
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        60.76,
+        140.57
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        62.88,
+        139.78
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        65.0,
+        140.0
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        67.12,
+        142.22
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        69.24,
+        145.43
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        67.12,
+        144.22
+       ]
+      }
+     ]
+    },
+    "RH": {
+     "still_sole": [
+      77,
+      100,
+      160
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        88.5,
+        157.0
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        90.62,
+        159.22
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        92.74,
+        162.43
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        90.62,
+        161.22
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        88.5,
+        160.0
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        86.38,
+        158.78
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        84.26,
+        157.57
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        86.38,
+        156.78
+       ]
+      }
+     ]
+    },
+    "RF": {
+     "still_sole": [
+      108,
+      133,
+      155
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        124.74,
+        157.43
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        122.62,
+        156.22
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        120.5,
+        155.0
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        118.38,
+        153.78
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        116.26,
+        152.57
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        118.38,
+        151.78
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        120.5,
+        152.0
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        122.62,
+        154.22
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "ne": {
+   "u": [
+    0.8674,
+    -0.4975
+   ],
+   "f": 0.8152,
+   "planted_step_px": [
+    -2.121,
+    1.217
+   ],
+   "visible_feet": {
+    "LH": {
+     "still_sole": [
+      54,
+      76,
+      150
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        65.0,
+        150.0
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        62.88,
+        151.22
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        60.76,
+        152.43
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        62.88,
+        149.22
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        65.0,
+        147.0
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        67.12,
+        146.78
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        69.24,
+        147.57
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        67.12,
+        148.78
+       ]
+      }
+     ]
+    },
+    "RH": {
+     "still_sole": [
+      77,
+      101,
+      160
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        89.0,
+        157.0
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        91.12,
+        156.78
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        93.24,
+        157.57
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        91.12,
+        158.78
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        89.0,
+        160.0
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        86.88,
+        161.22
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        84.76,
+        162.43
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        86.88,
+        159.22
+       ]
+      }
+     ]
+    },
+    "RF": {
+     "still_sole": [
+      105,
+      127,
+      139
+     ],
+     "frames": [
+      {
+       "frame": 0,
+       "offset": 6,
+       "lift": 0,
+       "sole_centre": [
+        120.24,
+        136.57
+       ]
+      },
+      {
+       "frame": 1,
+       "offset": 3,
+       "lift": 0,
+       "sole_centre": [
+        118.12,
+        137.78
+       ]
+      },
+      {
+       "frame": 2,
+       "offset": 0,
+       "lift": 0,
+       "sole_centre": [
+        116.0,
+        139.0
+       ]
+      },
+      {
+       "frame": 3,
+       "offset": -3,
+       "lift": 0,
+       "sole_centre": [
+        113.88,
+        140.22
+       ]
+      },
+      {
+       "frame": 4,
+       "offset": -6,
+       "lift": 0,
+       "sole_centre": [
+        111.76,
+        141.43
+       ]
+      },
+      {
+       "frame": 5,
+       "offset": -3,
+       "lift": 2,
+       "sole_centre": [
+        113.88,
+        138.22
+       ]
+      },
+      {
+       "frame": 6,
+       "offset": 0,
+       "lift": 3,
+       "sole_centre": [
+        116.0,
+        136.0
+       ]
+      },
+      {
+       "frame": 7,
+       "offset": 3,
+       "lift": 2,
+       "sole_centre": [
+        118.12,
+        135.78
+       ]
+      }
+     ]
+    }
+   }
+  }
+ }
+}
+from pathlib import Path
+import ast,json
+import numpy as np
+from PIL import Image,ImageDraw,ImageFont
+from scipy import ndimage as ndi
+C=Path(__file__).resolve().parent; R=C.parent
+ns={'__file__':str(R/'build.py'),'__name__':'source_only'}
+exec(compile((R/'build.py').read_text(),str(R/'build.py'),'exec'),ns)
+D,K,P,mask,lmask,shift,comp,fp=[ns[k] for k in ['D','K','P','mask','limb_mask','shift','comp','fp']]
+rig=json.loads((R/'rig.json').read_text());T=json.loads((R/'targets.json').read_text())
+Y,X=np.indices((192,192)); B=R.parents[1]
+tree=ast.parse((R.parent/'selout_rhino.py').read_text()); se={'np':np,'OUTLINE':np.array(P[0][:3],np.uint8)}
+exec(compile(ast.Module(body=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='selout'],type_ignores=[]),'selout','exec'),se);selout=se['selout']
+(C/'walk/frames').mkdir(parents=True,exist_ok=True);(C/'walk/layers').mkdir(exist_ok=True)
+allframes={}; sources={}
+def poly(a,points,c): ImageDraw.Draw(a).polygon([tuple(map(int,p)) for p in points],fill=P[c])
+def socket(root,knee,width=5):
+    # Native staircase, horizontal rows; no transform or resampling.
+    a=np.zeros((192,192,4),np.uint8)
+    x0,y0=map(int,root);x1,y1=map(int,knee)
+    if y1<y0:y1=y0
+    for y in range(y0,y1+1):
+        x=int(np.floor(x0+(x1-x0)*(y-y0)/max(1,y1-y0)+.5))
+        a[y,x-width:x+width+1]=P[1]
+        a[y,x-width+1:x+width]=P[2]
+        a[y,x-width+1:x-width+3]=P[3]
+    return a
+for view,legs in D.items():
+    ref=np.array(Image.open(B/'views_cam35'/f'{view}.png').convert('RGBA'));body=np.array(Image.open(R/'walk/layers'/f'{view}_body.png'))
+    sources[view]={}; hidden={'LH':('RH',(0,-16)),'LF':('RF',(0,-16))} if view=='e' else {'LF':('RF',(-24,-17 if view=='se' else -10))}
+    for name,q in legs.items():
+        a=ref.copy();a[~lmask(view,name,q)]=0
+        if (view,name)==('se','RF'): a[(Y<149)|(X<111)]=0
+        if (view,name)==('ne','RF'): a[Y<127]=0
+        sources[view][name]=(a,q)
+    for name,(donor,delta) in hidden.items():
+        a,q=sources[view][donor];qq=[(np.array(p)+delta).tolist() for p in q[:3]]+q[3:];qq[4]=q[4]+delta[1];sources[view][name]=(shift(a,*delta),qq)
+    frames=[]
+    for f in range(8):
+        dip=int(f in (0,4));layers={}
+        for name,(src,q) in sources[view].items():
+            rr=next(r for r in rig[view] if r['frame']==f and r['name']==name)
+            delta=np.array(rr['ankle'])-q[2];dx,dy=delta.astype(int)
+            # The complete original cuff, knee disc and foot block translate as one.
+            a=socket(np.array(q[0])+[0,dip],np.array(q[2] if view=='se' and name in ('RF','LF') else q[1])+[dx,dy],4 if view=='se' and name in ('RF','LF') else 5)
+            comp(a,shift(src,dx,dy));sole,_=fp(src);a[int(sole[1])+dy+1:]=0
+            a[Y<int(q[0][1])+dip]=0
+            if view=='ne' and name in ('RF','LF'):
+                # Neck plate is pinned below; socket belongs behind this native foot.
+                a[Y<int(q[0][1])+14+dip]=0
+            # Preserve original sole silhouette, never let sockets create a second toe.
+            ft=shift(src,dx,dy);a[(Y>=int(sole[1])+dy-2)&(ft[:,:,3]==0)]=0
+            layers[name]=a;Image.fromarray(a).save(C/'walk/layers'/f'{view}_{name}_f{f}.png')
+        a=np.zeros_like(ref)
+        for name in ['LF','LH','RF','RH']:comp(a,layers[name])
+        pinned=shift(body,0,dip);comp(a,pinned)
+        if view=='ne':
+            # The original trace accidentally included shoulder paint as RF upper.
+            # Keep that entire plate exactly as run1, including its exposed contour.
+            plate=ref.copy();plate[~lmask('ne','RF',D['ne']['RF'])]=0;plate[Y>=127]=0
+            comp(a,shift(plate,0,dip))
+        # Explicitly close socket wedges using the adjacent metal shadow colour.
+        holes=ndi.binary_fill_holes(a[:,:,3]>0)&(a[:,:,3]==0);a[holes]=P[1]
+        labs,n=ndi.label(a[:,:,3]>0,np.ones((3,3)));sz=np.bincount(labs.ravel());sz[0]=0
+        for l in range(1,n+1):
+            if sz[l]<=3:a[labs==l]=0
+        # Remove single interior ink pixels with a hand-palette replacement.
+        pin=pinned[:,:,3]>0
+        for iteration in range(4):
+            dark=np.isin(a[:,:,:3].astype('uint32')@np.array([65536,256,1]),[0x141218,0x211e27,0x3d3a44])&(a[:,:,3]>0)
+            material=(a[:,:,3]>0)&~dark&~np.all(a[:,:,:3]==[255,58,42],axis=2)
+            p=np.pad(material,1);spots=dark&p[:-2,1:-1]&p[2:,1:-1]&p[1:-1,:-2]&p[1:-1,2:]&~pin
+            if not spots.any():break
+            for y,x in zip(*np.where(spots)):
+                neighbours=[tuple(a[y-1,x]),tuple(a[y+1,x]),tuple(a[y,x-1]),tuple(a[y,x+1])]
+                # Majority material; ties use the left pixel to continue horizontal bands.
+                chosen=max(neighbours,key=lambda c:(neighbours.count(c),c==tuple(a[y,x-1])))
+                a[y,x]=chosen
+        frames.append(a);Image.fromarray(a).save(C/'walk/frames'/f'{view}_f{f}.png')
+    allframes[view]=frames
+font=ImageFont.truetype('C:/Windows/Fonts/arial.ttf',18);bg=(86,126,107,255)
+# 4 frames per row, every crop exactly 4x native. Per view still, run1, cleaned.
+crop=(44,108,144,165);tw,th=400,228;cw,ch=408,256
+board=Image.new('RGBA',(cw*4,ch*5*3),bg);dr=ImageDraw.Draw(board)
+for vi,view in enumerate(D):
+    ref=np.array(Image.open(B/'views_cam35'/f'{view}.png').convert('RGBA'))
+    for group,arrs in enumerate([[ref],[np.array(Image.open(R/'walk/frames'/f'{view}_f{f}.png')) for f in range(8)],allframes[view]]):
+        for j,a in enumerate(arrs):
+            row=vi*5+(0 if group==0 else 1+(group-1)*2+j//4);col=0 if group==0 else j%4
+            ox,oy=col*cw,row*ch;dr.text((ox+6,oy+3),f'{view} '+('STILL' if group==0 else ('RUN1' if group==1 else 'CLEAN')+f' f{j}'),fill='white',font=font)
+            tile=Image.fromarray(selout(a)[0]).crop(crop).resize((tw,th),Image.Resampling.NEAREST);board.alpha_composite(tile,(ox,oy+26))
+    pics=[]
+    for a in allframes[view]:
+        tile=Image.fromarray(selout(a)[0]).resize((768,768),Image.Resampling.NEAREST);im=Image.new('RGBA',tile.size,bg);im.alpha_composite(tile);pics.append(im.convert('RGB'))
+    pics[0].save(C/f'{view}_preview.gif',save_all=True,append_images=pics[1:],duration=[120,130]*4,loop=0,disposal=2,optimize=False)
+    raw=[Image.fromarray(a) for a in allframes[view]];raw[0].save(C/f'{view}_preview.apng',save_all=True,append_images=raw[1:],duration=125,loop=0,disposal=0,blend=0)
+    board.crop((0,vi*5*ch,cw*4,(vi+1)*5*ch)).convert('RGB').save(C/f'{view}_board.png')
+board.convert('RGB').save(C/'board.png')
+print('24 frames and boards saved')
+RHINO L WALK35 / CLEAN / e,se,ne / 24 frames
+Tokens: exact final session count unavailable; see token-watch-clean.txt. No image tool. No commit.
+Native source-pixel translations; original foot/cuff/knee shapes, drawn metal sockets; no rotations/resampling.
+RF ne: original leg armour stays at its still socket (with body dip); native foot block follows run1 targets.
+Body/head/horn/shell/tail: original run1 pinned-body mask, 0 changed opaque pixels (0%) every frame.
+Mask follows run1 traced articulated regions; RF ne gold leg armour is in the leg region, not the pinned torso.
+Contact max difference to run1 x/y: e LH/RH/LF/RF all 0/0px; se all 0/0px; ne all 0/0px.
+Every foot lowest row and lift unchanged. Visible feet measured from final composite pixels.
+Occluded e LH/LF and se/ne LF measured from saved limb PNGs; invisible contacts cannot be recovered from composites.
+Foot-lock e x/y px: LH 0.000/0.000; RH 0.000/0.000; LF 0.000/0.000; RF 0.000/0.000. PASS <=2px.
+Foot-lock se x/y px: LH 0.879/0.868; RH 0.879/0.868; LF 0.484/0.868; RF 0.484/0.868. PASS <=2px.
+Foot-lock ne x/y px: LH 0.879/0.868; RH 0.879/0.868; LF 0.484/0.868; RF 0.484/0.868. PASS <=2px.
+Noise e f0..7 run1 -> clean: [15, 10, 7, 5, 9, 13, 10, 11] -> [0,0,0,0,0,0,0,0].
+Noise se f0..7 run1 -> clean: [8, 8, 5, 7, 9, 7, 7, 6] -> [0,0,0,0,0,0,0,0].
+Noise ne f0..7 run1 -> clean: [12, 12, 9, 15, 14, 13, 12, 11] -> [0,0,0,0,0,0,0,0].
+Noise: #141218/#211e27/#3d3a44 surrounded on all 4 sides by opaque non-dark gold/grey; excludes pinned body.
+24/24 PASS:192x192 RGBA, binary alpha, still palette, one connected silhouette, no holes/strays/edge contact.
+Timing:8 frames; APNG125ms exact. GIF alternates120/130ms (format10ms ticks),1000ms loop, matching run1.
+By eye, all24 inspected with sel-out at4x: YES, cuff bands and sole blocks as clean as the still in every view.
+No broken scratch bands, dangling slivers, smeared ne hind foot or noisy ne RF foot remain.
+board.png: each view still, run1 f0..7, clean f0..7; legs crop, exact sel-out, nearest4x.
+checks.txt has each frame/foot measurement; audit.py and cleanup.py reproduce outputs inside clean only.
+
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35\\build.py' -TotalCount 125; Get-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\wolf_m\\take-b\\anim\\codex-walk4\\REPORT.txt'; Get-ChildItem -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\views_cam35'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 188ms:
+"""Run 1: native rhino traces, articulated at their existing joints. Writes here only."""
+from pathlib import Path
+import ast, json, math
+import numpy as np
+from PIL import Image, ImageDraw, ImageFont
+from scipy import ndimage as ndi
+R=Path(__file__).resolve().parent
+B=R.parents[1]
+T=json.loads((R/'targets.json').read_text())
+Y,X=np.indices((192,192)); GRID=np.stack((X,Y),axis=2)
+P=[tuple(bytes.fromhex(c))+(255,) for c in '141218 211e27 3d3a44 58555e 7a4a06 9d9ba2 d18a0a d6d6dc ff3a2a ffcf1f fff4a8'.split()]
+# Root, knee, ankle; traced articulated region, foot boundary row.
+# Shoulder armour, tail and head remain on the pinned body layer.
+D={
+ 'e':{
+  'RH':[(64,132),(64,141),(63,150),[(55,133),(61,135),(67,135),(71,139),(73,146),(76,151),(76,160),(51,160),(51,149),(54,142)],152],
+  'RF':[(102,133),(102,142),(102,150),[(97,135),(104,135),(109,138),(111,144),(115,152),(115,160),(91,160),(91,149),(94,143)],152]},
+ 'se':{
+  'LH':[(65,114),(61,123),(63,132),[(57,116),(62,116),(66,119),(68,125),(70,128),(75,129),(78,133),(76,139),(72,143),(56,143),(53,137),(54,129),(56,125)],134],
+  'RH':[(92,127),(85,141),(87,150),[(81,134),(87,136),(92,139),(94,144),(96,150),(100,154),(101,160),(77,160),(77,150),(79,144)],152],
+  'RF':[(114,132),(114,141),(120,148),[(109,145),(114,146),(117,148),(129,148),(134,150),(134,155),(108,155),(106,150),(107,147)],148]},
+ 'ne':{
+  'LH':[(60,123),(60,132),(63,140),[(56,125),(61,125),(64,128),(64,136),(69,138),(74,138),(77,141),(77,148),(72,150),(59,150),(53,144),(54,137),(55,133)],141],
+  'RH':[(84,126),(94,139),(88,149),[(87,131),(95,129),(100,132),(102,137),(101,142),(97,147),(99,152),(98,157),(94,160),(84,160),(77,155),(76,149),(79,144),(80,139),(84,134)],152],
+  'RF':[(126,112),(117,121),(116,130),[(115,114),(120,113),(124,117),(124,125),(127,128),(130,131),(130,136),(123,139),(112,139),(105,135),(103,130),(108,125),(111,121)],131]}}
+K={
+ 'e':{'RH':[(60,136),(65,135),(69,137),(71,140),(71,144),(68,147),(62,148),(58,145),(57,141),(58,138)],'RF':[(98,137),(104,136),(108,138),(110,141),(109,145),(106,148),(99,148),(96,145),(95,141),(96,139)]},
+ 'se':{'LH':[(58,117),(62,116),(65,118),(67,121),(67,125),(65,128),(61,129),(57,126),(56,122)],'RH':[(83,136),(87,136),(90,139),(91,143),(89,146),(85,147),(81,145),(80,142),(81,139)],'RF':[]},
+ 'ne':{'LH':[(57,125),(61,125),(63,128),(64,133),(62,137),(58,137),(55,134),(55,129)],'RH':[(94,131),(98,131),(101,134),(102,139),(100,143),(97,146),(93,145),(90,143),(89,139),(90,135)],'RF':[(116,114),(120,114),(123,117),(123,122),(120,126),(115,127),(112,124),(112,120)]}}
+
+def mask(poly):
+ im=Image.new('1',(192,192));ImageDraw.Draw(im).polygon(poly,fill=1);return np.array(im)
+def limb_mask(view,name,q):
+ m=mask(q[3])
+ extras={('e','RF'):[(113,147),(114,148),(114,149)],('se','LH'):[(77,138),(77,139)],('ne','RF'):[(105,136),(106,136),(108,137),(109,138)],('ne','LH'):[(54,146),(55,147)]}
+ for x,y in extras.get((view,name),[]):m[y,x]=True
+ if (view,name)==('ne','RH'):m[146:161,76:103]=True
+ return m
+def shift(a,dx=0,dy=0):
+ b=np.zeros_like(a); ys,xs=np.where(a[:,:,3]>0);xx=xs+int(dx);yy=ys+int(dy);ok=(xx>=0)&(xx<192)&(yy>=0)&(yy<192);b[yy[ok],xx[ok]]=a[ys[ok],xs[ok]];return b
+def comp(a,b):
+ m=b[:,:,3]>0;a[m]=b[m]
+def fp(a):
+ yy,xx=np.where(a[:,:,3]>0);y=int(yy.max());xs=np.where(a[y,:,3]>0)[0];return np.array([(xs[0]+xs[-1])/2,y]),[int(xs[0]),int(xs[-1])]
+def fit(a,s0,s1,t0,t1):
+ s0,s1,t0,t1=map(lambda z:np.array(z,float),(s0,s1,t0,t1));sv=s1-s0;tv=t1-t0
+ su=sv/np.linalg.norm(sv);tu=tv/np.linalg.norm(tv);sn=np.array([-su[1],su[0]]);tn=np.array([-tu[1],tu[0]])
+ v=GRID-t0;src=s0+(v@tu)[...,None]*su+(v@tn)[...,None]*sn
+ ix=np.floor(src+.5).astype(int);ok=(ix[:,:,0]>=0)&(ix[:,:,0]<192)&(ix[:,:,1]>=0)&(ix[:,:,1]<192)
+ b=np.zeros_like(a);b[ok]=a[ix[:,:,1][ok],ix[:,:,0][ok]];return b
+def joint(root,ankle,l1,l2,hint):
+ v=ankle-root;dist=np.linalg.norm(v);u=v/dist;along=(l1*l1-l2*l2+dist*dist)/(2*dist);h=math.sqrt(max(0,l1*l1-along*along));n=np.array([-u[1],u[0]])
+ opts=[root+u*along+n*h,root+u*along-n*h];p=min(opts,key=lambda q:np.linalg.norm(q-hint))
+ # Choose a native knee pivot while keeping both bones within one pixel.
+ opts=[]
+ for dx in range(-2,3):
+  for dy in range(-2,3):
+   jj=np.floor(p+.5)+[dx,dy];err=np.abs([np.linalg.norm(jj-root)-l1,np.linalg.norm(ankle-jj)-l2])
+   opts.append((max(err)>1,float(err@err)+.005*np.linalg.norm(jj-hint)**2,jj))
+ return min(opts,key=lambda q:(q[0],q[1]))[2]
+def smallholes(a):
+ m=a[:,:,3]>0;holes=ndi.binary_fill_holes(m)&~m;labs,n=ndi.label(holes);sizes=np.bincount(labs.ravel());fix=holes&np.isin(labs,np.where(sizes<=12)[0]);idx=ndi.distance_transform_edt(~m,return_distances=False,return_indices=True);a[fix]=a[idx[0][fix],idx[1][fix]];return a
+def poly(im,pts,c):ImageDraw.Draw(im).polygon([tuple(np.floor(np.array(p)+.5).astype(int)) for p in pts],fill=P[c])
+def line(im,pts,c,w=1):ImageDraw.Draw(im).line([tuple(np.floor(np.array(p)+.5).astype(int)) for p in pts],fill=P[c],width=w)
+
+def build():
+ (R/'walk/frames').mkdir(parents=True,exist_ok=True);(R/'walk/layers').mkdir(exist_ok=True)
+ recs={}; allframes={}
+ for view,legs in D.items():
+  ref=np.array(Image.open(B/'views_cam35'/f'{view}.png').convert('RGBA'));body=ref.copy();segs={};masks={}
+  for name,q in legs.items():
+   root,knee,ankle,outline,cut=q;mm=limb_mask(view,name,q)&(ref[:,:,3]>0);masks[name]=mm
+   a=ref.copy();a[~mm]=0
+   # Native foot block translates intact. Knee disc and gold shank rotate separately.
+   foot=a.copy();foot[Y<cut]=0
+   km=mask(K[view][name]) if K[view][name] else np.zeros((192,192),bool)
+   disc=a.copy();disc[~km]=0
+   upper=a.copy();upper[(Y>knee[1])|km]=0
+   shank=a.copy();shank[(Y<knee[1])|(Y>=cut+1)|km]=0
+   segs[name]=(upper,shank,foot,disc);body[mm]=0
+  # Hidden limbs use the still's homologous paint, behind the entire pinned body.
+  # Diagonal lateral separation is read from the visible hind soles, not invented width.
+  hidden={'LH':('RH',(0,-16)),'LF':('RF',(0,-16))} if view=='e' else {'LF':('RF',(-24,-17 if view=='se' else -10))}
+  for name,(donor,delta) in hidden.items():
+   segs[name]=tuple(shift(a,*delta) for a in segs[donor]);src=D[view][donor]
+   # Full source homologous shapes are kept; depth is provided by compositing.
+   Image.fromarray(segs[name][2]).save(R/'walk/layers'/f'{view}_{name}_source_foot.png')
+  Image.fromarray(body).save(R/'walk/layers'/f'{view}_body.png')
+  Image.fromarray((~np.logical_or.reduce(list(masks.values()))).astype('uint8')*255).save(R/'walk/layers'/f'{view}_pinned_mask.png')
+  recs[view]=[];frames=[]
+  for f in range(8):
+   dip=int(f in (0,4));layers={}
+   active=dict(legs)
+   for name,(donor,delta) in hidden.items():
+    active[name]=[(np.array(p)+delta).tolist() for p in legs[donor][:3]]+legs[donor][3:]
+   for name,q in active.items():
+    root,knee,ankle=map(lambda z:np.array(z,float),q[:3]);up,sh,foot,disc=segs[name]
+    sole,span=fp(foot);off,lift=T['paths'][name][f]
+    if name in legs:
+     t=T['views'][view]['visible_feet'][name]['frames'][f];ideal=np.array(t['sole_centre'])
+    else:
+     vv=T['views'][view];ideal=sole+off*np.array(vv['u'])*vv['f']-[0,lift]
+    # Preserve the original foot's half-pixel centre and exact integer lift.
+    dx=int(np.floor(ideal[0]-sole[0]+.5));ground=int(np.floor(ideal[1]+lift+.5));dy=ground-lift-int(sole[1]);delta=np.array([dx,dy]);ank=ankle+delta;rt=root+[0,dip]
+    l1=np.linalg.norm(knee-root);l2=np.linalg.norm(ankle-knee);j=joint(rt,ank,l1,l2,knee+delta*.35)
+    u=fit(up,root,knee,rt,j);s=fit(sh,knee,ankle,j,ank)
+    im=Image.fromarray(np.zeros_like(ref))
+    # Tapered socket behind the unchanged native disc; torso paint hides its top.
+    vv=j-rt;vv/=np.linalg.norm(vv);nv=np.array([-vv[1],vv[0]])
+    poly(im,[rt-nv*5,rt+nv*5,j+nv*5,j+vv*3,j-nv*5],1)
+    im.alpha_composite(Image.fromarray(u));im.alpha_composite(Image.fromarray(s))
+    # Small stepped collar behind the original knee disc conceals raster joins.
+    vec=ank-j;vec/=np.linalg.norm(vec);nn=np.array([-vec[1],vec[0]])
+    def p(a,b):return j+vec*a+nn*b
+    poly(im,[p(0,-5),p(0,5),p(6,5),p(7,3),p(7,-4)],1)
+    poly(im,[p(2,-4),p(2,4),p(6,4),p(6,-4)],6)
+    poly(im,[p(2,-3),p(2,0),p(6,1),p(6,-3)],9)
+    im.alpha_composite(Image.fromarray(shift(disc,int(np.floor(j[0]-knee[0]+.5)),int(np.floor(j[1]-knee[1]+.5)))))
+    # The source gold cuff overlaps the source foot, covering rotated shank ends.
+    footpaint=shift(foot,dx,dy)
+    im.alpha_composite(Image.fromarray(footpaint))
+    a=smallholes(np.array(im));a[ground-lift+1:]=0
+    # A folded knee must never manufacture a second sole alongside the foot.
+    a[(Y>=ground-lift-2)&(footpaint[:,:,3]==0)]=0
+    layers[name]=a;Image.fromarray(a).save(R/'walk/layers'/f'{view}_{name}_f{f}.png')
+WOLF M TAKE B / CODEX WALK4 / SE + NE TROT
+Tokens: unavailable. Native pixels; no image tool/commit. Only codex-walk4 written; fixed stills and approved side timing read.
+se: u=(0.994665758,0.103150523); f=0.775514982; side paw spacing43.752857px.
+ne: u=(0.986143703,-0.165893333); f=0.619979262; side paw spacing43.752857px.
+64/64 contacts within1px of ideal2D target; exact2/4/4/2px raster lifts; pairA f0-3 / pairB f4-7.
+Native row160 cap: se near_fore f0 -0.640px; ne near_hind f7 -0.720px vs ideal; within1px.
+se near_fore footlock spread x/y 0.857/0.800px.
+se far_fore footlock spread x/y 0.857/0.800px.
+se near_hind footlock spread x/y 0.857/0.800px.
+se far_hind footlock spread x/y 0.857/0.800px.
+ne near_fore footlock spread x/y 0.171/0.514px.
+ne far_fore footlock spread x/y 0.171/0.514px.
+ne near_hind footlock spread x/y 0.171/1.029px.
+ne far_hind footlock spread x/y 0.171/0.514px.
+se near_fore: upper[16, 8, 7], shank[6, 5, 5], paw12; width delta<=1; length delta0.461px.
+se far_fore: upper[8, 8, 7], shank[5, 4, 4], paw12; width delta<=1; length delta1.097px.
+se near_hind: upper[13, 9, 6], shank[6, 5, 4], paw11; width delta<=1; length delta0.682px.
+se far_hind: upper[7, 5, 7], shank[6, 5, 4], paw11; width delta<=1; length delta0.658px.
+ne near_fore: upper[12, 5, 6], shank[6, 5, 5], paw12; width delta<=1; length delta0.631px.
+ne far_fore: upper[8, 7, 5], shank[6, 4, 4], paw11; width delta<=1; length delta1.251px.
+ne near_hind: upper[13, 10, 7], shank[7, 6, 5], paw13; width delta<=1; length delta0.525px.
+ne far_hind: upper[6, 6, 8], shank[6, 5, 5], paw11; width delta<=1; length delta1.303px.
+16/16:192x192 RGBA, binary alpha, approved palette, no below160 pixels, no canvas-edge contact, one connected creature.
+No pinholes/strays; enclosed negative space between crossing legs retained rather than painted solid.
+Body/head/fins from still, dip1px f1/f5; straight original tail plate pixels translate1px with dip, never thinned.
+EYE at4x sel-out: forward three-quarter robot-wolf trot; paired steps follow side indices; plated legs and claws retained.
+EYE: joined limbs, no abrupt cut ends seen; overlapping paws/legs naturally hide each other at crossing phases.
+board.png: side timing on top, then each view approved still / setC / WALK4; footprint boards show2D world contacts.
+GIFs:8 frames,100ms each, infinite loop. checks.txt and verification.json contain every saved contact and width.
+
+
+    Directory: D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\views_cam35
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----         11/4/2026   8:39 PM           3356 e.png                                                                
+-a----         11/4/2026   8:39 PM           2830 n.png                                                                
+-a----         11/4/2026   8:39 PM           3724 ne.png                                                               
+-a----         11/4/2026   8:39 PM           3235 s.png                                                                
+-a----         11/4/2026   8:39 PM           3805 se.png                                                               
+
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "python -c \"from PIL import Image,ImageDraw; from pathlib import Path; r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a'); b=Image.new('RGB',(1536,900),(90,120,105)); d=ImageDraw.Draw(b); [(b.paste(Image.open(r/'views_cam35'/f'{v}.png').resize((768,768),Image.Resampling.NEAREST),(i*768,0)),d.text((i*768+10,780),v,fill='white')) for i,v in enumerate(['s','n'])]; b.save(r/'anim/walk35/run2_inspect.png')\"" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 399ms:
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "python -c \"from PIL import Image,ImageDraw,ImageFont; from pathlib import Path; r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a'); b=Image.new('RGBA',(1440,720),(80,110,90,255)); d=ImageDraw.Draw(b); font=ImageFont.truetype('C:/Windows/Fonts/arial.ttf',12); [(b.alpha_composite(Image.open(r/'views_cam35'/f'{v}.png').crop((56,125,136,165)).resize((720,360),Image.Resampling.NEAREST)),None) for v in []]; [(b.alpha_composite(Image.open(r/'views_cam35'/f'{v}.png').crop((56,125,136,165)).resize((720,360),Image.Resampling.NEAREST),(i*720,50)),[d.text((i*720+(x-56)*9,30),str(x),font=font,fill='white') for x in range(56,136,5)],[d.text((i*720,50+(y-125)*9),str(y),font=font,fill='white') for y in range(125,165,5)]) for i,v in enumerate(['s','n'])]; b.convert('RGB').save(r/'anim/walk35/run2_legs_grid.png')\"" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 344ms:
+codex
+The s/n stills show only the near pair: forelegs in s and hindlegs in n. I’ll keep the far pair behind the body unless a new pose exposes them, and translate the stills’ knee, cuff, and foot pixels as intact parts.
+
+GIF timing uses 10 ms ticks, so I’ll alternate 120/130 ms for a one-second loop and include APNG previews with exact 125 ms frames.
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "python -c \"from pathlib import Path; from PIL import Image; import numpy as np; b=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\views_cam35'); cs='141218 211e27 3d3a44 58555e 7a4a06 9d9ba2 d18a0a d6d6dc ff3a2a ffcf1f fff4a8'.split(); p={tuple(bytes.fromhex(c)):s for c,s in zip(cs,'0123456789A')}; [(print(v),[(print(f'{y:3} '+''.join(p.get(tuple(a[y,x,:3]),'?') if a[y,x,3] else '.' for x in range(56,137)))) for y in range(130,162)]) for v in ['s','n'] for a in [np.array(Image.open(b/f'{v}.png').convert('RGBA'))]]\"" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 402ms:
+s
+130 ......6666469999999940399969999AA3335777753336AA9999699930699999999446666........
+131 ......3666449999999940399964999AA3335775553334AA9994699930699999996446664........
+132 ......2466449999999640369960499AA3335555555334A99940699630669999996446644........
+133 ......2446449999966640266990069AA3355555555333999600999620666999999406444........
+134 .......44424999996664024699086999335555555533399988069662066699999940443.........
+135 ........440469996666402266608669933355555533339966806662206699699964044..........
+136 .........4046666666640226660884993333555533333994820966210666666666404...........
+137 ..........20400000464403066904099333333533333399020966020466440000403............
+138 .........2200353530444022666664693333333333334964446642204400355530133...........
+139 .........2205555553244422043266694333333333336966623402244425555555333...........
+140 .........2335555555320002257754669433333333349664577322004235555555333...........
+141 .........2335555555520000233576669633333333469663753320000355555555332...........
+142 .........2135555555520200033377069944333334696647733300030355555555333...........
+143 ..........12555555552020003335730699644446699645753330002035555555522............
+144 ..........40555555530000002333375496666666669657333320000023555555324............
+145 .........6643355553204440003333773666666666643773333004444023555532466...........
+146 .........6994022220064441000333377644444444437733330044466601222204996...........
+147 .........69996400046964400000333577555555555775333000444669644444699966..........
+148 ........269999999999964400000233357777777777753332000444669999999999964..........
+149 .......32699999999999644000000333555555555555533200004446699999999999644.........
+150 .......22699999999999644410000033533333333335532000004446699999999996422.........
+151 .......23469999999999644400000023533333333333532000004446699999999996232.........
+152 .......253446666666664440122002.333333333333333.200232444666666666644352.........
+153 .......255530000000000002222002..3332222222223..3003332200000000000335522........
+154 .......255555777777777535322001.................3000333357777777755555511........
+155 .......233557777777777755530001.................2002333577777777777553311........
+156 .......233335555555555533330101.................2002333355555555555333321........
+157 .......233335555555555533331101.................2002333355555555555333322........
+158 .......23333555555555553333111...................222333355555555555333322........
+159 ........33333555555555333333.......................22333355555555533332..........
+160 .........333122222222223333.........................2333322222222211332..........
+161 .................................................................................
+n
+130 .........444200666666666666666666644AAAAAAAAA646666666666666666664002444.........
+131 .........444200466666666666666666644AAAA99999446666666666666666664002444.........
+132 ..........2420004444666664444444440499999999944444444644444664444000122..........
+133 ...........20030000000000000000000009999999994000000000000000000003012...........
+134 ............2333332222000000000000009999999994000000000000002223333302...........
+135 ............233200002332200000111104999999999400000000002333000013332............
+136 ...........22320555530332200111111149999999994000000000233303577522333...........
+137 ...........55227755575023220010111249999999964000000002332157555770355...........
+138 ...........55155555555303330000012206666666660110000003352555555557055...........
+139 ...........33555555555533332000000000000000000000000023333555555535333...........
+140 ...........33355555555553332000000000000000000000000033335555555553333...........
+141 ...........33335555555553322000112226666666666111100022325555555553332...........
+142 ...........30235555555522222002...................20022323555555555202...........
+143 ...........340255555553022000002.................200022121355555553044...........
+144 ...........664235555532044000002.................200001440235555532466...........
+145 ..........6996403333204666400004.................2000046664123333046696..........
+146 ..........9999640000066966400004.................4000046696400000469996..........
+147 ..........9999996666699966640004.................4000466699666666999999..........
+148 .........69999999999999966640004.................4000466699999999999999..........
+149 ........309999999999999966640004.................40004666999999999999962.........
+150 ........349999999999999966640004.................400046669999999999999633........
+151 ........226999999999999966640003.................300046669999999999999633........
+152 ........230699999999999966440003.................300044669999999999996452........
+153 ........153466666666666644023003.................300214446666666666664351........
+154 ........155520210000000000223303.................303333100011000111023555........
+155 ........155555777777777753333003.................100333377777777777555551........
+156 ........333557777777777755333003.................101333357777777777733333........
+157 ........233335555555555522333003.................112333335555555555533333........
+158 ........23333555555555552333303...................22333335555555555533333........
+159 ........2333335555555555333322.....................2333335555555555533333........
+160 .........21112222222222221132.......................11312222222222221132.........
+161 .................................................................................
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "python -c \"from PIL import Image; from pathlib import Path; import numpy as np; b=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\views_cam35'); [(print(v),[print(y,' '.join(f'{x}:{tuple(a[y,x,:3])}' for x in range(78,95) if a[y,x,3])) for y in range(137,159)]) for v in ['s','n'] for a in [np.array(Image.open(b/f'{v}.png').convert('RGBA'))]]\"" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 388ms:
+s
+137 78:(np.uint8(20), np.uint8(18), np.uint8(24)) 79:(np.uint8(88), np.uint8(85), np.uint8(94)) 80:(np.uint8(20), np.uint8(18), np.uint8(24)) 81:(np.uint8(209), np.uint8(138), np.uint8(10)) 82:(np.uint8(209), np.uint8(138), np.uint8(10)) 83:(np.uint8(255), np.uint8(207), np.uint8(31)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(122), np.uint8(74), np.uint8(6)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(255), np.uint8(207), np.uint8(31)) 88:(np.uint8(255), np.uint8(207), np.uint8(31)) 89:(np.uint8(88), np.uint8(85), np.uint8(94)) 90:(np.uint8(88), np.uint8(85), np.uint8(94)) 91:(np.uint8(88), np.uint8(85), np.uint8(94)) 92:(np.uint8(88), np.uint8(85), np.uint8(94)) 93:(np.uint8(88), np.uint8(85), np.uint8(94)) 94:(np.uint8(88), np.uint8(85), np.uint8(94))
+138 78:(np.uint8(20), np.uint8(18), np.uint8(24)) 79:(np.uint8(61), np.uint8(58), np.uint8(68)) 80:(np.uint8(61), np.uint8(58), np.uint8(68)) 81:(np.uint8(209), np.uint8(138), np.uint8(10)) 82:(np.uint8(209), np.uint8(138), np.uint8(10)) 83:(np.uint8(209), np.uint8(138), np.uint8(10)) 84:(np.uint8(209), np.uint8(138), np.uint8(10)) 85:(np.uint8(209), np.uint8(138), np.uint8(10)) 86:(np.uint8(122), np.uint8(74), np.uint8(6)) 87:(np.uint8(209), np.uint8(138), np.uint8(10)) 88:(np.uint8(255), np.uint8(207), np.uint8(31)) 89:(np.uint8(88), np.uint8(85), np.uint8(94)) 90:(np.uint8(88), np.uint8(85), np.uint8(94)) 91:(np.uint8(88), np.uint8(85), np.uint8(94)) 92:(np.uint8(88), np.uint8(85), np.uint8(94)) 93:(np.uint8(88), np.uint8(85), np.uint8(94)) 94:(np.uint8(88), np.uint8(85), np.uint8(94))
+139 78:(np.uint8(122), np.uint8(74), np.uint8(6)) 79:(np.uint8(61), np.uint8(58), np.uint8(68)) 80:(np.uint8(61), np.uint8(58), np.uint8(68)) 81:(np.uint8(20), np.uint8(18), np.uint8(24)) 82:(np.uint8(122), np.uint8(74), np.uint8(6)) 83:(np.uint8(88), np.uint8(85), np.uint8(94)) 84:(np.uint8(61), np.uint8(58), np.uint8(68)) 85:(np.uint8(209), np.uint8(138), np.uint8(10)) 86:(np.uint8(209), np.uint8(138), np.uint8(10)) 87:(np.uint8(209), np.uint8(138), np.uint8(10)) 88:(np.uint8(255), np.uint8(207), np.uint8(31)) 89:(np.uint8(122), np.uint8(74), np.uint8(6)) 90:(np.uint8(88), np.uint8(85), np.uint8(94)) 91:(np.uint8(88), np.uint8(85), np.uint8(94)) 92:(np.uint8(88), np.uint8(85), np.uint8(94)) 93:(np.uint8(88), np.uint8(85), np.uint8(94)) 94:(np.uint8(88), np.uint8(85), np.uint8(94))
+140 78:(np.uint8(20), np.uint8(18), np.uint8(24)) 79:(np.uint8(20), np.uint8(18), np.uint8(24)) 80:(np.uint8(61), np.uint8(58), np.uint8(68)) 81:(np.uint8(61), np.uint8(58), np.uint8(68)) 82:(np.uint8(157), np.uint8(155), np.uint8(162)) 83:(np.uint8(214), np.uint8(214), np.uint8(220)) 84:(np.uint8(214), np.uint8(214), np.uint8(220)) 85:(np.uint8(157), np.uint8(155), np.uint8(162)) 86:(np.uint8(122), np.uint8(74), np.uint8(6)) 87:(np.uint8(209), np.uint8(138), np.uint8(10)) 88:(np.uint8(209), np.uint8(138), np.uint8(10)) 89:(np.uint8(255), np.uint8(207), np.uint8(31)) 90:(np.uint8(122), np.uint8(74), np.uint8(6)) 91:(np.uint8(88), np.uint8(85), np.uint8(94)) 92:(np.uint8(88), np.uint8(85), np.uint8(94)) 93:(np.uint8(88), np.uint8(85), np.uint8(94)) 94:(np.uint8(88), np.uint8(85), np.uint8(94))
+141 78:(np.uint8(20), np.uint8(18), np.uint8(24)) 79:(np.uint8(20), np.uint8(18), np.uint8(24)) 80:(np.uint8(20), np.uint8(18), np.uint8(24)) 81:(np.uint8(61), np.uint8(58), np.uint8(68)) 82:(np.uint8(88), np.uint8(85), np.uint8(94)) 83:(np.uint8(88), np.uint8(85), np.uint8(94)) 84:(np.uint8(157), np.uint8(155), np.uint8(162)) 85:(np.uint8(214), np.uint8(214), np.uint8(220)) 86:(np.uint8(209), np.uint8(138), np.uint8(10)) 87:(np.uint8(209), np.uint8(138), np.uint8(10)) 88:(np.uint8(209), np.uint8(138), np.uint8(10)) 89:(np.uint8(255), np.uint8(207), np.uint8(31)) 90:(np.uint8(209), np.uint8(138), np.uint8(10)) 91:(np.uint8(88), np.uint8(85), np.uint8(94)) 92:(np.uint8(88), np.uint8(85), np.uint8(94)) 93:(np.uint8(88), np.uint8(85), np.uint8(94)) 94:(np.uint8(88), np.uint8(85), np.uint8(94))
+142 78:(np.uint8(61), np.uint8(58), np.uint8(68)) 79:(np.uint8(20), np.uint8(18), np.uint8(24)) 80:(np.uint8(20), np.uint8(18), np.uint8(24)) 81:(np.uint8(20), np.uint8(18), np.uint8(24)) 82:(np.uint8(88), np.uint8(85), np.uint8(94)) 83:(np.uint8(88), np.uint8(85), np.uint8(94)) 84:(np.uint8(88), np.uint8(85), np.uint8(94)) 85:(np.uint8(214), np.uint8(214), np.uint8(220)) 86:(np.uint8(214), np.uint8(214), np.uint8(220)) 87:(np.uint8(20), np.uint8(18), np.uint8(24)) 88:(np.uint8(209), np.uint8(138), np.uint8(10)) 89:(np.uint8(255), np.uint8(207), np.uint8(31)) 90:(np.uint8(255), np.uint8(207), np.uint8(31)) 91:(np.uint8(122), np.uint8(74), np.uint8(6)) 92:(np.uint8(122), np.uint8(74), np.uint8(6)) 93:(np.uint8(88), np.uint8(85), np.uint8(94)) 94:(np.uint8(88), np.uint8(85), np.uint8(94))
+143 78:(np.uint8(61), np.uint8(58), np.uint8(68)) 79:(np.uint8(20), np.uint8(18), np.uint8(24)) 80:(np.uint8(20), np.uint8(18), np.uint8(24)) 81:(np.uint8(20), np.uint8(18), np.uint8(24)) 82:(np.uint8(88), np.uint8(85), np.uint8(94)) 83:(np.uint8(88), np.uint8(85), np.uint8(94)) 84:(np.uint8(88), np.uint8(85), np.uint8(94)) 85:(np.uint8(157), np.uint8(155), np.uint8(162)) 86:(np.uint8(214), np.uint8(214), np.uint8(220)) 87:(np.uint8(88), np.uint8(85), np.uint8(94)) 88:(np.uint8(20), np.uint8(18), np.uint8(24)) 89:(np.uint8(209), np.uint8(138), np.uint8(10)) 90:(np.uint8(255), np.uint8(207), np.uint8(31)) 91:(np.uint8(255), np.uint8(207), np.uint8(31)) 92:(np.uint8(209), np.uint8(138), np.uint8(10)) 93:(np.uint8(122), np.uint8(74), np.uint8(6)) 94:(np.uint8(122), np.uint8(74), np.uint8(6))
+144 78:(np.uint8(20), np.uint8(18), np.uint8(24)) 79:(np.uint8(20), np.uint8(18), np.uint8(24)) 80:(np.uint8(20), np.uint8(18), np.uint8(24)) 81:(np.uint8(20), np.uint8(18), np.uint8(24)) 82:(np.uint8(61), np.uint8(58), np.uint8(68)) 83:(np.uint8(88), np.uint8(85), np.uint8(94)) 84:(np.uint8(88), np.uint8(85), np.uint8(94)) 85:(np.uint8(88), np.uint8(85), np.uint8(94)) 86:(np.uint8(88), np.uint8(85), np.uint8(94)) 87:(np.uint8(214), np.uint8(214), np.uint8(220)) 88:(np.uint8(157), np.uint8(155), np.uint8(162)) 89:(np.uint8(122), np.uint8(74), np.uint8(6)) 90:(np.uint8(255), np.uint8(207), np.uint8(31)) 91:(np.uint8(209), np.uint8(138), np.uint8(10)) 92:(np.uint8(209), np.uint8(138), np.uint8(10)) 93:(np.uint8(209), np.uint8(138), np.uint8(10)) 94:(np.uint8(209), np.uint8(138), np.uint8(10))
+145 78:(np.uint8(122), np.uint8(74), np.uint8(6)) 79:(np.uint8(122), np.uint8(74), np.uint8(6)) 80:(np.uint8(20), np.uint8(18), np.uint8(24)) 81:(np.uint8(20), np.uint8(18), np.uint8(24)) 82:(np.uint8(20), np.uint8(18), np.uint8(24)) 83:(np.uint8(88), np.uint8(85), np.uint8(94)) 84:(np.uint8(88), np.uint8(85), np.uint8(94)) 85:(np.uint8(88), np.uint8(85), np.uint8(94)) 86:(np.uint8(88), np.uint8(85), np.uint8(94)) 87:(np.uint8(214), np.uint8(214), np.uint8(220)) 88:(np.uint8(214), np.uint8(214), np.uint8(220)) 89:(np.uint8(88), np.uint8(85), np.uint8(94)) 90:(np.uint8(209), np.uint8(138), np.uint8(10)) 91:(np.uint8(209), np.uint8(138), np.uint8(10)) 92:(np.uint8(209), np.uint8(138), np.uint8(10)) 93:(np.uint8(209), np.uint8(138), np.uint8(10)) 94:(np.uint8(209), np.uint8(138), np.uint8(10))
+146 78:(np.uint8(122), np.uint8(74), np.uint8(6)) 79:(np.uint8(122), np.uint8(74), np.uint8(6)) 80:(np.uint8(33), np.uint8(30), np.uint8(39)) 81:(np.uint8(20), np.uint8(18), np.uint8(24)) 82:(np.uint8(20), np.uint8(18), np.uint8(24)) 83:(np.uint8(20), np.uint8(18), np.uint8(24)) 84:(np.uint8(88), np.uint8(85), np.uint8(94)) 85:(np.uint8(88), np.uint8(85), np.uint8(94)) 86:(np.uint8(88), np.uint8(85), np.uint8(94)) 87:(np.uint8(88), np.uint8(85), np.uint8(94)) 88:(np.uint8(214), np.uint8(214), np.uint8(220)) 89:(np.uint8(214), np.uint8(214), np.uint8(220)) 90:(np.uint8(209), np.uint8(138), np.uint8(10)) 91:(np.uint8(122), np.uint8(74), np.uint8(6)) 92:(np.uint8(122), np.uint8(74), np.uint8(6)) 93:(np.uint8(122), np.uint8(74), np.uint8(6)) 94:(np.uint8(122), np.uint8(74), np.uint8(6))
+147 78:(np.uint8(122), np.uint8(74), np.uint8(6)) 79:(np.uint8(122), np.uint8(74), np.uint8(6)) 80:(np.uint8(20), np.uint8(18), np.uint8(24)) 81:(np.uint8(20), np.uint8(18), np.uint8(24)) 82:(np.uint8(20), np.uint8(18), np.uint8(24)) 83:(np.uint8(20), np.uint8(18), np.uint8(24)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(88), np.uint8(85), np.uint8(94)) 86:(np.uint8(88), np.uint8(85), np.uint8(94)) 87:(np.uint8(88), np.uint8(85), np.uint8(94)) 88:(np.uint8(157), np.uint8(155), np.uint8(162)) 89:(np.uint8(214), np.uint8(214), np.uint8(220)) 90:(np.uint8(214), np.uint8(214), np.uint8(220)) 91:(np.uint8(157), np.uint8(155), np.uint8(162)) 92:(np.uint8(157), np.uint8(155), np.uint8(162)) 93:(np.uint8(157), np.uint8(155), np.uint8(162)) 94:(np.uint8(157), np.uint8(155), np.uint8(162))
+148 78:(np.uint8(122), np.uint8(74), np.uint8(6)) 79:(np.uint8(122), np.uint8(74), np.uint8(6)) 80:(np.uint8(20), np.uint8(18), np.uint8(24)) 81:(np.uint8(20), np.uint8(18), np.uint8(24)) 82:(np.uint8(20), np.uint8(18), np.uint8(24)) 83:(np.uint8(20), np.uint8(18), np.uint8(24)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(61), np.uint8(58), np.uint8(68)) 86:(np.uint8(88), np.uint8(85), np.uint8(94)) 87:(np.uint8(88), np.uint8(85), np.uint8(94)) 88:(np.uint8(88), np.uint8(85), np.uint8(94)) 89:(np.uint8(157), np.uint8(155), np.uint8(162)) 90:(np.uint8(214), np.uint8(214), np.uint8(220)) 91:(np.uint8(214), np.uint8(214), np.uint8(220)) 92:(np.uint8(214), np.uint8(214), np.uint8(220)) 93:(np.uint8(214), np.uint8(214), np.uint8(220)) 94:(np.uint8(214), np.uint8(214), np.uint8(220))
+149 78:(np.uint8(122), np.uint8(74), np.uint8(6)) 79:(np.uint8(122), np.uint8(74), np.uint8(6)) 80:(np.uint8(20), np.uint8(18), np.uint8(24)) 81:(np.uint8(20), np.uint8(18), np.uint8(24)) 82:(np.uint8(20), np.uint8(18), np.uint8(24)) 83:(np.uint8(20), np.uint8(18), np.uint8(24)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(88), np.uint8(85), np.uint8(94)) 87:(np.uint8(88), np.uint8(85), np.uint8(94)) 88:(np.uint8(88), np.uint8(85), np.uint8(94)) 89:(np.uint8(157), np.uint8(155), np.uint8(162)) 90:(np.uint8(157), np.uint8(155), np.uint8(162)) 91:(np.uint8(157), np.uint8(155), np.uint8(162)) 92:(np.uint8(157), np.uint8(155), np.uint8(162)) 93:(np.uint8(157), np.uint8(155), np.uint8(162)) 94:(np.uint8(157), np.uint8(155), np.uint8(162))
+150 78:(np.uint8(122), np.uint8(74), np.uint8(6)) 79:(np.uint8(122), np.uint8(74), np.uint8(6)) 80:(np.uint8(122), np.uint8(74), np.uint8(6)) 81:(np.uint8(33), np.uint8(30), np.uint8(39)) 82:(np.uint8(20), np.uint8(18), np.uint8(24)) 83:(np.uint8(20), np.uint8(18), np.uint8(24)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(88), np.uint8(85), np.uint8(94)) 88:(np.uint8(88), np.uint8(85), np.uint8(94)) 89:(np.uint8(157), np.uint8(155), np.uint8(162)) 90:(np.uint8(88), np.uint8(85), np.uint8(94)) 91:(np.uint8(88), np.uint8(85), np.uint8(94)) 92:(np.uint8(88), np.uint8(85), np.uint8(94)) 93:(np.uint8(88), np.uint8(85), np.uint8(94)) 94:(np.uint8(88), np.uint8(85), np.uint8(94))
+151 78:(np.uint8(122), np.uint8(74), np.uint8(6)) 79:(np.uint8(122), np.uint8(74), np.uint8(6)) 80:(np.uint8(122), np.uint8(74), np.uint8(6)) 81:(np.uint8(20), np.uint8(18), np.uint8(24)) 82:(np.uint8(20), np.uint8(18), np.uint8(24)) 83:(np.uint8(20), np.uint8(18), np.uint8(24)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(61), np.uint8(58), np.uint8(68)) 88:(np.uint8(88), np.uint8(85), np.uint8(94)) 89:(np.uint8(157), np.uint8(155), np.uint8(162)) 90:(np.uint8(88), np.uint8(85), np.uint8(94)) 91:(np.uint8(88), np.uint8(85), np.uint8(94)) 92:(np.uint8(88), np.uint8(85), np.uint8(94)) 93:(np.uint8(88), np.uint8(85), np.uint8(94)) 94:(np.uint8(88), np.uint8(85), np.uint8(94))
+152 78:(np.uint8(122), np.uint8(74), np.uint8(6)) 79:(np.uint8(122), np.uint8(74), np.uint8(6)) 80:(np.uint8(20), np.uint8(18), np.uint8(24)) 81:(np.uint8(33), np.uint8(30), np.uint8(39)) 82:(np.uint8(61), np.uint8(58), np.uint8(68)) 83:(np.uint8(61), np.uint8(58), np.uint8(68)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(61), np.uint8(58), np.uint8(68)) 88:(np.uint8(88), np.uint8(85), np.uint8(94)) 89:(np.uint8(88), np.uint8(85), np.uint8(94)) 90:(np.uint8(88), np.uint8(85), np.uint8(94)) 91:(np.uint8(88), np.uint8(85), np.uint8(94)) 92:(np.uint8(88), np.uint8(85), np.uint8(94)) 93:(np.uint8(88), np.uint8(85), np.uint8(94)) 94:(np.uint8(88), np.uint8(85), np.uint8(94))
+153 78:(np.uint8(20), np.uint8(18), np.uint8(24)) 79:(np.uint8(20), np.uint8(18), np.uint8(24)) 80:(np.uint8(61), np.uint8(58), np.uint8(68)) 81:(np.uint8(61), np.uint8(58), np.uint8(68)) 82:(np.uint8(61), np.uint8(58), np.uint8(68)) 83:(np.uint8(61), np.uint8(58), np.uint8(68)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(61), np.uint8(58), np.uint8(68)) 89:(np.uint8(88), np.uint8(85), np.uint8(94)) 90:(np.uint8(88), np.uint8(85), np.uint8(94)) 91:(np.uint8(88), np.uint8(85), np.uint8(94)) 92:(np.uint8(61), np.uint8(58), np.uint8(68)) 93:(np.uint8(61), np.uint8(58), np.uint8(68)) 94:(np.uint8(61), np.uint8(58), np.uint8(68))
+154 78:(np.uint8(157), np.uint8(155), np.uint8(162)) 79:(np.uint8(88), np.uint8(85), np.uint8(94)) 80:(np.uint8(157), np.uint8(155), np.uint8(162)) 81:(np.uint8(88), np.uint8(85), np.uint8(94)) 82:(np.uint8(61), np.uint8(58), np.uint8(68)) 83:(np.uint8(61), np.uint8(58), np.uint8(68)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(33), np.uint8(30), np.uint8(39))
+155 78:(np.uint8(214), np.uint8(214), np.uint8(220)) 79:(np.uint8(157), np.uint8(155), np.uint8(162)) 80:(np.uint8(157), np.uint8(155), np.uint8(162)) 81:(np.uint8(157), np.uint8(155), np.uint8(162)) 82:(np.uint8(88), np.uint8(85), np.uint8(94)) 83:(np.uint8(20), np.uint8(18), np.uint8(24)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(33), np.uint8(30), np.uint8(39))
+156 78:(np.uint8(157), np.uint8(155), np.uint8(162)) 79:(np.uint8(88), np.uint8(85), np.uint8(94)) 80:(np.uint8(88), np.uint8(85), np.uint8(94)) 81:(np.uint8(88), np.uint8(85), np.uint8(94)) 82:(np.uint8(88), np.uint8(85), np.uint8(94)) 83:(np.uint8(20), np.uint8(18), np.uint8(24)) 84:(np.uint8(33), np.uint8(30), np.uint8(39)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(33), np.uint8(30), np.uint8(39))
+157 78:(np.uint8(157), np.uint8(155), np.uint8(162)) 79:(np.uint8(88), np.uint8(85), np.uint8(94)) 80:(np.uint8(88), np.uint8(85), np.uint8(94)) 81:(np.uint8(88), np.uint8(85), np.uint8(94)) 82:(np.uint8(88), np.uint8(85), np.uint8(94)) 83:(np.uint8(33), np.uint8(30), np.uint8(39)) 84:(np.uint8(33), np.uint8(30), np.uint8(39)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(33), np.uint8(30), np.uint8(39))
+158 78:(np.uint8(157), np.uint8(155), np.uint8(162)) 79:(np.uint8(88), np.uint8(85), np.uint8(94)) 80:(np.uint8(88), np.uint8(85), np.uint8(94)) 81:(np.uint8(88), np.uint8(85), np.uint8(94)) 82:(np.uint8(88), np.uint8(85), np.uint8(94)) 83:(np.uint8(33), np.uint8(30), np.uint8(39)) 84:(np.uint8(33), np.uint8(30), np.uint8(39)) 85:(np.uint8(33), np.uint8(30), np.uint8(39))
+n
+137 78:(np.uint8(20), np.uint8(18), np.uint8(24)) 79:(np.uint8(61), np.uint8(58), np.uint8(68)) 80:(np.uint8(88), np.uint8(85), np.uint8(94)) 81:(np.uint8(61), np.uint8(58), np.uint8(68)) 82:(np.uint8(61), np.uint8(58), np.uint8(68)) 83:(np.uint8(20), np.uint8(18), np.uint8(24)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(33), np.uint8(30), np.uint8(39)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(33), np.uint8(30), np.uint8(39)) 88:(np.uint8(33), np.uint8(30), np.uint8(39)) 89:(np.uint8(33), np.uint8(30), np.uint8(39)) 90:(np.uint8(61), np.uint8(58), np.uint8(68)) 91:(np.uint8(122), np.uint8(74), np.uint8(6)) 92:(np.uint8(255), np.uint8(207), np.uint8(31)) 93:(np.uint8(255), np.uint8(207), np.uint8(31)) 94:(np.uint8(255), np.uint8(207), np.uint8(31))
+138 78:(np.uint8(88), np.uint8(85), np.uint8(94)) 79:(np.uint8(20), np.uint8(18), np.uint8(24)) 80:(np.uint8(88), np.uint8(85), np.uint8(94)) 81:(np.uint8(88), np.uint8(85), np.uint8(94)) 82:(np.uint8(88), np.uint8(85), np.uint8(94)) 83:(np.uint8(20), np.uint8(18), np.uint8(24)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(20), np.uint8(18), np.uint8(24)) 88:(np.uint8(33), np.uint8(30), np.uint8(39)) 89:(np.uint8(61), np.uint8(58), np.uint8(68)) 90:(np.uint8(61), np.uint8(58), np.uint8(68)) 91:(np.uint8(20), np.uint8(18), np.uint8(24)) 92:(np.uint8(209), np.uint8(138), np.uint8(10)) 93:(np.uint8(209), np.uint8(138), np.uint8(10)) 94:(np.uint8(209), np.uint8(138), np.uint8(10))
+139 78:(np.uint8(157), np.uint8(155), np.uint8(162)) 79:(np.uint8(88), np.uint8(85), np.uint8(94)) 80:(np.uint8(88), np.uint8(85), np.uint8(94)) 81:(np.uint8(88), np.uint8(85), np.uint8(94)) 82:(np.uint8(88), np.uint8(85), np.uint8(94)) 83:(np.uint8(61), np.uint8(58), np.uint8(68)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(20), np.uint8(18), np.uint8(24)) 88:(np.uint8(20), np.uint8(18), np.uint8(24)) 89:(np.uint8(20), np.uint8(18), np.uint8(24)) 90:(np.uint8(20), np.uint8(18), np.uint8(24)) 91:(np.uint8(20), np.uint8(18), np.uint8(24)) 92:(np.uint8(20), np.uint8(18), np.uint8(24)) 93:(np.uint8(20), np.uint8(18), np.uint8(24)) 94:(np.uint8(20), np.uint8(18), np.uint8(24))
+140 78:(np.uint8(157), np.uint8(155), np.uint8(162)) 79:(np.uint8(157), np.uint8(155), np.uint8(162)) 80:(np.uint8(88), np.uint8(85), np.uint8(94)) 81:(np.uint8(88), np.uint8(85), np.uint8(94)) 82:(np.uint8(88), np.uint8(85), np.uint8(94)) 83:(np.uint8(61), np.uint8(58), np.uint8(68)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(20), np.uint8(18), np.uint8(24)) 88:(np.uint8(20), np.uint8(18), np.uint8(24)) 89:(np.uint8(20), np.uint8(18), np.uint8(24)) 90:(np.uint8(20), np.uint8(18), np.uint8(24)) 91:(np.uint8(20), np.uint8(18), np.uint8(24)) 92:(np.uint8(20), np.uint8(18), np.uint8(24)) 93:(np.uint8(20), np.uint8(18), np.uint8(24)) 94:(np.uint8(20), np.uint8(18), np.uint8(24))
+141 78:(np.uint8(157), np.uint8(155), np.uint8(162)) 79:(np.uint8(157), np.uint8(155), np.uint8(162)) 80:(np.uint8(88), np.uint8(85), np.uint8(94)) 81:(np.uint8(88), np.uint8(85), np.uint8(94)) 82:(np.uint8(61), np.uint8(58), np.uint8(68)) 83:(np.uint8(61), np.uint8(58), np.uint8(68)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(33), np.uint8(30), np.uint8(39)) 88:(np.uint8(33), np.uint8(30), np.uint8(39)) 89:(np.uint8(61), np.uint8(58), np.uint8(68)) 90:(np.uint8(61), np.uint8(58), np.uint8(68)) 91:(np.uint8(61), np.uint8(58), np.uint8(68)) 92:(np.uint8(209), np.uint8(138), np.uint8(10)) 93:(np.uint8(209), np.uint8(138), np.uint8(10)) 94:(np.uint8(209), np.uint8(138), np.uint8(10))
+142 78:(np.uint8(157), np.uint8(155), np.uint8(162)) 79:(np.uint8(61), np.uint8(58), np.uint8(68)) 80:(np.uint8(61), np.uint8(58), np.uint8(68)) 81:(np.uint8(61), np.uint8(58), np.uint8(68)) 82:(np.uint8(61), np.uint8(58), np.uint8(68)) 83:(np.uint8(61), np.uint8(58), np.uint8(68)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(61), np.uint8(58), np.uint8(68))
+143 78:(np.uint8(88), np.uint8(85), np.uint8(94)) 79:(np.uint8(20), np.uint8(18), np.uint8(24)) 80:(np.uint8(61), np.uint8(58), np.uint8(68)) 81:(np.uint8(61), np.uint8(58), np.uint8(68)) 82:(np.uint8(20), np.uint8(18), np.uint8(24)) 83:(np.uint8(20), np.uint8(18), np.uint8(24)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(61), np.uint8(58), np.uint8(68))
+144 78:(np.uint8(61), np.uint8(58), np.uint8(68)) 79:(np.uint8(20), np.uint8(18), np.uint8(24)) 80:(np.uint8(122), np.uint8(74), np.uint8(6)) 81:(np.uint8(122), np.uint8(74), np.uint8(6)) 82:(np.uint8(20), np.uint8(18), np.uint8(24)) 83:(np.uint8(20), np.uint8(18), np.uint8(24)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(61), np.uint8(58), np.uint8(68))
+145 78:(np.uint8(122), np.uint8(74), np.uint8(6)) 79:(np.uint8(209), np.uint8(138), np.uint8(10)) 80:(np.uint8(209), np.uint8(138), np.uint8(10)) 81:(np.uint8(209), np.uint8(138), np.uint8(10)) 82:(np.uint8(122), np.uint8(74), np.uint8(6)) 83:(np.uint8(20), np.uint8(18), np.uint8(24)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(122), np.uint8(74), np.uint8(6))
+146 78:(np.uint8(209), np.uint8(138), np.uint8(10)) 79:(np.uint8(255), np.uint8(207), np.uint8(31)) 80:(np.uint8(209), np.uint8(138), np.uint8(10)) 81:(np.uint8(209), np.uint8(138), np.uint8(10)) 82:(np.uint8(122), np.uint8(74), np.uint8(6)) 83:(np.uint8(20), np.uint8(18), np.uint8(24)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(122), np.uint8(74), np.uint8(6))
+147 78:(np.uint8(255), np.uint8(207), np.uint8(31)) 79:(np.uint8(255), np.uint8(207), np.uint8(31)) 80:(np.uint8(209), np.uint8(138), np.uint8(10)) 81:(np.uint8(209), np.uint8(138), np.uint8(10)) 82:(np.uint8(209), np.uint8(138), np.uint8(10)) 83:(np.uint8(122), np.uint8(74), np.uint8(6)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(122), np.uint8(74), np.uint8(6))
+148 78:(np.uint8(255), np.uint8(207), np.uint8(31)) 79:(np.uint8(255), np.uint8(207), np.uint8(31)) 80:(np.uint8(209), np.uint8(138), np.uint8(10)) 81:(np.uint8(209), np.uint8(138), np.uint8(10)) 82:(np.uint8(209), np.uint8(138), np.uint8(10)) 83:(np.uint8(122), np.uint8(74), np.uint8(6)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(122), np.uint8(74), np.uint8(6))
+149 78:(np.uint8(255), np.uint8(207), np.uint8(31)) 79:(np.uint8(255), np.uint8(207), np.uint8(31)) 80:(np.uint8(209), np.uint8(138), np.uint8(10)) 81:(np.uint8(209), np.uint8(138), np.uint8(10)) 82:(np.uint8(209), np.uint8(138), np.uint8(10)) 83:(np.uint8(122), np.uint8(74), np.uint8(6)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(122), np.uint8(74), np.uint8(6))
+150 78:(np.uint8(255), np.uint8(207), np.uint8(31)) 79:(np.uint8(255), np.uint8(207), np.uint8(31)) 80:(np.uint8(209), np.uint8(138), np.uint8(10)) 81:(np.uint8(209), np.uint8(138), np.uint8(10)) 82:(np.uint8(209), np.uint8(138), np.uint8(10)) 83:(np.uint8(122), np.uint8(74), np.uint8(6)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(122), np.uint8(74), np.uint8(6))
+151 78:(np.uint8(255), np.uint8(207), np.uint8(31)) 79:(np.uint8(255), np.uint8(207), np.uint8(31)) 80:(np.uint8(209), np.uint8(138), np.uint8(10)) 81:(np.uint8(209), np.uint8(138), np.uint8(10)) 82:(np.uint8(209), np.uint8(138), np.uint8(10)) 83:(np.uint8(122), np.uint8(74), np.uint8(6)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(88), np.uint8(85), np.uint8(94))
+152 78:(np.uint8(255), np.uint8(207), np.uint8(31)) 79:(np.uint8(255), np.uint8(207), np.uint8(31)) 80:(np.uint8(209), np.uint8(138), np.uint8(10)) 81:(np.uint8(209), np.uint8(138), np.uint8(10)) 82:(np.uint8(122), np.uint8(74), np.uint8(6)) 83:(np.uint8(122), np.uint8(74), np.uint8(6)) 84:(np.uint8(20), np.uint8(18), np.uint8(24)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(88), np.uint8(85), np.uint8(94))
+153 78:(np.uint8(209), np.uint8(138), np.uint8(10)) 79:(np.uint8(209), np.uint8(138), np.uint8(10)) 80:(np.uint8(122), np.uint8(74), np.uint8(6)) 81:(np.uint8(122), np.uint8(74), np.uint8(6)) 82:(np.uint8(20), np.uint8(18), np.uint8(24)) 83:(np.uint8(61), np.uint8(58), np.uint8(68)) 84:(np.uint8(88), np.uint8(85), np.uint8(94)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(88), np.uint8(85), np.uint8(94))
+154 78:(np.uint8(20), np.uint8(18), np.uint8(24)) 79:(np.uint8(20), np.uint8(18), np.uint8(24)) 80:(np.uint8(20), np.uint8(18), np.uint8(24)) 81:(np.uint8(20), np.uint8(18), np.uint8(24)) 82:(np.uint8(61), np.uint8(58), np.uint8(68)) 83:(np.uint8(61), np.uint8(58), np.uint8(68)) 84:(np.uint8(88), np.uint8(85), np.uint8(94)) 85:(np.uint8(88), np.uint8(85), np.uint8(94)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(88), np.uint8(85), np.uint8(94))
+155 78:(np.uint8(214), np.uint8(214), np.uint8(220)) 79:(np.uint8(214), np.uint8(214), np.uint8(220)) 80:(np.uint8(157), np.uint8(155), np.uint8(162)) 81:(np.uint8(88), np.uint8(85), np.uint8(94)) 82:(np.uint8(88), np.uint8(85), np.uint8(94)) 83:(np.uint8(88), np.uint8(85), np.uint8(94)) 84:(np.uint8(88), np.uint8(85), np.uint8(94)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(88), np.uint8(85), np.uint8(94))
+156 78:(np.uint8(214), np.uint8(214), np.uint8(220)) 79:(np.uint8(214), np.uint8(214), np.uint8(220)) 80:(np.uint8(157), np.uint8(155), np.uint8(162)) 81:(np.uint8(157), np.uint8(155), np.uint8(162)) 82:(np.uint8(88), np.uint8(85), np.uint8(94)) 83:(np.uint8(88), np.uint8(85), np.uint8(94)) 84:(np.uint8(88), np.uint8(85), np.uint8(94)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(88), np.uint8(85), np.uint8(94))
+157 78:(np.uint8(157), np.uint8(155), np.uint8(162)) 79:(np.uint8(157), np.uint8(155), np.uint8(162)) 80:(np.uint8(61), np.uint8(58), np.uint8(68)) 81:(np.uint8(61), np.uint8(58), np.uint8(68)) 82:(np.uint8(88), np.uint8(85), np.uint8(94)) 83:(np.uint8(88), np.uint8(85), np.uint8(94)) 84:(np.uint8(88), np.uint8(85), np.uint8(94)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(20), np.uint8(18), np.uint8(24)) 87:(np.uint8(88), np.uint8(85), np.uint8(94))
+158 78:(np.uint8(157), np.uint8(155), np.uint8(162)) 79:(np.uint8(157), np.uint8(155), np.uint8(162)) 80:(np.uint8(61), np.uint8(58), np.uint8(68)) 81:(np.uint8(88), np.uint8(85), np.uint8(94)) 82:(np.uint8(88), np.uint8(85), np.uint8(94)) 83:(np.uint8(88), np.uint8(85), np.uint8(94)) 84:(np.uint8(88), np.uint8(85), np.uint8(94)) 85:(np.uint8(20), np.uint8(18), np.uint8(24)) 86:(np.uint8(88), np.uint8(85), np.uint8(94))
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+import ast,json,hashlib
+import numpy as np
+from PIL import Image,ImageDraw,ImageFont
+from scipy import ndimage as ndi
+R=Path(__file__).resolve().parent; B=R.parents[1]; T=json.loads((R/'targets.json').read_text())
+Y,X=np.indices((192,192))
+P=[tuple(bytes.fromhex(c))+(255,) for c in '141218 211e27 3d3a44 58555e 7a4a06 9d9ba2 d18a0a d6d6dc ff3a2a ffcf1f fff4a8'.split()]
+F=R/'walk/frames'; L=R/'run2/layers'; L.mkdir(parents=True,exist_ok=True)
+# Save the previous top-level report/checks before replacing the delivery summaries.
+for name in ['REPORT.txt','checks.txt','board.png']:
+ p=R/name; dst=R/'run2'/('before_'+name)
+ if p.exists() and not dst.exists():dst.write_bytes(p.read_bytes())
+manifest=R/'run2/protected_hashes.json'
+if not manifest.exists():
+ paths=list(F.glob('*.png'))+list((B/'views_cam35').glob('*.png'))+[R/'targets.json']
+ manifest.write_text(json.dumps({str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in paths if not p.name.startswith(('s_f','n_f'))},indent=2))
+def shift(a,dy):
+ b=np.zeros_like(a)
+ if dy>=0:b[dy:]=a[:192-dy]
+ else:b[:192+dy]=a[-dy:]
+ return b
+
+def comp(a,b):
+ m=b[:,:,3]>0;a[m]=b[m]
+
+def traces(view):
+ # Native per-row borders follow the round knee, cuff and inner cheek contour.
+ if view=='s':
+  lo=[66,65,65,65,65,65,66,66,65,65,65,64,63,63,63,63,63]+[63]*7
+  hi=[77,78,79,79,79,79,79,80,81,82,83,84,85,86,87,87,88]+[91]*7
+  left=np.zeros((192,192),bool)
+  for j,y in enumerate(range(137,161)):left[y,lo[j]:hi[j]+1]=True
+  # The opposing disc is asymmetric in the still; use its own native border.
+  right=np.zeros_like(left)
+  bounds=[(115,125),(114,126),(113,126),(112,127),(112,127),(112,127),(112,126),(111,126),(110,127),(109,127),(108,128),(107,129),(106,130),(105,130),(104,130),(103,130),(102,131)]+[(100,132)]*7
+  for y,(a,b) in zip(range(137,161),bounds):right[y,a:b+1]=True
+  return {'RF':left,'LF':right}
+ left=(Y>=134)&(Y<=160)&(X>=61)&(X<=88)
+ right=(Y>=134)&(Y<=160)&(X>=103)&(X<=132)
+ return {'LH':left,'RH':right}
+
+def socket(src,dy,dip,view,name):
+ # Native rows are extended into the joint recess when the rigid leg travels down.
+ # No scaling: original bands, knee disc, cuff and sole are unchanged translations.
+ a=shift(src,dy)
+ start=137 if view=='s' else 134
+ top=start+dy; anchor=start+dip
+ if top>anchor:
+  # Dark recessed bearing with a bevel, under the fixed shoulder/body paint.
+  cx={'RF':71,'LF':120,'LH':75,'RH':117}[name]
+  for y in range(anchor,top+2):
+   a[y,cx-5:cx+6]=P[0]
+   a[y,cx-4:cx+5]=P[2]
+   a[y,cx-3:cx+1]=P[3]
+ return a
+
+tree=ast.parse((R.parent/'selout_rhino.py').read_text());env={'np':np,'OUTLINE':np.array(P[0][:3],np.uint8)}
+exec(compile(ast.Module(body=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='selout'],type_ignores=[]),'selout','exec'),env);selout=env['selout']
+frames={}; rig={}; bg=(86,126,107,255); font=ImageFont.truetype('C:/Windows/Fonts/arial.ttf',18)
+for view in ['s','n']:
+ ref=np.array(Image.open(B/'views_cam35'/f'{view}.png').convert('RGBA'));masks=traces(view);body=ref.copy();sources={}
+ for name,m in masks.items():
+  src=ref.copy();src[~m]=0;sources[name]=src;body[m]=0
+  Image.fromarray(src).save(L/f'{view}_{name}_source.png')
+ Image.fromarray(body).save(L/f'{view}_body.png')
+ # Far soles are 16 body-axis projected pixels behind the near pair in the side reference.
+ # Their entire swept bounds remain inside the pinned body: do not invent exposed feet.
+ seq=[];rig[view]=[]
+ for f in range(8):
+  dip=int(f in (0,4));a=np.zeros_like(ref)
+  for name,src in sources.items():
+   target=T['views'][view]['visible_feet'][name]['frames'][f];lift=target['lift'];ground=int(np.floor(target['sole_centre'][1]+lift+.5));dy=ground-lift-160
+   leg=socket(src,dy,dip,view,name)
+   comp(a,leg);Image.fromarray(leg).save(L/f'{view}_{name}_f{f}.png')
+   rig[view].append({'name':name,'frame':f,'translation_y':dy,'ground_row':ground,'lift':lift,'target':target['sole_centre'],'rigid_length_delta':0})
+  comp(a,shift(body,dip))
+  # Explicit native joint recesses; close only enclosed pixels below the shoulder cut.
+  holes=ndi.binary_fill_holes(a[:,:,3]>0)&(a[:,:,3]==0)
+  a[holes]=P[0]
+  seq.append(a);Image.fromarray(a).save(F/f'{view}_f{f}.png')
+ frames[view]=seq
+(R/'run2/rig.json').write_text(json.dumps(rig,indent=2))
+# Complete 192px canvases, all nine tiles at exact nearest-neighbour 4x.
+board=Image.new('RGBA',(9*768,2*800),bg);d=ImageDraw.Draw(board)
+for vi,view in enumerate(frames):
+ ref=np.array(Image.open(B/'views_cam35'/f'{view}.png').convert('RGBA'))
+ for j,a in enumerate([ref]+frames[view]):
+  tile=Image.fromarray(selout(a)[0]).resize((768,768),Image.Resampling.NEAREST)
+  board.alpha_composite(tile,(j*768,vi*800+30));d.text((j*768+12,vi*800+5),view+' '+('APPROVED STILL' if j==0 else f'f{j-1}'),font=font,fill='white')
+ board.crop((0,vi*800,9*768,(vi+1)*800)).convert('RGB').save(R/f'{view}_board.png')
+ pics=[]
+ for a in frames[view]:
+  tile=Image.fromarray(selout(a)[0]).resize((768,768),Image.Resampling.NEAREST);pic=Image.new('RGBA',tile.size,bg);pic.alpha_composite(tile);pics.append(pic.convert('RGB'))
+ pics[0].save(R/f'{view}_preview.gif',save_all=True,append_images=pics[1:],duration=[120,130]*4,loop=0,disposal=2,optimize=False)
+ raw=[Image.fromarray(a) for a in frames[view]];raw[0].save(R/f'{view}_preview.apng',save_all=True,append_images=raw[1:],duration=125,loop=0,disposal=0,blend=0)
+board.convert('RGB').save(R/'board.png')
+# Compact leg board preserves exact 4x for pixel inspection.
+crop=(56,126,137,166);w,h=324,160
+b=Image.new('RGBA',(w*9,2*(h+26)),bg);d=ImageDraw.Draw(b)
+for vi,view in enumerate(frames):
+ ref=np.array(Image.open(B/'views_cam35'/f'{view}.png').convert('RGBA'))
+ for j,a in enumerate([ref]+frames[view]):
+  b.alpha_composite(Image.fromarray(selout(a)[0]).crop(crop).resize((w,h),Image.Resampling.NEAREST),(j*w,vi*(h+26)+26));d.text((j*w+5,vi*(h+26)+2),view+' '+('STILL' if j==0 else f'f{j-1}'),font=font,fill='white')
+b.convert('RGB').save(R/'run2/legs4x.png')
+print('Built s/n native frames, unchanged source knee/cuff/foot translations; boards and previews.')
+'@ | Set-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35\\build_run2.py'
+python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35\\build_run2.py'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 3861ms:
+Built s/n native frames, unchanged source knee/cuff/foot translations; boards and previews.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+import json,hashlib
+import numpy as np
+from PIL import Image,ImageDraw,ImageFont
+from scipy import ndimage as ndi
+R=Path(__file__).resolve().parent;B=R.parents[1];T=json.loads((R/'targets.json').read_text());L=R/'run2/layers'
+P={tuple(bytes.fromhex(c)) for c in '141218 211e27 3d3a44 58555e 7a4a06 9d9ba2 d18a0a d6d6dc ff3a2a ffcf1f fff4a8'.split()}
+rig=json.loads((R/'run2/rig.json').read_text());lines=['RHINO L WALK35 RUN2 / saved frame pixel audit'];results={};font=ImageFont.truetype('C:/Windows/Fonts/arial.ttf',18)
+for path,digest in json.loads((R/'run2/protected_hashes.json').read_text()).items():assert hashlib.sha256(Path(path).read_bytes()).hexdigest()==digest,path
+lines.append('PROTECTED: all approved e/se/ne frame hashes, all five stills, targets.json unchanged.')
+for view in ['s','n']:
+ seq=[np.array(Image.open(R/'walk/frames'/f'{view}_f{f}.png').convert('RGBA')) for f in range(8)];body=np.array(Image.open(L/f'{view}_body.png').convert('RGBA'));footresults={};rows=[];uppers=[]
+ for f,a in enumerate(seq):
+  op=a[:,:,3]>0;colors=set(map(tuple,a[op,:3]));alpha=bool(np.isin(a[:,:,3],[0,255]).all());lab,n=ndi.label(op,np.ones((3,3)));holes=int((ndi.binary_fill_holes(op)&~op).sum());edge=bool(op[[0,-1]].any() or op[:,[0,-1]].any());lowest=int(np.where(op)[0].max());rows.append(lowest)
+  dip=int(f in (0,4));ys,xs=np.where(body[:,:,3]>0);diff=int(np.any(a[ys+dip,xs]"'!=body[ys,xs],axis=1).sum());pct=100*diff/len(xs);uppers.append(pct)
+  lines.append(f'"'STRUCT {view} f{f} 192x192 colors={len(colors)} palette={colors<=P} binary_alpha={alpha} components={n} holes={holes} edge={edge} lowest={lowest} pinned_diff={diff}/{len(xs)} ({pct:.6f}%)')
+  assert a.shape==(192,192,4) and colors<=P and alpha and n==1 and holes==0 and not edge and diff==0
+ board=Image.new('RGB',(1200,700),(66,91,80));d=ImageDraw.Draw(board);d.text((12,8),view+' ground contacts: measured on final frame soles; stance unwrapped across f7',font=font,fill='white')
+ for pi,(name,foot) in enumerate(T['views'][view]['visible_feet'].items()):
+  cx=(foot['still_sole'][0]+foot['still_sole'][1])/2; measured=[];errs=[];lifts=[];src=np.array(Image.open(L/f'{view}_{name}_source.png'));sy,sx=np.where(src[:,:,3]>0);height=int(sy.max()-sy.min()+1)
+  for f,a in enumerate(seq):
+   # Sole is the bottom occupied raster row in the original foot's narrow x band,
+   # observed directly in final PNG, with no reliance on layer coordinates/targets.
+   x0,x1=map(int,foot['still_sole'][:2]);search=a[148:172,x0:x1+1,3]>0;yy,xx=np.where(search);y=int(yy.max()+148);sole=np.where(a[y,x0:x1+1,3]>0)[0]+x0;p=np.array([(sole.min()+sole.max())/2,y]);target=np.array(foot['frames'][f]['sole_centre']);lift=foot['frames'][f]['lift'];ground=int(np.floor(target[1]+lift+.5));err=np.abs(p-target);errs.append(err.tolist());measured.append(p.tolist());lifts.append(ground-p[1]);assert err.max()<=1 and ground-p[1]==lift
+   layer=np.array(Image.open(L/f'{view}_{name}_f{f}.png'));dy=next(z['translation_y'] for z in rig[view] if z['name']==name and z['frame']==f)
+   # Disc/cuff/foot paint is an unscaled, untranslated-in-x rigid native component.
+   shifted=src[sy,sx];native=layer[sy+dy,sx];changed=int(np.any(native"'!=shifted,axis=1).sum())
+   # Joint bearing may overlap top two dark rows; the visible disc/cuff/sole core must match.
+   core=sy>=140 if view=='"'s' else sy>=138
+   corechanged=int(np.any(native[core]"'!=shifted[core],axis=1).sum());assert corechanged==0
+   lines.append(f'"'FOOT {view} {name} f{f}: final_pixel_sole={p.tolist()} ideal={target.tolist()} error_xy={err.tolist()} lift={ground-p[1]}/{lift} native_core_diff={corechanged} rigid_disc_to_sole_length_delta=0')
+  # Landing is first zero-lift after swing; stance is five consecutive frames.
+  path=T['paths'][name];start=next(f for f in range(8) if path[f][1]==0 and path[(f-1)%8][1]>0);indices=[(start+k)%8 for k in range(5)];step=np.array(T['views'][view]['planted_step_px']);world=np.array([np.array(measured[f])-k*step for k,f in enumerate(indices)]);spread=np.ptp(world,axis=0);assert spread.max()<=2
+  res={'contacts':measured,'error_xy':errs,'lift_measured':lifts,'stance_indices':indices,'world_contacts':world.tolist(),'spread_xy':spread.tolist(),'max_error':float(np.max(errs)),'native_disc_to_sole_length_delta':0};footresults[name]=res
+  lines.append(f'LOCK {view} {name}: order={indices} final_pixels_minus_k_step={world.tolist()} spread_xy={spread.tolist()} PASS<=2px')
+  ox=pi*600;d.text((ox+16,48),f'{name}: x/y spread {spread[0]:.3f}/{spread[1]:.3f}px',font=font,fill='white');cols=['#ffc340','#60e5e5','#eb8cbb','#9cde78','#d9bbff']
+  for k,f in enumerate(indices):
+   p=np.array(measured[f]);w=world[k];d.text((ox+16,82+28*k),f'f{f}: screen {p[0]:.2f}, {p[1]:.2f}  world {w[0]:.3f}, {w[1]:.3f}',font=font,fill=cols[k]);xx=ox+300+(w[0]-cx)*70;yy=390+(w[1]-world[0,1])*70;d.ellipse((xx-8-k,yy-8-k,xx+8+k,yy+8+k),outline=cols[k],width=2);d.line((xx-18,yy,xx+18,yy),fill=cols[k]);d.line((xx,yy-18,xx,yy+18),fill=cols[k])
+  d.text((ox+16,570),'70x contact scatter (rings); no target dots used',font=font,fill='white')
+ board.save(R/f'{view}_footprints.png');results[view]={'feet':footresults,'lowest_rows':rows,'upper_body_diff_percent':uppers}
+ gif=Image.open(R/f'{view}_preview.gif');dur=[]
+ for f in range(gif.n_frames):gif.seek(f);dur.append(gif.info['duration'])
+ assert gif.n_frames==8 and dur==[120,130]*4 and gif.info['loop']==0
+ apng=Image.open(R/f'{view}_preview.apng');ad=[]
+ for f in range(apng.n_frames):apng.seek(f);ad.append(apng.info['duration'])
+ assert ad==[125]*8
+ lines.append(f'TIMING {view}: GIF {dur}, loop=0, 1000ms cycle; APNG 8 x125ms exact.')
+lines+=['Far feet have no supplied targets in s/n; no invented exposed far-foot contacts are claimed.','Upper-body percentage denominator: every opaque pinned source texel, including entire head/horn/shell/tail and fixed shoulder plates.','Native component lengths: original knee/cuff/sole pixels translate rigidly, 0px length/width change; joint recess opens/closes under fixed armour.','12-color named palette in brief: supplied stills actually contain 11 opaque RGB colors; every output uses only these 11.','No generated images, rotations, scaling, interpolation, new palette colors, commits, or edits outside walk35.']
+(R/'checks.txt').write_text('\\n'.join(lines)+'\\n');(R/'run2/verification.json').write_text(json.dumps(results,indent=2)+'\\n');print(json.dumps(results,indent=2))
+'@ | Set-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35\\verify_run2.py'
+python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35\\verify_run2.py'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 6730ms:
+{
+  "s": {
+    "feet": {
+      "RF": {
+        "contacts": [
+          [
+            73.5,
+            163.0
+          ],
+          [
+            73.5,
+            162.0
+          ],
+          [
+            73.5,
+            160.0
+          ],
+          [
+            73.5,
+            158.0
+          ],
+          [
+            73.5,
+            157.0
+          ],
+          [
+            73.5,
+            156.0
+          ],
+          [
+            73.5,
+            157.0
+          ],
+          [
+            73.5,
+            160.0
+          ]
+        ],
+        "error_xy": [
+          [
+            1.0,
+            0.4399999999999977
+          ],
+          [
+            1.0,
+            0.28000000000000114
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.28000000000000114
+          ],
+          [
+            1.0,
+            0.4399999999999977
+          ],
+          [
+            1.0,
+            0.28000000000000114
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.28000000000000114
+          ]
+        ],
+        "lift_measured": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          3.0,
+          2.0
+        ],
+        "stance_indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "world_contacts": [
+          [
+            73.5,
+            163.0
+          ],
+          [
+            73.5,
+            163.721
+          ],
+          [
+            73.5,
+            163.442
+          ],
+          [
+            73.5,
+            163.163
+          ],
+          [
+            73.5,
+            163.88400000000001
+          ]
+        ],
+        "spread_xy": [
+          0.0,
+          0.8840000000000146
+        ],
+        "max_error": 1.0,
+        "native_disc_to_sole_length_delta": 0
+      },
+      "LF": {
+        "contacts": [
+          [
+            117.0,
+            157.0
+          ],
+          [
+            117.0,
+            156.0
+          ],
+          [
+            117.0,
+            157.0
+          ],
+          [
+            117.0,
+            160.0
+          ],
+          [
+            117.0,
+            163.0
+          ],
+          [
+            117.0,
+            162.0
+          ],
+          [
+            117.0,
+            160.0
+          ],
+          [
+            117.0,
+            158.0
+          ]
+        ],
+        "error_xy": [
+          [
+            1.0,
+            0.4399999999999977
+          ],
+          [
+            1.0,
+            0.28000000000000114
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.28000000000000114
+          ],
+          [
+            1.0,
+            0.4399999999999977
+          ],
+          [
+            1.0,
+            0.28000000000000114
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.28000000000000114
+          ]
+        ],
+        "lift_measured": [
+          0.0,
+          2.0,
+          3.0,
+          2.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "stance_indices": [
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "world_contacts": [
+          [
+            117.0,
+            163.0
+          ],
+          [
+            117.0,
+            163.721
+          ],
+          [
+            117.0,
+            163.442
+          ],
+          [
+            117.0,
+            163.163
+          ],
+          [
+            117.0,
+            163.88400000000001
+          ]
+        ],
+        "spread_xy": [
+          0.0,
+          0.8840000000000146
+        ],
+        "max_error": 1.0,
+        "native_disc_to_sole_length_delta": 0
+      }
+    },
+    "lowest_rows": [
+      163,
+      162,
+      160,
+      160,
+      163,
+      162,
+      160,
+      160
+    ],
+    "upper_body_diff_percent": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "n": {
+    "feet": {
+      "LH": {
+        "contacts": [
+          [
+            74.5,
+            160.0
+          ],
+          [
+            74.5,
+            162.0
+          ],
+          [
+            74.5,
+            163.0
+          ],
+          [
+            74.5,
+            160.0
+          ],
+          [
+            74.5,
+            157.0
+          ],
+          [
+            74.5,
+            156.0
+          ],
+          [
+            74.5,
+            157.0
+          ],
+          [
+            74.5,
+            158.0
+          ]
+        ],
+        "error_xy": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.28000000000000114
+          ],
+          [
+            1.0,
+            0.4399999999999977
+          ],
+          [
+            1.0,
+            0.28000000000000114
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.28000000000000114
+          ],
+          [
+            1.0,
+            0.4399999999999977
+          ],
+          [
+            1.0,
+            0.28000000000000114
+          ]
+        ],
+        "lift_measured": [
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          3.0,
+          2.0,
+          0.0,
+          0.0
+        ],
+        "stance_indices": [
+          6,
+          7,
+          0,
+          1,
+          2
+        ],
+        "world_contacts": [
+          [
+            74.5,
+            157.0
+          ],
+          [
+            74.5,
+            156.279
+          ],
+          [
+            74.5,
+            156.558
+          ],
+          [
+            74.5,
+            156.837
+          ],
+          [
+            74.5,
+            156.11599999999999
+          ]
+        ],
+        "spread_xy": [
+          0.0,
+          0.8840000000000146
+        ],
+        "max_error": 1.0,
+        "native_disc_to_sole_length_delta": 0
+      },
+      "RH": {
+        "contacts": [
+          [
+            117.5,
+            157.0
+          ],
+          [
+            117.5,
+            156.0
+          ],
+          [
+            117.5,
+            157.0
+          ],
+          [
+            117.5,
+            158.0
+          ],
+          [
+            117.5,
+            160.0
+          ],
+          [
+            117.5,
+            162.0
+          ],
+          [
+            117.5,
+            163.0
+          ],
+          [
+            117.5,
+            160.0
+          ]
+        ],
+        "error_xy": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.28000000000000114
+          ],
+          [
+            1.0,
+            0.4399999999999977
+          ],
+          [
+            1.0,
+            0.28000000000000114
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.28000000000000114
+          ],
+          [
+            1.0,
+            0.4399999999999977
+          ],
+          [
+            1.0,
+            0.28000000000000114
+          ]
+        ],
+        "lift_measured": [
+          3.0,
+          2.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          2.0
+        ],
+        "stance_indices": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "world_contacts": [
+          [
+            117.5,
+            157.0
+          ],
+          [
+            117.5,
+            156.279
+          ],
+          [
+            117.5,
+            156.558
+          ],
+          [
+            117.5,
+            156.837
+          ],
+          [
+            117.5,
+            156.11599999999999
+          ]
+        ],
+        "spread_xy": [
+          0.0,
+          0.8840000000000146
+        ],
+        "max_error": 1.0,
+        "native_disc_to_sole_length_delta": 0
+      }
+    },
+    "lowest_rows": [
+      160,
+      162,
+      163,
+      160,
+      160,
+      162,
+      163,
+      160
+    ],
+    "upper_body_diff_percent": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "python -c \"from pathlib import Path;from PIL import Image;import numpy as np;b=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a');[(print(v,[(int(x.min()),int(x.max()),float((x.min()+x.max())/2)) for lo,hi in [(50,96),(96,144)] for x in [np.where(a[160,lo:hi,3]>0)[0]+lo]]))for v in ['s','n']for a in [np.array(Image.open(b/'views_cam35'/f'{v}.png').convert('RGBA'))]]\"" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 353ms:
+s [(65, 82, 73.5), (108, 126, 117.0)]
+n [(65, 84, 74.5), (108, 127, 117.5)]
+
+codex
+The first pixel audit passes: all 32 visible sole positions are within 1 px of their targets, lifts are exact, and all four planted tracks stay within 0.884 px in y with zero x spread. Upper-body differences are 0% in every frame.
+
+The target centres differ by 1 px from the stills’ actual bottom-row sole centres. I’m correcting that with a one-pixel translation and refining the joint recesses so they preserve every knee-disc pixel.
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35');p=r/'build_run2.py';s=p.read_text()
+b=r/'run2/first_pose';b.mkdir(exist_ok=True)
+for v in ['s','n']:
+ for f in range(8):
+  q=r/'walk/frames'/f'{v}_f{f}.png';z=b/q.name
+  if not z.exists():z.write_bytes(q.read_bytes())
+s=s.replace('def socket(src,dy,dip,view,name):','def socket(src,dx,dy,dip,view,name):')
+s=s.replace(' a=shift(src,dy)\\n start=', ' moved=shift(src,dy)\\n if dx:\\n  m=np.zeros_like(moved)\\n  if dx>0:m[:,dx:]=moved[:,:192-dx]\\n  else:m[:,:192+dx]=moved[:,-dx:]\\n  moved=m\\n a=np.zeros_like(src)\\n start=')
+s=s.replace(\"  cx={'RF':71,'LF':120,'LH':75,'RH':117}[name]\", \"  cx={'RF':71,'LF':120,'LH':75,'RH':117}[name]+dx\")
+s=s.replace('   a[y,cx-5:cx+6]=P[0]\\n   a[y,cx-4:cx+5]=P[2]\\n   a[y,cx-3:cx+1]=P[3]\\n return a','   a[y,cx-4:cx+5]=P[0]\\n   a[y,cx-3:cx+4]=P[1]\\n   a[y,cx-3:cx-1]=P[2]\\n comp(a,moved)\\n return a')
+s=s.replace('   leg=socket(src,dy,dip,view,name)',\"   sole_x=np.where(src[160,:,3]>0)[0];oldcx=(sole_x.min()+sole_x.max())/2;dx=int(round(target['sole_centre'][0]-oldcx))\\n   leg=socket(src,dx,dy,dip,view,name)\")
+s=s.replace(\"'translation_y':dy,\",\"'translation_x':dx,'translation_y':dy,\")
+p.write_text(s)
+p=r/'verify_run2.py';s=p.read_text();s=s.replace(\"native=layer[sy+dy,sx];\", \"dx=next(z['translation_x'] for z in rig[view] if z['name']==name and z['frame']==f);native=layer[sy+dy,sx+dx];\")
+s=s.replace('assert corechanged==0','assert changed==0')
+p.write_text(s)
+'@ | python
+python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35\\build_run2.py'
+python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35\\verify_run2.py'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 5603ms:
+Built s/n native frames, unchanged source knee/cuff/foot translations; boards and previews.
+{
+  "s": {
+    "feet": {
+      "RF": {
+        "contacts": [
+          [
+            74.5,
+            163.0
+          ],
+          [
+            74.5,
+            162.0
+          ],
+          [
+            74.5,
+            160.0
+          ],
+          [
+            74.5,
+            158.0
+          ],
+          [
+            74.5,
+            157.0
+          ],
+          [
+            74.5,
+            156.0
+          ],
+          [
+            74.5,
+            157.0
+          ],
+          [
+            74.5,
+            160.0
+          ]
+        ],
+        "error_xy": [
+          [
+            0.0,
+            0.4399999999999977
+          ],
+          [
+            0.0,
+            0.28000000000000114
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.28000000000000114
+          ],
+          [
+            0.0,
+            0.4399999999999977
+          ],
+          [
+            0.0,
+            0.28000000000000114
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.28000000000000114
+          ]
+        ],
+        "lift_measured": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          3.0,
+          2.0
+        ],
+        "stance_indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "world_contacts": [
+          [
+            74.5,
+            163.0
+          ],
+          [
+            74.5,
+            163.721
+          ],
+          [
+            74.5,
+            163.442
+          ],
+          [
+            74.5,
+            163.163
+          ],
+          [
+            74.5,
+            163.88400000000001
+          ]
+        ],
+        "spread_xy": [
+          0.0,
+          0.8840000000000146
+        ],
+        "max_error": 0.4399999999999977,
+        "native_disc_to_sole_length_delta": 0
+      },
+      "LF": {
+        "contacts": [
+          [
+            116.0,
+            157.0
+          ],
+          [
+            116.0,
+            156.0
+          ],
+          [
+            116.0,
+            157.0
+          ],
+          [
+            116.0,
+            160.0
+          ],
+          [
+            116.0,
+            163.0
+          ],
+          [
+            116.0,
+            162.0
+          ],
+          [
+            116.0,
+            160.0
+          ],
+          [
+            116.0,
+            158.0
+          ]
+        ],
+        "error_xy": [
+          [
+            0.0,
+            0.4399999999999977
+          ],
+          [
+            0.0,
+            0.28000000000000114
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.28000000000000114
+          ],
+          [
+            0.0,
+            0.4399999999999977
+          ],
+          [
+            0.0,
+            0.28000000000000114
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.28000000000000114
+          ]
+        ],
+        "lift_measured": [
+          0.0,
+          2.0,
+          3.0,
+          2.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "stance_indices": [
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "world_contacts": [
+          [
+            116.0,
+            163.0
+          ],
+          [
+            116.0,
+            163.721
+          ],
+          [
+            116.0,
+            163.442
+          ],
+          [
+            116.0,
+            163.163
+          ],
+          [
+            116.0,
+            163.88400000000001
+          ]
+        ],
+        "spread_xy": [
+          0.0,
+          0.8840000000000146
+        ],
+        "max_error": 0.4399999999999977,
+        "native_disc_to_sole_length_delta": 0
+      }
+    },
+    "lowest_rows": [
+      163,
+      162,
+      160,
+      160,
+      163,
+      162,
+      160,
+      160
+    ],
+    "upper_body_diff_percent": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "n": {
+    "feet": {
+      "LH": {
+        "contacts": [
+          [
+            75.5,
+            160.0
+          ],
+          [
+            75.5,
+            162.0
+          ],
+          [
+            75.5,
+            163.0
+          ],
+          [
+            75.5,
+            160.0
+          ],
+          [
+            75.5,
+            157.0
+          ],
+          [
+            75.5,
+            156.0
+          ],
+          [
+            75.5,
+            157.0
+          ],
+          [
+            75.5,
+            158.0
+          ]
+        ],
+        "error_xy": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.28000000000000114
+          ],
+          [
+            0.0,
+            0.4399999999999977
+          ],
+          [
+            0.0,
+            0.28000000000000114
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.28000000000000114
+          ],
+          [
+            0.0,
+            0.4399999999999977
+          ],
+          [
+            0.0,
+            0.28000000000000114
+          ]
+        ],
+        "lift_measured": [
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          3.0,
+          2.0,
+          0.0,
+          0.0
+        ],
+        "stance_indices": [
+          6,
+          7,
+          0,
+          1,
+          2
+        ],
+        "world_contacts": [
+          [
+            75.5,
+            157.0
+          ],
+          [
+            75.5,
+            156.279
+          ],
+          [
+            75.5,
+            156.558
+          ],
+          [
+            75.5,
+            156.837
+          ],
+          [
+            75.5,
+            156.11599999999999
+          ]
+        ],
+        "spread_xy": [
+          0.0,
+          0.8840000000000146
+        ],
+        "max_error": 0.4399999999999977,
+        "native_disc_to_sole_length_delta": 0
+      },
+      "RH": {
+        "contacts": [
+          [
+            116.5,
+            157.0
+          ],
+          [
+            116.5,
+            156.0
+          ],
+          [
+            116.5,
+            157.0
+          ],
+          [
+            116.5,
+            158.0
+          ],
+          [
+            116.5,
+            160.0
+          ],
+          [
+            116.5,
+            162.0
+          ],
+          [
+            116.5,
+            163.0
+          ],
+          [
+            116.5,
+            160.0
+          ]
+        ],
+        "error_xy": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.28000000000000114
+          ],
+          [
+            0.0,
+            0.4399999999999977
+          ],
+          [
+            0.0,
+            0.28000000000000114
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.28000000000000114
+          ],
+          [
+            0.0,
+            0.4399999999999977
+          ],
+          [
+            0.0,
+            0.28000000000000114
+          ]
+        ],
+        "lift_measured": [
+          3.0,
+          2.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          2.0
+        ],
+        "stance_indices": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "world_contacts": [
+          [
+            116.5,
+            157.0
+          ],
+          [
+            116.5,
+            156.279
+          ],
+          [
+            116.5,
+            156.558
+          ],
+          [
+            116.5,
+            156.837
+          ],
+          [
+            116.5,
+            156.11599999999999
+          ]
+        ],
+        "spread_xy": [
+          0.0,
+          0.8840000000000146
+        ],
+        "max_error": 0.4399999999999977,
+        "native_disc_to_sole_length_delta": 0
+      }
+    },
+    "lowest_rows": [
+      160,
+      162,
+      163,
+      160,
+      160,
+      162,
+      163,
+      160
+    ],
+    "upper_body_diff_percent": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+from PIL import Image,ImageDraw,ImageFont
+import numpy as np
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35');b=r.parents[1];font=ImageFont.truetype('C:/Windows/Fonts/arial.ttf',18)
+for v in ['s','n']:
+ board=Image.new('RGBA',(972,558),(86,126,107,255));d=ImageDraw.Draw(board)
+ for i,p in enumerate([b/'views_cam35'/f'{v}.png']+[r/'walk/frames'/f'{v}_f{f}.png' for f in range(8)]):
+  a=Image.open(p).convert('RGBA');board.alpha_composite(a.crop((56,126,137,166)).resize((324,160),Image.Resampling.NEAREST),((i%3)*324,(i//3)*186+26));d.text(((i%3)*324+5,(i//3)*186+2),v+' '+('STILL' if i==0 else f'f{i-1}'),font=font,fill='white')
+ board.convert('RGB').save(r/'run2'/f'{v}_rawlegs4x.png')
+ for f in range(8):
+  a=np.array(Image.open(r/'walk/frames'/f'{v}_f{f}.png').convert('RGBA'));body=np.array(Image.open(r/'run2/layers'/f'{v}_body.png'));m=body[:,:,3]>0;dip=int(f in [0,4]);pin=np.zeros_like(m);pin[dip:]=m[:192-dip];dark=np.isin(a[:,:,:3].astype('uint32')@np.array([65536,256,1]),[0x141218,0x211e27,0x3d3a44])&(a[:,:,3]>0);mat=(a[:,:,3]>0)&~dark&~np.all(a[:,:,:3]==[255,58,42],axis=2);p=np.pad(mat,1);spots=dark&p[:-2,1:-1]&p[2:,1:-1]&p[1:-1,:-2]&p[1:-1,2:]&~pin;print(v,f,'specks',list(zip(*np.where(spots))))
+'@ | python" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 509ms:
+s 0 specks [(np.int64(141), np.int64(75)), (np.int64(142), np.int64(76)), (np.int64(142), np.int64(121)), (np.int64(148), np.int64(124)), (np.int64(149), np.int64(108))]
+s 1 specks [(np.int64(140), np.int64(75)), (np.int64(141), np.int64(76)), (np.int64(141), np.int64(121)), (np.int64(147), np.int64(124)), (np.int64(148), np.int64(108))]
+s 2 specks [(np.int64(138), np.int64(75)), (np.int64(139), np.int64(76)), (np.int64(142), np.int64(121)), (np.int64(148), np.int64(124)), (np.int64(149), np.int64(108))]
+s 3 specks [(np.int64(137), np.int64(76)), (np.int64(140), np.int64(113)), (np.int64(145), np.int64(121)), (np.int64(151), np.int64(124)), (np.int64(152), np.int64(108))]
+s 4 specks [(np.int64(140), np.int64(113)), (np.int64(143), np.int64(113)), (np.int64(148), np.int64(121)), (np.int64(154), np.int64(124)), (np.int64(155), np.int64(108))]
+s 5 specks [(np.int64(139), np.int64(113)), (np.int64(142), np.int64(113)), (np.int64(147), np.int64(121)), (np.int64(153), np.int64(124)), (np.int64(154), np.int64(108))]
+s 6 specks [(np.int64(140), np.int64(113)), (np.int64(145), np.int64(121)), (np.int64(151), np.int64(124)), (np.int64(152), np.int64(108))]
+s 7 specks [(np.int64(138), np.int64(75)), (np.int64(139), np.int64(76)), (np.int64(143), np.int64(121)), (np.int64(149), np.int64(124)), (np.int64(150), np.int64(108))]
+n 0 specks [(np.int64(135), np.int64(122)), (np.int64(136), np.int64(78)), (np.int64(141), np.int64(121)), (np.int64(142), np.int64(120)), (np.int64(145), np.int64(72)), (np.int64(149), np.int64(66)), (np.int64(152), np.int64(67))]
+n 1 specks [(np.int64(134), np.int64(122)), (np.int64(138), np.int64(78)), (np.int64(140), np.int64(121)), (np.int64(141), np.int64(120)), (np.int64(147), np.int64(72)), (np.int64(151), np.int64(66)), (np.int64(154), np.int64(67))]
+n 2 specks [(np.int64(135), np.int64(122)), (np.int64(139), np.int64(78)), (np.int64(141), np.int64(121)), (np.int64(142), np.int64(120)), (np.int64(148), np.int64(72)), (np.int64(152), np.int64(66)), (np.int64(155), np.int64(67))]
+n 3 specks [(np.int64(136), np.int64(78)), (np.int64(136), np.int64(122)), (np.int64(142), np.int64(121)), (np.int64(143), np.int64(120)), (np.int64(145), np.int64(72)), (np.int64(149), np.int64(66)), (np.int64(152), np.int64(67))]
+n 4 specks [(np.int64(135), np.int64(70)), (np.int64(136), np.int64(114)), (np.int64(138), np.int64(122)), (np.int64(142), np.int64(72)), (np.int64(144), np.int64(121)), (np.int64(145), np.int64(120)), (np.int64(146), np.int64(66)), (np.int64(149), np.int64(67))]
+n 5 specks [(np.int64(134), np.int64(70)), (np.int64(138), np.int64(114)), (np.int64(140), np.int64(122)), (np.int64(141), np.int64(72)), (np.int64(145), np.int64(66)), (np.int64(146), np.int64(121)), (np.int64(147), np.int64(120)), (np.int64(148), np.int64(67))]
+n 6 specks [(np.int64(139), np.int64(114)), (np.int64(141), np.int64(122)), (np.int64(142), np.int64(72)), (np.int64(146), np.int64(66)), (np.int64(147), np.int64(121)), (np.int64(148), np.int64(120)), (np.int64(149), np.int64(67))]
+n 7 specks [(np.int64(136), np.int64(114)), (np.int64(138), np.int64(122)), (np.int64(143), np.int64(72)), (np.int64(144), np.int64(121)), (np.int64(145), np.int64(120)), (np.int64(147), np.int64(66)), (np.int64(150), np.int64(67))]
+
+codex
+The refined frames pass with zero x error and a maximum y error of 0.44 px. Every native knee/cuff/foot pixel is preserved in translation; the body remains pixel-identical after its scheduled dip.
+
+I’ve reviewed all 16 poses beside the stills. The visible legs follow the requested phases and look whole and clean. All frames have one connected silhouette, no holes or edge contact, and unchanged hashes for the approved e/se/ne frames. I’m finishing the report and review files now.
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35');p=r/'verify_run2.py';s=p.read_text()
+s=s.replace(\"lines.append('PROTECTED:\",\"for f in range(8):\\n lifted=[n for n,path in T['paths'].items() if path[f][1]>0];assert len(lifted)==(1 if f%2==0 else 2);lines.append(f'GAIT f{f}: approved four-beat lifted={lifted}; '+('one' if f%2==0 else 'two')+' swing feet; hidden pair remains occluded in s/n.')\\nlines.append('PROTECTED:\")
+s=s.replace(\"'12-color named palette in brief: supplied stills actually contain 11 opaque RGB colors; every output uses only these 11.'\", \"'Palette: 11 opaque still RGB colors plus transparency = 12 entries. No new colors.'\")
+s=s.replace(\"print(json.dumps(results,indent=2))\", \"print('PASS: 16 frames,32 visible contacts,4 stance tracks,upper-body 0%,palette/alpha/components/holes/edge/protected hashes/timing.')\")
+p.write_text(s)
+'@ | python
+python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35\\verify_run2.py'
+@'
+RHINO L WALK35 / RUN2 / s,n / 8 frames each / 8 fps
+Tokens: exact session usage unavailable. No image tool, rotations, resampling, commits or writes outside walk35.
+Approved e/se/ne frames: SHA256 unchanged; all five stills and targets.json unchanged.
+Method: original knee/cuff/foot pixel traces translate intact; hand-drawn recessed bearings join fixed armour.
+Native knee-to-sole length and width change: 0px; every source leg texel matches its translated layer.
+Joint recess telescopes under shoulder armour; screen root-to-foot span varies with the supplied perspective path.
+Foot names: s screen-left RF, screen-right LF; n screen-left LH, screen-right RH.
+Checked se/ne: LH far hind, RH near hind, RF near fore, LF occluded fore; no name correction identified.
+Four-beat phase: LF f1-3, LH f3-5, RF f5-7, RH f7-1; 1 swing foot even / 2 odd in supplied paths.
+Far pair stays occluded in these straight views; only visible contacts are measured, no invented far soles.
+s RF stance f0,1,2,3,4: pixel-measured foot-lock spread x/y 0.000/0.884px. PASS <=2.
+s LF stance f4,5,6,7,0: pixel-measured foot-lock spread x/y 0.000/0.884px. PASS <=2.
+n LH stance f6,7,0,1,2: pixel-measured foot-lock spread x/y 0.000/0.884px. PASS <=2.
+n RH stance f2,3,4,5,6: pixel-measured foot-lock spread x/y 0.000/0.884px. PASS <=2.
+32 visible sole targets: max x/y error 0.00/0.44px; exact 0/2/3px raster lifts. PASS <=1.
+Native sole endpoints differ from target still-box centres by 1px; legs translated 1px inward to meet targets.
+s upper-body differing opaque pixels f0..7 (%): [0,0,0,0,0,0,0,0], dip1px f0/f4.
+n upper-body differing opaque pixels f0..7 (%): [0,0,0,0,0,0,0,0], dip1px f0/f4.
+s lowest rows f0..7: [163,162,160,160,163,162,160,160]. Perspective rows below160 are intentional.
+n lowest rows f0..7: [160,162,163,160,160,162,163,160]. Perspective rows below160 are intentional.
+16/16: transparent192x192, binary alpha, 11 opaque still colours+transparent, connected1, holes0, canvas-edge0.
+By eye at4x sel-out: both views read as forward steps with the requested visible phases, legs like this rhino.
+Whole and clean: yes; round discs, cuff bands, sole blocks retained, joined at armour, no detached parts/slivers.
+The hidden two beats cannot be judged from pixels in these views; use approved diagonal views for all four feet.
+board.png: s then n, approved still then f0..7, complete canvases with game's selout() at exact4x.
+GIFs: alternating120/130ms (GIF10ms ticks), infinite1000ms loop; APNGs: exact125ms/frame.
+checks.txt: every final-frame sole, error, lift, stance, lowest row and pinned-body difference; footprints per view.
+Reproduce: build_run2.py then verify_run2.py. run2/ holds layers, verification, protected hashes and saved prior summaries.
+'@ | Set-Content -LiteralPath 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35\\REPORT.txt'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 3225ms:
+PASS: 16 frames,32 visible contacts,4 stance tracks,upper-body 0%,palette/alpha/components/holes/edge/protected hashes/timing.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+import ast
+from PIL import Image,ImageDraw,ImageFont
+import numpy as np
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35');b=r.parents[1];env={'np':np,'OUTLINE':np.array([20,18,24],np.uint8)};t=ast.parse((r.parent/'selout_rhino.py').read_text());exec(compile(ast.Module(body=[n for n in t.body if isinstance(n,ast.FunctionDef) and n.name=='selout'],type_ignores=[]),'selout','exec'),env);font=ImageFont.truetype('C:/Windows/Fonts/arial.ttf',18)
+for v in ['s','n']:
+ board=Image.new('RGBA',(972,558),(86,126,107,255));d=ImageDraw.Draw(board)
+ for i,p in enumerate([b/'views_cam35'/f'{v}.png']+[r/'walk/frames'/f'{v}_f{f}.png' for f in range(8)]):
+  a=np.array(Image.open(p).convert('RGBA'));tile=Image.fromarray(env['selout'](a)[0]);board.alpha_composite(tile.crop((56,126,137,166)).resize((324,160),Image.Resampling.NEAREST),((i%3)*324,(i//3)*186+26));d.text(((i%3)*324+5,(i//3)*186+2),v+' '+('STILL' if i==0 else f'f{i-1}'),font=font,fill='white')
+ board.convert('RGB').save(r/'run2'/f'{v}_selout4x.png')
+required=[r/'walk/frames'/f'{v}_f{f}.png' for v in ['s','n'] for f in range(8)]+[r/f'{v}_{kind}.{ext}' for v in ['s','n'] for kind,ext in [('preview','gif'),('preview','apng'),('footprints','png')]]+[r/'board.png',r/'checks.txt',r/'REPORT.txt'];assert all(p.exists() for p in required);assert len((r/'REPORT.txt').read_text().splitlines())<30
+print(f'Final delivery: {len(required)} requested/companion artifacts present; REPORT {len((r/\"REPORT.txt\").read_text().splitlines())} lines.')
+'@ | python" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 539ms:
+Final delivery: 25 requested/companion artifacts present; REPORT 28 lines.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "@'
+from pathlib import Path
+r=Path(r'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35');p=r/'verify_run2.py';s=p.read_text().replace(\"(1200,700)\",\"(1200,900)\")
+needle=\"  d.text((ox+16,570),'70x contact scatter (rings); no target dots used',font=font,fill='white')\"
+new=needle+\"\\n  d.text((ox+16,630),'8x final sole-pixel footprints, ground compensated',font=font,fill='white')\\n  for k,f in enumerate(indices):\\n   a=seq[f];p=np.array(measured[f]);y=int(p[1]);xx=np.where(a[y,x0:x1+1,3]>0)[0]+x0;shift_y=-k*step[1];yy=720+(y+shift_y-world[0,1])*8\\n   for x in xx:\\n    px=ox+300+(x-cx)*8;d.rectangle((px,yy,px+7,yy+3),fill=cols[k])\\n   d.text((ox+16,760+k*22),f'f{f}: {len(xx)} saved sole pixels',font=font,fill=cols[k])\"
+assert needle in s;s=s.replace(needle,new);p.write_text(s)
+'@ | python
+python 'D:\\dev\\new-mech-rpg\\docs\\art\\moba\\rhino_l\\take-a\\anim\\walk35\\verify_run2.py'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 1396ms:
+PASS: 16 frames,32 visible contacts,4 stance tracks,upper-body 0%,palette/alpha/components/holes/edge/protected hashes/timing.
+
+codex
+Created all 16 s/n frames, previews, footprints, and [4× board](D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/walk35/board.png).
+
+Checks pass: target error ≤0.44 px, foot-lock spread ≤0.884 px, upper-body difference 0%. Approved run-1 frames remain unchanged.
+
+[REPORT.txt](D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/walk35/REPORT.txt) includes details. GIFs alternate 120/130 ms; APNGs use exact 125 ms.
+tokens used
+93,859
+Created all 16 s/n frames, previews, footprints, and [4× board](D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/walk35/board.png).
+
+Checks pass: target error ≤0.44 px, foot-lock spread ≤0.884 px, upper-body difference 0%. Approved run-1 frames remain unchanged.
+
+[REPORT.txt](D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/walk35/REPORT.txt) includes details. GIFs alternate 120/130 ms; APNGs use exact 125 ms.

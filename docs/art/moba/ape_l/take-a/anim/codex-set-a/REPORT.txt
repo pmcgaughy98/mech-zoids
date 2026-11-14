@@ -1,0 +1,42 @@
+APE L - CODEX SET A
+Completed 2026-11-04. 81 transparent native-scale frames; 4 animations x front/side/back.
+
+METHOD
+Read the rhino codex-set-a prompts, refs, REPORT, finishing scripts, grids and checks. Used the built-in image tool with the approved front/side/back sprites attached in that order. One new sheet per animation. Exact prompts are in prompts/. Original generated sheets are retained unmodified as <animation>/sheet_raw.png. refs/ holds copied approved stills and nearest-neighbour inspection enlargements.
+
+Each raw sheet was separated into three row bands and the requested number of columns using empty gutters. grid.json records source cuts, opaque bounds, fixed row factors and placements. slices/ retains the individual generated cells. A fixed factor per view brought generated drawings to the approved still pixel scale; no independent resizing of individual action poses. Final canvases are 192x192, with the approved reference at (+16,+30), ground row 160.
+
+FINISHING
+The generated idle and walk changed planted contacts and small armour details. Their final cycles were finished from the native approved pixel parts following the generated action plan. Idle lifts the upper body 0,1,2,1,0 pixels, with lower contacts fixed. Walk alternates anatomical right forearm + left hind foot against the opposite diagonal, with a small torso bob and lifted swing contacts. Planted contacts retain their coordinates. No whole-sprite translations or resizes in these cycles.
+
+Chest beat and shield retain generated action silhouettes, palette-snapped and cleaned at native resolution. Visible face plates/eyes and back gems were restored from approved pixel patches. A fist may obscure the side-view face during a chest beat or shield release. Gem/bezel patches were restored inside the gauntlet silhouettes, without extending beyond them. The penultimate chest-beat frame uses the one-pixel idle settle. All ability start/end frames use the exact approved still. Finishing records: native_finish_log.txt and gem_finish_log.txt.
+
+CHECK RESULTS
+Idle frame 0, silhouette IoU AND exact-colour IoU against the approved still at (+16,+30): front 1.000000; side 1.000000; back 1.000000.
+All four animations also have exact reference frame 0 in all three views. Both abilities have exact reference final frames in all three views.
+81/81: 192x192 RGBA, binary alpha, only approved palette colours, bottom row exactly 160, zero opaque pixels below 160, zero canvas-edge contacts, zero detached components smaller than 3 pixels. The set uses all 15 approved opaque colours. Per-frame results are in each checks.txt; aggregate machine-readable checks and raw hashes are in verification.json.
+
+VISUAL REVIEW
+Viewed all final front/side/back boards after finishing. Checked face direction, eyes, back gem, gauntlet silhouettes, ground contact, diagonal timing, chest alternation and throw timing. Corrected idle seam gaps, two one-pixel rear walk ground overflows, face stamps on occluding fists, misplaced back-gem stamps and gem patches protruding beyond gauntlet silhouettes. Rebuilt previews and boards after these corrections.
+
+Animation timings and files:
+- idle: 5 moments x 3 views = 15 PNGs. Clean 3x5 raw grid. GIF frame counts [5, 5, 5].
+
+Each animation contains frames/, sheet_raw.png, slices/, grid.json, checks.txt, preview_front.gif, preview_side.gif, preview_back.gif, review.png, detail_board.png and review_small.png. Previews use nearest-neighbour enlargement on grey; production PNGs remain transparent and unscaled. Root review.png is a front-view key-pose overview.
+
+Rebuild: python finish.py; python polish.py; python gems.py; python verify.py (from this directory). Verification is local pixel/geometry QA and visual review, not an in-engine playback test. No effects, shield or dome included. No asset installation or commit.
+- walk: 8 moments x 3 views = 24 PNGs. Clean 3x8 raw grid. GIF frame counts [8, 8, 8].
+
+Each animation contains frames/, sheet_raw.png, slices/, grid.json, checks.txt, preview_front.gif, preview_side.gif, preview_back.gif, review.png, detail_board.png and review_small.png. Previews use nearest-neighbour enlargement on grey; production PNGs remain transparent and unscaled. Root review.png is a front-view key-pose overview.
+
+Rebuild: python finish.py; python polish.py; python gems.py; python verify.py (from this directory). Verification is local pixel/geometry QA and visual review, not an in-engine playback test. No effects, shield or dome included. No asset installation or commit.
+- chest_beat: 8 moments x 3 views = 24 PNGs. Clean 3x8 raw grid. GIF frame counts [8, 8, 8].
+
+Each animation contains frames/, sheet_raw.png, slices/, grid.json, checks.txt, preview_front.gif, preview_side.gif, preview_back.gif, review.png, detail_board.png and review_small.png. Previews use nearest-neighbour enlargement on grey; production PNGs remain transparent and unscaled. Root review.png is a front-view key-pose overview.
+
+Rebuild: python finish.py; python polish.py; python gems.py; python verify.py (from this directory). Verification is local pixel/geometry QA and visual review, not an in-engine playback test. No effects, shield or dome included. No asset installation or commit.
+- hex_shield: 6 moments x 3 views = 18 PNGs. Clean 3x6 raw grid. GIF frame counts [6, 6, 6].
+
+Each animation contains frames/, sheet_raw.png, slices/, grid.json, checks.txt, preview_front.gif, preview_side.gif, preview_back.gif, review.png, detail_board.png and review_small.png. Previews use nearest-neighbour enlargement on grey; production PNGs remain transparent and unscaled. Root review.png is a front-view key-pose overview.
+
+Rebuild: python finish.py; python polish.py; python gems.py; python verify.py (from this directory). Verification is local pixel/geometry QA and visual review, not an in-engine playback test. No effects, shield or dome included. No asset installation or commit.

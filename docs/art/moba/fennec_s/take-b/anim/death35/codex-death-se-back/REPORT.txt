@@ -1,0 +1,37 @@
+codex-death-se-back-2026-11-05 -- SE and back death candidates
+Tokens: watcher snapshot 19:36:29 = 101594; final total and image tokens unknown.
+Image calls: exactly TWO built-in calls, one per view; no retries or third image.
+Prompts: prompts/death_se.txt and prompts/death_back.txt, written before generation.
+sheet_raw_se.png and sheet_raw_back.png are untouched byte copies of generated outputs.
+Authored writes confined here. Built-in image generation also wrote its automatic .codex/generated_images cache.
+No live frames/assets/tools changed; no build_death.py/check_death.py run; no commit.
+Whole-cell extraction at fixed per-view scale, palette snap, native polygon/pixel repaint: redraw.py.
+No still parts pasted, cut, or moved. Back f3-f5 ears/head and SE f5 are extensively repainted.
+All 14 frames: 160x160, binary alpha, allowed palette, one 8-connected piece, no enclosed holes/strays/edge contact.
+All 14 lowest opaque row=140. Both f0 byte-identical still; both f6 exact f5 with eye colours -> #2E1A6E.
+Back has no visible eyes: stray generated eye-colour plate pixels repainted; f6 equals f5.
+GIFs: 3x exact supplied selout, 300/100/130/140/160/180/1400 ms, seven frames, no loop extension.
+Board: still + live/new rows per view + full live front row, selout 4x. Close-ups: self-cropped 7x, raw. Grey #5A6058.
+Exact refs light_deg method UNVERIFIED: formula absent in refs; referenced relight.py outside allowed read area.
+Proxy below fits violet brightness rank against x/y; atan2(-by,bx). It is NOT the supplied 54/96 metric.
+All colour shares, manual landmarks, head/body projected sizes, ear lengths and body centre x: checks.txt / measurements.json.
+Manual projected measurements have about 1-2px uncertainty and include occluded ear-root estimates.
+SE baseline: ink/cap 6.12/2.35%; ears 26.2/26.2px; head 20x21; body 26x22; torso centre x=78.5.
+SE f0-f6 ink%: 6.12,6.72,6.89,6.40,6.74,6.46,6.46; cap%: 2.35,2.63,1.83,2.49,2.73,3.03,3.03.
+SE f0-f6 light PROXY: 95.5,94.6,85.8,76.1,80.1,93.3,94.9; eye px: 18,25,18,20,20,10,0.
+SE f0-f6 torso centre x: 78.5,77,77.5,77.5,78,75,75; head widths: 20,20,21,20,21,19,19.
+SE f1-f5 ear lengths: 26.8/27.0,27.7/25.0,27.5/29.8,28.3/28.4,29.0/28.2px.
+Back baseline: ink/cap 6.24/5.13%; ears 35.5/35.1px; head 21x20; body 24x19; torso centre x=79.5.
+Back f0-f6 ink%: 6.24,5.48,5.45,6.35,4.99,5.77,5.77; cap%: 5.13,3.49,4.97,6.51,5.34,6.46,6.46.
+Back f0-f6 light PROXY: 104.0,73.4,78.9,135.5,118.3,96.8,96.8; eye px all zero.
+Back f0-f6 torso centre x: 79.5,79.5,81,83,80.5,87.5,87.5; head widths: 21,19,20,22,23,25,25.
+Back f1-f5 ear lengths: 35.8/35.5,35.0/31.8,33/33,33/33,33/33px.
+Proportion tolerance is NOT a full pass: SE some ears ~3-4px long; back f2 torso projects 19x16 vs 24x19, f3 21x16.
+Back final head projects 25x25 vs 21x20 partly from rotation; rear ears ~2-2.5px short. Scale is not certified within 2px.
+By eye SE: recognisable whole fennec, connected drooping ears, buckling chest, right-side cheek-down finish; tail/flank stay in place.
+SE limitations: f4 still reads partly crouched; f5 ear/leg overlaps are schematic and head dome simpler than still.
+By eye back: rear head/neck retained; complete pointed ears; body rolls toward its own right, tail and folded feet retained.
+Back limitations: f2-f3 torso compresses; f3 ears flare too symmetrically; f4 ears remain too upright; f5 ears are more tapered/regular than still.
+Same-side fall as front is intended/readable, but front's relaxed ear stacking and detailed limb overlaps are not fully matched.
+Palette/material family matches; stepped highlights are present, but native hand work is cleaner/more geometric than still's irregular surface.
+Final judgement: useful complete candidates, structural PASS; NOT a full visual/proportion/lighting pass. Nothing installed.

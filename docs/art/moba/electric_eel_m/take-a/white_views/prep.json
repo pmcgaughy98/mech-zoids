@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "b2b79d152f249c856a03fb87d78abc03cf58c682a0beaaad29949322d77e6ca6",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 0.8007699711260827,
+  "lowest_body_row_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "electric_eel_front.png",
+      "source_box": [
+        64,
+        105,
+        324,
+        402
+      ],
+      "source_dimensions": [
+        260,
+        297
+      ],
+      "output_box": [
+        408,
+        698,
+        616,
+        936
+      ]
+    },
+    "left": {
+      "file": "electric_eel_left.png",
+      "source_box": [
+        446,
+        145,
+        1478,
+        384
+      ],
+      "source_dimensions": [
+        1032,
+        239
+      ],
+      "output_box": [
+        99,
+        745,
+        925,
+        936
+      ]
+    },
+    "back": {
+      "file": "electric_eel_back.png",
+      "source_box": [
+        64,
+        608,
+        320,
+        956
+      ],
+      "source_dimensions": [
+        256,
+        348
+      ],
+      "output_box": [
+        409,
+        657,
+        614,
+        936
+      ]
+    },
+    "right": {
+      "file": "electric_eel_right.png",
+      "source_box": [
+        412,
+        651,
+        1451,
+        888
+      ],
+      "source_dimensions": [
+        1039,
+        237
+      ],
+      "output_box": [
+        96,
+        746,
+        928,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.31896551724137934
+}

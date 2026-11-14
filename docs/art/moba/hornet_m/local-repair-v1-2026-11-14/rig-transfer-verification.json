@@ -1,0 +1,24 @@
+{
+  "source_rig": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_hornet_touchup_remeshed_25k_20261111_character.glb",
+  "source_rig_sha256": "02e61d1695fca6a5cf80591de4f4a1ebffe9a427f50ad556df1c81f76ba4b8a0",
+  "output_sha256": "483471b77e49fb6983ce026c6217014f3d3a3853c8b90949ccbe650b90a82762",
+  "skeleton_nodes_bind_transforms_skins_scenes_unchanged": true,
+  "original_rig_buffer_retained": true,
+  "weights": "Transferred from actual downloaded rig using four nearest surface samples, inverse fourth power, strongest four influences normalized. UV-seam duplicates use identical point queries. Current six-leg skeleton and all its controls retained; no removed-chain reassignment.",
+  "removed_limb_weight_joints": [],
+  "surface_materials": "Restored original source materials and embedded textures, plus local cut-root finish; downloaded materials retained in archive buffer/JSON.",
+  "distance_stats": [
+    {
+      "vertices": 257729,
+      "distance_mean": 0.018622308483851987,
+      "distance_99pct": 0.09957635723148645,
+      "distance_max": 0.17149358065306955
+    },
+    {
+      "vertices": 2796,
+      "distance_mean": 0.040083285965963826,
+      "distance_99pct": 0.11246056375868241,
+      "distance_max": 0.11412892733984682
+    }
+  ]
+}

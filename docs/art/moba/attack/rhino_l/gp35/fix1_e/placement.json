@@ -1,0 +1,244 @@
+{
+  "frames": {
+    "e_f1": {
+      "column": 1,
+      "translation": [
+        22,
+        45
+      ],
+      "hind": [
+        62.5,
+        160.0
+      ],
+      "front": [
+        [
+          101.5,
+          160.0
+        ]
+      ],
+      "foot_boxes": {
+        "hind": [
+          28,
+          103,
+          56,
+          118
+        ],
+        "front": [
+          [
+            66,
+            103,
+            94,
+            118
+          ]
+        ]
+      },
+      "method": "Visually traced steel foot pads; lowest opaque dark sole row midpoint within boxes; E only near front is visible."
+    },
+    "e_f2": {
+      "column": 2,
+      "translation": [
+        22,
+        45
+      ],
+      "hind": [
+        62.5,
+        160.0
+      ],
+      "front": [
+        [
+          106.5,
+          145.0
+        ]
+      ],
+      "foot_boxes": {
+        "hind": [
+          27,
+          103,
+          55,
+          118
+        ],
+        "front": [
+          [
+            73,
+            89,
+            102,
+            105
+          ]
+        ]
+      },
+      "method": "Visually traced steel foot pads; lowest opaque dark sole row midpoint within boxes; E only near front is visible."
+    },
+    "e_f3": {
+      "column": 3,
+      "translation": [
+        21,
+        45
+      ],
+      "hind": [
+        62.5,
+        160.0
+      ],
+      "front": [
+        [
+          107.5,
+          125.0
+        ]
+      ],
+      "foot_boxes": {
+        "hind": [
+          28,
+          103,
+          56,
+          118
+        ],
+        "front": [
+          [
+            78,
+            69,
+            107,
+            83
+          ]
+        ]
+      },
+      "method": "Visually traced steel foot pads; lowest opaque dark sole row midpoint within boxes; E only near front is visible."
+    },
+    "se_f1": {
+      "column": 1,
+      "translation": [
+        10,
+        39
+      ],
+      "hind": [
+        65.5,
+        143.0
+      ],
+      "front": [
+        [
+          74.0,
+          158.0
+        ],
+        [
+          110.5,
+          153.0
+        ]
+      ],
+      "foot_boxes": {
+        "hind": [
+          27,
+          89,
+          57,
+          105
+        ],
+        "front": [
+          [
+            50,
+            106,
+            79,
+            123
+          ],
+          [
+            81,
+            103,
+            115,
+            117
+          ]
+        ]
+      },
+      "method": "Visually traced steel foot pads; lowest opaque dark sole row midpoint within boxes; E only near front is visible."
+    },
+    "se_f2": {
+      "column": 2,
+      "translation": [
+        23,
+        36
+      ],
+      "hind": [
+        65.0,
+        143.0
+      ],
+      "front": [
+        [
+          97.5,
+          134.0
+        ],
+        [
+          111.0,
+          126.0
+        ]
+      ],
+      "foot_boxes": {
+        "hind": [
+          27,
+          92,
+          57,
+          112
+        ],
+        "front": [
+          [
+            66,
+            87,
+            95,
+            102
+          ],
+          [
+            87,
+            75,
+            112,
+            91
+          ]
+        ]
+      },
+      "method": "Visually traced steel foot pads; lowest opaque dark sole row midpoint within boxes; E only near front is visible."
+    },
+    "se_f3": {
+      "column": 3,
+      "translation": [
+        30,
+        36
+      ],
+      "hind": [
+        65.0,
+        143.0
+      ],
+      "front": [
+        [
+          97.0,
+          117.0
+        ],
+        [
+          118.5,
+          108.0
+        ]
+      ],
+      "foot_boxes": {
+        "hind": [
+          27,
+          92,
+          57,
+          112
+        ],
+        "front": [
+          [
+            66,
+            66,
+            94,
+            82
+          ],
+          [
+            88,
+            56,
+            112,
+            73
+          ]
+        ]
+      },
+      "method": "Visually traced steel foot pads; lowest opaque dark sole row midpoint within boxes; E only near front is visible."
+    }
+  },
+  "moves": [
+    "e_f2 (+22,+45)",
+    "e_f3 (+21,+45)",
+    "se_f2 (+23,+36)",
+    "se_f3 (+30,+36)"
+  ]
+}

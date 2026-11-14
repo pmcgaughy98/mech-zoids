@@ -1,0 +1,121 @@
+{
+  "sizes": {
+    "ne": [
+      78,
+      80,
+      2886
+    ],
+    "n": [
+      35,
+      84,
+      1978
+    ],
+    "nw": [
+      78,
+      80,
+      2875
+    ],
+    "e": [
+      110,
+      66,
+      3091
+    ],
+    "w": [
+      110,
+      66,
+      3088
+    ],
+    "se": [
+      83,
+      70,
+      2715
+    ],
+    "s": [
+      33,
+      72,
+      1556
+    ],
+    "sw": [
+      83,
+      70,
+      2705
+    ]
+  },
+  "depth": {
+    "ne": {
+      "p05": 20.2888,
+      "p95": 188.8664,
+      "dominant_colour": "#6e6e7e",
+      "dominant_share": 0.23215523215523215,
+      "height": 80
+    },
+    "n": {
+      "p05": 27.866400000000002,
+      "p95": 188.8664,
+      "dominant_colour": "#6e6e7e",
+      "dominant_share": 0.2537917087967644,
+      "height": 84
+    },
+    "nw": {
+      "p05": 27.866400000000002,
+      "p95": 188.8664,
+      "dominant_colour": "#444452",
+      "dominant_share": 0.2306086956521739,
+      "height": 80
+    },
+    "e": {
+      "p05": 27.866400000000002,
+      "p95": 188.8664,
+      "dominant_colour": "#444452",
+      "dominant_share": 0.24749272080232934,
+      "height": 66
+    },
+    "w": {
+      "p05": 27.866400000000002,
+      "p95": 188.8664,
+      "dominant_colour": "#444452",
+      "dominant_share": 0.23769430051813473,
+      "height": 66
+    },
+    "se": {
+      "p05": 20.2888,
+      "p95": 188.8664,
+      "dominant_colour": "#444452",
+      "dominant_share": 0.21804788213627993,
+      "height": 70
+    },
+    "s": {
+      "p05": 20.2888,
+      "p95": 188.8664,
+      "dominant_colour": "#444452",
+      "dominant_share": 0.2191516709511568,
+      "height": 72
+    },
+    "sw": {
+      "p05": 20.2888,
+      "p95": 188.8664,
+      "dominant_colour": "#444452",
+      "dominant_share": 0.22513863216266175,
+      "height": 70
+    }
+  },
+  "border_contact": {
+    "ne": false,
+    "n": false,
+    "nw": false,
+    "e": false,
+    "w": false,
+    "se": false,
+    "s": false,
+    "sw": false
+  },
+  "colours": 12,
+  "top_five_share": 0.7735713601991002,
+  "shape": {
+    "east_shoulder_height": 57,
+    "east_chest_gap": 30,
+    "east_body_chest_to_rump": 57,
+    "south_chest_width": 33,
+    "south_head_width": 23
+  }
+}

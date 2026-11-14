@@ -1,0 +1,775 @@
+{
+  "clean": true,
+  "raw_size": [
+    2172,
+    724
+  ],
+  "x": [
+    [
+      0,
+      330,
+      629,
+      936,
+      1255,
+      1565,
+      1871,
+      2172
+    ],
+    [
+      0,
+      323,
+      622,
+      929,
+      1248,
+      1558,
+      1864,
+      2172
+    ]
+  ],
+  "y": [
+    0,
+    350,
+    724
+  ],
+  "cells": [
+    {
+      "row": "se",
+      "column": 0,
+      "cell_box_raw": [
+        0,
+        0,
+        330,
+        350
+      ],
+      "foreground_box_in_cell": [
+        41,
+        87,
+        309,
+        290
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": "se",
+      "column": 1,
+      "cell_box_raw": [
+        330,
+        0,
+        629,
+        350
+      ],
+      "foreground_box_in_cell": [
+        21,
+        87,
+        287,
+        290
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": "se",
+      "column": 2,
+      "cell_box_raw": [
+        629,
+        0,
+        936,
+        350
+      ],
+      "foreground_box_in_cell": [
+        12,
+        83,
+        296,
+        288
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": "se",
+      "column": 3,
+      "cell_box_raw": [
+        936,
+        0,
+        1255,
+        350
+      ],
+      "foreground_box_in_cell": [
+        11,
+        83,
+        294,
+        288
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": "se",
+      "column": 4,
+      "cell_box_raw": [
+        1255,
+        0,
+        1565,
+        350
+      ],
+      "foreground_box_in_cell": [
+        25,
+        87,
+        288,
+        291
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": "se",
+      "column": 5,
+      "cell_box_raw": [
+        1565,
+        0,
+        1871,
+        350
+      ],
+      "foreground_box_in_cell": [
+        23,
+        83,
+        283,
+        283
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": "se",
+      "column": 6,
+      "cell_box_raw": [
+        1871,
+        0,
+        2172,
+        350
+      ],
+      "foreground_box_in_cell": [
+        24,
+        87,
+        284,
+        290
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": "ne",
+      "column": 0,
+      "cell_box_raw": [
+        0,
+        350,
+        323,
+        724
+      ],
+      "foreground_box_in_cell": [
+        37,
+        66,
+        295,
+        298
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": "ne",
+      "column": 1,
+      "cell_box_raw": [
+        323,
+        350,
+        622,
+        724
+      ],
+      "foreground_box_in_cell": [
+        28,
+        65,
+        281,
+        298
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": "ne",
+      "column": 2,
+      "cell_box_raw": [
+        622,
+        350,
+        929,
+        724
+      ],
+      "foreground_box_in_cell": [
+        19,
+        61,
+        290,
+        292
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": "ne",
+      "column": 3,
+      "cell_box_raw": [
+        929,
+        350,
+        1248,
+        724
+      ],
+      "foreground_box_in_cell": [
+        18,
+        60,
+        290,
+        293
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": "ne",
+      "column": 4,
+      "cell_box_raw": [
+        1248,
+        350,
+        1558,
+        724
+      ],
+      "foreground_box_in_cell": [
+        30,
+        70,
+        284,
+        299
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": "ne",
+      "column": 5,
+      "cell_box_raw": [
+        1558,
+        350,
+        1864,
+        724
+      ],
+      "foreground_box_in_cell": [
+        26,
+        60,
+        278,
+        293
+      ],
+      "major": 1,
+      "clean": true
+    },
+    {
+      "row": "ne",
+      "column": 6,
+      "cell_box_raw": [
+        1864,
+        350,
+        2172,
+        724
+      ],
+      "foreground_box_in_cell": [
+        29,
+        66,
+        280,
+        298
+      ],
+      "major": 1,
+      "clean": true
+    }
+  ],
+  "rows": {
+    "se": {
+      "factor": 0.3383986387428835,
+      "raw_column1_size": [
+        268,
+        203
+      ],
+      "target_size": [
+        89,
+        70
+      ],
+      "resized_sheet_size": [
+        735,
+        245
+      ],
+      "effective_scale": [
+        0.3383977900552486,
+        0.3383977900552486
+      ],
+      "fixed_cell_offset": [
+        39,
+        63
+      ],
+      "frames": [
+        {
+          "frame": 0,
+          "raw_cell_box": [
+            0,
+            0,
+            330,
+            350
+          ],
+          "scaled_cell_box": [
+            0,
+            0,
+            112,
+            118
+          ],
+          "fixed_cell_offset": [
+            39,
+            63
+          ],
+          "ground_adjustment": 0,
+          "requested_ground_adjustment": 0,
+          "final_cell_offset": [
+            39,
+            63
+          ],
+          "foreground_box": [
+            53,
+            92,
+            144,
+            161
+          ]
+        },
+        {
+          "frame": 1,
+          "raw_cell_box": [
+            330,
+            0,
+            629,
+            350
+          ],
+          "scaled_cell_box": [
+            112,
+            0,
+            213,
+            118
+          ],
+          "fixed_cell_offset": [
+            39,
+            63
+          ],
+          "ground_adjustment": 0,
+          "requested_ground_adjustment": 0,
+          "final_cell_offset": [
+            39,
+            63
+          ],
+          "foreground_box": [
+            46,
+            92,
+            135,
+            161
+          ]
+        },
+        {
+          "frame": 2,
+          "raw_cell_box": [
+            629,
+            0,
+            936,
+            350
+          ],
+          "scaled_cell_box": [
+            213,
+            0,
+            317,
+            118
+          ],
+          "fixed_cell_offset": [
+            39,
+            63
+          ],
+          "ground_adjustment": 1,
+          "requested_ground_adjustment": 1,
+          "final_cell_offset": [
+            39,
+            64
+          ],
+          "foreground_box": [
+            43,
+            92,
+            139,
+            161
+          ]
+        },
+        {
+          "frame": 3,
+          "raw_cell_box": [
+            936,
+            0,
+            1255,
+            350
+          ],
+          "scaled_cell_box": [
+            317,
+            0,
+            425,
+            118
+          ],
+          "fixed_cell_offset": [
+            39,
+            63
+          ],
+          "ground_adjustment": 1,
+          "requested_ground_adjustment": 1,
+          "final_cell_offset": [
+            39,
+            64
+          ],
+          "foreground_box": [
+            42,
+            92,
+            138,
+            161
+          ]
+        },
+        {
+          "frame": 4,
+          "raw_cell_box": [
+            1255,
+            0,
+            1565,
+            350
+          ],
+          "scaled_cell_box": [
+            425,
+            0,
+            530,
+            118
+          ],
+          "fixed_cell_offset": [
+            39,
+            63
+          ],
+          "ground_adjustment": 0,
+          "requested_ground_adjustment": 0,
+          "final_cell_offset": [
+            39,
+            63
+          ],
+          "foreground_box": [
+            47,
+            93,
+            136,
+            161
+          ]
+        },
+        {
+          "frame": 5,
+          "raw_cell_box": [
+            1565,
+            0,
+            1871,
+            350
+          ],
+          "scaled_cell_box": [
+            530,
+            0,
+            633,
+            118
+          ],
+          "fixed_cell_offset": [
+            39,
+            63
+          ],
+          "ground_adjustment": 2,
+          "requested_ground_adjustment": 2,
+          "final_cell_offset": [
+            39,
+            65
+          ],
+          "foreground_box": [
+            46,
+            93,
+            134,
+            161
+          ]
+        },
+        {
+          "frame": 6,
+          "raw_cell_box": [
+            1871,
+            0,
+            2172,
+            350
+          ],
+          "scaled_cell_box": [
+            633,
+            0,
+            735,
+            118
+          ],
+          "fixed_cell_offset": [
+            39,
+            63
+          ],
+          "ground_adjustment": 0,
+          "requested_ground_adjustment": 0,
+          "final_cell_offset": [
+            39,
+            63
+          ],
+          "foreground_box": [
+            47,
+            92,
+            135,
+            161
+          ]
+        }
+      ]
+    },
+    "ne": {
+      "factor": 0.3085370885171574,
+      "raw_column1_size": [
+        258,
+        232
+      ],
+      "target_size": [
+        77,
+        74
+      ],
+      "resized_sheet_size": [
+        670,
+        223
+      ],
+      "effective_scale": [
+        0.30847145488029465,
+        0.3080110497237569
+      ],
+      "fixed_cell_offset": [
+        47,
+        69
+      ],
+      "frames": [
+        {
+          "frame": 0,
+          "raw_cell_box": [
+            0,
+            350,
+            323,
+            724
+          ],
+          "scaled_cell_box": [
+            0,
+            108,
+            100,
+            223
+          ],
+          "fixed_cell_offset": [
+            47,
+            69
+          ],
+          "ground_adjustment": 0,
+          "requested_ground_adjustment": 0,
+          "final_cell_offset": [
+            47,
+            69
+          ],
+          "foreground_box": [
+            58,
+            89,
+            138,
+            161
+          ]
+        },
+        {
+          "frame": 1,
+          "raw_cell_box": [
+            323,
+            350,
+            622,
+            724
+          ],
+          "scaled_cell_box": [
+            100,
+            108,
+            192,
+            223
+          ],
+          "fixed_cell_offset": [
+            47,
+            69
+          ],
+          "ground_adjustment": 0,
+          "requested_ground_adjustment": 0,
+          "final_cell_offset": [
+            47,
+            69
+          ],
+          "foreground_box": [
+            55,
+            89,
+            133,
+            161
+          ]
+        },
+        {
+          "frame": 2,
+          "raw_cell_box": [
+            622,
+            350,
+            929,
+            724
+          ],
+          "scaled_cell_box": [
+            192,
+            108,
+            287,
+            223
+          ],
+          "fixed_cell_offset": [
+            47,
+            69
+          ],
+          "ground_adjustment": 2,
+          "requested_ground_adjustment": 2,
+          "final_cell_offset": [
+            47,
+            71
+          ],
+          "foreground_box": [
+            53,
+            90,
+            136,
+            161
+          ]
+        },
+        {
+          "frame": 3,
+          "raw_cell_box": [
+            929,
+            350,
+            1248,
+            724
+          ],
+          "scaled_cell_box": [
+            287,
+            108,
+            385,
+            223
+          ],
+          "fixed_cell_offset": [
+            47,
+            69
+          ],
+          "ground_adjustment": 2,
+          "requested_ground_adjustment": 2,
+          "final_cell_offset": [
+            47,
+            71
+          ],
+          "foreground_box": [
+            52,
+            90,
+            136,
+            161
+          ]
+        },
+        {
+          "frame": 4,
+          "raw_cell_box": [
+            1248,
+            350,
+            1558,
+            724
+          ],
+          "scaled_cell_box": [
+            385,
+            108,
+            481,
+            223
+          ],
+          "fixed_cell_offset": [
+            47,
+            69
+          ],
+          "ground_adjustment": 0,
+          "requested_ground_adjustment": 0,
+          "final_cell_offset": [
+            47,
+            69
+          ],
+          "foreground_box": [
+            56,
+            91,
+            135,
+            161
+          ]
+        },
+        {
+          "frame": 5,
+          "raw_cell_box": [
+            1558,
+            350,
+            1864,
+            724
+          ],
+          "scaled_cell_box": [
+            481,
+            108,
+            575,
+            223
+          ],
+          "fixed_cell_offset": [
+            47,
+            69
+          ],
+          "ground_adjustment": 2,
+          "requested_ground_adjustment": 2,
+          "final_cell_offset": [
+            47,
+            71
+          ],
+          "foreground_box": [
+            55,
+            89,
+            132,
+            161
+          ]
+        },
+        {
+          "frame": 6,
+          "raw_cell_box": [
+            1864,
+            350,
+            2172,
+            724
+          ],
+          "scaled_cell_box": [
+            575,
+            108,
+            670,
+            223
+          ],
+          "fixed_cell_offset": [
+            47,
+            69
+          ],
+          "ground_adjustment": 0,
+          "requested_ground_adjustment": 0,
+          "final_cell_offset": [
+            47,
+            69
+          ],
+          "foreground_box": [
+            56,
+            89,
+            133,
+            161
+          ]
+        }
+      ]
+    }
+  },
+  "coordinate_note": "Boxes are half-open. Whole raw sheet resized once per row; rounded scaled cell boxes are then pasted at fixed_cell_offset + ground_adjustment. Effective x/y scale uses resized dimensions/raw dimensions; filtered colours use the set B pipeline."
+}

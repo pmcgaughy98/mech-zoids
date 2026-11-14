@@ -1,0 +1,49 @@
+DRAFT, 2026-11-05: finish after run 1 (add what run 1 got wrong, as hippo run 2 did). Not launched.
+
+You are making pixel-art walk frames for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\walk\wolf_m\run2.
+Read anything under D:\dev\new-mech-rpg\docs\art\moba. Do not touch any other folder (run1 included), assets, art or
+tools, and do not commit. Run tag: wolf-walk35-run2.
+
+This is run 2 of the M wolf's trot at 35 degrees. Run 1 (D:\dev\new-mech-rpg\docs\art\moba\walk\wolf_m\run1) made the
+e, se and ne views. Read run1\brief.txt (the machine, the gait, the method, the rules and the pass marks all still
+apply), run1\REPORT.txt, and run1's scripts (build.py, rig.json, verify.py, checks.txt): that is your own method from
+run 1, so reuse it. Read D:\dev\new-mech-rpg\docs\art\moba\walk\WALK_PLAYBOOK.md section 7 for the front and back
+views, and the hippo's run 2 (walk\hippo_l\run2: brief.txt, REPORT.txt, scripts) and the fennec's run 2
+(walk\fennec_s\run2), which drew s and n the same way. The stills are in run2\stills; the targets (the same plan as
+run 1) are in run2\targets.json; the guides are run2\guide_s.png and guide_n.png. Draw s and n only. Do not redraw e,
+se or ne.
+
+Keep run2\REPORT.txt up to date after each view, so a report exists even if the run is stopped by its token cap.
+
+What run 1 got wrong: TO FILL from the walk lane's review of run 1.
+
+Part 1, s. Part 2, n. Each is an 8-frame loop, 100 ms a frame, with run 1's trot: pair A (RF + LH) on the ground
+f0-f3, pair B (LF + RH) on the ground f4-f7, lifts 2, 4, 4, 2, the body dipping 1 px on f1 and f5. Per view, the path
+turns into screen px as offset * f * u, with the lift straight up:
+  s: u = (0, 1), f = 0.5736; a planted foot moves (0.00, -2.87) px a frame on the canvas (x, y; y down)
+  n: u = (0, -1), f = 0.5736; a planted foot moves (0.00, +2.87) px a frame
+At 35 degrees a step toward or away from the camera shows at 0.57 of its length, so these views need real paw travel
+up and down the screen, not reordered side frames. Round each frame's position so a planted foot's total travel stays
+within 0.5 px of the target. Labels: D:\dev\new-mech-rpg\docs\art\moba\walk\wolf_m\feet.json. In s the fore paws are
+near on row 160 (RF on screen left, LF on screen right) and the hind paws are hidden behind the head and fore legs; in n
+the hind paws are near on row 151 (LH on screen left, RH on screen right), the fore paws are hidden behind the rump, and
+the tail tip is the lowest thing on the canvas (row 160): it stays the still's straight plates, dipping with the body.
+Draw a hidden paw only where the new pose shows it. A paw nearer the camera than in the still may sit up to 5 px below
+its still row (the s f0 targets reach row 164.6).
+Draw order: in s, hind legs, then body, then fore legs, then the head and jaw exactly as the still layers them over the
+fore legs (check at 8x where the jaw and chest meet each fore leg); in n, fore legs, then body, then hind legs, then the
+tail and rump exactly as the still layers them over the hind legs. In both views each leg moves straight up and down the
+screen, joints redrawn by hand; the shoulders and hips stay pinned to the body and dip with it; the legs stay apart from
+each other, the jaw and the tail.
+
+Pass marks for s and n: all of run 1's (foot lock over the 4 planted frames within 2 px, measured from the frame
+pixels; targets within 1 px; lifts exact; above the legs every frame equals the still after the dip; the stills' 12
+colours only; binary alpha; no holes, stray pixels or edge contact; specks no more than the still's count plus 2; belly;
+whole feet). Run walk_tools.py footlock and seams as in run1\brief.txt, with run2's paths and --views s n.
+
+Output in run2: walk\frames\s_f0.png to s_f7.png and n_f0.png to n_f7.png (raw, no outline), walk\layers and source\
+as in run 1, a preview gif per view (100 ms, loop), footprint pictures, board.png (per view: the still, then the 8
+frames, with sel-out, at 4x), legs_zoom.png (5x, every frame), checks.txt, footlock.json, and REPORT.txt (under 30
+lines): tokens if known, the foot-lock spreads, target errors, the belly and whole-feet results, the seams result,
+upper-body match, specks, lowest rows, and by eye: do s and n read as this wolf trotting toward and away from the camera
+in diagonal pairs, legs like the still, jaw, fins and tail whole, nothing hanging below the belly?

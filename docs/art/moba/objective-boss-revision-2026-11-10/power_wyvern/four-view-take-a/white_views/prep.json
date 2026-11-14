@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "12e199bba55ab0d4e09039cb2a3f212228c4c63d2b72adb0ee7d016528fa59f3",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.1019867549668874,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "wyvern_front.png",
+      "source_box": [
+        85,
+        24,
+        633,
+        480
+      ],
+      "source_dimensions": [
+        548,
+        456
+      ],
+      "output_box": [
+        210,
+        433,
+        814,
+        936
+      ]
+    },
+    "left": {
+      "file": "wyvern_left.png",
+      "source_box": [
+        736,
+        26,
+        1491,
+        485
+      ],
+      "source_dimensions": [
+        755,
+        459
+      ],
+      "output_box": [
+        96,
+        430,
+        928,
+        936
+      ]
+    },
+    "back": {
+      "file": "wyvern_back.png",
+      "source_box": [
+        86,
+        535,
+        631,
+        988
+      ],
+      "source_dimensions": [
+        545,
+        453
+      ],
+      "output_box": [
+        211,
+        437,
+        812,
+        936
+      ]
+    },
+    "right": {
+      "file": "wyvern_right.png",
+      "source_box": [
+        731,
+        537,
+        1485,
+        998
+      ],
+      "source_dimensions": [
+        754,
+        461
+      ],
+      "output_box": [
+        96,
+        428,
+        927,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.01735357917570499
+}

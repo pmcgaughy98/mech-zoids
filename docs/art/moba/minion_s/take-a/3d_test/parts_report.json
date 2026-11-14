@@ -1,0 +1,41 @@
+{
+ "pass": 5,
+ "voxels_solid": 61302,
+ "voxels_surface": 9280,
+ "quads": 4238,
+ "triangles": 8476,
+ "size_m": [
+  1.088,
+  0.784,
+  0.896
+ ],
+ "reproject_at_drawn_pitch": {
+  "s": {
+   "silhouette_iou": 0.874,
+   "colour_match": 0.329
+  },
+  "se": {
+   "silhouette_iou": 0.796,
+   "colour_match": 0.305
+  },
+  "e": {
+   "silhouette_iou": 0.801,
+   "colour_match": 0.28
+  },
+  "ne": {
+   "silhouette_iou": 0.788,
+   "colour_match": 0.212
+  },
+  "n": {
+   "silhouette_iou": 0.855,
+   "colour_match": 0.262
+  }
+ },
+ "material_match_at_drawn_pitch": {
+  "s": 0.618,
+  "se": 0.606,
+  "e": 0.586,
+  "ne": 0.583,
+  "n": 0.612
+ }
+}

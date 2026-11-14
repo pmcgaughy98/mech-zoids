@@ -1,0 +1,114 @@
+{
+  "sizes": {
+    "ne": [
+      114,
+      74,
+      4157
+    ],
+    "n": [
+      83,
+      75,
+      3925
+    ],
+    "nw": [
+      113,
+      74,
+      4166
+    ],
+    "e": [
+      124,
+      55,
+      3499
+    ],
+    "w": [
+      124,
+      55,
+      3492
+    ],
+    "se": [
+      114,
+      63,
+      3943
+    ],
+    "s": [
+      89,
+      66,
+      3444
+    ],
+    "sw": [
+      114,
+      63,
+      3955
+    ]
+  },
+  "depth": {
+    "ne": {
+      "p05": 18.8584,
+      "p95": 184.722,
+      "dominant_colour": "#7e7e8e",
+      "dominant_share": 0.2352658166947318,
+      "height": 74
+    },
+    "n": {
+      "p05": 30.8428,
+      "p95": 154.8664,
+      "dominant_colour": "#7e7e8e",
+      "dominant_share": 0.25146496815286623,
+      "height": 75
+    },
+    "nw": {
+      "p05": 18.8584,
+      "p95": 184.722,
+      "dominant_colour": "#7e7e8e",
+      "dominant_share": 0.23523763802208353,
+      "height": 74
+    },
+    "e": {
+      "p05": 18.8584,
+      "p95": 184.722,
+      "dominant_colour": "#34343e",
+      "dominant_share": 0.20748785367247785,
+      "height": 55
+    },
+    "w": {
+      "p05": 18.8584,
+      "p95": 184.722,
+      "dominant_colour": "#34343e",
+      "dominant_share": 0.20389461626575028,
+      "height": 55
+    },
+    "se": {
+      "p05": 18.8584,
+      "p95": 184.722,
+      "dominant_colour": "#6a0a10",
+      "dominant_share": 0.18589906162820188,
+      "height": 63
+    },
+    "s": {
+      "p05": 18.8584,
+      "p95": 184.722,
+      "dominant_colour": "#6a0a10",
+      "dominant_share": 0.18466898954703834,
+      "height": 66
+    },
+    "sw": {
+      "p05": 18.8584,
+      "p95": 184.722,
+      "dominant_colour": "#6a0a10",
+      "dominant_share": 0.18356510745891277,
+      "height": 63
+    }
+  },
+  "border_contact": {
+    "ne": false,
+    "n": false,
+    "nw": false,
+    "e": false,
+    "w": false,
+    "se": false,
+    "s": false,
+    "sw": false
+  },
+  "colours": 14,
+  "top_five_share": 0.7043589156665904
+}

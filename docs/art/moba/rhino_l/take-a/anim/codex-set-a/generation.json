@@ -1,0 +1,38 @@
+{
+  "idle": {
+    "size": [
+      1619,
+      971
+    ],
+    "sha256": "b477d5d4dc6cad9198886c0a78163d9ee328d519af4f6bc5cc55cdd8e19d4bb0",
+    "prompt": "prompts/idle.txt",
+    "generation_count": 1
+  },
+  "walk": {
+    "size": [
+      1914,
+      822
+    ],
+    "sha256": "2472cb15045d0a73f23555c21d427ed504702e5b502abdd5821260b6f2522277",
+    "prompt": "prompts/walk.txt",
+    "generation_count": 1
+  },
+  "horn-jab": {
+    "size": [
+      1774,
+      887
+    ],
+    "sha256": "5d650f731f04c23a35ad6e1243bfb4eb1a1a49f3d93d05ecf6a41b81f0a43146",
+    "prompt": "prompts/horn-jab.txt",
+    "generation_count": 1
+  },
+  "horn-toss": {
+    "size": [
+      1914,
+      822
+    ],
+    "sha256": "cc140678a40d1c11c8f8944f8cdba40a9b6f6cc3dfa0393cef9a15d9e23191b0",
+    "prompt": "prompts/horn-toss.txt",
+    "generation_count": 1
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "source": "D:\\dev\\new-mech-rpg\\art\\model_catalog\\workspaces\\gorilla_hands_feet_review.blend",
+  "source_sha256": "8a9ed545fe740d4b481ef26df009f7c5990f138881a79fb9491f2103b7407b3e",
+  "atlas_size": 2304,
+  "faces": 2272,
+  "notes": [
+    "Body palette sampled directly from existing shin texture.",
+    "Gray toes and knuckles retained; green heel/instep housings transition into shin armor.",
+    "Hands receive the same subtle gray surface finish; hand geometry and size unchanged.",
+    "Foot geometry retained, with two small ankle-bound accent pieces per side.",
+    "No generated source body geometry, skeleton or gameplay assets modified."
+  ],
+  "new_parts": [
+    "Foot_L_AccentSocket",
+    "Foot_L_AccentLens",
+    "Foot_R_AccentSocket",
+    "Foot_R_AccentLens"
+  ]
+}

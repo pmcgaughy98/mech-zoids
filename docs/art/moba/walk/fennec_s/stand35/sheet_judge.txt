@@ -1,0 +1,15 @@
+sheet judge: D:\dev\new-mech-rpg\docs\art\moba\walk\fennec_s\stand35\slices
+  e   h  60 feet 140 palette   1.0 colours  15  ok
+  ne  h  69 feet 140 palette   1.0 colours  12  height: 69 px, the set's median 61
+  n   h  68 feet 140 palette   1.0 colours  12  height: 68 px, the set's median 61
+  nw  h  69 feet 140 palette   1.0 colours  12  height: 69 px, the set's median 61
+  w   h  60 feet 140 palette   1.0 colours  14  ok
+  sw  h  61 feet 140 palette   1.0 colours  15  ok
+  s   h  57 feet 140 palette   1.0 colours  15  ok
+  se  h  61 feet 140 palette   1.0 colours  15  ok
+  mirror e/w 0.898  mirror ne/nw 0.895  mirror se/sw 0.993  same n/s 0.095  even n/s [0.888, 0.995]
+  FIX (code, --fix): nothing
+  REDO (generate again): ne, n, nw
+
+Exit code: 1
+Height comparison is informational for this elevated camera; no height repairs applied.

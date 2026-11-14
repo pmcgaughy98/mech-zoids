@@ -1,0 +1,650 @@
+{
+  "definition": "8-connected shade islands of 1-3 pixels wholly enclosed within crimson or steel, including diagonal surroundings; seam, material-edge and silhouette contacts excluded. Conservative candidates; visual inspection also checks all big plates.",
+  "views": {
+    "ne": {
+      "crimson": {
+        "islands": 4,
+        "details": [
+          {
+            "colour": "9c1030",
+            "pixels": 2,
+            "xy": [
+              61,
+              126
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              76,
+              138
+            ]
+          },
+          {
+            "colour": "520a1e",
+            "pixels": 3,
+            "xy": [
+              106,
+              122
+            ]
+          },
+          {
+            "colour": "520a1e",
+            "pixels": 1,
+            "xy": [
+              92,
+              129
+            ]
+          }
+        ]
+      },
+      "steel": {
+        "islands": 2,
+        "details": [
+          {
+            "colour": "e2e5ec",
+            "pixels": 1,
+            "xy": [
+              106,
+              152
+            ]
+          },
+          {
+            "colour": "a6abb6",
+            "pixels": 1,
+            "xy": [
+              70,
+              156
+            ]
+          }
+        ]
+      },
+      "total": 6
+    },
+    "n": {
+      "crimson": {
+        "islands": 1,
+        "details": [
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              65,
+              107
+            ]
+          }
+        ]
+      },
+      "steel": {
+        "islands": 0,
+        "details": []
+      },
+      "total": 1
+    },
+    "nw": {
+      "crimson": {
+        "islands": 3,
+        "details": [
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              112,
+              92
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              72,
+              101
+            ]
+          },
+          {
+            "colour": "520a1e",
+            "pixels": 3,
+            "xy": [
+              103,
+              129
+            ]
+          }
+        ]
+      },
+      "steel": {
+        "islands": 1,
+        "details": [
+          {
+            "colour": "a6abb6",
+            "pixels": 1,
+            "xy": [
+              85,
+              155
+            ]
+          }
+        ]
+      },
+      "total": 4
+    },
+    "e": {
+      "crimson": {
+        "islands": 4,
+        "details": [
+          {
+            "colour": "ff8a98",
+            "pixels": 3,
+            "xy": [
+              124,
+              134
+            ]
+          },
+          {
+            "colour": "e0203e",
+            "pixels": 1,
+            "xy": [
+              69,
+              131
+            ]
+          },
+          {
+            "colour": "e0203e",
+            "pixels": 2,
+            "xy": [
+              126,
+              140
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 2,
+            "xy": [
+              99,
+              96
+            ]
+          }
+        ]
+      },
+      "steel": {
+        "islands": 1,
+        "details": [
+          {
+            "colour": "a6abb6",
+            "pixels": 1,
+            "xy": [
+              79,
+              155
+            ]
+          }
+        ]
+      },
+      "total": 5
+    },
+    "w": {
+      "crimson": {
+        "islands": 4,
+        "details": [
+          {
+            "colour": "e0203e",
+            "pixels": 3,
+            "xy": [
+              119,
+              131
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 3,
+            "xy": [
+              65,
+              136
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              66,
+              139
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              59,
+              142
+            ]
+          }
+        ]
+      },
+      "steel": {
+        "islands": 1,
+        "details": [
+          {
+            "colour": "e2e5ec",
+            "pixels": 1,
+            "xy": [
+              83,
+              157
+            ]
+          }
+        ]
+      },
+      "total": 5
+    },
+    "se": {
+      "crimson": {
+        "islands": 20,
+        "details": [
+          {
+            "colour": "ff8a98",
+            "pixels": 2,
+            "xy": [
+              134,
+              134
+            ]
+          },
+          {
+            "colour": "e0203e",
+            "pixels": 1,
+            "xy": [
+              74,
+              94
+            ]
+          },
+          {
+            "colour": "e0203e",
+            "pixels": 1,
+            "xy": [
+              93,
+              108
+            ]
+          },
+          {
+            "colour": "e0203e",
+            "pixels": 1,
+            "xy": [
+              95,
+              108
+            ]
+          },
+          {
+            "colour": "e0203e",
+            "pixels": 3,
+            "xy": [
+              132,
+              126
+            ]
+          },
+          {
+            "colour": "e0203e",
+            "pixels": 1,
+            "xy": [
+              94,
+              138
+            ]
+          },
+          {
+            "colour": "e0203e",
+            "pixels": 1,
+            "xy": [
+              134,
+              147
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 2,
+            "xy": [
+              128,
+              124
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              134,
+              135
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              137,
+              136
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              134,
+              137
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 2,
+            "xy": [
+              124,
+              140
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              140,
+              140
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 2,
+            "xy": [
+              141,
+              142
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 3,
+            "xy": [
+              98,
+              143
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              126,
+              143
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              146,
+              143
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              104,
+              146
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 2,
+            "xy": [
+              84,
+              156
+            ]
+          },
+          {
+            "colour": "520a1e",
+            "pixels": 3,
+            "xy": [
+              85,
+              105
+            ]
+          }
+        ]
+      },
+      "steel": {
+        "islands": 0,
+        "details": []
+      },
+      "total": 20
+    },
+    "s": {
+      "crimson": {
+        "islands": 10,
+        "details": [
+          {
+            "colour": "e0203e",
+            "pixels": 1,
+            "xy": [
+              65,
+              138
+            ]
+          },
+          {
+            "colour": "e0203e",
+            "pixels": 1,
+            "xy": [
+              68,
+              139
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              80,
+              91
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              59,
+              131
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 3,
+            "xy": [
+              60,
+              135
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 2,
+            "xy": [
+              69,
+              140
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              126,
+              141
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              119,
+              146
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              73,
+              148
+            ]
+          },
+          {
+            "colour": "520a1e",
+            "pixels": 1,
+            "xy": [
+              125,
+              154
+            ]
+          }
+        ]
+      },
+      "steel": {
+        "islands": 0,
+        "details": []
+      },
+      "total": 10
+    },
+    "sw": {
+      "crimson": {
+        "islands": 14,
+        "details": [
+          {
+            "colour": "e0203e",
+            "pixels": 1,
+            "xy": [
+              63,
+              105
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 2,
+            "xy": [
+              110,
+              91
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              71,
+              100
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              56,
+              136
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 2,
+            "xy": [
+              51,
+              137
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              53,
+              139
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 2,
+            "xy": [
+              93,
+              139
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              50,
+              140
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              118,
+              141
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 2,
+            "xy": [
+              48,
+              142
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              51,
+              142
+            ]
+          },
+          {
+            "colour": "9c1030",
+            "pixels": 1,
+            "xy": [
+              94,
+              142
+            ]
+          },
+          {
+            "colour": "520a1e",
+            "pixels": 1,
+            "xy": [
+              102,
+              103
+            ]
+          },
+          {
+            "colour": "520a1e",
+            "pixels": 3,
+            "xy": [
+              55,
+              149
+            ]
+          }
+        ]
+      },
+      "steel": {
+        "islands": 3,
+        "details": [
+          {
+            "colour": "e2e5ec",
+            "pixels": 2,
+            "xy": [
+              74,
+              128
+            ]
+          },
+          {
+            "colour": "e2e5ec",
+            "pixels": 1,
+            "xy": [
+              73,
+              133
+            ]
+          },
+          {
+            "colour": "e2e5ec",
+            "pixels": 1,
+            "xy": [
+              124,
+              148
+            ]
+          }
+        ]
+      },
+      "total": 17
+    }
+  }
+}

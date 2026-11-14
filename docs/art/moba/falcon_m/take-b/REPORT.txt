@@ -1,0 +1,13 @@
+Sizes W x H/area: s50x72/2324; se60x71/2456; e71x69/2278; ne57x71/2329; n48x71/2324.
+Shape (+/-2px, projected): east wing50/body27=1.852; beak7/head26=0.269; e69/s72=0.958; south span50/chest28=1.786; green ne0/nw0 PASS.
+ONE built-in image, prompt-sheet.txt verbatim, only refs/craft_drembit.png attached; raw unchanged SHA256 in generation.json; tokens/cost unknown; no redo.
+view_check: front/back0.89 PASS; area0.07; height0.03; colour0.86; dips none; lone0.13 ->0.02443 PASS after ONE lens-preserving despeckle pass (2023 pixels).
+sheet_judge: eight ok; FIX nothing; REDO nothing; mirrors e/w0.993, ne/nw0.914, se/sw0.991; binary alpha; feet140 (s139); border contact NONE.
+16 shared colours, white armour retained; full material ramps retained with white lens glint shared; top-five65.91% PASS; edge plum/magenta0, lone pale0, seam ink0.
+Depth e/se/s/n: p05 24.03/24.03/18.86/24.03; p95 230.12 each; ranges206.09/206.09/211.26/206.09 PASS; dominant17.47/15.43/16.78/23.36%; heights69/71/72/71.
+By eye FIRST, MACHINE: YES; hard flat bevelled plates, straight cuts, charcoal frame at neck/joints, steel joint discs, green lens eyes, no feathers.
+BOLD/LIVELY: YES; ivory body, strongly contrasting crimson jet wings, yellow hooked beak, glowing green eyes; BOTH wings folded resting on sides, swept tips give forward energy; holds at40px.
+NE/NW show near folded wing AND thin far-wing edge PASS; no eye/face. FALCON: YES; alert upright raptor, sleek body, compact head, short hooked beak, folded wings, short blade tail partly buried, strong legs, hooked talons; nothing held.
+Four-step crimson shading present; ivory has three dedicated tones plus shared steel/frame underside shadows; overlap lines present; no continuous dark outside line.
+Profiles69 vs front72 FAIL exact height; n71<=s72 PASS; ne71=se71 and nw71=sw71 PASS; similar low camera. Rear heels FAIL/weak: feet retain camera-facing claws. SE/SW true three-quarter, head turned, far eye hidden PASS.
+All deliverables in take-b, including sheet, views, audits and both nearest reviews; no installation, commits, reverts or project changes elsewhere.

@@ -1,0 +1,13 @@
+Pixel-art animation sheet of ONE mech rhino bracing: it plants its feet wide and locks its armour, on a plain magenta background (#FF00FF). The two attached sprites are the exact design: the first is the three-quarter front view, turned toward the camera and facing down and to the right; the second is the three-quarter back view, turned away from the camera and facing up and to the right. Keep everything from them: big flat hexagonal yellow armour plates with the dark frame showing between them, short stubby legs with big round grey disc wheel joints, flat grey feet, two-tone grey nose horn and a small second horn, red eye, grey jaw, short tail stub, the same colours, outline and chunky pixel size. Only the pose changes. Never redesign: no gloss, no rounded armour, no long or realistic legs, no new parts.
+
+Layout: a grid of 2 rows and 5 columns of equal cells, one whole rhino per cell, nothing crossing a cell edge, no labels, no text, no grid lines. Row 1 is the three-quarter front view facing down and to the right, exactly the camera angle of the first sprite: we see its face and horn. Row 2 is the three-quarter back view facing up and to the right, exactly the camera angle of the second sprite: we see its rump and tail stub, and its head points away. Every cell in a row keeps that row's angle: never turn it to a straight front, side or back view, and never mirror it. Each column is one moment seen from two angles, so the two rows match frame for frame. The rhino is the same size in every cell and the ground line is at the same height in every cell. Its legs keep their length in every view: when the front end rises, the shoulders and head rise above the hips while the hind legs stay planted as they are.
+
+Columns, left to right:
+1. Reference: exactly the attached sprites, standing still with all four feet flat on the ground.
+2. Sink: legs bend, body drops low, head lowers.
+3. Plant: legs spread wide with the feet planted further apart, body low, head down with the horn forward, plates held tight.
+4. Hold: the same braced pose as column 3, body one pixel lower.
+5. Release: rising back toward the reference stance, feet drawing back in.
+The feet never leave the ground.
+
+No motion lines, no dust, no impact effect, no shadow, no other creature.

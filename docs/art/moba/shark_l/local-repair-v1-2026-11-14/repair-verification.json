@@ -1,0 +1,297 @@
+{
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_shark_remeshed_25k_20261108_character.glb",
+  "source_sha256": "67cb0c7d6bb00a15bf0bf9f7ddf9a163023aedce2e241fd9117debdefc237e7e",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\shark_l\\local-repair-v1-2026-11-14\\shark-rigged-local-repair-v1.glb",
+  "output_sha256": "9f66099793171fefa584f4cc1d91fac5f193c0e72a7a5eaadb2d214d77717b22",
+  "before_triangles": 23301,
+  "final_triangles": 23252,
+  "joint_count": 19,
+  "removed_malformed_triangles": 56,
+  "removed_face_ids": [
+    1646,
+    2062,
+    2402,
+    3450,
+    3661,
+    4683,
+    5798,
+    6161,
+    6690,
+    6695,
+    6697,
+    6863,
+    7472,
+    7753,
+    9092,
+    9796,
+    9895,
+    9962,
+    10441,
+    10563,
+    10691,
+    10758,
+    10907,
+    10913,
+    11397,
+    11459,
+    11878,
+    12111,
+    12130,
+    12560,
+    12561,
+    12562,
+    12817,
+    13696,
+    13741,
+    13768,
+    14049,
+    14867,
+    14986,
+    15103,
+    15463,
+    15640,
+    16685,
+    16989,
+    17075,
+    17106,
+    17540,
+    17548,
+    17550,
+    18450,
+    18533,
+    19191,
+    20200,
+    20941,
+    21232,
+    21641
+  ],
+  "holes_closed": [
+    {
+      "triangle": [
+        3245,
+        3243,
+        3301
+      ],
+      "bounds": [
+        [
+          0.1547282189130783,
+          0.9742392897605896,
+          1.3306519985198975
+        ],
+        [
+          0.17034725844860077,
+          0.9785690903663635,
+          1.3369359970092773
+        ]
+      ],
+      "normal": [
+        0.3256775736808777,
+        0.3704266846179962,
+        0.8698955178260803
+      ],
+      "normal_alignment": 0.9901925921440125,
+      "uv_perimeter": 0.00829922966659069
+    },
+    {
+      "triangle": [
+        5404,
+        5379,
+        5702
+      ],
+      "bounds": [
+        [
+          -0.25399965047836304,
+          0.8322006464004517,
+          1.2298824787139893
+        ],
+        [
+          -0.2520764172077179,
+          0.8380526304244995,
+          1.2339448928833008
+        ]
+      ],
+      "normal": [
+        -0.49386462569236755,
+        0.5918213129043579,
+        0.6370599269866943
+      ],
+      "normal_alignment": 0.5836109519004822,
+      "uv_perimeter": 0.004251434584148228
+    },
+    {
+      "triangle": [
+        21165,
+        21242,
+        21159
+      ],
+      "bounds": [
+        [
+          0.04576863348484039,
+          0.964530348777771,
+          -0.6297359466552734
+        ],
+        [
+          0.06036262959241867,
+          0.9882160425186157,
+          -0.622420072555542
+        ]
+      ],
+      "normal": [
+        0.7570050358772278,
+        0.5524022579193115,
+        -0.34899160265922546
+      ],
+      "normal_alignment": 0.6909744143486023,
+      "uv_perimeter": 0.003902704978827387
+    },
+    {
+      "triangle": [
+        9562,
+        9490,
+        9571
+      ],
+      "bounds": [
+        [
+          0.20965196192264557,
+          1.0958009958267212,
+          0.354232519865036
+        ],
+        [
+          0.2142423540353775,
+          1.09818696975708,
+          0.36186379194259644
+        ]
+      ],
+      "normal": [
+        0.03262779116630554,
+        0.9540834426879883,
+        0.29775896668434143
+      ],
+      "normal_alignment": 0.9569041728973389,
+      "uv_perimeter": 0.4506073594093323
+    },
+    {
+      "triangle": [
+        4574,
+        4557,
+        4459
+      ],
+      "bounds": [
+        [
+          0.27005746960639954,
+          0.6135684251785278,
+          1.2868942022323608
+        ],
+        [
+          0.2733485996723175,
+          0.6320294737815857,
+          1.2971445322036743
+        ]
+      ],
+      "normal": [
+        0.9341985583305359,
+        -0.14931218326091766,
+        0.32400450110435486
+      ],
+      "normal_alignment": 0.8365933895111084,
+      "uv_perimeter": 0.01139331713784486
+    },
+    {
+      "triangle": [
+        1805,
+        1875,
+        1816
+      ],
+      "bounds": [
+        [
+          0.14013764262199402,
+          0.494337797164917,
+          1.5175423622131348
+        ],
+        [
+          0.14773119986057281,
+          0.5006012916564941,
+          1.5439844131469727
+        ]
+      ],
+      "normal": [
+        0.5726497173309326,
+        0.7454947829246521,
+        0.34104207158088684
+      ],
+      "normal_alignment": 0.43052539229393005,
+      "uv_perimeter": 0.03363952785730362
+    },
+    {
+      "triangle": [
+        15292,
+        15188,
+        15181
+      ],
+      "bounds": [
+        [
+          -0.2097514420747757,
+          1.0810389518737793,
+          0.35328978300094604
+        ],
+        [
+          -0.20856526494026184,
+          1.1209197044372559,
+          0.3942057192325592
+        ]
+      ],
+      "normal": [
+        -0.9994683265686035,
+        0.01973857544362545,
+        -0.025951454415917397
+      ],
+      "normal_alignment": 0.3851969242095947,
+      "uv_perimeter": 0.026091824751347303
+    }
+  ],
+  "boundary_edges": 0,
+  "over_shared_edges": 1,
+  "protected_closed_contact_edges": [
+    [
+      7437,
+      7585
+    ]
+  ],
+  "contact_note": "Seven holes closed; one balanced original four-face assembly contact retained.",
+  "collapsed_triangles": 0,
+  "healthy_main_body_source_faces_retained": 23241,
+  "all_original_vertex_attribute_rows_weights_materials_skeleton_rest_binds_preserved": true,
+  "new_geometric_vertices": 0,
+  "scope": "Local topology repair. Mouth and teeth, two eyes, dorsal and paired fins, tail and armor retained. Original vertex attributes, skin, 19-joint skeleton/rest/binds and textures preserved; no remesh or rerig. Three duplicate corner rows on closure 4 use one healthy neighboring UV island. All original attribute/skin rows remain exact; duplicate skin rows copy the same corners.",
+  "new_attribute_rows": 3,
+  "uv_repair": {
+    "patch": 4,
+    "source_neighbor_face": 15188,
+    "method": "Three duplicate corner rows, original positions/normals/joints/weights copied exactly; UVs sampled inside one adjacent healthy texture island to avoid atlas stripe.",
+    "old_corner_rows": [
+      9562,
+      9490,
+      9571
+    ],
+    "new_corner_rows": [
+      27740,
+      27741,
+      27742
+    ],
+    "uv": [
+      [
+        0.09277500212192535,
+        0.7233679890632629
+      ],
+      [
+        0.09357500076293945,
+        0.7239459753036499
+      ],
+      [
+        0.09277500212192535,
+        0.7233679890632629
+      ]
+    ],
+    "uv_perimeter": 0.001973895588889718
+  }
+}

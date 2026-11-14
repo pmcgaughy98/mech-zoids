@@ -1,0 +1,9 @@
+Projected feature boxes measured by eye on cropped finished sprites; +/-2 px. Boxes inclusive; x increases toward viewer right.
+East coil y0..39 = 40 px; torso y10..41 = 32 px (excludes head and legs); coil/body = 1.250.
+East near steel turret x60..73 = 14 px; wedge head x55..83 = 29 px; turret/head = 0.483.
+East overall height 58 px / south 64 px = 0.90625; profile-height equality FAIL.
+South both turret span x4..36 = 33 px; wedge helmet head x11..33 = 23 px; span/head = 1.435.
+South tail visible above head/back toward viewer RIGHT only; viewer LEFT absent; PASS one side.
+Reserved glowing lens colour pixel counts: {'ne': 0, 'nw': 0, 'e': 46, 's': 58, 'se': 48, 'sw': 51}
+NE/NW lens pixels = 0/0 PASS. Body gold and reserved lens colours remain separate.
+By-eye caveats: elevated rear helmet corner reads casque-like; planted feet read block toes more than opposing clamps; north feet keep camera-facing toes rather than clear heels.

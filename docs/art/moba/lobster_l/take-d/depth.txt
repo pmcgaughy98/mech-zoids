@@ -1,0 +1,7 @@
+Luminance = 0.2126R + 0.7152G + 0.0722B over all opaque n pixels.
+Take C n: p05 18.86; p95 127.16; range 108.30; most common #7e7e8e 24.02%; height 77px
+Take D n: p05 30.84; p95 154.87; range 124.02; most common #7e7e8e 25.15%; height 75px.
+Mottling candidates: enclosed 8-connected 1-3px same-material shade islands; excludes seams/material and silhouette contacts; mechanical details may count.
+n: 44 candidate islands; gunmetal 37, red 5, steel 2
+ne: 40 candidate islands; gunmetal 34, red 5, steel 1
+nw: 37 candidate islands; gunmetal 31, red 6, steel 0

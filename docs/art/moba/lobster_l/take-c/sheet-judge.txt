@@ -1,0 +1,12 @@
+sheet judge: D:\dev\new-mech-rpg\docs\art\moba\lobster_l\take-c\views
+  e   h  55 feet 160 palette   1.0 colours  13  height: 55 px, the set's median 64
+  ne  h  75 feet 160 palette   1.0 colours  12  height: 75 px, the set's median 64
+  n   h  77 feet 160 palette   1.0 colours  12  height: 77 px, the set's median 64
+  nw  h  75 feet 160 palette   1.0 colours  12  height: 75 px, the set's median 64
+  w   h  55 feet 160 palette   1.0 colours  13  height: 55 px, the set's median 64
+  sw  h  63 feet 160 palette   1.0 colours  13  ok
+  s   h  66 feet 160 palette   1.0 colours  14  ok
+  se  h  63 feet 160 palette   1.0 colours  14  ok
+  mirror e/w 0.995  mirror ne/nw 0.992  mirror se/sw 0.995  same n/s 0.099  even n/s [0.993, 0.995]
+  FIX (code, --fix): nothing
+  REDO (generate again): e, ne, n, nw, w

@@ -1,0 +1,1474 @@
+{
+  "raw_size": [
+    2172,
+    724
+  ],
+  "raw_sha256": "26287131775e393e037322df09bf71df71cd24108b4e48460fb506463d234e6b",
+  "columns": 8,
+  "rows": [
+    "front",
+    "side",
+    "back"
+  ],
+  "x_edges": [
+    0,
+    272,
+    543,
+    814,
+    1086,
+    1358,
+    1629,
+    1900,
+    2172
+  ],
+  "y_edges": [
+    0,
+    250,
+    443,
+    724
+  ],
+  "row_scale": {
+    "front": 0.3194849364588393,
+    "side": 0.4405289523048003,
+    "back": 0.3310135666457418
+  },
+  "cells": [
+    {
+      "view": "front",
+      "frame": 0,
+      "source_box": [
+        0,
+        0,
+        272,
+        250
+      ],
+      "source_opaque_box": [
+        102,
+        28,
+        215,
+        234
+      ],
+      "scale": 0.3194849364588393,
+      "placement": [
+        78,
+        95
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        80,
+        89,
+        113,
+        161
+      ],
+      "final_path": "frames/front_f0.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "front",
+      "frame": 1,
+      "source_box": [
+        272,
+        0,
+        543,
+        250
+      ],
+      "source_opaque_box": [
+        102,
+        28,
+        215,
+        234
+      ],
+      "scale": 0.3194849364588393,
+      "placement": [
+        78,
+        95
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        80,
+        89,
+        113,
+        161
+      ],
+      "final_path": "frames/front_f1.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "front",
+      "frame": 2,
+      "source_box": [
+        543,
+        0,
+        814,
+        250
+      ],
+      "source_opaque_box": [
+        102,
+        28,
+        215,
+        234
+      ],
+      "scale": 0.3194849364588393,
+      "placement": [
+        78,
+        95
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        80,
+        89,
+        113,
+        161
+      ],
+      "final_path": "frames/front_f2.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "front",
+      "frame": 3,
+      "source_box": [
+        814,
+        0,
+        1086,
+        250
+      ],
+      "source_opaque_box": [
+        102,
+        28,
+        215,
+        234
+      ],
+      "scale": 0.3194849364588393,
+      "placement": [
+        78,
+        95
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        80,
+        89,
+        113,
+        161
+      ],
+      "final_path": "frames/front_f3.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "front",
+      "frame": 4,
+      "source_box": [
+        1086,
+        0,
+        1358,
+        250
+      ],
+      "source_opaque_box": [
+        102,
+        28,
+        215,
+        234
+      ],
+      "scale": 0.3194849364588393,
+      "placement": [
+        78,
+        95
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        79,
+        89,
+        112,
+        161
+      ],
+      "final_path": "frames/front_f4.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "front",
+      "frame": 5,
+      "source_box": [
+        1358,
+        0,
+        1629,
+        250
+      ],
+      "source_opaque_box": [
+        102,
+        27,
+        215,
+        227
+      ],
+      "scale": 0.3194849364588393,
+      "placement": [
+        78,
+        97
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        79,
+        89,
+        112,
+        161
+      ],
+      "final_path": "frames/front_f5.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "front",
+      "frame": 6,
+      "source_box": [
+        1629,
+        0,
+        1900,
+        250
+      ],
+      "source_opaque_box": [
+        102,
+        27,
+        215,
+        234
+      ],
+      "scale": 0.3194849364588393,
+      "placement": [
+        78,
+        95
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        79,
+        89,
+        112,
+        161
+      ],
+      "final_path": "frames/front_f6.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "front",
+      "frame": 7,
+      "source_box": [
+        1900,
+        0,
+        2172,
+        250
+      ],
+      "source_opaque_box": [
+        103,
+        27,
+        216,
+        234
+      ],
+      "scale": 0.3194849364588393,
+      "placement": [
+        78,
+        95
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        79,
+        89,
+        112,
+        161
+      ],
+      "final_path": "frames/front_f7.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 0,
+      "source_box": [
+        0,
+        250,
+        272,
+        443
+      ],
+      "source_opaque_box": [
+        7,
+        16,
+        265,
+        161
+      ],
+      "scale": 0.4405289523048003,
+      "placement": [
+        39,
+        97
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        33,
+        95,
+        153,
+        161
+      ],
+      "final_path": "frames/side_f0.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 1,
+      "source_box": [
+        272,
+        250,
+        543,
+        443
+      ],
+      "source_opaque_box": [
+        7,
+        16,
+        264,
+        161
+      ],
+      "scale": 0.4405289523048003,
+      "placement": [
+        40,
+        97
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        34,
+        95,
+        153,
+        161
+      ],
+      "final_path": "frames/side_f1.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 2,
+      "source_box": [
+        543,
+        250,
+        814,
+        443
+      ],
+      "source_opaque_box": [
+        8,
+        16,
+        265,
+        161
+      ],
+      "scale": 0.4405289523048003,
+      "placement": [
+        40,
+        97
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        34,
+        95,
+        153,
+        161
+      ],
+      "final_path": "frames/side_f2.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 3,
+      "source_box": [
+        814,
+        250,
+        1086,
+        443
+      ],
+      "source_opaque_box": [
+        9,
+        16,
+        265,
+        161
+      ],
+      "scale": 0.4405289523048003,
+      "placement": [
+        40,
+        97
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        34,
+        95,
+        153,
+        161
+      ],
+      "final_path": "frames/side_f3.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 4,
+      "source_box": [
+        1086,
+        250,
+        1358,
+        443
+      ],
+      "source_opaque_box": [
+        8,
+        16,
+        265,
+        161
+      ],
+      "scale": 0.4405289523048003,
+      "placement": [
+        40,
+        97
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        34,
+        95,
+        153,
+        161
+      ],
+      "final_path": "frames/side_f4.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 5,
+      "source_box": [
+        1358,
+        250,
+        1629,
+        443
+      ],
+      "source_opaque_box": [
+        7,
+        16,
+        263,
+        161
+      ],
+      "scale": 0.4405289523048003,
+      "placement": [
+        40,
+        97
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        34,
+        95,
+        153,
+        161
+      ],
+      "final_path": "frames/side_f5.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 6,
+      "source_box": [
+        1629,
+        250,
+        1900,
+        443
+      ],
+      "source_opaque_box": [
+        7,
+        16,
+        266,
+        161
+      ],
+      "scale": 0.4405289523048003,
+      "placement": [
+        39,
+        97
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        33,
+        95,
+        153,
+        161
+      ],
+      "final_path": "frames/side_f6.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 7,
+      "source_box": [
+        1900,
+        250,
+        2172,
+        443
+      ],
+      "source_opaque_box": [
+        9,
+        16,
+        264,
+        161
+      ],
+      "scale": 0.4405289523048003,
+      "placement": [
+        40,
+        97
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        34,
+        95,
+        152,
+        161
+      ],
+      "final_path": "frames/side_f7.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 0,
+      "source_box": [
+        0,
+        443,
+        272,
+        724
+      ],
+      "source_opaque_box": [
+        87,
+        34,
+        196,
+        245
+      ],
+      "scale": 0.3310135666457418,
+      "placement": [
+        78,
+        91
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        78,
+        89,
+        114,
+        161
+      ],
+      "final_path": "frames/back_f0.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 1,
+      "source_box": [
+        272,
+        443,
+        543,
+        724
+      ],
+      "source_opaque_box": [
+        88,
+        33,
+        197,
+        245
+      ],
+      "scale": 0.3310135666457418,
+      "placement": [
+        78,
+        91
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        78,
+        89,
+        114,
+        161
+      ],
+      "final_path": "frames/back_f1.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 2,
+      "source_box": [
+        543,
+        443,
+        814,
+        724
+      ],
+      "source_opaque_box": [
+        89,
+        34,
+        198,
+        245
+      ],
+      "scale": 0.3310135666457418,
+      "placement": [
+        78,
+        91
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        78,
+        89,
+        114,
+        161
+      ],
+      "final_path": "frames/back_f2.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 3,
+      "source_box": [
+        814,
+        443,
+        1086,
+        724
+      ],
+      "source_opaque_box": [
+        89,
+        33,
+        198,
+        245
+      ],
+      "scale": 0.3310135666457418,
+      "placement": [
+        78,
+        91
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        78,
+        89,
+        114,
+        161
+      ],
+      "final_path": "frames/back_f3.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 4,
+      "source_box": [
+        1086,
+        443,
+        1358,
+        724
+      ],
+      "source_opaque_box": [
+        88,
+        33,
+        197,
+        245
+      ],
+      "scale": 0.3310135666457418,
+      "placement": [
+        78,
+        91
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        78,
+        89,
+        113,
+        161
+      ],
+      "final_path": "frames/back_f4.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 5,
+      "source_box": [
+        1358,
+        443,
+        1629,
+        724
+      ],
+      "source_opaque_box": [
+        88,
+        34,
+        196,
+        245
+      ],
+      "scale": 0.3310135666457418,
+      "placement": [
+        78,
+        91
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        78,
+        89,
+        113,
+        161
+      ],
+      "final_path": "frames/back_f5.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 6,
+      "source_box": [
+        1629,
+        443,
+        1900,
+        724
+      ],
+      "source_opaque_box": [
+        89,
+        34,
+        198,
+        245
+      ],
+      "scale": 0.3310135666457418,
+      "placement": [
+        78,
+        91
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        78,
+        89,
+        113,
+        161
+      ],
+      "final_path": "frames/back_f6.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 7,
+      "source_box": [
+        1900,
+        443,
+        2172,
+        724
+      ],
+      "source_opaque_box": [
+        89,
+        33,
+        198,
+        245
+      ],
+      "scale": 0.3310135666457418,
+      "placement": [
+        78,
+        91
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        78,
+        89,
+        113,
+        161
+      ],
+      "final_path": "frames/back_f7.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    }
+  ],
+  "final_canvas": [
+    192,
+    192
+  ],
+  "duration_ms": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+  ],
+  "loop": true,
+  "native_finishing": {
+    "method": "Whole generated drawings, nearest-neighbour native pixel corrections, fixed palette and binary alpha. No approved part compositing. Exact endpoints copied byte for byte.",
+    "scripts": [
+      "../polish.py",
+      "../gait_finish.py"
+    ],
+    "final_pixel_scale": 1,
+    "approved_canvas_offset": [
+      0,
+      0
+    ]
+  },
+  "support_edits": [
+    {
+      "view": "front",
+      "frame": 0,
+      "whole_generated_source_frame": 0,
+      "mirror_whole_drawing": false,
+      "legs": [
+        {
+          "source_foot_bottom": 160,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            82,
+            92
+          ],
+          "final_foot_span": [
+            83,
+            92
+          ]
+        },
+        {
+          "source_foot_bottom": 150,
+          "final_foot_bottom": 157,
+          "clearance": 3,
+          "source_foot_span": [
+            96,
+            107
+          ],
+          "final_foot_span": [
+            100,
+            109
+          ]
+        }
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 1,
+      "whole_generated_source_frame": 1,
+      "mirror_whole_drawing": false,
+      "legs": [
+        {
+          "source_foot_bottom": 160,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            82,
+            92
+          ],
+          "final_foot_span": [
+            83,
+            92
+          ]
+        },
+        {
+          "source_foot_bottom": 150,
+          "final_foot_bottom": 156,
+          "clearance": 4,
+          "source_foot_span": [
+            98,
+            107
+          ],
+          "final_foot_span": [
+            100,
+            109
+          ]
+        }
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 2,
+      "whole_generated_source_frame": 2,
+      "mirror_whole_drawing": false,
+      "legs": [
+        {
+          "source_foot_bottom": 160,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            83,
+            92
+          ],
+          "final_foot_span": [
+            83,
+            92
+          ]
+        },
+        {
+          "source_foot_bottom": 153,
+          "final_foot_bottom": 155,
+          "clearance": 5,
+          "source_foot_span": [
+            100,
+            110
+          ],
+          "final_foot_span": [
+            100,
+            109
+          ]
+        }
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 3,
+      "whole_generated_source_frame": 3,
+      "mirror_whole_drawing": false,
+      "legs": [
+        {
+          "source_foot_bottom": 160,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            82,
+            92
+          ],
+          "final_foot_span": [
+            83,
+            92
+          ]
+        },
+        {
+          "source_foot_bottom": 159,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            99,
+            108
+          ],
+          "final_foot_span": [
+            100,
+            109
+          ]
+        }
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 4,
+      "whole_generated_source_frame": 0,
+      "mirror_whole_drawing": true,
+      "legs": [
+        {
+          "source_foot_bottom": 150,
+          "final_foot_bottom": 157,
+          "clearance": 3,
+          "source_foot_span": [
+            84,
+            95
+          ],
+          "final_foot_span": [
+            83,
+            92
+          ]
+        },
+        {
+          "source_foot_bottom": 160,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            99,
+            109
+          ],
+          "final_foot_span": [
+            100,
+            109
+          ]
+        }
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 5,
+      "whole_generated_source_frame": 1,
+      "mirror_whole_drawing": true,
+      "legs": [
+        {
+          "source_foot_bottom": 150,
+          "final_foot_bottom": 156,
+          "clearance": 4,
+          "source_foot_span": [
+            84,
+            93
+          ],
+          "final_foot_span": [
+            83,
+            92
+          ]
+        },
+        {
+          "source_foot_bottom": 160,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            99,
+            109
+          ],
+          "final_foot_span": [
+            100,
+            109
+          ]
+        }
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 6,
+      "whole_generated_source_frame": 2,
+      "mirror_whole_drawing": true,
+      "legs": [
+        {
+          "source_foot_bottom": 153,
+          "final_foot_bottom": 155,
+          "clearance": 5,
+          "source_foot_span": [
+            81,
+            91
+          ],
+          "final_foot_span": [
+            83,
+            92
+          ]
+        },
+        {
+          "source_foot_bottom": 160,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            99,
+            108
+          ],
+          "final_foot_span": [
+            100,
+            109
+          ]
+        }
+      ]
+    },
+    {
+      "view": "front",
+      "frame": 7,
+      "whole_generated_source_frame": 3,
+      "mirror_whole_drawing": true,
+      "legs": [
+        {
+          "source_foot_bottom": 159,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            83,
+            92
+          ],
+          "final_foot_span": [
+            83,
+            92
+          ]
+        },
+        {
+          "source_foot_bottom": 160,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            99,
+            109
+          ],
+          "final_foot_span": [
+            100,
+            109
+          ]
+        }
+      ]
+    },
+    {
+      "view": "back",
+      "frame": 0,
+      "whole_generated_source_frame": 0,
+      "mirror_whole_drawing": false,
+      "legs": [
+        {
+          "source_foot_bottom": 160,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            79,
+            90
+          ],
+          "final_foot_span": [
+            78,
+            87
+          ]
+        },
+        {
+          "source_foot_bottom": 155,
+          "final_foot_bottom": 157,
+          "clearance": 3,
+          "source_foot_span": [
+            101,
+            111
+          ],
+          "final_foot_span": [
+            103,
+            112
+          ]
+        }
+      ]
+    },
+    {
+      "view": "back",
+      "frame": 1,
+      "whole_generated_source_frame": 1,
+      "mirror_whole_drawing": false,
+      "legs": [
+        {
+          "source_foot_bottom": 160,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            81,
+            90
+          ],
+          "final_foot_span": [
+            78,
+            87
+          ]
+        },
+        {
+          "source_foot_bottom": 152,
+          "final_foot_bottom": 156,
+          "clearance": 4,
+          "source_foot_span": [
+            102,
+            112
+          ],
+          "final_foot_span": [
+            103,
+            112
+          ]
+        }
+      ]
+    },
+    {
+      "view": "back",
+      "frame": 2,
+      "whole_generated_source_frame": 2,
+      "mirror_whole_drawing": false,
+      "legs": [
+        {
+          "source_foot_bottom": 160,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            81,
+            90
+          ],
+          "final_foot_span": [
+            78,
+            87
+          ]
+        },
+        {
+          "source_foot_bottom": 157,
+          "final_foot_bottom": 155,
+          "clearance": 5,
+          "source_foot_span": [
+            102,
+            112
+          ],
+          "final_foot_span": [
+            103,
+            112
+          ]
+        }
+      ]
+    },
+    {
+      "view": "back",
+      "frame": 3,
+      "whole_generated_source_frame": 3,
+      "mirror_whole_drawing": false,
+      "legs": [
+        {
+          "source_foot_bottom": 160,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            81,
+            90
+          ],
+          "final_foot_span": [
+            78,
+            87
+          ]
+        },
+        {
+          "source_foot_bottom": 158,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            102,
+            112
+          ],
+          "final_foot_span": [
+            103,
+            112
+          ]
+        }
+      ]
+    },
+    {
+      "view": "back",
+      "frame": 4,
+      "whole_generated_source_frame": 0,
+      "mirror_whole_drawing": true,
+      "legs": [
+        {
+          "source_foot_bottom": 155,
+          "final_foot_bottom": 157,
+          "clearance": 3,
+          "source_foot_span": [
+            80,
+            90
+          ],
+          "final_foot_span": [
+            78,
+            87
+          ]
+        },
+        {
+          "source_foot_bottom": 160,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            101,
+            112
+          ],
+          "final_foot_span": [
+            103,
+            112
+          ]
+        }
+      ]
+    },
+    {
+      "view": "back",
+      "frame": 5,
+      "whole_generated_source_frame": 1,
+      "mirror_whole_drawing": true,
+      "legs": [
+        {
+          "source_foot_bottom": 152,
+          "final_foot_bottom": 156,
+          "clearance": 4,
+          "source_foot_span": [
+            79,
+            89
+          ],
+          "final_foot_span": [
+            78,
+            87
+          ]
+        },
+        {
+          "source_foot_bottom": 160,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            101,
+            110
+          ],
+          "final_foot_span": [
+            103,
+            112
+          ]
+        }
+      ]
+    },
+    {
+      "view": "back",
+      "frame": 6,
+      "whole_generated_source_frame": 2,
+      "mirror_whole_drawing": true,
+      "legs": [
+        {
+          "source_foot_bottom": 157,
+          "final_foot_bottom": 155,
+          "clearance": 5,
+          "source_foot_span": [
+            79,
+            89
+          ],
+          "final_foot_span": [
+            78,
+            87
+          ]
+        },
+        {
+          "source_foot_bottom": 160,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            101,
+            110
+          ],
+          "final_foot_span": [
+            103,
+            112
+          ]
+        }
+      ]
+    },
+    {
+      "view": "back",
+      "frame": 7,
+      "whole_generated_source_frame": 3,
+      "mirror_whole_drawing": true,
+      "legs": [
+        {
+          "source_foot_bottom": 158,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            79,
+            89
+          ],
+          "final_foot_span": [
+            78,
+            87
+          ]
+        },
+        {
+          "source_foot_bottom": 160,
+          "final_foot_bottom": 160,
+          "clearance": 0,
+          "source_foot_span": [
+            101,
+            110
+          ],
+          "final_foot_span": [
+            103,
+            112
+          ]
+        }
+      ]
+    }
+  ]
+}

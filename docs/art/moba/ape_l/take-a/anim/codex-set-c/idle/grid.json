@@ -1,0 +1,293 @@
+{
+  "source": "native approved parts; NO image generation",
+  "raw_size": [
+    960,
+    384
+  ],
+  "columns": 5,
+  "rows": [
+    "se",
+    "ne"
+  ],
+  "x_edges": [
+    0,
+    192,
+    384,
+    576,
+    768,
+    960
+  ],
+  "y_edges": [
+    0,
+    192,
+    384
+  ],
+  "row_scale": {
+    "se": 1,
+    "ne": 1
+  },
+  "cells": [
+    {
+      "view": "se",
+      "frame": 0,
+      "source_box": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "placement": [
+        16,
+        30
+      ],
+      "upper_lift": 0,
+      "scale": 1,
+      "touches_cut": false,
+      "final_bbox": [
+        52,
+        89,
+        141,
+        161
+      ],
+      "final_source": "native approved pixel parts"
+    },
+    {
+      "view": "se",
+      "frame": 1,
+      "source_box": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "placement": [
+        16,
+        30
+      ],
+      "upper_lift": 1,
+      "scale": 1,
+      "touches_cut": false,
+      "final_bbox": [
+        52,
+        88,
+        141,
+        161
+      ],
+      "final_source": "native approved pixel parts"
+    },
+    {
+      "view": "se",
+      "frame": 2,
+      "source_box": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "placement": [
+        16,
+        30
+      ],
+      "upper_lift": 2,
+      "scale": 1,
+      "touches_cut": false,
+      "final_bbox": [
+        52,
+        87,
+        141,
+        161
+      ],
+      "final_source": "native approved pixel parts"
+    },
+    {
+      "view": "se",
+      "frame": 3,
+      "source_box": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "placement": [
+        16,
+        30
+      ],
+      "upper_lift": 1,
+      "scale": 1,
+      "touches_cut": false,
+      "final_bbox": [
+        52,
+        88,
+        141,
+        161
+      ],
+      "final_source": "native approved pixel parts"
+    },
+    {
+      "view": "se",
+      "frame": 4,
+      "source_box": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "placement": [
+        16,
+        30
+      ],
+      "upper_lift": 0,
+      "scale": 1,
+      "touches_cut": false,
+      "final_bbox": [
+        52,
+        89,
+        141,
+        161
+      ],
+      "final_source": "native approved pixel parts"
+    },
+    {
+      "view": "ne",
+      "frame": 0,
+      "source_box": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "placement": [
+        16,
+        30
+      ],
+      "upper_lift": 0,
+      "scale": 1,
+      "touches_cut": false,
+      "final_bbox": [
+        53,
+        91,
+        139,
+        161
+      ],
+      "final_source": "native approved pixel parts"
+    },
+    {
+      "view": "ne",
+      "frame": 1,
+      "source_box": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "placement": [
+        16,
+        30
+      ],
+      "upper_lift": 1,
+      "scale": 1,
+      "touches_cut": false,
+      "final_bbox": [
+        53,
+        90,
+        139,
+        161
+      ],
+      "final_source": "native approved pixel parts"
+    },
+    {
+      "view": "ne",
+      "frame": 2,
+      "source_box": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "placement": [
+        16,
+        30
+      ],
+      "upper_lift": 2,
+      "scale": 1,
+      "touches_cut": false,
+      "final_bbox": [
+        53,
+        89,
+        139,
+        161
+      ],
+      "final_source": "native approved pixel parts"
+    },
+    {
+      "view": "ne",
+      "frame": 3,
+      "source_box": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "placement": [
+        16,
+        30
+      ],
+      "upper_lift": 1,
+      "scale": 1,
+      "touches_cut": false,
+      "final_bbox": [
+        53,
+        90,
+        139,
+        161
+      ],
+      "final_source": "native approved pixel parts"
+    },
+    {
+      "view": "ne",
+      "frame": 4,
+      "source_box": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "placement": [
+        16,
+        30
+      ],
+      "upper_lift": 0,
+      "scale": 1,
+      "touches_cut": false,
+      "final_bbox": [
+        53,
+        91,
+        139,
+        161
+      ],
+      "final_source": "native approved pixel parts"
+    }
+  ],
+  "clean": true,
+  "final_canvas": [
+    192,
+    192
+  ],
+  "approved_offset": [
+    16,
+    30
+  ],
+  "ground_row": 160,
+  "finishing": [
+    "finish.py",
+    "polish.py",
+    "gems.py",
+    "final_pose.py",
+    "seam_fill.py",
+    "gem_cleanup.py",
+    "verify.py"
+  ],
+  "clean_after_isolation": true,
+  "raw_grid_note": "native contact sheet; no generation",
+  "walk_support_note": null
+}

@@ -1,0 +1,13 @@
+By eye: recognizable same mech rhino and named parts, but approved proportions drift; this take FAILS approval requirements.
+Front feet visibly lift in columns 2-4 front/side; back-row front feet are occluded, so the required three-view lift is unproven.
+Columns broadly share the same action beats; front/back are straight on, side faces right; perfect bilateral symmetry fails.
+Exactly one built-in generation; tokens used unavailable. Prompt unchanged from prompt.txt; attachments front/side/back.
+Raw: 1774x887; SHA256 b151a819d25a0e0e94a69248cff7859013988c06d78b2031c8ad2f3898e752cf
+Clean separate 3x6 grid YES, with uneven row spacing; shrink factor 0.3718411552; finished sheet 660x330.
+All 18 frames: 192x192, binary alpha, 11-12 exact ref colours, no border contact, no magenta/plum, zero lone pale rim pixels.
+F0 front/side/back: 86x80 / 103x71 / 77x89 vs refs 72x70 / 103x67 / 66x77; exact colour matches about 21% / 34% / 27%.
+Front-foot clearance F0..F5, manual estimates +/-2px: front 0,8,26,30,0,0; side 0,5,18,24,0,1; back N/A (occluded).
+Ground FAIL: side F1/F2/F5 bottom y=159; all other frame bottoms y=160. Fixed column-1 anchors preserved.
+Exact-colour mirror similarities: front about .64-.80; back about .75-.87. Per-frame sizes, colours and palette rim audit: checks.txt.
+Saved sheet_raw.png, sheet_finished.png, generation.json, 18 frames, both labelled reviews and all three timed looping GIFs.
+No retry or installation. All task writes stayed in out; only allowed reference images were opened for viewing.

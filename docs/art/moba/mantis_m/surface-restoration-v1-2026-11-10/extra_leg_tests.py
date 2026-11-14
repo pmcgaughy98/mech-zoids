@@ -1,0 +1,9 @@
+import bpy,json,math
+import numpy as np
+from pathlib import Path
+from mathutils import Vector
+OUT=Path('D:/dev/new-mech-rpg/docs/art/moba/mantis_m/surface-restoration-v1-2026-11-10');bpy.ops.wm.open_mainfile(filepath=str(OUT/'mantis-restored-six-limbs-rigged-v1.blend'));scene=bpy.context.scene;cam=scene.camera;ob=next(o for o in scene.objects if o.type=='MESH' and len(o.vertex_groups));rig=next(o for o in scene.objects if o.type=='ARMATURE');dg=bpy.context.evaluated_depsgraph_get();ev=ob.evaluated_get(dg);me=ev.to_mesh();rest=np.array([tuple(v.co) for v in me.vertices]);ev.to_mesh_clear();_,first,inverse=np.unique(np.round(rest,6),axis=0,return_index=True,return_inverse=True);report=json.loads((OUT/'visual-rig-check.json').read_text())
+for bone,angle in [('Bone_035',10),('Bone_037',-10)]:
+ for pb in rig.pose.bones:pb.matrix_basis.identity()
+ pb=rig.pose.bones[bone];pb.rotation_mode='XYZ';pb.rotation_euler.x=math.radians(angle);bpy.context.view_layer.update();dg=bpy.context.evaluated_depsgraph_get();ev=ob.evaluated_get(dg);me=ev.to_mesh();posed=np.array([tuple(v.co) for v in me.vertices]);disp=np.linalg.norm(posed-rest,axis=1);gap=float(np.linalg.norm(posed-posed[first[inverse]],axis=1).max());assert np.isfinite(posed).all() and disp.max()>.001;report['poses'].append({'bone':bone,'angle_x':angle,'max_displacement':float(disp.max()),'moved_vertices_over_1mm':int((disp>.001).sum()),'uv_split_seam_gap_m':gap});ev.to_mesh_clear();cam.data.ortho_scale=3.6;center=Vector((0,0,.85));cam.location=center+Vector((6,-9,6));cam.rotation_euler=(center-cam.location).to_track_quat('-Z','Y').to_euler();scene.render.filepath=str(OUT/f'pose-{bone}.png');bpy.ops.render.render(write_still=True)
+(OUT/'visual-rig-check.json').write_text(json.dumps(report,indent=2));print(json.dumps(report['poses'][-2:]),flush=True)

@@ -1,0 +1,23 @@
+{
+  "source_rig": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_spider_textured_25k_20261111_character.glb",
+  "source_rig_sha256": "b7b81dfbc4100d628ed1316ec3e4987e3745ac0e2139be546fbf1a94dd12128b",
+  "output_sha256": "23116d1f765452b7850f3d83007e3d1b7bea2137fd4a8535b4dfc15402f223f8",
+  "skeleton_nodes_bind_transforms_skins_scenes_unchanged": true,
+  "original_rig_buffer_retained": true,
+  "weights": "Transferred from actual downloaded rig using four nearest surface samples, inverse fourth power, strongest four influences normalized. UV-seam duplicates use identical point queries.",
+  "surface_materials": "Restored original source materials and embedded textures, plus local cut-root finish; downloaded materials retained in archive buffer/JSON.",
+  "distance_stats": [
+    {
+      "vertices": 247522,
+      "distance_mean": 0.015502569079290256,
+      "distance_99pct": 0.05632720636670046,
+      "distance_max": 0.167131576823115
+    },
+    {
+      "vertices": 4488,
+      "distance_mean": 0.02728596935647321,
+      "distance_99pct": 0.08785555843798686,
+      "distance_max": 0.09601805892000166
+    }
+  ]
+}

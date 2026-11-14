@@ -1,0 +1,19 @@
+ne: width 127px, height 72px, opaque area 6420
+n: width 130px, height 76px, opaque area 7162
+nw: width 127px, height 72px, opaque area 6425
+e: width 129px, height 76px, opaque area 6864
+w: width 129px, height 76px, opaque area 6842
+se: width 135px, height 79px, opaque area 7901
+s: width 140px, height 80px, opaque area 8235
+sw: width 135px, height 79px, opaque area 7902
+Height range 72-80px: exact matching FAIL; all within 10% of median PASS.
+East/south height: 76/80 = 0.950; profile equally tall FAIL (4px shorter).
+North/south height: 76/80 = 0.950; back no taller PASS.
+NE/SE and NW/SW height: 72/79 = 0.911; rear diagonals no taller PASS, same-height FAIL.
+NE/NW cyan eye pixels: 0/0 (exact #4af0ff); pale lens pixels also 0/0.
+By-eye semantic audit, not an automatic claw segmentation: 0 visible claw pixels above the adjacent shell rim; 0 stalks occluded by claws in all eight views.
+Clearly readable planted leg tips / clearly readable visible tips, by eye: ne4/4,n4/4,nw4/4,e3/3,w3/3,se3/3,s2/2,sw3/3. Perspective accounts for different contact rows; no visible foot lifted.
+Six legs cannot be verified in all views: front claws hide most feet, north has four unambiguous soles. Ambiguous dark under-shell appendages excluded from count.
+Claws: resting against ground in front/profile/front diagonals; rear-diagonal visible claw edges sit slightly above the nearest feet, consistent with far-side perspective but contact not independently visible.
+SE/SW: genuinely turned, one lens each and far lens hidden; far stalk also entirely hidden, so two separately readable stalks FAIL.
+Low camera remains broadly consistent, back shell visible from above but no more than front; no rear eyes or face. Rear legs visible.

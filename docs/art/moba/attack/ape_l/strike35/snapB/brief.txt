@@ -1,0 +1,9 @@
+Job from Claude (the attack lane of the mech MOBA in D:/dev/new-mech-rpg), approved by Preston on 2026-11-06 ("Yes, draw the rest", for four sheets, cap 40,000 each): a DRAW-ONLY sheet of the robot gorilla's basic attack, a one-arm thrown punch (deep wind-up, then a straight snap), in two views (a second take of southeast, and south), from the approved 35 degree stills. Only the image is made; the attack lane finishes it by script.
+Run tag: ape-snapB. Write only inside OUT = D:/dev/new-mech-rpg/docs/art/moba/attack/ape_l/strike35/snapB
+Open no image and no file except OUT/prompt-sheet.txt and the one attachment. Do not write outside OUT. Do not commit.
+
+1. Generate exactly ONE image with your built-in image tool from OUT/prompt-sheet.txt word for word, attaching exactly one image: OUT/refs/look_35.png. Save it unchanged as OUT/sheet_raw.png. Never make a second image or a redo; if it fails, report and stop.
+
+2. Write OUT/REPORT.txt, under 12 lines, and the same in your final answer: tokens used if known; the image size; then by eye for each row (se, s) and each of columns 2 to 6: does it keep its row's facing (se faces the lower right, toward the viewer; s faces the viewer)? At contact, is the fist drawn bigger, closer to the camera, off the ground? Is the punching arm the near arm, with the far fist and both feet still planted (exactly three ground contacts)? Is column 3 the fist pulled back behind the shoulder? Is column 4 the arm locked straight with the fist clearly past where the standing fist rests, off the ground? Does the arm keep its length and parts (no extra joint, no second forearm)? Anything extra, missing or broken (gems, eyes, legs)?
+
+3. Stop. Do not shrink, recolour, slice, measure or check anything else.

@@ -1,0 +1,361 @@
+{
+ "glb": "res://art/arena_models/cobra.glb",
+ "source_file": "D:/dev/_scratch/cobra-3d/game-export-r3/cobra-base-r3.glb",
+ "forward": "+Z",
+ "rest_height": 1.7,
+ "source_fps": 60,
+ "times": "seconds",
+ "loops": [
+  "Idle",
+  "Walk",
+  "Ghost_Run"
+ ],
+ "one_shots": [
+  "Strike_1",
+  "Strike_2",
+  "Strike_3",
+  "Hit_Front",
+  "Death",
+  "Wall_Over",
+  "Wall_Over_3m",
+  "Hood_Gaze",
+  "Seam_In",
+  "Seam_Out",
+  "Breach"
+ ],
+ "clips": {
+  "Idle": {
+   "name": "Cobra_Idle",
+   "length": 3.0,
+   "loop": true,
+   "events": []
+  },
+  "Walk": {
+   "name": "Cobra_Slither",
+   "length": 0.55,
+   "loop": true,
+   "events": [],
+   "speed": 3.5,
+   "peak_height": 1.728
+  },
+  "Strike_1": {
+   "name": "Cobra_Strike_1",
+   "length": 0.6,
+   "loop": false,
+   "events": [
+    {
+     "name": "coil",
+     "time": 0.1,
+     "damage": false
+    },
+    {
+     "name": "hit",
+     "time": 0.22,
+     "damage": true
+    },
+    {
+     "name": "recover",
+     "time": 0.4,
+     "damage": false
+    }
+   ]
+  },
+  "Strike_2": {
+   "name": "Cobra_Strike_2",
+   "length": 0.65,
+   "loop": false,
+   "events": [
+    {
+     "name": "wind",
+     "time": 0.12,
+     "damage": false
+    },
+    {
+     "name": "hit",
+     "time": 0.21,
+     "damage": true
+    },
+    {
+     "name": "recover",
+     "time": 0.44,
+     "damage": false
+    }
+   ]
+  },
+  "Strike_3": {
+   "name": "Cobra_Strike_3",
+   "length": 0.9,
+   "loop": false,
+   "events": [
+    {
+     "name": "rear_up",
+     "time": 0.3,
+     "damage": false
+    },
+    {
+     "name": "hit",
+     "time": 0.46,
+     "damage": true
+    },
+    {
+     "name": "recover",
+     "time": 0.66,
+     "damage": false
+    }
+   ]
+  },
+  "Hit_Front": {
+   "name": "Cobra_Hit_Front",
+   "length": 0.35,
+   "loop": false,
+   "events": []
+  },
+  "Death": {
+   "name": "Cobra_Death",
+   "length": 1.5,
+   "loop": false,
+   "events": [
+    {
+     "name": "body_down",
+     "time": 0.8,
+     "damage": false
+    },
+    {
+     "name": "head_down",
+     "time": 1.05,
+     "damage": false
+    }
+   ]
+  },
+  "Wall_Over": {
+   "name": "Cobra_Wall_Over",
+   "length": 2.7833,
+   "loop": false,
+   "events": [
+    {
+     "name": "reach",
+     "time": 0.2667,
+     "damage": false
+    },
+    {
+     "name": "crest",
+     "time": 0.65,
+     "damage": false
+    },
+    {
+     "name": "land",
+     "time": 1.8167,
+     "damage": false
+    },
+    {
+     "name": "clear",
+     "time": 2.65,
+     "damage": false
+    }
+   ],
+   "slot": "passive, Wall Line: the 5v5 wall module (2.6 m tall, 1.6 m thick)",
+   "note": "In place horizontally. The game moves the cobra forward at travel.speed for the whole clip, starting with the near face wall.near_face_ahead_m_at_start ahead of the model origin. Lifts the body to the wall height + 0.08 m.",
+   "wall": {
+    "height": 2.6,
+    "thickness": 1.6,
+    "near_face_ahead_m_at_start": 3.49
+   },
+   "travel": {
+    "speed": 3.0,
+    "from": 0.0,
+    "to": 2.7833
+   }
+  },
+  "Wall_Over_3m": {
+   "name": "Cobra_Wall_Over_3m",
+   "length": 2.65,
+   "loop": false,
+   "events": [
+    {
+     "name": "reach",
+     "time": 0.2667,
+     "damage": false
+    },
+    {
+     "name": "crest",
+     "time": 0.65,
+     "damage": false
+    },
+    {
+     "name": "land",
+     "time": 1.6833,
+     "damage": false
+    },
+    {
+     "name": "clear",
+     "time": 2.5167,
+     "damage": false
+    }
+   ],
+   "slot": "passive, Wall Line: the old arena walls (3 m tall, 1.2 m thick)",
+   "note": "In place horizontally. The game moves the cobra forward at travel.speed for the whole clip, starting with the near face wall.near_face_ahead_m_at_start ahead of the model origin. Lifts the body to the wall height + 0.08 m.",
+   "wall": {
+    "height": 3.0,
+    "thickness": 1.2,
+    "near_face_ahead_m_at_start": 3.49
+   },
+   "travel": {
+    "speed": 3.0,
+    "from": 0.0,
+    "to": 2.65
+   }
+  },
+  "Ghost_Run": {
+   "name": "Cobra_Ghost_Run",
+   "length": 0.4,
+   "loop": true,
+   "events": [],
+   "speed": 6.0,
+   "peak_height": 1.695,
+   "slot": "1, Ghost Run",
+   "note": "Loop. A lower, quicker slither with the hood folded flat; planted at 6.0 m/s. The soft look is an effect, not in the clip."
+  },
+  "Hood_Gaze": {
+   "name": "Cobra_Hood_Gaze",
+   "length": 0.95,
+   "loop": false,
+   "events": [
+    {
+     "name": "gather",
+     "time": 0.12,
+     "damage": false
+    },
+    {
+     "name": "gaze",
+     "time": 0.3,
+     "damage": false
+    },
+    {
+     "name": "release",
+     "time": 0.62,
+     "damage": false
+    }
+   ],
+   "slot": "2, Hood Gaze",
+   "note": "One-shot, in place. The hood flares wide with both plates swung forward. The cone fires at 'gaze'; 'release' is the end of the hold."
+  },
+  "Seam_In": {
+   "name": "Cobra_Seam_In",
+   "length": 1.1,
+   "loop": false,
+   "events": [
+    {
+     "name": "lunge",
+     "time": 0.12,
+     "damage": false
+    },
+    {
+     "name": "contact",
+     "time": 0.2167,
+     "damage": false
+    },
+    {
+     "name": "hidden",
+     "time": 0.9,
+     "damage": false
+    }
+   ],
+   "slot": "3, Seam, into the wall",
+   "inside_s": 2.0,
+   "note": "In place horizontally. The game moves the cobra forward at travel.speed for the whole clip, near face wall.near_face_ahead_m_at_start ahead at the start. It dives head-first into the foot of the wall at 40 degrees. At 'hidden' no part is outside the wall above the floor: hide the model and start the inside travel. It stays inside the wall for inside_s (2.0 s; Preston, 2026-11-13: \"Seam stays inside the wall 2 seconds\"), then Seam_Out plays.",
+   "wall": {
+    "height": 2.6,
+    "thickness": 1.6,
+    "near_face_ahead_m_at_start": 2.463
+   },
+   "travel": {
+    "speed": 4.0,
+    "from": 0.0,
+    "to": 1.1
+   }
+  },
+  "Seam_Out": {
+   "name": "Cobra_Seam_Out",
+   "length": 1.2333,
+   "loop": false,
+   "events": [
+    {
+     "name": "emerge",
+     "time": 0.0167,
+     "damage": false
+    },
+    {
+     "name": "base_out",
+     "time": 0.2487,
+     "damage": false
+    },
+    {
+     "name": "clear",
+     "time": 0.9167,
+     "damage": false
+    }
+   ],
+   "slot": "3, Seam, out of the wall",
+   "note": "In place horizontally. Place the cobra so the exit face is wall.exit_face_ahead_m_at_start ahead of the origin, with the wall behind that face, and move it forward at travel.speed for the whole clip. 'emerge' is the snout clearing the face; 'clear' is the tail tip out. Blend to Idle or Walk after 'clear'.",
+   "wall": {
+    "height": 2.6,
+    "thickness": 1.6,
+    "exit_face_ahead_m_at_start": 2.059
+   },
+   "travel": {
+    "speed": 4.0,
+    "from": 0.0,
+    "to": 1.2333
+   }
+  },
+  "Breach": {
+   "name": "Cobra_Breach",
+   "length": 1.5,
+   "loop": false,
+   "events": [
+    {
+     "name": "wind",
+     "time": 0.3,
+     "damage": false
+    },
+    {
+     "name": "go",
+     "time": 0.36,
+     "damage": false
+    },
+    {
+     "name": "contact",
+     "time": 0.4167,
+     "damage": false
+    },
+    {
+     "name": "burst",
+     "time": 0.55,
+     "damage": true
+    },
+    {
+     "name": "clear",
+     "time": 1.0167,
+     "damage": false
+    },
+    {
+     "name": "stop",
+     "time": 1.046,
+     "damage": false
+    }
+   ],
+   "slot": "4, Breach",
+   "note": "In place horizontally. The game moves the cobra forward at travel.speed only between 'go' and 'stop'. Near face wall.near_face_ahead_m_at_start ahead at the start. 'burst' is the snout coming out of the far face: damage and knockback there. The wall section is soft, so nothing is checked against it (the game dissolves or hides it).",
+   "wall": {
+    "height": 2.6,
+    "thickness": 1.6,
+    "near_face_ahead_m_at_start": 2.163
+   },
+   "travel": {
+    "speed": 8.0,
+    "from": 0.36,
+    "to": 1.046
+   }
+  }
+ }
+}

@@ -1,0 +1,15 @@
+Approved by Preston, 2026-11-04, in the 3D test session: "Appeove", then "Both" when asked what it covered.
+
+1. Model B, pass 3, is approved as the minion drone's 3D model for now.
+   Files: drone_parts_blue.glb and drone_parts_red.glb, built by part_build.py.
+   Scored 6/10 against "the sprite became 3D" from the chase camera. It reads as the same drone but is not yet the sprite.
+   The known gaps are listed in NOTES.md: it is taller and boxier from above, the pods read as balls, and voxel steps show on the shell edge.
+   The game itself has not changed: the arena still uses the sprite billboard.
+
+2. The request to the sprite factory lane, sent through the hub, is approved:
+   draw the drone's s and se views at the game's 30 degree chase camera angle.
+   This gives a real target to score the 3D model against.
+
+Note (Claude, 2026-11-04): Preston then asked to keep refining (pass 4), then said "Lean toward drawing" (pass 5).
+Pass 5 now holds drone_parts_blue.glb and _red.glb in this folder. Pass 4 is kept in _pass4/.
+The approved pass 3 files are kept unchanged in _pass3_approved/. Passes 4 and 5 are not approved yet.

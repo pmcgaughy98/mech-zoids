@@ -1,0 +1,3259 @@
+{
+  "views": {
+    "se": {
+      "structure": [
+        {
+          "frame": 0,
+          "size": [
+            192,
+            192
+          ],
+          "palette_ok": true,
+          "color_count": 12,
+          "binary_alpha": true,
+          "components": 1,
+          "below160": 0,
+          "edge": false,
+          "unintended_pinholes": 0,
+          "enclosed_interleg_negative_spaces": []
+        },
+        {
+          "frame": 1,
+          "size": [
+            192,
+            192
+          ],
+          "palette_ok": true,
+          "color_count": 12,
+          "binary_alpha": true,
+          "components": 1,
+          "below160": 0,
+          "edge": false,
+          "unintended_pinholes": 0,
+          "enclosed_interleg_negative_spaces": []
+        },
+        {
+          "frame": 2,
+          "size": [
+            192,
+            192
+          ],
+          "palette_ok": true,
+          "color_count": 12,
+          "binary_alpha": true,
+          "components": 1,
+          "below160": 0,
+          "edge": false,
+          "unintended_pinholes": 0,
+          "enclosed_interleg_negative_spaces": [
+            139
+          ]
+        },
+        {
+          "frame": 3,
+          "size": [
+            192,
+            192
+          ],
+          "palette_ok": true,
+          "color_count": 12,
+          "binary_alpha": true,
+          "components": 1,
+          "below160": 0,
+          "edge": false,
+          "unintended_pinholes": 0,
+          "enclosed_interleg_negative_spaces": [
+            61
+          ]
+        },
+        {
+          "frame": 4,
+          "size": [
+            192,
+            192
+          ],
+          "palette_ok": true,
+          "color_count": 12,
+          "binary_alpha": true,
+          "components": 1,
+          "below160": 0,
+          "edge": false,
+          "unintended_pinholes": 0,
+          "enclosed_interleg_negative_spaces": []
+        },
+        {
+          "frame": 5,
+          "size": [
+            192,
+            192
+          ],
+          "palette_ok": true,
+          "color_count": 12,
+          "binary_alpha": true,
+          "components": 1,
+          "below160": 0,
+          "edge": false,
+          "unintended_pinholes": 0,
+          "enclosed_interleg_negative_spaces": []
+        },
+        {
+          "frame": 6,
+          "size": [
+            192,
+            192
+          ],
+          "palette_ok": true,
+          "color_count": 12,
+          "binary_alpha": true,
+          "components": 1,
+          "below160": 0,
+          "edge": false,
+          "unintended_pinholes": 0,
+          "enclosed_interleg_negative_spaces": [
+            130
+          ]
+        },
+        {
+          "frame": 7,
+          "size": [
+            192,
+            192
+          ],
+          "palette_ok": true,
+          "color_count": 12,
+          "binary_alpha": true,
+          "components": 1,
+          "below160": 0,
+          "edge": false,
+          "unintended_pinholes": 0,
+          "enclosed_interleg_negative_spaces": [
+            72
+          ]
+        }
+      ],
+      "paws": {
+        "near_fore": {
+          "frames": [
+            {
+              "frame": 0,
+              "contact": [
+                111.0,
+                160.0
+              ],
+              "sole_span": [
+                106,
+                116
+              ],
+              "ideal": [
+                111.171025578835,
+                160.63995820817547
+              ],
+              "error_xy": [
+                0.1710255788349997,
+                0.6399582081754716
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                106,
+                107,
+                108,
+                109,
+                111,
+                112,
+                113,
+                116
+              ]
+            },
+            {
+              "frame": 1,
+              "contact": [
+                107.0,
+                160.0
+              ],
+              "sole_span": [
+                102,
+                112
+              ],
+              "ideal": [
+                107.31413459206313,
+                160.23998432806582
+              ],
+              "error_xy": [
+                0.31413459206312666,
+                0.23998432806581604
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                102,
+                103,
+                104,
+                105,
+                107,
+                108,
+                109,
+                112
+              ]
+            },
+            {
+              "frame": 2,
+              "contact": [
+                103.0,
+                160.0
+              ],
+              "sole_span": [
+                98,
+                108
+              ],
+              "ideal": [
+                103.45724360529125,
+                159.84001044795613
+              ],
+              "error_xy": [
+                0.45724360529125363,
+                0.1599895520438679
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                98,
+                99,
+                100,
+                101,
+                103,
+                104,
+                105,
+                108
+              ]
+            },
+            {
+              "frame": 3,
+              "contact": [
+                100.0,
+                159.0
+              ],
+              "sole_span": [
+                95,
+                105
+              ],
+              "ideal": [
+                99.60035261851938,
+                159.44003656784645
+              ],
+              "error_xy": [
+                0.3996473814806194,
+                0.4400365678464482
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                95,
+                96,
+                97,
+                98,
+                100,
+                101,
+                102,
+                105
+              ]
+            },
+            {
+              "frame": 4,
+              "contact": [
+                102.0,
+                158.0
+              ],
+              "sole_span": [
+                97,
+                107
+              ],
+              "ideal": [
+                101.91448721058251,
+                157.68002089591226
+              ],
+              "error_xy": [
+                0.08551278941749274,
+                0.3199791040877358
+              ],
+              "lift_expected": 2,
+              "lift_measured": 2.0,
+              "visible_matching_sole_pixels": [
+                97,
+                98,
+                99,
+                100,
+                102,
+                103,
+                104,
+                107
+              ]
+            },
+            {
+              "frame": 5,
+              "contact": [
+                104.0,
+                156.0
+              ],
+              "sole_span": [
+                99,
+                109
+              ],
+              "ideal": [
+                104.22862180264562,
+                155.92000522397805
+              ],
+              "error_xy": [
+                0.2286218026456197,
+                0.07999477602194816
+              ],
+              "lift_expected": 4,
+              "lift_measured": 4.0,
+              "visible_matching_sole_pixels": [
+                99,
+                100,
+                101,
+                102,
+                104,
+                105,
+                106,
+                109
+              ]
+            },
+            {
+              "frame": 6,
+              "contact": [
+                107.0,
+                156.0
+              ],
+              "sole_span": [
+                102,
+                112
+              ],
+              "ideal": [
+                106.54275639470875,
+                156.15998955204387
+              ],
+              "error_xy": [
+                0.45724360529125363,
+                0.1599895520438679
+              ],
+              "lift_expected": 4,
+              "lift_measured": 4.0,
+              "visible_matching_sole_pixels": [
+                102,
+                103,
+                104,
+                105,
+                107,
+                108,
+                109,
+                112
+              ]
+            },
+            {
+              "frame": 7,
+              "contact": [
+                109.0,
+                158.0
+              ],
+              "sole_span": [
+                104,
+                114
+              ],
+              "ideal": [
+                108.85689098677187,
+                158.39997388010968
+              ],
+              "error_xy": [
+                0.14310901322812697,
+                0.39997388010968393
+              ],
+              "lift_expected": 2,
+              "lift_measured": 2.0,
+              "visible_matching_sole_pixels": [
+                104,
+                105,
+                106,
+                107,
+                109,
+                110,
+                111,
+                114
+              ]
+            }
+          ],
+          "world_contacts": [
+            [
+              111.0,
+              160.0
+            ],
+            [
+              110.85689098677187,
+              160.39997388010968
+            ],
+            [
+              110.71378197354375,
+              160.79994776021934
+            ],
+            [
+              111.57067296031562,
+              160.19992164032902
+            ]
+          ],
+          "spread_xy": [
+            0.856890986771873,
+            0.7999477602193394
+          ],
+          "max_target_error": 0.6399582081754716
+        },
+        "far_fore": {
+          "frames": [
+            {
+              "frame": 0,
+              "contact": [
+                117.5,
+                156.0
+              ],
+              "sole_span": [
+                113,
+                122
+              ],
+              "ideal": [
+                117.41448721058251,
+                155.68002089591226
+              ],
+              "error_xy": [
+                0.08551278941749274,
+                0.3199791040877358
+              ],
+              "lift_expected": 2,
+              "lift_measured": 2.0,
+              "visible_matching_sole_pixels": [
+                116,
+                118,
+                119,
+                120,
+                122
+              ]
+            },
+            {
+              "frame": 1,
+              "contact": [
+                119.5,
+                154.0
+              ],
+              "sole_span": [
+                115,
+                124
+              ],
+              "ideal": [
+                119.72862180264562,
+                153.92000522397805
+              ],
+              "error_xy": [
+                0.2286218026456197,
+                0.07999477602194816
+              ],
+              "lift_expected": 4,
+              "lift_measured": 4.0,
+              "visible_matching_sole_pixels": [
+                115,
+                116,
+                117,
+                118,
+                120,
+                121,
+                122,
+                124
+              ]
+            },
+            {
+              "frame": 2,
+              "contact": [
+                122.5,
+                154.0
+              ],
+              "sole_span": [
+                118,
+                127
+              ],
+              "ideal": [
+                122.04275639470875,
+                154.15998955204387
+              ],
+              "error_xy": [
+                0.45724360529125363,
+                0.1599895520438679
+              ],
+              "lift_expected": 4,
+              "lift_measured": 4.0,
+              "visible_matching_sole_pixels": [
+                118,
+                119,
+                120,
+                121,
+                123,
+                124,
+                125,
+                127
+              ]
+            },
+            {
+              "frame": 3,
+              "contact": [
+                124.5,
+                156.0
+              ],
+              "sole_span": [
+                120,
+                129
+              ],
+              "ideal": [
+                124.35689098677187,
+                156.39997388010968
+              ],
+              "error_xy": [
+                0.14310901322812697,
+                0.39997388010968393
+              ],
+              "lift_expected": 2,
+              "lift_measured": 2.0,
+              "visible_matching_sole_pixels": [
+                120,
+                121,
+                122,
+                123,
+                125,
+                126,
+                127,
+                129
+              ]
+            },
+            {
+              "frame": 4,
+              "contact": [
+                126.5,
+                159.0
+              ],
+              "sole_span": [
+                122,
+                131
+              ],
+              "ideal": [
+                126.671025578835,
+                158.63995820817547
+              ],
+              "error_xy": [
+                0.1710255788349997,
+                0.36004179182452845
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                122,
+                123,
+                124,
+                125,
+                127,
+                128,
+                129,
+                131
+              ]
+            },
+            {
+              "frame": 5,
+              "contact": [
+                122.5,
+                158.0
+              ],
+              "sole_span": [
+                118,
+                127
+              ],
+              "ideal": [
+                122.81413459206313,
+                158.23998432806582
+              ],
+              "error_xy": [
+                0.31413459206312666,
+                0.23998432806581604
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                118,
+                119,
+                120,
+                121,
+                123,
+                124,
+                125,
+                127
+              ]
+            },
+            {
+              "frame": 6,
+              "contact": [
+                118.5,
+                158.0
+              ],
+              "sole_span": [
+                114,
+                123
+              ],
+              "ideal": [
+                118.95724360529125,
+                157.84001044795613
+              ],
+              "error_xy": [
+                0.45724360529125363,
+                0.1599895520438679
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                114,
+                115,
+                116,
+                117,
+                119,
+                120,
+                121,
+                123
+              ]
+            },
+            {
+              "frame": 7,
+              "contact": [
+                115.5,
+                157.0
+              ],
+              "sole_span": [
+                111,
+                120
+              ],
+              "ideal": [
+                115.10035261851938,
+                157.44003656784645
+              ],
+              "error_xy": [
+                0.3996473814806194,
+                0.4400365678464482
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                113,
+                116,
+                117,
+                118,
+                120
+              ]
+            }
+          ],
+          "world_contacts": [
+            [
+              141.9275639470875,
+              160.5998955204387
+            ],
+            [
+              141.78445493385937,
+              159.9998694005484
+            ],
+            [
+              141.64134592063124,
+              160.39984328065805
+            ],
+            [
+              142.4982369074031,
+              159.79981716076773
+            ]
+          ],
+          "spread_xy": [
+            0.856890986771873,
+            0.8000783596709766
+          ],
+          "max_target_error": 0.45724360529125363
+        },
+        "near_hind": {
+          "frames": [
+            {
+              "frame": 0,
+              "contact": [
+                68.5,
+                155.0
+              ],
+              "sole_span": [
+                66,
+                71
+              ],
+              "ideal": [
+                68.41448721058251,
+                154.68002089591226
+              ],
+              "error_xy": [
+                0.08551278941749274,
+                0.3199791040877358
+              ],
+              "lift_expected": 2,
+              "lift_measured": 2.0,
+              "visible_matching_sole_pixels": [
+                66,
+                67,
+                71
+              ]
+            },
+            {
+              "frame": 1,
+              "contact": [
+                70.5,
+                153.0
+              ],
+              "sole_span": [
+                68,
+                73
+              ],
+              "ideal": [
+                70.72862180264562,
+                152.92000522397805
+              ],
+              "error_xy": [
+                0.2286218026456197,
+                0.07999477602194816
+              ],
+              "lift_expected": 4,
+              "lift_measured": 4.0,
+              "visible_matching_sole_pixels": [
+                68,
+                69,
+                73
+              ]
+            },
+            {
+              "frame": 2,
+              "contact": [
+                73.5,
+                153.0
+              ],
+              "sole_span": [
+                71,
+                76
+              ],
+              "ideal": [
+                73.04275639470875,
+                153.15998955204387
+              ],
+              "error_xy": [
+                0.45724360529125363,
+                0.1599895520438679
+              ],
+              "lift_expected": 4,
+              "lift_measured": 4.0,
+              "visible_matching_sole_pixels": [
+                71,
+                72,
+                76
+              ]
+            },
+            {
+              "frame": 3,
+              "contact": [
+                75.5,
+                155.0
+              ],
+              "sole_span": [
+                73,
+                78
+              ],
+              "ideal": [
+                75.35689098677187,
+                155.39997388010968
+              ],
+              "error_xy": [
+                0.14310901322812697,
+                0.39997388010968393
+              ],
+              "lift_expected": 2,
+              "lift_measured": 2.0,
+              "visible_matching_sole_pixels": [
+                73,
+                74,
+                78
+              ]
+            },
+            {
+              "frame": 4,
+              "contact": [
+                77.5,
+                158.0
+              ],
+              "sole_span": [
+                75,
+                80
+              ],
+              "ideal": [
+                77.671025578835,
+                157.63995820817547
+              ],
+              "error_xy": [
+                0.1710255788349997,
+                0.36004179182452845
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                75,
+                76,
+                80
+              ]
+            },
+            {
+              "frame": 5,
+              "contact": [
+                73.5,
+                157.0
+              ],
+              "sole_span": [
+                71,
+                76
+              ],
+              "ideal": [
+                73.81413459206313,
+                157.23998432806582
+              ],
+              "error_xy": [
+                0.31413459206312666,
+                0.23998432806581604
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                71,
+                72,
+                76
+              ]
+            },
+            {
+              "frame": 6,
+              "contact": [
+                69.5,
+                157.0
+              ],
+              "sole_span": [
+                67,
+                72
+              ],
+              "ideal": [
+                69.95724360529125,
+                156.84001044795613
+              ],
+              "error_xy": [
+                0.45724360529125363,
+                0.1599895520438679
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                67,
+                68,
+                72
+              ]
+            },
+            {
+              "frame": 7,
+              "contact": [
+                66.5,
+                156.0
+              ],
+              "sole_span": [
+                64,
+                69
+              ],
+              "ideal": [
+                66.10035261851938,
+                156.44003656784645
+              ],
+              "error_xy": [
+                0.3996473814806194,
+                0.4400365678464482
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                64,
+                65,
+                69
+              ]
+            }
+          ],
+          "world_contacts": [
+            [
+              92.92756394708749,
+              159.5998955204387
+            ],
+            [
+              92.78445493385937,
+              158.9998694005484
+            ],
+            [
+              92.64134592063124,
+              159.39984328065805
+            ],
+            [
+              93.49823690740311,
+              158.79981716076773
+            ]
+          ],
+          "spread_xy": [
+            0.856890986771873,
+            0.8000783596709766
+          ],
+          "max_target_error": 0.45724360529125363
+        },
+        "far_hind": {
+          "frames": [
+            {
+              "frame": 0,
+              "contact": [
+                92.5,
+                155.0
+              ],
+              "sole_span": [
+                88,
+                97
+              ],
+              "ideal": [
+                92.671025578835,
+                154.63995820817547
+              ],
+              "error_xy": [
+                0.1710255788349997,
+                0.36004179182452845
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                88,
+                89,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                97
+              ]
+            },
+            {
+              "frame": 1,
+              "contact": [
+                88.5,
+                154.0
+              ],
+              "sole_span": [
+                84,
+                93
+              ],
+              "ideal": [
+                88.81413459206313,
+                154.23998432806582
+              ],
+              "error_xy": [
+                0.31413459206312666,
+                0.23998432806581604
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                84,
+                85,
+                86,
+                87,
+                88,
+                89,
+                90,
+                91,
+                93
+              ]
+            },
+            {
+              "frame": 2,
+              "contact": [
+                84.5,
+                154.0
+              ],
+              "sole_span": [
+                80,
+                89
+              ],
+              "ideal": [
+                84.95724360529125,
+                153.84001044795613
+              ],
+              "error_xy": [
+                0.45724360529125363,
+                0.1599895520438679
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                80,
+                81,
+                82,
+                83,
+                84,
+                85,
+                86,
+                87,
+                89
+              ]
+            },
+            {
+              "frame": 3,
+              "contact": [
+                81.5,
+                153.0
+              ],
+              "sole_span": [
+                77,
+                86
+              ],
+              "ideal": [
+                81.10035261851938,
+                153.44003656784645
+              ],
+              "error_xy": [
+                0.3996473814806194,
+                0.4400365678464482
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                79,
+                81,
+                82,
+                83,
+                84,
+                86
+              ]
+            },
+            {
+              "frame": 4,
+              "contact": [
+                83.5,
+                152.0
+              ],
+              "sole_span": [
+                79,
+                88
+              ],
+              "ideal": [
+                83.41448721058251,
+                151.68002089591226
+              ],
+              "error_xy": [
+                0.08551278941749274,
+                0.3199791040877358
+              ],
+              "lift_expected": 2,
+              "lift_measured": 2.0,
+              "visible_matching_sole_pixels": [
+                79,
+                80,
+                81,
+                82,
+                83,
+                84,
+                85,
+                86,
+                88
+              ]
+            },
+            {
+              "frame": 5,
+              "contact": [
+                85.5,
+                150.0
+              ],
+              "sole_span": [
+                81,
+                90
+              ],
+              "ideal": [
+                85.72862180264562,
+                149.92000522397805
+              ],
+              "error_xy": [
+                0.2286218026456197,
+                0.07999477602194816
+              ],
+              "lift_expected": 4,
+              "lift_measured": 4.0,
+              "visible_matching_sole_pixels": [
+                81,
+                82,
+                83,
+                84,
+                85,
+                86,
+                87,
+                88,
+                90
+              ]
+            },
+            {
+              "frame": 6,
+              "contact": [
+                88.5,
+                150.0
+              ],
+              "sole_span": [
+                84,
+                93
+              ],
+              "ideal": [
+                88.04275639470875,
+                150.15998955204387
+              ],
+              "error_xy": [
+                0.45724360529125363,
+                0.1599895520438679
+              ],
+              "lift_expected": 4,
+              "lift_measured": 4.0,
+              "visible_matching_sole_pixels": [
+                84,
+                85,
+                86,
+                87,
+                88,
+                89,
+                90,
+                91,
+                93
+              ]
+            },
+            {
+              "frame": 7,
+              "contact": [
+                90.5,
+                152.0
+              ],
+              "sole_span": [
+                86,
+                95
+              ],
+              "ideal": [
+                90.35689098677187,
+                152.39997388010968
+              ],
+              "error_xy": [
+                0.14310901322812697,
+                0.39997388010968393
+              ],
+              "lift_expected": 2,
+              "lift_measured": 2.0,
+              "visible_matching_sole_pixels": [
+                86,
+                87,
+                88,
+                89,
+                90,
+                91,
+                92,
+                93,
+                95
+              ]
+            }
+          ],
+          "world_contacts": [
+            [
+              92.5,
+              155.0
+            ],
+            [
+              92.35689098677187,
+              154.39997388010968
+            ],
+            [
+              92.21378197354375,
+              154.79994776021934
+            ],
+            [
+              93.07067296031562,
+              154.19992164032902
+            ]
+          ],
+          "spread_xy": [
+            0.856890986771873,
+            0.8000783596709766
+          ],
+          "max_target_error": 0.45724360529125363
+        }
+      },
+      "widths": {
+        "near_fore": {
+          "upper": {
+            "reference": [
+              16,
+              8,
+              7
+            ],
+            "frames": [
+              [
+                16,
+                8,
+                7
+              ],
+              [
+                15,
+                9,
+                6
+              ],
+              [
+                15,
+                7,
+                7
+              ],
+              [
+                17,
+                9,
+                7
+              ],
+              [
+                15,
+                8,
+                7
+              ],
+              [
+                16,
+                8,
+                7
+              ],
+              [
+                17,
+                9,
+                7
+              ],
+              [
+                15,
+                9,
+                6
+              ]
+            ],
+            "max_delta": 1
+          },
+          "shank": {
+            "reference": [
+              6,
+              5,
+              5
+            ],
+            "frames": [
+              [
+                6,
+                5,
+                5
+              ],
+              [
+                6,
+                5,
+                5
+              ],
+              [
+                6,
+                6,
+                5
+              ],
+              [
+                6,
+                6,
+                5
+              ],
+              [
+                6,
+                5,
+                5
+              ],
+              [
+                6,
+                5,
+                5
+              ],
+              [
+                6,
+                5,
+                5
+              ],
+              [
+                6,
+                6,
+                4
+              ]
+            ],
+            "max_delta": 1
+          },
+          "paw": {
+            "reference": 12,
+            "frames": [
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12
+            ]
+          },
+          "max_length_delta": 0.4612029605892438
+        },
+        "far_fore": {
+          "upper": {
+            "reference": [
+              8,
+              8,
+              7
+            ],
+            "frames": [
+              [
+                8,
+                8,
+                7
+              ],
+              [
+                8,
+                8,
+                7
+              ],
+              [
+                8,
+                7,
+                6
+              ],
+              [
+                8,
+                7,
+                8
+              ],
+              [
+                8,
+                7,
+                7
+              ],
+              [
+                8,
+                7,
+                8
+              ],
+              [
+                8,
+                7,
+                8
+              ],
+              [
+                8,
+                8,
+                7
+              ]
+            ],
+            "max_delta": 1
+          },
+          "shank": {
+            "reference": [
+              5,
+              4,
+              4
+            ],
+            "frames": [
+              [
+                5,
+                3,
+                4
+              ],
+              [
+                5,
+                3,
+                4
+              ],
+              [
+                5,
+                3,
+                4
+              ],
+              [
+                5,
+                4,
+                4
+              ],
+              [
+                5,
+                3,
+                4
+              ],
+              [
+                5,
+                4,
+                4
+              ],
+              [
+                5,
+                4,
+                4
+              ],
+              [
+                5,
+                4,
+                4
+              ]
+            ],
+            "max_delta": 1
+          },
+          "paw": {
+            "reference": 12,
+            "frames": [
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12
+            ]
+          },
+          "max_length_delta": 1.0970771028033575
+        },
+        "near_hind": {
+          "upper": {
+            "reference": [
+              13,
+              9,
+              6
+            ],
+            "frames": [
+              [
+                14,
+                10,
+                6
+              ],
+              [
+                13,
+                10,
+                6
+              ],
+              [
+                12,
+                9,
+                5
+              ],
+              [
+                13,
+                9,
+                6
+              ],
+              [
+                13,
+                9,
+                6
+              ],
+              [
+                13,
+                10,
+                7
+              ],
+              [
+                12,
+                10,
+                6
+              ],
+              [
+                12,
+                10,
+                6
+              ]
+            ],
+            "max_delta": 1
+          },
+          "shank": {
+            "reference": [
+              6,
+              5,
+              4
+            ],
+            "frames": [
+              [
+                6,
+                5,
+                4
+              ],
+              [
+                6,
+                5,
+                4
+              ],
+              [
+                6,
+                5,
+                3
+              ],
+              [
+                6,
+                5,
+                3
+              ],
+              [
+                6,
+                5,
+                4
+              ],
+              [
+                6,
+                6,
+                4
+              ],
+              [
+                6,
+                4,
+                4
+              ],
+              [
+                6,
+                5,
+                4
+              ]
+            ],
+            "max_delta": 1
+          },
+          "paw": {
+            "reference": 11,
+            "frames": [
+              11,
+              11,
+              11,
+              11,
+              11,
+              11,
+              11,
+              11
+            ]
+          },
+          "max_length_delta": 0.6821789367236466
+        },
+        "far_hind": {
+          "upper": {
+            "reference": [
+              7,
+              5,
+              7
+            ],
+            "frames": [
+              [
+                7,
+                6,
+                6
+              ],
+              [
+                6,
+                4,
+                8
+              ],
+              [
+                6,
+                4,
+                7
+              ],
+              [
+                7,
+                4,
+                8
+              ],
+              [
+                7,
+                6,
+                6
+              ],
+              [
+                7,
+                4,
+                7
+              ],
+              [
+                7,
+                6,
+                6
+              ],
+              [
+                6,
+                4,
+                8
+              ]
+            ],
+            "max_delta": 1
+          },
+          "shank": {
+            "reference": [
+              6,
+              5,
+              4
+            ],
+            "frames": [
+              [
+                6,
+                4,
+                4
+              ],
+              [
+                6,
+                5,
+                4
+              ],
+              [
+                6,
+                4,
+                4
+              ],
+              [
+                5,
+                5,
+                3
+              ],
+              [
+                6,
+                4,
+                4
+              ],
+              [
+                6,
+                4,
+                4
+              ],
+              [
+                6,
+                6,
+                4
+              ],
+              [
+                6,
+                6,
+                4
+              ]
+            ],
+            "max_delta": 1
+          },
+          "paw": {
+            "reference": 11,
+            "frames": [
+              11,
+              11,
+              11,
+              11,
+              11,
+              11,
+              11,
+              11
+            ]
+          },
+          "max_length_delta": 0.6583359358736658
+        }
+      }
+    },
+    "ne": {
+      "structure": [
+        {
+          "frame": 0,
+          "size": [
+            192,
+            192
+          ],
+          "palette_ok": true,
+          "color_count": 10,
+          "binary_alpha": true,
+          "components": 1,
+          "below160": 0,
+          "edge": false,
+          "unintended_pinholes": 0,
+          "enclosed_interleg_negative_spaces": [
+            63
+          ]
+        },
+        {
+          "frame": 1,
+          "size": [
+            192,
+            192
+          ],
+          "palette_ok": true,
+          "color_count": 10,
+          "binary_alpha": true,
+          "components": 1,
+          "below160": 0,
+          "edge": false,
+          "unintended_pinholes": 0,
+          "enclosed_interleg_negative_spaces": [
+            70
+          ]
+        },
+        {
+          "frame": 2,
+          "size": [
+            192,
+            192
+          ],
+          "palette_ok": true,
+          "color_count": 10,
+          "binary_alpha": true,
+          "components": 1,
+          "below160": 0,
+          "edge": false,
+          "unintended_pinholes": 0,
+          "enclosed_interleg_negative_spaces": []
+        },
+        {
+          "frame": 3,
+          "size": [
+            192,
+            192
+          ],
+          "palette_ok": true,
+          "color_count": 10,
+          "binary_alpha": true,
+          "components": 1,
+          "below160": 0,
+          "edge": false,
+          "unintended_pinholes": 0,
+          "enclosed_interleg_negative_spaces": []
+        },
+        {
+          "frame": 4,
+          "size": [
+            192,
+            192
+          ],
+          "palette_ok": true,
+          "color_count": 10,
+          "binary_alpha": true,
+          "components": 1,
+          "below160": 0,
+          "edge": false,
+          "unintended_pinholes": 0,
+          "enclosed_interleg_negative_spaces": [
+            92
+          ]
+        },
+        {
+          "frame": 5,
+          "size": [
+            192,
+            192
+          ],
+          "palette_ok": true,
+          "color_count": 10,
+          "binary_alpha": true,
+          "components": 1,
+          "below160": 0,
+          "edge": false,
+          "unintended_pinholes": 0,
+          "enclosed_interleg_negative_spaces": []
+        },
+        {
+          "frame": 6,
+          "size": [
+            192,
+            192
+          ],
+          "palette_ok": true,
+          "color_count": 10,
+          "binary_alpha": true,
+          "components": 1,
+          "below160": 0,
+          "edge": false,
+          "unintended_pinholes": 0,
+          "enclosed_interleg_negative_spaces": []
+        },
+        {
+          "frame": 7,
+          "size": [
+            192,
+            192
+          ],
+          "palette_ok": true,
+          "color_count": 10,
+          "binary_alpha": true,
+          "components": 1,
+          "below160": 0,
+          "edge": false,
+          "unintended_pinholes": 0,
+          "enclosed_interleg_negative_spaces": [
+            138
+          ]
+        }
+      ],
+      "paws": {
+        "near_fore": {
+          "frames": [
+            {
+              "frame": 0,
+              "contact": [
+                124.5,
+                154.0
+              ],
+              "sole_span": [
+                122,
+                127
+              ],
+              "ideal": [
+                124.39110916248403,
+                154.17719658948866
+              ],
+              "error_xy": [
+                0.10889083751597184,
+                0.17719658948865913
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                122,
+                123,
+                124,
+                125,
+                126,
+                127
+              ]
+            },
+            {
+              "frame": 1,
+              "contact": [
+                121.5,
+                155.0
+              ],
+              "sole_span": [
+                119,
+                124
+              ],
+              "ideal": [
+                121.33416593593151,
+                154.69144872105824
+              ],
+              "error_xy": [
+                0.16583406406849122,
+                0.3085512789417635
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                119,
+                120,
+                121,
+                122,
+                123,
+                124
+              ]
+            },
+            {
+              "frame": 2,
+              "contact": [
+                118.5,
+                155.0
+              ],
+              "sole_span": [
+                116,
+                121
+              ],
+              "ideal": [
+                118.27722270937899,
+                155.20570085262784
+              ],
+              "error_xy": [
+                0.2227772906210106,
+                0.20570085262784232
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                116,
+                117,
+                118,
+                119,
+                120,
+                121
+              ]
+            },
+            {
+              "frame": 3,
+              "contact": [
+                115.5,
+                156.0
+              ],
+              "sole_span": [
+                113,
+                118
+              ],
+              "ideal": [
+                115.22027948282647,
+                155.71995298419742
+              ],
+              "error_xy": [
+                0.27972051717352997,
+                0.2800470158025803
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                113,
+                114,
+                115,
+                116,
+                117,
+                118
+              ]
+            },
+            {
+              "frame": 4,
+              "contact": [
+                117.5,
+                153.0
+              ],
+              "sole_span": [
+                115,
+                120
+              ],
+              "ideal": [
+                117.05444541875798,
+                153.41140170525566
+              ],
+              "error_xy": [
+                0.4455545812420212,
+                0.4114017052556562
+              ],
+              "lift_expected": 2,
+              "lift_measured": 2.0,
+              "visible_matching_sole_pixels": [
+                115,
+                116,
+                117,
+                118,
+                119,
+                120
+              ]
+            },
+            {
+              "frame": 5,
+              "contact": [
+                118.5,
+                151.0
+              ],
+              "sole_span": [
+                116,
+                121
+              ],
+              "ideal": [
+                118.8886113546895,
+                151.10285042631392
+              ],
+              "error_xy": [
+                0.3886113546895018,
+                0.10285042631392116
+              ],
+              "lift_expected": 4,
+              "lift_measured": 4.0,
+              "visible_matching_sole_pixels": [
+                116,
+                117,
+                118,
+                119,
+                120,
+                121
+              ]
+            },
+            {
+              "frame": 6,
+              "contact": [
+                120.5,
+                151.0
+              ],
+              "sole_span": [
+                118,
+                123
+              ],
+              "ideal": [
+                120.72277729062101,
+                150.79429914737216
+              ],
+              "error_xy": [
+                0.2227772906210106,
+                0.20570085262784232
+              ],
+              "lift_expected": 4,
+              "lift_measured": 4.0,
+              "visible_matching_sole_pixels": [
+                118,
+                119,
+                120,
+                121,
+                122,
+                123
+              ]
+            },
+            {
+              "frame": 7,
+              "contact": [
+                122.5,
+                152.0
+              ],
+              "sole_span": [
+                120,
+                125
+              ],
+              "ideal": [
+                122.55694322655252,
+                152.48574786843042
+              ],
+              "error_xy": [
+                0.05694322655251938,
+                0.4857478684304226
+              ],
+              "lift_expected": 2,
+              "lift_measured": 2.0,
+              "visible_matching_sole_pixels": [
+                120,
+                121,
+                122,
+                123,
+                124,
+                125
+              ]
+            }
+          ],
+          "world_contacts": [
+            [
+              124.5,
+              154.0
+            ],
+            [
+              124.55694322655252,
+              154.48574786843042
+            ],
+            [
+              124.61388645310504,
+              153.97149573686085
+            ],
+            [
+              124.67082967965757,
+              154.45724360529124
+            ]
+          ],
+          "spread_xy": [
+            0.17082967965757234,
+            0.5142521315695774
+          ],
+          "max_target_error": 0.4857478684304226
+        },
+        "far_fore": {
+          "frames": [
+            {
+              "frame": 0,
+              "contact": [
+                101.0,
+                151.0
+              ],
+              "sole_span": [
+                100,
+                102
+              ],
+              "ideal": [
+                100.55444541875798,
+                151.41140170525566
+              ],
+              "error_xy": [
+                0.4455545812420212,
+                0.4114017052556562
+              ],
+              "lift_expected": 2,
+              "lift_measured": 2.0,
+              "visible_matching_sole_pixels": [
+                100,
+                101,
+                102
+              ]
+            },
+            {
+              "frame": 1,
+              "contact": [
+                102.0,
+                149.0
+              ],
+              "sole_span": [
+                101,
+                103
+              ],
+              "ideal": [
+                102.3886113546895,
+                149.10285042631392
+              ],
+              "error_xy": [
+                0.3886113546895018,
+                0.10285042631392116
+              ],
+              "lift_expected": 4,
+              "lift_measured": 4.0,
+              "visible_matching_sole_pixels": [
+                101,
+                102,
+                103
+              ]
+            },
+            {
+              "frame": 2,
+              "contact": [
+                104.0,
+                149.0
+              ],
+              "sole_span": [
+                103,
+                105
+              ],
+              "ideal": [
+                104.22277729062101,
+                148.79429914737216
+              ],
+              "error_xy": [
+                0.2227772906210106,
+                0.20570085262784232
+              ],
+              "lift_expected": 4,
+              "lift_measured": 4.0,
+              "visible_matching_sole_pixels": [
+                103,
+                104,
+                105
+              ]
+            },
+            {
+              "frame": 3,
+              "contact": [
+                106.0,
+                150.0
+              ],
+              "sole_span": [
+                105,
+                107
+              ],
+              "ideal": [
+                106.05694322655252,
+                150.48574786843042
+              ],
+              "error_xy": [
+                0.05694322655251938,
+                0.4857478684304226
+              ],
+              "lift_expected": 2,
+              "lift_measured": 2.0,
+              "visible_matching_sole_pixels": [
+                105,
+                106,
+                107
+              ]
+            },
+            {
+              "frame": 4,
+              "contact": [
+                108.0,
+                152.0
+              ],
+              "sole_span": [
+                107,
+                109
+              ],
+              "ideal": [
+                107.89110916248403,
+                152.17719658948866
+              ],
+              "error_xy": [
+                0.10889083751597184,
+                0.17719658948865913
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                107,
+                108,
+                109
+              ]
+            },
+            {
+              "frame": 5,
+              "contact": [
+                105.0,
+                153.0
+              ],
+              "sole_span": [
+                104,
+                106
+              ],
+              "ideal": [
+                104.83416593593151,
+                152.69144872105824
+              ],
+              "error_xy": [
+                0.16583406406849122,
+                0.3085512789417635
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                104,
+                105,
+                106
+              ]
+            },
+            {
+              "frame": 6,
+              "contact": [
+                102.0,
+                153.0
+              ],
+              "sole_span": [
+                101,
+                103
+              ],
+              "ideal": [
+                101.77722270937899,
+                153.20570085262784
+              ],
+              "error_xy": [
+                0.2227772906210106,
+                0.20570085262784232
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                101,
+                102,
+                103
+              ]
+            },
+            {
+              "frame": 7,
+              "contact": [
+                99.0,
+                154.0
+              ],
+              "sole_span": [
+                98,
+                100
+              ],
+              "ideal": [
+                98.72027948282647,
+                153.71995298419742
+              ],
+              "error_xy": [
+                0.27972051717352997,
+                0.2800470158025803
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                98,
+                99,
+                100
+              ]
+            }
+          ],
+          "world_contacts": [
+            [
+              120.22777290621009,
+              149.94299147372166
+            ],
+            [
+              120.28471613276261,
+              150.42873934215208
+            ],
+            [
+              120.34165935931513,
+              149.9144872105825
+            ],
+            [
+              120.39860258586765,
+              150.40023507901293
+            ]
+          ],
+          "spread_xy": [
+            0.17082967965755813,
+            0.5142521315695774
+          ],
+          "max_target_error": 0.4857478684304226
+        },
+        "near_hind": {
+          "frames": [
+            {
+              "frame": 0,
+              "contact": [
+                90.0,
+                158.0
+              ],
+              "sole_span": [
+                88,
+                92
+              ],
+              "ideal": [
+                89.55444541875798,
+                158.41140170525566
+              ],
+              "error_xy": [
+                0.4455545812420212,
+                0.4114017052556562
+              ],
+              "lift_expected": 2,
+              "lift_measured": 2.0,
+              "visible_matching_sole_pixels": [
+                88,
+                89,
+                90,
+                91,
+                92
+              ]
+            },
+            {
+              "frame": 1,
+              "contact": [
+                91.0,
+                156.0
+              ],
+              "sole_span": [
+                89,
+                93
+              ],
+              "ideal": [
+                91.3886113546895,
+                156.10285042631392
+              ],
+              "error_xy": [
+                0.3886113546895018,
+                0.10285042631392116
+              ],
+              "lift_expected": 4,
+              "lift_measured": 4.0,
+              "visible_matching_sole_pixels": [
+                89,
+                90,
+                91,
+                92,
+                93
+              ]
+            },
+            {
+              "frame": 2,
+              "contact": [
+                93.0,
+                156.0
+              ],
+              "sole_span": [
+                91,
+                95
+              ],
+              "ideal": [
+                93.22277729062101,
+                155.79429914737216
+              ],
+              "error_xy": [
+                0.2227772906210106,
+                0.20570085262784232
+              ],
+              "lift_expected": 4,
+              "lift_measured": 4.0,
+              "visible_matching_sole_pixels": [
+                91,
+                92,
+                93,
+                94,
+                95
+              ]
+            },
+            {
+              "frame": 3,
+              "contact": [
+                95.0,
+                157.0
+              ],
+              "sole_span": [
+                93,
+                97
+              ],
+              "ideal": [
+                95.05694322655252,
+                157.48574786843042
+              ],
+              "error_xy": [
+                0.05694322655251938,
+                0.4857478684304226
+              ],
+              "lift_expected": 2,
+              "lift_measured": 2.0,
+              "visible_matching_sole_pixels": [
+                93,
+                94,
+                95,
+                96,
+                97
+              ]
+            },
+            {
+              "frame": 4,
+              "contact": [
+                97.0,
+                159.0
+              ],
+              "sole_span": [
+                95,
+                99
+              ],
+              "ideal": [
+                96.89110916248403,
+                159.17719658948866
+              ],
+              "error_xy": [
+                0.10889083751597184,
+                0.17719658948865913
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                95,
+                96,
+                97,
+                98,
+                99
+              ]
+            },
+            {
+              "frame": 5,
+              "contact": [
+                94.0,
+                160.0
+              ],
+              "sole_span": [
+                92,
+                96
+              ],
+              "ideal": [
+                93.83416593593151,
+                159.69144872105824
+              ],
+              "error_xy": [
+                0.16583406406849122,
+                0.3085512789417635
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                92,
+                93,
+                94,
+                95,
+                96
+              ]
+            },
+            {
+              "frame": 6,
+              "contact": [
+                91.0,
+                160.0
+              ],
+              "sole_span": [
+                89,
+                93
+              ],
+              "ideal": [
+                90.77722270937899,
+                160.20570085262784
+              ],
+              "error_xy": [
+                0.2227772906210106,
+                0.20570085262784232
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                89,
+                90,
+                91,
+                92,
+                93
+              ]
+            },
+            {
+              "frame": 7,
+              "contact": [
+                88.0,
+                160.0
+              ],
+              "sole_span": [
+                86,
+                90
+              ],
+              "ideal": [
+                87.72027948282647,
+                160.71995298419742
+              ],
+              "error_xy": [
+                0.27972051717352997,
+                0.7199529841974197
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                86,
+                87,
+                88,
+                89,
+                90
+              ]
+            }
+          ],
+          "world_contacts": [
+            [
+              109.22777290621009,
+              156.94299147372166
+            ],
+            [
+              109.28471613276261,
+              157.42873934215208
+            ],
+            [
+              109.34165935931513,
+              156.9144872105825
+            ],
+            [
+              109.39860258586765,
+              156.40023507901293
+            ]
+          ],
+          "spread_xy": [
+            0.17082967965755813,
+            1.0285042631391548
+          ],
+          "max_target_error": 0.7199529841974197
+        },
+        "far_hind": {
+          "frames": [
+            {
+              "frame": 0,
+              "contact": [
+                82.0,
+                156.0
+              ],
+              "sole_span": [
+                80,
+                84
+              ],
+              "ideal": [
+                81.89110916248403,
+                156.17719658948866
+              ],
+              "error_xy": [
+                0.10889083751597184,
+                0.17719658948865913
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                80,
+                81,
+                82,
+                83,
+                84
+              ]
+            },
+            {
+              "frame": 1,
+              "contact": [
+                79.0,
+                157.0
+              ],
+              "sole_span": [
+                77,
+                81
+              ],
+              "ideal": [
+                78.83416593593151,
+                156.69144872105824
+              ],
+              "error_xy": [
+                0.16583406406849122,
+                0.3085512789417635
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                77,
+                78,
+                79,
+                80,
+                81
+              ]
+            },
+            {
+              "frame": 2,
+              "contact": [
+                76.0,
+                157.0
+              ],
+              "sole_span": [
+                74,
+                78
+              ],
+              "ideal": [
+                75.77722270937899,
+                157.20570085262784
+              ],
+              "error_xy": [
+                0.2227772906210106,
+                0.20570085262784232
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                74,
+                75,
+                76,
+                77,
+                78
+              ]
+            },
+            {
+              "frame": 3,
+              "contact": [
+                73.0,
+                158.0
+              ],
+              "sole_span": [
+                71,
+                75
+              ],
+              "ideal": [
+                72.72027948282647,
+                157.71995298419742
+              ],
+              "error_xy": [
+                0.27972051717352997,
+                0.2800470158025803
+              ],
+              "lift_expected": 0,
+              "lift_measured": 0.0,
+              "visible_matching_sole_pixels": [
+                71,
+                72,
+                73,
+                74,
+                75
+              ]
+            },
+            {
+              "frame": 4,
+              "contact": [
+                75.0,
+                155.0
+              ],
+              "sole_span": [
+                73,
+                77
+              ],
+              "ideal": [
+                74.55444541875798,
+                155.41140170525566
+              ],
+              "error_xy": [
+                0.4455545812420212,
+                0.4114017052556562
+              ],
+              "lift_expected": 2,
+              "lift_measured": 2.0,
+              "visible_matching_sole_pixels": [
+                73,
+                74,
+                75,
+                76,
+                77
+              ]
+            },
+            {
+              "frame": 5,
+              "contact": [
+                76.0,
+                153.0
+              ],
+              "sole_span": [
+                74,
+                78
+              ],
+              "ideal": [
+                76.3886113546895,
+                153.10285042631392
+              ],
+              "error_xy": [
+                0.3886113546895018,
+                0.10285042631392116
+              ],
+              "lift_expected": 4,
+              "lift_measured": 4.0,
+              "visible_matching_sole_pixels": [
+                74,
+                75,
+                76,
+                77,
+                78
+              ]
+            },
+            {
+              "frame": 6,
+              "contact": [
+                78.0,
+                153.0
+              ],
+              "sole_span": [
+                76,
+                80
+              ],
+              "ideal": [
+                78.22277729062101,
+                152.79429914737216
+              ],
+              "error_xy": [
+                0.2227772906210106,
+                0.20570085262784232
+              ],
+              "lift_expected": 4,
+              "lift_measured": 4.0,
+              "visible_matching_sole_pixels": [
+                76,
+                77,
+                78,
+                79,
+                80
+              ]
+            },
+            {
+              "frame": 7,
+              "contact": [
+                80.0,
+                154.0
+              ],
+              "sole_span": [
+                78,
+                82
+              ],
+              "ideal": [
+                80.05694322655252,
+                154.48574786843042
+              ],
+              "error_xy": [
+                0.05694322655251938,
+                0.4857478684304226
+              ],
+              "lift_expected": 2,
+              "lift_measured": 2.0,
+              "visible_matching_sole_pixels": [
+                78,
+                79,
+                80,
+                81,
+                82
+              ]
+            }
+          ],
+          "world_contacts": [
+            [
+              82.0,
+              156.0
+            ],
+            [
+              82.05694322655252,
+              156.48574786843042
+            ],
+            [
+              82.11388645310504,
+              155.97149573686085
+            ],
+            [
+              82.17082967965757,
+              156.45724360529124
+            ]
+          ],
+          "spread_xy": [
+            0.17082967965757234,
+            0.5142521315695774
+          ],
+          "max_target_error": 0.4857478684304226
+        }
+      },
+      "widths": {
+        "near_fore": {
+          "upper": {
+            "reference": [
+              12,
+              5,
+              6
+            ],
+            "frames": [
+              [
+                13,
+                6,
+                7
+              ],
+              [
+                12,
+                4,
+                6
+              ],
+              [
+                12,
+                4,
+                6
+              ],
+              [
+                12,
+                4,
+                6
+              ],
+              [
+                12,
+                5,
+                7
+              ],
+              [
+                12,
+                5,
+                6
+              ],
+              [
+                12,
+                4,
+                6
+              ],
+              [
+                11,
+                5,
+                5
+              ]
+            ],
+            "max_delta": 1
+          },
+          "shank": {
+            "reference": [
+              6,
+              5,
+              5
+            ],
+            "frames": [
+              [
+                6,
+                5,
+                4
+              ],
+              [
+                6,
+                5,
+                4
+              ],
+              [
+                6,
+                5,
+                5
+              ],
+              [
+                6,
+                5,
+                5
+              ],
+              [
+                6,
+                5,
+                4
+              ],
+              [
+                6,
+                5,
+                4
+              ],
+              [
+                6,
+                5,
+                4
+              ],
+              [
+                6,
+                5,
+                5
+              ]
+            ],
+            "max_delta": 1
+          },
+          "paw": {
+            "reference": 12,
+            "frames": [
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12
+            ]
+          },
+          "max_length_delta": 0.6306831231470191
+        },
+        "far_fore": {
+          "upper": {
+            "reference": [
+              8,
+              7,
+              5
+            ],
+            "frames": [
+              [
+                7,
+                7,
+                6
+              ],
+              [
+                7,
+                6,
+                5
+              ],
+              [
+                7,
+                6,
+                5
+              ],
+              [
+                7,
+                7,
+                6
+              ],
+              [
+                8,
+                7,
+                5
+              ],
+              [
+                7,
+                7,
+                4
+              ],
+              [
+                7,
+                6,
+                5
+              ],
+              [
+                7,
+                6,
+                5
+              ]
+            ],
+            "max_delta": 1
+          },
+          "shank": {
+            "reference": [
+              6,
+              4,
+              4
+            ],
+            "frames": [
+              [
+                7,
+                4,
+                4
+              ],
+              [
+                7,
+                4,
+                4
+              ],
+              [
+                7,
+                4,
+                4
+              ],
+              [
+                6,
+                4,
+                4
+              ],
+              [
+                6,
+                4,
+                4
+              ],
+              [
+                6,
+                4,
+                4
+              ],
+              [
+                6,
+                4,
+                4
+              ],
+              [
+                5,
+                3,
+                4
+              ]
+            ],
+            "max_delta": 1
+          },
+          "paw": {
+            "reference": 11,
+            "frames": [
+              11,
+              11,
+              11,
+              11,
+              11,
+              11,
+              11,
+              11
+            ]
+          },
+          "max_length_delta": 1.2511685222808602
+        },
+        "near_hind": {
+          "upper": {
+            "reference": [
+              13,
+              10,
+              7
+            ],
+            "frames": [
+              [
+                13,
+                10,
+                6
+              ],
+              [
+                13,
+                9,
+                7
+              ],
+              [
+                14,
+                10,
+                7
+              ],
+              [
+                13,
+                10,
+                6
+              ],
+              [
+                13,
+                10,
+                7
+              ],
+              [
+                13,
+                10,
+                6
+              ],
+              [
+                13,
+                10,
+                7
+              ],
+              [
+                13,
+                10,
+                6
+              ]
+            ],
+            "max_delta": 1
+          },
+          "shank": {
+            "reference": [
+              7,
+              6,
+              5
+            ],
+            "frames": [
+              [
+                7,
+                6,
+                5
+              ],
+              [
+                7,
+                5,
+                5
+              ],
+              [
+                6,
+                6,
+                4
+              ],
+              [
+                6,
+                6,
+                4
+              ],
+              [
+                7,
+                5,
+                5
+              ],
+              [
+                7,
+                6,
+                5
+              ],
+              [
+                7,
+                5,
+                5
+              ],
+              [
+                8,
+                6,
+                6
+              ]
+            ],
+            "max_delta": 1
+          },
+          "paw": {
+            "reference": 13,
+            "frames": [
+              13,
+              13,
+              13,
+              13,
+              13,
+              13,
+              13,
+              13
+            ]
+          },
+          "max_length_delta": 0.5249136877720311
+        },
+        "far_hind": {
+          "upper": {
+            "reference": [
+              6,
+              6,
+              8
+            ],
+            "frames": [
+              [
+                6,
+                6,
+                8
+              ],
+              [
+                6,
+                7,
+                7
+              ],
+              [
+                6,
+                6,
+                8
+              ],
+              [
+                6,
+                5,
+                7
+              ],
+              [
+                6,
+                6,
+                8
+              ],
+              [
+                6,
+                6,
+                8
+              ],
+              [
+                6,
+                7,
+                8
+              ],
+              [
+                6,
+                6,
+                8
+              ]
+            ],
+            "max_delta": 1
+          },
+          "shank": {
+            "reference": [
+              6,
+              5,
+              5
+            ],
+            "frames": [
+              [
+                6,
+                5,
+                5
+              ],
+              [
+                6,
+                5,
+                5
+              ],
+              [
+                6,
+                5,
+                5
+              ],
+              [
+                5,
+                4,
+                5
+              ],
+              [
+                6,
+                5,
+                5
+              ],
+              [
+                6,
+                5,
+                5
+              ],
+              [
+                5,
+                5,
+                5
+              ],
+              [
+                5,
+                5,
+                5
+              ]
+            ],
+            "max_delta": 1
+          },
+          "paw": {
+            "reference": 11,
+            "frames": [
+              11,
+              11,
+              11,
+              11,
+              11,
+              11,
+              11,
+              11
+            ]
+          },
+          "max_length_delta": 1.303157934543698
+        }
+      }
+    }
+  }
+}

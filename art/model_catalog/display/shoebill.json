@@ -1,0 +1,49 @@
+{
+  "id": "shoebill",
+  "source_sha256": "0130e8e37491cb50f1aedcbd9a2c3c9e93fc2eeb160925765ed0b8bbeb5e7366",
+  "source_triangles": 500000,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.7809237542990516,
+  "blender_bounds_min": [
+    -3.959807872772217,
+    -1.0701889991760254,
+    0.11829936504364014
+  ],
+  "blender_bounds_max": [
+    -2.0408735275268555,
+    1.0714553594589233,
+    3.319636106491089
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

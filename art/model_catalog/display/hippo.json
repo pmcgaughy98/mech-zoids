@@ -1,0 +1,41 @@
+{
+  "id": "hippo",
+  "source_sha256": "21644d9326cc0ed72c5e6cd2f7efe665b9ec8de8f1a067d00ec259a08be04575",
+  "source_triangles": 500000,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8749387754128971,
+  "blender_bounds_min": [
+    -3.760190486907959,
+    -1.5994868278503418,
+    0.11589499562978745
+  ],
+  "blender_bounds_max": [
+    -2.239806890487671,
+    1.60073721408844,
+    1.5869419574737549
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

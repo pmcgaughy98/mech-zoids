@@ -1,0 +1,5 @@
+COMMAND C:\Users\pmcga\AppData\Local\Programs\Python\Python312\python.exe -B D:\dev\new-mech-rpg\docs\art\moba\walk\tools\walk_tools.py seams --targets D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run2\targets.json --frames D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run2\walk\frames --views s n --still-dir D:\dev\new-mech-rpg\docs\art\moba\walk\hippo_l\run2\stills --body a990e0 7258b4 4a347e 26183f
+s: enclosed slit px per frame [11, 11, 0, 0, 11, 11, 0, 0]
+n: enclosed slit px per frame [0, 0, 0, 0, 0, 0, 0, 0]
+Look at every slit before filling: a real gap between a limb and the body must stay open.
+EXIT 0

@@ -1,0 +1,2216 @@
+Reading prompt from stdin...
+OpenAI Codex v0.166.0
+--------
+workdir: C:\Users\pmcga\dev\hollowtide
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR, D:\dev\new-mech-rpg\docs\art\moba]
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a1a736-5336-7931-a123-26af25d93def
+--------
+user
+Job from Claude (the animation lane of the mech RPG): rhino animation sheets for Preston's mech-animal MOBA in D:/dev/new-mech-rpg (working id rhino_l, take A). The rhino's moves are drawn in front, side and back only; this job adds the missing three-quarter views (se = three-quarter front facing down-right, ne = three-quarter back facing up-right) and, in set D, a braced shuffle. Another Codex job may be running in a sibling folder (codex-set-c or codex-set-d) and one in docs/art/moba/ape_l; do not touch either.
+You run from C:\Users\pmcga\dev\hollowtide only because that folder is trusted and holds the tools. This is NOT Hollowtide work: write nothing in the Hollowtide repo. Write only inside D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d (called "out" below). The only images you may open are the files in out/refs and the images you generate in this job. Never open any other image anywhere. Text files and scripts under D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-b and .../codex-ground-pound may be read.
+Read first: docs/art/sprite-canon-2026-11-02.md and .codex/skills/hollowtide-sprites/SKILL.md (their craft, palette and check rules apply; their lore and evolution sections do not), then codex-set-b/brief.txt, codex-set-b/refinish.py and codex-set-b/REPORT.txt. You made set B; this is the same method with different rows. Copy codex-set-b/refinish.py into out and adapt it, do not start over.
+Sheets (prompt files are out/prompts/<name>.txt):
+- brace: 2 rows (se, ne), 5 columns; attach refs/se_6x.png then ne_6x.png; game-size refs se.png 89x70 and ne.png 77x74; frames se/ne; GIF timing f0-f4, 120 ms each with f3 held 600 ms.
+- death: 2 rows (se, ne), 7 columns; attach refs/se_6x.png then ne_6x.png; game-size refs se.png 89x70 and ne.png 77x74; frames se/ne; GIF timing f0-f6, 120 ms each with f6 held 1000 ms.
+- idle: 2 rows (se, ne), 5 columns; attach refs/se_6x.png then ne_6x.png; game-size refs se.png 89x70 and ne.png 77x74; frames se/ne; GIF timing f0-f4, 200 ms each, loop.
+- brace-shuffle: 3 rows (front, side, back), 6 columns; attach refs/brace_front_6x.png, brace_side_6x.png, brace_back_6x.png in that order; game-size refs brace_front.png 87x60, brace_side.png 106x59, brace_back.png 81x65; frames front/side/back; GIF timing f0-f5, 150 ms each, loop.
+1. For each sheet, generate exactly ONE image with your built-in image tool, with out/prompts/<name>.txt word for word as the prompt and the listed 6x refs attached in the listed order. Use a wide landscape size. Save each result unchanged as out/<name>/sheet_raw.png and record every image's size and sha256 in out/generation.json. Never make a second image or a redo of any sheet; if one fails, report it and go on to the next.
+2. Finish each sheet the way refinish.py does. Magenta to transparent with no magenta or plum fringe. Find the rows by N columns of cells; if a sheet is not a clean grid of separate rhinos, report it and save what you found. Shrink each ROW with its own factor so that row's column 1 matches its game-size ref: a side row by width, every other row (front, back, se, ne) by the geometric mean of the width and height ratios. Map every pixel to the union palette of all the game-size refs in out/refs, except: the two eye colours (#FF3A2A red and #FFE6D8 glint) are allowed only on pixels whose 8 neighbours are all opaque; any other pixel that would take an eye colour takes its nearest non-eye colour, so no red sits on the rim. Save out/<name>/grid.json with the cell boxes, the row factors and every frame's placement offset, so pixels can be traced from the raw sheet to the frames.
+3. Frames: out/<name>/frames/<row>_f{0..N-1}.png on 192x192 transparent canvases (f0 is column 1). Within a row use one fixed anchor taken from column 1: place column 1 where it best overlaps its game-size ref (feet at y=160), and every other frame by the same cell offset. Then, in every frame, the lowest pixel must sit on y=160: move a frame up or down by up to 3 px to fix it, and report any frame that was off by more. No frame may touch its canvas border.
+4. Checks, saved to out/<name>/checks.txt: for each frame its width, height, colour count, red eye and glint pixel counts, and eye-colour pixels touching transparency (must be 0); for each row, column 1 against its game-size ref (width, height, share of pixels with the same colour after aligning the feet) and the same share against the ref mirrored left-right (it must be lower, or the row faces the wrong way); for front and back rows the left-right mirror similarity; whether a side row faces right.
+5. Previews: out/<name>/review.png (all frames at 3x, nearest, on mid grey #808080, one row per view in the listed order, columns f0 onward, with the game-size ref drawn to the left of each row) and out/<name>/preview_<row>.gif at 3x with the listed timing.
+6. Do not touch anything outside out, do not touch assets/ or art/ in either repo, do not commit, do not revert other files.
+7. Report in under 25 lines, also saved as out/REPORT.txt: tokens used if known; each image's size and hash; per sheet whether the grid was clean, the row factors and the check lines; and by eye, per sheet: is it the SAME rhino as the refs in every row (hex yellow plates with the dark frame, grey wheel joints, flat grey feet, two-tone horn, red eye, tail stub)? Does it show the move as asked, with the rows matching column for column? Is each se and ne row at its ref's three-quarter angle in every cell (not turned to a straight view, not mirrored)? Do the legs keep their length? For brace-shuffle: does the body stay low and braced, and does only one foot lift at a time?
+"out" means D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d.
+
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\pmcga\.codex\config.toml): `computer_use.windows.always_allowed_app_ids` is ignored.
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\pmcga\.codex\config.toml): `computer_use.windows.always_allowed_app_ids` is ignored.
+codex
+I’ll read the canon, set B workflow, prompts, and allowed refs, then generate each sheet once and process the results inside set D only.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'Get-Content D:/dev/new-mech-rpg/docs/art/sprite-canon-2026-11-02.md; Get-Content .codex/skills/hollowtide-sprites/SKILL.md' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 295ms:
+. : File C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be loaded because 
+running scripts is disabled on this system. For more information, see about_Execution_Policies at 
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:3
++ . 'C:\Users\pmcga\OneDrive\Documents\WindowsPowerShell\Microsoft.Powe ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+Get-Content : Cannot find path 'D:\dev\new-mech-rpg\docs\art\sprite-canon-2026-11-02.md' because it does not exist.
+At line:2 char:1
++ Get-Content D:/dev/new-mech-rpg/docs/art/sprite-canon-2026-11-02.md;  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (D:\dev\new-mech...n-2026-11-02.md:String) [Get-Content], ItemNotFoundEx 
+   ception
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand
+ 
+---
+name: hollowtide-sprites
+description: Make or repair a Hollowtide creature's eight-angle views (and then its walk) in the house style, with image generation drawing and tools/art/sheet_judge.py deciding which views pass, which code can fix, and which to generate again. Use for any new creature, new stage, or broken angle set.
+---
+
+# Hollowtide creature sprites
+
+Written by Claude on 2026-10-28 for Codex, from what the project has measured since 2026-10-12. Preston approves
+every creature; nothing here replaces his eye. Read `CLAUDE.md` and `docs/AI_COLLABORATION.md` first.
+
+## The split of work
+
+- **Image generation draws.** Code never redraws a creature. A code renderer reads as 3D ("roblox"), and Preston
+  judged Nano Banana 2.1's raw output better than our heavy finishing (2026-10-13).
+- **Code judges and corrects.** `tools/art/sheet_judge.py` measures the eight views, fixes what moving or flipping
+  can fix, and names the views to generate again. Nothing is copied from other games or repos; references are
+  structure only.
+- **Ask before paying.** Every generation costs credits. Give Preston the tool, the count and the estimate first.
+
+## House style
+
+- **References:** the creature's own approved views, then Tallowroot (`assets/sprites/arena/tallowroot/`). Never
+  Preostmar; Preston called it one of the worst. Ask him before adding other style references.
+- **Colours:** fantasy colours, not Earth-animal browns and greys. Keep the line's colour family across stages.
+- **A new stage evolves, it does not grow.** Keep only two or three anchors (the face and eye motif, the signature
+  part, the colour family). Change the silhouette, head shape, proportions, posture and palette shade, and turn the
+  signature part into something new. Keep a line's named parts, for example the Flintram line's horn.
+- **Canvas:** transparent, alpha 0 or 255 only, the creature bottom-centred. Use the size of the creature's own
+  existing views: Rimefin is 128 px, Sparkwick 144, and Riftfin and Scourmaw 160. Do not assume a size from the
+  creature's stage. For a new line, match the line's other stages.
+- **Finishing Codex image output:** shrink the whole sheet once so that its median view height matches the target,
+  give all eight views one shared palette (16 or fewer, see `docs/art/sprite-canon-2026-11-02.md`), then slice. Shrinking views one at a time, or giving
+  each view its own palette, makes the views drift apart.
+- **One Codex image job at a time.** Concurrent jobs share `~/.codex/generated_images`, and both logs of the
+  2026-10-28 pair named the same file. Neither picked the wrong image that time, but Retro Diffusion misfiled a walk
+  the same way.
+- **Outline:** the game draws the black outline with a shader (`scripts/arena/creature_finish.gd`). Do not paint a
+  heavy outline around the silhouette. Do paint a dark line inside the body where one part overlaps another, and give
+  each main material 4 tones (highlight, base, shadow, deep shadow): sheets with 2 or 3 tones read flat (2026-11-02).
+- **Lighting:** from the upper left, the same in every view.
+
+## Read the canon first
+
+Before every sheet, read `docs/art/sprite-canon-2026-11-02.md` and copy its numbers into the brief: colours, top-5 share, lone pixels, drawing for game size, the evolution step and the back-view rules. Preston, 2026-11-02: "dont forget to use what we need everytime we make new sprites with codex".
+
+## Why Drembit's views agreed
+
+Preston, 2026-10-31: "drembit was almost perfect ... future creatures should account for that so we dont keep
+creating creatures we have to scrap eventually." Front and back are one body seen from opposite sides, so their
+outlines should nearly cover each other. `python tools/art/view_check.py <folder>` prints that as front/back, where
+1.0 is the same shape.
+
+| Set | front/back |
+| --- | --- |
+| Drembit, raw sheet | 0.88 |
+| Kithflare, raw sheet | 0.83 |
+| Kithflare after its front was replaced by a separate redraw | 0.67 |
+| The same set after three repair passes | 0.77 |
+| Game Sparkwick | 0.33 |
+| Kithflare, one fresh sheet under the rules below, first try | 0.88 |
+
+The sheet agreed with itself, the separate redraw broke it, and repairs never won it back. Body length is not the
+cause: Drembit is a long body, and across 51 creatures length has no link to this score.
+
+Every new creature takes these from it:
+
+- **One image.** All eight views come from one sheet. A view drawn later is drawn by a different hand.
+- **Start from Drembit's brief,** `docs/creatures/codex-new-creature-2026-10-31/prompt-sheet.txt`. Keep its cell
+  layout and its "eight copies of the exact same creature" paragraph word for word, and change only the design.
+- **Neutral standing pose.** Legs under the body, no lean, no crouch, no action. Kithflare's brief asked for a body
+  leaning forward ready to spring.
+- **The signature shows from all eight views and clears the head.** Drembit's tail stands taller than its head, on
+  both sides of the centre line. Kithflare's sat at head height on the centre line, so from behind it covered the
+  head and the raw north view had no head at all.
+- **A tail grows from a root as wide as the hips.** Preston on a thin stem rising from a round rump: "look like a
+  monkeys". Give a bird a feathered tail that flows out of the back, and cover the rear in rows of feathers or scales
+  with no round cheeks and no crease.
+- **The signature keeps its height as it turns.** Kithflare's tail tip stood 78 to 79 px tall on e, w, ne and nw against
+  81 to 86 on the other four, and Preston saw that as wrong perspective. The tip stands tallest from the front and
+  lowest from behind, and east and west show the most reach, about 1.4 times the diagonals.
+- **To change one part of a sheet, redraw the whole sheet with the old sheet attached,** naming what stays and what
+  changes. Kithflare's tail and rear were replaced this way and front/back held at 0.88. The parts you meant to keep
+  can still drift: both peacock tail takes came back with rounder heads and bigger eyes despite "keep exactly", so
+  compare the result to the old sheet and report any drift. Say so plainly, Claude can move the new part onto the
+  approved body by code.
+- **A tail needs volume, not only the right height.** A stripe down one long shape reads as a flat feather from the
+  side and back. Draw layered feathers instead, and remember a bigger tail draws the whole creature smaller in the
+  game, because game size comes from solid area.
+- **Keep the identity in what shows from behind:** shape, colour and the signature. Huge eyes and cheek patches exist
+  only from the front, so they can't hold eight views together, and hard numbers on eye size pull the front away from
+  the rest. Drembit's face is a small eye and a bill.
+- **One head.** The front and side views must be the same head. Kithflare's front is a round chick and its side a
+  hooked hawk. No number sees this, so look.
+
+## The loop
+
+1. **Eight angles first, in one image** (Preston, 2026-10-14). Generate one 3x3 sheet before any single front view,
+   with the previous stage's sheet as the pose guide. Cell layout, the creature facing the middle:
+
+   ```
+   ne  n  nw
+   e   .  w
+   se  s  sw
+   ```
+
+   For a creature that is the same on both sides, the west column can be left to code (step 3). The pipelines that
+   hold eight views together generate five directions and mirror three.
+2. **Slice:** `python tools/art/slice_grid.py <sheet.png> <out_dir> [--canvas 128] [--feet 104]`. It cuts and
+   places, and never changes pixels.
+3. **Score the raw sheet first:** `python tools/art/view_check.py <out_dir>`, before any repair. Under 0.80 front/back
+   means generate the whole sheet again with a changed prompt. Stop after two tries and report what is failing.
+4. **Judge:** `python tools/art/sheet_judge.py <out_dir>`. It prints two verdicts:
+   - **FIX:** code corrects these. Run `python tools/art/sheet_judge.py <out_dir> --fix <fixed_dir>
+     [--mirror-from east|west]` and judge `<fixed_dir>` again. Mirror only a creature that is the same on both
+     sides. For one-sided parts (a horn or blade on one side, a lopsided body), pass `--asymmetric`; mirror faults
+     then become REDO.
+   - **REDO:** do not redraw one view of a new creature. If the drawing only needs moving, trimming or recolouring,
+     do that in Aseprite. Otherwise generate the whole sheet again with the correction in the prompt. An installed
+     creature whose other views are approved may get one view redrawn as a last resort: keep it only if front/back
+     stays at or above where it was. Stop after two tries and report what is still failing. Do not loop on credits.
+     Claude wrote the earlier rule here, "generate only those views again", and following it is what broke Kithflare.
+5. **Look.** Things the judge cannot measure:
+   - The back diagonals (ne, nw) must not show the face. A colour test for this failed in both directions on
+     2026-10-28.
+   - The north view must point north. The judge's `turned` check caught Sparkwick, but lopsided creatures trip it.
+   - Before paying to redraw a view the judge flags, check that another file doesn't already hold it. Sparkwick's
+     (2026-10-28) north file held its northeast view, its northwest file held its north view, and its northeast
+     file showed the face. Putting the files back in the right slots and flipping the northeast for the northwest
+     fixed the back views for free (`docs/creatures/sheet-judge-2026-10-28/sparkwick/`).
+   - Before paying to redraw a view flagged `turned`, check whether it only leans. `tools/art/aseprite/fix_view.lua`
+     slides pixel rows and repaints named pixels with no new colours, and it passed Gruntle's north on 2026-10-30
+     (`docs/art/reference-measurements-2026-10-30.md`). A view truly drawn turned, like Sparkwick's, stays a redo.
+     `tools/art/north_straighten.py` does this and gives every north frame the same lean, so the walk still matches.
+6. **Show Preston** the sheet before anything goes into `assets/`. When he approves, install it into
+   `assets/sprites/arena/<name>/`, then rebuild with `tools/arena/build_small.py` and
+   `tools/arena/build_dungeon_set.py`, then run `tools/art/walk_lock.py <name>` for the walk.
+   Then run `python tools/art/pose_fix.py plan <name>`: west walks are flips of east walks, so a west still drawn on
+   its own sits a turn off them (45 creatures on 2026-10-31). `apply` flips the still that disagrees.
+
+## What the judge checks
+
+- **files:** all eight views, on one canvas size.
+- **alpha:** no partial alpha.
+- **ground:** every view on the same foot row.
+- **centre:** every view on the middle column.
+- **height:** no view more than 10% off the set's median height.
+- **palette:** at least 85% of each view's pixels near the south view's colours.
+- **specks:** few lone pixels.
+- **mirror:** each pair's silhouettes overlap at 0.85 or more when flipped.
+- **face:** the north view is not the south view again.
+- **turned:** the north view is about as even left to right as the south view, and is not shaped like a diagonal.
+
+The thresholds are in `LIMITS` at the top of the script. On 2026-10-28 it ran over all 50 in-game sets: 22 need
+views generated again, and 29 need no new generation. Run `python tools/art/sheet_judge.py --all` for the current
+list.
+
+## Before showing Preston anything
+
+`sheet_judge.py` checks one set of views. `python tools/art/sprite_director.py <creature> --look` then reviews the whole
+creature: whether the body carries its walk, whether it stands on its shadow, whether the eight views agree in size and
+colour, the attack beats, hurt and sleep. Read its worklist and look at the strips in `docs/creatures/sprite-director/look`.
+Standards are in `docs/art/pro-sprite-standards-2026-10-31.md`. Every line of its regression list must print `found`.
+
+## Don'ts
+
+- Do not invent creature names, lore or stats. Label new ideas as proposals.
+- Do not edit Route 1.
+- Do not restore the Cinderpelt evolution link.
+- Do not overwrite game sprites without Preston's yes. Originals for walk work live in
+  `docs/creatures/walk-lock-2026-10-28/before/`.
+- Do not run two Retro Diffusion creature jobs at once.
+
+After finishing, list the palette and count how much of each colour sits on the sprite's edge. A plum colour mostly on the rim is the magenta background bled into edge pixels, and it can also show through gaps between legs. `defringe.py` can repaint 0 pixels and still leave it. Clear it, and report near-black outlines, which the brief rules out. Red creatures hide this; green ones show it (Tallowroot, 2026-10-31).
+
+## Making the next stage of a line
+
+Design it from the measured numbers before drawing. Real evolution lines match the last stage's outline only 0.28 to 0.55 at equal height, and area grows 1.3 to 2.7 times a stage. Run `python tools/art/stage_step.py <last stage folder> <new folder>` and report the line; over 0.55 is the old body made bigger. Game size comes from solid area, so a big tail or fan shrinks the body: Stormwick's closed train gave it 17 percent more scale than the open burst. Change the tail's shape, not only its size. When two takes share a body brief, the bodies still drift, so compare them.
+A fan or big tail on a rear diagonal is not the side view's. From behind at an angle it sits on the rump, nearer than the body, so it crosses the back: centre it halfway between the side and back spreads, and shorten the blades toward the edges. If every blade leans one way, Preston reads that side as having more feathers (Stormwick, 2026-10-31). Generators miscount repeated parts, so count them by eye in every view; code can then copy one clean blade to fix the count without a new image.
+
+Feet and tails change from behind too. On the straight back view the feet are never the front's toes pointing at the camera, and nothing from the chest or face sits on the rump. A trunk leg stands on its roots, with one or two short claws or roots toward the camera, in the same bark as the leg; no smooth rounded heel. On the rear diagonals a tail slopes down toward the camera at about the front diagonal's length. Say this in the prompt, and check it by eye: Huskward's sheet passed every number with front feet on its back (Preston, 2026-10-31), and hand-drawn rounded heels were rejected as looking edited (2026-11-01).
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'Get-Content docs/art/sprite-canon-2026-11-02.md; Get-Content C:/Users/pmcga/.codex/skills/.system/imagegen/SKILL.md; Get-Content D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-b/brief.txt; Get-Content D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-b/refinish.py; Get-Content D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-b/REPORT.txt; Get-ChildItem D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d -Recurse | Select-Object FullName,Length' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 388ms:
+# Sprite canon: what every new creature sheet carries
+
+Preston, 2026-11-02, after Huskward take E drifted from Drembit's style and read "a bit too detailed": "reevaluate all we've collected and learned ... then lets make it". Every Codex sprite job reads this first and puts its numbers in the brief. References are measured for structure only: no pixels from PokeAPI, PMD, Emerald or any ROM go into the repo, a prompt or a reference image.
+
+## 1. Draw for the size it is seen at
+
+- Handheld monster sprites of the 16-colour era use one palette of 15 visible colours. Our PokeAPI sample measured 14 to 15 a sprite.
+- Sky's creatures stand 20 to 26 px on a 24 px tile. Ours are drawn at 128 to 176 px and shrunk 3.3 to 5 times for the dungeon (stage masses 15.5, 21, 30).
+- So a part or shading cluster narrower than about 4 drawn px vanishes or turns to speckle at game size. No grain, crease lines or texture strokes, but keep the volume: give each main material 4 tones (highlight, base, shadow, deep shadow) in big masses, small parts 2 or 3. (Changed 2026-11-02: the old "2 or 3 tones" rule made the Rimefin and Cinderhide sheets read flat next to Drembit. Preston: "the creatures are starting to look flatter".)
+- Judge the sheet shrunk to game size as well as full size.
+
+## 2. Numbers to hit
+
+Measured 2026-11-02 on s, se, e, ne and n (`view_check.py` for lone pixels).
+
+| | Reference sample | Tallowroot A | Drembit | Huskward E | Target |
+|---|---|---|---|---|---|
+| Colours across all views | 14 to 15 a sprite | 12 | 19 | 15 | 16 or fewer, shared |
+| Share of the top 5 colours | 0.73 mean | 0.70 | 0.40 | 0.50 | 0.65 or more |
+| Lone pixels | 0.11 mean | 0.04 | 0.14 | 0.17 | 0.11 or less |
+| Front/back outline | | 0.79 | 0.86 | 0.87 | 0.80 or more, raw |
+| Back height over front | 0.99 mean | | | | 0.95 to 1.05 |
+
+Drembit is the model for shapes and for eight views agreeing, not for colour: two near-blacks cover 15% of it. Take E spread its colour over six bark browns and dark crease lines (13% on one crease colour), which is what reads as too detailed.
+
+Depth, measured on e, se and s 2026-11-02 (luminance 0 to 255, 5th to 95th percentile): Drembit 1 to 225 with about 5 tones on its main material; Tallowroot A 33 to 197; Cinderhide take B 41 to 192 with one tone on 60% of the body; Cinderhide A 56 to 167. Aim for a range of 180 or more and no single tone on more than about 40% of the body.
+
+## 3. Style
+
+- Tallowroot is the house style reference, never Preostmar. Drembit is the reference for views agreeing and for clear shapes.
+- Chunky clean clusters, angular volumes, light from the upper left on every view, a clear shadow side and underside away from it. No painted outline around the silhouette (the shader draws it), but a dark line inside the body wherever one part overlaps another (leg over belly, head over neck, crest base on the back), as Drembit has. The shader (`sel_out.gdshaderinc`) adds a dark texel round the silhouette and has an internal "detail ink" mode, but that mode is off for creatures by default, so the inside lines have to be painted.
+- Fantasy colours in the line's family, given as hex values. Later stages go darker in shade.
+- Eyes: an almond tucked under the brow, with a dark rim, an iris in a mid colour and a dark pupil. Flat pale blocks read as googly (Preston, 2026-11-02). Huskward take F's eyes are restamped this way in Aseprite.
+
+## 4. Eight views, one image
+
+- One 3x3 sheet with Drembit's layout and its "eight copies" paragraph word for word. Neutral standing pose. The signature shows from all eight views and clears the head.
+- Raw front/back at least 0.80, heights within 10%, no face on ne or nw, north points north.
+- Back views (`.claude/skills/sprite-back-view`): feet keep the front's claw family seen from behind (outer toes whole, the heel hides the middle toe); armour and bark lines sit at one height on a leg in every view; on the rear diagonals the farther feet stand 5 to 9 px higher; the tail slopes toward the camera; no chest V on the rump.
+
+## 5. Evolution
+
+- `stage_step.py` against the stage before: 0.28 to 0.55, as in real lines. Area grows 1.3 to 2.7 times a stage. Every Huskward take so far missed (A 0.72, B 0.70, C 0.77, E 0.60). Rampartroot take A, measured against Huskward F with F given only as a rendering reference, came in at 0.49: the first take on the line inside the range.
+- Keep two or three anchors (face and eye motif, the signature, the colour family). Change the silhouette, head, proportions, posture and palette shade, and turn the signature into something new.
+- Later stages read older: smaller head against the body, small deep-set eyes, thick neck, angular planes, and real weight: thick legs and a heavy body, never skinny or lanky (Preston 2026-11-02 on Caller take A, which this line used to push toward long jointed legs: "its too skinny"). Image references outweigh words, so attach Stage I art only for lineage, never as the craft reference, and never attach the old drawing of the creature being remade: Codex copies it ("You went back to remaking the original sprites again").
+
+## 6. Process
+
+- Codex draws, code judges, Aseprite fixes (a layered `.aseprite`, one frame per view), Preston approves. Nothing goes into `assets/` without his yes.
+- A fresh `codex.cmd exec` with a written brief costs about 60k to 110k tokens a sheet. Resuming the Claude-jobs chat cost 786,677 tokens for Huskward take F on 2026-11-02, because it carries the chat's whole history: use a fresh exec.
+- Image references outweigh words. Take F was given take E as its design picture and came back as take E made squatter, crease lines and oval patches included, against a brief that said otherwise. Give the design in words, or as a picture already at game size. Say the cost first; one image job at a time; two tries at most.
+- After the sheet: `slice_grid.py`, `view_check.py`, `sheet_judge.py`, `stage_step.py`, the palette edge audit (fringe), the numbers in section 2, then look at full size and game size.
+- Walks stay Retro's. Sky's timing (a 24-frame step, about 3 drawings held 4 to 10 frames, lift set per creature) is a game setting, not sprite art.
+
+## Sources
+
+`docs/art/reference-measurements-2026-10-30.md` (PokeAPI sample), `docs/research/sky-walk-measure-2026-10-30.md`, `docs/research/sky-fight-measure-2026-11-02.md`, `docs/research/emerald-arena-study-2026-10-30.md` (its creature sprites are PMDCollab sheets: never usable), `docs/art/pro-sprite-standards-2026-10-31.md`, `docs/art/back-view-feet-study-2026-11-02.md`, `docs/creatures/codex-new-creature-2026-10-31/DESIGN.md` (Drembit), `docs/creatures/codex-remake-2026-10-31/tallowroot/huskward/REPORT.md`, `docs/research/japanese-tools-2026-10-31.md`. Memory notes: evolve-not-grow, stage-two-reads-older, eight-views-one-image, creature-palettes, sprite-reference-choices.
+
+Not used for stills, and why: the Opal Forge (it stops on 2026-11-17, and Codex beat it on Drembit), SpriteCook and Retro Diffusion (paid; Retro stays the walk source and is on hold), Hugging Face Spaces (sending art to one needs Preston's yes), Pixel Refiner (tried, not adopted).
+---
+name: "imagegen"
+description: "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas."
+---
+
+# Image Generation Skill
+
+Generates or edits images for the current project (for example website assets, game assets, UI mockups, product mockups, wireframes, logo design, photorealistic images, or infographics).
+
+## Top-level modes and rules
+
+This skill has exactly two top-level modes:
+
+- **Default built-in tool mode (preferred):** built-in `image_gen` tool for image generation, editing, and transparent-image requests. Does not require `OPENAI_API_KEY`.
+- **Fallback CLI mode:** `scripts/image_gen.py` CLI. Use when the user explicitly asks for or confirms the CLI/API/model path. Requires `OPENAI_API_KEY`.
+
+Within CLI fallback, the CLI exposes three subcommands:
+
+- `generate`
+- `edit`
+- `generate-batch`
+
+Rules:
+- Use the built-in `image_gen` tool by default for normal image generation and editing requests.
+- Do not switch to CLI fallback for ordinary quality, size, or file-path control.
+- For transparent images, ask built-in `image_gen` for a transparent background and preserve the generated alpha.
+- Never silently switch from built-in `image_gen` or CLI `gpt-image-2` to CLI `gpt-image-1.5`; ask the user first unless they explicitly requested `gpt-image-1.5`.
+- The word `batch` by itself does not mean CLI fallback. If the user asks for many assets or says to batch-generate assets without explicitly asking for CLI/API/model controls, stay on the built-in path and issue one built-in call per requested asset or variant.
+- If the built-in tool fails or is unavailable, tell the user the CLI fallback exists and that it requires `OPENAI_API_KEY`. Proceed only if the user explicitly asks for that fallback.
+- If the user explicitly asks for CLI mode, use the bundled `scripts/image_gen.py` workflow. Do not create one-off SDK runners.
+- Never modify `scripts/image_gen.py`. If something is missing, ask the user before doing anything else.
+
+Built-in save-path policy:
+- In built-in tool mode, Codex saves generated images under `$CODEX_HOME/*` by default.
+- Do not describe or rely on OS temp as the default built-in destination.
+- Do not describe or rely on a destination-path argument (if any) on the built-in `image_gen` tool. If a specific location is needed, generate first and then move or copy the selected output from `$CODEX_HOME/generated_images/...`.
+- Save-path precedence in built-in mode:
+  1. If the user names a destination, move or copy the selected output there.
+  2. If the image is meant for the current project, move or copy the final selected image into the workspace before finishing.
+  3. If the image is only for preview or brainstorming, render it inline; the underlying file can remain at the default `$CODEX_HOME/*` path.
+- Never leave a project-referenced asset only at the default `$CODEX_HOME/*` path.
+- Do not overwrite an existing asset unless the user explicitly asked for replacement; otherwise create a sibling versioned filename such as `hero-v2.png` or `item-icon-edited.png`.
+
+Shared prompt guidance for both modes lives in `references/prompting.md` and `references/sample-prompts.md`.
+
+Fallback-only docs/resources for CLI mode:
+- `references/cli.md`
+- `references/image-api.md`
+- `references/codex-network.md`
+- `scripts/image_gen.py`
+
+## When to use
+- Generate a new image (concept art, product shot, cover, website hero)
+- Generate a new image using one or more reference images for style, composition, or mood
+- Edit an existing image (inpainting, lighting or weather transformations, background replacement, object removal, compositing, transparent background)
+- Produce many assets or variants for one task
+
+## When not to use
+- Extending or matching an existing SVG/vector icon set, logo system, or illustration library inside the repo
+- Creating simple shapes, diagrams, wireframes, or icons that are better produced directly in SVG, HTML/CSS, or canvas
+- Making a small project-local asset edit when the source file already exists in an editable native format
+- Any task where the user clearly wants deterministic code-native output instead of a generated bitmap
+
+## Decision tree
+
+Think about two separate questions:
+
+1. **Intent:** is this a new image or an edit of an existing image?
+2. **Execution strategy:** is this one asset or many assets/variants?
+
+Intent:
+- If the user wants to modify an existing image while preserving parts of it, treat the request as **edit**.
+- If the user provides images only as references for style, composition, mood, or subject guidance, treat the request as **generate**.
+- If the user provides no images, treat the request as **generate**.
+
+Built-in edit semantics:
+- Built-in edit mode is for images already visible in the conversation context, such as attached images or images generated earlier in the thread.
+- If the user wants to edit a local image file with the built-in tool, first load it with built-in `view_image` tool so the image is visible in the conversation context, then proceed with the built-in edit flow.
+- Do not promise arbitrary filesystem-path editing through the built-in tool.
+- If a local file still needs direct file-path control, masks, or other explicit CLI-only parameters, use the explicit CLI fallback only when the user asks for it.
+- For edits, preserve invariants aggressively and save non-destructively by default.
+
+Execution strategy:
+- In the built-in default path, produce many assets or variants by issuing one `image_gen` call per requested asset or variant.
+- In the CLI fallback path, use the CLI `generate-batch` subcommand only when the user explicitly chose CLI mode and needs many prompts/assets.
+- For many distinct assets, do not use `n` as a substitute for separate prompts. `n` is for variants of one prompt; distinct assets need distinct built-in calls or distinct CLI `generate-batch` jobs.
+
+Assume the user wants a new image unless they clearly ask to change an existing one.
+
+## Workflow
+1. Decide the top-level mode: built-in by default, including transparent-output requests; fallback CLI only if explicitly requested or confirmed.
+2. Decide the intent: `generate` or `edit`.
+3. Decide whether the output is preview-only or meant to be consumed by the current project.
+4. Decide the execution strategy: single asset vs repeated built-in calls vs CLI `generate-batch`.
+5. Collect inputs up front: prompt(s), exact text (verbatim), constraints/avoid list, and any input images.
+6. For every input image, label its role explicitly:
+   - reference image
+   - edit target
+   - supporting insert/style/compositing input
+7. If the edit target is only on the local filesystem and you are staying on the built-in path, inspect it with `view_image` first so the image is available in conversation context.
+8. If the user asked for a photo, illustration, sprite, product image, banner, or other explicitly raster-style asset, use `image_gen` rather than substituting SVG/HTML/CSS placeholders. If the request is for an icon, logo, or UI graphic that should match existing repo-native SVG/vector/code assets, prefer editing those directly instead.
+9. Augment the prompt based on specificity:
+   - If the user's prompt is already specific and detailed, normalize it into a clear spec without adding creative requirements.
+   - If the user's prompt is generic, add tasteful augmentation only when it materially improves output quality.
+10. Use the built-in `image_gen` tool by default.
+11. For transparent-output requests, ask built-in `image_gen` for a transparent background and preserve the generated alpha channel.
+12. Inspect outputs and validate: subject, style, composition, text accuracy, and invariants/avoid items.
+13. Iterate with a single targeted change, then re-check.
+14. For preview-only work, render the image inline; the underlying file may remain at the default `$CODEX_HOME/generated_images/...` path.
+15. For project-bound work, move or copy the selected artifact into the workspace and update any consuming code or references. Never leave a project-referenced asset only at the default `$CODEX_HOME/generated_images/...` path.
+16. For batches or multi-asset requests, persist every requested deliverable final in the workspace unless the user explicitly asked to keep outputs preview-only. Discarded variants do not need to be kept unless requested.
+17. If the user explicitly chooses or confirms the CLI fallback, then use the fallback-only docs for model, quality, size, `input_fidelity`, masks, output format, output paths, and network setup.
+18. Always report the final saved path(s) for any workspace-bound asset(s), plus the final prompt or prompt set and whether the built-in tool or fallback CLI mode was used.
+
+## Transparent image requests
+
+Ask built-in `image_gen` for a genuinely transparent background and preserve its alpha.
+
+## Prompt augmentation
+
+Reformat user prompts into a structured, production-oriented spec. Make the user's goal clearer and more actionable, but do not blindly add detail.
+
+Treat this as prompt-shaping guidance, not a closed schema. Use only the lines that help, and add a short extra labeled line when it materially improves clarity.
+
+### Specificity policy
+
+Use the user's prompt specificity to decide how much augmentation is appropriate:
+
+- If the prompt is already specific and detailed, preserve that specificity and only normalize/structure it.
+- If the prompt is generic, you may add tasteful augmentation when it will materially improve the result.
+
+Allowed augmentations:
+- composition or framing hints
+- polish level or intended-use hints
+- practical layout guidance
+- reasonable scene concreteness that supports the stated request
+
+Not allowed augmentations:
+- extra characters or objects that are not implied by the request
+- brand names, slogans, palettes, or narrative beats that are not implied
+- arbitrary side-specific placement unless the surrounding layout supports it
+
+## Use-case taxonomy (exact slugs)
+
+Classify each request into one of these buckets and keep the slug consistent across prompts and references.
+
+Generate:
+- photorealistic-natural â€” candid/editorial lifestyle scenes with real texture and natural lighting.
+- product-mockup â€” product/packaging shots, catalog imagery, merch concepts.
+- ui-mockup â€” app/web interface mockups and wireframes; specify the desired fidelity.
+- infographic-diagram â€” diagrams/infographics with structured layout and text.
+- scientific-educational â€” classroom explainers, scientific diagrams, and learning visuals with required labels and accuracy constraints.
+- ads-marketing â€” campaign concepts and ad creatives with audience, brand position, scene, and exact tagline/copy.
+- productivity-visual â€” slide, chart, workflow, and data-heavy business visuals.
+- logo-brand â€” logo/mark exploration, vector-friendly.
+- illustration-story â€” comics, childrenâ€™s book art, narrative scenes.
+- stylized-concept â€” style-driven concept art, 3D/stylized renders.
+- historical-scene â€” period-accurate/world-knowledge scenes.
+
+Edit:
+- text-localization â€” translate/replace in-image text, preserve layout.
+- identity-preserve â€” try-on, person-in-scene; lock face/body/pose.
+- precise-object-edit â€” remove/replace a specific element (including interior swaps).
+- lighting-weather â€” time-of-day/season/atmosphere changes only.
+- background-extraction â€” transparent background / clean cutout. Ask built-in `image_gen` for actual transparency.
+- style-transfer â€” apply reference style while changing subject/scene.
+- compositing â€” multi-image insert/merge with matched lighting/perspective.
+- sketch-to-render â€” drawing/line art to photoreal render.
+
+## Shared prompt schema
+
+Use the following labeled spec as shared prompt scaffolding for both top-level modes:
+
+```text
+Use case: <taxonomy slug>
+Asset type: <where the asset will be used>
+Primary request: <user's main prompt>
+Input images: <Image 1: role; Image 2: role> (optional)
+Scene/backdrop: <environment>
+Subject: <main subject>
+Style/medium: <photo/illustration/3D/etc>
+Composition/framing: <wide/close/top-down; placement>
+Lighting/mood: <lighting + mood>
+Color palette: <palette notes>
+Materials/textures: <surface details>
+Text (verbatim): "<exact text>"
+Constraints: <must keep/must avoid>
+Avoid: <negative constraints>
+```
+
+Notes:
+- `Asset type` and `Input images` are prompt scaffolding, not dedicated CLI flags.
+- `Scene/backdrop` refers to the visual setting. It is not the same as the fallback CLI `background` parameter, which controls output transparency behavior.
+- Fallback-only execution notes such as `Quality:`, `Input fidelity:`, masks, output format, and output paths belong in the CLI path only. Do not treat them as built-in `image_gen` tool arguments.
+
+Augmentation rules:
+- Keep it short.
+- Add only the details needed to improve the prompt materially.
+- For edits, explicitly list invariants (`change only X; keep Y unchanged`).
+- If any critical detail is missing and blocks success, ask a question; otherwise proceed.
+
+## Examples
+
+### Generation example (hero image)
+```text
+Use case: product-mockup
+Asset type: landing page hero
+Primary request: a minimal hero image of a ceramic coffee mug
+Style/medium: clean product photography
+Composition/framing: wide composition with usable negative space for page copy if needed
+Lighting/mood: soft studio lighting
+Constraints: no logos, no text, no watermark
+```
+
+### Edit example (invariants)
+```text
+Use case: precise-object-edit
+Asset type: product photo background replacement
+Primary request: replace only the background with a warm sunset gradient
+Constraints: change only the background; keep the product and its edges unchanged; no text; no watermark
+```
+
+## Prompting best practices
+- Structure prompt as scene/backdrop -> subject -> details -> constraints.
+- Include intended use (ad, UI mock, infographic) to set the mode and polish level.
+- Use camera/composition language for photorealism.
+- Only use SVG/vector stand-ins when the user explicitly asked for vector output or a non-image placeholder.
+- Quote exact text and specify typography + placement.
+- For tricky words, spell them letter-by-letter and require verbatim rendering.
+- For multi-image inputs, reference images by index and describe how they should be used.
+- For edits, repeat invariants every iteration to reduce drift.
+- Iterate with single-change follow-ups.
+- If the prompt is generic, add only the extra detail that will materially help.
+- If the prompt is already detailed, normalize it instead of expanding it.
+- For CLI fallback only, see `references/cli.md` and `references/image-api.md` for model, `quality`, `input_fidelity`, masks, output format, and output-path guidance.
+- For transparent images, ask built-in `image_gen` for actual transparency and preserve its alpha.
+
+More principles shared by both modes: `references/prompting.md`.
+Copy/paste specs shared by both modes: `references/sample-prompts.md`.
+
+## Guidance by asset type
+Asset-type templates (website assets, game assets, wireframes, logo) are consolidated in `references/sample-prompts.md`.
+
+## gpt-image-2 guidance for CLI fallback
+
+The fallback CLI defaults to `gpt-image-2`.
+
+- Use `gpt-image-2` for new CLI/API workflows unless the user confirms a different model.
+- CLI `gpt-image-2` does not support `background=transparent`; ask before using `gpt-image-1.5` unless the user explicitly requested that model.
+- `gpt-image-2` always uses high fidelity for image inputs; do not set `input_fidelity` with this model.
+- `gpt-image-2` supports `quality` values `low`, `medium`, `high`, and `auto`.
+- Use `quality low` for fast drafts, thumbnails, and quick iterations. Use `medium`, `high`, or `auto` for final assets, dense text, diagrams, identity-sensitive edits, or high-resolution outputs.
+- Square images are typically fastest to generate. Use `1024x1024` for fast square drafts.
+- If the user asks for 4K-style output, use `3840x2160` for landscape or `2160x3840` for portrait.
+- `gpt-image-2` size may be `auto` or `WIDTHxHEIGHT` if all constraints hold: max edge `<= 3840px`, both edges multiples of `16px`, long-to-short ratio `<= 3:1`, total pixels between `655,360` and `8,294,400`.
+
+Popular `gpt-image-2` sizes:
+- `1024x1024` square
+- `1536x1024` landscape
+- `1024x1536` portrait
+- `2048x2048` 2K square
+- `2048x1152` 2K landscape
+- `3840x2160` 4K landscape
+- `2160x3840` 4K portrait
+- `auto`
+
+## Fallback CLI mode only
+
+### Temp and output conventions
+These conventions apply only to the CLI fallback. They do not describe built-in `image_gen` output behavior.
+- Use `tmp/imagegen/` for intermediate files (for example JSONL batches); delete them when done.
+- Write final artifacts under `output/imagegen/`.
+- Use `--out` or `--out-dir` to control output paths; keep filenames stable and descriptive.
+
+### Dependencies
+Prefer `uv` for dependency management in this repo.
+
+Required Python package:
+```bash
+uv pip install openai
+```
+
+Optional for image inspection and downscaling:
+```bash
+uv pip install pillow
+```
+
+Portability note:
+- If you are using the installed skill outside this repo, install dependencies into that environment with its package manager.
+- In uv-managed environments, `uv pip install ...` remains the preferred path.
+
+### Environment
+- `OPENAI_API_KEY` must be set for live API calls.
+- Do not ask the user for `OPENAI_API_KEY` when using the built-in `image_gen` tool.
+- Never ask the user to paste the full key in chat. Ask them to set it locally and confirm when ready.
+
+If the key is missing, give the user these steps:
+1. Create an API key in the OpenAI platform UI: https://platform.openai.com/api-keys
+2. Set `OPENAI_API_KEY` as an environment variable in their system.
+3. Offer to guide them through setting the environment variable for their OS/shell if needed.
+
+If installation is not possible in this environment, tell the user which dependency is missing and how to install it into their active environment.
+
+### Script-mode notes
+- CLI commands + examples: `references/cli.md`
+- API parameter quick reference: `references/image-api.md`
+- Network approvals / sandbox settings for CLI mode: `references/codex-network.md`
+
+## Reference map
+- `references/prompting.md`: shared prompting principles for both modes.
+- `references/sample-prompts.md`: shared copy/paste prompt recipes for both modes.
+- `references/cli.md`: fallback-only CLI usage via `scripts/image_gen.py`.
+- `references/image-api.md`: fallback-only API/CLI parameter reference.
+- `references/codex-network.md`: fallback-only network/sandbox troubleshooting for CLI mode.
+- `scripts/image_gen.py`: fallback-only CLI implementation. Use only when the user explicitly chooses or confirms CLI mode.
+Job from Claude (the mech RPG session), set B of two: rhino animation sheets for Preston's mech-animal MOBA in D:/dev/new-mech-rpg (working id rhino_l, take A). The ground pound is already done and approved; this set makes: brace, stampede, death, effects. A second Codex job is making the other sheets in a sibling folder at the same time; do not touch it.
+You run from C:\Users\pmcga\dev\hollowtide only because that folder is trusted and holds the tools. This is NOT Hollowtide work: write nothing in the Hollowtide repo. Write only inside D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-b (called "out" below). The only images you may open are the six files in out/refs and the images you generate in this job. Never open any other image anywhere. Text files and scripts under D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-ground-pound may be read (called "gp" below).
+Read first: docs/art/sprite-canon-2026-11-02.md and .codex/skills/hollowtide-sprites/SKILL.md (their craft, palette and check rules apply; their lore and evolution sections do not), then gp/brief.txt, gp/finish.py and gp/clean/refinish.py. refinish.py is the finishing Preston approved: copy it into out and adapt it, do not start over.
+Refs: out/refs/front_6x.png, side_6x.png and back_6x.png are the approved sprites at 6x on magenta. out/refs/front.png, side.png and back.png are the same sprites at game size on transparent 192x192 canvases with feet at y=160 (front 72x70, side 103x67, back 66x77 px; the 6x refs add a magenta margin).
+1. For each sheet, generate exactly ONE image with your built-in image tool, with out/prompts/<name>.txt word for word as the prompt, attaching out/refs/front_6x.png, side_6x.png and back_6x.png in that order (the effects sheet attaches only side_6x.png). Use a wide landscape size. Save each result unchanged as out/<name>/sheet_raw.png and record every image's size and sha256 in out/generation.json. Never make a second image or a redo of any sheet; if one fails, report it and go on to the next.
+2. Rhino sheets: finish each one the way refinish.py does. Magenta to transparent with no magenta or plum fringe. Find the 3 rows by N columns of cells (N is in the prompt); if a sheet is not a clean grid of separate rhinos, report it and save what you found. Shrink each ROW with its own factor so that row's column 1 matches its game-size ref: the side row by width to 103 px, the front and back rows by the geometric mean of the width and height ratios to 72x70 and 66x77. Map every pixel to the union palette of the three game-size refs, except: the two eye colours (#FF3A2A red and #FFE6D8 glint) are allowed only on pixels whose 8 neighbours are all opaque; any other pixel that would take an eye colour takes its nearest non-eye colour, so no red sits on the rim.
+3. Frames: out/<name>/frames/{front,side,back}_f{0..N-1}.png on 192x192 transparent canvases (f0 is column 1, the reference). Within a row use one fixed anchor taken from column 1 (feet at y=160, horizontal centre at x=96) and place every frame by the same cell offset. Then, in every frame, the lowest pixel must sit on y=160: move a frame up or down by up to 3 px to fix it, and report any frame that was off by more. No frame may touch its canvas border.
+4. Checks, saved to out/<name>/checks.txt: for each frame its width, height, colour count, the number of red eye pixels and glint pixels, and the number of eye-colour pixels touching transparency (must be 0); for each row, column 1 against its game-size ref (width, height, share of pixels with the same colour after aligning the feet); front and back rows left-right mirror similarity; whether the side row faces right.
+5. Previews: out/<name>/review.png (all frames at 3x, nearest, on mid grey #808080, rows front/side/back, columns f0 onward) and out/<name>/preview_{front,side,back}.gif at 3x with this timing: brace: f0-f4, 120 ms each with f3 held 600 ms; stampede: f1-f6, 80 ms each, loop; death: f0-f6, 120 ms each with f6 held 1000 ms.
+Effects sheet (out/effects): finish it into game frames. Magenta to transparent, binary alpha, no magenta fringe. Find the 6 rows by 6 columns. Shrink each ROW with its own factor so its widest frame is this wide in px: row 1 impact puff 40, row 2 hit spark 28, row 3 stun loop 26, row 4 dust trail puff 16, row 5 brace ring 110, row 6 deflect spark 28. Map every pixel to the union palette of the three game-size refs without the two eye colours, plus #75543A, #8D7157 and #EABE53 (the dust colours of the approved ground pound effect). Keep deliberate single-pixel specks in the spark rows; remove stray single pixels elsewhere. Save out/effects/<row>/f0..f5.png, rows named impact-puff, hit-spark, stun-loop, dust-trail, brace-ring, deflect-spark, each row on one canvas size (its largest frame plus a 4 px margin) with one fixed anchor per row: the centre of the ground line for impact-puff, dust-trail and brace-ring, the burst centre for the other three. Record the anchors in out/effects/anchor.json. Save out/effects/review.png (all frames at 4x on #3D4350, rows in order) and one 4x GIF per row at 90 ms per frame (stun-loop looping).
+6. Do not touch anything outside out, do not touch assets/ or art/ in either repo, do not commit, do not revert other files.
+7. Report in under 25 lines, also saved as out/REPORT.txt: tokens used if known; each image's size and hash; per sheet whether the grid was clean, the three row factors and the check lines; and by eye, per sheet: is it the SAME rhino as the refs in all three rows (hex yellow plates with the dark frame, grey wheel joints, flat grey feet, two-tone horn, red eye, tail stub)? Does it show the move as asked, with the three rows matching column for column? Are the front and back rows straight on, not three-quarter? In the back row, do the legs keep their length?
+"out" means D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-b.
+"""Adapted from the approved gp/clean/refinish.py, preserving its keying,
+nearest-foreground fill, median smoothing, reduction, and palette pipeline.
+Only this job's refs and generated images are opened. All writes stay here.
+"""
+from pathlib import Path
+import json, hashlib
+import numpy as np
+from PIL import Image, ImageFilter, ImageDraw
+from scipy import ndimage as ndi
+OUT=Path(__file__).resolve().parent
+NAMES=['front','side','back']
+TARGET={'front':(72,70),'side':(103,67),'back':(66,77)}
+EYE={(255,58,42),(255,230,216)}
+refs=[Image.open(OUT/'refs'/f'{n}.png').convert('RGBA') for n in NAMES]
+allpal=np.unique(np.concatenate([np.array(im)[np.array(im)[:,:,3]>0,:3] for im in refs]),axis=0)
+
+def keyed(raw, effects=False):
+    a=np.array(raw); rgb=a[:,:,:3].astype(float)
+    pink=(rgb[:,:,0]-rgb[:,:,1]>28)&(rgb[:,:,2]-rgb[:,:,1]>24)&(rgb[:,:,2]>rgb[:,:,0]*.64)
+    mask=(a[:,:,3]>127)&~pink
+    labels,_=ndi.label(mask); sizes=np.bincount(labels.ravel())
+    threshold=2 if effects else max(20,mask.sum()*.0003)
+    keep=np.flatnonzero(sizes>threshold); keep=keep[keep!=0]
+    mask=np.isin(labels,keep)
+    return a,mask
+
+def boundaries(mask, count, axis):
+    occ=mask.any(axis=axis); L=len(occ)
+    # Choose empty gutters nearest the ideal equal-cell boundary.
+    edges=[0]
+    for i in range(1,count):
+        lo=int((i-.22)*L/count); hi=int((i+.22)*L/count)
+        runs=ndi.find_objects(ndi.label(~occ)[0]); candidates=[(v[0].start+v[0].stop)//2 for v in runs if v[0].stop-v[0].start>=3 and lo<=(v[0].start+v[0].stop)//2<hi]
+        edges.append(min(candidates,key=lambda v:abs(v-i*L/count)) if candidates else round(i*L/count))
+    return np.array(edges+[L])
+
+def box(m):
+    yy,xx=np.where(m)
+    return None if not len(xx) else [int(xx.min()),int(yy.min()),int(xx.max()+1),int(yy.max()+1)]
+
+def stats(im):
+    ar=np.array(im); m=ar[:,:,3]>0; b=im.getbbox()
+    rim=m&~ndi.binary_erosion(m,structure=np.ones((3,3)))
+    red=np.all(ar[:,:,:3]==[255,58,42],2)&m; glint=np.all(ar[:,:,:3]==[255,230,216],2)&m
+    return dict(width=b[2]-b[0],height=b[3]-b[1],colours=len(np.unique(ar[m,:3],axis=0)),red=int(red.sum()),glint=int(glint.sum()),eye_rim=int(((red|glint)&rim).sum()),bottom=b[3]-1,border=bool(m[0].any() or m[-1].any() or m[:,0].any() or m[:,-1].any()))
+
+def gifsave(frames,path,durations,scale,bg,loop):
+    ims=[]
+    for f in frames:
+        b=Image.new('RGB',f.size,bg); b.paste(f,mask=f.getchannel('A')); ims.append(b.resize((b.width*scale,b.height*scale),Image.Resampling.NEAREST))
+    kw={'loop':0} if loop else {}
+    ims[0].save(path,save_all=True,append_images=ims[1:],duration=durations,disposal=2,optimize=False,**kw)
+
+def audit(frames,pal):
+    counts=np.zeros(len(pal),int); edges=counts.copy()
+    for f in frames:
+        ar=np.array(f); m=ar[:,:,3]>0; rim=m&~ndi.binary_erosion(m,structure=np.ones((3,3)))
+        for i,p in enumerate(pal):
+            hit=np.all(ar[:,:,:3]==p,2)&m; counts[i]+=hit.sum(); edges[i]+=(hit&rim).sum()
+    return ['Palette audit hex total rim rim_share:']+[f'#{p[0]:02X}{p[1]:02X}{p[2]:02X} {t} {e} {e/max(1,t):.4f}' for p,t,e in zip(pal,counts,edges)]+[f'Top5 share={np.sort(counts)[-5:].sum()/max(1,counts.sum()):.4f}; near-black (<48 each) share={sum(t for p,t in zip(pal,counts) if max(p)<48)/max(1,counts.sum()):.4f}']
+
+def finish(factor):
+    nw, nh = round(W * factor), round(H * factor)
+    small = np.array(filled.resize((nw, nh), Image.Resampling.LANCZOS))
+    alpha = np.array(Image.fromarray(mask.astype("uint8") * 255).resize((nw, nh), Image.Resampling.BOX)) >= 128
+    small = np.array(Image.fromarray(small).filter(ImageFilter.MedianFilter(3)))
+    rim = alpha & ~ndi.binary_erosion(alpha)
+    for _ in range(4):
+        prev = small.copy()
+        for y, x in zip(*np.where(rim & (small.mean(2) > 170))):
+            y0, y1, x0, x1 = max(0, y - 1), min(nh, y + 2), max(0, x - 1), min(nw, x + 2)
+            near = prev[y0:y1, x0:x1][alpha[y0:y1, x0:x1]].astype(float)
+            if len(near) > 1 and (np.linalg.norm(near - prev[y, x], axis=1) < 70).sum() < 3:
+                small[y, x] = np.median(near, axis=0).astype("uint8")
+    for _ in range(12):
+        trial = ((small[:, :, None, :].astype(np.int32) - palette[None, None]) ** 2).sum(3).argmin(2)
+        changes = []
+        for y, x in zip(*np.where(rim & (pal[trial].mean(2) > 180))):
+            y0, y1, x0, x1 = max(0, y - 1), min(nh, y + 2), max(0, x - 1), min(nw, x + 2)
+            lm = alpha[y0:y1, x0:x1].copy(); lm[y - y0, x - x0] = False
+            nearby = trial[y0:y1, x0:x1][lm]
+            if len(nearby) and not (nearby == trial[y, x]).any():
+                changes.append((y, x, np.median(small[y0:y1, x0:x1][lm], axis=0).astype("uint8")))
+        if not changes:
+            break
+        for y, x, v in changes:
+            small[y, x] = v
+    flat = small.reshape(-1, 3).astype(np.int32)
+    quant = pal[((flat[:, None, :] - palette[None]) ** 2).sum(2).argmin(1)].reshape(nh, nw, 3)
+    # Eye colours only inside a full opaque 3x3 neighbourhood.
+    interior = ndi.binary_erosion(alpha, structure=np.ones((3,3)))
+    nonpal = np.array([c for c in pal if tuple(map(int,c)) not in EYE])
+    bad = ~interior & np.isin(quant[:,:,0].astype(int)*65536+quant[:,:,1].astype(int)*256+quant[:,:,2], [0xFF3A2A,0xFFE6D8])
+    vals=small[bad].astype(np.int32)
+    if len(vals): quant[bad]=nonpal[((vals[:,None,:]-nonpal.astype(np.int32)[None])**2).sum(2).argmin(1)]
+    fin = np.dstack([quant, alpha.astype("uint8") * 255]); fin[~alpha] = 0
+    return Image.fromarray(fin.astype("uint8"), "RGBA")
+
+metadata={}; summary={}
+for name,N in [('brace',5),('stampede',7),('death',7),('effects',6)]:
+    path=OUT/name; raw=Image.open(path/'sheet_raw.png').convert('RGBA'); W,H=raw.size
+    metadata[name]=dict(size=[W,H],sha256=hashlib.sha256((path/'sheet_raw.png').read_bytes()).hexdigest(),prompt=f'prompts/{name}.txt',generations=1)
+    a,mask=keyed(raw,name=='effects'); R=6 if name=='effects' else 3
+    ys=boundaries(mask,R,1); xs=boundaries(mask,N,0)
+    xrows=[boundaries(mask[ys[r]:ys[r+1]],N,0) for r in range(R)]
+    found=[]; clean=True
+    for r in range(R):
+        xs=xrows[r]
+        for c in range(N):
+            m=mask[ys[r]:ys[r+1],xs[c]:xs[c+1]]; b=box(m)
+            labels,_=ndi.label(m); sizes=np.bincount(labels.ravel())[1:]
+            major=int((sizes>max(30,m.sum()*.025)).sum())
+            ok=b is not None and min(b[0],b[1],m.shape[1]-b[2],m.shape[0]-b[3])>=1 and (name=='effects' or major==1)
+            found.append(dict(row=r,column=c,box=b,major=major,clean=bool(ok))); clean &= ok
+    (path/'grid.json').write_text(json.dumps(dict(clean=bool(clean),x=[v.tolist() for v in xrows],y=ys.tolist(),cells=found),indent=2))
+    indices=ndi.distance_transform_edt(~mask,return_distances=False,return_indices=True)
+    filled=Image.fromarray(a[:,:,:3][tuple(indices)]).filter(ImageFilter.MedianFilter(3))
+    lines=[f'Clean {R}x{N} grid: {clean}; binary alpha; transparent RGB zero.']
+    factors=[]; frames=[]; rowstats=[]
+    if name!='effects':
+        pal=allpal; palette=pal.astype(np.int32); (path/'frames').mkdir(exist_ok=True)
+        for r,n in enumerate(NAMES):
+            xs=xrows[r]
+            b=found[r*N]['box']; w,h=b[2]-b[0],b[3]-b[1]; tw,th=TARGET[n]
+            factor=tw/w if n=='side' else ((tw/w)*(th/h))**.5; factors.append(factor)
+            sheet=finish(factor); sheet.save(path/f'row_{n}_finished.png')
+            sx=np.rint(xs*factor).astype(int); sy=np.rint(ys*factor).astype(int)
+            b0=sheet.crop((sx[0],sy[r],sx[1],sy[r+1])).getbbox()
+            dx=round(96-(b0[0]+b0[2]-1)/2); dy=160-(b0[3]-1)
+            row=[]; st=[]
+            lines.append(f'{n}: factor={factor:.10f}; fixed cell anchor offset=({dx},{dy})')
+            for c in range(N):
+                cell=sheet.crop((sx[c],sy[r],sx[c+1],sy[r+1])); f=Image.new('RGBA',(192,192)); f.paste(cell,(dx,dy))
+                shift=160-(f.getbbox()[3]-1)
+                if abs(shift)<=3:
+                    moved=Image.new('RGBA',f.size); moved.paste(f,(0,shift)); f=moved
+                f.save(path/'frames'/f'{n}_f{c}.png'); row.append(f); d=stats(f); d['requested_shift']=shift; st.append(d)
+                lines.append(f'{n}_f{c}: '+', '.join(f'{k}={v}' for k,v in d.items())+(' GROUND_FAIL_OVER_3PX' if abs(shift)>3 else ''))
+            frames.append(row); rowstats.append(st)
+            f=row[0]; ref=refs[r]; b=f.getbbox(); rb=ref.getbbox(); aligned=Image.new('RGBA',(192,192))
+            aligned.paste(ref,(round((b[0]+b[2]-rb[0]-rb[2])/2),b[3]-rb[3]))
+            fa,ra=np.array(f),np.array(aligned); union=(fa[:,:,3]>0)|(ra[:,:,3]>0)
+            sim=float((np.all(fa==ra,2)&union).sum()/union.sum())
+            lines.append(f'{n} column1 vs ref: {b[2]-b[0]}x{b[3]-b[1]} vs {tw}x{th}; exact colour share over opaque union, feet aligned={sim:.4f}')
+            if n!='side':
+                vals=[]
+                for f in row:
+                    ar=np.array(f.crop(f.getbbox())); flip=ar[:,::-1]; union=(ar[:,:,3]>0)|(flip[:,:,3]>0)
+                    vals.append(float((np.all(ar==flip,2)&union).sum()/union.sum()))
+                lines.append(f'{n} mirror colour similarities: '+', '.join(f'{v:.3f}' for v in vals))
+        lines.append('Side faces right: YES (visual audit; horn and head at right).')
+        review=Image.new('RGB',(60+N*576,32+3*576),(128,128,128)); draw=ImageDraw.Draw(review)
+        for r,n in enumerate(NAMES):
+            draw.text((4,32+r*576+260),n,fill='white')
+            for c,f in enumerate(frames[r]):
+                z=f.resize((576,576),Image.Resampling.NEAREST); review.paste(z,(60+c*576,32+r*576),z); draw.text((60+c*576,8),f'f{c}',fill='white')
+            seq=frames[r][1:] if name=='stampede' else frames[r]
+            dur=[80]*6 if name=='stampede' else ([120,120,120,600,120] if name=='brace' else [120]*6+[1000])
+            gifsave(seq,path/f'preview_{n}.gif',dur,3,(128,128,128),name=='stampede')
+        review.save(path/'review.png')
+        lines+=audit([f for row in frames for f in row],pal)
+        summary[name]=dict(clean=bool(clean),factors=factors,stats=rowstats,refchecks=[s for s in lines if 'column1 vs' in s],mirror=[s for s in lines if 'mirror colour' in s])
+    else:
+        pal=np.unique(np.array([c.tolist() for c in allpal if tuple(map(int,c)) not in EYE]+[[117,84,58],[141,113,87],[234,190,83]],dtype=np.uint8),axis=0); palette=pal.astype(np.int32)
+        names=['impact-puff','hit-spark','stun-loop','dust-trail','brace-ring','deflect-spark']; targets=[40,28,26,16,110,28]; anchors={}
+        for r,(n,tw) in enumerate(zip(names,targets)):
+            xs=xrows[r]
+            widest=max(found[r*N+c]['box'][2]-found[r*N+c]['box'][0] for c in range(N)); factor=tw/widest; factors.append(factor)
+            # Effects keep their deliberate spark fragments; reduce directly after nearest-foreground fill.
+            for attempt in range(30):
+                dims=(round(W*factor),round(H*factor))
+                test=np.array(Image.fromarray(mask.astype('uint8')*255).resize(dims,Image.Resampling.BOX))>=128
+                tx=np.rint(xs*factor).astype(int); ty=np.rint(ys*factor).astype(int)
+                widths=[]
+                for c in range(N):
+                    b=box(test[ty[r]:ty[r+1],tx[c]:tx[c+1]])
+                    widths.append(b[2]-b[0] if b else 0)
+                actual=max(widths)
+                if actual==tw: break
+                factor *= (tw+.25)/(actual+.25)
+            factors[-1]=factor
+            scaled=filled.resize((round(W*factor),round(H*factor)),Image.Resampling.LANCZOS)
+            rgb=np.array(scaled); alpha=np.array(Image.fromarray(mask.astype('uint8')*255).resize(scaled.size,Image.Resampling.BOX))>=128
+            if r not in (1,5):
+                lab,_=ndi.label(alpha,structure=np.ones((3,3))); sz=np.bincount(lab.ravel()); alpha &= sz[lab]>1
+            vals=rgb.reshape(-1,3).astype(np.int32); q=pal[((vals[:,None,:]-palette[None])**2).sum(2).argmin(1)].reshape(rgb.shape)
+            ar=np.dstack([q,alpha.astype('uint8')*255]); ar[~alpha]=0; sheet=Image.fromarray(ar)
+            sx=np.rint(xs*factor).astype(int); sy=np.rint(ys*factor).astype(int)
+            cells=[sheet.crop((sx[c],sy[r],sx[c+1],sy[r+1])) for c in range(N)]
+            boxes=[f.getbbox() for f in cells]
+            # One stable cell-coordinate anchor, estimated across the complete row.
+            ax=round(np.median([(b[0]+b[2]-1)/2 for b in boxes])); ground=r in (0,3,4)
+            ay=max(b[3]-1 for b in boxes) if ground else round(np.median([(b[1]+b[3]-1)/2 for b in boxes]))
+            left=max(ax-b[0] for b in boxes); right=max(b[2]-1-ax for b in boxes); top=max(ay-b[1] for b in boxes); bottom=max(b[3]-1-ay for b in boxes)
+            cw,ch=left+right+1+8,top+bottom+1+8; dest=(left+4,top+4); row=[]; (path/n).mkdir(exist_ok=True)
+            anchors[n]=dict(canvas=[cw,ch],anchor=list(dest),source_cell_anchor=[ax,ay],type='ground-centre' if ground else 'burst-centre',margin=4,factor=factor)
+            for c,cell in enumerate(cells):
+                f=Image.new('RGBA',(cw,ch)); f.paste(cell,(dest[0]-ax,dest[1]-ay)); f.save(path/n/f'f{c}.png'); row.append(f); d=stats(f)
+                lines.append(f'{n}/f{c}: '+', '.join(f'{k}={v}' for k,v in d.items()))
+            frames.append(row); gifsave(row,path/f'preview_{n}.gif',[90]*6,4,(61,67,80),n=='stun-loop')
+            lines.append(f'{n}: factor={factor:.10f}; widest target={tw}; actual widest={max(stats(f)["width"] for f in row)}; anchor={dest}; canvas={cw}x{ch}')
+        (path/'anchor.json').write_text(json.dumps(anchors,indent=2))
+        cellw=max(f.width for row in frames for f in row)*4+20; cellh=max(f.height for row in frames for f in row)*4+20
+        review=Image.new('RGB',(110+6*cellw,30+6*cellh),(61,67,80)); draw=ImageDraw.Draw(review)
+        for r,n in enumerate(names):
+            draw.text((4,30+r*cellh+8),n,fill='white')
+            for c,f in enumerate(frames[r]):
+                z=f.resize((f.width*4,f.height*4),Image.Resampling.NEAREST); review.paste(z,(110+c*cellw+(cellw-z.width)//2,30+r*cellh+(cellh-z.height)//2),z)
+        review.save(path/'review.png'); lines+=audit([f for row in frames for f in row],pal)
+        summary[name]=dict(clean=bool(clean),factors=factors,anchors=anchors)
+    (path/'checks.txt').write_text('\n'.join(lines)+'\n')
+    print(name, 'grid',clean,'factors',factors)
+(OUT/'generation.json').write_text(json.dumps(metadata,indent=2)+'\n')
+(OUT/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
+Set B complete: exactly one built-in image generation per sheet, exact supplied prompts; tokens used unavailable.
+brace: 1619x971; sha256 203753a4309077179ca698490ae4a9916a85c3b9344d5dbd1cf6c285f1ad76d7
+stampede: 1914x822; sha256 fc75d7f3aaf463421f2495b56ea07c4110172f9ec6d84490e81a97686d4c88ba
+death: 1915x821; sha256 47bd417b45d5ec27b68c2f41bef33891dc6a6a44bbf1f9d7ec1923f692c2edd2
+effects: 1289x1221; sha256 2037238c333c3177cc9df6787dc58f1eec7590799e68a90283413528078fc817
+brace: clean 3x5 grid YES; front/side/back factors 0.2976650457, 0.3539518900, 0.2770629764
+brace f0/ref dimensions, exact-colour share (feet aligned): 71x71 vs 72x70 match=0.6498; 103x70 vs 103x67 match=0.3505; 66x76 vs 66x77 match=0.5189
+brace checks: mirror colour range front 0.699-0.816, back 0.737-0.850; side right YES; eye rim 0; no border contact.
+stampede: clean 3x7 grid YES; front/side/back factors 0.3481553119, 0.4055118110, 0.3273544427
+stampede f0/ref dimensions, exact-colour share (feet aligned): 73x69 vs 72x70 match=0.6172; 103x70 vs 103x67 match=0.4020; 68x74 vs 66x77 match=0.3475
+stampede checks: mirror colour range front 0.257-0.755, back 0.620-0.835; side right YES; eye rim 0; no border contact.
+death: clean 3x7 grid YES; front/side/back factors 0.3314461889, 0.3992248062, 0.3164769605
+death f0/ref dimensions, exact-colour share (feet aligned): 75x67 vs 72x70 match=0.4739; 103x66 vs 103x67 match=0.5731; 68x74 vs 66x77 match=0.4488
+death checks: mirror colour range front 0.414-0.797, back 0.719-0.874; side right YES; eye rim 0; no border contact.
+Brace by eye: recognizably the same rhino in all rows (yellow hex plates/dark frame, discs, grey feet, two-tone horn, tail); cleanup loses most red eyes/glints. Brace reads and columns broadly agree; front/back straight; rear legs look shorter in sink/hold.
+Stampede by eye: same rhino design in all rows, with eye loss after cleanup; gallop reads, but head/horn remain too high, front/side/back leg beats only partly agree. Front/back straight; rear leg length mostly holds.
+Stampede ground FAIL: side_f5 needs +4 px, exceeds 3 px limit; left at bottom y=156. All other rhino frames bottom y=160.
+Death by eye: same rhino design in all rows, with eye loss after cleanup; belly collapse reads across columns, but raw final eyes do not extinguish consistently (side_f5 still red). Front/back straight; rear legs tuck/splay and visually shorten at collapse.
+Effects: clean 6x6 grid YES; row factors 0.2127659574, 0.1759243814, 0.1595092025, 0.1159808186, 0.5583756345, 0.1976781835; widths exactly 40/28/26/16/110/28 px.
+Effects by eye: all six requested moves read, no rhino (identity/front/back checks N/A); stun has three stars; brace ring reads rocky/heavy. Raw size nearly square, not wide landscape; no redo.
+Validation: 57 rhino + 36 effect frames; binary alpha, allowed palettes, eye rim zero and clear borders PASS. Per-frame dimensions/colours/eyes, mirrors, palette edge audit, lone pixels: each sheet/checks.txt.
+Deliverables: unchanged raws + generation.json; adapted refinish.py; frames, grid.json, checks.txt, labelled reviews and timed GIFs; effects/anchor.json. Writes confined to codex-set-b; no install or commit.
+
+FullName                                                                                    Length
+--------                                                                                    ------
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\prompts                         
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\refs                            
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\brief.txt                 5770  
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\codex-log.txt             0     
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\prompts\brace-shuffle.txt 2494  
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\prompts\brace.txt         2293  
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\prompts\death.txt         2431  
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\prompts\idle.txt          2288  
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\refs\brace_back.png       2073  
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\refs\brace_back_6x.png    4289  
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\refs\brace_front.png      2760  
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\refs\brace_front_6x.png   5268  
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\refs\brace_side.png       2710  
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\refs\brace_side_6x.png    5473  
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\refs\ne.png               3060  
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\refs\ne_6x.png            5957  
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\refs\se.png               3617  
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\refs\se_6x.png            6944  
+
+
+
+codex
+I’m applying the imagegen and sprite craft skills, with your sheet layouts, exact prompts, and one-generation limit taking precedence. The canon file is in the trusted tools repo; I’ll keep all job writes in set D.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'Get-Content D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-b/brief.txt; Get-Content D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/brief.txt; Get-Content D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/prompts/brace.txt; Get-Content D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/prompts/death.txt; Get-Content D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/prompts/idle.txt; Get-Content D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/prompts/brace-shuffle.txt' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 117ms:
+Job from Claude (the mech RPG session), set B of two: rhino animation sheets for Preston's mech-animal MOBA in D:/dev/new-mech-rpg (working id rhino_l, take A). The ground pound is already done and approved; this set makes: brace, stampede, death, effects. A second Codex job is making the other sheets in a sibling folder at the same time; do not touch it.
+You run from C:\Users\pmcga\dev\hollowtide only because that folder is trusted and holds the tools. This is NOT Hollowtide work: write nothing in the Hollowtide repo. Write only inside D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-b (called "out" below). The only images you may open are the six files in out/refs and the images you generate in this job. Never open any other image anywhere. Text files and scripts under D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-ground-pound may be read (called "gp" below).
+Read first: docs/art/sprite-canon-2026-11-02.md and .codex/skills/hollowtide-sprites/SKILL.md (their craft, palette and check rules apply; their lore and evolution sections do not), then gp/brief.txt, gp/finish.py and gp/clean/refinish.py. refinish.py is the finishing Preston approved: copy it into out and adapt it, do not start over.
+Refs: out/refs/front_6x.png, side_6x.png and back_6x.png are the approved sprites at 6x on magenta. out/refs/front.png, side.png and back.png are the same sprites at game size on transparent 192x192 canvases with feet at y=160 (front 72x70, side 103x67, back 66x77 px; the 6x refs add a magenta margin).
+1. For each sheet, generate exactly ONE image with your built-in image tool, with out/prompts/<name>.txt word for word as the prompt, attaching out/refs/front_6x.png, side_6x.png and back_6x.png in that order (the effects sheet attaches only side_6x.png). Use a wide landscape size. Save each result unchanged as out/<name>/sheet_raw.png and record every image's size and sha256 in out/generation.json. Never make a second image or a redo of any sheet; if one fails, report it and go on to the next.
+2. Rhino sheets: finish each one the way refinish.py does. Magenta to transparent with no magenta or plum fringe. Find the 3 rows by N columns of cells (N is in the prompt); if a sheet is not a clean grid of separate rhinos, report it and save what you found. Shrink each ROW with its own factor so that row's column 1 matches its game-size ref: the side row by width to 103 px, the front and back rows by the geometric mean of the width and height ratios to 72x70 and 66x77. Map every pixel to the union palette of the three game-size refs, except: the two eye colours (#FF3A2A red and #FFE6D8 glint) are allowed only on pixels whose 8 neighbours are all opaque; any other pixel that would take an eye colour takes its nearest non-eye colour, so no red sits on the rim.
+3. Frames: out/<name>/frames/{front,side,back}_f{0..N-1}.png on 192x192 transparent canvases (f0 is column 1, the reference). Within a row use one fixed anchor taken from column 1 (feet at y=160, horizontal centre at x=96) and place every frame by the same cell offset. Then, in every frame, the lowest pixel must sit on y=160: move a frame up or down by up to 3 px to fix it, and report any frame that was off by more. No frame may touch its canvas border.
+4. Checks, saved to out/<name>/checks.txt: for each frame its width, height, colour count, the number of red eye pixels and glint pixels, and the number of eye-colour pixels touching transparency (must be 0); for each row, column 1 against its game-size ref (width, height, share of pixels with the same colour after aligning the feet); front and back rows left-right mirror similarity; whether the side row faces right.
+5. Previews: out/<name>/review.png (all frames at 3x, nearest, on mid grey #808080, rows front/side/back, columns f0 onward) and out/<name>/preview_{front,side,back}.gif at 3x with this timing: brace: f0-f4, 120 ms each with f3 held 600 ms; stampede: f1-f6, 80 ms each, loop; death: f0-f6, 120 ms each with f6 held 1000 ms.
+Effects sheet (out/effects): finish it into game frames. Magenta to transparent, binary alpha, no magenta fringe. Find the 6 rows by 6 columns. Shrink each ROW with its own factor so its widest frame is this wide in px: row 1 impact puff 40, row 2 hit spark 28, row 3 stun loop 26, row 4 dust trail puff 16, row 5 brace ring 110, row 6 deflect spark 28. Map every pixel to the union palette of the three game-size refs without the two eye colours, plus #75543A, #8D7157 and #EABE53 (the dust colours of the approved ground pound effect). Keep deliberate single-pixel specks in the spark rows; remove stray single pixels elsewhere. Save out/effects/<row>/f0..f5.png, rows named impact-puff, hit-spark, stun-loop, dust-trail, brace-ring, deflect-spark, each row on one canvas size (its largest frame plus a 4 px margin) with one fixed anchor per row: the centre of the ground line for impact-puff, dust-trail and brace-ring, the burst centre for the other three. Record the anchors in out/effects/anchor.json. Save out/effects/review.png (all frames at 4x on #3D4350, rows in order) and one 4x GIF per row at 90 ms per frame (stun-loop looping).
+6. Do not touch anything outside out, do not touch assets/ or art/ in either repo, do not commit, do not revert other files.
+7. Report in under 25 lines, also saved as out/REPORT.txt: tokens used if known; each image's size and hash; per sheet whether the grid was clean, the three row factors and the check lines; and by eye, per sheet: is it the SAME rhino as the refs in all three rows (hex yellow plates with the dark frame, grey wheel joints, flat grey feet, two-tone horn, red eye, tail stub)? Does it show the move as asked, with the three rows matching column for column? Are the front and back rows straight on, not three-quarter? In the back row, do the legs keep their length?
+"out" means D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-b.
+Job from Claude (the animation lane of the mech RPG): rhino animation sheets for Preston's mech-animal MOBA in D:/dev/new-mech-rpg (working id rhino_l, take A). The rhino's moves are drawn in front, side and back only; this job adds the missing three-quarter views (se = three-quarter front facing down-right, ne = three-quarter back facing up-right) and, in set D, a braced shuffle. Another Codex job may be running in a sibling folder (codex-set-c or codex-set-d) and one in docs/art/moba/ape_l; do not touch either.
+You run from C:\Users\pmcga\dev\hollowtide only because that folder is trusted and holds the tools. This is NOT Hollowtide work: write nothing in the Hollowtide repo. Write only inside D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d (called "out" below). The only images you may open are the files in out/refs and the images you generate in this job. Never open any other image anywhere. Text files and scripts under D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-b and .../codex-ground-pound may be read.
+Read first: docs/art/sprite-canon-2026-11-02.md and .codex/skills/hollowtide-sprites/SKILL.md (their craft, palette and check rules apply; their lore and evolution sections do not), then codex-set-b/brief.txt, codex-set-b/refinish.py and codex-set-b/REPORT.txt. You made set B; this is the same method with different rows. Copy codex-set-b/refinish.py into out and adapt it, do not start over.
+Sheets (prompt files are out/prompts/<name>.txt):
+- brace: 2 rows (se, ne), 5 columns; attach refs/se_6x.png then ne_6x.png; game-size refs se.png 89x70 and ne.png 77x74; frames se/ne; GIF timing f0-f4, 120 ms each with f3 held 600 ms.
+- death: 2 rows (se, ne), 7 columns; attach refs/se_6x.png then ne_6x.png; game-size refs se.png 89x70 and ne.png 77x74; frames se/ne; GIF timing f0-f6, 120 ms each with f6 held 1000 ms.
+- idle: 2 rows (se, ne), 5 columns; attach refs/se_6x.png then ne_6x.png; game-size refs se.png 89x70 and ne.png 77x74; frames se/ne; GIF timing f0-f4, 200 ms each, loop.
+- brace-shuffle: 3 rows (front, side, back), 6 columns; attach refs/brace_front_6x.png, brace_side_6x.png, brace_back_6x.png in that order; game-size refs brace_front.png 87x60, brace_side.png 106x59, brace_back.png 81x65; frames front/side/back; GIF timing f0-f5, 150 ms each, loop.
+1. For each sheet, generate exactly ONE image with your built-in image tool, with out/prompts/<name>.txt word for word as the prompt and the listed 6x refs attached in the listed order. Use a wide landscape size. Save each result unchanged as out/<name>/sheet_raw.png and record every image's size and sha256 in out/generation.json. Never make a second image or a redo of any sheet; if one fails, report it and go on to the next.
+2. Finish each sheet the way refinish.py does. Magenta to transparent with no magenta or plum fringe. Find the rows by N columns of cells; if a sheet is not a clean grid of separate rhinos, report it and save what you found. Shrink each ROW with its own factor so that row's column 1 matches its game-size ref: a side row by width, every other row (front, back, se, ne) by the geometric mean of the width and height ratios. Map every pixel to the union palette of all the game-size refs in out/refs, except: the two eye colours (#FF3A2A red and #FFE6D8 glint) are allowed only on pixels whose 8 neighbours are all opaque; any other pixel that would take an eye colour takes its nearest non-eye colour, so no red sits on the rim. Save out/<name>/grid.json with the cell boxes, the row factors and every frame's placement offset, so pixels can be traced from the raw sheet to the frames.
+3. Frames: out/<name>/frames/<row>_f{0..N-1}.png on 192x192 transparent canvases (f0 is column 1). Within a row use one fixed anchor taken from column 1: place column 1 where it best overlaps its game-size ref (feet at y=160), and every other frame by the same cell offset. Then, in every frame, the lowest pixel must sit on y=160: move a frame up or down by up to 3 px to fix it, and report any frame that was off by more. No frame may touch its canvas border.
+4. Checks, saved to out/<name>/checks.txt: for each frame its width, height, colour count, red eye and glint pixel counts, and eye-colour pixels touching transparency (must be 0); for each row, column 1 against its game-size ref (width, height, share of pixels with the same colour after aligning the feet) and the same share against the ref mirrored left-right (it must be lower, or the row faces the wrong way); for front and back rows the left-right mirror similarity; whether a side row faces right.
+5. Previews: out/<name>/review.png (all frames at 3x, nearest, on mid grey #808080, one row per view in the listed order, columns f0 onward, with the game-size ref drawn to the left of each row) and out/<name>/preview_<row>.gif at 3x with the listed timing.
+6. Do not touch anything outside out, do not touch assets/ or art/ in either repo, do not commit, do not revert other files.
+7. Report in under 25 lines, also saved as out/REPORT.txt: tokens used if known; each image's size and hash; per sheet whether the grid was clean, the row factors and the check lines; and by eye, per sheet: is it the SAME rhino as the refs in every row (hex yellow plates with the dark frame, grey wheel joints, flat grey feet, two-tone horn, red eye, tail stub)? Does it show the move as asked, with the rows matching column for column? Is each se and ne row at its ref's three-quarter angle in every cell (not turned to a straight view, not mirrored)? Do the legs keep their length? For brace-shuffle: does the body stay low and braced, and does only one foot lift at a time?
+"out" means D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d.
+Pixel-art animation sheet of ONE mech rhino bracing: it plants its feet wide and locks its armour, on a plain magenta background (#FF00FF). The two attached sprites are the exact design: the first is the three-quarter front view, turned toward the camera and facing down and to the right; the second is the three-quarter back view, turned away from the camera and facing up and to the right. Keep everything from them: big flat hexagonal yellow armour plates with the dark frame showing between them, short stubby legs with big round grey disc wheel joints, flat grey feet, two-tone grey nose horn and a small second horn, red eye, grey jaw, short tail stub, the same colours, outline and chunky pixel size. Only the pose changes. Never redesign: no gloss, no rounded armour, no long or realistic legs, no new parts.
+
+Layout: a grid of 2 rows and 5 columns of equal cells, one whole rhino per cell, nothing crossing a cell edge, no labels, no text, no grid lines. Row 1 is the three-quarter front view facing down and to the right, exactly the camera angle of the first sprite: we see its face and horn. Row 2 is the three-quarter back view facing up and to the right, exactly the camera angle of the second sprite: we see its rump and tail stub, and its head points away. Every cell in a row keeps that row's angle: never turn it to a straight front, side or back view, and never mirror it. Each column is one moment seen from two angles, so the two rows match frame for frame. The rhino is the same size in every cell and the ground line is at the same height in every cell. Its legs keep their length in every view: when the front end rises, the shoulders and head rise above the hips while the hind legs stay planted as they are.
+
+Columns, left to right:
+1. Reference: exactly the attached sprites, standing still with all four feet flat on the ground.
+2. Sink: legs bend, body drops low, head lowers.
+3. Plant: legs spread wide with the feet planted further apart, body low, head down with the horn forward, plates held tight.
+4. Hold: the same braced pose as column 3, body one pixel lower.
+5. Release: rising back toward the reference stance, feet drawing back in.
+The feet never leave the ground.
+
+No motion lines, no dust, no impact effect, no shadow, no other creature.
+Pixel-art animation sheet of ONE mech rhino being destroyed and collapsing, on a plain magenta background (#FF00FF). The two attached sprites are the exact design: the first is the three-quarter front view, turned toward the camera and facing down and to the right; the second is the three-quarter back view, turned away from the camera and facing up and to the right. Keep everything from them: big flat hexagonal yellow armour plates with the dark frame showing between them, short stubby legs with big round grey disc wheel joints, flat grey feet, two-tone grey nose horn and a small second horn, red eye, grey jaw, short tail stub, the same colours, outline and chunky pixel size. Only the pose changes. Never redesign: no gloss, no rounded armour, no long or realistic legs, no new parts.
+
+Layout: a grid of 2 rows and 7 columns of equal cells, one whole rhino per cell, nothing crossing a cell edge, no labels, no text, no grid lines. Row 1 is the three-quarter front view facing down and to the right, exactly the camera angle of the first sprite: we see its face and horn. Row 2 is the three-quarter back view facing up and to the right, exactly the camera angle of the second sprite: we see its rump and tail stub, and its head points away. Every cell in a row keeps that row's angle: never turn it to a straight front, side or back view, and never mirror it. Each column is one moment seen from two angles, so the two rows match frame for frame. The rhino is the same size in every cell and the ground line is at the same height in every cell. Its legs keep their length in every view: when the front end rises, the shoulders and head rise above the hips while the hind legs stay planted as they are.
+
+Columns, left to right:
+1. Reference: exactly the attached sprites, standing still with all four feet flat on the ground.
+2. Hit: the body jolts, head thrown back slightly.
+3. Stagger: front legs buckle, body tilting forward.
+4. Collapse: chest hits the ground, back legs still standing.
+5. Fall: back end drops, the body lies flat on its belly with the legs splayed out to the sides.
+6. Down: head drops to the ground, the eye light goes out (the eye turns dark grey instead of red).
+7. Still: the same as column 6, settled one pixel lower.
+In every view it falls onto its belly. No parts fly off, no fire, no smoke, no sparks.
+
+No motion lines, no dust, no impact effect, no shadow, no other creature.
+Pixel-art animation sheet of ONE mech rhino breathing while it stands still, on a plain magenta background (#FF00FF). The two attached sprites are the exact design: the first is the three-quarter front view, turned toward the camera and facing down and to the right; the second is the three-quarter back view, turned away from the camera and facing up and to the right. Keep everything from them: big flat hexagonal yellow armour plates with the dark frame showing between them, short stubby legs with big round grey disc wheel joints, flat grey feet, two-tone grey nose horn and a small second horn, red eye, grey jaw, short tail stub, the same colours, outline and chunky pixel size. Only the pose changes. Never redesign: no gloss, no rounded armour, no long or realistic legs, no new parts.
+
+Layout: a grid of 2 rows and 5 columns of equal cells, one whole rhino per cell, nothing crossing a cell edge, no labels, no text, no grid lines. Row 1 is the three-quarter front view facing down and to the right, exactly the camera angle of the first sprite: we see its face and horn. Row 2 is the three-quarter back view facing up and to the right, exactly the camera angle of the second sprite: we see its rump and tail stub, and its head points away. Every cell in a row keeps that row's angle: never turn it to a straight front, side or back view, and never mirror it. Each column is one moment seen from two angles, so the two rows match frame for frame. The rhino is the same size in every cell and the ground line is at the same height in every cell. Its legs keep their length in every view: when the front end rises, the shoulders and head rise above the hips while the hind legs stay planted as they are.
+
+Columns, left to right:
+1. Reference: exactly the attached sprites, standing still with all four feet flat on the ground.
+2. Breathe in: body and head rise very slightly, legs straighten a little.
+3. Top of the breath: head lifts a touch, horn tilted up slightly.
+4. Breathe out: body back down to the reference height.
+5. Settle: body a touch lower than the reference, head dipped slightly.
+All four feet stay planted in exactly the same place in every column. Every movement is small.
+
+No motion lines, no dust, no impact effect, no shadow, no other creature.
+Pixel-art animation sheet of ONE mech rhino shuffling forward while braced: it stays locked low in its braced stance and creeps forward with small heavy steps, on a plain magenta background (#FF00FF). The three attached sprites are the exact design and the exact braced pose: the first is the front view, the second the side view facing right, the third the back view. Keep everything from them: big flat hexagonal yellow armour plates with the dark frame showing between them, short stubby legs with big round grey disc wheel joints, flat grey feet, two-tone grey nose horn and a small second horn, red eye, grey jaw, short tail stub, the same colours, outline and chunky pixel size. Only the legs change. Never redesign: no gloss, no rounded armour, no long or realistic legs, no new parts.
+
+Layout: a grid of 3 rows and 6 columns of equal cells, one whole rhino per cell, nothing crossing a cell edge, no labels, no text, no grid lines. Row 1 is the front view: camera directly in front, centred and left-right symmetric, like the first sprite. Row 2 is the side view facing right, like the second sprite. Row 3 is the back view: camera directly behind, centred and symmetric, tail stub toward the viewer, no face, like the third sprite. Each column is one moment seen from three sides, so the three rows match frame for frame. The rhino is the same size in every cell and the ground line is at the same height in every cell. Its legs keep their length in every view.
+
+Columns, left to right:
+1. Reference: exactly the attached braced sprites, all four feet planted wide.
+2. The rhino's own left front foot lifts just clear of the ground, two or three pixels, and reaches a short way forward; the other three feet stay planted.
+3. That foot plants again; the right hind foot lifts just clear and slides forward.
+4. The right front foot lifts just clear and reaches a short way forward; the other three stay planted.
+5. That foot plants again; the left hind foot lifts just clear and slides forward.
+6. All four feet planted, the body one pixel lower as the weight settles; the loop goes back to column 1.
+In the front view the rhino's left feet are on the viewer's right; in the back view they are on the viewer's left. The body never rises out of the brace: the head stays low, the armour stays locked, the legs stay wide. Feet lift only a little. This is a slow braced shuffle, not a walk or a trot.
+
+No motion lines, no dust, no impact effect, no shadow, no other creature.
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "python -c \"import json,pathlib; p=pathlib.Path('D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/prompts'); print(json.dumps({f.stem:f.read_text() for f in p.glob('*.txt')}))\"" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 299ms:
+{"brace-shuffle": "Pixel-art animation sheet of ONE mech rhino shuffling forward while braced: it stays locked low in its braced stance and creeps forward with small heavy steps, on a plain magenta background (#FF00FF). The three attached sprites are the exact design and the exact braced pose: the first is the front view, the second the side view facing right, the third the back view. Keep everything from them: big flat hexagonal yellow armour plates with the dark frame showing between them, short stubby legs with big round grey disc wheel joints, flat grey feet, two-tone grey nose horn and a small second horn, red eye, grey jaw, short tail stub, the same colours, outline and chunky pixel size. Only the legs change. Never redesign: no gloss, no rounded armour, no long or realistic legs, no new parts.\n\nLayout: a grid of 3 rows and 6 columns of equal cells, one whole rhino per cell, nothing crossing a cell edge, no labels, no text, no grid lines. Row 1 is the front view: camera directly in front, centred and left-right symmetric, like the first sprite. Row 2 is the side view facing right, like the second sprite. Row 3 is the back view: camera directly behind, centred and symmetric, tail stub toward the viewer, no face, like the third sprite. Each column is one moment seen from three sides, so the three rows match frame for frame. The rhino is the same size in every cell and the ground line is at the same height in every cell. Its legs keep their length in every view.\n\nColumns, left to right:\n1. Reference: exactly the attached braced sprites, all four feet planted wide.\n2. The rhino's own left front foot lifts just clear of the ground, two or three pixels, and reaches a short way forward; the other three feet stay planted.\n3. That foot plants again; the right hind foot lifts just clear and slides forward.\n4. The right front foot lifts just clear and reaches a short way forward; the other three stay planted.\n5. That foot plants again; the left hind foot lifts just clear and slides forward.\n6. All four feet planted, the body one pixel lower as the weight settles; the loop goes back to column 1.\nIn the front view the rhino's left feet are on the viewer's right; in the back view they are on the viewer's left. The body never rises out of the brace: the head stays low, the armour stays locked, the legs stay wide. Feet lift only a little. This is a slow braced shuffle, not a walk or a trot.\n\nNo motion lines, no dust, no impact effect, no shadow, no other creature.\n", "brace": "Pixel-art animation sheet of ONE mech rhino bracing: it plants its feet wide and locks its armour, on a plain magenta background (#FF00FF). The two attached sprites are the exact design: the first is the three-quarter front view, turned toward the camera and facing down and to the right; the second is the three-quarter back view, turned away from the camera and facing up and to the right. Keep everything from them: big flat hexagonal yellow armour plates with the dark frame showing between them, short stubby legs with big round grey disc wheel joints, flat grey feet, two-tone grey nose horn and a small second horn, red eye, grey jaw, short tail stub, the same colours, outline and chunky pixel size. Only the pose changes. Never redesign: no gloss, no rounded armour, no long or realistic legs, no new parts.\n\nLayout: a grid of 2 rows and 5 columns of equal cells, one whole rhino per cell, nothing crossing a cell edge, no labels, no text, no grid lines. Row 1 is the three-quarter front view facing down and to the right, exactly the camera angle of the first sprite: we see its face and horn. Row 2 is the three-quarter back view facing up and to the right, exactly the camera angle of the second sprite: we see its rump and tail stub, and its head points away. Every cell in a row keeps that row's angle: never turn it to a straight front, side or back view, and never mirror it. Each column is one moment seen from two angles, so the two rows match frame for frame. The rhino is the same size in every cell and the ground line is at the same height in every cell. Its legs keep their length in every view: when the front end rises, the shoulders and head rise above the hips while the hind legs stay planted as they are.\n\nColumns, left to right:\n1. Reference: exactly the attached sprites, standing still with all four feet flat on the ground.\n2. Sink: legs bend, body drops low, head lowers.\n3. Plant: legs spread wide with the feet planted further apart, body low, head down with the horn forward, plates held tight.\n4. Hold: the same braced pose as column 3, body one pixel lower.\n5. Release: rising back toward the reference stance, feet drawing back in.\nThe feet never leave the ground.\n\nNo motion lines, no dust, no impact effect, no shadow, no other creature.\n", "death": "Pixel-art animation sheet of ONE mech rhino being destroyed and collapsing, on a plain magenta background (#FF00FF). The two attached sprites are the exact design: the first is the three-quarter front view, turned toward the camera and facing down and to the right; the second is the three-quarter back view, turned away from the camera and facing up and to the right. Keep everything from them: big flat hexagonal yellow armour plates with the dark frame showing between them, short stubby legs with big round grey disc wheel joints, flat grey feet, two-tone grey nose horn and a small second horn, red eye, grey jaw, short tail stub, the same colours, outline and chunky pixel size. Only the pose changes. Never redesign: no gloss, no rounded armour, no long or realistic legs, no new parts.\n\nLayout: a grid of 2 rows and 7 columns of equal cells, one whole rhino per cell, nothing crossing a cell edge, no labels, no text, no grid lines. Row 1 is the three-quarter front view facing down and to the right, exactly the camera angle of the first sprite: we see its face and horn. Row 2 is the three-quarter back view facing up and to the right, exactly the camera angle of the second sprite: we see its rump and tail stub, and its head points away. Every cell in a row keeps that row's angle: never turn it to a straight front, side or back view, and never mirror it. Each column is one moment seen from two angles, so the two rows match frame for frame. The rhino is the same size in every cell and the ground line is at the same height in every cell. Its legs keep their length in every view: when the front end rises, the shoulders and head rise above the hips while the hind legs stay planted as they are.\n\nColumns, left to right:\n1. Reference: exactly the attached sprites, standing still with all four feet flat on the ground.\n2. Hit: the body jolts, head thrown back slightly.\n3. Stagger: front legs buckle, body tilting forward.\n4. Collapse: chest hits the ground, back legs still standing.\n5. Fall: back end drops, the body lies flat on its belly with the legs splayed out to the sides.\n6. Down: head drops to the ground, the eye light goes out (the eye turns dark grey instead of red).\n7. Still: the same as column 6, settled one pixel lower.\nIn every view it falls onto its belly. No parts fly off, no fire, no smoke, no sparks.\n\nNo motion lines, no dust, no impact effect, no shadow, no other creature.\n", "idle": "Pixel-art animation sheet of ONE mech rhino breathing while it stands still, on a plain magenta background (#FF00FF). The two attached sprites are the exact design: the first is the three-quarter front view, turned toward the camera and facing down and to the right; the second is the three-quarter back view, turned away from the camera and facing up and to the right. Keep everything from them: big flat hexagonal yellow armour plates with the dark frame showing between them, short stubby legs with big round grey disc wheel joints, flat grey feet, two-tone grey nose horn and a small second horn, red eye, grey jaw, short tail stub, the same colours, outline and chunky pixel size. Only the pose changes. Never redesign: no gloss, no rounded armour, no long or realistic legs, no new parts.\n\nLayout: a grid of 2 rows and 5 columns of equal cells, one whole rhino per cell, nothing crossing a cell edge, no labels, no text, no grid lines. Row 1 is the three-quarter front view facing down and to the right, exactly the camera angle of the first sprite: we see its face and horn. Row 2 is the three-quarter back view facing up and to the right, exactly the camera angle of the second sprite: we see its rump and tail stub, and its head points away. Every cell in a row keeps that row's angle: never turn it to a straight front, side or back view, and never mirror it. Each column is one moment seen from two angles, so the two rows match frame for frame. The rhino is the same size in every cell and the ground line is at the same height in every cell. Its legs keep their length in every view: when the front end rises, the shoulders and head rise above the hips while the hind legs stay planted as they are.\n\nColumns, left to right:\n1. Reference: exactly the attached sprites, standing still with all four feet flat on the ground.\n2. Breathe in: body and head rise very slightly, legs straighten a little.\n3. Top of the breath: head lifts a touch, horn tilted up slightly.\n4. Breathe out: body back down to the reference height.\n5. Settle: body a touch lower than the reference, head dipped slightly.\nAll four feet stay planted in exactly the same place in every column. Every movement is small.\n\nNo motion lines, no dust, no impact effect, no shadow, no other creature.\n"}
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Copy-Item -LiteralPath D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-b/refinish.py -Destination D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/refinish.py; python -c \"import PIL,numpy,scipy; print('Finishing dependencies available')\"" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 549ms:
+Finishing dependencies available
+
+apply patch
+patch: completed
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\adapt_refinish.py
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\finish_tail.txt
+diff --git a/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/adapt_refinish.py b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/adapt_refinish.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..ba894fc7d9debb5320b988aa39472a25ff8c4813
+--- /dev/null
++++ b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/adapt_refinish.py
+@@ -0,0 +1,12 @@
++from pathlib import Path
++p=Path(__file__).with_name('refinish.py')
++s=p.read_text()
++start=s.index("NAMES=['front'")
++end=s.index('\ndef keyed',start)
++s=s[:start]+'''EYE={(255,58,42),(255,230,216)}
++refnames=['se','ne','brace_front','brace_side','brace_back']
++refmap={n:Image.open(OUT/'refs'/f'{n}.png').convert('RGBA') for n in refnames}
++allpal=np.unique(np.concatenate([np.array(im)[np.array(im)[:,:,3]>0,:3] for im in refmap.values()]),axis=0)
++'''+s[end:]
++s=s[:s.index('metadata={}; summary={}')]
++p.write_text(s+Path(__file__).with_name('finish_tail.txt').read_text())
+diff --git a/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/finish_tail.txt b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/finish_tail.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..c508082571fe90b794a1a0ba2c488e1ff92befc0
+--- /dev/null
++++ b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/finish_tail.txt
+@@ -0,0 +1,101 @@
++def share(f,ref):
++    fa,ra=np.array(f),np.array(ref); union=(fa[:,:,3]>0)|(ra[:,:,3]>0)
++    return float((np.all(fa==ra,2)&union).sum()/max(1,union.sum()))
++
++def bestalign(cell,ref):
++    # Fixed reference canvas, normalized to the required foot line.
++    rb=ref.getbbox(); target=Image.new('RGBA',(192,192)); target.paste(ref,(0,161-rb[3]))
++    b=cell.getbbox(); dy=161-b[3]
++    centre=round((rb[0]+rb[2]-b[0]-b[2])/2)
++    options=[]
++    for dx in range(centre-24,centre+25):
++        f=Image.new('RGBA',(192,192)); f.paste(cell,(dx,dy)); options.append((share(f,target),dx))
++    _,dx=max(options,key=lambda x:(x[0],-abs(x[1]-centre)))
++    return dx,dy,target
++
++metadata={}; summary={}
++for name,N in [('brace',5),('death',7),('idle',5),('brace-shuffle',6)]:
++    path=OUT/name
++    if not (path/'sheet_raw.png').exists():
++        summary[name]={'failed':'No raw output; generation failed'}; continue
++    names=['front','side','back'] if name=='brace-shuffle' else ['se','ne']
++    keys=['brace_'+n for n in names] if name=='brace-shuffle' else names
++    refs=[refmap[k] for k in keys]; R=len(names)
++    raw=Image.open(path/'sheet_raw.png').convert('RGBA'); W,H=raw.size
++    metadata[name]=dict(size=[W,H],sha256=hashlib.sha256((path/'sheet_raw.png').read_bytes()).hexdigest(),prompt=f'prompts/{name}.txt',generations=1)
++    a,mask=keyed(raw); ys=boundaries(mask,R,1)
++    xrows=[boundaries(mask[ys[r]:ys[r+1]],N,0) for r in range(R)]
++    found=[]; clean=True
++    for r in range(R):
++        xs=xrows[r]
++        for c in range(N):
++            m=mask[ys[r]:ys[r+1],xs[c]:xs[c+1]]; b=box(m)
++            labels,_=ndi.label(m); sizes=np.bincount(labels.ravel())[1:]
++            major=int((sizes>max(30,m.sum()*.025)).sum())
++            ok=b is not None and min(b[0],b[1],m.shape[1]-b[2],m.shape[0]-b[3])>=1 and major==1
++            found.append(dict(row=r,column=c,box=b,raw_cell=[int(xs[c]),int(ys[r]),int(xs[c+1]),int(ys[r+1])],major=major,clean=bool(ok))); clean &= ok
++    grid=dict(clean=bool(clean),x=[v.tolist() for v in xrows],y=ys.tolist(),cells=found,rows=[],placements=[],mapping='raw coordinates * effective_scale_xy, rounded cell origin subtracted, then placement_offset added; colour finishing uses nearest fill, median, Lanczos and palette mapping')
++    (path/'grid.json').write_text(json.dumps(grid,indent=2))
++    if any(f['box'] is None for f in found):
++        (path/'checks.txt').write_text('FAIL: empty cells; see grid.json. No substitute images or redraw.\n'); summary[name]={'clean':False,'failed':'empty cells'}; continue
++    indices=ndi.distance_transform_edt(~mask,return_distances=False,return_indices=True)
++    filled=Image.fromarray(a[:,:,:3][tuple(indices)]).filter(ImageFilter.MedianFilter(3))
++    pal=allpal; palette=pal.astype(np.int32); (path/'frames').mkdir(exist_ok=True)
++    lines=[f'Clean {R}x{N} grid: {clean}; binary alpha; transparent RGB zero.']
++    factors=[]; frames=[]; rowstats=[]; refchecks=[]
++    for r,n in enumerate(names):
++        xs=xrows[r]; b=found[r*N]['box']; w,h=b[2]-b[0],b[3]-b[1]
++        ref=refs[r]; rb=ref.getbbox(); tw,th=rb[2]-rb[0],rb[3]-rb[1]
++        factor=tw/w if n=='side' else ((tw/w)*(th/h))**.5; factors.append(factor)
++        sheet=finish(factor); sheet.save(path/f'row_{n}_finished.png')
++        sx=np.rint(xs*factor).astype(int); sy=np.rint(ys*factor).astype(int)
++        first=sheet.crop((sx[0],sy[r],sx[1],sy[r+1])); dx,dy,target=bestalign(first,ref)
++        grid['rows'].append(dict(name=n,factor=factor,effective_scale_xy=[sheet.width/W,sheet.height/H],fixed_cell_offset=[dx,dy],target=[tw,th]))
++        row=[]; st=[]; lines.append(f'{n}: factor={factor:.10f}; fixed cell anchor offset=({dx},{dy})')
++        for c in range(N):
++            cell=sheet.crop((sx[c],sy[r],sx[c+1],sy[r+1])); b=cell.getbbox()
++            requested=160-(b[3]-1+dy); shift=requested if abs(requested)<=3 else 0
++            f=Image.new('RGBA',(192,192)); f.paste(cell,(dx,dy+shift))
++            f.save(path/'frames'/f'{n}_f{c}.png'); row.append(f); d=stats(f); d['requested_shift']=requested; st.append(d)
++            clipped=b[0]+dx<0 or b[2]+dx>192 or b[1]+dy+shift<0 or b[3]+dy+shift>192
++            grid['placements'].append(dict(row=n,column=c,scaled_cell=[int(sx[c]),int(sy[r]),int(sx[c+1]),int(sy[r+1])],placement_offset=[dx,dy+shift],ground_requested=requested,ground_applied=shift,clipped=clipped))
++            lines.append(f'{n}_f{c}: '+', '.join(f'{k}={v}' for k,v in d.items())+(' GROUND_FAIL_OVER_3PX' if abs(requested)>3 else '')+(' CLIPPED' if clipped else ''))
++        frames.append(row); rowstats.append(st)
++        # Compare both references after independently aligning feet and best horizontal overlap.
++        f=row[0]; crop=f.crop(f.getbbox()); _,_,t=bestalign(crop,ref)
++        _,_,mt=bestalign(crop,ref.transpose(Image.Transpose.FLIP_LEFT_RIGHT))
++        def bestshare(target):
++            dx2,dy2,target2=bestalign(crop,target); temp=Image.new('RGBA',(192,192)); temp.paste(crop,(dx2,dy2)); return share(temp,target2)
++        sim=bestshare(ref); msim=bestshare(ref.transpose(Image.Transpose.FLIP_LEFT_RIGHT))
++        d=st[0]; line=f'{n} column1 vs ref: {d["width"]}x{d["height"]} vs {tw}x{th}; exact-colour share={sim:.4f}; mirrored ref={msim:.4f}; orientation={"PASS" if msim<sim else "FAIL"} (opaque union; feet aligned; best x overlap each)'
++        lines.append(line); refchecks.append(line)
++        if n in ('front','back'):
++            vals=[]
++            for f in row:
++                ar=np.array(f.crop(f.getbbox())); flip=ar[:,::-1]; union=(ar[:,:,3]>0)|(flip[:,:,3]>0)
++                vals.append(float((np.all(ar==flip,2)&union).sum()/union.sum()))
++            lines.append(f'{n} mirror colour similarities: '+', '.join(f'{v:.3f}' for v in vals))
++    if 'side' in names: lines.append('Side faces right: pending visual audit in REPORT.txt (not inferred from numbers).')
++    review=Image.new('RGB',((N+1)*576,32+R*576),(128,128,128)); draw=ImageDraw.Draw(review)
++    for r,n in enumerate(names):
++        ref=refs[r]; refcanvas=Image.new('RGBA',(192,192)); refcanvas.paste(ref,(0,161-ref.getbbox()[3])); z=refcanvas.resize((576,576),Image.Resampling.NEAREST)
++        review.paste(z,(0,32+r*576),z); draw.text((8,40+r*576),n+' REF',fill='white')
++        for c,f in enumerate(frames[r]):
++            z=f.resize((576,576),Image.Resampling.NEAREST); review.paste(z,((c+1)*576,32+r*576),z); draw.text(((c+1)*576+8,8),f'f{c}',fill='white')
++        dur={'brace':[120,120,120,600,120],'death':[120]*6+[1000],'idle':[200]*5,'brace-shuffle':[150]*6}[name]
++        gifsave(frames[r],path/f'preview_{n}.gif',dur,3,(128,128,128),name in ('idle','brace-shuffle'))
++    review.save(path/'review.png'); lines+=audit([f for row in frames for f in row],pal)
++    for r,n in enumerate(names):
++        lone=[]
++        for f in frames[r]:
++            ar=np.array(f); m=ar[:,:,3]>0; same=np.zeros(m.shape,int)
++            for yy,xx in [(-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1)]:
++                shifted=np.roll(ar,(yy,xx),(0,1)); same+=np.all(ar==shifted,2)&m
++            lone.append(float(((same==0)&m).sum()/max(1,m.sum())))
++        lines.append(f'{n} lone-colour-pixel shares: '+', '.join(f'{v:.4f}' for v in lone))
++    (path/'checks.txt').write_text('\n'.join(lines)+'\n')
++    (path/'grid.json').write_text(json.dumps(grid,indent=2))
++    summary[name]=dict(clean=bool(clean),factors=factors,stats=rowstats,refchecks=refchecks,mirror=[s for s in lines if 'mirror colour' in s])
++    print(name,'grid',clean,'factors',factors)
++(OUT/'generation.json').write_text(json.dumps(metadata,indent=2)+'\n')
++(OUT/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'python D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/adapt_refinish.py' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 310ms:
+codex
+The brace raw is complete: both rows keep their three-quarter angles, and the sink/plant/hold sequence reads. The rear legs appear to shorten during the deepest brace; I’ll flag that in the report and proceed without a redo.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'New-Item -ItemType Directory -Force D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/brace | Out-Null; Copy-Item -LiteralPath C:/Users/pmcga/.codex/generated_images/01a1a736-5336-7931-a123-26af25d93def/exec-81efd67a-9cc3-4291-b898-ff3aa1740871.png -Destination D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/brace/sheet_raw.png' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 116ms:
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "python -c \"import ast,pathlib; ast.parse(pathlib.Path('D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/refinish.py').read_text()); print('Adapted finisher syntax OK')\"" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 150ms:
+Adapted finisher syntax OK
+
+codex
+The adapted finisher now records raw cell boxes, row scales, fixed anchors, and per-frame ground shifts in `grid.json`. It also checks each first frame against both the original and mirrored ref, and includes the refs beside the frames in each review. Death generation is still running.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'New-Item -ItemType Directory -Force D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/death | Out-Null; Copy-Item -LiteralPath C:/Users/pmcga/.codex/generated_images/01a1a736-5336-7931-a123-26af25d93def/exec-38f026b2-d2f4-4406-a43e-69e63d66905e.png -Destination D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/death/sheet_raw.png' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 109ms:
+apply patch
+patch: completed
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\validate.py
+diff --git a/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/adapt_refinish.py b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/adapt_refinish.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..ba894fc7d9debb5320b988aa39472a25ff8c4813
+--- /dev/null
++++ b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/adapt_refinish.py
+@@ -0,0 +1,12 @@
++from pathlib import Path
++p=Path(__file__).with_name('refinish.py')
++s=p.read_text()
++start=s.index("NAMES=['front'")
++end=s.index('\ndef keyed',start)
++s=s[:start]+'''EYE={(255,58,42),(255,230,216)}
++refnames=['se','ne','brace_front','brace_side','brace_back']
++refmap={n:Image.open(OUT/'refs'/f'{n}.png').convert('RGBA') for n in refnames}
++allpal=np.unique(np.concatenate([np.array(im)[np.array(im)[:,:,3]>0,:3] for im in refmap.values()]),axis=0)
++'''+s[end:]
++s=s[:s.index('metadata={}; summary={}')]
++p.write_text(s+Path(__file__).with_name('finish_tail.txt').read_text())
+diff --git a/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/finish_tail.txt b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/finish_tail.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..c508082571fe90b794a1a0ba2c488e1ff92befc0
+--- /dev/null
++++ b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/finish_tail.txt
+@@ -0,0 +1,101 @@
++def share(f,ref):
++    fa,ra=np.array(f),np.array(ref); union=(fa[:,:,3]>0)|(ra[:,:,3]>0)
++    return float((np.all(fa==ra,2)&union).sum()/max(1,union.sum()))
++
++def bestalign(cell,ref):
++    # Fixed reference canvas, normalized to the required foot line.
++    rb=ref.getbbox(); target=Image.new('RGBA',(192,192)); target.paste(ref,(0,161-rb[3]))
++    b=cell.getbbox(); dy=161-b[3]
++    centre=round((rb[0]+rb[2]-b[0]-b[2])/2)
++    options=[]
++    for dx in range(centre-24,centre+25):
++        f=Image.new('RGBA',(192,192)); f.paste(cell,(dx,dy)); options.append((share(f,target),dx))
++    _,dx=max(options,key=lambda x:(x[0],-abs(x[1]-centre)))
++    return dx,dy,target
++
++metadata={}; summary={}
++for name,N in [('brace',5),('death',7),('idle',5),('brace-shuffle',6)]:
++    path=OUT/name
++    if not (path/'sheet_raw.png').exists():
++        summary[name]={'failed':'No raw output; generation failed'}; continue
++    names=['front','side','back'] if name=='brace-shuffle' else ['se','ne']
++    keys=['brace_'+n for n in names] if name=='brace-shuffle' else names
++    refs=[refmap[k] for k in keys]; R=len(names)
++    raw=Image.open(path/'sheet_raw.png').convert('RGBA'); W,H=raw.size
++    metadata[name]=dict(size=[W,H],sha256=hashlib.sha256((path/'sheet_raw.png').read_bytes()).hexdigest(),prompt=f'prompts/{name}.txt',generations=1)
++    a,mask=keyed(raw); ys=boundaries(mask,R,1)
++    xrows=[boundaries(mask[ys[r]:ys[r+1]],N,0) for r in range(R)]
++    found=[]; clean=True
++    for r in range(R):
++        xs=xrows[r]
++        for c in range(N):
++            m=mask[ys[r]:ys[r+1],xs[c]:xs[c+1]]; b=box(m)
++            labels,_=ndi.label(m); sizes=np.bincount(labels.ravel())[1:]
++            major=int((sizes>max(30,m.sum()*.025)).sum())
++            ok=b is not None and min(b[0],b[1],m.shape[1]-b[2],m.shape[0]-b[3])>=1 and major==1
++            found.append(dict(row=r,column=c,box=b,raw_cell=[int(xs[c]),int(ys[r]),int(xs[c+1]),int(ys[r+1])],major=major,clean=bool(ok))); clean &= ok
++    grid=dict(clean=bool(clean),x=[v.tolist() for v in xrows],y=ys.tolist(),cells=found,rows=[],placements=[],mapping='raw coordinates * effective_scale_xy, rounded cell origin subtracted, then placement_offset added; colour finishing uses nearest fill, median, Lanczos and palette mapping')
++    (path/'grid.json').write_text(json.dumps(grid,indent=2))
++    if any(f['box'] is None for f in found):
++        (path/'checks.txt').write_text('FAIL: empty cells; see grid.json. No substitute images or redraw.\n'); summary[name]={'clean':False,'failed':'empty cells'}; continue
++    indices=ndi.distance_transform_edt(~mask,return_distances=False,return_indices=True)
++    filled=Image.fromarray(a[:,:,:3][tuple(indices)]).filter(ImageFilter.MedianFilter(3))
++    pal=allpal; palette=pal.astype(np.int32); (path/'frames').mkdir(exist_ok=True)
++    lines=[f'Clean {R}x{N} grid: {clean}; binary alpha; transparent RGB zero.']
++    factors=[]; frames=[]; rowstats=[]; refchecks=[]
++    for r,n in enumerate(names):
++        xs=xrows[r]; b=found[r*N]['box']; w,h=b[2]-b[0],b[3]-b[1]
++        ref=refs[r]; rb=ref.getbbox(); tw,th=rb[2]-rb[0],rb[3]-rb[1]
++        factor=tw/w if n=='side' else ((tw/w)*(th/h))**.5; factors.append(factor)
++        sheet=finish(factor); sheet.save(path/f'row_{n}_finished.png')
++        sx=np.rint(xs*factor).astype(int); sy=np.rint(ys*factor).astype(int)
++        first=sheet.crop((sx[0],sy[r],sx[1],sy[r+1])); dx,dy,target=bestalign(first,ref)
++        grid['rows'].append(dict(name=n,factor=factor,effective_scale_xy=[sheet.width/W,sheet.height/H],fixed_cell_offset=[dx,dy],target=[tw,th]))
++        row=[]; st=[]; lines.append(f'{n}: factor={factor:.10f}; fixed cell anchor offset=({dx},{dy})')
++        for c in range(N):
++            cell=sheet.crop((sx[c],sy[r],sx[c+1],sy[r+1])); b=cell.getbbox()
++            requested=160-(b[3]-1+dy); shift=requested if abs(requested)<=3 else 0
++            f=Image.new('RGBA',(192,192)); f.paste(cell,(dx,dy+shift))
++            f.save(path/'frames'/f'{n}_f{c}.png'); row.append(f); d=stats(f); d['requested_shift']=requested; st.append(d)
++            clipped=b[0]+dx<0 or b[2]+dx>192 or b[1]+dy+shift<0 or b[3]+dy+shift>192
++            grid['placements'].append(dict(row=n,column=c,scaled_cell=[int(sx[c]),int(sy[r]),int(sx[c+1]),int(sy[r+1])],placement_offset=[dx,dy+shift],ground_requested=requested,ground_applied=shift,clipped=clipped))
++            lines.append(f'{n}_f{c}: '+', '.join(f'{k}={v}' for k,v in d.items())+(' GROUND_FAIL_OVER_3PX' if abs(requested)>3 else '')+(' CLIPPED' if clipped else ''))
++        frames.append(row); rowstats.append(st)
++        # Compare both references after independently aligning feet and best horizontal overlap.
++        f=row[0]; crop=f.crop(f.getbbox()); _,_,t=bestalign(crop,ref)
++        _,_,mt=bestalign(crop,ref.transpose(Image.Transpose.FLIP_LEFT_RIGHT))
++        def bestshare(target):
++            dx2,dy2,target2=bestalign(crop,target); temp=Image.new('RGBA',(192,192)); temp.paste(crop,(dx2,dy2)); return share(temp,target2)
++        sim=bestshare(ref); msim=bestshare(ref.transpose(Image.Transpose.FLIP_LEFT_RIGHT))
++        d=st[0]; line=f'{n} column1 vs ref: {d["width"]}x{d["height"]} vs {tw}x{th}; exact-colour share={sim:.4f}; mirrored ref={msim:.4f}; orientation={"PASS" if msim<sim else "FAIL"} (opaque union; feet aligned; best x overlap each)'
++        lines.append(line); refchecks.append(line)
++        if n in ('front','back'):
++            vals=[]
++            for f in row:
++                ar=np.array(f.crop(f.getbbox())); flip=ar[:,::-1]; union=(ar[:,:,3]>0)|(flip[:,:,3]>0)
++                vals.append(float((np.all(ar==flip,2)&union).sum()/union.sum()))
++            lines.append(f'{n} mirror colour similarities: '+', '.join(f'{v:.3f}' for v in vals))
++    if 'side' in names: lines.append('Side faces right: pending visual audit in REPORT.txt (not inferred from numbers).')
++    review=Image.new('RGB',((N+1)*576,32+R*576),(128,128,128)); draw=ImageDraw.Draw(review)
++    for r,n in enumerate(names):
++        ref=refs[r]; refcanvas=Image.new('RGBA',(192,192)); refcanvas.paste(ref,(0,161-ref.getbbox()[3])); z=refcanvas.resize((576,576),Image.Resampling.NEAREST)
++        review.paste(z,(0,32+r*576),z); draw.text((8,40+r*576),n+' REF',fill='white')
++        for c,f in enumerate(frames[r]):
++            z=f.resize((576,576),Image.Resampling.NEAREST); review.paste(z,((c+1)*576,32+r*576),z); draw.text(((c+1)*576+8,8),f'f{c}',fill='white')
++        dur={'brace':[120,120,120,600,120],'death':[120]*6+[1000],'idle':[200]*5,'brace-shuffle':[150]*6}[name]
++        gifsave(frames[r],path/f'preview_{n}.gif',dur,3,(128,128,128),name in ('idle','brace-shuffle'))
++    review.save(path/'review.png'); lines+=audit([f for row in frames for f in row],pal)
++    for r,n in enumerate(names):
++        lone=[]
++        for f in frames[r]:
++            ar=np.array(f); m=ar[:,:,3]>0; same=np.zeros(m.shape,int)
++            for yy,xx in [(-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1)]:
++                shifted=np.roll(ar,(yy,xx),(0,1)); same+=np.all(ar==shifted,2)&m
++            lone.append(float(((same==0)&m).sum()/max(1,m.sum())))
++        lines.append(f'{n} lone-colour-pixel shares: '+', '.join(f'{v:.4f}' for v in lone))
++    (path/'checks.txt').write_text('\n'.join(lines)+'\n')
++    (path/'grid.json').write_text(json.dumps(grid,indent=2))
++    summary[name]=dict(clean=bool(clean),factors=factors,stats=rowstats,refchecks=refchecks,mirror=[s for s in lines if 'mirror colour' in s])
++    print(name,'grid',clean,'factors',factors)
++(OUT/'generation.json').write_text(json.dumps(metadata,indent=2)+'\n')
++(OUT/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
+diff --git a/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/validate.py b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/validate.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..2dc422e1c092027406f5a32a7cdbb272c8b79726
+--- /dev/null
++++ b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/validate.py
+@@ -0,0 +1,34 @@
++from pathlib import Path
++import json,hashlib
++import numpy as np
++from PIL import Image
++from scipy import ndimage as ndi
++out=Path(__file__).resolve().parent
++pal=set()
++for p in (out/'refs').glob('*.png'):
++    if '_6x' in p.stem: continue
++    ar=np.array(Image.open(p).convert('RGBA')); pal.update(map(tuple,ar[ar[:,:,3]>0,:3]))
++meta=json.loads((out/'generation.json').read_text()); total=0; warnings=[]
++for name,n,rows in [('brace',5,['se','ne']),('death',7,['se','ne']),('idle',5,['se','ne']),('brace-shuffle',6,['front','side','back'])]:
++    p=out/name; raw=p/'sheet_raw.png'; assert hashlib.sha256(raw.read_bytes()).hexdigest()==meta[name]['sha256']
++    grid=json.loads((p/'grid.json').read_text()); assert len(grid['cells'])==n*len(rows); assert len(grid['placements'])==n*len(rows)
++    for r in rows:
++        with Image.open(p/f'preview_{r}.gif') as gif:
++            times=[]
++            for i in range(gif.n_frames): gif.seek(i); times.append(gif.info['duration'])
++            expected={'brace':1080,'death':1720,'idle':1000,'brace-shuffle':900}[name]
++            assert sum(times)==expected,(name,r,times)
++            assert (gif.info.get('loop')==0)==(name in ('idle','brace-shuffle'))
++        for c in range(n):
++            f=p/'frames'/f'{r}_f{c}.png'; im=Image.open(f).convert('RGBA'); ar=np.array(im); m=ar[:,:,3]>0
++            assert im.size==(192,192); assert set(np.unique(ar[:,:,3]))<={0,255}
++            assert set(map(tuple,ar[m,:3]))<=pal
++            assert not(m[0].any() or m[-1].any() or m[:,0].any() or m[:,-1].any())
++            assert not ar[~m].any()
++            eyes=(np.all(ar[:,:,:3]==[255,58,42],2)|np.all(ar[:,:,:3]==[255,230,216],2))&m
++            assert not (eyes&~ndi.binary_erosion(m,np.ones((3,3)))).any()
++            if im.getbbox()[3]!=161: warnings.append(f'{name}/{r}_f{c}: bottom {im.getbbox()[3]-1}')
++            total+=1
++    assert (p/'review.png').exists()
++print(f'{total} frames verified: 192x192; binary alpha; union palette; eye rim zero; no border contact; GIF total durations and looping; raw hashes; grid placements.')
++print('Ground warnings: '+('; '.join(warnings) if warnings else 'none'))
+
+codex
+The death raw shows the belly collapse in both views, with the eye dark in the final front-view cells. The main concern is leg foreshortening as the body falls; the rows otherwise appear to match the sequence. Idle is generating next, followed by the braced shuffle.
+apply patch
+patch: completed
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\refinish.py
+diff --git a/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/adapt_refinish.py b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/adapt_refinish.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..ba894fc7d9debb5320b988aa39472a25ff8c4813
+--- /dev/null
++++ b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/adapt_refinish.py
+@@ -0,0 +1,12 @@
++from pathlib import Path
++p=Path(__file__).with_name('refinish.py')
++s=p.read_text()
++start=s.index("NAMES=['front'")
++end=s.index('\ndef keyed',start)
++s=s[:start]+'''EYE={(255,58,42),(255,230,216)}
++refnames=['se','ne','brace_front','brace_side','brace_back']
++refmap={n:Image.open(OUT/'refs'/f'{n}.png').convert('RGBA') for n in refnames}
++allpal=np.unique(np.concatenate([np.array(im)[np.array(im)[:,:,3]>0,:3] for im in refmap.values()]),axis=0)
++'''+s[end:]
++s=s[:s.index('metadata={}; summary={}')]
++p.write_text(s+Path(__file__).with_name('finish_tail.txt').read_text())
+diff --git a/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/finish_tail.txt b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/finish_tail.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..c508082571fe90b794a1a0ba2c488e1ff92befc0
+--- /dev/null
++++ b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/finish_tail.txt
+@@ -0,0 +1,101 @@
++def share(f,ref):
++    fa,ra=np.array(f),np.array(ref); union=(fa[:,:,3]>0)|(ra[:,:,3]>0)
++    return float((np.all(fa==ra,2)&union).sum()/max(1,union.sum()))
++
++def bestalign(cell,ref):
++    # Fixed reference canvas, normalized to the required foot line.
++    rb=ref.getbbox(); target=Image.new('RGBA',(192,192)); target.paste(ref,(0,161-rb[3]))
++    b=cell.getbbox(); dy=161-b[3]
++    centre=round((rb[0]+rb[2]-b[0]-b[2])/2)
++    options=[]
++    for dx in range(centre-24,centre+25):
++        f=Image.new('RGBA',(192,192)); f.paste(cell,(dx,dy)); options.append((share(f,target),dx))
++    _,dx=max(options,key=lambda x:(x[0],-abs(x[1]-centre)))
++    return dx,dy,target
++
++metadata={}; summary={}
++for name,N in [('brace',5),('death',7),('idle',5),('brace-shuffle',6)]:
++    path=OUT/name
++    if not (path/'sheet_raw.png').exists():
++        summary[name]={'failed':'No raw output; generation failed'}; continue
++    names=['front','side','back'] if name=='brace-shuffle' else ['se','ne']
++    keys=['brace_'+n for n in names] if name=='brace-shuffle' else names
++    refs=[refmap[k] for k in keys]; R=len(names)
++    raw=Image.open(path/'sheet_raw.png').convert('RGBA'); W,H=raw.size
++    metadata[name]=dict(size=[W,H],sha256=hashlib.sha256((path/'sheet_raw.png').read_bytes()).hexdigest(),prompt=f'prompts/{name}.txt',generations=1)
++    a,mask=keyed(raw); ys=boundaries(mask,R,1)
++    xrows=[boundaries(mask[ys[r]:ys[r+1]],N,0) for r in range(R)]
++    found=[]; clean=True
++    for r in range(R):
++        xs=xrows[r]
++        for c in range(N):
++            m=mask[ys[r]:ys[r+1],xs[c]:xs[c+1]]; b=box(m)
++            labels,_=ndi.label(m); sizes=np.bincount(labels.ravel())[1:]
++            major=int((sizes>max(30,m.sum()*.025)).sum())
++            ok=b is not None and min(b[0],b[1],m.shape[1]-b[2],m.shape[0]-b[3])>=1 and major==1
++            found.append(dict(row=r,column=c,box=b,raw_cell=[int(xs[c]),int(ys[r]),int(xs[c+1]),int(ys[r+1])],major=major,clean=bool(ok))); clean &= ok
++    grid=dict(clean=bool(clean),x=[v.tolist() for v in xrows],y=ys.tolist(),cells=found,rows=[],placements=[],mapping='raw coordinates * effective_scale_xy, rounded cell origin subtracted, then placement_offset added; colour finishing uses nearest fill, median, Lanczos and palette mapping')
++    (path/'grid.json').write_text(json.dumps(grid,indent=2))
++    if any(f['box'] is None for f in found):
++        (path/'checks.txt').write_text('FAIL: empty cells; see grid.json. No substitute images or redraw.\n'); summary[name]={'clean':False,'failed':'empty cells'}; continue
++    indices=ndi.distance_transform_edt(~mask,return_distances=False,return_indices=True)
++    filled=Image.fromarray(a[:,:,:3][tuple(indices)]).filter(ImageFilter.MedianFilter(3))
++    pal=allpal; palette=pal.astype(np.int32); (path/'frames').mkdir(exist_ok=True)
++    lines=[f'Clean {R}x{N} grid: {clean}; binary alpha; transparent RGB zero.']
++    factors=[]; frames=[]; rowstats=[]; refchecks=[]
++    for r,n in enumerate(names):
++        xs=xrows[r]; b=found[r*N]['box']; w,h=b[2]-b[0],b[3]-b[1]
++        ref=refs[r]; rb=ref.getbbox(); tw,th=rb[2]-rb[0],rb[3]-rb[1]
++        factor=tw/w if n=='side' else ((tw/w)*(th/h))**.5; factors.append(factor)
++        sheet=finish(factor); sheet.save(path/f'row_{n}_finished.png')
++        sx=np.rint(xs*factor).astype(int); sy=np.rint(ys*factor).astype(int)
++        first=sheet.crop((sx[0],sy[r],sx[1],sy[r+1])); dx,dy,target=bestalign(first,ref)
++        grid['rows'].append(dict(name=n,factor=factor,effective_scale_xy=[sheet.width/W,sheet.height/H],fixed_cell_offset=[dx,dy],target=[tw,th]))
++        row=[]; st=[]; lines.append(f'{n}: factor={factor:.10f}; fixed cell anchor offset=({dx},{dy})')
++        for c in range(N):
++            cell=sheet.crop((sx[c],sy[r],sx[c+1],sy[r+1])); b=cell.getbbox()
++            requested=160-(b[3]-1+dy); shift=requested if abs(requested)<=3 else 0
++            f=Image.new('RGBA',(192,192)); f.paste(cell,(dx,dy+shift))
++            f.save(path/'frames'/f'{n}_f{c}.png'); row.append(f); d=stats(f); d['requested_shift']=requested; st.append(d)
++            clipped=b[0]+dx<0 or b[2]+dx>192 or b[1]+dy+shift<0 or b[3]+dy+shift>192
++            grid['placements'].append(dict(row=n,column=c,scaled_cell=[int(sx[c]),int(sy[r]),int(sx[c+1]),int(sy[r+1])],placement_offset=[dx,dy+shift],ground_requested=requested,ground_applied=shift,clipped=clipped))
++            lines.append(f'{n}_f{c}: '+', '.join(f'{k}={v}' for k,v in d.items())+(' GROUND_FAIL_OVER_3PX' if abs(requested)>3 else '')+(' CLIPPED' if clipped else ''))
++        frames.append(row); rowstats.append(st)
++        # Compare both references after independently aligning feet and best horizontal overlap.
++        f=row[0]; crop=f.crop(f.getbbox()); _,_,t=bestalign(crop,ref)
++        _,_,mt=bestalign(crop,ref.transpose(Image.Transpose.FLIP_LEFT_RIGHT))
++        def bestshare(target):
++            dx2,dy2,target2=bestalign(crop,target); temp=Image.new('RGBA',(192,192)); temp.paste(crop,(dx2,dy2)); return share(temp,target2)
++        sim=bestshare(ref); msim=bestshare(ref.transpose(Image.Transpose.FLIP_LEFT_RIGHT))
++        d=st[0]; line=f'{n} column1 vs ref: {d["width"]}x{d["height"]} vs {tw}x{th}; exact-colour share={sim:.4f}; mirrored ref={msim:.4f}; orientation={"PASS" if msim<sim else "FAIL"} (opaque union; feet aligned; best x overlap each)'
++        lines.append(line); refchecks.append(line)
++        if n in ('front','back'):
++            vals=[]
++            for f in row:
++                ar=np.array(f.crop(f.getbbox())); flip=ar[:,::-1]; union=(ar[:,:,3]>0)|(flip[:,:,3]>0)
++                vals.append(float((np.all(ar==flip,2)&union).sum()/union.sum()))
++            lines.append(f'{n} mirror colour similarities: '+', '.join(f'{v:.3f}' for v in vals))
++    if 'side' in names: lines.append('Side faces right: pending visual audit in REPORT.txt (not inferred from numbers).')
++    review=Image.new('RGB',((N+1)*576,32+R*576),(128,128,128)); draw=ImageDraw.Draw(review)
++    for r,n in enumerate(names):
++        ref=refs[r]; refcanvas=Image.new('RGBA',(192,192)); refcanvas.paste(ref,(0,161-ref.getbbox()[3])); z=refcanvas.resize((576,576),Image.Resampling.NEAREST)
++        review.paste(z,(0,32+r*576),z); draw.text((8,40+r*576),n+' REF',fill='white')
++        for c,f in enumerate(frames[r]):
++            z=f.resize((576,576),Image.Resampling.NEAREST); review.paste(z,((c+1)*576,32+r*576),z); draw.text(((c+1)*576+8,8),f'f{c}',fill='white')
++        dur={'brace':[120,120,120,600,120],'death':[120]*6+[1000],'idle':[200]*5,'brace-shuffle':[150]*6}[name]
++        gifsave(frames[r],path/f'preview_{n}.gif',dur,3,(128,128,128),name in ('idle','brace-shuffle'))
++    review.save(path/'review.png'); lines+=audit([f for row in frames for f in row],pal)
++    for r,n in enumerate(names):
++        lone=[]
++        for f in frames[r]:
++            ar=np.array(f); m=ar[:,:,3]>0; same=np.zeros(m.shape,int)
++            for yy,xx in [(-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1)]:
++                shifted=np.roll(ar,(yy,xx),(0,1)); same+=np.all(ar==shifted,2)&m
++            lone.append(float(((same==0)&m).sum()/max(1,m.sum())))
++        lines.append(f'{n} lone-colour-pixel shares: '+', '.join(f'{v:.4f}' for v in lone))
++    (path/'checks.txt').write_text('\n'.join(lines)+'\n')
++    (path/'grid.json').write_text(json.dumps(grid,indent=2))
++    summary[name]=dict(clean=bool(clean),factors=factors,stats=rowstats,refchecks=refchecks,mirror=[s for s in lines if 'mirror colour' in s])
++    print(name,'grid',clean,'factors',factors)
++(OUT/'generation.json').write_text(json.dumps(metadata,indent=2)+'\n')
++(OUT/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
+diff --git a/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/refinish.py b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/refinish.py
+index d0a90787192d22236d2f87cf57d3201651d65edd..429b5d80e22ce17a00b986fc5511cb78f221133d
+--- a/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/refinish.py
++++ b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/refinish.py
+@@ -110,8 +110,11 @@
+     _,dx=max(options,key=lambda x:(x[0],-abs(x[1]-centre)))
+     return dx,dy,target
+ 
+-metadata={}; summary={}
++import sys
++metadata=json.loads((OUT/'generation.json').read_text()) if (OUT/'generation.json').exists() else {}
++summary=json.loads((OUT/'summary.json').read_text()) if (OUT/'summary.json').exists() else {}
+ for name,N in [('brace',5),('death',7),('idle',5),('brace-shuffle',6)]:
++    if len(sys.argv)>1 and name not in sys.argv[1:]: continue
+     path=OUT/name
+     if not (path/'sheet_raw.png').exists():
+         summary[name]={'failed':'No raw output; generation failed'}; continue
+diff --git a/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/validate.py b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/validate.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..2dc422e1c092027406f5a32a7cdbb272c8b79726
+--- /dev/null
++++ b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/validate.py
+@@ -0,0 +1,34 @@
++from pathlib import Path
++import json,hashlib
++import numpy as np
++from PIL import Image
++from scipy import ndimage as ndi
++out=Path(__file__).resolve().parent
++pal=set()
++for p in (out/'refs').glob('*.png'):
++    if '_6x' in p.stem: continue
++    ar=np.array(Image.open(p).convert('RGBA')); pal.update(map(tuple,ar[ar[:,:,3]>0,:3]))
++meta=json.loads((out/'generation.json').read_text()); total=0; warnings=[]
++for name,n,rows in [('brace',5,['se','ne']),('death',7,['se','ne']),('idle',5,['se','ne']),('brace-shuffle',6,['front','side','back'])]:
++    p=out/name; raw=p/'sheet_raw.png'; assert hashlib.sha256(raw.read_bytes()).hexdigest()==meta[name]['sha256']
++    grid=json.loads((p/'grid.json').read_text()); assert len(grid['cells'])==n*len(rows); assert len(grid['placements'])==n*len(rows)
++    for r in rows:
++        with Image.open(p/f'preview_{r}.gif') as gif:
++            times=[]
++            for i in range(gif.n_frames): gif.seek(i); times.append(gif.info['duration'])
++            expected={'brace':1080,'death':1720,'idle':1000,'brace-shuffle':900}[name]
++            assert sum(times)==expected,(name,r,times)
++            assert (gif.info.get('loop')==0)==(name in ('idle','brace-shuffle'))
++        for c in range(n):
++            f=p/'frames'/f'{r}_f{c}.png'; im=Image.open(f).convert('RGBA'); ar=np.array(im); m=ar[:,:,3]>0
++            assert im.size==(192,192); assert set(np.unique(ar[:,:,3]))<={0,255}
++            assert set(map(tuple,ar[m,:3]))<=pal
++            assert not(m[0].any() or m[-1].any() or m[:,0].any() or m[:,-1].any())
++            assert not ar[~m].any()
++            eyes=(np.all(ar[:,:,:3]==[255,58,42],2)|np.all(ar[:,:,:3]==[255,230,216],2))&m
++            assert not (eyes&~ndi.binary_erosion(m,np.ones((3,3)))).any()
++            if im.getbbox()[3]!=161: warnings.append(f'{name}/{r}_f{c}: bottom {im.getbbox()[3]-1}')
++            total+=1
++    assert (p/'review.png').exists()
++print(f'{total} frames verified: 192x192; binary alpha; union palette; eye rim zero; no border contact; GIF total durations and looping; raw hashes; grid placements.')
++print('Ground warnings: '+('; '.join(warnings) if warnings else 'none'))
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'python D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/refinish.py brace death' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 8791ms:
+brace grid True factors [0.283420149421344, 0.2604483314082341]
+death grid True factors [0.31107745494664113, 0.2921546591494153]
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'Get-Content D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/summary.json' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 210ms:
+{
+  "brace": {
+    "clean": true,
+    "factors": [
+      0.283420149421344,
+      0.2604483314082341
+    ],
+    "stats": [
+      [
+        {
+          "width": 89,
+          "height": 70,
+          "colours": 11,
+          "red": 3,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 84,
+          "height": 64,
+          "colours": 11,
+          "red": 2,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 96,
+          "height": 61,
+          "colours": 11,
+          "red": 3,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 93,
+          "height": 59,
+          "colours": 11,
+          "red": 5,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 88,
+          "height": 70,
+          "colours": 11,
+          "red": 4,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        }
+      ],
+      [
+        {
+          "width": 79,
+          "height": 73,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 78,
+          "height": 67,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 91,
+          "height": 64,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 88,
+          "height": 61,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 77,
+          "height": 73,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        }
+      ]
+    ],
+    "refchecks": [
+      "se column1 vs ref: 89x70 vs 89x70; exact-colour share=0.6754; mirrored ref=0.1905; orientation=PASS (opaque union; feet aligned; best x overlap each)",
+      "ne column1 vs ref: 79x73 vs 77x74; exact-colour share=0.6175; mirrored ref=0.2112; orientation=PASS (opaque union; feet aligned; best x overlap each)"
+    ],
+    "mirror": []
+  },
+  "death": {
+    "clean": true,
+    "factors": [
+      0.31107745494664113,
+      0.2921546591494153
+    ],
+    "stats": [
+      [
+        {
+          "width": 91,
+          "height": 69,
+          "colours": 11,
+          "red": 3,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 83,
+          "height": 79,
+          "colours": 11,
+          "red": 6,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 84,
+          "height": 68,
+          "colours": 11,
+          "red": 3,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 83,
+          "height": 62,
+          "colours": 11,
+          "red": 3,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 86,
+          "height": 49,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 85,
+          "height": 48,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 86,
+          "height": 47,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        }
+      ],
+      [
+        {
+          "width": 81,
+          "height": 71,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 78,
+          "height": 81,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 79,
+          "height": 69,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 77,
+          "height": 61,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 1
+        },
+        {
+          "width": 82,
+          "height": 48,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 1
+        },
+        {
+          "width": 83,
+          "height": 44,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 1
+        },
+        {
+          "width": 82,
+          "height": 43,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 1
+        }
+      ]
+    ],
+    "refchecks": [
+      "se column1 vs ref: 91x69 vs 89x70; exact-colour share=0.6592; mirrored ref=0.1872; orientation=PASS (opaque union; feet aligned; best x overlap each)",
+      "ne column1 vs ref: 81x71 vs 77x74; exact-colour share=0.6163; mirrored ref=0.2205; orientation=PASS (opaque union; feet aligned; best x overlap each)"
+    ],
+    "mirror": []
+  }
+}
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'New-Item -ItemType Directory -Force D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/idle | Out-Null; Copy-Item -LiteralPath C:/Users/pmcga/.codex/generated_images/01a1a736-5336-7931-a123-26af25d93def/exec-c3e4e761-cc5a-4ebe-a482-069c3033a3ec.png -Destination D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/idle/sheet_raw.png' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 146ms:
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'python D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/refinish.py idle' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 5255ms:
+idle grid True factors [0.26177528450910464, 0.24197670595832615]
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'Get-Content D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/idle/checks.txt' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 979ms:
+Clean 2x5 grid: True; binary alpha; transparent RGB zero.
+se: factor=0.2617752845; fixed cell anchor offset=(42,74)
+se_f0: width=91, height=69, colours=11, red=5, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+se_f1: width=89, height=70, colours=11, red=4, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=1
+se_f2: width=90, height=72, colours=11, red=5, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=1
+se_f3: width=90, height=69, colours=11, red=5, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=1
+se_f4: width=89, height=66, colours=11, red=3, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=1
+se column1 vs ref: 91x69 vs 89x70; exact-colour share=0.6856; mirrored ref=0.1845; orientation=PASS (opaque union; feet aligned; best x overlap each)
+ne: factor=0.2419767060; fixed cell anchor offset=(48,74)
+ne_f0: width=80, height=71, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+ne_f1: width=81, height=74, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+ne_f2: width=80, height=75, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+ne_f3: width=80, height=72, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+ne_f4: width=81, height=68, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+ne column1 vs ref: 80x71 vs 77x74; exact-colour share=0.3944; mirrored ref=0.1862; orientation=PASS (opaque union; feet aligned; best x overlap each)
+Palette audit hex total rim rim_share:
+#141218 958 174 0.1816
+#211E27 4079 447 0.1096
+#3D3A44 4486 986 0.2198
+#58555E 3820 749 0.1961
+#7A4A06 4293 266 0.0620
+#9D9BA2 3548 294 0.0829
+#D18A0A 7558 540 0.0714
+#D6D6DC 1085 213 0.1963
+#FF3A2A 22 0 0.0000
+#FFCF1F 10115 427 0.0422
+#FFE6D8 0 0 0.0000
+#FFF4A8 4282 399 0.0932
+Top5 share=0.6946; near-black (<48 each) share=0.1138
+se lone-colour-pixel shares: 0.0068, 0.0098, 0.0107, 0.0087, 0.0082
+ne lone-colour-pixel shares: 0.0083, 0.0083, 0.0059, 0.0099, 0.0082
+
+codex
+Brace, death, and idle all sliced into clean grids. Their first-frame orientation checks pass, all processed feet sit at y=160, and no eye colours touch transparency. Cleanup preserves the red eyes but removes the tiny glints; idle also has some foot-position drift despite the planted-foot instruction.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command "Get-Content D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/generation.json; Select-String -Path D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/brace/checks.txt,D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/death/checks.txt -Pattern 'Top5|near-black|FAIL'" in C:\Users\pmcga\dev\hollowtide
+ succeeded in 356ms:
+{
+  "brace": {
+    "size": [
+      1774,
+      887
+    ],
+    "sha256": "652463b27e06d227713bcdfc862fae1554fa5c8b16f5d785dc0ae4f3dcb74dbb",
+    "prompt": "prompts/brace.txt",
+    "generations": 1
+  },
+  "death": {
+    "size": [
+      2098,
+      749
+    ],
+    "sha256": "a12538f8ccdc2d65461061fe4182f60c54687375689f192cde9f443b08bff347",
+    "prompt": "prompts/death.txt",
+    "generations": 1
+  },
+  "idle": {
+    "size": [
+      1983,
+      793
+    ],
+    "sha256": "7c244c95d2d0baf414baeb47156718883bdb75b33ea9aba6c8e870513e83157f",
+    "prompt": "prompts/idle.txt",
+    "generations": 1
+  }
+}
+
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\brace\checks.txt:29:Top5 share=0.7005; near-black 
+(<48 each) share=0.1240
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\death\checks.txt:33:Top5 share=0.7106; near-black 
+(<48 each) share=0.1176
+
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'New-Item -ItemType Directory -Force D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/brace-shuffle | Out-Null; Copy-Item -LiteralPath C:/Users/pmcga/.codex/generated_images/01a1a736-5336-7931-a123-26af25d93def/exec-07e01918-5524-4a52-a92a-438718a4e936.png -Destination D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/brace-shuffle/sheet_raw.png; python D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/refinish.py brace-shuffle' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 3939ms:
+brace-shuffle grid True factors [0.3420157743671575, 0.3940520446096654, 0.32310679545474674]
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'python D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/validate.py; Get-Content D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/brace-shuffle/checks.txt' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 1876ms:
+52 frames verified: 192x192; binary alpha; union palette; eye rim zero; no border contact; GIF total durations and looping; raw hashes; grid placements.
+Ground warnings: none
+Clean 3x6 grid: True; binary alpha; transparent RGB zero.
+front: factor=0.3420157744; fixed cell anchor offset=(44,76)
+front_f0: width=87, height=59, colours=11, red=1, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+front_f1: width=86, height=60, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=-1
+front_f2: width=88, height=60, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=-1
+front_f3: width=87, height=59, colours=11, red=2, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+front_f4: width=87, height=60, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=-1
+front_f5: width=87, height=59, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=-1
+front column1 vs ref: 87x59 vs 87x60; exact-colour share=0.6154; mirrored ref=0.5759; orientation=PASS (opaque union; feet aligned; best x overlap each)
+front mirror colour similarities: 0.739, 0.659, 0.579, 0.479, 0.546, 0.705
+side: factor=0.3940520446; fixed cell anchor offset=(37,80)
+side_f0: width=106, height=61, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+side_f1: width=106, height=61, colours=11, red=3, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+side_f2: width=106, height=61, colours=11, red=2, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+side_f3: width=106, height=61, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+side_f4: width=107, height=60, colours=11, red=1, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+side_f5: width=106, height=58, colours=11, red=2, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+side column1 vs ref: 106x61 vs 106x59; exact-colour share=0.7021; mirrored ref=0.2337; orientation=PASS (opaque union; feet aligned; best x overlap each)
+back: factor=0.3231067955; fixed cell anchor offset=(47,78)
+back_f0: width=83, height=64, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+back_f1: width=84, height=64, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+back_f2: width=83, height=64, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+back_f3: width=84, height=63, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+back_f4: width=84, height=63, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+back_f5: width=84, height=61, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=1
+back column1 vs ref: 83x64 vs 81x65; exact-colour share=0.4616; mirrored ref=0.4482; orientation=PASS (opaque union; feet aligned; best x overlap each)
+back mirror colour similarities: 0.804, 0.739, 0.775, 0.752, 0.666, 0.885
+Side faces right: pending visual audit in REPORT.txt (not inferred from numbers).
+Palette audit hex total rim rim_share:
+#141218 1515 411 0.2713
+#211E27 4325 649 0.1501
+#3D3A44 5128 675 0.1316
+#58555E 5455 1104 0.2024
+#7A4A06 6586 431 0.0654
+#9D9BA2 6650 336 0.0505
+#D18A0A 13258 809 0.0610
+#D6D6DC 1137 304 0.2674
+#FF3A2A 11 0 0.0000
+#FFCF1F 17136 588 0.0343
+#FFE6D8 0 0 0.0000
+#FFF4A8 8895 1397 0.1571
+Top5 share=0.7493; near-black (<48 each) share=0.0833
+front lone-colour-pixel shares: 0.0069, 0.0085, 0.0077, 0.0072, 0.0054, 0.0069
+side lone-colour-pixel shares: 0.0049, 0.0054, 0.0063, 0.0056, 0.0063, 0.0073
+back lone-colour-pixel shares: 0.0036, 0.0045, 0.0045, 0.0066, 0.0042, 0.0042
+
+codex
+All four sheets are finished, and all 52 frames pass the palette, alpha, eye-rim, border, ground, and GIF timing checks. The shuffle stays low and faces the requested directions, but its hind-foot order and frame matching across rows are hard to confirm. I’ll record that uncertainty alongside the lost glints and intermittent shuffle eye pixels.
+apply patch
+patch: completed
+D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\codex-set-d\make_report.py
+diff --git a/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/adapt_refinish.py b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/adapt_refinish.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..ba894fc7d9debb5320b988aa39472a25ff8c4813
+--- /dev/null
++++ b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/adapt_refinish.py
+@@ -0,0 +1,12 @@
++from pathlib import Path
++p=Path(__file__).with_name('refinish.py')
++s=p.read_text()
++start=s.index("NAMES=['front'")
++end=s.index('\ndef keyed',start)
++s=s[:start]+'''EYE={(255,58,42),(255,230,216)}
++refnames=['se','ne','brace_front','brace_side','brace_back']
++refmap={n:Image.open(OUT/'refs'/f'{n}.png').convert('RGBA') for n in refnames}
++allpal=np.unique(np.concatenate([np.array(im)[np.array(im)[:,:,3]>0,:3] for im in refmap.values()]),axis=0)
++'''+s[end:]
++s=s[:s.index('metadata={}; summary={}')]
++p.write_text(s+Path(__file__).with_name('finish_tail.txt').read_text())
+diff --git a/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/finish_tail.txt b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/finish_tail.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..c508082571fe90b794a1a0ba2c488e1ff92befc0
+--- /dev/null
++++ b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/finish_tail.txt
+@@ -0,0 +1,101 @@
++def share(f,ref):
++    fa,ra=np.array(f),np.array(ref); union=(fa[:,:,3]>0)|(ra[:,:,3]>0)
++    return float((np.all(fa==ra,2)&union).sum()/max(1,union.sum()))
++
++def bestalign(cell,ref):
++    # Fixed reference canvas, normalized to the required foot line.
++    rb=ref.getbbox(); target=Image.new('RGBA',(192,192)); target.paste(ref,(0,161-rb[3]))
++    b=cell.getbbox(); dy=161-b[3]
++    centre=round((rb[0]+rb[2]-b[0]-b[2])/2)
++    options=[]
++    for dx in range(centre-24,centre+25):
++        f=Image.new('RGBA',(192,192)); f.paste(cell,(dx,dy)); options.append((share(f,target),dx))
++    _,dx=max(options,key=lambda x:(x[0],-abs(x[1]-centre)))
++    return dx,dy,target
++
++metadata={}; summary={}
++for name,N in [('brace',5),('death',7),('idle',5),('brace-shuffle',6)]:
++    path=OUT/name
++    if not (path/'sheet_raw.png').exists():
++        summary[name]={'failed':'No raw output; generation failed'}; continue
++    names=['front','side','back'] if name=='brace-shuffle' else ['se','ne']
++    keys=['brace_'+n for n in names] if name=='brace-shuffle' else names
++    refs=[refmap[k] for k in keys]; R=len(names)
++    raw=Image.open(path/'sheet_raw.png').convert('RGBA'); W,H=raw.size
++    metadata[name]=dict(size=[W,H],sha256=hashlib.sha256((path/'sheet_raw.png').read_bytes()).hexdigest(),prompt=f'prompts/{name}.txt',generations=1)
++    a,mask=keyed(raw); ys=boundaries(mask,R,1)
++    xrows=[boundaries(mask[ys[r]:ys[r+1]],N,0) for r in range(R)]
++    found=[]; clean=True
++    for r in range(R):
++        xs=xrows[r]
++        for c in range(N):
++            m=mask[ys[r]:ys[r+1],xs[c]:xs[c+1]]; b=box(m)
++            labels,_=ndi.label(m); sizes=np.bincount(labels.ravel())[1:]
++            major=int((sizes>max(30,m.sum()*.025)).sum())
++            ok=b is not None and min(b[0],b[1],m.shape[1]-b[2],m.shape[0]-b[3])>=1 and major==1
++            found.append(dict(row=r,column=c,box=b,raw_cell=[int(xs[c]),int(ys[r]),int(xs[c+1]),int(ys[r+1])],major=major,clean=bool(ok))); clean &= ok
++    grid=dict(clean=bool(clean),x=[v.tolist() for v in xrows],y=ys.tolist(),cells=found,rows=[],placements=[],mapping='raw coordinates * effective_scale_xy, rounded cell origin subtracted, then placement_offset added; colour finishing uses nearest fill, median, Lanczos and palette mapping')
++    (path/'grid.json').write_text(json.dumps(grid,indent=2))
++    if any(f['box'] is None for f in found):
++        (path/'checks.txt').write_text('FAIL: empty cells; see grid.json. No substitute images or redraw.\n'); summary[name]={'clean':False,'failed':'empty cells'}; continue
++    indices=ndi.distance_transform_edt(~mask,return_distances=False,return_indices=True)
++    filled=Image.fromarray(a[:,:,:3][tuple(indices)]).filter(ImageFilter.MedianFilter(3))
++    pal=allpal; palette=pal.astype(np.int32); (path/'frames').mkdir(exist_ok=True)
++    lines=[f'Clean {R}x{N} grid: {clean}; binary alpha; transparent RGB zero.']
++    factors=[]; frames=[]; rowstats=[]; refchecks=[]
++    for r,n in enumerate(names):
++        xs=xrows[r]; b=found[r*N]['box']; w,h=b[2]-b[0],b[3]-b[1]
++        ref=refs[r]; rb=ref.getbbox(); tw,th=rb[2]-rb[0],rb[3]-rb[1]
++        factor=tw/w if n=='side' else ((tw/w)*(th/h))**.5; factors.append(factor)
++        sheet=finish(factor); sheet.save(path/f'row_{n}_finished.png')
++        sx=np.rint(xs*factor).astype(int); sy=np.rint(ys*factor).astype(int)
++        first=sheet.crop((sx[0],sy[r],sx[1],sy[r+1])); dx,dy,target=bestalign(first,ref)
++        grid['rows'].append(dict(name=n,factor=factor,effective_scale_xy=[sheet.width/W,sheet.height/H],fixed_cell_offset=[dx,dy],target=[tw,th]))
++        row=[]; st=[]; lines.append(f'{n}: factor={factor:.10f}; fixed cell anchor offset=({dx},{dy})')
++        for c in range(N):
++            cell=sheet.crop((sx[c],sy[r],sx[c+1],sy[r+1])); b=cell.getbbox()
++            requested=160-(b[3]-1+dy); shift=requested if abs(requested)<=3 else 0
++            f=Image.new('RGBA',(192,192)); f.paste(cell,(dx,dy+shift))
++            f.save(path/'frames'/f'{n}_f{c}.png'); row.append(f); d=stats(f); d['requested_shift']=requested; st.append(d)
++            clipped=b[0]+dx<0 or b[2]+dx>192 or b[1]+dy+shift<0 or b[3]+dy+shift>192
++            grid['placements'].append(dict(row=n,column=c,scaled_cell=[int(sx[c]),int(sy[r]),int(sx[c+1]),int(sy[r+1])],placement_offset=[dx,dy+shift],ground_requested=requested,ground_applied=shift,clipped=clipped))
++            lines.append(f'{n}_f{c}: '+', '.join(f'{k}={v}' for k,v in d.items())+(' GROUND_FAIL_OVER_3PX' if abs(requested)>3 else '')+(' CLIPPED' if clipped else ''))
++        frames.append(row); rowstats.append(st)
++        # Compare both references after independently aligning feet and best horizontal overlap.
++        f=row[0]; crop=f.crop(f.getbbox()); _,_,t=bestalign(crop,ref)
++        _,_,mt=bestalign(crop,ref.transpose(Image.Transpose.FLIP_LEFT_RIGHT))
++        def bestshare(target):
++            dx2,dy2,target2=bestalign(crop,target); temp=Image.new('RGBA',(192,192)); temp.paste(crop,(dx2,dy2)); return share(temp,target2)
++        sim=bestshare(ref); msim=bestshare(ref.transpose(Image.Transpose.FLIP_LEFT_RIGHT))
++        d=st[0]; line=f'{n} column1 vs ref: {d["width"]}x{d["height"]} vs {tw}x{th}; exact-colour share={sim:.4f}; mirrored ref={msim:.4f}; orientation={"PASS" if msim<sim else "FAIL"} (opaque union; feet aligned; best x overlap each)'
++        lines.append(line); refchecks.append(line)
++        if n in ('front','back'):
++            vals=[]
++            for f in row:
++                ar=np.array(f.crop(f.getbbox())); flip=ar[:,::-1]; union=(ar[:,:,3]>0)|(flip[:,:,3]>0)
++                vals.append(float((np.all(ar==flip,2)&union).sum()/union.sum()))
++            lines.append(f'{n} mirror colour similarities: '+', '.join(f'{v:.3f}' for v in vals))
++    if 'side' in names: lines.append('Side faces right: pending visual audit in REPORT.txt (not inferred from numbers).')
++    review=Image.new('RGB',((N+1)*576,32+R*576),(128,128,128)); draw=ImageDraw.Draw(review)
++    for r,n in enumerate(names):
++        ref=refs[r]; refcanvas=Image.new('RGBA',(192,192)); refcanvas.paste(ref,(0,161-ref.getbbox()[3])); z=refcanvas.resize((576,576),Image.Resampling.NEAREST)
++        review.paste(z,(0,32+r*576),z); draw.text((8,40+r*576),n+' REF',fill='white')
++        for c,f in enumerate(frames[r]):
++            z=f.resize((576,576),Image.Resampling.NEAREST); review.paste(z,((c+1)*576,32+r*576),z); draw.text(((c+1)*576+8,8),f'f{c}',fill='white')
++        dur={'brace':[120,120,120,600,120],'death':[120]*6+[1000],'idle':[200]*5,'brace-shuffle':[150]*6}[name]
++        gifsave(frames[r],path/f'preview_{n}.gif',dur,3,(128,128,128),name in ('idle','brace-shuffle'))
++    review.save(path/'review.png'); lines+=audit([f for row in frames for f in row],pal)
++    for r,n in enumerate(names):
++        lone=[]
++        for f in frames[r]:
++            ar=np.array(f); m=ar[:,:,3]>0; same=np.zeros(m.shape,int)
++            for yy,xx in [(-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1)]:
++                shifted=np.roll(ar,(yy,xx),(0,1)); same+=np.all(ar==shifted,2)&m
++            lone.append(float(((same==0)&m).sum()/max(1,m.sum())))
++        lines.append(f'{n} lone-colour-pixel shares: '+', '.join(f'{v:.4f}' for v in lone))
++    (path/'checks.txt').write_text('\n'.join(lines)+'\n')
++    (path/'grid.json').write_text(json.dumps(grid,indent=2))
++    summary[name]=dict(clean=bool(clean),factors=factors,stats=rowstats,refchecks=refchecks,mirror=[s for s in lines if 'mirror colour' in s])
++    print(name,'grid',clean,'factors',factors)
++(OUT/'generation.json').write_text(json.dumps(metadata,indent=2)+'\n')
++(OUT/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
+diff --git a/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/make_report.py b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/make_report.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..ae3fecb4a6d51daaa885bba5acffa410ee637277
+--- /dev/null
++++ b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/make_report.py
+@@ -0,0 +1,33 @@
++from pathlib import Path
++import json
++out=Path(__file__).resolve().parent
++meta=json.loads((out/'generation.json').read_text()); summary=json.loads((out/'summary.json').read_text())
++visual={
++'brace':'Same rhino in both rows: yellow hex plates/dark frame, grey disc joints/flat feet, two-tone horn and tail retained; se red retained, glints lost. Brace reads and columns agree broadly; se/ne angles held throughout, no mirroring/straightening. Rear shins visibly shorten at deepest brace; not a full leg-length pass.',
++'death':'Same rhino in both rows with listed design anchors; se red retained early, glints lost, final eyes dark. Belly-collapse sequence agrees broadly across rows; se/ne angles held, no mirroring/straightening. Legs tuck and visually shorten at collapse rather than keeping clear full length; chest-down/back-standing beat is weak.',
++'idle':'Same rhino in both rows with listed design anchors; se red retained, glints lost. Small breathing motion and column beats read; se/ne angles held in every cell, no mirroring/straightening. Leg lengths mostly hold, but feet drift slightly instead of remaining exactly planted.',
++'brace-shuffle':'Same rhino in all three rows with listed design anchors, but red eyes disappear in several finished front/side cells and glints are lost. Front/back stay straight; side faces RIGHT. Body stays low/braced and legs remain short; shuffle reads. One visible foot lifts in some cells, but exact hind-foot order, only-one-foot lifting throughout, and column-for-column row agreement cannot be certified from occluded feet.'}
++lines=['Set D: exactly ONE built-in generation per sheet, supplied prompt text and ordered refs; all raws wide landscape; no redos. Tokens used unavailable.']
++for name in ['brace','death','idle','brace-shuffle']:
++    m=meta[name]; lines.append(f'{name}: {m["size"][0]}x{m["size"][1]}; sha256 {m["sha256"]}')
++for name in ['brace','death','idle','brace-shuffle']:
++    s=summary[name]; rows=['front','side','back'] if name=='brace-shuffle' else ['se','ne']
++    lines.append(f'{name}: clean grid YES; '+', '.join(f'{r} factor={v:.10f}' for r,v in zip(rows,s['factors'])))
++    parts=[]
++    for r,check in zip(rows,s['refchecks']):
++        parts.append(check.replace(' column1 vs ref:', ' f0/ref:').replace(' (opaque union; feet aligned; best x overlap each)',''))
++    lines.append(' | '.join(parts))
++    text=(out/name/'checks.txt').read_text(); audit=next(l for l in text.splitlines() if l.startswith('Top5'))
++    ds=[d for row in s['stats'] for d in row]
++    checks=f'{name} checks: {len(ds)} frames; colours {min(d["colours"] for d in ds)}-{max(d["colours"] for d in ds)}; red {min(d["red"] for d in ds)}-{max(d["red"] for d in ds)} px/frame; glint 0; eye rim 0; feet y160; no borders; max ground correction {max(abs(d["requested_shift"]) for d in ds)} px. '+audit
++    if s['mirror']: checks+='; '+'; '.join(s['mirror'])+'; side right YES.'
++    lines.append(checks)
++    lines.append(name+' by eye: '+visual[name])
++lines.append('Validation PASS: 52 frames, 192x192 binary alpha, transparent RGB zero, union palette (12 colours), no magenta/plum fringe, no clipped frames; raw hashes and GIF total timings/loops verified. Palette edge/near-black and lone-pixel audits in each checks.txt; dark frame/rim tones retained from refs.')
++lines.append('Saved unchanged raws, generation.json, adapted set-B refinish.py, frames, traceable grid.json, checks.txt, 3x reviews with refs, and timed GIFs. Writes confined to set D; no installs, commits, or sibling changes.')
++assert len(lines)<25
++(out/'REPORT.txt').write_text('\n'.join(lines)+'\n')
++# Replace the pending visual result in the requested sheet check file.
++p=out/'brace-shuffle'/'checks.txt'
++p.write_text(p.read_text().replace('Side faces right: pending visual audit in REPORT.txt (not inferred from numbers).','Side faces right: YES (visual audit: head and horn point right in every cell).'))
++print('\n'.join(lines))
+diff --git a/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/refinish.py b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/refinish.py
+index d0a90787192d22236d2f87cf57d3201651d65edd..429b5d80e22ce17a00b986fc5511cb78f221133d
+--- a/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/refinish.py
++++ b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/refinish.py
+@@ -110,8 +110,11 @@
+     _,dx=max(options,key=lambda x:(x[0],-abs(x[1]-centre)))
+     return dx,dy,target
+ 
+-metadata={}; summary={}
++import sys
++metadata=json.loads((OUT/'generation.json').read_text()) if (OUT/'generation.json').exists() else {}
++summary=json.loads((OUT/'summary.json').read_text()) if (OUT/'summary.json').exists() else {}
+ for name,N in [('brace',5),('death',7),('idle',5),('brace-shuffle',6)]:
++    if len(sys.argv)>1 and name not in sys.argv[1:]: continue
+     path=OUT/name
+     if not (path/'sheet_raw.png').exists():
+         summary[name]={'failed':'No raw output; generation failed'}; continue
+diff --git a/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/validate.py b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/validate.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..2dc422e1c092027406f5a32a7cdbb272c8b79726
+--- /dev/null
++++ b/D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/validate.py
+@@ -0,0 +1,34 @@
++from pathlib import Path
++import json,hashlib
++import numpy as np
++from PIL import Image
++from scipy import ndimage as ndi
++out=Path(__file__).resolve().parent
++pal=set()
++for p in (out/'refs').glob('*.png'):
++    if '_6x' in p.stem: continue
++    ar=np.array(Image.open(p).convert('RGBA')); pal.update(map(tuple,ar[ar[:,:,3]>0,:3]))
++meta=json.loads((out/'generation.json').read_text()); total=0; warnings=[]
++for name,n,rows in [('brace',5,['se','ne']),('death',7,['se','ne']),('idle',5,['se','ne']),('brace-shuffle',6,['front','side','back'])]:
++    p=out/name; raw=p/'sheet_raw.png'; assert hashlib.sha256(raw.read_bytes()).hexdigest()==meta[name]['sha256']
++    grid=json.loads((p/'grid.json').read_text()); assert len(grid['cells'])==n*len(rows); assert len(grid['placements'])==n*len(rows)
++    for r in rows:
++        with Image.open(p/f'preview_{r}.gif') as gif:
++            times=[]
++            for i in range(gif.n_frames): gif.seek(i); times.append(gif.info['duration'])
++            expected={'brace':1080,'death':1720,'idle':1000,'brace-shuffle':900}[name]
++            assert sum(times)==expected,(name,r,times)
++            assert (gif.info.get('loop')==0)==(name in ('idle','brace-shuffle'))
++        for c in range(n):
++            f=p/'frames'/f'{r}_f{c}.png'; im=Image.open(f).convert('RGBA'); ar=np.array(im); m=ar[:,:,3]>0
++            assert im.size==(192,192); assert set(np.unique(ar[:,:,3]))<={0,255}
++            assert set(map(tuple,ar[m,:3]))<=pal
++            assert not(m[0].any() or m[-1].any() or m[:,0].any() or m[:,-1].any())
++            assert not ar[~m].any()
++            eyes=(np.all(ar[:,:,:3]==[255,58,42],2)|np.all(ar[:,:,:3]==[255,230,216],2))&m
++            assert not (eyes&~ndi.binary_erosion(m,np.ones((3,3)))).any()
++            if im.getbbox()[3]!=161: warnings.append(f'{name}/{r}_f{c}: bottom {im.getbbox()[3]-1}')
++            total+=1
++    assert (p/'review.png').exists()
++print(f'{total} frames verified: 192x192; binary alpha; union palette; eye rim zero; no border contact; GIF total durations and looping; raw hashes; grid placements.')
++print('Ground warnings: '+('; '.join(warnings) if warnings else 'none'))
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -Command 'python D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/make_report.py; Remove-Item -LiteralPath D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/adapt_refinish.py,D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/finish_tail.txt' in C:\Users\pmcga\dev\hollowtide
+ succeeded in 199ms:
+Set D: exactly ONE built-in generation per sheet, supplied prompt text and ordered refs; all raws wide landscape; no redos. Tokens used unavailable.
+brace: 1774x887; sha256 652463b27e06d227713bcdfc862fae1554fa5c8b16f5d785dc0ae4f3dcb74dbb
+death: 2098x749; sha256 a12538f8ccdc2d65461061fe4182f60c54687375689f192cde9f443b08bff347
+idle: 1983x793; sha256 7c244c95d2d0baf414baeb47156718883bdb75b33ea9aba6c8e870513e83157f
+brace-shuffle: 1774x887; sha256 87ef27ff0380dd14bdf1812f8bbf9299b3e81f715e87caa9985714c779f9f184
+brace: clean grid YES; se factor=0.2834201494, ne factor=0.2604483314
+se f0/ref: 89x70 vs 89x70; exact-colour share=0.6754; mirrored ref=0.1905; orientation=PASS | ne f0/ref: 79x73 vs 77x74; exact-colour share=0.6175; mirrored ref=0.2112; orientation=PASS
+brace checks: 10 frames; colours 10-11; red 0-5 px/frame; glint 0; eye rim 0; feet y160; no borders; max ground correction 0 px. Top5 share=0.7005; near-black (<48 each) share=0.1240
+brace by eye: Same rhino in both rows: yellow hex plates/dark frame, grey disc joints/flat feet, two-tone horn and tail retained; se red retained, glints lost. Brace reads and columns agree broadly; se/ne angles held throughout, no mirroring/straightening. Rear shins visibly shorten at deepest brace; not a full leg-length pass.
+death: clean grid YES; se factor=0.3110774549, ne factor=0.2921546591
+se f0/ref: 91x69 vs 89x70; exact-colour share=0.6592; mirrored ref=0.1872; orientation=PASS | ne f0/ref: 81x71 vs 77x74; exact-colour share=0.6163; mirrored ref=0.2205; orientation=PASS
+death checks: 14 frames; colours 10-11; red 0-6 px/frame; glint 0; eye rim 0; feet y160; no borders; max ground correction 1 px. Top5 share=0.7106; near-black (<48 each) share=0.1176
+death by eye: Same rhino in both rows with listed design anchors; se red retained early, glints lost, final eyes dark. Belly-collapse sequence agrees broadly across rows; se/ne angles held, no mirroring/straightening. Legs tuck and visually shorten at collapse rather than keeping clear full length; chest-down/back-standing beat is weak.
+idle: clean grid YES; se factor=0.2617752845, ne factor=0.2419767060
+se f0/ref: 91x69 vs 89x70; exact-colour share=0.6856; mirrored ref=0.1845; orientation=PASS | ne f0/ref: 80x71 vs 77x74; exact-colour share=0.3944; mirrored ref=0.1862; orientation=PASS
+idle checks: 10 frames; colours 10-11; red 0-5 px/frame; glint 0; eye rim 0; feet y160; no borders; max ground correction 1 px. Top5 share=0.6946; near-black (<48 each) share=0.1138
+idle by eye: Same rhino in both rows with listed design anchors; se red retained, glints lost. Small breathing motion and column beats read; se/ne angles held in every cell, no mirroring/straightening. Leg lengths mostly hold, but feet drift slightly instead of remaining exactly planted.
+brace-shuffle: clean grid YES; front factor=0.3420157744, side factor=0.3940520446, back factor=0.3231067955
+front f0/ref: 87x59 vs 87x60; exact-colour share=0.6154; mirrored ref=0.5759; orientation=PASS | side f0/ref: 106x61 vs 106x59; exact-colour share=0.7021; mirrored ref=0.2337; orientation=PASS | back f0/ref: 83x64 vs 81x65; exact-colour share=0.4616; mirrored ref=0.4482; orientation=PASS
+brace-shuffle checks: 18 frames; colours 10-11; red 0-3 px/frame; glint 0; eye rim 0; feet y160; no borders; max ground correction 1 px. Top5 share=0.7493; near-black (<48 each) share=0.0833; front mirror colour similarities: 0.739, 0.659, 0.579, 0.479, 0.546, 0.705; back mirror colour similarities: 0.804, 0.739, 0.775, 0.752, 0.666, 0.885; side right YES.
+brace-shuffle by eye: Same rhino in all three rows with listed design anchors, but red eyes disappear in several finished front/side cells and glints are lost. Front/back stay straight; side faces RIGHT. Body stays low/braced and legs remain short; shuffle reads. One visible foot lifts in some cells, but exact hind-foot order, only-one-foot lifting throughout, and column-for-column row agreement cannot be certified from occluded feet.
+Validation PASS: 52 frames, 192x192 binary alpha, transparent RGB zero, union palette (12 colours), no magenta/plum fringe, no clipped frames; raw hashes and GIF total timings/loops verified. Palette edge/near-black and lone-pixel audits in each checks.txt; dark frame/rim tones retained from refs.
+Saved unchanged raws, generation.json, adapted set-B refinish.py, frames, traceable grid.json, checks.txt, 3x reviews with refs, and timed GIFs. Writes confined to set D; no installs, commits, or sibling changes.
+
+codex
+Completed set D: exactly one generation per sheet, 52 finished frames, reviews, timed GIFs, and traceable grids.
+
+All grids are clean. Palette, alpha, eye-rim, border, ground, orientation, and GIF timing checks pass.
+
+Visual caveats: brace/death legs shorten, idle feet drift slightly, glints were lost, and shuffle foot order cannot be fully confirmed. Some shuffle eye pixels were also lost.
+
+The [23-line report](D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/REPORT.txt) contains every raw size/hash, row factor, check summary, and visual finding. No sibling files changed; no commits.
+tokens used
+71,728
+Completed set D: exactly one generation per sheet, 52 finished frames, reviews, timed GIFs, and traceable grids.
+
+All grids are clean. Palette, alpha, eye-rim, border, ground, orientation, and GIF timing checks pass.
+
+Visual caveats: brace/death legs shorten, idle feet drift slightly, glints were lost, and shuffle foot order cannot be fully confirmed. Some shuffle eye pixels were also lost.
+
+The [23-line report](D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-set-d/REPORT.txt) contains every raw size/hash, row factor, check summary, and visual finding. No sibling files changed; no commits.

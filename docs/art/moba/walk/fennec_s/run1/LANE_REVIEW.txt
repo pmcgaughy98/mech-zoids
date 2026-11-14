@@ -1,0 +1,15 @@
+Fennec trot run 1 (e, se, ne): walk lane review, 2026-11-05.
+Tokens 134,714 (cap 140k), finished on its own with REPORT.txt written.
+Codex's own checks: every foot locked (stamp measure, spreads 0.5-0.95 px, target errors 0.5 px or less), lifts exact,
+  upper body identical to the still, 15 colours, binary alpha, one piece per frame, no holes or strays.
+Lane footlock (walk_tools silhouette measure): e RH and ne RH pass; the others read 2-4 px. The fennec's feet stand
+  close together, so the silhouette measure merges neighbouring soles (Codex said the same). By eye the feet stay planted.
+Lane seams: e f3 12, f5 10; se f3 15, f5 9; ne f1 10, f2 4, f3 3 px. In e and se these are gaps between the near and
+  far front legs, which stay open. The ne ones sit inside the defect below.
+By eye (lane_board3x.png, lane_defects_zoom.png at 5x): e and se read as this fennec trotting in diagonal pairs. Two defects:
+  1. ne, all 8 frames: the far hind leg's dark upper band is drawn over the tail. The tail's light top band breaks into
+     dark blocks, with specks around the tail root and between the hind legs. The still has a clean tail with the
+     far hind leg below it.
+  2. e f3-f6: the gold chest plate at the near front shoulder breaks into loose gold fragments as the leg moves. The
+     se chest needs the same look.
+Not acceptable as is: a repair goes before packing (fold into run 2, or a separate pass).

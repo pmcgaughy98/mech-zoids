@@ -1,0 +1,708 @@
+{
+  "raw_size": [
+    1774,
+    887
+  ],
+  "raw_sha256": "b06d929fd3a10c609215195c8c772c9710ef5d875515e75cbedbe16e016b3c82",
+  "columns": 6,
+  "rows": [
+    "front",
+    "side",
+    "back"
+  ],
+  "x_edges": [
+    0,
+    296,
+    593,
+    887,
+    1183,
+    1478,
+    1774
+  ],
+  "y_edges": [
+    0,
+    319,
+    536,
+    887
+  ],
+  "row_scale": {
+    "front": 0.2966479394838265,
+    "side": 0.4385290096535146,
+    "back": 0.2822162605150792
+  },
+  "cells": [
+    {
+      "view": "front",
+      "frame": 0,
+      "source_box": [
+        0,
+        0,
+        296,
+        319
+      ],
+      "source_opaque_box": [
+        118,
+        66,
+        253,
+        266
+      ],
+      "scale": 0.2966479394838265,
+      "placement": [
+        76,
+        102
+      ],
+      "duration_ms": 70,
+      "touches_cut": false,
+      "final_opaque_box": [
+        80,
+        102,
+        113,
+        161
+      ],
+      "final_path": "frames/front_f0.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "front",
+      "frame": 1,
+      "source_box": [
+        296,
+        0,
+        593,
+        319
+      ],
+      "source_opaque_box": [
+        117,
+        67,
+        253,
+        281
+      ],
+      "scale": 0.2966479394838265,
+      "placement": [
+        76,
+        98
+      ],
+      "duration_ms": 70,
+      "touches_cut": false,
+      "final_opaque_box": [
+        80,
+        98,
+        113,
+        161
+      ],
+      "final_path": "frames/front_f1.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "front",
+      "frame": 2,
+      "source_box": [
+        593,
+        0,
+        887,
+        319
+      ],
+      "source_opaque_box": [
+        82,
+        63,
+        262,
+        245
+      ],
+      "scale": 0.2966479394838265,
+      "placement": [
+        70,
+        99
+      ],
+      "duration_ms": 70,
+      "touches_cut": false,
+      "final_opaque_box": [
+        75,
+        99,
+        118,
+        153
+      ],
+      "final_path": "frames/front_f2.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 152
+    },
+    {
+      "view": "front",
+      "frame": 3,
+      "source_box": [
+        887,
+        0,
+        1183,
+        319
+      ],
+      "source_opaque_box": [
+        103,
+        68,
+        236,
+        283
+      ],
+      "scale": 0.2966479394838265,
+      "placement": [
+        77,
+        97
+      ],
+      "duration_ms": 70,
+      "touches_cut": false,
+      "final_opaque_box": [
+        80,
+        97,
+        113,
+        161
+      ],
+      "final_path": "frames/front_f3.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "front",
+      "frame": 4,
+      "source_box": [
+        1183,
+        0,
+        1478,
+        319
+      ],
+      "source_opaque_box": [
+        90,
+        68,
+        222,
+        278
+      ],
+      "scale": 0.2966479394838265,
+      "placement": [
+        77,
+        99
+      ],
+      "duration_ms": 70,
+      "touches_cut": false,
+      "final_opaque_box": [
+        80,
+        99,
+        113,
+        161
+      ],
+      "final_path": "frames/front_f4.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "front",
+      "frame": 5,
+      "source_box": [
+        1478,
+        0,
+        1774,
+        319
+      ],
+      "source_opaque_box": [
+        72,
+        68,
+        206,
+        283
+      ],
+      "scale": 0.2966479394838265,
+      "placement": [
+        76,
+        97
+      ],
+      "duration_ms": 70,
+      "touches_cut": false,
+      "final_opaque_box": [
+        80,
+        97,
+        113,
+        161
+      ],
+      "final_path": "frames/front_f5.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 0,
+      "source_box": [
+        0,
+        319,
+        296,
+        536
+      ],
+      "source_opaque_box": [
+        30,
+        38,
+        294,
+        181
+      ],
+      "scale": 0.4385290096535146,
+      "placement": [
+        38,
+        98
+      ],
+      "duration_ms": 70,
+      "touches_cut": false,
+      "final_opaque_box": [
+        38,
+        101,
+        154,
+        161
+      ],
+      "final_path": "frames/side_f0.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 1,
+      "source_box": [
+        296,
+        319,
+        593,
+        536
+      ],
+      "source_opaque_box": [
+        35,
+        37,
+        296,
+        179
+      ],
+      "scale": 0.4385290096535146,
+      "placement": [
+        39,
+        99
+      ],
+      "duration_ms": 70,
+      "touches_cut": false,
+      "final_opaque_box": [
+        39,
+        103,
+        153,
+        161
+      ],
+      "final_path": "frames/side_f1.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 2,
+      "source_box": [
+        593,
+        319,
+        887,
+        536
+      ],
+      "source_opaque_box": [
+        29,
+        37,
+        293,
+        156
+      ],
+      "scale": 0.4385290096535146,
+      "placement": [
+        38,
+        101
+      ],
+      "duration_ms": 70,
+      "touches_cut": false,
+      "final_opaque_box": [
+        38,
+        103,
+        154,
+        153
+      ],
+      "final_path": "frames/side_f2.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 152
+    },
+    {
+      "view": "side",
+      "frame": 3,
+      "source_box": [
+        887,
+        319,
+        1183,
+        536
+      ],
+      "source_opaque_box": [
+        30,
+        41,
+        287,
+        179
+      ],
+      "scale": 0.4385290096535146,
+      "placement": [
+        40,
+        100
+      ],
+      "duration_ms": 70,
+      "touches_cut": false,
+      "final_opaque_box": [
+        40,
+        102,
+        153,
+        161
+      ],
+      "final_path": "frames/side_f3.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 4,
+      "source_box": [
+        1183,
+        319,
+        1478,
+        536
+      ],
+      "source_opaque_box": [
+        19,
+        41,
+        275,
+        179
+      ],
+      "scale": 0.4385290096535146,
+      "placement": [
+        40,
+        100
+      ],
+      "duration_ms": 70,
+      "touches_cut": false,
+      "final_opaque_box": [
+        40,
+        102,
+        152,
+        161
+      ],
+      "final_path": "frames/side_f4.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "side",
+      "frame": 5,
+      "source_box": [
+        1478,
+        319,
+        1774,
+        536
+      ],
+      "source_opaque_box": [
+        13,
+        39,
+        266,
+        181
+      ],
+      "scale": 0.4385290096535146,
+      "placement": [
+        40,
+        99
+      ],
+      "duration_ms": 70,
+      "touches_cut": false,
+      "final_opaque_box": [
+        40,
+        102,
+        151,
+        161
+      ],
+      "final_path": "frames/side_f5.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 0,
+      "source_box": [
+        0,
+        536,
+        296,
+        887
+      ],
+      "source_opaque_box": [
+        114,
+        47,
+        254,
+        273
+      ],
+      "scale": 0.2822162605150792,
+      "placement": [
+        76,
+        97
+      ],
+      "duration_ms": 70,
+      "touches_cut": false,
+      "final_opaque_box": [
+        79,
+        97,
+        114,
+        161
+      ],
+      "final_path": "frames/back_f0.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 1,
+      "source_box": [
+        296,
+        536,
+        593,
+        887
+      ],
+      "source_opaque_box": [
+        114,
+        47,
+        254,
+        278
+      ],
+      "scale": 0.2822162605150792,
+      "placement": [
+        76,
+        96
+      ],
+      "duration_ms": 70,
+      "touches_cut": false,
+      "final_opaque_box": [
+        79,
+        96,
+        114,
+        161
+      ],
+      "final_path": "frames/back_f1.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 2,
+      "source_box": [
+        593,
+        536,
+        887,
+        887
+      ],
+      "source_opaque_box": [
+        83,
+        36,
+        271,
+        236
+      ],
+      "scale": 0.2822162605150792,
+      "placement": [
+        69,
+        97
+      ],
+      "duration_ms": 70,
+      "touches_cut": false,
+      "final_opaque_box": [
+        72,
+        97,
+        119,
+        153
+      ],
+      "final_path": "frames/back_f2.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 152
+    },
+    {
+      "view": "back",
+      "frame": 3,
+      "source_box": [
+        887,
+        536,
+        1183,
+        887
+      ],
+      "source_opaque_box": [
+        97,
+        47,
+        238,
+        282
+      ],
+      "scale": 0.2822162605150792,
+      "placement": [
+        76,
+        95
+      ],
+      "duration_ms": 70,
+      "touches_cut": false,
+      "final_opaque_box": [
+        79,
+        95,
+        114,
+        161
+      ],
+      "final_path": "frames/back_f3.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 4,
+      "source_box": [
+        1183,
+        536,
+        1478,
+        887
+      ],
+      "source_opaque_box": [
+        88,
+        47,
+        227,
+        274
+      ],
+      "scale": 0.2822162605150792,
+      "placement": [
+        76,
+        97
+      ],
+      "duration_ms": 70,
+      "touches_cut": false,
+      "final_opaque_box": [
+        79,
+        97,
+        113,
+        161
+      ],
+      "final_path": "frames/back_f4.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    },
+    {
+      "view": "back",
+      "frame": 5,
+      "source_box": [
+        1478,
+        536,
+        1774,
+        887
+      ],
+      "source_opaque_box": [
+        70,
+        47,
+        208,
+        278
+      ],
+      "scale": 0.2822162605150792,
+      "placement": [
+        76,
+        96
+      ],
+      "duration_ms": 70,
+      "touches_cut": false,
+      "final_opaque_box": [
+        79,
+        96,
+        113,
+        161
+      ],
+      "final_path": "frames/back_f5.png",
+      "exact_endpoint": false,
+      "final_canvas_offset": [
+        0,
+        0
+      ],
+      "final_bottom": 160
+    }
+  ],
+  "final_canvas": [
+    192,
+    192
+  ],
+  "duration_ms": [
+    70,
+    70,
+    70,
+    70,
+    70,
+    70
+  ],
+  "loop": true,
+  "native_finishing": {
+    "method": "Whole generated drawings, nearest-neighbour native pixel corrections, fixed palette and binary alpha. No approved part compositing. Exact endpoints copied byte for byte.",
+    "scripts": [
+      "../polish.py",
+      "../details.py"
+    ],
+    "final_pixel_scale": 1,
+    "approved_canvas_offset": [
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "7dae730d4cbd8d2554559f3ef1ae736196a0a55398bdabe1b0925614aaee055b",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.4054054054054055,
+  "lowest_body_row_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "hornet_front.png",
+      "source_box": [
+        74,
+        100,
+        559,
+        492
+      ],
+      "source_dimensions": [
+        485,
+        392
+      ],
+      "output_box": [
+        171,
+        385,
+        853,
+        936
+      ]
+    },
+    "left": {
+      "file": "hornet_left.png",
+      "source_box": [
+        626,
+        98,
+        1218,
+        495
+      ],
+      "source_dimensions": [
+        592,
+        397
+      ],
+      "output_box": [
+        96,
+        378,
+        928,
+        936
+      ]
+    },
+    "back": {
+      "file": "hornet_back.png",
+      "source_box": [
+        67,
+        667,
+        564,
+        1065
+      ],
+      "source_dimensions": [
+        497,
+        398
+      ],
+      "output_box": [
+        163,
+        377,
+        861,
+        936
+      ]
+    },
+    "right": {
+      "file": "hornet_right.png",
+      "source_box": [
+        669,
+        672,
+        1259,
+        1065
+      ],
+      "source_dimensions": [
+        590,
+        393
+      ],
+      "output_box": [
+        97,
+        384,
+        926,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.01507537688442211
+}

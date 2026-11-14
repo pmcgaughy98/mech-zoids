@@ -1,0 +1,50 @@
+{
+  "asset": "wall",
+  "raw_sha256": "d5b43782810d30d6a14b9aae9e34cb145f09543705b514dfd208954fbf46abd9",
+  "runtime_sha256": "8ff251217ea4f94817481fca12eb20d15850ae0803ec2c305306753f27e3fe2a",
+  "raw_triangles": 5532,
+  "runtime_triangles": 5000,
+  "materials": 1,
+  "images": [
+    {
+      "name": "Image_0",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_1",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_2",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_3",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "dimensions_godot_xyz_m": [
+    6,
+    2.6,
+    1.6
+  ],
+  "pivot": "bottom center",
+  "up": "+Y",
+  "front": "+Z; symmetric environment module",
+  "collision": "separate authored foundation boxes; generated mesh excluded from nav",
+  "sockets": "X ends at -3/+3m; visual skin only",
+  "provider_metadata": "../source/wall/refine-status.json",
+  "license": "Provider API output, paid account; no third-party assets intentionally supplied. No per-file license string supplied by API."
+}

@@ -1,0 +1,15 @@
+{
+  "request": {
+    "mode": "preview",
+    "ai_model": "meshy-6",
+    "target_formats": [
+      "glb"
+    ],
+    "prompt": "Stylized industrial science fiction MOBA Foundry environment piece. Broad clean beveled armor forms, dark blue charcoal steel, warm worn iron inset plates, small amber light strips, sparse yellow hazard trim. Strong readable silhouette, no text, no logos, no characters, no ground, isolated single object, flat bottom. One compact armored turret head on its own, no pedestal: wide faceted housing, front mantlet with twin short cannon barrels pointing forward, rear counterweight block, small sensor mast. Longer than wide, low.",
+    "should_remesh": true,
+    "topology": "triangle",
+    "target_polycount": 4000
+  },
+  "reserved_credits": 20,
+  "at": "2026-11-14T13:40:19.013253+00:00"
+}

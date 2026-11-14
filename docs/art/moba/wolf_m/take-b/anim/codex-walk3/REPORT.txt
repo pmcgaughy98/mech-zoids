@@ -1,0 +1,23 @@
+WOLF M TAKE B / CODEX WALK3 / SIDE TROT
+Tokens: unavailable. Native pixel repair only; no image tool; no commit.
+Inputs: approved fixed/e.png and codex-walk2; all writes inside codex-walk3.
+8 RGBA frames,192x192; 100ms loop preview; supplied 0.90m/s diagnostic PNG/MP4.
+Widths below: perpendicular native pixels at 25/50/75% of plate and shank; paw widest row.
+near_fore: upper [15, 9, 9] -> [14, 8, 8]..[16, 10, 9]; shank [7, 6, 4] -> [6, 5, 3]..[8, 6, 5]; paw 13 -> 13..13
+far_hind: upper [6, 6, 7] -> [5, 6, 6]..[7, 7, 7]; shank [6, 5, 5] -> [5, 4, 5]..[6, 5, 5]; paw 11 -> 11..11
+far_fore: upper [7, 4, 4] -> [6, 3, 3]..[8, 4, 4]; shank [5, 4, 4] -> [5, 3, 3]..[6, 4, 5]; paw 12 -> 12..12
+near_hind: upper [16, 7, 7] -> [15, 7, 6]..[16, 8, 8]; shank [6, 4, 4] -> [6, 3, 3]..[7, 5, 4]; paw 12 -> 12..12
+Width PASS: each corresponding native cross-section and paw width within1px of the traced still.
+Width audit uses visible approved contours; hidden upper plates reconstructed only under the body overlap.
+32/32 paw checks PASS: sole endpoints within1px of walk2; center errors <=0.5px; lift errors0px.
+near_fore ground world-x [121.5, 121.5, 121.5, 121.5]; spread 0px; endpoint spreads [0, 0]px.
+far_hind ground world-x [87.0, 87.0, 87.0, 87.0]; spread 0px; endpoint spreads [0, 0]px.
+far_fore ground world-x [147.5, 147.5, 147.5, 147.5]; spread 0px; endpoint spreads [0, 0]px.
+near_hind ground world-x [96.0, 96.0, 96.0, 96.0]; spread 0px; endpoint spreads [0, 0]px.
+Actual supplied diagnostic stamp times: all four planted-paw spreads0px at0.90m/s.
+8/8 PASS: binary alpha, approved palette, bottom160, below160=0, holes0, components1, canvas-edge0.
+Body/head/fins/tail: pixel-identical to walk2 outside union of old and replacement leg masks.
+Method: approved plate paint fitted to existing rig; native shoulder/hip, knee, ankle and toe joins repainted.
+EYE at4x game sel-out: tapered plate legs and separate clawed toes resemble the still; whole joined limbs, no cutoffs seen.
+EYE: still reads as a robot wolf trotting forward; diagonal timing and paw paths retained.
+board.png: fixed still / walk2 row / walk3 row, supplied selout() OUTLINE#141418, nearest4x.

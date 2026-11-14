@@ -1,0 +1,58 @@
+You are making pixel-art animation frames for a game. Write only inside
+D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\codex-set-d\. Read anything under D:\dev\new-mech-rpg\docs\art\moba.
+Another Codex job is writing the sibling folder anim\codex-set-c at the same time; do not touch it.
+
+Job: the fennec fox mech (fennec_s, take B) is drawn in front, side and back (sets A and B). This job adds its two
+three-quarter views for the same moves: se (three-quarter front, facing down-right) and ne (three-quarter back, facing
+up-right).
+Method: you made the fennec's sets A and B. Read anim\common.txt, anim\codex-set-a and anim\codex-set-b (brief.txt,
+REPORT.txt, prompts\, finish.py, polish.py, seam_fill.py, details.py, gait_finish.py, finalize.py, final_pass.py,
+verify.py) and follow the method that worked: one sheet per move from your image tool with the approved stills attached,
+slice it, finish every frame against the stills at their native pixel scale, check, and board it. Copy and adapt those
+scripts; do not start over. Generate exactly ONE image per move. Never make a second image or a redo; if one fails,
+report it and go on.
+
+The creature is the fennec fox mech (fennec_s, take B). Approved stills, 160x160, feet on row 140, in
+D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\views\: s.png (front), e.png (side facing right), n.png (back); se, ne,
+sw, w, nw also exist. The approved pose is SEATED on its haunches, front legs straight, the straight segmented tail lying
+on the ground behind it. Keep the design exactly: the violet armoured body and head, the huge pointed ears with cream
+insides, the half-closed glowing teal eyes (calm, sleepy, uncanny), the cream muzzle, chest and tail tip, the grey joint
+discs and grey foot pads, the straight segmented tail with the gold-cream tip, the same 15 colours (#141218 #211e27
+#2e1a6e #3d3a44 #6a3cc8 #9d9ba2 #a46bff #b8923a #d6d6dc #e0c8ff #f0d27a #3fe8b0 #c8fff0 #fff4d6 #f6fffb), the dark outline
+and the chunky pixel size. Only the pose changes. Never redesign: no new parts, no gloss, no fur, no longer or thinner
+limbs, no bigger head. The tail NEVER curls (Preston: "no curved tails as they are hard to rotate"); it can lift, swing
+and angle but stays a straight line of segments. The eyes stay half-closed and glowing except where a move says
+otherwise. It is a robot: no realistic animal anatomy beyond what the stills show.
+
+Approved stills for this job: se.png and ne.png in D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\views\
+(copied with 6x enlargements on magenta in codex-set-d\refs\). Attach refs\se_6x.png then refs\ne_6x.png, in that
+order. Effects (sand spray, sound rings, tunnel holes, pings) are made separately: draw the body only.
+
+Prompts: for each move write codex-set-d\prompts\<move>.txt from that move's existing prompt: change the sentence about
+the attached images to say they are the approved se (three-quarter front, facing down-right) and ne (three-quarter
+back, facing up-right) views, replace the layout part with this text word for word (N = the move's column count):
+"Layout: a grid of 2 rows and {n} columns of equal cells, one whole fennec per cell, nothing crossing a cell edge, no labels, no text, no grid lines. Row 1 is the three-quarter front view facing down and to the right, exactly the camera angle of the first attached sprite: we see its face, muzzle and teal eyes. Row 2 is the three-quarter back view facing up and to the right, exactly the camera angle of the second attached sprite: we see its back and the backs of its ears, and its head points away. Every cell in a row keeps that row's angle: never turn it to a straight front, side or back view, and never mirror it. Each column is one moment seen from two angles, so the two rows match frame for frame. The fennec is the same size in every cell and the ground line is at the same height in every cell."
+and keep every column description word for word, so the new rows match the drawn rows beat for beat.
+
+Moves:
+- dig: 6 columns; column text from anim\codex-set-b\prompts\dig.txt; frames se/ne; preview ms 300, 120, 90, 100, 100, 180.
+- pop_out: 5 columns; column text from anim\codex-set-b\prompts\pop_out.txt; frames se/ne; preview ms 120, 90, 130, 110, 350.
+- death: 7 columns; column text from anim\codex-set-b\prompts\death.txt; frames se/ne; preview ms 300, 100, 130, 140, 160, 180, 1400.
+
+Output for each move, in codex-set-d\<move>\ :
+- frames\se_f<i>.png and ne_f<i>.png on 192x192 transparent canvases, at the stills' pixel scale (never resize the
+  design), placed like the still shifted by +16 x and +20 y, so the feet stand on row 160.
+- Frame 0 of dig and death must be the exact approved se or ne still; so must pop_out's last frame. pop_out starts with only the ear tips above the ground, like the drawn rows.
+- Like the drawn rows: dig's frames 3, 4 and 5 and pop_out's frame 0 are partly underground, cut off at row 160 (nothing below row 160 ever); pop_out's frame 2 is in the air with its lowest row between 140 and 150; every other frame stands on row 160.
+- Report the IoU of every frame that must equal a still (it must be 1.0).
+- Snap every pixel to the 15 colours; binary alpha; one-texel dark outline like the stills; no anti-aliasing, no stray
+  pixels, nothing touching the canvas edge. No see-through seams or holes inside the silhouette: run the seam and hole
+  checks from sets A and B and fill what you find. The tail stays straight in every frame.
+- Keep sheet_raw.png, grid.json (cut edges, row factors, every frame's placement and preview ms), checks.txt, a
+  preview gif per view with the listed timing, and a review.png board with the approved still at the left of each row.
+Also write codex-set-d\REPORT.txt (under 30 lines): tokens used if known, each sheet's size and hash, whether each grid
+was clean, the checks, and by eye per move: same fennec in both rows? the move as asked, rows matching column for
+column and matching the drawn front/side/back frames? each row at its still's three-quarter angle in every cell, not
+turned straight and not mirrored? limbs keep their length? Look at your boards before finishing and fix drift from
+the stills; the eyes, the ears and the tail segments are where drift usually shows. Do not touch anything outside
+codex-set-d, do not touch assets\ or art\, do not commit.

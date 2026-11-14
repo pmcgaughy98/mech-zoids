@@ -1,0 +1,28 @@
+{
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_jellyfish_remeshed_25k_20261108_character.glb",
+  "source_sha256": "f36af9f26735370980e4c5e89e2a0ab3a04358f8193957ed8b52c281b808bf6c",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\jellyfish_m\\local-repair-v1-2026-11-14\\jellyfish-rigged-local-repair-v1.glb",
+  "output_sha256": "7e589f0e4d26f67b1b0226044f6deaad315181b12f0c8b5eee2c0675c254a33f",
+  "before_triangles": 25919,
+  "final_triangles": 25912,
+  "joint_count": 49,
+  "removed_malformed_triangles": 7,
+  "removed_face_ids": [
+    5094,
+    6729,
+    7302,
+    9099,
+    11059,
+    16515,
+    25159
+  ],
+  "holes_closed": [],
+  "boundary_edges": 0,
+  "over_shared_edges": 0,
+  "collapsed_triangles": 0,
+  "healthy_source_faces_retained": 25912,
+  "all_original_vertex_attribute_rows_weights_materials_skeleton_rest_binds_preserved": true,
+  "new_geometric_vertices": 0,
+  "scope": "Remove seven verified single-triangle flaps. Retain all twelve tentacles, dome, rim, collars, cap and lights. Original vertex attributes, weights, 49-joint rig, rest/binds and textures remain exact. No remesh or rerig.",
+  "limitations": "Existing baked dome appearance does not reproduce the clear reference window and internal canisters. Existing grouped rig controls do not establish independent articulation of every tentacle. No authored animation clips."
+}

@@ -1,0 +1,99 @@
+{
+  "id": "gold_beetle",
+  "name": "Golden Beetle",
+  "category": "objective",
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_coinclaw_mech_remeshed_25k_20261111_character.glb",
+  "source_sha256": "100b37f26e5f279080350e7111df45f2bd7539f1937a9123165d5ea5d14b7946",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\gold_beetle_objective\\repair-v1-2026-11-11\\gold_beetle-objective-repaired-v1.glb",
+  "output_sha256": "50833a9affe40bbb55d541987babef09d9233bfca9dd7bb47bb874d24d45ca19",
+  "joint_count": 23,
+  "before_triangles": 25895,
+  "final_triangles": 25866,
+  "removed_fold_triangles": 30,
+  "removed_fold_triangle_ids": [
+    1305,
+    10643,
+    10670,
+    10897,
+    20985,
+    21010,
+    22326,
+    22355,
+    22441,
+    22459,
+    22461,
+    22475,
+    22496,
+    22503,
+    22522,
+    22531,
+    22566,
+    22569,
+    22583,
+    22592,
+    22598,
+    22617,
+    22634,
+    22638,
+    22640,
+    22681,
+    22693,
+    22715,
+    22742,
+    23208
+  ],
+  "removed_extra_foreleg_triangles": 0,
+  "removed_extra_foreleg_face_ids": [],
+  "healthy_source_body_faces_retained": 25865,
+  "holes_closed": [
+    {
+      "new_triangles": [
+        [
+          29079,
+          29078,
+          29109
+        ]
+      ],
+      "bounds": [
+        [
+          -1.0035197734832764,
+          1.0078896284103394,
+          -0.25530895590782166
+        ],
+        [
+          -0.9496036171913147,
+          1.0774250030517578,
+          -0.23479487001895905
+        ]
+      ],
+      "normal_alignment_score": 0.3483400046825409,
+      "uv_perimeter": 0.0349619765765965
+    }
+  ],
+  "boundary_edges": 0,
+  "over_shared_edges": 2,
+  "protected_closed_contact_edges": [
+    [
+      12026,
+      12052
+    ],
+    [
+      5556,
+      5568
+    ]
+  ],
+  "contact_note": "Two unchanged source four-face contacts between otherwise closed assembly surfaces.",
+  "unclassified_nonmanifold_edges": 0,
+  "collapsed_triangles": 0,
+  "skeleton_hierarchy_rest_binds_skins_scenes_materials_unchanged": true,
+  "original_binary_prefix_unchanged": true,
+  "original_position_normal_uv_rows_unchanged": true,
+  "all_skin_rows_unchanged": true,
+  "locally_reassigned_skin_rows": 0,
+  "changed_skin_row_ids": [],
+  "removed_joint_influences": [],
+  "residual_removed_joint_influence_reassigned_to": null,
+  "new_vertices": 0,
+  "intact_pre_remesh_source_available": false,
+  "anatomy": "Six walking legs, paired mandibles and coin shell retained."
+}

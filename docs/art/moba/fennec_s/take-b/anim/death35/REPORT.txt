@@ -1,0 +1,56 @@
+Violet S fennec death35 -- 35 raw native-pixel frames; no image generation.
+Tokens: watcher snapshot 09:49:51 101919 (time, tokens); final total not yet known.
+PASS f0: exact RGBA equality in all five views (zero changed pixels).
+PASS palette: each view stays within its own still palette (union 15 colours).
+PASS alpha: binary; no enclosed holes, detached components, or edge contacts.
+Lowest opaque rows f0..f6:
+  front: 140, 138, 140, 140, 140, 140, 140
+  se: 140, 139, 140, 140, 140, 140, 140
+  side: 140, 140, 140, 140, 140, 140, 140
+  ne: 140, 140, 140, 140, 137, 138, 138
+  back: 140, 140, 140, 140, 140, 140, 140
+Measured torso centre x f0..f6 (explicit anatomical mask; see checks.txt):
+  front: 79.21, 79.21, 79.21, 78.21, 75.88, 73.88, 73.88
+  se: 80.31, 79.31, 80.31, 80.31, 77.67, 76.67, 76.67
+  side: 86.64, 84.64, 86.64, 86.64, 83.67, 83.67, 83.67
+  ne: 84.95, 83.95, 84.95, 85.95, 88.67, 90.67, 90.67
+  back: 79.21, 79.21, 79.21, 80.21, 83.88, 86.88, 86.88
+PASS in-place: torso shifts only with recoil/roll; no progressive canvas slide.
+PASS timing: all GIFs have 7 frames, 300/100/130/140/160/180/1400 ms, play once.
+PASS settle: f6 preserves f5 pose/alpha; visible eyes darken to #2E1A6E.
+n/ne have no visible eye lights to extinguish; their f6 equals f5 exactly.
+PASS review: board.png + five boards, exact game sel-out #141218 at 4x.
+By eye front: whole violet fox, asymmetric ear drop and roll onto its right.
+By eye se: recognisable face/hips; chest buckles, flank lowers, ears flatten.
+By eye side: head/chest descend over folded legs; straight tail rests behind.
+By eye ne: native back/hip plates retained; right roll exposes folded limbs.
+By eye back: head rolls screen-right; near ear rests low, legs fold left.
+Native translations/hand redrawing; no external files or Git state changed.
+
+Cleanup (death35-clean)
+Tokens: watcher snapshot 10:05:16 71479; final total unknown.
+front: replaced both blade/wing ears with broad native shells/panels; redrew folded hinges.
+se: native lower/upper ear triangles and gold panels; removed parallel violet/gold remnants.
+side: kept near ear panel and far upper triangle; cleaned the false lower far-ear stripe and joins.
+ne: native back-facing shells, stepped down toward neck; removed isolated corner tips.
+back: broad native back-ear shells through the fall; connected folded bases without slivers.
+PASS all views f0..f6: four-connected piece counts 1,1,1,1,1,1,1; long thin-run counts all 0.
+Full ear traces: length within 1.38px; base breadth within 0.85px (grid rounding); per-frame/visible spans in checks.txt.
+PASS f0 exact; own-still palette; binary alpha; no holes/edge contacts; f0/f1 unchanged.
+PASS lowest rows f0..f6: front:140,138,140,140,140,140,140; se:140,139,140,140,140,140,140; side:140,140,140,140,140,140,140; ne:140,140,140,140,137,138,138; back:140,140,140,140,140,140,140
+PASS row140+ unchanged; timings unchanged; board/five GIFs rebuilt with game selout #141218 at 4x.
+By eye: ears retain native triangles and gold panels as they fold down; no parallel slivers.
+
+Front redraw (touch-up lane, 2026-11-05), kept by Preston ("Install both", then "Fix last 2 death animations btw,
+still flat. Eyes are grey." -> fixed and installed)
+The old front f2-f6 kept the seated pose with the ears moved; a later ear-only pass was rejected ("Looks like you just
+cutoff pieces ... while keeping the original pose"). The front set is now a real collapse: PixelLab
+animate_with_skeleton_v3 (3 free daily generations), hand-posed skeletons per frame (skeleton_front/keypoints.py):
+recoil, sag, legs buckle, topple onto its right side, lie flat. Then, recolour-only finishing, all in skeleton_front/:
+clean_death.py (15 colours, ground line, specks, holes), finish2.py (touchup_machine passes, highlight caps and
+shade_pass volume to the still's shares, capped ink at 1.5x the still's #141218 share), fix_end.py on f5
+(per-plate relief, ground contact) and the f5 eyes painted in Aseprite (the snap had turned them grey). f6 = f5 with
+the eyes out (#2E1A6E). Rules: f0 = still, 15 colours, binary alpha, one piece, no holes, lowest row 140, f5/f6 same
+alpha and differ only at the eyes: all pass. Replaced front frames: frames_pre_skeleton_front/.
+DO NOT rerun build_death.py or check_death.py: build_death.py rebuilds all 35 frames and would overwrite this front set.
+Other views (se, side, ne, back) unchanged. preview_front.gif rewritten.

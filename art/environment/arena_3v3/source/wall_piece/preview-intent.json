@@ -1,0 +1,15 @@
+{
+  "request": {
+    "mode": "preview",
+    "ai_model": "meshy-6",
+    "target_formats": [
+      "glb"
+    ],
+    "prompt": "Stylized industrial science fiction MOBA Foundry environment piece. Broad clean beveled armor forms, dark blue charcoal steel, warm worn iron inset plates, small amber light strips, sparse yellow hazard trim. Strong readable silhouette, no text, no logos, no characters, no ground, isolated single object, flat bottom. One short straight modular armored wall block, a little wider than tall, about twice as wide as thick. Heavy low plinth, two tall inset armor panels, a steel cap rail along the top, flat end faces so copies join in a row.",
+    "should_remesh": true,
+    "topology": "triangle",
+    "target_polycount": 3000
+  },
+  "reserved_credits": 20,
+  "at": "2026-11-14T13:40:13.608327+00:00"
+}

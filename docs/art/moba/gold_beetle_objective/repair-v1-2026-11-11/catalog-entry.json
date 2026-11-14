@@ -1,0 +1,91 @@
+{
+  "id": "gold_beetle",
+  "name": "Golden Beetle",
+  "category": "objective",
+  "reference_only": false,
+  "source_model": {
+    "path": "res://art/model_catalog/sources/Meshy_AI_coinclaw_mech_remeshed_25k_20261111_character.glb",
+    "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_coinclaw_mech_remeshed_25k_20261111_character.glb",
+    "sha256": "100b37f26e5f279080350e7111df45f2bd7539f1937a9123165d5ea5d14b7946",
+    "bytes": 31593612,
+    "kind": "rigged_download",
+    "source_stage": "remeshed/rigged input; not an intact pre-remesh original"
+  },
+  "display_model": "res://docs/art/moba/gold_beetle_objective/repair-v1-2026-11-11/gold_beetle-objective-repaired-v1.glb",
+  "status": "Six legs retained; local folds and coin-shell gap repaired. Original 23-joint rig and weights.",
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/gold_beetle/front.png",
+      "source": "D:\\user\\Downloads\\coin_beetle_front.png",
+      "sha256": "dd118838faca8366fdf82933324e2a667744de85bf50fbcd2cde0261c4502f5d",
+      "bytes": 448571,
+      "project_matches": [],
+      "provenance_note": "Exact downloaded reference; creature identity and limb intent visually checked. No exact historical generation-job linkage verified."
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/gold_beetle/left.png",
+      "source": "D:\\user\\Downloads\\coin_beetle_left.png",
+      "sha256": "12ba0bbbee42ee862a332be143fcd78dab49b034023a44436b1c3780701a70c1",
+      "bytes": 387545,
+      "project_matches": [],
+      "provenance_note": "Exact downloaded reference; creature identity and limb intent visually checked. No exact historical generation-job linkage verified."
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/gold_beetle/back.png",
+      "source": "D:\\user\\Downloads\\coin_beetle_back.png",
+      "sha256": "28496292853755e953d18cb6068e50f924fbc7c5b19ba7b7313347ed2910f97f",
+      "bytes": 404805,
+      "project_matches": [],
+      "provenance_note": "Exact downloaded reference; creature identity and limb intent visually checked. No exact historical generation-job linkage verified."
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/gold_beetle/right.png",
+      "source": "D:\\user\\Downloads\\coin_beetle_right.png",
+      "sha256": "3283876944f177f1b1cfeaab4825d670226b205674afa481f06d6812f9b4094e",
+      "bytes": 394958,
+      "project_matches": [],
+      "provenance_note": "Exact downloaded reference; creature identity and limb intent visually checked. No exact historical generation-job linkage verified."
+    }
+  },
+  "artist_workspace": "res://docs/art/moba/gold_beetle_objective/repair-v1-2026-11-11/gold_beetle-objective-repaired-v1.blend",
+  "review_models": [
+    {
+      "label": "DOWNLOADED RIG\nBefore local repair",
+      "path": "res://art/model_catalog/sources/Meshy_AI_coinclaw_mech_remeshed_25k_20261111_character.glb",
+      "display_scale": 1.0229694863892331
+    },
+    {
+      "label": "REPAIRED\nSame 23-joint skeleton",
+      "path": "res://docs/art/moba/gold_beetle_objective/repair-v1-2026-11-11/gold_beetle-objective-repaired-v1.glb",
+      "display_scale": 1.0229694863892331
+    }
+  ],
+  "review_views": {
+    "front": {
+      "path": "res://docs/art/moba/gold_beetle_objective/repair-v1-2026-11-11/review-front.png",
+      "kind": "Labeled rigged-download/local-repair comparison; true pre-remesh original unavailable"
+    },
+    "left": {
+      "path": "res://docs/art/moba/gold_beetle_objective/repair-v1-2026-11-11/review-side.png",
+      "kind": "Labeled rigged-download/local-repair comparison; true pre-remesh original unavailable"
+    },
+    "back": {
+      "path": "res://docs/art/moba/gold_beetle_objective/repair-v1-2026-11-11/review-back.png",
+      "kind": "Labeled rigged-download/local-repair comparison; true pre-remesh original unavailable"
+    },
+    "right": {
+      "path": "res://docs/art/moba/gold_beetle_objective/repair-v1-2026-11-11/review-right.png",
+      "kind": "Labeled rigged-download/local-repair comparison; true pre-remesh original unavailable"
+    }
+  },
+  "review_provenance": {
+    "date": "2026-11-13",
+    "report": "res://docs/art/moba/gold_beetle_objective/repair-v1-2026-11-11/repair-verification.json",
+    "independent_audit": "res://docs/art/moba/gold_beetle_objective/repair-v1-2026-11-11/independent-export-audit.json",
+    "joint_count": 23,
+    "rigged_input_sha256": "100b37f26e5f279080350e7111df45f2bd7539f1937a9123165d5ea5d14b7946",
+    "repaired_sha256": "50833a9affe40bbb55d541987babef09d9233bfca9dd7bb47bb874d24d45ca19",
+    "intact_pre_remesh_available": false,
+    "scope": "Six walking legs, paired mandibles and coin shell retained. Original hierarchy/rest/binds/materials retained. True pre-remesh source unavailable; two-version comparison only. Review asset, no authored-map or gameplay replacement."
+  }
+}

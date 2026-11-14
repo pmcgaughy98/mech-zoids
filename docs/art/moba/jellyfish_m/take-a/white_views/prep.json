@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "3c77a07f3b9f233b912d64d89b54750ac2ebb9a7e98b29f809993d4abaaab771",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.4469565217391305,
+  "lowest_body_row_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "jellyfish_front.png",
+      "source_box": [
+        71,
+        26,
+        580,
+        600
+      ],
+      "source_dimensions": [
+        509,
+        574
+      ],
+      "output_box": [
+        143,
+        105,
+        880,
+        936
+      ]
+    },
+    "left": {
+      "file": "jellyfish_left.png",
+      "source_box": [
+        702,
+        28,
+        1165,
+        600
+      ],
+      "source_dimensions": [
+        463,
+        572
+      ],
+      "output_box": [
+        177,
+        108,
+        847,
+        936
+      ]
+    },
+    "back": {
+      "file": "jellyfish_back.png",
+      "source_box": [
+        65,
+        668,
+        579,
+        1243
+      ],
+      "source_dimensions": [
+        514,
+        575
+      ],
+      "output_box": [
+        140,
+        104,
+        884,
+        936
+      ]
+    },
+    "right": {
+      "file": "jellyfish_right.png",
+      "source_box": [
+        689,
+        669,
+        1162,
+        1243
+      ],
+      "source_dimensions": [
+        473,
+        574
+      ],
+      "output_box": [
+        170,
+        105,
+        854,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.0052173913043478265
+}

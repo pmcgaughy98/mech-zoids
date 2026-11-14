@@ -1,0 +1,653 @@
+{
+  "brace": {
+    "clean": true,
+    "factors": [
+      0.283420149421344,
+      0.2604483314082341
+    ],
+    "stats": [
+      [
+        {
+          "width": 89,
+          "height": 70,
+          "colours": 11,
+          "red": 3,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 84,
+          "height": 64,
+          "colours": 11,
+          "red": 2,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 96,
+          "height": 61,
+          "colours": 11,
+          "red": 3,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 93,
+          "height": 59,
+          "colours": 11,
+          "red": 5,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 88,
+          "height": 70,
+          "colours": 11,
+          "red": 4,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        }
+      ],
+      [
+        {
+          "width": 79,
+          "height": 73,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 78,
+          "height": 67,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 91,
+          "height": 64,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 88,
+          "height": 61,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 77,
+          "height": 73,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        }
+      ]
+    ],
+    "refchecks": [
+      "se column1 vs ref: 89x70 vs 89x70; exact-colour share=0.6754; mirrored ref=0.1905; orientation=PASS (opaque union; feet aligned; best x overlap each)",
+      "ne column1 vs ref: 79x73 vs 77x74; exact-colour share=0.6175; mirrored ref=0.2112; orientation=PASS (opaque union; feet aligned; best x overlap each)"
+    ],
+    "mirror": []
+  },
+  "death": {
+    "clean": true,
+    "factors": [
+      0.31107745494664113,
+      0.2921546591494153
+    ],
+    "stats": [
+      [
+        {
+          "width": 91,
+          "height": 69,
+          "colours": 11,
+          "red": 3,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 83,
+          "height": 79,
+          "colours": 11,
+          "red": 6,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 84,
+          "height": 68,
+          "colours": 11,
+          "red": 3,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 83,
+          "height": 62,
+          "colours": 11,
+          "red": 3,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 86,
+          "height": 49,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 85,
+          "height": 48,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 86,
+          "height": 47,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        }
+      ],
+      [
+        {
+          "width": 81,
+          "height": 71,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 78,
+          "height": 81,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 79,
+          "height": 69,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 77,
+          "height": 61,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 1
+        },
+        {
+          "width": 82,
+          "height": 48,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 1
+        },
+        {
+          "width": 83,
+          "height": 44,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 1
+        },
+        {
+          "width": 82,
+          "height": 43,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 1
+        }
+      ]
+    ],
+    "refchecks": [
+      "se column1 vs ref: 91x69 vs 89x70; exact-colour share=0.6592; mirrored ref=0.1872; orientation=PASS (opaque union; feet aligned; best x overlap each)",
+      "ne column1 vs ref: 81x71 vs 77x74; exact-colour share=0.6163; mirrored ref=0.2205; orientation=PASS (opaque union; feet aligned; best x overlap each)"
+    ],
+    "mirror": []
+  },
+  "idle": {
+    "clean": true,
+    "factors": [
+      0.26177528450910464,
+      0.24197670595832615
+    ],
+    "stats": [
+      [
+        {
+          "width": 91,
+          "height": 69,
+          "colours": 11,
+          "red": 5,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 89,
+          "height": 70,
+          "colours": 11,
+          "red": 4,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 1
+        },
+        {
+          "width": 90,
+          "height": 72,
+          "colours": 11,
+          "red": 5,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 1
+        },
+        {
+          "width": 90,
+          "height": 69,
+          "colours": 11,
+          "red": 5,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 1
+        },
+        {
+          "width": 89,
+          "height": 66,
+          "colours": 11,
+          "red": 3,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 1
+        }
+      ],
+      [
+        {
+          "width": 80,
+          "height": 71,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 81,
+          "height": 74,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 80,
+          "height": 75,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 80,
+          "height": 72,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 81,
+          "height": 68,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        }
+      ]
+    ],
+    "refchecks": [
+      "se column1 vs ref: 91x69 vs 89x70; exact-colour share=0.6856; mirrored ref=0.1845; orientation=PASS (opaque union; feet aligned; best x overlap each)",
+      "ne column1 vs ref: 80x71 vs 77x74; exact-colour share=0.3944; mirrored ref=0.1862; orientation=PASS (opaque union; feet aligned; best x overlap each)"
+    ],
+    "mirror": []
+  },
+  "brace-shuffle": {
+    "clean": true,
+    "factors": [
+      0.3420157743671575,
+      0.3940520446096654,
+      0.32310679545474674
+    ],
+    "stats": [
+      [
+        {
+          "width": 87,
+          "height": 59,
+          "colours": 11,
+          "red": 1,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 86,
+          "height": 60,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": -1
+        },
+        {
+          "width": 88,
+          "height": 60,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": -1
+        },
+        {
+          "width": 87,
+          "height": 59,
+          "colours": 11,
+          "red": 2,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 87,
+          "height": 60,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": -1
+        },
+        {
+          "width": 87,
+          "height": 59,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": -1
+        }
+      ],
+      [
+        {
+          "width": 106,
+          "height": 61,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 106,
+          "height": 61,
+          "colours": 11,
+          "red": 3,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 106,
+          "height": 61,
+          "colours": 11,
+          "red": 2,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 106,
+          "height": 61,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 107,
+          "height": 60,
+          "colours": 11,
+          "red": 1,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 106,
+          "height": 58,
+          "colours": 11,
+          "red": 2,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        }
+      ],
+      [
+        {
+          "width": 83,
+          "height": 64,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 84,
+          "height": 64,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 83,
+          "height": 64,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 84,
+          "height": 63,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 84,
+          "height": 63,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 0
+        },
+        {
+          "width": 84,
+          "height": 61,
+          "colours": 10,
+          "red": 0,
+          "glint": 0,
+          "eye_rim": 0,
+          "bottom": 160,
+          "border": false,
+          "requested_shift": 1
+        }
+      ]
+    ],
+    "refchecks": [
+      "front column1 vs ref: 87x59 vs 87x60; exact-colour share=0.6154; mirrored ref=0.5759; orientation=PASS (opaque union; feet aligned; best x overlap each)",
+      "side column1 vs ref: 106x61 vs 106x59; exact-colour share=0.7021; mirrored ref=0.2337; orientation=PASS (opaque union; feet aligned; best x overlap each)",
+      "back column1 vs ref: 83x64 vs 81x65; exact-colour share=0.4616; mirrored ref=0.4482; orientation=PASS (opaque union; feet aligned; best x overlap each)"
+    ],
+    "mirror": [
+      "front mirror colour similarities: 0.739, 0.659, 0.579, 0.479, 0.546, 0.705",
+      "back mirror colour similarities: 0.804, 0.739, 0.775, 0.752, 0.666, 0.885"
+    ]
+  }
+}

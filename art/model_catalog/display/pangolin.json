@@ -1,0 +1,49 @@
+{
+  "id": "pangolin",
+  "source_sha256": "a766e089536e882578f2c38037780652702aedd787211a151eb3b793cafd71f7",
+  "source_triangles": 500000,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8747938314193825,
+  "blender_bounds_min": [
+    -3.61063814163208,
+    -1.600276231765747,
+    0.11918526142835617
+  ],
+  "blender_bounds_max": [
+    -2.3899946212768555,
+    1.6004778146743774,
+    1.218086838722229
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

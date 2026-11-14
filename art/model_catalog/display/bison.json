@@ -1,0 +1,41 @@
+{
+  "id": "bison",
+  "source_sha256": "45586e24104722d455498fc882e945d1d5b23a091035d98f7df425b14c1c11ee",
+  "source_triangles": 499802,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8752173277966738,
+  "blender_bounds_min": [
+    -3.751286745071411,
+    -1.5999011993408203,
+    0.11742708086967468
+  ],
+  "blender_bounds_max": [
+    -2.2474241256713867,
+    1.59930419921875,
+    2.0218687057495117
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

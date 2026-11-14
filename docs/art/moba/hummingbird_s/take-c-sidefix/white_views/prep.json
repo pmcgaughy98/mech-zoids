@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "8b9d679b1a5e5fb7447af736a4434084d659242bb7ba1c2a384a930e641f954b",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 0.9892984542211652,
+  "lowest_body_row_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "hummingbird_front.png",
+      "source_box": [
+        28,
+        39,
+        869,
+        415
+      ],
+      "source_dimensions": [
+        841,
+        376
+      ],
+      "output_box": [
+        96,
+        564,
+        928,
+        936
+      ]
+    },
+    "left": {
+      "file": "hummingbird_left.png",
+      "source_box": [
+        922,
+        51,
+        1752,
+        408
+      ],
+      "source_dimensions": [
+        830,
+        357
+      ],
+      "output_box": [
+        101,
+        583,
+        922,
+        936
+      ]
+    },
+    "back": {
+      "file": "hummingbird_back.png",
+      "source_box": [
+        28,
+        481,
+        868,
+        854
+      ],
+      "source_dimensions": [
+        840,
+        373
+      ],
+      "output_box": [
+        96,
+        567,
+        927,
+        936
+      ]
+    },
+    "right": {
+      "file": "hummingbird_right.png",
+      "source_box": [
+        905,
+        492,
+        1731,
+        849
+      ],
+      "source_dimensions": [
+        826,
+        357
+      ],
+      "output_box": [
+        103,
+        583,
+        920,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.05053191489361702
+}

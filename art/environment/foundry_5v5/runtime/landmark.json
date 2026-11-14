@@ -1,0 +1,50 @@
+{
+  "asset": "landmark",
+  "raw_sha256": "701b8855cf6e4016e58cdae1b4a835b10625678253bcae8cfe2f40142f7d896e",
+  "runtime_sha256": "b7ddea0e631764eedb8e1d2a41abc4cfbc3bbaf59bbf674166ec61263b4bde65",
+  "raw_triangles": 9016,
+  "runtime_triangles": 8000,
+  "materials": 1,
+  "images": [
+    {
+      "name": "Image_0",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_1",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_2",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_3",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "dimensions_godot_xyz_m": [
+    5.2,
+    5,
+    5.2
+  ],
+  "pivot": "bottom center",
+  "up": "+Y",
+  "front": "+Z; symmetric environment module",
+  "collision": "separate authored foundation boxes; generated mesh excluded from nav",
+  "sockets": "5.2m square footprint",
+  "provider_metadata": "../source/landmark/refine-status.json",
+  "license": "Provider API output, paid account; no third-party assets intentionally supplied. No per-file license string supplied by API."
+}

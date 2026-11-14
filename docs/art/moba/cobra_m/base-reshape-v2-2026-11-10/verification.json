@@ -1,0 +1,40 @@
+{
+  "method": "Replace only left lower-body patch with mirrored healthy right-side geometry/UVs; conform and resample cut ring; transfer existing rig weights locally with boundary fade. Rejected radial-shrink test is not delivered.",
+  "source": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\cobra_m\\rigged-repair-v1-2026-11-10\\cobra-rigged-local-repair-v1.glb",
+  "source_sha256": "f22aa3eac79edf0d22764f19c067765d1fbb0fbcfcbf484672f36bc34c2641ab",
+  "output_sha256": "7996566b080693278f24e26a104618fea5f4e8eb8fa697edacafd1bbfa0bc12e",
+  "patch_region_gltf": {
+    "left_x_min": 0.06688863,
+    "height_max": 0.62,
+    "front_z_min": 0.32
+  },
+  "retained_cut_ring_max_snap_m": 0.07055170829242514,
+  "source_triangle_count": 23680,
+  "retained_outside_triangles": 22321,
+  "mirrored_patch_triangles": 2688,
+  "original_vertex_rows_reused_byte_exact": 23145,
+  "removed_degenerate_subtriangles": 28,
+  "sub_3mm_seam_corner_closures": [
+    [
+      8353,
+      8355,
+      8356
+    ],
+    [
+      13049,
+      13052,
+      13053
+    ]
+  ],
+  "skeleton_nodes_bind_transforms_materials_textures_unchanged": true,
+  "local_weights_transferred": true,
+  "binary_original_prefix_preserved": true,
+  "topology": {
+    "vertices": 27353,
+    "triangles": 25510,
+    "boundary_edges": 0,
+    "over_shared_edges": 0,
+    "collapsed": 0,
+    "boundary_components": []
+  }
+}

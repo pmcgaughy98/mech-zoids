@@ -1,0 +1,13 @@
+{
+  "scale": 1.0,
+  "turn_rate": 12.0,
+  "idle": "idle",
+  "walk": "walk",
+  "walk_speed": 0.48,
+  "run": "charge",
+  "run_speed": 1.47,
+  "run_above": 7.0,
+  "rest_height": 1.7,
+  "clips": {"idle": "idle", "walk": "walk", "charge": "charge", "horn_attack": "horn_attack"},
+  "events": {}
+}

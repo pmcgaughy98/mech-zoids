@@ -1,0 +1,10 @@
+Pixel-art effects sheet for a mech-animal game, on a plain magenta background (#FF00FF). The attached sprite only shows the art style: use the same chunky pixel size, a dark outline where it helps, and its colour family (yellows, oranges, browns, greys, pale cream). Do not draw the rhino or any creature. No blue, no purple, no lightning, no fire, no text, no labels, no grid lines.
+
+Layout: a grid of 6 rows and 6 columns of equal cells. Each row is one effect animated left to right over its six frames, each frame centred in its cell, nothing crossing a cell edge. Effects that sit on the ground share one ground line in their row and are seen from a low three-quarter camera, so flat rings look like wide ellipses.
+
+Row 1, impact puff: a ground-level dust burst. A small pale flash in column 1, a puff of brown dust spreading out and up in columns 2 to 4, thinning in 5 and 6.
+Row 2, hit spark: a bright yellow and white star-shaped burst with short sharp spikes. Grows in columns 1 and 2, biggest in 3, breaks into fragments in 4 and 5, only a few specks in 6.
+Row 3, stun loop: three small yellow four-point stars circling in a flat ring seen from slightly above, each column turned one sixth further around the ring, so it loops.
+Row 4, dust trail puff: one small round puff of brown dust. It appears small at ground level, grows and rises, thins out and fades away.
+Row 5, brace ring: a low flat ring of grey and brown dust pushed outward along the ground, a wide ellipse. Small and dense in column 1, widening through columns 2 to 4, faint and broken in 5 and 6.
+Row 6, deflect spark: a short burst of pale grey and white metal sparks glancing off to the right from one point. A small flash in column 1, sparks flying up and out in 2 and 3, falling and fading in 4 and 5, two or three specks in 6.

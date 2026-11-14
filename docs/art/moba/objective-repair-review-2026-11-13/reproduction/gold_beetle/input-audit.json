@@ -1,0 +1,50 @@
+{
+  "id": "gold_beetle",
+  "name": "Golden Beetle",
+  "category": "objective",
+  "input": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_coinclaw_mech_remeshed_25k_20261111_character.glb",
+  "sha256": "100b37f26e5f279080350e7111df45f2bd7539f1937a9123165d5ea5d14b7946",
+  "triangles": 25895,
+  "vertices_first_primitive": 36020,
+  "primitives": 1,
+  "joint_count": 23,
+  "clips": 0,
+  "boundary_edges_first_primitive": 17,
+  "over_shared_edges_first_primitive": 11,
+  "collapsed_first_primitive": 0,
+  "bounds_first_primitive": [
+    [
+      -1.2895050048828125,
+      3.8227391030432045e-08,
+      -1.4174420833587646
+    ],
+    [
+      1.2895052433013916,
+      1.7000000476837158,
+      1.4174420833587646
+    ]
+  ],
+  "intact_pre_remesh_source": null,
+  "references": {
+    "front": {
+      "path": "D:\\user\\Downloads\\coin_beetle_front.png",
+      "sha256": "dd118838faca8366fdf82933324e2a667744de85bf50fbcd2cde0261c4502f5d",
+      "project_matches": []
+    },
+    "left": {
+      "path": "D:\\user\\Downloads\\coin_beetle_left.png",
+      "sha256": "12ba0bbbee42ee862a332be143fcd78dab49b034023a44436b1c3780701a70c1",
+      "project_matches": []
+    },
+    "back": {
+      "path": "D:\\user\\Downloads\\coin_beetle_back.png",
+      "sha256": "28496292853755e953d18cb6068e50f924fbc7c5b19ba7b7313347ed2910f97f",
+      "project_matches": []
+    },
+    "right": {
+      "path": "D:\\user\\Downloads\\coin_beetle_right.png",
+      "sha256": "3283876944f177f1b1cfeaab4825d670226b205674afa481f06d6812f9b4094e",
+      "project_matches": []
+    }
+  }
+}

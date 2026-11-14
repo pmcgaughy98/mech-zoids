@@ -1,0 +1,349 @@
+{
+ "rest_height": 1.7,
+ "source_fps": 120,
+ "times": "seconds",
+ "loops": [
+  "Idle",
+  "Walk",
+  "Walk_Back",
+  "Strafe_Left",
+  "Strafe_Right",
+  "Guard",
+  "Stun"
+ ],
+ "clips": {
+  "Kangaroo_Idle": {
+   "events": []
+  },
+  "Kangaroo_Idle_Fidget": {
+   "events": [
+    {
+     "name": "tail_thump",
+     "time": 1.24,
+     "damage": false
+    },
+    {
+     "name": "glove_tap",
+     "time": 1.92,
+     "damage": false
+    },
+    {
+     "name": "glove_tap",
+     "time": 2.12,
+     "damage": false
+    }
+   ]
+  },
+  "Kangaroo_Walk": {
+   "events": [
+    {
+     "name": "land",
+     "time": 0.0,
+     "damage": false
+    },
+    {
+     "name": "push_off",
+     "time": 0.18,
+     "damage": false
+    }
+   ],
+   "peak_height": 1.847,
+   "speed": 3.5
+  },
+  "Kangaroo_Walk_Back": {
+   "events": [
+    {
+     "name": "land",
+     "time": 0.0,
+     "damage": false
+    },
+    {
+     "name": "push_off",
+     "time": 0.128,
+     "damage": false
+    }
+   ],
+   "peak_height": 1.793
+  },
+  "Kangaroo_Strafe_Left": {
+   "events": [
+    {
+     "name": "land",
+     "time": 0.0,
+     "damage": false
+    },
+    {
+     "name": "push_off",
+     "time": 0.086,
+     "damage": false
+    }
+   ],
+   "peak_height": 1.762
+  },
+  "Kangaroo_Strafe_Right": {
+   "events": [
+    {
+     "name": "land",
+     "time": 0.0,
+     "damage": false
+    },
+    {
+     "name": "push_off",
+     "time": 0.086,
+     "damage": false
+    }
+   ],
+   "peak_height": 1.762
+  },
+  "Kangaroo_Jab_Left": {
+   "events": [
+    {
+     "name": "hit",
+     "time": 0.2,
+     "damage": true
+    }
+   ]
+  },
+  "Kangaroo_Jab_Right": {
+   "events": [
+    {
+     "name": "hit",
+     "time": 0.2,
+     "damage": true
+    }
+   ]
+  },
+  "Kangaroo_HopJab": {
+   "events": [
+    {
+     "name": "hop",
+     "time": 0.12,
+     "damage": false
+    },
+    {
+     "name": "land",
+     "time": 0.4,
+     "damage": false
+    },
+    {
+     "name": "hit",
+     "time": 0.52,
+     "damage": true
+    },
+    {
+     "name": "hit",
+     "time": 0.64,
+     "damage": true
+    },
+    {
+     "name": "hit",
+     "time": 0.76,
+     "damage": true
+    },
+    {
+     "name": "hit",
+     "time": 0.88,
+     "damage": true
+    }
+   ],
+   "peak_height": 1.827
+  },
+  "Kangaroo_Jab_Right_Quick": {
+   "events": [
+    {
+     "name": "hit",
+     "time": 0.11,
+     "damage": true
+    }
+   ]
+  },
+  "Kangaroo_Hook_Right": {
+   "events": [
+    {
+     "name": "hit",
+     "time": 0.24,
+     "damage": true
+    }
+   ]
+  },
+  "Kangaroo_TailKick": {
+   "events": [
+    {
+     "name": "brace",
+     "time": 0.14,
+     "damage": false
+    },
+    {
+     "name": "hit",
+     "time": 0.5,
+     "damage": true
+    },
+    {
+     "name": "land",
+     "time": 0.74,
+     "damage": false
+    }
+   ]
+  },
+  "Kangaroo_Guard": {
+   "events": []
+  },
+  "Kangaroo_Guard_Counter": {
+   "events": [
+    {
+     "name": "block",
+     "time": 0.0,
+     "damage": false
+    },
+    {
+     "name": "hit",
+     "time": 0.22,
+     "damage": true
+    }
+   ]
+  },
+  "Kangaroo_Hit_Front": {
+   "events": []
+  },
+  "Kangaroo_Hit_Heavy": {
+   "events": [
+    {
+     "name": "replant",
+     "time": 0.2,
+     "damage": false
+    }
+   ]
+  },
+  "Kangaroo_Stun": {
+   "events": []
+  },
+  "Kangaroo_Death": {
+   "events": [
+    {
+     "name": "collapse",
+     "time": 0.55,
+     "damage": false
+    },
+    {
+     "name": "settle",
+     "time": 1.2,
+     "damage": false
+    }
+   ]
+  },
+  "Kangaroo_Ring_Cast": {
+   "events": [
+    {
+     "name": "glove_tap",
+     "time": 0.18,
+     "damage": false
+    },
+    {
+     "name": "ring",
+     "time": 0.42,
+     "damage": false
+    }
+   ]
+  },
+  "Kangaroo_Leap": {
+   "events": [
+    {
+     "name": "hop",
+     "time": 0.14,
+     "damage": false
+    },
+    {
+     "name": "apex",
+     "time": 0.34,
+     "damage": false
+    },
+    {
+     "name": "land",
+     "time": 0.54,
+     "damage": false
+    }
+   ],
+   "peak_height": 2.054
+  },
+  "Kangaroo_Flurry": {
+   "events": [
+    {
+     "name": "hit",
+     "time": 0.1,
+     "damage": true
+    },
+    {
+     "name": "hit",
+     "time": 0.22,
+     "damage": true
+    },
+    {
+     "name": "hit",
+     "time": 0.34,
+     "damage": true
+    },
+    {
+     "name": "hit",
+     "time": 0.46,
+     "damage": true
+    }
+   ]
+  },
+  "Kangaroo_Guard_Sweep": {
+   "events": [
+    {
+     "name": "block",
+     "time": 0.0,
+     "damage": false
+    },
+    {
+     "name": "hit",
+     "time": 0.26,
+     "damage": true
+    },
+    {
+     "name": "land",
+     "time": 0.46,
+     "damage": false
+    }
+   ]
+  },
+  "Kangaroo_Slip_Left": {
+   "events": [
+    {
+     "name": "push",
+     "time": 0.04,
+     "damage": false
+    },
+    {
+     "name": "land",
+     "time": 0.21,
+     "damage": false
+    }
+   ]
+  },
+  "Kangaroo_Slip_Right": {
+   "events": [
+    {
+     "name": "push",
+     "time": 0.04,
+     "damage": false
+    },
+    {
+     "name": "land",
+     "time": 0.21,
+     "damage": false
+    }
+   ]
+  },
+  "Kangaroo_Reel": {
+   "events": [
+    {
+     "name": "replant",
+     "time": 0.2,
+     "damage": false
+    }
+   ]
+  }
+ }
+}

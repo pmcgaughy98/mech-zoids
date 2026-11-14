@@ -1,0 +1,45 @@
+front: 8 frames, 12 colours, 6 outside the rhino palette; input bottom 110, height 70, width 76
+  f0: bottom 110 (+0), height 72 (+2), width 76, IoU with input 0.93
+  f1: bottom 110 (+0), height 74 (+4), width 76, IoU with input 0.86
+  f2: bottom 110 (+0), height 76 (+6), width 76, IoU with input 0.80
+  f3: bottom 109 (-1), height 72 (+2), width 76, IoU with input 0.86
+  f4: bottom 108 (-2), height 69 (-1), width 76, IoU with input 0.92
+  f5: bottom 110 (+0), height 72 (+2), width 76, IoU with input 0.90
+  f6: bottom 109 (-1), height 73 (+3), width 76, IoU with input 0.86
+  f7: bottom 107 (-3), height 73 (+3), width 76, IoU with input 0.81
+side: 8 frames, 12 colours, 5 outside the rhino palette; input bottom 110, height 72, width 105
+  f0: bottom 110 (+0), height 73 (+1), width 105, IoU with input 0.91
+  f1: bottom 110 (+0), height 72 (+0), width 106, IoU with input 0.88
+  f2: bottom 110 (+0), height 72 (+0), width 106, IoU with input 0.87
+  f3: bottom 111 (+1), height 73 (+1), width 108, IoU with input 0.87
+  f4: bottom 110 (+0), height 72 (+0), width 108, IoU with input 0.89
+  f5: bottom 110 (+0), height 73 (+1), width 106, IoU with input 0.86
+  f6: bottom 110 (+0), height 72 (+0), width 108, IoU with input 0.88
+  f7: bottom 110 (+0), height 72 (+0), width 107, IoU with input 0.90
+back: 8 frames, 11 colours, 5 outside the rhino palette; input bottom 110, height 78, width 68
+  f0: bottom 110 (+0), height 78 (+0), width 68, IoU with input 0.97
+  f1: bottom 110 (+0), height 79 (+1), width 68, IoU with input 0.93
+  f2: bottom 110 (+0), height 78 (+0), width 68, IoU with input 0.89
+  f3: bottom 110 (+0), height 77 (-1), width 68, IoU with input 0.90
+  f4: bottom 108 (-2), height 74 (-4), width 68, IoU with input 0.89
+  f5: bottom 108 (-2), height 75 (-3), width 68, IoU with input 0.84
+  f6: bottom 108 (-2), height 77 (-1), width 68, IoU with input 0.83
+  f7: bottom 108 (-2), height 76 (-2), width 68, IoU with input 0.88
+se: 8 frames, 13 colours, 6 outside the rhino palette; input bottom 110, height 72, width 91
+  f0: bottom 109 (-1), height 72 (+0), width 93, IoU with input 0.93
+  f1: bottom 109 (-1), height 74 (+2), width 95, IoU with input 0.86
+  f2: bottom 109 (-1), height 73 (+1), width 92, IoU with input 0.87
+  f3: bottom 111 (+1), height 73 (+1), width 87, IoU with input 0.90
+  f4: bottom 111 (+1), height 72 (+0), width 87, IoU with input 0.89
+  f5: bottom 111 (+1), height 73 (+1), width 87, IoU with input 0.93
+  f6: bottom 111 (+1), height 74 (+2), width 87, IoU with input 0.91
+  f7: bottom 111 (+1), height 75 (+3), width 89, IoU with input 0.88
+ne: 8 frames, 12 colours, 5 outside the rhino palette; input bottom 110, height 76, width 79
+  f0: bottom 110 (+0), height 76 (+0), width 81, IoU with input 0.95
+  f1: bottom 109 (-1), height 76 (+0), width 84, IoU with input 0.87
+  f2: bottom 108 (-2), height 76 (+0), width 85, IoU with input 0.82
+  f3: bottom 106 (-4), height 75 (-1), width 85, IoU with input 0.80
+  f4: bottom 106 (-4), height 74 (-2), width 85, IoU with input 0.84
+  f5: bottom 108 (-2), height 74 (-2), width 81, IoU with input 0.90
+  f6: bottom 108 (-2), height 74 (-2), width 77, IoU with input 0.91
+  f7: bottom 109 (-1), height 76 (+0), width 76, IoU with input 0.91

@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "0bb3c99a198fba76273d57621e0ce2c9a769901fb33aa375babafdf41b4cd58e",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.5522388059701493,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "mantis_front.png",
+      "source_box": [
+        99,
+        34,
+        624,
+        482
+      ],
+      "source_dimensions": [
+        525,
+        448
+      ],
+      "output_box": [
+        104,
+        241,
+        919,
+        936
+      ]
+    },
+    "left": {
+      "file": "mantis_left.png",
+      "source_box": [
+        802,
+        38,
+        1323,
+        482
+      ],
+      "source_dimensions": [
+        521,
+        444
+      ],
+      "output_box": [
+        107,
+        247,
+        916,
+        936
+      ]
+    },
+    "back": {
+      "file": "mantis_back.png",
+      "source_box": [
+        95,
+        572,
+        631,
+        1021
+      ],
+      "source_dimensions": [
+        536,
+        449
+      ],
+      "output_box": [
+        96,
+        239,
+        928,
+        936
+      ]
+    },
+    "right": {
+      "file": "mantis_right.png",
+      "source_box": [
+        800,
+        575,
+        1319,
+        1021
+      ],
+      "source_dimensions": [
+        519,
+        446
+      ],
+      "output_box": [
+        109,
+        244,
+        915,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.011135857461024499
+}

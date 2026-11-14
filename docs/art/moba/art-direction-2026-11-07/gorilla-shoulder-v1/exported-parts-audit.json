@@ -1,0 +1,170 @@
+[
+  {
+    "object": "Body_static",
+    "uv_seam_split_vertices": 63886,
+    "position_welded_vertices": 40701,
+    "connected_components_before": 1559,
+    "connected_components_after_position_weld": 2,
+    "top_components": [
+      {
+        "vertices": 40574,
+        "faces": 81156,
+        "lo": [
+          -0.4856623411178589,
+          -0.35844916105270386,
+          -2.6127950150112156e-06
+        ],
+        "hi": [
+          0.3208092749118805,
+          0.3814770579338074,
+          0.7190577983856201
+        ],
+        "center": [
+          -0.0824265331029892,
+          0.011513948440551758,
+          0.35952759279530255
+        ],
+        "dimensions": [
+          0.8064716160297394,
+          0.7399262189865112,
+          0.7190604111806351
+        ]
+      },
+      {
+        "vertices": 127,
+        "faces": 250,
+        "lo": [
+          0.21993407607078552,
+          -0.09986338764429092,
+          0.16836854815483093
+        ],
+        "hi": [
+          0.29252496361732483,
+          -0.0002066474553430453,
+          0.275985985994339
+        ],
+        "center": [
+          0.2562295198440552,
+          -0.050035017549816985,
+          0.22217726707458496
+        ],
+        "dimensions": [
+          0.0725908875465393,
+          0.09965674018894788,
+          0.10761743783950806
+        ]
+      }
+    ],
+    "boundary_edges_after_weld": 0,
+    "nonmanifold_edges_after_weld": 0,
+    "zero_area_faces": 0,
+    "wire_edges": 0,
+    "isolated_vertices": 0,
+    "custom_normals": true,
+    "small_components_under_10_faces": []
+  },
+  {
+    "object": "ShoulderArm_R",
+    "uv_seam_split_vertices": 16328,
+    "position_welded_vertices": 10261,
+    "connected_components_before": 408,
+    "connected_components_after_position_weld": 2,
+    "top_components": [
+      {
+        "vertices": 10178,
+        "faces": 20356,
+        "lo": [
+          0.18000006675720215,
+          -0.29302817583084106,
+          4.60943701909855e-05
+        ],
+        "hi": [
+          0.48714491724967957,
+          0.07975640147924423,
+          0.6175803542137146
+        ],
+        "center": [
+          0.33357249200344086,
+          -0.10663588717579842,
+          0.3088132242919528
+        ],
+        "dimensions": [
+          0.3071448504924774,
+          0.3727845773100853,
+          0.6175342598435236
+        ]
+      },
+      {
+        "vertices": 83,
+        "faces": 162,
+        "lo": [
+          0.18000006675720215,
+          -0.14108918607234955,
+          0.32881835103034973
+        ],
+        "hi": [
+          0.19609826803207397,
+          -0.09207220375537872,
+          0.41242659091949463
+        ],
+        "center": [
+          0.18804916739463806,
+          -0.11658069491386414,
+          0.3706224709749222
+        ],
+        "dimensions": [
+          0.016098201274871826,
+          0.049016982316970825,
+          0.0836082398891449
+        ]
+      }
+    ],
+    "boundary_edges_after_weld": 0,
+    "nonmanifold_edges_after_weld": 0,
+    "zero_area_faces": 0,
+    "wire_edges": 0,
+    "isolated_vertices": 0,
+    "custom_normals": true,
+    "small_components_under_10_faces": []
+  },
+  {
+    "object": "ShoulderSocket_R",
+    "uv_seam_split_vertices": 323,
+    "position_welded_vertices": 266,
+    "connected_components_before": 1,
+    "connected_components_after_position_weld": 1,
+    "top_components": [
+      {
+        "vertices": 266,
+        "faces": 528,
+        "lo": [
+          0.1550000011920929,
+          -0.08499999344348907,
+          0.4300000071525574
+        ],
+        "hi": [
+          0.29499998688697815,
+          0.054999999701976776,
+          0.5699999928474426
+        ],
+        "center": [
+          0.22499999403953552,
+          -0.01499999687075615,
+          0.5
+        ],
+        "dimensions": [
+          0.13999998569488525,
+          0.13999999314546585,
+          0.13999998569488525
+        ]
+      }
+    ],
+    "boundary_edges_after_weld": 0,
+    "nonmanifold_edges_after_weld": 0,
+    "zero_area_faces": 0,
+    "wire_edges": 0,
+    "isolated_vertices": 0,
+    "custom_normals": true,
+    "small_components_under_10_faces": []
+  }
+]

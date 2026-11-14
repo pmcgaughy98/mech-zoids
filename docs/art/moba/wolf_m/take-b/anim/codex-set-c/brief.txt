@@ -1,0 +1,64 @@
+You are making pixel-art animation frames for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\codex-set-c. Read anything under
+D:\dev\new-mech-rpg\docs\art\moba. Other Codex jobs are writing sibling folders under anim at the same time; do not
+touch them. Do not touch assets, art or tools, and do not commit.
+
+Job: the wolf mech (wolf_m, take B) is drawn in front, side and back (sets A and B). This job adds its two
+three-quarter views for the same moves: se (three-quarter front, facing down-right) and ne (three-quarter back, facing
+up-right). Method: you made sets A and B. Read anim\codex-set-a (brief.txt, REPORT.txt, prompts\, finish.py, polish.py, gait_finish.py, details.py, verify.py) and follow the method that worked: one sheet per move from your
+image tool with the approved stills attached, slice it, finish every frame against the stills at their native pixel
+scale, check, and board it. Copy and adapt those scripts; do not start over. Generate exactly ONE image per move. Never
+make a second image or a redo; if one fails, report it and go on.
+
+The creature is the wolf mech (wolf_m, take B), the game's assassin. Approved stills, 192x192, already placed with
+the feet on row 160, in D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\fixed\: s.png (front), e.png (side facing right), n.png (back); se, ne, sw, w, nw also
+exist. Use fixed\, not views\ (Preston approved the fixed back views; the n still carries a little detail ink added
+today). The approved pose is STANDING on four long legs. Keep the design exactly: an armoured gunmetal wolf with a long
+narrow muzzle, two pale sabre fangs, small cyan eyes under a heavy brow, a hood and tall swept-back ears, two red-edged
+folded blade-fins along the back, red lower legs and paws, and a plated tail with a red tip; the same 12 colours
+(#141418 #22222b #5c0a10 #a8141a #444452 #e8251f #6e6e7e #ff6a55 #6ff0dc #bcbcc8 #c9c2b8 #f0ece4), the dark outline and the chunky pixel size. Sizes: front 33x72, side 110x66, back 35x72 px. Only the pose changes.
+Never redesign: no new parts, no fur, no gloss, no longer or thinner limbs, no bigger head. The tail stays a straight
+line of plates (Preston: "no curved tails as they are hard to rotate"); it can lift, swing and angle, but it keeps the
+still's thickness, plate count and red tip in every frame and every view (in the side view as thick as in e.png, never
+a thin rod; set A's first side walk and sprint got this wrong). It is a robot: no
+realistic animal anatomy beyond what the stills show.
+
+Approved stills for this job: se.png (83x70 px (x 54-136, y 91-160)) and ne.png (78x70 px (x 57-134, y 91-160)) in
+D:\dev\new-mech-rpg\docs\art\moba\wolf_m\take-b\anim\..\fixed\, 192x192, already placed with the feet on row 160 (copied with 6x enlargements on magenta in
+codex-set-c\refs\). Attach refs\se_6x.png then refs\ne_6x.png, in that order. Effects (scent trails, slow marks,
+howl rings, blood, sparks) are made separately: draw the body only.
+
+Do NOT paste still parts onto generated frames (on the fennec that caused the cutoffs Preston rejected). Each frame is
+one whole drawing, cleaned by hand pixel by pixel. Proportions (ears, head and muzzle, body, legs, tail) stay within 2
+px of the stills. The tail keeps the still's thickness, plate count and red tip in every frame (never a thin rod). In the walk it keeps the still's angle, its root moving with the body and its tip swaying 1-2 px with the trot; in the sprint it may stream back closer to level, at the same thickness.
+
+Prompts: for each move write codex-set-c\prompts\<move>.txt from that move's existing prompt: change the sentence about
+the attached images to say they are the approved se (three-quarter front, facing down-right) and ne (three-quarter
+back, facing up-right) views, replace the layout part with this text word for word (N = the move's column count):
+"Layout: a grid of 2 rows and N columns of equal cells, one whole wolf per cell, nothing crossing a cell edge, no labels, no text, no grid lines. Row 1 is the three-quarter front view facing down and to the right, exactly the camera angle of the first attached sprite: we see its face, muzzle, fangs and cyan eyes. Row 2 is the three-quarter back view facing up and to the right, exactly the camera angle of the second attached sprite: we see its back, the fins and the backs of its ears, and its head points away. Every cell in a row keeps that row's angle: never turn it to a straight front, side or back view, and never mirror it. Each column is one moment seen from two angles, so the two rows match frame for frame. The wolf is the same size in every cell and the ground line is at the same height in every cell."
+and keep every column description word for word, so the new rows match the drawn rows beat for beat.
+
+Moves:
+- walk: 8 columns; column text from anim\codex-set-a\prompts\walk.txt; frames se/ne; preview ms 100 ms each, loop.
+- sprint: 6 columns; column text from anim\codex-set-a\prompts\sprint.txt; frames se/ne; preview ms 70 ms each, loop.
+- lunge: 7 columns; column text from anim\codex-set-a\prompts\lunge.txt; frames se/ne; preview ms 120, 180, 80, 120, 90, 160, 200.
+- bite: 5 columns; column text from anim\codex-set-a\prompts\bite.txt; frames se/ne; preview ms 100, 120, 80, 140, 160.
+
+Output for each move, in codex-set-c\<move>\ :
+- frames\se_f<i>.png and ne_f<i>.png on 192x192 transparent canvases at the stills' pixel scale, placed like the
+  stills (feet on row 160).
+- Frames 0 and 6 of the lunge and frames 0 and 4 of the bite must be the exact approved se or ne still.
+- The walk is the standing trot like the drawn rows; f0 close to the still; planted paws keep their coordinates (no sliding), as in set A's gait_finish.py; a lifted paw clears the ground by 3-5 px.
+- The sprint's f2 is the one air frame, lowest row 148-156. The lunge's f3 is the air frame, lowest row 120-150, and the lunge is drawn IN PLACE: the lift stays in the cell, the body does not travel across the cell (the game moves the wolf). Every other frame stands on row 160.
+- Report the IoU of every frame that must equal a still (it must be 1.0).
+- Snap every pixel to the stills' 12 colours; binary alpha; a dark outline like the stills; no anti-aliasing, no stray
+  pixels, no enclosed holes, no see-through seams, no straight cut edges, no part ending abruptly, nothing touching
+  the canvas edge.
+- The game adds a one-texel sel-out outline at pack time (D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\selout_rhino.py, function selout, OUTLINE #141418). Judge every
+  board with it applied, at 4x or more, next to the stills.
+- Keep sheet_raw.png, grid.json (cut edges, scale, every frame's placement and preview ms), checks.txt, a preview gif
+  per view with the listed timing, and review.png with the approved still at the left of each row.
+Also write codex-set-c\REPORT.txt (under 30 lines): tokens used if known, each sheet's size and hash, the checks, the
+proportion numbers, and by eye per move: same wolf in both rows? the move as asked? rows matching column for column
+and matching the drawn front/side/back frames? each row at its still's three-quarter angle in every cell, not turned
+straight and not mirrored? whole parts, no cutoffs? the tail at the still's thickness? Look at your boards before
+finishing and fix drift from the stills; the eyes, ears, fins and tail are where drift usually shows.

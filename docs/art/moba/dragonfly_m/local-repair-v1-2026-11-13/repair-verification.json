@@ -1,0 +1,67 @@
+{
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_dragonfly_remeshed_25k_20261111_character.glb",
+  "source_sha256": "4aa5552ba0601f5006e7e4a06eb93c67f7721a1cf50e811ef67349cf6c47eeaf",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\dragonfly_m\\local-repair-v1-2026-11-13\\dragonfly-rigged-local-repair-v1.glb",
+  "output_sha256": "d21585337fb2f4d48ef8a333afc05c89823e3a2ecd18bf807ea0493d5744ec67",
+  "joint_count": 46,
+  "before_triangles": 25263,
+  "final_triangles": 24662,
+  "removed_flaps": 15,
+  "selected_pair": 2,
+  "remaining_pairs": [
+    1,
+    3,
+    4
+  ],
+  "remaining_legs": 6,
+  "removed_skin_chains": [
+    "Bone_022",
+    "Bone_023",
+    "Bone_024",
+    "Bone_025",
+    "Bone_026",
+    "Bone_027"
+  ],
+  "residual_influence_reassigned_to": "Bone_001",
+  "locally_reassigned_rows": 3618,
+  "detached_tip_scrap_triangles": 88,
+  "closures": [
+    {
+      "bounds": [
+        [
+          -0.29119449853897095,
+          0.8428094387054443,
+          0.04032588750123978
+        ],
+        [
+          -0.18822290003299713,
+          0.9561647772789001,
+          0.14094646275043488
+        ]
+      ],
+      "border_vertices": 61
+    },
+    {
+      "bounds": [
+        [
+          0.1880536824464798,
+          0.8428374528884888,
+          0.037525683641433716
+        ],
+        [
+          0.28334635496139526,
+          0.9725677967071533,
+          0.14133945107460022
+        ]
+      ],
+      "border_vertices": 62
+    }
+  ],
+  "boundary_edges": 0,
+  "over_shared_edges": 0,
+  "collapsed_triangles": 0,
+  "skeleton_rest_binds_original_materials_textures_preserved": true,
+  "original_position_normal_uv_rows_preserved": true,
+  "new_material": "Recessed teal leg sockets",
+  "scope": "User selected pair 2. Removed outer-front pair, retained front/middle/rear pairs and four wings. Local sockets and 15 malformed flaps repaired."
+}

@@ -1,0 +1,2566 @@
+{
+  "s": [
+    {
+      "foot": "RF",
+      "frame": 0,
+      "delta": [
+        0,
+        3
+      ],
+      "knee_delta": [
+        0,
+        2
+      ],
+      "source_sole": [
+        70.0,
+        160.0
+      ],
+      "target": [
+        70.0,
+        163.44
+      ],
+      "lift": 0,
+      "root": [
+        65,
+        137
+      ],
+      "socket": [
+        65,
+        135
+      ],
+      "knee": [
+        65,
+        147
+      ],
+      "ankle": [
+        66,
+        154
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.011694718432742945,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 0,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        121.0,
+        160.0
+      ],
+      "target": [
+        121.0,
+        156.56
+      ],
+      "lift": 0,
+      "root": [
+        126,
+        131
+      ],
+      "socket": [
+        126,
+        135
+      ],
+      "knee": [
+        126,
+        144
+      ],
+      "ankle": [
+        125,
+        148
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 0,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        70.0,
+        135.0
+      ],
+      "target": [
+        70.0,
+        132.0
+      ],
+      "lift": 3,
+      "root": [
+        65,
+        106
+      ],
+      "socket": [
+        65,
+        110
+      ],
+      "knee": [
+        65,
+        119
+      ],
+      "ankle": [
+        66,
+        123
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LH",
+      "frame": 0,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        1
+      ],
+      "source_sole": [
+        121.0,
+        135.0
+      ],
+      "target": [
+        121.0,
+        135.0
+      ],
+      "lift": 0,
+      "root": [
+        126,
+        109
+      ],
+      "socket": [
+        126,
+        110
+      ],
+      "knee": [
+        126,
+        121
+      ],
+      "ankle": [
+        125,
+        126
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.016256983294567817,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 1,
+      "delta": [
+        0,
+        2
+      ],
+      "knee_delta": [
+        0,
+        1
+      ],
+      "source_sole": [
+        70.0,
+        160.0
+      ],
+      "target": [
+        70.0,
+        161.72
+      ],
+      "lift": 0,
+      "root": [
+        65,
+        136
+      ],
+      "socket": [
+        65,
+        134
+      ],
+      "knee": [
+        65,
+        146
+      ],
+      "ankle": [
+        66,
+        153
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.011694718432742945,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 1,
+      "delta": [
+        0,
+        -4
+      ],
+      "knee_delta": [
+        0,
+        -2
+      ],
+      "source_sole": [
+        121.0,
+        160.0
+      ],
+      "target": [
+        121.0,
+        156.28
+      ],
+      "lift": 2,
+      "root": [
+        126,
+        130
+      ],
+      "socket": [
+        126,
+        134
+      ],
+      "knee": [
+        126,
+        143
+      ],
+      "ankle": [
+        125,
+        147
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 1,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        70.0,
+        135.0
+      ],
+      "target": [
+        70.0,
+        134.7208
+      ],
+      "lift": 2,
+      "root": [
+        65,
+        109
+      ],
+      "socket": [
+        65,
+        109
+      ],
+      "knee": [
+        65,
+        120
+      ],
+      "ankle": [
+        66,
+        126
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LH",
+      "frame": 1,
+      "delta": [
+        0,
+        -2
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        121.0,
+        135.0
+      ],
+      "target": [
+        121.0,
+        133.2792
+      ],
+      "lift": 0,
+      "root": [
+        126,
+        107
+      ],
+      "socket": [
+        126,
+        109
+      ],
+      "knee": [
+        126,
+        119
+      ],
+      "ankle": [
+        125,
+        124
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.016256983294567817,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 2,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        70.0,
+        160.0
+      ],
+      "target": [
+        70.0,
+        160.0
+      ],
+      "lift": 0,
+      "root": [
+        65,
+        134
+      ],
+      "socket": [
+        65,
+        134
+      ],
+      "knee": [
+        65,
+        145
+      ],
+      "ankle": [
+        66,
+        151
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 2,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        121.0,
+        160.0
+      ],
+      "target": [
+        121.0,
+        157.0
+      ],
+      "lift": 3,
+      "root": [
+        126,
+        131
+      ],
+      "socket": [
+        126,
+        134
+      ],
+      "knee": [
+        126,
+        144
+      ],
+      "ankle": [
+        125,
+        148
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 2,
+      "delta": [
+        0,
+        3
+      ],
+      "knee_delta": [
+        0,
+        2
+      ],
+      "source_sole": [
+        70.0,
+        135.0
+      ],
+      "target": [
+        70.0,
+        138.4416
+      ],
+      "lift": 0,
+      "root": [
+        65,
+        112
+      ],
+      "socket": [
+        65,
+        109
+      ],
+      "knee": [
+        65,
+        122
+      ],
+      "ankle": [
+        66,
+        129
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.011694718432742945,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LH",
+      "frame": 2,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        121.0,
+        135.0
+      ],
+      "target": [
+        121.0,
+        131.5584
+      ],
+      "lift": 0,
+      "root": [
+        126,
+        106
+      ],
+      "socket": [
+        126,
+        109
+      ],
+      "knee": [
+        126,
+        119
+      ],
+      "ankle": [
+        125,
+        123
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 3,
+      "delta": [
+        0,
+        -2
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        70.0,
+        160.0
+      ],
+      "target": [
+        70.0,
+        158.28
+      ],
+      "lift": 0,
+      "root": [
+        65,
+        132
+      ],
+      "socket": [
+        65,
+        134
+      ],
+      "knee": [
+        65,
+        144
+      ],
+      "ankle": [
+        66,
+        149
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.016256983294567817,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 3,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        121.0,
+        160.0
+      ],
+      "target": [
+        121.0,
+        159.72
+      ],
+      "lift": 2,
+      "root": [
+        126,
+        134
+      ],
+      "socket": [
+        126,
+        134
+      ],
+      "knee": [
+        126,
+        145
+      ],
+      "ankle": [
+        125,
+        151
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 3,
+      "delta": [
+        0,
+        2
+      ],
+      "knee_delta": [
+        0,
+        1
+      ],
+      "source_sole": [
+        70.0,
+        135.0
+      ],
+      "target": [
+        70.0,
+        136.7208
+      ],
+      "lift": 0,
+      "root": [
+        65,
+        111
+      ],
+      "socket": [
+        65,
+        109
+      ],
+      "knee": [
+        65,
+        121
+      ],
+      "ankle": [
+        66,
+        128
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.011694718432742945,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LH",
+      "frame": 3,
+      "delta": [
+        0,
+        -4
+      ],
+      "knee_delta": [
+        0,
+        -2
+      ],
+      "source_sole": [
+        121.0,
+        135.0
+      ],
+      "target": [
+        121.0,
+        131.2792
+      ],
+      "lift": 2,
+      "root": [
+        126,
+        105
+      ],
+      "socket": [
+        126,
+        109
+      ],
+      "knee": [
+        126,
+        118
+      ],
+      "ankle": [
+        125,
+        122
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 4,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        70.0,
+        160.0
+      ],
+      "target": [
+        70.0,
+        156.56
+      ],
+      "lift": 0,
+      "root": [
+        65,
+        131
+      ],
+      "socket": [
+        65,
+        135
+      ],
+      "knee": [
+        65,
+        144
+      ],
+      "ankle": [
+        66,
+        148
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 4,
+      "delta": [
+        0,
+        3
+      ],
+      "knee_delta": [
+        0,
+        2
+      ],
+      "source_sole": [
+        121.0,
+        160.0
+      ],
+      "target": [
+        121.0,
+        163.44
+      ],
+      "lift": 0,
+      "root": [
+        126,
+        137
+      ],
+      "socket": [
+        126,
+        135
+      ],
+      "knee": [
+        126,
+        147
+      ],
+      "ankle": [
+        125,
+        154
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.011694718432742945,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 4,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        1
+      ],
+      "source_sole": [
+        70.0,
+        135.0
+      ],
+      "target": [
+        70.0,
+        135.0
+      ],
+      "lift": 0,
+      "root": [
+        65,
+        109
+      ],
+      "socket": [
+        65,
+        110
+      ],
+      "knee": [
+        65,
+        121
+      ],
+      "ankle": [
+        66,
+        126
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.016256983294567817,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LH",
+      "frame": 4,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        121.0,
+        135.0
+      ],
+      "target": [
+        121.0,
+        132.0
+      ],
+      "lift": 3,
+      "root": [
+        126,
+        106
+      ],
+      "socket": [
+        126,
+        110
+      ],
+      "knee": [
+        126,
+        119
+      ],
+      "ankle": [
+        125,
+        123
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 5,
+      "delta": [
+        0,
+        -4
+      ],
+      "knee_delta": [
+        0,
+        -2
+      ],
+      "source_sole": [
+        70.0,
+        160.0
+      ],
+      "target": [
+        70.0,
+        156.28
+      ],
+      "lift": 2,
+      "root": [
+        65,
+        130
+      ],
+      "socket": [
+        65,
+        134
+      ],
+      "knee": [
+        65,
+        143
+      ],
+      "ankle": [
+        66,
+        147
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 5,
+      "delta": [
+        0,
+        2
+      ],
+      "knee_delta": [
+        0,
+        1
+      ],
+      "source_sole": [
+        121.0,
+        160.0
+      ],
+      "target": [
+        121.0,
+        161.72
+      ],
+      "lift": 0,
+      "root": [
+        126,
+        136
+      ],
+      "socket": [
+        126,
+        134
+      ],
+      "knee": [
+        126,
+        146
+      ],
+      "ankle": [
+        125,
+        153
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.011694718432742945,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 5,
+      "delta": [
+        0,
+        -2
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        70.0,
+        135.0
+      ],
+      "target": [
+        70.0,
+        133.2792
+      ],
+      "lift": 0,
+      "root": [
+        65,
+        107
+      ],
+      "socket": [
+        65,
+        109
+      ],
+      "knee": [
+        65,
+        119
+      ],
+      "ankle": [
+        66,
+        124
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.016256983294567817,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LH",
+      "frame": 5,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        121.0,
+        135.0
+      ],
+      "target": [
+        121.0,
+        134.7208
+      ],
+      "lift": 2,
+      "root": [
+        126,
+        109
+      ],
+      "socket": [
+        126,
+        109
+      ],
+      "knee": [
+        126,
+        120
+      ],
+      "ankle": [
+        125,
+        126
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 6,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        70.0,
+        160.0
+      ],
+      "target": [
+        70.0,
+        157.0
+      ],
+      "lift": 3,
+      "root": [
+        65,
+        131
+      ],
+      "socket": [
+        65,
+        134
+      ],
+      "knee": [
+        65,
+        144
+      ],
+      "ankle": [
+        66,
+        148
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 6,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        121.0,
+        160.0
+      ],
+      "target": [
+        121.0,
+        160.0
+      ],
+      "lift": 0,
+      "root": [
+        126,
+        134
+      ],
+      "socket": [
+        126,
+        134
+      ],
+      "knee": [
+        126,
+        145
+      ],
+      "ankle": [
+        125,
+        151
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 6,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        70.0,
+        135.0
+      ],
+      "target": [
+        70.0,
+        131.5584
+      ],
+      "lift": 0,
+      "root": [
+        65,
+        106
+      ],
+      "socket": [
+        65,
+        109
+      ],
+      "knee": [
+        65,
+        119
+      ],
+      "ankle": [
+        66,
+        123
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LH",
+      "frame": 6,
+      "delta": [
+        0,
+        3
+      ],
+      "knee_delta": [
+        0,
+        2
+      ],
+      "source_sole": [
+        121.0,
+        135.0
+      ],
+      "target": [
+        121.0,
+        138.4416
+      ],
+      "lift": 0,
+      "root": [
+        126,
+        112
+      ],
+      "socket": [
+        126,
+        109
+      ],
+      "knee": [
+        126,
+        122
+      ],
+      "ankle": [
+        125,
+        129
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.011694718432742945,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 7,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        70.0,
+        160.0
+      ],
+      "target": [
+        70.0,
+        159.72
+      ],
+      "lift": 2,
+      "root": [
+        65,
+        134
+      ],
+      "socket": [
+        65,
+        134
+      ],
+      "knee": [
+        65,
+        145
+      ],
+      "ankle": [
+        66,
+        151
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 7,
+      "delta": [
+        0,
+        -2
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        121.0,
+        160.0
+      ],
+      "target": [
+        121.0,
+        158.28
+      ],
+      "lift": 0,
+      "root": [
+        126,
+        132
+      ],
+      "socket": [
+        126,
+        134
+      ],
+      "knee": [
+        126,
+        144
+      ],
+      "ankle": [
+        125,
+        149
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.016256983294567817,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 7,
+      "delta": [
+        0,
+        -4
+      ],
+      "knee_delta": [
+        0,
+        -2
+      ],
+      "source_sole": [
+        70.0,
+        135.0
+      ],
+      "target": [
+        70.0,
+        131.2792
+      ],
+      "lift": 2,
+      "root": [
+        65,
+        105
+      ],
+      "socket": [
+        65,
+        109
+      ],
+      "knee": [
+        65,
+        118
+      ],
+      "ankle": [
+        66,
+        122
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LH",
+      "frame": 7,
+      "delta": [
+        0,
+        2
+      ],
+      "knee_delta": [
+        0,
+        1
+      ],
+      "source_sole": [
+        121.0,
+        135.0
+      ],
+      "target": [
+        121.0,
+        136.7208
+      ],
+      "lift": 0,
+      "root": [
+        126,
+        111
+      ],
+      "socket": [
+        126,
+        109
+      ],
+      "knee": [
+        126,
+        121
+      ],
+      "ankle": [
+        125,
+        128
+      ],
+      "native_projected_length": 17.08276253029822,
+      "leg_length_error": 0.011694718432742945,
+      "hidden_in_still": true
+    }
+  ],
+  "n": [
+    {
+      "foot": "LH",
+      "frame": 0,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        1
+      ],
+      "source_sole": [
+        72.0,
+        160.0
+      ],
+      "target": [
+        72.0,
+        160.0
+      ],
+      "lift": 0,
+      "root": [
+        71,
+        139
+      ],
+      "socket": [
+        71,
+        140
+      ],
+      "knee": [
+        71,
+        147
+      ],
+      "ankle": [
+        72,
+        152
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.01625698329456604,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 0,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        118.5,
+        160.0
+      ],
+      "target": [
+        118.5,
+        157.0
+      ],
+      "lift": 3,
+      "root": [
+        120,
+        136
+      ],
+      "socket": [
+        120,
+        140
+      ],
+      "knee": [
+        120,
+        145
+      ],
+      "ankle": [
+        119,
+        149
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 0,
+      "delta": [
+        0,
+        3
+      ],
+      "knee_delta": [
+        0,
+        2
+      ],
+      "source_sole": [
+        72.0,
+        132.0
+      ],
+      "target": [
+        72.0,
+        135.4416
+      ],
+      "lift": 0,
+      "root": [
+        71,
+        114
+      ],
+      "socket": [
+        71,
+        112
+      ],
+      "knee": [
+        71,
+        120
+      ],
+      "ankle": [
+        72,
+        127
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.011694718432742945,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 0,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        118.5,
+        132.0
+      ],
+      "target": [
+        118.5,
+        128.5584
+      ],
+      "lift": 0,
+      "root": [
+        120,
+        108
+      ],
+      "socket": [
+        120,
+        112
+      ],
+      "knee": [
+        120,
+        117
+      ],
+      "ankle": [
+        119,
+        121
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LH",
+      "frame": 1,
+      "delta": [
+        0,
+        2
+      ],
+      "knee_delta": [
+        0,
+        1
+      ],
+      "source_sole": [
+        72.0,
+        160.0
+      ],
+      "target": [
+        72.0,
+        161.72
+      ],
+      "lift": 0,
+      "root": [
+        71,
+        141
+      ],
+      "socket": [
+        71,
+        139
+      ],
+      "knee": [
+        71,
+        147
+      ],
+      "ankle": [
+        72,
+        154
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.011694718432742945,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 1,
+      "delta": [
+        0,
+        -4
+      ],
+      "knee_delta": [
+        0,
+        -2
+      ],
+      "source_sole": [
+        118.5,
+        160.0
+      ],
+      "target": [
+        118.5,
+        156.28
+      ],
+      "lift": 2,
+      "root": [
+        120,
+        135
+      ],
+      "socket": [
+        120,
+        139
+      ],
+      "knee": [
+        120,
+        144
+      ],
+      "ankle": [
+        119,
+        148
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 1,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        72.0,
+        132.0
+      ],
+      "target": [
+        72.0,
+        131.7208
+      ],
+      "lift": 2,
+      "root": [
+        71,
+        111
+      ],
+      "socket": [
+        71,
+        111
+      ],
+      "knee": [
+        71,
+        118
+      ],
+      "ankle": [
+        72,
+        124
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 1,
+      "delta": [
+        0,
+        -2
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        118.5,
+        132.0
+      ],
+      "target": [
+        118.5,
+        130.2792
+      ],
+      "lift": 0,
+      "root": [
+        120,
+        109
+      ],
+      "socket": [
+        120,
+        111
+      ],
+      "knee": [
+        120,
+        117
+      ],
+      "ankle": [
+        119,
+        122
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.01625698329456604,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LH",
+      "frame": 2,
+      "delta": [
+        0,
+        3
+      ],
+      "knee_delta": [
+        0,
+        2
+      ],
+      "source_sole": [
+        72.0,
+        160.0
+      ],
+      "target": [
+        72.0,
+        163.44
+      ],
+      "lift": 0,
+      "root": [
+        71,
+        142
+      ],
+      "socket": [
+        71,
+        139
+      ],
+      "knee": [
+        71,
+        148
+      ],
+      "ankle": [
+        72,
+        155
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.011694718432742945,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 2,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        118.5,
+        160.0
+      ],
+      "target": [
+        118.5,
+        156.56
+      ],
+      "lift": 0,
+      "root": [
+        120,
+        136
+      ],
+      "socket": [
+        120,
+        139
+      ],
+      "knee": [
+        120,
+        145
+      ],
+      "ankle": [
+        119,
+        149
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 2,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        72.0,
+        132.0
+      ],
+      "target": [
+        72.0,
+        129.0
+      ],
+      "lift": 3,
+      "root": [
+        71,
+        108
+      ],
+      "socket": [
+        71,
+        111
+      ],
+      "knee": [
+        71,
+        117
+      ],
+      "ankle": [
+        72,
+        121
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 2,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        118.5,
+        132.0
+      ],
+      "target": [
+        118.5,
+        132.0
+      ],
+      "lift": 0,
+      "root": [
+        120,
+        111
+      ],
+      "socket": [
+        120,
+        111
+      ],
+      "knee": [
+        120,
+        118
+      ],
+      "ankle": [
+        119,
+        124
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LH",
+      "frame": 3,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        72.0,
+        160.0
+      ],
+      "target": [
+        72.0,
+        159.72
+      ],
+      "lift": 2,
+      "root": [
+        71,
+        139
+      ],
+      "socket": [
+        71,
+        139
+      ],
+      "knee": [
+        71,
+        146
+      ],
+      "ankle": [
+        72,
+        152
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 3,
+      "delta": [
+        0,
+        -2
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        118.5,
+        160.0
+      ],
+      "target": [
+        118.5,
+        158.28
+      ],
+      "lift": 0,
+      "root": [
+        120,
+        137
+      ],
+      "socket": [
+        120,
+        139
+      ],
+      "knee": [
+        120,
+        145
+      ],
+      "ankle": [
+        119,
+        150
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.01625698329456604,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 3,
+      "delta": [
+        0,
+        -4
+      ],
+      "knee_delta": [
+        0,
+        -2
+      ],
+      "source_sole": [
+        72.0,
+        132.0
+      ],
+      "target": [
+        72.0,
+        128.2792
+      ],
+      "lift": 2,
+      "root": [
+        71,
+        107
+      ],
+      "socket": [
+        71,
+        111
+      ],
+      "knee": [
+        71,
+        116
+      ],
+      "ankle": [
+        72,
+        120
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 3,
+      "delta": [
+        0,
+        2
+      ],
+      "knee_delta": [
+        0,
+        1
+      ],
+      "source_sole": [
+        118.5,
+        132.0
+      ],
+      "target": [
+        118.5,
+        133.7208
+      ],
+      "lift": 0,
+      "root": [
+        120,
+        113
+      ],
+      "socket": [
+        120,
+        111
+      ],
+      "knee": [
+        120,
+        119
+      ],
+      "ankle": [
+        119,
+        126
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.011694718432742945,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LH",
+      "frame": 4,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        72.0,
+        160.0
+      ],
+      "target": [
+        72.0,
+        157.0
+      ],
+      "lift": 3,
+      "root": [
+        71,
+        136
+      ],
+      "socket": [
+        71,
+        140
+      ],
+      "knee": [
+        71,
+        145
+      ],
+      "ankle": [
+        72,
+        149
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 4,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        1
+      ],
+      "source_sole": [
+        118.5,
+        160.0
+      ],
+      "target": [
+        118.5,
+        160.0
+      ],
+      "lift": 0,
+      "root": [
+        120,
+        139
+      ],
+      "socket": [
+        120,
+        140
+      ],
+      "knee": [
+        120,
+        147
+      ],
+      "ankle": [
+        119,
+        152
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.01625698329456604,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 4,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        72.0,
+        132.0
+      ],
+      "target": [
+        72.0,
+        128.5584
+      ],
+      "lift": 0,
+      "root": [
+        71,
+        108
+      ],
+      "socket": [
+        71,
+        112
+      ],
+      "knee": [
+        71,
+        117
+      ],
+      "ankle": [
+        72,
+        121
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 4,
+      "delta": [
+        0,
+        3
+      ],
+      "knee_delta": [
+        0,
+        2
+      ],
+      "source_sole": [
+        118.5,
+        132.0
+      ],
+      "target": [
+        118.5,
+        135.4416
+      ],
+      "lift": 0,
+      "root": [
+        120,
+        114
+      ],
+      "socket": [
+        120,
+        112
+      ],
+      "knee": [
+        120,
+        120
+      ],
+      "ankle": [
+        119,
+        127
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.011694718432742945,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LH",
+      "frame": 5,
+      "delta": [
+        0,
+        -4
+      ],
+      "knee_delta": [
+        0,
+        -2
+      ],
+      "source_sole": [
+        72.0,
+        160.0
+      ],
+      "target": [
+        72.0,
+        156.28
+      ],
+      "lift": 2,
+      "root": [
+        71,
+        135
+      ],
+      "socket": [
+        71,
+        139
+      ],
+      "knee": [
+        71,
+        144
+      ],
+      "ankle": [
+        72,
+        148
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 5,
+      "delta": [
+        0,
+        2
+      ],
+      "knee_delta": [
+        0,
+        1
+      ],
+      "source_sole": [
+        118.5,
+        160.0
+      ],
+      "target": [
+        118.5,
+        161.72
+      ],
+      "lift": 0,
+      "root": [
+        120,
+        141
+      ],
+      "socket": [
+        120,
+        139
+      ],
+      "knee": [
+        120,
+        147
+      ],
+      "ankle": [
+        119,
+        154
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.011694718432742945,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 5,
+      "delta": [
+        0,
+        -2
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        72.0,
+        132.0
+      ],
+      "target": [
+        72.0,
+        130.2792
+      ],
+      "lift": 0,
+      "root": [
+        71,
+        109
+      ],
+      "socket": [
+        71,
+        111
+      ],
+      "knee": [
+        71,
+        117
+      ],
+      "ankle": [
+        72,
+        122
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.01625698329456604,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 5,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        118.5,
+        132.0
+      ],
+      "target": [
+        118.5,
+        131.7208
+      ],
+      "lift": 2,
+      "root": [
+        120,
+        111
+      ],
+      "socket": [
+        120,
+        111
+      ],
+      "knee": [
+        120,
+        118
+      ],
+      "ankle": [
+        119,
+        124
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LH",
+      "frame": 6,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        72.0,
+        160.0
+      ],
+      "target": [
+        72.0,
+        156.56
+      ],
+      "lift": 0,
+      "root": [
+        71,
+        136
+      ],
+      "socket": [
+        71,
+        139
+      ],
+      "knee": [
+        71,
+        145
+      ],
+      "ankle": [
+        72,
+        149
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 6,
+      "delta": [
+        0,
+        3
+      ],
+      "knee_delta": [
+        0,
+        2
+      ],
+      "source_sole": [
+        118.5,
+        160.0
+      ],
+      "target": [
+        118.5,
+        163.44
+      ],
+      "lift": 0,
+      "root": [
+        120,
+        142
+      ],
+      "socket": [
+        120,
+        139
+      ],
+      "knee": [
+        120,
+        148
+      ],
+      "ankle": [
+        119,
+        155
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.011694718432742945,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 6,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        72.0,
+        132.0
+      ],
+      "target": [
+        72.0,
+        132.0
+      ],
+      "lift": 0,
+      "root": [
+        71,
+        111
+      ],
+      "socket": [
+        71,
+        111
+      ],
+      "knee": [
+        71,
+        118
+      ],
+      "ankle": [
+        72,
+        124
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.0,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 6,
+      "delta": [
+        0,
+        -3
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        118.5,
+        132.0
+      ],
+      "target": [
+        118.5,
+        129.0
+      ],
+      "lift": 3,
+      "root": [
+        120,
+        108
+      ],
+      "socket": [
+        120,
+        111
+      ],
+      "knee": [
+        120,
+        117
+      ],
+      "ankle": [
+        119,
+        121
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "LH",
+      "frame": 7,
+      "delta": [
+        0,
+        -2
+      ],
+      "knee_delta": [
+        0,
+        -1
+      ],
+      "source_sole": [
+        72.0,
+        160.0
+      ],
+      "target": [
+        72.0,
+        158.28
+      ],
+      "lift": 0,
+      "root": [
+        71,
+        137
+      ],
+      "socket": [
+        71,
+        139
+      ],
+      "knee": [
+        71,
+        145
+      ],
+      "ankle": [
+        72,
+        150
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.01625698329456604,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "RH",
+      "frame": 7,
+      "delta": [
+        0,
+        0
+      ],
+      "knee_delta": [
+        0,
+        0
+      ],
+      "source_sole": [
+        118.5,
+        160.0
+      ],
+      "target": [
+        118.5,
+        159.72
+      ],
+      "lift": 2,
+      "root": [
+        120,
+        139
+      ],
+      "socket": [
+        120,
+        139
+      ],
+      "knee": [
+        120,
+        146
+      ],
+      "ankle": [
+        119,
+        152
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.0,
+      "hidden_in_still": false
+    },
+    {
+      "foot": "LF",
+      "frame": 7,
+      "delta": [
+        0,
+        2
+      ],
+      "knee_delta": [
+        0,
+        1
+      ],
+      "source_sole": [
+        72.0,
+        132.0
+      ],
+      "target": [
+        72.0,
+        133.7208
+      ],
+      "lift": 0,
+      "root": [
+        71,
+        113
+      ],
+      "socket": [
+        71,
+        111
+      ],
+      "knee": [
+        71,
+        119
+      ],
+      "ankle": [
+        72,
+        126
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.011694718432742945,
+      "hidden_in_still": true
+    },
+    {
+      "foot": "RF",
+      "frame": 7,
+      "delta": [
+        0,
+        -4
+      ],
+      "knee_delta": [
+        0,
+        -2
+      ],
+      "source_sole": [
+        118.5,
+        132.0
+      ],
+      "target": [
+        118.5,
+        128.2792
+      ],
+      "lift": 2,
+      "root": [
+        120,
+        107
+      ],
+      "socket": [
+        120,
+        111
+      ],
+      "knee": [
+        120,
+        116
+      ],
+      "ankle": [
+        119,
+        120
+      ],
+      "native_projected_length": 13.082762530298218,
+      "leg_length_error": 0.04034309531944302,
+      "hidden_in_still": true
+    }
+  ]
+}

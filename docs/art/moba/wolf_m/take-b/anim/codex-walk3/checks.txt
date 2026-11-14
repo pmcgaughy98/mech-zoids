@@ -1,0 +1,66 @@
+WOLF M TAKE B / WALK3 / NATIVE AUDIT
+Widths: traced visible plate/shank contours in fixed/e.png; cross-sections at 25/50/75% of each segment axis.
+Widths are rounded native pixel coverage perpendicular to the segment, not a horizontal bounding box.
+Paw width is its widest horizontal native row; contact span is tested separately.
+STRUCT {"frame": 0, "binary_alpha": true, "palette_ok": true, "colors": 12, "holes": 0, "components": 1, "component_sizes": [3075], "below160": 0, "edge": false, "outside_leg_changes": 0}
+STRUCT {"frame": 1, "binary_alpha": true, "palette_ok": true, "colors": 12, "holes": 0, "components": 1, "component_sizes": [3025], "below160": 0, "edge": false, "outside_leg_changes": 0}
+STRUCT {"frame": 2, "binary_alpha": true, "palette_ok": true, "colors": 12, "holes": 0, "components": 1, "component_sizes": [3157], "below160": 0, "edge": false, "outside_leg_changes": 0}
+STRUCT {"frame": 3, "binary_alpha": true, "palette_ok": true, "colors": 12, "holes": 0, "components": 1, "component_sizes": [3073], "below160": 0, "edge": false, "outside_leg_changes": 0}
+STRUCT {"frame": 4, "binary_alpha": true, "palette_ok": true, "colors": 12, "holes": 0, "components": 1, "component_sizes": [2981], "below160": 0, "edge": false, "outside_leg_changes": 0}
+STRUCT {"frame": 5, "binary_alpha": true, "palette_ok": true, "colors": 12, "holes": 0, "components": 1, "component_sizes": [3072], "below160": 0, "edge": false, "outside_leg_changes": 0}
+STRUCT {"frame": 6, "binary_alpha": true, "palette_ok": true, "colors": 12, "holes": 0, "components": 1, "component_sizes": [2997], "below160": 0, "edge": false, "outside_leg_changes": 0}
+STRUCT {"frame": 7, "binary_alpha": true, "palette_ok": true, "colors": 12, "holes": 0, "components": 1, "component_sizes": [2988], "below160": 0, "edge": false, "outside_leg_changes": 0}
+WIDTH near_fore: upper [15, 9, 9] -> [14, 8, 8]..[16, 10, 9]; shank [7, 6, 4] -> [6, 5, 3]..[8, 6, 5]; paw 13 -> 13..13
+WIDTH far_hind: upper [6, 6, 7] -> [5, 6, 6]..[7, 7, 7]; shank [6, 5, 5] -> [5, 4, 5]..[6, 5, 5]; paw 11 -> 11..11
+WIDTH far_fore: upper [7, 4, 4] -> [6, 3, 3]..[8, 4, 4]; shank [5, 4, 4] -> [5, 3, 3]..[6, 4, 5]; paw 12 -> 12..12
+WIDTH near_hind: upper [16, 7, 7] -> [15, 7, 6]..[16, 8, 8]; shank [6, 4, 4] -> [6, 3, 3]..[7, 5, 4]; paw 12 -> 12..12
+PAW {"paw": "near_fore", "frame": 0, "target_x": 122, "sole_span": [116, 127], "center_x": 121.5, "endpoint_errors": [1, 0], "target_lift": 0, "lift": 0, "x_error": 0.5, "lift_error": 0, "visible_matching_sole_pixels": [116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127]}
+PAW {"paw": "near_fore", "frame": 1, "target_x": 117, "sole_span": [111, 122], "center_x": 116.5, "endpoint_errors": [1, 0], "target_lift": 0, "lift": 0, "x_error": 0.5, "lift_error": 0, "visible_matching_sole_pixels": [111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122]}
+PAW {"paw": "near_fore", "frame": 2, "target_x": 112, "sole_span": [106, 117], "center_x": 111.5, "endpoint_errors": [1, 0], "target_lift": 0, "lift": 0, "x_error": 0.5, "lift_error": 0, "visible_matching_sole_pixels": [106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117]}
+PAW {"paw": "near_fore", "frame": 3, "target_x": 107, "sole_span": [101, 112], "center_x": 106.5, "endpoint_errors": [1, 0], "target_lift": 0, "lift": 0, "x_error": 0.5, "lift_error": 0, "visible_matching_sole_pixels": [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112]}
+PAW {"paw": "near_fore", "frame": 4, "target_x": 110, "sole_span": [104, 115], "center_x": 109.5, "endpoint_errors": [1, 0], "target_lift": 2, "lift": 2, "x_error": 0.5, "lift_error": 0, "visible_matching_sole_pixels": [104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115]}
+PAW {"paw": "near_fore", "frame": 5, "target_x": 113, "sole_span": [107, 118], "center_x": 112.5, "endpoint_errors": [1, 0], "target_lift": 4, "lift": 4, "x_error": 0.5, "lift_error": 0, "visible_matching_sole_pixels": [107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118]}
+PAW {"paw": "near_fore", "frame": 6, "target_x": 116, "sole_span": [110, 121], "center_x": 115.5, "endpoint_errors": [1, 0], "target_lift": 4, "lift": 4, "x_error": 0.5, "lift_error": 0, "visible_matching_sole_pixels": [110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121]}
+PAW {"paw": "near_fore", "frame": 7, "target_x": 119, "sole_span": [113, 124], "center_x": 118.5, "endpoint_errors": [1, 0], "target_lift": 2, "lift": 2, "x_error": 0.5, "lift_error": 0, "visible_matching_sole_pixels": [113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124]}
+FOOTLOCK near_fore {"world_x": [121.5, 121.5, 121.5, 121.5], "center_spread": 0.0, "endpoint_spreads": [0, 0], "actual_stamp_spread": 0.0}
+PAW {"paw": "far_hind", "frame": 0, "target_x": 87, "sole_span": [82, 92], "center_x": 87.0, "endpoint_errors": [0, 0], "target_lift": 0, "lift": 0, "x_error": 0.0, "lift_error": 0, "visible_matching_sole_pixels": [82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92]}
+PAW {"paw": "far_hind", "frame": 1, "target_x": 82, "sole_span": [77, 87], "center_x": 82.0, "endpoint_errors": [0, 0], "target_lift": 0, "lift": 0, "x_error": 0.0, "lift_error": 0, "visible_matching_sole_pixels": [77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87]}
+PAW {"paw": "far_hind", "frame": 2, "target_x": 77, "sole_span": [72, 82], "center_x": 77.0, "endpoint_errors": [0, 0], "target_lift": 0, "lift": 0, "x_error": 0.0, "lift_error": 0, "visible_matching_sole_pixels": [72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82]}
+PAW {"paw": "far_hind", "frame": 3, "target_x": 72, "sole_span": [67, 77], "center_x": 72.0, "endpoint_errors": [0, 0], "target_lift": 0, "lift": 0, "x_error": 0.0, "lift_error": 0, "visible_matching_sole_pixels": [67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77]}
+PAW {"paw": "far_hind", "frame": 4, "target_x": 75, "sole_span": [70, 80], "center_x": 75.0, "endpoint_errors": [0, 0], "target_lift": 2, "lift": 2, "x_error": 0.0, "lift_error": 0, "visible_matching_sole_pixels": [70, 72, 76, 78]}
+PAW {"paw": "far_hind", "frame": 5, "target_x": 78, "sole_span": [73, 83], "center_x": 78.0, "endpoint_errors": [0, 0], "target_lift": 4, "lift": 4, "x_error": 0.0, "lift_error": 0, "visible_matching_sole_pixels": [73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83]}
+PAW {"paw": "far_hind", "frame": 6, "target_x": 81, "sole_span": [76, 86], "center_x": 81.0, "endpoint_errors": [0, 0], "target_lift": 4, "lift": 4, "x_error": 0.0, "lift_error": 0, "visible_matching_sole_pixels": [76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86]}
+PAW {"paw": "far_hind", "frame": 7, "target_x": 84, "sole_span": [79, 89], "center_x": 84.0, "endpoint_errors": [0, 0], "target_lift": 2, "lift": 2, "x_error": 0.0, "lift_error": 0, "visible_matching_sole_pixels": [79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89]}
+FOOTLOCK far_hind {"world_x": [87.0, 87.0, 87.0, 87.0], "center_spread": 0.0, "endpoint_spreads": [0, 0], "actual_stamp_spread": 0.0}
+PAW {"paw": "far_fore", "frame": 0, "target_x": 116, "sole_span": [110, 121], "center_x": 115.5, "endpoint_errors": [1, 0], "target_lift": 2, "lift": 2, "x_error": 0.5, "lift_error": 0, "visible_matching_sole_pixels": [110, 111, 112, 113, 114, 116, 117, 118]}
+PAW {"paw": "far_fore", "frame": 1, "target_x": 119, "sole_span": [113, 124], "center_x": 118.5, "endpoint_errors": [1, 0], "target_lift": 4, "lift": 4, "x_error": 0.5, "lift_error": 0, "visible_matching_sole_pixels": [116, 117, 118, 119, 120, 121, 122, 123, 124]}
+PAW {"paw": "far_fore", "frame": 2, "target_x": 122, "sole_span": [116, 127], "center_x": 121.5, "endpoint_errors": [1, 0], "target_lift": 4, "lift": 4, "x_error": 0.5, "lift_error": 0, "visible_matching_sole_pixels": [116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127]}
+PAW {"paw": "far_fore", "frame": 3, "target_x": 125, "sole_span": [119, 130], "center_x": 124.5, "endpoint_errors": [1, 0], "target_lift": 2, "lift": 2, "x_error": 0.5, "lift_error": 0, "visible_matching_sole_pixels": [119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130]}
+PAW {"paw": "far_fore", "frame": 4, "target_x": 128, "sole_span": [122, 133], "center_x": 127.5, "endpoint_errors": [1, 0], "target_lift": 0, "lift": 0, "x_error": 0.5, "lift_error": 0, "visible_matching_sole_pixels": [122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133]}
+PAW {"paw": "far_fore", "frame": 5, "target_x": 123, "sole_span": [117, 128], "center_x": 122.5, "endpoint_errors": [1, 0], "target_lift": 0, "lift": 0, "x_error": 0.5, "lift_error": 0, "visible_matching_sole_pixels": [117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128]}
+PAW {"paw": "far_fore", "frame": 6, "target_x": 118, "sole_span": [112, 123], "center_x": 117.5, "endpoint_errors": [1, 0], "target_lift": 0, "lift": 0, "x_error": 0.5, "lift_error": 0, "visible_matching_sole_pixels": [112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123]}
+PAW {"paw": "far_fore", "frame": 7, "target_x": 113, "sole_span": [107, 118], "center_x": 112.5, "endpoint_errors": [1, 0], "target_lift": 0, "lift": 0, "x_error": 0.5, "lift_error": 0, "visible_matching_sole_pixels": [107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118]}
+FOOTLOCK far_fore {"world_x": [147.5, 147.5, 147.5, 147.5], "center_spread": 0.0, "endpoint_spreads": [0, 0], "actual_stamp_spread": 0.0}
+PAW {"paw": "near_hind", "frame": 0, "target_x": 64, "sole_span": [59, 69], "center_x": 64.0, "endpoint_errors": [0, 0], "target_lift": 2, "lift": 2, "x_error": 0.0, "lift_error": 0, "visible_matching_sole_pixels": [59, 60, 61, 62, 63, 64, 65, 66, 67, 69]}
+PAW {"paw": "near_hind", "frame": 1, "target_x": 67, "sole_span": [62, 72], "center_x": 67.0, "endpoint_errors": [0, 0], "target_lift": 4, "lift": 4, "x_error": 0.0, "lift_error": 0, "visible_matching_sole_pixels": [62, 63, 64, 65, 66, 67, 68, 69, 70, 72]}
+PAW {"paw": "near_hind", "frame": 2, "target_x": 70, "sole_span": [65, 75], "center_x": 70.0, "endpoint_errors": [0, 0], "target_lift": 4, "lift": 4, "x_error": 0.0, "lift_error": 0, "visible_matching_sole_pixels": [65, 66, 67, 68, 69, 70, 71, 72, 73, 75]}
+PAW {"paw": "near_hind", "frame": 3, "target_x": 73, "sole_span": [68, 78], "center_x": 73.0, "endpoint_errors": [0, 0], "target_lift": 2, "lift": 2, "x_error": 0.0, "lift_error": 0, "visible_matching_sole_pixels": [68, 69, 70, 71, 72, 73, 74, 75, 76, 78]}
+PAW {"paw": "near_hind", "frame": 4, "target_x": 76, "sole_span": [71, 81], "center_x": 76.0, "endpoint_errors": [0, 0], "target_lift": 0, "lift": 0, "x_error": 0.0, "lift_error": 0, "visible_matching_sole_pixels": [71, 72, 73, 74, 75, 76, 77, 78, 79, 81]}
+PAW {"paw": "near_hind", "frame": 5, "target_x": 71, "sole_span": [66, 76], "center_x": 71.0, "endpoint_errors": [0, 0], "target_lift": 0, "lift": 0, "x_error": 0.0, "lift_error": 0, "visible_matching_sole_pixels": [66, 67, 68, 69, 70, 71, 72, 73, 74, 76]}
+PAW {"paw": "near_hind", "frame": 6, "target_x": 66, "sole_span": [61, 71], "center_x": 66.0, "endpoint_errors": [0, 0], "target_lift": 0, "lift": 0, "x_error": 0.0, "lift_error": 0, "visible_matching_sole_pixels": [61, 62, 63, 64, 65, 66, 67, 68, 69, 71]}
+PAW {"paw": "near_hind", "frame": 7, "target_x": 61, "sole_span": [56, 66], "center_x": 61.0, "endpoint_errors": [0, 0], "target_lift": 0, "lift": 0, "x_error": 0.0, "lift_error": 0, "visible_matching_sole_pixels": [56, 57, 58, 59, 60, 61, 62, 63, 64, 66]}
+FOOTLOCK near_hind {"world_x": [96.0, 96.0, 96.0, 96.0], "center_spread": 0.0, "endpoint_spreads": [0, 0], "actual_stamp_spread": 0.0}
+GIF PASS 8 frames, 100 ms each, infinite loop.
+Palette RGB : opaque pixel count / silhouette edge count, all 8 frames:
+#141418 1463 / 665
+#22222b 2738 / 590
+#5c0a10 2313 / 827
+#a8141a 2977 / 572
+#444452 6733 / 386
+#e8251f 1297 / 237
+#6e6e7e 5138 / 337
+#ff6a55 246 / 40
+#6ff0dc 32 / 0
+#bcbcc8 1111 / 96
+#c9c2b8 288 / 152
+#f0ece4 32 / 0

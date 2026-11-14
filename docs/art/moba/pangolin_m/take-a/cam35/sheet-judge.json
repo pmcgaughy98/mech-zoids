@@ -1,0 +1,87 @@
+{
+ "folder": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\pangolin_m\\take-a\\cam35\\slices",
+ "fails": {
+  "e": [
+   "height: 42 px, the set's median 60"
+  ],
+  "ne": [],
+  "n": [
+   "height: 69 px, the set's median 60"
+  ],
+  "nw": [],
+  "w": [
+   "height: 42 px, the set's median 60"
+  ],
+  "sw": [],
+  "s": [
+   "height: 70 px, the set's median 60"
+  ],
+  "se": []
+ },
+ "notes": {
+  "e": {
+   "h": 42,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 13
+  },
+  "ne": {
+   "h": 60,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 12
+  },
+  "n": {
+   "h": 69,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 11
+  },
+  "nw": {
+   "h": 60,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 12
+  },
+  "w": {
+   "h": 42,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 13
+  },
+  "sw": {
+   "h": 61,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 13
+  },
+  "s": {
+   "h": 70,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 13
+  },
+  "se": {
+   "h": 61,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 13
+  },
+  "mirror e/w": 0.983,
+  "mirror ne/nw": 0.926,
+  "mirror se/sw": 0.964,
+  "same n/s": 0.218,
+  "even n/s": [
+   0.99,
+   0.917
+  ]
+ },
+ "fix": [],
+ "mirror_from": null,
+ "redo": [
+  "e",
+  "n",
+  "w",
+  "s"
+ ]
+}

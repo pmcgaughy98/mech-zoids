@@ -1,0 +1,105 @@
+{
+  "id": "hornet",
+  "name": "Hornet",
+  "source_model": {
+    "path": "res://art/model_catalog/sources/hornet_front - Hunyuan 3D v3.1 Pro.glb",
+    "source": "D:\\user\\Downloads\\hornet_front - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "1abdd53ffe957aa022deb629644ca5f0e7c6d357bedc1998565ea627773240c1",
+    "bytes": 52442088
+  },
+  "display_model": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/hornet-rigged-local-repair-v1.glb",
+  "status": "Approved six-leg layout restored from intact source. Original 51-joint skeleton retained; skin transferred and tested. High-detail review (445k triangles); optimisation and authored movement pending.",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/hornet/front.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\hornet_front.png",
+      "sha256": "e210855ec616446c93f032acead3b39bc285367b70120f9b9fca5ce27a058943",
+      "bytes": 252323,
+      "project_matches": [
+        "docs/art/moba/hornet_m/take-b-forward/white_views/hornet_front.png"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/hornet/left.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\hornet_left.png",
+      "sha256": "ea58aace4e85edc1b062be77aeab3d80b86f6dc618655e4a284f08c4facdc9a1",
+      "bytes": 299388,
+      "project_matches": [
+        "docs/art/moba/hornet_m/take-b-forward/white_views/hornet_left.png"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/hornet/back.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\hornet_back.png",
+      "sha256": "770d794f0046f3989dd362688d2b0ba4973ea0d630ad244f07d21b2991c6a1c9",
+      "bytes": 258912,
+      "project_matches": [
+        "docs/art/moba/hornet_m/take-b-forward/white_views/hornet_back.png"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/hornet/right.png",
+      "source": "C:\\Users\\pmcga\\Downloads\\hornet_right.png",
+      "sha256": "9ee2bc82a8334cad6c76cc5da1ed215a4cfb79901ca95a5593ba0dcc9138435a",
+      "bytes": 302150,
+      "project_matches": [
+        "docs/art/moba/hornet_m/take-b-forward/white_views/hornet_right.png"
+      ]
+    }
+  },
+  "artist_workspace": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/hornet-rigged-local-repair-v1.blend",
+  "review_models": [
+    {
+      "label": "INTACT SOURCE ARCHIVE\nExtra limbs unapproved",
+      "path": "res://art/model_catalog/sources/hornet_front - Hunyuan 3D v3.1 Pro.glb",
+      "display_scale": 3.204471100036714
+    },
+    {
+      "label": "APPROVED SIX-LEG CUT\nPre-rig / cracked surface",
+      "path": "res://art/model_catalog/sources/hornet_front - 6 legs touchup.glb",
+      "display_scale": 0.905447484112799
+    },
+    {
+      "label": "DOWNLOADED RIG\nDamaged surface",
+      "path": "res://art/model_catalog/sources/Meshy_AI_hornet_touchup_remeshed_25k_20261111_character.glb",
+      "display_scale": 1.0111033337366337
+    },
+    {
+      "label": "RESTORED SURFACE\nSix legs / original 51-joint rig",
+      "path": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/hornet-rigged-local-repair-v1.glb",
+      "display_scale": 1.0111033337366337
+    }
+  ],
+  "review_views": {
+    "front": {
+      "path": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/review-front.png",
+      "kind": "Intact generated archive (extra anatomy unapproved) / approved six-leg pre-rig touch-up (cracked) / damaged rig / restored surface; matched framing"
+    },
+    "left": {
+      "path": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/review-left.png",
+      "kind": "Intact generated archive (extra anatomy unapproved) / approved six-leg pre-rig touch-up (cracked) / damaged rig / restored surface; matched framing"
+    },
+    "back": {
+      "path": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/review-back.png",
+      "kind": "Intact generated archive (extra anatomy unapproved) / approved six-leg pre-rig touch-up (cracked) / damaged rig / restored surface; matched framing"
+    },
+    "right": {
+      "path": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/review-right.png",
+      "kind": "Intact generated archive (extra anatomy unapproved) / approved six-leg pre-rig touch-up (cracked) / damaged rig / restored surface; matched framing"
+    }
+  },
+  "review_provenance": {
+    "date": "2026-11-14",
+    "report": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/repair-verification.json",
+    "independent_audit": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/independent-export-audit.json",
+    "joint_count": 51,
+    "rigged_input_sha256": "02e61d1695fca6a5cf80591de4f4a1ebffe9a427f50ad556df1c81f76ba4b8a0",
+    "repaired_sha256": "483471b77e49fb6983ce026c6217014f3d3a3853c8b90949ccbe650b90a82762",
+    "intact_pre_remesh_available": true,
+    "accepted_pre_rig_touchup": "res://art/model_catalog/sources/hornet_front - 6 legs touchup.glb",
+    "accepted_pre_rig_touchup_sha256": "84622e39a7a46413ab9676789fcac12a9599da71614f5c12462550d220837bb2",
+    "source_archive_scope": "Original generated archive plus the documented approved six-leg pre-rig touch-up. Exact historical Meshy upload not independently verified. Both damaged inputs remain visible.",
+    "scope": "Restore intact generated surface with the documented approved six-leg/floating-claw cuts. Delete only two verified cut-created remnants. Transfer weights from the actual 51-joint downloaded rig; preserve its full hierarchy/rest/binds. Original and pre-rig sources archived. High-detail review asset; optimisation and authored flight/gait work remain."
+  }
+}

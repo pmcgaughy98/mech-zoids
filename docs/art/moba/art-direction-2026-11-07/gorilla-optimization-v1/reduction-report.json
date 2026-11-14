@@ -1,0 +1,72 @@
+{
+  "source": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\art-direction-2026-11-07\\gorilla-polish-v1\\gorilla-source.glb",
+  "source_stats": [
+    {
+      "object": "node_0",
+      "triangles": 499148,
+      "vertices": 306875,
+      "materials": 1,
+      "bounds_min": [
+        -0.4855090081691742,
+        -0.35848912596702576,
+        -4.8166171495722665e-08
+      ],
+      "bounds_max": [
+        0.48711898922920227,
+        0.38144806027412415,
+        0.7190220952033997
+      ]
+    }
+  ],
+  "method": "Blender collapse decimate; no remesh, no weld, no smooth or topology repair; UV data retained",
+  "variants": [
+    {
+      "requested_triangles": 100000,
+      "actual_stats": [
+        {
+          "object": "node_0",
+          "triangles": 99999,
+          "vertices": 96224,
+          "materials": 1,
+          "bounds_min": [
+            -0.4855544865131378,
+            -0.35855764150619507,
+            -2.413335460005328e-05
+          ],
+          "bounds_max": [
+            0.4871658682823181,
+            0.3814431428909302,
+            0.719098687171936
+          ]
+        }
+      ],
+      "file": "gorilla-100k-4k.glb",
+      "seconds": 8.21,
+      "file_bytes": 38479428
+    },
+    {
+      "requested_triangles": 40000,
+      "actual_stats": [
+        {
+          "object": "node_0",
+          "triangles": 40000,
+          "vertices": 44098,
+          "materials": 1,
+          "bounds_min": [
+            -0.48557049036026,
+            -0.35851943492889404,
+            -7.960762741276994e-05
+          ],
+          "bounds_max": [
+            0.48725202679634094,
+            0.38144707679748535,
+            0.7192591428756714
+          ]
+        }
+      ],
+      "file": "gorilla-40k-4k.glb",
+      "seconds": 7.28,
+      "file_bytes": 35782636
+    }
+  ]
+}

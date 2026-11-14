@@ -1,0 +1,48 @@
+{
+  "asset": "rock_scrap",
+  "raw_sha256": "015b60ee645dd4fad63cec57b5da52c9e62fd5f7a6cfc554cf8896866baa09ec",
+  "runtime_sha256": "addf39b5e39c940870f296916dc2bc076c74c1dbb4f2f7ad084c9acbeaab4a39",
+  "raw_triangles": 6100,
+  "runtime_triangles": 2500,
+  "materials": 1,
+  "images": [
+    {
+      "name": "Image_0",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_1",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_2",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "Image_3",
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "size_godot_xyz_m": [
+    6.0,
+    3.0,
+    6.0
+  ],
+  "turned_deg": 0,
+  "pivot": "bottom centre",
+  "up": "+Y",
+  "collision": "none: the blockout keeps its own bodies and nav mesh",
+  "provider_metadata": "../source/rock_scrap/refine-status.json"
+}

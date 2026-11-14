@@ -1,0 +1,513 @@
+{
+  "raw_size": [
+    1774,
+    887
+  ],
+  "raw_sha256": "d262280448282c9508b4b0cf8d4b95871b836b8dac4c6824c222e62cd32d2e9c",
+  "columns": 5,
+  "rows": [
+    "se",
+    "ne"
+  ],
+  "x_edges": [
+    0,
+    355,
+    710,
+    1064,
+    1419,
+    1774
+  ],
+  "y_edges": [
+    0,
+    419,
+    887
+  ],
+  "row_scale": {
+    "se": 0.25117540649557085,
+    "ne": 0.23458782266111022
+  },
+  "cells": [
+    {
+      "view": "se",
+      "frame": 0,
+      "source_box": [
+        0,
+        0,
+        355,
+        419
+      ],
+      "source_opaque_box": [
+        22,
+        71,
+        344,
+        357
+      ],
+      "scale": 0.25117540649557085,
+      "placement": [
+        55,
+        89
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        54,
+        91,
+        137,
+        161
+      ],
+      "final_path": "frames/se_f0.png",
+      "exact_endpoint": true,
+      "extraction_placement": [
+        55,
+        89
+      ],
+      "final_placement": [
+        54,
+        91
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.25117540649557085,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "se",
+      "frame": 1,
+      "source_box": [
+        355,
+        0,
+        710,
+        419
+      ],
+      "source_opaque_box": [
+        20,
+        47,
+        341,
+        357
+      ],
+      "scale": 0.25117540649557085,
+      "placement": [
+        55,
+        83
+      ],
+      "duration_ms": 120,
+      "touches_cut": false,
+      "final_opaque_box": [
+        54,
+        83,
+        136,
+        161
+      ],
+      "final_path": "frames/se_f1.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        55,
+        83
+      ],
+      "final_placement": [
+        54,
+        83
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.25117540649557085,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "se",
+      "frame": 2,
+      "source_box": [
+        710,
+        0,
+        1064,
+        419
+      ],
+      "source_opaque_box": [
+        12,
+        96,
+        346,
+        357
+      ],
+      "scale": 0.25117540649557085,
+      "placement": [
+        54,
+        95
+      ],
+      "duration_ms": 80,
+      "touches_cut": false,
+      "final_opaque_box": [
+        54,
+        95,
+        138,
+        161
+      ],
+      "final_path": "frames/se_f2.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        54,
+        95
+      ],
+      "final_placement": [
+        54,
+        95
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.25117540649557085,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "se",
+      "frame": 3,
+      "source_box": [
+        1064,
+        0,
+        1419,
+        419
+      ],
+      "source_opaque_box": [
+        6,
+        57,
+        325,
+        357
+      ],
+      "scale": 0.25117540649557085,
+      "placement": [
+        56,
+        86
+      ],
+      "duration_ms": 140,
+      "touches_cut": false,
+      "final_opaque_box": [
+        54,
+        86,
+        136,
+        161
+      ],
+      "final_path": "frames/se_f3.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        56,
+        86
+      ],
+      "final_placement": [
+        54,
+        86
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.25117540649557085,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "se",
+      "frame": 4,
+      "source_box": [
+        1419,
+        0,
+        1774,
+        419
+      ],
+      "source_opaque_box": [
+        6,
+        72,
+        329,
+        357
+      ],
+      "scale": 0.25117540649557085,
+      "placement": [
+        55,
+        89
+      ],
+      "duration_ms": 160,
+      "touches_cut": false,
+      "final_opaque_box": [
+        54,
+        91,
+        137,
+        161
+      ],
+      "final_path": "frames/se_f4.png",
+      "exact_endpoint": true,
+      "extraction_placement": [
+        55,
+        89
+      ],
+      "final_placement": [
+        54,
+        91
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.25117540649557085,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "ne",
+      "frame": 0,
+      "source_box": [
+        0,
+        419,
+        355,
+        887
+      ],
+      "source_opaque_box": [
+        22,
+        74,
+        340,
+        386
+      ],
+      "scale": 0.23458782266111022,
+      "placement": [
+        58,
+        88
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        57,
+        91,
+        135,
+        161
+      ],
+      "final_path": "frames/ne_f0.png",
+      "exact_endpoint": true,
+      "extraction_placement": [
+        58,
+        88
+      ],
+      "final_placement": [
+        57,
+        91
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.23458782266111022,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "ne",
+      "frame": 1,
+      "source_box": [
+        355,
+        419,
+        710,
+        887
+      ],
+      "source_opaque_box": [
+        17,
+        63,
+        329,
+        386
+      ],
+      "scale": 0.23458782266111022,
+      "placement": [
+        60,
+        85
+      ],
+      "duration_ms": 120,
+      "touches_cut": false,
+      "final_opaque_box": [
+        57,
+        85,
+        133,
+        161
+      ],
+      "final_path": "frames/ne_f1.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        60,
+        85
+      ],
+      "final_placement": [
+        57,
+        85
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.23458782266111022,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "ne",
+      "frame": 2,
+      "source_box": [
+        710,
+        419,
+        1064,
+        887
+      ],
+      "source_opaque_box": [
+        8,
+        89,
+        342,
+        386
+      ],
+      "scale": 0.23458782266111022,
+      "placement": [
+        57,
+        91
+      ],
+      "duration_ms": 80,
+      "touches_cut": false,
+      "final_opaque_box": [
+        57,
+        91,
+        135,
+        161
+      ],
+      "final_path": "frames/ne_f2.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        57,
+        91
+      ],
+      "final_placement": [
+        57,
+        91
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.23458782266111022,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "ne",
+      "frame": 3,
+      "source_box": [
+        1064,
+        419,
+        1419,
+        887
+      ],
+      "source_opaque_box": [
+        6,
+        65,
+        312,
+        386
+      ],
+      "scale": 0.23458782266111022,
+      "placement": [
+        60,
+        86
+      ],
+      "duration_ms": 140,
+      "touches_cut": false,
+      "final_opaque_box": [
+        57,
+        86,
+        132,
+        161
+      ],
+      "final_path": "frames/ne_f3.png",
+      "exact_endpoint": false,
+      "extraction_placement": [
+        60,
+        86
+      ],
+      "final_placement": [
+        57,
+        86
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.23458782266111022,
+      "whole_x_correction": 1
+    },
+    {
+      "view": "ne",
+      "frame": 4,
+      "source_box": [
+        1419,
+        419,
+        1774,
+        887
+      ],
+      "source_opaque_box": [
+        7,
+        74,
+        325,
+        386
+      ],
+      "scale": 0.23458782266111022,
+      "placement": [
+        58,
+        88
+      ],
+      "duration_ms": 160,
+      "touches_cut": false,
+      "final_opaque_box": [
+        57,
+        91,
+        135,
+        161
+      ],
+      "final_path": "frames/ne_f4.png",
+      "exact_endpoint": true,
+      "extraction_placement": [
+        58,
+        88
+      ],
+      "final_placement": [
+        57,
+        91
+      ],
+      "final_bottom_row": 160,
+      "native_finishing": [
+        "polish.py",
+        "details.py"
+      ],
+      "effective_whole_scale": 0.23458782266111022,
+      "whole_x_correction": 1
+    }
+  ],
+  "final_canvas": [
+    192,
+    192
+  ],
+  "duration_ms": [
+    100,
+    120,
+    80,
+    140,
+    160
+  ],
+  "loop": false,
+  "finishing_notes": {
+    "palette": "shared exact 12 colours",
+    "alpha": "binary",
+    "no_reference_part_compositing": true,
+    "exact_endpoints": "copied byte for byte from fixed",
+    "pose_corrections": "whole-cell nearest sampling and native material cleanup",
+    "walk_support_gate": "FAILED: diagonal phases, fixed contacts and 3-5px lift not fully solved",
+    "strict_per_part_2px_gate": "NOT CERTIFIED",
+    "raw_edge_contact": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+ "machine": "lobster_l take-g",
+ "stills": "D:/dev/new-mech-rpg/docs/art/moba/lobster_l/take-g/views_cam35 (APPROVED.txt: Preston 2026-11-06, 'Accept them')",
+ "canvas": 192,
+ "offset": [0, 0],
+ "note": "[x0, x1, sole row] per walking leg; 1 = front, 3 = rear. R and L are the lobster's own; its right side is the near side in se, e and ne. Labelled 2026-11-06 by the walk lane from the soles list and the red two-toed feet. Only clearly visible feet are labelled: e R1-R3; se R1-R3 (R3 partly hidden behind R2); ne R1-R3; s R1 and L1 (the front legs beside the claws; R2, R3, L2, L3 stack behind them); n L3 and R3 (the rear legs beside the tail; the middle and front legs stack behind). The far legs in se, e and ne sit behind the body. Not feet: the claws (they rest on the ground in front: e x 142-152 row 158, se x 95-119 row 160 and x 124-142 row 153, s x 60-125 rows 150-160) and the tail (n x 73-124 row 160, ne lower left).",
+ "views": {
+  "s":  {"R1": [54, 65, 144], "L1": [125, 134, 144]},
+  "se": {"R3": [52, 60, 122], "R2": [58, 71, 141], "R1": [76, 86, 153]},
+  "e":  {"R3": [73, 84, 158], "R2": [94, 106, 160], "R1": [114, 128, 158]},
+  "ne": {"R3": [108, 122, 144], "R2": [124, 137, 134], "R1": [137, 145, 122]},
+  "n":  {"L3": [58, 65, 135], "R3": [125, 133, 135]}
+ }
+}

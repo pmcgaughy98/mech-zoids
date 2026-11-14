@@ -1,0 +1,96 @@
+You are making pixel-art walk frames for a game. Write only inside D:\dev\new-mech-rpg\docs\art\moba\walk\lobster_l\run1.
+Read anything under D:\dev\new-mech-rpg\docs\art\moba. Do not touch any other folder, assets, art or tools, and do not
+commit. Run tag: lobster-walk35-run1.
+
+The machine: the L robot lobster, a heavy gunmetal and red machine with a long low body, two big red claws resting on
+the ground in front, a segmented gunmetal tail lying flat behind, and three short walking legs a side (a grey ball joint
+at the body, a grey upper segment with a red band, a grey lower segment, a red two-toed foot). Its approved standing
+stills at 35 degrees are in run1\stills (s, se, e, ne, n; 192x192, lowest row 160, 14 colours, raw with no outline;
+copied from D:\dev\new-mech-rpg\docs\art\moba\lobster_l\take-g\views_cam35, whose APPROVED.txt says how they were
+made). Preston, the game's owner, approved these stills; above the legs the walk must match them exactly. Never
+redesign: no new parts, no longer or thinner limbs, no extra legs.
+Read first: D:\dev\new-mech-rpg\docs\art\moba\walk\WALK_PLAYBOOK.md (sections 1, 4, 5, 7, 9, 11 and 13; 13 is what the
+last walks taught). Then the walks that worked, and reuse their method and scripts rather than starting again: the
+violet hippo, walk\hippo_l\run1 and run2 (brief.txt, REPORT.txt, build.py, native.py, verify.py, rig.json) and
+hippo_l\final\README.txt; and the fennec's trot, walk\fennec_s\run1 and run2 (brief.txt, REPORT.txt, build.py).
+
+What went wrong before, so do not repeat it: the hippo's body layer was filled where a leg had been in the still,
+including below the belly, so dark body colour hung below the belly with straight edges, and in ne it was drawn across a
+foot as a dark line splitting it; the fennec's far hind leg was drawn over its tail; the fennec's chest plate broke into
+loose specks as a leg moved; a limb sliding back left a transparent slit inside the body.
+
+Keep run1\REPORT.txt current: write it once the first view is drawn and update it after each view, so a report exists
+even if the run is stopped by its token cap.
+
+Job, run 1: an 8-frame walk, 125 ms a frame (8 fps), looping, in these views: e, se, ne. The gait is an alternating
+tripod (Preston: "Tripod, 3 legs at once"). Legs are numbered from the front: 1 front, 2 middle, 3 rear. Tripod A, the
+left front (L1), right middle (R2) and left rear (L3), is on the ground f0-f3 and swings f4-f7; tripod B, R1, L2 and R3,
+swings f0-f3 and is on the ground f4-f7. Lifts 2, 3, 3 and 2 px over the four swing frames. The body, claws and tail
+dip 1 px together on f0 and f4 (the frames a tripod lands); the claws never step, they ride with the body, and their
+tips may sit 1 px below their still row on those two frames. Each foot's offset along the body (side-view px, + =
+forward): on the ground +5, +2, -1, -4; in the air -2.2, -0.4, +1.4, +3.2 (tripod A: f0-f3 on the ground, f4-f7 in the
+air; tripod B the other way round). These are run1\targets.json "paths". Per view the path turns into screen px as
+offset * f * u, with the lift straight up:
+  e: u = (1, 0), f = 1.0; a planted foot moves (-3.00, +0.00) px a frame on the canvas (x, y; y down)
+  se: u = (0.8674, 0.4975), f = 0.8152; a planted foot moves (-2.12, -1.22) px a frame
+  ne: u = (0.8674, -0.4975), f = 0.8152; a planted foot moves (-2.12, +1.22) px a frame
+Round each frame's position so a planted foot's total travel stays within 0.5 px of the target. targets.json "views"
+gives the sole centre of every labelled foot in each still for every frame; run1\guide_<view>.png shows them (the still
+faded, then a bar per foot per frame, filled when planted and outlined when lifted, with a tick for the lift). R and L
+are the lobster's own right and left; its right side is the near side in e, se and ne. The labels are in
+D:\dev\new-mech-rpg\docs\art\moba\walk\lobster_l\feet.json: check them and say if one is wrong. Only the near legs are
+labelled in these views (se R3 is partly behind R2); the far legs sit behind the body, so draw a far leg only where the
+new pose shows it. The claws and the tail are not feet.
+
+How the legs move: short, heavy, careful steps. Each leg swings from its ball joint, which stays pinned to the body and
+dips with it. The foot is the still's foot translated whole (never rotated or resampled), flat when down; the lower and
+upper segments are redrawn as leaning bands in the still's own colours and shading bands, stepped 1 px per row or two,
+the red band and the lit edge kept, each leg within 1 px of its still length. On a lifted foot the lower segment rises
+with it. Every joint and every join with the body is redrawn by hand: no seams, no straight cut edges, no gaps. Where a
+leg slides back, draw the body behind it: no slit may show the background inside the body. The legs stay apart from each
+other and from the claws.
+The body stops at its own underside: where a leg in the still came out below the body, the body layer there is
+transparent, not filled. Fill only inside the body's own outline, continuing its bands and seams.
+Draw order, every frame: far legs, then the body and tail, then the near legs (R3, R2, R1), then the claws and claw arms
+exactly as the still layers them over the near front leg (check at 8x where the near claw arm meets R1, and keep that).
+Nothing of a far leg may sit on top of the body, tail, a claw or a near leg. Plates stay whole: where a moving leg
+uncovers part of a plate or segment, draw that part whole with its bands and seams; where a leg covers it, draw the
+leg's edge cleanly over it. No loose specks.
+
+Pass marks (report each):
+- Foot lock: for each foot, its sole centre on its k-th planted frame (k = 0 to 3 in order, wrapping past f7) minus k
+  times the planted step above stays within 2 px in x and y. Measure from the frame pixels, not from your targets.
+  Write a footprint picture per view. Also run these and report their results:
+  python D:\dev\new-mech-rpg\docs\art\moba\walk\tools\walk_tools.py footlock
+    --targets D:\dev\new-mech-rpg\docs\art\moba\walk\lobster_l\run1\targets.json
+    --frames D:\dev\new-mech-rpg\docs\art\moba\walk\lobster_l\run1\walk\frames --views e se ne
+    --still-dir D:\dev\new-mech-rpg\docs\art\moba\walk\lobster_l\run1\stills
+    --out D:\dev\new-mech-rpg\docs\art\moba\walk\lobster_l\run1\footlock.json
+  python D:\dev\new-mech-rpg\docs\art\moba\walk\tools\walk_tools.py seams
+    --targets D:\dev\new-mech-rpg\docs\art\moba\walk\lobster_l\run1\targets.json
+    --frames D:\dev\new-mech-rpg\docs\art\moba\walk\lobster_l\run1\walk\frames --views e se ne
+    --still-dir D:\dev\new-mech-rpg\docs\art\moba\walk\lobster_l\run1\stills --body <the stills' gunmetal body hexes>
+  For a foot hidden in a frame, measure it from your leg layer and say so. Seams must report no slits inside the body
+  (a flag between two legs is a real gap and stays open). If the silhouette footlock merges a sole with a claw or another
+  foot, say so and give your own stamp measure as the deciding one.
+- Each visible foot meets its target within 1 px; lifts exact.
+- Above the legs every frame equals the still after the 1 px dip: report the % of differing pixels per frame.
+- Underside: per view, for each leg's column span in the still, the body layer's lowest opaque row in that span may not
+  sit more than 1 px below the straight line between the body's lowest rows in the columns just outside the span.
+- Whole feet: every foot in every frame is the still's foot translated whole, with nothing drawn across it except where
+  the still itself shows something in front of it (report the foot match per foot per frame).
+- Specks: per frame, count the 8-connected single-colour pieces of 1 or 2 px in rows 100-164; no frame may have more
+  than the still has in that view plus 2. Report the still's count and each frame's.
+- 192x192 transparent frames, the stills' 14 colours only, binary alpha, no holes, no stray pixels, nothing touching
+  the canvas edge. No foot below its still row; report each frame's lowest row.
+- Judge boards at 4x with the game's 1 px dark sel-out added (the packer adds it; use the selout function in
+  D:\dev\new-mech-rpg\docs\art\moba\touchup\touchup_machine.py), with the still beside them, then a 5x zoom of the legs
+  of every frame: look at every joint, foot and claw arm.
+
+Output in run1: walk\frames\<view>_f0.png to <view>_f7.png for e, se and ne (raw, no outline, like the stills),
+walk\layers, source\ (the body layer per view), a preview gif per view (125 ms, loop), footprint pictures, board.png
+(per view: the still, then your 8 frames, with sel-out, at 4x), legs_zoom.png, checks.txt, footlock.json, and
+REPORT.txt (under 30 lines): tokens if known, the foot names you used, the foot-lock spreads, target errors, the seams,
+underside and whole-feet results, upper-body match, speck counts, lowest rows, and by eye: does each view read as this
+heavy lobster walking forward three legs at a time, legs like the still, claws and tail whole and riding with the body,
+nothing hanging below the body?

@@ -1,0 +1,84 @@
+{
+ "folder": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\lobster_l\\take-g\\cam35\\slices",
+ "fails": {
+  "e": [
+   "height: 70 px, the set's median 95"
+  ],
+  "ne": [],
+  "n": [
+   "height: 106 px, the set's median 95"
+  ],
+  "nw": [],
+  "w": [
+   "height: 69 px, the set's median 95"
+  ],
+  "sw": [],
+  "s": [],
+  "se": []
+ },
+ "notes": {
+  "e": {
+   "h": 70,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 14
+  },
+  "ne": {
+   "h": 96,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 12
+  },
+  "n": {
+   "h": 106,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 12
+  },
+  "nw": {
+   "h": 96,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 12
+  },
+  "w": {
+   "h": 69,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 14
+  },
+  "sw": {
+   "h": 95,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 14
+  },
+  "s": {
+   "h": 105,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 14
+  },
+  "se": {
+   "h": 95,
+   "feet": 160,
+   "palette": 1.0,
+   "colours": 13
+  },
+  "mirror e/w": 0.981,
+  "mirror ne/nw": 0.965,
+  "mirror se/sw": 0.987,
+  "same n/s": 0.085,
+  "even n/s": [
+   0.986,
+   0.991
+  ]
+ },
+ "fix": [],
+ "mirror_from": null,
+ "redo": [
+  "e",
+  "n",
+  "w"
+ ]
+}

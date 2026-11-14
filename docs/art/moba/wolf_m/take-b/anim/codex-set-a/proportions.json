@@ -1,0 +1,801 @@
+{
+  "status": "NOT PASSED: complete per-part intrinsic measurements of every articulated drawing have not been established. Do not equate silhouette bounds with limb, ear or tail lengths.",
+  "reference_axes_native_pixels": {
+    "front": {
+      "ear_left_axis": [
+        [
+          91,
+          89
+        ],
+        [
+          92,
+          101
+        ]
+      ],
+      "ear_right_axis": [
+        [
+          103,
+          89
+        ],
+        [
+          102,
+          101
+        ]
+      ],
+      "head_axis": [
+        [
+          96,
+          100
+        ],
+        [
+          96,
+          117
+        ]
+      ],
+      "muzzle_axis": [
+        [
+          96,
+          108
+        ],
+        [
+          96,
+          117
+        ]
+      ],
+      "torso_width": [
+        [
+          80,
+          121
+        ],
+        [
+          112,
+          121
+        ]
+      ],
+      "torso_depth": [
+        [
+          96,
+          117
+        ],
+        [
+          96,
+          133
+        ]
+      ],
+      "foreleg_axis": [
+        [
+          85,
+          126
+        ],
+        [
+          87,
+          138
+        ],
+        [
+          87,
+          157
+        ],
+        [
+          87,
+          160
+        ]
+      ],
+      "shank_cross_section": [
+        [
+          84,
+          145
+        ],
+        [
+          90,
+          145
+        ]
+      ],
+      "tail_axis": null
+    },
+    "side": {
+      "ear_far_axis": [
+        [
+          119,
+          97
+        ],
+        [
+          126,
+          108
+        ]
+      ],
+      "ear_near_axis": [
+        [
+          127,
+          95
+        ],
+        [
+          137,
+          108
+        ]
+      ],
+      "head_axis": [
+        [
+          123,
+          109
+        ],
+        [
+          150,
+          118
+        ]
+      ],
+      "muzzle_axis": [
+        [
+          136,
+          112
+        ],
+        [
+          150,
+          118
+        ]
+      ],
+      "torso_length": [
+        [
+          69,
+          118
+        ],
+        [
+          117,
+          115
+        ]
+      ],
+      "torso_depth": [
+        [
+          99,
+          107
+        ],
+        [
+          99,
+          129
+        ]
+      ],
+      "foreleg_axis": [
+        [
+          115,
+          121
+        ],
+        [
+          112,
+          140
+        ],
+        [
+          115,
+          157
+        ],
+        [
+          118,
+          159
+        ]
+      ],
+      "hindleg_axis": [
+        [
+          80,
+          122
+        ],
+        [
+          69,
+          140
+        ],
+        [
+          68,
+          157
+        ],
+        [
+          71,
+          159
+        ]
+      ],
+      "shank_cross_section": [
+        [
+          105,
+          145
+        ],
+        [
+          111,
+          145
+        ]
+      ],
+      "tail_axis": [
+        [
+          62,
+          125
+        ],
+        [
+          42,
+          154
+        ]
+      ]
+    },
+    "back": {
+      "ear_left_axis": [
+        [
+          89,
+          89
+        ],
+        [
+          89,
+          102
+        ]
+      ],
+      "ear_right_axis": [
+        [
+          101,
+          89
+        ],
+        [
+          102,
+          102
+        ]
+      ],
+      "head_axis": [
+        [
+          95,
+          98
+        ],
+        [
+          95,
+          109
+        ]
+      ],
+      "torso_width": [
+        [
+          78,
+          119
+        ],
+        [
+          112,
+          119
+        ]
+      ],
+      "torso_depth": [
+        [
+          95,
+          109
+        ],
+        [
+          95,
+          137
+        ]
+      ],
+      "hindleg_axis": [
+        [
+          83,
+          128
+        ],
+        [
+          83,
+          140
+        ],
+        [
+          83,
+          155
+        ]
+      ],
+      "shank_cross_section": [
+        [
+          81,
+          145
+        ],
+        [
+          84,
+          145
+        ]
+      ],
+      "tail_axis": [
+        [
+          95,
+          125
+        ],
+        [
+          95,
+          160
+        ]
+      ]
+    }
+  },
+  "reference_inclusive_axis_lengths": {
+    "front": {
+      "ear_left_axis": 13.04,
+      "ear_right_axis": 13.04,
+      "head_axis": 18.0,
+      "muzzle_axis": 10.0,
+      "torso_width": 33.0,
+      "torso_depth": 17.0,
+      "foreleg_axis": 35.17,
+      "shank_cross_section": 7.0,
+      "tail_axis": null
+    },
+    "side": {
+      "ear_far_axis": 14.04,
+      "ear_near_axis": 17.4,
+      "head_axis": 29.46,
+      "muzzle_axis": 16.23,
+      "torso_length": 49.09,
+      "torso_depth": 23.0,
+      "foreleg_axis": 41.1,
+      "hindleg_axis": 42.73,
+      "shank_cross_section": 7.0,
+      "tail_axis": 36.23
+    },
+    "back": {
+      "ear_left_axis": 14.0,
+      "ear_right_axis": 14.04,
+      "head_axis": 12.0,
+      "torso_width": 35.0,
+      "torso_depth": 29.0,
+      "hindleg_axis": 28.0,
+      "shank_cross_section": 4.0,
+      "tail_axis": 36.0
+    }
+  },
+  "whole_frame_measurements": {
+    "walk/front": {
+      "silhouette_width_range": [
+        33,
+        33
+      ],
+      "silhouette_height_range": [
+        72,
+        72
+      ],
+      "per_frame_wh": [
+        [
+          33,
+          72
+        ],
+        [
+          33,
+          72
+        ],
+        [
+          33,
+          72
+        ],
+        [
+          33,
+          72
+        ],
+        [
+          33,
+          72
+        ],
+        [
+          33,
+          72
+        ],
+        [
+          33,
+          72
+        ],
+        [
+          33,
+          72
+        ]
+      ]
+    },
+    "walk/side": {
+      "silhouette_width_range": [
+        118,
+        120
+      ],
+      "silhouette_height_range": [
+        66,
+        66
+      ],
+      "per_frame_wh": [
+        [
+          120,
+          66
+        ],
+        [
+          119,
+          66
+        ],
+        [
+          119,
+          66
+        ],
+        [
+          119,
+          66
+        ],
+        [
+          119,
+          66
+        ],
+        [
+          119,
+          66
+        ],
+        [
+          120,
+          66
+        ],
+        [
+          118,
+          66
+        ]
+      ]
+    },
+    "walk/back": {
+      "silhouette_width_range": [
+        35,
+        36
+      ],
+      "silhouette_height_range": [
+        72,
+        72
+      ],
+      "per_frame_wh": [
+        [
+          36,
+          72
+        ],
+        [
+          36,
+          72
+        ],
+        [
+          36,
+          72
+        ],
+        [
+          36,
+          72
+        ],
+        [
+          35,
+          72
+        ],
+        [
+          35,
+          72
+        ],
+        [
+          35,
+          72
+        ],
+        [
+          35,
+          72
+        ]
+      ]
+    },
+    "sprint/front": {
+      "silhouette_width_range": [
+        33,
+        43
+      ],
+      "silhouette_height_range": [
+        54,
+        64
+      ],
+      "per_frame_wh": [
+        [
+          33,
+          59
+        ],
+        [
+          33,
+          63
+        ],
+        [
+          43,
+          54
+        ],
+        [
+          33,
+          64
+        ],
+        [
+          33,
+          62
+        ],
+        [
+          33,
+          64
+        ]
+      ]
+    },
+    "sprint/side": {
+      "silhouette_width_range": [
+        111,
+        116
+      ],
+      "silhouette_height_range": [
+        50,
+        60
+      ],
+      "per_frame_wh": [
+        [
+          116,
+          60
+        ],
+        [
+          114,
+          58
+        ],
+        [
+          116,
+          50
+        ],
+        [
+          113,
+          59
+        ],
+        [
+          112,
+          59
+        ],
+        [
+          111,
+          59
+        ]
+      ]
+    },
+    "sprint/back": {
+      "silhouette_width_range": [
+        34,
+        47
+      ],
+      "silhouette_height_range": [
+        56,
+        66
+      ],
+      "per_frame_wh": [
+        [
+          35,
+          64
+        ],
+        [
+          35,
+          65
+        ],
+        [
+          47,
+          56
+        ],
+        [
+          35,
+          66
+        ],
+        [
+          34,
+          64
+        ],
+        [
+          34,
+          65
+        ]
+      ]
+    },
+    "lunge/front": {
+      "silhouette_width_range": [
+        33,
+        42
+      ],
+      "silhouette_height_range": [
+        52,
+        72
+      ],
+      "per_frame_wh": [
+        [
+          33,
+          72
+        ],
+        [
+          41,
+          52
+        ],
+        [
+          40,
+          67
+        ],
+        [
+          35,
+          62
+        ],
+        [
+          42,
+          54
+        ],
+        [
+          35,
+          63
+        ],
+        [
+          33,
+          72
+        ]
+      ]
+    },
+    "lunge/side": {
+      "silhouette_width_range": [
+        104,
+        110
+      ],
+      "silhouette_height_range": [
+        52,
+        66
+      ],
+      "per_frame_wh": [
+        [
+          110,
+          66
+        ],
+        [
+          108,
+          52
+        ],
+        [
+          104,
+          66
+        ],
+        [
+          107,
+          66
+        ],
+        [
+          108,
+          56
+        ],
+        [
+          105,
+          63
+        ],
+        [
+          110,
+          66
+        ]
+      ]
+    },
+    "lunge/back": {
+      "silhouette_width_range": [
+        34,
+        41
+      ],
+      "silhouette_height_range": [
+        57,
+        72
+      ],
+      "per_frame_wh": [
+        [
+          35,
+          72
+        ],
+        [
+          40,
+          57
+        ],
+        [
+          37,
+          68
+        ],
+        [
+          34,
+          60
+        ],
+        [
+          41,
+          60
+        ],
+        [
+          34,
+          64
+        ],
+        [
+          35,
+          72
+        ]
+      ]
+    },
+    "bite/front": {
+      "silhouette_width_range": [
+        33,
+        37
+      ],
+      "silhouette_height_range": [
+        68,
+        72
+      ],
+      "per_frame_wh": [
+        [
+          33,
+          72
+        ],
+        [
+          34,
+          72
+        ],
+        [
+          37,
+          68
+        ],
+        [
+          36,
+          71
+        ],
+        [
+          33,
+          72
+        ]
+      ]
+    },
+    "bite/side": {
+      "silhouette_width_range": [
+        102,
+        110
+      ],
+      "silhouette_height_range": [
+        63,
+        73
+      ],
+      "per_frame_wh": [
+        [
+          110,
+          66
+        ],
+        [
+          104,
+          73
+        ],
+        [
+          109,
+          63
+        ],
+        [
+          102,
+          71
+        ],
+        [
+          110,
+          66
+        ]
+      ]
+    },
+    "bite/back": {
+      "silhouette_width_range": [
+        35,
+        36
+      ],
+      "silhouette_height_range": [
+        69,
+        73
+      ],
+      "per_frame_wh": [
+        [
+          35,
+          72
+        ],
+        [
+          35,
+          73
+        ],
+        [
+          35,
+          69
+        ],
+        [
+          36,
+          73
+        ],
+        [
+          35,
+          72
+        ]
+      ]
+    }
+  },
+  "part_plate_count_status": "Generated plate boundaries vary; a full per-frame tail plate-count pass is not certified.",
+  "known_visual_risks": [
+    "Side walk has uneven diagonal timing and some excessive raised-paw clearance.",
+    "Sprint profile ears are repainted flat; streaming tail length and intrinsic per-part dimensions remain uncertified.",
+    "Bite foot extents were anchored but interior hind-limb contours still vary.",
+    "Some action torsos and muzzles differ from the still beyond the requested 2px tolerance; not certified for installation."
+  ],
+  "reference_tail_note": "Front tail occluded. Rear native tail tip is on row160; rear paw soles end on row155."
+}

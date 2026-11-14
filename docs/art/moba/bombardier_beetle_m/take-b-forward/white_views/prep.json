@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "355b5ead5a16f7cf9ed7c6959b902e68adb0a777b37af6f9f9b5a2993971d4a8",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.439446366782007,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "bombardier_beetle_front.png",
+      "source_box": [
+        101,
+        84,
+        587,
+        484
+      ],
+      "source_dimensions": [
+        486,
+        400
+      ],
+      "output_box": [
+        162,
+        360,
+        862,
+        936
+      ]
+    },
+    "left": {
+      "file": "bombardier_beetle_left.png",
+      "source_box": [
+        749,
+        110,
+        1327,
+        480
+      ],
+      "source_dimensions": [
+        578,
+        370
+      ],
+      "output_box": [
+        96,
+        403,
+        928,
+        936
+      ]
+    },
+    "back": {
+      "file": "bombardier_beetle_back.png",
+      "source_box": [
+        100,
+        584,
+        590,
+        1022
+      ],
+      "source_dimensions": [
+        490,
+        438
+      ],
+      "output_box": [
+        159,
+        306,
+        864,
+        936
+      ]
+    },
+    "right": {
+      "file": "bombardier_beetle_right.png",
+      "source_box": [
+        783,
+        630,
+        1350,
+        1002
+      ],
+      "source_dimensions": [
+        567,
+        372
+      ],
+      "output_box": [
+        104,
+        401,
+        920,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.1552511415525114
+}

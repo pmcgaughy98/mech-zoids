@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "f0dd092e77702c10e8dca38a00bfa1bba2f9917336ce8442bdba26f351031f6b",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 0.8404040404040404,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "wolf_front.png",
+      "source_box": [
+        103,
+        28,
+        430,
+        450
+      ],
+      "source_dimensions": [
+        327,
+        422
+      ],
+      "output_box": [
+        374,
+        581,
+        649,
+        936
+      ]
+    },
+    "left": {
+      "file": "wolf_left.png",
+      "source_box": [
+        535,
+        53,
+        1505,
+        452
+      ],
+      "source_dimensions": [
+        970,
+        399
+      ],
+      "output_box": [
+        104,
+        601,
+        919,
+        936
+      ]
+    },
+    "back": {
+      "file": "wolf_back.png",
+      "source_box": [
+        101,
+        516,
+        439,
+        965
+      ],
+      "source_dimensions": [
+        338,
+        449
+      ],
+      "output_box": [
+        370,
+        559,
+        654,
+        936
+      ]
+    },
+    "right": {
+      "file": "wolf_right.png",
+      "source_box": [
+        485,
+        539,
+        1475,
+        965
+      ],
+      "source_dimensions": [
+        990,
+        426
+      ],
+      "output_box": [
+        96,
+        578,
+        928,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.111358574610245
+}

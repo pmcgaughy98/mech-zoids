@@ -1,0 +1,36 @@
+{
+  "generator": "built-in image_gen",
+  "calls": 4,
+  "redos": 0,
+  "tokens_used": null,
+  "reference_order": [
+    "refs/se_6x.png",
+    "refs/ne_6x.png"
+  ],
+  "moves": {
+    "walk": {
+      "prompt": "prompts/walk.txt",
+      "prompt_sha256": "f84df81ba7a61ea278796aeb4906f00719b5926e61703375f2124afeb4c74d99",
+      "sheet": "walk/sheet_raw.png",
+      "raw_sha256": "01a47e589085f6e1c0981c9b7c6cf17eeee2aa35f3f3a5ac1f91d4be2cefaec0"
+    },
+    "sand_kick": {
+      "prompt": "prompts/sand_kick.txt",
+      "prompt_sha256": "bdc4a147fe9449b22a2d7e66d81efb1eb74af1d4576247d2b29c66cbae521ff4",
+      "sheet": "sand_kick/sheet_raw.png",
+      "raw_sha256": "ab347c3fb2a2682f328f94c61d3349372328e5ea0a5ca5c3bc2397346e24cf1b"
+    },
+    "ear_burst": {
+      "prompt": "prompts/ear_burst.txt",
+      "prompt_sha256": "03b3d1db29e352022d1ef03dffd6b7ec2033fce5a0f933d196dae956af9c6e8f",
+      "sheet": "ear_burst/sheet_raw.png",
+      "raw_sha256": "341a55a25f54a4ad14cbf9be751504d2211b737ce82008c78b329475ebeb2eff"
+    },
+    "sonic_boom": {
+      "prompt": "prompts/sonic_boom.txt",
+      "prompt_sha256": "af3c783e502995ab5ca10c2f8ceb775404645819115854ccaaca1d266b79728b",
+      "sheet": "sonic_boom/sheet_raw.png",
+      "raw_sha256": "5c13e935aac0d1a3348ce78731522370f94881bdc7f332837d2a1d8d495d2aee"
+    }
+  }
+}

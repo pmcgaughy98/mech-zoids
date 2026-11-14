@@ -1,0 +1,58 @@
+{
+  "stampede": {
+    "size": [
+      2172,
+      724
+    ],
+    "sha256": "7574668c52d383d05f1d67b98a7b24f3468ecc8e06f54594d0a9219022aef647",
+    "prompt": "prompts/stampede.txt",
+    "prompt_sha256": "fc66d54a4008aaf6f4f4e62c525599a71d8fa2fb86c58c23f269b2489eb3dbf7",
+    "references": [
+      "refs/se_6x.png",
+      "refs/ne_6x.png"
+    ],
+    "generations": 1
+  },
+  "horn-toss": {
+    "size": [
+      2172,
+      724
+    ],
+    "sha256": "5e7ebe830b7b45aa2f5099cbe2190d99254a5e23e5746c4fc5738ad1850b9946",
+    "prompt": "prompts/horn-toss.txt",
+    "prompt_sha256": "5c8d776397497f3005998e10552dca7cb35dcc6a9f2f2a4334d7edb3e7ba5dd5",
+    "references": [
+      "refs/se_6x.png",
+      "refs/ne_6x.png"
+    ],
+    "generations": 1
+  },
+  "ground-pound": {
+    "size": [
+      2172,
+      724
+    ],
+    "sha256": "2aeadf5e6b78e73d294daeb8760cf2a53f7558ec526a3ebb7f358552d7333aa0",
+    "prompt": "prompts/ground-pound.txt",
+    "prompt_sha256": "b88f5a28cba9ea0739881e8def1c0ac708045076d2d3516438843fbafa234bc4",
+    "references": [
+      "refs/se_6x.png",
+      "refs/ne_6x.png"
+    ],
+    "generations": 1
+  },
+  "horn-jab": {
+    "size": [
+      2172,
+      724
+    ],
+    "sha256": "3c67a7db72f42e66992b19a845fbf3f59f1c47eab5fefb8841467663d698e06a",
+    "prompt": "prompts/horn-jab.txt",
+    "prompt_sha256": "110aaa8e8a3587a68a9f7b38d57d13ec9f4154d97de976427ef64ab8aa63c05e",
+    "references": [
+      "refs/se_6x.png",
+      "refs/ne_6x.png"
+    ],
+    "generations": 1
+  }
+}

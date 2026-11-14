@@ -1,0 +1,26 @@
+extends "res://tools/debug/gorilla_targeting_2026_11_10/review.gd"
+func run() -> void:
+	shot("PAINTED REACTOR SEAL / ALLY HOVER");aim(second.global_position);targeter.arm("1");await wait(1.8)
+	shot("SHIELD RELEASE / UPRIGHT SEAL + GROUND BLOOM");targeter.confirm();await wait(1.5)
+	check("painted shield burst driven by actual release",kit.painted_fx.release_count==1)
+	reset();await wait(.2);aim(Vector3(4,0,1));targeter.arm("1")
+	shot("SELF SHIELD / SAME ART FAMILY");await wait(.8);targeter.confirm();await wait(1.3)
+	check("self cast reuses release art",kit.painted_fx.release_count==2)
+	reset();await wait(.2);actor.position=Vector3.ZERO;actor.facing=Vector3.FORWARD;actor.body.snap_facing(actor.facing)
+	enemy.position=Vector3(0,0,-4);aim(enemy.global_position);targeter.arm("3")
+	shot("DRIVE SLAM / FRACTURE STAMP");await wait(1);targeter.confirm();await wait(1.9)
+	check("ground-slam contact reaches painted impact hook",kit.grab.impacted)
+	reset();await wait(.2);actor.position=Vector3.ZERO;enemy.position=Vector3(1.3,0,-3)
+	aim(enemy.position);targeter.arm("2");shot("FAULT LINE / PAINTED RUPTURE + SLOW PATCH")
+	await wait(1);targeter.confirm();await wait(1.4)
+	check("fault line launches painted rupture",kit.fault.release_count>0)
+	reset();await wait(.2);actor.position=Vector3.ZERO;enemy.position=Vector3(0,0,-4)
+	targeter.arm("4");shot("CONTAINMENT RITUAL / SEGMENTED SEAL")
+	await wait(1.5);shot("THREE BEATS / PERIMETER LOCKS");targeter.confirm();await wait(2.8)
+	check("ultimate builds all three painted beats",kit.painted_fx.ult_beats==3)
+	check("painted transients expire",kit.painted_fx.live.is_empty())
+	var file:=FileAccess.open(OUT+"painted-art-checks.json",FileAccess.WRITE);file.store_string(JSON.stringify(tests,"  "))
+	print("PAINTED_ART_REVIEW_COMPLETE ",tests.size())
+	var code:=0 if tests.all(func(t):return t.passed) else 1
+	get_child(0).queue_free();await get_tree().process_frame;await get_tree().process_frame
+	MechModel3D.clear_templates();get_tree().quit(code)

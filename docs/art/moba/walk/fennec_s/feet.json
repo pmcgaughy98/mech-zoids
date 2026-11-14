@@ -1,0 +1,105 @@
+{
+ "_note": "Fennec sole labels on the 192 canvas (standing 35 views_stand35 at +16,+20, feet row 140 -> 160). From walk_tools.py soles plus a 6x look, 2026-11-05. F = front feet, H = hind feet; R/L are the fennec's own right and left (its right side is near in se, e, ne; on screen left in s, on screen right in n). Partly hidden feet: s RH, LH; se LH; n LF, RF. Hidden: e LH, LF (peek at x 90-94 and 119-121, row 153); ne LF. s widened 2026-11-05 (Preston: front legs a bit wider): every s foot moved 2 px outward, see widen_s/.",
+ "canvas": 192,
+ "offset": [
+  16,
+  20
+ ],
+ "views": {
+  "s": {
+   "RF": [
+    82,
+    92,
+    160
+   ],
+   "LF": [
+    99,
+    109,
+    160
+   ],
+   "RH": [
+    78,
+    82,
+    149
+   ],
+   "LH": [
+    109,
+    113,
+    149
+   ]
+  },
+  "se": {
+   "RF": [
+    98,
+    108,
+    160
+   ],
+   "LF": [
+    109,
+    118,
+    156
+   ],
+   "RH": [
+    80,
+    88,
+    153
+   ],
+   "LH": [
+    92,
+    96,
+    148
+   ]
+  },
+  "e": {
+   "RH": [
+    81,
+    92,
+    160
+   ],
+   "RF": [
+    107,
+    118,
+    159
+   ]
+  },
+  "ne": {
+   "LH": [
+    78,
+    86,
+    155
+   ],
+   "RH": [
+    90,
+    99,
+    160
+   ],
+   "RF": [
+    105,
+    114,
+    148
+   ]
+  },
+  "n": {
+   "LF": [
+    80,
+    83,
+    140
+   ],
+   "LH": [
+    83,
+    92,
+    160
+   ],
+   "RH": [
+    99,
+    108,
+    160
+   ],
+   "RF": [
+    108,
+    111,
+    140
+   ]
+  }
+ }
+}

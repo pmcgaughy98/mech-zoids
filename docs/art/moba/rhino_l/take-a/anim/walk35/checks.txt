@@ -1,0 +1,69 @@
+RHINO L WALK35 RUN2 / saved frame pixel audit
+GAIT f0: approved four-beat lifted=['RH']; one swing feet; hidden pair remains occluded in s/n.
+GAIT f1: approved four-beat lifted=['LF', 'RH']; two swing feet; hidden pair remains occluded in s/n.
+GAIT f2: approved four-beat lifted=['LF']; one swing feet; hidden pair remains occluded in s/n.
+GAIT f3: approved four-beat lifted=['LF', 'LH']; two swing feet; hidden pair remains occluded in s/n.
+GAIT f4: approved four-beat lifted=['LH']; one swing feet; hidden pair remains occluded in s/n.
+GAIT f5: approved four-beat lifted=['LH', 'RF']; two swing feet; hidden pair remains occluded in s/n.
+GAIT f6: approved four-beat lifted=['RF']; one swing feet; hidden pair remains occluded in s/n.
+GAIT f7: approved four-beat lifted=['RF', 'RH']; two swing feet; hidden pair remains occluded in s/n.
+PROTECTED: all approved e/se/ne frame hashes, all five stills, targets.json unchanged.
+STRUCT s f0 192x192 colors=11 palette=True binary_alpha=True components=1 holes=0 edge=False lowest=163 pinned_diff=0/3738 (0.000000%)
+STRUCT s f1 192x192 colors=11 palette=True binary_alpha=True components=1 holes=0 edge=False lowest=162 pinned_diff=0/3738 (0.000000%)
+STRUCT s f2 192x192 colors=11 palette=True binary_alpha=True components=1 holes=0 edge=False lowest=160 pinned_diff=0/3738 (0.000000%)
+STRUCT s f3 192x192 colors=11 palette=True binary_alpha=True components=1 holes=0 edge=False lowest=160 pinned_diff=0/3738 (0.000000%)
+STRUCT s f4 192x192 colors=11 palette=True binary_alpha=True components=1 holes=0 edge=False lowest=163 pinned_diff=0/3738 (0.000000%)
+STRUCT s f5 192x192 colors=11 palette=True binary_alpha=True components=1 holes=0 edge=False lowest=162 pinned_diff=0/3738 (0.000000%)
+STRUCT s f6 192x192 colors=11 palette=True binary_alpha=True components=1 holes=0 edge=False lowest=160 pinned_diff=0/3738 (0.000000%)
+STRUCT s f7 192x192 colors=11 palette=True binary_alpha=True components=1 holes=0 edge=False lowest=160 pinned_diff=0/3738 (0.000000%)
+FOOT s RF f0: final_pixel_sole=[74.5, 163.0] ideal=[74.5, 163.44] error_xy=[0.0, 0.4399999999999977] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT s RF f1: final_pixel_sole=[74.5, 162.0] ideal=[74.5, 161.72] error_xy=[0.0, 0.28000000000000114] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT s RF f2: final_pixel_sole=[74.5, 160.0] ideal=[74.5, 160.0] error_xy=[0.0, 0.0] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT s RF f3: final_pixel_sole=[74.5, 158.0] ideal=[74.5, 158.28] error_xy=[0.0, 0.28000000000000114] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT s RF f4: final_pixel_sole=[74.5, 157.0] ideal=[74.5, 156.56] error_xy=[0.0, 0.4399999999999977] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT s RF f5: final_pixel_sole=[74.5, 156.0] ideal=[74.5, 156.28] error_xy=[0.0, 0.28000000000000114] lift=2.0/2 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT s RF f6: final_pixel_sole=[74.5, 157.0] ideal=[74.5, 157.0] error_xy=[0.0, 0.0] lift=3.0/3 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT s RF f7: final_pixel_sole=[74.5, 160.0] ideal=[74.5, 159.72] error_xy=[0.0, 0.28000000000000114] lift=2.0/2 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+LOCK s RF: order=[0, 1, 2, 3, 4] final_pixels_minus_k_step=[[74.5, 163.0], [74.5, 163.721], [74.5, 163.442], [74.5, 163.163], [74.5, 163.88400000000001]] spread_xy=[0.0, 0.8840000000000146] PASS<=2px
+FOOT s LF f0: final_pixel_sole=[116.0, 157.0] ideal=[116.0, 156.56] error_xy=[0.0, 0.4399999999999977] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT s LF f1: final_pixel_sole=[116.0, 156.0] ideal=[116.0, 156.28] error_xy=[0.0, 0.28000000000000114] lift=2.0/2 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT s LF f2: final_pixel_sole=[116.0, 157.0] ideal=[116.0, 157.0] error_xy=[0.0, 0.0] lift=3.0/3 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT s LF f3: final_pixel_sole=[116.0, 160.0] ideal=[116.0, 159.72] error_xy=[0.0, 0.28000000000000114] lift=2.0/2 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT s LF f4: final_pixel_sole=[116.0, 163.0] ideal=[116.0, 163.44] error_xy=[0.0, 0.4399999999999977] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT s LF f5: final_pixel_sole=[116.0, 162.0] ideal=[116.0, 161.72] error_xy=[0.0, 0.28000000000000114] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT s LF f6: final_pixel_sole=[116.0, 160.0] ideal=[116.0, 160.0] error_xy=[0.0, 0.0] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT s LF f7: final_pixel_sole=[116.0, 158.0] ideal=[116.0, 158.28] error_xy=[0.0, 0.28000000000000114] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+LOCK s LF: order=[4, 5, 6, 7, 0] final_pixels_minus_k_step=[[116.0, 163.0], [116.0, 163.721], [116.0, 163.442], [116.0, 163.163], [116.0, 163.88400000000001]] spread_xy=[0.0, 0.8840000000000146] PASS<=2px
+TIMING s: GIF [120, 130, 120, 130, 120, 130, 120, 130], loop=0, 1000ms cycle; APNG 8 x125ms exact.
+STRUCT n f0 192x192 colors=10 palette=True binary_alpha=True components=1 holes=0 edge=False lowest=160 pinned_diff=0/3515 (0.000000%)
+STRUCT n f1 192x192 colors=10 palette=True binary_alpha=True components=1 holes=0 edge=False lowest=162 pinned_diff=0/3515 (0.000000%)
+STRUCT n f2 192x192 colors=10 palette=True binary_alpha=True components=1 holes=0 edge=False lowest=163 pinned_diff=0/3515 (0.000000%)
+STRUCT n f3 192x192 colors=10 palette=True binary_alpha=True components=1 holes=0 edge=False lowest=160 pinned_diff=0/3515 (0.000000%)
+STRUCT n f4 192x192 colors=10 palette=True binary_alpha=True components=1 holes=0 edge=False lowest=160 pinned_diff=0/3515 (0.000000%)
+STRUCT n f5 192x192 colors=10 palette=True binary_alpha=True components=1 holes=0 edge=False lowest=162 pinned_diff=0/3515 (0.000000%)
+STRUCT n f6 192x192 colors=10 palette=True binary_alpha=True components=1 holes=0 edge=False lowest=163 pinned_diff=0/3515 (0.000000%)
+STRUCT n f7 192x192 colors=10 palette=True binary_alpha=True components=1 holes=0 edge=False lowest=160 pinned_diff=0/3515 (0.000000%)
+FOOT n LH f0: final_pixel_sole=[75.5, 160.0] ideal=[75.5, 160.0] error_xy=[0.0, 0.0] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT n LH f1: final_pixel_sole=[75.5, 162.0] ideal=[75.5, 161.72] error_xy=[0.0, 0.28000000000000114] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT n LH f2: final_pixel_sole=[75.5, 163.0] ideal=[75.5, 163.44] error_xy=[0.0, 0.4399999999999977] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT n LH f3: final_pixel_sole=[75.5, 160.0] ideal=[75.5, 159.72] error_xy=[0.0, 0.28000000000000114] lift=2.0/2 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT n LH f4: final_pixel_sole=[75.5, 157.0] ideal=[75.5, 157.0] error_xy=[0.0, 0.0] lift=3.0/3 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT n LH f5: final_pixel_sole=[75.5, 156.0] ideal=[75.5, 156.28] error_xy=[0.0, 0.28000000000000114] lift=2.0/2 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT n LH f6: final_pixel_sole=[75.5, 157.0] ideal=[75.5, 156.56] error_xy=[0.0, 0.4399999999999977] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT n LH f7: final_pixel_sole=[75.5, 158.0] ideal=[75.5, 158.28] error_xy=[0.0, 0.28000000000000114] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+LOCK n LH: order=[6, 7, 0, 1, 2] final_pixels_minus_k_step=[[75.5, 157.0], [75.5, 156.279], [75.5, 156.558], [75.5, 156.837], [75.5, 156.11599999999999]] spread_xy=[0.0, 0.8840000000000146] PASS<=2px
+FOOT n RH f0: final_pixel_sole=[116.5, 157.0] ideal=[116.5, 157.0] error_xy=[0.0, 0.0] lift=3.0/3 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT n RH f1: final_pixel_sole=[116.5, 156.0] ideal=[116.5, 156.28] error_xy=[0.0, 0.28000000000000114] lift=2.0/2 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT n RH f2: final_pixel_sole=[116.5, 157.0] ideal=[116.5, 156.56] error_xy=[0.0, 0.4399999999999977] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT n RH f3: final_pixel_sole=[116.5, 158.0] ideal=[116.5, 158.28] error_xy=[0.0, 0.28000000000000114] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT n RH f4: final_pixel_sole=[116.5, 160.0] ideal=[116.5, 160.0] error_xy=[0.0, 0.0] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT n RH f5: final_pixel_sole=[116.5, 162.0] ideal=[116.5, 161.72] error_xy=[0.0, 0.28000000000000114] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT n RH f6: final_pixel_sole=[116.5, 163.0] ideal=[116.5, 163.44] error_xy=[0.0, 0.4399999999999977] lift=0.0/0 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+FOOT n RH f7: final_pixel_sole=[116.5, 160.0] ideal=[116.5, 159.72] error_xy=[0.0, 0.28000000000000114] lift=2.0/2 native_core_diff=0 rigid_disc_to_sole_length_delta=0
+LOCK n RH: order=[2, 3, 4, 5, 6] final_pixels_minus_k_step=[[116.5, 157.0], [116.5, 156.279], [116.5, 156.558], [116.5, 156.837], [116.5, 156.11599999999999]] spread_xy=[0.0, 0.8840000000000146] PASS<=2px
+TIMING n: GIF [120, 130, 120, 130, 120, 130, 120, 130], loop=0, 1000ms cycle; APNG 8 x125ms exact.
+Far feet have no supplied targets in s/n; no invented exposed far-foot contacts are claimed.
+Upper-body percentage denominator: every opaque pinned source texel, including entire head/horn/shell/tail and fixed shoulder plates.
+Native component lengths: original knee/cuff/sole pixels translate rigidly, 0px length/width change; joint recess opens/closes under fixed armour.
+Palette: 11 opaque still RGB colors plus transparency = 12 entries. No new colors.
+No generated images, rotations, scaling, interpolation, new palette colors, commits, or edits outside walk35.

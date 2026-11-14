@@ -1,0 +1,53 @@
+INDEPENDENT CODEX VERIFICATION OF CURRENT DELIVERABLES
+All images read only from this job refs/ and frames/.
+Current final files verified after a concurrent process replaced consistency_pass.py.
+No final images were overwritten by this verification.
+
+file alpha_IoU colours input_bottom output_bottom changed_pixels exterior_identical feet_rows_150plus_identical
+front_f0.png 1.000000 12 165 165 269 yes yes
+front_f1.png 1.000000 12 165 165 262 yes yes
+front_f2.png 1.000000 12 163 163 251 yes yes
+front_f3.png 1.000000 12 162 162 270 yes yes
+front_f4.png 1.000000 12 164 164 276 yes yes
+front_f5.png 1.000000 12 163 163 268 yes yes
+front_f6.png 1.000000 12 162 162 256 yes yes
+front_f7.png 1.000000 12 161 161 274 yes yes
+back_f0.png 1.000000 10 162 162 263 yes yes
+back_f1.png 1.000000 10 162 162 263 yes yes
+back_f2.png 1.000000 10 163 163 264 yes yes
+back_f3.png 1.000000 10 161 161 265 yes yes
+back_f4.png 1.000000 10 162 162 249 yes yes
+back_f5.png 1.000000 10 162 162 261 yes yes
+back_f6.png 1.000000 10 163 163 266 yes yes
+back_f7.png 1.000000 10 163 163 261 yes yes
+ne_f0.png 1.000000 10 160 160 219 yes yes
+ne_f1.png 1.000000 10 160 160 221 yes yes
+ne_f2.png 1.000000 10 160 160 222 yes yes
+ne_f3.png 1.000000 10 160 160 223 yes yes
+ne_f4.png 1.000000 10 161 161 224 yes yes
+ne_f5.png 1.000000 10 162 162 210 yes yes
+ne_f6.png 1.000000 10 163 163 199 yes yes
+ne_f7.png 1.000000 10 163 163 209 yes yes
+
+Input registration discrepancy: supplied references do not all end at y=161.
+Their opaque bottoms range y=160..165. Exact source alpha/foot rows were preserved.
+REPORT.txt now explicitly records this supplied-reference discrepancy and gives the measured per-frame values.
+
+Palette audit: hex total_opaque exterior_pixels
+#141218 16061 6849
+#211E27 5715 0
+#3D3A44 9091 0
+#7A4A06 9250 0
+#58555E 8196 0
+#FF3A2A 48 0
+#D18A0A 16077 0
+#9D9BA2 6005 0
+#FFCF1F 19669 0
+#D6D6DC 1346 0
+#FFE6D8 16 0
+#FFF4A8 10070 0
+
+GIF: 8 frames; durations [120, 130, 120, 130, 120, 130, 120, 130]; total 1000 ms = 8 fps average.
+Board dimensions: (4718, 4060); 192px source cells at 3x with labels.
+Visual QA: front horn root/socket contrast and back plate overlaps are visibly strengthened.
+Remaining limitation: existing simpler front/back geometry and input non-rigid variations remain.

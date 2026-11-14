@@ -1,0 +1,930 @@
+[
+  {
+    "move": "walk",
+    "view": "side",
+    "frame": 0,
+    "legs": {
+      "far_hind": {
+        "root": [
+          81,
+          123
+        ],
+        "knee": [
+          70,
+          141
+        ],
+        "ankle": [
+          78,
+          156
+        ],
+        "links_nominal": [
+          21,
+          17
+        ],
+        "continuous_link_sum": 38,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "far_fore": {
+        "root": [
+          119,
+          123
+        ],
+        "knee": [
+          109,
+          139
+        ],
+        "ankle": [
+          118,
+          153
+        ],
+        "links_nominal": [
+          19,
+          17
+        ],
+        "continuous_link_sum": 36,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "near_hind": {
+        "root": [
+          79,
+          123
+        ],
+        "knee": [
+          63,
+          136
+        ],
+        "ankle": [
+          66,
+          153
+        ],
+        "links_nominal": [
+          21,
+          17
+        ],
+        "continuous_link_sum": 38,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "near_fore": {
+        "root": [
+          114,
+          122
+        ],
+        "knee": [
+          108,
+          140
+        ],
+        "ankle": [
+          114,
+          156
+        ],
+        "links_nominal": [
+          19,
+          17
+        ],
+        "continuous_link_sum": 36,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      }
+    }
+  },
+  {
+    "move": "walk",
+    "view": "side",
+    "frame": 1,
+    "legs": {
+      "far_hind": {
+        "root": [
+          81,
+          123
+        ],
+        "knee": [
+          70,
+          141
+        ],
+        "ankle": [
+          78,
+          156
+        ],
+        "links_nominal": [
+          21,
+          17
+        ],
+        "continuous_link_sum": 38,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "far_fore": {
+        "root": [
+          119,
+          123
+        ],
+        "knee": [
+          110,
+          139
+        ],
+        "ankle": [
+          121,
+          152
+        ],
+        "links_nominal": [
+          19,
+          17
+        ],
+        "continuous_link_sum": 36,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "near_hind": {
+        "root": [
+          79,
+          123
+        ],
+        "knee": [
+          63,
+          136
+        ],
+        "ankle": [
+          69,
+          152
+        ],
+        "links_nominal": [
+          21,
+          17
+        ],
+        "continuous_link_sum": 38,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "near_fore": {
+        "root": [
+          114,
+          122
+        ],
+        "knee": [
+          108,
+          140
+        ],
+        "ankle": [
+          114,
+          156
+        ],
+        "links_nominal": [
+          19,
+          17
+        ],
+        "continuous_link_sum": 36,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      }
+    }
+  },
+  {
+    "move": "walk",
+    "view": "side",
+    "frame": 2,
+    "legs": {
+      "far_hind": {
+        "root": [
+          81,
+          123
+        ],
+        "knee": [
+          70,
+          141
+        ],
+        "ankle": [
+          78,
+          156
+        ],
+        "links_nominal": [
+          21,
+          17
+        ],
+        "continuous_link_sum": 38,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "far_fore": {
+        "root": [
+          119,
+          123
+        ],
+        "knee": [
+          111,
+          140
+        ],
+        "ankle": [
+          124,
+          151
+        ],
+        "links_nominal": [
+          19,
+          17
+        ],
+        "continuous_link_sum": 36,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "near_hind": {
+        "root": [
+          79,
+          123
+        ],
+        "knee": [
+          63,
+          137
+        ],
+        "ankle": [
+          72,
+          151
+        ],
+        "links_nominal": [
+          21,
+          17
+        ],
+        "continuous_link_sum": 38,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "near_fore": {
+        "root": [
+          114,
+          122
+        ],
+        "knee": [
+          108,
+          140
+        ],
+        "ankle": [
+          114,
+          156
+        ],
+        "links_nominal": [
+          19,
+          17
+        ],
+        "continuous_link_sum": 36,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      }
+    }
+  },
+  {
+    "move": "walk",
+    "view": "side",
+    "frame": 3,
+    "legs": {
+      "far_hind": {
+        "root": [
+          81,
+          123
+        ],
+        "knee": [
+          70,
+          141
+        ],
+        "ankle": [
+          78,
+          156
+        ],
+        "links_nominal": [
+          21,
+          17
+        ],
+        "continuous_link_sum": 38,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "far_fore": {
+        "root": [
+          119,
+          123
+        ],
+        "knee": [
+          112,
+          141
+        ],
+        "ankle": [
+          120,
+          156
+        ],
+        "links_nominal": [
+          19,
+          17
+        ],
+        "continuous_link_sum": 36,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "near_hind": {
+        "root": [
+          79,
+          123
+        ],
+        "knee": [
+          66,
+          139
+        ],
+        "ankle": [
+          68,
+          156
+        ],
+        "links_nominal": [
+          21,
+          17
+        ],
+        "continuous_link_sum": 38,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "near_fore": {
+        "root": [
+          114,
+          122
+        ],
+        "knee": [
+          108,
+          140
+        ],
+        "ankle": [
+          114,
+          156
+        ],
+        "links_nominal": [
+          19,
+          17
+        ],
+        "continuous_link_sum": 36,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      }
+    }
+  },
+  {
+    "move": "walk",
+    "view": "side",
+    "frame": 4,
+    "legs": {
+      "far_hind": {
+        "root": [
+          81,
+          123
+        ],
+        "knee": [
+          67,
+          139
+        ],
+        "ankle": [
+          76,
+          153
+        ],
+        "links_nominal": [
+          21,
+          17
+        ],
+        "continuous_link_sum": 38,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "far_fore": {
+        "root": [
+          119,
+          123
+        ],
+        "knee": [
+          112,
+          141
+        ],
+        "ankle": [
+          120,
+          156
+        ],
+        "links_nominal": [
+          19,
+          17
+        ],
+        "continuous_link_sum": 36,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "near_hind": {
+        "root": [
+          79,
+          123
+        ],
+        "knee": [
+          66,
+          139
+        ],
+        "ankle": [
+          68,
+          156
+        ],
+        "links_nominal": [
+          21,
+          17
+        ],
+        "continuous_link_sum": 38,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "near_fore": {
+        "root": [
+          114,
+          122
+        ],
+        "knee": [
+          104,
+          138
+        ],
+        "ankle": [
+          112,
+          153
+        ],
+        "links_nominal": [
+          19,
+          17
+        ],
+        "continuous_link_sum": 36,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      }
+    }
+  },
+  {
+    "move": "walk",
+    "view": "side",
+    "frame": 5,
+    "legs": {
+      "far_hind": {
+        "root": [
+          81,
+          123
+        ],
+        "knee": [
+          68,
+          139
+        ],
+        "ankle": [
+          79,
+          152
+        ],
+        "links_nominal": [
+          21,
+          17
+        ],
+        "continuous_link_sum": 38,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "far_fore": {
+        "root": [
+          119,
+          123
+        ],
+        "knee": [
+          112,
+          141
+        ],
+        "ankle": [
+          120,
+          156
+        ],
+        "links_nominal": [
+          19,
+          17
+        ],
+        "continuous_link_sum": 36,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "near_hind": {
+        "root": [
+          79,
+          123
+        ],
+        "knee": [
+          66,
+          139
+        ],
+        "ankle": [
+          68,
+          156
+        ],
+        "links_nominal": [
+          21,
+          17
+        ],
+        "continuous_link_sum": 38,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "near_fore": {
+        "root": [
+          114,
+          122
+        ],
+        "knee": [
+          105,
+          139
+        ],
+        "ankle": [
+          115,
+          152
+        ],
+        "links_nominal": [
+          19,
+          17
+        ],
+        "continuous_link_sum": 36,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      }
+    }
+  },
+  {
+    "move": "walk",
+    "view": "side",
+    "frame": 6,
+    "legs": {
+      "far_hind": {
+        "root": [
+          81,
+          123
+        ],
+        "knee": [
+          69,
+          140
+        ],
+        "ankle": [
+          82,
+          151
+        ],
+        "links_nominal": [
+          21,
+          17
+        ],
+        "continuous_link_sum": 38,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "far_fore": {
+        "root": [
+          119,
+          123
+        ],
+        "knee": [
+          112,
+          141
+        ],
+        "ankle": [
+          120,
+          156
+        ],
+        "links_nominal": [
+          19,
+          17
+        ],
+        "continuous_link_sum": 36,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "near_hind": {
+        "root": [
+          79,
+          123
+        ],
+        "knee": [
+          66,
+          139
+        ],
+        "ankle": [
+          68,
+          156
+        ],
+        "links_nominal": [
+          21,
+          17
+        ],
+        "continuous_link_sum": 38,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "near_fore": {
+        "root": [
+          114,
+          122
+        ],
+        "knee": [
+          106,
+          139
+        ],
+        "ankle": [
+          118,
+          151
+        ],
+        "links_nominal": [
+          19,
+          17
+        ],
+        "continuous_link_sum": 36,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      }
+    }
+  },
+  {
+    "move": "walk",
+    "view": "side",
+    "frame": 7,
+    "legs": {
+      "far_hind": {
+        "root": [
+          81,
+          123
+        ],
+        "knee": [
+          70,
+          141
+        ],
+        "ankle": [
+          78,
+          156
+        ],
+        "links_nominal": [
+          21,
+          17
+        ],
+        "continuous_link_sum": 38,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "far_fore": {
+        "root": [
+          119,
+          123
+        ],
+        "knee": [
+          112,
+          141
+        ],
+        "ankle": [
+          120,
+          156
+        ],
+        "links_nominal": [
+          19,
+          17
+        ],
+        "continuous_link_sum": 36,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "near_hind": {
+        "root": [
+          79,
+          123
+        ],
+        "knee": [
+          66,
+          139
+        ],
+        "ankle": [
+          68,
+          156
+        ],
+        "links_nominal": [
+          21,
+          17
+        ],
+        "continuous_link_sum": 38,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      },
+      "near_fore": {
+        "root": [
+          114,
+          122
+        ],
+        "knee": [
+          108,
+          140
+        ],
+        "ankle": [
+          114,
+          156
+        ],
+        "links_nominal": [
+          19,
+          17
+        ],
+        "continuous_link_sum": 36,
+        "paw_extension": 4,
+        "shank_material_thickness": 5,
+        "shank_with_outline": 7
+      }
+    }
+  },
+  {
+    "move": "sprint",
+    "view": "side",
+    "frame": 0,
+    "ear_axis_landmarks": [
+      [
+        [
+          115,
+          104
+        ],
+        [
+          128,
+          113
+        ]
+      ],
+      [
+        [
+          120,
+          102
+        ],
+        [
+          135,
+          111
+        ]
+      ]
+    ],
+    "method": "complete removal of upright tips and direct native-pixel folded contour repaint, joined to hood"
+  },
+  {
+    "move": "sprint",
+    "view": "side",
+    "frame": 1,
+    "ear_axis_landmarks": [
+      [
+        [
+          113,
+          105
+        ],
+        [
+          126,
+          114
+        ]
+      ],
+      [
+        [
+          118,
+          103
+        ],
+        [
+          133,
+          112
+        ]
+      ]
+    ],
+    "method": "complete removal of upright tips and direct native-pixel folded contour repaint, joined to hood"
+  },
+  {
+    "move": "sprint",
+    "view": "side",
+    "frame": 2,
+    "ear_axis_landmarks": [
+      [
+        [
+          114,
+          105
+        ],
+        [
+          127,
+          114
+        ]
+      ],
+      [
+        [
+          119,
+          103
+        ],
+        [
+          134,
+          112
+        ]
+      ]
+    ],
+    "method": "complete removal of upright tips and direct native-pixel folded contour repaint, joined to hood"
+  },
+  {
+    "move": "sprint",
+    "view": "side",
+    "frame": 3,
+    "ear_axis_landmarks": [
+      [
+        [
+          114,
+          104
+        ],
+        [
+          127,
+          113
+        ]
+      ],
+      [
+        [
+          119,
+          102
+        ],
+        [
+          134,
+          111
+        ]
+      ]
+    ],
+    "method": "complete removal of upright tips and direct native-pixel folded contour repaint, joined to hood"
+  },
+  {
+    "move": "sprint",
+    "view": "side",
+    "frame": 4,
+    "ear_axis_landmarks": [
+      [
+        [
+          111,
+          104
+        ],
+        [
+          124,
+          113
+        ]
+      ],
+      [
+        [
+          116,
+          102
+        ],
+        [
+          131,
+          111
+        ]
+      ]
+    ],
+    "method": "complete removal of upright tips and direct native-pixel folded contour repaint, joined to hood"
+  },
+  {
+    "move": "sprint",
+    "view": "side",
+    "frame": 5,
+    "ear_axis_landmarks": [
+      [
+        [
+          111,
+          104
+        ],
+        [
+          124,
+          113
+        ]
+      ],
+      [
+        [
+          116,
+          102
+        ],
+        [
+          131,
+          111
+        ]
+      ]
+    ],
+    "method": "complete removal of upright tips and direct native-pixel folded contour repaint, joined to hood"
+  }
+]

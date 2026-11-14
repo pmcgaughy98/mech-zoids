@@ -1,0 +1,60 @@
+You are making pixel-art animation frames for a game. Write only inside
+D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\anim\codex-set-b\. Read anything under D:\dev\new-mech-rpg\docs\art\moba.
+Another Codex job may be writing in docs\art\moba\rhino_l\take-a\anim\codex-set-c or codex-set-d; do not touch them.
+
+Method: you made the gorilla's set A the same way. Read D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\anim\codex-set-a
+(brief.txt, REPORT.txt, prompts\, refs\, finish.py, polish.py, gems.py, seam_fill.py, verify.py, grid.json files) and
+follow the method that worked there: one sheet per animation from your image tool with the approved stills attached,
+slice it, finish every frame against the stills at their native pixel scale, check, and board it. Copy and adapt set A's
+scripts into codex-set-b; do not start over.
+Generate exactly ONE image per animation. Never make a second image or a redo; if one fails, report it and go on.
+
+The creature is the gorilla mech (ape_l). Approved stills, 160x160, feet on row 130, in
+D:\dev\new-mech-rpg\docs\art\moba\ape_l\take-a\views\: s.png (front), e.png (side facing right), n.png (back). Keep the
+design exactly: the mossy green armoured body and head, the grey face plate with green eyes, the big orange forearm
+gauntlets each carrying a large green octagonal hex gem, the grey knuckle fists, the green hex gem on the back, the same
+15 colours, the dark outline and the chunky pixel size. Only the pose changes. Never redesign: no new parts, no gloss,
+no realistic fur, no longer or thinner limbs. No effects of any kind (no dome, no shockwave, no dust, no glow, no
+motion lines); effects are made separately.
+
+Kit context (D:\dev\new-mech-rpg\docs\plan\moba-kits.md, Gorilla section): bound leaps to an ally or a spot and the
+landing knocks enemies back; hex dome is the ultimate that raises a dome of green hex panels over an area.
+
+Set B is three animations. Each is drawn in three rows: front (like s.png), side facing right (like e.png), back (like
+n.png). Each column is one moment seen from the three sides, so the rows match frame for frame.
+1. bound (ability 3): 9 frames. 0 idle (the exact still). 1 crouch: weight drops onto the knuckles and the hind legs
+   bend, body 3-4 px lower. 2 push-off: arms and legs drive the body up, feet and knuckles still touching. 3 rising:
+   the whole gorilla off the ground, arms swinging forward. 4 peak: highest point, arms raised and forward, legs tucked.
+   5 falling: arms reaching down for the ground. 6 landing impact: both fists slam onto the ground in front, body low,
+   hind feet planted. 7 pushing back up toward idle. 8 idle (the exact still).
+   Frames 3, 4 and 5 are in the air: lift the whole gorilla so its lowest pixel sits 12 to 28 px above row 160 (4 the
+   highest), and record each frame's lift. The engine moves the gorilla across the ground and holds frame 4 in flight.
+2. hex_dome (ability 4, the ultimate cast): 8 frames. 0 idle (exact still). 1 rising onto the hind legs. 2 both fists
+   raised overhead together, gauntlet gems facing outward. 3 top hold: the highest pose. 4 swinging both fists down.
+   5 impact: both fists slammed onto the ground together in front, body low and wide. 6 pushing back up. 7 idle (exact
+   still). Feet stay planted on row 160 throughout; the fists come back down onto the ground line, never below it.
+   This must read differently from chest_beat (alternating fists on the chest): here both fists move together, overhead
+   then down onto the ground.
+3. death: 8 frames. 0 idle (exact still). 1 recoil: head and shoulders snap back. 2 stagger: leaning back, one fist
+   lifting off the ground. 3 knees buckle. 4 sinking forward onto its fists. 5 falling forward onto its belly. 6 lying
+   flat on its belly, arms splayed out to the sides, the green eyes gone dark (eye pixels take the face plate's darkest
+   grey). 7 settled one pixel lower, eyes dark. The gems stay as they are. Its body never crosses the canvas edge.
+
+Output for each animation, in anim\codex-set-b\<name>\ :
+- frames\front_f<i>.png, side_f<i>.png, back_f<i>.png on 192x192 transparent canvases. Keep the gorilla at the stills'
+  pixel scale (never resize the design), placed like the still shifted by +16 x and +30 y, so the feet stand on row 160
+  (bound's air frames excepted, as above).
+- Frame 0 of every animation and the last frame of bound and hex_dome must be the exact approved still in each view;
+  report the IoU.
+- Snap every pixel to the stills' colours. Keep a one-texel dark outline like the stills. No anti-aliasing, no stray
+  pixels, nothing touching the canvas edge. No see-through seams or holes inside the silhouette (set A needed
+  seam_fill.py beside the gauntlets; run the same check here and fill any you find).
+- Keep sheet_raw.png, grid.json, checks.txt (per frame: lowest row, colour count, any pixel below row 160, enclosed
+  holes found and filled, frame-0 and last-frame IoU), a preview gif per view, and a review.png board.
+- Preview timings in ms: bound 300, 120, 80, 90, 200, 90, 80, 150, 250. hex_dome 300, 150, 150, 300, 60, 350, 150, 300.
+  death 80, 120, 120, 140, 160, 180, 250, 1000.
+Also write anim\codex-set-b\REPORT.txt for the whole set (under 30 lines): tokens used if known, each sheet's size and
+hash, whether each grid was clean, the checks, and by eye per animation: same gorilla in every row? the move as asked,
+rows matching column for column? front and back straight on? limbs keep their length? Look at your own boards before
+finishing and fix anything that drifts from the stills; the eyes, the hex gems and the gauntlet shapes are where drift
+usually shows. Do not touch anything outside codex-set-b, do not touch assets\ or art\, do not commit.

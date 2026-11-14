@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-13",
+  "source_model": "docs/art/moba/archive-refresh-2026-11-13/models/rhino-v57.glb",
+  "source_model_sha256": "23068f5991c7db3b1666fb01fec87e612efd0151365fc14cea281ddd80c3eec4",
+  "references": [
+    "rhino-v57-hero.png",
+    "rhino-v57-side.png",
+    "rhino-v57-back.png"
+  ],
+  "method": "One built-in image_gen call using saved Mech Legend Card Forge v2 art direction and current-model reference renders. Opal browser unavailable; not an Opal generation.",
+  "generation_id": "exec-24a4577e-038c-416b-941e-4eee851f1c89",
+  "original_output": "C:\\Users\\pmcga\\.codex\\generated_images\\01a1bd14-2b4c-7843-807b-91ed4bf2e5f2\\exec-24a4577e-038c-416b-941e-4eee851f1c89.png",
+  "master_dimensions": [
+    992,
+    1586
+  ],
+  "master_sha256": "0b0c4b7cac62e64f3814085184fed6100efbe241d34307436f76ed344e994884",
+  "loading_dimensions": [
+    205,
+    373
+  ],
+  "seed": null,
+  "generation_calls": 1,
+  "cost": "No separately billed external API. Built-in image usage/cost not exposed.",
+  "packaging": "Existing block-mode downsampler; entire composition retained; bottom background extended to slot aspect. No palette snap or automatic cleanup."
+}

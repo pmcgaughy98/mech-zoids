@@ -1,0 +1,10 @@
+Anatomical spans are manual crop-local landmarks, +/-2px; inclusive endpoints. See landmark-review.png.
+East tail y6..63 = 58px; non-tail body including ears y0..70 = 71px; tail/body = 0.817.
+East body excluding ears, helmet crown through soles y12..70 = 59px; tail/body without ears = 0.983.
+East ear plate y0..18 = 19px; helmet head excluding teeth y12..30 = 19px; ear/head = 1.000.
+East/south height = 71/72 = 0.986; north/south = 72/72 = 1.000.
+Amber eye pixels (all three lens colours): ne 0; nw 0.
+South: ear-tip top y0; tail top approximately y14; tail lower by 14px (PASS).
+North: ear-tip top y0; tail top approximately y15; tail lower by 15px (PASS).
+By eye all eight tail tops remain below ear tips. Tail is a C-hook rather than a strong S; four fan ends are not distinct.
+Rear diagonals 72px versus front diagonals 71px: 1px taller, FAIL literal no-taller rule, within 5%.

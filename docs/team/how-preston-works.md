@@ -57,3 +57,12 @@ win.
   then build what he picks.
 - One working thing per session, verified. No urgency, no hype, no em-dashes.
 - Commit only when asked, as "Preston McGaughy Jr <pmcgaughy98@gmail.com>", ending with the Co-Authored-By line.
+
+## Teach visual edits by recording (Preston, 2026-11-08)
+
+Preston realized that manual touch-ups and animation decisions that need his eye can be taught with recorded demonstrations. Keep this option visible in future art and animation sessions.
+
+- When an edit needs his judgment, offer a short recording that shows how he can make that specific edit himself in Blender or the relevant tool.
+- Show the actual interface, cursor, selections and changed settings, with concise captions or explanation and a before/after. A rendered turntable alone is not an editing tutorial.
+- Teach one useful operation at a time, such as moving a joint pivot, correcting one plate's weights, or changing a step's timing. Include a safe practice copy and how to undo the change.
+- Use the current project asset and preserve approved source art. Learning from a demonstration does not make Preston responsible for every remaining task; continue the work he has authorized.

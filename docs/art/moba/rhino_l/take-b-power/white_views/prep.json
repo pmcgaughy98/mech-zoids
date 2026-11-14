@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "fc34e86745e6ca6b2a41b17a9ebad1332a3518bb9f9b73df0dddb821d0e4ba3a",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.0847457627118644,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "rhino_front.png",
+      "source_box": [
+        66,
+        24,
+        613,
+        457
+      ],
+      "source_dimensions": [
+        547,
+        433
+      ],
+      "output_box": [
+        215,
+        466,
+        808,
+        936
+      ]
+    },
+    "left": {
+      "file": "rhino_left.png",
+      "source_box": [
+        711,
+        24,
+        1478,
+        457
+      ],
+      "source_dimensions": [
+        767,
+        433
+      ],
+      "output_box": [
+        96,
+        466,
+        928,
+        936
+      ]
+    },
+    "back": {
+      "file": "rhino_back.png",
+      "source_box": [
+        71,
+        536,
+        612,
+        969
+      ],
+      "source_dimensions": [
+        541,
+        433
+      ],
+      "output_box": [
+        218,
+        466,
+        805,
+        936
+      ]
+    },
+    "right": {
+      "file": "rhino_right.png",
+      "source_box": [
+        708,
+        539,
+        1475,
+        969
+      ],
+      "source_dimensions": [
+        767,
+        430
+      ],
+      "output_box": [
+        96,
+        470,
+        928,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.006928406466512702
+}

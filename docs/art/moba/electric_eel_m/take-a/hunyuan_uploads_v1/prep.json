@@ -1,0 +1,67 @@
+{
+  "source_sha256": "b2b79d152f249c856a03fb87d78abc03cf58c682a0beaaad29949322d77e6ca6",
+  "operation": "Crop each isolated raw silhouette, add 8px white border. No scaling, stretching, repainting or paid API calls.",
+  "occupancy_metric": "Local alpha>=128 foreground fraction; not the remote proprietary detector.",
+  "views": {
+    "back": {
+      "file": "electric_eel_back_hunyuan.png",
+      "canvas": [
+        272,
+        364
+      ],
+      "foreground_fraction": 0.415,
+      "bounding_box_fraction": 0.8998,
+      "source_box": [
+        64,
+        608,
+        320,
+        956
+      ]
+    },
+    "front": {
+      "file": "electric_eel_front_hunyuan.png",
+      "canvas": [
+        276,
+        313
+      ],
+      "foreground_fraction": 0.4839,
+      "bounding_box_fraction": 0.8939,
+      "source_box": [
+        64,
+        105,
+        324,
+        402
+      ]
+    },
+    "right": {
+      "file": "electric_eel_right_hunyuan.png",
+      "canvas": [
+        1055,
+        253
+      ],
+      "foreground_fraction": 0.5778,
+      "bounding_box_fraction": 0.9226,
+      "source_box": [
+        412,
+        651,
+        1451,
+        888
+      ]
+    },
+    "left": {
+      "file": "electric_eel_left_hunyuan.png",
+      "canvas": [
+        1048,
+        255
+      ],
+      "foreground_fraction": 0.5834,
+      "bounding_box_fraction": 0.9229,
+      "source_box": [
+        446,
+        145,
+        1478,
+        384
+      ]
+    }
+  }
+}

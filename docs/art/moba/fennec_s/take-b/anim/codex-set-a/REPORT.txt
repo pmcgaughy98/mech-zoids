@@ -1,0 +1,43 @@
+FENNEC S / TAKE B / CODEX SET A
+Completed 2026-11-04. 99 transparent 192x192 PNGs across five animations and three views.
+
+COST AND PROVENANCE
+Built-in image tool only. Exactly FOUR calls: one walk, one sand_kick, one ear_burst, one sonic_boom. Idle used ZERO calls. No redos, variations or other generators.
+Tokens used: UNAVAILABLE. Neither this session nor the image tool returned a usage counter. No token total has been invented. generation.json records the four tool results and source locations.
+Exact prompts: prompts/walk.txt, sand_kick.txt, ear_burst.txt, sonic_boom.txt.
+References: copied approved s/e/n stills in refs/front.png, side.png, back.png; corresponding 6x nearest-neighbour enlargements on a flat magenta key colour. All three 6x references attached to every sheet call.
+Each animation's unmodified sheet_raw.png and slices/ preserve generated provenance. Idle has no generated sheet.
+
+METHOD
+Read gorilla codex-set-a and codex-set-b prompts, refs, REPORTs, finish.py, polish.py, gems.py, seam_fill.py and verify.py, plus codex-set-c's native idle method. Read the Fennec kit context. Body frames only; no sand, rings, tunnel holes, pings or other effects.
+Split each generated sheet by three detected row bands and the requested column count using empty gutters. grid.json records exact source cuts, scale per row, source opaque bounds, placements, durations and final PNG paths. One fixed scale per view, calibrated against the approved neutral cell, brings generated work to native pixel size. Individual poses are never independently normalized. Final approved still offset is (+16,+20), not the gorilla offset.
+Finishing snaps every opaque pixel to the specified 15-colour palette, makes alpha binary, cleans debris, fills new enclosed holes, closes long one-pixel joins and restores a thin dark silhouette edge.
+
+NATIVE RESTORATION AND ANIMATION
+idle: 5 moments, 220 ms each. Only native still pixels. Upper body lifts 0,1,1,1,0 pixels. The lower body, haunches, feet and grounded tail remain fixed. Native overlaps close the breathing join.
+walk: 8 moments, 100 ms each. Generated four-legged trot supplies the body and stepping plan. Complete native heads, ears and sleepy faces are restored without resizing and remain steady. Native collars join them to the moving torso. Original joint discs are restored at exposed joints. Side tail is the native segmented tail moved rigidly, angled slightly upward, never bent. Rear tail is a native rigid projection raised above the ground with a one-pixel sway. Rear leg patches preserve native leg length, alternating support/swing, and planted contacts at row160. Other visible diagonal limbs follow the generated paired phases. Front/back projections occlude some of the far limbs.
+sand_kick: 6 moments; 260,130,130,90,160,280 ms. Native head/ear/face/collar pixels restored at the generated action head positions, including the forward profile release. Rise, dig, both-paw fling, follow-through, seated recovery. Native joint discs restored where visible. Frames0 and5 exact stills.
+ear_burst: 6 moments; 260,130,100,100,160,280 ms. Swept ears, upright snap, open-mouth bright-eye yip, recoil. Native lower seated parts restored; complete native head/ears on upright f2; native sleepy face pixels restored outside f3. Frames0 and5 exact stills.
+sonic_boom: 8 moments; 300,150,230,260,100,140,180,350 ms. Rise, low flat-ear crouch, held crouch, open-mouth wide-eye blast, recoil, settle. Native sleepy face and joint details restored where the pose permits. Frames0 and7 exact stills. The f2/f3 charge drawings are near-identical and held by their durations.
+Native records: native_finish_log.txt and detail_finish_log.txt. Generated extreme poses retain some variation in armour contour; they are review candidates, not an installed game set.
+
+MEASURED RESULTS
+99/99 PNGs: 192x192 RGBA, binary alpha, approved palette only, lowest opaque row160, no pixels below row160, no canvas-edge contacts, no tiny detached specks, one connected silhouette per frame.
+All 24 required exact still endpoints: SILHOUETTE IoU 1.000000 AND EXACT-COLOUR IoU 1.000000.
+  idle: front/side/back f0 and f4: both IoUs 1.0.
+  sand_kick: front/side/back f0 and f5: both IoUs 1.0.
+  ear_burst: front/side/back f0 and f5: both IoUs 1.0.
+  sonic_boom: front/side/back f0 and f7: both IoUs 1.0.
+Walk is intentionally exempt from the seated still comparison.
+The set uses all 15 specified opaque colours. palette.txt records their counts, edge counts and edge fractions.
+15/15 GIFs independently reopened: exact requested logical frame count and matching per-frame duration. Held idle drawings are retained as separate GIF frames using explicit GIF frame blocks.
+
+SOURCE CONFLICTS PRESERVED EXPLICITLY
+The approved side still contains six enclosed transparent pixels at source (94,133), (93,134), (94,134), (93,135), (94,135), (94,136). Exact reference endpoints must retain them to achieve IoU1.0. The same gap also remains in the idle's fixed lower body; all newly posed drawings have zero enclosed holes.
+In the approved BACK still, grey foot pads end above the tail tip. Its lowest opaque row140 is the tail, not the pads. Exact still endpoints preserve this arrangement at (+16,+20); moving those feet to row160 would break exact IoU. The walk rear feet were finished to row160 while its tail is lifted. Ground checks report actual lowest opaque row, as named in checks.txt.
+
+VISUAL REVIEW AND DELIVERY
+Viewed the final five boards, including all three rows of each generated animation, against the approved still shown leftmost. Checked sleepy eyes except release beats, ear scale, straight tail segments, joint details, haunches, ground contacts and matching charge/release timing. Corrected head/ear drift, a missing kick-release profile eye, neck joins, the grounded rear walk tail and rear foot contact. Viewed the corrected boards again.
+Each animation includes frames/, grid.json with preview duration per frame, checks.txt, preview_front.gif, preview_side.gif, preview_back.gif, review.png and review_small.png. Generated actions also include sheet_raw.png and slices/. Root review.png is a front-view overview; verification.json contains all final per-frame measurements.
+Rebuild inside this set: python finish.py; python polish.py; python seam_fill.py; python details.py; python gait_finish.py; python finalize.py.
+No game installation, asset replacement or commit. All task-owned files are inside this set folder. Image tool originals were automatically saved by the tool outside it; the retained deliverable copies are inside this set.

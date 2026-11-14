@@ -1,0 +1,35 @@
+{
+  "source": "D:\\dev\\_scratch\\mech-art-direction\\cobra-tail-2026-11-10\\cobra-source.glb",
+  "source_sha256": "af7353fcb7967f579bd715e64df339f52e6488958990dde25d652b47078bcfa3",
+  "rig_present": false,
+  "intended_tail": "Continuous rearward +Y branch from neck; paired side profiles support one rear-trailing body. Lateral +X branch is the generated duplicate.",
+  "cut_volume_blender_z_up": {
+    "x_min": -0.03,
+    "z_max": 0.125,
+    "y_range": [
+      -1,
+      1
+    ]
+  },
+  "before_position_welded": {
+    "vertices": 250002,
+    "faces": 500000,
+    "boundary_edges": 0
+  },
+  "after": {
+    "vertices": 176212,
+    "faces": 350327,
+    "triangles": 352420,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "zero_area_faces": 0,
+    "cap_faces": 4
+  },
+  "protected_geometry": {
+    "regions": "all geometry above z=.13, or x<-.04 (head/hood/neck and rear tail)",
+    "source_samples": 205635,
+    "maximum_position_error": 0.0,
+    "samples_over_1e-5": 0
+  },
+  "cap_note": "Local green painted-metal cap with a small 1.5mm clamped bevel at its outer boundary; source texture images retained unchanged. No generated or repainted atlas."
+}

@@ -1,0 +1,17 @@
+PASS f0: {'e': 0, 'se': 0, 'ne': 0} pixels differ
+MISS hind soles: e 0.00,0.50,0.00,0.00,0.00,1.00; se 0.00,0.50,0.00,0.00,0.50,1.00; ne 0.00,3.64,4.12,4.61,4.00,4.00 px; 1 px limit; steel-pad/dark-sole boxes in placement.json
+MISS front F2/F3/F4: e 6.53/18.56/3.50; se 16.55,29.27/23.14,34.30/5.00,6.32; ne 1.00/19.97/8.14 px error per visible foot; traced steel pads, outermost dark sole midpoint; SE far pad overlaps jaw, uncertain
+MISS front F5: {'e': 2.0, 'se': 7.0, 'ne': 3.0} px up, 1-4 required; same pad labels
+MISS lowest row: e 160,160,160,160,160,160; se 160,155,143,143,155,153; ne 160,159,159,159,160,159; 160-163 allowed only camera-facing toes
+MISS F4-F5: largest part move >= e 7.07, se 7.81, ne 13.04 px; limit 3; max(symmetric silhouette Hausdorff, foot landmarks), lower bounds, no claim of full part correspondence
+MISS F5-still: largest part move >= e 7.81, se 15.03, ne 15.81 px; limit 4; max(symmetric silhouette Hausdorff, foot landmarks), lower bounds, no claim of full part correspondence
+PASS F1-still: e IoU 0.77 same-colour/opaque-union 0.34; se IoU 0.85 same-colour/opaque-union 0.40; ne IoU 0.64 same-colour/opaque-union 0.25; measured, no threshold supplied
+PASS F3 rear IoU: e 0.40, se 0.36, ne 0.66 <=0.85
+PASS eye pixels: e 5,5,5,5,5,5; se 5,5,5,5,5,5; ne 0,0,0,0,0,0; E/SE dark generated sockets, >=4; NE 0
+PASS ink %: e 8.14,8.69,9.24,8.46,8.94,8.77; se 7.79,8.94,8.94,8.61,8.16,8.74; ne 8.25,8.17,8.15,7.31,8.04,8.14 vs E 8.14 SE 7.79 NE 8.25, +/-15%
+PASS palette/alpha/border: extra colours []; binary alpha True; border contacts 0
+PASS pieces/specks: pieces e 1,1,1,1,1,1; se 1,1,1,1,1,1; ne 1,1,1,1,1,1; specks e 322,267,285,270,268,238; se 414,358,310,287,333,326; ne 346,259,296,307,283,295; limits E386.4 SE496.8 NE415.2; no despeckle threshold exceeded
+MISS column1 bbox: e 103x74 vs 103x75; se 90x84 vs 85x83; ne 87x87 vs 83x103; +/-4%
+MISS head size: e 0.00%, se 5.70%, ne -7.52% vs still, +/-3%; manual horn-to-eye E/SE, horn-to-back-head NE; landmarks in preparation.json
+PASS seam slits: e 0,0,0,0,0,0; se 0,0,0,0,0,0; ne 0,0,0,0,0,0 enclosed transparent pixels absent from still hole mask at same canvas coordinates
+MISS fringe: plum/pale-rim {'e': [[0, 1], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]], 'se': [[0, 2], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]], 'ne': [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]}

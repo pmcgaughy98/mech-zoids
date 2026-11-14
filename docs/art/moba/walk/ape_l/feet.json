@@ -1,0 +1,12 @@
+{
+ "_note": "Gorilla sole labels on the 192 canvas (still at +16,+30, feet row 130 -> 160). From walk_tools.py soles plus a look at the stills, 2026-11-05. F = fists (shielded forearms), H = hind feet. Feet not listed are hidden in that view.",
+ "canvas": 192,
+ "offset": [16, 30],
+ "views": {
+  "s":  {"RF": [55, 75, 160], "LF": [115, 135, 160], "RH": [80, 90, 143], "LH": [100, 110, 143]},
+  "se": {"RF": [74, 96, 160], "LF": [122, 131, 148]},
+  "e":  {"RH": [62, 80, 150], "RF": [101, 125, 160]},
+  "ne": {"LH": [59, 69, 148], "RH": [81, 96, 160], "RF": [120, 127, 158]},
+  "n":  {"LF": [57, 65, 144], "LH": [68, 86, 160], "RH": [104, 122, 160], "RF": [125, 133, 144]}
+ }
+}

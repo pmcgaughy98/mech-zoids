@@ -1,0 +1,13 @@
+Sizes W x H/area: s49x65/2031; se65x62/2853; e84x59/3082; ne65x62/2821; n47x63/2008.
+Shape projected +/-2px: e coil39/body32=1.219; turret14/head29=0.483; e59/s65=0.908 FAIL; s turrets38/head26=1.462; tail viewer-left only; NE/NW lens0/0.
+Feet planted/visible: e4/4,w4/4,se3/3,sw3/3,s2/2,n2/2,ne3/3,nw3/3; no lifted visible foot; occluded feet unverified.
+ONE built-in image, prompt-sheet.txt verbatim, only craft_drembit.png attached; raw unchanged, SHA256 in generation.json; tokens/cost unknown; no redo.
+view_check: front/back0.81 PASS; area0.29; height0.05; colour0.83; dips none; lone0.135428->0.026096 after ONE lens-preserving despeckle (2648 pixels).
+sheet_judge: eight ok; FIX nothing; REDO nothing; mirrors e/w0.995, ne/nw0.922, se/sw0.921; binary alpha; feet140 all; border contact NONE.
+16 shared colours; all material ramps and separate lens colours retained; top-five61.67% FAIL (<65%); edge plum/magenta0, lone pale0, seam ink0.
+Depth e/se/s/n: p05 18.86 each; p95 225.63 each; ranges206.78 PASS; dominant20.73/16.09/14.87/18.08%; heights59/62/65/63.
+By eye FIRST, MACHINE: YES; hard flat bevelled plates, straight cuts, charcoal joint frame, steel joint discs, glowing lens eyes; no scales or skin.
+BOLD/LIVELY: YES at full and40px; turquoise armour, gold jaw/belly, glowing turrets and striking spiral coil. CHAMELEON: YES; elevated bent legs, narrow arched body, wedge head, bulging turrets and coiled tail.
+Nothing held, no second face/doors/keys/staff, no back spines/headdress/hair; raised rear helmet corner still casque-like FAIL/ambiguous; clamp feet partial, rear heel direction FAIL.
+Four turquoise shading steps, interior overlap lines, no continuous dark outer outline PASS; profiles too short FAIL; back63<=front65 and rear diagonals62<=front diagonals62 PASS; camera somewhat elevated; rear face/lenses absent; SE/SW turned, far lens hidden PASS.
+All deliverables saved in take-b only; no assets installed, commits, reverts or intentional writes elsewhere (built-in tool also retains its default generated-image original).

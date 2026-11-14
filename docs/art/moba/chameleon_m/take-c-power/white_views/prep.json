@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "4f31f6da6989410cf98fc6aed343fd9438c572d5b88dd560f652f5235896b8af",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 0.88604898828541,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "chameleon_front.png",
+      "source_box": [
+        70,
+        99,
+        466,
+        448
+      ],
+      "source_dimensions": [
+        396,
+        349
+      ],
+      "output_box": [
+        336,
+        627,
+        687,
+        936
+      ]
+    },
+    "left": {
+      "file": "chameleon_left.png",
+      "source_box": [
+        556,
+        103,
+        1492,
+        447
+      ],
+      "source_dimensions": [
+        936,
+        344
+      ],
+      "output_box": [
+        97,
+        631,
+        926,
+        936
+      ]
+    },
+    "back": {
+      "file": "chameleon_back.png",
+      "source_box": [
+        76,
+        587,
+        465,
+        958
+      ],
+      "source_dimensions": [
+        389,
+        371
+      ],
+      "output_box": [
+        339,
+        607,
+        684,
+        936
+      ]
+    },
+    "right": {
+      "file": "chameleon_right.png",
+      "source_box": [
+        527,
+        594,
+        1466,
+        944
+      ],
+      "source_dimensions": [
+        939,
+        350
+      ],
+      "output_box": [
+        96,
+        626,
+        928,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.07277628032345014
+}

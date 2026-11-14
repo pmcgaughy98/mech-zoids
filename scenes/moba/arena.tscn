@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/moba/moba_match.gd" id="1_match"]
+[ext_resource type="Script" path="res://scripts/moba/moba_unit.gd" id="2_unit"]
+[ext_resource type="Script" path="res://scripts/moba/lane_spawner.gd" id="3_spawner"]
+
+[node name="Arena" type="Node2D"]
+script = ExtResource("1_match")
+
+[node name="Ground" type="ColorRect" parent="."]
+offset_left = -120.0
+offset_top = -260.0
+offset_right = 1920.0
+offset_bottom = 260.0
+color = Color(0.22, 0.27, 0.2, 1)
+
+[node name="Lanes" type="Node2D" parent="."]
+
+[node name="mid" type="Line2D" parent="Lanes"]
+points = PackedVector2Array(40, 0, 500, -40, 900, 0, 1300, 40, 1760, 0)
+width = 36.0
+default_color = Color(0.45, 0.39, 0.3, 1)
+
+[node name="blue" type="Node2D" parent="."]
+
+[node name="core" type="Node2D" parent="blue"]
+position = Vector2(40, 0)
+script = ExtResource("2_unit")
+kind = "core"
+max_hp = 3000
+damage = 0
+speed = 0.0
+
+[node name="tower" type="Node2D" parent="blue"]
+position = Vector2(560, -34)
+script = ExtResource("2_unit")
+kind = "tower"
+max_hp = 1500
+damage = 60
+attack_range = 120.0
+speed = 0.0
+sight = 120.0
+
+[node name="red" type="Node2D" parent="."]
+
+[node name="core" type="Node2D" parent="red"]
+position = Vector2(1760, 0)
+script = ExtResource("2_unit")
+team = "red"
+kind = "core"
+max_hp = 3000
+damage = 0
+speed = 0.0
+
+[node name="tower" type="Node2D" parent="red"]
+position = Vector2(1240, 34)
+script = ExtResource("2_unit")
+team = "red"
+kind = "tower"
+max_hp = 1500
+damage = 60
+attack_range = 120.0
+speed = 0.0
+sight = 120.0
+
+[node name="Units" type="Node2D" parent="."]
+
+[node name="Spawner" type="Node" parent="."]
+script = ExtResource("3_spawner")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(900, 0)
+zoom = Vector2(0.17, 0.17)

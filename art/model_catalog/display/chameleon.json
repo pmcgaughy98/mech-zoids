@@ -1,0 +1,49 @@
+{
+  "id": "chameleon",
+  "source_sha256": "9199eccfebf19216cad0e1100b9ba35236f0941394aed89d8ca090843e8770e4",
+  "source_triangles": 500000,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8749836239303401,
+  "blender_bounds_min": [
+    -3.52193021774292,
+    -1.6004959344863892,
+    0.1170365959405899
+  ],
+  "blender_bounds_max": [
+    -2.478361129760742,
+    1.5995639562606812,
+    1.1574265956878662
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

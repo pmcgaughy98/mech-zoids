@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "9dcec5dd9a0cc324194f33a65a40da9e3bf1c945c6dc933e463fa5bc772167af",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 0.819704433497537,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "lobster_front.png",
+      "source_box": [
+        14,
+        27,
+        760,
+        422
+      ],
+      "source_dimensions": [
+        746,
+        395
+      ],
+      "output_box": [
+        206,
+        612,
+        817,
+        936
+      ]
+    },
+    "left": {
+      "file": "lobster_left.png",
+      "source_box": [
+        776,
+        28,
+        1784,
+        417
+      ],
+      "source_dimensions": [
+        1008,
+        389
+      ],
+      "output_box": [
+        99,
+        617,
+        925,
+        936
+      ]
+    },
+    "back": {
+      "file": "lobster_back.png",
+      "source_box": [
+        34,
+        447,
+        722,
+        868
+      ],
+      "source_dimensions": [
+        688,
+        421
+      ],
+      "output_box": [
+        230,
+        591,
+        794,
+        936
+      ]
+    },
+    "right": {
+      "file": "lobster_right.png",
+      "source_box": [
+        752,
+        448,
+        1767,
+        845
+      ],
+      "source_dimensions": [
+        1015,
+        397
+      ],
+      "output_box": [
+        96,
+        611,
+        928,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.07600950118764846
+}

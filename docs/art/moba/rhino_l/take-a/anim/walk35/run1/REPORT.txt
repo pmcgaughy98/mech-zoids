@@ -1,0 +1,29 @@
+RHINO L / TAKE A / WALK35 / RUN 1 / e,se,ne
+Tokens: live watcher last sample 21:39:19 92706; provisional, final total unavailable. Native pixels; no image tool; no commit.
+Names: LF left fore, LH left hind, RF right fore, RH right hind. Supplied se/ne names look anatomically consistent.
+Visible in still: e RH/RF; se/ne LH/RH/RF. Hidden homologues draw behind pinned body and appear only where uncovered.
+Hidden depth: e left lane16px up; se LF=RF+(-24,-17); ne LF=RF+(-24,-10). These are inferred, not supplied targets.
+Visible foot contacts measured from saved complete frame pixels by exhaustive source-foot matching, independent of targets.
+e visible foot-lock spreads x/y px: RH 0.000/0.000; RF 0.000/0.000.
+se visible foot-lock spreads x/y px: LH 0.879/0.868; RH 0.879/0.868; RF 0.484/0.868.
+ne visible foot-lock spreads x/y px: LH 0.879/0.868; RH 0.879/0.868; RF 0.484/0.868.
+e hidden foot-lock x/y px: LF 0.000/0.000; LH 0.000/0.000 (saved limb pixels; composite may occlude soles).
+se hidden foot-lock x/y px: LF 0.484/0.868 (saved limb pixels; composite may occlude soles).
+ne hidden foot-lock x/y px: LF 0.484/0.868 (saved limb pixels; composite may occlude soles).
+64/64 visible targets PASS: e x/y0/0px; se/ne max x0.50,y0.43px; every integer lift exact.
+Upper-body differing pixels %, f0..f7: e [0,0,0,0,0,0,0,0]; se [0,0,0,0,0,0,0,0]; ne [0,0,0,0,0,0,0,0].
+Pinned body/head/horns/armour/tail paint exact after1px f0/f4 dip. Audit mask excludes explicitly traced articulated leg paint.
+Lowest rows f0..f7: e [160,160,160,160,160,160,160,158]; se [157,159,162,161,160,159,158,157]; ne [157,157,158,159,160,161,162,159].
+24/24 frames:192x192 RGBA, binary alpha, source palette (11 opaque colours + transparency), one component, no holes/strays/edge contact.
+Bone length deltas max: e0.793px, se0.849px, ne1.000px. Native foot blocks and knee discs keep source pixel shapes; shanks rigidly rotate.
+EYE e: reads as this rhino walking forward; short gold cuffs, broad grey soles, native discs; far feet peek below body.
+EYE se: reads forward walking; compact original leg masses; foreleg partly hidden by the original chin; connected clean sockets.
+EYE ne: reads forward walking; original rump/tail/shoulder design held; short articulated limbs remain whole, no open join wedges.
+ONE-FOOT-AIR criterion FAIL in supplied data: f1 RH+LF, f3 LF+LH, f5 LH+RF, f7 RF+RH. Paths followed exactly; not a strict single-air-foot walk.
+GIFs:8 frames, infinite loop, alternating120/130ms (GIF10ms unit), mean125ms and1000ms cycle. APNGs:exact125ms, same raw pixels.
+board.png and per-view boards: approved still then f0..f7, exact game selout(), native4x; footprint boards show all four tracks.
+checks.txt + verification.json: all geometry/pixel/file audits PASS. Gait conflict and GIF timing limitation remain as explicitly reported.
+
+2026-11-04 (Claude): tokens 102,921 (codex-log-run1.txt; watcher token-watch-run1.txt). My pixel check: e feet 0 px slide; se/ne visible feet that my window could isolate under 0.9 px (se LH and ne RF windows caught another leg on some frames, so those are unmeasured by me; Codex reports them under 0.9 px). Body matches the still. Leg finish: rotation noise on cuffs, a few dark slivers under the body, ne fore foot under the head noisy (claude-legs-4x.png). The brief said "one foot in the air at a time"; that was my wording error, the approved gait has two up on odd frames.
+
+2026-11-04 (Claude): cleanup by Codex in clean/ (78,180 tokens; run 1 + cleanup 181,101). Installed into walk/frames; run 1 frames in walk/frames_pre_clean/. My check: only leg rows 113-154 changed, soles and lowest rows identical to run 1, so the foot lock holds; specks gone at 4x; the dark bits left under the body in e f2/f6 and se f6 are the far legs, as in the still.

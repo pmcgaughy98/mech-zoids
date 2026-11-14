@@ -1,0 +1,11 @@
+82 x 41; W/82 1.000; H/43 .953; H/W .500 vs .66; H 41 vs se/ne 61/60 and target 54-60: MISS; canvas top 120, border-clear.
+Near feet hind/front 159/160; visible far front 150 (10 rows higher, PASS); far hind occluded, unmeasurable.
+Top outline 120; spine still on upper contour; distinct mid-body ridge row indeterminate, required interior ridge MISS.
+Lightest yellow 17.130% (approved 8.758%, first run 14.758%).
+Eye one connected group of 9; no eye pixels elsewhere; approved 11, first run 8: PASS minimum 8.
+Dark accent 1.788% vs 1.8%; thin internal seams retained, broad shadows on material ramps.
+Palette PASS: all 13 fixed colours, no outsiders; binary alpha; no magenta/plum, lone pale rim pixels or accent rim pixels remain.
+Depth p05/p95 31.2876/236.9798 (range 205.6922); most common ffc61a 28.600%.
+Scale .173046252 vs RUN1 .204944179; one whole-sheet nearest shrink. One despeckle pass: lone colour pixels 176 to 95; 337 recoloured. West mirror differs 366 RGBA pixels, 33 silhouette, IoU .983688.
+By eye: camera MISS; lit back plates/head/tail, but no far-back band above an internal ridge. Same recognizable pangolin, one tail, no obvious new parts; four legs and three claws on each front foot cannot all be verified (near front three visible).
+Tokens unknown. Exactly one built-in generation, verbatim prompt and two refs; no redo. Raw unchanged, e/w, scripts, checks and review.png saved only inside OUT; not approved.

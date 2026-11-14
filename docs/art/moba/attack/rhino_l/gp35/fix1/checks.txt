@@ -1,0 +1,15 @@
+PASS hind soles: e2/e3/se2/se3 drift 0 px (limit 1).
+MISS HIND LEG LENGTH: sole-to-disc centre e 17/17 vs still 19 px; se 17/17 vs 19.5 (limit +/-2). Round steel face traced, excluding bracket: e still rows137-145/new139-147; se still119-128/new122-130.
+PASS above-disc run: e 1/2 vs still2 rows; se 1/0 vs still1 (limit +/-2). Counted rows between disc top and yellow plate.
+MISS HIP HEIGHT: lowest yellow row above disc, x62-66: e137/136 vs still134; se120/121 vs117 (limit +/-3).
+MISS front feet: e2/e3 errors 4.71/17.27 px; se2 near/far18.36/20.40, se3 25.57/26.43 (limit3). Steel-pad boxes traced by eye; lowest dark sole row midpoint; placement.json lists boxes.
+PASS F3 alpha IoU: e0.534, se0.432 (limit0.85).
+PASS eye pixels: e2/e3/se2/se3 each5 ff3a2a in dark sockets (minimum4).
+PASS ink: e2/e3 8.87/7.99%; se2/se3 8.52/8.94%, within15% of e8.1/se7.8%.
+PASS palette/alpha/border: 0 extra colours; binary alpha all4; 0 border contacts.
+PASS pieces/specks: 1 four-connected piece each; e2/e3 289/261 specks <=386.4; se2/se3 277/264 <=496.8; 0 despeckle passes.
+MISS column1 size: e92x65 vs103x75; se84x76 vs85x83 (limit +/-4%). Column1 saved only in sheet, never as a frame.
+MISS head size: horn-tip/eye-centre error col1 e-8.89%, se+10.81%; e2/e3 -10.82/-6.42%; se2/se3 +0.65/+1.23% (limit +/-3%).
+PASS seam slits: e2/e3/se2/se3 0 enclosed transparent pixels absent from still.
+PASS fringe: all4 have0 plum,0 lone pale rim,0 ink rim pixels.
+MISS continuity: F1/F2/F3 eye rows e133.4/111.4/95.4,se130.4/101.4/84.4; front sole rows e160/147/128,se155/135/118 (both monotonic PASS); max hip delta vs run1 F1/F4 e1,se4 px (limit2).

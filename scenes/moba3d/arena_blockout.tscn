@@ -1,0 +1,143 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/moba3d/arena_blockout.gd" id="1_arena"]
+[ext_resource type="Script" path="res://scripts/moba3d/directional_sprite_3d.gd" id="2_dir"]
+[ext_resource type="Script" path="res://scripts/moba3d/chase_camera_3d.gd" id="3_cam"]
+[ext_resource type="Script" path="res://scripts/moba3d/machine_test_player.gd" id="4_player"]
+[ext_resource type="SpriteFrames" path="res://art/machines/rhino/rhino_frames.tres" id="5_frames"]
+[ext_resource type="Texture2D" path="res://art/field/moba3d/ring.png" id="6_ring"]
+[ext_resource type="Texture2D" path="res://art/field/moba3d/shadow.png" id="7_shadow"]
+[ext_resource type="Script" path="res://scripts/moba3d/rhino_kit.gd" id="8_kit"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sky"]
+sky_top_color = Color(0.3, 0.56, 0.88, 1)
+sky_horizon_color = Color(0.75, 0.85, 0.93, 1)
+ground_bottom_color = Color(0.45, 0.6, 0.3, 1)
+ground_horizon_color = Color(0.75, 0.85, 0.93, 1)
+
+[sub_resource type="Sky" id="Sky_main"]
+sky_material = SubResource("ProceduralSkyMaterial_sky")
+
+[sub_resource type="Environment" id="Environment_main"]
+background_mode = 2
+sky = SubResource("Sky_main")
+ambient_light_source = 2
+ambient_light_color = Color(1, 0.98, 0.92, 1)
+ambient_light_energy = 0.9
+tonemap_mode = 0
+fog_enabled = true
+fog_light_color = Color(0.72, 0.8, 0.88, 1)
+fog_density = 0.005
+fog_sky_affect = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ring"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("6_ring")
+texture_filter = 3
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ring"]
+material = SubResource("StandardMaterial3D_ring")
+size = Vector2(3.2, 3.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shadow"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("7_shadow")
+texture_filter = 3
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_shadow"]
+material = SubResource("StandardMaterial3D_shadow")
+size = Vector2(2.8, 1.4)
+
+[node name="ArenaBlockout" type="Node3D"]
+script = ExtResource("1_arena")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_main")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, 0, -0.5, -0.383, 0.643, -0.663, 0.321, 0.766, 0.557, 0, 10, 0)
+light_color = Color(1, 0.96, 0.88, 1)
+light_energy = 1.7
+shadow_enabled = true
+
+[node name="Player" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 64)
+script = ExtResource("4_player")
+camera_path = NodePath("../Camera")
+
+[node name="Shadow" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0)
+mesh = SubResource("PlaneMesh_shadow")
+
+[node name="Ring" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.035, 0)
+mesh = SubResource("PlaneMesh_ring")
+
+[node name="Sprite" type="AnimatedSprite3D" parent="Player"]
+sprite_frames = ExtResource("5_frames")
+animation = &"idle_n"
+script = ExtResource("2_dir")
+
+[node name="Kit" type="Node" parent="Player"]
+script = ExtResource("8_kit")
+
+[node name="Camera" type="Camera3D" parent="."]
+current = true
+fov = 60.0
+script = ExtResource("3_cam")
+target_path = NodePath("../Player")
+bounds = Vector2(41.5, 77.5)
+
+[node name="Markers" type="Node3D" parent="."]
+
+[node name="BlueSpawn" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 70)
+
+[node name="BlueCore" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 56)
+
+[node name="BlueTower" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
+
+[node name="BluePit" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 12)
+
+[node name="BlueCamp1" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, 34)
+
+[node name="BlueCamp2" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 36)
+
+[node name="RedSpawn" type="Marker3D" parent="Markers"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -70)
+
+[node name="RedCore" type="Marker3D" parent="Markers"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -56)
+
+[node name="RedTower" type="Marker3D" parent="Markers"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -40)
+
+[node name="RedPit" type="Marker3D" parent="Markers"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -25, 0, -12)
+
+[node name="RedCamp1" type="Marker3D" parent="Markers"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 27, 0, -34)
+
+[node name="RedCamp2" type="Marker3D" parent="Markers"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -27, 0, -36)
+
+[node name="Plaza" type="Marker3D" parent="Markers"]
+
+[node name="Stream1" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 0)
+
+[node name="Stream2" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 0)
+
+[node name="Stream3" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 0)
+
+[node name="Stream4" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 0)

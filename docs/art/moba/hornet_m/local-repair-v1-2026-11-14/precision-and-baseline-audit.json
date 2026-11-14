@@ -1,0 +1,94 @@
+{
+  "weld_tolerances": [
+    {
+      "tolerance": 1e-06,
+      "unique_positions": 18912,
+      "boundary_edges": 17912,
+      "over_shared_edges": 6,
+      "collapsed_triangles": 0
+    },
+    {
+      "tolerance": 3e-06,
+      "unique_positions": 18912,
+      "boundary_edges": 17912,
+      "over_shared_edges": 6,
+      "collapsed_triangles": 0
+    },
+    {
+      "tolerance": 6e-06,
+      "unique_positions": 18912,
+      "boundary_edges": 17912,
+      "over_shared_edges": 6,
+      "collapsed_triangles": 0
+    },
+    {
+      "tolerance": 1e-05,
+      "unique_positions": 18912,
+      "boundary_edges": 17912,
+      "over_shared_edges": 6,
+      "collapsed_triangles": 0
+    },
+    {
+      "tolerance": 3e-05,
+      "unique_positions": 18903,
+      "boundary_edges": 17896,
+      "over_shared_edges": 6,
+      "collapsed_triangles": 0
+    },
+    {
+      "tolerance": 0.0001,
+      "unique_positions": 18440,
+      "boundary_edges": 17210,
+      "over_shared_edges": 10,
+      "collapsed_triangles": 0
+    }
+  ],
+  "quality_baselines": [
+    {
+      "path": "D:\\user\\Downloads\\hornet_front - 6 legs touchup.glb",
+      "sha256": "84622e39a7a46413ab9676789fcac12a9599da71614f5c12462550d220837bb2",
+      "joint_count": 0,
+      "primitives": [
+        {
+          "vertices": 35538,
+          "triangles": 35167,
+          "bounds": [
+            [
+              -0.4497986435890198,
+              0.0002890451578423381,
+              -0.5045018792152405
+            ],
+            [
+              0.45492053031921387,
+              0.5365523099899292,
+              0.3948347270488739
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "D:\\dev\\new-mech-rpg\\art\\model_catalog\\sources\\hornet_front - Hunyuan 3D v3.1 Pro.glb",
+      "sha256": "1abdd53ffe957aa022deb629644ca5f0e7c6d357bedc1998565ea627773240c1",
+      "joint_count": 0,
+      "primitives": [
+        {
+          "vertices": 289899,
+          "triangles": 500000,
+          "bounds": [
+            [
+              -0.449629008769989,
+              -0.5044779777526855,
+              -0.5363990068435669
+            ],
+            [
+              0.45432600378990173,
+              0.3944520056247711,
+              0.0
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

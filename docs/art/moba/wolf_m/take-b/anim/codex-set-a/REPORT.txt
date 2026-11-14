@@ -1,0 +1,36 @@
+WOLF M / TAKE B / CODEX SET A / 2026-11-04
+STATUS: review candidates. Structural checks pass; the strict per-part 2px gate is NOT PASSED. Do not treat these as certified final animation art.
+78 transparent 192x192 frame PNGs: walk24, sprint18, lunge21, bite15. All task writes are inside this folder; sibling set B, assets and tools untouched; no commit.
+Built-in image tool: exactly FOUR calls, ONE per move; no redo or variation. Tokens used unavailable. Prompts are the actual submitted text in prompts/.
+References: fixed/s.png, e.png, n.png; attached refs/s_6x.png, e_6x.png, n_6x.png in that order. Supplied refs were verified pixel-identical to fixed/.
+walk: raw 2172x724; SHA256 26287131775e393e037322df09bf71df71cd24108b4e48460fb506463d234e6b.
+sprint: raw 1774x887; SHA256 b06d929fd3a10c609215195c8c772c9710ef5d875515e75cbedbe16e016b3c82.
+lunge: raw 1915x821; SHA256 409df3f0f7645afb1fb0cff03941f6580b77bcc909218868c56a2d6d4c5c8831.
+bite: raw 1536x1024; SHA256 f00a550a22f854da4a2ceec2ce32de358ea03d2dce5dc6c40d5f724677c8b223.
+Method: generated WHOLE cells, one fixed extraction scale per row, nearest-neighbour whole-drawing coordinate corrections, 12-colour snap, binary alpha, debris/hole cleanup; no approved parts pasted.
+Native changes: front/back walk proportion correction, whole-frame mirrored second half-cycle, continuous leg coordinate corrections for fixed contacts and 3/4/5px swings; bite paw reanchoring; profile lunge jaw repainted open; profile sprint ears repainted flat back.
+File checks: 78/78 correct canvas/palette/binary alpha; no below160 pixels, canvas-edge contacts or stray components. Every posed frame is one connected body with zero enclosed holes.
+Ground: 72 grounded frames bottom160. Sprint f2 front/side/back bottom152 (required148-156); lunge f3 all views bottom140 (required120-150).
+Exact stills: lunge f0/f6 and bite f0/f4, all three views: 12/12 PNG files byte-identical to fixed still; RGBA equal, silhouette IoU1.0, colour IoU1.0.
+Source conflict preserved: exact front has1 enclosed transparent pixel, exact side96; back0. Exact back feet end at155 while tail reaches160. Repairing these would violate exact still identity.
+12/12 GIFs reopened: correct logical frame counts and exact requested durations; walk/sprint loop; lunge/bite play once. Preview boards and GIFs apply supplied selout() with #141418.
+Review boards: viewed every move at native 4x, approved still leftmost in all three rows. Crop expanded to y65 so the high lunge ear tips remain visible.
+Live playback NOT performed: browser host unavailable; automatic approval review rejected Chrome access: Computer Use was not approved to use Google Chrome. play.html is provided for replay.
+Manual reference axes (inclusive px; complete endpoints in proportions.json): front ears13/13, head18, muzzle10, torso33x17, foreleg35.17, shank7; tail occluded.
+Reference side axes: ears14.04/17.40, head29.46, muzzle16.23, torso49.09x23, fore/hind joint chains41.10/42.73 incl paw, shank7, straight tail36.23.
+Reference back axes: ears14/14.04, head12, torso35x29, hindleg28, shank4, straight tail36. These are visible projected landmarks, not hidden anatomy.
+walk actual whole silhouettes: front 33-33w x 72-72h; side 118-120w x 66-66h; back 35-36w x 72-72h.
+sprint actual whole silhouettes: front 33-43w x 54-64h; side 111-116w x 50-60h; back 34-47w x 56-66h.
+lunge actual whole silhouettes: front 33-42w x 52-72h; side 104-110w x 52-66h; back 34-41w x 57-72h.
+bite actual whole silhouettes: front 33-37w x 68-72h; side 102-110w x 63-73h; back 35-36w x 69-73h.
+PROPORTION LIMIT: whole silhouettes do not prove each part is within2px. Per-frame intrinsic ear/head/muzzle/torso/leg/tail measurements and every tail plate count remain uncertified; proportions.json explicitly fails that gate.
+walk eye: same wolf and true back; whole connected parts, no pasted cutoffs; front/back support phases corrected. Side diagonal timing and excessive swing lift remain weak, so rows are not certified frame-for-frame.
+sprint eye: same wolf, full gallop and extended f2 read; rows broadly match columns, whole parts; profile ears corrected flat back; generated tail/limb proportion variation unresolved.
+lunge eye: same wolf, load/launch/open-jaw air/landing-hit/recovery read in place; back has no face, rows broadly match; no pasted cutoffs, but crouched body and muzzle proportions remain uncertified.
+bite eye: same wolf, open windup/snap/tug read with true back; foot extents reanchored, whole parts, no pasted cutoffs; generated hind-leg and torso contour variation still needs a strict pixel pass.
+Rebuild: python -B finish.py extract walk sprint lunge bite; python -B polish.py walk sprint lunge bite; python -B gait_finish.py; python -B details.py; python -B verify.py. Raw sheets, slices and underpaint retained.
+Per move: frames/, sheet_raw.png, grid.json with cuts/scales/placements/ms, checks.txt, three preview GIFs, review.png and split 4x view boards. Root provenance, palette, proportions and support records retained.
+
+2026-11-04 (Claude): side walk and sprint tails replaced by anim/codex-tailfix (67,668 tokens), which redrew only the tails at the still's thickness. Set A's own side frames are in walk/ and sprint/frames_pre_tailfix/.
+
+2026-11-04 (Claude): the side walk is now codex-walk3 (a real trot to a foot path, legs matched to the still; Preston approved: "Yes, do se and ne"). The reversed set A side frames are in walk/frames_pre_trot/, the original order in walk/frames_pre_reverse/.

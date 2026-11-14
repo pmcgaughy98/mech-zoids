@@ -1,0 +1,34 @@
+FENNEC S / TAKE B / CODEX SET B / 2026-11-04
+54 transparent native-scale 192x192 PNG frames: dig 18; pop_out 15; death 21.
+Built-in image tool: exactly THREE calls, one sheet per animation; no redo or variations.
+Tokens used: unavailable. Neither image generation nor the session tools exposes token totals; no estimate is presented as usage.
+
+METHOD
+Read both ape_l take-a codex sets, prompts, references, reports, finish/polish/gems/seam_fill/verify scripts. Used the same reference-sheet, slice, native-detail restore, seam cleanup, board and check method.
+Approved front/side/back stills and 6x nearest-neighbour copies on magenta are in refs/. Each sheet attached all three approved 6x stills in that order. Exact generation prompts are in prompts/. All raw sheets retained unmodified.
+Clean gutters define per-row slice boundaries. grid.json records source boxes, source bounds, one fixed conversion factor per view (from the neutral reference column), placements, durations and frame paths. Generated poses are never independently fit or normalized. Native restored parts are translated or rigid-rotated, never resized.
+Native face, half-closed eyes and muzzle, full heads and ears on upright poses, cream inner-ear texels on compatible drooped poses, exposed grey joint discs, straight grounded tail segments and tips are restored from the approved stills. Occluded parts are not invented.
+finish.py snaps to the shared 15-colour palette, uses binary alpha and a dark one-texel rim. polish.py restores native parts; final_pass.py restores straight tails, darkens the final eyes, fills enclosed seams through clean(), removes detached old-head remnants and builds detail boards.
+
+VALIDATION
+All 54: approved palette only; binary alpha; no pixels below row160; no edge contacts; no detached debris. Source cuts have zero silhouette contacts.
+Exact still offset (+16,+20). Dig f0, death f0, pop_out f4 in ALL three views: silhouette IoU 1.000000; exact-colour IoU 1.000000.
+pop_out f0 follows its specific ear-tips-only instruction, overriding the generic f0=still rule. It contains native ear tips clipped at row160.
+pop_out airborne f2 lowest row: front=145, side=145, back=145. Every other frame has lowest row160, including the clipped dig descent.
+Dig f3 front half is underground; f4 exposes reduced rump/hind-limb edge and straight tail; f5 only the native gold-cream tail tip remains. No hole or dirt.
+Death staggers, ears hinge outward/down, short legs buckle and body slumps onto its side. Native straight tail is flat. Final f6 teal/mint/white eye pixels take #2e1a6e and the frame is held for 1400ms. All GIFs are one-shot and stop on the final frame.
+Exception: the approved SIDE still has SIX enclosed transparent pixels. They are preserved in dig side_f0, death side_f0 and pop_out side_f4 to keep exact IoU 1.0. All newly drawn frames have zero enclosed holes.
+Per-frame geometry, colour counts, durations, IoUs and holes: each checks.txt. Full machine-readable results and per-colour edge counts: verification.json.
+
+VISUAL REVIEW
+Viewed all three-view review and enlarged detail boards after native finishing. Corrected shrinking rear ears, cut-neighbor tail tips, clipped underground descent, copied chest colours leaking into joint patches, detached old-ear remnants, straight tail segments and remaining bright final-eye highlights.
+Generated extreme-pose armour contours still have small drawing differences from the approved stills. Exact endpoints and native visible identity parts are enforced; no claim of pixel identity for changed poses.
+
+DELIVERY
+dig: 6 moments x 3 views; durations_ms=[300, 120, 90, 100, 100, 180]; raw_size=[1774, 887]; raw_sha256=6bdd7b660e0bf5cab111429fc117c430eef5efa6686140b37a6940a852536c65
+pop_out: 5 moments x 3 views; durations_ms=[120, 90, 130, 110, 350]; raw_size=[1619, 971]; raw_sha256=bc221dcf9bd8a81f72503043716cd35c62f613008f527a98b726b14829c4eb03
+death: 7 moments x 3 views; durations_ms=[300, 100, 130, 140, 160, 180, 1400]; raw_size=[1912, 823]; raw_sha256=d4216d6bb556e568e07c8e09623ce2516d70bdb2cf25cd97d46ebfd24705a038
+Each animation: frames/, sheet_raw.png, slices/, grid.json, checks.txt, three preview GIFs, review.png (approved still leftmost in every row), review_small.png, detail_board.png, detail_small.png.
+Root review.png combines the three animations. Prompts, refs, restoration logs, scripts and verification are retained.
+Rebuild in order: python finish.py; python polish.py; python final_pass.py; python verify.py.
+Only this codex-set-b folder was written by finishing. The built-in tool used its managed default cache; its outputs were copied here. No game installation or commit.

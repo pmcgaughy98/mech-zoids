@@ -1,0 +1,28 @@
+WOLF M / TAKE B / CODEX SET C / 2026-11-04
+STATUS: review candidates, NOT approved final art. Structural checks pass; walk support and strict per-part/tail-count gates do not.
+52 frames: walk16 sprint12 lunge14 bite10; two views se/ne; 192x192 transparent. All task writes inside codex-set-c; siblings/assets/tools untouched; no commit.
+Built-in image tool: exactly ONE sheet per move, FOUR calls total; no redo/variation. Tokens used unavailable. Actual prompts saved in prompts/.
+Refs attached in order refs/se_6x.png then refs/ne_6x.png, approved fixed views. No still parts pasted; exact endpoints alone use full approved stills.
+walk: raw 1774x887; SHA256 a63fec8a58655f304548e7a853548ba65bfb3437c323420ad3b31fecf0b9672d.
+sprint: raw 2172x724; SHA256 ddc32b2f88db51b2330769aee3062e0f8410ad37c8d0bc12123a0318aa174fb5.
+lunge: raw 2172x724; SHA256 0058116876b1f6f23a58840d515f9f7a1ce42de72f90120753374f22f0cbfd55.
+bite: raw 1774x887; SHA256 d262280448282c9508b4b0cf8d4b95871b836b8dac4c6824c222e62cd32d2e9c.
+Method: copied/adapted set A finish/polish/gait/details/verify; whole generated cells, one extraction scale per row, native whole-drawing coordinate corrections, shared palette and material-speckle cleanup.
+Finishing: sprint whole-row scale corrected (se x0.88, ne x0.94); posed se lunge width x0.96; bite contact-span reanchoring; walk foot x corrections limited to2px after stronger edits visibly damaged paws.
+52/52 canvas, 12-colour-membership, binary alpha, connected body, no debris, below160 pixels or canvas-edge contact checks PASS. All44 posed drawings have zero enclosed holes.
+Ground:48 grounded drawings bottom160; sprint f2 se/ne bottom152; lunge f3 se/ne bottom140. Required air ranges PASS; lunge horizontally in place.
+Exact silhouette/colour IoU1.0 and byte identity: lunge se_f0,se_f6,ne_f0,ne_f6; bite se_f0,se_f4,ne_f0,ne_f4 (8/8).
+Source conflict: exact se has9 enclosed transparent pixels and exact ne11; kept to preserve byte identity. Every other frame is hole-free.
+8/8 GIFs reopened: exact frame counts/ms; walk/sprint loop, lunge/bite once. Boards/GIFs use supplied selout() with OUTLINE#141418; reviewed all views at4x with still at left.
+Reference approximate axes(px): se ears15.56/13.37, head24.02, muzzle13.21, torso30.02x21, fore-shank19.25x6, tail34.42 with10.22 cross-section; ne ears14.60/14.93, head15.14, torso29.23x20, hind-shank16.03x6, tail41.31 with12.31 cross-section.
+Actual silhouette ranges(px): walk se83-84x68-70/ne77-78x70-72; sprint se90-95x47-55/ne87-98x55-60; lunge se83-91x53-71/ne75-86x55-74; bite se82-84x66-78/ne75-78x70-76.
+PROPORTION GATE NOT PASSED: silhouette bounds do not prove each part within2px. Per-frame intrinsic ear/head/muzzle/torso/leg/tail measurements and identical tail plate counts remain uncertified; see proportions.json.
+walk eye: same wolf in both rows; both remain correct se/ne cameras, never mirrored/straightened. Standing trot reads, but repeated support phases and excessive lifts fail strict diagonal timing, fixed contacts and3-5px clearance; therefore not column-exact against A. Tail broad/straight, plate count not certified. No pasted cutoffs.
+sprint eye: same wolf, correct se/ne angles, not mirrored; gather/push/extended-air/land/push/gather broadly match both rows and A. Ears remain insufficiently flat in some cells; tail stays broad with red tip but length/plate divisions vary. Whole parts, no obvious cutoffs.
+lunge eye: same wolf, correct se/ne angles, not mirrored; load/launch/open-jaw-air/landing-hit/recover match rows and broad A beats. Whole parts and broad straight tail, but generated head/torso drift and tail plate count unresolved.
+bite eye: same wolf, correct se/ne body cameras, not mirrored; open/snap/tug match both rows and A beats; contact extents corrected. Whole parts, no pasted cutoffs; leg interiors/torso/tail vary, so exact fixed-paw/art gate is not certified.
+Raw edge note: walk se f7 touches sheet right edge; final muzzle reviewed at4x with a continuous silhouette, but original source gutter requirement failed.
+Per move: sheet_raw.png, slices/, underpaint/, frames/, grid.json, checks.txt, preview_se/ne.gif, review.png and 4x panels. Root: provenance, proportions, support records and palette counts.
+Rebuild: python -B finish.py extract walk sprint lunge bite; python -B polish.py; python -B gait_finish.py; python -B details.py; python -B verify.py. Source A scripts retained as source_a_*.py.
+
+2026-11-04 (Claude): se and ne walk replaced by codex-walk4 (trot in step with the side view, legs re-posed from the stills, foot lock under 1.1 px). Earlier frames in walk/frames_pre_trot/.

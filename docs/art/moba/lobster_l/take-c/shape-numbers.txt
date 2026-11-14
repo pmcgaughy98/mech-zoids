@@ -1,0 +1,14 @@
+Every view W x H: ne 112x75, n 83x77, nw 112x75, e 124x55, w 124x55, se 114x63, s 89x66, sw 114x63
+East/south height 55/66=0.8333; north/south 1.1667.
+Eye centres above foot baseline y160 / view height: s: [0.509, 0.5096], se: [0.5197, 0.5185], sw: [0.5202, 0.5169], e: [0.5145], w: [0.5063]
+Eye height spread 2.74%; within 10%: True.
+Rear cyan/glint pixels: {
+  "ne": 0,
+  "n": 0,
+  "nw": 0,
+  "e": 30,
+  "w": 33,
+  "se": 67,
+  "s": 85,
+  "sw": 67
+}

@@ -1,0 +1,33 @@
+{
+ "src": "views",
+ "target": 0.079,
+ "views": {
+  "s": {
+   "share_before": 0.1084,
+   "gated": false
+  },
+  "se": {
+   "share_before": 0.079,
+   "gated": false
+  },
+  "e": {
+   "share_before": 0.0866,
+   "gated": false
+  },
+  "ne": {
+   "share_before": 0.0702,
+   "gated": false
+  },
+  "n": {
+   "share_before": 0.0469,
+   "gated": true,
+   "need": 64,
+   "added": 64,
+   "candidates": 157,
+   "lone": 0,
+   "share_capped": 0.0792,
+   "share_full_rule": 0.1261,
+   "full_rule_px": 182
+  }
+ }
+}

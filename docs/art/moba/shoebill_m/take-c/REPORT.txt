@@ -1,0 +1,13 @@
+Sizes W x H/area: s 46x80/2164; se 56x80/2298; e 67x81/2172; ne 42x77/1953; n 44x77/1996.
+Shape east (+/-2px): bill27/head18=1.500; legs31/body23=1.348; landmarks in shape.txt and measure-e-grid.png.
+ONE built-in image; prompt-sheet.txt verbatim, only craft_drembit.png attached; raw byte-identical SHA256 recorded; tokens/cost unknown; no redo.
+view_check: front/back0.86 PASS; area0.10; height0.05; colour0.87; dips none; lone0.15 FAIL (>0.11); 15 shared colours; top-five 64.67% (five-view 64.51%) FAIL (<65%).
+sheet_judge: eight ok; FIX nothing; REDO nothing; mirrors e/w0.917, ne/nw0.992, se/sw0.990; binary alpha; no border contact; south feet139, others140.
+Finish: one whole-sheet nearest shrink0.233236 to292x292, south80px; four blue/four gold tones retained; remaining plum/magenta0, lone pale rim0, exterior ink0; repainted48 pale and466 ink rim pixels.
+Depth e/se/s/n: p05 24.16 each; p95 207.15/207.15/207.15/202.49; range182.99/182.99/182.99/178.33 (north misses180); dominant #3f5b92 shares25.60/22.98/21.86/30.86%; heights81/80/80/77px.
+By eye FIRST, MACHINE: YES, hard flat bevelled plates, straight cut edges, ring neck, round joints, shin pistons and lens eyes; no feathers; crest/tuft/stripes/headdress absent.
+SHOEBILL: PARTIAL; big blunt box bill, small hook and hinge, block head/short thick neck, upright heavy hull and long struts; calm/dignified, not cute; front bill narrower than head FAIL, exact four toes unclear.
+Slate-blue armour and small turquoise eyes behind bill base PASS; steel legs/joint discs/pistons and gold claws PASS, gold ankle bands absent FAIL; two flat gold-edged wing panels/lenses show at front shoulders and rear, near lens in profile.
+Nothing held, no symbols/text PASS; four-step blue/gold volume and internal overlap lines present, exterior ink removed; small highlights/joints remain speckled; at40px robot silhouette/bill/panels survive, eye and joint details weaken.
+Backs n77<=s80 and ne/nw77<=se/sw80 PASS; n/s height0.9625, same camera and no rear eye/face; tiny gold bill-like slivers beside north neck FAIL; back feet show steel heels with gold outer toes.
+SE/SW true three-quarter with bill length/depth visible, but SW far eye still visible FAIL (SE mostly hidden); candidate misses craft/anatomy targets. All deliverables in take-c; no installation, commits, reverts, or Hollowtide writes.

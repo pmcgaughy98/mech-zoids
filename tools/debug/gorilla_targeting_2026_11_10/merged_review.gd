@@ -1,0 +1,66 @@
+extends "res://tools/debug/gorilla_targeting_2026_11_10/review.gd"
+var slam_events:=0
+func prepare(at:=Vector3(0,0,-4)) -> void:
+	reset();actor.position=Vector3.ZERO;actor.facing=Vector3.FORWARD;actor.body.snap_facing(actor.facing)
+	enemy.halt();enemy.alive=true;enemy.max_hp=600;enemy.hp=600;enemy.stunned=0;enemy.position=at
+	actor.max_hp=600;actor.hp=600
+	enemy.get_node("Kit").braced=false
+	kit.grab.impacted=false;kit.grab.captured=false;uses.clear();slam_events=0
+	aim(Vector3(0,0,-6))
+func run() -> void:
+	kit.grab.slammed.connect(func(_target):slam_events+=1)
+	prepare();shot("ONE MOVE / DRIVE INTO GROUND SLAM");targeter.arm("3")
+	await wait(.9);targeter.confirm()
+	check("combined move spends only slot 3",uses==["3"] and not actor.cooldowns.has("2"))
+	await wait(.49);check("drive impact does not shove recipient away",enemy.position.distance_to(Vector3(0,0,-4))<.01)
+	await wait(1.5)
+	check("drive plus slam deals 24 + 28 exactly",is_equal_approx(enemy.max_hp-enemy.hp,52))
+	check("one drive collision and one ground slam",kit.drive.hit_count==1 and slam_events==1)
+	check("combined move returns control to both units",not actor.busy and not enemy.has_meta("held_by") and not kit.grab.active)
+	prepare(Vector3(8,0,-4));shot("MISS / MOBILITY REMAINS / NO AUTOMATIC GRAB");targeter.arm("3");targeter.confirm();await wait(1.4)
+	check("miss has no grab or damage",slam_events==0 and enemy.hp==enemy.max_hp and not kit.grab.active)
+	check("miss retains forward travel",actor.position.z< -3.5 and actor.position.z> -4.1)
+	prepare();shot("MINION IN PATH / MECH IS THE TAKEDOWN TARGET")
+	var minion: Node3D=load("res://tools/debug/gorilla_visual_review_2026_11_09/target.gd").new();add_child(minion);minion.team="red";minion.kind="minion";minion.position=Vector3(0,0,-1.2)
+	targeter.arm("3");targeter.confirm();await wait(2)
+	check("minion does not consume drive or slam",slam_events==1 and is_equal_approx(enemy.max_hp-enemy.hp,52) and minion.damage_calls==0)
+	minion.queue_free();await get_tree().process_frame
+	prepare();enemy.get_node("Kit").braced=true;shot("BRACED TARGET / TAKEDOWN IMMUNITY")
+	targeter.arm("3");targeter.confirm();await wait(1.5)
+	check("brace rejects automatic grab",slam_events==0 and not enemy.has_meta("held_by"))
+	prepare();shot("INTERRUPTED CHARGE / CLEAN CANCEL");targeter.arm("3");targeter.confirm();await wait(.1);actor.stunned=1;await wait(1)
+	check("stun cancels drive and takedown",slam_events==0 and enemy.hp==enemy.max_hp and not actor.busy)
+	prepare();shot("FAULT LINE / AIMED RUPTURE + SLOW PATCH")
+	var releases: int=kit.fault.release_count;aim(enemy.position);targeter.arm("2");await wait(1);targeter.confirm()
+	check("fault line spends slot 2, not mobility",uses==["2"] and not actor.cooldowns.has("3"))
+	await wait(.2);check("fault line waits for ground strike event",kit.fault.release_count==releases)
+	await wait(.9)
+	check("fault line damages once despite wave plus field",is_equal_approx(enemy.max_hp-enemy.hp,22))
+	check("field slows without stunning",enemy.slowed>0 and enemy.stunned<=0)
+	enemy.position=Vector3(7,0,-4);await wait(.3);check("leaving patch promptly clears slow",enemy.slowed<=0)
+	await wait(1.1);check("fault line cleans up wave and field",kit.fault.waves.is_empty() and kit.fault.fields.is_empty())
+	prepare();shot("FAULT LINE / INTERRUPTED BEFORE RELEASE");releases=kit.fault.release_count;aim(enemy.position);targeter.arm("2");targeter.confirm();await wait(.1);actor.stunned=1;await wait(.7)
+	check("interrupted ground strike launches nothing",kit.fault.release_count==releases and enemy.hp==enemy.max_hp)
+	prepare();shot("WALL / BOTH ABILITIES RESPECT TERRAIN")
+	var wall:=StaticBody3D.new();wall.collision_layer=1;var collider:=CollisionShape3D.new();var shape:=BoxShape3D.new();shape.size=Vector3(3,3,.35);collider.shape=shape;wall.add_child(collider);add_child(wall);wall.position=Vector3(0,1,-2)
+	await get_tree().physics_frame;await get_tree().physics_frame
+	targeter.arm("3");targeter.confirm();await wait(1.4)
+	check("wall stops drive without grabbing through it",actor.position.z> -1 and slam_events==0 and enemy.hp==enemy.max_hp)
+	reset();aim(enemy.position);targeter.arm("2");targeter.confirm();await wait(1.5)
+	check("rupture stops at wall without damage behind it",enemy.hp==enemy.max_hp and kit.fault.waves.is_empty())
+	wall.queue_free()
+	await get_tree().physics_frame;await get_tree().physics_frame
+	prepare();shot("ESCAPE WINDOW / RECIPIENT LEAVES BEFORE GRAB");targeter.arm("3");targeter.confirm();await wait(.46);enemy.position=Vector3(6,0,-4);await wait(1.2)
+	check("escaping drive recipient is not pulled back",slam_events==0 and not enemy.has_meta("held_by") and is_equal_approx(enemy.max_hp-enemy.hp,24))
+	prepare();targeter.arm("3");targeter.confirm();await wait(.46);enemy.alive=false;enemy.hp=0;await wait(1.2)
+	check("dead recipient cannot enter takedown",slam_events==0 and not kit.grab.active and not actor.busy)
+	prepare();targeter.arm("3");targeter.confirm();await wait(.85);check("combo reaches its hold phase",enemy.has_meta("held_by"));actor.stunned=1;await wait(.4)
+	check("stun during hold safely releases victim",not enemy.has_meta("held_by") and is_zero_approx(enemy.position.y) and slam_events==0)
+	prepare();aim(Vector3(0,0,-99));check("fault line aim clamps to six meters",is_equal_approx(kit.fault.endpoint(Vector3(0,0,-99)).distance_to(actor.position),6))
+	var wave_minion: Node3D=load("res://tools/debug/gorilla_visual_review_2026_11_09/target.gd").new();add_child(wave_minion);wave_minion.team="red";wave_minion.kind="minion";wave_minion.position=Vector3(0,0,-2)
+	aim(enemy.position);targeter.arm("2");targeter.confirm();await wait(1.4)
+	check("rupture pierces minion and hits each enemy once",wave_minion.damage_calls==1 and is_equal_approx(wave_minion.hp,78) and is_equal_approx(enemy.max_hp-enemy.hp,22));wave_minion.queue_free()
+	var file:=FileAccess.open(OUT+"merged-checks.json",FileAccess.WRITE);file.store_string(JSON.stringify(tests,"  "));file.close()
+	print("MERGED_REVIEW_COMPLETE ",tests.size())
+	var code:=0 if tests.all(func(t):return t.passed) else 1
+	get_child(0).queue_free();await get_tree().process_frame;await get_tree().process_frame;MechModel3D.clear_templates();get_tree().quit(code)

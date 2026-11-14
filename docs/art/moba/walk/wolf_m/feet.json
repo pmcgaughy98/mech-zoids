@@ -1,0 +1,14 @@
+{
+ "machine": "wolf_m take-b",
+ "stills": "D:/dev/new-mech-rpg/docs/art/moba/wolf_m/take-b/views_cam35_touchup (APPROVED.txt: kept by Preston 2026-11-05, 'Keep it')",
+ "canvas": 192,
+ "offset": [0, 0],
+ "note": "[x0, x1, sole row] per foot. R and L are the wolf's own; its right side is the near side in se, e and ne. Labelled 2026-11-05 by the walk lane from the soles list, the red leg pieces and their shade (far legs darker). Hidden: s LH and RH (behind the head and fore legs), n LF and RF (behind the rump). Partly hidden: e LF (its left edge behind RF's leg), ne LF (only rows 118-126 show, behind RF and the chest). Not feet: the tail tip is the lowest point in ne (x 60-68, rows 147-160) and n (x 94-96, row 160).",
+ "views": {
+  "s":  {"RF": [81, 90, 160], "LF": [100, 109, 160]},
+  "se": {"RH": [69, 79, 142], "LH": [88, 96, 132], "RF": [102, 109, 160], "LF": [119, 125, 154]},
+  "e":  {"RH": [66, 76, 160], "LH": [80, 88, 145], "RF": [109, 120, 160], "LF": [117, 127, 147]},
+  "ne": {"LH": [72, 80, 153], "RH": [90, 98, 158], "LF": [104, 111, 126], "RF": [119, 130, 133]},
+  "n":  {"LH": [78, 87, 151], "RH": [103, 113, 151]}
+ }
+}

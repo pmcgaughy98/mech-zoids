@@ -1,0 +1,27 @@
+{
+  "source": "D:\\dev\\new-mech-rpg\\art\\model_catalog\\workspaces\\gorilla_shields_review.blend",
+  "source_sha256": "9d629fdd05024bcaf37fbe60b39ef5016e2c31ac494e57caf7f55dca59aad89b",
+  "backing_srgb_sampled_from_original_back": [
+    0.23725492,
+    0.62549022,
+    0.04117647
+  ],
+  "rim_srgb": [
+    0.72,
+    0.435,
+    0.175
+  ],
+  "front_backplate_pixels": 65536,
+  "back_background_pixels": 0,
+  "back_orange_pixels": 143018,
+  "checks": {
+    "front_atlas_unchanged_outside_backplate_tiles": true,
+    "body_atlas_unchanged_outside_back_orange_rim_mask": true,
+    "original_back_green_retained": true
+  },
+  "notes": [
+    "Use the original back-cell field green for front backings; user clarified this is not literal dark forest green.",
+    "Back shield cell layout, existing green background, frame shape and all mesh geometry preserved.",
+    "Back rim hue normalized to match the front orange frame."
+  ]
+}

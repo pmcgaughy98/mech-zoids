@@ -1,0 +1,916 @@
+{
+  "raw_size": [
+    1774,
+    887
+  ],
+  "raw_sha256": "196957ad985afc68b7153bc4322e0489ab639925065b9054ebbb09f1f66b2b7b",
+  "columns": 8,
+  "rows": [
+    "back",
+    "ne"
+  ],
+  "x_edges": [
+    0,
+    222,
+    444,
+    665,
+    887,
+    1109,
+    1330,
+    1552,
+    1774
+  ],
+  "y_edges": [
+    0,
+    428,
+    887
+  ],
+  "row_scale": {
+    "back": 0.285,
+    "ne": 0.285
+  },
+  "cells": [
+    {
+      "view": "back",
+      "frame": 0,
+      "source_box": [
+        0,
+        0,
+        222,
+        428
+      ],
+      "source_opaque_box": [
+        36,
+        71,
+        188,
+        348
+      ],
+      "scale": 0.285,
+      "placement": [
+        74,
+        82
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        74,
+        84,
+        118,
+        161
+      ],
+      "final_path": "frames/back_f0.png",
+      "pixel_repaint": {
+        "move": "walk",
+        "view": "back",
+        "frame": 0,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          0,
+          2
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "back",
+      "frame": 1,
+      "source_box": [
+        222,
+        0,
+        444,
+        428
+      ],
+      "source_opaque_box": [
+        36,
+        71,
+        187,
+        340
+      ],
+      "scale": 0.285,
+      "placement": [
+        74,
+        84
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        74,
+        84,
+        118,
+        161
+      ],
+      "final_path": "frames/back_f1.png",
+      "pixel_repaint": {
+        "move": "walk",
+        "view": "back",
+        "frame": 1,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          0,
+          3
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "back",
+      "frame": 2,
+      "source_box": [
+        444,
+        0,
+        665,
+        428
+      ],
+      "source_opaque_box": [
+        35,
+        71,
+        187,
+        335
+      ],
+      "scale": 0.285,
+      "placement": [
+        74,
+        86
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        74,
+        84,
+        118,
+        161
+      ],
+      "final_path": "frames/back_f2.png",
+      "pixel_repaint": {
+        "move": "walk",
+        "view": "back",
+        "frame": 2,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 1,
+        "hind_lifts": [
+          0,
+          4
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "back",
+      "frame": 3,
+      "source_box": [
+        665,
+        0,
+        887,
+        428
+      ],
+      "source_opaque_box": [
+        36,
+        71,
+        188,
+        347
+      ],
+      "scale": 0.285,
+      "placement": [
+        74,
+        82
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        74,
+        84,
+        118,
+        161
+      ],
+      "final_path": "frames/back_f3.png",
+      "pixel_repaint": {
+        "move": "walk",
+        "view": "back",
+        "frame": 3,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "back",
+      "frame": 4,
+      "source_box": [
+        887,
+        0,
+        1109,
+        428
+      ],
+      "source_opaque_box": [
+        36,
+        71,
+        188,
+        343
+      ],
+      "scale": 0.285,
+      "placement": [
+        74,
+        83
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        74,
+        84,
+        118,
+        161
+      ],
+      "final_path": "frames/back_f4.png",
+      "pixel_repaint": {
+        "move": "walk",
+        "view": "back",
+        "frame": 4,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          2,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "back",
+      "frame": 5,
+      "source_box": [
+        1109,
+        0,
+        1330,
+        428
+      ],
+      "source_opaque_box": [
+        36,
+        71,
+        188,
+        340
+      ],
+      "scale": 0.285,
+      "placement": [
+        74,
+        84
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        74,
+        84,
+        118,
+        161
+      ],
+      "final_path": "frames/back_f5.png",
+      "pixel_repaint": {
+        "move": "walk",
+        "view": "back",
+        "frame": 5,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          3,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "back",
+      "frame": 6,
+      "source_box": [
+        1330,
+        0,
+        1552,
+        428
+      ],
+      "source_opaque_box": [
+        37,
+        71,
+        188,
+        335
+      ],
+      "scale": 0.285,
+      "placement": [
+        74,
+        86
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        74,
+        84,
+        118,
+        161
+      ],
+      "final_path": "frames/back_f6.png",
+      "pixel_repaint": {
+        "move": "walk",
+        "view": "back",
+        "frame": 6,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 1,
+        "hind_lifts": [
+          4,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "back",
+      "frame": 7,
+      "source_box": [
+        1552,
+        0,
+        1774,
+        428
+      ],
+      "source_opaque_box": [
+        36,
+        71,
+        189,
+        347
+      ],
+      "scale": 0.285,
+      "placement": [
+        74,
+        82
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        74,
+        84,
+        118,
+        161
+      ],
+      "final_path": "frames/back_f7.png",
+      "pixel_repaint": {
+        "move": "walk",
+        "view": "back",
+        "frame": 7,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "ne",
+      "frame": 0,
+      "source_box": [
+        0,
+        428,
+        222,
+        887
+      ],
+      "source_opaque_box": [
+        24,
+        81,
+        197,
+        350
+      ],
+      "scale": 0.285,
+      "placement": [
+        72,
+        84
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        67,
+        86,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f0.png",
+      "pixel_repaint": {
+        "move": "walk",
+        "view": "ne",
+        "frame": 0,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          0,
+          2
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "ne",
+      "frame": 1,
+      "source_box": [
+        222,
+        428,
+        444,
+        887
+      ],
+      "source_opaque_box": [
+        26,
+        82,
+        197,
+        344
+      ],
+      "scale": 0.285,
+      "placement": [
+        72,
+        86
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        67,
+        86,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f1.png",
+      "pixel_repaint": {
+        "move": "walk",
+        "view": "ne",
+        "frame": 1,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          0,
+          3
+        ],
+        "hind_x_shift": [
+          0,
+          1
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "ne",
+      "frame": 2,
+      "source_box": [
+        444,
+        428,
+        665,
+        887
+      ],
+      "source_opaque_box": [
+        31,
+        81,
+        197,
+        338
+      ],
+      "scale": 0.285,
+      "placement": [
+        72,
+        88
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        67,
+        86,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f2.png",
+      "pixel_repaint": {
+        "move": "walk",
+        "view": "ne",
+        "frame": 2,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 1,
+        "hind_lifts": [
+          0,
+          4
+        ],
+        "hind_x_shift": [
+          0,
+          2
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "ne",
+      "frame": 3,
+      "source_box": [
+        665,
+        428,
+        887,
+        887
+      ],
+      "source_opaque_box": [
+        30,
+        81,
+        198,
+        350
+      ],
+      "scale": 0.285,
+      "placement": [
+        72,
+        84
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        67,
+        86,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f3.png",
+      "pixel_repaint": {
+        "move": "walk",
+        "view": "ne",
+        "frame": 3,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "ne",
+      "frame": 4,
+      "source_box": [
+        887,
+        428,
+        1109,
+        887
+      ],
+      "source_opaque_box": [
+        28,
+        81,
+        197,
+        346
+      ],
+      "scale": 0.285,
+      "placement": [
+        72,
+        85
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        67,
+        86,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f4.png",
+      "pixel_repaint": {
+        "move": "walk",
+        "view": "ne",
+        "frame": 4,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          2,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "ne",
+      "frame": 5,
+      "source_box": [
+        1109,
+        428,
+        1330,
+        887
+      ],
+      "source_opaque_box": [
+        28,
+        82,
+        197,
+        342
+      ],
+      "scale": 0.285,
+      "placement": [
+        72,
+        87
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        67,
+        86,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f5.png",
+      "pixel_repaint": {
+        "move": "walk",
+        "view": "ne",
+        "frame": 5,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          3,
+          0
+        ],
+        "hind_x_shift": [
+          1,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "ne",
+      "frame": 6,
+      "source_box": [
+        1330,
+        428,
+        1552,
+        887
+      ],
+      "source_opaque_box": [
+        33,
+        81,
+        198,
+        336
+      ],
+      "scale": 0.285,
+      "placement": [
+        72,
+        88
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        67,
+        86,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f6.png",
+      "pixel_repaint": {
+        "move": "walk",
+        "view": "ne",
+        "frame": 6,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 1,
+        "hind_lifts": [
+          4,
+          0
+        ],
+        "hind_x_shift": [
+          2,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    },
+    {
+      "view": "ne",
+      "frame": 7,
+      "source_box": [
+        1552,
+        428,
+        1774,
+        887
+      ],
+      "source_opaque_box": [
+        32,
+        81,
+        198,
+        351
+      ],
+      "scale": 0.285,
+      "placement": [
+        72,
+        84
+      ],
+      "duration_ms": 100,
+      "touches_cut": false,
+      "final_opaque_box": [
+        67,
+        86,
+        125,
+        161
+      ],
+      "final_path": "frames/ne_f7.png",
+      "pixel_repaint": {
+        "move": "walk",
+        "view": "ne",
+        "frame": 7,
+        "head_translation": [
+          0,
+          0
+        ],
+        "body_bob": 0,
+        "hind_lifts": [
+          0,
+          0
+        ],
+        "hind_x_shift": [
+          0,
+          0
+        ],
+        "method": "direct native-pixel contour/colour repaint; no still part compositing"
+      },
+      "final_approved_coordinate_offset": [
+        16,
+        20
+      ],
+      "exact_endpoint": false
+    }
+  ],
+  "approved_offset": [
+    16,
+    20
+  ],
+  "ground_row": 160,
+  "duration_ms": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+  ],
+  "loop": true,
+  "finishing": "../redraw.py then ../finalize.py; direct native pixel repaint, no still parts",
+  "source_grid_clean": true
+}

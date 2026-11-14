@@ -1,0 +1,51 @@
+from repair import *
+report='''FENNEC TAKE B / REPAIR A+B / 2026-11-04
+Tokens used: unavailable. Image-tool calls: 0. Current PNGs were the starting point.
+153 frames inspected; 45 repaired; each original preserved once in frames_pre_repair.
+All boards use the specified selout() at 4x nearest-neighbour, still leftmost.
+idle/front f1-3: joined chest paste line; clean f0,4.
+idle/side f1-3: closed native haunch/tail pinholes; clean locked f0,4.
+idle/back f1-3: joined waist paste line; clean f0,4.
+walk/front: clean f0-7.
+walk/side f0-7: rounded clipped upper haunch; f2,5,6 finished truncated hind pads; f5 stray removed.
+walk/back f0-7: removed shoulder tabs and redrew continuous tapered shoulder outlines.
+sand_kick/front f1-4: rounded clipped shoulder/joint tops; clean f0,5.
+sand_kick/side f1-4: finished upper hip/shoulder contours; f3 join holes closed; clean f0,5.
+sand_kick/back f1,2,4: finished hip caps; f3 shoulder bars removed; clean f0,5.
+ear_burst/front: clean f0-5.
+ear_burst/side f2: redrew sloping neck/back join and removed tab; clean f0,1,3-5.
+ear_burst/back f2: removed shoulder bars, completed shoulder taper; clean f0,1,3-5.
+sonic_boom/front: clean f0-7.
+sonic_boom/side: clean f0-7.
+sonic_boom/back: clean f0-7.
+dig/front f2: finished forepaw caps and short throat join; clean f0,1,3-5.
+dig/side f1: finished hip cap; f2 redrew torso/neck bridge, removed tail wedge/bar and pinholes; clean f0,3-5.
+dig/back f2: completed hip tops and join pinholes; clean f0,1,3-5.
+pop_out/front: clean f0-4; f0 two separate buried ear tips intentional.
+pop_out/side: clean f0-4.
+pop_out/back: clean f0-4; f0 two separate buried ear tips intentional.
+death/front f1: chin remnant removed; f4 finished chopped lower ear rim; clean f0,2,3,5,6.
+death/side: clean f0-6.
+death/back: clean f0-6.
+Checks rerun on all 153: 192x192; 15-colour palette only; binary alpha; canvas edges clear: PASS.
+Ground: no pixels below 160; all grounded at 160 except pop_out f2 bottoms 145/146/146: PASS.
+33 locked frames pixel-exact to approved still at (+16,+20); files not rewritten: PASS.
+Holes: 0 on editable frames; 11 locked side frames retain the approved still's 6 pixels each.
+Strays: 0 tiny disconnected components; only pop_out f0 front/back have intentional paired ears.
+24 outlined GIFs decoded; frame counts and original millisecond holds retained: PASS.
+Viewed all eight after boards and magnified frame groups; repaired areas re-inspected after refinement.
+Live GIF playback unavailable: browser host unavailable; automatic approval review rejected Chrome control.
+No sets C/D, assets, art, tools, raw sheets, timing, grid metadata or game files changed. No commit.
+'''
+# Ground values are measured, not assumed.
+bots=[]
+for v in VIEWS:
+ a=np.array(Image.open(files('pop_out',v)[2]));bots.append(int(np.where(a[:,:,3]>0)[0].max()))
+report=report.replace('145/146/146','/'.join(map(str,bots)))
+assert len(report.splitlines())<40
+(OUT/'REPAIR.txt').write_text(report)
+checks=json.loads((OUT/'checks.json').read_text());locked=set(json.loads((OUT/'validation.json').read_text())['locked_exact'])
+for r in checks:
+ assert r['palette'] and r['alpha'] and not r['edge'] and not r['strays']
+ if r['move']+'/'+r['frame']+'.png' not in locked:assert r['holes']==0,r
+print('Final checks PASS; report lines',len(report.splitlines()),'; pop_out air rows',bots)

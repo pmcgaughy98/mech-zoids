@@ -1,0 +1,83 @@
+{
+  "tested_sha256": "e0c071ba0b6af6f9b9f38e4d974fd99ec3c12a0ec41e3cb659422709020017a5",
+  "joint_count": 23,
+  "poses": [
+    {
+      "label": "front-left",
+      "bone": "Bone_016",
+      "degrees": 12,
+      "max_displacement_m": 0.0946856954735315,
+      "coincident_surface_gap_m": 1.7881393432617188e-07
+    },
+    {
+      "label": "front-left-ankle",
+      "bone": "Bone_015",
+      "degrees": 12,
+      "max_displacement_m": 0.05325139780650719,
+      "coincident_surface_gap_m": 1.7881393432617188e-07
+    },
+    {
+      "label": "front-right",
+      "bone": "Bone_013",
+      "degrees": -12,
+      "max_displacement_m": 0.09466738206361883,
+      "coincident_surface_gap_m": 1.884864366154897e-07
+    },
+    {
+      "label": "front-right-ankle",
+      "bone": "Bone_012",
+      "degrees": -12,
+      "max_displacement_m": 0.05493183382005382,
+      "coincident_surface_gap_m": 2.0647654623614278e-07
+    },
+    {
+      "label": "middle-left",
+      "bone": "Bone_010",
+      "degrees": 10,
+      "max_displacement_m": 0.07894883504237593,
+      "coincident_surface_gap_m": 1.7881393432617188e-07
+    },
+    {
+      "label": "middle-right",
+      "bone": "Bone_007",
+      "degrees": -10,
+      "max_displacement_m": 0.07893359168736064,
+      "coincident_surface_gap_m": 1.7881393432617188e-07
+    },
+    {
+      "label": "rear-left",
+      "bone": "Bone_019",
+      "degrees": 10,
+      "max_displacement_m": 0.0820502947921225,
+      "coincident_surface_gap_m": 1.7881393432617188e-07
+    },
+    {
+      "label": "rear-right",
+      "bone": "Bone_022",
+      "degrees": -10,
+      "max_displacement_m": 0.08203195123149054,
+      "coincident_surface_gap_m": 1.7881393432617188e-07
+    },
+    {
+      "label": "head",
+      "bone": "Bone_004",
+      "degrees": 8,
+      "max_displacement_m": 0.1807312924418992,
+      "coincident_surface_gap_m": 1.7881393432617188e-07
+    },
+    {
+      "label": "mandibles",
+      "bone": "Bone_002",
+      "degrees": 6,
+      "max_displacement_m": 0.05282420026360552,
+      "coincident_surface_gap_m": 1.7881393432617188e-07
+    },
+    {
+      "label": "shell",
+      "bone": "Bone_001",
+      "degrees": 5,
+      "max_displacement_m": 0.15783320125345063,
+      "coincident_surface_gap_m": 1.7881393432617188e-07
+    }
+  ]
+}

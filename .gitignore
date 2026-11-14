@@ -19,3 +19,12 @@ docs/art/2d/*/
 # Python bytecode (Claude, 2026-10-20)
 __pycache__/
 *.pyc
+
+# Option A, 2026-11-14 (Preston: "A: game only"): source and workspace models stay on disk, out of git
+*.blend
+*.blend1
+art/model_catalog/sources/
+art/model_catalog/workspaces/
+art/environment/foundry_5v5/workspaces/
+docs/**/*.mp4
+docs/**/*.zip

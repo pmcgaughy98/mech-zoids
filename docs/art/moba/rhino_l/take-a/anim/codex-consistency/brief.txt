@@ -1,0 +1,31 @@
+Job from Claude (the mech RPG session): a detail-consistency pass on the rhino's walk for Preston's mech-animal MOBA in D:/dev/new-mech-rpg (working id rhino_l, take A). Preston: "codex can see the rhino frames missing consistencies based off se. Some still look flat especially near horn eyes etc."
+
+You run from C:\Users\pmcga\dev\hollowtide only because that folder is trusted and holds the tools. This is NOT Hollowtide work: write nothing in the Hollowtide repo. Write only inside D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/codex-consistency (called "out" below). The only images you may open are the files in out/refs and the images you make in this job. Never open any other image anywhere.
+
+Read first: docs/art/sprite-canon-2026-11-02.md and .codex/skills/hollowtide-sprites/SKILL.md (their craft, palette and check rules apply; their lore and evolution sections do not). Then D:/dev/new-mech-rpg/docs/art/moba/rhino_l/take-a/anim/selout_rhino.py and detail_ink.py: the outline and interior-ink rules these frames already went through.
+
+Refs: every file is 192x192, transparent, feet on y=160, with the one-texel outline under light feet on y=161.
+- out/refs/se_f0..7.png (front three-quarter, facing right) and out/refs/side_f0..7.png (facing right) are the look Preston likes.
+- out/refs/front_f0..7.png, out/refs/back_f0..7.png and out/refs/ne_f0..7.png (back three-quarter, facing right and away) are the walk frames to bring up to that look.
+
+Goal: front, back and ne carry the same level of detail as se. That means:
+- black interior lines between plates, joints and body;
+- the horn two-toned, with a dark line where it meets the head;
+- red eyes with a dark socket (front and se show both eyes; ne may show none; back shows none);
+- plate edges with the same highlight and shadow steps as se;
+- grey disc joints ringed like se.
+Today front and back look flat, worst around the horn and eyes.
+
+Hard rules:
+- Same canvas, frame count, frame order and pose. Same silhouette: alpha IoU with the input frame 0.97 or more. Feet stay on the same rows.
+- Only these colours: 141218 211E27 3D3A44 7A4A06 58555E FF3A2A D18A0A 9D9BA2 FFCF1F D6D6DC FFE6D8 FFF4A8. The outline stays #141218, one texel outside the silhouette, as now.
+- Edit the given frames; do not redraw them from scratch. Keep each frame's leg motion exactly.
+- The same fix in every frame of a view, so nothing flickers. The body barely moves between frames: make each view's body edit once and carry it to every frame by that frame's offset.
+- Pixel edits by script are preferred. If you generate images at all, finish them back onto the palette and run the checks.
+
+Deliver in out:
+- frames/front_f0..7.png, frames/back_f0..7.png, frames/ne_f0..7.png;
+- board.png: rows are se as the reference, then each view before and after, at 3x on #3D4350;
+- preview.gif: se, front, ne, back side by side at 8 fps;
+- REPORT.txt: per frame the IoU with the input, the colour count, the bottom row and the number of changed pixels, plus what you could not fix.
+No redos beyond this pass, no installs, no commits.

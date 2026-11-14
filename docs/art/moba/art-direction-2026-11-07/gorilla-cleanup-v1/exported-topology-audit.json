@@ -1,0 +1,42 @@
+[
+  {
+    "object": "node_0",
+    "uv_seam_split_vertices": 78140,
+    "position_welded_vertices": 49994,
+    "connected_components_before": 1896,
+    "connected_components_after_position_weld": 1,
+    "top_components": [
+      {
+        "vertices": 49994,
+        "faces": 100000,
+        "lo": [
+          -0.4856623411178589,
+          -0.35844919085502625,
+          -2.6461818833922734e-06
+        ],
+        "hi": [
+          0.48714491724967957,
+          0.38147690892219543,
+          0.7190576791763306
+        ],
+        "center": [
+          0.0007412880659103394,
+          0.011513859033584595,
+          0.3595275164972236
+        ],
+        "dimensions": [
+          0.9728072583675385,
+          0.7399260997772217,
+          0.719060325358214
+        ]
+      }
+    ],
+    "boundary_edges_after_weld": 0,
+    "nonmanifold_edges_after_weld": 0,
+    "zero_area_faces": 0,
+    "wire_edges": 0,
+    "isolated_vertices": 0,
+    "custom_normals": true,
+    "small_components_under_10_faces": []
+  }
+]

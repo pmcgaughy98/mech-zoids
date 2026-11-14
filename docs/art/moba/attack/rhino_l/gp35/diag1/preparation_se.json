@@ -1,0 +1,143 @@
+{
+  "raw_sha256": "f4c9ee91a074288968303990db0d1bd4949baa9323a3af22a7f50c42c0db2ca3",
+  "raw_size": [
+    2172,
+    362
+  ],
+  "heads": {
+    "se": {
+      "raw": [
+        [
+          289,
+          169
+        ],
+        [
+          236.5,
+          229
+        ]
+      ],
+      "still": [
+        [
+          128,
+          112
+        ],
+        [
+          113.5,
+          132.75
+        ]
+      ],
+      "raw_length": 79.72609359550987,
+      "still_length": 25.31427462914946,
+      "factor": 0.3175155521551246
+    }
+  },
+  "median_factor": 0.3175155521551246,
+  "actual_xy_scale": [
+    0.31767955801104975,
+    0.31767955801104975
+  ],
+  "finished_size": [
+    690,
+    115
+  ],
+  "rows": {
+    "se": {
+      "width": 79,
+      "height": 74,
+      "still_wh": [
+        85,
+        83
+      ],
+      "head_length_scaled": 25.31427462914946,
+      "head_error": 0.0
+    }
+  },
+  "eye_restored": [
+    "se_f0 @(75,72) local cell",
+    "se_f1 @(75,79) local cell",
+    "se_f2 @(74,63) local cell",
+    "se_f3 @(72,43) local cell",
+    "se_f4 @(74,81) local cell",
+    "se_f5 @(75,70) local cell"
+  ],
+  "discarded_tiny_alpha": {
+    "se0": 0,
+    "se1": 0,
+    "se2": 0,
+    "se3": 0,
+    "se4": 0,
+    "se5": 0
+  },
+  "despeckle": {
+    "se0": {
+      "before": 289,
+      "after": 289,
+      "passes": 0
+    },
+    "se1": {
+      "before": 310,
+      "after": 310,
+      "passes": 0
+    },
+    "se2": {
+      "before": 307,
+      "after": 307,
+      "passes": 0
+    },
+    "se3": {
+      "before": 331,
+      "after": 331,
+      "passes": 0
+    },
+    "se4": {
+      "before": 271,
+      "after": 271,
+      "passes": 0
+    },
+    "se5": {
+      "before": 319,
+      "after": 319,
+      "passes": 0
+    }
+  },
+  "ink": {
+    "se0": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08770210681038706
+    },
+    "se1": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.08209538702111024
+    },
+    "se2": {
+      "eligible": 12,
+      "added": 0,
+      "share": 0.08939974457215837
+    },
+    "se3": {
+      "eligible": 38,
+      "added": 0,
+      "share": 0.08951048951048951
+    },
+    "se4": {
+      "eligible": 0,
+      "added": 0,
+      "share": 0.07011642949547219
+    },
+    "se5": {
+      "eligible": 12,
+      "added": 0,
+      "share": 0.08936170212765958
+    }
+  },
+  "closed_pinholes": {
+    "se0": 2,
+    "se1": 2,
+    "se2": 2,
+    "se3": 0,
+    "se4": 0,
+    "se5": 1
+  }
+}

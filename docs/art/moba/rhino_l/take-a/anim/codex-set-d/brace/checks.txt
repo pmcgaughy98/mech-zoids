@@ -1,0 +1,31 @@
+Clean 2x5 grid: True; binary alpha; transparent RGB zero.
+se: factor=0.2834201494; fixed cell anchor offset=(42,62)
+se_f0: width=89, height=70, colours=11, red=3, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+se_f1: width=84, height=64, colours=11, red=2, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+se_f2: width=96, height=61, colours=11, red=3, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+se_f3: width=93, height=59, colours=11, red=5, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+se_f4: width=88, height=70, colours=11, red=4, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+se column1 vs ref: 89x70 vs 89x70; exact-colour share=0.6754; mirrored ref=0.1905; orientation=PASS (opaque union; feet aligned; best x overlap each)
+ne: factor=0.2604483314; fixed cell anchor offset=(48,68)
+ne_f0: width=79, height=73, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+ne_f1: width=78, height=67, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+ne_f2: width=91, height=64, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+ne_f3: width=88, height=61, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+ne_f4: width=77, height=73, colours=10, red=0, glint=0, eye_rim=0, bottom=160, border=False, requested_shift=0
+ne column1 vs ref: 79x73 vs 77x74; exact-colour share=0.6175; mirrored ref=0.2112; orientation=PASS (opaque union; feet aligned; best x overlap each)
+Palette audit hex total rim rim_share:
+#141218 1346 209 0.1553
+#211E27 3825 551 0.1441
+#3D3A44 3480 758 0.2178
+#58555E 3408 635 0.1863
+#7A4A06 4136 203 0.0491
+#9D9BA2 3322 311 0.0936
+#D18A0A 7206 465 0.0645
+#D6D6DC 920 179 0.1946
+#FF3A2A 17 0 0.0000
+#FFCF1F 9829 381 0.0388
+#FFE6D8 0 0 0.0000
+#FFF4A8 4218 429 0.1017
+Top5 share=0.7005; near-black (<48 each) share=0.1240
+se lone-colour-pixel shares: 0.0076, 0.0086, 0.0079, 0.0120, 0.0089
+ne lone-colour-pixel shares: 0.0086, 0.0079, 0.0084, 0.0086, 0.0076

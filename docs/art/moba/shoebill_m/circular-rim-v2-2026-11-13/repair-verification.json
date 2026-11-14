@@ -1,0 +1,27 @@
+{
+  "source": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\shoebill_m\\backplate-repair-v1-2026-11-13\\shoebill-backplate-repaired-v1.glb",
+  "source_sha256": "19f929756d3fcfa9a2b8fa53a1385815af0e5cf5607c6e44ac47d14c22786cb0",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\shoebill_m\\circular-rim-v2-2026-11-13\\shoebill-circular-moon-rim-v2.glb",
+  "output_sha256": "d6e52a3b322ef0bd3d5f65823c337eb7dc34f46a41ae30a5caa8f26d3f5de6f4",
+  "joint_count": 38,
+  "before_triangles": 25962,
+  "final_triangles": 30186,
+  "new_frame_triangles": 4224,
+  "frame_segments": 192,
+  "circular_outer_radius_m": 0.29,
+  "moon_window_radius_m": 0.23,
+  "plate_center_gltf_xy": [
+    -0.0001698,
+    1.1668026
+  ],
+  "frame_positive_volume_m3": 0.011505278758704662,
+  "new_frame_rigid_attachment": "Bone_003, existing plate/body control",
+  "all_prior_primitives_attributes_weights_and_source_binary_preserved": true,
+  "skeleton_hierarchy_rest_binds_unchanged": true,
+  "original_moon_face_rim_brass_mounts_body_and_wings_geometry_unchanged": true,
+  "added_materials": [
+    "Continuous silver moon rim",
+    "Circular blue backplate casing"
+  ],
+  "scope": "User confirmed a circular rim with moon design visible. Added a smooth circular silver rim and fitted blue outer casing over exposed gray backing. Original brass mounts remain visible in fitted recesses; original rig and weights unchanged."
+}

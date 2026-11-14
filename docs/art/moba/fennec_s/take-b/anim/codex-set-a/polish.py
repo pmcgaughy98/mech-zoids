@@ -1,0 +1,48 @@
+from finish import *
+LOG=[]
+
+def teal(a):return (a[:,:,1]>180)&(a[:,:,0]<100)&(a[:,:,3]>0)
+def eyes(a):
+ g=teal(a);lab,k=ndi.label(g);pts=[]
+ for j in range(1,k+1):
+  y,x=np.where(lab==j)
+  if len(x)>=2 and y.mean()<145:pts.extend(zip(x,y))
+ return np.mean(pts,axis=0) if pts else None
+
+def restore_head(name,n,c):
+ path=ROOT/name/'frames'/f'{n}_f{c}.png';im=Image.open(path).convert('RGBA');a=np.array(im);ref=np.array(approved(n))
+ if name=='walk':dx,dy=0,0
+ elif n!='back':
+  p=eyes(a);q=eyes(ref)
+  if p is None:return
+  dx,dy=np.rint(p-q).astype(int);dx=int(np.clip(dx,-8,8));dy=int(np.clip(dy,-8,12))
+ else:dx,dy=0,[0,4,8,0,5,0][c]
+ end={'front':111,'side':110,'back':110}[n]+20
+ a[:end+dy]=0
+ patch=ref.copy();patch[end:]=0
+ im=Image.fromarray(a);im.alpha_composite(Image.fromarray(patch),(dx,dy))
+ im=clean(im);im.save(path);LOG.append(f'{name}/{n}_f{c}: full native head ears face at delta {dx},{dy}')
+
+# Idle never changes the fixed lower body, including the approved side joint gap.
+for n in NAMES:
+ for c in [1,2,3]:
+  p=ROOT/'idle'/'frames'/f'{n}_f{c}.png';a=np.array(Image.open(p));ref=np.array(approved(n));a[140:]=ref[140:];Image.fromarray(a).save(p)
+
+for name in ['walk','sand_kick']:
+ for n in NAMES:
+  for c in range(COUNTS[name]):
+   if name!='walk' and c in [0,COUNTS[name]-1]:continue
+   restore_head(name,n,c)
+
+# Face plates are restored by observed eye centres, not by bounding-box top.
+for name in ['ear_burst','sonic_boom']:
+ if not (ROOT/name/'frames').exists():continue
+ for n in ['front','side']:
+  box={'front':(68,95,94,110),'side':(98,94,117,106)}[n];patch=REFS[n].crop(box);pa=np.array(patch);q=eyes(pa)
+  for c in range(1,COUNTS[name]-1):
+   if (name=='ear_burst' and c==3) or (name=='sonic_boom' and c==4):continue
+   p=ROOT/name/'frames'/f'{n}_f{c}.png';im=Image.open(p).convert('RGBA');a=np.array(im);g=eyes(a)
+   if g is None:continue
+   x,y=np.rint(g-q).astype(int);mask=a[:,:,3]>0;im.alpha_composite(patch,(int(x),int(y)));a=np.array(im);a[~mask]=0
+   clean(Image.fromarray(a)).save(p);LOG.append(f'{name}/{n}_f{c}: native sleepy eyes muzzle face at {x},{y}')
+(ROOT/'native_finish_log.txt').write_text('\n'.join(LOG)+'\n')

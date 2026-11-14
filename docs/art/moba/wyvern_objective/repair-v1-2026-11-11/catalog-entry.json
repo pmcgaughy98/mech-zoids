@@ -1,0 +1,91 @@
+{
+  "id": "wyvern",
+  "name": "Wyvern",
+  "category": "objective",
+  "reference_only": false,
+  "source_model": {
+    "path": "res://art/model_catalog/sources/Meshy_AI_Cyber_Wyvern_Sentinel_1110211655_texture.glb",
+    "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_Cyber_Wyvern_Sentinel_1110211655_texture.glb",
+    "sha256": "de6feb0f20655e289e8cae2de8ad6f9589050c93acb2feecd0e073194cd8d512",
+    "bytes": 37778492,
+    "kind": "rigged_download",
+    "source_stage": "remeshed/rigged input; not an intact pre-remesh original"
+  },
+  "display_model": "res://docs/art/moba/wyvern_objective/repair-v1-2026-11-11/wyvern-objective-repaired-v1.glb",
+  "status": "Extra chest forelegs removed: two hind legs plus two wing arms. Original 46-joint rig retained.",
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/wyvern/front.png",
+      "source": "D:\\user\\Downloads\\wyvern_front.png",
+      "sha256": "a305c11d38ffd43c7704bbd8659930cf4ae32e29aece02da3507d920a137dca9",
+      "bytes": 339506,
+      "project_matches": [],
+      "provenance_note": "Exact downloaded reference; creature identity and limb intent visually checked. No exact historical generation-job linkage verified."
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/wyvern/left.png",
+      "source": "D:\\user\\Downloads\\wyvern_left.png",
+      "sha256": "249a2679c86c18104d4f3c275ceb66aae69259f7bc5328b18d70ced00a1ec26e",
+      "bytes": 323865,
+      "project_matches": [],
+      "provenance_note": "Exact downloaded reference; creature identity and limb intent visually checked. No exact historical generation-job linkage verified."
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/wyvern/back.png",
+      "source": "D:\\user\\Downloads\\wyvern_back.png",
+      "sha256": "00b03fea257cb7b4bc1c4f42c24c505915f58f9405a9ca8739d57c81ec995385",
+      "bytes": 338579,
+      "project_matches": [],
+      "provenance_note": "Exact downloaded reference; creature identity and limb intent visually checked. No exact historical generation-job linkage verified."
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/wyvern/right.png",
+      "source": "D:\\user\\Downloads\\wyvern_right.png",
+      "sha256": "27dbe88d7e9e54354fc17d3f97af10107409443c3a6576a44aae1703974d4244",
+      "bytes": 323830,
+      "project_matches": [],
+      "provenance_note": "Exact downloaded reference; creature identity and limb intent visually checked. No exact historical generation-job linkage verified."
+    }
+  },
+  "artist_workspace": "res://docs/art/moba/wyvern_objective/repair-v1-2026-11-11/wyvern-objective-repaired-v1.blend",
+  "review_models": [
+    {
+      "label": "DOWNLOADED RIG\nBefore local repair",
+      "path": "res://art/model_catalog/sources/Meshy_AI_Cyber_Wyvern_Sentinel_1110211655_texture.glb",
+      "display_scale": 0.8761529512464642
+    },
+    {
+      "label": "REPAIRED\nSame 46-joint skeleton",
+      "path": "res://docs/art/moba/wyvern_objective/repair-v1-2026-11-11/wyvern-objective-repaired-v1.glb",
+      "display_scale": 0.8761529512464642
+    }
+  ],
+  "review_views": {
+    "front": {
+      "path": "res://docs/art/moba/wyvern_objective/repair-v1-2026-11-11/review-front.png",
+      "kind": "Labeled rigged-download/local-repair comparison; true pre-remesh original unavailable"
+    },
+    "left": {
+      "path": "res://docs/art/moba/wyvern_objective/repair-v1-2026-11-11/review-side.png",
+      "kind": "Labeled rigged-download/local-repair comparison; true pre-remesh original unavailable"
+    },
+    "back": {
+      "path": "res://docs/art/moba/wyvern_objective/repair-v1-2026-11-11/review-back.png",
+      "kind": "Labeled rigged-download/local-repair comparison; true pre-remesh original unavailable"
+    },
+    "right": {
+      "path": "res://docs/art/moba/wyvern_objective/repair-v1-2026-11-11/review-right.png",
+      "kind": "Labeled rigged-download/local-repair comparison; true pre-remesh original unavailable"
+    }
+  },
+  "review_provenance": {
+    "date": "2026-11-13",
+    "report": "res://docs/art/moba/wyvern_objective/repair-v1-2026-11-11/repair-verification.json",
+    "independent_audit": "res://docs/art/moba/wyvern_objective/repair-v1-2026-11-11/independent-export-audit.json",
+    "joint_count": 46,
+    "rigged_input_sha256": "de6feb0f20655e289e8cae2de8ad6f9589050c93acb2feecd0e073194cd8d512",
+    "repaired_sha256": "400b4030afb72959a5d265a97cf992c2ecee6e6ab417fb4e237ab0fd98ba09d9",
+    "intact_pre_remesh_available": false,
+    "scope": "Extra inner walking forelegs removed; two hind legs and two wing forelimbs retained. Closed jaw detail preserved. Original hierarchy/rest/binds/materials retained. True pre-remesh source unavailable; two-version comparison only. Review asset, no authored-map or gameplay replacement."
+  }
+}

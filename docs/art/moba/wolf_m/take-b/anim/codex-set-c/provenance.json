@@ -1,0 +1,45 @@
+{
+  "tool": "built-in image_gen",
+  "calls": 4,
+  "redos": 0,
+  "reference_order": [
+    "refs/se_6x.png",
+    "refs/ne_6x.png"
+  ],
+  "source_method": "../codex-set-a",
+  "tokens_used": null,
+  "sheets": {
+    "walk": {
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "a63fec8a58655f304548e7a853548ba65bfb3437c323420ad3b31fecf0b9672d",
+      "prompt_sha256": "b68d225767539dc32640803fd3a2154880f74bf6615cd413fe762154522a0538"
+    },
+    "sprint": {
+      "size": [
+        2172,
+        724
+      ],
+      "sha256": "ddc32b2f88db51b2330769aee3062e0f8410ad37c8d0bc12123a0318aa174fb5",
+      "prompt_sha256": "ab3187bacab7af178a3be7404930dc1375da05a370ddbf09f4f18eac7970313c"
+    },
+    "lunge": {
+      "size": [
+        2172,
+        724
+      ],
+      "sha256": "0058116876b1f6f23a58840d515f9f7a1ce42de72f90120753374f22f0cbfd55",
+      "prompt_sha256": "a8a91acec93624b9d76b95ce8dd99d898322f07b1bbfab4734e16592c5226766"
+    },
+    "bite": {
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "d262280448282c9508b4b0cf8d4b95871b836b8dac4c6824c222e62cd32d2e9c",
+      "prompt_sha256": "ae25d855bfcf92959ffae330c516ef51596dc941f37f03558674a1efe68af141"
+    }
+  }
+}

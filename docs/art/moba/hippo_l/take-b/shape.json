@@ -1,0 +1,39 @@
+{
+  "measurement_note": "Manual anatomical landmarks on measure-e.png and measure-s.png, coordinates relative to opaque bbox; approx +/-2 px. Body means torso excluding head, tail and legs. Includes second nose-to-rump length to avoid ambiguity.",
+  "east": {
+    "torso_x_inclusive": [
+      8,
+      79
+    ],
+    "torso_y_inclusive": [
+      4,
+      51
+    ],
+    "body_length": 72,
+    "body_height": 48,
+    "length_over_height": 1.5,
+    "nose_to_rump_length": 115,
+    "nose_to_rump_over_torso_height": 2.3958333333333335,
+    "belly_gap_column": 40,
+    "belly_last_y": 51,
+    "belly_gap_height": 10,
+    "head_x_inclusive": [
+      75,
+      122
+    ],
+    "head_length": 48,
+    "head_over_torso_length": 0.6666666666666666,
+    "head_over_nose_to_rump": 0.41739130434782606,
+    "height": 62,
+    "height_over_south": 0.8857142857142857
+  },
+  "south": {
+    "head_including_jaw_x_inclusive": [
+      13,
+      64
+    ],
+    "head_width": 52,
+    "body_width": 77,
+    "head_over_body_width": 0.6753246753246753
+  }
+}

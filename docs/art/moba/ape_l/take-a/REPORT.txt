@@ -1,0 +1,13 @@
+Sizes (width x height, opaque area): s 91x72, 4760; se 89x72, 4445; e 79x71, 3992; ne 86x70, 4282; n 87x70, 4528.
+Exactly ONE built-in image; prompt-sheet.txt verbatim (trailing newline omitted), only refs/craft_drembit.png attached; raw SHA256 matches source; tokens/cost unknown; no redo.
+One whole-sheet nearest shrink 0.25263158 to 317x317; magenta transparent; 15 shared colours; all four armour and orange shades retained; 160px canvases, feet 130, no border contact.
+view_check: front/back 0.88 PASS; area 0.10; height 0.01; colour 0.89; dips none; lone 0.09 PASS; colours 15. sheet_judge: eight ok; FIX nothing; REDO nothing.
+Top-five share 55.13% FAIL (<65%); plum/magenta fringe 0; lone pale edge pixels 0 after 9 repaints; dark ink rim 0 after 633 repaints; alpha unchanged; edge-audit.json has colour counts/shares.
+Depth e: p05 24.44, p95 185.43, range 160.99 FAIL (<180); most common #6c9b4a 15.61%; height 71px.
+Depth se: p05 24.44, p95 185.43, range 160.99 FAIL; most common #d4853b 12.10%; height 72px.
+Depth s: p05 24.44, p95 185.43, range 160.99 FAIL; most common #4a4950 12.18%; height 72px.
+Depth n: p05 24.44, p95 185.43, range 160.99 FAIL; most common #6c9b4a 18.60%; height 70px; dominant shares all PASS (<40%).
+By eye full/game size: massive armoured gorilla on all fours, planted knuckles, widest at high shoulders with sloped back; small low browed head, narrow green visor, steel jaw; huge orange gauntlets/head-width fists, short thick hind legs, orange shins/feet, steel joint discs; no guns.
+Bright green hex forearm shields and high back generator read clearly; generator top shows from front and core from rear; far shield occluded in profiles FAIL literal both-visible-in-all-eight rule; inner hex outline largely lost at finished size.
+Round solid volume and four-step armour/orange shading remain, with internal overlap lines and no exterior ink; some shading speckle remains. Back views 70px versus front 72px PASS; no rear visor/face; rear feet are blocky and toe-like, heels not clearly established FAIL.
+SE/SW bodies are three-quarter but heads stay too frontal and both visor ends show FAIL. Reviews and all audits saved here; only take-a written; no older gorilla art opened, assets touched, commits or reverts.

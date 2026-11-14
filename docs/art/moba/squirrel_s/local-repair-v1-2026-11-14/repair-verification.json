@@ -1,0 +1,251 @@
+{
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_squirrel_remeshed_25k_20261107_character.glb",
+  "source_sha256": "63a164377740ac29db9f31dc4bbec2ba929c233426f0d17af3240942dd9da1f8",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\squirrel_s\\local-repair-v1-2026-11-14\\squirrel-rigged-local-repair-v1.glb",
+  "output_sha256": "0427c30992c70e6ea1e74289618a032aa3b59fc3852667ddc95c82ca16d3d1c3",
+  "before_triangles": 22557,
+  "final_triangles": 22504,
+  "joint_count": 26,
+  "removed_malformed_triangles": 58,
+  "removed_face_ids": [
+    9,
+    63,
+    945,
+    1335,
+    3119,
+    3717,
+    4540,
+    5309,
+    6309,
+    6694,
+    6887,
+    7081,
+    7989,
+    8037,
+    9267,
+    9766,
+    9772,
+    9773,
+    9863,
+    9973,
+    10281,
+    10755,
+    10795,
+    10955,
+    11378,
+    11646,
+    11684,
+    12775,
+    13011,
+    13453,
+    14096,
+    14526,
+    14958,
+    15439,
+    15709,
+    15949,
+    15971,
+    16807,
+    16907,
+    16987,
+    17373,
+    17517,
+    17692,
+    17925,
+    18037,
+    18047,
+    18223,
+    18701,
+    18731,
+    18732,
+    19376,
+    19641,
+    20476,
+    20585,
+    20687,
+    21014,
+    21261,
+    21483
+  ],
+  "holes_closed": [
+    {
+      "triangle": [
+        8668,
+        8667,
+        8376
+      ],
+      "bounds": [
+        [
+          0.3549225330352783,
+          0.3799073100090027,
+          0.565933346748352
+        ],
+        [
+          0.36057978868484497,
+          0.38669314980506897,
+          0.5713832378387451
+        ]
+      ],
+      "normal": [
+        0.7201539278030396,
+        -0.28876638412475586,
+        0.630866289138794
+      ],
+      "normal_alignment": 0.9943678975105286,
+      "uv_perimeter": 0.003636050270870328
+    },
+    {
+      "triangle": [
+        19369,
+        19422,
+        19423
+      ],
+      "bounds": [
+        [
+          -0.2448423206806183,
+          1.1239358186721802,
+          -0.30338412523269653
+        ],
+        [
+          -0.22399675846099854,
+          1.1460564136505127,
+          -0.27772319316864014
+        ]
+      ],
+      "normal": [
+        -0.6426875591278076,
+        -0.23881860077381134,
+        -0.7279548645019531
+      ],
+      "normal_alignment": 0.7996825575828552,
+      "uv_perimeter": 0.024354789406061172
+    },
+    {
+      "triangle": [
+        10967,
+        10966,
+        11008
+      ],
+      "bounds": [
+        [
+          -0.10760650783777237,
+          0.38330739736557007,
+          0.777563214302063
+        ],
+        [
+          -0.10202858597040176,
+          0.40881580114364624,
+          0.7822138071060181
+        ]
+      ],
+      "normal": [
+        -0.5294769406318665,
+        -0.23994213342666626,
+        0.8136841654777527
+      ],
+      "normal_alignment": 0.8022187948226929,
+      "uv_perimeter": 0.4581820871680975
+    },
+    {
+      "triangle": [
+        12561,
+        12559,
+        12612
+      ],
+      "bounds": [
+        [
+          -0.18789373338222504,
+          0.012746081687510014,
+          0.6610429286956787
+        ],
+        [
+          -0.1867285519838333,
+          0.015035819262266159,
+          0.662415623664856
+        ]
+      ],
+      "normal": [
+        -0.5714055299758911,
+        -0.41036877036094666,
+        0.7106990814208984
+      ],
+      "normal_alignment": 0.7626255750656128,
+      "uv_perimeter": 0.0037506057415157557
+    },
+    {
+      "triangle": [
+        1606,
+        1512,
+        1498
+      ],
+      "bounds": [
+        [
+          -0.03385702520608902,
+          1.0464750528335571,
+          0.5890239477157593
+        ],
+        [
+          -0.03344015032052994,
+          1.0533219575881958,
+          0.5902317762374878
+        ]
+      ],
+      "normal": [
+        0.9533053040504456,
+        0.04600706696510315,
+        -0.2984834909439087
+      ],
+      "normal_alignment": 0.999464213848114,
+      "uv_perimeter": 0.0040199351496994495
+    }
+  ],
+  "boundary_edges": 0,
+  "over_shared_edges": 2,
+  "protected_closed_contact_edges": [
+    [
+      9302,
+      9351
+    ],
+    [
+      1501,
+      1524
+    ]
+  ],
+  "contact_note": "Five gaps closed; two balanced four-face assembly contacts remain, preserving the underlying source surfaces.",
+  "collapsed_triangles": 0,
+  "healthy_main_body_source_faces_retained": 22049,
+  "all_original_vertex_attribute_rows_weights_materials_skeleton_rest_binds_preserved": true,
+  "new_geometric_vertices": 0,
+  "scope": "Local topology repair. Both arms/paws and legs/feet, two ears/eyes, muzzle/teeth and one plated tail retained. Original vertex attributes, skin, 26-joint skeleton/rest/binds and textures preserved; no remesh or rerig. Three duplicate corner rows on closure 3 use one healthy neighboring UV island. All original attribute/skin rows remain exact; duplicate skin rows copy the same corners.",
+  "new_attribute_rows": 3,
+  "uv_repair": {
+    "patch": 3,
+    "source_neighbor_face": 11673,
+    "method": "Three duplicate corner rows, original positions/normals/joints/weights copied exactly; UVs sampled inside one adjacent healthy texture island to avoid atlas stripe.",
+    "old_corner_rows": [
+      10967,
+      10966,
+      11008
+    ],
+    "new_corner_rows": [
+      27049,
+      27050,
+      27051
+    ],
+    "uv": [
+      [
+        0.7807532548904419,
+        0.09299715608358383
+      ],
+      [
+        0.7798910140991211,
+        0.09273797273635864
+      ],
+      [
+        0.7808459997177124,
+        0.09302502870559692
+      ]
+    ],
+    "uv_perimeter": 0.0019943907391279936
+  }
+}

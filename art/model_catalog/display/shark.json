@@ -1,0 +1,49 @@
+{
+  "id": "shark",
+  "source_sha256": "a350f3d282e4b719eec3224b23031452e655588b3cdbd8f77021bb05a83e57e4",
+  "source_triangles": 500000,
+  "display_triangles": 40000,
+  "texture_sizes": [
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ],
+    [
+      1024,
+      1024
+    ]
+  ],
+  "gallery_scale": 0.8749626332088295,
+  "blender_bounds_min": [
+    -4.025498390197754,
+    -1.600249171257019,
+    0.11826677620410919
+  ],
+  "blender_bounds_max": [
+    -1.975036382675171,
+    1.5998873710632324,
+    1.559863567352295
+  ],
+  "validation": "PASS: static mesh, UVs, triangle/texture limits; engine visual review separate",
+  "purpose": "Gallery proxy only; not an approved match asset or retopology"
+}

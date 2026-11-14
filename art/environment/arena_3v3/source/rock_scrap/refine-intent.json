@@ -1,0 +1,16 @@
+{
+  "request": {
+    "mode": "refine",
+    "ai_model": "meshy-6",
+    "target_formats": [
+      "glb"
+    ],
+    "preview_task_id": "01a1da49-c24c-73e2-ae9f-51149cd7b041",
+    "texture_resolution": "2k",
+    "enable_pbr": true,
+    "remove_lighting": true,
+    "texture_prompt": "Stylized dark slag basalt with soft blue-grey highlights, rusty warm iron scrap, a thin glowing amber seam. Broad clean color blocks, gentle wear. No text or logos. Neutral illumination, no baked shadows."
+  },
+  "reserved_credits": 10,
+  "at": "2026-11-14T13:42:49.419580+00:00"
+}

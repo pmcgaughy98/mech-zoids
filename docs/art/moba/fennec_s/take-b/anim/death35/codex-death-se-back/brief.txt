@@ -1,0 +1,62 @@
+You are redrawing pixel-art death frames for a game (codex-death-se-back-2026-11-05). Write only inside D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\death35\codex-death-se-back.
+Read anything under D:\dev\new-mech-rpg\docs\art\moba. Do not write anywhere else, do not touch assets, art or tools,
+do not write into anim\death35\frames, do not run build_death.py or check_death.py (they overwrite the live frames),
+and do not commit.
+
+The machine: the violet fennec fox mech with very large ears, at a 35 degree camera. This job is two views of its
+death: se (three-quarter front, facing down-right) and back (seen from behind, n). Approved stills: refs\still_se.png
+and refs\still_back.png (160x160, binary alpha, raw: no outline, the game adds one; lowest foot on row 140). The 15
+colours: #141218 #211E27 #2E1A6E #3D3A44 #3FE8B0 #6A3CC8 #9D9BA2 #A46BFF #B8923A #C8FFF0 #D6D6DC #E0C8FF #F0D27A #F6FFFB #FFF4D6.
+
+Why: you just redrew the front view of this death (anim\death35\codex-death: read your brief.txt, REPORT.txt and
+redraw.py there). Preston, the game's owner, approved and installed it ("Install it"); the live front is
+anim\death35\frames\front_f0-6.png (copy at 6x in refs\front_new_f0-f6_6x.png). The se and back deaths were built
+earlier by moving the still's own parts, so their surface already matches the stills, but the middle frames look cut
+up: in se f2-f4 the ears break into fragments; in back f3-f5 the ears spread like wings with the head gone and the
+lying pose is a slab of ear chunks. Preston rejected that look on the front before ("Looks like you just cutoff
+pieces ... while keeping the original pose") and has now said for these two views: "Yes, redraw poses".
+
+Job: redraw se and back f1-f5 as whole drawings of this fennec collapsing, and f6.
+- Motion: keep the live frames' beats and timing (refs\live_<view>_f0-f5_6x.png, positions in refs\coordinates.json):
+  f1 hit, the body jolts back 1-2 px, ears flick back; f2 stagger, the head drops, ears begin to droop; f3 the front
+  legs buckle and the chest lowers; f4 the hindquarters sag and it tips onto its own right flank; f5 it lies on its
+  right side, tail flat, ears lying flat; f6 the same pose settled, the eyes dark. The same fall as the new front:
+  same side, same lying shape, seen from this view. It falls in place: the body centre may move by the width of the
+  fall, not wander; lowest opaque row 140; nothing touches the canvas edge.
+- Shapes: every frame reads as the whole fox: a head (in back, the back of the head and neck stay visible between and
+  below the ears), two whole ears with their shape, rims and inner gold as on the still, a body, legs that fold rather
+  than vanish, the tail. No fragments, no floating pieces, no parts cut by straight edges, no ear pieces scattered.
+  Keep the still's proportions: ear length, head and body size within about 2 px of the still's (report them). The
+  lying fox keeps the still's scale; it lies lower, it does not shrink.
+- Surface: the still's own: light from the same side as on each still (violet plate light angle: se 54 deg,
+  back 96 deg), stepped shading bands, highlight caps, 1 px ink part lines with ink near the still's share (se
+  6.12%, back 6.24%), never specks inside plates; whole gold plates; segmented legs; the eyes half closed and
+  glowing teal (#3FE8B0 #C8FFF0 #F6FFFB) until f6 where the view shows them.
+- f0 = the still byte for byte (refs\still_se.png, refs\still_back.png). f6 = your f5 with every eye pixel (#3FE8B0
+  #C8FFF0 #F6FFFB) set to #2E1A6E (if a view shows no eye pixels, f6 equals f5).
+- Timings 300, 100, 130, 140, 160, 180, 1400 ms; it does not loop.
+
+Method:
+- Generate exactly ONE image per view with the built-in image generation tool (two images in total), attaching the
+  view's still at 6x, then its live strip, then refs\front_new_f0-f6_6x.png. Ask for 6 cells f0-f5 in the live strip's
+  layout, each redrawn as a whole pose of the falling fox in the still's art. Write the prompts to
+  prompts\death_se.txt and prompts\death_back.txt first. Never make a third image or a redo; if an image is weak,
+  finish by hand from it, the live frame and the still.
+- Each frame is one whole drawing: the generated cell scaled to the still's pixel scale (match the still's ear and head
+  size), placed so the fall stays in place, snapped to the 15 colours, then cleaned and repainted pixel by pixel at
+  native size with the still beside it. Never paste the still's parts; never cut and move pieces.
+- Measure: colour shares, violet light angle (the same measure as refs\measure.json), proportions, body centre x.
+
+Pass marks (checks.txt), per view: 160x160; binary alpha; only the 15 colours; one 8-connected piece; no enclosed
+holes; no stray pixels; nothing touching the canvas edge; lowest opaque row 140 every frame; f0 equals the still; f6 =
+f5 with the eyes out; per frame: ink %, cap %, violet light angle, eye pixel count, ear length and head width against
+the still, body centre x.
+
+Output in D:\dev\new-mech-rpg\docs\art\moba\fennec_s\take-b\anim\death35\codex-death-se-back: frames\se_f0-6.png and frames\back_f0-6.png; sheet_raw_se.png and sheet_raw_back.png (the generated
+images, untouched); checks.txt; preview_se.gif and preview_back.gif (3x, sel-out on, the timings); board.png (per view:
+the still leftmost, the live row f0-f6, your new row under it; then the live front row for comparison; sel-out on, 4x,
+on grey #5A6058). Sel-out: D:\dev\new-mech-rpg\docs\art\moba\rhino_l\take-a\anim\selout_rhino.py, function selout
+(returns a tuple, [0] is the image), OUTLINE #141218. Also close_7x.png: per view the still, new f3, new f5, each
+cropped to itself, 7x, no outline, on grey. REPORT.txt under 40 lines: tokens used if known, the image call count, the
+numbers, and by eye: does each view read as this fennec collapsing onto its side, whole, the same fall as the front,
+in the still's art? Say plainly where it still falls short.

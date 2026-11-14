@@ -1,0 +1,14 @@
+Sizes W x H/area: s60x72/2997; se69x71/3237; e75x71/3045; ne63x72/2996; n52x72/2501.
+Shape, manual +/-2px: east tail58/body71=0.817 (without ears59=0.983); ear19/head19=1.000; east/south71/72=0.986.
+Tail below ear tips: s14px, n15px; below tips in all eight by eye. Amber eye pixels ne0/nw0 PASS. Rear diagonals72 vs front diagonals71: 1px taller, literal FAIL.
+view_check: front/back0.81 PASS; area0.17; height0.01; colour0.84; dips none; lone0.15082 ->0.03031 PASS after ONE lens-preserving despeckle pass.
+sheet_judge: eight ok; FIX nothing; REDO nothing; mirror e/w0.929, ne/nw0.926, se/sw0.919; binary alpha; feet140; no canvas-border contact.
+16 shared colours, all four cobalt shades and all three cream/steel shades retained; top-five82.15%; plum/magenta0, lone pale rim0, overlap-ink rim0; charcoal6.29% and deep cobalt32.41% of rim.
+Depth e/se/s/n: p05=31.29/18.86/18.86/18.86; p95=177.55/214.43/218.08/177.55; ranges146.26/195.57/199.22/158.69 (e,n FAIL180); dominant23.71/23.82/21.55/40.66%; heights71/71/72/72.
+ONE built-in image, prompt-sheet.txt verbatim, only craft_drembit.png attached; raw unchanged (SHA256 in generation.json); tokens/cost unknown; one whole-sheet nearest shrink; no redo.
+By eye FIRST, MACHINE: YES; hard flat bevelled plates, straight cuts, charcoal neck/waist/joints, round joint discs and amber lenses; no fur or tufts.
+BOLD/LIVELY: YES; saturated cobalt, cream chest, glowing amber and a huge jagged segmented tail. No tail above ear tips; the tail remains a C-hook rather than the requested S, without four distinct fan ends.
+SQUIRREL: YES; crouched upright on folded hind legs, empty raised forepaws, round helmet, tall ear plates, steel front teeth and large arching tail; nothing held, no acorn.
+Four-step cobalt volume and internal overlap lines present; no continuous black outside line, but substantial deep-cobalt rims. Chest, teeth and joints lose detail at40px; tail still reads strongly.
+Profiles1px shorter than front; north equals front; similar camera height, heels visible, no rear eyes/face. North tail partly hides rear helmet. SE/SW true three-quarter, head turned, far eye hidden PASS.
+All deliverables in take-b, including review.png at4x and review-game-size.png at40px then4x; full sizes, shape, depth, edge audit and before/after checks saved. No installation, commits, reverts or Hollowtide writes.

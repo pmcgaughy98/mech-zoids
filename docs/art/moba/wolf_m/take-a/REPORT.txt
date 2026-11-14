@@ -1,0 +1,14 @@
+Sizes (width x height, opaque area): s 57x78, 3226; se 99x74, 4244; e 120x66, 4128; ne 86x81, 4146; n 56x79, 3187.
+Exactly ONE built-in image; prompt-sheet.txt verbatim including trailing newlines; only refs/craft_drembit.png attached; raw SHA256 matches source; tokens/cost unknown; no redo.
+One whole-sheet nearest shrink 0.30414747 to 381x381; magenta transparent; 13 shared colours, all four gunmetal and red shades retained; 192px canvases, feet 160; no border contact; binary alpha.
+view_check: front/back 0.77 FAIL (<0.80); area 0.24; height 0.19; colour 0.89; dips none; lone 0.09 PASS; colours 13; top-five share 79.01% PASS.
+sheet_judge: six views ok; e/w height 66px versus median 76px FAIL; FIX nothing; REDO e, w; mirrors e/w 0.940, ne/nw 0.989, se/sw 0.928; no generation repeated.
+Edge audit: plum/magenta 0; lone pale rim 0 after 19 repaints; dark ink rim 0 after 505 repaints; alpha unchanged; all palette counts/shares in edge-audit.json.
+Depth e: p05 20.29, p95 188.87, range 168.58 FAIL (<180); most common #444452 28.75%; height 66px.
+Depth se: p05 20.29, p95 188.87, range 168.58 FAIL; most common #444452 25.09%; height 74px.
+Depth s: p05 20.29, p95 188.87, range 168.58 FAIL; most common #22222b 20.99%; height 78px.
+Depth n: p05 20.29, p95 188.87, range 168.58 FAIL; most common #444452 30.97%; height 79px; all dominant shares PASS (<40%).
+By eye full/game size: lean solid armoured wolf, strong chest/haunches, four planted legs (far legs overlap in profile); low forward long narrow muzzle, two long pale sabre fangs, small cyan eyes under heavy brow, swept-back hood armour.
+Gunmetal body, red lower legs/claws, long plated tail with red tip; two folded curved red-edged blade-fins readable in all eight, behind head in front and framing back behind; nothing held, no separate weapons.
+Round solid volumes, four-step material shading and internal overlap lines remain; exterior ink removed; some small shading speckle remains; SE/SW are true three-quarter with turned heads and far eyes hidden PASS.
+Back has no eyes/face and tail slopes toward camera PASS; n 79px > s 78px, ne/nw 81px > se/sw 74px FAIL no-taller rule; rear camera too high, back feet toe-like/heels unclear FAIL. Reviews/audits saved in take-a; no asset installs, commits or reverts.

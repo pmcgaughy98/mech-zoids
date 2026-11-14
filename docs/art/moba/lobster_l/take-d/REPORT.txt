@@ -1,0 +1,12 @@
+By eye FIRST: same machine YES; gunmetal plates, red panels/rings, pale legs/red feet, antenna rods, straight spined tail; no red tail/fan.
+Camera FAIL: rear still looks down on tail; root remains raised. Fan has six apparent bevelled plates/seams, but retains a broad flat top.
+Visible feet planted n6/6 ne3/3 nw3/3; no curl/bend or rear face; cyan ne/n/nw 0/0/0. Turn-size consistency FAIL.
+Kept s,se,sw,e,w are pixel-identical to C: zero changed pixels; lower two sheet rows unchanged.
+Sizes W x H/area: n83x75/3925; ne114x74/4157; nw113x74/4166; s89x66/3444.
+Height/s: n1.1364 ne1.1212 nw1.1212; all FAIL no-taller/within10%; ne/nw mirror0.992.
+view_check: front/back0.82 PASS; area0.16 height0.26 colour0.82 dips none lone0.09; sheet_judge FAIL height e,ne,n,nw,w; FIX nothing.
+Depth n C -> D: p05 18.86->30.84; p95 127.16->154.87; dominant24.02%->25.15%; height77->75; range124.02 still under180.
+Mottling n/ne/nw: 44/40/37 enclosed 1-3px shade-island candidates; some small mechanical details may count; not clean enough.
+ONE built-in edit; exact prompt; raw1254x1254 same as C, saved unchanged/hash in generation.json; tokens/cost unknown; no redo.
+Exact C scale66/223 and all14 palette colours retained; median9 before palette; no post-palette despeckle; plum/magenta/lone-pale/ink rim0 after cleanup.
+All eight192px views, no border contact, binary alpha; reviews/checks/scripts saved only in take-d; no install/commit/revert. Candidate fails requested back-view fix.

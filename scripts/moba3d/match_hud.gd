@@ -4,7 +4,8 @@ extends CanvasLayer
 ## over. Layout after SMITE's (docs/plan/moba-hud-reimagine-2026-11-05.md, mock-up B, Preston's pick), drawn as pixel
 ## art in our own look: steel plates, rivets, hazard trim and a 3 x 5 pixel font, every square a whole pixel of the
 ## 320 x 180 canvas (canvas_items stretch, integer scale).
-##   over every unit: a health bar, unchanged from 2026-11-04 at the old 720-line scale (cam_angle_set_test.gd's BARS)
+##   over every unit: a health bar, unchanged from 2026-11-04 at the old 720-line scale (cam_angle_set_test.gd's BARS);
+##     GROUNDED in amber under a grounded machine's bar, and an amber lock on the player's locked mobility slots (2026-11-20)
 ##   top centre: team kills, tower and core pips, the clock; the next wave; the nearest structure's health when near
 ##   top left: allies (portrait, health, slot-4 recharge diamond); the kill feed under them
 ##   top right: enemies (portrait; grey at low health while seen; respawn seconds when down)
@@ -15,7 +16,7 @@ extends CanvasLayer
 ##   above everything (layer 7): the mouse-aim ring and line, redrawn in 2D when they fall under a panel
 
 const SLOT_NAMES := {
-	"rhino": ["horn toss", "ground pound", "brace", "stampede"],
+	"rhino": ["horn toss", "ground pound", "aftershock", "stampede"], # Aftershock replaced Brace (Preston, 2026-11-20)
 	"gorilla": ["hex shield", "fault line", "drive slam", "chest beat"],
 	"fennec": ["sand kick", "blink gate", "tunnel", "sonic boom"],
 	"kangaroo": ["hop and jab", "tail kick", "guard", "title bout"], # game feel lane, Preston 2026-11-12: "You add them"
@@ -24,7 +25,7 @@ const SLOT_NAMES := {
 	"shoebill":["moonbeam","none","none","none"],
 }
 const ICON_OF := {
-	"horn toss": "horn", "ground pound": "pound", "brace": "shield", "stampede": "dash",
+	"horn toss": "horn", "ground pound": "pound", "aftershock": "wave", "stampede": "dash",
 	"hex shield": "shield", "chest beat": "dome", "bound": "dash", # the ult ends in the hex dome, so it keeps the dome's icon
 	"grab slam":"pound","shield drive":"dash",
 	"fault line":"pound","drive slam":"dash",
@@ -95,7 +96,10 @@ const ICONS := {
 	"dash": [".........", "#...#....", ".#...#...", "..#...#..", "...#...#.", "..#...#..", ".#...#...", "#...#....", "........."],
 	"dome": [".........", "...###...", "..#...#..", ".#.....#.", ".#.###.#.", "#..#.#..#", "#.......#", "#########", "........."],
 	"ring": ["..#####..", ".#.....#.", "#..###..#", "#.#...#.#", "#.#.#.#.#", "#.#...#.#", "#..###..#", ".#.....#.", "..#####.."],
+	"wave": [".#######.", "#.......#", "..#####..", ".#.....#.", "...###...", "..#...#..", ".........", "..#####..", ".#######."], # Aftershock: waves off a stomp
 }
+const LOCK := [".###.", ".#.#.", "#####", "##.##", "#####"] ## a mobility slot locked while grounded (the rhino's Aftershock)
+const GROUNDED_COL := HAZ_Y
 const DIAMOND := ["..#..", ".###.", "#####", ".###.", "..#.."]
 const PIT_RING := [".###.", "#...#", "#...#", "#...#", ".###."] ## a side pit, open to take
 const PIT_SHUT := [".###.", "#####", "#####", "#####", ".###."] ## a side pit, locked for its owners
@@ -391,7 +395,7 @@ func _diamond(at: Vector2, share: float) -> void:
 
 
 func _slot(at: Vector2, n: int, key: String, icon: String, left: float, total: float, flash: float, small := false,
-		empty := false) -> void:
+		empty := false, locked := false) -> void:
 	_canvas.draw_rect(Rect2(at - Vector2.ONE, Vector2(n + 2, n + 2)), EDGE)
 	if empty: # a kit's slot named "none": nothing on this key yet. Sunk, hatched, the key dimmed; no sweep or flash
 		_canvas.draw_rect(Rect2(at, Vector2(n, n)), PLATE_LO)
@@ -415,6 +419,11 @@ func _slot(at: Vector2, n: int, key: String, icon: String, left: float, total: f
 				var a := fposmod(rad_to_deg(atan2(at.x + xx + 0.5 - cx, -(at.y + yy + 0.5 - cy))), 360.0)
 				if a < share * 360.0:
 					_canvas.draw_rect(Rect2(at.x + xx, at.y + yy, 1, 1), Color(0, 0, 0, 0.7))
+	if locked: # grounded: this mobility slot can't be used, cooling or not; the lock takes the key and seconds' place (map lane, 2026-11-20)
+		_canvas.draw_rect(Rect2(at, Vector2(n, n)), Color(0, 0, 0, 0.6))
+		_glyph(at + Vector2(floorf((n - 5) / 2.0), floorf((n - 5) / 2.0)), LOCK, GROUNDED_COL)
+		_frame(Rect2(at, Vector2(n, n)), GROUNDED_COL)
+		return
 	if small:
 		_text(_canvas, Vector2(at.x + floorf((n - _tw(key)) / 2.0), at.y + floorf((n - 5) / 2.0)), key, GOLD, 1)
 	elif cooling:
@@ -655,10 +664,13 @@ func _player_bar(vs: Vector2) -> void:
 	_text(_canvas, Vector2(hx + hw - _tw(s), r.position.y + 5), s, WHITE)
 	var names: Array = SLOT_NAMES.get(kind, ["", "", "", ""]) # a kit with no names draws normal slots and sweeps; only "none" reads empty (Preston, 2026-11-10)
 	var sy := r.position.y + 14.0
+	var grounded: bool = p.alive and float(p.grounded) > 0.0
 	for i in 4:
 		var slot := str(i + 1)
+		# The same rule slot_ready() uses: a grounded machine's MatchRules.MOBILITY slots are locked (map lane, 2026-11-20).
+		var locked: bool = grounded and MatchRules.is_mobility(kind, slot)
 		_slot(Vector2(hx + i * 16.0, sy), 13, slot, ICON_OF.get(names[i], ""), float(p.cooldowns.get(slot, 0.0)),
-				MatchRules.cooldown(kind, slot), float(_flash.get(slot, 0.0)), false, names[i] == "none")
+				MatchRules.cooldown(kind, slot), float(_flash.get(slot, 0.0)), false, names[i] == "none", locked)
 	_slot(Vector2(hx + 66, sy + 2), 11, "SP", "", p.attack_cd, director.basic_cooldown_of(p), 0.0, true) # each kit's own basic (game feel, 2026-11-05)
 	_slot(Vector2(hx + 80, sy + 2), 11, "B", "", 0.0, 0.0, 0.0, true)
 	var rec := float(director.recalls.get(p, -1.0))
@@ -841,3 +853,5 @@ func _world_bar(cam: Camera3D, u: Node3D, vs: Vector2) -> void:
 		_label(Vector2(sp.x - w / 2.0, sp.y - 4.0), "OFF %d" % ceili(_off(u)), 14, Color(1, 1, 1, 0.9))
 	if k == "machine" and u != director.player:
 		_label(Vector2(sp.x - w / 2.0, sp.y - 3.0), MatchTeams.machine_kind(u), 11, col.lightened(0.25))
+	if k == "machine" and float(u.get("grounded") if u.get("grounded") != null else 0.0) > 0.0: # the rhino's Aftershock (map lane, 2026-11-20)
+		_label(Vector2(sp.x - w / 2.0, sp.y + t + 10.0), "GROUNDED", 11, GROUNDED_COL)

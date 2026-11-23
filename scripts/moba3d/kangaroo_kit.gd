@@ -650,6 +650,9 @@ func _landing(target: Node3D, gap: float) -> Vector3:
 	return ArenaMotion.slide(player, target.global_position - to.normalized() * (tr + gap), Vector3.ZERO, player.body_radius())
 
 
+var airborne := false ## in a hop's or a leap's air time (machine_test_player.is_airborne reads it: Aftershock's wave passes under)
+
+
 ## Carries the kangaroo to land_at during the leap clip's hop (call it on the clip's "hop" event).
 func _fly(b: MechModel3D, land_at: Vector3, clip := "HopJab") -> void:
 	var from := feet()
@@ -657,6 +660,7 @@ func _fly(b: MechModel3D, land_at: Vector3, clip := "HopJab") -> void:
 	var air := clampf(flat(land_at - from).length() / leap_speed, clip_air, maxf(leap_air_max, clip_air))
 	var hung := air <= clip_air + 0.01
 	var t := 0.0
+	airborne = true
 	while t < air and is_instance_valid(b) and b.action == clip and player.alive:
 		await get_tree().process_frame
 		t += get_process_delta_time()
@@ -665,6 +669,7 @@ func _fly(b: MechModel3D, land_at: Vector3, clip := "HopJab") -> void:
 			hung = true
 		var at := from.lerp(land_at, minf(t / air, 1.0))
 		player.global_position = Vector3(at.x, from.y, at.z)
+	airborne = false
 
 
 func hop_and_jab() -> void:
@@ -693,12 +698,14 @@ func hop_and_jab() -> void:
 		if target != null:
 			await _fly(b, land_at, clip)
 		else:
+			airborne = true
 			while t < CLIP_AIR and is_instance_valid(b) and b.action == "HopJab" and player.alive:
 				var dt := get_process_delta_time()
 				t += dt
 				if _in_cone(dir, hop_stop_short, 60.0).is_empty():  # it lands in front of an enemy, not through it
 					player.global_position = ArenaMotion.slide(player, player.global_position, dir * hop_distance * dt / CLIP_AIR, player.body_radius())
 				await get_tree().process_frame
+			airborne = false
 	if await _event(b, clip, "land"):
 		cue.emit("hop_land")
 		impact.emit(0.15)
@@ -1016,6 +1023,8 @@ func _bout_slip(b: MechModel3D, target: Node3D, degrees: float) -> void:
 		if current != "Bout" or not _bout_target_ok():
 			return
 		await get_tree().process_frame
+	if float(player.get("grounded")) > 0.0:
+		return  # grounded (the rhino's Aftershock, 2026-11-20): no new slips; one already moving finishes
 	var centre := flat(target.global_position)
 	var arm := flat(feet()) - centre
 	if arm.length() < 0.05 or absf(degrees) < 0.5:

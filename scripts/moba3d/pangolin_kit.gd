@@ -18,6 +18,9 @@ extends Node
 ## salvage_time. Armour is machine_test_player's `armour`, a multiplier on every damage taken (set_armour).
 ## Magnetised: mag_time seconds. While the ball rolls, the nearest magnetised enemy ahead within mag_pull_range bends
 ## the roll toward it at mag_turn, on top of the steering (the spec: "magnetised enemies pull its path toward them").
+## Near-field snap (Preston's pick, 2026-11-18): the bend rate is mag_turn x clamp((mag_snap_ref / d)^2, 1, mag_snap_cap),
+## d the flat distance to it, so 1.6 rad/s out to 4 m, about 2.8 at 3 m, and the 4.8 rad/s lock from about 2.3 m in.
+## Only the ball's path bends; nothing moves the enemy.
 ##
 ## Slice 3 (Preston, 2026-11-13: "Yes, slice 3"), slot 3, scale flare: the Scale_Flare clip. On its "flare" event every
 ## enemy within flare_radius of the pangolin takes flare_damage, and the scales stay up for flare_time: they block the
@@ -31,7 +34,8 @@ extends Node
 ## charge_damage more on the crash (cue ball_charge, after charges rises). 2 again mid-roll pops: the ball uncurls early
 ## and every enemy within pop_radius takes pop_damage and is lifted pop_lift (cue ball_pop with pop_at, then ball_end).
 ## charges is back to 0 once the pangolin has uncurled.
-## Not built yet: the basic (claw swipes; the base kit's test shot stands in), the sharp-scales passive.
+## Basic, the "Pry" chain (2026-11-18, option A): left swipe, right swipe, then a two-claw pry that hits the whole arc
+## and refreshes magnetise (see the basic section). Not built yet: the sharp-scales passive.
 ##
 ## pangolin_fx.gd (the effects lane) reads rolling, roll_speed, roll_dir, hit_speed, hit_at and the cues ball_start,
 ## ball_hit, ball_end. New for slot 2: cues ball_roll, ball_bounce (bounce_at), ball_bowl (bowl_at). Keep these names.
@@ -39,7 +43,8 @@ extends Node
 signal impact(strength: float) ## something landed; KitFeel shakes the camera on it
 signal used(slot: String) ## the director starts the slot's cooldown (MatchRules)
 signal cue(name: String) ## ball_start, ball_roll, ball_bounce, ball_bowl, ball_hit, ball_end, salvage, magnetise,
-## flare_block, flare_end, ball_spiked, spike_burst
+## flare_block, flare_end, ball_spiked, spike_burst; swipe (beat_target), pry (pry_targets), mag_refresh (refreshed),
+## mag_snap (mag_snapped: the roll's bend first reaching mag_snap_cap on that target)
 
 const FX_SCRIPT := "res://scripts/moba3d/pangolin_fx.gd"
 const ROLL_CLIP_SPEED := 7.74 ## m/s that Ball_Roll is authored at (pangolin.events.json roll_speed; 7.67 before round 11)
@@ -85,7 +90,9 @@ var _pop := false
 @export var salvage_time := 4.0 ## seconds the plates stay stolen (pangolin_fx reads it)
 @export var mag_time := 4.0 ## seconds an enemy stays magnetised (pangolin_fx reads it)
 @export var mag_pull_range := 10.0 ## metres: a magnetised enemy this close bends the roll
-@export var mag_turn := 1.6 ## rad/s the roll bends toward it, on top of the steering
+@export var mag_turn := 1.6 ## rad/s the roll bends toward it, on top of the steering (from mag_snap_ref out)
+@export var mag_snap_ref := 4.0 ## metres: closer than this the bend grows as (mag_snap_ref / d)^2
+@export var mag_snap_cap := 3.0 ## the most it grows: 3 x 1.6 = 4.8 rad/s, reached at about 2.3 m (the snap)
 @export var flare_damage := 50.0
 @export var flare_radius := 2.5 ## metres from the pangolin's middle (or the spiked ball's target) to an enemy's edge; pangolin_fx FLARE_R
 @export var flare_block_count := 2 ## kit hits the raised scales block
@@ -109,6 +116,8 @@ var salvage_targets: Array = [] ## the machines the last salvage cone took (pang
 var plates_worn := 0 ## machines stripped by the last salvage, for the checks
 var mag_target: Node3D = null ## the last enemy magnetised (pangolin_fx reads it on cue "magnetise")
 var mag_pull: Node3D = null ## the magnetised enemy bending the roll this frame, for the checks
+var mag_mult := 1.0 ## this frame's bend multiplier, 1 to mag_snap_cap (pangolin_fx can read it for the pull line's tautness)
+var mag_snapped: Node3D = null ## the target the bend is at the cap on (cue "mag_snap" when it first gets there)
 var _mag_until := {} ## enemy -> _clock time its mark runs out
 var _clock := 0.0
 var flared := false ## the scales are up and blocking
@@ -118,8 +127,31 @@ var flare_hits := 0 ## enemies the last standing flare hit, for the checks
 var spiked := false ## flared while rolling: the crash bursts
 var spike_at := Vector3.ZERO ## the spiked crash's burst centre (cue "spike_burst")
 var _flare_token := 0
-var basic_range := 6.0
-var basic_damage := 30.0
+## The basic, the "Pry" chain (option A of docs/plan/pangolin-basic-attack-2026-11-18.md; Preston, 2026-11-18: "The
+## short reach is fine, build A"): left swipe, right swipe, pry. Reach is centre to edge (MatchTeams.edge_distance),
+## measured in Blender (pangolin 3D lane, corrected 2026-11-18): the swipes' claw tips reach 1.29 m; at the pry's
+## impact (r13 clip) the claws are 1.15 to 1.19 m out, about 1.48 m with the lunge. Preston kept 1.6 / 1.9 m (2026-11-18).
+@export var basic_range := 1.6 ## the swipes' reach; the director and the bots read it
+@export var basic_cooldown := 0.75 ## set per beat before each one starts (the director reads it after basic_attack)
+@export var swipe_damage := 23.0 ## beats 1 and 2, the nearest enemy in the arc
+@export var swipe_half_angle := 35.0
+@export var swipe_gap := 0.75 ## seconds until the next beat after a swipe (0.50 s clip + 0.25 s to move)
+@export var pry_range := 1.9 ## beat 3, including the 0.3 m lunge
+@export var pry_lunge := 0.3 ## metres the body lunges forward on the drop (visual: the clip is built in place, the reach already counts it)
+@export var pry_lunge_at := 0.27 ## seconds into Claw_Rake the drop starts; the lunge eases out from here to arrive with the impact
+@export var pry_lunge_back := 0.3 ## seconds it eases back after the impact
+@export var pry_half_angle := 60.0
+@export var pry_damage := 30.0 ## every enemy in the arc
+@export var pry_hit_time := 0.375 ## seconds into Claw_Rake: the r13 clip's one impact, both claws on the floor (r13 in the arena since 2026-11-19, sha 1d8c5cc6)
+@export var pry_gap := 1.1 ## seconds until beat 1 after the pry (0.80 s clip + 0.30 s)
+@export var chain_reset := 1.5 ## this long after the last beat swung (its hit time passed, hit or whiff), the chain starts over at beat 1
+const CHAIN := ["Basic_Left", "Basic_Right", "Claw_Rake"]
+var beat := 0 ## the next beat, 0 to 2 (the probes and pangolin_fx read it)
+var beat_target: Node3D = null ## a swipe's victim, set before cue "swipe"
+var pry_targets: Array = [] ## the pry's victims, set before cue "pry"
+var refreshed: Array = [] ## magnetised enemies the pry refreshed, set before cue "mag_refresh"
+var _last_hit := -1000.0
+var _swing_token := 0
 var _bowled: Array = []
 var _ev_body: MechModel3D = null
 var _got: Dictionary = {}
@@ -268,26 +300,107 @@ func _hit(victim: Node3D, damage: float, dir: Vector3, shake: float) -> void:
 	impact.emit(shake)
 
 
-# ---- basic: the base kit's test shot until the claw swipes are ported -----------------------------------------------
+# ---- basic: the "Pry" chain -----------------------------------------------------------------------------------------
+## Quick, quick, heavy. Each beat plays its clip toward the target (a bot's pick) or the aim and lands on its hit time:
+## the swipes on the clip's "hit" event (0.20 s), the pry at pry_hit_time. Only a landed hit moves the chain on.
+## Moving before the hit stops the clip and the beat is lost (the next basic tries the same beat); moving after it
+## cuts the recovery and keeps the chain. A whiff (nobody in the arc) still moves the chain on, as a swing at the air.
+## The pry refreshes magnetise on every magnetised enemy it hits, back to the full mag_time; it never applies it
+## (Salvage stays the only way to magnetise) and it does not touch the stolen plates.
 
 func basic_attack(target: Node3D = null) -> bool:
-	if busy_with != "" or not is_instance_valid(player) or player.busy or not player.alive or player.has_meta("held_by"):
+	var b := _body()
+	if b == null or busy_with != "" or not is_instance_valid(player) or player.busy or not player.alive \
+			or player.has_meta("held_by") or b.action != "":
 		return false
-	if target == null:
-		for n in MatchTeams.enemies_of(player):
-			if MatchTeams.hittable(n) and MatchTeams.edge_distance(player, n) <= basic_range \
-					and MatchTeams.clear_line(player, player.global_position, n.global_position):
-				target = n
-				break
-	if not MatchTeams.hittable(target):
-		return false
-	player.facing = flat(target.global_position - player.global_position).normalized()
-	var shot := TestShot.fire(player.get_parent(), player.global_position, target.global_position, player.team == "red", target)
-	shot.team = player.team
-	shot.source = player
-	shot.hp_damage = basic_damage
-	shot.reach = basic_range + 3
+	if _clock - _last_hit > chain_reset:
+		beat = 0
+	var dir := _aim(target)
+	var clip: String = CHAIN[beat]
+	basic_cooldown = pry_gap if beat == 2 else swipe_gap
+	player.facing = dir
+	_swing_token += 1
+	_play(b, clip)
+	_beat(b, clip, beat, dir, target, _swing_token)
 	return true
+
+
+func _beat(b: MechModel3D, clip: String, n: int, dir: Vector3, target: Node3D, token: int) -> void:
+	var t0 := _clock
+	var lunged := false
+	while true:  # the wind-up: wait for the hit, and moving before it loses the beat
+		await get_tree().process_frame
+		if token != _swing_token or not is_instance_valid(b) or not player.alive or b.action != clip:
+			return
+		if _moving():
+			b.stop_action()
+			return
+		if n == 2 and not lunged and _clock - t0 >= pry_lunge_at:
+			lunged = true
+			b.lunge(dir * pry_lunge, pry_hit_time - (_clock - t0), pry_lunge_back)  # the lunge on the drop
+		if (n == 2 and _clock - t0 >= pry_hit_time) or (n < 2 and int(_got.get(clip + "/hit", 0)) >= 1):
+			break
+	beat = (n + 1) % CHAIN.size()
+	_last_hit = _clock
+	if n < 2:
+		beat_target = target if MatchTeams.hittable(target) and _in_arc(target, dir, basic_range, swipe_half_angle) \
+				else _arc_pick(dir, basic_range, swipe_half_angle)
+		if beat_target != null:
+			_basic_hit(beat_target, swipe_damage, dir, 0.6)
+		cue.emit("swipe")
+	else:
+		pry_targets = []
+		refreshed = []
+		for e in MatchTeams.enemies_of(player):
+			if is_instance_valid(e) and MatchTeams.hittable(e) and _in_arc(e, dir, pry_range, pry_half_angle):
+				pry_targets.append(e)
+				if is_magnetised(e):
+					_mag_until[e] = _clock + mag_time
+					refreshed.append(e)
+		for e in pry_targets:
+			_basic_hit(e, pry_damage, dir, 1.0)
+		cue.emit("pry")
+		if not refreshed.is_empty():
+			cue.emit("mag_refresh")
+	while is_instance_valid(b) and b.action == clip and player.alive and token == _swing_token:
+		if _moving():
+			b.stop_action()  # moving after the hit cuts the recovery; the chain stays
+			return
+		await get_tree().process_frame
+
+
+func _moving() -> bool:
+	return player.has_method("move_dir") and (player.move_dir() as Vector3).length() > 0.1
+
+
+func _in_arc(e: Node3D, dir: Vector3, reach: float, half_angle: float) -> bool:
+	if MatchTeams.edge_distance(player, e) > reach:
+		return false
+	var to := flat(e.global_position - player.global_position)
+	return to.length() < 0.3 or to.normalized().dot(dir) >= cos(deg_to_rad(half_angle))
+
+
+## The nearest enemy in the arc, machines before minions.
+func _arc_pick(dir: Vector3, reach: float, half_angle: float) -> Node3D:
+	var best: Node3D = null
+	var best_key := INF
+	for e in MatchTeams.enemies_of(player):
+		if not is_instance_valid(e) or not MatchTeams.hittable(e) or not _in_arc(e, dir, reach, half_angle):
+			continue
+		var key: float = MatchTeams.edge_distance(player, e) + (100.0 if e.get("kind") == "minion" else 0.0)
+		if key < best_key:
+			best_key = key
+			best = e
+	return best
+
+
+## Machines take a kit hit (plating, shields and stolen plates apply); towers and cores take the damage straight.
+func _basic_hit(t: Node3D, damage: float, dir: Vector3, strength: float) -> void:
+	if t.has_method("hit"):
+		t.hit(player, damage / MatchRules.kit_hit_damage)
+	elif t.has_method("take_damage"):
+		t.take_damage(damage, player)
+	KitFeel.basic_hit(player, t, dir, strength)
 
 
 # ---- 2, iron ball --------------------------------------------------------------------------------------------------
@@ -308,6 +421,9 @@ func iron_ball(target: Variant = null) -> bool:
 	charges = 0
 	_pop = false
 	_bowled.clear()
+	mag_pull = null
+	mag_mult = 1.0
+	mag_snapped = null
 	cue.emit("ball_start")
 	_play(b, "Curl_In")
 	await _event(b, "Curl_In", "closed")
@@ -320,8 +436,8 @@ func iron_ball(target: Variant = null) -> bool:
 		var left := ball_time
 		while left > 0.0:
 			await get_tree().process_frame
-			if not _can_roll(b) or _pop:
-				break
+			if not _can_roll(b) or _pop or _grounded():
+				break  # grounded (Aftershock): the roll ends here into its Curl_Out, no refund
 			var dt := get_process_delta_time()
 			left -= dt
 			_steer(dt)
@@ -360,6 +476,11 @@ func _can_roll(b: MechModel3D) -> bool:
 			and float(player.get("stunned")) <= 0.0
 
 
+## Grounded by the rhino's Aftershock (2026-11-20): the ball and the comet stop rolling into their normal ending.
+func _grounded() -> bool:
+	return is_instance_valid(player) and float(player.get("grounded")) > 0.0
+
+
 func _steer(dt: float, rate := -1.0) -> void:
 	if rate < 0.0:
 		rate = ball_turn
@@ -371,10 +492,20 @@ func _steer(dt: float, rate := -1.0) -> void:
 		var turn := clampf(roll_dir.signed_angle_to(want.normalized(), Vector3.UP), -rate * dt, rate * dt)
 		roll_dir = roll_dir.rotated(Vector3.UP, turn).normalized()
 	mag_pull = _nearest_magnetised()
-	if mag_pull != null:
-		var to := flat(mag_pull.global_position - player.global_position).normalized()
-		var bend := clampf(roll_dir.signed_angle_to(to, Vector3.UP), -mag_turn * dt, mag_turn * dt)
-		roll_dir = roll_dir.rotated(Vector3.UP, bend).normalized()
+	if mag_pull == null:
+		mag_mult = 1.0
+		mag_snapped = null
+		return
+	var to := flat(mag_pull.global_position - player.global_position)
+	mag_mult = clampf(pow(mag_snap_ref / maxf(to.length(), 0.01), 2.0), 1.0, mag_snap_cap)
+	if mag_mult < mag_snap_cap:
+		mag_snapped = null
+	elif mag_snapped != mag_pull:
+		mag_snapped = mag_pull
+		cue.emit("mag_snap")
+	var pull_rate := mag_turn * mag_mult  # _steer's own `rate` is the steering's
+	var bend := clampf(roll_dir.signed_angle_to(to.normalized(), Vector3.UP), -pull_rate * dt, pull_rate * dt)
+	roll_dir = roll_dir.rotated(Vector3.UP, bend).normalized()
 
 
 ## One frame of rolling through the arena's walls. A move the sweep turned means a wall: the turn's direction is the
@@ -721,6 +852,9 @@ func scrap_comet(target: Variant = null) -> bool:
 	_bowled.clear()
 	flattened.clear()
 	burst_hits = 0
+	mag_pull = null  # as at the ball's start, so a comet that locks the ball's last target still cues mag_snap
+	mag_mult = 1.0
+	mag_snapped = null
 	comet = true
 	comet_size = comet_start_size
 	comet_plates = plates_worn if float(player.get("armour")) < 1.0 else 0  # plates still worn from salvage
@@ -744,9 +878,13 @@ func scrap_comet(target: Variant = null) -> bool:
 		b.play_hold(roll_clip, _comet_rate())
 		cue.emit("comet_roll")
 		var left := comet_time
+		var stopped := false
 		while left > 0.0:
 			await get_tree().process_frame
 			if not _can_roll(b):
+				break
+			if _grounded():
+				stopped = true  # grounded: the comet's own Comet_Burst ending where it is, no refund
 				break
 			var dt := get_process_delta_time()
 			left -= dt
@@ -758,7 +896,7 @@ func scrap_comet(target: Variant = null) -> bool:
 			_roll_step(dt, _comet_r())
 			player.facing = roll_dir
 			_run_over()
-		whole = left <= 0.0
+		whole = left <= 0.0 or stopped
 		rolling = false
 	if _comet_built and whole:
 		_play(b, "Comet_Burst")  # the plates fly off at "burst" (0.04 s); the ball is plain again by "clear" (0.30 s)

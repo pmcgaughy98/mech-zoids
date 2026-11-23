@@ -330,3 +330,65 @@ Preston said "Yes, chin tank" after the hippo 3D lane painted a small front tank
   - The glass faces almost straight down, so the game camera never sees it; only low close shots, such as a workshop view, do. In those shots, at partial pressure it shows mostly dark glass with only a tip of the surface line.
   - r16, which repaints the chin glass plain dark, was not installed yet when this was checked, so the panel was judged over the old painted liquid.
 - **Decision.** Preston, 2026-11-14: "Leave it as is." The front glass stays as built; no more polish, since the game camera never sees it. r16, the plain dark glass, is now installed.
+
+## Unreal: hippo event timings for the effects (from the hippo 3D lane, 2026-11-16)
+
+The MOBA is moving to Unreal (Preston, 2026-11-15). When the hippo effects are ported, they should fire on these HippoKit.cpp times, in seconds from each action's start. They match hippo.events.json and the Unreal film within one 30 Hz frame.
+
+| Action | Events |
+|---|---|
+| Bite | hit .26, end .45 |
+| Jaw_Swing | hit .24, end .42 |
+| Stomp | hit .42, end .65 |
+| Yawn (Vent) | spray .45, end 1.3 |
+| Belly_Flop (Piston Drop) | push-off .22, landing .72, eruption landing + .5, end 1.4 |
+| Lockjaw_Clamp | capture .24, end .5; carry up to 1.0; slam .28, end .85 |
+| Toxic_Flood | burst .75, end 1.7 |
+
+HippoKit logs each one as a HIPPO_* line: HIPPO_BITE, HIPPO_VENT, HIPPO_DROP_LAND, HIPPO_ERUPT, HIPPO_CLAMP, HIPPO_SLAM, HIPPO_FLOOD_BURST. The hippo 3D lane reports that the Unreal Hippo_glow material looks unlit (a flat pale tank window); they are checking its emissive, so the tank glow should not be ported on top of it yet.
+
+## Toxic Flood concept sheet from Gemini (2026-11-17, sent with Preston's approval)
+
+An AI-made 8-frame sheet, kept as a concept and timing reference only. It is not a texture or a look target, because AI work is never the reference. The sheet is in the hub's shared notes: `gemini-hippo-toxic-flood-effect-sheet-2026-11-17.jpg`.
+
+| Frame | What it shows |
+|---|---|
+| F0 | three violet glows at the tanks, with green vapour |
+| F1 | three violet geysers |
+| F2-F4 | a standing wave ring with a curling, foamy crest |
+| F5 | the wave breaks into spray |
+| F6 | a glossy lake with popping bubbles and low green vapour |
+| F7 | the lake fades from the rim |
+
+- **Worth taking.** The wave as a real standing wall with height, and a bubbling lake surface. The flat-effect rejection of 2026-11-12 points the same way.
+- **Not to take.**
+  - The wave barely grows between frames, so it reads as a pool, not a spreading lake.
+  - F0 reads as flames, not tanks under pressure.
+  - The green vapour fights the toxic-purple rule. It could only be a faint accent, and only if Preston wants it.
+
+## Unreal: the Flood's standing wave (2026-11-18, hub row 42)
+
+What was built (in `D:/dev/mech-moba-unreal`; nothing committed):
+- `Source/MechMoba/HippoFx.h/.cpp`: `UHippoFxSubsystem` watches each hippo's replicated state. When Toxic Flood is used (Kind 3, action 53), it waits .75 s after `State.Started` and then spawns `AHippoFloodWaveFx` at the hippo's feet. It is cosmetic and client only.
+- The wave is a procedural ring, 72 segments by 10 profile rows. Its curl profile is rebuilt every tick at the current radius, so the lip never stretches. It grows from 170 cm to 600 cm with a cubic ease-out over .55 s, rises in .12 s, then breaks over .45 s (the crest drops forward and the wall tears into holes). Its height is 150 cm.
+- `Tools/make_hippo_fx.py` creates `/Game/Hippo/Fx/M_HippoFloodWave`, a Custom node that is translucent, unlit and two-sided:
+  - Flowing streaks run down the face.
+  - A lighter crest band carries noise foam.
+  - The lip breaks into drops.
+- Shared files: the ProceduralMeshComponent plugin is turned on in `MechMoba.uproject` and added to `MechMoba.Build.cs`.
+
+Lessons:
+- **The scene's exposure lifts unlit translucent colour a lot.** In v1 the goo purple was (0.42,0.13,0.58) and it filmed near white, around (240,200,245) on screen. v2 is about a third of that and more saturated: deep (0.035,0.006,0.06), goo (0.13,0.025,0.21), sheen (0.34,0.14,0.48). It films around (200,125,220), in the same family as the hippo's body. Start Unreal effect colours at roughly a third of their Godot values.
+- **A new material, or a procedural-mesh material, draws nothing in its first `-game` take** while its shaders compile. Always do a throwaway take first.
+- `-HippoFloodTint` paints the wave flat green, which confirms where it sits before you judge the look.
+
+Still open:
+- The kit's own small white hit sparks on the target remain. They belong to the kit, not to this lane.
+- The curl is hard to read from the default camera because the wave reads mostly as a band. A lower camera, or a taller lip, is the next tuning step if Preston wants more "wave".
+
+## Taller curl and arena lighting (2026-11-18 to 11-20, hub rows 54, 59 and 73b)
+- **Lighting (row 54):** the Flood wave was filmed in Arena3v3 under the current and the proposed lighting. It read as toxic purple in both, so the colour was not tuned. Preston chose the proposed lighting, tone 0 and EV 0.0, which is now the arena default.
+- **Curl v2 (Preston: "make curl taller"):** the wave is 210 cm tall, up from 150. The profile was changed so the crest throws to +0.56 of the wave height and the lip hangs down to 0.46. From the play camera it now reads as a rolling tube. Video: `D:/dev/_scratch/hippo-fx/ue/flood_taller_curl_arena.mp4`.
+- **Row 59:** the full check failed 3 times on network-startup tests while the machine was overloaded, so v2 was rolled back.
+- **Row 73b:** after the grab steady-server fix, v2 went back in and passed the full check first time, on DLL 82719D8B.
+- **Next slice, offered:** a lingering 600 cm lake patch for the 4 s lake, `HLakeLife` in HippoKit. The client already knows when and where each burst lands, so no gameplay change is needed. The Vent puddle does need a replicated field from the kit owner.

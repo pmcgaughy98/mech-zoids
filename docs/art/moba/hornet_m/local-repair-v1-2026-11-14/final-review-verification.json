@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "tested_sha256": "483471b77e49fb6983ce026c6217014f3d3a3853c8b90949ccbe650b90a82762",
+  "joint_count": 51,
+  "native_joint_tests": 24,
+  "maximum_seam_gap_m": 0.0,
+  "godot_check": "Four native versions, original/revised sheets, 51-joint skeleton and current ChaseCamera3D",
+  "screenshots": "res://reports/model_catalog/hornet-restoration-v1",
+  "intact_archive_sha256": "1abdd53ffe957aa022deb629644ca5f0e7c6d357bedc1998565ea627773240c1",
+  "accepted_pre_rig_touchup_sha256": "84622e39a7a46413ab9676789fcac12a9599da71614f5c12462550d220837bb2",
+  "original_reference_sha256": {
+    "front": "e210855ec616446c93f032acead3b39bc285367b70120f9b9fca5ce27a058943",
+    "left": "ea58aace4e85edc1b062be77aeab3d80b86f6dc618655e4a284f08c4facdc9a1",
+    "back": "770d794f0046f3989dd362688d2b0ba4973ea0d630ad244f07d21b2991c6a1c9",
+    "right": "9ee2bc82a8334cad6c76cc5da1ed215a4cfb79901ca95a5593ba0dcc9138435a"
+  },
+  "final_triangles": 445372,
+  "boundary_edges": 0,
+  "over_shared_edges": 0,
+  "collapsed_triangles": 0,
+  "source_skeleton_rest_binds_scenes_clips_preserved": true,
+  "summer_review_report": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/summer-review-verification.json",
+  "skin_scope": "Transferred from damaged downloaded rig onto restored geometry; original downloaded weights remain archived.",
+  "readiness": "High-detail review asset. Optimisation, authored gait/flight and independent appendage control work remain."
+}

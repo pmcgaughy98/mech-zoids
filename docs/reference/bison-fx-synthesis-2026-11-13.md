@@ -400,7 +400,13 @@ Recorder: `rec/caps_record.sh [--shots]` with `caps_rec.gd`.
 It sets `slag_spots` before each `"slag"` cue. With such a kit, the effect pours each molten glob onto that spot, 0.3 s
 from a rear stack, and drops none on the clip's beats. With the launcher's stub, the beats still drive the globs.
 
-**Status:** Preston's "also turn on" (2026-11-14) came relayed through the bison 3D lane. The edit that puts the
+**Status: on in the real match (2026-11-14).** On Preston's direct "Yes, turn on", the game feel lane added the
+`BisonFxInstaller` node (ext_resource `5_bisonfx`) to `scenes/moba3d/arena_play.tscn`, after `RhinoFxInstaller`. Its
+checks: installer check-only clean, the scene loads 600 frames with no errors, match_check 67 pass, 0 fail, and its
+bison probe passes, including a check that `BisonFx` hangs under the kit after `set_machine("bison")`. To turn the
+effects off, remove that node and its ext_resource.
+
+How it got there: Preston's "also turn on" (2026-11-14) first came relayed through the bison 3D lane. The edit that puts the
 installer node into `scenes/moba3d/arena_play.tscn` was refused by this session's permission check, because the
 go-ahead was relayed rather than typed here. That edit is two lines, an `ext_resource` and a `BisonFxInstaller` node,
 and waits on Preston's direct yes. `arena_play.tscn` is the game feel lane's file: it is asking him, and on his yes it
@@ -421,14 +427,105 @@ this is the kit working as designed.
 **Checks:** check-only clean on `bison_fx.gd`, `bison_fx_installer.gd` and `match_rec.gd`. match_check's first run was
 63 pass, 4 fail, all on the flaky tower checks; the rerun was 67 pass, 0 fail.
 
+## The Whistle Stop refine (2026-11-14): what changes here
+Preston approved a refined bison kit ("Whistle Stop"; `docs/plan/moba-kits.md`, Bison, and `kit-design-2026-11-11.md`,
+"Bison refine draft"). For this lane:
+- **Eruption's bombs and slag ring retire.** They stay in `bison_fx.gd` only until the kit stops sending `bomb_land`;
+  nothing new wires them into a match. Eruption's vent fire is kept as the fire at the base of the steam columns.
+- **Kept as built:** Coupling Chain (chain from `muzzle_purge`, heat pulse, hot collar, taut chain), Plow, footfall dust,
+  the cooldown stacks, Freight's slag track (small, short, beside the hippo's puddles), magma orange.
+- **New:** Whistle Stop's steam columns and scald; the Haul (slot 1 recast) with its chuff and buffer slam; Freight as a
+  line chain that couples a train nose to tail, then the pile-up when it brakes; all four stack caps blasting together
+  on Whistle Stop.
+- **The kit is rebuilt (game feel lane, 2026-11-14, Preston: "Yes, rebuild it"),** with the names proposed here. New cues:
+  `whistle` (time the columns off the Whistle clip's inhale, blast and plume_end), `scald` at the blast
+  (`scald_targets`; `whistle_radius` 9, `scald_radius` 3), `haul` and `buffer_slam` (then `chain_break`), `pile_up`
+  (then one null `chain_break`). Fields `hauling`, `haul_kind` ("haul" or "freight") and `steam` (0 to 1 over 2 s). Both
+  hauls play the r6 `Haul` clip. `freight_targets` is nose to tail, and `chain_end` is the line's far end (12 m, cut
+  short at walls). Gone: `eruption`, `rally`, `bomb_land` and their fields, so the bombs no longer show.
+- **Checked with the rebuilt kit in the real match** (`rec/match_rec.gd`, 2026-11-14): no script errors. Every new cue
+  arrives, and the effects ignore the ones not yet built. The slot-1 Haul and Freight's haul both read as hauls
+  (6.18 to 7.70 s, and 11.27 to 15.28 s), with `steam` 0.375 midway through the first. The chain, Plow, the slag globs
+  and the chain breaks all fire as before. Still built for the old kit: Freight chains each car to the bison, not nose
+  to tail, until item 5.
+- **The rule bent on purpose:** the effects rule is small, short flashes. Whistle Stop's columns must be "seen across
+  the map", so they are the one tall effect: about 1.5 s up, then gone, no lingering cloud.
+
+## The slice: Whistle Stop (built 2026-11-17, Preston: "Yes, read and start")
+Files: the WHISTLE STOP section of `scripts/moba3d/bison_fx.gd`; new `shaders/bison_ring.gdshader` (a thin floor ring,
+additive, render_priority 3); launcher key 2 is now Whistle Stop (`bison_fx_standin.gd`, which sends "scald" on the
+clip's blast). No kit, body or shared file edited.
+
+Timed off the Whistle clip (1.3 s), with the structure of the Gemini sheet (ripple, base flare, columns, ground steam
+ring, call ring, fade):
+- **inhale (0.05):** the four stack mouths heat, the steam vents shriek, and a short orange ripple runs out under the bison.
+- **blast (0.32):** every stack flashes and all four caps blast together, the cooling ones included. Each stack then
+  shoots a column of steam straight up until plume_end (0.95), with flame bursting at its base. The columns lean
+  slightly out from the hump's centre, so four read at height rather than one pillar. They widen as they climb to
+  about 7 m, which runs off the top of the play camera. They are gone by about 1.7 s.
+- **scald (the kit's cue at the blast):** a low ring of steam rolls out to `scald_radius` (3 m) over a hot floor ring,
+  and each scalded enemy gets a flash and a hiss.
+- **The ally call:** one faint, thin ring runs out to `whistle_radius` (9 m).
+- The columns are the kit's one tall effect, on purpose ("seen across the map"). The rest stays small and short.
+
+**Recorded:** `D:/dev/_scratch/bison-fx/rec/bison-whistle-stop.mp4` (also in the shared notes folder). It is the main
+match with the real kit at the game camera: a standing cast, then a walking one, with three minions inside the scald
+radius and one outside. The log shows "scald 3" on both casts. Recorder: `rec/whistle_record.sh [--shots]` with
+`whistle_rec.gd`. A first take came out black, because the display had slept; the re-take was clean.
+**Known:** the columns are built of stacked puffs and look slightly beaded up close. That reads as a locomotive's
+chuff, and is cheap to smooth (a shorter COLUMN_TICK) if Preston wants one smooth plume.
+
+## The slag fix: no more "poop" (2026-11-17)
+Preston, relayed by the bison 3D lane: "the lava balls look like poop when towing". Round globs falling from behind
+the rump read as dung. Now no ball falls. Each slag spot is a flat streak of cracked, glowing slag that appears on
+the floor at once, laid along the haul (0.8 m by 1.76 m), with a low flash and a short hiss of steam. It cools from
+orange to black over the slag time. A rear stack still spits a small flash, alternating sides, to tie the spill to the
+engine. The streaks line up into a short dashed track. Checked in the launcher's Freight take: a flat dark crack with
+orange veins behind the bison, nothing round.
+
+## The slice: Haul chuff and buffer slam (built 2026-11-18, Preston: "yep get in queue")
+Files: the HAUL CHUFF AND BUFFER SLAM section of `scripts/moba3d/bison_fx.gd`. No kit, body or shared file edited.
+- **Chuff:** the r6 Haul clip's chuff beats (0.092 and 0.312 of its 0.433 s loop) are read off the clip position. On
+  each beat a diagonal pair of stacks (fl and rr, then fr and rl) coughs a short flame and a puff of steam that rises
+  and trails off behind. The kit's steam sharpens it: bigger, slower, greyer puffs at the start, smaller, faster, whiter
+  ones at full steam. The clip speeds up with the haul (rate 1.08 to 1.44 measured), so the chuffs quicken. The "haul"
+  cue opens with one chuff from all four stacks.
+- **Full steam:** the vents shriek once when steam reaches 1. Slot 1's haul (1.5 s) tops out at 0.75 steam, so it never
+  fires there. In the take, Freight's haul ran 2.0 s and full steam landed on the same frame as the pile-up, so in
+  practice it reads as the brakes at the pile-up. Cheap to drop if the kit keeps these timings.
+- **Buffer slam:** a hot flash where the two backs meet and one on the slammed enemy, a short floor ring, low dust, and
+  the brakes venting steam out of both rear stacks. The stun shows with the match's own gold stars (seen on the slammed
+  minion), so nothing is added for it.
+- **Freight** plays the same clip, so it chuffs the same way. The old Freight_Haul trudge keeps its steady burn.
+
+**Recorded:** `D:/dev/_scratch/bison-fx/rec/haul_take.mp4` (in the shared notes folder as
+`bison-haul-chuff-buffer-slam.mp4`): the main match with the real kit at the game camera. Slot 1 chains a minion,
+hauls it and slams it, then Freight runs. Log: 9 chuffs on the 1.5 s haul; cues haul, buffer_slam, chain_break in
+order; the slam names the minion; Freight 12 chuffs over 2.0 s, 4 slag spills, full steam with the pile-up. Recorder:
+`rec/haul_record.sh [--shots]` with `haul_rec.gd`.
+**Fixed after the first take:** the chuff puffs read faint at the game camera (about 25% bigger now), and the slam
+flash sat at the coupler behind both bodies (moved to where the backs meet, plus one on the enemy).
+**Not covered:** the launcher stand-in sends no haul or buffer_slam cues, so this slice shows only in the main match.
+The chuff times are written into HAUL_CHUFFS; if the 3D lane's stronger Haul pass moves the chuff events, update them.
+
 ## What is next (ordered)
-1. Done: magma orange (Preston, 2026-11-13).
-2. Done: Coupling Chain (slot 1), in the launcher.
-3. Done: Plow (slot 3), in the launcher.
-4. Done: Freight (ult), in the launcher.
-5. Done: footfall dust (Walk, Trot, Walk_Back, both strafes) and the Hit_Heavy replant stamp, in the launcher.
-6. Done: cooldown stacks, in the launcher.
-7. Built: `bison_fx_installer.gd`, proved in the real match. Adding its node to `arena_play.tscn` waits on Preston's
-   direct yes; the game feel lane, whose file it is, adds it (see "In the match: the installer").
-8. A `steps` row with hoof names in the bison's body row (3D lane, proposed), so the body's `step` signal carries the
+1. Done: magma orange, Coupling Chain, Plow, Freight (old kit), footfall dust and the replant, cooldown stacks.
+2. Done: `bison_fx_installer.gd`, on in the real match since 2026-11-14.
+3. Done, 2026-11-17: Whistle Stop (see "The slice: Whistle Stop"), and the slag spill fix.
+4. Done, 2026-11-18: the Haul chuff and buffer slam (see its slice).
+5. **Freight as a line.** One chain fired in a line; each car coupled to the one ahead, nose to tail; the chuff and slag
+   track as now; the pile-up when it brakes (a flash where each pair of cars meets, a stun tell on each). Needs:
+   `freight_targets` ordered nose to tail, and a `pile_up` cue.
+6. Retire the bomb and slag-ring code once the kit's Eruption is gone.
+7. A `steps` row with hoof names in the bison's body row (3D lane, proposed), so the body's `step` signal carries the
    footfalls for sound too.
+8. **The Unreal port** (hub row 45, after pangolin effects at 44; approved 2026-11-18): new files only,
+   `Source/MechMoba/BisonFx.h/.cpp` (a client tickable world subsystem, the HippoFx pattern), `Tools/make_bison_fx.py`,
+   `/Game/Bison/Fx`, a launch flag inside BisonFx for the film runs (as pangolin's `-PangolinCometFxFilm`), a full Check
+   Migration. Slice 1 is Whistle Stop and the slag streaks. Drafts go in `D:/dev/_scratch/bison-fx/ue-drafts/` until
+   pangolin hands over the editor.
+   Done 2026-11-18: Whistle Stop and the slag streaks filmed in Unreal and the full check passed. The look is not at
+   Godot parity yet: the flash and rings wash toward white, and the slag shows as separate ovals. Frames, DLL hash, the
+   three look fixes and what is still open are in `D:/dev/_scratch/bison-fx/ue-drafts/ROW45_PLAN.md` (Result). The
+   lesson that carries over to every Unreal effect: the arena's auto exposure brightens unlit emissive about 9x, so
+   cancel it with EyeAdaptationInverse, connected by first input and checked.

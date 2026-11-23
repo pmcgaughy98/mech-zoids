@@ -624,7 +624,7 @@ func lockjaw(target: Variant = null) -> bool:
 		cue.emit("lockjaw_carry")
 	var t := 0.0
 	carried_m = 0.0
-	while _holding(b) and t < carry_time and not _slam_now:
+	while _holding(b) and t < carry_time and not _slam_now and float(player.get("grounded")) <= 0.0:  # grounded (Aftershock): straight to the slam
 		var dt := get_process_delta_time()
 		t += dt
 		var steer := _carry_steer()

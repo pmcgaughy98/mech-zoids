@@ -239,3 +239,8 @@ is gone: the test scene's "rhino" entry now loads the registered v52 at 1.0.
 - Arena hippo.glb sha ba76c29b: body value 0.373, saturation 0.76 at 3.5 s (r10 was 0.369 and 0.77). Passes. Frame lum p50 0.289, unchanged.
 - The red pixels left in the crop are the enemy target outline, not the body. Board: D:/dev/_scratch/moba-look/v4/hippo10_vs_12.jpg. Script: body_value_purple.py.
 - moba_look_v3 now takes --model=<absolute GLB path> to measure any scratch candidate with an existing entry's clips.
+
+## 2026-11-17: Unreal paleness (row 19c), cause is auto-exposure
+- In Unreal every mech read paler than Godot. On the cobra plate (Godot review render 45,117,74), Unreal with auto-exposure gave about (110,186,127).
+- Manual exposure on the trial map (one unbound post-process volume): bias 0 gave (25,81,40), +1.0 gave (40,111,58), and +1.2 gave (46,118,64). Red and green match, and blue is about 10 low (the colour finish).
+- The map was left restored. A ready copy with the volume at +1.2 is at D:/dev/_scratch/moba-look/unreal-19c/TrialMap.bias1.2.umap. Applying it is Preston's call. Scripts: set_exposure.py, run_19c.ps1, measure.py. Board: row19c_before_after_godot.jpg.

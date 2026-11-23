@@ -1229,6 +1229,7 @@ in. Colour flash blinds coming out of camouflage, and shared camouflage walks th
 **Still open:** names and numbers. The film unit rig was taken 2026-11-14.
 
 ### Bison: where it stands, and the picks left (2026-11-13)
+*Refined 2026-11-14: see "Bison refine draft" at the end (Preston: "Whistle Stop").*
 **His words:** "bison drafts next also read bison 3d model and bison effects session too". Read: both drafts above, the
 bison 3D lane's and the bison effects lane's recent work, and the effects lane's hand-over
 (`side-session-notes/local_cffe19dd-40a3-4628-9c16-ada3cfd03ade/bison-fx-lane-handover-2026-11-13.md`).
@@ -1357,3 +1358,158 @@ His answer to "Which walls can the cobra cross?", asked because the map lane cou
 rule. Every inner 3 m wall can be crossed; base walls and the map's edge cannot. Read as covering Wall Line, Seam and
 Breach alike. The map already sets those walls apart, so it needs nothing new. The 3v3 walls are laid in 2 m modules,
 so Breach opens one module. Now in `moba-kits.md` (Cobra).
+
+### Pistol shrimp kit draft (2026-11-14, Preston: "Pistol shrimp")
+**Why it is first:** it heads the future lineup in `roster-roles-2026-11-14.md`. Preston already picked its role: a
+solo/top bruiser, not a ranged carry (`power-body-recreations.md`). It takes the fighters from 2 to 3.
+
+**Start point:** the identity above ("New animals"): the verb is **burst**: it cocks the claw, and one snap sends a
+bubble that bursts at a point; the ult is a giant projected claw. It never keeps a reservoir and never leaves a field,
+which keeps it apart from the hippo and the shark; its colour is the white flash and the bubble. The body is the
+cavitation-pressure concept, four white sheets in `pistol_shrimp_l/take-a/` (one giant snapping claw, pressure
+vessels, bulky supports, a tail fan; model review pending, not installed). Built: nothing.
+
+**The idea in one line:** few hits, each one huge, and every one shows itself before it lands.
+
+| Layer | The pistol shrimp's answer |
+|---|---|
+| Body | **The one trait:** the snap. It cocks the giant claw, and the snap fires a cavitation bubble that collapses with a white flash and a bang. Basics stay animal: jabs from the small claw. |
+| Power | cavitation pressure: the pressure vessels and bulky supports on its sheet |
+| Rig | proposal: a **pile driver**, built to drive piles into a seabed with one huge strike after a slow lift. It hands the kit the ram, the lift and drop, and the braced frame. |
+| Ode | Thor as a theme only: the flash before the thunder. Thor's SMITE 2 kit (the hammer throw, the fissure, the spin, the flying slam, strength per nearby enemy) is not used. |
+
+| Slot | Draft | Cooldown | Layers |
+|---|---|---|---|
+| Basic, pincer jabs | The small claw jabs twice, quick, then a short pause. Melee. | basic | Body |
+| Passive, Ringing | Its hits leave an enemy ringing for a few seconds (white sound lines around them). Its shot or its ult on a ringing enemy deafens it: it can't use abilities for a moment (a silence). | none | Body (the bang) + Power |
+| 1, Cavitation Shot (the one trait) | Cocks the claw (a short tell: the claw's vessels glow), then snaps: a bubble flies a short way and bursts at the first enemy or at the end of its reach. Damage in a small circle, a white flash and a bang. No push. | short | Body + Power |
+| 2, Ram | The pile driver's piston fires it forward a medium distance. It stops at the first enemy it meets and leaves them ringing; that enemy is not pushed. Its way in and its way out. | medium | Rig + Power |
+| 3, Hammer Down | Lifts the giant claw like the pile driver's hammer, about half a second, standing still and taking less damage, then drops it on the spot in front: heavy damage, and enemies hit are pinned (rooted) for a moment. Ringing enemies take more. | medium | Rig + Body (the claw as the hammer) |
+| 4, Thunderclap | Projects a giant claw over a spot in range. The flash comes first: the circle under it flashes white as the warning. About 0.6 s later the claw snaps and the bubble collapses with a bang: heavy damage in a wide circle, and everyone inside is deafened, ringing enemies for longer. It can't be moved while it cocks (the rig's frame braces). No push, nothing left on the ground. | long | Body (a giant projection, principle 4) + Power + Rig + Ode (theme) |
+
+**How it plays:**
+- **In lane:** jab to ring the enemy, then Cavitation Shot to deafen them and win the trade. Ram in for a trade, or
+  out of one.
+- **In a fight:** Ram onto the carry, Hammer Down to pin them, then the shot.
+- **The ult:** flank, then drop Thunderclap on the back line so they can't answer while the team goes in.
+
+**Counterplay:** every big hit shows first: the claw's glow, the lift, the white flash. Step out of it and the shrimp
+has spent its turn. It has one dash, so kiting beats it. It has no heal, on purpose, so healing stays with the
+supports.
+
+**Overlap check:**
+- **Knockbacks:** none added. Nothing in the kit pushes.
+- **Fields:** none, as its identity says.
+- **The pressure trio:** the hippo fills and spends (violet), the shark lays currents (aqua), the shrimp bursts
+  (white). The shrimp has no gauge.
+- **The lobster:** both are crustaceans with claws. The lobster grabs and pulls on a tow line (violet gravity); the
+  shrimp fires a bubble and never pulls. The lobster's basic is named "claw snap", so no shrimp slot is named "snap".
+  Silhouettes: two claws against one giant claw.
+- **The hippo's Piston Drop** leaps and stuns a point after a delay. Hammer Down stays in place and roots. No shrimp
+  name uses "piston" in its title.
+- **Silence comes back.** Nobody has had one since 2026-11-05. A silence on a bruiser's ult is strong in a team
+  fight, so the durations matter. The gorilla's hex shield clears a slow or root, not a deafen.
+  *Changed 2026-11-16 (Preston: "stun not silence"): stuns instead, so no silence comes back. Stun now has four
+  owners (the rhino, the hippo, the bison, the shrimp), and the hex shield doesn't clear it.*
+- **Roots:** a third, after the lobster's pinch and the shoebill's moon pool.
+- **Giant projection ults:** the falcon's wings sweep a far line; the shrimp's claw snaps a circle. Principle 4
+  allows both. A flag.
+- **The kangaroo** is the other melee fighter. It wins with many hits and a ring; the shrimp wins with a few big ones.
+- **The chameleon owns the blind.** The white flash here is a warning light only.
+
+**Art and build cost:**
+- Nothing built. The four white sheets are the start; model review is pending. An older display model also exists
+  at `art/model_catalog/display/pistol_shrimp.glb` (2025-09-01), from before the sheets.
+- Clips a 3D lane would need: the jabs, cock and snap, the ram launch and stop, the hammer lift and drop, the ult cast.
+- Effects: the bubble, the white flash, the bang (rings in the air, look only), the ringing mark, the warning
+  circle, the projected claw.
+
+**Approved:** Preston, 2026-11-16: "Yes, approve it", then "wait stun not silence". The deafen becomes a stun:
+Cavitation Shot on a ringing enemy stuns it, and Thunderclap stuns everyone inside, ringing enemies for longer. The
+pile driver rig came with the draft. The kit is now in `moba-kits.md`.
+**Still open:** names and numbers (the stun durations most of all), whether the stun uses up the ring (proposed),
+and the model review of its sheets.
+
+### Bison refine draft (2026-11-14)
+**His words:** "bison kit may need some refining to really feel like how it looks like it should tbh. The tow feels to
+simple and weak, also its like how do the 4 lava bombs that also look very weak fit to the kit and a teamfight." He
+named the feel he wants from Ares in SMITE: play back, catch someone who steps up, drag them back toward the team,
+then a stun. "I don't want to copy it and obviously towing is a cool aspect of bull." On the stacks: "Maybe we could
+reimagine how those pipes work? if we did keep the balls we should add more to make it more impactful or work
+differently." On items: some machines will build around basic attacks (the mantis), and the bison may want movement
+speed.
+
+**What is wrong now:**
+- **The tow is passive.** The chain only tows if the enemy walks past its length and the bison walks away. Nothing
+  happens on the bison's terms, and there is no payoff.
+- **The bombs don't fit.** Four small bombs in a ring around itself don't help the catch, don't fit a locomotive,
+  and read weak next to the bombs' own slag.
+- **A correction of mine.** The approved kit lines up with Ares's SMITE 2 kit slot by slot. Coupling Chain's "can't
+  dash or leap" is Shackles' cripple. Eruption's buff (allies hit harder and attack faster) is Bolster Defenses
+  (protections and basic-attack damage). Freight's chains to every enemy around it, braced and unstoppable, is No
+  Escape. I checked draft 2 on 2026-11-13 under the inspiration-only rule and missed all three. This draft moves each
+  one off Ares's function.
+
+| Layer | The bison's answer (unchanged unless marked) |
+|---|---|
+| Body | The one trait: the hump-powered head sweep (Plow). Basics: the horn hook. |
+| Power | heat, flame and steam, in magma orange |
+| Rig | the steam locomotive. **New use:** the haul builds steam (the chuff gets faster), the whistle calls the team, and every haul ends at the buffers. |
+| Ode | Ares and Vulcan as themes only. The catch-drag-stun beat he described stays; the functions no longer match Ares's kit. |
+
+| Slot | Draft | Was | Layers |
+|---|---|---|---|
+| Basic, horn hook | Unchanged. | same | Body |
+| Passive, Scorch and Steam | The chain burns coupled enemies, and its basics hit burning enemies harder (kept). **New:** while it hauls, it builds steam. It walks faster each second, up to a cap, and the stacks chuff faster as the tell. Bonus move speed from items counts in full toward the haul. | Scorch and Slag | Power + Rig |
+| 1, Coupling Chain, then Haul | Fires the chain. The first enemy hit is coupled for about 3 s and burns. No status: a dash or leap only goes as far as the chain's slack, because the chain holds. **Recast to Haul:** it turns toward the aim and hauls for up to about 1.5 s, building steam, dragging the coupled enemy behind it at its own speed. When the haul ends, the enemy runs into its rear buffers: a short stun (the buffer slam). A stun or knock-up on the bison during the haul snaps the chain. | the leash that tows only if the bison walks away; can't dash or leap | Rig + Power |
+| 2, Whistle Stop (*replaces Eruption*) | The whistle shrieks and all four stacks blast tall columns of steam with fire at their base, seen across the map. Allies in a wide circle run faster toward the bison for a few seconds: the call to collapse on its catch. Enemies close around it are scalded (damage, burning). No damage buff for allies, which is Ares's Bolster Defenses. | four bombs in a ring and the rally buff | Rig + Power + Ode (theme) |
+| 3, Plow | Unchanged: the head sweep throws enemies sideways and scorches them; a coupled enemy is thrown to the far end of its chain, which aims a Haul. | same | Body + Power |
+| 4, Freight | Fires one long coupling chain in a line. It passes through enemies and couples every one it hits, nose to tail, into a train behind it. Then it hauls the train, building steam, over a short slag track. When it brakes (recast, or at the end), the cars run into each other: every coupled enemy is stunned briefly (the pile-up). A stun or knock-up on the bison snaps the train. Not unstoppable any more. | chains to every enemy around it, braced and unstoppable | Rig + Power |
+
+**The difference from Ares, in one line:** Ares chains everyone around himself and pulls them to his spot. The bison
+catches a line, drags it behind a moving engine it steers, and the stun comes from the cars hitting each other when it
+brakes.
+
+**How it plays:** it plays back behind its front line and waits for someone to step up. Chain them, recast to Haul them
+into its team, and the buffer slam stuns them as the team arrives. Whistle Stop is how the team gets there in time. Plow
+peels a diver off its carry, or throws a coupled enemy to the chain's far end, toward its team. Freight catches a line
+of enemies in a choke or a lane, hauls the whole train into its team, then brakes for the pile-up.
+
+**Items (no item system exists yet; the HUD notes plan relic slots):** the bison builds as a tank, plus movement speed.
+Its threat is the chain's reach and how fast it hauls, and speed items feed both.
+
+**Option, if he keeps the bombs:** **Firebox Barrage** in slot 2. All four stacks fire three bombs each, twelve in all,
+at a target area. They land in a creeping line that walks from the far end back toward the bison over about 1.5 s:
+damage and burning on each. Enemies in the area either walk through the fire or move toward the bison and its chain, so
+the bombs herd them into the catch. Only the last row leaves slag. It hits harder than Whistle Stop, but the team loses
+the rally.
+
+**Overlap check:**
+- **Charges:** still none (the rhino's). The haul is a walk that speeds up behind a chain, not a run.
+- **Pulls:** still none (the lobster's). The bison drags behind it as it walks; it never reels in.
+- **The lobster's Weight** was redesigned around the old "can't dash or leap". The chain's slack does that job now,
+  so the two still differ.
+- **Team speed:** Whistle Stop joins the wolf's Shade Pack and the hummingbird's Surge line. A light flag.
+- **Stuns:** the buffer slam and the pile-up, next to the hippo, the cobra and the kangaroo. Both come at the end of a
+  haul the enemy can see coming.
+- **Crowd-moving ults:** Freight is still one of three. It now needs aim.
+- **Slag:** only Freight's short track now, so it sits further from the hippo's puddles.
+
+**Art and build cost:**
+- `bison_kit.gd` is not built yet, so no code is lost. *Wrong, corrected the same day: it was built at 10:47 to the
+  old kit, with Eruption, so the refine is rework in it (the bison 3D lane caught this).*
+- Clips the bison 3D lane already has: Bison_Chain_Throw (the chain), Bison_Freight_Haul (both hauls),
+  Bison_Freight_Brace (the brake and the pile-up), Bison_Whistle (Whistle Stop, unused until now), Bison_Plow,
+  Bison_Stun. Bison_Eruption is left over, or kept for the barrage option.
+- Effects: the effects lane's Eruption effect (on in the real match, not only a test scene) retires, or becomes the stacks' fire base under the steam
+  columns. New: the steam columns, the haul's chuff, the buffer slam, the pile-up, the line chain for Freight. Coupling
+  Chain's chain mesh is still needed.
+- Lanes to tell once he approves: the game feel lane (`bison_kit.gd`), the bison effects lane (its queue), the bison 3D
+  lane (no new clips needed for the recommended version). *Wrong, found the same day by the bison 3D lane: the
+  haul clip is a 0.518 m/s trudge, so a haul at move speed needs a new hauling-trot clip. See the open speed
+  question in `moba-kits.md`, Bison.*
+
+**Approved:** Preston, 2026-11-14: "Whistle Stop", his answer to "Which version of the bison's slot 2?". The draft
+with Whistle Stop is now in `moba-kits.md`; Firebox Barrage stays an unused option.
+**Still open:** names and numbers. The haul's speed is settled: move speed, with the new Bison_Haul clip (Preston,
+2026-11-14, to the bison 3D lane: "Yes, build it"; see `moba-kits.md`, Bison).

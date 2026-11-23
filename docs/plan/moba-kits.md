@@ -40,13 +40,14 @@ hold the front, the small ones are quick.
 
 | Machine | Size | Ode to | Role | Signature |
 |---|---|---|---|---|
-| Rhino | L | Cabrakan | engage tank | Seismic charge: tremble circle, Brace and release, Tremor charge with the carry |
+| Rhino | L | Cabrakan | engage tank | Seismic charge: tremble circle, Aftershock (grounds), Tremor charge with the carry |
 | Gorilla | L | Geb | protector tank | green hex shields |
 | Hippo | L | Bacchus | sustain tank | pressure tanks, toxic Vent, Lockjaw drag, Toxic Flood |
-| Bison | L | Ares, Vulcan | catcher tank | Coupling Chain, Eruption's rally ring, Freight's haul through slag |
+| Bison | L | Ares, Vulcan | catcher tank | Coupling Chain and Haul, Whistle Stop, Freight's train and pile-up |
 | Lobster | L | Khepri | catcher support | gravity: Weight rings, claw grab, Anchor, gravity well |
 | Kangaroo | M | Ravana | brawler | punch rhythm, the leap to friend or foe, wall-stun tail kick, title bout |
 | Pangolin | M | Kuzenbo | diving fighter | salvage (armour theft), rail dive, iron ball |
+| Pistol shrimp | L | Thor | solo bruiser | Ringing, Cavitation Shot stuns, Ram, Hammer Down pins, Thunderclap |
 | Wolf | M | Thanatos | assassin | hunts the wounded: scent, Shade Step, Snare, run down |
 | Cobra | M | Medusa | jungler | crosses walls: Wall Line over, Seam along, Breach through |
 | Shoebill | M | Thoth | long-range mage | patience, moonbeam, moonlance |
@@ -56,7 +57,8 @@ hold the front, the small ones are quick.
 | Hummingbird | S | Cupid | healer support | nectar heals, bloom |
 | Fennec | S | Janus | utility mage | portals for itself and the team: pocket gates, far gates, great gate with rift boom; gate echo |
 
-Count: 4 tanks, 2 fighters, 1 assassin, 1 jungler, 2 mages, 2 ranged carries, 3 supports.
+Count (16): 4 tanks, 3 fighters, 1 assassin, 1 jungler, 2 mages, 2 ranged carries, 3 supports. The pistol shrimp's
+kit is approved (2026-11-16); its model is not built yet.
 
 ---
 
@@ -74,16 +76,16 @@ the build's proposals. The reasoning for Heave is in `kit-design-2026-11-11.md`,
 | Slot | What it does | Cooldown |
 |---|---|---|
 | Basic, horn chain | Hook, rip, gore: three hits, the gore heaviest, each with a short hitstop. The chain starts over 1.5 s after a basic ends. | a chain |
-| Passive, front plating | Hits from inside a 100-degree arc in front spark off the plates and are blocked. Every blocked hit (plating or Brace) adds one **Seismic charge**, up to 5, at most one per attacker every 0.5 s. After 5 s with no gain, one drains every 2 s. The charge glows on the drum ring. | none |
+| Passive, front plating | Hits from inside a 100-degree arc in front spark off the plates and are blocked. Every blocked hit adds one **Seismic charge**, up to 5, at most one per attacker every 0.5 s. After 5 s with no gain, one drains every 2 s. The charge glows on the drum ring. | none |
 | 1, Heave (*replaces horn toss; Preston, 2026-11-12: "Heave"*) | The shoulder transducers thump the ground. A ripple runs a short way ahead, and the first enemy it reaches is heaved up out of the ground and pitched over the rhino's back, landing behind it (toward its team), stunned briefly. The horn rings and glows as the tell. No dash: the rhino stays planted, so the Tremor charge is its only charge. *Not built yet:* the code still runs horn toss until the rhino 3D lane's clip lands; game feel then swaps it, with the effects lane's cues (heave_tell, heave_thump, heave_lift, heave_land). | medium |
 | 2, ground pound | **The tremble slow.** Rears and slams, then stomps 4 more times in place: a 4 m circle that shakes and slows everyone in it while it lasts and 0.8 s after. One hit of damage, on the slam. Preston, 2026-11-05: "a bigger circle like cabrakan where its stomping on the ground trembling and slowing those in the circle". | short |
-| 3, Brace and release | Plants its feet for up to 3 s: every hit is blocked (and adds Seismic charge), it moves at about a third of its speed, and ground pound still works. When the brace ends, or on a second press after 1 s, it lets go: a ring of 3 m (plus 0.4 m a charge). Enemies inside take damage once (10, plus 6 a charge), are pushed 2 m out and slowed (1 s, plus 0.2 s a charge), and are stunned for 1 s only at full charge. The charge is spent. | medium-long |
+| 3, Aftershock (*replaces Brace and release; Preston, 2026-11-20: "Aftershock"*) | A whole-body forward drive (0.35 s: the body pitches down, the shoulder pistons thump, the drum ring flares, the horn dips). Then a seismic wave rolls forward in a cone along the aim: 8 m long, about 6 m wide at the end, at 16 m/s. Each enemy it hits takes 30 damage once, is slowed 30% for 1.5 s, and is **grounded** for 2 s: no dashes, leaps or rolls, though walking and basics still work. It spends Seismic charge: each charge adds 1 m, 6 damage and 0.2 s grounded. At full charge (5) it also stuns for 0.75 s. Walls stop the wave, and machines in the air dodge it. Spec: `docs/plan/rhino-brace-replacement-2026-11-20.md`. *Built in Godot 2026-11-20 (game feel lane); not in Unreal yet.* | medium-long (12 s) |
 | 4, Tremor charge | A run of up to 16 m, speeding up from 9 to 12 m/s and steering toward the aim. Every 3 m it sends a tremor pulse (2.2 m across, light damage, a 1 s slow), and every 4 m adds a Seismic charge. Enemy machines the front touches ride along on the horn (Preston, 2026-11-11). A second press after 0.5 s ends the run early. The finale is a pound that stuns everyone in the ring; its size and its stun grow with the distance run and the charge, which it spends. The carried machines are flicked up and dropped into it. | long |
 
 **How it plays:** Tremor charge in and carry their front line into the finale, ground pound to slow the group, Heave a
-straggler back into the team, brace to soak the focus and let it go as a blast.
+straggler back into the team, Aftershock the escape or the dive so nobody leaps out.
 **Art it needs:** the 3D body (the rhino 3D lane) has the horn chain, ground_pound, ground_pound_finale, the brace
-clips (enter, hold, walk, release, exit), piston_charge, stampede_windup and the charge loop (v53, per the rhino 3D lane). New: Heave, a planted shoulder thump with the
+clips (enter, hold, walk, release, exit; kept in the GLB but unmapped since Aftershock, 2026-11-20), piston_charge, stampede_windup and the charge loop (v53, per the rhino 3D lane). New: Heave, a planted shoulder thump with the
 horn ringing. The horn_toss and toss clips are retired, not deleted.
 
 ### Gorilla (`ape_l`), ode to Geb
@@ -193,40 +195,76 @@ It took the jaws, the mud and the territory from the real animal. Preston asked 
 "just uploading real hippos".
 
 ### Bison (`bison_l`), odes to Ares and Vulcan
-**Role:** catcher tank, a frontliner who rallies. It catches one enemy on a chain, lifts its team in a fight, and drags
-a group apart with its ult.
+**Role:** catcher tank who plays back. It waits for someone to step up, chains them, hauls them into its team and
+stuns them at the buffers. Its whistle brings the team in.
 **From the animal (the one trait):** the hump-powered head sweep bison use to plow snow (Plow). Basics stay animal:
 the horn hook.
 **Power:** heat, flame and steam, in magma orange (Preston, 2026-11-13: "Magma orange"; blue was dropped).
-**Rig:** a steam locomotive: coupling chains, the haul, and the four hex stacks on the hump as smokestacks.
-**Odes:** Ares and Vulcan as themes only (Preston: odes are "just inspiration to skill up the creativity"): chains
-that bind and a war rally from Ares; the forge, molten slag and the volcano's roar from Vulcan. No charge anywhere:
+**Rig:** a steam locomotive: coupling chains, a haul that builds steam, the whistle, the buffers, and the four hex
+stacks on the hump as smokestacks.
+**Odes:** Ares and Vulcan as themes only (Preston: odes are "just inspiration to skill up the creativity"). The
+catch, drag and stun beat Preston described from Ares stays; none of Ares's SMITE functions do. No charge anywhere:
 the rhino keeps the charge.
-*Approved 2026-11-13 (Preston: "Yes, with your picks"): draft 2 from `kit-design-2026-11-11.md` ("Bison kit draft 2:
-Ares + Vulcan", built on draft 1), with the role, the rig, the buff inside Eruption, short slag and the cooldown
-stacks as recommended in "Bison: where it stands". Names, numbers and cooldown tiers are proposals.*
+*Approved 2026-11-13 (draft 2), refined 2026-11-14 (Preston: "Whistle Stop", his pick in `kit-design-2026-11-11.md`,
+"Bison refine draft"): an active Haul with a buffer stun, Whistle Stop in place of Eruption's bombs and buff, and a
+Freight that catches a line. Names, numbers and cooldown tiers are proposals.*
 
 | Slot | What it does | Cooldown |
 |---|---|---|
 | Basic, horn hook | A short, heavy horn hook that alternates sides. | basic |
-| Passive, Scorch and Slag | Its chains and plow scorch enemies, and its basic attacks hit scorched enemies harder. Fire the stacks throw lands as slag: a small burning pool that scorches anyone standing in it for a few seconds (about 4.5 s, a placeholder). | none |
-| 1, Coupling Chain | Fires a red-hot chain from the muzzle. The first enemy hit is coupled for a few seconds: it can't dash or leap, and it burns. The chain has a fixed length; if the enemy walks past it, the chain goes taut and tows them wherever the bison walks. While one enemy is coupled, a second chain fires for free. | medium |
-| 2, Eruption | Head up, a roar, and all four stacks erupt in turn, launching four molten bombs that land in a ring around it and leave slag. Allies inside the ring hit harder and attack faster for a few seconds; landing hits on enemy machines stretches the buff. | medium |
+| Passive, Scorch and Steam | The chain burns coupled enemies, and its basics hit burning enemies harder. While it hauls, it builds steam: it walks faster each second, up to a cap, and the stacks chuff faster. Bonus move speed from items counts in full toward the haul. | none |
+| 1, Coupling Chain, then Haul | Fires a red-hot chain from the muzzle. The first enemy hit is coupled for about 3 s and burns; a dash or leap only goes as far as the chain's slack. **Recast to Haul:** it turns toward the aim and hauls for up to about 1.5 s, dragging the coupled enemy behind it at its own speed. When the haul ends, the enemy runs into its rear buffers: a short stun. A stun or knock-up on the bison during the haul snaps the chain. | medium |
+| 2, Whistle Stop | The whistle shrieks and all four stacks blast tall columns of steam with fire at their base, seen across the map. Allies in a wide circle run faster toward the bison for a few seconds. Enemies close around it are scalded: damage and burning. | medium |
 | 3, Plow | The hump-powered head sweep, far bigger than the basic: a wide arc in front that throws enemies sideways and scorches them, with the stacks flaring. A coupled enemy it hits is thrown to the far end of its chain. | short |
-| 4, Freight | Throws chains to every enemy around it and couples them all. It braces for a beat and can't be stopped, then walks off at a slow, heavy pace, towing the whole line behind it like rail cars, while the stacks pour fire and drop a slag track behind it. Coupled enemies burn and can't dash, but can still attack. A stun or knock-up landed on the bison while it hauls snaps every chain. | long |
+| 4, Freight | Fires one long coupling chain in a line. It passes through enemies and couples every one it hits, nose to tail, into a train behind it. Then it hauls the train, building steam, over a short slag track. When it brakes (recast, or at the end), the cars run into each other: every coupled enemy is stunned briefly. A stun or knock-up on the bison snaps the train. | long |
 
 **Cooldown stacks (looks only; picked):** each stack belongs to one ability and goes dark while it cools down, so
-anyone can read the bison's cooldowns off its back.
-**How it plays:** couple the carry, plow them to the chain's far end toward your team, erupt as the team collapses
-(the buff ring, and slag under the fight). Freight drags the coupled line apart or into a choke, through its own fire.
-**Built so far:** the bison 3D lane's round 4 body and 13 clips, Eruption among them; Eruption's effect in magma
-orange, in the effects lane's test scene only. No `bison_kit.gd` yet: the game feel lane builds it to the effects
-lane's cue contracts. It joins the bot roster after its kit (Preston: "After its kit").
-**Art it needs:** effects for Coupling Chain (a chain mesh from `muzzle_purge`, a heat pulse, a hot collar on the
-coupled enemy), Plow (the stack flare, scorch, side dust), Freight (chains out, brace stamps, the slag track),
-footfall dust, and the cooldown stacks.
-**To watch:** slag next to the hippo's toxic puddle (keep slag short and small), and three ults that move a crowd
-(gravity well, Freight, Kindred ring).
+anyone can read the bison's cooldowns off its back. All four blast together for Whistle Stop.
+**How it plays:** it plays back behind its front line. When someone steps up, chain them and Haul them into its team;
+the buffer slam stuns them as the team arrives on Whistle Stop. Plow peels a diver off its carry, or throws a coupled
+enemy to the chain's far end, toward its team. Freight catches a line of enemies in a choke or a lane, hauls the train
+into its team, then brakes for the pile-up.
+**Items (no item system yet):** a tank build plus movement speed. Its threat is the chain's reach and how fast it
+hauls, and speed feeds both.
+**Built so far:** the bison 3D lane's round 4 body and 13 clips, among them Bison_Chain_Throw, Bison_Freight_Haul,
+Bison_Freight_Brace (the brake), Bison_Whistle (Whistle Stop), Bison_Plow and Bison_Stun, plus Bison_Haul (the
+hauling trot, round 6). `bison_kit.gd` exists
+(the game feel lane, 2026-11-14; rebuilt to this refine the same day, Preston: "Yes, rebuild it") and the match
+installs it. The bison effects are on in the real match (a BisonFxInstaller node in `arena_play.tscn`): Coupling
+Chain's chain from `muzzle_purge` with the heat pulse and hot collar, Plow, footfall dust and the cooldown stacks.
+Eruption's vent fire becomes the fire at the base of the steam columns; its bombs retire. It joined the bots on
+2026-11-16 (Preston: "Yes, bison bots"): one bison bot on blue, so the match is 4 v 4.
+**Art it needs:** Whistle Stop's steam columns, the haul's chuff and the buffer slam, and Freight (the line chain, the
+train, the pile-up, the slag track). The effects lane's order, waiting on Preston's start: Whistle Stop, the Haul,
+then Freight.
+**Placeholders built in `bison_kit.gd` (the game feel lane's, not Preston's numbers):**
+- Coupling Chain and Haul: the haul lasts 1.5 s; the buffer slam stuns 0.8 s.
+- Steam: full in 2 s, up to 1.4x move speed. A 1.5 s Haul tops out at 1.3x. Item move speed counts in full.
+- Whistle Stop: allies within 9 m get 1.3x speed for 3 s, only while heading toward the bison. Enemies within 3 m take
+  40 damage and burn for 10 a second for 3 s.
+- Freight: a 12 m line, 1 m to each side. It hauls for 2 s (Preston, 2026-11-16: "Cut to 2 s"; 4 s dragged a train
+  about 18 m, and 2 s drags it about 8.4 m) and the pile-up stuns 1 s. With no move input it hauls away
+  from the train, and a Freight that catches nobody doesn't haul (the lane's choices).
+- Freight's slag track: one continuous burning track (Preston, 2026-11-18: "Yes, continuous track").
+  - Each 0.6 s drop is a capsule from the previous drop point, 60 cm radius plus the enemy's body radius, lasting
+    4.5 s at 12 damage a second.
+  - The burn is per frame, once a frame however many segments touch.
+  - The hauled cars burn too: up to 24 each over the 2 s haul. The ult says it hauls the train over the slag track.
+  - Godot changed to this on 2026-11-18 (game feel lane; bison probes 0 fail, match_check 68/0). Before that it
+    dropped spaced 0.6 m circles every 0.6 s, as the Unreal port still does (`BHaulTime` also still 4 s there, from
+    before the 2 s cut). I first wrote that Godot already worked this way; I'd read the edit mid-test.
+  - The track is about 8.4 m long.
+  - The drawing matches the hitbox edge. Advice and numbers: `bison-slag-trail-advice-2026-11-18.md`.
+- The old rally code (allies hit harder) stays in the shared player and match scripts, unused.
+**The haul's speed: move speed (Preston, 2026-11-14, to the bison 3D lane: "Yes, build it").** The Haul and Freight
+run at the bison's move speed (3.5 m/s, a placeholder in `machine_test_player.gd`), so a 1.5 s haul drags someone about
+5.3 m, or about 6 m with steam. The old `Bison_Freight_Haul` was a 0.518 m/s trudge and would have played 6.8x to 11.5x
+too fast. The bison 3D lane built **Bison_Haul** (role `Haul`), a hauling trot authored at 3.407 m/s with the
+chain-pull lean, head low and the hump driving. It plays at 1.03x at base speed, 1.44x at the 1.4x cap and 1.75x at
+1.7x, and the stride holds across that range. One clip serves both the Haul and Freight (lane note
+`bison-3d-r6-2026-11-14.md` in the shared notes).
+**To watch:** team speed (Whistle Stop, the wolf's Shade Pack, the hummingbird's Surge line); three ults that move a
+crowd (gravity well, Freight, Kindred ring); slag only on Freight's short track, beside the hippo's puddles.
 
 ### Lobster (`lobster_l`), ode to Khepri
 **Role:** catcher support. Pulls targets out of position and keeps its own team from being moved.
@@ -338,6 +376,11 @@ scripted, and the press only adds the crit.
 **Superseded (Preston, 2026-11-12, "Approved"):** the fun pass replaces the table below where they differ: iron ball
 moves to slot 2 (short cooldown, wall bounce, bowls minions, curves to magnetised enemies), rail dive is cut, scale
 flare spikes the ball, new ultimate scrap comet. Spec: `docs/plan/pangolin-kit-fun-pass-2026-11-12.md`.
+**Near-field snap (Preston, 2026-11-18: "Near-field snap"):**
+- The ball's pull toward a magnetised enemy keeps 1.6 rad/s out to 10 m, grows inside 4 m (`mag_turn × (4 m /
+  distance)²`, capped at 3×), and locks at about 2.3 m with a clang.
+- The field never lifts, throws or pulls a machine.
+- Spec: `docs/plan/pangolin-magnetism-showcase-2026-11-18.md`.
 **Role:** diving fighter. Gets into the back line and survives there.
 **Took:** the spiked shell that hurts whoever hits it. **Left:** the summoned kappa, the grab-and-slam, the water ultimate.
 **From the animal:** armoured overlapping scales, curling into a ball, claws.
@@ -349,7 +392,7 @@ Full reasoning: `docs/plan/kit-design-2026-11-11.md`, "Pangolin redo". **Approve
 
 | Slot | What it does | Cooldown |
 |---|---|---|
-| Basic attack | Claw swipes (uses the existing Claw_Rake clip). | none |
+| Basic attack | **Pry chain** (Preston, 2026-11-18: "A, Pry chain"). Left swipe, right swipe (23 each, 1.6 m), then the pry: a full-rear both-claws drop, 30 to every enemy in a 60 degree half angle at 1.9 m, which refreshes magnetise on magnetised enemies. 29 a second on one target. The reach stays 1.6/1.9 m though the claw tips measured 1.29 m (Preston, 2026-11-18: "Keep 1.6 ／ 1.9"). Spec: `docs/plan/pangolin-basic-attack-2026-11-18.md`. | none |
 | Passive, sharp scales | Enemies who hit it in melee take a little damage back. (The ode: Kuzenbo's spiked shell.) | none |
 | 1, salvage | Its field tears armour plates off enemies in a short cone in front: they lose armour and it gains that armour for a few seconds, with the plates visibly stuck to its shell. Each enemy hit is magnetised (about 4 s). | short |
 | 2, rail dive | Rides its spine rails' field in a straight line. On a magnetised enemy it locks on from long range and streaks to them; without one it is a short dash to a spot. Arriving on a magnetised enemy spends the charge for extra damage. | medium |
@@ -435,6 +478,51 @@ wall face), Breach (a drive into a wall face).
 edge. Read as covering all three crossings (Wall Line, Seam, Breach), so it can't get into a base through its wall.
 The map already sets those walls apart (team-colour strips on base walls, the edge fence).
 **Open:** names and numbers, the power's name, how long Seam may stay inside a wall.
+
+### Pistol shrimp (`pistol_shrimp_l`), ode to Thor
+**Role:** solo bruiser (Preston's pick: solo/top). Few hits, each one huge, and every one shows itself before it lands.
+**From the animal (the one trait):** the snap. It cocks the giant claw, and the snap fires a cavitation bubble that
+collapses with a white flash and a bang (Cavitation Shot). Basics stay animal: jabs from the small claw.
+**Power:** cavitation pressure, in white: the pressure vessels and bulky supports on its sheet. It never keeps a
+reservoir and never leaves a field, which keeps it apart from the hippo and the shark.
+**Rig:** a pile driver, built to drive piles into a seabed with one huge strike after a slow lift: the ram, the lift
+and drop, the braced frame.
+**Ode:** Thor as a theme only: the flash before the thunder. None of Thor's SMITE 2 kit is used.
+*Approved 2026-11-16 (Preston: "Yes, approve it", then "wait stun not silence"): the draft in
+`kit-design-2026-11-11.md`, "Pistol shrimp kit draft", with stuns in place of the deafen (a silence). The rig came with
+the draft. Names, numbers and cooldown tiers are proposals.*
+
+| Slot | What it does | Cooldown |
+|---|---|---|
+| Basic, pincer jabs | The small claw jabs twice, quick, then a short pause. Melee. | basic |
+| Passive, Ringing | Its hits leave an enemy ringing for a few seconds (white sound lines around them). Cavitation Shot on a ringing enemy stuns it briefly. The stun uses up the ring (a proposal), so it can't chain. | none |
+| 1, Cavitation Shot | Cocks the claw (a short tell: the claw's vessels glow), then snaps: a bubble flies a short way and bursts at the first enemy or at the end of its reach. Damage in a small circle, a white flash and a bang. No push. | short |
+| 2, Ram | The pile driver's piston fires it forward a medium distance. It stops at the first enemy it meets and leaves them ringing; that enemy is not pushed. Its way in and its way out. | medium |
+| 3, Hammer Down | Lifts the giant claw like the pile driver's hammer, about half a second, standing still and taking less damage, then drops it on the spot in front: heavy damage, and enemies hit are pinned (rooted) for a moment. Ringing enemies take more. | medium |
+| 4, Thunderclap | Projects a giant claw over a spot in range. The flash comes first: the circle under it flashes white as the warning. About 0.6 s later the claw snaps and the bubble collapses with a bang: heavy damage in a wide circle, and everyone inside is stunned briefly, ringing enemies for longer. It can't be moved while it cocks (the rig's frame braces). No push, nothing left on the ground. | long |
+
+**How it plays:** in lane, jab to ring the enemy, then Cavitation Shot to stun them and win the trade; Ram in for a
+trade, or out of one. In a fight, Ram onto the carry, Hammer Down to pin them, then the shot. With the ult, flank and
+drop Thunderclap on the back line, stunning them while the team goes in.
+**Counterplay:** every big hit shows first: the claw's glow, the lift, the white flash. Step out of it and the shrimp
+has spent its turn. It has one dash, so kiting beats it. It has no heal, on purpose.
+**Built so far:** nothing. The four white sheets in `pistol_shrimp_l/take-a/` are the start; model review is pending.
+An older display model from before the sheets is at `art/model_catalog/display/pistol_shrimp.glb` (2025-09-01).
+**Art it needs:** clips for the jabs, the cock and snap, the ram launch and stop, the hammer lift and drop, the ult
+cast and a stunned reaction. Effects for the bubble, the white flash, the bang (rings in the air, look only), the
+ringing mark, the warning circle and the projected claw.
+**To watch:**
+- **A stun on a short cooldown.** A jab rings the enemy and the shot stuns it, so the stun repeats in lane. Using up
+  the ring and a short duration keep it fair; the durations are open.
+- **Stuns pile up.** The rhino, the hippo's Piston Drop, the bison (the buffer slam, the pile-up) and now the shrimp:
+  four owners. Thunderclap is a delayed circle stun like Piston Drop, but it stays put, it is an ult, and its circle is
+  wide with a white flash.
+- **A lot of control on one bruiser:** a stun, a root and an ult stun. Keep each short.
+- **The gorilla's hex shield** clears one slow or root, so it answers Hammer Down but not the stun.
+- **Other overlaps:** no knockbacks (nothing pushes); roots are a third, after the lobster's pinch and the shoebill's
+  moon pool; the lobster grabs and pulls, the shrimp never pulls, and no shrimp slot is named "snap" (the lobster's
+  basic); the falcon's wings sweep a line and the shrimp's claw snaps a circle (two giant projection ults, a flag); the
+  chameleon owns the blind, so the white flash is a warning light only.
 
 ## Mages
 
@@ -622,10 +710,15 @@ enemies on entry). It took everything from the animal, which the 2026-11-04 kit 
 ---
 
 ## Roster checks
-- **Hard control, one main owner each:** stun on the rhino and the hippo's Piston Drop (plus the kangaroo's
-  title bout lock, ultimate only, inside its ring, 2026-11-12); knock-up on the pangolin;
-  taunt on the gorilla; the pull on the lobster; the hold (Lockjaw) on the hippo; roots on the lobster (pinch) and
-  the shoebill (moon pool); blind on the chameleon; charm on the hummingbird; no silence since 2026-11-05 (the fennec's doors of
+- **Hard control, one main owner each:** stun on the rhino (Heave, Tremor charge's finale, Aftershock at full
+  charge), the hippo's Piston Drop, the bison (buffer slam, Freight's pile-up), the pistol shrimp (Cavitation Shot on a
+  ringing enemy, Thunderclap), the kangaroo (tail kick into a wall, 1.2 s; the guard counter, 0.6 s; plus the title
+  bout lock, ultimate only, inside its ring, 2026-11-12) and the cobra (Hood Gaze, on enemies facing it). So stun has
+  **six owners, not four.** *Corrected 2026-11-23 (kit council, `kit-council-2026-11-23.md`): this line said four and
+  missed the kangaroo's and the cobra's stuns.* Nothing in the roster shortens or removes a stun; the gorilla's hex
+  shield clears a slow or root only. Knock-up on the pangolin;
+  taunt on the gorilla; grounded (no dashes, leaps or rolls) on the rhino (Aftershock, 2026-11-20); the pull on the lobster; the hold (Lockjaw) on the hippo; roots on the lobster (pinch),
+  the shoebill (moon pool) and the pistol shrimp (Hammer Down); blind on the chameleon; charm on the hummingbird; no silence since 2026-11-05 (the fennec's doors of
   war left with the portal kit). Big knockbacks: kangaroo, gorilla.
 - **Camouflage counters:** squirrel Tail Ping (reveals through walls and fog), fennec gate echo (shows enemies its bolts or boom hit, from 2026-11-14), wolf scent
   (wounded only).

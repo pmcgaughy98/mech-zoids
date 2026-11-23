@@ -1,0 +1,42 @@
+{
+  "id": "sloth",
+  "name": "Sloth",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/sloth/front.png",
+      "source": "D:\\user\\Downloads\\sloth_front.png",
+      "sha256": "83303a1f518c549c22b8d401b2ca31a0fcab1c89268a796dc2ff25a8a1f18c61",
+      "bytes": 378146,
+      "project_matches": []
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/sloth/left.png",
+      "source": "D:\\user\\Downloads\\sloth_left.png",
+      "sha256": "a4b1d92e600c1564252d9480115006c773b34ceb3575b307943ce16d6cd6e128",
+      "bytes": 353806,
+      "project_matches": []
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/sloth/back.png",
+      "source": "D:\\user\\Downloads\\sloth_back.png",
+      "sha256": "ad18c2232b858264447531bca8bee0cd898ac2f132dc1596786dc3b7a3f1ca6f",
+      "bytes": 293129,
+      "project_matches": []
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/sloth/right.png",
+      "source": "D:\\user\\Downloads\\sloth_right.png",
+      "sha256": "66cee548baa2e9c646dac707657863cba921abbaca5f68f93f9c48afb071ee87",
+      "bytes": 363525,
+      "project_matches": []
+    }
+  },
+  "source_model": {
+    "path": "res://art/model_catalog/sources/Meshy_AI_mecha_sloth_guardian_remeshed_25k_20261114_character.glb",
+    "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_mecha_sloth_guardian_remeshed_25k_20261114_character.glb",
+    "sha256": "f01c3719f38134ffcbae9fcf029b49ee9590d24552aa173bf1227ac1b7604030",
+    "bytes": 44304168,
+    "kind": "Exact downloaded remeshed rig; intact pre-remesh GLB not yet located"
+  }
+}

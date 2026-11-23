@@ -93,6 +93,7 @@
     "date": "2026-11-14",
     "report": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/repair-verification.json",
     "independent_audit": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/independent-export-audit.json",
+    "summer_runtime_report": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/summer-review-verification.json",
     "joint_count": 51,
     "rigged_input_sha256": "02e61d1695fca6a5cf80591de4f4a1ebffe9a427f50ad556df1c81f76ba4b8a0",
     "repaired_sha256": "483471b77e49fb6983ce026c6217014f3d3a3853c8b90949ccbe650b90a82762",
@@ -100,6 +101,7 @@
     "accepted_pre_rig_touchup": "res://art/model_catalog/sources/hornet_front - 6 legs touchup.glb",
     "accepted_pre_rig_touchup_sha256": "84622e39a7a46413ab9676789fcac12a9599da71614f5c12462550d220837bb2",
     "source_archive_scope": "Original generated archive plus the documented approved six-leg pre-rig touch-up. Exact historical Meshy upload not independently verified. Both damaged inputs remain visible.",
-    "scope": "Restore intact generated surface with the documented approved six-leg/floating-claw cuts. Delete only two verified cut-created remnants. Transfer weights from the actual 51-joint downloaded rig; preserve its full hierarchy/rest/binds. Original and pre-rig sources archived. High-detail review asset; optimisation and authored flight/gait work remain."
+    "scope": "Restore intact generated surface with the documented approved six-leg/floating-claw cuts. Delete only two verified cut-created remnants. Transfer weights from the actual 51-joint downloaded rig; preserve its full hierarchy/rest/binds. Original and pre-rig sources archived. High-detail review asset; optimisation and authored flight/gait work remain.",
+    "runtime_report": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/final-review-verification.json"
   }
 }

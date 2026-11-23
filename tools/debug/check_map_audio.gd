@@ -114,19 +114,67 @@ func _process(_delta: float) -> bool:
 			var where: String = "at the emitter" if p is AudioStreamPlayer3D and p.position == stand_in.position else "non-positional"
 			print("ok   %-16s -> %s.wav (%s)" % [sig, EVENTS[sig], where])
 	ma.stop_all()
+	ma._last_global.clear()
+	stand_in.emit_signal("wave_spawned")  # one gate, fresh: the first loads in the loop above can outlast the 300 ms window
 	var n := ma.get_child_count()
 	stand_in.emit_signal("wave_spawned")  # the other gate, same moment
 	if ma.get_child_count() != n:
 		_fail("a second wave_spawned in the same moment played again")
 	else:
 		print("ok   wave_spawned from two gates at once -> played once")
+	# Match music (2026-11-16, Preston's pick "Epic boss battle"): the match_ended emitter starts one loop on Music.
+	var music: AudioStreamPlayer = ma._music
+	if music and music.playing and music.bus == &"Music" and music.stream.resource_path.get_file() == "match_theme.ogg" \
+			and music.stream.get("loop"):
+		print("ok   match music loops on Music while the match runs")
+	else:
+		_fail("no looping match_theme.ogg on Music after a match_ended emitter came in")
+	var second := Node.new()
+	second.add_user_signal("match_ended", [{"name": "won", "type": TYPE_BOOL}])
+	root.add_child(second)
+	if ma._music == music and not ma._active.has(music):
+		print("ok   a second match_ended emitter does not start a second loop, and the loop takes no voice")
+	else:
+		_fail("a second emitter replaced or doubled the match music, or the loop took a voice")
+	root.remove_child(second)
+	second.free()
 	ma.stop_all()
+	if ma._music != music:
+		_fail("stop_all() cut the match music")
 	stand_in.emit_signal("match_ended", true)
+	if ma._music == null:
+		print("ok   match_ended stops the match music before the stinger")
+	else:
+		_fail("match_ended left the match music playing")
 	var last: Node = ma.get_child(ma.get_child_count() - 1)
 	if last.get("stream").resource_path.get_file() == "win.wav" and last.get("bus") == &"Music":
 		print("ok   match_ended(true) -> win.wav on Music")
 	else:
 		_fail("match_ended did not play win.wav on Music")
+	var next_match := Node.new()
+	next_match.add_user_signal("match_ended", [{"name": "won", "type": TYPE_BOOL}])
+	root.add_child(next_match)
+	var again: AudioStreamPlayer = ma._music
+	root.remove_child(next_match)
+	next_match.free()
+	if again and again != music and ma._music == null:
+		print("ok   the next match starts the loop again, and it stops when that match leaves the tree")
+	else:
+		_fail("the match music did not restart for a new match, or did not stop when it left")
+	var ender := Node.new()  # the usual order: the match ends, the fade frees the loop, then the director leaves
+	ender.add_user_signal("match_ended", [{"name": "won", "type": TYPE_BOOL}])
+	root.add_child(ender)
+	var faded: AudioStreamPlayer = ma._music
+	ender.emit_signal("match_ended", false)
+	var lose: Node = ma.get_child(ma.get_child_count() - 1)
+	ma.remove_child(faded)
+	faded.free()
+	root.remove_child(ender)
+	ender.free()
+	if ma._music == null and lose.get("stream").resource_path.get_file() == "lose.wav" and lose.get("bus") == &"Music":
+		print("ok   match_ended(false) -> lose.wav on Music; the director leaving after the fade is quiet")
+	else:
+		_fail("a lost match did not play lose.wav on Music, or the loop survived")
 
 	# Priority (SMITE 2, Doom): a crowd of minion hits never cuts or blocks a tower or core sound.
 	ma.stop_all()

@@ -1,0 +1,100 @@
+{
+  "id": "minion_melee",
+  "name": "Melee Minion",
+  "category": "minion",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/minion_melee/front.png",
+      "source": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\minion-set-2026-11-07\\melee\\white_views\\minion_melee_front.png",
+      "sha256": "777122ba7e7267f51644c0c19f78e44dc353cd56b7667988e0c28ed821658613",
+      "bytes": 203040,
+      "project_matches": [
+        "docs/art/moba/minion-set-2026-11-07/melee/white_views/minion_melee_front.png"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/minion_melee/left.png",
+      "source": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\minion-set-2026-11-07\\melee\\white_views\\minion_melee_left.png",
+      "sha256": "a6b5fd1dc9e8f733ea5c87f0be8f9f49d9edf542af3a7fd3a8bd912ad29868e5",
+      "bytes": 211686,
+      "project_matches": [
+        "docs/art/moba/minion-set-2026-11-07/melee/white_views/minion_melee_left.png"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/minion_melee/back.png",
+      "source": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\minion-set-2026-11-07\\melee\\white_views\\minion_melee_back.png",
+      "sha256": "128bfdb479482f5107f1c40cb43d9315123cca7416cd276729ed1d455e539a09",
+      "bytes": 182538,
+      "project_matches": [
+        "docs/art/moba/minion-set-2026-11-07/melee/white_views/minion_melee_back.png"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/minion_melee/right.png",
+      "source": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\minion-set-2026-11-07\\melee\\white_views\\minion_melee_right.png",
+      "sha256": "0e67ad23a3487429cdd1b94effbb27a8408b40ef21b9c8142ace0a4aab282a2f",
+      "bytes": 217447,
+      "project_matches": [
+        "docs/art/moba/minion-set-2026-11-07/melee/white_views/minion_melee_right.png"
+      ]
+    }
+  },
+  "source_model": {
+    "path": "res://art/model_catalog/sources/minion_melee_front - Hunyuan 3D v3.1 Pro.glb",
+    "source": "D:\\user\\Downloads\\Mecha Beast GLB\\minion_melee_front - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "932c8f61f9845ca8660d3e6d098463d219876a05425f6345d892dc00000fca45",
+    "bytes": 44972660
+  },
+  "display_model": "res://docs/art/moba/minion_melee/local-repair-v1-2026-11-14/melee-minion-rigged-local-repair-v1.glb",
+  "artist_workspace": "res://docs/art/moba/minion_melee/local-repair-v1-2026-11-14/melee-minion-rigged-local-repair-v1.blend",
+  "status": "Eight small gaps and 136 malformed triangles repaired. Four legs and feet, front bumper, cyan slit, dorsal armor and rear grille retained. Original 18-joint rig, all skin weights and textures preserved.",
+  "review_models": [
+    {
+      "label": "INTACT QUALITY ARCHIVE\nOriginal generated geometry",
+      "path": "res://art/model_catalog/sources/minion_melee_front - Hunyuan 3D v3.1 Pro.glb",
+      "display_scale": 3.6616359112195824
+    },
+    {
+      "label": "DOWNLOADED RIG\nBefore local triangle cleanup",
+      "path": "res://art/model_catalog/sources/Meshy_AI_minion_melee_remeshed_25k_20261111_character.glb",
+      "display_scale": 1.236821262355775
+    },
+    {
+      "label": "LOCAL REPAIR\nSame 18-joint rig and skin",
+      "path": "res://docs/art/moba/minion_melee/local-repair-v1-2026-11-14/melee-minion-rigged-local-repair-v1.glb",
+      "display_scale": 1.236821262355775
+    }
+  ],
+  "review_views": {
+    "front": {
+      "path": "res://docs/art/moba/minion_melee/local-repair-v1-2026-11-14/review-front.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "left": {
+      "path": "res://docs/art/moba/minion_melee/local-repair-v1-2026-11-14/review-left.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "back": {
+      "path": "res://docs/art/moba/minion_melee/local-repair-v1-2026-11-14/review-back.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    },
+    "right": {
+      "path": "res://docs/art/moba/minion_melee/local-repair-v1-2026-11-14/review-right.png",
+      "kind": "Intact generated quality archive / downloaded rig / local repair; matched view and scale"
+    }
+  },
+  "review_provenance": {
+    "date": "2026-11-14",
+    "report": "res://docs/art/moba/minion_melee/local-repair-v1-2026-11-14/repair-verification.json",
+    "independent_audit": "res://docs/art/moba/minion_melee/local-repair-v1-2026-11-14/independent-export-audit.json",
+    "joint_count": 18,
+    "rigged_input_sha256": "d7d4d313fda8ed575b1ef0ead6a5bae8e1c9a0c84128fb7d0752b43d82f26b01",
+    "repaired_sha256": "585419e1022af21a47b06ceab8ad767864fbd806e4a62f7de6d24035293b5d81",
+    "intact_pre_remesh_available": true,
+    "source_archive_scope": "Intact generated quality archive; exact historical Meshy upload not independently verified.",
+    "scope": "Local topology repair. Four legs/feet, front impact bumper, cyan optic slit, dorsal armor plate and rear grille retained. Original vertex attributes, skin, 18-joint skeleton/rest/binds and textures preserved; no remesh or rerig. All 19,660 healthy source faces retained. No gameplay replacement.",
+    "runtime_report": "res://docs/art/moba/minion_melee/local-repair-v1-2026-11-14/final-review-verification.json"
+  }
+}

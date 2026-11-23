@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" path="res://scenes/moba3d/arena_blockout.tscn" id="2_arena"]
 [ext_resource type="Script" path="res://scripts/moba3d/gorilla_fx_installer.gd" id="3_gorillafx"]
 [ext_resource type="Script" path="res://scripts/moba3d/rhino_fx_installer.gd" id="4_rhinofx"]
+[ext_resource type="Script" path="res://scripts/moba3d/bison_fx_installer.gd" id="5_bisonfx"]
 
 [node name="ArenaPlay" type="Node3D"]
 script = ExtResource("1_play")
@@ -15,3 +16,6 @@ script = ExtResource("3_gorillafx")
 
 [node name="RhinoFxInstaller" type="Node" parent="."]
 script = ExtResource("4_rhinofx")
+
+[node name="BisonFxInstaller" type="Node" parent="."]
+script = ExtResource("5_bisonfx")

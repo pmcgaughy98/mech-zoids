@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "date": "2026-11-15",
+  "tested_sha256": "3d5d7dc32bc212a82eeb06ccd77b5d8bcea41d5f63df581bcb77e1d0e80b6e24",
+  "triangles": 25532,
+  "joint_count": 37,
+  "native_joint_tests": 37,
+  "controls_above_1mm_motion": 37,
+  "controls_below_1mm_motion": 0,
+  "maximum_seam_gap_m": 0.0,
+  "boundary_edges": 0,
+  "over_shared_edges": 1,
+  "collapsed_triangles": 0,
+  "healthy_source_faces_retained": 25532,
+  "original_attribute_and_skin_rows_preserved": true,
+  "duplicate_uv_corner_rows": 0,
+  "original_skeleton_rest_binds_materials_textures_preserved": true,
+  "original_reference_sha256": {
+    "front": "b1a758675d6ef5f8032092ea4c9b8079f3ffde6838fdca8f6e4ea2cd5f7e94c6",
+    "left": "2b723fe4f0313582a52e463515312b3268b0343052ed553b0c1d02c358165904",
+    "back": "8d781a4a25696f27bd7a58e474d59adae06d7e11bfa210b34c9c3f150e187958",
+    "right": "609961f486162b99cf829ad0df43757c5b2b11566a54d189dfb3c9e7a9f1048b"
+  },
+  "downloaded_input_sha256": "f3273da9b09c2174e78ee9796494998414c19bc03e5161d37e4535726a5a4a17",
+  "intact_pre_remesh_available": false,
+  "native_runtime_check": "Two native versions, original/review sheets, source skeleton and actual ChaseCamera3D",
+  "screenshots": "res://reports/model_catalog/honey_badger-local-v1",
+  "limits": "Existing generated/baked surface detail remains; authored movement and final visual polish remain."
+}

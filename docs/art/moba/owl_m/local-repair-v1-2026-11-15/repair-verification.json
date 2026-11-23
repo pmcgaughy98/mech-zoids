@@ -1,0 +1,71 @@
+{
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_cyber_owl_remeshed_25k_20261114_character.glb",
+  "source_sha256": "91c26d8cbcf4e4fa40f873cbefc0d0deec0c98ee2e43e956e39687914f45229a",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\owl_m\\local-repair-v1-2026-11-15\\owl-rigged-local-repair-v1.glb",
+  "output_sha256": "44767063fa4e89649209906355dfe5d86a8b8a29aa01fe7cbb14db9576a616cf",
+  "before_triangles": 25348,
+  "final_triangles": 25324,
+  "joint_count": 33,
+  "removed_malformed_triangles": 24,
+  "removed_face_ids": [
+    189,
+    1154,
+    1385,
+    3108,
+    3182,
+    6920,
+    7393,
+    7876,
+    10510,
+    10898,
+    11811,
+    13079,
+    14927,
+    16491,
+    16520,
+    16538,
+    16971,
+    17172,
+    17456,
+    18509,
+    20034,
+    22590,
+    23438,
+    24976
+  ],
+  "holes_closed": [],
+  "boundary_edges": 0,
+  "over_shared_edges": 6,
+  "protected_closed_contact_edges": [
+    [
+      34101,
+      34121
+    ],
+    [
+      14964,
+      14974
+    ],
+    [
+      27103,
+      27131
+    ],
+    [
+      43,
+      58
+    ],
+    [
+      26037,
+      26053
+    ],
+    [
+      25603,
+      25604
+    ]
+  ],
+  "contact_note": "0 small gaps closed; 6 balanced original assembly contacts retained.",
+  "collapsed_triangles": 0,
+  "healthy_main_body_source_faces_retained": 25276,
+  "all_original_vertex_attribute_rows_weights_materials_skeleton_rest_binds_preserved": true,
+  "new_geometric_vertices": 0,
+  "scope": "Local topology repair. Two folded wings, two taloned legs, paired eye lenses, beak, chest condenser, hoses and tail feather armor retained. Original vertex attributes, skin, 33-joint skeleton/rest/binds and textures preserved; no remesh or rerig."
+}

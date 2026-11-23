@@ -1,0 +1,97 @@
+{
+  "id": "anyklo",
+  "name": "anyklo",
+  "category": "objective",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/anyklo/front.png",
+      "sha256": "621bd160d8317e46b1d36a3340bbc83c68f023a1b9d90eaf42ad8f367b320da0",
+      "source": "D:\\user\\Downloads\\power_ankylosaur_front.png",
+      "bytes": 168800,
+      "project_related": [
+        "docs/art/moba/objective-boss-revision-2026-11-10/power_ankylosaur/four-view-take-a/tight_white_views/power_ankylosaur_front.png"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/anyklo/left.png",
+      "sha256": "0ef57cf35ab093bbdb976dcb0d741491295b43bee85c4cda00533dc0cdb49d0d",
+      "source": "D:\\user\\Downloads\\power_ankylosaur_left.png",
+      "bytes": 276153,
+      "project_related": [
+        "docs/art/moba/objective-boss-revision-2026-11-10/power_ankylosaur/four-view-take-a/tight_white_views/power_ankylosaur_left.png"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/anyklo/back.png",
+      "sha256": "0064773d2288636514f7f3c35cef82948c4c105aacda1501a8faa1a9ad0d6799",
+      "source": "D:\\user\\Downloads\\power_ankylosaur_back.png",
+      "bytes": 161041,
+      "project_related": [
+        "docs/art/moba/objective-boss-revision-2026-11-10/power_ankylosaur/four-view-take-a/tight_white_views/power_ankylosaur_back.png"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/anyklo/right.png",
+      "sha256": "ddbe576573ecec74d7807b7eff3fc3740940cf0fccc891a6e8e664fe486e265e",
+      "source": "D:\\user\\Downloads\\power_ankylosaur_right.png",
+      "bytes": 277524,
+      "project_related": [
+        "docs/art/moba/objective-boss-revision-2026-11-10/power_ankylosaur/four-view-take-a/tight_white_views/power_ankylosaur_right.png"
+      ]
+    }
+  },
+  "source_model": {
+    "path": "res://art/model_catalog/sources/Meshy_AI_cyber_tortoise_remeshed_25k_20261111_character.glb",
+    "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_cyber_tortoise_remeshed_25k_20261111_character.glb",
+    "sha256": "a21fa4395da287cca07b06544fbab322e95086c43e63f1ece0eec0c8210dd951",
+    "bytes": 31538240,
+    "kind": "Downloaded remeshed rig; intact pre-remesh archive not located"
+  },
+  "previous_export_name": "cyber tortoise",
+  "display_model": "res://docs/art/moba/anyklo_objective/local-repair-v1-2026-11-14/anyklo-rigged-tail-mallet-v1.glb",
+  "artist_workspace": "res://docs/art/moba/anyklo_objective/local-repair-v1-2026-11-14/anyklo-rigged-tail-mallet-v1.blend",
+  "status": "Renamed from cyber tortoise. Tail hammer lobes aligned into a crosswise mallet; 15 stray triangles removed. Four legs, head and capacitor armor retained. Original 37-joint rig, all skin weights and textures preserved.",
+  "review_models": [
+    {
+      "label": "DOWNLOADED RIG\ncyber tortoise / before repair",
+      "path": "res://art/model_catalog/sources/Meshy_AI_cyber_tortoise_remeshed_25k_20261111_character.glb",
+      "display_scale": 0.5660059569966045
+    },
+    {
+      "label": "anyklo\nAligned mallet / same 37-joint rig",
+      "path": "res://docs/art/moba/anyklo_objective/local-repair-v1-2026-11-14/anyklo-rigged-tail-mallet-v1.glb",
+      "display_scale": 0.5660059569966045
+    }
+  ],
+  "review_views": {
+    "front": {
+      "path": "res://docs/art/moba/anyklo_objective/local-repair-v1-2026-11-14/review-front.png",
+      "kind": "Downloaded remeshed rig / locally aligned mallet; matched view and scale; no intact pre-remesh source located"
+    },
+    "left": {
+      "path": "res://docs/art/moba/anyklo_objective/local-repair-v1-2026-11-14/review-left.png",
+      "kind": "Downloaded remeshed rig / locally aligned mallet; matched view and scale; no intact pre-remesh source located"
+    },
+    "back": {
+      "path": "res://docs/art/moba/anyklo_objective/local-repair-v1-2026-11-14/review-back.png",
+      "kind": "Downloaded remeshed rig / locally aligned mallet; matched view and scale; no intact pre-remesh source located"
+    },
+    "right": {
+      "path": "res://docs/art/moba/anyklo_objective/local-repair-v1-2026-11-14/review-right.png",
+      "kind": "Downloaded remeshed rig / locally aligned mallet; matched view and scale; no intact pre-remesh source located"
+    }
+  },
+  "review_provenance": {
+    "date": "2026-11-14",
+    "report": "res://docs/art/moba/anyklo_objective/local-repair-v1-2026-11-14/repair-verification.json",
+    "independent_audit": "res://docs/art/moba/anyklo_objective/local-repair-v1-2026-11-14/independent-export-audit.json",
+    "joint_count": 37,
+    "rigged_input_sha256": "a21fa4395da287cca07b06544fbab322e95086c43e63f1ece0eec0c8210dd951",
+    "repaired_sha256": "e8931b6b9da4702173fb11281dc6efc9079bad09791fc74ed274542a12bdf16f",
+    "intact_pre_remesh_available": false,
+    "source_archive_scope": "Exact cyber tortoise rigged download, renamed in Workshop to anyklo. Intact pre-remesh GLB not located; no static proxy mislabeled as an original. Original generation PNGs preserved.",
+    "scope": "Rename cyber tortoise to anyklo. Align the two tail hammer lobes to a shared transverse mallet axis using local rotations with continuous collar transitions. Only tail-head positions/normals and 15 malformed triangle indices changed. Four legs, head, dorsal capacitor ribs and tail shaft retained. Original 37-joint skeleton/rest/binds and all weights, UVs and textures preserved; no remesh or rerig.",
+    "runtime_report": "res://docs/art/moba/anyklo_objective/local-repair-v1-2026-11-14/final-review-verification.json"
+  }
+}

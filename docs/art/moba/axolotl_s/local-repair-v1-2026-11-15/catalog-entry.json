@@ -1,0 +1,95 @@
+{
+  "id": "axolotl",
+  "name": "Axolotl",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/axolotl/front.png",
+      "source": "D:\\user\\Downloads\\axolotl_front.png",
+      "sha256": "cbc8db646ff5a6c6b04702e8b6af5f4d1810c1b57d811494b5d25c4b35da8ff2",
+      "bytes": 194685,
+      "project_related": [
+        "docs/art/moba/axolotl_s/take-a/REPORT.md"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/axolotl/left.png",
+      "source": "D:\\user\\Downloads\\axolotl_left.png",
+      "sha256": "2bbd71bb93e19c883f51ddd0da1a020712e71b922d0391ca5908649092a5292a",
+      "bytes": 247663,
+      "project_related": [
+        "docs/art/moba/axolotl_s/take-a/REPORT.md"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/axolotl/back.png",
+      "source": "D:\\user\\Downloads\\axolotl_back.png",
+      "sha256": "f2b5f0e18fb45b7feafd921169c5afea8fecb44b93dfb5bf23ca82844d69adde",
+      "bytes": 206562,
+      "project_related": [
+        "docs/art/moba/axolotl_s/take-a/REPORT.md"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/axolotl/right.png",
+      "source": "D:\\user\\Downloads\\axolotl_right.png",
+      "sha256": "5ea00d891d8db3771c0a6eb046a039ccc1f8d5732ca34c02d53f091a95ac706f",
+      "bytes": 251769,
+      "project_related": [
+        "docs/art/moba/axolotl_s/take-a/REPORT.md"
+      ]
+    }
+  },
+  "source_model": {
+    "path": "res://art/model_catalog/sources/Meshy_AI_crimson_aXOltol_remeshed_25k_20261114_character.glb",
+    "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_crimson_aXOltol_remeshed_25k_20261114_character.glb",
+    "sha256": "ac1315bed7f815b91de02f118acdc1e30111087066dc41c21b66e364b72a69f4",
+    "bytes": 46030844,
+    "kind": "Exact downloaded remeshed rig; intact pre-remesh GLB not located"
+  },
+  "display_model": "res://docs/art/moba/axolotl_s/local-repair-v1-2026-11-15/axolotl-rigged-local-repair-v1.glb",
+  "artist_workspace": "res://docs/art/moba/axolotl_s/local-repair-v1-2026-11-15/axolotl-rigged-local-repair-v1.blend",
+  "status": "Small leg gap and stray geometry repaired. Four feet, six gill stalks, side cylinders and tail retained. Original rig and textures preserved.",
+  "review_models": [
+    {
+      "label": "DOWNLOADED RIG\nBefore local repair",
+      "path": "res://art/model_catalog/sources/Meshy_AI_crimson_aXOltol_remeshed_25k_20261114_character.glb",
+      "display_scale": 0.6382202780731558
+    },
+    {
+      "label": "LOCAL REPAIR\nSame 31-joint rig and skin",
+      "path": "res://docs/art/moba/axolotl_s/local-repair-v1-2026-11-15/axolotl-rigged-local-repair-v1.glb",
+      "display_scale": 0.6382202780731558
+    }
+  ],
+  "review_views": {
+    "front": {
+      "path": "res://docs/art/moba/axolotl_s/local-repair-v1-2026-11-15/review-front.png",
+      "kind": "Exact downloaded remeshed rig / local repair; matched view and scale; intact pre-remesh GLB not located"
+    },
+    "left": {
+      "path": "res://docs/art/moba/axolotl_s/local-repair-v1-2026-11-15/review-left.png",
+      "kind": "Exact downloaded remeshed rig / local repair; matched view and scale; intact pre-remesh GLB not located"
+    },
+    "back": {
+      "path": "res://docs/art/moba/axolotl_s/local-repair-v1-2026-11-15/review-back.png",
+      "kind": "Exact downloaded remeshed rig / local repair; matched view and scale; intact pre-remesh GLB not located"
+    },
+    "right": {
+      "path": "res://docs/art/moba/axolotl_s/local-repair-v1-2026-11-15/review-right.png",
+      "kind": "Exact downloaded remeshed rig / local repair; matched view and scale; intact pre-remesh GLB not located"
+    }
+  },
+  "review_provenance": {
+    "date": "2026-11-15",
+    "report": "res://docs/art/moba/axolotl_s/local-repair-v1-2026-11-15/repair-verification.json",
+    "independent_audit": "res://docs/art/moba/axolotl_s/local-repair-v1-2026-11-15/independent-export-audit.json",
+    "joint_count": 31,
+    "rigged_input_sha256": "ac1315bed7f815b91de02f118acdc1e30111087066dc41c21b66e364b72a69f4",
+    "repaired_sha256": "52c6f003c1061aa5b1c2876261f9af9951d397de5f9f641a5f32d76ccef42591",
+    "intact_pre_remesh_available": false,
+    "source_archive_scope": "Exact downloaded rig archived; intact pre-remesh GLB not located. Original generation PNGs are separate.",
+    "scope": "Local topology repair. Four legs/feet, six gill stalks, eyes, head, paired side cylinders, dorsal armor and complete tail retained. Original vertex attributes, skin, 31-joint skeleton/rest/binds and textures preserved; no remesh or rerig.",
+    "runtime_report": "res://docs/art/moba/axolotl_s/local-repair-v1-2026-11-15/final-review-verification.json"
+  }
+}

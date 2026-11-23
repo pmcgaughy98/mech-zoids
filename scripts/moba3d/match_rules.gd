@@ -60,9 +60,28 @@ const TIERS := { ## doc, per slot
 	"squirrel": {"1": "short", "2": "short-medium", "3": "medium-long", "4": "long"}, ## Squirrel session, the tiers Preston took ("Take it"), 2026-11-05
 	"falcon": {"1": "short", "2": "medium", "3": "medium", "4": "long"}, ## Falcon session, doc tier words, 2026-11-05
 	"hippo": {"1": "short", "2": "medium", "3": "medium-long", "4": "long"}, ## Hippo session, doc tier words (kit rework undecided), 2026-11-05
-	"bison": {"1": "medium", "2": "medium", "3": "short", "4": "long"}, ## moba-kits.md (approved 2026-11-13); slice 1 builds 2 only
+	"bison": {"1": "medium", "2": "medium", "3": "short", "4": "long"}, ## moba-kits.md (the Whistle Stop refine, 2026-11-14); all four built
 	"pangolin": {"1": "short", "2": "medium", "3": "medium", "4": "long"}, ## kit redo (Preston approved 2026-11-12): the spec gives the iron ball "about 9 s", the medium tier here
 }
+## rhino 3 is Aftershock since 2026-11-20: kit design's "about 11 s" sits in medium-long (12 s); there is no 11 s tier.
+
+## The slots that move the caster itself, which grounded (the rhino's Aftershock) blocks: dashes, leaps, rolls, blinks
+## and long carries (kit design, 2026-11-20; docs/plan/rhino-brace-replacement-2026-11-20.md, "Grounded rules"). The
+## bison's Chain (1) is not one: its haul is about the hook. Its Plow and every basic attack are not either.
+const MOBILITY := {
+	"rhino": ["1", "4"], ## Horn Toss's dash; Stampede and its Tremor charge
+	"gorilla": ["3"], ## Drive Slam (its grab only chains off the drive)
+	"kangaroo": ["1", "4"], ## Hop and Jab; Boxing Ring
+	"hippo": ["2", "3"], ## Piston Drop; Lockjaw's carry
+	"pangolin": ["2", "4"], ## Iron Ball; Scrap Comet (a mid-roll Scale Flare ends with the roll)
+	"fennec": ["2", "3"], ## Blink Gate and its Gate Back recast; Tunnel
+	"wolf": ["1"], ## Lunge
+	"bison": ["4"], ## Freight
+}
+
+
+static func is_mobility(machine: String, slot: String) -> bool:
+	return slot in MOBILITY.get(machine, [])
 
 # ---- jungle --------------------------------------------------------------------------------------------------------------
 static var monster_hp := 500.0 ## pick

@@ -540,6 +540,18 @@ func nudge(world: Vector3, back: float) -> void:
 	_nudge_tw.tween_property(self, "feel_offset", Vector3.ZERO, back).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
 
 
+## Like nudge, but eases out to world over in_t first, so the full offset arrives with an impact (the pangolin's pry
+## lunge on the drop, 2026-11-18), then eases back over back.
+func lunge(world: Vector3, in_t: float, back: float) -> void:
+	var p := get_parent() as Node3D
+	var local: Vector3 = p.global_basis.inverse() * world if p != null else world
+	if _nudge_tw != null:
+		_nudge_tw.kill()
+	_nudge_tw = create_tween()
+	_nudge_tw.tween_property(self, "feel_offset", local, maxf(in_t, 0.01)).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	_nudge_tw.tween_property(self, "feel_offset", Vector3.ZERO, back).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+
+
 ## A short white flash on this body only, through the look lane's per-instance hit_flash (0 to 1) in mech_body
 ## (2026-11-10). material_overlay stays free for the hex shield.
 func flash(strength := 0.6, t := 0.15) -> void:

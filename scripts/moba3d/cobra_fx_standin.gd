@@ -9,7 +9,8 @@ extends Node
 ## at runtime, near face at the clip's 2.163 m), moves the cobra at the clip's 8 m/s from "go" to "stop", and on
 ## "burst" picks enemies within 2.4 m of the exit, cues "breach_hit" and pushes them back 2.2 m. All guesses.
 ## The stub resolves the cone on the clip's "gaze" event: enemy units within gaze_range and gaze_angle of the cobra's
-## facing; stunned if the unit faces the cobra (within 90 degrees), slowed otherwise. Those rules and every number
+## facing; stunned if the unit faces the cobra (within 60 degrees), slowed otherwise. The cone numbers (6 m, 60, 1 s, 2 s)
+## are the ones Preston approved on 2026-11-17 (relayed by the Cobra Unreal port); the rest of the rules and numbers
 ## are the stub's guesses; the game feel lane owns the real ones.
 const MECH_LOOK := preload("res://scripts/moba3d/mech_look.gd")
 const FX := preload("res://scripts/moba3d/cobra_fx.gd")
@@ -34,8 +35,8 @@ class StubKit extends Node:
 	signal cue(name: String)
 	var current: Variant = null ## the arena's swap() reads this
 	var gaze_range := 6.0
-	var gaze_angle := 70.0
-	var gaze_stun_time := 1.2
+	var gaze_angle := 60.0
+	var gaze_stun_time := 1.0
 	var gaze_slow_time := 2.0
 	var gaze_stunned: Array = []
 	var gaze_slowed: Array = []
@@ -213,7 +214,7 @@ func _on_body_event(clip: String, n: String, _damage: bool) -> void:
 		var dist := d.length()
 		if dist < 0.3 or dist > stub.gaze_range or d.normalized().dot(f) < cos(half):
 			continue
-		if _facing_of(t).dot(-d.normalized()) > 0.0:
+		if _facing_of(t).dot(-d.normalized()) > cos(deg_to_rad(60.0)):
 			stub.gaze_stunned.append(t)
 		else:
 			stub.gaze_slowed.append(t)

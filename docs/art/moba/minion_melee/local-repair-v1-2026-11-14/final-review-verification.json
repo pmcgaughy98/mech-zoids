@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "tested_sha256": "585419e1022af21a47b06ceab8ad767864fbd806e4a62f7de6d24035293b5d81",
+  "triangles": 19668,
+  "joint_count": 18,
+  "native_joint_tests_with_surface_motion": 13,
+  "native_joint_tests_below_1mm_motion_threshold": [
+    {
+      "label": "bone-002",
+      "bone": "Bone_002",
+      "degrees": 8,
+      "max_displacement_m": 2.9371863250422934e-05,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-006",
+      "bone": "Bone_006",
+      "degrees": 8,
+      "max_displacement_m": 3.965687024550926e-05,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-009",
+      "bone": "Bone_009",
+      "degrees": -8,
+      "max_displacement_m": 1.0489636939613835e-05,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-012",
+      "bone": "Bone_012",
+      "degrees": 8,
+      "max_displacement_m": 3.1496219481001514e-05,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-015",
+      "bone": "Bone_015",
+      "degrees": -8,
+      "max_displacement_m": 1.866476321024728e-05,
+      "coincident_surface_gap_m": 0.0
+    }
+  ],
+  "maximum_seam_gap_m": 0.0,
+  "godot_check": "Three native GLB versions, original/revised sheets, original 18-joint rig and actual ChaseCamera3D",
+  "screenshots": "res://reports/model_catalog/melee-minion-local-v1",
+  "intact_archive_sha256": "932c8f61f9845ca8660d3e6d098463d219876a05425f6345d892dc00000fca45",
+  "original_reference_sha256": {
+    "front": "777122ba7e7267f51644c0c19f78e44dc353cd56b7667988e0c28ed821658613",
+    "left": "a6b5fd1dc9e8f733ea5c87f0be8f9f49d9edf542af3a7fd3a8bd912ad29868e5",
+    "back": "128bfdb479482f5107f1c40cb43d9315123cca7416cd276729ed1d455e539a09",
+    "right": "0e67ad23a3487429cdd1b94effbb27a8408b40ef21b9c8142ace0a4aab282a2f"
+  },
+  "boundary_edges": 0,
+  "over_shared_edges": 10,
+  "protected_contacts": "Ten balanced original four-face assembly contacts retained after closure; healthy source surfaces preserved.",
+  "collapsed_triangles": 0,
+  "healthy_source_triangles_retained": 19660,
+  "all_original_vertex_and_skin_rows_preserved": true,
+  "duplicate_uv_corner_rows": 0
+}

@@ -1,0 +1,50 @@
+{
+  "id": "owl",
+  "name": "Owl",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/owl/front.png",
+      "source": "D:\\user\\Downloads\\owl_front.png",
+      "sha256": "c0721c3a11aca68a395db16343e63e36cda4b12058f4f47a264c5fd31d27535e",
+      "bytes": 443623,
+      "project_related": [
+        "docs/art/moba/owl_m/take-a/REPORT.md"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/owl/left.png",
+      "source": "D:\\user\\Downloads\\owl_left.png",
+      "sha256": "2e1a32fa364020ad75daa475902ca667368099e21669330f593bd6a3f25df518",
+      "bytes": 320382,
+      "project_related": [
+        "docs/art/moba/owl_m/take-a/REPORT.md"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/owl/back.png",
+      "source": "D:\\user\\Downloads\\owl_back.png",
+      "sha256": "96116bd8490b72cb081dfa979c28d65320c758545c044f52c347206c5fcff07c",
+      "bytes": 376913,
+      "project_related": [
+        "docs/art/moba/owl_m/take-a/REPORT.md"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/owl/right.png",
+      "source": "D:\\user\\Downloads\\owl_right.png",
+      "sha256": "c3411dde20a658d40967a0db3a49cf40597348c99a531c603f6fb91c9602fc13",
+      "bytes": 316283,
+      "project_related": [
+        "docs/art/moba/owl_m/take-a/REPORT.md"
+      ]
+    }
+  },
+  "source_model": {
+    "path": "res://art/model_catalog/sources/Meshy_AI_cyber_owl_remeshed_25k_20261114_character.glb",
+    "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_cyber_owl_remeshed_25k_20261114_character.glb",
+    "sha256": "91c26d8cbcf4e4fa40f873cbefc0d0deec0c98ee2e43e956e39687914f45229a",
+    "bytes": 45361292,
+    "kind": "Exact downloaded remeshed rig; intact pre-remesh GLB not located"
+  }
+}

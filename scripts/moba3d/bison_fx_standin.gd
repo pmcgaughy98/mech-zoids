@@ -40,6 +40,9 @@ class StubKit extends Node:
 	signal cue(name: String)
 	var current: Variant = null ## the arena's swap() reads this
 	var eruption_radius := 3.5
+	var whistle_radius := 9.0 ## the kit's placeholder (game feel lane)
+	var scald_radius := 3.0
+	var scald_targets: Array = []
 	var slag_time := 4.5
 	var chain_target: Node3D = null
 	var chain_end := Vector3.ZERO
@@ -164,6 +167,29 @@ func erupt() -> void:
 	body.play_action("Eruption")
 
 
+## Whistle Stop (key 2 since 2026-11-17): the Whistle clip; "scald" goes out on its "blast" event, as the kit sends it.
+func whistle() -> void:
+	if not ready_done:
+		return
+	stub.scald_targets = []
+	stub.cue.emit("whistle")
+	_cool("2")
+	body.play_action("Whistle")
+
+
+func _scald_targets() -> Array:
+	var out := []
+	for u in get_tree().get_nodes_in_group("match_unit"):
+		var n := u as Node3D
+		if n == null or n == player or not n.is_inside_tree():
+			continue
+		if n.get("team") == player.get("team") or n.get("alive") == false:
+			continue
+		if n.global_position.distance_to(player.global_position) <= stub.scald_radius + 0.6:
+			out.append(n)
+	return out
+
+
 ## Throws the chain at target (null: a miss along facing). The cues go out on the clip's "fire" event.
 func chain(target: Node3D) -> void:
 	if not ready_done:
@@ -274,6 +300,11 @@ func _end_haul(how: String) -> void:
 
 
 func _on_body_event(clip: String, n: String, _damage: bool) -> void:
+	if clip == "Whistle":
+		if n == "blast":
+			stub.scald_targets = _scald_targets()
+			stub.cue.emit("scald")
+		return
 	if clip == "Freight_Brace":
 		if n == "chains_out":
 			stub.freight_targets = _freight_targets
@@ -367,7 +398,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		plow()
 		get_viewport().set_input_as_handled()
 	elif k.physical_keycode == KEY_2:
-		erupt()
+		whistle()
 		get_viewport().set_input_as_handled()
 	elif k.physical_keycode == KEY_H and ready_done:
 		body.play_action("Hit_Heavy")

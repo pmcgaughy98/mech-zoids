@@ -195,7 +195,7 @@ func swap() -> void:
 		"pangolin":  # slice 1 of the kit redo: the iron ball on slot 2 (game feel lane, 2026-11-12)
 			load("res://scripts/moba3d/pangolin_kit.gd").install(player)
 			player.sprite.size_class=ROSTER.profile(machine).get("size_class","M")
-		"bison":  # slice 1: horn hook, scorch and slag, 2 Eruption (game feel lane, 2026-11-14; Preston: "Yes, start it")
+		"bison":  # the Whistle Stop kit (game feel lane, 2026-11-14; Preston: "Whistle Stop", "Yes, rebuild it")
 			load("res://scripts/moba3d/bison_kit.gd").install(player)
 			player.sprite.size_class=ROSTER.profile(machine).get("size_class","L")
 		"rhino":

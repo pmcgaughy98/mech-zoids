@@ -76,27 +76,8 @@ func _run() -> void:
 		await process_frame
 		waited += 1
 	_check(not player.busy and sprite.action == "", "the rhino is free again after the pound (%.2f s after the slow check)" % (waited / 60.0))
-	# Braced walking steps at the slow speed instead of sliding the planted pose; stopping plants it again.
-	kit.brace()
-	for i in 40:
-		await process_frame
-	_check(sprite.action == "brace" and sprite.hold and sprite.frame == RhinoKit.BRACE_PLANTED_FRAME and not sprite.is_playing(),
-		"brace plants and holds frame %d (got %s f%d)" % [RhinoKit.BRACE_PLANTED_FRAME, sprite.animation, sprite.frame])
-	player.input_override = Vector2(0.0, -1.0)
-	for i in 20:
-		await process_frame
-	_check(String(sprite.animation).begins_with("brace_shuffle_") and sprite.is_playing() and absf(sprite.speed_scale - 1.0) < 0.01,
-		"braced and moving plays the brace shuffle at its drawn pace (got %s, speed %.2f)" % [sprite.animation, sprite.speed_scale])
-	player.input_override = Vector2.ZERO
-	for i in 5:
-		await process_frame
-	_check(String(sprite.animation).begins_with("brace_") and sprite.frame == RhinoKit.BRACE_PLANTED_FRAME and not sprite.is_playing(),
-		"stopping while braced plants the brace pose again (got %s f%d)" % [sprite.animation, sprite.frame])
-	player.input_override = null
-	for i in 200:
-		await process_frame
-	_check(not player.busy and sprite.action == "" and is_equal_approx(sprite.speed_scale, 1.0),
-		"the brace ends and the rhino is free again (got %s, speed %.2f)" % [sprite.animation, sprite.speed_scale])
+	# The braced-walk checks are retired: Aftershock replaced Brace on slot 3, 2026-11-20 (game feel lane).
+	# Aftershock is covered by D:/dev/_scratch/game_feel/probe/aftershock_probe.gd.
 	# The own-view rule, on a made-up action drawn only in s, e and n (every real action has se and ne now).
 	var sheet := sprite.sprite_frames
 	var test_sheet: SpriteFrames = sheet.duplicate()

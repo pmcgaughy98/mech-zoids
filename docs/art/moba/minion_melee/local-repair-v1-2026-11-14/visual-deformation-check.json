@@ -1,0 +1,156 @@
+{
+  "tested_sha256": "585419e1022af21a47b06ceab8ad767864fbd806e4a62f7de6d24035293b5d81",
+  "joint_count": 18,
+  "poses": [
+    {
+      "label": "bone-000",
+      "bone": "Bone_000",
+      "degrees": 8,
+      "max_displacement_m": 0.25655963027589224,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-001",
+      "bone": "Bone_001",
+      "degrees": -8,
+      "max_displacement_m": 0.1974628798677982,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-003",
+      "bone": "Bone_003",
+      "degrees": -8,
+      "max_displacement_m": 0.0077800690029328195,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-004",
+      "bone": "Bone_004",
+      "degrees": 8,
+      "max_displacement_m": 0.030779784701942536,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-005",
+      "bone": "Bone_005",
+      "degrees": -8,
+      "max_displacement_m": 0.03896654596096414,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-007",
+      "bone": "Bone_007",
+      "degrees": -8,
+      "max_displacement_m": 0.07195534487172725,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-008",
+      "bone": "Bone_008",
+      "degrees": 8,
+      "max_displacement_m": 0.10860486813074706,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-010",
+      "bone": "Bone_010",
+      "degrees": 8,
+      "max_displacement_m": 0.05990477389459568,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-011",
+      "bone": "Bone_011",
+      "degrees": -8,
+      "max_displacement_m": 0.09414172071140652,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-013",
+      "bone": "Bone_013",
+      "degrees": -8,
+      "max_displacement_m": 0.07208065073015327,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-014",
+      "bone": "Bone_014",
+      "degrees": 8,
+      "max_displacement_m": 0.10860008728194682,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-016",
+      "bone": "Bone_016",
+      "degrees": 8,
+      "max_displacement_m": 0.06006813890832259,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-017",
+      "bone": "Bone_017",
+      "degrees": -8,
+      "max_displacement_m": 0.09419177602325426,
+      "coincident_surface_gap_m": 0.0
+    }
+  ],
+  "no_surface_motion": [
+    {
+      "label": "bone-002",
+      "bone": "Bone_002",
+      "degrees": 8,
+      "max_displacement_m": 2.9371863250422934e-05,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-006",
+      "bone": "Bone_006",
+      "degrees": 8,
+      "max_displacement_m": 3.965687024550926e-05,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-009",
+      "bone": "Bone_009",
+      "degrees": -8,
+      "max_displacement_m": 1.0489636939613835e-05,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-012",
+      "bone": "Bone_012",
+      "degrees": 8,
+      "max_displacement_m": 3.1496219481001514e-05,
+      "coincident_surface_gap_m": 0.0
+    },
+    {
+      "label": "bone-015",
+      "bone": "Bone_015",
+      "degrees": -8,
+      "max_displacement_m": 1.866476321024728e-05,
+      "coincident_surface_gap_m": 0.0
+    }
+  ],
+  "rendered_poses": [
+    "bone-000",
+    "bone-001",
+    "bone-002",
+    "bone-003",
+    "bone-004",
+    "bone-005",
+    "bone-006",
+    "bone-007",
+    "bone-008",
+    "bone-009",
+    "bone-010",
+    "bone-011",
+    "bone-012",
+    "bone-013",
+    "bone-014",
+    "bone-015",
+    "bone-016",
+    "bone-017"
+  ],
+  "surface_motion_threshold_m": 0.001,
+  "classification": "Below 1 mm is classified as no_surface_motion; small nonzero movement may be present."
+}

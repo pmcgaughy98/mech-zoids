@@ -1,0 +1,50 @@
+{
+  "id": "minion_melee",
+  "name": "Melee Minion",
+  "category": "minion",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/minion_melee/front.png",
+      "source": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\minion-set-2026-11-07\\melee\\white_views\\minion_melee_front.png",
+      "sha256": "777122ba7e7267f51644c0c19f78e44dc353cd56b7667988e0c28ed821658613",
+      "bytes": 203040,
+      "project_matches": [
+        "docs/art/moba/minion-set-2026-11-07/melee/white_views/minion_melee_front.png"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/minion_melee/left.png",
+      "source": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\minion-set-2026-11-07\\melee\\white_views\\minion_melee_left.png",
+      "sha256": "a6b5fd1dc9e8f733ea5c87f0be8f9f49d9edf542af3a7fd3a8bd912ad29868e5",
+      "bytes": 211686,
+      "project_matches": [
+        "docs/art/moba/minion-set-2026-11-07/melee/white_views/minion_melee_left.png"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/minion_melee/back.png",
+      "source": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\minion-set-2026-11-07\\melee\\white_views\\minion_melee_back.png",
+      "sha256": "128bfdb479482f5107f1c40cb43d9315123cca7416cd276729ed1d455e539a09",
+      "bytes": 182538,
+      "project_matches": [
+        "docs/art/moba/minion-set-2026-11-07/melee/white_views/minion_melee_back.png"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/minion_melee/right.png",
+      "source": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\minion-set-2026-11-07\\melee\\white_views\\minion_melee_right.png",
+      "sha256": "0e67ad23a3487429cdd1b94effbb27a8408b40ef21b9c8142ace0a4aab282a2f",
+      "bytes": 217447,
+      "project_matches": [
+        "docs/art/moba/minion-set-2026-11-07/melee/white_views/minion_melee_right.png"
+      ]
+    }
+  },
+  "source_model": {
+    "path": "res://art/model_catalog/sources/minion_melee_front - Hunyuan 3D v3.1 Pro.glb",
+    "source": "D:\\user\\Downloads\\Mecha Beast GLB\\minion_melee_front - Hunyuan 3D v3.1 Pro.glb",
+    "sha256": "932c8f61f9845ca8660d3e6d098463d219876a05425f6345d892dc00000fca45",
+    "bytes": 44972660
+  }
+}

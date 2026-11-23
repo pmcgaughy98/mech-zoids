@@ -6,10 +6,10 @@ assert 'MODEL REPAIR CHECK PASS: hornet, 4 comparison versions, original/review 
 assert not any(x in log for x in ['SCRIPT ERROR:','Assertion failed','Parse Error:'])
 for name in ['lineup','review','original','comparison','comparison-back','review-sheet','actual-chase-camera']:assert (shots/(name+'.png')).stat().st_size>10000
 cat=json.loads((BASE/'art/model_catalog/catalog.json').read_text(encoding='utf-8'));entry=next(x for x in cat['entries'] if x['id']=='hornet');assert entry['review_provenance']['repaired_sha256']==r['output_sha256'] and len(entry['review_models'])==4;assert hashlib.sha256(Path(r['output']).read_bytes()).hexdigest()==r['output_sha256'];gap=max(x['coincident_surface_gap_m'] for x in p['poses']);assert gap<1e-6
-evidence={'passed':True,'tested_sha256':r['output_sha256'],'joint_count':51,'native_joint_tests':24,'maximum_seam_gap_m':gap,'godot_check':'Four native versions, original/revised sheets, 51-joint skeleton and current ChaseCamera3D','screenshots':'res://reports/model_catalog/hornet-restoration-v1','intact_archive_sha256':a['intact_archive_sha256'],'accepted_pre_rig_touchup_sha256':a['accepted_touchup_sha256'],'original_reference_sha256':a['original_reference_sha256'],'final_triangles':r['final_triangles'],'boundary_edges':0,'over_shared_edges':0,'collapsed_triangles':0,'source_skeleton_rest_binds_scenes_clips_preserved':True,'skin_scope':'Transferred from damaged downloaded rig onto restored geometry; original downloaded weights remain archived.','readiness':'High-detail review asset. Optimisation, authored gait/flight and independent appendage control work remain.'};(OUT/'final-review-verification.json').write_text(json.dumps(evidence,indent=2)+'\n');shutil.copy2(ROOT/'godot-review.log',OUT/'godot-review.log')
+evidence={'passed':True,'tested_sha256':r['output_sha256'],'joint_count':51,'native_joint_tests':24,'maximum_seam_gap_m':gap,'godot_check':'Four native versions, original/revised sheets, 51-joint skeleton and current ChaseCamera3D','screenshots':'res://reports/model_catalog/hornet-restoration-v1','intact_archive_sha256':a['intact_archive_sha256'],'accepted_pre_rig_touchup_sha256':a['accepted_touchup_sha256'],'original_reference_sha256':a['original_reference_sha256'],'final_triangles':r['final_triangles'],'boundary_edges':0,'over_shared_edges':0,'collapsed_triangles':0,'source_skeleton_rest_binds_scenes_clips_preserved':True,'summer_review_report':'res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/summer-review-verification.json','skin_scope':'Transferred from damaged downloaded rig onto restored geometry; original downloaded weights remain archived.','readiness':'High-detail review asset. Optimisation, authored gait/flight and independent appendage control work remain.'};(OUT/'final-review-verification.json').write_text(json.dumps(evidence,indent=2)+'\n');shutil.copy2(ROOT/'godot-review.log',OUT/'godot-review.log')
 readme=f'''# Hornet six-leg surface restoration
 
-Completed November 14, 2026, after Fennec. Hornet's downloaded 51-joint rig had widespread missing surface across the head, wings, joints and body. The documented six-leg pre-rig touch-up also contained widespread cracks. An intact-source reconstruction was required instead of broad hole filling.
+Restored November 14, 2026, after Fennec. The previously pending native Workshop check was completed after Wolf. Hornet's downloaded 51-joint rig had widespread missing surface across the head, wings, joints and body. The documented six-leg pre-rig touch-up also contained widespread cracks. An intact-source reconstruction was required instead of broad hole filling.
 
 ![Damaged rig and restored surface](before-after.png)
 
@@ -60,9 +60,32 @@ Fennec and all earlier roster work are preserved. No paid generation, commits or
 ''';(OUT/'README.md').write_text(readme,encoding='utf-8')
 note=f'''Hornet surface restoration completed November 14 after Fennec. The downloaded 51-joint rig and accepted six-leg pre-rig touch-up both had widespread surface cracks. Restored the intact 500k source using the exact approved FL1/FL2/FR1/FR2/L2/L4/R2/R4 cut mask (4,939 proxy faces), closed cut roots and removed only two verified cut-created remnants. Six legs, four wings, antennae, barrels, abdomen and stinger retained. Actual final {r['final_triangles']:,}-triangle export has zero open/over-shared/collapsed triangles. Original 51-joint hierarchy/rest/binds/scenes/clips preserved; skin transferred from the actual damaged rig, not claimed unchanged. Twenty-four native diagnostics passed with maximum measured seam gap {gap:.9g} m, below one-micrometre tolerance. Textured anatomy/local/motion views and final Godot four-version/original-review-sheet/51-joint/chase-camera screenshots inspected. Workshop and sheets show intact archive (extra limbs unapproved), accepted cracked pre-rig touch-up, damaged rig and restoration; four-version camera widened while prior two/three-version sizes are unchanged. SHA256 {r['output_sha256']}. Evidence: docs/art/moba/hornet_m/local-repair-v1-2026-11-14/README.md. High-detail review asset; optimisation and authored gait/flight remain. Original archives/reference PNGs and all prior repairs preserved. No gameplay replacement or next model selection claimed.'''
 for rel in ['docs/art/moba/MODEL_WORKBENCH.md','docs/team/codex-lanes-2026-11-07/model-polish.md','docs/team/codex-lanes-2026-11-07/queued-roster-repair.md']:
- path=BASE/rel;s=path.read_text(encoding='utf-8');parts=s.split('\n\n');matches=[i for i,v in enumerate(parts) if v.startswith('Hornet surface restoration completed November 14 after Fennec.') or v.startswith('Hornet restoration is the current target, November 14.')]
+ path=BASE/rel;s=path.read_text(encoding='utf-8');parts=s.split('\n\n');matches=[i for i,v in enumerate(parts) if v.startswith('Hornet surface restoration completed November 14 after Fennec.') or v.startswith('Hornet restoration is the current target, November 14.') or v.startswith('Hornet restoration and its isolated Summer review, November 14:')]
  if matches:parts[matches[0]]=note;s='\n\n'.join(parts)
  elif s.startswith('# '):head,tail=s.split('\n',1);s=head+'\n\n'+note+'\n\n'+tail.lstrip('\n')
  else:s=note+'\n\n'+s
  path.write_text(s,encoding='utf-8')
 shutil.copy2(Path(__file__),OUT/Path(__file__).name);shutil.copy2(ROOT/'surface-component-inspection.json',OUT/'removed-remnant-inspection.json');print(json.dumps(evidence,indent=2))
+
+# Resolve the pending native check while retaining its original context and Summer evidence.
+pending_path=OUT/'runtime-review-pending.json'
+pending=json.loads(pending_path.read_text(encoding='utf-8'))
+if 'previous_pending_state' not in pending:
+    pending={'previous_pending_state':pending}
+pending.update({'status':'Resolved: native Godot Workshop check passed and screenshots inspected','tested_sha256':r['output_sha256'],'native_godot_status':'passed; four versions, original/review sheets, 51-joint rig and current ChaseCamera3D','runtime_report':'res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/final-review-verification.json','summer_review':'passed; summer-review-verification.json preserved','remaining_native_check':None})
+pending_path.write_text(json.dumps(pending,indent=2)+'\n',encoding='utf-8')
+readme_path=OUT/'README.md'
+readme_text=readme_path.read_text(encoding='utf-8')
+readme_text+='\n## Earlier Summer review\n\nSummer Engine 0.7.0 independently passed its isolated four-version/51-joint review, with seven inspected 1600x900 views. That evidence remains in `summer-review-verification.json` and `summer-review/`. Its original pending-Workshop wording records the state at that earlier capture; the native Godot check is now resolved by `final-review-verification.json`. Model geometry and skin were not changed for this completion.\n'
+readme_path.write_text(readme_text,encoding='utf-8')
+catpath=BASE/'art/model_catalog/catalog.json'
+cat=json.loads(catpath.read_text(encoding='utf-8'))
+assert len(cat['entries'])==29
+others=[x for x in cat['entries'] if x['id']!='hornet']
+entry=next(x for x in cat['entries'] if x['id']=='hornet')
+entry['review_provenance']['runtime_report']='res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/final-review-verification.json'
+assert [x for x in cat['entries'] if x['id']!='hornet']==others
+catpath.write_text(json.dumps(cat,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+(OUT/'catalog-entry.json').write_text(json.dumps(entry,indent=2)+'\n',encoding='utf-8')
+shutil.copy2(Path(__file__),OUT/Path(__file__).name)
+print('Hornet pending native status resolved; Summer evidence and other entries preserved.')

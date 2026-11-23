@@ -1,0 +1,99 @@
+{
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_crimson_aXOltol_remeshed_25k_20261114_character.glb",
+  "source_sha256": "ac1315bed7f815b91de02f118acdc1e30111087066dc41c21b66e364b72a69f4",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\axolotl_s\\local-repair-v1-2026-11-15\\axolotl-rigged-local-repair-v1.glb",
+  "output_sha256": "52c6f003c1061aa5b1c2876261f9af9951d397de5f9f641a5f32d76ccef42591",
+  "before_triangles": 25324,
+  "final_triangles": 25304,
+  "joint_count": 31,
+  "removed_malformed_triangles": 21,
+  "removed_face_ids": [
+    7447,
+    7514,
+    7578,
+    7583,
+    7749,
+    8007,
+    8689,
+    8812,
+    9280,
+    10850,
+    11080,
+    11611,
+    14493,
+    14626,
+    16693,
+    18379,
+    18439,
+    19721,
+    22799,
+    23961,
+    25139
+  ],
+  "holes_closed": [
+    {
+      "triangle": [
+        24633,
+        24653,
+        24963
+      ],
+      "bounds": [
+        [
+          -0.5837557315826416,
+          0.6188598871231079,
+          0.5602121949195862
+        ],
+        [
+          -0.5809211730957031,
+          0.6290690302848816,
+          0.5642452239990234
+        ]
+      ],
+      "normal": [
+        -0.9039790630340576,
+        0.18232205510139465,
+        -0.3867563307285309
+      ],
+      "normal_alignment": 0.6588112711906433,
+      "uv_perimeter": 0.0034285036381334066
+    }
+  ],
+  "boundary_edges": 0,
+  "over_shared_edges": 7,
+  "protected_closed_contact_edges": [
+    [
+      20087,
+      20118
+    ],
+    [
+      24646,
+      24677
+    ],
+    [
+      24653,
+      24661
+    ],
+    [
+      25084,
+      25130
+    ],
+    [
+      12648,
+      12658
+    ],
+    [
+      8418,
+      8420
+    ],
+    [
+      8431,
+      8444
+    ]
+  ],
+  "contact_note": "1 small gaps closed; 7 balanced original assembly contacts retained.",
+  "collapsed_triangles": 0,
+  "healthy_main_body_source_faces_retained": 25291,
+  "all_original_vertex_attribute_rows_weights_materials_skeleton_rest_binds_preserved": true,
+  "new_geometric_vertices": 0,
+  "scope": "Local topology repair. Four legs/feet, six gill stalks, eyes, head, paired side cylinders, dorsal armor and complete tail retained. Original vertex attributes, skin, 31-joint skeleton/rest/binds and textures preserved; no remesh or rerig."
+}

@@ -243,12 +243,44 @@ Built from the clip notes and events; each needs Preston's go and, for most, a k
   from the kit each frame; Seam_Out `emerge` 0.02: the face ripples and parts round the snout, `clear` 0.92 closes it.
 - **Wall Line passive:** the empowered first basic after leaving a wall: the strips stay lit until that basic fires.
 
+## Unreal hook for Hood Gaze (built by the Cobra Unreal port, live as of row 32, DLL 021e0ff1, 2026-11-17)
+- The server calls `UCobraKit::GazeCue(const FCobraGazeCue&)` (unreliable NetMulticast) right after it picks targets
+  at 0.30 s. Effects code in its own files binds `Mech->Cobra->OnGazeCue` (native multicast delegate; include
+  CobraKit.h; `Cobra` is ATrialGorilla's UCobraKit* member). The cobra component now replicates to carry it.
+- `FCobraGazeCue`: Caster, Origin, Facing (flat unit), RangeCm 600, HalfAngleDeg 30, Stunned and Slowed
+  (TArray<AActor*>), StunSeconds 1, SlowSeconds 2, PickTime.
+- RangeCm is edge reach: a target counts when its centre is within RangeCm + 96 cm. PickTime is on
+  ATrialGorilla::Clock(), the same clock as State.Started (server world time). A braced machine that refuses the
+  stun is in neither list. Every machine logs COBRA_GAZE_CUE on arrival.
+- Port's network check (60 ms lag, 3% loss): the client got the cue with the right stunned and slowed targets.
+- Timing rule: PickTime is server time, and on a client the shared Clock() ran 3.2 to 4.5 s ahead of the server in
+  those runs. So never compare PickTime (or State.Started) with a client's Clock(). Start the effect when the cue
+  arrives and time it with StunSeconds and SlowSeconds.
+- Because the cue is unreliable, nothing in gameplay hangs on it. The effects draw the cone, glow and floor when the
+  replicated action turns to 84, and fall back to the victims' StunUntil/SlowUntil when a cue is dropped. Those are
+  probably on the same server clock, so read them as on or off, not as countdowns, until the offset is checked.
+- Unreal ids: machine Kind 6; actions 80-82 the strike chain (contacts .22 bite, .21 hood swipe, .46 head slam);
+  83 Ghost Run, 84 Hood Gaze. No Unreal effects are built; that waits on Preston's go.
+
+## Unreal strike chain (drafted 2026-11-18, row requested, not built)
+- Preston, 2026-11-18: "Yes, start them". No Godot strike effects exist, so this look is new, not a port.
+- Bite: two gold fang arcs close on the snout tip at .22 s. Hood swipe: a low curved gold wall swept right to left,
+  straight ahead at .21 s. Head slam: an overhead arc down to the ground at .46 s, with a small low ring (to 1.5 m).
+  A hit adds one small gold flash (.13 s) and hides the kit's amber Impact ring; a whiff shows the swing only.
+- Timing from each machine's own clock at State arrival, never Clock() against Started. Remote-client sync with the
+  clip waits on the shared clock fix (hub row 32).
+- Draft, plan and film script: D:/dev/_scratch/cobra-fx/ue/ (ROW_PLAN.md). Uncompiled; the hub was asked for a
+  row on 2026-11-18.
+
 ## What Preston decides (in order)
 1. Colour: decided, **gold** (Preston, 2026-11-14). Power: phase, not petrify (Preston, 2026-11-14).
-2. The cone's numbers: 6 m, 70 degrees, stun 1.2 s, slow 2.0 s, all placeholders (kit numbers).
+2. The cone numbers: decided, 6 m reach, 60 degree cone, stun 1 s if the target faces the cobra within 60 degrees,
+   otherwise slow 2 s at 40%, 9 s cooldown (Preston, 2026-11-17, "Use proposed numbers", relayed by the Cobra Unreal
+   port session). The launcher stub and the fx fallbacks use them.
 3. The stun read: decided, held out of phase (drained to gold, wobbling, a drifting double, snaps back solid).
    Preston, 2026-11-14: "Yes, keep it".
-4. Which effect next: decided, Breach (Preston, 2026-11-14), built. After it: Seam or Ghost Run (Ghost Run touches
-   the cobra's materials: the look lane's, ask first).
+4. Which effect next: decided, Breach (Preston, 2026-11-14), built. Its look (take 2, the soft section with side
+   seams) is decided: Preston, 2026-11-17, "Yes, keep it". After it: Seam or Ghost Run (Ghost Run touches the
+   cobra's materials: the look lane's, ask first).
 5. Breach's numbers: section width 2.2 m, gap 4.0 s, hit radius 2.4 m, push 2.2 m (placeholders, kit numbers).
 6. The game feel lane builds `cobra_kit.gd` to the contract above; the effects go live in matches on Preston's "turn on".

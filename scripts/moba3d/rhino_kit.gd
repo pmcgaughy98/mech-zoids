@@ -11,7 +11,11 @@ extends Node
 ##   2 ground pound: rears and slams, then keeps stomping in place; the big circle shakes and slows everyone in it
 ##     while it lasts and a moment after (Preston, 2026-11-05: "a bigger circle like cabrakan where its stomping on
 ##     the ground trembling and slowing those in the circle"). One damaging hit, on the first slam.
-##   3 brace: plants its feet; every hit deflects, it moves slowly, and ground pound still works.
+##   3 aftershock (Preston, 2026-11-20, replacing the brace; numbers from kit design, docs/plan/rhino-brace-replacement-
+##     2026-11-20.md): a stomp after aftershock_windup sends a seismic wave along the aim, a cone that travels out. Each
+##     enemy it passes is hit once: damage, a 30% slow and grounded (no dashes, leaps, rolls or blinks). It spends the
+##     Seismic charge for more reach, damage and grounded time, and at full charge it also stuns. Machines in the air
+##     when the front passes dodge it; held ones are still hit; walls and rocks between are cover.
 ##   4 stampede: a long charge that shoves every target in its path aside, ending in a pound that stuns the ring.
 ##   Basic attack, horn jab (Rhino session, 2026-11-05; Preston: "we need basic attacks. Rhino, gorilla will be
 ##     melee"): a short low-to-high jab at one target in reach. The director calls basic_attack() (game feel's hook).
@@ -24,12 +28,13 @@ extends Node
 
 signal impact(strength: float) ## something landed hard; cameras can shake on it
 signal used(slot: String)
-signal cue(name: String) ## named moments for the sound lane: dash_cast, horn_catch, toss_land, tremor_stomp, jab_swing, jab_hit
+signal cue(name: String) ## named moments for the sound lane: dash_cast, horn_catch, toss_land, tremor_stomp, jab_swing, jab_hit,
+## and Aftershock's aftershock_windup (the cast), aftershock_wave (the stomp: last_aftershock holds the wave), aftershock_hit
+## (one per enemy; last_aftershock_hit is that enemy) and aftershock_end (the front reached its reach)
 
 const TOSS_DASH_FRAME := 2 ## horn_toss frame 2, head down, is held through the dash
 const TOSS_RELEASE_FRAME := 3 ## horn_toss frame 3 is the flick
 const POUND_SLAM_FRAME := 4 ## ground_pound frame 4 is the slam (composite.py starts the ring on F4)
-const BRACE_PLANTED_FRAME := 3
 const POUND_RISE_FRAME := 5 ## ground_pound frame 5, the lift after the slam: each stomp of the tremor goes 5 then 4
 ## horn_jab frame 2 is the hit: the lunge, the horn furthest forward and the head lowest in every side-on view (attack
 ## lane, measured on all five drawn views, 2026-11-05). Frame 3 is the upward toss after contact.
@@ -59,8 +64,6 @@ const GORE_LAND_SHAKE := 0.3 ## a stomp is 0.35
 @export var tremor_linger := 0.8 ## the slow stays this long after the last stomp
 @export var pound_slow_time := 1.2
 @export var patch_time := 2.5 ## the stampede finale's cracks stay this long as a slow patch
-@export var brace_time := 3.0
-@export var brace_move_scale := 0.35
 @export var stampede_distance := 12.0
 @export var stampede_speed := 9.0
 @export var stampede_width := 1.8
@@ -75,19 +78,24 @@ const GORE_LAND_SHAKE := 0.3 ## a stomp is 0.35
 @export var basic_hitstop := 0.05 ## the hit frame holds this long on contact
 @export var jab_assist := true ## Space with nothing where the mouse aims: the jab turns to the nearest enemy in reach
 @export var jab_anim_speed := 2.0 ## horn_jab is 9 ticks at 10 fps: at 2x it plays in 0.45 s, the hit at 0.20 s
-@export_group("Brace and release, Seismic charge (drafts for Preston, rhino lane slice 1, 2026-11-11)")
+@export_group("Seismic charge (drafts for Preston, rhino lane slice 1, 2026-11-11)")
 @export var seismic_gap := 0.5 ## one charge per attacker at most this often
 @export var seismic_hold := 5.0 ## no gain this long and the charge starts to drain
 @export var seismic_decay_every := 2.0 ## then one charge drains this often
-@export var release_after := 1.0 ## a second press this long after planting lets go early
-@export var release_radius := 3.0 ## plus release_radius_per a charge
-@export var release_radius_per := 0.4
-@export var release_push := 2.0 ## metres outward
-@export var release_slow := 1.0 ## seconds, plus release_slow_per a charge (the slow itself is MatchRules.slow_mult)
-@export var release_slow_per := 0.2
-@export var release_damage := 10.0 ## plus release_damage_per a charge, once
-@export var release_damage_per := 6.0
-@export var release_stun := 1.0 ## only at full charge
+@export_group("Aftershock, slot 3 (Preston, 2026-11-20; kit design's numbers)")
+@export var aftershock_windup := 0.35 ## the stomp: the wave sets off this long after the cast (the clip to come hits at about 0.35 s)
+@export var aftershock_recover := 0.45 ## the rhino is busy this long after the stomp (about 0.8 s in all)
+@export var aftershock_length := 8.0 ## metres the wave runs, plus aftershock_length_per a charge spent
+@export var aftershock_length_per := 1.0
+@export var aftershock_half_angle := 20.0 ## degrees each side of the aim
+@export var aftershock_speed := 16.0 ## m/s: the front reaches 8 m in 0.5 s
+@export var aftershock_damage := 30.0 ## plus aftershock_damage_per a charge, once per enemy
+@export var aftershock_damage_per := 6.0
+@export var aftershock_slow := 0.7 ## speed factor: slowed 30%
+@export var aftershock_slow_time := 1.5
+@export var aftershock_grounded := 2.0 ## seconds, plus aftershock_grounded_per a charge
+@export var aftershock_grounded_per := 0.2
+@export var aftershock_stun := 0.75 ## only at full charge (SEISMIC_MAX), alongside the grounded
 @export_group("Tremor charge, the stampede rework (drafts for Preston, rhino lane slice 2, 2026-11-11)")
 @export var tremor_distance := 16.0 ## the longest run, metres
 @export var tremor_speed_start := 9.0 ## m/s, rising to tremor_speed_end over tremor_ramp seconds
@@ -114,23 +122,22 @@ const GORE_LAND_SHAKE := 0.3 ## a stomp is 0.35
 @export_group("Basic attack, horn jab (picks for Preston to tune)")
 @export var chain_reset := 1.5 ## 3D body: this long after a basic ends, the next one starts the chain over at the hook
 
-var braced := false
+var braced := false ## always false now: Aftershock replaced the brace (2026-11-20); rhino_release_fx and machine_test_player._braced read it
 var current := "" ## the ability whose animation is playing, or ""
-var _ring: Node3D
+var last_aftershock := {} ## the last wave: origin, dir, reach, charge, half_angle, speed, hits (the effects and checks read it)
+var last_aftershock_hit: Node3D = null ## the enemy the last aftershock_hit cue was for
 var _chain := 0 ## the next hit of the 3D body's chain (index into CHAIN)
 var _chain_end := -1000.0 ## seconds (ticks) when the last basic ended
 var _got := {} ## "clip/event" -> true: the body's events since that clip last started
 const SEISMIC_MAX := 5
 const LOOK := preload("res://scripts/moba3d/mech_look.gd")
-var seismic := 0 ## Seismic charge, 0 to SEISMIC_MAX: blocked hits (plating or brace) fill it, the release spends it
+var seismic := 0 ## Seismic charge, 0 to SEISMIC_MAX: plating blocks and the Tremor run fill it; Aftershock and the Tremor finale spend it
 var _clock := 0.0 ## seconds of game time this kit has run (gates and decay use it, not the wall clock)
 var _seismic_from := {} ## attacker (or "?") -> _clock of its last charge
 var _seismic_last := -1000.0
 var _seismic_decay := 0.0
 var _glow_flash := 0.0 ## the release flash, seconds left
 var _glow_set := -1.0
-var _braced_at := 0.0
-var _release_now := false
 var tremor_pulses := 0 ## pulses fired since the kit started (the checks read it)
 var tremor_gone := 0.0 ## metres the current or last Tremor charge ran
 var last_finale_r := 0.0 ## the last Tremor charge finale's radius and stun (the checks read them)
@@ -166,7 +173,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	var k := event as InputEventKey
 	if k == null or not k.pressed or k.echo:
 		return
-	if player.get("bot") or (player.has_method("slot_ready") and not player.slot_ready(str(k.physical_keycode - KEY_0)) and not (braced and k.physical_keycode == KEY_3) and not (_tremor_running and k.physical_keycode == KEY_4)):
+	if player.get("bot") or (player.has_method("slot_ready") and not player.slot_ready(str(k.physical_keycode - KEY_0)) and not (_tremor_running and k.physical_keycode == KEY_4)):
 		return  # a bot's kit ignores the keyboard; in a match a slot waits out its cooldown (MatchRules)
 	match k.physical_keycode:
 		KEY_1:
@@ -174,7 +181,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		KEY_2:
 			ground_pound()
 		KEY_3:
-			brace()
+			aftershock()
 		KEY_4:
 			stampede()
 
@@ -200,10 +207,10 @@ static func flat(v: Vector3) -> Vector3:
 	return Vector3(v.x, 0.0, v.z)
 
 
-## Passive, front plating. Call when anything hits the rhino; true when the plating (or brace) takes it.
+## Passive, front plating. Call when anything hits the rhino; true when the plating takes it.
 func take_hit(from: Vector3, by: Node3D = null) -> bool:
 	var to := flat(from - feet()).normalized()
-	var blocked := braced or rad_to_deg(ahead().angle_to(to)) <= front_arc_degrees * 0.5
+	var blocked := rad_to_deg(ahead().angle_to(to)) <= front_arc_degrees * 0.5
 	if blocked:
 		_gain_seismic(by)
 	Fx3D.spawn(world(), "deflect_spark" if blocked else "hit_spark", feet() + to * 0.9 + Vector3.UP * 0.9, 0.3)
@@ -505,61 +512,41 @@ func _stomp(c: Vector3, r: float) -> void:
 	impact.emit(0.35)
 
 
-func brace() -> void:
-	if braced:
-		if _clock - _braced_at >= release_after:
-			_release_now = true  # the second press lets go early
+## Aftershock (slot 3). at: a point to aim at (the bots pass the nearest enemy's position); without one the aim, else
+## the facing. The cast spends the cooldown; a stun or a hold during the wind-up cuts it with no refund. After the
+## stomp the wave runs on its own while the rhino recovers. The 3D clip comes later from the rhino 3D lane (about
+## 0.8 s, the stomp at about 0.35 s): until then the kit times it and plays an "aftershock" clip only if the body has one.
+func aftershock(at: Variant = null) -> void:
+	if current != "":
 		return
-	if not _begin("brace"):
-		return
-	used.emit("3")
-	var b := _body()
-	if b != null:
-		_play(b, "brace_enter")
-		await _clip_end(b, "brace_enter")  # planted when the enter clip ends
-		if is_instance_valid(b):
-			b.play_hold("brace_hold")
-	else:
-		await _wait_frame("brace", BRACE_PLANTED_FRAME)
-		sprite.hold_frame(BRACE_PLANTED_FRAME)
-	braced = true
-	_braced_at = _clock
-	_release_now = false
-	current = ""
-	player.busy = false
-	player.speed_mult = brace_move_scale
-	_ring = Fx3D.spawn_flat(player, "brace_ring", 6, feet() + Vector3.UP * 0.03, 2.36)
-	impact.emit(0.3)
-	var held := 0.0
-	while held < brace_time and not _release_now and player.alive:
-		await get_tree().process_frame
-		held += get_process_delta_time()
-	_release_now = false
-	while current != "":  # a ground pound used while braced finishes first
-		await get_tree().process_frame
-	braced = false
-	player.speed_mult = 1.0
-	if is_instance_valid(_ring):
-		_ring.queue_free()
-	current = "brace"
+	current = "aftershock"  # no drawn sprite action, so not _begin()
 	player.busy = true
-	b = _body()
-	if b != null and b.has_clip("brace_release"):
-		if player.alive:  # the release clip slams the stored charge out; a dead rhino keeps its Death pose
-			_play(b, "brace_release")
-			if await _event(b, "brace_release", "release"):
-				_release()
-			await _clip_end(b, "brace_release")
-	elif b != null:
-		if player.alive:
-			_release()
-			_play(b, "brace_exit")
-			await _clip_end(b, "brace_exit")
-	else:
-		_release()
-		sprite.play_action("brace")
-		sprite.release_from(BRACE_PLANTED_FRAME + 1)
-		await _wait_end("brace")
+	used.emit("3")
+	var dir := Vector3.ZERO
+	if at is Vector3:
+		dir = flat(at - feet())
+	elif player.has_method("aim_dir"):
+		dir = flat(player.aim_dir())
+	if dir.length() < 0.1:
+		dir = ahead()
+	dir = dir.normalized()
+	player.facing = dir
+	var b := _body()
+	if b != null and b.has_clip("aftershock"):
+		_play(b, "aftershock")
+	cue.emit("aftershock_windup")
+	var t := 0.0
+	while t < aftershock_windup:
+		await get_tree().process_frame
+		if not (is_instance_valid(player) and player.alive and float(player.get("stunned")) <= 0.0 and not player.has_meta("held_by")):
+			_end()
+			return
+		t += get_process_delta_time()
+	_aftershock_wave(feet(), dir)  # a coroutine left running: the wave travels while the rhino recovers
+	t = 0.0
+	while t < aftershock_recover and player.alive:
+		await get_tree().process_frame
+		t += get_process_delta_time()
 	_end()
 
 
@@ -585,7 +572,7 @@ func stampede() -> void:
 	var shoved := {}
 	var gone := 0.0
 	var dust := 0.0
-	while gone < stampede_distance:
+	while gone < stampede_distance and float(player.get("grounded")) <= 0.0:  # grounded: into the pound where it is
 		await get_tree().process_frame
 		var step := minf(stampede_speed * get_process_delta_time(), stampede_distance - gone)
 		player.global_position = ArenaMotion.slide(player, player.global_position, dir * step, player.body_radius())
@@ -642,14 +629,7 @@ func _begin(anim: String) -> bool:
 func _end() -> void:
 	current = ""
 	player.busy = false
-	if braced:
-		sprite.play_action("brace")
-		sprite.hold_frame(BRACE_PLANTED_FRAME)
-		var b := _body()
-		if b != null and player.alive and b.action != "brace_hold" and b.action != "brace_walk":
-			b.play_hold("brace_hold")  # a pound used while braced hands back to the planted hold
-	else:
-		sprite.stop_action()
+	sprite.stop_action()
 
 
 func _wait_frame(anim: String, f: int) -> void:
@@ -662,24 +642,9 @@ func _wait_end(anim: String) -> void:
 		await get_tree().process_frame
 
 
-## The 3D body when it carries the rhino's kit clips, else null (the sprite path runs).
-## Braced and moving, the planted hold walks (brace_walk, authored at BRACE_WALK_SPEED m/s and played at the machine's
-## speed); standing, it holds. Only between the brace clips: a pound used while braced keeps its own clip.
-const BRACE_WALK_SPEED := 1.042
-
-
 func _process(delta: float) -> void:
 	_clock += delta
 	_seismic_tick(delta)
-	if not braced or not player.alive:
-		return
-	var b := _body()
-	if b == null or not (b.action == "brace_hold" or b.action == "brace_walk") or not b.has_clip("brace_walk"):
-		return
-	var moving: bool = player.speed > 0.05 and player.stunned <= 0.0
-	var want := "brace_walk" if moving else "brace_hold"
-	if b.action != want:
-		b.play_hold(want, maxf(0.15, player.speed / BRACE_WALK_SPEED) if moving else 1.0)
 
 
 ## Seismic charge (rhino lane slice 1): one per blocked hit, at most one per attacker every seismic_gap; gate false for
@@ -715,38 +680,85 @@ func _seismic_tick(delta: float) -> void:
 		_glow_set = e
 
 
-## The release (slice 1): a ring of release_radius + release_radius_per a charge. Enemies inside take the damage once,
-## are pushed out and slowed, and at full charge stunned. The charge is spent.
-func _release() -> void:
-	if not player.alive:
-		return
+## Aftershock's wave: the stomp spends the charge, and the front runs out from origin at aftershock_speed to the reach
+## (aftershock_length + aftershock_length_per a charge). An enemy is hit when this frame's sweep of the front (last
+## frame's front to this one) overlaps its body inside the cone, once, with a clear line from the stomp (walls are
+## cover, as for Freight). One in the air while the front crosses it dodges, and the front does not come back for it;
+## a held one is still hit. Nothing is pushed. The charge is spent here, so a cast cut in its wind-up keeps it.
+func _aftershock_wave(origin: Vector3, dir: Vector3) -> void:
 	var c := seismic
-	var r := release_radius + release_radius_per * c
-	for t in targets():
-		if not is_instance_valid(t):
-			continue
-		var d := flat(t.global_position - feet())
-		if d.length() > r:
-			continue
-		var out := d.normalized() if d.length() > 0.05 else ahead()
-		var dmg := release_damage + release_damage_per * c
-		if t.has_method("hit"):
-			t.hit(player, dmg / MatchRules.kit_hit_damage)
-		else:
-			t.take_damage(dmg, player)
-		if t.get("alive") == false:
-			continue
-		if t.has_method("knock_aside") and t.get_method_argument_count("knock_aside") >= 3:
-			t.knock_aside(out * release_push, 0.3, false)  # the push only; the release's own damage landed above
-		if t.has_method("slow"):
-			t.slow(release_slow + release_slow_per * c)
-		if c >= SEISMIC_MAX and t.has_method("stun"):
-			t.stun(release_stun)
 	seismic = 0
 	_glow_flash = 0.4
-	Fx3D.spawn_flat(world(), "brace_ring", 6, feet() + Vector3.UP * 0.03, r * 2.0)
-	cue.emit("brace_release")
+	var reach := aftershock_length + aftershock_length_per * c
+	var tan_half := tan(deg_to_rad(aftershock_half_angle))
+	var hits: Array = []
+	var dodged: Array = []
+	last_aftershock = {"origin": origin, "dir": dir, "reach": reach, "charge": c, "half_angle": aftershock_half_angle,
+			"speed": aftershock_speed, "front": 0.0, "hits": hits, "dodged": dodged}
+	cue.emit("aftershock_wave")
 	impact.emit(0.4 + 0.1 * c)
+	var front := 0.0
+	var dust := 0.0
+	while front < reach:
+		await get_tree().process_frame
+		if not is_instance_valid(player):
+			return
+		var prev := front
+		front = minf(front + aftershock_speed * get_process_delta_time(), reach)
+		last_aftershock["front"] = front
+		dust -= front - prev
+		if dust <= 0.0:
+			dust = 1.0
+			Fx3D.spawn(world(), "dust_trail", origin + dir * front, 0.3)  # a stand-in until rhino effects draws the wave
+		for e in targets():
+			if not is_instance_valid(e) or hits.has(e):
+				continue
+			var d := flat(e.global_position - origin)
+			var along := d.dot(dir)
+			var r := _radius_of(e)
+			if along <= 0.0 or along + r < prev or along - r > front:
+				continue  # behind the stomp, or the front is not crossing it this frame
+			if (d - dir * along).length() > along * tan_half + r:
+				continue  # outside the cone
+			if not MatchTeams.clear_line(player, origin, e.global_position):
+				continue  # a wall or rock in between is cover (kit design, 2026-11-20); a cobra inside a wall is never reached
+			if not e.has_meta("held_by") and e.has_method("is_airborne") and e.is_airborne():
+				if not dodged.has(e):
+					dodged.append(e)
+				continue  # off the ground as the front passes: it dodges
+			hits.append(e)
+			_shock(e, c)
+	cue.emit("aftershock_end")
+
+
+## One enemy the wave reached: the damage, then (if it lives) the 30% slow and grounded on a machine, the plain slow
+## on anything else that slows, and at full charge the stun.
+func _shock(e: Node3D, c: int) -> void:
+	var dmg := aftershock_damage + aftershock_damage_per * c
+	if e.has_method("hit"):
+		e.hit(player, dmg / MatchRules.kit_hit_damage)
+	else:
+		e.take_damage(dmg, player)
+	last_aftershock_hit = e
+	Fx3D.spawn(world(), "hit_spark", e.global_position + Vector3.UP * 0.8, 0.4)
+	cue.emit("aftershock_hit")
+	if e.get("alive") == false:
+		return
+	if e.has_method("ground"):
+		e.slow(aftershock_slow_time, aftershock_slow)
+		e.ground(aftershock_grounded + aftershock_grounded_per * c)
+	elif e.has_method("slow"):
+		e.slow(aftershock_slow_time)
+	if c >= SEISMIC_MAX and e.has_method("stun"):
+		e.stun(aftershock_stun)
+
+
+static func _radius_of(e: Node3D) -> float:
+	if e.has_method("body_radius"):
+		return float(e.call("body_radius"))
+	if e.has_method("radius"):
+		return float(e.call("radius"))
+	return 0.5
 
 
 ## The Tremor charge (rhino lane slice 2): the wind-up paws twice and ramps the drum ring, then on "go" the rhino runs
@@ -782,7 +794,7 @@ func _tremor_charge(b: MechModel3D) -> void:
 	_drop_carried()
 	last_carried = 0
 	_run_shoved = []
-	while tremor_gone < tremor_distance - 0.01 and not _tremor_stop and player.alive:
+	while tremor_gone < tremor_distance - 0.01 and not _tremor_stop and player.alive and float(player.get("grounded")) <= 0.0:  # grounded: the finale where it is
 		await get_tree().process_frame
 		var dt := get_process_delta_time()
 		_tremor_t += dt

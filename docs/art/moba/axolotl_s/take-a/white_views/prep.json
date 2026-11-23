@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "f1ac9f41972e3093956805e37ccc20b8aeeabcca1a6b2cf7cf36998006c42d91",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.0133982947624847,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "axolotl_front.png",
+      "source_box": [
+        54,
+        88,
+        538,
+        455
+      ],
+      "source_dimensions": [
+        484,
+        367
+      ],
+      "output_box": [
+        267,
+        564,
+        757,
+        936
+      ]
+    },
+    "left": {
+      "file": "axolotl_left.png",
+      "source_box": [
+        589,
+        86,
+        1404,
+        455
+      ],
+      "source_dimensions": [
+        815,
+        369
+      ],
+      "output_box": [
+        99,
+        562,
+        925,
+        936
+      ]
+    },
+    "back": {
+      "file": "axolotl_back.png",
+      "source_box": [
+        54,
+        590,
+        544,
+        966
+      ],
+      "source_dimensions": [
+        490,
+        376
+      ],
+      "output_box": [
+        263,
+        555,
+        760,
+        936
+      ]
+    },
+    "right": {
+      "file": "axolotl_right.png",
+      "source_box": [
+        597,
+        590,
+        1418,
+        966
+      ],
+      "source_dimensions": [
+        821,
+        376
+      ],
+      "output_box": [
+        96,
+        555,
+        928,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.023936170212765957
+}

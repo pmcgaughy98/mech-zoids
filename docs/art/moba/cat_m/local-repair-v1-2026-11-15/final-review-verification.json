@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "date": "2026-11-15",
+  "tested_sha256": "24b79ee4f0a6dcb3cbbe5ce021699f7e80f974c51d4d641f0a4b8831ecb8d71c",
+  "triangles": 25564,
+  "joint_count": 48,
+  "native_joint_tests": 48,
+  "controls_above_1mm_motion": 48,
+  "controls_below_1mm_motion": 0,
+  "maximum_seam_gap_m": 0.0,
+  "boundary_edges": 0,
+  "over_shared_edges": 0,
+  "collapsed_triangles": 0,
+  "healthy_source_faces_retained": 25564,
+  "original_attribute_and_skin_rows_preserved": true,
+  "duplicate_uv_corner_rows": 0,
+  "original_skeleton_rest_binds_materials_textures_preserved": true,
+  "original_reference_sha256": {
+    "front": "caf743f0cb1655f19dbeb6c4da20ed5fb210f38b6a06786fbb18c70c030a3c4d",
+    "left": "0585e23ea068db7358aedc9c98a57d4abb18ce28ffaab703f445023019d03d8b",
+    "back": "05e19f74723417eb9a352739785c2795aeeaa90810d7fb87c0e970542866d0bb",
+    "right": "e652b6cbb3d3b6f13bd55f7c6ed89ac65df294314f247b11f24724c8ae06966c"
+  },
+  "downloaded_input_sha256": "38608b6f8baec60b65ffc7668e18909de5969f6736955603221c0ab027bd72ca",
+  "intact_pre_remesh_available": false,
+  "native_runtime_check": "Two native versions, original/review sheets, source skeleton and actual ChaseCamera3D",
+  "screenshots": "res://reports/model_catalog/cat-local-v1",
+  "limits": "Existing baked light/core and texture detail differs from the reference sheets; authored motion and final visual polish remain."
+}

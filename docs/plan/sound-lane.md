@@ -301,7 +301,7 @@ A short callout costs about 1 credit per character per take on v3 (about 13 to 1
 - **Rhino gore_land (2026-11-10, from game feel via the hub):** the 3D rhino is in the match, and its horn chain's gore fires `cue("gore_land")` as
   the front feet crash down (about 0.27 s after the gore hit). `tools/audio/rhino_gore_recorded.py` gives A "Feet crash" (0.70 s, -16 LUFS, very
   low: 75% under 150 Hz) and B "Steel feet" (0.65 s, more metal). A is installed with a RhinoKit cues entry. The listen page is
-  docs/listen/rhino-gore-land-2026-11-10.html, and Preston's pick is pending. Check: PASS.
+  docs/listen/rhino-gore-land-2026-11-10.html, and Preston picked A on 2026-11-16 ("Take A", relayed by the hub), so the installed file stays. Check: PASS.
 - **Kangaroo (queued 2026-11-11, from the Kangaroo 3D lane `local_e90129d2-2d3d-451f-8d70-528caf6fda29`):** event times in
   art/arena_models/kangaroo.events.json (120 fps source, damage flags). Its kit isn't ported yet, so nothing fires in a match; game feel
   will wire it. Moments that want sound: jab hits (Jab_Left 0.20, Jab_Right_Quick 0.11, Hook_Right 0.24), HopJab (hop 0.12, land 0.40,
@@ -325,3 +325,15 @@ A short callout costs about 1 credit per character per take on v3 (about 13 to 1
   (credits in its CREDITS.md): Industrial Cinematic, Industrial Revolution and Crusade - Heavy Industry (Kevin MacLeod, CC BY 4.0,
   credit needed), and Epic boss battle (Juhani Junkala, CC0, loops). The listen page is docs/listen/match-music-patch-2026-11-14.html
   (`tools/audio/match_music_preview.py`). Nothing is in the game; it waits on Preston's pick, then a match-music hook (not built yet).
+
+### 2026-11-16: match music in (Preston: "Epic boss battle")
+- `audio/music/match_theme.ogg` is "Epic boss battle" (Juhani Junkala, CC0, via Patch), copied unchanged; credit in
+  `audio/CREDITS.md`. Import has loop=true, and MapAudio sets loop on the stream too.
+- MapAudio starts it when a match_ended emitter enters the tree (MatchDirector, its 5v5 FoundationDirector, or the
+  2D scripts/moba/moba_match.gd): one loop at a time, Music bus, `MATCH_MUSIC_DB` -14 (file -6.9 LUFS, bus -8 dB, so about -29).
+  It fades out over 0.6 s on match_ended, before the win/lose stinger, or when the emitter leaves the tree. It is
+  outside the 32 one-shot voices, and stop_all() leaves it alone.
+- check_map_audio.gd: five new checks (loops on Music, no second loop, stops before the stinger, restarts next match
+  and stops when it leaves, lose.wav and a director leaving after the fade). PASS.
+- Not heard in a running match yet. If it is too loud or quiet, change the one const.
+- The other three Patch tracks (Kevin MacLeod, CC BY) stay in scratch, not in the game.

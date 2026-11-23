@@ -1,11 +1,19 @@
 {
-  "status": "Pending: Godot slot occupied by other tasks",
+  "previous_pending_state": {
+    "status": "Pending: Godot slot occupied by other tasks",
+    "tested_sha256": "483471b77e49fb6983ce026c6217014f3d3a3853c8b90949ccbe650b90a82762",
+    "native_joint_tests": 24,
+    "max_seam_gap_m": 0.0,
+    "remaining": "Run and inspect Hornet four-version/original-review-sheet/51-joint/chase-camera Godot check, then finalize_review.py.",
+    "catalog_candidate_published": true,
+    "last_user_direction": "Use Summer Engine for an isolated review while other Godot runs continue undisturbed.",
+    "summer_review": "passed; see summer-review-verification.json",
+    "native_godot_status": "pending; no native Workshop or ChaseCamera3D pass claimed"
+  },
+  "status": "Resolved: native Godot Workshop check passed and screenshots inspected",
   "tested_sha256": "483471b77e49fb6983ce026c6217014f3d3a3853c8b90949ccbe650b90a82762",
-  "native_joint_tests": 24,
-  "max_seam_gap_m": 0.0,
-  "remaining": "Run and inspect Hornet four-version/original-review-sheet/51-joint/chase-camera Godot check, then finalize_review.py.",
-  "catalog_candidate_published": true,
-  "last_user_direction": "Use Summer Engine for an isolated review while other Godot runs continue undisturbed.",
-  "summer_review": "passed; see summer-review-verification.json",
-  "native_godot_status": "pending; no native Workshop or ChaseCamera3D pass claimed"
+  "native_godot_status": "passed; four versions, original/review sheets, 51-joint rig and current ChaseCamera3D",
+  "runtime_report": "res://docs/art/moba/hornet_m/local-repair-v1-2026-11-14/final-review-verification.json",
+  "summer_review": "passed; summer-review-verification.json preserved",
+  "remaining_native_check": null
 }

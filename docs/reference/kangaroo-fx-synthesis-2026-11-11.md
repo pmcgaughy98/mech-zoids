@@ -250,3 +250,25 @@ Built as effects on the clips that already exist: `scripts/moba3d/kangaroo_kinet
   down from the feet (tilt 0.6, 0.8/1.1/1.4 m, 30 ms apart, 2.5 m/s) like thrust, with a 1.8 m ground ring and a white
   pin. The bout's opening hop gets the release without the charge (its move is "Bout"). Recorded: reads at the match
   camera; the back rings are thinner than the kick's and partly behind the afterimages.
+
+## Gemini concept sheet for the tail kick (received 2026-11-17)
+Preston approved sending a Gemini 8-frame sheet (concept and timing only, not a texture, never copied in):
+side-session-notes/local_b046f4d1-.../gemini-kangaroo-tail-kick-effect-sheet-2026-11-17.jpg.
+Compared with what is built in Godot (`kangaroo_kinetic_fx.gd`):
+- F1 compression rings round the legs: built (leg charge on tail_brace).
+- F2 sharp forward cone of force: built as three widening rings; the sheet's version is a single solid cone with a
+  hard point and dust blown back. Worth taking for the port.
+- F3 curved crescent pressure wave with volume: not built. Fits the kick's hit frame.
+- F4-F5 launch streak with spiral rings (bout_launch): not built. Skip the flat F4 line; F5's spiral rings fit.
+- F6 wall slam with cracks and a stun ring (tail_slam): not built.
+- Lightning crackle in F0, F1 and F6: leave out; kinetic must not read as electric.
+Since the 2026-11-15 move to Unreal, these go to the Unreal port rather than more Godot work, unless Preston says otherwise.
+
+## Paragon effects bar, for the next review (received 2026-11-18)
+Hub, sent at Preston's ask: `D:/dev/_scratch/hub/paragon-fx-bar-2026-11-18.md` (private reference, never copied).
+Median 5 layers per effect; a three-beat impact (flash gone by about 0.6 s, falling debris, smoke to about 1.5 s);
+only 14% additive. Against that, the kangaroo's kinetic effects are 2 to 3 layers (ring, pin, sometimes a ground
+ring), all additive, and end by 0.32 s with no debris or smoke beat. In Arena3v3, additive over the pale floor
+already films cream ([[arena-effects-wash-pale]]). Next review: add a debris beat and a short dust or smoke beat to
+the kick and wall slam, and move the rings to translucent. Not sent to the Unreal lane mid-row (hub: no plan
+changes mid-run).

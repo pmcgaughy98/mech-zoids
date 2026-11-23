@@ -13,7 +13,7 @@ const PLAN := {
 	"rhino": {
 		"1": {"call": "horn_toss", "reach": 2.8, "min": 1, "aim": true},
 		"2": {"call": "ground_pound", "reach": 2.0, "min": 1},
-		"3": {"call": "brace", "reach": 6.0, "min": 1, "machines": true, "low": 0.75},
+		"3": {"call": "aftershock", "reach": 7.0, "min": 1, "machines": true, "aim": true, "arg": "target"}, # the wave runs 8 m; aimed at the nearest machine
 		"4": {"call": "stampede", "reach": 9.0, "min": 1, "machines": true, "aim": true},
 	},
 	"gorilla": {
@@ -33,6 +33,13 @@ const PLAN := {
 		"2": {"call": "tail_kick", "reach": 2.4, "min": 1, "aim": true},
 		"3": {"call": "guard", "reach": 4.0, "min": 1, "machines": true, "low": 0.8},
 		"4": {"call": "boxing_ring", "reach": 7.0, "min": 1, "machines": true, "aim": true}, # the title bout: a dive on a machine within bout_range (8 m edge)
+	},
+	"bison": { # the Whistle Stop kit (game feel lane, 2026-11-16; Preston: "Yes, bison bots"); reaches are the kit's
+		"1": {"call": "chain", "reach": 9.0, "edge": true, "min": 1, "machines": true, "aim": true, "arg": "target"},
+		"1r": {"call": "haul", "ready": "haul_ready", "steer": "home"}, # the recast drags the coupled foe toward its own base
+		"2": {"call": "whistle", "reach": 3.0, "edge": true, "min": 1}, # the scald
+		"3": {"call": "plow", "reach": 3.0, "edge": true, "min": 1, "aim": true, "arg": "target"},
+		"4": {"call": "freight", "reach": 10.0, "min": 2, "aim": true, "arg": "target", "steer": "home"}, # hauls the train home
 	},
 }
 const SIGHT := 9.0 ## pick: how far it looks for a fight
@@ -158,6 +165,14 @@ func _use_kit() -> void:
 		return
 	var plan: Dictionary = PLAN.get(MatchTeams.machine_kind(_m), {})
 	var share: float = _m.hp / _m.max_hp
+	var home := MatchTeams.flat(_home() - _m.global_position).normalized()
+	for key in plan:  # a recast that waits on the kit, not on a cooldown (the bison's Haul)
+		var r: Dictionary = plan[key]
+		if r.has("ready") and kit.call(r["ready"]):
+			if r.get("steer", "") == "home":
+				kit.set("steer_to", home)
+			kit.call(r["call"], _m.global_position + home * 6.0)
+			return
 	for slot in ["4", "3", "2", "1"]:
 		var p: Dictionary = plan.get(slot, {})
 		if p.is_empty() or not _m.slot_ready(slot) or (p.has("low") and share > p["low"]) or (p.has("high") and share < p["high"]):
@@ -168,6 +183,8 @@ func _use_kit() -> void:
 		var aim: Node3D = near[0]
 		if p.get("aim", false):
 			_face(aim)
+		if p.get("steer", "") == "home":
+			kit.set("steer_to", home)
 		match p.get("arg", ""):
 			"target":
 				kit.call(p["call"], aim.global_position)

@@ -1,0 +1,50 @@
+{
+  "id": "honey_badger",
+  "name": "Honey Badger",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/honey_badger/front.png",
+      "source": "D:\\user\\Downloads\\honey_badger_front.png",
+      "sha256": "b1a758675d6ef5f8032092ea4c9b8079f3ffde6838fdca8f6e4ea2cd5f7e94c6",
+      "bytes": 269954,
+      "project_related": [
+        "docs/art/moba/honey_badger_s/take-a/REPORT.md"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/honey_badger/left.png",
+      "source": "D:\\user\\Downloads\\honey_badger_left.png",
+      "sha256": "2b723fe4f0313582a52e463515312b3268b0343052ed553b0c1d02c358165904",
+      "bytes": 323059,
+      "project_related": [
+        "docs/art/moba/honey_badger_s/take-a/REPORT.md"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/honey_badger/back.png",
+      "source": "D:\\user\\Downloads\\honey_badger_back.png",
+      "sha256": "8d781a4a25696f27bd7a58e474d59adae06d7e11bfa210b34c9c3f150e187958",
+      "bytes": 237983,
+      "project_related": [
+        "docs/art/moba/honey_badger_s/take-a/REPORT.md"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/honey_badger/right.png",
+      "source": "D:\\user\\Downloads\\honey_badger_right.png",
+      "sha256": "609961f486162b99cf829ad0df43757c5b2b11566a54d189dfb3c9e7a9f1048b",
+      "bytes": 329154,
+      "project_related": [
+        "docs/art/moba/honey_badger_s/take-a/REPORT.md"
+      ]
+    }
+  },
+  "source_model": {
+    "path": "res://art/model_catalog/sources/Meshy_AI_honeybadger_remeshed_25k_20261114_character.glb",
+    "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_honeybadger_remeshed_25k_20261114_character.glb",
+    "sha256": "f3273da9b09c2174e78ee9796494998414c19bc03e5161d37e4535726a5a4a17",
+    "bytes": 45819812,
+    "kind": "Exact downloaded remeshed rig; intact pre-remesh GLB not located"
+  }
+}

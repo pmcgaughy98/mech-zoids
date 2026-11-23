@@ -36,7 +36,7 @@ var _aim_ring: MeshInstance3D
 var _aim_line: MeshInstance3D
 var move_override: Variant = null ## a world-space Vector3 for scripted moves (the reveal); wins over input
 var busy := false ## an ability owns the machine: no walking, the kit drives the sprite
-var speed_mult := 1.0 ## brace slows the machine
+var speed_mult := 1.0 ## a kit's own pace change (the rhino's brace used it until Aftershock replaced it, 2026-11-20)
 var boosts := {} ## key -> [mult, seconds left]: timed speed changes (boost()); the same key refreshes, different keys multiply
 var speed := 0.0
 var death_hold := 0.0 ## how long the wreck stays in view after dying: its Death clip plus death_linger, 0 without one (the director hides it then)
@@ -189,15 +189,15 @@ func move_dir() -> Vector3:
 
 
 ## A timed speed change, e.g. boost(1.3, 2.0, &"tail_ping"). The same key again refreshes it (it never stacks with
-## itself); different keys multiply with each other, with speed_mult (brace) and with a slow.
+## itself); different keys multiply with each other, with speed_mult and with a slow.
 func boost(mult: float, t: float, key: StringName = &"boost") -> void:
 	boosts[key] = [mult, t]
 
 
-## Every speed change at once: speed_mult (brace) x the timed boosts x the slow (MatchRules.slow_mult; two slows do
-## not deepen). Tail Ping on a slowed squirrel: 1.3 x 0.6 = 0.78.
+## Every speed change at once: speed_mult x the timed boosts x the slow (slow_factor(); two slows do not deepen).
+## Tail Ping on a slowed squirrel: 1.3 x 0.6 = 0.78.
 func speed_factor() -> float:
-	var f := speed_mult * (MatchRules.slow_mult if slowed > 0.0 else 1.0)
+	var f := speed_mult * slow_factor()
 	for k in boosts:
 		f *= float(boosts[k][0])
 	return f
@@ -417,7 +417,9 @@ var seen := true ## false while the map lane's fog hides this enemy from the pla
 var cooldowns := {} ## slot "1"-"4" -> seconds left; the director fills it when the kit says used(slot)
 var attack_cd := 0.0 ## the stand-in basic attack's cooldown
 var stunned := 0.0
-var slowed := 0.0
+var slowed := 0.0 ## seconds left of any slow (0 clears them all, as the hex shield does)
+var slows := {} ## speed factor -> seconds left: each slow keeps its own strength and the strongest live one counts (slow())
+var grounded := 0.0 ## seconds left of grounded (the rhino's Aftershock, 2026-11-20): MatchRules.MOBILITY slots are not ready
 var taunted := 0.0
 var taunted_by: Node3D = null
 var cage: HexShield = null
@@ -451,9 +453,26 @@ func _untouchable() -> bool:
 	return u == true
 
 
-## Whether a key or a bot may use this slot now: alive, not stunned, off cooldown. Always true outside a match.
+## Whether a key or a bot may use this slot now: alive, not stunned, off cooldown, and not a mobility slot while
+## grounded (MatchRules.MOBILITY). Always true outside a match.
 func slot_ready(slot: String) -> bool:
-	return alive and not has_meta("held_by") and stunned <= 0.0 and float(cooldowns.get(slot, 0.0)) <= 0.0
+	return alive and not has_meta("held_by") and stunned <= 0.0 and float(cooldowns.get(slot, 0.0)) <= 0.0 \
+			and not (grounded > 0.0 and MatchRules.is_mobility(MatchTeams.machine_kind(self), slot))
+
+
+## Grounded (the rhino's Aftershock): no dashes, leaps, rolls or blinks for t seconds; walking and basic attacks still
+## work, and others can still move it. A second one refreshes to the longer time left; it does not stack.
+func ground(t: float) -> void:
+	grounded = maxf(grounded, t)
+
+
+## Off the ground: thrown (air), or mid-leap by its own kit (a kit's `airborne`, the hippo's Piston Drop and the
+## kangaroo's hops). Aftershock's wave passes under it.
+func is_airborne() -> bool:
+	if air > 0.05:
+		return true
+	var kit := get_node_or_null("Kit")
+	return kit != null and kit.get("airborne") == true
 
 
 func set_seen(v: bool) -> void:
@@ -466,6 +485,13 @@ func _tick_match(delta: float) -> void:
 		cooldowns[s] = maxf(cooldowns[s] - delta, 0.0)
 	attack_cd = maxf(attack_cd - delta, 0.0)
 	slowed = maxf(slowed - delta, 0.0)
+	if slowed <= 0.0:
+		slows.clear()
+	for m in slows.keys():
+		slows[m] -= delta
+		if slows[m] <= 0.0:
+			slows.erase(m)
+	grounded = maxf(grounded - delta, 0.0)
 	for k in boosts.keys():
 		boosts[k][1] -= delta
 		if boosts[k][1] <= 0.0:
@@ -578,7 +604,7 @@ func hit(by: Node3D = null, scale := 1.0) -> void:
 
 func stun(t: float) -> void:
 	if _braced():
-		return  # a braced rhino takes no stun (rhino slice 1)
+		return  # a braced kit takes no stun (the rhino's brace, gone since 2026-11-20; no kit sets braced now)
 	stunned = maxf(stunned, t)
 	if body != null and body.has_clip("Stun"):
 		_stun_pose()
@@ -588,8 +614,25 @@ func stun(t: float) -> void:
 		_stars = Fx3D.spawn(self, "stun_loop", global_position + Vector3.UP * (2.4 * sprite.size_scale()), 0.0, true)
 
 
-func slow(t: float) -> void:
+## Slowed for t seconds at speed factor mult (MatchRules.slow_mult, 0.6, unless given; Aftershock's is 0.7). Each
+## strength keeps its own time; while slowed the strongest live one counts, so two slows never deepen.
+func slow(t: float, mult := -1.0) -> void:
+	var m := MatchRules.slow_mult if mult < 0.0 else mult
+	slows[m] = maxf(float(slows.get(m, 0.0)), t)
 	slowed = maxf(slowed, t)
+
+
+## The slow's speed factor now: 1.0 when not slowed; MatchRules.slow_mult when slowed was set directly with no
+## strength (ape_reveal does that).
+func slow_factor() -> float:
+	if slowed <= 0.0:
+		return 1.0
+	if slows.is_empty():
+		return MatchRules.slow_mult
+	var f := 1.0
+	for m in slows:
+		f = minf(f, float(m))
+	return f
 
 
 ## Forced to attack `by` (gorilla chest beat): a bot obeys; the player sees the mark.
@@ -652,7 +695,7 @@ func trap(dome: HexShield) -> void:
 
 func _braced() -> bool:
 	var kit := get_node_or_null("Kit")
-	return kit != null and kit.get("braced") == true  # the rhino's brace, the bison's Freight brace (2026-11-14)
+	return kit != null and kit.get("braced") == true  # was the rhino's brace and the bison's Freight brace; both kits keep it false now (2026-11-20)
 
 
 func _move_tween() -> Tween:

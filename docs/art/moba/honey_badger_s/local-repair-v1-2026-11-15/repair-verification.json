@@ -1,0 +1,44 @@
+{
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_honeybadger_remeshed_25k_20261114_character.glb",
+  "source_sha256": "f3273da9b09c2174e78ee9796494998414c19bc03e5161d37e4535726a5a4a17",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\honey_badger_s\\local-repair-v1-2026-11-15\\honey-badger-rigged-local-repair-v1.glb",
+  "output_sha256": "3d5d7dc32bc212a82eeb06ccd77b5d8bcea41d5f63df581bcb77e1d0e80b6e24",
+  "before_triangles": 25549,
+  "final_triangles": 25532,
+  "joint_count": 37,
+  "removed_malformed_triangles": 17,
+  "removed_face_ids": [
+    5978,
+    7896,
+    9068,
+    9636,
+    11495,
+    12113,
+    13248,
+    14405,
+    14869,
+    15577,
+    16051,
+    17317,
+    18162,
+    19374,
+    24090,
+    25384,
+    25386
+  ],
+  "holes_closed": [],
+  "boundary_edges": 0,
+  "over_shared_edges": 1,
+  "protected_closed_contact_edges": [
+    [
+      15219,
+      15238
+    ]
+  ],
+  "contact_note": "0 small gaps closed; 1 balanced original assembly contacts retained.",
+  "collapsed_triangles": 0,
+  "healthy_main_body_source_faces_retained": 25532,
+  "all_original_vertex_attribute_rows_weights_materials_skeleton_rest_binds_preserved": true,
+  "new_geometric_vertices": 0,
+  "scope": "Local topology repair. Four legs, long front claws, hind paws, head/eyes, dorsal armor, shoulder mechanisms and short tail retained. Original vertex attributes, skin, 37-joint skeleton/rest/binds and textures preserved; no remesh or rerig."
+}

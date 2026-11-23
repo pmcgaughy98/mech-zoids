@@ -63,12 +63,7 @@ func run() -> void:
  kit.ground_pound();await wait(.53);await capture("painted-pound");await idle();await wait(.8)
  check("one initial slam",count("pound_slam")==1)
  check("four actual stomp cues",count("tremor_stomp")==4)
- reset();shot("BRACE / ARMOR CREST / POUND WHILE PLANTED")
- kit.brace();await wait(.9)
- check("brace visual starts on planted state",kit.braced and fx.brace_mark.visible)
- check("brace crest shows",fx.brace_face.visible);await capture("painted-brace")
- kit.ground_pound();await idle();await wait(1.2)
- check("brace art clears after duration",not kit.braced and not fx.brace_face.visible)
+ # Brace case retired 2026-11-20: Aftershock replaced it.
  reset();enemy.position=Vector3(.4,0,-4);shot("STAMPEDE / TRAVEL WAKE / FINALE GROUND RUPTURE")
  kit.stampede();await wait(.3);check("stampede has travel art",fx.wake.visible)
  await idle(6);await wait(2.7)
@@ -78,7 +73,7 @@ func run() -> void:
  var slams:=count("pound_slam");kit.ground_pound();await wait(.1);actor.body.stop_action();await idle();await wait(.7)
  check("stopped windup produces no slam art",count("pound_slam")==slams)
  fx.burst(1,actor.global_position,Vector2.ONE,1,.5);actor.alive=false;await get_tree().process_frame;await get_tree().process_frame
- check("death clears all transient effects",fx.live.is_empty() and not fx.brace_face.visible)
+ check("death clears all transient effects",fx.live.is_empty())
  var file:=FileAccess.open(OUT+"checks.json",FileAccess.WRITE);file.store_string(JSON.stringify({"checks":tests,"events":fx.event_log},"  "))
  print("RHINO_PAINTED_REVIEW_COMPLETE ",tests.size())
  field.queue_free();await get_tree().process_frame;await get_tree().process_frame;MechModel3D.clear_templates()

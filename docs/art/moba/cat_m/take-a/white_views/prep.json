@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "9a670e382782caa5136b57c6f823e50568fa7c9dee9000fe60c5dc412aa12260",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 0.9411764705882353,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "cat_front.png",
+      "source_box": [
+        105,
+        44,
+        435,
+        470
+      ],
+      "source_dimensions": [
+        330,
+        426
+      ],
+      "output_box": [
+        356,
+        535,
+        667,
+        936
+      ]
+    },
+    "left": {
+      "file": "cat_left.png",
+      "source_box": [
+        504,
+        40,
+        1388,
+        470
+      ],
+      "source_dimensions": [
+        884,
+        430
+      ],
+      "output_box": [
+        96,
+        531,
+        928,
+        936
+      ]
+    },
+    "back": {
+      "file": "cat_back.png",
+      "source_box": [
+        105,
+        576,
+        434,
+        1022
+      ],
+      "source_dimensions": [
+        329,
+        446
+      ],
+      "output_box": [
+        357,
+        516,
+        667,
+        936
+      ]
+    },
+    "right": {
+      "file": "cat_right.png",
+      "source_box": [
+        499,
+        571,
+        1378,
+        1014
+      ],
+      "source_dimensions": [
+        879,
+        443
+      ],
+      "output_box": [
+        98,
+        519,
+        925,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.04484304932735426
+}

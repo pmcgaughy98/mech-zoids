@@ -343,8 +343,8 @@ func blink_gate(at: Variant = null) -> bool:
 ## The recast: inside the window, back through the gate to where the blink started. Once the window is over (or
 ## during another ability) it does nothing and returns false.
 func gate_back() -> bool:
-	if not gate_open or current != "":
-		return false
+	if not gate_open or current != "" or float(player.get("grounded")) > 0.0:
+		return false  # grounded (the rhino's Aftershock, 2026-11-20): Gate Back is a blink; a gate that runs out meanwhile is lost
 	var from := feet()
 	var away: Node3D = Flash.play(world(), from, Flash.OUT, sprite)
 	player.global_position = Vector3(gate_pos.x, player.global_position.y, gate_pos.z)
@@ -359,10 +359,10 @@ func _gate_step(delta: float) -> void:
 	if not gate_open:
 		return
 	gate_left -= delta
-	if player.get("bot") and gate_window - gate_left >= bot_return_after:
-		gate_back()
-	elif gate_left <= 0.0:
-		_close_gate()
+	if player.get("bot") and gate_window - gate_left >= bot_return_after and gate_back():
+		return
+	if gate_left <= 0.0:
+		_close_gate()  # also when the bot's snap back keeps being refused (grounded): the gate still runs out
 
 
 func _close_gate() -> void:
@@ -520,7 +520,7 @@ func tunnel(to: Variant = null) -> void:
 	Fx3D.spawn(world(), "impact_puff", start, 0.3)
 	var t := 0.0
 	var puff := 0.0
-	while t < tunnel_travel:  # underground: a line of dust where it runs
+	while t < tunnel_travel and float(player.get("grounded")) <= 0.0:  # underground: a line of dust where it runs; grounded (Aftershock) comes up here
 		await get_tree().process_frame
 		var dt := get_process_delta_time()
 		t += dt
@@ -700,7 +700,20 @@ func _begin(anim: String) -> bool:
 	player.busy = true
 	if _framed(anim):
 		sprite.play_action(anim)
+	if anim == "cast":
+		_body_cast()
 	return true
+
+
+## The 3D body's portal cast for the gate moves (fennec 3D lane, 2026-11-14; Preston: "Keep, wire to kit"): the body's
+## Cast clip (r3: rears up, drives down with the ears flared) is sped up so its release lands on the drawn cast f3,
+## where the gates and bolts already spawn, so the kit's timing is unchanged. No body (sprite only): nothing to do.
+const BODY_CAST_RELEASE := 0.30 ## the Cast clip's release event, s
+const SPRITE_CAST_RELEASE := 0.26 ## the drawn cast f3 (CAST_FRAME), s
+func _body_cast() -> void:
+	var body: Node = player.get_node_or_null("Body")
+	if body != null and body.has_method("play_action"):
+		body.play_action("Cast", BODY_CAST_RELEASE / SPRITE_CAST_RELEASE)
 
 
 func _end() -> void:

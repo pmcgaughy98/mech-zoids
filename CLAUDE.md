@@ -1,5 +1,15 @@
 # How to work on this project
 
+## Engine migration approved, Preston, 2026-11-15
+
+Preston decided to move the MOBA to Unreal: "Yep were doing it."
+The destination is `D:/dev/mech-moba-unreal/MechMoba.uproject`; read that project's
+`AGENTS.md` and `Migration/DECISION.md`. This Godot project is retained as the
+playable behavior reference. Continue portable Blender/art work in preserved
+workbenches; new engine gameplay, map and HUD work targets Unreal. Do not delete
+or mass-rewrite this reference. Hollowtide remains separate and unchanged.
+Older instructions describing Godot as the destination are historical.
+
 ## Current shared model workspace (Preston, 2026-11-07)
 
 For downloaded MeshForge models, read `docs/art/moba/MODEL_WORKBENCH.md`.

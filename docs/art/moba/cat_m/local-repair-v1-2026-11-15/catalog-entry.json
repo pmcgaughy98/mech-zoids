@@ -1,0 +1,95 @@
+{
+  "id": "cat",
+  "name": "Cat",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/cat/front.png",
+      "source": "D:\\user\\Downloads\\cat_front.png",
+      "sha256": "caf743f0cb1655f19dbeb6c4da20ed5fb210f38b6a06786fbb18c70c030a3c4d",
+      "bytes": 163641,
+      "project_related": [
+        "docs/art/moba/cat_m/take-a/REPORT.md"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/cat/left.png",
+      "source": "D:\\user\\Downloads\\cat_left.png",
+      "sha256": "0585e23ea068db7358aedc9c98a57d4abb18ce28ffaab703f445023019d03d8b",
+      "bytes": 287599,
+      "project_related": [
+        "docs/art/moba/cat_m/take-a/REPORT.md"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/cat/back.png",
+      "source": "D:\\user\\Downloads\\cat_back.png",
+      "sha256": "05e19f74723417eb9a352739785c2795aeeaa90810d7fb87c0e970542866d0bb",
+      "bytes": 147092,
+      "project_related": [
+        "docs/art/moba/cat_m/take-a/REPORT.md"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/cat/right.png",
+      "source": "D:\\user\\Downloads\\cat_right.png",
+      "sha256": "e652b6cbb3d3b6f13bd55f7c6ed89ac65df294314f247b11f24724c8ae06966c",
+      "bytes": 292855,
+      "project_related": [
+        "docs/art/moba/cat_m/take-a/REPORT.md"
+      ]
+    }
+  },
+  "source_model": {
+    "path": "res://art/model_catalog/sources/Meshy_AI_cat_mech_remeshed_25k_20261115_character.glb",
+    "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_cat_mech_remeshed_25k_20261115_character.glb",
+    "sha256": "38608b6f8baec60b65ffc7668e18909de5969f6736955603221c0ab027bd72ca",
+    "bytes": 48409304,
+    "kind": "Exact downloaded remeshed rig; intact pre-remesh GLB not located"
+  },
+  "display_model": "res://docs/art/moba/cat_m/local-repair-v1-2026-11-15/cat-rigged-local-repair-v1.glb",
+  "artist_workspace": "res://docs/art/moba/cat_m/local-repair-v1-2026-11-15/cat-rigged-local-repair-v1.blend",
+  "status": "Local mesh cleanup complete. Four paws, ears, face, burner ports and tail retained. Original rig and textures preserved.",
+  "review_models": [
+    {
+      "label": "DOWNLOADED RIG\nBefore local repair",
+      "path": "res://art/model_catalog/sources/Meshy_AI_cat_mech_remeshed_25k_20261115_character.glb",
+      "display_scale": 0.7718212082841697
+    },
+    {
+      "label": "LOCAL REPAIR\nSame 48-joint rig and skin",
+      "path": "res://docs/art/moba/cat_m/local-repair-v1-2026-11-15/cat-rigged-local-repair-v1.glb",
+      "display_scale": 0.7718212082841697
+    }
+  ],
+  "review_views": {
+    "front": {
+      "path": "res://docs/art/moba/cat_m/local-repair-v1-2026-11-15/review-front.png",
+      "kind": "Exact downloaded remeshed rig / local repair; matched view and scale; intact pre-remesh GLB not located"
+    },
+    "left": {
+      "path": "res://docs/art/moba/cat_m/local-repair-v1-2026-11-15/review-left.png",
+      "kind": "Exact downloaded remeshed rig / local repair; matched view and scale; intact pre-remesh GLB not located"
+    },
+    "back": {
+      "path": "res://docs/art/moba/cat_m/local-repair-v1-2026-11-15/review-back.png",
+      "kind": "Exact downloaded remeshed rig / local repair; matched view and scale; intact pre-remesh GLB not located"
+    },
+    "right": {
+      "path": "res://docs/art/moba/cat_m/local-repair-v1-2026-11-15/review-right.png",
+      "kind": "Exact downloaded remeshed rig / local repair; matched view and scale; intact pre-remesh GLB not located"
+    }
+  },
+  "review_provenance": {
+    "date": "2026-11-15",
+    "report": "res://docs/art/moba/cat_m/local-repair-v1-2026-11-15/repair-verification.json",
+    "independent_audit": "res://docs/art/moba/cat_m/local-repair-v1-2026-11-15/independent-export-audit.json",
+    "joint_count": 48,
+    "rigged_input_sha256": "38608b6f8baec60b65ffc7668e18909de5969f6736955603221c0ab027bd72ca",
+    "repaired_sha256": "24b79ee4f0a6dcb3cbbe5ce021699f7e80f974c51d4d641f0a4b8831ecb8d71c",
+    "intact_pre_remesh_available": false,
+    "source_archive_scope": "Exact downloaded rig archived; intact pre-remesh GLB not located. Original generation PNGs are separate.",
+    "scope": "Local topology repair. Four feline legs/paws, two ears, eye lenses, muzzle, shoulder burner ports, chest core and complete segmented tail retained. Original vertex attributes, skin, 48-joint skeleton/rest/binds and textures preserved; no remesh or rerig.",
+    "runtime_report": "res://docs/art/moba/cat_m/local-repair-v1-2026-11-15/final-review-verification.json"
+  }
+}

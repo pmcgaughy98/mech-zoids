@@ -1,0 +1,104 @@
+{
+  "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_mecha_sloth_guardian_remeshed_25k_20261114_character.glb",
+  "source_sha256": "f01c3719f38134ffcbae9fcf029b49ee9590d24552aa173bf1227ac1b7604030",
+  "output": "D:\\dev\\new-mech-rpg\\docs\\art\\moba\\sloth_m\\local-repair-v1-2026-11-15\\sloth-rigged-local-repair-v1.glb",
+  "output_sha256": "a2f838dbfe557bff2f8671fcd050af1813d1f64f04950be4740e0b53062725ad",
+  "before_triangles": 25566,
+  "final_triangles": 25556,
+  "joint_count": 52,
+  "removed_malformed_triangles": 11,
+  "removed_face_ids": [
+    1021,
+    1269,
+    5324,
+    5417,
+    7048,
+    7051,
+    11261,
+    12355,
+    16842,
+    17100,
+    19348
+  ],
+  "holes_closed": [
+    {
+      "triangle": [
+        495,
+        484,
+        496
+      ],
+      "bounds": [
+        [
+          0.18210138380527496,
+          1.3036777973175049,
+          0.8628321290016174
+        ],
+        [
+          0.20325890183448792,
+          1.3124332427978516,
+          0.8745638728141785
+        ]
+      ],
+      "normal": [
+        0.5584085583686829,
+        0.6364718675613403,
+        0.5320558547973633
+      ],
+      "normal_alignment": 0.946794867515564,
+      "uv_perimeter": 1.1542717218399048
+    }
+  ],
+  "boundary_edges": 0,
+  "over_shared_edges": 3,
+  "protected_closed_contact_edges": [
+    [
+      25352,
+      25366
+    ],
+    [
+      405,
+      423
+    ],
+    [
+      24405,
+      24426
+    ]
+  ],
+  "contact_note": "One small chest gap closed; three balanced original assembly contacts retained.",
+  "collapsed_triangles": 0,
+  "healthy_main_body_source_faces_retained": 25513,
+  "all_original_vertex_attribute_rows_weights_materials_skeleton_rest_binds_preserved": true,
+  "new_geometric_vertices": 0,
+  "scope": "Local topology repair. Two long forearms with three hooked digits each, two hind legs/feet, face and eyes, paired forearm reels, chest core, three dorsal growth recesses and short tail retained. Original vertex attributes, skin, 52-joint skeleton/rest/binds and textures preserved; no remesh or rerig. Three duplicate corner rows on closure 1 use one healthy neighboring UV island. All original attribute/skin rows remain exact; duplicate skin rows copy the same corners.",
+  "new_attribute_rows": 3,
+  "uv_repair": {
+    "patch": 1,
+    "source_neighbor_face": 14936,
+    "method": "Three duplicate corner rows, original positions/normals/joints/weights copied exactly; UVs sampled inside one adjacent healthy texture island to avoid atlas stripe.",
+    "old_corner_rows": [
+      495,
+      484,
+      496
+    ],
+    "new_corner_rows": [
+      37312,
+      37313,
+      37314
+    ],
+    "uv": [
+      [
+        0.997859001159668,
+        0.3404170274734497
+      ],
+      [
+        0.997859001159668,
+        0.3404170274734497
+      ],
+      [
+        0.997859001159668,
+        0.3404170274734497
+      ]
+    ],
+    "uv_perimeter": 0.0
+  }
+}

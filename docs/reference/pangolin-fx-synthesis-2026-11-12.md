@@ -284,3 +284,32 @@ Preston: the scrap ball is the big part, the pangolin stays normal size inside, 
 - `charged_crash`: ball_hit with charges adds the copper flare ring, sized by charge count. At 3 charges it adds a white-amber flash and a 0.14 s light.
 - `pop`: ball_pop draws a ring out to pop_radius, a puff ring and a spark, and the hoops flash once.
 - Recorded: `pangolin-bank-charge.mp4`. The second and third charges in the recording are added by the recorder on an open lane; the real bounce charge is shown on the wall bank.
+
+## Reference: Gemini scrap comet concept sheet (2026-11-17, sent by the Gemini test session, approved by Preston)
+File: side-session-notes/local_b046f4d1.../gemini-pangolin-scrap-comet-effect-sheet-2026-11-17.jpg. AI-made concept, so it is a timing and idea reference only, never the reference for the look.
+- **Worth taking:** clear dipole field loops (two lobes) before the plates arrive. Ours is a rim glow with latitude bands, and the loops read better as magnetism. Glow in the plate seams on the finished ball. A ground ring on the burst. Plates left smoking on the floor for a moment after it.
+- **Not taken as is:** the field and trail are electric blue. Our rule is copper with amber. Blue would be a palette change, and that is Preston's call. The comet trail is a flat ribbon, and flat travelling effects were rejected on 2026-11-12. The sheet does not show the 2x size.
+- **When:** the engine move to Unreal (2026-11-15) means a comet rework belongs in the Unreal port, not in the Godot reference.
+- 2026-11-18: Preston picked "Copper, like the rest" for the comet field. The Unreal port (PangolinFx.cpp, row 44) films copper only.
+
+## Slice 12: comet field in Unreal (2026-11-18, row 44)
+- `D:/dev/mech-moba-unreal/Source/MechMoba/PangolinFx.h/.cpp`: a client-side subsystem with eight dipole field loops (the Gemini sheet's structure). Each loop is a camera-facing ribbon, sized from the drawn PangolinShell (ShellCentre bone, 118.861 x shell world scale). The loops grow over the gather, flash at the slam (0.32 s), hold and turn while it rolls, and fly out and fade on the burst.
+- `Tools/make_pangolin_fx.py`: the additive material M_PangolinField. Copper per Preston. The Blue parameter stays off.
+- The first take read cream-white, so the copper was deepened (base 0.42, pulses 0.8). Film: `D:/dev/_scratch/pangolin-fx/ue/pangolin-comet-field-unreal.mp4`. Full Check Migration passed on the second run; the first failed only on a grab network flake.
+- Still to port from the sheet: seam glow, burst ground ring, plates smoking on the floor.
+
+## Slice 13, Unreal burst ground ring (2026-11-18, hub row 50)
+The concept sheet's burst frame, structure only: a low copper shock wall (55 cm) runs from the ball's edge to the kit's
+400 cm reach in 0.3 s and fades by 0.75 s, with an amber leading edge, a floor glow behind it and a broken, uneven
+crest. It replaces the kit's generic Impact ring for this burst (hidden from PangolinFx, no kit edit).
+Filmed in Arena3v3 (Preston's pick). Additive read cream over the pale floor, so the ring is a translucent blend at
+0.55 emissive; crest measured (218,181,99) on film. Video: D:/dev/_scratch/pangolin-fx/ue/pangolin-comet-burst-ring-unreal.mp4.
+
+## Slice 14: comet field re-tuned for the arena (row 60, 2026-11-19)
+- Preston: "Yes, re-tune field". M_PangolinField moved from additive to translucent, like the burst ring (row 50):
+  opacity from strength, emissive = the colour's own hue times Level (0.55), pulses and slam flash to a peak of 1.045.
+  Copper kept (Preston's pick); strength only. Every material connection is now checked in Tools/make_pangolin_fx.py.
+- Filmed in Arena3v3 at the new default (ARENA_LOOK ev=0.00 tone=0.00) after a warm-up take. Warm pixels around the
+  ball: median about (170 to 229, 117 to 162, 70 to 103), hue 20 to 31, zero near-white. The box also catches the
+  ball's own orange plates, so these numbers are approximate.
+- Against the Paragon bar (hub, private reference): the field is one looping layer, below the median 5.

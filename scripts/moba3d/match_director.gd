@@ -22,7 +22,7 @@ class Gate extends Node3D:
 	signal wave_spawned ## the sound lane's name: once per wave per team, where the minions leave the base
 
 ## Who plays besides the player: the three machines that exist. A pick until Preston sets the teams.
-const BOT_ROSTER := {"blue": ["gorilla", "fennec"], "red": ["rhino", "gorilla", "kangaroo", "cobra"]} ## red: the kangaroo in place of the fennec (Preston, 2026-11-11: "Red, replace fennec"); the cobra added (Preston, 2026-11-13: "The cobra isn't on BOT_ROSTER yet, so add it"; red was the cobra 3D lane's pick). No cobra kit in code yet: it plays as a plain machine in the cobra's body.
+const BOT_ROSTER := {"blue": ["gorilla", "fennec", "bison"], "red": ["rhino", "gorilla", "kangaroo", "cobra"]} ## blue: the bison added (Preston, 2026-11-16: "Yes, bison bots"; blue so the match is 4 v 4). red: the kangaroo in place of the fennec (Preston, 2026-11-11: "Red, replace fennec"); the cobra added (Preston, 2026-11-13: "The cobra isn't on BOT_ROSTER yet, so add it"; red was the cobra 3D lane's pick). No cobra kit in code yet: it plays as a plain machine in the cobra's body.
 const SLOTS := [Vector3(0, 0, 0), Vector3(-2.6, 0, 0), Vector3(2.6, 0, 0), Vector3(-5.2, 0, 0)] ## where a team's machines stand at spawn (the 4th for red's cobra, 2026-11-13)
 
 var arena: Node3D
@@ -259,6 +259,9 @@ func _make_bot(team: String, kind: String, i: int) -> void:
 			load("res://scripts/moba3d/hummingbird_kit.gd").install(m)  # no class_name on that kit (2026-11-06)
 		"lobster":
 			load("res://scripts/moba3d/lobster_kit.gd").install(m)  # by path, as in arena_play (2026-11-06)
+		"bison":
+			load("res://scripts/moba3d/bison_kit.gd").install(m)  # the Whistle Stop kit, by path as in arena_play
+			m.sprite.size_class = "L"
 	m.apply_size_class()
 	var mine := MatchTeams.team_of(player)  # the player is enlisted after the bots, so "" means blue
 	m.use_model(kind, team != (mine if mine != "" else "blue"))  # the kind's rigged 3D body, else its sprite (game feel lane, 2026-11-09)
@@ -501,6 +504,8 @@ func _respawn(m: Node3D) -> void:
 	m.alive = true
 	m.stunned = 0.0
 	m.slowed = 0.0
+	m.slows.clear()
+	m.grounded = 0.0
 	m.boosts.clear()
 	m.taunted = 0.0
 	m.visible = m.seen

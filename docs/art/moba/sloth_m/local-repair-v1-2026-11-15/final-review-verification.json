@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "date": "2026-11-15",
+  "tested_sha256": "a2f838dbfe557bff2f8671fcd050af1813d1f64f04950be4740e0b53062725ad",
+  "triangles": 25556,
+  "joint_count": 52,
+  "native_joint_tests_with_surface_motion": 52,
+  "maximum_seam_gap_m": 0.0,
+  "boundary_edges": 0,
+  "over_shared_edges": 3,
+  "collapsed_triangles": 0,
+  "healthy_source_faces_retained": 25555,
+  "original_vertex_attribute_and_skin_rows_preserved": true,
+  "duplicate_uv_corner_rows": 3,
+  "original_skeleton_rest_binds_materials_textures_preserved": true,
+  "original_reference_sha256": {
+    "front": "83303a1f518c549c22b8d401b2ca31a0fcab1c89268a796dc2ff25a8a1f18c61",
+    "left": "a4b1d92e600c1564252d9480115006c773b34ceb3575b307943ce16d6cd6e128",
+    "back": "ad18c2232b858264447531bca8bee0cd898ac2f132dc1596786dc3b7a3f1ca6f",
+    "right": "66cee548baa2e9c646dac707657863cba921abbaca5f68f93f9c48afb071ee87"
+  },
+  "downloaded_input_sha256": "f01c3719f38134ffcbae9fcf029b49ee9590d24552aa173bf1227ac1b7604030",
+  "intact_pre_remesh_available": false,
+  "native_runtime_check": "Two native versions, original/review sheets, 52-joint rig and actual ChaseCamera3D",
+  "screenshots": "res://reports/model_catalog/sloth-local-v1",
+  "selector_layout": "Five compact rows fit above the objective buttons. Overview camera fits actual model bounds with padding.",
+  "limits": "Local geometry repair. Baked moss detail in dorsal recesses remains faint; authored motion and final visual polish remain."
+}

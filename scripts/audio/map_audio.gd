@@ -28,6 +28,8 @@ const EVENTS := {  # signal -> [file, heard at the emitter's position]
 	"pit_taken": ["pit_taken", true],  # map lane: ArenaPit.pit_taken(team), heard at the pit
 }
 ## match_ended(won: bool) plays win.wav or lose.wav on the Music bus.
+## Match music: the node that has match_ended (the MatchDirector, made when a match starts) also starts one looping
+## track on the Music bus; it fades out when that match ends, before the stinger, or when the node leaves the tree.
 
 ## Hums: the map lane's turning heads (arena_blockout.gd names them <structure>Gem: BlueTowerGem, RedCoreGem...)
 ## each get a looping hum, silent while the head is hidden (set_structure_down hides it when the structure falls).
@@ -49,6 +51,9 @@ const PRIORITY := {
 	"camp_aggro": 50, "respawned": 50, "recall_started": 40, "recall_finished": 40, "minion_hit": 10,
 }
 const MATCH_END_RANK := 100
+const MATCH_MUSIC := "res://audio/music/match_theme.ogg"  ## "Epic boss battle", Juhani Junkala, CC0 (audio/CREDITS.md); Preston's pick 2026-11-16
+const MATCH_MUSIC_DB := -14.0  ## the file is -6.9 LUFS and dense; with the Music bus's -8 dB it sits near -29, under the kit sounds
+const MUSIC_FADE := 0.6
 const SINGLE := ["minion_hit"]  ## one at a time per emitter: a minion's new hit replaces its last one
 const PITCH_NUDGE := {"minion_hit": 0.12, "tower_shot": 0.03, "tower_shot_hit": 0.04}  ## repeats never sound identical
 
@@ -57,6 +62,7 @@ var _wired := {}    # instance ids already handled
 var _active: Array[Node] = []  # one-shots playing now, oldest first
 var _singles := {}  # "emitter id:signal" -> its playing one-shot, for SINGLE signals
 var _last_global := {}  # signal -> msec it last played, for events heard everywhere
+var _music: AudioStreamPlayer = null  # the match loop: outside _active, so it never takes a voice and stop_all() leaves it
 
 
 func _ready() -> void:
@@ -169,6 +175,7 @@ func _listen(node: Node, sig_name: String) -> void:
 		if argc >= 1:
 			var on_end := _on_match_ended
 			node.connect(sig_name, on_end.unbind(argc - 1) if argc > 1 else on_end)
+			_start_music(node)
 		else:
 			push_warning("MapAudio: match_ended needs a won argument; skipped on " + str(node.get_path()))
 		return
@@ -209,9 +216,43 @@ func _on_event(node: Node, sig_name: String) -> void:
 
 
 func _on_match_ended(won: bool) -> void:
+	_stop_music(_music)  # first, so the stinger is the last thing added
 	var stream := _stream("res://audio/sfx/map/%s.wav" % ("win" if won else "lose"))
 	if stream and _make_room(MATCH_END_RANK):
 		_play(AudioStreamPlayer.new(), stream, &"Music", MATCH_END_RANK, 1.0)
+
+
+## One loop at a time, whichever emitter came first; that emitter leaving the tree (back to the menu, a reload) stops it.
+func _start_music(emitter: Node) -> void:
+	if is_instance_valid(_music):
+		return
+	var stream := _stream(MATCH_MUSIC)
+	if stream == null:
+		return
+	if "loop" in stream:
+		stream.set("loop", true)  # the .import says so too; this keeps it looping if that is ever reset
+	_music = AudioStreamPlayer.new()
+	_music.stream = stream
+	_music.bus = &"Music"
+	_music.volume_db = MATCH_MUSIC_DB
+	add_child(_music)
+	_music.play()
+	emitter.tree_exiting.connect(_stop_music.bind(_music), CONNECT_ONE_SHOT)
+
+
+func _stop_music(p) -> void:  # untyped: the emitter can leave after the fade has already freed its player
+	if not is_instance_valid(p):
+		return
+	if _music == p:
+		_music = null
+	if p.is_queued_for_deletion():
+		return
+	if not is_inside_tree():
+		p.queue_free()
+		return
+	var fade := create_tween()
+	fade.tween_property(p, "volume_db", -60.0, MUSIC_FADE)
+	fade.tween_callback(p.queue_free)
 
 
 ## True when a sound of `rank` may play: a voice is free, or the oldest of the lowest-ranked sounds playing

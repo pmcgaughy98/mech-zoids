@@ -1,0 +1,90 @@
+{
+  "source": "sheet_raw.png",
+  "source_sha256": "7df9f1564172e0840dc8b4ccd9a5ee072dc275505dfa82c703f689b382f6a13a",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "shared_scale": 1.4494773519163764,
+  "feet_baseline_exclusive": 936,
+  "method": "Four largest alpha>=128 components; preserve interior alpha; composite on white at one nearest-neighbour scale. Low-opacity external halo excluded.",
+  "views": {
+    "front": {
+      "file": "sloth_front.png",
+      "source_box": [
+        46,
+        65,
+        578,
+        597
+      ],
+      "source_dimensions": [
+        532,
+        532
+      ],
+      "output_box": [
+        126,
+        165,
+        897,
+        936
+      ]
+    },
+    "left": {
+      "file": "sloth_left.png",
+      "source_box": [
+        635,
+        71,
+        1209,
+        599
+      ],
+      "source_dimensions": [
+        574,
+        528
+      ],
+      "output_box": [
+        96,
+        171,
+        928,
+        936
+      ]
+    },
+    "back": {
+      "file": "sloth_back.png",
+      "source_box": [
+        60,
+        673,
+        561,
+        1191
+      ],
+      "source_dimensions": [
+        501,
+        518
+      ],
+      "output_box": [
+        149,
+        185,
+        875,
+        936
+      ]
+    },
+    "right": {
+      "file": "sloth_right.png",
+      "source_box": [
+        607,
+        675,
+        1181,
+        1215
+      ],
+      "source_dimensions": [
+        574,
+        540
+      ],
+      "output_box": [
+        96,
+        153,
+        928,
+        936
+      ]
+    }
+  },
+  "source_height_spread_fraction": 0.040740740740740744
+}

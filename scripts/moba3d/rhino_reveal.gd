@@ -141,17 +141,9 @@ func _run() -> void:
 	await at(28.6)
 	stage(Vector3.ZERO, Vector3(1, 0, 0))
 	shot(Vector3(-0.8, 2.6, 6.0), Vector3(0.9, 2.8, 5.8), Vector3(0, 0.6, 0), Vector3(0.4, 0.6, 0), 6.5)
-	show_card("3", "ABILITY 3", "BRACE", "Plants all four feet: less damage, no knockbacks or pulls, and it moves slowly. Ground pound still works while braced.")
+	show_card("3", "ABILITY 3", "AFTERSHOCK", "Drives its horn into the floor, and a seismic wave rolls forward in a cone along the aim. Machines it hits are slowed and grounded: no dashes, leaps or rolls.")
 	await at(29.2)
-	kit.brace()
-	for e in [[29.9, -1.0, 0.1], [30.3, 1.0, -0.1], [30.6, -1.0, -0.2]]:
-		await at(e[0])
-		bolt(Vector3(e[1], 0.0, e[2]))
-	await at(30.8)
-	player.move_override = Vector3(1, 0, 0)
-	await at(31.5)
-	player.move_override = null
-	kit.ground_pound()
+	kit.aftershock(Vector3(6.0, 0, 0))  # Aftershock replaced Brace, 2026-11-20 (game feel lane; minimal swap, staging is open)
 	await at(34.6)
 	hide_card()
 
@@ -355,7 +347,7 @@ func _build_ui() -> void:
 	root.add_child(_outro)
 	_label(_outro, "RHINO", Vector2(14, 24), Vector2(150, 40), 34, PALE, 700, 3)
 	_label(_outro, "ENGAGE TANK", Vector2(16, 64), Vector2(150, 14), 10, GOLD, 700, 2)
-	var rows := [["P", "FRONT PLATING"], ["1", "HORN TOSS"], ["2", "GROUND POUND"], ["3", "BRACE"], ["4", "STAMPEDE"]]
+	var rows := [["P", "FRONT PLATING"], ["1", "HORN TOSS"], ["2", "GROUND POUND"], ["3", "AFTERSHOCK"], ["4", "STAMPEDE"]]
 	for i in rows.size():
 		var y := 84.0 + i * 14.0
 		var b := _box(_outro, Vector2(16, y), Vector2(12, 12), GOLD, INK, 0, 1)

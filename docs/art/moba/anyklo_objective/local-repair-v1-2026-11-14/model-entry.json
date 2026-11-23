@@ -1,0 +1,52 @@
+{
+  "id": "anyklo",
+  "name": "anyklo",
+  "category": "objective",
+  "reference_only": false,
+  "views": {
+    "front": {
+      "path": "res://art/model_catalog/references/anyklo/front.png",
+      "sha256": "621bd160d8317e46b1d36a3340bbc83c68f023a1b9d90eaf42ad8f367b320da0",
+      "source": "D:\\user\\Downloads\\power_ankylosaur_front.png",
+      "bytes": 168800,
+      "project_related": [
+        "docs/art/moba/objective-boss-revision-2026-11-10/power_ankylosaur/four-view-take-a/tight_white_views/power_ankylosaur_front.png"
+      ]
+    },
+    "left": {
+      "path": "res://art/model_catalog/references/anyklo/left.png",
+      "sha256": "0ef57cf35ab093bbdb976dcb0d741491295b43bee85c4cda00533dc0cdb49d0d",
+      "source": "D:\\user\\Downloads\\power_ankylosaur_left.png",
+      "bytes": 276153,
+      "project_related": [
+        "docs/art/moba/objective-boss-revision-2026-11-10/power_ankylosaur/four-view-take-a/tight_white_views/power_ankylosaur_left.png"
+      ]
+    },
+    "back": {
+      "path": "res://art/model_catalog/references/anyklo/back.png",
+      "sha256": "0064773d2288636514f7f3c35cef82948c4c105aacda1501a8faa1a9ad0d6799",
+      "source": "D:\\user\\Downloads\\power_ankylosaur_back.png",
+      "bytes": 161041,
+      "project_related": [
+        "docs/art/moba/objective-boss-revision-2026-11-10/power_ankylosaur/four-view-take-a/tight_white_views/power_ankylosaur_back.png"
+      ]
+    },
+    "right": {
+      "path": "res://art/model_catalog/references/anyklo/right.png",
+      "sha256": "ddbe576573ecec74d7807b7eff3fc3740940cf0fccc891a6e8e664fe486e265e",
+      "source": "D:\\user\\Downloads\\power_ankylosaur_right.png",
+      "bytes": 277524,
+      "project_related": [
+        "docs/art/moba/objective-boss-revision-2026-11-10/power_ankylosaur/four-view-take-a/tight_white_views/power_ankylosaur_right.png"
+      ]
+    }
+  },
+  "source_model": {
+    "path": "res://art/model_catalog/sources/Meshy_AI_cyber_tortoise_remeshed_25k_20261111_character.glb",
+    "source": "D:\\user\\Downloads\\Mecha Beast GLB Meshy Rigged\\Meshy_AI_cyber_tortoise_remeshed_25k_20261111_character.glb",
+    "sha256": "a21fa4395da287cca07b06544fbab322e95086c43e63f1ece0eec0c8210dd951",
+    "bytes": 31538240,
+    "kind": "Downloaded remeshed rig; intact pre-remesh archive not located"
+  },
+  "previous_export_name": "cyber tortoise"
+}

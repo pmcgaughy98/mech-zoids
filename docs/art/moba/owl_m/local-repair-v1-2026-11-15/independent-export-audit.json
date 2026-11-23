@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "tested_sha256": "44767063fa4e89649209906355dfe5d86a8b8a29aa01fe7cbb14db9576a616cf",
+  "triangles": 25324,
+  "joint_count": 33,
+  "boundary_edges": 0,
+  "over_shared_edges": 6,
+  "collapsed_triangles": 0,
+  "healthy_main_body_faces_retained": 25324,
+  "all_original_vertex_attribute_and_weight_rows_unchanged": true,
+  "skeleton_rest_binds_materials_textures_unchanged": true,
+  "source_binary_prefix_preserved": true,
+  "downloaded_input_sha256": "91c26d8cbcf4e4fa40f873cbefc0d0deec0c98ee2e43e956e39687914f45229a",
+  "intact_pre_remesh_available": false,
+  "original_reference_sha256": {
+    "front": "c0721c3a11aca68a395db16343e63e36cda4b12058f4f47a264c5fd31d27535e",
+    "left": "2e1a32fa364020ad75daa475902ca667368099e21669330f593bd6a3f25df518",
+    "back": "96116bd8490b72cb081dfa979c28d65320c758545c044f52c347206c5fcff07c",
+    "right": "c3411dde20a658d40967a0db3a49cf40597348c99a531c603f6fb91c9602fc13"
+  },
+  "geometry_budget": "25,324 triangles; one original primitive/material, zero new rows unless closure UV mapping is recorded separately, no new geometric positions or textures; no remesh/decimation."
+}

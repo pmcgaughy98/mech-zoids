@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "date": "2026-11-14",
+  "name": "anyklo",
+  "previous_export_name": "cyber tortoise",
+  "tested_sha256": "e8931b6b9da4702173fb11281dc6efc9079bad09791fc74ed274542a12bdf16f",
+  "triangles": 25960,
+  "joint_count": 37,
+  "original_controls_tested": 37,
+  "pitch_and_tail_yaw_checks": 41,
+  "tests_above_1mm_surface_motion": 41,
+  "tests_below_1mm_surface_motion": 0,
+  "maximum_seam_gap_m": 0.0,
+  "boundary_edges": 0,
+  "over_shared_edges": 2,
+  "collapsed_triangles": 0,
+  "local_triangle_inversions": 0,
+  "modified_triangles_tested": 2030,
+  "rear_panel_alignment": [
+    {
+      "side": -1,
+      "before_angle_xy_degrees": 20.272187375238225,
+      "after_angle_xy_degrees": 0.04584343247496898
+    },
+    {
+      "side": 1,
+      "before_angle_xy_degrees": -20.770377182134897,
+      "after_angle_xy_degrees": 0.06897195283596107
+    }
+  ],
+  "original_reference_sha256": {
+    "front": "621bd160d8317e46b1d36a3340bbc83c68f023a1b9d90eaf42ad8f367b320da0",
+    "left": "0ef57cf35ab093bbdb976dcb0d741491295b43bee85c4cda00533dc0cdb49d0d",
+    "back": "0064773d2288636514f7f3c35cef82948c4c105aacda1501a8faa1a9ad0d6799",
+    "right": "ddbe576573ecec74d7807b7eff3fc3740940cf0fccc891a6e8e664fe486e265e"
+  },
+  "source_sha256": "a21fa4395da287cca07b06544fbab322e95086c43e63f1ece0eec0c8210dd951",
+  "all_original_weights_uvs_skeleton_rest_binds_materials_textures_preserved": true,
+  "all_positions_normals_outside_tail_head_unchanged": true,
+  "native_runtime_check": "Two native versions, original/review sheets, 37-joint rig and actual ChaseCamera3D",
+  "screenshots": "res://reports/model_catalog/anyklo-tail-mallet-v1",
+  "intact_pre_remesh_available": false,
+  "limits": "Downloaded generation texture roughness and approximate original skinning remain. No authored gait/swing clips or gameplay installation."
+}

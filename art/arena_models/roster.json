@@ -21,14 +21,15 @@
       "workspace": "res://art/model_catalog/workspaces/bison.blend",
       "source_sha256": "45586e24104722d455498fc882e945d1d5b23a091035d98f7df425b14c1c11ee",
       "notes": "Current completed local animation trial; art and final kit polish remain open.",
-      "source_file": "D:\\dev\\_scratch\\bison-3d\\game-export-r5\\bison-kit-r5.glb",
-      "runtime_sha256": "97a939a6e9c217200ce1412ba975e62eea356c8e7158baa40db0d8176fc624a0",
+      "source_file": "D:\\dev\\_scratch\\bison-3d\\game-export-r7\\bison-kit-r7.glb",
+      "runtime_sha256": "2e13a41d607f358e3fae336606c2b86c7f0cbc5a1ae14152a0ff0cdc0c31d052",
       "clips": [
         "Bison_Chain_Throw",
         "Bison_Death",
         "Bison_Eruption",
         "Bison_Freight_Brace",
         "Bison_Freight_Haul",
+        "Bison_Haul",
         "Bison_Hit_Front",
         "Bison_Hit_Heavy",
         "Bison_Hook_Left",
@@ -53,7 +54,7 @@
         "run_speed": 3.407,
         "run_above": 2.0,
         "rest_height": 1.65,
-        "kit": "r5 (bison-3d, 2026-11-12): Idle, Walk (four-beat walk), Trot (proposed for the run slot), the alternating horn-hook basic (Hook_Left, Hook_Right), Hit_Front, Death, and the draft kit's clips (Chain_Throw for Coupling Chain, Whistle for War Whistle, Plow, Freight_Brace and Freight_Haul for Freight). Clips and events only; the kit is a draft and its code is not written. scale, turn_rate and every length are placeholders for Preston. Ares + Vulcan draft (2026-11-12): Eruption replaces War Whistle in slot 2 (the four stacks fire in turn, events erupt_fl/rr/fr/rl); Whistle stays in the GLB, unused. Plow has a stack flare event, Freight_Haul has slag drop events. Round 5 (2026-11-13): Hit_Heavy (replant event) and a Stun loop for stuns and holds; Walk_Back, Strafe_Left and Strafe_Right for the side band (mech_model_3d _side_clip).",
+        "kit": "r7 (bison-3d, 2026-11-12): Idle, Walk (four-beat walk), Trot (proposed for the run slot), the alternating horn-hook basic (Hook_Left, Hook_Right), Hit_Front, Death, and the draft kit's clips (Chain_Throw for Coupling Chain, Whistle for War Whistle, Plow, Freight_Brace and Freight_Haul for Freight). Clips and events only; the kit is a draft and its code is not written. scale, turn_rate and every length are placeholders for Preston. Ares + Vulcan draft (2026-11-12): Eruption replaces War Whistle in slot 2 (the four stacks fire in turn, events erupt_fl/rr/fr/rl); Whistle stays in the GLB, unused. Plow has a stack flare event, Freight_Haul has slag drop events. Round 5 (2026-11-13): Hit_Heavy (replant event) and a Stun loop for stuns and holds; Walk_Back, Strafe_Left and Strafe_Right for the side band (mech_model_3d _side_clip). Round 6 (2026-11-14, Whistle Stop kit): Haul is the hauling trot for slot 1's Haul and Freight, authored at haul_trot_speed; play it at ground speed / haul_trot_speed. Chuff events on each push. Whistle is slot 2 again; Eruption and Freight_Haul stay in the GLB, unused.",
         "clips": {
           "Idle": "Bison_Idle",
           "Walk": "Bison_Walk",
@@ -72,7 +73,8 @@
           "Stun": "Bison_Stun",
           "Walk_Back": "Bison_Walk_Back",
           "Strafe_Left": "Bison_Strafe_Left",
-          "Strafe_Right": "Bison_Strafe_Right"
+          "Strafe_Right": "Bison_Strafe_Right",
+          "Haul": "Bison_Haul"
         },
         "events": {
           "Idle": [
@@ -418,6 +420,28 @@
               0.22,
               false
             ]
+          ],
+          "Haul": [
+            [
+              "step",
+              0.0,
+              false
+            ],
+            [
+              "chuff",
+              0.092,
+              false
+            ],
+            [
+              "step",
+              0.22,
+              false
+            ],
+            [
+              "chuff",
+              0.312,
+              false
+            ]
           ]
         },
         "basic_chain_proposal": [
@@ -439,15 +463,19 @@
           "Walk_Back",
           "Strafe_Left",
           "Strafe_Right",
-          "Stun"
+          "Stun",
+          "Haul"
         ],
         "ability_slots_proposal": {
-          "1": "Chain_Throw",
-          "2": "Eruption",
+          "1": [
+            "Chain_Throw",
+            "Haul"
+          ],
+          "2": "Whistle",
           "3": "Plow",
           "4": [
             "Freight_Brace",
-            "Freight_Haul"
+            "Haul"
           ]
         },
         "haul_speed": 0.518,
@@ -549,6 +577,8 @@
         "strafe_left": "Strafe_Left",
         "strafe_right": "Strafe_Right",
         "strafe_speed": 2.208,
+        "haul_trot": "Haul",
+        "haul_trot_speed": 3.407,
         "glb": "res://art/arena_models/bison.glb"
       }
     },
@@ -1119,8 +1149,8 @@
       "workspace": "res://art/model_catalog/workspaces/gorilla.blend",
       "source_sha256": "5c223ba84c7cde87be15d75b9414b13630c6e75760c019eb9bedc2828ff6d915",
       "notes": "Current completed local animation trial; art and final kit polish remain open.",
-      "source_file": "D:\\dev\\_scratch\\gorilla\\meshforge-2026-11-08\\round28\\gorilla-kit-v40.glb",
-      "runtime_sha256": "4c72de05456403a78e9736a586a5f585db63f52bb431e39421d24907c892862d",
+      "source_file": "D:\\dev\\_scratch\\gorilla\\chestbeat-pose-2026-11-18\\gorilla-kit-v46-housing.glb",
+      "runtime_sha256": "ae7242232f59628dbd430851c97542bb335b5673137782a25cf292f0994ee537",
       "clips": [
         "Gorilla_Dead",
         "Gorilla_Death",
@@ -1446,7 +1476,7 @@
           "LeftHand",
           "RightHand"
         ],
-        "kit": "v40 (gorilla lane, 2026-11-14): v39 with the slot 2 Fault Line wind-up arching the back (reactor up toward the camera)",
+        "kit": "v46 (gorilla lane, 2026-11-19): v40 plus an angled chest core housing, centred and set lower, so the core faces the camera in the chest beat (no new bone)",
         "strafe_left": "Strafe_Left",
         "strafe_right": "Strafe_Right",
         "back": "Walk_Back",
@@ -2025,8 +2055,8 @@
       "workspace": "res://art/model_catalog/workspaces/kangaroo.blend",
       "source_sha256": "badc14dd2f91d85e74d43f42e78c7294fa422654ebb2951fb0524ec1154be179",
       "notes": "Current completed local animation trial; art and final kit polish remain open.",
-      "source_file": "D:\\dev\\_scratch\\kangaroo-3d\\game-export-r12\\kangaroo-kit-r12.glb",
-      "runtime_sha256": "fcf8e55631f57b151f5e8a3239284928a6f75894c7f2b8979cc502d47a9987f0",
+      "source_file": "D:\\dev\\_scratch\\kangaroo-3d\\game-export-r13\\kangaroo-kit-r13.glb",
+      "runtime_sha256": "1d75a8ae6a8133fb12409545054f04e2f5ecf4ba4707f7f7f625b85d3afd6505",
       "clips": [
         "Kangaroo_Idle",
         "Kangaroo_Idle_Fidget",
@@ -2052,7 +2082,10 @@
         "Kangaroo_Guard_Sweep",
         "Kangaroo_Slip_Left",
         "Kangaroo_Slip_Right",
-        "Kangaroo_Reel"
+        "Kangaroo_Reel",
+        "Kangaroo_Hit_Left",
+        "Kangaroo_Hit_Right",
+        "Kangaroo_Hit_Back"
       ],
       "body": {
         "scale": 1.0,
@@ -2066,7 +2099,7 @@
         "back": "Walk_Back",
         "strafe_speed": 3.5,
         "back_speed": 3.5,
-        "kit": "r12 (kangaroo-3d, 2026-11-13): r11 with the Death clip fixed (the arms swing out as the legs fold, so the gloves no longer pass through the thighs). r11 (kangaroo-3d, 2026-11-12): r10 plus three clips for the title bout's bob and weave: Slip_Left and Slip_Right (0.25 s duck and bob, in place), Reel (the bout target's reaction when the target is a kangaroo; starts and ends on Stun's first frame). The 22 older clips are rebuilt from the same script and rig.",
+        "kit": "r13 (kangaroo-3d, 2026-11-14): r12 with three hit flinches added, Hit_Left, Hit_Right and Hit_Back, so the kangaroo recoils away from where a blow comes from. r12 (kangaroo-3d, 2026-11-13): r11 with the Death clip fixed (the arms swing out as the legs fold, so the gloves no longer pass through the thighs). r11 (kangaroo-3d, 2026-11-12): r10 plus three clips for the title bout's bob and weave: Slip_Left and Slip_Right (0.25 s duck and bob, in place), Reel (the bout target's reaction when the target is a kangaroo; starts and ends on Stun's first frame). The 22 older clips are rebuilt from the same script and rig.",
         "basic_chain_proposal": [
           "Jab_Left",
           "Jab_Right_Quick",
@@ -2097,7 +2130,10 @@
           "Guard_Sweep": "Kangaroo_Guard_Sweep",
           "Slip_Left": "Kangaroo_Slip_Left",
           "Slip_Right": "Kangaroo_Slip_Right",
-          "Reel": "Kangaroo_Reel"
+          "Reel": "Kangaroo_Reel",
+          "Hit_Left": "Kangaroo_Hit_Left",
+          "Hit_Right": "Kangaroo_Hit_Right",
+          "Hit_Back": "Kangaroo_Hit_Back"
         },
         "events": {
           "Idle_Fidget": [

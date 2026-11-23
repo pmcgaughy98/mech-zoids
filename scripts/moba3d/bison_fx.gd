@@ -50,12 +50,35 @@ extends Node3D
 ## (0.46) and stamp_r (0.56) throw basalt dust off the front feet; braced (0.75) is the whistle: steam from both vents
 ## and a flare from every stack. Kit cue (proposed): "freight_chains" at Freight_Brace "chains_out" (0.26), field
 ## freight_targets (Array of Node3D): a Coupling Chain to each, from a rear coupler, coupled 0.09 s later without a
-## further cue. The haul is read off the body: while its action is "Freight_Haul" (a held loop), all four stacks burn
-## and rear stacks smoke, and on the clip's slag beats (0.15 and 0.75 of each loop, read off the clip position because
-## a held loop's events fire once) a molten glob pours off a rear stack, alternating sides, and lands behind as a small
-## slag patch (1.2 m, the same 4.5 s): the patches overlap into a short burning track. "chain_break" with a null
+## further cue. The haul is read off the body: while its action is a haul clip (HAUL_CLIPS: "Freight_Haul", or the r6
+## hauling trot "Haul" that the rebuilt kit plays for slot 1's Haul and for Freight, 2026-11-14), the stacks chuff on
+## the clip's beats (see HAUL CHUFF); the old trudge, which has no chuff beats, keeps a steady burn and rear smoke. Each slag spot is a SPILL (no ball falls: Preston, 2026-11-14, "the lava balls look like poop
+## when towing"): a rear stack spits a small flash, and a flat glowing streak appears on the floor at once, laid along
+## the haul, with a low flat flash and a short hiss of steam; it cools from orange to black over the slag time. With
+## bison_kit.gd the spots are its slag_spots on each "slag" cue; with the launcher's stub, the clip's slag beats (0.15
+## and 0.75 s of each loop, read off the clip position because a held loop's events fire once), just behind the
+## coupler. The streaks line up into a short dashed track. "chain_break" with a null
 ## target drops every chain at the haul's end; "freight_snap" (a stun or knock-up on the hauler) bursts each coupled
 ## chain at its middle and drops it. The coupler is taken from the model's bounds until the 3D lane adds a socket.
+## HAUL CHUFF AND BUFFER SLAM (slot 1's recast in the rebuilt kit; built 2026-11-18 on Preston's "yep get in queue").
+## The r6 Haul clip (a 0.433 s loop) has chuff events at 0.092 and 0.312 (HAUL_CHUFFS); like the slag beats they are
+## read off the clip position. Each chuff, a diagonal pair of stacks coughs a short flame and a puff of steam that
+## rises and trails off behind. The kit's steam (0 to 1 over the haul's first 2 s) sharpens it: big slow grey puffs at
+## the start, smaller, whiter and faster ones at full steam. The clip speeds up with the haul, so the chuffs come faster
+## too. The "haul" cue starts it with one chuff from all four stacks; at full steam the vents shriek once. Kit cue
+## "buffer_slam" (chain_target, stunned buffer_stun): a hot flash at the rear coupler, a short floor ring and low dust,
+## a flash on the slammed enemy itself, and the brakes venting steam out of both rear stacks. The stun shows with the
+## match's own stun_loop (gold stars, seen on a slammed minion 2026-11-18), so nothing is added for it. Freight plays the same clip and chuffs the same way.
+## WHISTLE STOP (slot 2, Preston's "Whistle Stop" kit, 2026-11-14; built 2026-11-17 on his "Yes, read and start").
+## Body events on clip "Whistle" (1.3 s): inhale (0.05) heats the four stack mouths, the steam vents shriek and a short
+## orange ripple runs out under the bison; blast (0.32) flashes every stack (all four caps blast together, even those
+## cooling down) and starts the columns: each stack shoots steam straight up, about 7 m, to read across the map, with
+## flame bursting at its base, until plume_end (0.95). Then the columns thin and are gone by about 1.7 s; nothing
+## lingers. Kit cue "scald" (at the blast, scald_targets and scald_radius): a low ring of steam rolls out to
+## scald_radius over a hot floor ring, and each scalded enemy gets a flash and a hiss. The ally call is one faint thin
+## ring running out to whistle_radius. The columns are the one tall effect in the kit, on purpose (the kit asks for
+## "seen across the map"); everything else stays small and short. Structure from the Gemini sheet (2026-11-17):
+## ripple, base flare, columns, ground steam ring, call ring, fade.
 ## FOOTFALLS. The bison's clips carry their footfalls as "step" events (Walk 4, Trot, Walk_Back, Strafe_Left and
 ## Strafe_Right 2 each), but the body fires events for actions only, and its `step` signal reads a "steps" row the
 ## bison does not have. So the locomotion loop playing is followed here by clip position, and each step time it passes
@@ -81,6 +104,12 @@ const GLOW := preload("res://shaders/bison_glow.gdshader")
 const SLAG := preload("res://shaders/bison_slag.gdshader")
 const DUST := preload("res://shaders/rhino_dust.gdshader") ## the rhino lane's smooth dust puff, used as is
 const RING_R := 3.5 ## metres, placeholder: where the bombs land (the kit has no number yet)
+const RING := preload("res://shaders/bison_ring.gdshader")
+const SCALD_R := 3.0 ## metres, centre to edge, until the kit's scald_radius
+const WHISTLE_R := 9.0 ## metres, the ally call, until the kit's whistle_radius
+const COLUMN_V := 20.0 ## m/s a column puff leaves the stack at; with the puffs' drag it climbs about 7 m
+const COLUMN_TICK := 0.035 ## seconds between column puffs, per stack
+const COLUMN_FAN := 0.09 ## each column leans out from the hump's centre by this much per metre, so four read at height
 const SLAG_TIME := 4.5 ## seconds, placeholder: how long a slag patch stays
 const FLIGHT := 0.72 ## seconds from the stack to the floor
 const APEX := 3.2 ## metres the arc climbs above the straight line at its middle
@@ -117,8 +146,12 @@ const COLLAR_R := 0.55 ## metres, placeholder for the target's waist
 const COLLAR_Y := 0.75 ## metres above the target's feet
 const COLLAR_LINKS := 14
 const HAUL_SLAG := [0.15, 0.75] ## seconds into the haul loop: the clip's slag events
-const TRACK_SIZE := 1.2 ## metres, a haul slag patch (Eruption's are 1.9)
-const GLOB_FLIGHT := 0.3 ## seconds a glob takes to reach a slag spot the kit chose (the patch burns from the cue)
+const TRACK_SIZE := 0.8 ## metres across a haul slag streak (Eruption's patches are 1.9)
+const TRACK_STRETCH := 2.2 ## its length along the haul, as a multiple of TRACK_SIZE (1.76 m)
+const HAUL_CLIPS := ["Freight_Haul", "Haul"] ## the old trudge, and the r6 hauling trot (bison 3D lane, 2026-11-14)
+const HAUL_CHUFFS := { ## clip -> [loop position of a chuff event, the stacks that chuff on it]
+	"Haul": [[0.092, ["fl", "rr"]], [0.312, ["fr", "rl"]]],
+}
 const STACK_SLOT := {"fl": "1", "fr": "2", "rl": "3", "rr": "4"} ## placeholder until the kit's stack_slot (game feel lane)
 const CAP_LIFT := 0.05 ## metres from a stack socket (the box centre of a 9 cm stack) up to its mouth
 const CAP_SIZE := 0.26 ## metres, the ready glow over each stack mouth (a billboard)
@@ -171,6 +204,8 @@ var _haul_on := false
 var _haul_pos := 0.0
 var _haul_fire_t := 0.0
 var _haul_smoke_t := 0.0
+var _haul_steam := 0.0 ## the kit's steam last frame (full steam fires once)
+var chuffs := 0 ## chuffs so far (for the recorders)
 var _glob_side := 1.0
 var _kit_slag := false ## the kit places the haul's slag itself ("slag" cue with slag_spots): globs go there, not on the beats
 var _clip_full := {} ## clip -> animation name, from the roster row
@@ -178,6 +213,7 @@ var _gait := ""
 var _gait_pos := 0.0
 var _gait_steps: Array = []
 var _body_steps := false
+var _whistle := {} ## the steam columns while they run: {"age", "until", "puff_t", "fire_t"}
 var _caps := {} ## stack -> {"node", "mat", "ready", "flash", "amount"}
 var _cap_palette := ""
 var footfalls := {} ## gait -> footfalls dusted (a count, so the log stays short)
@@ -308,17 +344,23 @@ func _on_cue(n: String) -> void:
 					_end_chain(e, "retract")
 		"plow_hit":
 			_plow_hit()
+		"scald":
+			_scald()
+		"haul":  # slot 1's recast: the engine starts with one chuff from every stack
+			_chuff(STACKS.keys())
+		"buffer_slam":
+			_buffer_slam()
 		"freight_chains":
 			_freight_chains()
 		"freight_snap":
 			_freight_snap()
-		"slag":  # bison_kit.gd: a haul slag patch that burns, at slag_spots; the glob pours onto it
+		"slag":  # bison_kit.gd: a haul slag patch that burns, at slag_spots; the spill appears on it at once
 			var spots: Variant = kit.get("slag_spots") if is_instance_valid(kit) else null
 			if spots is Array:
 				_kit_slag = true
 				for at in spots:
 					if at is Vector3:
-						_glob(at)
+						_spill(at)
 		"chain_break":
 			var t: Node3D = _kit_target()
 			for e in chains:
@@ -337,6 +379,16 @@ func _on_event(clip: String, n: String, _damage: bool) -> void:
 			_stamp(1.0)
 			_stamp(-1.0)
 			log_rows.append("replant at %.2f" % _clock)
+		return
+	if clip == "Whistle":
+		match n:
+			"inhale":
+				_whistle_inhale()
+			"blast":
+				_whistle_blast()
+			"plume_end":
+				if not _whistle.is_empty():
+					_whistle["until"] = 0.0
 		return
 	if clip == "Plow":
 		match n:
@@ -534,7 +586,7 @@ func _chunk(at: Vector3, vel_in := Vector3.ZERO) -> void:
 		"floor": at.y - 0.15, "spin": Vector3(randf(), randf(), randf()) * 9.0, "s0": c.scale})
 
 
-func _slag(at: Vector3, size := SLAG_SIZE, lump_count := 3) -> void:
+func _slag(at: Vector3, size := SLAG_SIZE, lump_count := 3, heading: Variant = null, stretch := 1.0) -> void:
 	var life := _slag_time()
 	var q := _flat(size)
 	q.material_override = _slag_mat
@@ -543,7 +595,11 @@ func _slag(at: Vector3, size := SLAG_SIZE, lump_count := 3) -> void:
 	q.set_instance_shader_parameter("seed", randf() * 40.0)
 	add_child(q)
 	q.global_position = at + Vector3.UP * 0.025
-	q.rotation.y = randf() * TAU
+	if heading is Vector3:  # a streak laid along the haul
+		q.rotation.y = atan2((heading as Vector3).x, (heading as Vector3).z)
+		q.scale = Vector3(1.0, 1.0, stretch)
+	else:
+		q.rotation.y = randf() * TAU
 	var lumps := []
 	var k := size / SLAG_SIZE
 	for i in lump_count:
@@ -572,6 +628,7 @@ func _process(delta: float) -> void:
 	_step_haul(delta)
 	_step_gait()
 	_step_caps(delta)
+	_step_whistle(delta)
 	if log_rows.size() > 400:
 		log_rows = log_rows.slice(-200)
 	var keep: Array = []
@@ -613,17 +670,6 @@ func _step(e: Dictionary, delta: float) -> bool:
 		"burst":
 			(e["mat"] as ShaderMaterial).set_shader_parameter("age", age)
 			return age < life
-		"glob":
-			var gv: Vector3 = e["vel"]
-			gv.y -= GRAVITY * delta
-			e["vel"] = gv
-			var gp := n.global_position + gv * delta
-			n.global_position = gp
-			n.rotation += Vector3(7.0, 5.0, 3.0) * delta
-			if gp.y <= float(e["floor"]) + 0.08:
-				_glob_land(Vector3(gp.x, float(e["floor"]), gp.z))
-				return false
-			return age < life
 		"sockglow":
 			n.global_position = _socket(String(e["sock"]))
 			(e["mat"] as ShaderMaterial).set_shader_parameter("amount", 0.85 * sin(PI * clampf(age / life, 0.0, 1.0)))
@@ -634,7 +680,18 @@ func _step(e: Dictionary, delta: float) -> bool:
 			n.visible = true
 			n.global_position += (e["vel"] as Vector3) * delta
 			e["vel"] = (e["vel"] as Vector3) * (1.0 - 2.5 * delta)
+			if e.has("grow"):  # Whistle Stop's column puffs widen as they climb
+				n.scale = Vector3.ONE * float(e["size0"]) * (1.0 + float(e["grow"]) * clampf(age / life, 0.0, 1.0))
 			(e["dust"] as ShaderMaterial).set_shader_parameter("age", age)
+			return age < life
+		"ring":
+			if age < 0.0:
+				return true
+			n.visible = true
+			var kr := clampf(age / life, 0.0, 1.0)
+			var rr := lerpf(float(e["r0"]), float(e["r1"]), 1.0 - pow(1.0 - kr, 3.0))
+			n.scale = Vector3(rr, 1.0, rr)
+			(e["mat"] as ShaderMaterial).set_shader_parameter("amount", float(e["amount"]) * (1.0 - kr) * (1.0 - kr))
 			return age < life
 		"flash":
 			var k := 1.0 - clampf(age / life, 0.0, 1.0)
@@ -809,14 +866,27 @@ func _chain_out(t: Node3D, root := "muzzle_purge", auto := false) -> Dictionary:
 	return e
 
 
+# The chain's target, or null once it is gone. A target freed mid-effect (killed, or the match reset under it) must not
+# be read into a typed Node3D: that read was the "previously freed instance" error match_check logged at the two reads
+# below (2026-11-19). The freed target is cleared, so the miss and auto-couple checks see it as gone too.
+func _live_target(e: Dictionary) -> Node3D:
+	var raw: Variant = e["target"]
+	if not is_instance_valid(raw):
+		e["target"] = null
+		return null
+	return raw as Node3D
+
+
 func _target_point(e: Dictionary, a: Vector3) -> Vector3:
-	var t: Node3D = e["target"]
-	if t == null or not is_instance_valid(t):
-		return e["end"]
+	var t := _live_target(e)
+	if t == null:
+		return e.get("last_point", e["end"])  # a target freed mid-effect: the tip holds where it was last seen
 	var c := t.global_position + Vector3.UP * COLLAR_Y
 	var d := a - c
 	d.y = 0.0
-	return c + (d.normalized() if d.length() > 0.01 else Vector3.BACK) * _collar_r(e)
+	var p := c + (d.normalized() if d.length() > 0.01 else Vector3.BACK) * _collar_r(e)
+	e["last_point"] = p
+	return p
 
 
 func _collar_r(e: Dictionary) -> float:
@@ -868,7 +938,7 @@ func _step_chains(delta: float) -> void:
 				var k := clampf(float(e["t"]) / CHAIN_OUT, 0.0, 1.0)
 				e["tip"] = a.lerp(_target_point(e, a), k * (2.0 - k))
 				base_heat = 0.6
-				if e.get("auto", false) and k >= 1.0 and e["target"] != null:
+				if e.get("auto", false) and k >= 1.0 and _live_target(e) != null:
 					_couple(e)
 				if float(e["t"]) > CHAIN_OUT + 0.5:  # no couple or miss cue came: pull it back
 					_end_chain(e, "retract")
@@ -960,9 +1030,9 @@ func _lay_chain(mi: MultiMeshInstance3D, a: Vector3, tip: Vector3, sag: float, b
 
 
 func _lay_collar(e: Dictionary) -> void:
-	var t: Node3D = e["target"]
+	var t := _live_target(e)
 	var mi: MultiMeshInstance3D = e["collar"]
-	if t == null or not is_instance_valid(t):
+	if t == null:
 		mi.multimesh.visible_instance_count = 0
 		return
 	var c := t.global_position + Vector3.UP * COLLAR_Y
@@ -1267,13 +1337,14 @@ func _freight_snap() -> void:
 
 
 ## The haul is a held loop, and the body fires a held loop's events on its first pass only, so the slag beats (0.15
-## and 0.75 of each loop) are read off the clip's position here.
+## and 0.75 of each loop) and the chuffs (HAUL_CHUFFS) are read off the clip's position here.
 func _step_haul(delta: float) -> void:
-	var hauling := body != null and String(body.get("action")) == "Freight_Haul"
-	if not hauling:
+	var clip := String(body.get("action")) if body != null else ""
+	if not (clip in HAUL_CLIPS):
 		if _haul_on:
 			_haul_on = false
-			log_rows.append("haul end at %.2f" % _clock)
+			_haul_steam = 0.0
+			log_rows.append("haul end at %.2f (%d chuffs)" % [_clock, chuffs])
 		return
 	var ap: AnimationPlayer = body.get("anim")
 	var pos := ap.current_animation_position
@@ -1282,10 +1353,20 @@ func _step_haul(delta: float) -> void:
 		_haul_pos = pos
 		log_rows.append("haul start at %.2f (loop %.2f s)" % [_clock, ap.current_animation_length])
 	for st in ([] if _kit_slag else HAUL_SLAG):
-		var beat := float(st)
-		if (_haul_pos < beat and pos >= beat) or (pos < _haul_pos and (beat > _haul_pos or beat <= pos)):
-			_glob()
+		if _crossed(float(st), _haul_pos, pos):
+			_spill()
+	var beats: Array = HAUL_CHUFFS.get(clip, [])
+	for b in beats:
+		if _crossed(float(b[0]), _haul_pos, pos):
+			_chuff(b[1])
 	_haul_pos = pos
+	var steam := _steam()
+	if steam >= 0.999 and _haul_steam < 0.999:
+		_full_steam()
+	_haul_steam = steam
+	if not beats.is_empty():
+		return
+	# the old Freight_Haul trudge has no chuff events: a steady flicker and soot, as before
 	_haul_fire_t -= delta
 	if _haul_fire_t <= 0.0:
 		_haul_fire_t = 0.11
@@ -1299,38 +1380,84 @@ func _step_haul(delta: float) -> void:
 			_puff(_socket("stack_" + s) + Vector3.UP * 0.3, 0.6, 0.9, SOOT, 0.55, Vector3.UP * 1.2 + back * 0.8, 0.0)
 
 
-## A molten glob poured off a rear stack, alternating sides; it lands behind the bison as a small slag patch.
-## to: a floor point the kit chose (it burns there); the glob is thrown to land on it in GLOB_FLIGHT seconds.
-func _glob(to: Variant = null) -> void:
+## True when a looping clip's position moved past beat between prev and pos (wrapping at the loop's end).
+func _crossed(beat: float, prev: float, pos: float) -> bool:
+	return (prev < beat and pos >= beat) or (pos < prev and (beat > prev or beat <= pos))
+
+
+func _steam() -> float:
+	var v: Variant = kit.get("steam") if is_instance_valid(kit) else null
+	return clampf(float(v), 0.0, 1.0) if v != null else 0.0
+
+
+## One chuff: each stack in the pair coughs a short flame and a puff of steam that rises and trails off behind. The
+## kit's steam sharpens it: big slow grey puffs at the start of the haul, smaller, whiter and faster at full steam.
+func _chuff(pair: Array) -> void:
+	var k := _steam()
 	var f := _frame()
+	var back := -Vector3(f.basis.z.x, 0.0, f.basis.z.z).normalized()
+	for st in pair:
+		var m := _stack_mouth(String(st))
+		_burst(m + Vector3.UP * 0.14, Vector3(0.3, 0.6, 0.3) * lerpf(0.9, 1.15, k), 0.1, 7.0)
+		_puff(m + Vector3.UP * 0.24, lerpf(0.9, 0.7, k), lerpf(0.85, 0.6, k), SOOT.lerp(STEAM, lerpf(0.45, 1.0, k)),
+			lerpf(0.7, 0.8, k), Vector3.UP * lerpf(2.0, 3.4, k) + back * lerpf(0.5, 1.2, k), 0.0)
+	chuffs += 1
+
+
+## Full steam (the kit's steam reaches 1): the vents shriek once, a short tell that the haul is at top speed.
+func _full_steam() -> void:
+	_roar()
+	log_rows.append("full steam at %.2f" % _clock)
+
+
+## The buffer slam: slot 1's haul ends by throwing the hauled enemy into the rear buffers (the kit stuns it
+## buffer_stun). A hot flash where it hits, a short ring and low dust on the floor, and the brakes venting steam out of
+## both rear stacks. The stun shows with the match's own stun_loop, so nothing is added for it.
+func _buffer_slam() -> void:
+	var f := _frame()
+	var fwd := Vector3(f.basis.z.x, 0.0, f.basis.z.z).normalized()
+	var left := Vector3(f.basis.x.x, 0.0, f.basis.x.z).normalized()
+	var at := (_socket("coupler") if _sockets.has("coupler") else f.origin + Vector3.UP * 0.7) - fwd * 0.15
+	var t: Node3D = _kit_target()
+	if t != null:  # where the two backs meet, so the bodies do not hide it
+		at = Vector3(at.x, at.y + 0.35, at.z).lerp(Vector3(t.global_position.x, at.y + 0.35, t.global_position.z), 0.35)
+		_burst(t.global_position + Vector3.UP * 0.6, Vector3(0.7, 0.9, 0.7), 0.16, 7.0)
+	var g := Vector3(at.x, _floor_y(), at.z)
+	_burst(at, Vector3(0.95, 0.8, 0.95), 0.15, 10.0)
+	if _sockets.has("coupler"):
+		_sock_glow("coupler", 0.5, 0.3)
+	_ring(g, 0.3, 1.5, 0.28, 0.14, 0.8)
+	for i in 6:
+		var a := TAU * (float(i) + randf() * 0.5) / 6.0
+		var d := Vector3(cos(a), 0.0, sin(a))
+		_puff(g + d * 0.4 + Vector3.UP * 0.25, 0.7, 0.45, FOOT_DUST, 0.6, d * 1.8 + Vector3.UP * 0.3, 0.02 * i)
+	for side in [1.0, -1.0]:
+		var m := _stack_mouth("rl" if side > 0.0 else "rr")
+		for i in 2:
+			_puff(m + left * side * 0.1, 0.5 + 0.1 * i, 0.4, STEAM, 0.6, left * side * (2.6 - 0.6 * i) + Vector3.UP * 0.5,
+				0.05 * i)
+	log_rows.append("buffer slam at %.2f on %s" % [_clock, String(t.name) if t != null else "none"])
+
+
+## A slag spill on the haul track (see FREIGHT): nothing round falls from behind the bison. A rear stack spits, alternating
+## sides, and a flat glowing streak lies on the floor at once, along the haul, with a low flash and a short hiss.
+## to: a floor point the kit chose (it burns there from the cue); without one, just behind the coupler.
+func _spill(to: Variant = null) -> void:
+	var f := _frame()
+	var fwd := Vector3(f.basis.z.x, 0.0, f.basis.z.z).normalized()
 	_glob_side = -_glob_side
-	var from := _socket("stack_" + ("rl" if _glob_side > 0.0 else "rr")) + Vector3.UP * 0.12
-	var back := -(f.basis.z).normalized()
-	var side := (f.basis.x).normalized() * _glob_side
-	var b := MeshInstance3D.new()
-	b.mesh = _sphere
-	b.material_override = _rock_mat
-	b.scale = Vector3.ONE * 0.11
-	b.set_instance_shader_parameter("heat", 1.0)
-	b.set_instance_shader_parameter("seed", randf() * 40.0)
-	add_child(b)
-	b.global_position = from
-	_burst(from + Vector3.UP * 0.1, Vector3(0.35, 0.6, 0.35), 0.14, 7.0)
-	var vel := back * 2.6 + side * 0.5 + Vector3.UP * 2.2
+	var stack := _socket("stack_" + ("rl" if _glob_side > 0.0 else "rr"))
+	_burst(stack + Vector3.UP * 0.22, Vector3(0.3, 0.5, 0.3), 0.12, 7.0)
+	var at: Vector3
 	if to is Vector3:
-		var d: Vector3 = (to as Vector3) - from
-		d.y = _floor_y() - from.y
-		vel = Vector3(d.x, 0.0, d.z) / GLOB_FLIGHT + Vector3.UP * (d.y + 0.5 * GRAVITY * GLOB_FLIGHT * GLOB_FLIGHT) / GLOB_FLIGHT
-	live.append({"kind": "glob", "node": b, "age": 0.0, "life": 2.0, "vel": vel, "floor": _floor_y()})
-
-
-func _glob_land(at: Vector3) -> void:
-	_burst(at + Vector3.UP * 0.2, Vector3.ONE * 0.7, 0.18, 8.0)
-	_puff(at + Vector3.UP * 0.25, 0.8, 0.6, BASALT_DUST, 0.45, Vector3.UP * 0.3, 0.0)
-	for i in 2:
-		_chunk(at + Vector3.UP * 0.12, Vector3(randf_range(-1.5, 1.5), randf_range(2.0, 3.0), randf_range(-1.5, 1.5)))
-	_slag(at, TRACK_SIZE, 2)
-	log_rows.append("glob lands at %.2f" % _clock)
+		at = Vector3((to as Vector3).x, _floor_y(), (to as Vector3).z)
+	else:
+		var rear := _socket("stack_rl").lerp(_socket("stack_rr"), 0.5)
+		at = Vector3(rear.x, _floor_y(), rear.z) - fwd * 1.3
+	_slag(at, TRACK_SIZE, 0, fwd, TRACK_STRETCH)
+	_burst(at + Vector3.UP * 0.08, Vector3(TRACK_SIZE * 1.3, 0.28, 1.0), 0.13, 5.0)
+	_puff(at + Vector3.UP * 0.18, 0.75, 0.45, STEAM, 0.4, Vector3.UP * 0.55 - fwd * 0.3, 0.06)
+	log_rows.append("spill at %.2f" % _clock)
 
 
 # --- Footfalls ---
@@ -1435,10 +1562,134 @@ func _step_caps(delta: float) -> void:
 			c["flash"] = 1.0
 		c["ready"] = ready
 		c["flash"] = maxf(float(c["flash"]) - delta * 4.0, 0.0)
-		var want := CAP_GLOW + 1.1 * float(c["flash"]) if ready else 0.0
+		var want := (CAP_GLOW if ready else 0.0) + 1.1 * float(c["flash"])  # Whistle Stop flashes dark caps too
 		c["amount"] = move_toward(float(c["amount"]), want, delta * 9.0)
 		var n: MeshInstance3D = c["node"]
 		n.visible = float(c["amount"]) > 0.01
 		n.global_position = _socket("stack_" + st) + up * CAP_LIFT
 		(c["mat"] as ShaderMaterial).set_shader_parameter("amount", c["amount"])
 	_cap_palette = palette
+
+
+# --- Whistle Stop ---
+
+## A thin floor ring that runs out from r0 to r1 metres over life seconds and fades (see bison_ring.gdshader).
+func _ring(at: Vector3, r0: float, r1: float, life: float, width: float, amount: float, delay := 0.0) -> void:
+	var q := _flat(2.0)
+	var m := ShaderMaterial.new()
+	m.shader = RING
+	m.render_priority = 3
+	m.set_shader_parameter("width", width)
+	m.set_shader_parameter("seed", randf() * 40.0)
+	m.set_shader_parameter("amount", 0.0)
+	_tint(m)
+	q.material_override = m
+	q.visible = delay <= 0.0
+	add_child(q)
+	q.global_position = at + Vector3.UP * 0.035
+	q.scale = Vector3(r0, 1.0, r0)
+	live.append({"kind": "ring", "node": q, "mat": m, "age": -delay, "life": life, "r0": r0, "r1": r1, "amount": amount})
+
+
+func _ground() -> Vector3:
+	var at := machine.global_position if is_instance_valid(machine) else global_position
+	return Vector3(at.x, _floor_y(), at.z)
+
+
+func _stack_mouth(st: String) -> Vector3:
+	return _socket("stack_" + st) + _frame().basis.y.normalized() * CAP_LIFT
+
+
+func _whistle_inhale() -> void:
+	for st in STACKS:
+		_sock_glow("stack_" + st, 0.42, 0.3)
+	_roar()
+	_ring(_ground(), 0.7, 2.3, 0.3, 0.14, 0.7)
+	log_rows.append("whistle inhale at %.2f" % _clock)
+
+
+func _whistle_blast() -> void:
+	for st in STACKS:
+		_burst(_stack_mouth(st) + Vector3.UP * 0.25, Vector3(0.6, 1.1, 0.6), 0.18, 8.0)
+	for c in _caps.values():
+		c["flash"] = 1.0
+	var g := _floor_glow(_ground(), 2.6)
+	g["kind"] = "flash"
+	g["age"] = 0.0
+	g["life"] = 0.35
+	live.append(g)
+	var call_r := WHISTLE_R
+	var wr: Variant = kit.get("whistle_radius") if is_instance_valid(kit) else null
+	if wr != null:
+		call_r = float(wr)
+	_ring(_ground(), _scald_r(), call_r, 0.5, 0.035, 0.5, 0.06)
+	for st in STACKS:
+		_sock_glow("stack_" + st, 0.7, 0.68)  # the fire's hot base for the length of the columns
+	_whistle = {"age": 0.0, "until": 0.63, "puff_t": 0.0, "fire_t": 0.0}
+	log_rows.append("whistle blast at %.2f" % _clock)
+
+
+func _scald_r() -> float:
+	var v: Variant = kit.get("scald_radius") if is_instance_valid(kit) else null
+	return float(v) if v != null else SCALD_R
+
+
+## The scald: a low ring of steam rolls out to scald_radius over a hot ring, and each scalded enemy flashes and hisses.
+func _scald() -> void:
+	var c := _ground()
+	var r := _scald_r()
+	_ring(c, 0.8, r, 0.45, 0.1, 0.9)
+	var count := 14
+	var reach := maxf(r - 1.0, 0.5)
+	var v0 := reach * 2.5 / (1.0 - exp(-2.5 * 0.55))  # the puffs' drag is 2.5/s; they reach r in their 0.55 s
+	for i in count:
+		var a := TAU * (float(i) + randf() * 0.4) / float(count)
+		var dir := Vector3(cos(a), 0.0, sin(a))
+		_puff(c + dir * 1.0 + Vector3.UP * 0.3, 0.95, 0.55, STEAM, 0.6, dir * v0 + Vector3.UP * 0.25, 0.0)
+	var hit := 0
+	var ts: Variant = kit.get("scald_targets") if is_instance_valid(kit) else null
+	if ts is Array:
+		for t in ts:
+			if t is Node3D and is_instance_valid(t):
+				var at := (t as Node3D).global_position
+				_burst(at + Vector3.UP * 0.6, Vector3(0.7, 0.9, 0.7), 0.16, 7.0)
+				_puff(at + Vector3.UP * 0.5, 0.7, 0.5, STEAM, 0.55, Vector3.UP * 1.4, 0.04)
+				hit += 1
+	log_rows.append("scald %d at %.2f" % [hit, _clock])
+
+
+## The columns: steam shot straight up from every stack with flame at its base, from the blast to plume_end.
+func _step_whistle(delta: float) -> void:
+	if _whistle.is_empty():
+		return
+	_whistle["age"] = float(_whistle["age"]) + delta
+	if float(_whistle["age"]) >= float(_whistle["until"]):
+		_whistle = {}
+		log_rows.append("whistle columns end at %.2f" % _clock)
+		return
+	_whistle["puff_t"] = float(_whistle["puff_t"]) - delta
+	if float(_whistle["puff_t"]) <= 0.0:
+		_whistle["puff_t"] = COLUMN_TICK
+		var mid := Vector3.ZERO
+		for st in STACKS:
+			mid += _stack_mouth(st) / float(STACKS.size())
+		for st in STACKS:
+			var m := _stack_mouth(st) + Vector3.UP * 0.25
+			var out := m - mid
+			out.y = 0.0
+			out = out.normalized() if out.length() > 0.01 else Vector3.ZERO
+			var j := Vector3(randf_range(-0.25, 0.25), 0.0, randf_range(-0.25, 0.25))
+			_plume(m, 0.8, 1.6, 0.8, (Vector3.UP + out * COLUMN_FAN * 1.6) * COLUMN_V + j)
+			_plume(m, 0.55, 1.0, 0.6, (Vector3.UP + out * COLUMN_FAN) * COLUMN_V * 0.45 + j)
+	_whistle["fire_t"] = float(_whistle["fire_t"]) - delta
+	if float(_whistle["fire_t"]) <= 0.0:
+		_whistle["fire_t"] = 0.05
+		for st in STACKS:
+			_burst(_stack_mouth(st) + Vector3.UP * 0.3, Vector3(0.55, 1.05, 0.55) * randf_range(0.85, 1.15), 0.14, 6.0)
+
+
+## One column puff: steam that widens from size to size * (1 + grow) as it climbs.
+func _plume(at: Vector3, size: float, grow: float, life: float, vel: Vector3) -> void:
+	_puff(at, size, life, STEAM, 0.9, vel, 0.0)
+	live[-1]["grow"] = grow
+	live[-1]["size0"] = size

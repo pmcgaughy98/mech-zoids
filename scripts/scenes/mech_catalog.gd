@@ -101,13 +101,15 @@ func _build_ui() -> void:
 	_button("Title  [Esc]", Rect2(640, 560, 190, 30), _back)
 	var regular_index := 0
 	var objective_index := 0
+	var regular_count := entries.filter(func(entry: Dictionary): return entry.get("category", "") != "objective").size()
+	var button_height := minf(22.0, 88.0 / maxi(1, ceili(float(regular_count) / 7.0)))
 	if entries.any(func(entry: Dictionary): return entry.get("category", "") == "objective"):
 		_label("OBJECTIVES", Vector2(24, 696), 11)
 	for i in entries.size():
 		var short_name: String = entries[i]["name"]
 		if entries[i]["reference_only"]:
 			short_name = "Shoebill alt*"
-		var rect := Rect2(24 + (regular_index % 7) * 117, 602 + (regular_index / 7) * 22, 111, 22)
+		var rect := Rect2(24 + (regular_index % 7) * 117, 602 + (regular_index / 7) * button_height, 111, button_height)
 		if entries[i].get("category", "") == "objective":
 			rect = Rect2(142 + objective_index * 190, 694, 180, 24)
 			objective_index += 1
@@ -319,6 +321,15 @@ func _update_camera() -> void:
 		model_labels[i].visible = overview
 	camera.position = target + offset.rotated(Vector3.UP, deg_to_rad(yaw))
 	camera.look_at(target)
+	if overview and not comparing:
+		var camera_space := camera.global_transform.affine_inverse()
+		var aspect_ratio := float(viewport.size.x) / viewport.size.y
+		for model in models:
+			var model_bounds := _bounds(model)
+			for corner in 8:
+				var point := camera_space * (model.global_transform * model_bounds.get_endpoint(corner))
+				camera.size = maxf(camera.size, absf(point.y) * 2.0 + 2.0)
+				camera.size = maxf(camera.size, (absf(point.x) * 2.0 + 2.0) / aspect_ratio)
 
 func _toggle_view() -> void:
 	_clear_comparison()

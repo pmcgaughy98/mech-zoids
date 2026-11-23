@@ -62,3 +62,29 @@ M 400, S 600, 1.75x during an action (mech_model_3d.gd face()); facing and aim s
 during a heavy turn (2026-11-14): "A: feet shuffle", so the gait keeps reading the body heading and steps strafe or
 backpedal while it swings round (about 0.5 s of steps on a full reversal). Game feel's stage1_body_probe waits about
 0.6 s for the turn.
+
+## Unreal vs Godot camera (camera lane, 2026-11-18, read-only; nothing changed)
+Found after the map lane noticed Unreal's -ArenaShot camera (ArenaMap.cpp 436-446: 12 m back, 3.2 m look height,
+horizontal fov 91.5) still uses Godot's pre-2026-11-13 numbers. The in-game Unreal camera is a separate rig,
+ATrialGorilla in D:/dev/mech-moba-unreal/Source/MechMoba/Trial.cpp 61-69, and differs from Godot's in five ways:
+| | Godot chase_camera_3d.gd (now) | Unreal Trial.cpp (now) |
+|---|---|---|
+| Distance | per machine, 7.3-8.4 m from the feet, framed so the body fills 16-18% of the height | spring arm 8.5 m from a pivot about 2 m above the feet, same for every machine |
+| Side offset | none: machine centred (keeps left and right aim equal, the synthesis finding) | 1.9 m to the right (over the shoulder) |
+| Field of view | 60 deg vertical (91.5 horizontal at 16:9) | 65 deg horizontal, about 39 deg vertical: much tighter, reads zoomed in |
+| Pitch | 13 deg, mouse 6-30, feet held 71% down the screen | starts 20 deg, mouse pitch with the engine's default limits |
+| Body turn | capped by class (L 260, M 400 deg/s), aim instant | body yaw locked to the camera (instant), except during listed actions |
+Also not in Unreal: the ring pull-back, the reticle aim on the floor, the per-machine framing. Any change there needs a
+hub queue row; Preston decides whether Unreal should match Godot.
+
+Pangolin framing height (2026-11-18): Godot's camera reads 1.486 m for the pangolin, because its scrap_shell (comet ball) mesh counts as visible; the body (top_height) is 0.941 m. Preston: "Keep it as is", so the pangolin keeps the 7.3 m camera, and the Unreal port (hub row 71) frames it from 148.6 cm to match.
+
+## Unreal camera matched to Godot (hub row 71, 2026-11-20; Preston: "Yes, match Godot")
+Trial.cpp/Trial.h, ATrialGorilla::UpdateCameraFrame(): machine centred (no 1.9 m shoulder offset), 60 deg vertical at any
+aspect, feet 71% down, body share by class (L .18, M .16, S .14), mouse pitch held 6-30 deg down, start 13. Pangolin framed
+from 148.6 cm to match Godot. -CameraFilm films every machine in Arena3v3 (4 s each, pitch 13/30/6) and logs COMPARE_CAMERA.
+Measured from the engine's own projection, all 8 machines at pitch 13 and 30: feet 0.710 down, centred 0.500; heads 0.530 (L),
+0.550 (M), 0.570 (fennec); arms gorilla/rhino 7.46 m, hippo 8.07, kangaroo/cobra 8.35, bison 7.24, pangolin 7.30, fennec
+6.14; no wall pull-in. Full Check Migration PASS (first run missed one gorilla TrialAuto contact; a rerun of that smoke test
+and the second full run passed). DLL 89C3D03F. Film: D:/dev/_scratch/camera-lane/video/unreal_camera_match_2026-11-20.mp4.
+Not ported yet: ring pull-back, centre reticle aim, turn weight.
